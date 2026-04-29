@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "pages:build": "npm run build && npx @opennextjs/cloudflare build",
+    "pages:build": "npm run build && npx @opennextjs/cloudflare build && cp .open-next/cloudflare-templates/worker.js .open-next/cloudflare-templates/_worker.js",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit"
