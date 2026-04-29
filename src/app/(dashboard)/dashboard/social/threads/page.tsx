@@ -142,9 +142,9 @@ export default function ThreadsLandscapePage() {
 
   // Sentiment data
   const sentimentData = [
-    { name: 'Positive', value: metrics.sentiment.breakdown.positive, color: CHART_COLORS.emerald },
-    { name: 'Neutral', value: metrics.sentiment.breakdown.neutral, color: CHART_COLORS.platinum },
-    { name: 'Negative', value: metrics.sentiment.breakdown.negative, color: CHART_COLORS.rose },
+    { name: 'Positive', value: metrics.sentiment.positive, color: CHART_COLORS.emerald },
+    { name: 'Neutral', value: metrics.sentiment.neutral, color: CHART_COLORS.platinum },
+    { name: 'Negative', value: metrics.sentiment.negative, color: CHART_COLORS.rose },
   ]
 
   // Engagement data
@@ -211,7 +211,6 @@ export default function ThreadsLandscapePage() {
             key={idx}
             title={stat.label}
             value={stat.value}
-            previousValue={stat.value}
             icon={<stat.icon className="h-5 w-5" />}
             gradient={stat.color === CHART_COLORS.rose ? 'rose' : stat.color === CHART_COLORS.emerald ? 'emerald' : 'denim'}
             status={stat.status}
@@ -311,7 +310,7 @@ export default function ThreadsLandscapePage() {
                   <AreaChart
                     data={growthData}
                     xAxisKey="quarter"
-                    bars={[{ dataKey: 'mau', name: 'MAU (M)', color: CHART_COLORS.info }]}
+                    areas={[{ dataKey: 'mau', name: 'MAU (M)', color: CHART_COLORS.info }]}
                     height={280}
                     showGrid={true}
                   />
@@ -490,7 +489,7 @@ export default function ThreadsLandscapePage() {
                       showLegend={true}
                     />
                     <div className="space-y-3">
-                      {metrics.sentiment.keyConcerns.map((concern, idx) => (
+                      {metrics.sentiment.keyConcerns?.map((concern, idx) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: 10 }}
@@ -579,7 +578,7 @@ export default function ThreadsLandscapePage() {
                     </p>
                   </div>
                   <div className="space-y-3">
-                    {governmentAccounts.map((account, idx) => (
+                    {governmentAccounts?.map((account, idx) => (
                       <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
                         <div className="flex items-center gap-3">
                           {account.verified ? (
@@ -590,8 +589,8 @@ export default function ThreadsLandscapePage() {
                           <span className="text-sm font-medium text-slate-200">{account.handle}</span>
                           <Badge variant="outline" className="text-xs">{account.type}</Badge>
                         </div>
-                        {account.followers > 0 && (
-                          <span className="text-sm text-gold">{account.followers.toLocaleString()}</span>
+                        {(account.followers ?? 0) > 0 && (
+                          <span className="text-sm text-gold">{account.followers?.toLocaleString()}</span>
                         )}
                       </div>
                     ))}
@@ -778,8 +777,8 @@ export default function ThreadsLandscapePage() {
                         <div className="flex items-center justify-between">
                           <CardTitle className="text-lg">{narrative.topic}</CardTitle>
                           <Badge variant={
-                            narrative.sentiment === 'Positive' ? 'success' :
-                            narrative.sentiment === 'Negative' ? 'destructive' : 'outline'
+                            narrative.sentiment === 'positive' ? 'success' :
+                            narrative.sentiment === 'negative' ? 'destructive' : 'outline'
                           }>
                             {narrative.sentiment}
                           </Badge>
@@ -790,14 +789,14 @@ export default function ThreadsLandscapePage() {
                         <p className="text-sm text-slate-300 mb-4">{narrative.narrative}</p>
                         <div className="space-y-2">
                           <p className="text-xs text-slate-400 font-medium">Sources:</p>
-                          {narrative.sources.map((source, sIdx) => (
+                          {(narrative.sources || (narrative.source ? [narrative.source] : [])).map((source, sIdx) => (
                             <div key={sIdx} className="flex items-center gap-2">
                               <div className="h-1.5 w-1.5 rounded-full bg-platinum" />
                               <span className="text-xs text-slate-400">{source}</span>
                             </div>
                           ))}
                         </div>
-                        <Progress value={narrative.prevalence} className="mt-4 h-2" />
+                        <Progress value={typeof narrative.prevalence === 'number' ? narrative.prevalence : 50} className="mt-4 h-2" />
                       </CardContent>
                     </Card>
                   </motion.div>

@@ -150,7 +150,7 @@ export default function RecentHistoryPage() {
           value="$600B"
           previousValue={520}
           icon={<Banknote className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
       </div>
 
@@ -166,7 +166,7 @@ export default function RecentHistoryPage() {
           value="61,000"
           icon={<AlertCircle className="h-6 w-6" />}
           gradient="rose"
-          status="critical"
+          status="error"
         />
         <MetricCard
           title="Regimes Overthrown"
@@ -665,10 +665,10 @@ export default function RecentHistoryPage() {
                   <PieChart
                     data={[
                       { name: 'Syria', value: 656493, color: CHART_COLORS.rose },
-                      { name: 'Libya', value: 15000, color: CHART_COLORS.amber },
+                      { name: 'Libya', value: 15000, color: CHART_COLORS.gold },
                       { name: 'Yemen', value: 2000, color: CHART_COLORS.orange },
                       { name: 'Egypt', value: 846, color: CHART_COLORS.gold },
-                      { name: 'Others', value: 866, color: CHART_COLORS.slate },
+                      { name: 'Others', value: 866, color: CHART_COLORS.platinum },
                     ]}
                     height={300}
                     showLegend={true}
@@ -702,7 +702,7 @@ export default function RecentHistoryPage() {
                   title="GDP Growth 2023"
                   value="3.6-4.3%"
                   icon={<TrendingUp className="h-6 w-6" />}
-                  gradient="platinum"
+                  gradient="indigo"
                 />
                 <MetricCard
                   title="Non-Oil Growth"
@@ -992,7 +992,7 @@ export default function RecentHistoryPage() {
                   title="Stock Market Cap"
                   value="$1T"
                   icon={<TrendingUp className="h-6 w-6" />}
-                  gradient="platinum"
+                  gradient="indigo"
                 />
                 <MetricCard
                   title="US Defense Partner"

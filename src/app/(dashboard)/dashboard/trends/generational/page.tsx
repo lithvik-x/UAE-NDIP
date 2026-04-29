@@ -376,7 +376,7 @@ export default function GenerationalTrendsPage() {
             value={87}
             unit="%"
             icon={<Sparkles className="h-6 w-6" />}
-            gradient="platinum"
+            gradient="indigo"
           />
         </motion.div>
       </motion.div>

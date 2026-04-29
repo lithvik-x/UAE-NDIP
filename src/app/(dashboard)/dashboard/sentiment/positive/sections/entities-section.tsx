@@ -49,6 +49,7 @@ const ENTITY_ICONS: Record<string, React.ElementType> = {
 }
 
 const TIER_COLORS = {
+  0: 'slate',
   1: 'emerald',
   2: 'gold',
   3: 'denim',

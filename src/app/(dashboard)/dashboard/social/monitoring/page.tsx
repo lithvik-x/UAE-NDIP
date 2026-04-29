@@ -52,7 +52,7 @@ export default function SocialMonitoringPage() {
     { name: 'Instagram', reach: 5.1, sentiment: 75, posts: 670000, color: CHART_COLORS.pink },
     { name: 'Facebook', reach: 3.4, sentiment: 62, posts: 450000, color: CHART_COLORS.blue },
     { name: 'YouTube', reach: 4.8, sentiment: 70, posts: 380000, color: CHART_COLORS.danger },
-    { name: 'Snapchat', reach: 3.9, sentiment: 78, posts: 520000, color: CHART_COLORS.yellow },
+    { name: 'Snapchat', reach: 3.9, sentiment: 78, posts: 520000, color: CHART_COLORS.gold },
   ]
 
   // Monitoring coverage data
@@ -167,7 +167,7 @@ export default function SocialMonitoringPage() {
           value={torNodes.toLocaleString()}
           previousValue={torNodes + 45}
           icon={<AlertTriangle className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="warning"
         />
       </div>

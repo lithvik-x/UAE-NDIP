@@ -28,7 +28,7 @@ import {
 } from '@/components/ui/chart-library'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 
-function TableSection<T extends { [key: string]: string | number }>({
+function TableSection<T extends { [key: string]: any }>({
   title,
   description,
   data,
@@ -227,7 +227,7 @@ export function SectionStructuredData() {
             xAxisKey="group"
             bars={[
               { dataKey: 'crossCutting', name: 'Cross-Cutting %', color: CHART_COLORS.emerald },
-              { dataKey: 'sameSide', name: 'Same Side %', color: CHART_COLORS.slate },
+              { dataKey: 'sameSide', name: 'Same Side %', color: CHART_COLORS.platinum },
             ]}
             stacked={true}
             height={280}
@@ -251,7 +251,7 @@ export function SectionStructuredData() {
       <TableSection
         title="Algorithm Personalization Data Points"
         description="Data collection and tracking statistics"
-        data={algorithmPersonalizationData}
+        data={algorithmPersonalizationData as any}
         columns={[
           { key: 'metric', label: 'Metric' },
           { key: 'value', label: 'Value', render: (v) => <span className="font-semibold text-orange-400">{String(v)}</span> },

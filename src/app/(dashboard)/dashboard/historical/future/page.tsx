@@ -143,7 +143,7 @@ export default function FutureProjectionsPage() {
           value="$1.2T"
           previousValue={950}
           icon={<Rocket className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
       </div>
 

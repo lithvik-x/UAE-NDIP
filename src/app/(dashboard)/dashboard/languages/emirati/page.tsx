@@ -292,7 +292,7 @@ export default function EmiratiArabicPage() {
           value={data?.credibility?.score || 85}
           previousValue={83}
           icon={<Star className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="success"
         />
       </motion.div>

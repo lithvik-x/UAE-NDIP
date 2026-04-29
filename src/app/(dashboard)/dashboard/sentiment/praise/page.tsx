@@ -22,7 +22,7 @@ import {
 import {
   Shield,
   Sparkles,
-  Road,
+  Map,
   Heart,
   Trophy,
   Utensils,
@@ -213,7 +213,6 @@ export default function PraiseEndorsementPage() {
             <GlassPanel
               title="Praise & Endorsement Overview"
               description="Key metrics and distribution analysis"
-              icon={<ThumbsUp className="h-5 w-5 text-emerald-400" />}
             >
               <div className="space-y-6">
                 {/* Research Overview */}

@@ -70,7 +70,7 @@ export default function SocialMediaMonitoringPage() {
     { name: 'Tourism', value: 18, color: CHART_COLORS.platinum },
     { name: 'Culture', value: 15, color: CHART_COLORS.emerald },
     { name: 'Sports', value: 10, color: CHART_COLORS.rose },
-    { name: 'Other', value: 5, color: CHART_COLORS.slate },
+    { name: 'Other', value: 5, color: CHART_COLORS.platinum },
   ]
 
   // Top trending hashtags

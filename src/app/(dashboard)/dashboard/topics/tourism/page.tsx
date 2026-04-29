@@ -233,7 +233,7 @@ export default function TourismHospitalityPage() {
           value="925K"
           previousValue={898.6}
           icon={<Briefcase className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="success"
         />
       </motion.div>

@@ -237,7 +237,7 @@ export default function TerrorismExtremismPage() {
               previousValue="714 total entities"
               icon={<AlertOctagon className="h-6 w-6" />}
               gradient="rose"
-              status="critical"
+              status="error"
               onClick={() => {}}
             />
           </motion.div>
@@ -248,7 +248,7 @@ export default function TerrorismExtremismPage() {
               previousValue="326 searchable"
               icon={<Crosshair className="h-6 w-6" />}
               gradient="orange"
-              status="critical"
+              status="error"
               onClick={() => {}}
             />
           </motion.div>
@@ -259,7 +259,7 @@ export default function TerrorismExtremismPage() {
               previousValue="3 killed (2022 Houthi)"
               icon={<Users className="h-6 w-6" />}
               gradient="rose"
-              status="critical"
+              status="error"
               onClick={() => {}}
             />
           </motion.div>
@@ -799,11 +799,16 @@ export default function TerrorismExtremismPage() {
                         <CardDescription>Designation hierarchy and enforcement structure</CardDescription>
                       </CardHeader>
                       <CardContent>
-                        <FunnelChart
-                          data={legalFrameworkFunnel}
-                          dataKey="count"
+                        <BarChart
+                          data={legalFrameworkFunnel.map((item: any) => ({
+                            name: item.stage.split(' ')[0] + ' ' + item.stage.split(' ')[1],
+                            value: item.count,
+                            color: CHART_COLORS.navy,
+                          }))}
+                          xAxisKey="name"
+                          bars={[{ dataKey: 'value', name: 'Count', color: CHART_COLORS.navy }]}
                           height={300}
-                          showLegend={true}
+                          showGrid={true}
                         />
                       </CardContent>
                     </Card>

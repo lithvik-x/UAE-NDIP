@@ -134,7 +134,7 @@ export default function HistoricalCrisisPage() {
           value="$45B"
           previousValue={38}
           icon={<DollarSign className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
       </div>
 

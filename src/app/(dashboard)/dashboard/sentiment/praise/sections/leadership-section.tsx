@@ -60,7 +60,6 @@ export function LeadershipSection({
     <GlassPanel
       title="Visionary Leadership"
       description="20 years of transformative governance achievements"
-      icon={<Crown className="h-5 w-5 text-blue-400" />}
     >
       <div className="space-y-6">
         {/* Key Leadership Stats */}

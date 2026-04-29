@@ -414,7 +414,7 @@ export default function PoliticalTrendsPage() {
               value="165+"
               previousValue={160}
               icon={<Handshake className="h-6 w-6" />}
-              gradient="platinum"
+              gradient="indigo"
               status="success"
             />
           </motion.div>

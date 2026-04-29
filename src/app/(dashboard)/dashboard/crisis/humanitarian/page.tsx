@@ -71,7 +71,7 @@ export default function HumanitarianCrisesPage() {
   const sentimentData = [
     { name: 'Compassionate', value: 48, color: CHART_COLORS.emerald },
     { name: 'Concerned', value: 29, color: CHART_COLORS.gold },
-    { name: 'Neutral', value: 23, color: CHART_COLORS.slate },
+    { name: 'Neutral', value: 23, color: CHART_COLORS.platinum },
   ]
 
   return (
@@ -128,7 +128,7 @@ export default function HumanitarianCrisesPage() {
           value="7"
           previousValue="5"
           icon={<Home className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="success"
         />
       </div>

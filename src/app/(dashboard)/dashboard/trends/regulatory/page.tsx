@@ -276,14 +276,14 @@ function KPISection() {
         value="AED 50K-4M"
         icon={<AlertTriangle className="h-5 w-5" />}
         gradient="rose"
-        status="active"
+        status="success"
       />
       <MetricCard
         title="PDPL Fines"
         value="AED 50K-5M"
         icon={<Lock className="h-5 w-5" />}
         gradient="orange"
-        status="active"
+        status="success"
       />
       <MetricCard
         title="Corporate Tax (DMTT)"
@@ -291,7 +291,7 @@ function KPISection() {
         unit="for MNCs"
         icon={<DollarSign className="h-5 w-5" />}
         gradient="denim"
-        status="active"
+        status="success"
       />
     </div>
   )
@@ -467,7 +467,7 @@ function SentimentSection() {
         data={[
           { name: 'Business-Friendly', value: 40, color: CHART_COLORS.emerald },
           { name: 'Pro-Business', value: 25, color: CHART_COLORS.gold },
-          { name: 'Compliance-Focused', value: 20, color: CHART_COLORS.yellow },
+          { name: 'Compliance-Focused', value: 20, color: CHART_COLORS.gold },
           { name: 'Transitioning', value: 15, color: CHART_COLORS.orange },
         ]}
         height={250}

@@ -311,7 +311,7 @@ export default function GeopoliticalTrendsPage() {
             value="57%"
             previousValue={62}
             icon={<DollarSign className="h-6 w-6" />}
-            gradient="platinum"
+            gradient="indigo"
           />
         </motion.div>
         <motion.div variants={fadeInUp}>

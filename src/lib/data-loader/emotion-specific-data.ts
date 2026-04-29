@@ -595,6 +595,7 @@ export interface AnticipationData {
       project: string
       specs: string
       cost?: string
+      completion?: string
     }>
     infrastructure: Array<{
       project: string

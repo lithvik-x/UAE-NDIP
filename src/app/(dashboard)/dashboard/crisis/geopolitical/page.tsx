@@ -205,7 +205,7 @@ export default function GeopoliticalCrisisPage() {
             value="1,700+"
             icon={<Flame className="h-6 w-6" />}
             gradient="rose"
-            status="critical"
+            status="error"
           />
         </motion.div>
         <motion.div
@@ -218,7 +218,7 @@ export default function GeopoliticalCrisisPage() {
             value="6"
             icon={<Users className="h-6 w-6" />}
             gradient="rose"
-            status="critical"
+            status="error"
           />
         </motion.div>
         <motion.div
@@ -231,7 +231,7 @@ export default function GeopoliticalCrisisPage() {
             value="$200B"
             icon={<TrendingDown className="h-6 w-6" />}
             gradient="orange"
-            status="critical"
+            status="error"
           />
         </motion.div>
         <motion.div

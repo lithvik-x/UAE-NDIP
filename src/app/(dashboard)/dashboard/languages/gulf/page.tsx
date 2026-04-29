@@ -205,7 +205,7 @@ export default function GulfArabicPage() {
             value={data.queryVolume?.toLocaleString() || '18,500,000'}
             previousValue={(data.queryVolume || 18500000) - 500000}
             icon={<Search className="h-6 w-6" />}
-            gradient="platinum"
+            gradient="indigo"
             status="info"
           />
         </motion.div>

@@ -62,7 +62,6 @@ export function SourceCredibilitySection({
     <GlassPanel
       title="Source Credibility Matrix"
       description="Tier-based source classification for emotion research data"
-      icon={<Shield className="h-5 w-5 text-info" />}
     >
       <div className="space-y-6">
         {/* Tier Distribution Chart */}

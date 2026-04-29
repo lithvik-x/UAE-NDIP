@@ -228,7 +228,7 @@ export default function CivilSocietyStakeholdersPage() {
           title="Organizations"
           value={civilSocietyEntities.length}
           icon={<Heart className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="info"
         />
         <MetricCard

@@ -64,11 +64,11 @@ const reputationCrisisExtendedData = {
     { name: 'Sudan Genocide', severity: 'CRITICAL', timeline: '2023-2026', keyIssue: 'ICJ case, gold smuggling, RSF support', color: CHART_COLORS.rose },
     { name: 'Iran War 2026', severity: 'CRITICAL', timeline: 'Mar 2026', keyIssue: 'Physical damage + social media crackdown', color: CHART_COLORS.orange },
     { name: 'Human Rights', severity: 'CRITICAL', timeline: '2011-2026', keyIssue: 'Political prisoners, torture, press freedom', color: CHART_COLORS.red },
-    { name: 'Libya Airstrike', severity: 'HIGH', timeline: 'Jul 2019', keyIssue: 'Migrant center bombing, 53+ dead', color: CHART_COLORS.yellow },
+    { name: 'Libya Airstrike', severity: 'HIGH', timeline: 'Jul 2019', keyIssue: 'Migrant center bombing, 53+ dead', color: CHART_COLORS.gold },
     { name: 'Qatar Blockade', severity: 'HIGH', timeline: '2017-2021', keyIssue: 'Sovereignty violation, 13 demands', color: CHART_COLORS.gold },
     { name: 'Royal Family', severity: 'HIGH', timeline: '2018-2022', keyIssue: 'Princess Latifa/Haya abductions', color: CHART_COLORS.navy },
     { name: 'Sports Bans', severity: 'MODERATE', timeline: '2015-2025', keyIssue: 'FEI equestrian, FIFA misconduct', color: CHART_COLORS.emerald },
-    { name: 'Financial Crime', severity: 'MODERATE', timeline: '2019-2024', keyIssue: 'FATF grey list, money laundering', color: CHART_COLORS.cyan },
+    { name: 'Financial Crime', severity: 'MODERATE', timeline: '2019-2024', keyIssue: 'FATF grey list, money laundering', color: CHART_COLORS.info },
     { name: 'COP28', severity: 'MODERATE', timeline: '2023', keyIssue: 'Greenwashing allegations', color: CHART_COLORS.teal },
     { name: 'Academic Boycott', severity: 'MODERATE', timeline: '2024-2026', keyIssue: 'TAGATU3, $402M to US universities', color: CHART_COLORS.indigo },
   ],
@@ -786,7 +786,7 @@ export default function PhoenixProjectPage() {
                       count: item.sentiment === 'VERY NEGATIVE' ? 6 : item.sentiment === 'NEGATIVE' ? 3 : 1,
                       color: item.sentiment === 'VERY NEGATIVE' ? CHART_COLORS.rose :
                              item.sentiment === 'NEGATIVE' ? CHART_COLORS.orange :
-                             CHART_COLORS.yellow,
+                             CHART_COLORS.gold,
                     }))}
                     height={300}
                     showLegend={true}

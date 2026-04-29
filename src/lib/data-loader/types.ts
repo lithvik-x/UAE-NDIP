@@ -57,9 +57,13 @@ export interface Influencer {
 
 export interface Narrative {
   topic: string
-  snippet: string
-  underlyingBelief: string
-  source: string
+  snippet?: string
+  narrative?: string
+  underlyingBelief?: string
+  source?: string
+  sources?: string[]
+  sentiment?: string
+  prevalence?: number
   category?: string
 }
 
@@ -789,7 +793,7 @@ export type AlertLevel = 'RED' | 'YELLOW' | 'GREEN'
 
 export type HSBPCCategory = 'health' | 'safety' | 'policy' | 'business' | 'community'
 
-export type SentimentPolarity = 'positive' | 'negative' | 'neutral'
+export type SentimentPolarity = 'positive' | 'negative' | 'neutral' | 'mixed'
 
 export interface SentimentBreakdown {
   positive: number
@@ -862,11 +866,12 @@ export type EntityType =
   | 'event'
 
 export interface SocialAccount {
-  platform: string
+  platform?: string
   handle: string
   url?: string
   followers?: number
   verified: boolean
+  type?: string
 }
 
 export interface EntityRelationship {
@@ -1066,13 +1071,15 @@ export interface BotAnalysis {
   botNetworks?: string[]
   coordinatedInauthentic?: boolean
   confidence: number
+  indicators?: string[]
 }
 
-export interface Narrative {
+export interface NarrativeData {
   topic: string
   narrative: string
-  source: string
-  prevalence: 'low' | 'medium' | 'high'
+  source?: string
+  sources?: string[]
+  prevalence: string | number
   sentiment: SentimentPolarity
 }
 
@@ -1082,14 +1089,36 @@ export interface EngagementMetrics {
   shares: number
   comments: number
   engagementRate: number
+  avgLikes?: number
+  avgReplies?: number
+  avgReposts?: number
+  trendingHashtags?: string[]
+  bestPostingTime?: string
+  optimalDays?: string[]
+  avgViews?: number
+  avgComments?: number
+  avgShares?: number
+}
+
+export interface BotActivity {
+  estimatedBotPercent: number
+  coordinatedInauthentic: boolean
+  confidence: number
+  indicators?: string[]
+  botNetworks?: string[]
 }
 
 export interface PlatformMetrics {
   users: number
   penetration: number
   dailyActive: number
-  sentiment: SentimentBreakdown
+  sentiment: SentimentBreakdown & {
+    score?: number
+    trending?: string[]
+    keyConcerns?: string[]
+  }
   engagement: EngagementMetrics
+  botActivity?: BotActivity
   censorshipLevel: 'none' | 'partial' | 'significant' | 'extreme'
 }
 
@@ -1100,6 +1129,14 @@ export interface PlatformIntelligence {
   governmentAccounts?: SocialAccount[]
   botActivity: BotAnalysis
   censorshipLevel: 'none' | 'partial' | 'significant' | 'extreme'
+  censorship?: {
+    level: string
+    complianceRate?: number
+    governmentRequests?: number
+    contentRemoved?: number
+    notes?: string
+    [key: string]: any
+  }
   keyNarratives: Narrative[]
   darkSocialScore: number // 0-100 — encrypted/restricted platforms
   keyFindings?: KeyFinding[]
@@ -1352,7 +1389,7 @@ export type LanguageCode =
 export interface SearchTerm {
   term: string
   volume: number
-  trend: 'rising' | 'stable' | 'declining'
+  trend: 'rising' | 'stable' | 'declining' | 'mixed'
   sentiment: SentimentPolarity
 }
 
@@ -2359,6 +2396,20 @@ export interface HistoricalEra {
     totalPolicies?: number
     dataPointsCount?: number
   }
+  // Additional fields for historical data enrichment
+  sheikhdoms?: Array<{ emirate: string; duration: string; entryMethod: string }>
+  currencyEvolution?: Array<{ period: string; currency: string }>
+  treaties?: Array<{ name: string; date: string; description: string; articles: string }>
+  britishRepresentatives?: Array<{ name: string; period: string }>
+  pearlingData?: { peakBoats: string; peopleEmployed: string; dubaiBoats1907: string; boats1929: string; season: string; declineStarted: string }
+  divingEquipment?: Array<{ name: string; description: string }>
+  declineFactors?: Array<{ factor: string; impact: string }>
+  oilTimeline?: Array<{ year: string; event: string; details: string }>
+  concessionDetails?: { ipcDownPayment: string; monthlyPayment: string; concessionDuration: string; profitSharing: string; adnocStake: string }
+  companies?: Array<{ name: string; acronym: string; role: string; ownership: string }>
+  productionFields?: Array<{ field: string; discovery: string; onStream: string; productionData: string }>
+  uaeReserves?: { oilReservesAbuDhabi: string; oilReservesGlobalRank: string; naturalGasAbuDhabi: string; abuDhabiLandArea: string; islandsInTerritory: string; uaeProduction2010: string }
+  [key: string]: any
 }
 
 // --------------------------------------------------------------------------
@@ -2442,7 +2493,7 @@ export interface PolicyProvision {
 
 export interface PolicyKPI {
   kpi: string
-  value: string | number
+  value: string | number | boolean
   unit?: string
   date?: string
   status?: string
@@ -2486,8 +2537,12 @@ export interface PolicyAnnouncementDetails {
   approvalDate?: string
   policyYear?: number | string
   launchYear?: number | string
+  contractor?: string
   contractYear?: number | string
+  atCop6?: boolean
   atCop26?: boolean
+  atCop28?: boolean
+  [key: string]: any
 }
 
 export interface PolicyAnnouncement {
@@ -2513,10 +2568,14 @@ export interface SourceCredibilityEntry {
 }
 
 export interface UAERelevanceEntry {
-  policy: string
-  uaeRelevance: string
-  criticalKPIs: string
-  assessmentRationale: string
+  topic?: string
+  priority?: string
+  score?: number
+  policy?: string
+  uaeRelevance?: string
+  criticalKPIs?: string
+  assessmentRationale?: string
+  [key: string]: any
 }
 
 export interface SentimentSummaryEntry {
@@ -2786,6 +2845,41 @@ export interface VerificationResult {
   detectionConfidence?: DetectionConfidenceKPI[]
   // Extended fields for 11-1 Media About Media enrichment
   extendedData?: MediaAboutMediaExtendedData | OmissionSilenceExtendedData | FactCheckVerificationExtendedData
+  // Extended fields for 11-9 Bot & Inauthentic Behavior
+  takedownSummary?: Array<{ originCountry: string; numberOfTakedowns: number; platforms: string[] }>
+  aiGeneratedTrends?: any[]
+  platformComparisons?: any[]
+  operations?: any[]
+  narrativeThemes?: any[]
+  keyFinding?: string
+  kpiData?: any[]
+  detectionBranches?: any[]
+  behavioralSignatures?: any[]
+  definitions?: any[]
+  characteristics?: any[]
+  conceptDistinctions?: any[]
+  tactics?: any[]
+  opSecMeasures?: any[]
+  middleEastPatterns?: any[]
+  detectionChallenges?: any[]
+  warningSigns?: any[]
+  redFlags?: any[]
+  networkIndicators?: any[]
+  topPages?: any[]
+  categories?: any[]
+  regulatoryChallenges?: any[]
+  legalFrameworks?: any[]
+  crossPlatforms?: any[]
+  q1Operations?: any[]
+  uaeThreatLevels?: any[]
+  uaeOperations?: any[]
+  uaeRelevanceItems?: any[]
+  marketingFirms?: any[]
+  conclusions?: any[]
+  recommendations?: any[]
+  sourceCitations?: any[]
+  statisticalSummary?: any[]
+  researchCompiled?: string
 }
 
 // --------------------------------------------------------------------------
@@ -3035,7 +3129,7 @@ export interface KeySourceCitation {
   url: string
 }
 
-export interface DashboardKPIEntry {
+export interface DashboardKPISimpleEntry {
   kpi: string
   value: string
   trend?: string
@@ -3394,7 +3488,7 @@ export interface SummaryMetric {
   date?: string
 }
 
-export interface EnforcementAction {
+export interface EnforcementActionData {
   action: string
   count: number
   date?: string

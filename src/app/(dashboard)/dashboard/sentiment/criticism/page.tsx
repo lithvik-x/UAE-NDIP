@@ -50,6 +50,7 @@ import {
   Home,
   Briefcase,
   AlertOctagon,
+  PieChart as PieChartIcon,
 } from 'lucide-react'
 import {
   useCriticismComplaintData,
@@ -240,7 +241,7 @@ export default function CriticismComplaintPage() {
             value={criticalCount.toString()}
             icon={<AlertTriangle className="h-6 w-6" />}
             gradient="rose"
-            status="critical"
+            status="error"
           />
         </motion.div>
         <motion.div variants={fadeInUp}>
@@ -327,13 +328,7 @@ export default function CriticismComplaintPage() {
           <GlassPanel title="Economic Stress Composite Index" description="Cross-category economic stress assessment">
             <div className="space-y-6">
               <div className="grid gap-6 lg:grid-cols-2">
-                <motion.Card
-                  variants={cardHover}
-                  initial="initial"
-                  animate="animate"
-                  whileHover="hover"
-                  className="glass-card border-rose-500/30"
-                >
+                <Card className="glass-card border-rose-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                       <Scale className="w-4 h-4 inline mr-2" />
@@ -356,15 +351,9 @@ export default function CriticismComplaintPage() {
                       showGrid={true}
                     />
                   </CardContent>
-                </motion.Card>
+                </Card>
 
-                <motion.Card
-                  variants={cardHover}
-                  initial="initial"
-                  animate="animate"
-                  whileHover="hover"
-                  className="glass-card border-amber-500/30"
-                >
+                <Card className="glass-card border-amber-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                       <Activity className="w-4 h-4 inline mr-2" />
@@ -380,7 +369,7 @@ export default function CriticismComplaintPage() {
                       {data.economicStressCompositeTotal.interpretation}
                     </Badge>
                   </CardContent>
-                </motion.Card>
+                </Card>
               </div>
             </div>
           </GlassPanel>
@@ -605,13 +594,7 @@ export default function CriticismComplaintPage() {
           <GlassPanel title="Sentiment Distribution Matrix" description="Sentiment breakdown by complaint category">
             <div className="space-y-6">
               <div className="grid gap-6 lg:grid-cols-2">
-                <motion.Card
-                  variants={cardHover}
-                  initial="initial"
-                  animate="animate"
-                  whileHover="hover"
-                  className="glass-card border-rose-500/30"
-                >
+                <Card className="glass-card border-rose-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                       <ThumbsDown className="w-4 h-4 inline mr-2" />
@@ -630,18 +613,12 @@ export default function CriticismComplaintPage() {
                       showGrid={true}
                     />
                   </CardContent>
-                </motion.Card>
+                </Card>
 
-                <motion.Card
-                  variants={cardHover}
-                  initial="initial"
-                  animate="animate"
-                  whileHover="hover"
-                  className="glass-card border-slate-500/30"
-                >
+                <Card className="glass-card border-slate-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
-                      <PieChart className="w-4 h-4 inline mr-2" />
+                      <PieChartIcon className="w-4 h-4 inline mr-2" />
                       Sentiment Composition
                     </CardTitle>
                     <CardDescription>Overall sentiment distribution</CardDescription>
@@ -650,14 +627,14 @@ export default function CriticismComplaintPage() {
                     <PieChart
                       data={[
                         { name: 'Negative', value: 65, color: CHART_COLORS.rose },
-                        { name: 'Neutral', value: 20, color: CHART_COLORS.slate },
+                        { name: 'Neutral', value: 20, color: CHART_COLORS.platinum },
                         { name: 'Positive', value: 15, color: CHART_COLORS.emerald },
                       ]}
                       height={300}
                       showLegend={true}
                     />
                   </CardContent>
-                </motion.Card>
+                </Card>
               </div>
             </div>
           </GlassPanel>
@@ -666,13 +643,7 @@ export default function CriticismComplaintPage() {
           <GlassPanel title="Sentiment by Platform" description="Complaint sentiment scores across platforms">
             <div className="space-y-6">
               <div className="grid gap-6 lg:grid-cols-2">
-                <motion.Card
-                  variants={cardHover}
-                  initial="initial"
-                  animate="animate"
-                  whileHover="hover"
-                  className="glass-card border-cyan-500/30"
-                >
+                <Card className="glass-card border-cyan-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                       <Activity className="w-4 h-4 inline mr-2" />
@@ -685,20 +656,15 @@ export default function CriticismComplaintPage() {
                       data={platformChartData}
                       xAxisKey="name"
                       bars={[
-                        { dataKey: 'score', name: '|Sentiment|', color: CHART_COLORS.cyan },
+                        { dataKey: 'score', name: '|Sentiment|', color: CHART_COLORS.info },
                       ]}
                       height={300}
                       showGrid={true}
                     />
                   </CardContent>
-                </motion.Card>
+                </Card>
 
-                <motion.Card
-                  variants={cardHover}
-                  initial="initial"
-                  animate="animate"
-                  whileHover="hover"
-                  className="glass-card border-amber-500/30"
+                <Card className="glass-card border-amber-500/30"
                 >
                   <CardHeader>
                     <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
@@ -718,13 +684,13 @@ export default function CriticismComplaintPage() {
                       ]}
                       xAxisKey="tier"
                       bars={[
-                        { dataKey: 'sentiment', name: 'Sentiment Score', color: CHART_COLORS.amber },
+                        { dataKey: 'sentiment', name: 'Sentiment Score', color: CHART_COLORS.gold },
                       ]}
                       height={300}
                       showGrid={true}
                     />
                   </CardContent>
-                </motion.Card>
+                </Card>
               </div>
             </div>
           </GlassPanel>
@@ -732,13 +698,7 @@ export default function CriticismComplaintPage() {
           {/* Trend Analysis */}
           <GlassPanel title="Trend Analysis (2024-2026)" description="Complaint category severity progression">
             <div className="space-y-6">
-              <motion.Card
-                variants={cardHover}
-                initial="initial"
-                animate="animate"
-                whileHover="hover"
-                className="glass-card border-slate-500/30"
-              >
+              <Card className="glass-card border-slate-500/30">
                 <CardHeader>
                   <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                     <TrendingUp className="w-4 h-4 inline mr-2" />
@@ -751,15 +711,15 @@ export default function CriticismComplaintPage() {
                     data={trendChartData}
                     xAxisKey="category"
                     areas={[
-                      { dataKey: '2024', name: '2024', color: CHART_COLORS.slate },
-                      { dataKey: '2025', name: '2025', color: CHART_COLORS.amber },
+                      { dataKey: '2024', name: '2024', color: CHART_COLORS.platinum },
+                      { dataKey: '2025', name: '2025', color: CHART_COLORS.gold },
                       { dataKey: '2026', name: '2026', color: CHART_COLORS.rose },
                     ]}
                     height={350}
                     showGrid={true}
                   />
                 </CardContent>
-              </motion.Card>
+              </Card>
             </div>
           </GlassPanel>
         </TabsContent>
@@ -1089,13 +1049,7 @@ export default function CriticismComplaintPage() {
           {/* Relevance Issue Classification Chart */}
           <GlassPanel title="UAE Relevance by Issue Category" description="Population impact and severity">
             <div className="space-y-6">
-              <motion.Card
-                variants={cardHover}
-                initial="initial"
-                animate="animate"
-                whileHover="hover"
-                className="glass-card border-slate-500/30"
-              >
+              <Card className="glass-card border-slate-500/30">
                 <CardHeader>
                   <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                     <Users className="w-4 h-4 inline mr-2" />
@@ -1114,7 +1068,7 @@ export default function CriticismComplaintPage() {
                     showGrid={true}
                   />
                 </CardContent>
-              </motion.Card>
+              </Card>
             </div>
           </GlassPanel>
         </TabsContent>

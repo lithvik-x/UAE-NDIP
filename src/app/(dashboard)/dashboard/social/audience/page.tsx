@@ -167,7 +167,7 @@ export default function AudiencePage() {
           value="78%"
           previousValue={75}
           icon={<TrendingUp className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="success"
         />
       </div>

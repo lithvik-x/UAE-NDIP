@@ -101,7 +101,7 @@ export default function StatisticalDatapointsPage() {
     { name: 'Pakistani', value: 17, color: CHART_COLORS.emerald },
     { name: 'Bangladeshi', value: 7.4, color: CHART_COLORS.denim },
     { name: 'Filipino', value: 6.9, color: CHART_COLORS.gold },
-    { name: 'Other', value: 30.7, color: CHART_COLORS.slate },
+    { name: 'Other', value: 30.7, color: CHART_COLORS.platinum },
   ]
 
   // ============================================================================
@@ -175,7 +175,7 @@ export default function StatisticalDatapointsPage() {
   const budgetAllocation = [
     { sector: 'Social Development', amount: 27.859, pct: 39, color: CHART_COLORS.emerald },
     { sector: 'Government Affairs', amount: 25.570, pct: 35.7, color: CHART_COLORS.denim },
-    { sector: 'Other Expenditures', amount: 12.624, pct: 17.7, color: CHART_COLORS.slate },
+    { sector: 'Other Expenditures', amount: 12.624, pct: 17.7, color: CHART_COLORS.platinum },
     { sector: 'Infrastructure', amount: 2.581, pct: 3.6, color: CHART_COLORS.gold },
     { sector: 'Financial Investments', amount: 2.864, pct: 4, color: CHART_COLORS.platinum },
   ]
@@ -359,7 +359,7 @@ export default function StatisticalDatapointsPage() {
                   <AreaChart
                     data={gdpGrowthData}
                     xAxisKey="name"
-                    lines={[{ dataKey: 'value', name: 'GDP Growth %', color: CHART_COLORS.emerald }]}
+                    areas={[{ dataKey: 'value', name: 'GDP Growth %', color: CHART_COLORS.emerald }]}
                     height={260}
                     showGrid
                   />
@@ -552,7 +552,7 @@ export default function StatisticalDatapointsPage() {
                   <AreaChart
                     data={tourismTrendData}
                     xAxisKey="year"
-                    lines={[{ dataKey: 'visitors', name: 'Visitors (M)', color: CHART_COLORS.cyan }]}
+                    areas={[{ dataKey: 'visitors', name: 'Visitors (M)', color: CHART_COLORS.info }]}
                     height={200}
                     showGrid
                   />
@@ -677,7 +677,7 @@ export default function StatisticalDatapointsPage() {
                       <AreaChart
                         data={surplusData}
                         xAxisKey="year"
-                        lines={[{ dataKey: 'value', name: 'Surplus %', color: CHART_COLORS.purple }]}
+                        areas={[{ dataKey: 'value', name: 'Surplus %', color: CHART_COLORS.purple }]}
                         height={200}
                         showGrid
                       />

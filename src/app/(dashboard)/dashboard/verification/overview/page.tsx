@@ -91,7 +91,7 @@ export default function VerificationOverviewPage() {
     { name: 'Health', value: 18, color: CHART_COLORS.emerald },
     { name: 'Social', value: 15, color: CHART_COLORS.platinum },
     { name: 'Security', value: 10, color: CHART_COLORS.rose },
-    { name: 'Other', value: 5, color: CHART_COLORS.slate },
+    { name: 'Other', value: 5, color: CHART_COLORS.platinum },
   ]
 
   // Recent verifications
@@ -199,7 +199,7 @@ export default function VerificationOverviewPage() {
           title="Avg Response Time"
           value={avgResponseTime}
           icon={<Timer className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
       </div>
 
@@ -215,21 +215,21 @@ export default function VerificationOverviewPage() {
           value="300,000+"
           icon={<Eye className="h-6 w-6" />}
           gradient="emerald"
-          status="critical"
+          status="error"
         />
         <MetricCard
           title="Project Raven Budget"
           value="$34M"
           icon={<Server className="h-6 w-6" />}
           gradient="rose"
-          status="critical"
+          status="error"
         />
         <MetricCard
           title="Pegasus Numbers"
           value="50,000+"
           icon={<Smartphone className="h-6 w-6" />}
           gradient="denim"
-          status="critical"
+          status="error"
         />
         <MetricCard
           title="Media Data/Day"
@@ -1332,14 +1332,14 @@ export default function VerificationOverviewPage() {
                   value={cibMetrics.kpis.totalMenaTakedowns}
                   icon={<Globe className="h-6 w-6" />}
                   gradient="emerald"
-                  status="critical"
+                  status="error"
                 />
                 <MetricCard
                   title="UAE-Linked Ops"
                   value={cibMetrics.kpis.uaeLinkedTakedowns}
                   icon={<Network className="h-6 w-6" />}
                   gradient="rose"
-                  status="critical"
+                  status="error"
                 />
                 <MetricCard
                   title="Ad Spend (Aug 2019)"
@@ -1370,7 +1370,7 @@ export default function VerificationOverviewPage() {
                       { name: 'Egypt', value: cibMetrics.kpis.egyptLinkedTakedowns, color: CHART_COLORS.gold },
                       { name: 'UAE', value: cibMetrics.kpis.uaeLinkedTakedowns, color: CHART_COLORS.emerald },
                       { name: 'Saudi', value: cibMetrics.kpis.saudiLinkedTakedowns, color: CHART_COLORS.navy },
-                      { name: 'Other', value: 5, color: CHART_COLORS.slate },
+                      { name: 'Other', value: 5, color: CHART_COLORS.platinum },
                     ]}
                     xAxisKey="name"
                     bars={[{ dataKey: 'value', name: 'Takedowns', color: CHART_COLORS.rose }]}
@@ -1749,7 +1749,7 @@ export default function VerificationOverviewPage() {
                   value="+900%"
                   icon={<AlertTriangle className="h-6 w-6" />}
                   gradient="rose"
-                  status="critical"
+                  status="error"
                 />
                 <MetricCard
                   title="Fake News Spread"
@@ -1766,7 +1766,7 @@ export default function VerificationOverviewPage() {
                   unit="viral videos"
                   icon={<AlertOctagon className="h-6 w-6" />}
                   gradient="denim"
-                  status="critical"
+                  status="error"
                 />
                 <MetricCard
                   title="Cloud Seeding Missions"
@@ -2959,7 +2959,7 @@ export default function VerificationOverviewPage() {
                   title="Network Polarization Decline"
                   value=">70%"
                   icon={<Activity className="h-5 w-5" />}
-                  gradient="platinum"
+                  gradient="indigo"
                 />
               </motion.div>
 

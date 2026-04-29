@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { MetricCard } from '@/components/dashboard/metric-card'
 import { GlassPanel } from '@/components/dashboard/glass-card'
-import { AreaChart, LineChart, CHART_COLORS } from '@/components/ui/chart-library'
+import { AreaChart, BarChart, LineChart, CHART_COLORS } from '@/components/ui/chart-library'
 import {
   Shield,
   Heart,

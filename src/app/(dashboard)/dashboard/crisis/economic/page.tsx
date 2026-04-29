@@ -212,7 +212,7 @@ export default function EconomicCrisisPage() {
             value="$120B"
             icon={<TrendingDownIcon className="h-6 w-6" />}
             gradient="rose"
-            status="critical"
+            status="error"
           />
         </motion.div>
         <motion.div variants={fadeInUp} transition={{ delay: 0.2 }}>
@@ -221,7 +221,7 @@ export default function EconomicCrisisPage() {
             value="$59B"
             icon={<Building className="h-6 w-6" />}
             gradient="orange"
-            status="critical"
+            status="error"
           />
         </motion.div>
         <motion.div variants={fadeInUp} transition={{ delay: 0.3 }}>
@@ -230,7 +230,7 @@ export default function EconomicCrisisPage() {
             value="$5.4B"
             icon={<Briefcase className="h-6 w-6" />}
             gradient="rose"
-            status="critical"
+            status="error"
           />
         </motion.div>
         <motion.div variants={fadeInUp} transition={{ delay: 0.4 }}>

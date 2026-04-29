@@ -206,7 +206,7 @@ export default function PoliticsGovernancePage() {
           previousValue={18}
           icon={<Shield className="h-6 w-6" />}
           gradient="rose"
-          status="critical"
+          status="error"
         />
         <MetricCard
           title="Political Prisoners"
@@ -214,7 +214,7 @@ export default function PoliticsGovernancePage() {
           previousValue={24}
           icon={<Users className="h-6 w-6" />}
           gradient="gold"
-          status="critical"
+          status="error"
         />
         <MetricCard
           title="Surveillance Score"

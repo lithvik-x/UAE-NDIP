@@ -49,7 +49,7 @@ export const preFederationData: HistoricalEra = {
   description:
     'The Pre-Federation Era encompasses the history of the Arabian Gulf sheikhdoms from the earliest British contacts (1820) through the formation of the Trucial States, and culminating in the December 2, 1971 formation of the United Arab Emirates. This era covers approximately 150 years of British protectorate relationships, traditional economies (pearling), early oil discoveries, and the personalities who would become the UAE\'s founding fathers.',
   // UAE Relevance Assessment Matrix
-  relevanceMatrix: [
+  uaeRelevanceMatrix: [
     { topic: 'Trucial States treaties (1820, 1853, 1892)', priority: 'CRITICAL', score: 10 },
     { topic: 'British protectorate system', priority: 'CRITICAL', score: 10 },
     { topic: 'Pearl diving economy', priority: 'HIGH', score: 8 },

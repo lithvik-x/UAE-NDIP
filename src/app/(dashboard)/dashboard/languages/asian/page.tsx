@@ -170,7 +170,7 @@ export default function AsianLanguagesPage() {
           value="54"
           previousValue={64}
           icon={<Star className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="warning"
         />
       </div>

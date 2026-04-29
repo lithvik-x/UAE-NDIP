@@ -75,12 +75,12 @@ const adoptionData = [
 ]
 
 const investmentData = [
-  { category: 'AI & ML', value: 35, color: CHART_COLORS.gold },
-  { category: 'Cloud Infra', value: 22, color: CHART_COLORS.navy },
-  { category: 'Cybersecurity', value: 18, color: CHART_COLORS.platinum },
-  { category: 'Blockchain', value: 12, color: CHART_COLORS.emerald },
-  { category: 'IoT & Robotics', value: 8, color: CHART_COLORS.info },
-  { category: 'Quantum', value: 5, color: CHART_COLORS.purple },
+  { name: 'AI & ML', value: 35, color: CHART_COLORS.gold },
+  { name: 'Cloud Infra', value: 22, color: CHART_COLORS.navy },
+  { name: 'Cybersecurity', value: 18, color: CHART_COLORS.platinum },
+  { name: 'Blockchain', value: 12, color: CHART_COLORS.emerald },
+  { name: 'IoT & Robotics', value: 8, color: CHART_COLORS.info },
+  { name: 'Quantum', value: 5, color: CHART_COLORS.purple },
 ]
 
 const automationRiskData = [
@@ -339,7 +339,7 @@ export default function TechnologyTrendsPage() {
           value={87}
           previousValue={82}
           icon={<Cloud className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="success"
         />
       </motion.div>

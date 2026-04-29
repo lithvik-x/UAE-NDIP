@@ -161,7 +161,7 @@ export default function TagalogLanguagePage() {
           value='$450M'
           previousValue={420}
           icon={<Plane className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="success"
         />
       </div>

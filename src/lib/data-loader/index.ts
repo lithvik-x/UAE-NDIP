@@ -169,6 +169,7 @@ export {
 export {
   trendsOverview,
   trendsDataArray,
+  mediaIndustryExtendedData,
 } from './trends-data'
 
 export {
@@ -177,6 +178,17 @@ export {
   omissionSilenceData,
   omissionSilenceOverview,
   coordinatedInauthenticData,
+  coordinatedInauthenticExtendedData,
+  visualMultimediaExtendedData,
+  visualMultimediaData,
+  selfReferenceData,
+  selfReferenceDeepData,
+  comparativeRankingData,
+  statisticalDatapointsData,
+  statisticalKPIs,
+  factCheckVerificationData,
+  echoChamberFilterData,
+  cibMetrics,
 } from './verification-data'
 
 export {
@@ -270,7 +282,85 @@ export {
   crisisResponseData,
   historicalBaselineData,
   dailyMonitoringData,
+  // Skytrax Rankings
+  skytrax2025Rankings,
+  skytraxSpecialAwards,
+  // MD 12-2 Historical Baseline Data
+  historicalEnrichmentMetadata,
+  historicalKPIs,
+  preModernNewspaperArchives,
+  gulfNewsTimeline,
+  academicDatabases,
+  nlaData,
+  nlaDigitalArchiveTopics,
+  nlaAerialPhotography,
+  oralHistoryPrograms,
+  encyclopediaOfUAEHistory,
+  historicalImageCollections,
+  earlyInternetData,
+  socialMediaEraData,
+  dataReportal2024,
+  platformReachDataReportal,
+  platformYoYGrowth,
+  globalMediaInsight2024,
+  mostUsedPlatformsGMI,
+  favoritePlatforms,
+  timeSpentOnApps,
+  socialMediaDemographics,
+  reasonsForSocialMedia,
+  recentEraData as monitoringRecentEraData,
+  organizationsRegistry,
+  mediaPersonRegistry,
+  mediaEventRegistry,
+  tierDefinitions,
+  sourceRatingsTable,
+  kpiSet1HistoricalArchiveCoverage,
+  kpiSet2MediaEvolution,
+  kpiSet3HistoricalEventsImpact,
+  kpiSet4SourceReliabilityMatrix,
+  uaeRelevanceAssessmentSummary,
+  dataGaps,
+  failedUrls,
+  keySourceDomains,
+  topicSentimentAnalysis,
 } from './monitoring-data'
+
+// Competitive Intelligence Data (MD 12-6)
+export {
+  executiveSummary,
+  confidenceAssessment,
+  uaeRankingsExtended,
+  uaeSaudiDemographicsExtended,
+  uaeSaudiFiscal,
+  uaeSaudiBusiness,
+  uaeSaudiRankings,
+  uaeSaudiTradeSovereign,
+  uaeSaudiRivalryAnalysis,
+  uaeBahrainComparison,
+  uaeKuwaitComparison,
+  uaeOmanComparison,
+  uaeIsraelTech,
+  uaeTurkeyComparison,
+  uaeEgyptComparison,
+  dubaiLondonComparison,
+  dubaiNyComparison,
+  dubaiHkComparison,
+  dubaiSwitzerlandComparison,
+  dubaiMonacoComparison,
+  dataFreshnessLog,
+  ciSourceCredibilityMatrix,
+  ciUaeRelevanceMatrix,
+  ciRelevanceScoringCriteria,
+  queryExecutionLog,
+  webFetchEnrichmentMetrics,
+  webFetchSuccessData,
+  competitiveAdvantages,
+  visionProgramsComparison,
+  sovereignNations,
+  organizations,
+  keyIndices,
+  ciSourceBySourceAssessment,
+} from './competitive-intelligence-data'
 
 // Crisis Response Deep Research Data (MD 12-3)
 export {
@@ -306,6 +396,12 @@ export {
   crisisEntityRegistry,
   crisisLevels,
   crisisSentimentByTopic,
+  crisisStatistics,
+  factCheckingStatistics,
+  narrativeAttackStatistics,
+  influencerImpactStatistics,
+  emergencyManagementStatistics,
+  digitalStatistics,
 } from './crisis-response-data'
 
 // Gap Analysis Data (MD 12-8)
@@ -443,7 +539,7 @@ export {
 
 export {
   negativeSentimentOverview,
-  sourceCredibilityMatrix as negativeSentimentSourceCredibilityMatrix,
+  negativeSourceCredibilityMatrix as negativeSentimentSourceCredibilityMatrix,
   uaeRelevanceAssessment as negativeSentimentUAERelevanceAssessment,
   negativeCategories,
   narrativeThemes,

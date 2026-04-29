@@ -246,7 +246,7 @@ export default function HashtagsPage() {
           value="18"
           previousValue={15}
           icon={<Eye className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="success"
         />
       </div>

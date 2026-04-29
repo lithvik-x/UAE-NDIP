@@ -136,7 +136,7 @@ export default function TribalNetworksPage() {
           value={metrics.credibility?.score || 'N/A'}
           previousValue={(metrics.credibility?.score || 92) - 2}
           icon={<Shield className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
         <MetricCard
           title="UAE Relevance"

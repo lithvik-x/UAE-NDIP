@@ -24,8 +24,7 @@ import {
   Database,
   FileText,
   Flag,
-  Folding,
- Globe,
+  Globe,
   History,
   Layers,
   Link2,
@@ -48,7 +47,7 @@ import {
   gulfNewsTimeline,
   academicDatabases,
   nlaData,
-  nlaSubjectTopics,
+  nlaDigitalArchiveTopics,
   nlaAerialPhotography,
   oralHistoryPrograms,
   encyclopediaOfUAEHistory,
@@ -64,22 +63,22 @@ import {
   timeSpentOnApps,
   socialMediaDemographics,
   reasonsForSocialMedia,
-  recentEraData,
+  monitoringRecentEraData,
   organizationsRegistry,
-  personRegistry,
-  eventRegistry,
+  mediaPersonRegistry,
+  mediaEventRegistry,
   tierDefinitions,
   sourceRatingsTable,
-  sentimentAnalysisByTopic,
-  historicalKpiSet1,
-  historicalKpiSet2,
-  historicalKpiSet3,
-  historicalKpiSet4,
-  uaeRelevanceSummary,
+  kpiSet1HistoricalArchiveCoverage,
+  kpiSet2MediaEvolution,
+  kpiSet3HistoricalEventsImpact,
+  kpiSet4SourceReliabilityMatrix,
+  uaeRelevanceAssessmentSummary,
   dataGaps,
   failedUrls,
   keySourceDomains,
-} from '@/lib/data-loader/monitoring-data'
+  topicSentimentAnalysis,
+} from '@/lib/data-loader'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -100,7 +99,7 @@ export default function HistoricalBaselinePage() {
     { label: 'URLs Analyzed', value: historicalEnrichmentMetadata.totalUrlsAnalyzed, icon: <Link2 className="h-5 w-5" />, color: 'gold' },
     { label: 'Successfully Fetched', value: historicalEnrichmentMetadata.urlsSuccessfullyFetched, icon: <CheckCircle className="h-5 w-5" />, color: 'emerald' },
     { label: 'Failed/Blocked', value: historicalEnrichmentMetadata.urlsFailedBlocked, icon: <XCircle className="h-5 w-5" />, color: 'rose' },
-    { label: 'Data Points', value: historicalEnrichmentMetadata.dataPointsExtracted, icon: <Database className="h-5 w-5" />, color: 'navy' },
+    { label: 'Data Points', value: historicalEnrichmentMetadata.dataPointsExtracted, icon: <Database className="h-5 w-5" />, color: 'indigo' },
   ]
 
   // Query distribution by era
@@ -129,13 +128,13 @@ export default function HistoricalBaselinePage() {
   ]
 
   // Coverage scores by era
-  const coverageData = historicalKpiSet1.slice(0, 4).map(item => ({
+  const coverageData = kpiSet1HistoricalArchiveCoverage.slice(0, 4).map(item => ({
     era: item.era,
     coverage: parseInt(item.coverageScore),
   }))
 
   // NLA subject distribution
-  const nlaTopicsData = nlaSubjectTopics.slice(0, 6).map(item => ({
+  const nlaTopicsData = nlaDigitalArchiveTopics.slice(0, 6).map(item => ({
     topic: item.topic,
     items: item.items,
   }))
@@ -176,7 +175,7 @@ export default function HistoricalBaselinePage() {
               title={stat.label}
               value={stat.value}
               icon={stat.icon}
-              gradient={stat.color as 'gold' | 'emerald' | 'rose' | 'navy'}
+              gradient={stat.color as 'gold' | 'emerald' | 'rose' | 'indigo'}
               status="info"
             />
           </motion.div>
@@ -205,7 +204,7 @@ export default function HistoricalBaselinePage() {
           title="Entity Registries"
           value={historicalEnrichmentMetadata.entityRegistryEntries}
           icon={<Building2 className="h-6 w-6" />}
-          gradient="navy"
+          gradient="indigo"
         />
         <MetricCard
           title="Structured Tables"
@@ -288,7 +287,7 @@ export default function HistoricalBaselinePage() {
                       showLegend={true}
                     />
                     <div className="space-y-3">
-                      {uaeRelevanceSummary.map((item, idx) => (
+                      {uaeRelevanceAssessmentSummary.map((item, idx) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: 20 }}
@@ -363,7 +362,7 @@ export default function HistoricalBaselinePage() {
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 <MetricCard title="NLA Documents" value="Millions" icon={<Building2 className="h-6 w-6" />} gradient="gold" />
                 <MetricCard title="Aerial Photos" value="52,500+" icon={<MapPin className="h-6 w-6" />} gradient="emerald" />
-                <MetricCard title="Al-Ittihad Issues" value="53" icon={<Newspaper className="h-6 w-6" />} gradient="navy" />
+                <MetricCard title="Al-Ittihad Issues" value="53" icon={<Newspaper className="h-6 w-6" />} gradient="indigo" />
                 <MetricCard title="NYU Akkasah" value="33,000+" icon={<Archive className="h-6 w-6" />} gradient="rose" />
               </div>
 
@@ -513,7 +512,7 @@ export default function HistoricalBaselinePage() {
             <div className="space-y-6">
               {/* Key Metrics */}
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                <MetricCard title="Wayback Archive" value="624B+" icon={<Globe className="h-6 w-6" />} gradient="navy" />
+                <MetricCard title="Wayback Archive" value="624B+" icon={<Globe className="h-6 w-6" />} gradient="indigo" />
                 <MetricCard title="Wayback Coverage" value="High" icon={<Signal className="h-6 w-6" />} gradient="emerald" />
                 <MetricCard title="LexisNexis Sources" value="40,000+" icon={<Database className="h-6 w-6" />} gradient="gold" />
                 <MetricCard title="Archive Rate" value="82.8%" icon={<CheckCircle className="h-6 w-6" />} gradient="rose" />
@@ -680,7 +679,7 @@ export default function HistoricalBaselinePage() {
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 <MetricCard title="Population" value="9.55M" icon={<Users className="h-6 w-6" />} gradient="gold" />
                 <MetricCard title="Internet Users" value="9.46M" icon={<Globe className="h-6 w-6" />} gradient="emerald" />
-                <MetricCard title="Social Media Users" value="10.73M" icon={<Signal className="h-6 w-6" />} gradient="navy" />
+                <MetricCard title="Social Media Users" value="10.73M" icon={<Signal className="h-6 w-6" />} gradient="indigo" />
                 <MetricCard title="Internet Penetration" value="99%" icon={<TrendingUp className="h-6 w-6" />} gradient="rose" />
               </div>
 
@@ -831,7 +830,7 @@ export default function HistoricalBaselinePage() {
                 <MetricCard title="COVID Deaths" value="2,349" icon={<XCircle className="h-6 w-6" />} gradient="rose" />
                 <MetricCard title="Vaccine Doses" value="24.9M" icon={<CheckCircle className="h-6 w-6" />} gradient="emerald" />
                 <MetricCard title="COP28 Participants" value="80,000+" icon={<Users className="h-6 w-6" />} gradient="gold" />
-                <MetricCard title="Abraham Fund" value="$0" icon={<Scale className="h-6 w-6" />} gradient="navy" />
+                <MetricCard title="Abraham Fund" value="$0" icon={<Scale className="h-6 w-6" />} gradient="indigo" />
               </div>
 
               {/* COVID Timeline */}
@@ -845,29 +844,29 @@ export default function HistoricalBaselinePage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
-                    {recentEraData.covid19UAE && (
+                    {monitoringRecentEraData.covid19UAE && (
                       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
                         <div className="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50">
                           <div className="text-xs text-slate-400">Confirmed</div>
-                          <div className="text-lg font-bold text-rose">{recentEraData.covid19UAE.confirmedCases}</div>
+                          <div className="text-lg font-bold text-rose">{monitoringRecentEraData.covid19UAE.confirmedCases}</div>
                         </div>
                         <div className="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50">
                           <div className="text-xs text-slate-400">Recovered</div>
-                          <div className="text-lg font-bold text-emerald">{recentEraData.covid19UAE.recovered}</div>
+                          <div className="text-lg font-bold text-emerald">{monitoringRecentEraData.covid19UAE.recovered}</div>
                         </div>
                         <div className="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50">
                           <div className="text-xs text-slate-400">Deaths</div>
-                          <div className="text-lg font-bold text-slate-200">{recentEraData.covid19UAE.deaths}</div>
+                          <div className="text-lg font-bold text-slate-200">{monitoringRecentEraData.covid19UAE.deaths}</div>
                         </div>
                         <div className="p-2 rounded-lg bg-slate-800/50 border border-slate-700/50">
                           <div className="text-xs text-slate-400">Fatality Rate</div>
-                          <div className="text-lg font-bold text-gold">{recentEraData.covid19UAE.fatalityRate}</div>
+                          <div className="text-lg font-bold text-gold">{monitoringRecentEraData.covid19UAE.fatalityRate}</div>
                         </div>
                       </div>
                     )}
                     <ScrollArea className="h-[250px]">
                       <div className="space-y-2">
-                        {recentEraData.covidTimeline.map((event, idx) => (
+                        {monitoringRecentEraData.covidTimeline.map((event, idx) => (
                           <motion.div
                             key={idx}
                             initial={{ opacity: 0, x: -10 }}
@@ -930,7 +929,7 @@ export default function HistoricalBaselinePage() {
                     <div className="p-3 rounded-lg bg-slate-800/30 border border-slate-700/50">
                       <h4 className="text-sm font-semibold text-slate-200 mb-2">UAE Consensus Outcomes</h4>
                       <div className="grid gap-2">
-                        {recentEraData.cop28?.uaeConsensus?.map((item, idx) => (
+                        {monitoringRecentEraData.cop28?.uaeConsensus?.map((item, idx) => (
                           <div key={idx} className="flex items-start gap-2">
                             <CheckCircle className="h-4 w-4 text-emerald mt-0.5" />
                             <div>
@@ -1051,7 +1050,7 @@ export default function HistoricalBaselinePage() {
                 <CardContent>
                   <ScrollArea className="h-[300px]">
                     <div className="space-y-2">
-                      {personRegistry.map((person, idx) => (
+                      {mediaPersonRegistry.map((person, idx) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: -20 }}
@@ -1089,7 +1088,7 @@ export default function HistoricalBaselinePage() {
                 <CardContent>
                   <ScrollArea className="h-[300px]">
                     <div className="space-y-2">
-                      {eventRegistry.map((event, idx) => (
+                      {mediaEventRegistry.map((event, idx) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: -20 }}
@@ -1124,7 +1123,7 @@ export default function HistoricalBaselinePage() {
         <TabsContent value="sentiment" className="space-y-6">
           <GlassPanel title="Sentiment Analysis by Topic" description="Narrative polarity across key thematic areas">
             <div className="space-y-6">
-              {Object.entries(sentimentAnalysisByTopic).map(([topic, analyses]) => (
+              {Object.entries(topicSentimentAnalysis).map(([topic, analyses]) => (
                 <Card key={topic} className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg capitalize flex items-center gap-2">
@@ -1254,7 +1253,7 @@ export default function HistoricalBaselinePage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {historicalKpiSet1.map((kpi, idx) => (
+                    {kpiSet1HistoricalArchiveCoverage.map((kpi, idx) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, y: 10 }}

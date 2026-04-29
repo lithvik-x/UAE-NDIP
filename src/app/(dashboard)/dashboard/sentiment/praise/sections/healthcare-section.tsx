@@ -44,7 +44,6 @@ export function HealthcareSection({
     <GlassPanel
       title="Healthcare Excellence"
       description="World-class healthcare infrastructure and trust metrics"
-      icon={<Heart className="h-5 w-5 text-pink-400" />}
     >
       <div className="space-y-6">
         {/* Key Healthcare Metrics */}
@@ -54,7 +53,7 @@ export function HealthcareSection({
               <CardContent className="p-4">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs text-slate-400 truncate">{kpi.metric}</span>
-                  <Badge variant="pink" className="text-xs">
+                  <Badge variant="rose" className="text-xs">
                     {kpi.change}
                   </Badge>
                 </div>

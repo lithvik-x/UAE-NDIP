@@ -150,7 +150,7 @@ export default function HistoricalOverviewPage() {
           title="Policy Outcomes"
           value={totalPolicies}
           icon={<Landmark className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
         <MetricCard
           title="Avg. Credibility"
@@ -431,7 +431,7 @@ export default function HistoricalOverviewPage() {
                   value={12}
                   icon={<AlertCircle className="h-6 w-6" />}
                   gradient="rose"
-                  status="critical"
+                  status="error"
                 />
                 <MetricCard
                   title="Major"

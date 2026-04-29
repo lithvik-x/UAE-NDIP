@@ -128,7 +128,7 @@ export default function EnergyCrisesPage() {
           value="82/100"
           previousValue="78/100"
           icon={<Shield className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="success"
         />
       </div>

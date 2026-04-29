@@ -80,8 +80,8 @@ import {
   crisisPerformanceMetrics,
   toolsRecommended,
   sourceCitations,
-  sourceCredibilityMatrix as crisisSourceCredibilityMatrix,
-  uaeRelevanceAssessment as crisisUaeRelevanceAssessment,
+  crisisSourceCredibilityMatrix,
+  crisisUaeRelevanceAssessment,
   crisisEntityRegistry,
   crisisLevels,
   crisisSentimentByTopic,
@@ -2064,9 +2064,6 @@ export const dataHooks = {
   useTransliterationData,
   useCodeSwitchingData,
   useLanguageOverviewData,
-
-  // Criticism & Complaint Data (MD 9-6)
-  useCriticismComplaintData,
 
   // Generic
   useAllClairvoyanceData,

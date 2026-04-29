@@ -18,8 +18,10 @@ import {
   demographicData,
   qualitativeFindings,
   consensusMatrix,
-  echoChamberFilterData,
 } from '@/lib/data-loader/echo-chamber-data'
+import {
+  echoChamberFilterData,
+} from '@/lib/data-loader'
 import {
   AreaChart,
   BarChart,
@@ -93,7 +95,7 @@ export function SectionExecutiveSummary() {
             Echo chambers and filter bubbles represent two distinct but often conflated phenomena where algorithmic curation and human psychology combine to isolate users within self-reinforcing information environments.
           </p>
           <div className="grid gap-3 sm:grid-cols-2">
-            {echoChamberFilterData.keyFindings.slice(0, 6).map((finding, idx) => (
+            {(echoChamberFilterData.keyFindings || []).slice(0, 6).map((finding: any, idx: number) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, x: -10 }}

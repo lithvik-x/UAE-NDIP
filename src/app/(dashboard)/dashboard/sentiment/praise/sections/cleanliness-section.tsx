@@ -33,7 +33,6 @@ export function CleanlinessSection({ cleanlinessKPIs, wasteManagementInitiatives
     <GlassPanel
       title="Cleanliness Excellence"
       description="Dubai's 6-year streak as world's cleanest city"
-      icon={<Sparkles className="h-5 w-5 text-cyan-400" />}
     >
       <div className="space-y-6">
         {/* Key Cleanliness Achievement */}

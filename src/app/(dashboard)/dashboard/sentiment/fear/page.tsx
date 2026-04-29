@@ -556,7 +556,7 @@ export default function FearUncertaintyPage() {
             value={criticalCount.toString()}
             icon={<AlertTriangle className="h-6 w-6" />}
             gradient="rose"
-            status="critical"
+            status="error"
           />
         </motion.div>
         <motion.div variants={fadeInUp}>
@@ -581,7 +581,7 @@ export default function FearUncertaintyPage() {
             title="Research Date"
             value="2026-04-27"
             icon={<Clock className="h-6 w-6" />}
-            gradient="platinum"
+            gradient="indigo"
           />
         </motion.div>
       </motion.div>
@@ -602,13 +602,7 @@ export default function FearUncertaintyPage() {
             <div className="space-y-6">
               {/* Fear by Category Chart */}
               <div className="grid gap-6 lg:grid-cols-2">
-                <motion.Card
-                  variants={cardHover}
-                  initial="initial"
-                  animate="animate"
-                  whileHover="hover"
-                  className="glass-card border-red-500/30"
-                >
+                <Card className="glass-card border-red-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                       <TrendingUp className="w-4 h-4 inline mr-2" />
@@ -627,14 +621,9 @@ export default function FearUncertaintyPage() {
                       showGrid={true}
                     />
                   </CardContent>
-                </motion.Card>
+                </Card>
 
-                <motion.Card
-                  variants={cardHover}
-                  initial="initial"
-                  animate="animate"
-                  whileHover="hover"
-                  className="glass-card border-amber-500/30"
+                <Card className="glass-card border-amber-500/30"
                 >
                   <CardHeader>
                     <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
@@ -650,23 +639,17 @@ export default function FearUncertaintyPage() {
                       lines={[
                         { dataKey: 'fear', name: 'Fear Index', color: CHART_COLORS.rose },
                         { dataKey: 'uncertainty', name: 'Uncertainty', color: CHART_COLORS.gold },
-                        { dataKey: 'economicRisk', name: 'Economic Risk', color: CHART_COLORS.amber },
+                        { dataKey: 'economicRisk', name: 'Economic Risk', color: CHART_COLORS.orange },
                       ]}
                       height={300}
                       showGrid={true}
                     />
                   </CardContent>
-                </motion.Card>
+                </Card>
               </div>
 
               {/* Sentiment Distribution */}
-              <motion.Card
-                variants={cardHover}
-                initial="initial"
-                animate="animate"
-                whileHover="hover"
-                className="glass-card border-slate-500/30"
-              >
+              <Card className="glass-card border-slate-500/30">
                 <CardHeader>
                   <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                     <Scale className="w-4 h-4 inline mr-2" />
@@ -681,16 +664,10 @@ export default function FearUncertaintyPage() {
                     showLegend={true}
                   />
                 </CardContent>
-              </motion.Card>
+              </Card>
 
               {/* Severity Distribution */}
-              <motion.Card
-                variants={cardHover}
-                initial="initial"
-                animate="animate"
-                whileHover="hover"
-                className="glass-card border-slate-500/30"
-              >
+              <Card className="glass-card border-slate-500/30">
                 <CardHeader>
                   <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                     <AlertTriangle className="w-4 h-4 inline mr-2" />
@@ -705,7 +682,7 @@ export default function FearUncertaintyPage() {
                     showLegend={true}
                   />
                 </CardContent>
-              </motion.Card>
+              </Card>
             </div>
           </GlassPanel>
 

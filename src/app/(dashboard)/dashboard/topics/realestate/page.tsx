@@ -220,7 +220,7 @@ export default function RealEstatePage() {
           previousValue="0.58"
           icon={<AlertTriangle className="h-6 w-6" />}
           gradient="rose"
-          status="critical"
+          status="error"
         />
       </motion.div>
 

@@ -1005,15 +1005,15 @@ export interface PositiveSentimentMetric {
   unit?: string
   trend?: 'up' | 'down' | 'stable'
   icon: string
-  gradient: string
-  status?: string
+  gradient: 'gold' | 'red' | 'indigo' | 'cyan' | 'emerald' | 'rose' | 'orange' | 'lime' | 'teal' | 'denim' | 'purple' | 'fuchsia'
+  status?: 'success' | 'warning' | 'error' | 'info' | 'neutral'
 }
 
 export const positiveSentimentMetrics: PositiveSentimentMetric[] = [
   { title: 'Avg Positive', value: '88%', icon: 'ThumbsUp', gradient: 'emerald', status: 'success' },
-  { title: 'Peak Positive', value: '95%', icon: 'TrendingUp', gradient: 'gold' },
-  { title: 'Positive Volume', value: '1.2M', icon: 'Heart', gradient: 'denim' },
-  { title: 'Growth Rate', value: '+4.0%', icon: 'Sparkles', gradient: 'platinum' },
+  { title: 'Peak Positive', value: '95%', icon: 'TrendingUp', gradient: 'gold', status: 'success' },
+  { title: 'Positive Volume', value: '1.2M', icon: 'Heart', gradient: 'denim', status: 'info' },
+  { title: 'Growth Rate', value: '+4.0%', icon: 'Sparkles', gradient: 'indigo', status: 'success' },
 ]
 
 // ============================================================================

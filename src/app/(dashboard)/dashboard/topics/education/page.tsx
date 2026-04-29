@@ -305,7 +305,7 @@ export default function EducationYouthPage() {
           value={metrics.volume.toLocaleString()}
           previousValue={metrics.volume - 15000}
           icon={<Globe className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="neutral"
         />
         <MetricCard

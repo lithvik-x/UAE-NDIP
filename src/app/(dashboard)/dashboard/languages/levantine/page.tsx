@@ -111,7 +111,7 @@ export default function LevantineArabicPage() {
           value={data.queryVolume?.toLocaleString() || '28,400,000'}
           previousValue={(data.queryVolume || 28400000) - 800000}
           icon={<Search className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="info"
         />
         <MetricCard

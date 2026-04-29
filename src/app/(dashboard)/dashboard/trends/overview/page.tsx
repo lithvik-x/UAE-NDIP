@@ -48,6 +48,7 @@ import {
 import {
   useTrendsOverviewData,
   useTrendsDataArrayData,
+  mediaIndustryExtendedData,
 } from '@/lib/data-loader'
 import {
   regulatoryTrendsData,
@@ -166,7 +167,7 @@ export default function TrendsOverviewPage() {
           value={totalVolume > 1000000 ? `${(totalVolume / 1000000).toFixed(1)}M` : `${(totalVolume / 1000).toFixed(0)}K`}
           previousValue={totalVolume * 0.92}
           icon={<Newspaper className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
       </div>
 
@@ -1118,7 +1119,7 @@ export default function TrendsOverviewPage() {
                 title="Music Revenue"
                 value={`$${mediaIndustryExtendedData.music.globalRecordedMusicRevenue}B`}
                 icon={<Music className="h-6 w-6" />}
-                gradient="platinum"
+                gradient="indigo"
               />
             </div>
 

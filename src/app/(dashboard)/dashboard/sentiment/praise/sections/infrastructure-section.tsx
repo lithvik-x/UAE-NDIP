@@ -5,11 +5,12 @@ import { Badge } from '@/components/ui/badge'
 import { GlassPanel } from '@/components/dashboard/glass-card'
 import { CHART_COLORS } from '@/components/ui/chart-library'
 import {
-  Road,
+  Map,
   Train,
   Plane,
   Trophy,
   TrendingUp,
+  Route,
 } from 'lucide-react'
 
 interface InfrastructureSectionProps {
@@ -54,7 +55,6 @@ export function InfrastructureSection({
     <GlassPanel
       title="Infrastructure Excellence"
       description="World-class infrastructure rankings and metro achievements"
-      icon={<Road className="h-5 w-5 text-violet-400" />}
     >
       <div className="space-y-6">
         {/* Key Rankings */}
@@ -65,13 +65,13 @@ export function InfrastructureSection({
               <p className="text-sm text-slate-400">Road Quality Global Rank</p>
               <p className="text-4xl font-bold text-violet-400">#4</p>
               <p className="text-xs text-emerald-400 mt-1">+3 from last year</p>
-              <Badge variant="violet" className="mt-2">Top 5 Globally</Badge>
+              <Badge variant="purple" className="mt-2">Top 5 Globally</Badge>
             </CardContent>
           </Card>
 
           <Card className="glass-card border-violet-500/30">
             <CardContent className="p-6 text-center">
-              <Road className="h-10 w-10 text-violet-400 mx-auto mb-3" />
+              <Route className="h-10 w-10 text-violet-400 mx-auto mb-3" />
               <p className="text-sm text-slate-400">Arab World Rank</p>
               <p className="text-4xl font-bold text-violet-400">#1</p>
               <p className="text-xs text-slate-500 mt-1">Land Transport Score: 5.26/7</p>
@@ -121,7 +121,7 @@ export function InfrastructureSection({
                     </div>
                   </div>
                   {country.country === 'UAE' && (
-                    <Badge variant="violet" className="text-xs">
+                    <Badge variant="purple" className="text-xs">
                       UAE
                     </Badge>
                   )}

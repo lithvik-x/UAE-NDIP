@@ -187,7 +187,7 @@ export default function SportsIntelligencePage() {
           value={sportswashingIndex}
           previousValue={sportswashingIndex + 3}
           icon={<AlertTriangle className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="warning"
         />
         <MetricCard

@@ -247,7 +247,7 @@ export default function CorporateStakeholdersPage() {
           value={avgCredibility.toFixed(1)}
           previousValue={avgCredibility - 1.2}
           icon={<Shield className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
         <MetricCard
           title="Avg Engagement"

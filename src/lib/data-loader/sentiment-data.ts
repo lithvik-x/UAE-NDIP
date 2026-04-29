@@ -1429,13 +1429,6 @@ export function useNegativeSentimentData() {
 // ============================================================================
 // CRITICISM & COMPLAINT DATA (MD 9-6)
 // ============================================================================
-
-import type {
-  TierLevel,
-  AlertLevel,
-} from './types'
-
-// ============================================================================
 // COMPLAINT VOLUME METRICS
 // ============================================================================
 
@@ -3963,7 +3956,7 @@ export function useNeutralData() {
     shortTermInitiatives,
     mediumTermInitiatives,
     longTermInitiatives,
-    sourceCredibilityMatrix,
+    sourceCredibilityMatrix: futureSourceCredibilityMatrix,
     tierDefinitions,
     dataCompleteness,
     overallCompleteness,
@@ -4107,7 +4100,7 @@ export interface TopicMetrics {
   credibility: number
 }
 
-export interface UAERelevance {
+export interface UAERelevanceScore {
   score: number
   level: 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW'
   justification: string
@@ -4122,7 +4115,7 @@ export interface ControversyTopic {
   dominantSentiment: 'positive' | 'negative' | 'neutral' | 'highly-divided'
   keyDrivers: string[]
   debateAngles: DebateAngle[]
-  uaeRelevance: UAERelevance
+  uaeRelevance: UAERelevanceScore
   alertLevel: AlertLevel
   metrics: TopicMetrics
   keyFindings: KeyFinding[]
@@ -4147,7 +4140,7 @@ export const alcoholRegulationsData: ControversyTopic = {
     { angle: 'Liberalization Debate', proStance: 'Business and tourism attraction', conStance: 'Traditional values erosion', evidenceStrength: 'Moderate', sentiment: 0.3 },
     { angle: 'Cultural Identity', proStance: 'Progressive image enhancement', conStance: 'Authentic identity questions', evidenceStrength: 'Weak', sentiment: 0.1 },
   ],
-  uaeRelevance: { score: 55, level: 'medium', justification: 'Moderate relevance to tourism and business sectors' },
+  uaeRelevance: { score: 55, level: 'MEDIUM', justification: 'Moderate relevance to tourism and business sectors' },
   alertLevel: 'GREEN',
   metrics: { sentimentScore: 0.35, volume: 45000, velocity: 25, reach: 850000, engagement: 320000, credibility: 78 },
   keyFindings: [
@@ -4180,7 +4173,7 @@ export const dressCodeData: ControversyTopic = {
     { angle: 'Tourism Impact', proStance: 'Clear guidelines protect culture', conStance: 'Negative publicity from incidents', evidenceStrength: 'Moderate', sentiment: -0.3 },
     { angle: 'Freedom Expression', proStance: 'Individual choice advocates', conStance: 'Cultural sensitivity proponents', evidenceStrength: 'Weak', sentiment: -0.5 },
   ],
-  uaeRelevance: { score: 65, level: 'high', justification: 'Direct impact on tourism reputation and international media coverage' },
+  uaeRelevance: { score: 65, level: 'HIGH', justification: 'Direct impact on tourism reputation and international media coverage' },
   alertLevel: 'YELLOW',
   metrics: { sentimentScore: -0.45, volume: 38000, velocity: 45, reach: 1200000, engagement: 485000, credibility: 72 },
   keyFindings: [
@@ -4213,7 +4206,7 @@ export const emiratizationData: ControversyTopic = {
     { angle: 'Business Impact', proStance: 'Creates skilled citizen workforce', conStance: 'Increases operational costs', evidenceStrength: 'Moderate', sentiment: -0.2 },
     { angle: 'Implementation', proStance: 'Strategic workforce development', conStance: 'Quota-based rather than quality', evidenceStrength: 'Moderate', sentiment: -0.1 },
   ],
-  uaeRelevance: { score: 85, level: 'high', justification: 'Core economic policy with significant labor market implications' },
+  uaeRelevance: { score: 85, level: 'HIGH', justification: 'Core economic policy with significant labor market implications' },
   alertLevel: 'YELLOW',
   metrics: { sentimentScore: -0.10, volume: 52000, velocity: 32, reach: 950000, engagement: 380000, credibility: 80 },
   keyFindings: [
@@ -4246,8 +4239,8 @@ export const israelNormalizationData: ControversyTopic = {
     { angle: 'Palestinian Issue', proStance: 'Practical engagement over confrontation', conStance: 'Abandonment of solidarity', evidenceStrength: 'Strong', sentiment: -0.7 },
     { angle: 'Regional Dynamics', proStance: 'New partnerships and trade routes', conStance: 'Alliance with oppressor', evidenceStrength: 'Moderate', sentiment: -0.3 },
   ],
-  uaeRelevance: { score: 92, level: 'critical', justification: 'Major foreign policy decision with significant domestic and regional implications' },
-  alertLevel: 'ORANGE',
+  uaeRelevance: { score: 92, level: 'CRITICAL', justification: 'Major foreign policy decision with significant domestic and regional implications' },
+  alertLevel: 'YELLOW',
   metrics: { sentimentScore: -0.40, volume: 85000, velocity: 38, reach: 2100000, engagement: 920000, credibility: 85 },
   keyFindings: [
     { finding: 'Abraham Accords signed', metric: 'September 2020', source: 'Official statements', tier: 1 },
@@ -4279,7 +4272,7 @@ export const militaryInterventionData: ControversyTopic = {
     { angle: 'Humanitarian Impact', proStance: 'Humanitarian assistance programs', conStance: 'Direct civilian harm involvement', evidenceStrength: 'Strong', sentiment: -0.8 },
     { angle: 'International Law', proStance: 'Compliance with international norms', conStance: 'War crimes allegations', evidenceStrength: 'Strong', sentiment: -0.7 },
   ],
-  uaeRelevance: { score: 98, level: 'critical', justification: 'Critical reputational and international legal implications' },
+  uaeRelevance: { score: 98, level: 'CRITICAL', justification: 'Critical reputational and international legal implications' },
   alertLevel: 'RED',
   metrics: { sentimentScore: -0.75, volume: 120000, velocity: 52, reach: 3500000, engagement: 1450000, credibility: 90 },
   keyFindings: [
@@ -4312,7 +4305,7 @@ export const megaProjectsData: ControversyTopic = {
     { angle: 'Environmental Impact', proStance: 'Jobs and economic development', conStance: 'Ecological damage concerns', evidenceStrength: 'Strong', sentiment: -0.5 },
     { angle: 'Development Philosophy', proStance: 'Ambitious nation-building vision', conStance: 'Excessive vanity projects', evidenceStrength: 'Moderate', sentiment: 0.1 },
   ],
-  uaeRelevance: { score: 72, level: 'high', justification: 'Central to UAE\'s economic diversification and tourism strategy' },
+  uaeRelevance: { score: 72, level: 'HIGH', justification: 'Central to UAE\'s economic diversification and tourism strategy' },
   alertLevel: 'YELLOW',
   metrics: { sentimentScore: 0.25, volume: 95000, velocity: 28, reach: 1800000, engagement: 720000, credibility: 82 },
   keyFindings: [
@@ -4345,7 +4338,7 @@ export const royalWealthData: ControversyTopic = {
     { angle: 'Economic Rationale', proStance: 'Strategic investments and returns', conStance: 'Resources versus essential services', evidenceStrength: 'Moderate', sentiment: -0.3 },
     { angle: 'Social Impact', proStance: 'National pride and unity', conStance: 'Inequality reinforcement', evidenceStrength: 'Weak', sentiment: -0.4 },
   ],
-  uaeRelevance: { score: 58, level: 'medium', justification: 'Moderate relevance to social cohesion and equality discussions' },
+  uaeRelevance: { score: 58, level: 'MEDIUM', justification: 'Moderate relevance to social cohesion and equality discussions' },
   alertLevel: 'YELLOW',
   metrics: { sentimentScore: -0.35, volume: 28000, velocity: 35, reach: 750000, engagement: 295000, credibility: 68 },
   keyFindings: [
@@ -4378,7 +4371,7 @@ export const surveillanceData: ControversyTopic = {
     { angle: 'Privacy Rights', proStance: 'Modern security tools', conStance: 'Fundamental rights violations', evidenceStrength: 'Strong', sentiment: -0.9 },
     { angle: 'International Law', proStance: 'Legal surveillance programs', conStance: 'Extraterritorial targeting', evidenceStrength: 'Strong', sentiment: -0.85 },
   ],
-  uaeRelevance: { score: 96, level: 'critical', justification: 'Critical human rights and international reputation implications' },
+  uaeRelevance: { score: 96, level: 'CRITICAL', justification: 'Critical human rights and international reputation implications' },
   alertLevel: 'RED',
   metrics: { sentimentScore: -0.90, volume: 68000, velocity: 58, reach: 2800000, engagement: 1180000, credibility: 92 },
   keyFindings: [
@@ -4411,7 +4404,7 @@ export const goldenVisaData: ControversyTopic = {
     { angle: 'Talent Competition', proStance: 'Global talent attraction', conStance: 'Regional brain drain effects', evidenceStrength: 'Moderate', sentiment: 0.3 },
     { angle: 'Social Integration', proStance: 'Diverse global community', conStance: 'Inauthentic residency', evidenceStrength: 'Weak', sentiment: 0.2 },
   ],
-  uaeRelevance: { score: 70, level: 'high', justification: 'Significant economic policy with housing market and labor market implications' },
+  uaeRelevance: { score: 70, level: 'HIGH', justification: 'Significant economic policy with housing market and labor market implications' },
   alertLevel: 'GREEN',
   metrics: { sentimentScore: 0.40, volume: 42000, velocity: 30, reach: 920000, engagement: 365000, credibility: 78 },
   keyFindings: [
@@ -4444,7 +4437,7 @@ export const climateLeadershipData: ControversyTopic = {
     { angle: 'Greenwashing', proStance: 'Diversification and transition planning', conStance: 'Actual production increases', evidenceStrength: 'Strong', sentiment: -0.8 },
     { angle: 'Transition Reality', proStance: 'Post-oil economy preparation', conStance: 'Continued fossil fuel dependency', evidenceStrength: 'Moderate', sentiment: -0.5 },
   ],
-  uaeRelevance: { score: 95, level: 'critical', justification: 'Critical international reputation and climate commitment credibility' },
+  uaeRelevance: { score: 95, level: 'CRITICAL', justification: 'Critical international reputation and climate commitment credibility' },
   alertLevel: 'RED',
   metrics: { sentimentScore: -0.70, volume: 115000, velocity: 62, reach: 4200000, engagement: 1780000, credibility: 90 },
   keyFindings: [
@@ -4477,7 +4470,7 @@ export const humanRightsControversyData: ControversyTopic = {
     { angle: 'Political Prisoners', proStance: 'Security and legal process', conStance: 'Peaceful dissent suppression', evidenceStrength: 'Strong', sentiment: -0.9 },
     { angle: 'Labor Rights', proStance: 'Reformed kafala system', conStance: 'Exploitation continues', evidenceStrength: 'Strong', sentiment: -0.8 },
   ],
-  uaeRelevance: { score: 100, level: 'critical', justification: 'Core credibility and international reputation issue' },
+  uaeRelevance: { score: 100, level: 'CRITICAL', justification: 'Core credibility and international reputation issue' },
   alertLevel: 'RED',
   metrics: { sentimentScore: -0.88, volume: 135000, velocity: 48, reach: 3800000, engagement: 1620000, credibility: 95 },
   keyFindings: [
@@ -4596,14 +4589,14 @@ export const neutralSentimentOverview: NeutralSentimentOverview = {
 // POPULATION DATA (47 data points, 95% coverage)
 // ============================================================================
 
-export interface PopulationKPI {
+export interface PopulationDemographicKPI {
   indicator: string
   value: string | number
   year: number
   unit?: string
 }
 
-export const populationDemographicKPIs: PopulationKPI[] = [
+export const populationDemographicKPIs: PopulationDemographicKPI[] = [
   { indicator: 'Total Population', value: '9,282,410', year: 2024 },
   { indicator: 'Annual Population Growth', value: '4.6%', year: 2024 },
   { indicator: 'Citizens', value: '1,012,512', year: 2024 },
@@ -4807,13 +4800,13 @@ export const climatePolicyKPIs: ClimatePolicyKPI[] = [
 // EDUCATION DATA (12 data points, 75% coverage)
 // ============================================================================
 
-export interface EducationKPI {
+export interface EducationStatisticKPI {
   indicator: string
   value: string | number
   year: number
 }
 
-export const educationStatisticsKPIs: EducationKPI[] = [
+export const educationStatisticsKPIs: EducationStatisticKPI[] = [
   { indicator: 'Literacy Rate', value: '97.8%', year: 2024 },
   { indicator: 'Public Schools', value: '891', year: 2024 },
   { indicator: 'Private Schools', value: '584', year: 2024 },

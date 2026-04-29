@@ -43,7 +43,6 @@ export function BusinessSection({
     <GlassPanel
       title="Business Excellence"
       description="Economic indicators and business environment metrics"
-      icon={<Briefcase className="h-5 w-5 text-emerald-400" />}
     >
       <div className="space-y-6">
         {/* Key Business Metrics */}

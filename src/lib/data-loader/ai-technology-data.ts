@@ -409,9 +409,11 @@ export interface OperationalScope {
 }
 
 export interface AIRegulatoryEcosystem {
-  attribute: string
-  value: string
-  uaeRelevance: UAERelevanceLevel
+  attribute?: string
+  value?: string
+  uaeRelevance?: UAERelevanceLevel
+  function?: string
+  efficiencyGain?: string
 }
 
 export interface AIChallenge {
@@ -531,8 +533,10 @@ export interface MajorDeal {
 }
 
 export interface AWSSovereignCloud {
-  attribute: string
-  value: string
+  project: string
+  economicContribution: string
+  targetYear: string
+  partners: string
   uaeRelevance: UAERelevanceLevel
 }
 
@@ -586,9 +590,11 @@ export interface MajorPlayer {
 }
 
 export interface CombatRobotics {
-  attribute: string
-  value: string
+  attribute?: string
+  value?: string
   sourceTier?: TierLevel
+  claim?: string
+  mouDate?: string
 }
 
 export interface MilremEquipment {
@@ -598,10 +604,11 @@ export interface MilremEquipment {
 }
 
 export interface EDGEGroupUAV {
-  attribute: string
-  value: string
-  purpose?: string
-  type?: string
+  model: string
+  quantity: string
+  manufacturer: string
+  purpose: string
+  type: string
 }
 
 export interface HospitalityRobotics {
@@ -650,9 +657,8 @@ export interface SmartCityRanking {
 }
 
 export interface AbuDhabiTransformation {
-  attribute: string
-  value: string
-  alignment?: string
+  investment: string
+  alignment: string
   uaeRelevance: UAERelevanceLevel
 }
 
@@ -1751,17 +1757,3 @@ export const aiTechnologyData = {
 // ============================================================================
 
 export type AiTechnologyData = typeof aiTechnologyData
-export type {
-  UAERelevanceLevel,
-  RegulatoryLaw,
-  RegulatoryBody,
-  G42Overview,
-  G42Subsidiary,
-  LaborMarketKPI,
-  AutomationExposure,
-  SummaryKPI,
-  SourceCredibility,
-  GovernmentBody,
-  Company,
-  RegulatoryInstrument,
-}

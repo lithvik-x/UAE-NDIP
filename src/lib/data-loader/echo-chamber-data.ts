@@ -13,6 +13,7 @@ import type { TierLevel } from './types'
 
 // A.1 Echo Chamber Quantification Metrics
 export interface EchoChamberQuantMetric {
+  [key: string]: string | number | undefined
   metric: string
   value: string
   source: string
@@ -31,6 +32,7 @@ export const echoChamberQuantMetrics: EchoChamberQuantMetric[] = [
 
 // A.2 Platform-Specific Echo Chamber Effects
 export interface PlatformEchoChamber {
+  [key: string]: string | number | undefined
   platform: string
   echoChamberStrength: string
   dominantECType: string
@@ -48,6 +50,7 @@ export const platformEchoChambers: PlatformEchoChamber[] = [
 
 // A.3 Polarization Research Data
 export interface PolarizationStudy {
+  [key: string]: string | number | undefined
   study: string
   finding: string
   effectSize: string
@@ -65,6 +68,7 @@ export const polarizationStudies: PolarizationStudy[] = [
 
 // A.4 YouTube Recommendation System Data
 export interface YouTubeRecommendationData {
+  [key: string]: string | number | undefined
   metric: string
   value: string
   source: string
@@ -85,6 +89,7 @@ export const youtubeRecommendationData: YouTubeRecommendationData[] = [
 
 // A.5 Short Video Platform User Demographics
 export interface PlatformDemographic {
+  [key: string]: string | number | undefined
   platform: string
   under24: string
   age24to30: string
@@ -101,6 +106,7 @@ export const platformDemographics: PlatformDemographic[] = [
 
 // A.6 Media Literacy Intervention Effectiveness
 export interface MediaLiteracyEffect {
+  [key: string]: string | number | undefined
   outcome: string
   effectSize: string
   significance: string
@@ -120,6 +126,7 @@ export const mediaLiteracyEffects: MediaLiteracyEffect[] = [
 
 // A.7 Political Selective Exposure Statistics
 export interface SelectiveExposureStat {
+  [key: string]: string | number | undefined
   metric: string
   value: string
   source: string
@@ -138,6 +145,7 @@ export const selectiveExposureStats: SelectiveExposureStat[] = [
 
 // A.8 Network Simulation Parameters (Törnberg Model)
 export interface SimulationParameter {
+  [key: string]: string | number | undefined
   parameter: string
   value: string
 }
@@ -159,7 +167,7 @@ export const simulationParameters: SimulationParameter[] = [
 export interface AlgorithmPersonalizationData {
   metric: string
   value: string
-  year?: string
+  year?: string | number
 }
 
 export const algorithmPersonalizationData: AlgorithmPersonalizationData[] = [
@@ -176,6 +184,7 @@ export const algorithmPersonalizationData: AlgorithmPersonalizationData[] = [
 
 // B.1 Academic Institutions
 export interface AcademicInstitution {
+  [key: string]: string | number | undefined
   entity: string
   role: string
   researchContribution: string
@@ -194,6 +203,7 @@ export const academicInstitutions: AcademicInstitution[] = [
 
 // B.2 Platforms Studied
 export interface PlatformStudied {
+  [key: string]: string | number | undefined
   platform: string
   type: string
   curationMethod: string
@@ -214,6 +224,7 @@ export const platformsStudied: PlatformStudied[] = [
 
 // B.3 Key Researchers
 export interface KeyResearcher {
+  [key: string]: string | number | undefined
   researcher: string
   institution: string
   contribution: string
@@ -234,6 +245,7 @@ export const keyResearchers: KeyResearcher[] = [
 
 // B.4 Policy/Regulatory Entities
 export interface PolicyEntity {
+  [key: string]: string | number | undefined
   entity: string
   type: string
   contribution: string
@@ -250,6 +262,7 @@ export const policyEntities: PolicyEntity[] = [
 
 // B.5 Cognitive Biases Registry
 export interface CognitiveBias {
+  [key: string]: string | number | undefined
   bias: string
   effectOnEchoChambers: string
   mitigationDifficulty: string
@@ -265,6 +278,7 @@ export const cognitiveBiases: CognitiveBias[] = [
 
 // B.6 Historical Events Used as Echo Chamber Case Studies
 export interface HistoricalEvent {
+  [key: string]: string | number | undefined
   eventPeriod: string
   era: string
   echoChamberType: string
@@ -285,6 +299,7 @@ export const historicalEvents: HistoricalEvent[] = [
 
 // C.1 Sentiment by Research Position
 export interface ResearchPositionSentiment {
+  [key: string]: string | number | undefined
   position: string
   sentimentScore: string
   keySources: string
@@ -300,6 +315,7 @@ export const researchPositionSentiment: ResearchPositionSentiment[] = [
 
 // C.2 Sentiment by Platform
 export interface PlatformSentiment {
+  [key: string]: string | number | undefined
   platform: string
   sentimentUsers: string
   sentimentResearchers: string
@@ -317,6 +333,7 @@ export const platformSentiments: PlatformSentiment[] = [
 
 // C.3 Topic Sentiment Breakdown
 export interface TopicSentiment {
+  [key: string]: string | number | undefined
   topic: string
   sentiment: string
   confidence: string
@@ -334,6 +351,7 @@ export const topicSentiments: TopicSentiment[] = [
 
 // C.4 Emotional Tone Analysis
 export interface EmotionalTone {
+  [key: string]: string | number | undefined
   theme: string
   primaryEmotion: string
   secondaryEmotion: string
@@ -355,6 +373,7 @@ export const emotionalTones: EmotionalTone[] = [
 
 // D.1 Direct UAE Relevance Matrix
 export interface UAERelevanceItem {
+  [key: string]: string | number | undefined
   topicArea: string
   uaeRelevance: string
   rationale: string
@@ -371,6 +390,7 @@ export const uaeRelevanceMatrix: UAERelevanceItem[] = [
 
 // D.2 UAE-Specific Considerations
 export interface UAEConsideration {
+  [key: string]: string | number | undefined
   factor: string
   impact: string
   evidence: string
@@ -387,6 +407,7 @@ export const uaeConsiderations: UAEConsideration[] = [
 
 // D.3 Regional Echo Chamber Dynamics (Middle East)
 export interface RegionalDynamic {
+  [key: string]: string | number | undefined
   dynamic: string
   presentInUAERegion: string
   evidence: string
@@ -402,6 +423,7 @@ export const regionalDynamics: RegionalDynamic[] = [
 
 // D.4 Threat Assessment for UAE Information Ecosystem
 export interface ThreatAssessment {
+  [key: string]: string | number | undefined
   threat: string
   probability: string
   impact: string
@@ -423,6 +445,7 @@ export const threatAssessments: ThreatAssessment[] = [
 
 // E.1 Source Tier Classification
 export interface SourceCredibility {
+  [key: string]: string | number | undefined
   source: string
   url: string
   tier: string
@@ -453,6 +476,7 @@ export const sourceCredibilityMatrix: SourceCredibility[] = [
 
 // E.2 Tier Distribution Summary
 export interface TierDistribution {
+  [key: string]: string | number | undefined
   tier: string
   count: number
   percentage: string
@@ -467,6 +491,7 @@ export const tierDistribution: TierDistribution[] = [
 
 // E.3 Evidence Quality Assessment
 export interface EvidenceQuality {
+  [key: string]: string | number | undefined
   qualityDimension: string
   score: string
   leadingSource: string
@@ -486,6 +511,7 @@ export const evidenceQuality: EvidenceQuality[] = [
 // ============================================================================
 
 export interface SourceSummary {
+  [key: string]: string | number | string[] | undefined
   sourceName: string
   url: string
   tier: string
@@ -570,6 +596,7 @@ export const sourceSummaries: SourceSummary[] = [
 // ============================================================================
 
 export interface QuantitativeMetric {
+  [key: string]: string | number | undefined
   id: string
   metric: string
   value: string
@@ -627,6 +654,7 @@ export const quantitativeMetrics: QuantitativeMetric[] = [
 // ============================================================================
 
 export interface QualitativeFinding {
+  [key: string]: string | number | undefined
   id: string
   finding: string
   category: string
@@ -657,6 +685,7 @@ export const qualitativeFindings: QualitativeFinding[] = [
 
 // H.1 Consensus Matrix
 export interface ConsensusItem {
+  [key: string]: string | number | undefined
   finding: string
   consensusLevel: string
   supportingSources: string
@@ -675,6 +704,7 @@ export const consensusMatrix: ConsensusItem[] = [
 
 // H.2 Methodological Quality Assessment
 export interface MethodQuality {
+  [key: string]: string | number | undefined
   method: string
   studies: string
   qualityScore: string
@@ -706,6 +736,7 @@ export const researchGaps: string[] = [
 // ============================================================================
 
 export interface ConceptualDefinition {
+  [key: string]: string | number | undefined
   term: string
   definition: string
   source: string
@@ -750,6 +781,7 @@ export const echoChamberEnrichmentMetadata = {
 // ============================================================================
 
 export interface EchoChamberKPI {
+  [key: string]: string | number | undefined
   id: string
   title: string
   value: string

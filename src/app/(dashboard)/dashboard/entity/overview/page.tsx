@@ -236,7 +236,7 @@ export default function EntityIntelligenceOverviewPage() {
           value={mediaJournalistCount}
           previousValue={mediaJournalistCount - 3}
           icon={<Newspaper className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
         <MetricCard
           title="Corporate / Infrastructure"

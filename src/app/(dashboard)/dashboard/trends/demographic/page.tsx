@@ -246,7 +246,7 @@ export default function DemographicTrendsPage() {
           value={92}
           previousValue={91}
           icon={<Briefcase className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="success"
         />
       </div>
@@ -706,7 +706,7 @@ export default function DemographicTrendsPage() {
                   value={87}
                   unit="%"
                   icon={<Sparkles className="h-6 w-6" />}
-                  gradient="platinum"
+                  gradient="indigo"
                 />
               </div>
 

@@ -47,7 +47,7 @@ import {
   Cpu,
   DollarSign,
   UsersRound,
-  FlagTriangle,
+  Triangle,
   Building2,
   Plane,
   HandshakeIcon,
@@ -789,7 +789,7 @@ export default function IntlRelationsPage() {
           unit="%"
           icon={<Target className="h-6 w-6" />}
           gradient="emerald"
-          status="critical"
+          status="error"
         />
       </motion.div>
 
@@ -1073,7 +1073,7 @@ export default function IntlRelationsPage() {
                   date: s.date,
                 }))}
                 xAxisKey="name"
-                bars={[{ dataKey: 'value', name: 'Summit', color: CHART_COLORS.cyan }]}
+                bars={[{ dataKey: 'value', name: 'Summit', color: CHART_COLORS.info }]}
                 height={300}
                 showGrid={true}
               />
@@ -1221,7 +1221,7 @@ export default function IntlRelationsPage() {
           <Card className="glass-card">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <FlagTriangle className="h-5 w-5 text-red-400" />
+                <Triangle className="h-5 w-5 text-red-400" />
                 Palestinian Cause Media Action Plan
               </CardTitle>
               <CardDescription>{arabLeagueData.mediaActionPlan.date}</CardDescription>

@@ -45,7 +45,6 @@ export function RankingsSection({
     <GlassPanel
       title="Global Rankings Excellence"
       description="UAE's position among world's top destinations and nations"
-      icon={<Trophy className="h-5 w-5 text-amber-400" />}
     >
       <div className="space-y-6">
         {/* Key Rankings */}

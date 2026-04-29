@@ -379,7 +379,7 @@ export default function ExpansionPage() {
                     ]}
                     xAxisKey="name"
                     bars={[
-                      { dataKey: 'preWar', name: 'Pre-War', color: CHART_COLORS.slate },
+                      { dataKey: 'preWar', name: 'Pre-War', color: CHART_COLORS.platinum },
                       { dataKey: 'postWar', name: 'Post-War', color: CHART_COLORS.gold },
                     ]}
                     height={300}

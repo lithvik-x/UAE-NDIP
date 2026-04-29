@@ -19,7 +19,6 @@ import {
 import {
   AlertCircle,
   AlertTriangle,
-  Analysis,
   ArrowDown,
   ArrowUp,
   Banknote,
@@ -65,6 +64,7 @@ import {
   AlertOctagon,
   TrendingDown,
   TrendingUp,
+  Trophy,
   Twitter,
   Type,
   Umbrella,
@@ -73,6 +73,7 @@ import {
   Users,
   Video,
   Wifi,
+  XCircle,
   Zap,
 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -265,7 +266,7 @@ export default function GapAnalysisPage() {
             title="High Priority Topics"
             value={highPriorityTopics}
             icon={<Signal className="h-6 w-6" />}
-            gradient="navy"
+            gradient="indigo"
             status="info"
           />
         </motion.div>

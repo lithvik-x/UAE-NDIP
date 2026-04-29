@@ -137,7 +137,7 @@ export default function CrisisOverviewPage() {
           value={String(activeCrises)}
           icon={<AlertOctagon className="h-6 w-6" />}
           gradient="rose"
-          status="critical"
+          status="error"
         />
         <MetricCard
           title="Critical Severity"
@@ -150,7 +150,7 @@ export default function CrisisOverviewPage() {
           value="6"
           icon={<AlertTriangle className="h-6 w-6" />}
           gradient="orange"
-          status="critical"
+          status="error"
         />
         <MetricCard
           title="Containment Stage"

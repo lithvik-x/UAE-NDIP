@@ -131,7 +131,7 @@ export default function OilDiscoveryPage() {
           title="Key Concessions"
           value={data.policyOutcomes?.length || 0}
           icon={<Cog className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
         <MetricCard
           title="Years of Discovery"

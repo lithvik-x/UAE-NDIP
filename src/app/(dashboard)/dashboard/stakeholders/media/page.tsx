@@ -175,7 +175,7 @@ export default function MediaStakeholdersPage() {
             title="Avg Credibility"
             value={avgCredibility.toFixed(1)}
             icon={<Shield className="h-6 w-6" />}
-            gradient="platinum"
+            gradient="indigo"
           />
         </motion.div>
         <motion.div variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}>

@@ -41,7 +41,6 @@ export function SafetySection({ safetyStatistics, safestCitiesRanking, uaeVsGlob
     <GlassPanel
       title="Safety & Security Excellence"
       description="UAE's global leadership in safety perceptions and metrics"
-      icon={<Shield className="h-5 w-5 text-emerald-400" />}
     >
       <div className="space-y-6">
         {/* Key Safety Metrics */}

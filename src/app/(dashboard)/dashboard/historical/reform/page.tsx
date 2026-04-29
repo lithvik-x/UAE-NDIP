@@ -138,7 +138,7 @@ export default function ReformChangePage() {
           value="#16"
           previousValue={22}
           icon={<Globe className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
       </div>
 

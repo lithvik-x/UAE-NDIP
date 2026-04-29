@@ -100,10 +100,10 @@ const iconMap: Record<string, React.ElementType> = {
 }
 
 export default function PositiveSentimentPage() {
-  const { data } = usePositiveSentimentData()
+  const positiveData = usePositiveSentimentData()
   const hopeData = useHopeOptimismData()
 
-  if (!data) {
+  if (!positiveData) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
         <motion.div
@@ -117,7 +117,7 @@ export default function PositiveSentimentPage() {
     )
   }
 
-  const { overview, highlights, metrics } = data
+  const { overview, highlights, metrics } = positiveData
 
   return (
     <div className="space-y-8 p-8 font-rajdhani">

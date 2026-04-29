@@ -116,7 +116,7 @@ export default function ClimateEnvironmentalPage() {
     { location: 'Dubai\nAirport', mm: 164, color: CHART_COLORS.gold },
     { location: 'Jebel Yanas\n(Mar 2026)', mm: 244, color: CHART_COLORS.navy },
     { location: 'Al Manama\n(Mar 2026)', mm: 234.7, color: CHART_COLORS.emerald },
-    { location: 'Al Hayer\n(Mar 2026)', mm: 234.1, color: CHART_COLORS.cyan },
+    { location: 'Al Hayer\n(Mar 2026)', mm: 234.1, color: CHART_COLORS.info },
   ]
 
   const economicImpactData = [
@@ -127,7 +127,7 @@ export default function ClimateEnvironmentalPage() {
   ]
 
   const disasterFrequencyData = [
-    { type: 'Flash Floods', frequency: 75, color: CHART_COLORS.cyan },
+    { type: 'Flash Floods', frequency: 75, color: CHART_COLORS.info },
     { type: 'Heat Waves', frequency: 95, color: CHART_COLORS.rose },
     { type: 'Sandstorms', frequency: 65, color: CHART_COLORS.orange },
     { type: 'Earthquakes', frequency: 25, color: CHART_COLORS.navy },
@@ -145,7 +145,7 @@ export default function ClimateEnvironmentalPage() {
   const cloudSeedingData = [
     { year: '2014', missions: 187, color: CHART_COLORS.navy },
     { year: '2017', missions: 214, color: CHART_COLORS.gold },
-    { year: '2018', missions: 184, color: CHART_COLORS.cyan },
+    { year: '2018', missions: 184, color: CHART_COLORS.info },
     { year: '2019', missions: 247, color: CHART_COLORS.emerald },
   ]
 
@@ -201,7 +201,7 @@ export default function ClimateEnvironmentalPage() {
             previousValue="51.6C"
             icon={<Thermometer className="h-6 w-6" />}
             gradient="orange"
-            status="critical"
+            status="error"
           />
         </motion.div>
         <motion.div variants={cardHoverVariants} whileHover="hover">
@@ -211,7 +211,7 @@ export default function ClimateEnvironmentalPage() {
             previousValue="164mm"
             icon={<CloudRain className="h-6 w-6" />}
             gradient="denim"
-            status="critical"
+            status="error"
           />
         </motion.div>
         <motion.div variants={cardHoverVariants} whileHover="hover">
@@ -312,7 +312,7 @@ export default function ClimateEnvironmentalPage() {
                               data={rainfall2024Data}
                               xAxisKey="location"
                               bars={[
-                                { dataKey: 'mm', name: 'Rainfall (mm)', color: CHART_COLORS.cyan },
+                                { dataKey: 'mm', name: 'Rainfall (mm)', color: CHART_COLORS.info },
                               ]}
                               height={280}
                               showGrid={true}
@@ -518,7 +518,7 @@ export default function ClimateEnvironmentalPage() {
                       data={rainfall2024Data}
                       xAxisKey="location"
                       areas={[
-                        { dataKey: 'mm', name: 'Rainfall (mm)', color: CHART_COLORS.cyan },
+                        { dataKey: 'mm', name: 'Rainfall (mm)', color: CHART_COLORS.info },
                       ]}
                       height={300}
                       showGrid={true}
@@ -612,7 +612,7 @@ export default function ClimateEnvironmentalPage() {
                   unit="Al Yasat Island, 2010"
                   icon={<Thermometer className="h-6 w-6" />}
                   gradient="rose"
-                  status="critical"
+                  status="error"
                 />
                 <MetricCard
                   title="May 2025 Record"
@@ -620,7 +620,7 @@ export default function ClimateEnvironmentalPage() {
                   unit="Sweihan, Al Ain"
                   icon={<Sun className="h-6 w-6" />}
                   gradient="orange"
-                  status="critical"
+                  status="error"
                 />
                 <MetricCard
                   title="Work Ban Compliance"
@@ -966,7 +966,7 @@ export default function ClimateEnvironmentalPage() {
                   value="521"
                   unit="Quakes 4.0+ within 300km"
                   icon={<MapPin className="h-6 w-6" />}
-                  gradient="platinum"
+                  gradient="indigo"
                 />
               </motion.div>
 
@@ -1013,11 +1013,11 @@ export default function ClimateEnvironmentalPage() {
                       data={[
                         { range: '4.0+', count: 2, color: CHART_COLORS.rose },
                         { range: '3.0-4.0', count: 9, color: CHART_COLORS.gold },
-                        { range: '2.0-3.0', count: 5, color: CHART_COLORS.cyan },
+                        { range: '2.0-3.0', count: 5, color: CHART_COLORS.info },
                       ]}
                       xAxisKey="range"
                       bars={[
-                        { dataKey: 'count', name: 'Quakes', color: CHART_COLORS.cyan },
+                        { dataKey: 'count', name: 'Quakes', color: CHART_COLORS.info },
                       ]}
                       height={220}
                       showGrid={true}

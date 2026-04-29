@@ -60,7 +60,6 @@ export function UAERelevanceSection({ uaeRelevanceAssessment }: UAERelevanceSect
     <GlassPanel
       title="UAE Relevance Assessment"
       description="Categorization of emotion research topics by strategic relevance"
-      icon={<MapPin className="h-5 w-5 text-gold" />}
     >
       <div className="space-y-6">
         {/* Relevance Summary */}

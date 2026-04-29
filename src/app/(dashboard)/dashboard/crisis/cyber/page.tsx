@@ -168,21 +168,21 @@ export default function CyberThreatsPage() {
           value="500K-800K"
           icon={<Wifi className="h-6 w-6" />}
           gradient="purple"
-          status="critical"
+          status="error"
         />
         <MetricCard
           title="2026 Incidents"
           value="128"
           icon={<Bug className="h-6 w-6" />}
           gradient="rose"
-          status="critical"
+          status="error"
         />
         <MetricCard
           title="Bybit Hack Loss"
           value="$1.5B"
           icon={<Database className="h-6 w-6" />}
           gradient="orange"
-          status="critical"
+          status="error"
         />
         <MetricCard
           title="State-Sponsored"
@@ -323,7 +323,7 @@ export default function CyberThreatsPage() {
                                 <p className="font-semibold text-slate-200">{incident.incident}</p>
                                 <Badge variant="outline" className="text-xs">{incident.date}</Badge>
                               </div>
-                              <p className="text-sm text-slate-400 mb-2">{incident.description || incident.impact}</p>
+                              <p className="text-sm text-slate-400 mb-2">{incident.impact}</p>
                               <div className="flex items-center gap-4 text-xs text-slate-500">
                                 <span className="flex items-center gap-1">
                                   <Shield className="h-3 w-3" />

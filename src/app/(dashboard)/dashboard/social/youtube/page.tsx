@@ -245,7 +245,7 @@ export default function YouTubePage() {
             title="Bot Activity"
             value={`${botActivity?.estimatedBotPercent || 12}%`}
             icon={<AlertCircle className="h-6 w-6" />}
-            gradient="platinum"
+            gradient="indigo"
             status={botActivity?.estimatedBotPercent > 15 ? 'danger' : 'warning'}
           />
         </motion.div>

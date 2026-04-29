@@ -57,7 +57,7 @@ import {
   Droplet,
   Building,
   Wallet,
-  Prison,
+  Lock,
   MessageCircle,
   Languages,
   BarChart3,
@@ -210,7 +210,7 @@ export default function SarcasmIronyPage() {
             value={overview.criticalSources.toString()}
             icon={<AlertTriangle className="h-6 w-6" />}
             gradient="rose"
-            status="critical"
+            status="error"
           />
         </motion.div>
         <motion.div variants={fadeInUp}>
@@ -227,7 +227,7 @@ export default function SarcasmIronyPage() {
             value="9.5/10"
             icon={<AlertOctagon className="h-6 w-6" />}
             gradient="rose"
-            status="critical"
+            status="error"
           />
         </motion.div>
       </motion.div>
@@ -433,7 +433,7 @@ export default function SarcasmIronyPage() {
                         className="p-3 rounded-lg border border-slate-700/50 bg-slate-900/50 hover:border-red-500/30 transition-colors"
                       >
                         <div className="flex items-center gap-2 mb-2">
-                          <Prison className="h-4 w-4 text-red-400" />
+                          <Lock className="h-4 w-4 text-red-400" />
                           <span className="text-slate-200 font-bold text-sm">{prisoner.name}</span>
                         </div>
                         <div className="space-y-1">

@@ -95,7 +95,7 @@ function NetZeroSection() {
           unit="B USD"
           icon={<Leaf className="h-5 w-5" />}
           gradient="emerald"
-          status="active"
+          status="success"
         />
         <MetricCard
           title="Green Jobs Target"
@@ -103,7 +103,7 @@ function NetZeroSection() {
           unit="K"
           icon={<Users className="h-5 w-5" />}
           gradient="gold"
-          status="active"
+          status="success"
         />
         <MetricCard
           title="CDR via Mangroves"
@@ -111,7 +111,7 @@ function NetZeroSection() {
           unit="MtCO2e"
           icon={<TreePine className="h-5 w-5" />}
           gradient="cyan"
-          status="active"
+          status="success"
         />
         <MetricCard
           title="CDR via DAC"
@@ -119,7 +119,7 @@ function NetZeroSection() {
           unit="MtCO2e"
           icon={<Factory className="h-5 w-5" />}
           gradient="navy"
-          status="active"
+          status="success"
         />
       </div>
 
@@ -232,7 +232,7 @@ function EnergySection() {
           unit="%"
           icon={<Zap className="h-5 w-5" />}
           gradient="gold"
-          status="target"
+          status="info"
         />
         <MetricCard
           title="Grid Emission Factor"
@@ -240,7 +240,7 @@ function EnergySection() {
           unit="kg CO2/kWh"
           icon={<Wind className="h-5 w-5" />}
           gradient="cyan"
-          status="target"
+          status="info"
         />
         <MetricCard
           title="Investment"
@@ -248,7 +248,7 @@ function EnergySection() {
           unit="B AED"
           icon={<TrendingUp className="h-5 w-5" />}
           gradient="emerald"
-          status="active"
+          status="success"
         />
         <MetricCard
           title="Green Jobs 2030"
@@ -256,7 +256,7 @@ function EnergySection() {
           unit="K"
           icon={<Users className="h-5 w-5" />}
           gradient="navy"
-          status="target"
+          status="info"
         />
       </div>
 
@@ -435,7 +435,7 @@ function HydrogenCCUSSection() {
             unit="Mt/year"
             icon={<Factory className="h-5 w-5" />}
             gradient="navy"
-            status="active"
+            status="success"
           />
           <MetricCard
             title="2030 Target"
@@ -443,7 +443,7 @@ function HydrogenCCUSSection() {
             unit="MTPA"
             icon={<Target className="h-5 w-5" />}
             gradient="gold"
-            status="target"
+            status="info"
           />
           <MetricCard
             title="ADNOC Target"
@@ -451,7 +451,7 @@ function HydrogenCCUSSection() {
             unit="Mt/year"
             icon={<Globe className="h-5 w-5" />}
             gradient="emerald"
-            status="target"
+            status="info"
           />
           <MetricCard
             title="Storage Potential"
@@ -459,7 +459,7 @@ function HydrogenCCUSSection() {
             unit="Gt"
             icon={<Shield className="h-5 w-5" />}
             gradient="cyan"
-            status="active"
+            status="success"
           />
         </div>
 
@@ -525,7 +525,7 @@ function CarbonMangroveSection() {
           unit="M USD"
           icon={<TrendingUp className="h-5 w-5" />}
           gradient="emerald"
-          status="past"
+          status="neutral"
         />
         <MetricCard
           title="2024 Market"
@@ -533,7 +533,7 @@ function CarbonMangroveSection() {
           unit="M USD"
           icon={<TrendingUp className="h-5 w-5" />}
           gradient="gold"
-          status="current"
+          status="success"
         />
         <MetricCard
           title="2030 Projection"
@@ -541,7 +541,7 @@ function CarbonMangroveSection() {
           unit="M USD"
           icon={<Target className="h-5 w-5" />}
           gradient="cyan"
-          status="target"
+          status="info"
         />
       </div>
 
@@ -588,8 +588,8 @@ function CarbonMangroveSection() {
               data={[
                 { name: 'Afforestation', value: climateCarbonMarketData.afforestationShare, color: CHART_COLORS.emerald },
                 { name: 'Soil Carbon', value: 25, color: CHART_COLORS.gold },
-                { name: 'Energy Efficiency', value: 20, color: CHART_COLORS.cyan },
-                { name: 'Other', value: 20.59, color: CHART_COLORS.slate },
+                { name: 'Energy Efficiency', value: 20, color: CHART_COLORS.info },
+                { name: 'Other', value: 20.59, color: CHART_COLORS.platinum },
               ]}
               height={220}
               showLegend={true}
@@ -644,7 +644,7 @@ function CarbonMangroveSection() {
           unit="t/ha/year"
           icon={<TreePine className="h-5 w-5" />}
           gradient="teal"
-          status="active"
+          status="success"
         />
         <MetricCard
           title="Total Sequestration"
@@ -652,7 +652,7 @@ function CarbonMangroveSection() {
           unit="tonnes"
           icon={<Leaf className="h-5 w-5" />}
           gradient="emerald"
-          status="active"
+          status="success"
         />
         <MetricCard
           title="Storage Multiplier"
@@ -660,7 +660,7 @@ function CarbonMangroveSection() {
           unit="x"
           icon={<TrendingUp className="h-5 w-5" />}
           gradient="gold"
-          status="active"
+          status="success"
         />
         <MetricCard
           title="Park Coverage"
@@ -668,7 +668,7 @@ function CarbonMangroveSection() {
           unit="% UAE total"
           icon={<Globe className="h-5 w-5" />}
           gradient="navy"
-          status="active"
+          status="success"
         />
       </div>
 
@@ -734,7 +734,7 @@ function WaterWasteSection() {
           unit="%"
           icon={<Droplets className="h-5 w-5" />}
           gradient="cyan"
-          status="critical"
+          status="error"
         />
         <MetricCard
           title="Liwa Storage"
@@ -742,7 +742,7 @@ function WaterWasteSection() {
           unit="M m³"
           icon={<Shield className="h-5 w-5" />}
           gradient="navy"
-          status="active"
+          status="success"
         />
         <MetricCard
           title="Recoverable"
@@ -750,7 +750,7 @@ function WaterWasteSection() {
           unit="M m³"
           icon={<Droplets className="h-5 w-5" />}
           gradient="emerald"
-          status="active"
+          status="success"
         />
         <MetricCard
           title="Emergency Supply"
@@ -758,7 +758,7 @@ function WaterWasteSection() {
           unit="days"
           icon={<AlertTriangle className="h-5 w-5" />}
           gradient="gold"
-          status="active"
+          status="success"
         />
       </div>
 
@@ -771,10 +771,10 @@ function WaterWasteSection() {
         <CardContent>
           <PieChart
             data={[
-              { name: 'Desalination', value: climateWaterData.desalinationPercent, color: CHART_COLORS.cyan },
+              { name: 'Desalination', value: climateWaterData.desalinationPercent, color: CHART_COLORS.info },
               { name: 'Groundwater', value: 18, color: CHART_COLORS.navy },
               { name: 'Recycled', value: 12, color: CHART_COLORS.emerald },
-              { name: 'Imported', value: 5, color: CHART_COLORS.slate },
+              { name: 'Imported', value: 5, color: CHART_COLORS.platinum },
             ]}
             height={280}
             showLegend={true}
@@ -810,7 +810,7 @@ function WaterWasteSection() {
           unit="B USD"
           icon={<Recycle className="h-5 w-5" />}
           gradient="emerald"
-          status="current"
+          status="success"
         />
         <MetricCard
           title="Waste Mgmt 2033"
@@ -818,7 +818,7 @@ function WaterWasteSection() {
           unit="B USD"
           icon={<TrendingUp className="h-5 w-5" />}
           gradient="gold"
-          status="target"
+          status="info"
         />
         <MetricCard
           title="Waste-to-Energy"
@@ -826,7 +826,7 @@ function WaterWasteSection() {
           unit="M USD"
           icon={<Zap className="h-5 w-5" />}
           gradient="cyan"
-          status="active"
+          status="success"
         />
       </div>
 
@@ -874,7 +874,7 @@ function WaterWasteSection() {
         <CardContent>
           <BarChart
             data={[
-              { year: '2016', waste: climateWasteData.constructionDemolitionWaste2016, color: CHART_COLORS.slate },
+              { year: '2016', waste: climateWasteData.constructionDemolitionWaste2016, color: CHART_COLORS.platinum },
               { year: '2022', waste: climateWasteData.constructionDemolitionWaste2022, color: CHART_COLORS.emerald },
             ]}
             xAxisKey="year"
@@ -927,21 +927,21 @@ function LegislationSection() {
           value="May 2025"
           icon={<FileCheck className="h-5 w-5" />}
           gradient="purple"
-          status="active"
+          status="success"
         />
         <MetricCard
           title="NRCC Effective"
           value="Dec 2024"
           icon={<Globe className="h-5 w-5" />}
           gradient="navy"
-          status="active"
+          status="success"
         />
         <MetricCard
           title="Compliance Deadline"
           value="Jun 2025"
           icon={<AlertTriangle className="h-5 w-5" />}
           gradient="gold"
-          status="pending"
+          status="warning"
         />
       </div>
 
@@ -1201,7 +1201,7 @@ export default function EnvironmentalTrendsPage() {
           value={2050}
           icon={<Globe className="h-5 w-5" />}
           gradient="emerald"
-          status="active"
+          status="success"
         />
         <MetricCard
           title="Investment"
@@ -1209,7 +1209,7 @@ export default function EnvironmentalTrendsPage() {
           unit="B USD"
           icon={<TrendingUp className="h-5 w-5" />}
           gradient="gold"
-          status="active"
+          status="success"
         />
         <MetricCard
           title="Solar Capacity"
@@ -1217,7 +1217,7 @@ export default function EnvironmentalTrendsPage() {
           unit="MW"
           icon={<Sun className="h-5 w-5" />}
           gradient="gold"
-          status="active"
+          status="success"
         />
         <MetricCard
           title="Carbon Market"
@@ -1225,7 +1225,7 @@ export default function EnvironmentalTrendsPage() {
           unit="M USD"
           icon={<Leaf className="h-5 w-5" />}
           gradient="emerald"
-          status="growing"
+          status="success"
         />
         <MetricCard
           title="ESG Penalty"
@@ -1233,7 +1233,7 @@ export default function EnvironmentalTrendsPage() {
           unit="M AED max"
           icon={<AlertTriangle className="h-5 w-5" />}
           gradient="rose"
-          status="active"
+          status="success"
         />
       </motion.div>
 

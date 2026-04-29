@@ -53,9 +53,8 @@ import {
   Atom,
   Wifi,
   FileWarning,
-  Government,
+  Landmark,
   PersonStanding,
-  Chip,
   Factory,
   Building2,
 } from 'lucide-react'
@@ -137,7 +136,7 @@ function KPIGridItem({ kpi, index }: { kpi: typeof aiTechnologyData.summaryKPIs[
           <p className="text-xs text-platinum-500 font-medium truncate">{kpi.kpi}</p>
           <p className="text-2xl font-bold gradient-text-gold mt-1">{kpi.value}</p>
           <p className="text-xs text-platinum-600 mt-1">
-            {kpi.trend !== '-' ? `Trend: ${kpi.trend}` : kpi.timeline ? kpi.timeline : 'Stable'}
+            {kpi.trend !== '-' ? `Trend: ${kpi.trend}` : 'Stable'}
           </p>
         </div>
         <Badge variant="outline" className={`text-xs ml-2 ${getRelevanceColor(kpi.uaeRelevance)}`}>
@@ -400,7 +399,7 @@ function G42Section() {
             title="Chairman"
             value="Sheikh Tahnoon"
             icon={<PersonStanding className="h-6 w-6" />}
-            gradient="platinum"
+            gradient="indigo"
           />
         </div>
 
@@ -545,7 +544,6 @@ function AIJobsSection() {
           <MetricCard
             title="AI Hiring Growth"
             value="48%"
-            change={{ value: '+16pp', type: 'increase' }}
             icon={<TrendingUp className="h-6 w-6" />}
             gradient="emerald"
             status="success"
@@ -1113,7 +1111,7 @@ function AIGovernmentSection() {
     <GlassPanel
       title="AI Government Services"
       description="50% agentic AI deployment target • World-first regulatory ecosystem"
-      icon={<Government className="h-5 w-5 text-gold" />}
+      icon={<Building className="h-5 w-5 text-gold" />}
     >
       <div className="space-y-6">
         {/* Agentic AI Target */}
@@ -1162,7 +1160,7 @@ function AIGovernmentSection() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-lg bg-slate-800/50 p-3">
                   <p className="text-xs text-platinum-500">Function</p>
-                  <p className="text-sm text-platinum-200">{data.aiRegulatoryEcosystem.function}</p>
+                  <p className="text-sm text-platinum-200">{data.aiRegulatoryEcosystem?.function}</p>
                 </div>
                 <div className="rounded-lg bg-slate-800/50 p-3">
                   <p className="text-xs text-platinum-500">Efficiency Gain</p>
@@ -1252,7 +1250,6 @@ function TalentSection() {
           <MetricCard
             title="IMD Global Ranking"
             value="9th"
-            change={{ value: '+8', type: 'increase' }}
             icon={<TrendingUp className="h-6 w-6" />}
             gradient="gold"
             status="success"
@@ -1267,7 +1264,6 @@ function TalentSection() {
           <MetricCard
             title="Global Mobility Rank"
             value="2nd"
-            subtitle="Rising destination"
             icon={<Globe className="h-6 w-6" />}
             gradient="denim"
             status="success"
@@ -1382,7 +1378,7 @@ function SemiconductorsSection() {
     <GlassPanel
       title="Semiconductors"
       description="TSMC evaluation • US chip exports approved • $1.4T UAE-US agreement"
-      icon={<Chip className="h-5 w-5 text-gold" />}
+      icon={<Cpu className="h-5 w-5 text-gold" />}
     >
       <div className="space-y-6">
         {/* TSMC UAE */}
@@ -1845,7 +1841,6 @@ export default function AITechnologyPage() {
         <MetricCard
           title="AI Hiring Growth"
           value="48%"
-          change={{ value: '+16pp', type: 'increase' }}
           icon={<Users className="h-6 w-6" />}
           gradient="emerald"
           status="success"
@@ -1853,7 +1848,6 @@ export default function AITechnologyPage() {
         <MetricCard
           title="Smart City (Dubai)"
           value="4th"
-          change={{ value: '+8', type: 'increase' }}
           icon={<Building className="h-6 w-6" />}
           gradient="denim"
           status="success"
@@ -1861,7 +1855,6 @@ export default function AITechnologyPage() {
         <MetricCard
           title="IMD Talent Ranking"
           value="9th"
-          change={{ value: '+8', type: 'increase' }}
           icon={<Globe className="h-6 w-6" />}
           gradient="purple"
           status="success"

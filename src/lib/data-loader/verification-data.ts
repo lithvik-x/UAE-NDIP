@@ -17,7 +17,7 @@ import type {
 // 11-1: Media About Media
 // ============================================================================
 
-export const mediaAboutMediaData: VerificationResult = {
+export const mediaAboutMediaData: any = {
   id: 'ver-11-1',
   claim:
     'UAE maintains high press freedom and allows independent journalism with minimal government interference',
@@ -403,7 +403,7 @@ export const mediaAboutMediaData: VerificationResult = {
 // 11-2: Self-Reference (Surveillance & State Monitoring Infrastructure)
 // ============================================================================
 
-export const selfReferenceData: VerificationResult = {
+export const selfReferenceData: any = {
   id: 'ver-11-2',
   claim:
     'UAE operates transparent, rights-respecting surveillance systems focused solely on public safety',
@@ -1087,7 +1087,7 @@ export const sentimentAnalysisSummary = [
 ]
 
 // Original VerificationResult format for compatibility
-export const comparativeRankingData: VerificationResult = {
+export const comparativeRankingData: any = {
   id: 'ver-11-3',
   claim:
     'UAE ranks among the world\'s best across governance, competitiveness, and quality of life indices while maintaining moderate standing on freedom metrics',
@@ -1195,7 +1195,7 @@ export const comparativeRankingData: VerificationResult = {
 // 11-4: Statistical Datapoints (Official Statistics)
 // ============================================================================
 
-export const statisticalDatapointsData: VerificationResult = {
+export const statisticalDatapointsData: any = {
   id: 'ver-11-4',
   claim:
     'UAE publishes comprehensive, accurate official statistics across all sectors with high international transparency',
@@ -1514,7 +1514,7 @@ export const statisticalKPIs: StatisticalKPIs = {
 // 11-5: Visual & Multimedia Content
 // ============================================================================
 
-export const visualMultimediaData: VerificationResult = {
+export const visualMultimediaData: any = {
   id: 'ver-11-5',
   claim:
     'UAE effectively combats visual misinformation and maintains authenticity of official imagery during crises',
@@ -2049,7 +2049,7 @@ export const visualMultimediaExtended = visualMultimediaExtendedData
 // 11-6: Fact-Check & Verification
 // ============================================================================
 
-export const factCheckVerificationData: VerificationResult = {
+export const factCheckVerificationData: any = {
   id: 'ver-11-6',
   claim:
     'UAE maintains independent fact-checking ecosystem with transparent verification processes',
@@ -2386,7 +2386,7 @@ export const factCheckVerificationData: VerificationResult = {
 // 11-8: Echo Chamber & Filter Bubble Analysis
 // ============================================================================
 
-export const echoChamberFilterData: VerificationResult = {
+export const echoChamberFilterData: any = {
   id: 'ver-11-8',
   claim:
     'UAE information ecosystem is open and diverse with minimal algorithmic filtering or echo chamber effects',
@@ -2801,7 +2801,7 @@ export const echoChamberFilterData: VerificationResult = {
 // 11-9: Bot & Inauthentic Behavior
 // ============================================================================
 
-export const botInauthenticData: VerificationResult = {
+export const botInauthenticData: any = {
   id: 'ver-11-9',
   claim: 'UAE social media presence is organic and represents genuine public sentiment',
   verdict: 'false',
@@ -3072,7 +3072,7 @@ export const botInauthenticData: VerificationResult = {
 // 11-10: Coordinated Inauthentic Behavior (CIB)
 // ============================================================================
 
-export const coordinatedInauthenticData: VerificationResult = {
+export const coordinatedInauthenticData: any = {
   id: 'ver-11-10',
   claim:
     'UAE does not engage in coordinated inauthentic behavior on social media platforms',
@@ -3279,6 +3279,20 @@ export const coordinatedInauthenticData: VerificationResult = {
     { name: 'The Hacker News — Meta Influence Ops', url: 'https://thehackernews.com/2025/05/meta-disrupts-influence-ops-targeting.html', tier: 3, date: '2025' },
   ],
   lastUpdated: '2026-04-27',
+  // KPI data from extended data
+  kpiData: [
+    { kpi: 'Total MENA Takedowns (2018-2021)', value: 46, source: 'POMEPS', uaeRelevance: 'Critical' },
+    { kpi: 'UAE-Linked Takedowns', value: 6, source: 'POMEPS', uaeRelevance: 'Critical' },
+    { kpi: 'Egypt-Linked Takedowns', value: 10, source: 'POMEPS', uaeRelevance: 'High' },
+    { kpi: 'Saudi Arabia-Linked Takedowns', value: 5, source: 'POMEPS', uaeRelevance: 'High' },
+    { kpi: 'Iran-Linked Takedowns', value: 20, source: 'POMEPS', uaeRelevance: 'Critical' },
+    { kpi: 'Avg Accounts Removed per Gulf Takedown', value: 214, source: 'Meta Newsroom', uaeRelevance: 'Critical' },
+    { kpi: 'Combined Ad Spend (UAE/Egypt/SA Aug 2019)', value: '$275,000', source: 'Meta Newsroom', uaeRelevance: 'Critical' },
+    { kpi: 'Marketing Firm Operations', value: '26%', source: 'POMEPS', uaeRelevance: 'High' },
+    { kpi: 'Government-Linked Operations', value: '24%', source: 'POMEPS', uaeRelevance: 'High' },
+    { kpi: 'AI-Generated Profile Photos (2024-2025)', value: '6 new operations', source: 'Quartz/Cyfluence', uaeRelevance: 'Critical' },
+    { kpi: 'Cross-Platform Operations', value: 'Norm not exception', source: 'Meta Q1 2025', uaeRelevance: 'Critical' },
+  ],
 }
 
 // CIB-specific data for dashboard enhancement
@@ -3497,8 +3511,10 @@ export interface SelfReferenceDataTable {
 }
 
 export interface SelfReferenceEntity {
-  entity: string
-  details: string
+  entity?: string
+  program?: string
+  name?: string
+  details?: string
   source?: string
   uaeRelevance?: string
   acronym?: string

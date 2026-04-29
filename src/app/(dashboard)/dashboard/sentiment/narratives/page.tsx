@@ -44,6 +44,7 @@ import {
   controversyMilitaryKPIs,
   controversyFinancialKPIs,
   controversyClimateKPIs,
+  surveillanceData,
   useControversyData,
 } from '@/lib/data-loader'
 
@@ -183,7 +184,7 @@ export default function NarrativeAnalysisPage() {
           value={42}
           previousValue={48}
           icon={<AlertCircle className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="success"
         />
       </div>
@@ -647,21 +648,21 @@ export default function NarrativeAnalysisPage() {
                   unit="%"
                   icon={<Scale className="h-6 w-6" />}
                   gradient="rose"
-                  status="critical"
+                  status="error"
                 />
                 <MetricCard
                   title="Critical Issues"
                   value={controversyData.overview.criticalCount}
                   icon={<Flame className="h--6 w-6" />}
                   gradient="rose"
-                  status="critical"
+                  status="error"
                 />
                 <MetricCard
                   title="Red Alerts"
                   value={controversyData.overview.redAlerts}
                   icon={<AlertCircle className="h-6 w-6" />}
                   gradient="rose"
-                  status="critical"
+                  status="error"
                 />
               </div>
 

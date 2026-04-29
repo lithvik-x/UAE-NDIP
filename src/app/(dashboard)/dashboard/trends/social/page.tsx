@@ -540,7 +540,7 @@ export default function SocialTrendsPage() {
           value="890K"
           previousValue={820}
           icon={<MessageSquare className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
       </motion.div>
 

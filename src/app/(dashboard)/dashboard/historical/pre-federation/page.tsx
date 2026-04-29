@@ -115,7 +115,7 @@ const MetricsSection = ({ data }: { data: any }) => {
             value={criticalCount}
             icon={<AlertTriangle className="h-6 w-6" />}
             gradient="rose"
-            status="critical"
+            status="error"
           />
         </motion.div>
         <motion.div

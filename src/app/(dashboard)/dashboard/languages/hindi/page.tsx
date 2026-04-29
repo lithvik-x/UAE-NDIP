@@ -171,7 +171,7 @@ export default function HindiLanguagePage() {
           value={topHashtags.toLocaleString()}
           previousValue={topHashtags - 120}
           icon={<Hash className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="success"
         />
       </div>

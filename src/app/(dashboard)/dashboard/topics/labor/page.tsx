@@ -255,7 +255,7 @@ export default function LaborEmploymentPage() {
           previousValue={140}
           icon={<AlertCircle className="h-6 w-6" />}
           gradient="indigo"
-          status="critical"
+          status="error"
         />
         <MetricCard
           title="Wage Protection"

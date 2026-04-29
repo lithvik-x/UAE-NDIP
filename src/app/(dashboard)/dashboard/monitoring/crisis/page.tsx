@@ -66,7 +66,7 @@ import {
   Users,
   Database,
   Eye,
-  Radiotower,
+  RadioTower,
   MessageSquare,
   Network,
   BarChart3,
@@ -173,32 +173,32 @@ export default function CrisisResponsePage() {
           title="Crisis Query Volume"
           value="100K"
           unit="/hour"
-          trend={1}
+          trend="up"
           icon={<Database className="h-6 w-6" />}
-          gradient="primary"
-          status="critical"
+          gradient="denim"
+          status="error"
         />
         <MetricCard
           title="Crisis Detection Rate"
           value="28%"
-          trend={-1}
+          trend="down"
           icon={<AlertCircle className="h-6 w-6" />}
-          gradient="warning"
+          gradient="gold"
         />
         <MetricCard
           title="Narrative Attacks"
           value="8"
-          trend={1}
+          trend="up"
           icon={<Target className="h-6 w-6" />}
-          gradient="danger"
-          status="critical"
+          gradient="rose"
+          status="error"
         />
         <MetricCard
           title="Fact-Check Coverage"
           value="443"
-          trend={-1}
+          trend="down"
           icon={<CheckCircle className="h-6 w-6" />}
-          gradient="success"
+          gradient="emerald"
         />
       </motion.div>
 

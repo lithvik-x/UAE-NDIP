@@ -194,7 +194,6 @@ export function EmotionsDetailSection({ emotion, data, type }: EmotionsDetailSec
       <GlassPanel
         title={`${emotion} (UAE Context)`}
         description="National celebrations, achievements, and positive sentiment"
-        icon={<Icon className={`h-5 w-5`} style={{ color }} />}
       >
         <div className="space-y-6">
           {/* UAE Team Emirates Stats */}
@@ -307,7 +306,6 @@ export function EmotionsDetailSection({ emotion, data, type }: EmotionsDetailSec
       <GlassPanel
         title={`${emotion} (UAE Context)`}
         description="Government trust, institutional confidence, and humanitarian efforts"
-        icon={<Icon className={`h-5 w-5`} style={{ color }} />}
       >
         <div className="space-y-6">
           {/* Banking Sector */}
@@ -396,7 +394,6 @@ export function EmotionsDetailSection({ emotion, data, type }: EmotionsDetailSec
       <GlassPanel
         title={`${emotion} (UAE Context)`}
         description="Security threats, economic concerns, and social anxieties"
-        icon={<Icon className={`h-5 w-5`} style={{ color }} />}
       >
         <div className="space-y-6">
           {/* Regional Conflict Data */}
@@ -491,7 +488,6 @@ export function EmotionsDetailSection({ emotion, data, type }: EmotionsDetailSec
       <GlassPanel
         title={`${emotion} (UAE Context)`}
         description="Censorship, road safety, rent inflation, and institutional concerns"
-        icon={<Icon className={`h-5 w-5`} style={{ color }} />}
       >
         <div className="space-y-6">
           {/* Freedom House Data */}
@@ -593,7 +589,6 @@ export function EmotionsDetailSection({ emotion, data, type }: EmotionsDetailSec
     <GlassPanel
       title={`${emotion} (UAE Context)`}
       description="Emotion-specific analysis"
-      icon={<Icon className={`h-5 w-5`} style={{ color }} />}
     >
       <Card className="glass-card">
         <CardContent className="p-6 text-center text-slate-400">

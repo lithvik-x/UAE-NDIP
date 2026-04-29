@@ -136,7 +136,7 @@ export default function DiasporaPage() {
           value={metrics.credibility?.score || 'N/A'}
           previousValue={(metrics.credibility?.score || 74) - 2}
           icon={<Shield className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
         <MetricCard
           title="UAE Relevance"

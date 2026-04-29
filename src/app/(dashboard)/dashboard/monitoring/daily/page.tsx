@@ -63,7 +63,7 @@ import {
   mediaFreeZones,
   keyMediaEvents,
   officialMediaSources,
-  leadershipFigures,
+  md12LeadershipFigures,
   anomalyDetectionMethodologies,
   crisisDetectionCategories,
   crisisCommunicationTools,
@@ -75,19 +75,19 @@ import {
   monitoringCadence,
   keyMetricsCategories,
   alertTierSystem,
-  governmentEntities,
+  md12GovernmentEntities,
   technologyPlatforms,
   crisisToolsRegistry,
   sentimentAnalysisMatrix,
-  uaeRelevanceAssessment,
-  sourceCredibilityMatrix,
+  md12RelevanceAssessment,
+  md12CredibilityMatrix,
   quantitativeMetrics,
   qualitativeInsights,
   sourcesIndex,
   dashboardKpiTables,
   dailyMonitoringPhases,
   geopoliticalRiskFramework,
-} from '@/lib/data-loader/monitoring-data'
+} from '@/lib/data-loader'
 
 // Animation variants
 const fadeInUp = {
@@ -114,7 +114,7 @@ export default function DailyMonitoringPage() {
   const summaryMetrics = [
     { title: 'Daily Queries', value: '300,000', icon: <Zap className="h-6 w-6" />, gradient: 'gold' as const },
     { title: 'Data Sources', value: '18', icon: <Globe className="h-6 w-6" />, gradient: 'emerald' as const },
-    { title: 'Languages', value: wamData.languagesSupported, icon: <Globe2 className="h-6 w-6" />, gradient: 'navy' as const },
+    { title: 'Languages', value: wamData.languagesSupported, icon: <Globe2 className="h-6 w-6" />, gradient: 'indigo' as const },
     { title: 'Crisis Categories', value: crisisDetectionCategories.length, icon: <AlertOctagon className="h-6 w-6" />, gradient: 'rose' as const },
   ]
 
@@ -127,16 +127,28 @@ export default function DailyMonitoringPage() {
   ]
 
   // 1B Followers Summit stats
-  const summitStats = keyMediaEvents[1]?.statistics || {
-    totalParticipants: 7000,
-    contentCreators: '3,000+',
-    combinedFollowers: '1.6 billion+',
-    mediaCompanies: 200,
-    ceoAttendees: 100,
-    speakers: 190,
-    totalEvents: '100+',
-    panelDiscussions: 25,
-  }
+  const rawSummitStats = keyMediaEvents[1]?.statistics
+  const summitStats = typeof rawSummitStats === 'object' && rawSummitStats !== null
+    ? rawSummitStats as {
+        totalParticipants: number
+        contentCreators: string
+        combinedFollowers: string
+        mediaCompanies: number
+        ceoAttendees: number
+        speakers: number
+        totalEvents: string
+        panelDiscussions: number
+      }
+    : {
+        totalParticipants: 7000,
+        contentCreators: '3,000+',
+        combinedFollowers: '1.6 billion+',
+        mediaCompanies: 200,
+        ceoAttendees: 100,
+        speakers: 190,
+        totalEvents: '100+',
+        panelDiscussions: 25,
+      }
 
   // LinkedIn metrics
   const linkedInMetrics = [
@@ -326,7 +338,7 @@ export default function DailyMonitoringPage() {
               <CardContent>
                 <ScrollArea className="h-[180px]">
                   <div className="space-y-2">
-                    {leadershipFigures.map((leader, idx) => (
+                    {md12LeadershipFigures.map((leader, idx) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, x: -10 }}
@@ -437,7 +449,7 @@ export default function DailyMonitoringPage() {
             <CardContent>
               <ScrollArea className="h-[250px]">
                 <div className="space-y-3">
-                  {sourceCredibilityMatrix.map((tier, idx) => (
+                  {md12CredibilityMatrix.map((tier, idx) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, x: -20 }}
@@ -549,7 +561,7 @@ export default function DailyMonitoringPage() {
                   Royal/Leadership Mention Queries
                 </h4>
                 <div className="grid gap-2 sm:grid-cols-3 lg:grid-cols-5">
-                  {leadershipFigures.slice(0, 5).map((leader, idx) => (
+                  {md12LeadershipFigures.slice(0, 5).map((leader, idx) => (
                     <div key={idx} className="p-2 rounded-lg border border-slate-700/50 bg-slate-800/30">
                       <div className="text-xs text-slate-400">{leader.position}</div>
                       <div className="text-xs font-medium text-slate-200 truncate">{leader.figure.split(' ').slice(-2).join(' ')}</div>
@@ -850,7 +862,7 @@ export default function DailyMonitoringPage() {
                 <div>
                   <h4 className="text-sm font-semibold text-slate-300 mb-3">Government Entities</h4>
                   <div className="space-y-2">
-                    {governmentEntities.slice(0, 5).map((entity, idx) => (
+                    {md12GovernmentEntities.slice(0, 5).map((entity, idx) => (
                       <div key={idx} className="flex items-center justify-between p-2 rounded-lg bg-slate-800/30 border border-slate-700/50">
                         <span className="text-xs text-slate-200">{entity.entity}</span>
                         <Badge variant="gold" className="text-xs">{entity.credibility}</Badge>
@@ -1446,7 +1458,7 @@ export default function DailyMonitoringPage() {
             <CardContent>
               <ScrollArea className="h-[250px]">
                 <div className="space-y-2">
-                  {uaeRelevanceAssessment.map((assessment, idx) => (
+                  {md12RelevanceAssessment.map((assessment, idx) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, x: -10 }}

@@ -255,7 +255,7 @@ export default function InfluencersPage() {
           value="12"
           previousValue={8}
           icon={<Shield className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="warning"
         />
       </div>

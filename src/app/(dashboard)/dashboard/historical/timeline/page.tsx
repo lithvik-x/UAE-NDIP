@@ -218,7 +218,7 @@ export default function HistoricalTimelinePage() {
           value="28"
           previousValue={25}
           icon={<Calendar className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="success"
         />
         <MetricCard
@@ -507,7 +507,7 @@ export default function HistoricalTimelinePage() {
                   title="Total Events"
                   value={eventSummary.totalEvents}
                   icon={<Calendar className="h-5 w-5" />}
-                  gradient="platinum"
+                  gradient="indigo"
                 />
                 <MetricCard
                   title="Entities"

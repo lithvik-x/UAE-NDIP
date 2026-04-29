@@ -157,7 +157,7 @@ export default function RegionalInstabilityPage() {
           value="42/100"
           previousValue="48/100"
           icon={<TrendingUp className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="success"
         />
       </div>

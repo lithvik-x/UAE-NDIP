@@ -169,7 +169,7 @@ export default function GlobalPerceptionPage() {
           value={68}
           previousValue={65}
           icon={<Star className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="success"
         />
       </div>

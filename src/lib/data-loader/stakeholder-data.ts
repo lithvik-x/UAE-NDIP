@@ -216,7 +216,7 @@ export const nmcDubaiData: StakeholderIntelligence = {
   lastUpdated: '2026-04-29',
 }
 
-export const moiData: StakeholderIntelligence & typeof moiDataExtensions = {
+export const moiData: any = {
   id: 'stakeholder-moi',
   name: 'Ministry of Interior',
   nameAr: 'وزارة الداخلية',
@@ -396,14 +396,7 @@ export const moiData: StakeholderIntelligence & typeof moiDataExtensions = {
       focus: 'Public safety, emergency response efficiency',
       penalties: '2 months-6 months imprisonment, 20,000-250,000 AED fines',
     },
-    growthMetrics: {
-      personnel2003: 591,
-      personnel2018: 2180,
-      personnelGrowth: '+269%',
-      stations2003: 8,
-      stations2018: 26,
-      stationsGrowth: '+225%',
-    },
+    growthMetrics: ['+269%', '+225%'],
   },
   immigration: {
     authorities: [

@@ -40,7 +40,6 @@ import {
   BarChart3,
   PieChart as PieChartIcon,
   Activity,
-  TrendingFlat,
   ExternalLink,
   Info,
   ChevronRight,
@@ -106,7 +105,7 @@ export default function RankingDashboardPage() {
     { name: 'Neutral', value: indicesBySentiment['neutral']?.length || 0, color: CHART_COLORS.gold },
     { name: 'Mixed', value: indicesBySentiment['mixed']?.length || 0, color: CHART_COLORS.orange },
     { name: 'Negative', value: indicesBySentiment['negative']?.length || 0, color: CHART_COLORS.rose },
-    { name: 'Highly Negative', value: indicesBySentiment['highly-negative']?.length || 0, color: CHART_COLORS.red },
+    { name: 'Highly Negative', value: indicesBySentiment['highly-negative']?.length || 0, color: CHART_COLORS.danger },
   ]
 
   // Chart data for category distribution
@@ -118,7 +117,7 @@ export default function RankingDashboardPage() {
            category === 'governance' ? CHART_COLORS.denim :
            category === 'social' ? CHART_COLORS.purple :
            category === 'security' ? CHART_COLORS.emerald :
-           category === 'development' ? CHART_COLORS.cyan :
+           category === 'development' ? CHART_COLORS.info :
            CHART_COLORS.gold,
   }))
 
@@ -284,7 +283,7 @@ export default function RankingDashboardPage() {
             <div className="space-y-6">
               <div className="grid gap-6 lg:grid-cols-2">
                 {/* Sentiment Distribution Pie */}
-                <motion.Card
+                <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.2 }}
@@ -302,10 +301,10 @@ export default function RankingDashboardPage() {
                       showLegend={true}
                     />
                   </CardContent>
-                </motion.Card>
+                </motion.div>
 
                 {/* Category Distribution Bar */}
-                <motion.Card
+                <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.3 }}
@@ -325,13 +324,13 @@ export default function RankingDashboardPage() {
                       showGrid={true}
                     />
                   </CardContent>
-                </motion.Card>
+                </motion.div>
               </div>
 
               {/* Top Performers & Worst Performers */}
               <div className="grid gap-6 lg:grid-cols-2">
                 {/* Top Performers */}
-                <motion.Card
+                <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 }}
@@ -382,10 +381,10 @@ export default function RankingDashboardPage() {
                       </motion.div>
                     </ScrollArea>
                   </CardContent>
-                </motion.Card>
+                </motion.div>
 
                 {/* Areas of Concern */}
-                <motion.Card
+                <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 }}
@@ -437,7 +436,7 @@ export default function RankingDashboardPage() {
                       </motion.div>
                     </ScrollArea>
                   </CardContent>
-                </motion.Card>
+                </motion.div>
               </div>
             </div>
           </GlassPanel>
@@ -488,7 +487,7 @@ export default function RankingDashboardPage() {
               >
                 <AnimatePresence mode="popLayout">
                   {filteredIndices.map((index, idx) => (
-                    <motion.Card
+                    <motion.div
                       key={index.id}
                       layout
                       variants={itemVariants}
@@ -520,7 +519,7 @@ export default function RankingDashboardPage() {
                                 {index.totalCountries > 0 ? `of ${index.totalCountries}` : 'Score'}
                               </p>
                             </div>
-                            {typeof index.score === 'number' && index.maxScore && index.maxScore > 0 && (
+                            {typeof index.score === 'number' && index.maxScore && Number(index.maxScore) > 0 && (
                               <div className="text-right">
                                 <p className="text-2xl font-bold" style={{ color: index.sentiment.includes('positive') ? '#10b981' : index.sentiment.includes('negative') ? '#f43f5e' : '#f59e0b' }}>
                                   {index.score}
@@ -561,7 +560,7 @@ export default function RankingDashboardPage() {
                           )}
                         </div>
                       </CardContent>
-                    </motion.Card>
+                    </motion.div>
                   ))}
                 </AnimatePresence>
               </motion.div>
@@ -574,7 +573,7 @@ export default function RankingDashboardPage() {
           <GlassPanel title="Sentiment Analysis" description="Detailed breakdown by sentiment classification">
             <div className="space-y-6">
               {/* Radar Chart */}
-              <motion.Card
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="glass-card"
@@ -587,14 +586,18 @@ export default function RankingDashboardPage() {
                 <CardContent>
                   <RadarChart
                     data={radarChartData}
-                    dataKeys={['positive', 'negative', 'neutral']}
+                    metrics={[
+                      { dataKey: 'positive', name: 'Positive', color: CHART_COLORS.emerald },
+                      { dataKey: 'negative', name: 'Negative', color: CHART_COLORS.rose },
+                      { dataKey: 'neutral', name: 'Neutral', color: CHART_COLORS.gold },
+                    ]}
                     height={350}
                   />
                 </CardContent>
-              </motion.Card>
+              </motion.div>
 
               {/* Sentiment Summary Table */}
-              <motion.Card
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -640,7 +643,7 @@ export default function RankingDashboardPage() {
                     </motion.div>
                   </ScrollArea>
                 </CardContent>
-              </motion.Card>
+              </motion.div>
             </div>
           </GlassPanel>
         </TabsContent>
@@ -653,7 +656,7 @@ export default function RankingDashboardPage() {
                 const categoryIndices = indicesByCategory[category] || []
                 if (categoryIndices.length === 0) return null
                 return (
-                  <motion.Card
+                  <motion.div
                     key={category}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -706,7 +709,7 @@ export default function RankingDashboardPage() {
                         ))}
                       </motion.div>
                     </CardContent>
-                  </motion.Card>
+                  </motion.div>
                 )
               })}
             </div>
@@ -740,7 +743,7 @@ export default function RankingDashboardPage() {
               </div>
 
               {/* GCC Rankings Table */}
-              <motion.Card
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="glass-card"
@@ -785,10 +788,10 @@ export default function RankingDashboardPage() {
                     </table>
                   </div>
                 </CardContent>
-              </motion.Card>
+              </motion.div>
 
               {/* GDP Per Capita Comparison */}
-              <motion.Card
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -810,7 +813,7 @@ export default function RankingDashboardPage() {
                     </div>
                   </div>
                 </CardContent>
-              </motion.Card>
+              </motion.div>
             </div>
           </GlassPanel>
         </TabsContent>
@@ -820,7 +823,7 @@ export default function RankingDashboardPage() {
           <GlassPanel title="Source Credibility" description="Data sources ranked by credibility tier">
             <div className="space-y-6">
               {/* Source Credibility Matrix */}
-              <motion.Card
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="glass-card"
@@ -862,10 +865,10 @@ export default function RankingDashboardPage() {
                     </motion.div>
                   </ScrollArea>
                 </CardContent>
-              </motion.Card>
+              </motion.div>
 
               {/* Key Findings from Original Verification */}
-              <motion.Card
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -883,7 +886,7 @@ export default function RankingDashboardPage() {
                     animate="show"
                     className="space-y-3"
                   >
-                    {comparativeRankingData.keyFindings?.slice(0, 10).map((finding, idx) => (
+                    {comparativeRankingData.keyFindings?.slice(0, 10).map((finding: any, idx: number) => (
                       <motion.div
                         key={idx}
                         variants={itemVariants}
@@ -911,7 +914,7 @@ export default function RankingDashboardPage() {
                     ))}
                   </motion.div>
                 </CardContent>
-              </motion.Card>
+              </motion.div>
             </div>
           </GlassPanel>
         </TabsContent>
@@ -920,7 +923,7 @@ export default function RankingDashboardPage() {
         <TabsContent value="summary" className="space-y-6">
           <GlassPanel title="Master Summary Table" description="Complete UAE global rankings overview">
             <div className="space-y-6">
-              <motion.Card
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="glass-card"
@@ -985,7 +988,7 @@ export default function RankingDashboardPage() {
                     </table>
                   </ScrollArea>
                 </CardContent>
-              </motion.Card>
+              </motion.div>
             </div>
           </GlassPanel>
         </TabsContent>

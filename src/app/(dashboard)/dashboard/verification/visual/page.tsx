@@ -180,7 +180,7 @@ export default function VisualMultimediaPage() {
           title="Sources Rated"
           value={meta.sourcesCredibilityRated}
           icon={<Shield className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
       </div>
 
@@ -724,7 +724,7 @@ export default function VisualMultimediaPage() {
                   title="Weather Stations"
                   value={extended.cloudSeedingData.weatherStations.toString()}
                   icon={<Cloud className="h-6 w-6" />}
-                  gradient="platinum"
+                  gradient="indigo"
                 />
               </div>
 
@@ -819,7 +819,7 @@ export default function VisualMultimediaPage() {
                     bars={[
                       { dataKey: 'positive', name: 'Positive', color: CHART_COLORS.emerald },
                       { dataKey: 'negative', name: 'Negative', color: CHART_COLORS.rose },
-                      { dataKey: 'neutral', name: 'Neutral', color: CHART_COLORS.slate },
+                      { dataKey: 'neutral', name: 'Neutral', color: CHART_COLORS.platinum },
                     ]}
                     height={300}
                     showGrid={true}

@@ -62,10 +62,10 @@ import {
 interface MotionCardProps {
   children: React.ReactNode
   className?: string
-  initial?: object
-  animate?: object
-  transition?: object
-  whileHover?: object
+  initial?: any
+  animate?: any
+  transition?: any
+  whileHover?: any
 }
 
 function MotionCard({ children, className, initial, animate, transition, whileHover }: MotionCardProps) {
@@ -463,7 +463,7 @@ export default function RedditPage() {
           value={users?.toLocaleString() || '450,000'}
           previousValue={(users || 450000) - 25000}
           icon={<Users className="h-5 w-5" />}
-          gradient="platinum"
+          gradient="indigo"
           status="info"
         />
         <MetricCard
@@ -788,18 +788,18 @@ export default function RedditPage() {
                       <CardHeader className="pb-2">
                         <CardTitle className="text-base text-slate-200">{narrative.topic}</CardTitle>
                         <Badge
-                          variant={narrative.sentiment === 'Positive' ? 'default' : narrative.sentiment === 'Negative' ? 'destructive' : 'secondary'}
-                          className={`w-fit ${narrative.sentiment === 'Positive' ? 'bg-emerald-500/20 text-emerald-400' : narrative.sentiment === 'Negative' ? 'bg-rose-500/20 text-rose-400' : ''}`}
+                          variant={narrative.sentiment === 'positive' ? 'default' : narrative.sentiment === 'negative' ? 'destructive' : 'secondary'}
+                          className={`w-fit ${narrative.sentiment === 'positive' ? 'bg-emerald-500/20 text-emerald-400' : narrative.sentiment === 'negative' ? 'bg-rose-500/20 text-rose-400' : ''}`}
                         >
                           {narrative.sentiment}
                         </Badge>
                       </CardHeader>
                       <CardContent>
                         <p className="text-slate-300 text-sm">{narrative.narrative}</p>
-                        <Progress value={narrative.prevalence} className="mt-3 h-1" />
+                        <Progress value={typeof narrative.prevalence === 'number' ? narrative.prevalence : 50} className="mt-3 h-1" />
                         <div className="mt-2 flex items-center justify-between text-xs text-slate-400">
                           <span>{narrative.prevalence}% prevalence</span>
-                          <span>{narrative.sources}</span>
+                          <span>{narrative.source}</span>
                         </div>
                       </CardContent>
                     </MotionCard>
@@ -950,21 +950,21 @@ export default function RedditPage() {
                   value="Up to 50%"
                   icon={<TrendingDown className="h-5 w-5" />}
                   gradient="rose"
-                  status="critical"
+                  status="error"
                 />
                 <MetricCard
                   title="Rent Increases"
                   value="15-20%"
                   icon={<Home className="h-5 w-5" />}
-                  gradient="amber"
-                  status="critical"
+                  gradient="orange"
+                  status="error"
                 />
                 <MetricCard
                   title="Property Crash"
                   value="-43.5%"
                   icon={<Building2 className="h-5 w-5" />}
                   gradient="red"
-                  status="critical"
+                  status="error"
                 />
                 <MetricCard
                   title="Sectors Affected"

@@ -162,7 +162,7 @@ export default function ModernizationPage() {
               title="Dubai Metro Cost"
               value="$4.2B"
               icon={<TrendingUp className="h-6 w-6" />}
-              gradient="platinum"
+              gradient="indigo"
             />
             <MetricCard
               title="Debt Crisis"
@@ -191,7 +191,7 @@ export default function ModernizationPage() {
               title="Milestones"
               value={data.nationBuildingMilestones?.length || 0}
               icon={<TrendingUp className="h-6 w-6" />}
-              gradient="platinum"
+              gradient="indigo"
             />
             <MetricCard
               title="Credibility"

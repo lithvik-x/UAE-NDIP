@@ -46,8 +46,8 @@ import {
 } from 'lucide-react'
 import {
   factCheckVerificationData,
-  type VerificationResult,
 } from '@/lib/data-loader/verification-data'
+import type { VerificationResult } from '@/lib/data-loader'
 
 // ============================================================================
 // ENHANCEMENT CYCLE A: Header & Key Metrics
@@ -56,7 +56,7 @@ import {
 export default function FactCheckDashboardPage() {
   const [selectedTab, setSelectedTab] = useState<string>('overview')
 
-  const data = factCheckVerificationData.extendedData
+  const data = factCheckVerificationData.extendedData as any
 
   // Get alert color for status
   const getAlertBadge = (status: string) => {
@@ -87,7 +87,7 @@ export default function FactCheckDashboardPage() {
   }
 
   // KPI metrics from extended data
-  const criticalKPIs = data.kpis?.filter(k => k.uaeRelevance === 'Critical') || []
+  const criticalKPIs = data.kpis?.filter((k: any) => k.uaeRelevance === 'Critical') || []
   const enforcementActions = data.enforcementActions || []
   const miscaptionedVideos = data.miscaptionedVideos || []
   const aiContentCases = data.aiContentCases || []
@@ -102,10 +102,10 @@ export default function FactCheckDashboardPage() {
 
   // Verdict distribution for fact-checks
   const verdictCounts = {
-    verified: factCheckCases.filter(c => c.verdict === 'TRUE' || c.verdict === 'VERIFIED').length,
-    false: factCheckCases.filter(c => c.verdict === 'FALSE' || c.verdict === 'FAKE').length,
-    misleading: factCheckCases.filter(c => c.verdict === 'MISLEADING').length,
-    unverified: factCheckCases.filter(c => c.verdict === 'UNVERIFIED' || c.verdict === 'Not Rated').length,
+    verified: factCheckCases.filter((c: any) => c.verdict === 'TRUE' || c.verdict === 'VERIFIED').length,
+    false: factCheckCases.filter((c: any) => c.verdict === 'FALSE' || c.verdict === 'FAKE').length,
+    misleading: factCheckCases.filter((c: any) => c.verdict === 'MISLEADING').length,
+    unverified: factCheckCases.filter((c: any) => c.verdict === 'UNVERIFIED' || c.verdict === 'Not Rated').length,
   }
 
   return (
@@ -147,28 +147,28 @@ export default function FactCheckDashboardPage() {
       >
         <MetricCard
           title="Miscaptioned Videos"
-          value={data.kpis?.find(k => k.kpi.includes('Miscaptioned'))?.value || '15+'}
+          value={data.kpis?.find((k: any) => k.kpi.includes('Miscaptioned'))?.value || '15+'}
           icon={<Video className="h-6 w-6" />}
           gradient="rose"
           status="error"
         />
         <MetricCard
           title="AI Images Detected"
-          value={data.kpis?.find(k => k.kpi.includes('AI-Generated'))?.value || '8+'}
+          value={data.kpis?.find((k: any) => k.kpi.includes('AI-Generated'))?.value || '8+'}
           icon={<Eye className="h-6 w-6" />}
           gradient="orange"
           status="warning"
         />
         <MetricCard
           title="Prison Term (Standard)"
-          value={data.kpis?.find(k => k.kpi.includes('Prison Term') && k.kpi.includes('Standard'))?.value || '1+ year'}
+          value={data.kpis?.find((k: any) => k.kpi.includes('Prison Term') && k.kpi.includes('Standard'))?.value || '1+ year'}
           icon={<Gavel className="h-6 w-6" />}
           gradient="denim"
           status="info"
         />
         <MetricCard
           title="Arrests (March 2026)"
-          value={data.kpis?.find(k => k.kpi.includes('Arrested'))?.value || '70'}
+          value={data.kpis?.find((k: any) => k.kpi.includes('Arrested'))?.value || '70'}
           icon={<Users className="h-6 w-6" />}
           gradient="purple"
           status="error"
@@ -202,7 +202,7 @@ export default function FactCheckDashboardPage() {
             <div className="space-y-6">
               <div className="grid gap-6 lg:grid-cols-2">
                 {/* Verdict Distribution */}
-                <motion.Card
+                <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.2 }}
@@ -231,10 +231,10 @@ export default function FactCheckDashboardPage() {
                       </div>
                     </div>
                   </CardContent>
-                </motion.Card>
+                </motion.div>
 
                 {/* Government Organizations */}
-                <motion.Card
+                <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.3 }}
@@ -248,7 +248,7 @@ export default function FactCheckDashboardPage() {
                   <CardContent>
                     <ScrollArea className="h-[180px]">
                       <div className="space-y-3">
-                        {governmentOrgs.slice(0, 6).map((org, idx) => (
+                        {governmentOrgs.slice(0, 6).map((org: any, idx: number) => (
                           <motion.div
                             key={org.acronym}
                             initial={{ opacity: 0, x: -10 }}
@@ -273,13 +273,13 @@ export default function FactCheckDashboardPage() {
                       </div>
                     </ScrollArea>
                   </CardContent>
-                </motion.Card>
+                </motion.div>
               </div>
 
               {/* Key Findings */}
               <div className="grid gap-6 lg:grid-cols-2">
                 {/* Top Miscaptioned Videos */}
-                <motion.Card
+                <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 }}
@@ -296,7 +296,7 @@ export default function FactCheckDashboardPage() {
                   <CardContent>
                     <ScrollArea className="h-[300px]">
                       <div className="space-y-3">
-                        {miscaptionedVideos.slice(0, 6).map((video, idx) => (
+                        {miscaptionedVideos.slice(0, 6).map((video: any, idx: number) => (
                           <motion.div
                             key={idx}
                             initial={{ opacity: 0, x: -10 }}
@@ -317,10 +317,10 @@ export default function FactCheckDashboardPage() {
                       </div>
                     </ScrollArea>
                   </CardContent>
-                </motion.Card>
+                </motion.div>
 
                 {/* AI Content Cases */}
-                <motion.Card
+                <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 }}
@@ -337,7 +337,7 @@ export default function FactCheckDashboardPage() {
                   <CardContent>
                     <ScrollArea className="h-[300px]">
                       <div className="space-y-3">
-                        {aiContentCases.slice(0, 6).map((aiCase, idx) => (
+                        {aiContentCases.slice(0, 6).map((aiCase: any, idx: number) => (
                           <motion.div
                             key={idx}
                             initial={{ opacity: 0, x: 10 }}
@@ -358,7 +358,7 @@ export default function FactCheckDashboardPage() {
                       </div>
                     </ScrollArea>
                   </CardContent>
-                </motion.Card>
+                </motion.div>
               </div>
             </div>
           </GlassPanel>
@@ -370,8 +370,8 @@ export default function FactCheckDashboardPage() {
         <TabsContent value="cases" className="space-y-6">
           <GlassPanel title="Fact-Check Cases" description="Detailed breakdown of verified misinformation cases">
             <div className="space-y-6">
-              {factCheckCases.map((factCase, idx) => (
-                <motion.Card
+              {factCheckCases.map((factCase: any, idx: number) => (
+                <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -405,7 +405,7 @@ export default function FactCheckDashboardPage() {
                       </div>
                     </div>
                   </CardContent>
-                </motion.Card>
+                </motion.div>
               ))}
             </div>
           </GlassPanel>
@@ -419,7 +419,7 @@ export default function FactCheckDashboardPage() {
             <div className="space-y-6">
               <div className="grid gap-6 lg:grid-cols-2">
                 {/* AI Cases */}
-                <motion.Card
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="glass-card"
@@ -431,7 +431,7 @@ export default function FactCheckDashboardPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      {aiContentCases.map((aiCase, idx) => (
+                      {aiContentCases.map((aiCase: any, idx: number) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: -10 }}
@@ -448,10 +448,10 @@ export default function FactCheckDashboardPage() {
                       ))}
                     </div>
                   </CardContent>
-                </motion.Card>
+                </motion.div>
 
                 {/* Deepfake Risks */}
-                <motion.Card
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
@@ -464,7 +464,7 @@ export default function FactCheckDashboardPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      {deepfakeRisks.map((risk, idx) => (
+                      {deepfakeRisks.map((risk: any, idx: number) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: 10 }}
@@ -478,7 +478,7 @@ export default function FactCheckDashboardPage() {
                       ))}
                     </div>
                   </CardContent>
-                </motion.Card>
+                </motion.div>
               </div>
             </div>
           </GlassPanel>
@@ -491,7 +491,7 @@ export default function FactCheckDashboardPage() {
           <GlassPanel title="Legal Framework" description="UAE cybercrime laws and penalties for misinformation">
             <div className="space-y-6">
               {/* Legal Penalties */}
-              <motion.Card
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="glass-card"
@@ -503,7 +503,7 @@ export default function FactCheckDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    {legalPenalties.map((penalty, idx) => (
+                    {legalPenalties.map((penalty: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, x: -10 }}
@@ -529,10 +529,10 @@ export default function FactCheckDashboardPage() {
                     ))}
                   </div>
                 </CardContent>
-              </motion.Card>
+              </motion.div>
 
               {/* Detection Methods */}
-              <motion.Card
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -545,7 +545,7 @@ export default function FactCheckDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                    {data.detectionMethods?.map((method, idx) => (
+                    {data.detectionMethods?.map((method: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -560,7 +560,7 @@ export default function FactCheckDashboardPage() {
                     ))}
                   </div>
                 </CardContent>
-              </motion.Card>
+              </motion.div>
             </div>
           </GlassPanel>
         </TabsContent>
@@ -570,8 +570,8 @@ export default function FactCheckDashboardPage() {
             <div className="space-y-6">
               {/* Enforcement Stats */}
               <div className="grid gap-4 sm:grid-cols-2">
-                {enforcementActions.map((action, idx) => (
-                  <motion.Card
+                {enforcementActions.map((action: any, idx: number) => (
+                  <motion.div
                     key={idx}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -592,12 +592,12 @@ export default function FactCheckDashboardPage() {
                         <Badge variant="destructive" className="text-xs">ARREST</Badge>
                       </div>
                     </CardContent>
-                  </motion.Card>
+                  </motion.div>
                 ))}
               </div>
 
               {/* Incident Restrictions */}
-              <motion.Card
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -610,7 +610,7 @@ export default function FactCheckDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    {data.incidentRestrictions?.map((restriction, idx) => (
+                    {data.incidentRestrictions?.map((restriction: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, y: 10 }}
@@ -625,7 +625,7 @@ export default function FactCheckDashboardPage() {
                     ))}
                   </div>
                 </CardContent>
-              </motion.Card>
+              </motion.div>
             </div>
           </GlassPanel>
         </TabsContent>
@@ -636,8 +636,8 @@ export default function FactCheckDashboardPage() {
         <TabsContent value="experts" className="space-y-6">
           <GlassPanel title="Expert Insights" description="Quotes from industry experts on misinformation">
             <div className="space-y-6">
-              {expertQuotes.map((quote, idx) => (
-                <motion.Card
+              {expertQuotes.map((quote: any, idx: number) => (
+                <motion.div
                   key={idx}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -656,7 +656,7 @@ export default function FactCheckDashboardPage() {
                       <Badge variant="outline" className="text-xs">{quote.context}</Badge>
                     </div>
                   </CardContent>
-                </motion.Card>
+                </motion.div>
               ))}
             </div>
           </GlassPanel>
@@ -666,7 +666,7 @@ export default function FactCheckDashboardPage() {
           <GlassPanel title="Source Credibility" description="Fact-check organizations and their reliability">
             <div className="space-y-6">
               {/* Fact-Check Organizations */}
-              <motion.Card
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="glass-card"
@@ -679,7 +679,7 @@ export default function FactCheckDashboardPage() {
                 <CardContent>
                   <ScrollArea className="h-[400px]">
                     <div className="space-y-4">
-                      {factCheckOrgs.map((org, idx) => (
+                      {factCheckOrgs.map((org: any, idx: number) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: -10 }}
@@ -702,10 +702,10 @@ export default function FactCheckDashboardPage() {
                     </div>
                   </ScrollArea>
                 </CardContent>
-              </motion.Card>
+              </motion.div>
 
               {/* Source Credibility Matrix */}
-              <motion.Card
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -719,7 +719,7 @@ export default function FactCheckDashboardPage() {
                 <CardContent>
                   <ScrollArea className="h-[400px]">
                     <div className="space-y-4">
-                      {sourceCredibilityMatrix.slice(0, 10).map((source, idx) => (
+                      {sourceCredibilityMatrix.slice(0, 10).map((source: any, idx: number) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: 10 }}
@@ -753,7 +753,7 @@ export default function FactCheckDashboardPage() {
                     </div>
                   </ScrollArea>
                 </CardContent>
-              </motion.Card>
+              </motion.div>
             </div>
           </GlassPanel>
         </TabsContent>

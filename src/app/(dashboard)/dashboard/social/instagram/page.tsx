@@ -474,7 +474,7 @@ export default function InstagramVisualPlatformsPage() {
                 <AreaChart
                   data={userGrowthChartData}
                   xAxisKey="name"
-                  bars={[{ dataKey: 'users', name: 'Users (M)', color: CHART_COLORS.purple }]}
+                  areas={[{ dataKey: 'users', name: 'Users (M)', color: CHART_COLORS.purple }]}
                   height={220}
                   showGrid={true}
                   showLegend={false}
@@ -486,10 +486,10 @@ export default function InstagramVisualPlatformsPage() {
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <h3 className="text-lg font-semibold text-white">Sentiment Analysis</h3>
-                    <p className="text-sm text-platinum/60">Overall: {metrics.sentiment.overall} (Score: {metrics.sentiment.score})</p>
+                    <p className="text-sm text-platinum/60">Overall: {metrics.sentiment.overall} (Score: {metrics.sentiment.overall})</p>
                   </div>
                   <Badge variant="outline" className="border-purple-500/30 text-purple-400">
-                    {metrics.sentiment.score}/100
+                    {metrics.sentiment.overall}/100
                   </Badge>
                 </div>
                 <PieChart
@@ -865,7 +865,7 @@ export default function InstagramVisualPlatformsPage() {
                             )}
                           </div>
                           <Badge variant="outline" className="text-xs mt-1 border-blue-500/30 text-blue-300">
-                            {account.type || 'Government'}
+                            {account.platform || 'Government'}
                           </Badge>
                         </div>
                       </div>
@@ -1289,7 +1289,7 @@ export default function InstagramVisualPlatformsPage() {
         <TabsContent value="narratives" className="space-y-6">
           <GlassPanel title="Key Narratives" description="Dominant narratives on UAE Instagram">
             <div className="space-y-6">
-              {data.keyNarratives?.map((narrative: { topic: string; narrative: string; prevalence: number; sentiment: string; source: string }, idx: number) => (
+              {data.keyNarratives?.map((narrative, idx: number) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
@@ -1302,8 +1302,8 @@ export default function InstagramVisualPlatformsPage() {
                         <CardTitle className="text-lg">{narrative.topic}</CardTitle>
                         <div className="flex items-center gap-2">
                           <Badge variant={
-                            narrative.sentiment === 'Positive' ? 'default' :
-                            narrative.sentiment === 'Negative' ? 'destructive' : 'outline'
+                            narrative.sentiment === 'positive' ? 'default' :
+                            narrative.sentiment === 'negative' ? 'destructive' : 'outline'
                           }>
                             {narrative.sentiment}
                           </Badge>
@@ -1323,7 +1323,7 @@ export default function InstagramVisualPlatformsPage() {
                           </Badge>
                         </div>
                       </div>
-                      <Progress value={narrative.prevalence} className="mt-4 h-2" />
+                      <Progress value={typeof narrative.prevalence === 'number' ? narrative.prevalence : 50} className="mt-4 h-2" />
                     </CardContent>
                   </Card>
                 </motion.div>

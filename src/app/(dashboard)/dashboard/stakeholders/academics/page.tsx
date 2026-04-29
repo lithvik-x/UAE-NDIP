@@ -122,7 +122,7 @@ export default function AcademicsPage() {
           title="Digital Reach"
           value={metrics.digitalReach?.toLocaleString() || 'N/A'}
           icon={<Globe className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="info"
         />
         <MetricCard

@@ -18,6 +18,7 @@ import {
   RadarChart,
   CHART_COLORS,
 } from '@/components/ui/chart-library'
+import { ChartPie } from 'lucide-react'
 import {
   AlertCircle,
   AlertTriangle,
@@ -85,11 +86,11 @@ export default function TwitterXAnalysisPage() {
 
   // A. Enhancement Cycle A: Key Metrics from MD File
   const uaeTwitterStats = [
-    { label: 'Internet Users', value: '9.38M', icon: Users, color: CHART_COLORS.info, gradient: 'info' },
-    { label: 'Penetration', value: '99%', icon: Globe, color: CHART_COLORS.emerald, gradient: 'emerald' },
-    { label: 'Bot Activity', value: '91%', icon: Bot, color: CHART_COLORS.rose, gradient: 'rose' },
-    { label: '5G Coverage', value: '94%', icon: Zap, color: CHART_COLORS.gold, gradient: 'gold' },
-    { label: 'Censorship', value: 'Extreme', icon: ShieldAlert, color: CHART_COLORS.rose, gradient: 'rose', status: 'critical' },
+    { label: 'Internet Users', value: '9.38M', icon: Users, color: CHART_COLORS.info, gradient: 'cyan' as const },
+    { label: 'Penetration', value: '99%', icon: Globe, color: CHART_COLORS.emerald, gradient: 'emerald' as const },
+    { label: 'Bot Activity', value: '91%', icon: Bot, color: CHART_COLORS.rose, gradient: 'rose' as const },
+    { label: '5G Coverage', value: '94%', icon: Zap, color: CHART_COLORS.gold, gradient: 'gold' as const },
+    { label: 'Censorship', value: 'Extreme', icon: ShieldAlert, color: CHART_COLORS.rose, gradient: 'rose' as const, status: 'error' as const },
   ]
 
   // A. Enhancement Cycle B: Sentiment & Engagement Data
@@ -134,7 +135,7 @@ export default function TwitterXAnalysisPage() {
   const humanRightsData = humanRightsCases?.map(hc => ({
     name: hc.name,
     sentence: 'sentence' in hc ? hc.sentence : 'N/A',
-    year: 'arrest' in hc ? hc.arrest : 'date' in hc ? new Date(hc.date).getFullYear() : 'N/A',
+    year: 'arrest' in hc ? hc.arrest : 'date' in hc && hc.date ? new Date(hc.date).getFullYear() : 'N/A',
     reason: 'context' in hc ? hc.context : 'charges' in hc ? (hc.charges as string[])[0] : 'N/A',
   })) || []
 
@@ -491,7 +492,7 @@ export default function TwitterXAnalysisPage() {
                   <Card className="glass-card border-glass">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <PieChart className="h-5 w-5 text-info" />
+                        <ChartPie className="h-5 w-5 text-info" />
                         Bot vs Real Activity
                       </CardTitle>
                       <CardDescription>Estimated distribution of authentic vs bot activity</CardDescription>
@@ -781,11 +782,8 @@ export default function TwitterXAnalysisPage() {
               <GlassPanel title="Human Rights Cases" description="Documented cases of censorship and repression">
                 <div className="space-y-6">
                   {humanRightsCases?.map((caseItem, idx) => (
-                    <motion.Card
+                    <Card
                       key={idx}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: idx * 0.1 }}
                       className="glass-card border-rose-500/30 bg-rose-500/5"
                     >
                       <CardHeader>
@@ -835,7 +833,7 @@ export default function TwitterXAnalysisPage() {
                           </blockquote>
                         )}
                       </CardContent>
-                    </motion.Card>
+                    </Card>
                   ))}
                 </div>
               </GlassPanel>

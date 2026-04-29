@@ -39,7 +39,6 @@ export function CuisineSection({ restaurants, culinaryDiversity }: CuisineSectio
     <GlassPanel
       title="Culinary Excellence"
       description="Michelin-starred restaurants and diverse cuisine offerings"
-      icon={<Utensils className="h-5 w-5 text-orange-400" />}
     >
       <div className="space-y-6">
         {/* Michelin Highlights */}

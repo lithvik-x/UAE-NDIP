@@ -166,7 +166,7 @@ export default function LanguagesOverviewPage() {
           value="68%"
           previousValue={65}
           icon={<MessageSquare className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="success"
         />
       </div>
@@ -1260,7 +1260,7 @@ export default function LanguagesOverviewPage() {
                   title="Captives Exchanged"
                   value="6,305"
                   icon={<CheckCircle className="h-5 w-5" />}
-                  gradient="platinum"
+                  gradient="indigo"
                   status="success"
                 />
               </div>
@@ -2064,7 +2064,7 @@ export default function LanguagesOverviewPage() {
                   title="Standards"
                   value="4"
                   icon={<CheckCircle className="h-5 w-5" />}
-                  gradient="platinum"
+                  gradient="indigo"
                   status="success"
                 />
               </div>

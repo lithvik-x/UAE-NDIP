@@ -81,27 +81,27 @@ export default function MediaVerificationPage() {
   const [selectedTab, setSelectedTab] = useState('overview')
 
   const { extendedData } = mediaAboutMediaData
-  const data = extendedData as NonNullable<typeof extendedData>
+  const data = extendedData as any
 
   // Get critical KPIs
-  const criticalKPIs = data.kpis.filter(k => k.uaeRelevance === 'Critical')
-  const highKPIs = data.kpis.filter(k => k.uaeRelevance === 'High')
+  const criticalKPIs = data.kpis.filter((k: any) => k.uaeRelevance === 'Critical')
+  const highKPIs = data.kpis.filter((k: any) => k.uaeRelevance === 'High')
 
   // Chart data for trust metrics
-  const trustChartData = data.audienceTrustMetrics.map(m => ({
+  const trustChartData = data.audienceTrustMetrics.map((m: any) => ({
     name: m.source.split(' ')[0],
     value: parseInt(m.trustLevel.replace('%', '')),
   }))
 
   // Coverage bias chart data
-  const biasChartData = data.coverageBiasPerceptions.map(b => ({
+  const biasChartData = data.coverageBiasPerceptions.map((b: any) => ({
     name: b.metric.split(' ').slice(0, 3).join(' '),
     value: parseInt(b.value.replace('%', '')) || 0,
     sentiment: b.sentiment,
   }))
 
   // Sentiment chart data
-  const sentimentChartData = data.sentimentAnalysis.map(s => ({
+  const sentimentChartData = data.sentimentAnalysis.map((s: any) => ({
     topic: s.topic,
     score: s.score > 0 ? s.score : 0,
     negative: s.score < 0 ? Math.abs(s.score) : 0,
@@ -259,7 +259,7 @@ export default function MediaVerificationPage() {
           value="300,000+"
           icon={<Camera className="h-6 w-6" />}
           gradient="denim"
-          status="critical"
+          status="error"
         />
         <MetricCard
           title="Max Media Fine"
@@ -273,13 +273,13 @@ export default function MediaVerificationPage() {
           value="60-90"
           icon={<UsersRound className="h-6 w-6" />}
           gradient="rose"
-          status="critical"
+          status="error"
         />
         <MetricCard
           title="AI News Trust"
           value="62%"
           icon={<Cpu className="h-6 w-6" />}
-          gradient="info"
+          gradient="cyan"
           status="info"
         />
       </motion.div>
@@ -368,7 +368,7 @@ export default function MediaVerificationPage() {
                 <CardContent>
                   <ScrollArea className="h-[300px]">
                     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                      {data.summaryDataPoints.map((point, idx) => (
+                      {data.summaryDataPoints.map((point: any, idx: any) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, y: 10 }}
@@ -472,7 +472,7 @@ export default function MediaVerificationPage() {
             <CardContent>
               <ScrollArea className="h-[400px]">
                 <div className="space-y-3">
-                  {data.mediaOutletOwnership.map((outlet, idx) => (
+                  {data.mediaOutletOwnership.map((outlet: any, idx: any) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, x: -20 }}
@@ -513,7 +513,7 @@ export default function MediaVerificationPage() {
             </CardHeader>
             <CardContent>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {data.regulatoryBodies.map((body, idx) => (
+                {data.regulatoryBodies.map((body: any, idx: any) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -544,7 +544,7 @@ export default function MediaVerificationPage() {
             <CardContent>
               <ScrollArea className="h-[200px]">
                 <div className="space-y-3">
-                  {data.selfCensorshipDrivers.map((driver, idx) => (
+                  {data.selfCensorshipDrivers.map((driver: any, idx: any) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, x: -20 }}
@@ -570,7 +570,7 @@ export default function MediaVerificationPage() {
             <CardContent>
               <ScrollArea className="h-[300px]">
                 <div className="space-y-3">
-                  {data.journalistRestrictions.map((restriction, idx) => (
+                  {data.journalistRestrictions.map((restriction: any, idx: any) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, x: -20 }}
@@ -604,7 +604,7 @@ export default function MediaVerificationPage() {
             <CardContent>
               <ScrollArea className="h-[300px]">
                 <div className="space-y-3">
-                  {data.legalFramework.map((law, idx) => (
+                  {data.legalFramework.map((law: any, idx: any) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, x: -20 }}
@@ -636,7 +636,7 @@ export default function MediaVerificationPage() {
             </CardHeader>
             <CardContent>
               <div className="grid gap-4 sm:grid-cols-3">
-                {data.surveillanceInfrastructure.map((sys, idx) => (
+                {data.surveillanceInfrastructure.map((sys: any, idx: any) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, y: 20 }}
@@ -674,7 +674,7 @@ export default function MediaVerificationPage() {
             <CardContent>
               <ScrollArea className="h-[200px]">
                 <div className="space-y-3">
-                  {data.spywarePrograms.map((program, idx) => (
+                  {data.spywarePrograms.map((program: any, idx: any) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, x: -20 }}
@@ -707,7 +707,7 @@ export default function MediaVerificationPage() {
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-2">
-                {data.blockedServices.map((service, idx) => (
+                {data.blockedServices.map((service: any, idx: any) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -734,7 +734,7 @@ export default function MediaVerificationPage() {
             </CardHeader>
             <CardContent>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                {data.contentStandards.map((standard, idx) => (
+                {data.contentStandards.map((standard: any, idx: any) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -759,7 +759,7 @@ export default function MediaVerificationPage() {
             </CardHeader>
             <CardContent>
               <div className="grid gap-4 sm:grid-cols-3">
-                {data.penaltyStructure.map((penalty, idx) => (
+                {data.penaltyStructure.map((penalty: any, idx: any) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, y: 20 }}
@@ -787,7 +787,7 @@ export default function MediaVerificationPage() {
             </CardHeader>
             <CardContent>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {data.audienceTrustMetrics.map((metric, idx) => (
+                {data.audienceTrustMetrics.map((metric: any, idx: any) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, y: 20 }}
@@ -814,7 +814,7 @@ export default function MediaVerificationPage() {
             <CardContent>
               <ScrollArea className="h-[250px]">
                 <div className="space-y-3">
-                  {data.coverageBiasPerceptions.map((bias, idx) => (
+                  {data.coverageBiasPerceptions.map((bias: any, idx: any) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, x: -20 }}
@@ -884,7 +884,7 @@ export default function MediaVerificationPage() {
             </CardHeader>
             <CardContent>
               <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-5">
-                {data.blockedServices.map((service, idx) => (
+                {data.blockedServices.map((service: any, idx: any) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -912,7 +912,7 @@ export default function MediaVerificationPage() {
             <CardContent>
               <ScrollArea className="h-[350px]">
                 <div className="space-y-2">
-                  {data.sourceCredibilityMatrix.map((source, idx) => (
+                  {data.sourceCredibilityMatrix.map((source: any, idx: any) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, x: -10 }}
@@ -941,7 +941,7 @@ export default function MediaVerificationPage() {
             <CardContent>
               <ScrollArea className="h-[350px]">
                 <div className="space-y-3">
-                  {data.sentimentAnalysis.map((item, idx) => (
+                  {data.sentimentAnalysis.map((item: any, idx: any) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, y: 10 }}
@@ -969,7 +969,7 @@ export default function MediaVerificationPage() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {data.uaeRelevanceAssessment.map((tier, idx) => (
+                {data.uaeRelevanceAssessment.map((tier: any, idx: any) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, y: 10 }}
@@ -986,7 +986,7 @@ export default function MediaVerificationPage() {
                       </Badge>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      {tier.items.map((item, i) => (
+                      {tier.items.map((item: any, i: any) => (
                         <Badge key={i} variant="outline" className="text-xs bg-slate-700/50">
                           {item}
                         </Badge>
@@ -1007,7 +1007,7 @@ export default function MediaVerificationPage() {
             <CardContent>
               <ScrollArea className="h-[300px]">
                 <div className="space-y-3">
-                  {data.urlContentSummaries.map((url, idx) => (
+                  {data.urlContentSummaries.map((url: any, idx: any) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, x: -10 }}

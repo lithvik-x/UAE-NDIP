@@ -173,7 +173,7 @@ export default function IntlOrgsStakeholdersPage() {
           unit="%"
           icon={<Target className="h-6 w-6" />}
           gradient="emerald"
-          status="critical"
+          status="error"
         />
       </motion.div>
 
@@ -393,7 +393,7 @@ export default function IntlOrgsStakeholdersPage() {
                   date: s.date,
                 }))}
                 xAxisKey="name"
-                bars={[{ dataKey: 'value', name: 'Summit', color: CHART_COLORS.cyan }]}
+                bars={[{ dataKey: 'value', name: 'Summit', color: CHART_COLORS.info }]}
                 height={300}
                 showGrid={true}
               />

@@ -294,7 +294,7 @@ export default function TelegramPage() {
           value={users?.toLocaleString() || '33,624'}
           previousValue={(users || 33624) + 1200}
           icon={<Users className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="info"
         />
         <MetricCard

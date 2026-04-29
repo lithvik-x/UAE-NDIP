@@ -281,7 +281,7 @@ export default function ReligiousStakeholdersPage() {
           value={avgCredibility.toFixed(1)}
           previousValue={avgCredibility - 1.5}
           icon={<Shield className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
         <MetricCard
           title="Avg Engagement"

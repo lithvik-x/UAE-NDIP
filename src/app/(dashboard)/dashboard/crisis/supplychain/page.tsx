@@ -78,7 +78,7 @@ export default function SupplyChainDisruptionsPage() {
   const sentimentData = [
     { name: 'Resilient', value: 38, color: CHART_COLORS.emerald },
     { name: 'Concerned', value: 35, color: CHART_COLORS.gold },
-    { name: 'Neutral', value: 27, color: CHART_COLORS.slate },
+    { name: 'Neutral', value: 27, color: CHART_COLORS.platinum },
   ]
 
   return (
@@ -135,7 +135,7 @@ export default function SupplyChainDisruptionsPage() {
           value="94%"
           previousValue="87%"
           icon={<Globe className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="success"
         />
       </div>

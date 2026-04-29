@@ -114,7 +114,7 @@ export default function SnapchatPage() {
     { platform: 'YouTube', users: platformComparison.youtube, color: CHART_COLORS.rose },
     { platform: 'Instagram', users: platformComparison.instagram, color: CHART_COLORS.purple },
     { platform: 'Snapchat', users: platformComparison.snapchat, color: CHART_COLORS.gold },
-    { platform: 'X', users: platformComparison.x, color: CHART_COLORS.slate },
+    { platform: 'X', users: platformComparison.x, color: CHART_COLORS.platinum },
   ] : []
 
   // Middle East breakdown data
@@ -206,7 +206,7 @@ export default function SnapchatPage() {
           previousValue={(users || 5090000) - 515000}
           unit="users"
           icon={<Users className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="info"
         />
         <MetricCard
@@ -239,7 +239,7 @@ export default function SnapchatPage() {
           title="Daily App Opens"
           value="30+"
           icon={<Smartphone className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="info"
         />
         <MetricCard

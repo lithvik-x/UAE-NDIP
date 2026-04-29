@@ -84,7 +84,7 @@ export default function CrisisTimelinePage() {
 
   // Crisis by type
   const crisisByType = [
-    { type: 'Economic', count: 52, color: CHART_COLORS.yellow },
+    { type: 'Economic', count: 52, color: CHART_COLORS.gold },
     { type: 'Social', count: 48, color: CHART_COLORS.rose },
     { type: 'Geopolitical', count: 32, color: CHART_COLORS.orange },
     { type: 'Public Health', count: 18, color: CHART_COLORS.emerald },
@@ -96,7 +96,7 @@ export default function CrisisTimelinePage() {
   const severityDistribution = [
     { severity: 'Critical', count: 8, color: CHART_COLORS.rose },
     { severity: 'High', count: 35, color: CHART_COLORS.orange },
-    { severity: 'Medium', count: 78, color: CHART_COLORS.yellow },
+    { severity: 'Medium', count: 78, color: CHART_COLORS.gold },
     { severity: 'Low', count: 47, color: CHART_COLORS.emerald },
   ]
 

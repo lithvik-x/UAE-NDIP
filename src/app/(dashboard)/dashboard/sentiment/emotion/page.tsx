@@ -332,7 +332,6 @@ export default function EmotionAnalysisPage() {
                 <GlassPanel
                   title="Data Collection Methodology"
                   description="Research approach and limitations"
-                  icon={<Brain className="h-5 w-5 text-info" />}
                 >
                   <div className="space-y-6">
                     {/* Methodology */}

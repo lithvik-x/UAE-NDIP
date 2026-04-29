@@ -50,14 +50,15 @@ import {
   BookOpen,
   Beaker,
   Lightbulb,
-  AlertGate,
   BarChart3,
   PieChart as PieChartIcon,
   Layers,
   GitCompare,
+  Building2,
 } from 'lucide-react'
 import {
   coordinatedInauthenticData,
+  coordinatedInauthenticExtendedData,
 } from '@/lib/data-loader'
 
 // ============================================================================
@@ -66,10 +67,10 @@ import {
 
 export default function CoordinatedDashboardPage() {
   const [selectedTab, setSelectedTab] = useState<string>('overview')
-  const data = coordinatedInauthenticData
+  const data: any = coordinatedInauthenticExtendedData
 
   // Chart data - Takedown Summary
-  const takedownChartData = data.takedownSummary.map(t => ({
+  const takedownChartData = (data.takedownSummary || []).map((t: any) => ({
     name: t.originCountry,
     value: t.numberOfTakedowns,
     color: t.originCountry === 'UAE' ? CHART_COLORS.gold :
@@ -79,13 +80,13 @@ export default function CoordinatedDashboardPage() {
   }))
 
   // Chart data - AI Operations by Type
-  const aiOpsData = data.aiGeneratedTrends.map(t => ({
+  const aiOpsData = (data.aiGeneratedTrends || []).map((t: any) => ({
     name: t.trend,
     value: t.detectionImpact === 'Critical' ? 3 : 2,
   }))
 
   // Chart data - Platform Comparison
-  const platformComparisonData = data.platformComparisons.map(p => ({
+  const platformComparisonData = (data.platformComparisons || []).map((p: any) => ({
     name: p.platform,
     policy: p.cibPolicyStrength === 'Comprehensive' ? 4 : p.cibPolicyStrength === 'Exists' ? 2 : p.cibPolicyStrength === 'Developing' ? 3 : 2,
     enforcement: p.enforcementRegularity === 'Quarterly reports' ? 4 : p.enforcementRegularity === 'Regular reports' ? 3 : p.enforcementRegularity === 'Incident-based' ? 2 : 1,
@@ -270,7 +271,7 @@ export default function CoordinatedDashboardPage() {
                   <CardContent>
                     <ScrollArea className="h-[280px]">
                       <div className="space-y-3">
-                        {data.kpiData.filter(k => k.uaeRelevance === 'Critical').map((kpi, idx) => (
+                        {data.kpiData.filter((k: any) => k.uaeRelevance === 'Critical').map((kpi: any, idx: number) => (
                           <motion.div
                             key={idx}
                             initial={{ opacity: 0, x: -20 }}
@@ -302,7 +303,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    {data.detectionBranches.map((branch, idx) => (
+                    {data.detectionBranches.map((branch: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, y: 20 }}
@@ -316,7 +317,7 @@ export default function CoordinatedDashboardPage() {
                         </div>
                         <p className="text-sm text-slate-400 mb-2">{branch.purpose}</p>
                         <div className="space-y-1">
-                          {branch.keyIndicators.map((indicator, i) => (
+                          {branch.keyIndicators.map((indicator: any, i: number) => (
                             <p key={i} className="text-xs text-slate-500 flex items-center gap-1">
                               <Check className="h-3 w-3 text-emerald-400" />
                               {indicator}
@@ -337,7 +338,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-2">
-                    {data.behavioralSignatures.map((sig, idx) => (
+                    {data.behavioralSignatures.map((sig: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -366,7 +367,7 @@ export default function CoordinatedDashboardPage() {
         <TabsContent value="definitions" className="space-y-6">
           <GlassPanel title="CIB Definitions" description="Official definitions from leading organizations">
             <div className="space-y-6">
-              {data.definitions.map((def, idx) => (
+              {data.definitions.map((def: any, idx: number) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
@@ -395,7 +396,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {data.characteristics.map((char, idx) => (
+                    {data.characteristics.map((char: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, x: -20 }}
@@ -431,7 +432,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {data.conceptDistinctions.map((concept, idx) => (
+                    {data.conceptDistinctions.map((concept: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, x: -20 }}
@@ -464,7 +465,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    {data.tactics.map((tactic, idx) => (
+                    {data.tactics.map((tactic: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -492,7 +493,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-2">
-                    {data.opSecMeasures.map((opsec, idx) => (
+                    {data.opSecMeasures.map((opsec: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, y: 20 }}
@@ -522,7 +523,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {data.middleEastPatterns.map((pattern, idx) => (
+                    {data.middleEastPatterns.map((pattern: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, x: -20 }}
@@ -557,7 +558,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {data.detectionChallenges.map((challenge, idx) => (
+                    {data.detectionChallenges.map((challenge: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, x: -20 }}
@@ -574,7 +575,7 @@ export default function CoordinatedDashboardPage() {
                             </Badge>
                           </div>
                           <div className="space-y-1">
-                            {challenge.contributingFactors.map((factor, i) => (
+                            {challenge.contributingFactors.map((factor: any, i: number) => (
                               <p key={i} className="text-sm text-slate-400">• {factor}</p>
                             ))}
                           </div>
@@ -593,7 +594,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                    {data.warningSigns.map((sign, idx) => (
+                    {data.warningSigns.map((sign: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -624,7 +625,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {data.redFlags.map((flag, idx) => (
+                    {data.redFlags.map((flag: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, x: -20 }}
@@ -654,7 +655,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-2">
-                    {data.networkIndicators.map((indicator, idx) => (
+                    {data.networkIndicators.map((indicator: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, y: 20 }}
@@ -681,7 +682,7 @@ export default function CoordinatedDashboardPage() {
         <TabsContent value="cases" className="space-y-6">
           <GlassPanel title="Case Studies: Gulf States Operations" description="Documented CIB takedowns involving UAE, Saudi Arabia, and Egypt">
             <div className="space-y-6">
-              {data.operations.map((op, idx) => (
+              {data.operations.map((op: any, idx: number) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
@@ -725,7 +726,7 @@ export default function CoordinatedDashboardPage() {
                     <div>
                       <h4 className="font-semibold text-slate-300 mb-2">Methods Used</h4>
                       <div className="flex flex-wrap gap-2">
-                        {op.methodsUsed.map((method, i) => (
+                        {op.methodsUsed.map((method: any, i: number) => (
                           <Badge key={i} variant="outline" className="text-xs">{method}</Badge>
                         ))}
                       </div>
@@ -733,7 +734,7 @@ export default function CoordinatedDashboardPage() {
                     <div>
                       <h4 className="font-semibold text-slate-300 mb-2">Content Topics</h4>
                       <div className="flex flex-wrap gap-2">
-                        {op.contentTopics.map((topic, i) => (
+                        {op.contentTopics.map((topic: any, i: number) => (
                           <Badge key={i} className="text-xs bg-denim-500/20 text-denim-400 border-denim-500/50">{topic}</Badge>
                         ))}
                       </div>
@@ -750,7 +751,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {data.topPages.map((page, idx) => (
+                    {data.topPages.map((page: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, x: -20 }}
@@ -787,7 +788,7 @@ export default function CoordinatedDashboardPage() {
                 <CardContent>
                   <ScrollArea className="h-[400px]">
                     <div className="space-y-3">
-                      {data.narrativeThemes.map((narrative, idx) => (
+                      {data.narrativeThemes.map((narrative: any, idx: number) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, y: 10 }}
@@ -828,7 +829,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    {data.categories.map((cat, idx) => (
+                    {data.categories.map((cat: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -861,12 +862,12 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <RadarChart
+                    data={platformComparisonData}
                     metrics={[
-                      { label: 'Policy Strength', data: platformComparisonData.map(p => p.policy) },
-                      { label: 'Enforcement', data: platformComparisonData.map(p => p.enforcement) },
-                      { label: 'Transparency', data: platformComparisonData.map(p => p.transparency) },
+                      { dataKey: 'policy', name: 'Policy Strength' },
+                      { dataKey: 'enforcement', name: 'Enforcement' },
+                      { dataKey: 'transparency', name: 'Transparency' },
                     ]}
-                    labels={platformComparisonData.map(p => p.name)}
                     height={350}
                   />
                 </CardContent>
@@ -880,7 +881,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {data.regulatoryChallenges.map((challenge, idx) => (
+                    {data.regulatoryChallenges.map((challenge: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, x: -20 }}
@@ -907,7 +908,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-2">
-                    {data.legalFrameworks.map((framework, idx) => (
+                    {data.legalFrameworks.map((framework: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, y: 20 }}
@@ -938,7 +939,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-3">
-                    {data.aiGeneratedTrends.map((trend, idx) => (
+                    {data.aiGeneratedTrends.map((trend: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -968,7 +969,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {data.crossPlatforms.map((platform, idx) => (
+                    {data.crossPlatforms.map((platform: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, x: -20 }}
@@ -1000,7 +1001,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    {data.q1Operations.map((op, idx) => (
+                    {data.q1Operations.map((op: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, y: 20 }}
@@ -1041,7 +1042,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {data.uaeThreatLevels.map((threat, idx) => (
+                    {data.uaeThreatLevels.map((threat: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, x: -20 }}
@@ -1074,7 +1075,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {data.uaeOperations.map((op, idx) => (
+                    {data.uaeOperations.map((op: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, y: 10 }}
@@ -1115,7 +1116,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {data.uaeRelevanceItems.map((item, idx) => (
+                    {data.uaeRelevanceItems.map((item: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, x: -20 }}
@@ -1142,7 +1143,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {data.marketingFirms.map((firm, idx) => (
+                    {data.marketingFirms.map((firm: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, x: -20 }}
@@ -1184,7 +1185,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {data.conclusions.map((conclusion, idx) => (
+                    {data.conclusions.map((conclusion: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, y: 10 }}
@@ -1214,7 +1215,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-3 sm:grid-cols-2">
-                    {data.recommendations.map((rec, idx) => (
+                    {data.recommendations.map((rec: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -1239,7 +1240,7 @@ export default function CoordinatedDashboardPage() {
                 <CardContent>
                   <ScrollArea className="h-[400px]">
                     <div className="space-y-3">
-                      {data.sourceCitations.map((source, idx) => (
+                      {data.sourceCitations.map((source: any, idx: number) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: -10 }}
@@ -1273,7 +1274,7 @@ export default function CoordinatedDashboardPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    {data.statisticalSummary.map((stat, idx) => (
+                    {data.statisticalSummary.map((stat: any, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, scale: 0.9 }}

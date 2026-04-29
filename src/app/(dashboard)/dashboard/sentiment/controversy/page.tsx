@@ -172,8 +172,8 @@ export default function ControversyDebatePage() {
   const filteredTopics = selectedCategory === 'all'
     ? controversyTopicsData
     : controversyTopicsData.filter(t => {
-        if (selectedCategory === 'critical') return t.uaeRelevance.level === 'critical'
-        if (selectedCategory === 'high') return t.uaeRelevance.level === 'high'
+        if (selectedCategory === 'critical') return t.uaeRelevance.level === 'CRITICAL'
+        if (selectedCategory === 'high') return t.uaeRelevance.level === 'HIGH'
         if (selectedCategory === 'positive') return t.sentimentScore > 0
         if (selectedCategory === 'negative') return t.sentimentScore < 0
         return true
@@ -251,7 +251,7 @@ export default function ControversyDebatePage() {
         <motion.div variants={fadeInUp}>
           <MetricCard
             title="Critical Issues"
-            value={controversyTopicsData.filter(t => t.uaeRelevance.level === 'critical').length.toString()}
+            value={controversyTopicsData.filter(t => t.uaeRelevance.level === 'CRITICAL').length.toString()}
             icon={<AlertTriangle className="h-6 w-6" />}
             gradient="rose"
             status="error"
@@ -358,7 +358,7 @@ export default function ControversyDebatePage() {
             <CardContent>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {controversyTopicsData
-                  .filter(t => t.uaeRelevance.level === 'critical')
+                  .filter(t => t.uaeRelevance.level === 'CRITICAL')
                   .map((topic, idx) => (
                     <motion.div
                       key={topic.id}

@@ -70,7 +70,6 @@ export function OverviewSection({
     <GlassPanel
       title="Emotion Analysis Overview"
       description="Plutchik emotion model analysis for UAE context"
-      icon={<Brain className="h-5 w-5 text-gold" />}
     >
       <div className="space-y-6">
         {/* Emotion Cards Grid */}

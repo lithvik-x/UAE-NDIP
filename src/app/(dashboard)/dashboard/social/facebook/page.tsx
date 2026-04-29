@@ -213,7 +213,7 @@ export default function FacebookPage() {
               title="Censorship"
               value={censorship?.level?.toUpperCase() || 'PARTIAL'}
               icon={<Shield className="h-6 w-6" />}
-              gradient="platinum"
+              gradient="indigo"
               className="glass-panel"
             />
           </AnimatePresence>
@@ -664,7 +664,7 @@ export default function FacebookPage() {
                           className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
                         >
                           <div className="flex items-center gap-3">
-                            <Warning className={`h-4 w-4 ${scam.severity === 'high' ? 'text-rose-500' : 'text-gold'}`} />
+                            <AlertTriangle className={`h-4 w-4 ${scam.severity === 'high' ? 'text-rose-500' : 'text-gold'}`} />
                             <div>
                               <p className="text-sm font-medium text-slate-200">{scam.type}</p>
                               <p className="text-xs text-slate-400">{scam.desc}</p>

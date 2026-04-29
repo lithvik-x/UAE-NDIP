@@ -215,7 +215,7 @@ export default function DemographicsMigrationPage() {
           value="1.8"
           previousValue={2.1}
           icon={<Brain className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="success"
         />
       </motion.div>

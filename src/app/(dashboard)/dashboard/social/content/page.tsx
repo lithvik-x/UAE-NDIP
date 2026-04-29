@@ -45,7 +45,7 @@ export default function ContentModerationPage() {
   const censorshipCategories = [
     { category: 'Political Criticism', count: 234000, percentage: 28, color: CHART_COLORS.rose },
     { category: 'Religious Content', count: 189000, percentage: 22, color: CHART_COLORS.orange },
-    { category: 'Social Issues', count: 156000, percentage: 18, color: CHART_COLORS.yellow },
+    { category: 'Social Issues', count: 156000, percentage: 18, color: CHART_COLORS.gold },
     { category: 'External Affairs', count: 134000, percentage: 16, color: CHART_COLORS.purple },
     { category: 'Privacy Violations', count: 89000, percentage: 11, color: CHART_COLORS.blue },
     { category: 'Other', count: 45000, percentage: 5, color: CHART_COLORS.platinum },
@@ -150,7 +150,7 @@ export default function ContentModerationPage() {
           value={accountsSuspended.toLocaleString()}
           previousValue={accountsSuspended + 2300}
           icon={<Ban className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="warning"
         />
       </div>
@@ -194,7 +194,7 @@ export default function ContentModerationPage() {
                       bars={[
                         { dataKey: 'censored', name: 'Censored', color: CHART_COLORS.rose },
                         { dataKey: 'removed', name: 'Removed', color: CHART_COLORS.orange },
-                        { dataKey: 'flagged', name: 'Flagged', color: CHART_COLORS.yellow },
+                        { dataKey: 'flagged', name: 'Flagged', color: CHART_COLORS.gold },
                       ]}
                       height={280}
                       showGrid={true}

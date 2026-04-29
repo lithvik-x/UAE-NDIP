@@ -163,7 +163,7 @@ export default function RegionalSentimentPage() {
           value="UAQ"
           previousValue="Fujairah"
           icon={<TrendingDown className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
       </div>
 

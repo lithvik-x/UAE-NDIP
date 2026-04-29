@@ -46,14 +46,13 @@ import {
   EyeOff,
   Ban,
   FileWarning,
-  Warning,
   Info,
   ExternalLink,
   UserX,
   Scissors,
   Landmark,
   ShieldAlert,
-  Virus,
+  Bug,
 } from 'lucide-react'
 import {
   useTiktokIntelligenceData,
@@ -297,7 +296,7 @@ export default function TikTokLandscapePage() {
                 <CardContent>
                   <ScrollArea className="h-[220px]">
                     <div className="space-y-3">
-                      {metrics.sentiment.keyConcerns.map((concern, idx) => (
+                      {metrics.sentiment.keyConcerns?.map((concern, idx) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: -10 }}
@@ -332,7 +331,7 @@ export default function TikTokLandscapePage() {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-3">
-                  {metrics.engagement.trendingHashtags.map((tag, idx) => (
+                  {metrics.engagement.trendingHashtags?.map((tag, idx) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, scale: 0.8 }}
@@ -362,21 +361,21 @@ export default function TikTokLandscapePage() {
                   <Bot className="h-5 w-5 text-rose-400" />
                   Bot Activity Analysis
                 </CardTitle>
-                <CardDescription>{metrics.botActivity.estimatedBotPercent}% estimated bots</CardDescription>
+                <CardDescription>{metrics.botActivity?.estimatedBotPercent}% estimated bots</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-slate-300">Coordinated Activity</span>
-                    <Badge variant={metrics.botActivity.coordinatedInauthentic ? 'destructive' : 'success'}>
-                      {metrics.botActivity.coordinatedInauthentic ? 'Detected' : 'None'}
+                    <Badge variant={metrics.botActivity?.coordinatedInauthentic ? 'destructive' : 'success'}>
+                      {metrics.botActivity?.coordinatedInauthentic ? 'Detected' : 'None'}
                     </Badge>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-slate-300">Confidence Level</span>
-                    <span className="text-lg font-bold text-gold">{Math.round(metrics.botActivity.confidence * 100)}%</span>
+                    <span className="text-lg font-bold text-gold">{Math.round((metrics.botActivity?.confidence ?? 0) * 100)}%</span>
                   </div>
-                  <Progress value={metrics.botActivity.estimatedBotPercent} className="h-2" />
+                  <Progress value={metrics.botActivity?.estimatedBotPercent ?? 0} className="h-2" />
                 </div>
               </CardContent>
             </Card>

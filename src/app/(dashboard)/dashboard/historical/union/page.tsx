@@ -135,7 +135,7 @@ export default function UnionPage() {
           title="Milestones"
           value={nationBuildingData.length}
           icon={<Star className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
         <MetricCard
           title="Achievements"

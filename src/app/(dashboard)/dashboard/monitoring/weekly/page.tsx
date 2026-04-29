@@ -69,7 +69,7 @@ import {
 import {
   weeklyDeepDiveExtendedData,
   weeklyDeepDiveData,
-} from '@/lib/data-loader/monitoring-data'
+} from '@/lib/data-loader'
 
 // Animation variants
 const fadeInUp = {

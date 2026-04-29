@@ -284,7 +284,7 @@ export default function NgosStakeholdersPage() {
           value={avgCredibility.toFixed(1)}
           previousValue={avgCredibility - 2.1}
           icon={<Shield className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
         />
         <MetricCard
           title="Avg Engagement"

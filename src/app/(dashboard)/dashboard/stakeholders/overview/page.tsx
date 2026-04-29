@@ -79,7 +79,7 @@ export default function StakeholderOverviewPage() {
   // Alert level distribution
   const alertDistribution = [
     { name: 'RED', value: stakeholders.filter(s => s.alertLevel === 'RED').length, color: CHART_COLORS.rose },
-    { name: 'YELLOW', value: stakeholders.filter(s => s.alertLevel === 'YELLOW').length, color: CHART_COLORS.amber },
+    { name: 'YELLOW', value: stakeholders.filter(s => s.alertLevel === 'YELLOW').length, color: CHART_COLORS.gold },
     { name: 'GREEN', value: stakeholders.filter(s => s.alertLevel === 'GREEN').length, color: CHART_COLORS.emerald },
   ]
 
@@ -150,7 +150,7 @@ export default function StakeholderOverviewPage() {
           title="Total Stakeholders"
           value={totalStakeholders}
           icon={<Users className="h-6 w-6" />}
-          gradient="platinum"
+          gradient="indigo"
           status="info"
         />
         <MetricCard

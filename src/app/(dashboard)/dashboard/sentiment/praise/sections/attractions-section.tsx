@@ -38,7 +38,6 @@ export function AttractionsSection({ attractions, sources, visitorThemes }: Attr
     <GlassPanel
       title="Praised Attractions & Experiences"
       description="Most mentioned landmarks and visitor sentiments"
-      icon={<Star className="h-5 w-5 text-amber-400" />}
     >
       <div className="space-y-6">
         {/* Top Attractions Grid */}
@@ -50,7 +49,7 @@ export function AttractionsSection({ attractions, sources, visitorThemes }: Attr
             >
               <CardContent className="p-4">
                 <div className="flex items-start justify-between mb-2">
-                  <Badge variant="amber" className="text-xs">
+                  <Badge variant="warning" className="text-xs">
                     {attraction.emirate}
                   </Badge>
                   <div className="flex items-center gap-1">
