@@ -66,7 +66,7 @@ export default function MediaMonitoringPage() {
     { name: 'Society', value: 18, color: CHART_COLORS.platinum },
     { name: 'Security', value: 15, color: CHART_COLORS.rose },
     { name: 'Culture', value: 10, color: CHART_COLORS.emerald },
-    { name: 'Sports', value: 5, color: CHART_COLORS.cyan },
+    { name: 'Sports', value: 5, color: CHART_COLORS.info },
   ]
 
   // Daily coverage trend
@@ -111,7 +111,7 @@ export default function MediaMonitoringPage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="navy" className="mb-2">M-SECTOR</Badge>
+          <Badge variant="denim" className="mb-2">M-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-navy">Media Monitoring</h1>
           <p className="mt-2 text-slate-400">
             Real-time tracking of news outlets, broadcast media, and print publications
@@ -136,7 +136,7 @@ export default function MediaMonitoringPage() {
           value={monitoredOutlets}
           previousValue={monitoredOutlets + 12}
           icon={<Globe className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="info"
         />
         <MetricCard

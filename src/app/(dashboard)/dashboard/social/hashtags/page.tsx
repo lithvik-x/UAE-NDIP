@@ -146,7 +146,7 @@ export default function HashtagsPage() {
     { category: 'Tourism', value: 18, color: CHART_COLORS.platinum },
     { category: 'Business/Economy', value: 12, color: CHART_COLORS.emerald },
     { category: 'Technology', value: 8, color: CHART_COLORS.rose },
-    { category: 'Events', value: 6, color: CHART_COLORS.cyan },
+    { category: 'Events', value: 6, color: CHART_COLORS.info },
   ]
 
   // Platform hashtag usage
@@ -199,7 +199,7 @@ export default function HashtagsPage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="navy" className="mb-2">TREND INTELLIGENCE</Badge>
+          <Badge variant="denim" className="mb-2">TREND INTELLIGENCE</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-navy">Trending Hashtags & Topics</h1>
           <p className="mt-2 text-slate-400">
             Real-time hashtag tracking — trending topics, sentiment analysis, and platform distribution
@@ -224,7 +224,7 @@ export default function HashtagsPage() {
           value="156K"
           previousValue={148000}
           icon={<Hash className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="success"
         />
         <MetricCard

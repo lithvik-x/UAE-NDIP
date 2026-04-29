@@ -70,7 +70,7 @@ export default function SupplyChainDisruptionsPage() {
     { name: 'Shipping Routes', value: 34, color: CHART_COLORS.gold },
     { name: 'Manufacturing', value: 28, color: CHART_COLORS.danger },
     { name: 'Raw Materials', value: 18, color: CHART_COLORS.navy },
-    { name: 'Logistics', value: 12, color: CHART_COLORS.cyan },
+    { name: 'Logistics', value: 12, color: CHART_COLORS.info },
     { name: 'Regulatory', value: 8, color: CHART_COLORS.emerald },
   ]
 
@@ -119,7 +119,7 @@ export default function SupplyChainDisruptionsPage() {
           value="3"
           previousValue="7"
           icon={<AlertOctagon className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="success"
         />
         <MetricCard

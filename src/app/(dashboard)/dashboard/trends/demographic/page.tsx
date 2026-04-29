@@ -29,6 +29,11 @@ import {
   GraduationCap,
   Briefcase,
   Home,
+  Smartphone,
+  Heart,
+  Zap,
+  Target,
+  Sparkles,
 } from 'lucide-react'
 
 export default function DemographicTrendsPage() {
@@ -38,7 +43,7 @@ export default function DemographicTrendsPage() {
     { year: '2021', total: 10.25, uaeNationals: 1.22, expats: 9.03 },
     { year: '2022', total: 10.58, uaeNationals: 1.24, expats: 9.34 },
     { year: '2023', total: 10.87, uaeNationals: 1.26, expats: 9.61 },
-    { year: '2022024', total: 11.12, uaeNationals: 1.28, expats: 9.84 },
+    { year: '2024', total: 11.12, uaeNationals: 1.28, expats: 9.84 },
     { year: '2025', total: 11.27, uaeNationals: 1.30, expats: 9.97 },
   ]
 
@@ -47,7 +52,7 @@ export default function DemographicTrendsPage() {
     { group: '0-14', male: 18, female: 17, color: CHART_COLORS.gold },
     { group: '15-24', male: 22, female: 20, color: CHART_COLORS.navy },
     { group: '25-54', male: 48, female: 42, color: CHART_COLORS.emerald },
-    { group: '55-64', male: 8, female: 9, color: CHART_COLORS.cyan },
+    { group: '55-64', male: 8, female: 9, color: CHART_COLORS.info },
     { group: '65+', male: 4, female: 5, color: CHART_COLORS.platinum },
   ]
 
@@ -57,8 +62,97 @@ export default function DemographicTrendsPage() {
     { region: 'Arab Middle East', percentage: 15, color: CHART_COLORS.navy },
     { region: 'East Asia', percentage: 10, color: CHART_COLORS.rose },
     { region: 'Europe', percentage: 8, color: CHART_COLORS.emerald },
-    { region: 'Africa', percentage: 5, color: CHART_COLORS.cyan },
+    { region: 'Africa', percentage: 5, color: CHART_COLORS.info },
     { region: 'Americas', percentage: 4, color: CHART_COLORS.platinum },
+  ]
+
+  // Youth unemployment historical data (from MD file 10-3)
+  const youthUnemploymentData = [
+    { year: '1995', rate: 5.34, color: CHART_COLORS.emerald },
+    { year: '2019', rate: 7.32, color: CHART_COLORS.gold },
+    { year: '2020', rate: 13.48, color: CHART_COLORS.rose },
+    { year: '2021', rate: 9.74, color: CHART_COLORS.gold },
+    { year: '2022', rate: 9.99, color: CHART_COLORS.gold },
+    { year: '2023', rate: 6.35, color: CHART_COLORS.emerald },
+    { year: '2024', rate: 6.42, color: CHART_COLORS.emerald },
+    { year: '2025', rate: 6.45, color: CHART_COLORS.navy },
+  ]
+
+  // Generational breakdown data
+  const generationalData = [
+    { generation: 'Gen Z (1997-2012)', adoption: 92, color: CHART_COLORS.gold },
+    { generation: 'Millennials', adoption: 88, color: CHART_COLORS.navy },
+    { generation: 'Gen X', adoption: 65, color: CHART_COLORS.emerald },
+    { generation: 'Boomers', adoption: 42, color: CHART_COLORS.platinum },
+  ]
+
+  // Gen Z consumer metrics
+  const genZConsumerData = [
+    { metric: 'Personalized Experience Priority', value: 67, unit: '%' },
+    { metric: 'Cause-Driven Brand Premium', value: 60, unit: '%+' },
+    { metric: 'Daily Social Media Usage', value: 2.5, unit: 'hrs' },
+    { metric: 'Financial Insecurity', value: 48, unit: '%' },
+    { metric: 'Purpose Importance at Work', value: 89, unit: '%' },
+  ]
+
+  // Gen Alpha metrics
+  const genAlphaData = [
+    { metric: 'Brand Attentive', value: 87, unit: '%' },
+    { metric: 'Luxury Ownership by Age 10', value: 68, unit: '%' },
+    { metric: 'Parental Luxury Influence', value: 69, unit: '%' },
+    { metric: 'Sustainable Brand Premium', value: 60, unit: '%+' },
+  ]
+
+  // Mental health metrics
+  const mentalHealthMetrics = [
+    { metric: 'UAE Wellbeing Score', value: 70, unit: '%', change: '+8pp' },
+    { metric: 'Mental Health Condition Prevalence', value: 25, unit: '%', note: '1 in 4' },
+    { metric: 'GCC Undiagnosed Conditions', value: 80, unit: '%' },
+    { metric: 'Open to Mental Health Support', value: 66, unit: '%' },
+    { metric: 'Abu Dhabi Treatment Increase', value: 30, unit: '%', note: 'since 2022' },
+  ]
+
+  // Digital native metrics
+  const digitalNativeMetrics = [
+    { metric: 'Gen Z Daily Snapchat Usage', value: 90, unit: '%+' },
+    { metric: 'Gen Z Relying on AI for Work', value: 48, unit: '%' },
+    { metric: 'Abu Dhabi Digital Strategy', value: 13, unit: 'AED B' },
+    { metric: 'Agentic AI Government Target', value: 50, unit: '%', note: 'by 2027' },
+  ]
+
+  // Emiratization metrics
+  const emiratizationMetrics = [
+    { metric: 'Emiratis in Private Sector', value: 152000, unit: '+' },
+    { metric: 'Private Sector Target 2026', value: 10, unit: '%' },
+    { metric: 'Minimum Wage (Emiratis)', value: 6000, unit: 'AED/mo' },
+    { metric: 'Penalty per Missing Emirati', value: 6000, unit: 'AED/mo' },
+    { metric: 'Female Youth Unemployment', value: 12.1, unit: '%' },
+    { metric: 'Male Youth Unemployment', value: 4.1, unit: '%' },
+  ]
+
+  // Gig economy data
+  const gigEconomyData = [
+    { metric: 'UAE Freelancer Contribution', value: 10, unit: 'AED B/yr' },
+    { metric: 'UAE Global Gig Market Share', value: 7, unit: '%+' },
+    { metric: 'Startup Emirates Training Target', value: 10000, unit: 'persons' },
+    { metric: 'Startup Emirates Jobs Target', value: 30000, unit: 'jobs' },
+  ]
+
+  // Housing support data
+  const housingSupportData = [
+    { metric: 'Citizen Homeownership', value: 91, unit: '%' },
+    { metric: 'Housing Decisions 2025', value: 3567, unit: '' },
+    { metric: 'Total Housing Support Value', value: 2.546, unit: 'AED B' },
+    { metric: 'Al Habtoor Plan Coverage', value: 70, unit: '%' },
+  ]
+
+  // National identity data
+  const nationalIdentityData = [
+    { metric: 'Core Values', value: 5, unit: '' },
+    { metric: 'Core Elements', value: 6, unit: '' },
+    { metric: 'Strategic Pillars', value: 3, unit: '' },
+    { metric: 'Implementation Dimensions', value: 7, unit: '' },
+    { metric: 'Notable Initiatives', value: 13, unit: '' },
   ]
 
   // Urbanization data
@@ -86,7 +180,7 @@ export default function DemographicTrendsPage() {
     { sector: 'Oil & Gas', target: 15, current: 12, color: CHART_COLORS.gold },
     { sector: 'Finance', target: 35, current: 28, color: CHART_COLORS.navy },
     { sector: 'Healthcare', target: 30, current: 25, color: CHART_COLORS.emerald },
-    { sector: 'Education', target: 40, current: 35, color: CHART_COLORS.cyan },
+    { sector: 'Education', target: 40, current: 35, color: CHART_COLORS.info },
     { sector: 'Government', target: 60, current: 55, color: CHART_COLORS.platinum },
     { sector: 'Private Sector', target: 25, current: 18, color: CHART_COLORS.purple },
   ]
@@ -104,7 +198,7 @@ export default function DemographicTrendsPage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="navy" className="mb-2">TRENDS</Badge>
+          <Badge variant="denim" className="mb-2">TRENDS</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-navy">Demographic Trends</h1>
           <p className="mt-2 text-slate-400">
             Population dynamics, migration patterns, and workforce trends
@@ -129,7 +223,7 @@ export default function DemographicTrendsPage() {
           value={11.27}
           previousValue={11.12}
           icon={<Users className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="success"
         />
         <MetricCard
@@ -163,6 +257,7 @@ export default function DemographicTrendsPage() {
           <TabsTrigger value="population">Population</TabsTrigger>
           <TabsTrigger value="migration">Migration</TabsTrigger>
           <TabsTrigger value="labor">Labor Force</TabsTrigger>
+          <TabsTrigger value="generations">Generations</TabsTrigger>
         </TabsList>
 
         {/* Overview Tab */}
@@ -472,6 +567,24 @@ export default function DemographicTrendsPage() {
 
               <Card className="glass-card">
                 <CardHeader>
+                  <CardTitle className="text-lg">Youth Unemployment Historical Trend</CardTitle>
+                  <CardDescription>UAE youth unemployment rate 1995-2025 (Source: YCharts/FRED)</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <BarChart
+                    data={youthUnemploymentData}
+                    xAxisKey="year"
+                    bars={[
+                      { dataKey: 'rate', name: 'Youth Unemployment Rate %', color: CHART_COLORS.navy },
+                    ]}
+                    height={280}
+                    showGrid={true}
+                  />
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
                   <CardTitle className="text-lg">Nationalization Progress (Nafes)</CardTitle>
                   <CardDescription>Target vs current by sector</CardDescription>
                 </CardHeader>
@@ -514,7 +627,7 @@ export default function DemographicTrendsPage() {
                         { sector: 'Services', value: 45, color: CHART_COLORS.gold },
                         { sector: 'Construction', value: 22, color: CHART_COLORS.navy },
                         { sector: 'Manufacturing', value: 12, color: CHART_COLORS.emerald },
-                        { sector: 'Finance', value: 10, color: CHART_COLORS.cyan },
+                        { sector: 'Finance', value: 10, color: CHART_COLORS.info },
                         { sector: 'Government', value: 8, color: CHART_COLORS.platinum },
                         { sector: 'Other', value: 3, color: CHART_COLORS.purple },
                       ]}
@@ -553,6 +666,262 @@ export default function DemographicTrendsPage() {
                   </CardContent>
                 </Card>
               </div>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Generations Tab - ENHANCED WITH MD 10-3 DATA */}
+        <TabsContent value="generations" className="space-y-6">
+          <GlassPanel title="Generational Shift Trends" description="Gen Z, Millennials, and Gen Alpha in the UAE">
+            <div className="space-y-6">
+              {/* Key Generational Metrics */}
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <MetricCard
+                  title="Youth Unemployment 2025"
+                  value={6.45}
+                  previousValue={9.99}
+                  unit="%"
+                  icon={<TrendingDown className="h-6 w-6" />}
+                  gradient="emerald"
+                  status="success"
+                />
+                <MetricCard
+                  title="Gen Z Snapchat Daily"
+                  value={90}
+                  unit="%+"
+                  icon={<Smartphone className="h-6 w-6" />}
+                  gradient="gold"
+                />
+                <MetricCard
+                  title="UAE Wellbeing Score"
+                  value={70}
+                  previousValue={62}
+                  unit="%"
+                  icon={<Heart className="h-6 w-6" />}
+                  gradient="rose"
+                  status="success"
+                />
+                <MetricCard
+                  title="Gen Alpha Brand Attentive"
+                  value={87}
+                  unit="%"
+                  icon={<Sparkles className="h-6 w-6" />}
+                  gradient="platinum"
+                />
+              </div>
+
+              {/* Youth Unemployment Historical Trend */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Youth Unemployment Historical Trend</CardTitle>
+                  <CardDescription>UAE youth unemployment rate 1995-2025 (declining from 13.48% peak in 2020)</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <AreaChart
+                    data={youthUnemploymentData}
+                    xAxisKey="year"
+                    areas={[
+                      { dataKey: 'rate', name: 'Youth Unemployment Rate %', color: CHART_COLORS.navy },
+                    ]}
+                    height={280}
+                    showGrid={true}
+                  />
+                </CardContent>
+              </Card>
+
+              <div className="grid gap-6 lg:grid-cols-2">
+                {/* Gen Z Consumer Metrics */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Gen Z Consumer Behavior</CardTitle>
+                    <CardDescription>Key metrics from Deloitte and EDS Arabic</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {genZConsumerData.map((item, index) => (
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <span className="text-sm font-medium text-slate-200">{item.metric}</span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-lg font-bold text-gold">{item.value}</span>
+                            <span className="text-xs text-slate-400">{item.unit}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Gen Alpha Metrics */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Gen Alpha (2013-2025) Metrics</CardTitle>
+                    <CardDescription>Luxury brand and consumer behavior</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {genAlphaData.map((item, index) => (
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <span className="text-sm font-medium text-slate-200">{item.metric}</span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-lg font-bold text-platinum">{item.value}</span>
+                            <span className="text-xs text-slate-400">{item.unit}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Digital Native Metrics */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Digital Native Metrics</CardTitle>
+                  <CardDescription>Gen Z technology adoption and AI usage</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    {digitalNativeMetrics.map((item, index) => (
+                      <div key={index} className="rounded-lg bg-slate-800/50 p-4 text-center">
+                        <Smartphone className="mx-auto h-6 w-6 text-navy mb-2" />
+                        <p className="text-xs text-slate-400">{item.metric}</p>
+                        <p className="text-xl font-bold text-navy">{item.value}</p>
+                        <span className="text-xs text-slate-400">{item.unit}</span>
+                        {item.note && <p className="text-xs text-emerald mt-1">{item.note}</p>}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Mental Health Metrics */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Mental Health & Wellbeing</CardTitle>
+                  <CardDescription>UAE mental health landscape (Source: Oliver Wyman)</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+                    {mentalHealthMetrics.map((item, index) => (
+                      <div key={index} className="rounded-lg bg-slate-800/50 p-4 text-center">
+                        <Heart className="mx-auto h-6 w-6 text-rose mb-2" />
+                        <p className="text-xs text-slate-400">{item.metric}</p>
+                        <p className="text-xl font-bold text-rose">{item.value}</p>
+                        <span className="text-xs text-slate-400">{item.unit}</span>
+                        {item.change && <p className="text-xs text-emerald mt-1">{item.change}</p>}
+                        {item.note && <p className="text-xs text-emerald mt-1">{item.note}</p>}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <div className="grid gap-6 lg:grid-cols-2">
+                {/* Emiratization Metrics */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Emiratization Progress</CardTitle>
+                    <CardDescription>Private sector nationalization targets</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {emiratizationMetrics.map((item, index) => (
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <span className="text-sm font-medium text-slate-200">{item.metric}</span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-lg font-bold text-emerald">{item.value.toLocaleString()}</span>
+                            <span className="text-xs text-slate-400">{item.unit}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Gig Economy */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Gig Economy & Entrepreneurship</CardTitle>
+                    <CardDescription>Freelance and startup ecosystem</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {gigEconomyData.map((item, index) => (
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <span className="text-sm font-medium text-slate-200">{item.metric}</span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-lg font-bold text-gold">{item.value.toLocaleString()}</span>
+                            <span className="text-xs text-slate-400">{item.unit}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="grid gap-6 lg:grid-cols-2">
+                {/* Housing Support */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Housing Support Programs</CardTitle>
+                    <CardDescription>Government housing initiatives for citizens</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {housingSupportData.map((item, index) => (
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <span className="text-sm font-medium text-slate-200">{item.metric}</span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-lg font-bold text-navy">{item.value}</span>
+                            <span className="text-xs text-slate-400">{item.unit}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* National Identity Strategy */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Emirati National Identity Strategy</CardTitle>
+                    <CardDescription>Launched November 2025</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {nationalIdentityData.map((item, index) => (
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <span className="text-sm font-medium text-slate-200">{item.metric}</span>
+                          <div className="flex items-center gap-2">
+                            <span className="text-lg font-bold text-platinum">{item.value}</span>
+                            <span className="text-xs text-slate-400">{item.unit}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Generation Adoption Comparison */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Generational Adoption Rates</CardTitle>
+                  <CardDescription>Digital adoption and engagement by generation</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <BarChart
+                    data={generationalData}
+                    xAxisKey="generation"
+                    bars={[
+                      { dataKey: 'adoption', name: 'Adoption Rate %', color: CHART_COLORS.gold },
+                    ]}
+                    height={280}
+                    showGrid={true}
+                  />
+                </CardContent>
+              </Card>
             </div>
           </GlassPanel>
         </TabsContent>

@@ -129,7 +129,7 @@ export default function TribalNetworksPage() {
           title="Engagement"
           value={metrics.engagement?.toFixed(1) || 'N/A'}
           icon={<TrendingUp className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
         />
         <MetricCard
           title="Credibility Score"

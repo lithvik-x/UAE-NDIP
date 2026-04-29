@@ -25,25 +25,33 @@ import {
   Plane,
   Star,
   IndianRupee,
+  AlertTriangle,
+  Shield,
+  TrendingDown,
+  DollarSign,
 } from 'lucide-react'
+import { motion } from 'framer-motion'
 import {
   useUrduHindiData,
   useMalayIndonesianData,
+  usePersianData,
 } from '@/lib/data-loader'
 
 export default function AsianLanguagesPage() {
   const { data: urduHindiData } = useUrduHindiData()
   const { data: malayData } = useMalayIndonesianData()
+  const { data: persianData } = usePersianData()
 
   // Combined Asian languages data
-  const totalAsianVolume = 83400000 // Urdu/Hindi 67.8M + Malay/Indonesian 15.6M
+  const totalAsianVolume = 97600000 // Urdu/Hindi 67.8M + Malay/Indonesian 15.6M + Persian 14.2M
 
   // Asian languages breakdown
   const languageBreakdown = [
-    { name: 'Hindi/Urdu', percentage: 55, volume: 45870000, color: CHART_COLORS.orange },
-    { name: 'Malay/Indonesian', percentage: 20, volume: 16680000, color: CHART_COLORS.emerald },
-    { name: 'Tagalog', percentage: 15, volume: 12510000, color: CHART_COLORS.cyan },
-    { name: 'Other Asian', percentage: 10, volume: 8340000, color: CHART_COLORS.platinum },
+    { name: 'Hindi/Urdu', percentage: 47, volume: 45870000, color: CHART_COLORS.orange },
+    { name: 'Malay/Indonesian', percentage: 17, volume: 16680000, color: CHART_COLORS.emerald },
+    { name: 'Persian/Farsi', percentage: 15, volume: 14200000, color: CHART_COLORS.danger },
+    { name: 'Tagalog', percentage: 13, volume: 12510000, color: CHART_COLORS.info },
+    { name: 'Other Asian', percentage: 8, volume: 8340000, color: CHART_COLORS.platinum },
   ]
 
   // Sentiment by language
@@ -99,9 +107,9 @@ export default function AsianLanguagesPage() {
   const getCategoryBadge = (category: string) => {
     switch (category) {
       case 'Trade': return <Badge variant="gold" className="text-xs">{category}</Badge>
-      case 'Relations': return <Badge variant="navy" className="text-xs">{category}</Badge>
+      case 'Relations': return <Badge variant="denim" className="text-xs">{category}</Badge>
       case 'Labor': return <Badge variant="orange" className="text-xs">{category}</Badge>
-      case 'Visa': return <Badge variant="platinum" className="text-xs">{category}</Badge>
+      case 'Visa': return <Badge variant="default" className="text-xs">{category}</Badge>
       case 'Culture': return <Badge variant="emerald" className="text-xs">{category}</Badge>
       case 'Tourism': return <Badge variant="cyan" className="text-xs">{category}</Badge>
       case 'Community': return <Badge variant="fuchsia" className="text-xs">{category}</Badge>
@@ -152,14 +160,14 @@ export default function AsianLanguagesPage() {
         />
         <MetricCard
           title="Languages Tracked"
-          value="5"
+          value="6"
           icon={<MessageSquare className="h-6 w-6" />}
           gradient="emerald"
           status="success"
         />
         <MetricCard
           title="Avg Sentiment"
-          value="66"
+          value="54"
           previousValue={64}
           icon={<Star className="h-6 w-6" />}
           gradient="platinum"
@@ -172,6 +180,7 @@ export default function AsianLanguagesPage() {
           <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="southasian">South Asian</TabsTrigger>
           <TabsTrigger value="southeast">Southeast Asian</TabsTrigger>
+          <TabsTrigger value="persian">Persian</TabsTrigger>
           <TabsTrigger value="communities">Communities</TabsTrigger>
           <TabsTrigger value="sentiment">Sentiment</TabsTrigger>
         </TabsList>
@@ -337,118 +346,898 @@ export default function AsianLanguagesPage() {
 
         {/* Southeast Asian Tab */}
         <TabsContent value="southeast" className="space-y-6">
-          <GlassPanel title="Southeast Asian Languages" description="Malay, Indonesian, and Tagalog communities">
-            <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Malay/Indonesian Searches</CardTitle>
-                  <CardDescription>ASEAN community queries</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {malayTerms.map((item, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70"
-                      >
-                        <div className="flex items-center gap-4">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald/20 text-emerald">
-                            <Plane className="h-5 w-5" />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <GlassPanel title="Southeast Asian Languages" description="Malay, Indonesian, and Tagalog communities">
+              <div className="space-y-6">
+                {/* Key Metrics for Malaysia-Indonesia */}
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.1 }}
+                    whileHover={{ scale: 1.02 }}
+                    className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/20">
+                        <TrendingUp className="h-5 w-5 text-emerald-400" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-slate-400">Malaysia-UAE Trade 2024</p>
+                        <p className="text-lg font-bold text-emerald-400">US$5.5B</p>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.2 }}
+                    whileHover={{ scale: 1.02 }}
+                    className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/20">
+                        <Globe className="h-5 w-5 text-orange-400" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-slate-400">Indonesia-UAE Trade 2025</p>
+                        <p className="text-lg font-bold text-orange-400">US$6.4B</p>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.3 }}
+                    whileHover={{ scale: 1.02 }}
+                    className="rounded-lg border border-cyan-500/30 bg-cyan-500/10 p-4"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500/20">
+                        <Users className="h-5 w-5 text-cyan-400" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-slate-400">Indonesian Workers UAE</p>
+                        <p className="text-lg font-bold text-cyan-400">77,000+</p>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.4 }}
+                    whileHover={{ scale: 1.02 }}
+                    className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-500/20">
+                        <Shield className="h-5 w-5 text-amber-400" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-slate-400">Defense MoU</p>
+                        <p className="text-lg font-bold text-amber-400">Dec 2025</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Malaysia CEPA Trade Table */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Badge variant="emerald" className="text-xs">MALAYSIA</Badge>
+                      CEPA Trade Performance
+                    </CardTitle>
+                    <CardDescription>UAE-Malaysia comprehensive economic partnership</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 lg:grid-cols-2">
+                      <div className="space-y-3">
+                        {malayData?.extendedData?.kpiTables?.malaysiaUAETade?.slice(0, 4).map((item, index) => (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.05 }}
+                            className="flex items-center justify-between rounded-lg border border-emerald-700/50 bg-emerald-900/20 p-3"
+                          >
+                            <span className="text-sm text-slate-300">{item.metric}</span>
+                            <div className="text-right">
+                              <span className="text-lg font-bold text-emerald-400">{item.value}</span>
+                              {item.yoyChange && item.yoyChange !== '—' && (
+                                <span className="ml-2 text-xs text-emerald-300">({item.yoyChange})</span>
+                              )}
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                      <div className="rounded-lg border border-emerald-700/50 bg-emerald-900/20 p-4">
+                        <h4 className="text-sm font-semibold text-emerald-400 mb-3">Key CEPA Products</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {['CPO', 'Chemicals', 'Plastics', 'Electronics', 'Jewellery', 'Petroleum', 'Rubber'].map((product) => (
+                            <Badge key={product} variant="outline" className="text-xs border-emerald-500/50 text-emerald-300">
+                              {product}
+                            </Badge>
+                          ))}
+                        </div>
+                        <div className="mt-4 flex items-center justify-between">
+                          <span className="text-xs text-slate-400">6,331 tariff lines</span>
+                          <span className="text-sm font-bold text-emerald-400">Duty-Free</span>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Indonesia CEPA Trade Table */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Badge variant="orange" className="text-xs">INDONESIA</Badge>
+                      CEPA Trade Performance
+                    </CardTitle>
+                    <CardDescription>UAE-Indonesia bilateral trade (50th anniversary 2026)</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 lg:grid-cols-2">
+                      <div className="space-y-3">
+                        {malayData?.extendedData?.kpiTables?.indonesiaUAETade?.slice(0, 4).map((item, index) => (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.05 }}
+                            className="flex items-center justify-between rounded-lg border border-orange-700/50 bg-orange-900/20 p-3"
+                          >
+                            <span className="text-sm text-slate-300">{item.metric}</span>
+                            <div className="text-right">
+                              <span className="text-lg font-bold text-orange-400">{item.value}</span>
+                              {item.yoyChange && item.yoyChange !== '—' && (
+                                <span className="ml-2 text-xs text-orange-300">({item.yoyChange})</span>
+                              )}
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                      <div className="rounded-lg border border-orange-700/50 bg-orange-900/20 p-4">
+                        <h4 className="text-sm font-semibold text-orange-400 mb-3">CEPA Coverage</h4>
+                        <div className="space-y-3">
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-slate-400">Products covered</span>
+                            <span className="text-lg font-bold text-orange-400">90%</span>
                           </div>
-                          <div>
-                            <p className="font-semibold text-slate-200">{item.term}</p>
-                            <div className="flex items-center gap-2 mt-1">
-                              <Badge variant="outline" className="text-xs">{item.language}</Badge>
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-slate-400">Trade value covered</span>
+                            <span className="text-lg font-bold text-orange-400">94%</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-slate-400">Trade target</span>
+                            <span className="text-lg font-bold text-orange-400">US$10B</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Defense Cooperation */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Badge variant="amber" className="text-xs">DEFENSE</Badge>
+                      Malaysia-UAE Defense Cooperation
+                    </CardTitle>
+                    <CardDescription>Military partnership and exercises</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 lg:grid-cols-4">
+                      {malayData?.extendedData?.kpiTables?.defenseCooperation?.map((item, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                          whileHover={{ scale: 1.02 }}
+                          className="rounded-lg border border-amber-700/50 bg-amber-900/20 p-4"
+                        >
+                          <h4 className="text-xs text-slate-400 mb-1">{item.metric}</h4>
+                          <p className="text-lg font-bold text-amber-400">{item.value}</p>
+                          <p className="text-xs text-slate-500 mt-1">{item.date}</p>
+                          <Badge variant={item.status === 'Active' ? 'emerald' : item.status === 'Completed' ? 'default' : 'orange'} className="mt-2 text-xs">
+                            {item.status}
+                          </Badge>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Migrant Worker Crisis - March 2026 */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Badge variant="destructive" className="text-xs">CRISIS</Badge>
+                      March 2026 Middle East Conflict Impact
+                    </CardTitle>
+                    <CardDescription>Malaysian and Indonesian worker evacuation data</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-6 lg:grid-cols-2">
+                      {/* Malaysian Crisis */}
+                      <div className="rounded-lg border border-red-700/50 bg-red-900/20 p-4">
+                        <h4 className="text-sm font-semibold text-red-400 mb-3">Malaysian Workers Crisis</h4>
+                        <div className="space-y-2">
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-slate-400">Total in UAE</span>
+                            <span className="text-lg font-bold text-red-400">8,500</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-slate-400">Registered</span>
+                            <span className="text-sm text-slate-200">5,900</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-slate-400">Unregistered</span>
+                            <span className="text-sm text-red-300">2,600 (gap)</span>
+                          </div>
+                          <div className="mt-3 pt-3 border-t border-red-700/50">
+                            <p className="text-xs text-slate-400 mb-1">Evacuation Flight EK342</p>
+                            <div className="flex items-center justify-between">
+                              <span className="text-sm text-slate-400">March 6 passengers</span>
+                              <span className="text-lg font-bold text-red-400">222</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Indonesian Worker Abuse */}
+                      <div className="rounded-lg border border-orange-700/50 bg-orange-900/20 p-4">
+                        <h4 className="text-sm font-semibold text-orange-400 mb-3">Indonesian Worker Issues</h4>
+                        <div className="space-y-2">
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-slate-400">Total workers in UAE</span>
+                            <span className="text-lg font-bold text-orange-400">77,000+</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-slate-400">Female domestic workers</span>
+                            <span className="text-sm text-slate-200">90%</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-slate-400">Documented abuse cases</span>
+                            <span className="text-sm text-red-300">25+ (HRW)</span>
+                          </div>
+                          <div className="mt-3 pt-3 border-t border-orange-700/50">
+                            <p className="text-xs text-slate-400 mb-1">Documented Case</p>
+                            <p className="text-sm text-orange-300">Worker "I" - March 4, 2025</p>
+                            <p className="text-xs text-slate-500">Wage theft, torture, repatriated</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* UAE Investment in Indonesia */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Badge variant="cyan" className="text-xs">INVESTMENT</Badge>
+                      UAE Investment in Indonesia
+                    </CardTitle>
+                    <CardDescription>Nusantara development and sectoral investment</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 lg:grid-cols-3">
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.1 }}
+                        className="rounded-lg border border-cyan-700/50 bg-cyan-900/20 p-4"
+                      >
+                        <h4 className="text-xs text-slate-400 mb-1">Total Investment Q3 2025</h4>
+                        <p className="text-2xl font-bold text-cyan-400">US$88.14M</p>
+                        <p className="text-xs text-slate-500 mt-1">Cumulative</p>
+                      </motion.div>
+
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.2 }}
+                        className="rounded-lg border border-cyan-700/50 bg-cyan-900/20 p-4"
+                      >
+                        <h4 className="text-xs text-slate-400 mb-1">Nusantara Commitment</h4>
+                        <p className="text-2xl font-bold text-cyan-400">US$238.4M</p>
+                        <p className="text-xs text-slate-500 mt-1">Mid-2027 construction</p>
+                      </motion.div>
+
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.3 }}
+                        className="rounded-lg border border-emerald-700/50 bg-emerald-900/20 p-4"
+                      >
+                        <h4 className="text-xs text-slate-400 mb-1">Cirata Floating Solar</h4>
+                        <p className="text-2xl font-bold text-emerald-400">192 MWp</p>
+                        <p className="text-xs text-slate-500 mt-1">World's largest - Masdar</p>
+                      </motion.div>
+                    </div>
+
+                    {/* Investment Sectors */}
+                    <div className="mt-4">
+                      <h4 className="text-sm font-semibold text-slate-300 mb-3">Investment by Sector</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {malayData?.extendedData?.kpiTables?.uaeInvestmentBySector?.map((sector) => (
+                          <Badge
+                            key={sector.sector}
+                            variant={sector.priority === 'High' ? 'emerald' : sector.priority === 'Medium' ? 'orange' : 'outline'}
+                            className="text-xs"
+                          >
+                            {sector.sector} ({sector.priority})
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Humanitarian & Education */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Badge variant="fuchsia" className="text-xs">HUMANITARIAN</Badge>
+                      UAE-Indonesia Humanitarian Initiatives
+                    </CardTitle>
+                    <CardDescription>Education and religious diplomacy</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 lg:grid-cols-3">
+                      {malayData?.extendedData?.kpiTables?.humanitarianEducation?.map((item, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                          whileHover={{ scale: 1.02 }}
+                          className="rounded-lg border border-fuchsia-700/50 bg-fuchsia-900/20 p-4"
+                        >
+                          <h4 className="text-sm font-semibold text-fuchsia-400 mb-2">{item.initiative}</h4>
+                          <p className="text-2xl font-bold text-fuchsia-300">{item.amount}</p>
+                          <p className="text-xs text-slate-400 mt-1">Beneficiary: {item.beneficiary}</p>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Diplomatic Timeline */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Diplomatic Timeline</CardTitle>
+                    <CardDescription>Key Malaysia-UAE and Indonesia-UAE events</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ScrollArea className="h-[300px]">
+                      <div className="space-y-3">
+                        {malayData?.extendedData?.diplomaticTimeline?.map((event, index) => (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.03 }}
+                            className="flex items-start gap-4 rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                          >
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald/20 text-emerald font-bold text-sm">
+                              {event.year}
+                            </div>
+                            <div className="flex-1">
+                              <p className="font-semibold text-slate-200">{event.event}</p>
+                              {event.malaysianComponent && event.malaysianComponent !== '—' && (
+                                <p className="text-xs text-emerald-400 mt-1">MY: {event.malaysianComponent}</p>
+                              )}
+                              {event.indonesianComponent && event.indonesianComponent !== '—' && (
+                                <p className="text-xs text-orange-400 mt-1">ID: {event.indonesianComponent}</p>
+                              )}
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </CardContent>
+                </Card>
+
+                {/* Top Search Terms */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Malay/Indonesian Top Searches</CardTitle>
+                    <CardDescription>ASEAN community queries from data loader</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ScrollArea className="h-[400px]">
+                      <div className="space-y-3">
+                        {malayData?.topSearchTerms?.map((item, index) => (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.03 }}
+                            className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70"
+                          >
+                            <div className="flex items-center gap-4">
+                              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald/20 text-emerald">
+                                <Plane className="h-5 w-5" />
+                              </div>
+                              <div>
+                                <p className="font-semibold text-slate-200">{item.term}</p>
+                                <Badge
+                                  variant={item.sentiment === 'positive' ? 'emerald' : item.sentiment === 'negative' ? 'destructive' : 'outline'}
+                                  className="text-xs mt-1"
+                                >
+                                  {item.sentiment}
+                                </Badge>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-6">
+                              <div className="text-center">
+                                <div className="text-lg font-bold text-slate-200">
+                                  {(item.volume / 1000000).toFixed(1)}M
+                                </div>
+                                <p className="text-xs text-slate-400">Volume</p>
+                              </div>
+                              <Badge
+                                variant={item.trend === 'rising' ? 'emerald' : item.trend === 'declining' ? 'destructive' : 'outline'}
+                                className="text-xs"
+                              >
+                                {item.trend}
+                              </Badge>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </CardContent>
+                </Card>
+
+                {/* Tagalog Searches */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Tagalog (Filipino) Searches</CardTitle>
+                    <CardDescription>Philippines community queries</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {tagalogTerms.map((item, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70"
+                        >
+                          <div className="flex items-center gap-4">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan/20 text-cyan">
+                              <Users className="h-5 w-5" />
+                            </div>
+                            <div>
+                              <p className="font-semibold text-slate-200">{item.term}</p>
                               {getCategoryBadge(item.category)}
                             </div>
                           </div>
-                        </div>
-                        <div className="flex items-center gap-6">
-                          <div className="text-center">
-                            <div className="text-lg font-bold text-slate-200">
-                              {(item.volume / 1000000).toFixed(1)}M
+                          <div className="flex items-center gap-6">
+                            <div className="text-center">
+                              <div className="text-lg font-bold text-slate-200">
+                                {(item.volume / 1000000).toFixed(1)}M
+                              </div>
+                              <p className="text-xs text-slate-400">Volume</p>
                             </div>
-                            <p className="text-xs text-slate-400">Volume</p>
-                          </div>
-                          <div className="text-center">
-                            <div className={`text-lg font-bold ${getSentimentColor(item.sentiment)}`}>
-                              {item.sentiment}%
+                            <div className="text-center">
+                              <div className={`text-lg font-bold ${getSentimentColor(item.sentiment)}`}>
+                                {item.sentiment}%
+                              </div>
+                              <p className="text-xs text-slate-400">Sentiment</p>
                             </div>
-                            <p className="text-xs text-slate-400">Sentiment</p>
                           </div>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
 
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Tagalog (Filipino) Searches</CardTitle>
-                  <CardDescription>Philippines community queries</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {tagalogTerms.map((item, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70"
+                {/* Risk Indicators */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <AlertTriangle className="h-5 w-5 text-amber-400" />
+                      Risk Indicators
+                    </CardTitle>
+                    <CardDescription>Key risks in Malaysia-Indonesia UAE relations</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {malayData?.extendedData?.riskIndicators?.map((risk, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.05 }}
+                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                        >
+                          <div className="flex items-center gap-3">
+                            <Badge
+                              variant={risk.level === 'Critical' ? 'destructive' : risk.level === 'High' ? 'orange' : 'outline'}
+                              className="text-xs"
+                            >
+                              {risk.level}
+                            </Badge>
+                            <span className="text-sm text-slate-300">{risk.risk}</span>
+                          </div>
+                          <div className="flex items-center gap-4">
+                            <Badge
+                              variant={risk.trend === 'Positive' ? 'emerald' : risk.trend === 'Resolved' ? 'default' : 'orange'}
+                              className="text-xs"
+                            >
+                              {risk.trend}
+                            </Badge>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </GlassPanel>
+          </motion.div>
+        </TabsContent>
+
+        {/* Persian Tab */}
+        <TabsContent value="persian" className="space-y-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <GlassPanel title="Persian / Farsi Intelligence" description="Iranian media coverage and Persian language analysis of UAE">
+              <div className="space-y-6">
+                {/* Key Metrics */}
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.1 }}
+                    className="rounded-lg border border-red-500/30 bg-red-500/10 p-4"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-500/20">
+                        <Globe className="h-5 w-5 text-red-400" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-slate-400">Diplomatic Status</p>
+                        <p className="text-lg font-bold text-red-400">SEVERED</p>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.2 }}
+                    className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-500/20">
+                        <TrendingUp className="h-5 w-5 text-amber-400" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-slate-400">Trade Volume</p>
+                        <p className="text-lg font-bold text-amber-400">$27B</p>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.3 }}
+                    className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-4"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-rose-500/20">
+                        <Users className="h-5 w-5 text-rose-400" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-slate-400">Iranians in UAE</p>
+                        <p className="text-lg font-bold text-rose-400">500K-900K</p>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.4 }}
+                    className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/20">
+                        <Star className="h-5 w-5 text-orange-400" />
+                      </div>
+                      <div>
+                        <p className="text-xs text-slate-400">Sentiment</p>
+                        <p className="text-lg font-bold text-orange-400">12%</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* War Impact Section */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Badge variant="destructive" className="text-xs">CRITICAL</Badge>
+                      2026 Iran-UAE War Impact
+                    </CardTitle>
+                    <CardDescription>Military statistics and infrastructure damage</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 lg:grid-cols-3">
+                      <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="rounded-lg border border-slate-700 bg-slate-800/50 p-4"
                       >
-                        <div className="flex items-center gap-4">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan/20 text-cyan">
-                            <Users className="h-5 w-5" />
+                        <h4 className="text-sm font-semibold text-slate-300 mb-3">Attack Duration</h4>
+                        <p className="text-2xl font-bold text-red-400">Feb 28 - Apr 8, 2026</p>
+                        <p className="text-xs text-slate-400 mt-1">40 days of conflict</p>
+                      </motion.div>
+
+                      <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.3 }}
+                        className="rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+                      >
+                        <h4 className="text-sm font-semibold text-slate-300 mb-3">Casualties</h4>
+                        <div className="flex gap-4">
+                          <div>
+                            <p className="text-2xl font-bold text-red-400">13</p>
+                            <p className="text-xs text-slate-400">Killed</p>
                           </div>
                           <div>
-                            <p className="font-semibold text-slate-200">{item.term}</p>
-                            {getCategoryBadge(item.category)}
+                            <p className="text-2xl font-bold text-amber-400">224</p>
+                            <p className="text-xs text-slate-400">Injured</p>
                           </div>
                         </div>
-                        <div className="flex items-center gap-6">
-                          <div className="text-center">
-                            <div className="text-lg font-bold text-slate-200">
-                              {(item.volume / 1000000).toFixed(1)}M
-                            </div>
-                            <p className="text-xs text-slate-400">Volume</p>
+                      </motion.div>
+
+                      <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.4 }}
+                        className="rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+                      >
+                        <h4 className="text-sm font-semibold text-slate-300 mb-3">Defense Cost</h4>
+                        <p className="text-2xl font-bold text-orange-400">~$1B</p>
+                        <p className="text-xs text-slate-400">Per day shooting down missiles</p>
+                      </motion.div>
+                    </div>
+
+                    {/* Interception Stats */}
+                    <div className="mt-6">
+                      <h4 className="text-sm font-semibold text-slate-300 mb-3">Missiles & Drones Intercepted</h4>
+                      <div className="grid gap-3 sm:grid-cols-3">
+                        <motion.div
+                          whileHover={{ scale: 1.02 }}
+                          className="rounded-lg border border-red-700/50 bg-red-900/20 p-3"
+                        >
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-slate-400">Ballistic Missiles</span>
+                            <span className="text-xl font-bold text-red-400">537</span>
                           </div>
-                          <div className="text-center">
-                            <div className={`text-lg font-bold ${getSentimentColor(item.sentiment)}`}>
-                              {item.sentiment}%
-                            </div>
-                            <p className="text-xs text-slate-400">Sentiment</p>
+                          <Progress value={100} className="mt-2 h-1" />
+                        </motion.div>
+                        <motion.div
+                          whileHover={{ scale: 1.02 }}
+                          className="rounded-lg border border-amber-700/50 bg-amber-900/20 p-3"
+                        >
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-slate-400">Drones</span>
+                            <span className="text-xl font-bold text-amber-400">2,256</span>
+                          </div>
+                          <Progress value={100} className="mt-2 h-1" />
+                        </motion.div>
+                        <motion.div
+                          whileHover={{ scale: 1.02 }}
+                          className="rounded-lg border border-orange-700/50 bg-orange-900/20 p-3"
+                        >
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-slate-400">Cruise Missiles</span>
+                            <span className="text-xl font-bold text-orange-400">26</span>
+                          </div>
+                          <Progress value={100} className="mt-2 h-1" />
+                        </motion.div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Three Islands Dispute */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Badge variant="orange" className="text-xs">DISPUTED</Badge>
+                      Three Islands: Abu Musa, Greater Tunb, Lesser Tunb
+                    </CardTitle>
+                    <CardDescription>Territorial dispute since November 1971</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div className="grid gap-4 lg:grid-cols-3">
+                        <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                          <h4 className="text-sm font-semibold text-emerald-400 mb-2">Abu Musa</h4>
+                          <div className="space-y-1 text-xs text-slate-400">
+                            <p>Area: 12.8 km²</p>
+                            <p>Population: 2,131 (2012)</p>
+                            <p>Distance to Iran: 70 km</p>
+                            <p>Distance to Sharjah: 59 km</p>
+                          </div>
+                        </div>
+                        <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                          <h4 className="text-sm font-semibold text-emerald-400 mb-2">Greater Tunb</h4>
+                          <div className="space-y-1 text-xs text-slate-400">
+                            <p>Population (1971): ~150</p>
+                            <p>Distance to Iran: 17 miles from Qeshm</p>
+                            <p>Distance to UAE: 46 miles</p>
+                          </div>
+                        </div>
+                        <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                          <h4 className="text-sm font-semibold text-emerald-400 mb-2">Lesser Tunb</h4>
+                          <div className="space-y-1 text-xs text-slate-400">
+                            <p>Population (1971): Uninhabited</p>
+                            <p>Status: Under Iranian control</p>
                           </div>
                         </div>
                       </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                      <div className="mt-4 rounded-lg border border-amber-700/50 bg-amber-900/20 p-4">
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm text-slate-300">Financial Arrangement (Abu Musa)</span>
+                          <span className="text-sm font-bold text-amber-400">£1.5M/year + £125K/month</span>
+                        </div>
+                        <p className="text-xs text-slate-400 mt-1">Paid to Sharjah by Iran since April 21, 1972</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
 
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">ASEAN Trade Relations</CardTitle>
-                  <CardDescription>UAE-ASEAN economic partnerships</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <BarChart
-                    data={[
-                      { country: 'Malaysia', trade: 12.5, color: CHART_COLORS.emerald },
-                      { country: 'Indonesia', trade: 8.2, color: CHART_COLORS.orange },
-                      { country: 'Philippines', trade: 4.8, color: CHART_COLORS.cyan },
-                      { country: 'Thailand', trade: 3.2, color: CHART_COLORS.indigo },
-                      { country: 'Singapore', trade: 15.6, color: CHART_COLORS.platinum },
-                    ]}
-                    xAxisKey="country"
-                    bars={[
-                      { dataKey: 'trade', name: 'Trade ($B)', color: CHART_COLORS.gold },
-                    ]}
-                    height={250}
-                    showGrid={true}
-                  />
-                </CardContent>
-              </Card>
-            </div>
-          </GlassPanel>
+                {/* Bilateral Trade */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Iran-UAE Bilateral Trade</CardTitle>
+                    <CardDescription>Economic relationship metrics</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 lg:grid-cols-2">
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <span className="text-sm text-slate-400">Trade Volume (Current)</span>
+                          <span className="text-lg font-bold text-emerald-400">$27B</span>
+                        </div>
+                        <div className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <span className="text-sm text-slate-400">Iran Imports from UAE</span>
+                          <span className="text-lg font-bold text-amber-400">$20.8B</span>
+                        </div>
+                        <div className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <span className="text-sm text-slate-400">Iran Exports to UAE</span>
+                          <span className="text-lg font-bold text-orange-400">$6.6B</span>
+                        </div>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <span className="text-sm text-slate-400">UAE Ranking for Iran</span>
+                          <Badge variant="emerald">#2 after China</Badge>
+                        </div>
+                        <div className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <span className="text-sm text-slate-400">Share of Iran's Purchases</span>
+                          <span className="text-lg font-bold text-amber-400">~30%</span>
+                        </div>
+                        <div className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <span className="text-sm text-slate-400">Gray Market Imports</span>
+                          <span className="text-lg font-bold text-orange-400">$20-25B</span>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Iranian Community */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Iranian Community in UAE</CardTitle>
+                    <CardDescription>Demographics and presence</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 lg:grid-cols-2">
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <span className="text-sm text-slate-400">Total Population</span>
+                          <span className="text-lg font-bold text-rose-400">500K-900K</span>
+                        </div>
+                        <div className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <span className="text-sm text-slate-400">In Dubai</span>
+                          <span className="text-lg font-bold text-amber-400">~800,000</span>
+                        </div>
+                        <div className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <span className="text-sm text-slate-400">Companies Managed</span>
+                          <span className="text-lg font-bold text-emerald-400">~10,000</span>
+                        </div>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <span className="text-sm text-slate-400">Assets (2019)</span>
+                          <span className="text-lg font-bold text-amber-400">~$300B</span>
+                        </div>
+                        <div className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <span className="text-sm text-slate-400">Students in UAE</span>
+                          <span className="text-lg font-bold text-orange-400">~10,000</span>
+                        </div>
+                        <div className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <span className="text-sm text-slate-400">Iranian Schools</span>
+                          <span className="text-lg font-bold text-emerald-400">7 complexes</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-4 rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                      <p className="text-xs text-slate-400">
+                        <span className="font-semibold text-slate-300">Origin:</span> Most Iranians came from southern provinces (Hormozgan, Fars, Bushehr), particularly the Larestan and Lamerd regions, beginning about a century ago.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Sentiment Analysis */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Sentiment by Topic</CardTitle>
+                    <CardDescription>Persian media sentiment analysis</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {[
+                        { topic: '2026 War', sentiment: -0.95, label: 'Extremely Negative', color: 'text-red-400' },
+                        { topic: 'Three Islands Dispute', sentiment: -0.8, label: 'Negative', color: 'text-red-400' },
+                        { topic: 'Iran-UAE Relations', sentiment: -0.7, label: 'Negative', color: 'text-orange-400' },
+                        { topic: 'UAE Foreign Policy (post-war)', sentiment: -0.3, label: 'Cautious', color: 'text-yellow-400' },
+                        { topic: 'Iranian Community', sentiment: 0.2, label: 'Neutral', color: 'text-slate-400' },
+                        { topic: 'Economic/Trade Ties', sentiment: 0.1, label: 'Mixed', color: 'text-yellow-400' },
+                        { topic: 'Persian Gulf Naming', sentiment: 0.6, label: 'Positive', color: 'text-emerald-400' },
+                      ].map((item, index) => (
+                        <motion.div
+                          key={item.topic}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.05 }}
+                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                        >
+                          <span className="text-sm text-slate-300">{item.topic}</span>
+                          <div className="flex items-center gap-2">
+                            <Progress
+                              value={Math.abs(item.sentiment) * 100}
+                              className="h-2 w-20"
+                            />
+                            <span className={`text-sm font-bold ${item.color} w-28 text-right`}>
+                              {item.label}
+                            </span>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </GlassPanel>
+          </motion.div>
         </TabsContent>
 
         {/* Communities Tab */}

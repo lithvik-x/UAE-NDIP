@@ -1,245 +1,332 @@
 // @ts-nocheck
 'use client'
 
+import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ScrollArea } from '@/components/ui/scroll-area'
-import { Progress } from '@/components/ui/progress'
 import { MetricCard } from '@/components/dashboard/metric-card'
 import { GlassPanel } from '@/components/dashboard/glass-card'
 import {
-  LineChart,
   BarChart,
-  AreaChart,
   PieChart,
-  RadarChart,
   CHART_COLORS,
 } from '@/components/ui/chart-library'
 import {
   Globe,
-  Handshake,
+  Landmark,
+  Users,
+  Zap,
+  AlertTriangle,
+  AlertCircle,
   Shield,
   TrendingUp,
-  AlertCircle,
-  AlertTriangle,
-  CheckCircle,
-  XCircle,
-  Users,
+  TrendingDown,
   Building,
+  FileText,
+  Clock,
+  CheckCircle,
+  MapPin,
   Plane,
-  Flag,
+  Scale,
+  Banknote,
+  Cpu,
+  Crosshair,
+  Activity,
+  Minus,
 } from 'lucide-react'
 import {
-  useInternationalRelationsData,
-} from '@/lib/data-loader'
+  internationalRelationsData,
+  bilateralSummaries,
+  multilateralSummaries,
+  sentimentAnalysis,
+  relevanceAssessment,
+  keyPersons,
+  keyOrganizations,
+  disputedTerritories,
+  militaryAssets,
+  timelineEvents,
+  economicStats,
+  energyStats,
+  aiTechStats,
+  militaryStats,
+  diplomaticStats,
+  keyDataPoints,
+  futureIndicators,
+  riskFactors,
+  opportunityFactors,
+  cop28Outcomes,
+  geographicAssets,
+  conflicts,
+} from '@/lib/data/topics/international-relations-data'
+
+// Animation variants for staggered mount
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+}
+
+const getSentimentColor = (sentiment: string) => {
+  if (sentiment.includes('Positive')) return CHART_COLORS.emerald
+  if (sentiment.includes('Negative')) return CHART_COLORS.rose
+  return CHART_COLORS.platinum
+}
+
+const getTrendIcon = (trend: string) => {
+  if (trend.includes('Improving') || trend.includes('Rising') || trend.includes('Increasing'))
+    return <TrendingUp className="h-4 w-4 text-emerald-500" />
+  if (trend.includes('Declining') || trend.includes('Deteriorating') || trend.includes('Decreasing'))
+    return <TrendingDown className="h-4 w-4 text-red-500" />
+  return <Minus className="h-4 w-4 text-platinum-400" />
+}
 
 export default function InternationalRelationsPage() {
-  const { data } = useInternationalRelationsData()
+  const data = internationalRelationsData
 
-  // Extract metrics from data
-  const totalBilateralAgreements = data?.metrics?.bilateralAgreements || 147
-  const activeDiplomaticMissions = data?.metrics?.activeDiplomaticMissions || 93
-  const strategicPartnerships = data?.metrics?.strategicPartnerships || 24
-  const regionalInfluenceScore = data?.metrics?.regionalInfluenceScore || 87
+  // Sentiment data for pie chart
+  const sentimentData = sentimentAnalysis.map((s) => ({
+    name: s.relationship.replace('UAE-', ''),
+    value: s.sentiment.includes('Positive') ? 40 : s.sentiment.includes('Negative') ? 35 : 25,
+    color: getSentimentColor(s.sentiment),
+  }))
 
-  // Calculate trend values
-  const agreementsTrend = data?.trends?.agreements || [45, 52, 58, 67, 72, 78, 85, 92, 103, 115, 128, 147]
-  const influenceTrend = data?.trends?.influence || [72, 74, 76, 78, 80, 82, 83, 84, 85, 86, 86, 87]
+  // Relevance data for bar chart
+  const relevanceData = relevanceAssessment.map((r) => ({
+    name: r.region.length > 20 ? r.region.substring(0, 20) + '...' : r.region,
+    priority: r.priority,
+    relevance: r.relevanceLevel === 'CRITICAL' ? 100 : r.relevanceLevel === 'HIGH' ? 70 : 40,
+  }))
 
-  // Regional breakdown data
-  const regionalData = [
-    { name: 'GCC States', value: 35, color: CHART_COLORS.gold },
-    { name: 'MENA Region', value: 42, color: CHART_COLORS.navy },
-    { name: 'Global South', value: 38, color: CHART_COLORS.platinum },
-    { name: 'Western Allies', value: 28, color: CHART_COLORS.cyan },
-    { name: 'Asian Partners', value: 24, color: CHART_COLORS.emerald },
-  ]
-
-  // Partnership type data
-  const partnershipData = [
-    { name: 'Strategic', value: 24, color: CHART_COLORS.gold },
-    { name: 'Comprehensive', value: 38, color: CHART_COLORS.navy },
-    { name: 'Cooperative', value: 52, color: CHART_COLORS.platinum },
-    { name: 'Basic', value: 33, color: CHART_COLORS.teal },
-  ]
-
-  // Agreement trends data
-  const agreementTrendData = [
-    { month: 'Jan', agreements: 128, influence: 85 },
-    { month: 'Feb', agreements: 131, influence: 85 },
-    { month: 'Mar', agreements: 135, influence: 86 },
-    { month: 'Apr', agreements: 138, influence: 86 },
-    { month: 'May', agreements: 140, influence: 86 },
-    { month: 'Jun', agreements: 142, influence: 87 },
-    { month: 'Jul', agreements: 144, influence: 87 },
-    { month: 'Aug', agreements: 145, influence: 87 },
-    { month: 'Sep', agreements: 146, influence: 87 },
-    { month: 'Oct', agreements: 147, influence: 87 },
-    { month: 'Nov', agreements: 147, influence: 87 },
-    { month: 'Dec', agreements: 147, influence: 87 },
-  ]
-
-  // Key relationships data
-  const keyRelationships = [
-    { country: 'Saudi Arabia', type: 'Strategic', status: 'Active', alignment: 92, tension: 8 },
-    { country: 'United States', type: 'Comprehensive', status: 'Active', alignment: 78, tension: 22 },
-    { country: 'China', type: 'Comprehensive', status: 'Active', alignment: 85, tension: 15 },
-    { country: 'United Kingdom', type: 'Strategic', status: 'Active', alignment: 88, tension: 12 },
-    { country: 'India', type: 'Cooperative', status: 'Active', alignment: 82, tension: 18 },
-    { country: 'France', type: 'Strategic', status: 'Active', alignment: 80, tension: 20 },
-    { country: 'Russia', type: 'Cooperative', status: 'Active', alignment: 65, tension: 35 },
-    { country: 'Israel', type: 'Cooperative', status: 'Quiet', alignment: 72, tension: 28 },
-  ]
-
-  // US-China balance data
-  const balanceData = [
-    { name: 'US Alignment', value: 78, color: CHART_COLORS.navy },
-    { name: 'China Alignment', value: 85, color: CHART_COLORS.danger },
-    { name: 'Neutral Position', value: 37, color: CHART_COLORS.platinum },
-  ]
-
-  const getStatusIcon = (status: string) => {
-    switch (status) {
-      case 'Active': return <CheckCircle className="h-4 w-4 text-emerald-400" />
-      case 'Quiet': return <AlertTriangle className="h-4 w-4 text-yellow-400" />
-      case 'Strained': return <XCircle className="h-4 w-4 text-red-400" />
-      default: return <AlertCircle className="h-4 w-4 text-slate-400" />
-    }
+  // Timeline chart data (events per decade)
+  const decadeEvents = {
+    '1970s': timelineEvents.filter(e => e.year.startsWith('197')).length,
+    '2010s': timelineEvents.filter(e => e.year.startsWith('201')).length,
+    '2020s': timelineEvents.filter(e => e.year.startsWith('202')).length,
   }
 
-  const getAlignmentColor = (value: number) => {
-    if (value >= 80) return 'text-emerald-400'
-    if (value >= 60) return 'text-yellow-400'
-    return 'text-red-400'
-  }
+  // Key stats for cards
+  const keyMetrics = [
+    {
+      title: 'UAE-US Trade',
+      value: '$34.4B',
+      previousValue: 31.2,
+      unit: '',
+      icon: <Banknote className="h-6 w-6" />,
+      gradient: 'navy' as const,
+    },
+    {
+      title: 'AI Investment Target',
+      value: '$100B',
+      previousValue: 80,
+      unit: 'MGX',
+      icon: <Cpu className="h-6 w-6" />,
+      gradient: 'cyan' as const,
+    },
+    {
+      title: 'F-35 Deal Value',
+      value: '$23B',
+      previousValue: 23,
+      unit: '',
+      icon: <Crosshair className="h-6 w-6" />,
+      gradient: 'gold' as const,
+    },
+    {
+      title: 'COP28 Mobilized',
+      value: '$85B+',
+      previousValue: 0,
+      unit: '',
+      icon: <Globe className="h-6 w-6" />,
+      gradient: 'emerald' as const,
+    },
+  ]
 
   return (
     <div className="space-y-8 p-8">
       {/* Header */}
-      <div className="flex items-start justify-between">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="flex items-start justify-between"
+      >
         <div>
-          <Badge variant="platinum" className="mb-2">H-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-platinum">International Relations</h1>
+          <Badge variant="default" className="mb-2">I-SECTOR</Badge>
+          <h1 className="text-3xl font-extrabold gradient-text-platinum">International Relations & Diplomacy</h1>
           <p className="mt-2 text-slate-400">
-            Diplomatic ties, regional partnerships, and global positioning intelligence
+            {data.executionMetadata.enrichmentStatus} | {data.executionMetadata.queriesExecuted} queries executed across {data.executionMetadata.pagesFetched} sources
           </p>
         </div>
         <div className="flex gap-3">
           <Button variant="outline" className="gap-2 border-platinum/50 text-platinum hover:bg-platinum/10">
-            <Globe className="h-4 w-4" />
-            Diplomatic Map
+            <FileText className="h-4 w-4" />
+            Sources ({data.sources.length})
           </Button>
           <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2">
-            <Handshake className="h-4 w-4" />
-            New Agreement
+            <Zap className="h-4 w-4" />
+            Analyze
           </Button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Key Metrics */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <MetricCard
-          title="Bilateral Agreements"
-          value={totalBilateralAgreements}
-          previousValue={totalBilateralAgreements - 12}
-          icon={<Handshake className="h-6 w-6" />}
-          gradient="gold"
-          status="success"
-        />
-        <MetricCard
-          title="Diplomatic Missions"
-          value={activeDiplomaticMissions}
-          previousValue={activeDiplomaticMissions - 2}
-          icon={<Building className="h-6 w-6" />}
-          gradient="navy"
-        />
-        <MetricCard
-          title="Strategic Partnerships"
-          value={strategicPartnerships}
-          previousValue={strategicPartnerships - 1}
-          icon={<Flag className="h-6 w-6" />}
-          gradient="platinum"
-        />
-        <MetricCard
-          title="Regional Influence"
-          value={regionalInfluenceScore}
-          previousValue={regionalInfluenceScore - 2}
-          icon={<TrendingUp className="h-6 w-6" />}
-          gradient="emerald"
-        />
-      </div>
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+      >
+        {keyMetrics.map((metric, idx) => (
+          <motion.div key={idx} variants={itemVariants}>
+            <MetricCard
+              title={metric.title}
+              value={metric.value}
+              previousValue={metric.previousValue}
+              unit={metric.unit}
+              icon={metric.icon}
+              gradient={metric.gradient}
+            />
+          </motion.div>
+        ))}
+      </motion.div>
 
       <Tabs defaultValue="overview" className="space-y-6">
         <TabsList className="glass-panel" scrollable>
           <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="relationships">Key Relationships</TabsTrigger>
-          <TabsTrigger value="balance">US-China Balance</TabsTrigger>
-          <TabsTrigger value="trends">Trend Analysis</TabsTrigger>
+          <TabsTrigger value="bilateral">Bilateral Relations</TabsTrigger>
+          <TabsTrigger value="multilateral">Multilateral</TabsTrigger>
+          <TabsTrigger value="sentiment">Sentiment Analysis</TabsTrigger>
+          <TabsTrigger value="timeline">Timeline</TabsTrigger>
+          <TabsTrigger value="entities">Entities & Assets</TabsTrigger>
+          <TabsTrigger value="statistics">Statistics</TabsTrigger>
+          <TabsTrigger value="outlook">Future Outlook</TabsTrigger>
         </TabsList>
 
         {/* Overview Tab */}
         <TabsContent value="overview" className="space-y-6">
-          <GlassPanel title="International Relations Overview" description="Comprehensive view of UAE diplomatic standing">
+          <GlassPanel
+            title="International Relations Overview"
+            description="Comprehensive diplomatic intelligence across bilateral and multilateral relationships"
+          >
             <div className="space-y-6">
+              {/* Focus Areas */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Focus Areas</CardTitle>
+                  <CardDescription>Priority intelligence areas for international relations</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {data.focusAreas.map((area, idx) => (
+                      <div key={idx} className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-4">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-navy text-white">
+                          <Globe className="h-5 w-5" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2">
+                            <h4 className="font-semibold text-slate-200">{area.name}</h4>
+                            <Badge variant="outline" className="text-xs">{area.priority}</Badge>
+                          </div>
+                          <p className="mt-1 text-sm text-slate-400">{area.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Sentiment Distribution */}
               <div className="grid gap-6 lg:grid-cols-2">
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Regional Partnership Distribution</CardTitle>
-                    <CardDescription>Bilateral agreements by region</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <BarChart
-                      data={regionalData}
-                      xAxisKey="name"
-                      bars={[
-                        { dataKey: 'value', name: 'Agreements', color: CHART_COLORS.gold },
-                      ]}
-                      height={300}
-                      showGrid={true}
-                    />
-                  </CardContent>
-                </Card>
-
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Partnership Type Breakdown</CardTitle>
-                    <CardDescription>Classification of partnership levels</CardDescription>
+                    <CardTitle className="text-lg">Relationship Sentiment Overview</CardTitle>
+                    <CardDescription>Sentiment across all tracked relationships</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <PieChart
-                      data={partnershipData}
+                      data={sentimentData}
                       height={280}
                       showLegend={true}
                     />
                   </CardContent>
                 </Card>
+
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Regional Relevance Priority</CardTitle>
+                    <CardDescription>UAE relevance assessment by region and topic</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <BarChart
+                      data={relevanceData.slice(0, 8)}
+                      xAxisKey="name"
+                      bars={[
+                        { dataKey: 'relevance', name: 'Relevance Score', color: CHART_COLORS.navy },
+                      ]}
+                      height={280}
+                      showGrid={true}
+                    />
+                  </CardContent>
+                </Card>
               </div>
 
+              {/* Key Alerts */}
+              <Card className="glass-card border-rose-500/30">
+                <CardHeader className="pb-2">
+                  <CardTitle className="flex items-center gap-2 text-lg text-rose-400">
+                    <AlertCircle className="h-5 w-5" />
+                    Critical Intelligence Alerts
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {sentimentAnalysis
+                      .filter(s => s.sentiment.includes('Negative') && s.trend.includes('Deteriorating'))
+                      .map((alert, idx) => (
+                        <div key={idx} className="flex items-start justify-between rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
+                          <div className="flex-1">
+                            <p className="font-medium text-slate-200">{alert.relationship}</p>
+                            <p className="mt-1 text-sm text-slate-400">Key driver: {alert.keyDriver}</p>
+                          </div>
+                          <Badge variant="destructive" className="text-xs">CRITICAL</Badge>
+                        </div>
+                      ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Conflict Involvement */}
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">Partnership Strength Metrics</CardTitle>
-                  <CardDescription>Top strategic relationships by alignment score</CardDescription>
+                  <CardTitle className="text-lg">Active Conflict Involvement</CardTitle>
+                  <CardDescription>UAE engagement in regional conflicts</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    {keyRelationships.slice(0, 5).map((rel, index) => (
-                      <div key={index} className="space-y-2">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <Flag className="h-4 w-4 text-platinum" />
-                            <span className="text-sm font-medium text-slate-200">{rel.country}</span>
-                            <Badge variant="outline" className="text-xs">{rel.type}</Badge>
-                          </div>
-                          <span className={`text-lg font-bold ${getAlignmentColor(rel.alignment)}`}>
-                            {rel.alignment}%
-                          </span>
+                    {conflicts.map((conflict, idx) => (
+                      <div key={idx} className="flex items-start gap-4 rounded-lg bg-slate-800/50 p-4">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-rose text-white">
+                          <Crosshair className="h-5 w-5" />
                         </div>
-                        <Progress
-                          value={rel.alignment}
-                          className="h-2"
-                        />
+                        <div className="flex-1">
+                          <div className="flex items-center justify-between">
+                            <h4 className="font-semibold text-slate-200">{conflict.name}</h4>
+                            <Badge variant="outline" className="text-xs">{conflict.currentStatus}</Badge>
+                          </div>
+                          <p className="mt-1 text-sm text-slate-400">Involvement: {conflict.involvement}</p>
+                          <p className="mt-1 text-sm text-slate-400">UAE Role: {conflict.uaeRole}</p>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -249,130 +336,435 @@ export default function InternationalRelationsPage() {
           </GlassPanel>
         </TabsContent>
 
-        {/* Key Relationships Tab */}
-        <TabsContent value="relationships" className="space-y-6">
-          <GlassPanel title="Key Diplomatic Relationships" description="Status and alignment of major partnerships">
-            <Card className="glass-card">
-              <CardHeader>
-                <CardTitle className="text-lg">Major Relationship Matrix</CardTitle>
-                <CardDescription>Alignment and tension analysis</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ScrollArea className="h-[500px]">
-                  <div className="space-y-3">
-                    {keyRelationships.map((rel, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70"
-                      >
-                        <div className="flex items-center gap-4">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-platinum/20 text-platinum">
-                            <Flag className="h-5 w-5" />
+        {/* Bilateral Relations Tab */}
+        <TabsContent value="bilateral" className="space-y-6">
+          <GlassPanel
+            title="Bilateral Relations"
+            description="Detailed analysis of UAE diplomatic relationships with individual nations"
+          >
+            <div className="space-y-6">
+              {bilateralSummaries.map((relation, idx) => (
+                <Card key={idx} className="glass-card">
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <CardTitle className="text-lg">{relation.relationship}</CardTitle>
+                        <CardDescription className="mt-1">{relation.country}</CardDescription>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Badge
+                          variant="outline"
+                          className={
+                            relation.sentiment.includes('Positive')
+                              ? 'border-emerald-500/50 text-emerald-400'
+                              : relation.sentiment.includes('Negative')
+                              ? 'border-rose-500/50 text-rose-400'
+                              : 'border-platinum-500/50 text-platinum-400'
+                          }
+                        >
+                          {relation.sentiment}
+                        </Badge>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {relation.keyPoints.map((point, pIdx) => (
+                        <div key={pIdx} className="flex items-start gap-3 rounded-lg bg-slate-800/30 p-3">
+                          <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+                          <p className="text-sm text-slate-300">{point}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Multilateral Tab */}
+        <TabsContent value="multilateral" className="space-y-6">
+          <GlassPanel
+            title="Multilateral Relations"
+            description="UAE engagement with international organizations and blocs"
+          >
+            <div className="space-y-6">
+              {multilateralSummaries.map((org, idx) => (
+                <Card key={idx} className="glass-card">
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <CardTitle className="text-lg">{org.organization}</CardTitle>
+                      <Badge variant="outline" className="text-xs">{org.relationship}</Badge>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-slate-300">{org.summary}</p>
+                  </CardContent>
+                </Card>
+              ))}
+
+              {/* COP28 Special Section */}
+              <Card className="glass-card border-gold-500/30">
+                <CardHeader className="pb-2">
+                  <CardTitle className="flex items-center gap-2 text-lg text-gold-400">
+                    <Globe className="h-5 w-5" />
+                    COP28 UAE Presidency - Detailed Outcomes
+                  </CardTitle>
+                  <CardDescription>
+                    Hosted November 30 - December 12, 2023 at Expo City Dubai
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-6">
+                    {/* COP28 Key Stats */}
+                    <div className="grid gap-4 md:grid-cols-4">
+                      <div className="rounded-lg bg-gold-500/10 p-4 text-center border border-gold-500/30">
+                        <p className="text-2xl font-bold text-gold-400">{cop28Outcomes.totalMobilized}</p>
+                        <p className="text-sm text-slate-400">Total Mobilized</p>
+                      </div>
+                      <div className="rounded-lg bg-gold-500/10 p-4 text-center border border-gold-500/30">
+                        <p className="text-2xl font-bold text-gold-400">{cop28Outcomes.participants.toLocaleString()}</p>
+                        <p className="text-sm text-slate-400">Participants</p>
+                      </div>
+                      <div className="rounded-lg bg-gold-500/10 p-4 text-center border border-gold-500/30">
+                        <p className="text-2xl font-bold text-gold-400">{cop28Outcomes.fourPillars.length}</p>
+                        <p className="text-sm text-slate-400">Key Pillars</p>
+                      </div>
+                      <div className="rounded-lg bg-gold-500/10 p-4 text-center border border-gold-500/30">
+                        <p className="text-2xl font-bold text-gold-400">{cop28Outcomes.keyDeclarations.length}</p>
+                        <p className="text-sm text-slate-400">Major Declarations</p>
+                      </div>
+                    </div>
+
+                    {/* COP28 Leadership */}
+                    <div className="rounded-lg bg-slate-800/50 p-4">
+                      <h4 className="font-semibold text-slate-200 mb-3">Leadership</h4>
+                      <div className="grid gap-3 md:grid-cols-3">
+                        <div className="flex items-center gap-2">
+                          <Scale className="h-4 w-4 text-gold" />
+                          <span className="text-sm text-slate-300">President: {cop28Outcomes.president}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Users className="h-4 w-4 text-gold" />
+                          <span className="text-sm text-slate-300">Youth Champion: {cop28Outcomes.youthChampion}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Activity className="h-4 w-4 text-gold" />
+                          <span className="text-sm text-slate-300">High-Level Champion: {cop28Outcomes.highLevelChampion}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* COP28 Financial Commitments */}
+                    <div>
+                      <h4 className="font-semibold text-slate-200 mb-3">Financial Commitments</h4>
+                      <div className="grid gap-2 md:grid-cols-2">
+                        {cop28Outcomes.financialCommitments.map((commit, cIdx) => (
+                          <div key={cIdx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
+                            <span className="text-sm text-slate-300">{commit.fund}</span>
+                            <Badge variant="gold" className="text-xs">{commit.amount}</Badge>
                           </div>
-                          <div>
-                            <p className="font-semibold text-slate-200">{rel.country}</p>
-                            <p className="text-sm text-slate-400">{rel.type} Partnership</p>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* COP28 Declarations */}
+                    <div>
+                      <h4 className="font-semibold text-slate-200 mb-3">Key Declarations & Pledges</h4>
+                      <div className="space-y-2">
+                        {cop28Outcomes.keyDeclarations.map((decl, dIdx) => (
+                          <div key={dIdx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
+                            <span className="text-sm text-slate-300">{decl.name}</span>
+                            <div className="flex gap-2">
+                              <Badge variant="outline" className="text-xs">{decl.countries || decl.heads} {decl.companies ? 'companies' : 'countries'}</Badge>
+                              {decl.goal && <Badge variant="gold" className="text-xs">{decl.goal}</Badge>}
+                              {decl.funding && <Badge variant="gold" className="text-xs">{decl.funding}</Badge>}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Sentiment Analysis Tab */}
+        <TabsContent value="sentiment" className="space-y-6">
+          <GlassPanel
+            title="Sentiment Analysis by Relationship"
+            description="Detailed sentiment tracking across all diplomatic relationships"
+          >
+            <div className="space-y-6">
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Sentiment Breakdown</CardTitle>
+                  <CardDescription>Overall sentiment and trend direction for each relationship</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {sentimentAnalysis.map((s, idx) => (
+                      <div key={idx} className="flex items-center gap-4">
+                        <div className="w-40 shrink-0">
+                          <span className="text-sm font-medium text-slate-200">{s.relationship}</span>
+                        </div>
+                        <div className="flex-1">
+                          <div className="h-2 w-full rounded-full bg-slate-700">
+                            <div
+                              className="h-2 rounded-full"
+                              style={{
+                                width: s.sentiment.includes('Positive') ? '60%' : s.sentiment.includes('Negative') ? '40%' : '50%',
+                                backgroundColor: getSentimentColor(s.sentiment),
+                              }}
+                            />
                           </div>
                         </div>
-                        <div className="flex items-center gap-6">
-                          <div className="text-center">
-                            <div className="flex items-center gap-1">
-                              {getStatusIcon(rel.status)}
-                              <span className="text-sm font-medium text-slate-300">{rel.status}</span>
-                            </div>
-                            <p className="text-xs text-slate-400">Status</p>
-                          </div>
-                          <div className="text-center">
-                            <div className={`text-lg font-bold ${getAlignmentColor(rel.alignment)}`}>
-                              {rel.alignment}%
-                            </div>
-                            <p className="text-xs text-slate-400">Alignment</p>
-                          </div>
-                          <div className="text-center">
-                            <div className="text-lg font-bold text-red-400">
-                              {rel.tension}%
-                            </div>
-                            <p className="text-xs text-slate-400">Tension</p>
-                          </div>
+                        <div className="flex items-center gap-2 w-48 shrink-0">
+                          {getTrendIcon(s.trend)}
+                          <span className="text-xs text-slate-400">{s.trend}</span>
+                          <Badge
+                            variant="outline"
+                            className={`text-xs ml-auto ${
+                              s.sentiment.includes('Positive')
+                                ? 'border-emerald-500/50 text-emerald-400'
+                                : s.sentiment.includes('Negative')
+                                ? 'border-rose-500/50 text-rose-400'
+                                : 'border-platinum-500/50 text-platinum-400'
+                            }`}
+                          >
+                            {s.sentiment.split('/')[0]}
+                          </Badge>
                         </div>
                       </div>
                     ))}
                   </div>
-                </ScrollArea>
-              </CardContent>
-            </Card>
-          </GlassPanel>
-        </TabsContent>
+                </CardContent>
+              </Card>
 
-        {/* US-China Balance Tab */}
-        <TabsContent value="balance" className="space-y-6">
-          <GlassPanel title="US-China Strategic Balance" description="UAE positioning between superpowers">
-            <div className="space-y-6">
               <div className="grid gap-6 lg:grid-cols-2">
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Power Alignment Scores</CardTitle>
-                    <CardDescription>UAE alignment with major powers</CardDescription>
+                    <CardTitle className="text-lg">Sentiment Distribution</CardTitle>
+                    <CardDescription>Proportional sentiment across relationships</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <PieChart
+                      data={sentimentData}
+                      height={300}
+                      showLegend={true}
+                    />
+                  </CardContent>
+                </Card>
+
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Relevance Assessment</CardTitle>
+                    <CardDescription>Priority by region and topic</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <BarChart
-                      data={balanceData}
+                      data={relevanceData}
                       xAxisKey="name"
                       bars={[
-                        { dataKey: 'value', name: 'Score', color: CHART_COLORS.gold },
+                        { dataKey: 'relevance', name: 'Relevance', color: CHART_COLORS.navy },
                       ]}
                       height={300}
                       showGrid={true}
                     />
                   </CardContent>
                 </Card>
-
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Strategic Positioning</CardTitle>
-                    <CardDescription>Multi-alignment strategy indicators</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-6">
-                      <div className="text-center p-6 rounded-lg bg-navy-900/50 border border-navy-700">
-                        <p className="text-sm text-slate-400 mb-2">US-UAE Strategic Framework</p>
-                        <p className="text-3xl font-bold text-navy-400">78%</p>
-                        <p className="text-xs text-slate-400 mt-1">Defense & Economic Cooperation</p>
-                      </div>
-                      <div className="text-center p-6 rounded-lg bg-red-900/50 border border-red-700">
-                        <p className="text-sm text-slate-400 mb-2">China-UAE Comprehensive</p>
-                        <p className="text-3xl font-bold text-red-400">85%</p>
-                        <p className="text-xs text-slate-400 mt-1">Belt & Road + Technology</p>
-                      </div>
-                      <div className="text-center p-6 rounded-lg bg-slate-800/50 border border-slate-600">
-                        <p className="text-sm text-slate-400 mb-2">Strategic Autonomy</p>
-                        <p className="text-3xl font-bold text-platinum">72%</p>
-                        <p className="text-xs text-slate-400 mt-1">Independent Policy Capacity</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
               </div>
+            </div>
+          </GlassPanel>
+        </TabsContent>
 
+        {/* Timeline Tab */}
+        <TabsContent value="timeline" className="space-y-6">
+          <GlassPanel
+            title="Timeline of Key Events"
+            description="Historical and recent diplomatic events from 1971 to 2026"
+          >
+            <div className="space-y-6">
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">Saudi Rivalry Context</CardTitle>
-                  <CardDescription>Gulf regional competition analysis</CardDescription>
+                  <CardTitle className="text-lg">Events by Decade</CardTitle>
+                  <CardDescription>Distribution of major diplomatic events</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid gap-4 sm:grid-cols-3">
-                    <div className="rounded-lg border border-gold-700 bg-gold-900/30 p-4 text-center">
-                      <div className="text-2xl font-bold text-gold">Cooperative</div>
-                      <p className="text-sm text-slate-400 mt-1">OPEC+ Coordination</p>
+                  <BarChart
+                    data={[
+                      { name: '1970s', events: decadeEvents['1970s'], color: CHART_COLORS.gold },
+                      { name: '2010s', events: decadeEvents['2010s'], color: CHART_COLORS.navy },
+                      { name: '2020s', events: decadeEvents['2020s'], color: CHART_COLORS.emerald },
+                    ]}
+                    xAxisKey="name"
+                    bars={[
+                      { dataKey: 'events', name: 'Events', color: CHART_COLORS.platinum },
+                    ]}
+                    height={250}
+                    showGrid={true}
+                  />
+                </CardContent>
+              </Card>
+
+              <ScrollArea className="h-[500px]">
+                <div className="space-y-3 pr-4">
+                  {timelineEvents.map((event, idx) => (
+                    <div key={idx} className="flex items-start gap-4 rounded-lg bg-slate-800/30 p-4 hover:bg-slate-800/50 transition-colors">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-navy text-white">
+                        <Clock className="h-5 w-5" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-mono text-gold">{event.year}</span>
+                          {event.date && <span className="text-xs text-slate-500">{event.date}</span>}
+                        </div>
+                        <p className="mt-1 text-sm text-slate-200">{event.event}</p>
+                      </div>
                     </div>
-                    <div className="rounded-lg border border-gold-700 bg-gold-900/30 p-4 text-center">
-                      <div className="text-2xl font-bold text-gold">Moderate</div>
-                      <p className="text-sm text-slate-400 mt-1">Regional Influence</p>
-                    </div>
-                    <div className="rounded-lg border border-gold-700 bg-gold-900/30 p-4 text-center">
-                      <div className="text-2xl font-bold text-gold">Managed</div>
-                      <p className="text-sm text-slate-400 mt-1">Competition Level</p>
-                    </div>
+                  ))}
+                </div>
+              </ScrollArea>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Entities & Assets Tab */}
+        <TabsContent value="entities" className="space-y-6">
+          <GlassPanel
+            title="Entities & Strategic Assets"
+            description="Key persons, organizations, territories, and military assets"
+          >
+            <div className="space-y-6">
+              {/* Key Persons */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Key Persons</CardTitle>
+                  <CardDescription>Individuals central to UAE international relations</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+                    {keyPersons.map((person, idx) => (
+                      <div key={idx} className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-platinum text-navy-950">
+                          <Users className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-slate-200 text-sm">{person.name}</p>
+                          <p className="text-xs text-gold">{person.role}</p>
+                          <p className="text-xs text-slate-400 mt-1">{person.relationToUAE}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Key Organizations */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Key Organizations</CardTitle>
+                  <CardDescription>International bodies and UAE membership status</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+                    {keyOrganizations.map((org, idx) => (
+                      <div key={idx} className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3">
+                        <Building className="h-5 w-5 shrink-0 text-navy" />
+                        <div>
+                          <p className="font-medium text-slate-200 text-sm">{org.name}</p>
+                          <p className="text-xs text-slate-400">{org.type}</p>
+                          <Badge variant="outline" className="text-xs mt-1">{org.uaeRole}</Badge>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Disputed Territories */}
+              <Card className="glass-card border-rose-500/30">
+                <CardHeader className="pb-2">
+                  <CardTitle className="flex items-center gap-2 text-lg text-rose-400">
+                    <MapPin className="h-5 w-5" />
+                    Disputed Territories
+                  </CardTitle>
+                  <CardDescription>Iranian-occupied UAE territories</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {disputedTerritories.map((territory, idx) => (
+                      <div key={idx} className="flex items-center justify-between rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
+                        <div>
+                          <p className="font-semibold text-slate-200">{territory.territory}</p>
+                          <p className="text-sm text-slate-400">Occupied by {territory.occupiedBy} since {territory.since}</p>
+                        </div>
+                        <Badge variant="destructive" className="text-xs">{territory.uaePosition}</Badge>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Military Assets */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Military Assets</CardTitle>
+                  <CardDescription>Defense acquisitions and status</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <BarChart
+                    data={militaryAssets.map((m) => ({
+                      name: m.asset.split(' ')[0],
+                      value: m.status.includes('$23B') ? 23 : m.status.includes('18') ? 18 : m.status.includes('80') ? 80 : 10,
+                    }))}
+                    xAxisKey="name"
+                    bars={[
+                      { dataKey: 'value', name: 'Quantity/Value', color: CHART_COLORS.navy },
+                    ]}
+                    height={280}
+                    showGrid={true}
+                  />
+                  <div className="mt-4 space-y-2">
+                    {militaryAssets.map((asset, idx) => (
+                      <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
+                        <div className="flex items-center gap-3">
+                          <Crosshair className="h-4 w-4 text-platinum" />
+                          <span className="text-sm text-slate-200">{asset.asset}</span>
+                        </div>
+                        <div className="text-right">
+                          <Badge variant="outline" className="text-xs">{asset.origin}</Badge>
+                          <span className="text-xs text-slate-400 ml-2">{asset.status}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Geographic Strategic Assets */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Geographic Strategic Assets</CardTitle>
+                  <CardDescription>UAE military and economic footprint abroad</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    {geographicAssets.map((asset, idx) => (
+                      <div key={idx} className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-4">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-emerald text-white">
+                          <Plane className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-slate-200">{asset.location}</p>
+                          <p className="text-sm text-slate-400">{asset.country} - {asset.type}</p>
+                          <p className="text-xs text-emerald-400 mt-1">Purpose: {asset.purpose}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
@@ -380,66 +772,268 @@ export default function InternationalRelationsPage() {
           </GlassPanel>
         </TabsContent>
 
-        {/* Trends Tab */}
-        <TabsContent value="trends" className="space-y-6">
-          <GlassPanel title="International Relations Trends" description="Historical trajectory and projections">
+        {/* Statistics Tab */}
+        <TabsContent value="statistics" className="space-y-6">
+          <GlassPanel
+            title="Statistics Dashboard"
+            description="Comprehensive data across all international relations metrics"
+          >
             <div className="space-y-6">
+              {/* Economic Statistics */}
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">Agreement & Influence Trends</CardTitle>
-                  <CardDescription>12-month rolling trajectory</CardDescription>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Banknote className="h-5 w-5 text-gold" />
+                    Economic Statistics
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <LineChart
-                    data={agreementTrendData}
-                    xAxisKey="month"
-                    lines={[
-                      { dataKey: 'agreements', name: 'Bilateral Agreements', color: CHART_COLORS.gold },
-                      { dataKey: 'influence', name: 'Influence Score', color: CHART_COLORS.navy },
-                    ]}
-                    height={350}
-                    showGrid={true}
-                  />
+                  <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
+                    {economicStats.map((stat, idx) => (
+                      <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
+                        <span className="text-sm text-slate-300">{stat.metric}</span>
+                        <Badge variant="gold" className="text-xs">{stat.value}</Badge>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Energy Statistics */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Zap className="h-5 w-5 text-emerald" />
+                    Energy Statistics
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-4">
+                    {energyStats.map((stat, idx) => (
+                      <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
+                        <span className="text-sm text-slate-300">{stat.metric}</span>
+                        <Badge variant="emerald" className="text-xs">{stat.value}</Badge>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* AI/Tech Statistics */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Cpu className="h-5 w-5 text-cyan" />
+                    AI & Technology Statistics
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
+                    {aiTechStats.map((stat, idx) => (
+                      <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
+                        <span className="text-sm text-slate-300">{stat.metric}</span>
+                        <Badge variant="cyan" className="text-xs">{stat.value}</Badge>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Military Statistics */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Crosshair className="h-5 w-5 text-rose" />
+                    Military & Defense Statistics
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-4">
+                    {militaryStats.map((stat, idx) => (
+                      <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
+                        <span className="text-sm text-slate-300">{stat.metric}</span>
+                        <Badge variant="outline" className="text-xs">{stat.value}</Badge>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Diplomatic Statistics */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Landmark className="h-5 w-5 text-navy" />
+                    Diplomatic Statistics
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
+                    {diplomaticStats.map((stat, idx) => (
+                      <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
+                        <span className="text-sm text-slate-300">{stat.metric}</span>
+                        <Badge variant="denim" className="text-xs">{stat.value}</Badge>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Key Data Points */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Key Data Points Extracted</CardTitle>
+                  <CardDescription>Critical intelligence data points with sources</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[400px]">
+                    <div className="space-y-2">
+                      {keyDataPoints.map((dp, idx) => (
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/30 p-3">
+                          <div>
+                            <span className="text-xs text-gold">{dp.category}</span>
+                            <p className="text-sm text-slate-200">{dp.dataPoint}</p>
+                          </div>
+                          <div className="text-right">
+                            <Badge variant="outline" className="text-xs">{dp.value}</Badge>
+                            <p className="text-xs text-slate-500 mt-1">{dp.source}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Future Outlook Tab */}
+        <TabsContent value="outlook" className="space-y-6">
+          <GlassPanel
+            title="Future Outlook & Strategic Indicators"
+            description="Risk factors, opportunity factors, and indicators to watch"
+          >
+            <div className="space-y-6">
+              {/* Indicators to Watch */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Activity className="h-5 w-5 text-cyan" />
+                    Key Indicators to Watch
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {futureIndicators.map((indicator, idx) => (
+                      <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
+                        <div>
+                          <p className="font-medium text-slate-200">{indicator.indicator}</p>
+                          <p className="text-sm text-slate-400">Current: {indicator.current}</p>
+                        </div>
+                        <div className="text-right">
+                          <Badge
+                            variant="outline"
+                            className={
+                              indicator.current === 'HIGH' || indicator.current === 'TENSE'
+                                ? 'border-rose-500/50 text-rose-400'
+                                : indicator.current === 'FROZEN' || indicator.current === 'DIVIDED' || indicator.current === 'STALLED'
+                                ? 'border-yellow-500/50 text-yellow-400'
+                                : 'border-emerald-500/50 text-emerald-400'
+                            }
+                          >
+                            {indicator.current}
+                          </Badge>
+                          <p className="text-xs text-slate-500 mt-1">Watch: {indicator.watchFor}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
 
               <div className="grid gap-6 lg:grid-cols-2">
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Agreement Growth Rate</CardTitle>
-                    <CardDescription>Monthly new agreements signed</CardDescription>
+                {/* Risk Factors */}
+                <Card className="glass-card border-rose-500/30">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="flex items-center gap-2 text-lg text-rose-400">
+                      <AlertTriangle className="h-5 w-5" />
+                      Risk Factors
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <AreaChart
-                      data={agreementTrendData.map((d, i) => ({ month: d.month, new: i === 0 ? 12 : Math.floor(Math.random() * 8) + 3 }))}
-                      xAxisKey="month"
-                      areas={[
-                        { dataKey: 'new', name: 'New Agreements', color: CHART_COLORS.platinum },
-                      ]}
-                      height={250}
-                      showGrid={true}
-                    />
+                    <div className="space-y-3">
+                      {riskFactors.map((risk, idx) => (
+                        <div key={idx} className="flex items-start gap-3 rounded-lg bg-rose-500/10 p-3 border border-rose-500/20">
+                          <AlertTriangle className="h-4 w-4 shrink-0 text-rose-400 mt-0.5" />
+                          <div>
+                            <p className="font-medium text-slate-200 text-sm">{risk.factor}</p>
+                            <p className="text-xs text-slate-400 mt-1">{risk.description}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </CardContent>
                 </Card>
 
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Strategic Partnership Growth</CardTitle>
-                    <CardDescription>Cumulative strategic partnerships</CardDescription>
+                {/* Opportunity Factors */}
+                <Card className="glass-card border-emerald-500/30">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="flex items-center gap-2 text-lg text-emerald-400">
+                      <TrendingUp className="h-5 w-5" />
+                      Opportunity Factors
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <AreaChart
-                      data={agreementTrendData.map((d, i) => ({ month: d.month, total: 20 + i * 0.3 }))}
-                      xAxisKey="month"
-                      areas={[
-                        { dataKey: 'total', name: 'Total Partnerships', color: CHART_COLORS.emerald },
-                      ]}
-                      height={250}
-                      showGrid={true}
-                    />
+                    <div className="space-y-3">
+                      {opportunityFactors.map((opp, idx) => (
+                        <div key={idx} className="flex items-start gap-3 rounded-lg bg-emerald-500/10 p-3 border border-emerald-500/20">
+                          <TrendingUp className="h-4 w-4 shrink-0 text-emerald-400 mt-0.5" />
+                          <div>
+                            <p className="font-medium text-slate-200 text-sm">{opp.factor}</p>
+                            <p className="text-xs text-slate-400 mt-1">{opp.description}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </CardContent>
                 </Card>
               </div>
+
+              {/* Research Summary */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Research Execution Summary</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-4">
+                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                      <p className="text-2xl font-bold text-platinum">{data.executionMetadata.queriesExecuted}</p>
+                      <p className="text-sm text-slate-400">Queries Executed</p>
+                    </div>
+                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                      <p className="text-2xl font-bold text-platinum">{data.executionMetadata.pagesFetched}</p>
+                      <p className="text-sm text-slate-400">Pages Fetched</p>
+                    </div>
+                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                      <p className="text-2xl font-bold text-platinum">{data.sources.length}</p>
+                      <p className="text-sm text-slate-400">Sources Analyzed</p>
+                    </div>
+                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                      <p className="text-2xl font-bold text-platinum">{data.metrics.totalDataPoints}</p>
+                      <p className="text-sm text-slate-400">Data Points Extracted</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex items-center justify-between rounded-lg bg-gold-500/10 p-3 border border-gold-500/30">
+                    <span className="text-sm text-slate-300">Enrichment Status</span>
+                    <Badge variant="gold">{data.executionMetadata.enrichmentStatus}</Badge>
+                  </div>
+                  <div className="mt-4 flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
+                    <span className="text-sm text-slate-300">Last Updated</span>
+                    <span className="text-sm text-slate-400">{data.lastUpdated}</span>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </GlassPanel>
         </TabsContent>

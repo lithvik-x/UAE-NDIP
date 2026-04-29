@@ -50,7 +50,7 @@ export default function EmergingThreatsPage() {
     { name: 'Supply Chain', value: 18, color: CHART_COLORS.navy },
     { name: 'Ransomware 2.0', value: 15, color: CHART_COLORS.platinum },
     { name: 'Deepfake Content', value: 12, color: CHART_COLORS.rose },
-    { name: 'IoT Vulnerabilities', value: 5, color: CHART_COLORS.cyan },
+    { name: 'IoT Vulnerabilities', value: 5, color: CHART_COLORS.info },
   ]
 
   // Threat trend data
@@ -151,7 +151,7 @@ export default function EmergingThreatsPage() {
           value={threatScore}
           previousValue={threatScore + 8}
           icon={<Activity className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
         />
       </div>
 

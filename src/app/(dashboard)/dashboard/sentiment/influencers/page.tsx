@@ -63,7 +63,7 @@ export default function InfluencerSentimentPage() {
     { category: 'Technology', sentiment: 85, influencers: 38, color: CHART_COLORS.navy },
     { category: 'Lifestyle', sentiment: 78, influencers: 62, color: CHART_COLORS.emerald },
     { category: 'Fashion', sentiment: 80, influencers: 35, color: CHART_COLORS.rose },
-    { category: 'Food', sentiment: 76, influencers: 48, color: CHART_COLORS.cyan },
+    { category: 'Food', sentiment: 76, influencers: 48, color: CHART_COLORS.info },
     { category: 'Sports', sentiment: 84, influencers: 28, color: CHART_COLORS.purple },
   ]
 
@@ -162,7 +162,7 @@ export default function InfluencerSentimentPage() {
           value={315}
           previousValue={298}
           icon={<Globe className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="success"
         />
         <MetricCard

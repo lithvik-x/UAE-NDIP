@@ -45,6 +45,7 @@ import {
   useFacebookIntelligenceData,
   useRedditIntelligenceData,
   useTelegramIntelligenceData,
+  useDiscordIntelligenceData,
 } from '@/lib/data-loader'
 
 export default function SocialMediaOverviewPage() {
@@ -56,8 +57,9 @@ export default function SocialMediaOverviewPage() {
   const { data: facebook } = useFacebookIntelligenceData()
   const { data: reddit } = useRedditIntelligenceData()
   const { data: telegram } = useTelegramIntelligenceData()
+  const { data: discord } = useDiscordIntelligenceData()
 
-  if (!twitter || !tiktok || !instagram || !linkedin) {
+  if (!twitter || !tiktok || !instagram || !linkedin || !discord) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
         <div className="text-platinum-400">Loading Social Media data...</div>
@@ -104,7 +106,7 @@ export default function SocialMediaOverviewPage() {
       sentimentLabel: linkedin.metrics.sentiment.overall,
       botPercent: linkedin.metrics.botActivity.estimatedBotPercent,
       censorship: linkedin.censorship.level,
-      color: CHART_COLORS.cyan,
+      color: CHART_COLORS.info,
       icon: Users,
     },
     {
@@ -207,7 +209,7 @@ export default function SocialMediaOverviewPage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="platinum" className="mb-2">SOCIAL INTELLIGENCE</Badge>
+          <Badge variant="default" className="mb-2">SOCIAL INTELLIGENCE</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-platinum">Social Media Overview</h1>
           <p className="mt-2 text-slate-400">
             Comprehensive monitoring of social platforms across the UAE digital landscape
@@ -234,7 +236,7 @@ export default function SocialMediaOverviewPage() {
             value={stat.value}
             previousValue={stat.value}
             icon={<stat.icon className="h-6 w-6" />}
-            gradient="navy"
+            gradient="denim"
           />
         ))}
       </div>
@@ -246,6 +248,7 @@ export default function SocialMediaOverviewPage() {
           <TabsTrigger value="censorship">Censorship</TabsTrigger>
           <TabsTrigger value="bot-activity">Bot Activity</TabsTrigger>
           <TabsTrigger value="narratives">Key Narratives</TabsTrigger>
+          <TabsTrigger value="discord">Discord</TabsTrigger>
         </TabsList>
 
         {/* Platform Overview Tab */}
@@ -597,6 +600,318 @@ export default function SocialMediaOverviewPage() {
                       ))}
                     </div>
                   </ScrollArea>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Discord Tab */}
+        <TabsContent value="discord" className="space-y-6">
+          <GlassPanel title="Discord Intelligence" description="UAE Discord landscape, VPN requirements, and platform analysis">
+            <div className="space-y-6">
+              {/* Key Discord Metrics */}
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <MetricCard
+                  title="UAE Discord Servers"
+                  value={discord.serverDirectory.topUaeServers.length.toString()}
+                  icon={<MessageSquare className="h-6 w-6" />}
+                  gradient="denim"
+                />
+                <MetricCard
+                  title="Total Members"
+                  value={discord.serverDirectory.topUaeServers.reduce((acc: number, s: { members: number }) => acc + (s.members || 0), 0).toLocaleString()}
+                  icon={<Users className="h-6 w-6" />}
+                  gradient="denim"
+                />
+                <MetricCard
+                  title="Censorship Level"
+                  value="EXTREME"
+                  icon={<Shield className="h-6 w-6" />}
+                  gradient="denim"
+                />
+                <MetricCard
+                  title="Sentiment Score"
+                  value={`${discord.metrics.sentiment.score}`}
+                  icon={<TrendingUp className="h-6 w-6" />}
+                  gradient="denim"
+                />
+              </div>
+
+              {/* Blocking Status and VPN Requirements */}
+              <div className="grid gap-6 lg:grid-cols-2">
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Blocking Status</CardTitle>
+                    <CardDescription>Discord is fully blocked in UAE</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
+                        <div className="flex items-center gap-3">
+                          <AlertTriangle className="h-5 w-5 text-rose-400" />
+                          <span className="text-sm font-medium text-slate-200">Status</span>
+                        </div>
+                        <Badge variant="destructive">FULLY BLOCKED</Badge>
+                      </div>
+                      <div className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
+                        <div className="flex items-center gap-3">
+                          <Lock className="h-5 w-5 text-rose-400" />
+                          <span className="text-sm font-medium text-slate-200">Blocking Entity</span>
+                        </div>
+                        <span className="text-sm text-slate-400">Etisalat & UAE ISPs</span>
+                      </div>
+                      <div className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
+                        <div className="flex items-center gap-3">
+                          <Lock className="h-5 w-5 text-rose-400" />
+                          <span className="text-sm font-medium text-slate-200">Primary Reason</span>
+                        </div>
+                        <span className="text-sm text-slate-400">VoIP licensing</span>
+                      </div>
+                      <div className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
+                        <div className="flex items-center gap-3">
+                          <Unlock className="h-5 w-5 text-emerald-400" />
+                          <span className="text-sm font-medium text-slate-200">Solution</span>
+                        </div>
+                        <span className="text-sm text-slate-400">VPN with obfuscation</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">VPN Requirements</CardTitle>
+                    <CardDescription>Recommended VPNs for UAE Discord access</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {discord.vpnRequirements.recommendedVpns.map((vpn: { name: string, rank: number, speed: string, uaeCompatibility: string }, idx: number) => (
+                        <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <div className="flex items-center gap-3">
+                            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-gold">
+                              {vpn.rank}
+                            </div>
+                            <div>
+                              <span className="text-sm font-medium text-slate-200">{vpn.name}</span>
+                              <p className="text-xs text-slate-400">{vpn.speed} | {vpn.uaeCompatibility}</p>
+                            </div>
+                          </div>
+                          <Badge variant="outline" className="text-emerald-400 border-emerald-400/50">{vpn.keyFeature}</Badge>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Blocking Timeline */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Blocking Timeline</CardTitle>
+                  <CardDescription>History of Discord blocking in UAE</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[200px]">
+                    <div className="space-y-2">
+                      {discord.censorship.blockingTimeline.map((event: { date: string, event: string, sentiment: string }, idx: number) => (
+                        <div key={idx} className="flex items-start gap-4 rounded-lg bg-slate-800/50 p-3">
+                          <div className="mt-1 h-2 w-2 rounded-full bg-rose-400" />
+                          <div className="flex-1">
+                            <div className="flex items-center justify-between">
+                              <span className="text-xs font-medium text-gold">{event.date}</span>
+                            </div>
+                            <p className="text-sm text-slate-300">{event.event}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+
+              {/* Top UAE Servers */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Top UAE Discord Servers</CardTitle>
+                  <CardDescription>Major Discord communities relevant to UAE users</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {discord.serverDirectory.topUaeServers.slice(0, 8).map((server: { name: string, type: string, members: number, arabic: boolean | string, vpnRequired: boolean }, idx: number) => (
+                      <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                        <div className="flex items-center gap-3">
+                          <MessageSquare className="h-5 w-5 text-platinum" />
+                          <div>
+                            <span className="text-sm font-medium text-slate-200">{server.name}</span>
+                            <p className="text-xs text-slate-400">{server.type} | {server.members.toLocaleString()} members</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          {server.arabic && <Badge variant="outline" className="text-xs">Arabic</Badge>}
+                          {server.vpnRequired && <Badge variant="warning" className="text-xs">VPN Required</Badge>}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Crypto/Web3 and Teen Safety */}
+              <div className="grid gap-6 lg:grid-cols-2">
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Web3 Job Market</CardTitle>
+                    <CardDescription>Discord-required positions in Dubai</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <p className="text-2xl font-bold text-gold">{discord.cryptoWeb3.web3Jobs.availablePositions}</p>
+                          <p className="text-xs text-slate-400">Positions</p>
+                        </div>
+                        <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <p className="text-lg font-bold text-gold">{discord.cryptoWeb3.web3Jobs.salaryRange}</p>
+                          <p className="text-xs text-slate-400">Salary Range</p>
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <p className="text-xs font-medium text-slate-400">TOP COMPANIES</p>
+                        {discord.cryptoWeb3.web3Jobs.topCompanies.map((company: string, idx: number) => (
+                          <div key={idx} className="flex items-center gap-2 rounded-lg bg-slate-800/30 p-2">
+                            <div className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                            <span className="text-sm text-slate-300">{company}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Teen Safety Update</CardTitle>
+                    <CardDescription>Discord age verification changes affecting UAE</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div className="rounded-lg bg-slate-800/50 p-4">
+                        <p className="text-sm font-medium text-slate-200">Global Rollout</p>
+                        <p className="text-lg font-bold text-gold">{discord.teenSafety.globalRollout}</p>
+                        <p className="text-xs text-slate-400 mt-1">Teen-by-default settings for all accounts</p>
+                      </div>
+                      <div className="space-y-2">
+                        <p className="text-xs font-medium text-slate-400">UAE CONTEXT</p>
+                        <div className="rounded-lg bg-slate-800/30 p-3">
+                          <p className="text-sm text-slate-300">{discord.teenSafety.uaeContext.childDigitalSafetyLaw}</p>
+                          <p className="text-xs text-rose-400 mt-1">Penalty: {discord.teenSafety.uaeContext.nonCompliancePenalty}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Data Breach and Key Findings */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <AlertCircle className="h-5 w-5 text-rose-400" />
+                    October 2025 Data Breach
+                  </CardTitle>
+                  <CardDescription>Security incident affecting Discord users globally</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-6 lg:grid-cols-3">
+                    <div className="space-y-3">
+                      <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                        <p className="text-3xl font-bold text-rose-400">~70K</p>
+                        <p className="text-xs text-slate-400">Government IDs Exposed</p>
+                      </div>
+                      <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                        <p className="text-sm font-medium text-slate-200">Vendor Compromised</p>
+                        <p className="text-xs text-slate-400">5CA (third-party customer service)</p>
+                      </div>
+                    </div>
+                    <div className="lg:col-span-2 space-y-3">
+                      <p className="text-xs font-medium text-slate-400">DATA ACCESSED</p>
+                      {discord.dataBreach.incident.dataAccessed.map((data: string, idx: number) => (
+                        <div key={idx} className="flex items-center gap-2 rounded-lg bg-slate-800/30 p-2">
+                          <div className="h-1.5 w-1.5 rounded-full bg-rose-400" />
+                          <span className="text-sm text-slate-300">{data}</span>
+                        </div>
+                      ))}
+                      <p className="text-xs font-medium text-emerald-400 mt-2">DATA NOT ACCESSED</p>
+                      <p className="text-xs text-slate-400">Full credit card numbers, CCV codes, passwords, authentication data</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Key Findings */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Key Findings</CardTitle>
+                  <CardDescription>Critical insights from Discord intelligence analysis</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[250px]">
+                    <div className="space-y-3">
+                      {discord.keyFindings.map((finding: { finding: string, metric: string, tier: string }, idx: number) => (
+                        <div key={idx} className="flex items-start gap-4 rounded-lg bg-slate-800/50 p-4">
+                          <Badge
+                            variant={finding.tier === 'critical' ? 'destructive' : finding.tier === 'high' ? 'warning' : 'outline'}
+                            className="mt-0.5"
+                          >
+                            {finding.tier.toUpperCase()}
+                          </Badge>
+                          <div>
+                            <p className="text-sm font-medium text-slate-200">{finding.finding}</p>
+                            <p className="text-xs text-gold mt-1">{finding.metric}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+
+              {/* Sentiment by Topic */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Sentiment by Topic</CardTitle>
+                  <CardDescription>How UAE Discord users feel about different aspects</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {discord.sentiment.byTopic.map((item: { topic: string, sentiment: string, evidence: string }, idx: number) => (
+                      <div key={idx} className="space-y-2">
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm font-medium text-slate-200">{item.topic}</span>
+                          <Badge
+                            variant={
+                              item.sentiment.includes('Negative') ? 'destructive' :
+                              item.sentiment.includes('Positive') ? 'success' : 'outline'
+                            }
+                            className="text-xs"
+                          >
+                            {item.sentiment}
+                          </Badge>
+                        </div>
+                        <Progress
+                          value={
+                            item.sentiment.includes('Highly Negative') ? 90 :
+                            item.sentiment.includes('Negative') ? 70 :
+                            item.sentiment.includes('Positive') ? 60 :
+                            item.sentiment.includes('Mixed') ? 50 : 50
+                          }
+                          className="h-2"
+                        />
+                        <p className="text-xs text-slate-400">{item.evidence}</p>
+                      </div>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             </div>

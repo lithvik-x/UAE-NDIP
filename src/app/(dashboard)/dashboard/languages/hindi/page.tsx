@@ -42,7 +42,7 @@ export default function HindiLanguagePage() {
 
   // Platform distribution for Hindi
   const platformDistribution = [
-    { platform: 'YouTube', percentage: 42, speakers: 756000, color: CHART_COLORS.red },
+    { platform: 'YouTube', percentage: 42, speakers: 756000, color: CHART_COLORS.danger },
     { platform: 'WhatsApp', percentage: 28, speakers: 504000, color: CHART_COLORS.emerald },
     { platform: 'Instagram', percentage: 15, speakers: 270000, color: CHART_COLORS.pink },
     { platform: 'Twitter/X', percentage: 8, speakers: 144000, color: CHART_COLORS.navy },
@@ -122,7 +122,7 @@ export default function HindiLanguagePage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="navy" className="mb-2">L-SECTOR</Badge>
+          <Badge variant="denim" className="mb-2">L-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-navy">Hindi Language Media</h1>
           <p className="mt-2 text-slate-400">
             Hindi-language content monitoring and analysis in the UAE
@@ -163,7 +163,7 @@ export default function HindiLanguagePage() {
           value={sentimentScore + '%'}
           previousValue={sentimentScore - 3}
           icon={<TrendingUp className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="info"
         />
         <MetricCard

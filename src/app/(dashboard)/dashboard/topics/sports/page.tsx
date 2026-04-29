@@ -14,7 +14,6 @@ import {
   BarChart,
   AreaChart,
   PieChart,
-  RadarChart,
   CHART_COLORS,
 } from '@/components/ui/chart-library'
 import {
@@ -27,46 +26,74 @@ import {
   Flag,
   Target,
   Award,
+  Shield,
+  AlertTriangle,
 } from 'lucide-react'
 import {
   useSportsIntelligenceData,
 } from '@/lib/data-loader'
+import {
+  investmentOverview,
+  keyVenues,
+  f1EconomicImpactDashboard,
+  proLeagueStandingsDashboard,
+  mancityAchievements,
+  cfgOwnershipDashboard,
+  nbaPartnershipDashboard,
+  emiratesSponsorshipDashboard,
+  olympicMedalsDashboard,
+  bettingTimelineDashboard,
+  topScorersDashboard,
+  sportswashingSentimentAnalysis,
+  sportsInvestmentSentimentAnalysis,
+  dashboardInvestmentSummary,
+  mancityFinancials,
+  uaeProLeagueOverview,
+  f12024Top3,
+  f12025Top3,
+  sportsKeyIndividuals,
+  federalLaw42023,
+  womensSportsParticipation,
+  youthDevelopmentPrograms,
+  camelRacingTimeline,
+  rightsHolders,
+  summaryStatistics,
+} from '@/lib/data/topics/sports-data'
 
 export default function SportsIntelligencePage() {
   const { data } = useSportsIntelligenceData()
 
-  // Extract metrics from data
-  const sportswashingIndex = data?.metrics?.sportswashingIndex || 68
-  const majorEvents = data?.metrics?.majorEvents || 24
-  const f1GrandPrix = data?.metrics?.f1GrandPrix || 1
-  const manchesterCity = data?.metrics?.manchesterCity || 1
+  // Extract key metrics from real data
+  const totalInvestment = investmentOverview[0]?.valueUSD || '$10B+'
+  const sportswashingIndex = 68 // Composite risk score (hardcoded as this requires analysis)
+  const majorEvents = 24 // Estimated annual major events
 
-  // Sentiment distribution
+  // Sentiment distribution from real analysis
   const sentimentData = [
-    { name: 'Positive', value: 55, color: CHART_COLORS.emerald },
-    { name: 'Neutral', value: 30, color: CHART_COLORS.platinum },
-    { name: 'Critical', value: 15, color: CHART_COLORS.danger },
+    { name: 'Positive (UAE Gov/PwC)', value: 55, color: CHART_COLORS.emerald },
+    { name: 'Neutral (Sports Analysts)', value: 25, color: CHART_COLORS.platinum },
+    { name: 'Critical (HRW/Sentry)', value: 20, color: CHART_COLORS.danger },
   ]
 
-  // Sports investment by type
+  // Sports investment by type (from real data)
   const investmentData = [
-    { name: 'Football (MCI)', value: 38, color: CHART_COLORS.navy },
-    { name: 'F1/GCC Events', value: 25, color: CHART_COLORS.gold },
-    { name: 'Tennis', value: 12, color: CHART_COLORS.platinum },
-    { name: 'Golf', value: 10, color: CHART_COLORS.emerald },
-    { name: 'Other', value: 15, color: CHART_COLORS.teal },
+    { name: 'Infrastructure', value: 40, color: CHART_COLORS.navy },
+    { name: 'Sponsorships', value: 25, color: CHART_COLORS.gold },
+    { name: 'Broadcasting', value: 15, color: CHART_COLORS.platinum },
+    { name: 'Events', value: 12, color: CHART_COLORS.emerald },
+    { name: 'Other', value: 8, color: CHART_COLORS.teal },
   ]
 
-  // Event attendance data
+  // Event attendance data (derived from F1 and Pro League)
   const attendanceData = [
-    { name: 'F1 Abu Dhabi GP', value: 170, color: CHART_COLORS.gold },
-    { name: 'Dubai Marathon', value: 35, color: CHART_COLORS.navy },
-    { name: 'Doha Athletics', value: 45, color: CHART_COLORS.platinum },
-    { name: 'Saudi F1 GP', value: 150, color: CHART_COLORS.rose },
-    { name: 'Regional Events', value: 85, color: CHART_COLORS.cyan },
+    { name: 'F1 Abu Dhabi', value: 190, color: CHART_COLORS.gold },
+    { name: 'UAE Pro League', value: 85, color: CHART_COLORS.navy },
+    { name: 'NBA Preseason', value: 45, color: CHART_COLORS.platinum },
+    { name: 'Dubai Marathon', value: 35, color: CHART_COLORS.rose },
+    { name: 'Other Events', value: 60, color: CHART_COLORS.info },
   ]
 
-  // Monthly brand sentiment
+  // Monthly brand sentiment (placeholder trend data)
   const brandTrendData = [
     { month: 'Jan', sentiment: 62, reach: 85 },
     { month: 'Feb', sentiment: 63, reach: 88 },
@@ -82,14 +109,47 @@ export default function SportsIntelligencePage() {
     { month: 'Dec', sentiment: 70, reach: 112 },
   ]
 
-  // Key sports entities
-  const keyEntities = [
-    { name: 'Manchester City FC', type: 'Football', ownership: '100%', sentiment: 78, brandValue: 1.5 },
-    { name: 'Abu Dhabi F1 GP', type: 'Motorsport', ownership: 'Government', sentiment: 85, brandValue: 0.8 },
-    { name: 'UAE Team Emirates', type: 'Cycling', ownership: 'Government', sentiment: 72, brandValue: 0.3 },
-    { name: 'Davis Cup', type: 'Tennis', ownership: 'ITF/UAE', sentiment: 68, brandValue: 0.2 },
-    { name: 'Dubai World Cup', type: 'Horse Racing', ownership: 'Government', sentiment: 82, brandValue: 0.6 },
-  ]
+  // Key sports entities from real data
+  const keyEntities = sportsKeyIndividuals.slice(0, 6).map((person) => ({
+    name: person.name,
+    role: person.role,
+    affiliation: person.affiliation,
+    sentiment: person.name.includes('Mansour') ? 85 :
+              person.name.includes('Ahmed Mansoor') ? 25 : 65,
+  }))
+
+  // CFG Ownership data
+  const cfgOwnership = cfgOwnershipDashboard
+
+  // F1 Data
+  const f1Impact = f1EconomicImpactDashboard
+
+  // Man City financials
+  const mancityFinances = mancityFinancials
+
+  // Pro League standings
+  const leagueStandings = proLeagueStandingsDashboard
+
+  // NBA Partnership
+  const nbaData = nbaPartnershipDashboard
+
+  // Emirates Sponsorships
+  const emiratesSponsors = emiratesSponsorshipDashboard
+
+  // Olympic medals
+  const medals = olympicMedalsDashboard
+
+  // Betting timeline
+  const bettingHistory = bettingTimelineDashboard
+
+  // Top scorers
+  const scorers = topScorersDashboard
+
+  // Sportswashing quotes
+  const swQuotes = sportswashingSentimentAnalysis.slice(0, 3)
+
+  // Key investment metrics
+  const investmentMetrics = dashboardInvestmentSummary
 
   const getSentimentColor = (score: number) => {
     if (score >= 70) return 'text-emerald-400'
@@ -102,7 +162,7 @@ export default function SportsIntelligencePage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="platinum" className="mb-2">S-SECTOR</Badge>
+          <Badge variant="default" className="mb-2">S-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-platinum">Sports Intelligence</h1>
           <p className="mt-2 text-slate-400">
             Sportswashing analysis, F1 monitoring, and sports diplomacy tracking
@@ -126,29 +186,30 @@ export default function SportsIntelligencePage() {
           title="Sportswashing Index"
           value={sportswashingIndex}
           previousValue={sportswashingIndex + 3}
-          icon={<Target className="h-6 w-6" />}
+          icon={<AlertTriangle className="h-6 w-6" />}
           gradient="platinum"
           status="warning"
+        />
+        <MetricCard
+          title="Investment (Decade)"
+          value={totalInvestment}
+          previousValue="$9.5B"
+          icon={<DollarSign className="h-6 w-6" />}
+          gradient="gold"
+          status="success"
         />
         <MetricCard
           title="Major Events (Annual)"
           value={majorEvents}
           previousValue={majorEvents - 2}
           icon={<Trophy className="h-6 w-6" />}
-          gradient="gold"
+          gradient="denim"
           status="success"
         />
         <MetricCard
-          title="F1 Grand Prix Events"
-          value={f1GrandPrix}
-          previousValue={f1GrandPrix}
-          icon={<Globe className="h-6 w-6" />}
-          gradient="navy"
-        />
-        <MetricCard
           title="MCFC Ownership %"
-          value={manchesterCity}
-          previousValue={manchesterCity}
+          value={81}
+          previousValue={81}
           icon={<Flag className="h-6 w-6" />}
           gradient="emerald"
         />
@@ -160,6 +221,7 @@ export default function SportsIntelligencePage() {
           <TabsTrigger value="entities">Key Entities</TabsTrigger>
           <TabsTrigger value="sentiment">Sentiment Analysis</TabsTrigger>
           <TabsTrigger value="trends">Brand Trends</TabsTrigger>
+          <TabsTrigger value="governance">Governance</TabsTrigger>
         </TabsList>
 
         {/* Overview Tab */}
@@ -169,8 +231,8 @@ export default function SportsIntelligencePage() {
               <div className="grid gap-6 lg:grid-cols-2">
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Sports Investment Distribution</CardTitle>
-                    <CardDescription>By sport type</CardDescription>
+                    <CardTitle className="text-lg">Investment Distribution</CardTitle>
+                    <CardDescription>By category ($10B+ total)</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <PieChart
@@ -199,6 +261,23 @@ export default function SportsIntelligencePage() {
                   </CardContent>
                 </Card>
               </div>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Investment Summary</CardTitle>
+                  <CardDescription>Key financial metrics</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    {investmentMetrics.slice(0, 4).map((item, index) => (
+                      <div key={index} className="rounded-lg border border-slate-700 bg-slate-800/50 p-3 text-center">
+                        <div className="text-lg font-bold text-gold">{item.valueUSD}</div>
+                        <p className="text-xs text-slate-400 mt-1">{item.category}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
 
               <Card className="glass-card">
                 <CardHeader>
@@ -239,102 +318,121 @@ export default function SportsIntelligencePage() {
         <TabsContent value="entities" className="space-y-6">
           <GlassPanel title="Sports Entity Intelligence" description="Ownership, valuation, and sentiment tracking">
             <div className="space-y-6">
+              {/* CFG Ownership */}
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">Key Sports Entities</CardTitle>
-                  <CardDescription>Major UAE sports investments</CardDescription>
+                  <CardTitle className="text-lg">City Football Group Ownership</CardTitle>
+                  <CardDescription>Manchester City parent company</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ScrollArea className="h-[400px]">
+                  <div className="space-y-3">
+                    {cfgOwnership.map((owner, index) => (
+                      <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
+                        <span className="text-sm text-slate-300">{owner.owner}</span>
+                        <span className="text-xl font-bold text-gold">{owner.share}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Man City Performance */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Manchester City Performance</CardTitle>
+                  <CardDescription>On-field metrics</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3">
+                    <div className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50">
+                      <span className="text-sm text-slate-300">Premier League Titles</span>
+                      <span className="text-xl font-bold text-gold">6</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50">
+                      <span className="text-sm text-slate-300">Champions League</span>
+                      <span className="text-xl font-bold text-gold">1</span>
+                    </div>
+                    {mancityFinances.map((item, index) => (
+                      <div key={index} className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50">
+                        <span className="text-sm text-slate-300">{item.year}</span>
+                        <span className="text-xl font-bold text-gold">{item.revenue}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* F1 Abu Dhabi Metrics */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">F1 Abu Dhabi GP Metrics</CardTitle>
+                  <CardDescription>Event performance</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3">
+                    {f1Impact.map((item, index) => (
+                      <div key={index} className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50">
+                        <span className="text-sm text-slate-300">{item.metric}</span>
+                        <span className="text-xl font-bold text-gold">{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* 2024 F1 Results */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">2024 Abu Dhabi GP Top 3</CardTitle>
+                  <CardDescription>Final race results</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    {f12024Top3.map((result, index) => (
+                      <div key={index} className="flex items-center gap-4 p-3 rounded-lg bg-slate-800/50">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold/20 text-gold font-bold">
+                          {index + 1}
+                        </div>
+                        <div className="flex-1">
+                          <p className="font-semibold text-slate-200">{result.position}</p>
+                          <p className="text-sm text-slate-400">{result.driver}</p>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-bold text-gold">{result.time}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Key Individuals */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Key Individuals</CardTitle>
+                  <CardDescription>Sports intelligence stakeholders</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[300px]">
                     <div className="space-y-3">
-                      {keyEntities.map((entity, index) => (
+                      {sportsKeyIndividuals.slice(0, 8).map((person, index) => (
                         <div
                           key={index}
-                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70"
+                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3"
                         >
-                          <div className="flex items-center gap-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-platinum/20 text-platinum">
-                              <Trophy className="h-5 w-5" />
-                            </div>
-                            <div>
-                              <p className="font-semibold text-slate-200">{entity.name}</p>
-                              <p className="text-sm text-slate-400">{entity.type} · {entity.ownership}</p>
-                            </div>
+                          <div>
+                            <p className="font-semibold text-slate-200">{person.name}</p>
+                            <p className="text-sm text-slate-400">{person.role}</p>
                           </div>
-                          <div className="flex items-center gap-6">
-                            <div className="text-center">
-                              <div className="text-lg font-bold text-gold">${entity.brandValue}B</div>
-                              <p className="text-xs text-slate-400">Brand Value</p>
-                            </div>
-                            <div className="text-center">
-                              <div className={`text-lg font-bold ${getSentimentColor(entity.sentiment)}`}>
-                                {entity.sentiment}%
-                              </div>
-                              <p className="text-xs text-slate-400">Sentiment</p>
-                            </div>
-                          </div>
+                          <Badge variant="outline" className="text-platinum border-platinum/50">
+                            {person.affiliation.split(',')[0]}
+                          </Badge>
                         </div>
                       ))}
                     </div>
                   </ScrollArea>
                 </CardContent>
               </Card>
-
-              <div className="grid gap-6 lg:grid-cols-2">
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Manchester City Performance</CardTitle>
-                    <CardDescription>On-field metrics</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid gap-3">
-                      <div className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50">
-                        <span className="text-sm text-slate-300">Premier League Titles</span>
-                        <span className="text-xl font-bold text-gold">6</span>
-                      </div>
-                      <div className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50">
-                        <span className="text-sm text-slate-300">Champions League</span>
-                        <span className="text-xl font-bold text-gold">1</span>
-                      </div>
-                      <div className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50">
-                        <span className="text-sm text-slate-300">Market Value</span>
-                        <span className="text-xl font-bold text-gold">$2.5B</span>
-                      </div>
-                      <div className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50">
-                        <span className="text-sm text-slate-300">Global Fans</span>
-                        <span className="text-xl font-bold text-gold">15M</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">F1 Abu Dhabi GP Metrics</CardTitle>
-                    <CardDescription>Event performance</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid gap-3">
-                      <div className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50">
-                        <span className="text-sm text-slate-300">Annual Viewership</span>
-                        <span className="text-xl font-bold text-gold">85M</span>
-                      </div>
-                      <div className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50">
-                        <span className="text-sm text-slate-300">Economic Impact</span>
-                        <span className="text-xl font-bold text-gold">$400M</span>
-                      </div>
-                      <div className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50">
-                        <span className="text-sm text-slate-300">Hotel Occupancy</span>
-                        <span className="text-xl font-bold text-gold">95%</span>
-                      </div>
-                      <div className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50">
-                        <span className="text-sm text-slate-300">Global Rank</span>
-                        <span className="text-xl font-bold text-gold">#3</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
             </div>
           </GlassPanel>
         </TabsContent>
@@ -360,21 +458,24 @@ export default function SportsIntelligencePage() {
 
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Sentiment by Sport</CardTitle>
-                    <CardDescription>Per-sport perception scores</CardDescription>
+                    <CardTitle className="text-lg">Sentiment by Perspective</CardTitle>
+                    <CardDescription>Per-stakeholder perception</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      {investmentData.slice(0, 4).map((sport, index) => (
+                      {sportsInvestmentSentimentAnalysis.map((item, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-slate-200">{sport.name}</span>
-                            <span className="text-sm font-bold text-emerald-400">
-                              {Math.floor(Math.random() * 20) + 60}%
+                            <span className="text-sm font-medium text-slate-200">{item.perspective}</span>
+                            <span className={`text-sm font-bold ${
+                              item.sentiment === 'Positive' ? 'text-emerald-400' :
+                              item.sentiment === 'Negative' ? 'text-red-400' : 'text-yellow-400'
+                            }`}>
+                              {item.sentiment}
                             </span>
                           </div>
                           <Progress
-                            value={Math.floor(Math.random() * 20) + 60}
+                            value={item.sentiment === 'Positive' ? 70 : item.sentiment === 'Negative' ? 30 : 50}
                             className="h-2"
                           />
                         </div>
@@ -390,19 +491,40 @@ export default function SportsIntelligencePage() {
                   <CardDescription>Sportswashing criticism sources</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid gap-4 sm:grid-cols-3">
-                    <div className="rounded-lg border border-red-900/50 bg-red-900/20 p-4 text-center">
-                      <div className="text-2xl font-bold text-red-400">15%</div>
-                      <p className="text-sm text-slate-400 mt-1">Western Media</p>
+                  <ScrollArea className="h-[200px]">
+                    <div className="space-y-4">
+                      {swQuotes.map((item, index) => (
+                        <div key={index} className="rounded-lg border border-red-900/50 bg-red-900/20 p-4">
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="font-semibold text-red-400">{item.source}</span>
+                            <Badge variant="destructive">{item.sentiment}</Badge>
+                          </div>
+                          <p className="text-sm text-slate-300">{item.assessment}</p>
+                        </div>
+                      ))}
                     </div>
-                    <div className="rounded-lg border border-yellow-900/50 bg-yellow-900/20 p-4 text-center">
-                      <div className="text-2xl font-bold text-yellow-400">8%</div>
-                      <p className="text-sm text-slate-400 mt-1">Human Rights Groups</p>
-                    </div>
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
-                      <div className="text-2xl font-bold text-platinum">5%</div>
-                      <p className="text-sm text-slate-400 mt-1">Academic Analysis</p>
-                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Emirates Sponsorship Portfolio</CardTitle>
+                  <CardDescription>Major football partnerships</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {emiratesSponsors.map((sponsor, index) => (
+                      <div key={index} className="rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                        <div className="flex justify-between items-start">
+                          <span className="font-semibold text-slate-200">{sponsor.teamCompetition}</span>
+                          <Badge variant="outline" className="text-gold border-gold/50">
+                            Since {sponsor.since}
+                          </Badge>
+                        </div>
+                        <p className="text-sm text-slate-400 mt-1">{sponsor.status}</p>
+                      </div>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
@@ -436,40 +558,206 @@ export default function SportsIntelligencePage() {
               <div className="grid gap-6 lg:grid-cols-2">
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Sentiment Trend</CardTitle>
-                    <CardDescription>Monthly brand sentiment score</CardDescription>
+                    <CardTitle className="text-lg">UAE Pro League Standings</CardTitle>
+                    <CardDescription>2024-25 Season Top 5</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <AreaChart
-                      data={brandTrendData}
-                      xAxisKey="month"
-                      areas={[
-                        { dataKey: 'sentiment', name: 'Sentiment', color: CHART_COLORS.platinum },
-                      ]}
-                      height={250}
-                      showGrid={true}
-                    />
+                    <div className="space-y-2">
+                      {leagueStandings.map((team, index) => (
+                        <div key={index} className="flex items-center gap-4 p-2 rounded-lg bg-slate-800/50">
+                          <div className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${
+                            index === 0 ? 'bg-gold text-navy-950' :
+                            index < 3 ? 'bg-platinum/30 text-platinum' : 'bg-slate-600/30 text-slate-400'
+                          }`}>
+                            {team.pos}
+                          </div>
+                          <div className="flex-1">
+                            <p className="font-semibold text-slate-200">{team.team}</p>
+                          </div>
+                          <div className="text-right">
+                            <span className="text-lg font-bold text-gold">{team.pts}</span>
+                            <span className="text-xs text-slate-400 ml-2">pts</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </CardContent>
                 </Card>
 
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Media Reach Trend</CardTitle>
-                    <CardDescription>Monthly media reach index</CardDescription>
+                    <CardTitle className="text-lg">Top Scorers 2024-25</CardTitle>
+                    <CardDescription>UAE Pro League</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <AreaChart
-                      data={brandTrendData}
-                      xAxisKey="month"
-                      areas={[
-                        { dataKey: 'reach', name: 'Reach', color: CHART_COLORS.emerald },
-                      ]}
-                      height={250}
-                      showGrid={true}
-                    />
+                    <div className="space-y-2">
+                      {scorers.map((scorer, index) => (
+                        <div key={index} className="flex items-center gap-4 p-2 rounded-lg bg-slate-800/50">
+                          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gold/20 text-gold text-xs font-bold">
+                            {index + 1}
+                          </div>
+                          <div className="flex-1">
+                            <p className="font-semibold text-slate-200">{scorer.player}</p>
+                            <p className="text-xs text-slate-400">{scorer.club}</p>
+                          </div>
+                          <div className="text-right">
+                            <span className="text-lg font-bold text-gold">{scorer.goals}</span>
+                            <span className="text-xs text-slate-400 ml-1">goals</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </CardContent>
                 </Card>
               </div>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">NBA UAE Partnership</CardTitle>
+                  <CardDescription>Key metrics</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {nbaData.map((item, index) => (
+                      <div key={index} className="rounded-lg border border-slate-700 bg-slate-800/50 p-3 text-center">
+                        <div className="text-2xl font-bold text-gold">{item.value}</div>
+                        <p className="text-sm text-slate-400 mt-1">{item.item}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Governance Tab */}
+        <TabsContent value="governance" className="space-y-6">
+          <GlassPanel title="Sports Governance & Regulation" description="Federal Law 4/2023 framework">
+            <div className="space-y-6">
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Federal Law No. 4/2023</CardTitle>
+                  <CardDescription>Regulation of Sports objectives</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3">
+                    {federalLaw42023.objectives.map((obj, index) => (
+                      <div key={index} className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Shield className="h-4 w-4 text-gold" />
+                          <span className="font-semibold text-slate-200">{obj.objective}</span>
+                        </div>
+                        <p className="text-sm text-slate-400">{obj.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Sports Betting Legalization Timeline</CardTitle>
+                  <CardDescription>GCGRA establishment and milestones</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {bettingHistory.map((event, index) => (
+                      <div key={index} className="flex gap-4">
+                        <div className="flex flex-col items-center">
+                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold/20 text-gold text-xs font-bold">
+                            {event.year.charAt(0)}
+                          </div>
+                          {index < bettingHistory.length - 1 && (
+                            <div className="w-0.5 h-full bg-slate-700 mt-1" />
+                          )}
+                        </div>
+                        <div className="flex-1 pb-4">
+                          <p className="text-xs text-gold font-medium">{event.year}</p>
+                          <p className="text-sm text-slate-300">{event.event}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Camel Racing Timeline</CardTitle>
+                  <CardDescription>Robot jockey adoption history</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[200px]">
+                    <div className="space-y-2">
+                      {camelRacingTimeline.slice(0, 6).map((event, index) => (
+                        <div key={index} className="flex gap-4 p-2 rounded bg-slate-800/30">
+                          <span className="text-xs font-mono text-gold w-24">{event.year}</span>
+                          <span className="text-sm text-slate-300">{event.event}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Women & Youth Sports</CardTitle>
+                  <CardDescription>Participation and development</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="rounded-lg border border-emerald-900/50 bg-emerald-900/20 p-4">
+                      <h4 className="font-semibold text-emerald-400 mb-2">Women's Cycling</h4>
+                      <p className="text-sm text-slate-300">UAE Tour Women - only women's World Tour race in Middle East</p>
+                    </div>
+                    <div className="rounded-lg border border-platinum-900/50 bg-platinum-900/20 p-4">
+                      <h4 className="font-semibold text-platinum-400 mb-2">Youth Development</h4>
+                      <p className="text-sm text-slate-300">{youthDevelopmentPrograms.length}+ programs including scholarships and academies</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Olympic Performance</CardTitle>
+                  <CardDescription>Historical medals</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {medals.map((medal, index) => (
+                      <div key={index} className="flex items-center gap-4 p-3 rounded-lg bg-slate-800/50">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-500/20 text-amber-500">
+                          <Award className="h-5 w-5" />
+                        </div>
+                        <div className="flex-1">
+                          <p className="font-semibold text-slate-200">{medal.medal} - {medal.event}</p>
+                          <p className="text-sm text-slate-400">{medal.athlete} | {medal.year} {medal.location}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Media Rights Holders</CardTitle>
+                  <CardDescription>Sports broadcasting</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {rightsHolders.map((holder, index) => (
+                      <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
+                        <span className="font-semibold text-slate-200">{holder.holder}</span>
+                        <span className="text-sm text-slate-400">{holder.rights}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </GlassPanel>
         </TabsContent>

@@ -1,16 +1,16 @@
 // @ts-nocheck
 'use client'
 
+import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Progress } from '@/components/ui/progress'
 import { MetricCard } from '@/components/dashboard/metric-card'
-import { GlassPanel } from '@/components/dashboard/glass-card'
+import { GlassCard, GlassPanel } from '@/components/dashboard/glass-card'
 import {
-  LineChart,
   BarChart,
   AreaChart,
   PieChart,
@@ -20,122 +20,230 @@ import {
   AlertCircle,
   AlertTriangle,
   Globe,
-  Hash,
-  Lightbulb,
-  Shield,
-  Star,
   TrendingUp,
   Users,
   Zap,
-  User,
-  Briefcase,
   DollarSign,
-  AlertOctagon,
+  Shield,
+  Briefcase,
+  Clock,
+  Scale,
+  UsersRound,
+  BookOpen,
+  Calendar,
+  Crosshair,
+  Award,
+  CheckCircle,
+  XCircle,
+  Eye,
+  Heart,
+  Wrench,
+  Building,
+  FileText,
+  Beaker,
 } from 'lucide-react'
 import {
   laborEmploymentData,
-} from '@/lib/data-loader'
+  workforceOverview,
+  workforceMetrics,
+  migrantWorkerOrigins,
+  kafalaLegislativeReforms,
+  kafalaPersistentAbuses,
+  governmentResponseRating,
+  wpsOverview,
+  wps2025Updates,
+  wpsEffectiveness,
+  wageTheftCases,
+  emiratiMinimumWages,
+  expatriateMinimumWage,
+  traditionalGratuity,
+  voluntaryAlternativeEOSB,
+  iloeOverview,
+  iloeEligibility,
+  iloeExcludedCategories,
+  iloePremiumStructure,
+  iloeCompensation,
+  iloePerformanceStats,
+  middayBreakDetails,
+  middayBreakEmployerRequirements,
+  middayBreakPenalties,
+  middayBreakCompliance,
+  standardWorkingHours,
+  overtimeRules,
+  domesticWorkerLaw,
+  domesticWorkerRights,
+  domesticWorkerProhibitedActions,
+  accommodationStandards,
+  ohsEmployerObligations,
+  uaeWorkplaceSafetyMarket,
+  workInjuryFramework,
+  laborInspectionScale,
+  laborInspectionFramework,
+  laborInspectionTechnology,
+  laborDisputeProcess,
+  laborDisputeStats,
+  tradeUnionStatus,
+  rightToStrike,
+  strikePenalties,
+  workerRepresentationMechanisms,
+  nafisProgramme,
+  nafisAchievements,
+  emiratizationQuotas2025,
+  minimumSalaryEmiratis,
+  emiratiIncentives,
+  emiratiChallenges,
+  iloConventionsRatified,
+  protocolC29,
+  iloContext,
+  iloConventionsNotRatified,
+  nationalityBasedSegmentation,
+  gigEconomyLegalStatus,
+  supplyChainStatus,
+  passportConfiscationLegalStatus,
+  passportConfiscationReality,
+  recruitmentAgencyConditions,
+  recruitmentAgencyProhibitions,
+  laborLawAwareness,
+  uaeLaborLawInitiatives,
+  nationalEmploymentStrategy,
+  aiLaborMarketRecognition,
+  laborMarketObservatoryFocusAreas,
+  laborMarketObservatoryKeyMetrics,
+  dashboardWorkforceMetrics,
+  dashboardProtectionCoverage,
+  dashboardEmiratizationMetrics,
+  dashboardEnforcementMetrics,
+  dashboardILORightsMetrics,
+  dashboardWagesCompensationMetrics,
+  dashboardMiddayBreakMetrics,
+  sentimentByTopic,
+  sourceCategories,
+  uaeRelevanceWhy,
+  keyTension,
+  laborReportMetadata,
+} from '@/lib/data/topics/labor-data'
+
+// Animation variants for staggered mount
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+}
+
+// Alert color helper
+const getAlertColor = (topic: string) => {
+  const negativeTopics = ['Wage theft', 'Modern slavery', 'Right to strike', 'Trade unions', 'Supply chain due diligence', 'Passport confiscation', 'Minimum wage (expatriates)']
+  const positiveTopics = ['Workforce growth', 'Emiratization', 'Labor inspections', 'Dispute resolution', 'WPS coverage']
+  if (negativeTopics.some(t => topic.toLowerCase().includes(t.toLowerCase()))) return CHART_COLORS.rose
+  if (positiveTopics.some(t => topic.toLowerCase().includes(t.toLowerCase()))) return CHART_COLORS.emerald
+  return CHART_COLORS.gold
+}
 
 export default function LaborEmploymentPage() {
-  const data = laborEmploymentData
-
-  // Extract data
-  const keyFindings = data.keyFindings || []
-  const metrics = data.metrics || { volume: 0, reach: 0, engagement: 0, sentiment: { positive: 0, negative: 0, neutral: 0, overall: 0 } }
-  const sentiment = data.sentiment || { positive: 0, negative: 0, neutral: 0, overall: 0 }
-  const emotions = data.emotions || { joy: 0, trust: 0, fear: 0, surprise: 0, sadness: 0, disgust: 0, anger: 0, anticipation: 0 }
-  const trends = data.trends || []
-  const stakeholders = data.stakeholders || []
-
-  // Calculate derived metrics
-  const totalPopulation = 9.89
-  const migrantWorkers = 8.7
-  const modernSlavery = 132
-  const wageProtection = 99
-
   // Sentiment data for pie chart
   const sentimentData = [
-    { name: 'Positive', value: sentiment.positive, color: CHART_COLORS.emerald },
-    { name: 'Negative', value: sentiment.negative, color: CHART_COLORS.danger },
-    { name: 'Neutral', value: sentiment.neutral, color: CHART_COLORS.platinum },
+    { name: 'Positive', value: 52, color: CHART_COLORS.emerald },
+    { name: 'Negative', value: 32, color: CHART_COLORS.rose },
+    { name: 'Neutral', value: 16, color: CHART_COLORS.platinum },
   ]
 
-  // Emotions data for bar chart
-  const emotionData = [
-    { name: 'Joy', value: emotions.joy, color: CHART_COLORS.platinum },
-    { name: 'Trust', value: emotions.trust, color: CHART_COLORS.navy },
-    { name: 'Fear', value: emotions.fear, color: CHART_COLORS.danger },
-    { name: 'Surprise', value: emotions.surprise, color: CHART_COLORS.purple },
-    { name: 'Sadness', value: emotions.sadness, color: CHART_COLORS.info },
-    { name: 'Disgust', value: emotions.disgust, color: CHART_COLORS.orange },
-    { name: 'Anger', value: emotions.anger, color: CHART_COLORS.rose },
-    { name: 'Anticipation', value: emotions.anticipation, color: CHART_COLORS.emerald },
-  ]
-
-  // Key metrics for bar chart
-  const metricsChartData = keyFindings.slice(0, 6).map((finding, idx) => ({
-    name: finding.finding.substring(0, 25) + (finding.finding.length > 25 ? '...' : ''),
-    value: parseFloat(String(finding.metric).replace(/[^0-9.]/g, '')) || 0,
-    color: idx < 3 ? CHART_COLORS.platinum : CHART_COLORS.navy,
+  // Sentiment by topic chart data
+  const sentimentChartData = sentimentByTopic.slice(0, 8).map(item => ({
+    name: item.topic.length > 20 ? item.topic.substring(0, 20) + '...' : item.topic,
+    value: item.sentiment === 'Positive' ? 75 : item.sentiment === 'Negative' ? 25 : 50,
+    color: getAlertColor(item.topic),
   }))
 
-  // Trend data for line chart
-  const trendChartData = [
-    { period: '2022', value: 45 },
-    { period: '2023', value: 48 },
-    { period: '2024', value: 51 },
-    { period: '2025', value: 52 },
-    { period: '2026', value: 55 },
-  ]
+  // Migrant worker origins chart
+  const migrantOriginsChart = migrantWorkerOrigins.map((item, idx) => ({
+    name: item.country,
+    value: parseFloat(item.estimatedWorkers.replace(/[^0-9.]/g, '')) || 0,
+    color: Object.values(CHART_COLORS)[idx % Object.values(CHART_COLORS).length],
+  }))
 
-  // Get alert badge
-  const getAlertBadge = (level: string) => {
-    switch (level) {
-      case 'RED': return <Badge variant="destructive" className="text-xs"><AlertCircle className="h-3 w-3 mr-1" />RED</Badge>
-      case 'YELLOW': return <Badge variant="warning" className="text-xs"><AlertTriangle className="h-3 w-3 mr-1" />YELLOW</Badge>
-      case 'GREEN': return <Badge variant="success" className="text-xs"><Shield className="h-3 w-3 mr-1" />GREEN</Badge>
-      default: return <Badge variant="outline" className="text-xs">{level}</Badge>
-    }
-  }
+  // Emiratization achievements chart
+  const emiratizationChart = nafisAchievements.map((item, idx) => ({
+    name: item.metric.split(' ').slice(0, 2).join(' '),
+    value: parseFloat(String(item.growth || '').replace(/[^0-9.]/g, '').replace('+', '')) || 0,
+    color: CHART_COLORS.gold,
+  }))
 
-  // Get sector badge variant
-  const getSectorBadge = () => <Badge variant="gold" className="mb-2">S-SECTOR</Badge>
+  // ILO conventions chart
+  const iloRatified = iloConventionsRatified.filter(c => !c.convention.startsWith('P029')).length
+  const iloNotRatified = iloConventionsNotRatified.length
 
   return (
-    <div className="space-y-8 p-8">
+    <motion.div
+      className="space-y-8 p-8"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       {/* Header */}
-      <div className="flex items-start justify-between">
+      <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
-          {getSectorBadge()}
-          <h1 className="text-3xl font-extrabold gradient-text-platinum">Labor & Employment</h1>
-          <p className="mt-2 text-slate-400">
-            Workforce demographics, Emiratization, wage protection, kafala reform, and modern slavery
+          <Badge variant="default" className="mb-2">S-SECTOR</Badge>
+          <h1 className="text-4xl font-extrabold gradient-text-platinum">Labor & Employment</h1>
+          <p className="mt-2 text-platinum-400">
+            {laborEmploymentData.description}
           </p>
+          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500">
+            <span className="flex items-center gap-1">
+              <Calendar className="h-4 w-4" />
+              {laborReportMetadata.enrichedDate}
+            </span>
+            <span className="flex items-center gap-1">
+              <BookOpen className="h-4 w-4" />
+              500+ facts
+            </span>
+            <span className="flex items-center gap-1">
+              <Crosshair className="h-4 w-4" />
+              34 sources
+            </span>
+          </div>
         </div>
         <div className="flex gap-3">
           <Button variant="outline" className="gap-2 border-platinum/50 text-platinum hover:bg-platinum/10">
-            <Users className="h-4 w-4" />
-            Workforce Monitor
+            <Briefcase className="h-4 w-4" />
+            Workforce
           </Button>
           <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2">
             <Zap className="h-4 w-4" />
-            Export Report
+            Analyze
           </Button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Key Metrics */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <motion.div variants={itemVariants} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <MetricCard
           title="Total Population"
-          value={`${totalPopulation}M`}
+          value="9.89M"
           previousValue={9.2}
           icon={<Users className="h-6 w-6" />}
           gradient="indigo"
+          status="info"
         />
         <MetricCard
           title="Migrant Workers"
-          value={`${migrantWorkers}M`}
+          value="8.7M"
           previousValue={8.0}
           icon={<Globe className="h-6 w-6" />}
           gradient="denim"
@@ -143,293 +251,928 @@ export default function LaborEmploymentPage() {
         />
         <MetricCard
           title="Modern Slavery"
-          value={`${modernSlavery}K`}
+          value="132K"
           previousValue={140}
-          icon={<AlertOctagon className="h-6 w-6" />}
+          icon={<AlertCircle className="h-6 w-6" />}
           gradient="indigo"
-          status="error"
+          status="critical"
         />
         <MetricCard
           title="Wage Protection"
-          value={`${wageProtection}%`}
+          value="99%+"
           previousValue={95}
-          icon={<DollarSign className="h-6 w-6" />}
+          icon={<Shield className="h-6 w-6" />}
           gradient="emerald"
           status="success"
         />
-      </div>
+      </motion.div>
+
+      {/* Focus Areas */}
+      <motion.div variants={itemVariants}>
+        <div className="flex flex-wrap gap-2">
+          {[
+            { id: 'LAB-1', name: 'Kafala Reform' },
+            { id: 'LAB-2', name: 'Wage Protection' },
+            { id: 'LAB-3', name: 'Emiratization' },
+            { id: 'LAB-4', name: 'Modern Slavery' },
+            { id: 'LAB-5', name: 'ILO Compliance' },
+            { id: 'LAB-6', name: 'Worker Rights' },
+          ].map((area) => (
+            <Badge key={area.id} variant="outline" className="border-platinum/30 text-platinum">
+              {area.id} - {area.name}
+            </Badge>
+          ))}
+        </div>
+      </motion.div>
 
       <Tabs defaultValue="overview" className="space-y-6">
         <TabsList className="glass-panel" scrollable>
-          <TabsTrigger value="overview">Key Findings</TabsTrigger>
-          <TabsTrigger value="sentiment">Sentiment Analysis</TabsTrigger>
-          <TabsTrigger value="trends">Trends</TabsTrigger>
-          <TabsTrigger value="stakeholders">Stakeholders</TabsTrigger>
+          <TabsTrigger value="overview">Overview</TabsTrigger>
+          <TabsTrigger value="workforce">Workforce</TabsTrigger>
+          <TabsTrigger value="kafala">Kafala System</TabsTrigger>
+          <TabsTrigger value="wages">Wages & Protection</TabsTrigger>
+          <TabsTrigger value="emiratization">Emiratization</TabsTrigger>
+          <TabsTrigger value="workerrights">Worker Rights</TabsTrigger>
         </TabsList>
 
-        {/* Key Findings */}
+        {/* Overview Tab */}
         <TabsContent value="overview" className="space-y-6">
-          <GlassPanel title="Labor & Employment Metrics" description="Critical findings across workforce, wages, and labor rights">
-            <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Key Metrics</CardTitle>
-                  <CardDescription>Core labor and employment indicators</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <BarChart
-                    data={metricsChartData}
-                    xAxisKey="name"
-                    horizontal={true}
-                    bars={[
-                      { dataKey: 'value', name: 'Value', color: CHART_COLORS.platinum },
-                    ]}
-                    height={300}
-                    showGrid={true}
-                  />
-                </CardContent>
-              </Card>
-
-              <div className="grid gap-6 lg:grid-cols-2">
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Workforce Composition</CardTitle>
-                    <CardDescription>Population and labor force breakdown</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      {[
-                        { label: 'Total Population', value: '9.89M', sublabel: 'Walk Free Foundation' },
-                        { label: 'Migrant Workers', value: '8.7M (88%)', sublabel: 'Majority of workforce' },
-                        { label: 'Emiratis in Private Sector', value: '171K', sublabel: '+377% since Nafis program' },
-                      ].map((item, index) => (
-                        <div key={index} className="space-y-2">
-                          <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-slate-200">{item.label}</span>
-                            <span className="text-lg font-bold text-platinum">{item.value}</span>
-                          </div>
-                          <Progress
-                            value={Math.random() * 60 + 20}
-                            className="h-2"
-                          />
-                          <p className="text-xs text-slate-400">{item.sublabel}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Modern Slavery & Wages</CardTitle>
-                    <CardDescription>Labor rights and wage protection metrics</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      {[
-                        { label: 'Modern Slavery Prevalence', value: '132K', sublabel: '13.4/1,000 (7th globally)' },
-                        { label: 'Wage Protection Coverage', value: '99%+', sublabel: 'WPS system coverage' },
-                        { label: 'Emirati Minimum Wage', value: 'AED 6,000', sublabel: 'Per month (from Jan 2026)' },
-                      ].map((item, index) => (
-                        <div key={index} className="space-y-2">
-                          <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-slate-200">{item.label}</span>
-                            <span className="text-lg font-bold text-navy">{item.value}</span>
-                          </div>
-                          <Progress
-                            value={Math.random() * 60 + 20}
-                            className="h-2"
-                          />
-                          <p className="text-xs text-slate-400">{item.sublabel}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">All Key Findings</CardTitle>
-                  <CardDescription>Complete list of labor and employment metrics</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ScrollArea className="h-[400px]">
-                    <div className="space-y-2">
-                      {keyFindings.map((finding, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70"
-                        >
-                          <div className="flex-1">
-                            <p className="font-semibold text-slate-200">{finding.finding}</p>
-                            <p className="text-sm text-slate-400">Source: {finding.source}</p>
-                          </div>
-                          <div className="flex items-center gap-4">
-                            <div className="text-center">
-                              <div className="text-lg font-bold text-platinum">{finding.metric}</div>
-                              <p className="text-xs text-slate-400">Metric</p>
-                            </div>
-                            {finding.alert && getAlertBadge(finding.alert)}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </ScrollArea>
-                </CardContent>
-              </Card>
-            </div>
-          </GlassPanel>
-        </TabsContent>
-
-        {/* Sentiment Analysis */}
-        <TabsContent value="sentiment" className="space-y-6">
-          <GlassPanel title="Sentiment & Emotions Analysis" description="Public perception and emotional response to labor topics">
+          <GlassPanel
+            title="Labor & Employment Overview"
+            description="Key metrics across workforce, protections, and labor rights"
+            badge="Comprehensive"
+          >
             <div className="space-y-6">
               <div className="grid gap-6 lg:grid-cols-2">
+                {/* Sentiment Distribution */}
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Sentiment Distribution</CardTitle>
-                    <CardDescription>Overall sentiment breakdown</CardDescription>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <TrendingUp className="h-5 w-5 text-platinum" />
+                      Sentiment Distribution
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <PieChart
                       data={sentimentData}
-                      height={250}
+                      height={200}
                       showLegend={true}
+                      donut={true}
                     />
+                    <div className="mt-4 grid grid-cols-3 gap-2">
+                      <div className="text-center p-2 bg-emerald/20 rounded-lg">
+                        <p className="text-lg font-bold text-emerald">52%</p>
+                        <p className="text-xs text-platinum-500">Positive</p>
+                      </div>
+                      <div className="text-center p-2 bg-rose/20 rounded-lg">
+                        <p className="text-lg font-bold text-rose">32%</p>
+                        <p className="text-xs text-platinum-500">Negative</p>
+                      </div>
+                      <div className="text-center p-2 bg-platinum/20 rounded-lg">
+                        <p className="text-lg font-bold text-platinum">16%</p>
+                        <p className="text-xs text-platinum-500">Neutral</p>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
 
+                {/* Key Workforce Metrics */}
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Emotional Response</CardTitle>
-                    <CardDescription>Plutchik emotion model analysis</CardDescription>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Users className="h-5 w-5 text-gold" />
+                      Workforce Composition
+                    </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <BarChart
-                      data={emotionData}
-                      xAxisKey="name"
-                      bars={[
-                        { dataKey: 'value', name: 'Score', color: CHART_COLORS.platinum },
-                      ]}
-                      height={250}
-                      showGrid={true}
-                    />
+                  <CardContent className="space-y-4">
+                    {[
+                      { label: 'Migrant Workers', value: '8.7M (88%)', sublabel: 'Of total population' },
+                      { label: 'Foreign Workers', value: '92.4%', sublabel: 'Of total workforce' },
+                      { label: 'Youth (18-35)', value: '54.9%', sublabel: 'Of workforce' },
+                      { label: 'Women in Leadership', value: '17.4%', sublabel: 'In workforce' },
+                    ].map((item, index) => (
+                      <div key={index} className="space-y-2">
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm font-medium text-slate-200">{item.label}</span>
+                          <span className="text-lg font-bold text-platinum">{item.value}</span>
+                        </div>
+                        <Progress value={Math.random() * 60 + 20} className="h-2" />
+                        <p className="text-xs text-slate-400">{item.sublabel}</p>
+                      </div>
+                    ))}
                   </CardContent>
                 </Card>
               </div>
 
+              {/* Sentiment by Topic */}
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">Sentiment Metrics</CardTitle>
-                  <CardDescription>Detailed sentiment breakdown</CardDescription>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <TrendingUp className="h-5 w-5 text-platinum" />
+                    Sentiment by Topic
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid gap-4 sm:grid-cols-4">
-                    <div className="rounded-lg border border-emerald-500/50 bg-emerald-500/10 p-4 text-center">
-                      <div className="text-3xl font-bold text-emerald-400">{sentiment.positive}%</div>
-                      <p className="text-sm font-medium text-slate-300">Positive</p>
-                    </div>
-                    <div className="rounded-lg border border-red-500/50 bg-red-500/10 p-4 text-center">
-                      <div className="text-3xl font-bold text-red-400">{sentiment.negative}%</div>
-                      <p className="text-sm font-medium text-slate-300">Negative</p>
-                    </div>
-                    <div className="rounded-lg border border-slate-500/50 bg-slate-500/10 p-4 text-center">
-                      <div className="text-3xl font-bold text-slate-400">{sentiment.neutral}%</div>
-                      <p className="text-sm font-medium text-slate-300">Neutral</p>
-                    </div>
-                    <div className="rounded-lg border border-platinum-500/50 bg-platinum-500/10 p-4 text-center">
-                      <div className={`text-3xl font-bold ${sentiment.overall >= 0 ? 'text-emerald-400' : 'text-red-400'}`}>
-                        {sentiment.overall >= 0 ? '+' : ''}{sentiment.overall}
-                      </div>
-                      <p className="text-sm font-medium text-slate-300">Net Score</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </GlassPanel>
-        </TabsContent>
-
-        {/* Trends */}
-        <TabsContent value="trends" className="space-y-6">
-          <GlassPanel title="Trend Analysis" description="Historical trends and future projections">
-            <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Labor Rights Index</CardTitle>
-                  <CardDescription>Historical trend 2022-2026</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <AreaChart
-                    data={trendChartData}
-                    xAxisKey="period"
-                    areas={[
-                      { dataKey: 'value', name: 'Index', color: CHART_COLORS.platinum },
-                    ]}
-                    height={300}
+                  <BarChart
+                    data={sentimentChartData}
+                    xAxisKey="name"
+                    bars={[{ dataKey: 'value', name: 'Score', color: CHART_COLORS.gold }]}
+                    height={250}
                     showGrid={true}
+                    horizontal={true}
                   />
                 </CardContent>
               </Card>
 
-              <div className="grid gap-6 lg:grid-cols-2">
-                {trends.slice(0, 4).map((trend: { direction: string; changePercent: number; period: string; value: number }, index: number) => (
-                  <Card key={index} className="glass-card">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-lg flex items-center gap-2">
-                        {trend.direction === 'rising' ? (
-                          <TrendingUp className="h-5 w-5 text-emerald-400" />
-                        ) : trend.direction === 'declining' ? (
-                          <TrendingUp className="h-5 w-5 text-red-400 rotate-180" />
-                        ) : (
-                          <Hash className="h-5 w-5 text-slate-400" />
-                        )}
-                        {trend.period}
-                      </CardTitle>
-                      <CardDescription>Trend indicator</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="text-3xl font-bold text-platinum">
-                        {trend.changePercent >= 0 ? '+' : ''}{trend.changePercent}%
+              {/* UAE Relevance */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Globe className="h-5 w-5 text-emerald" />
+                    Why This Matters for UAE
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    {uaeRelevanceWhy.map((point, idx) => (
+                      <div key={idx} className="flex items-start gap-2 p-3 bg-slate-800/50 rounded-lg">
+                        <CheckCircle className="h-5 w-5 text-emerald shrink-0 mt-0.5" />
+                        <span className="text-sm text-platinum-300">{point}</span>
                       </div>
-                      <p className="mt-2 text-sm text-slate-400">
-                        {trend.direction === 'rising' ? 'Improving' : trend.direction === 'declining' ? 'Declining' : 'Stable'}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Key Tension */}
+              <Card className="glass-card border-gold/50">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-gold">
+                    <AlertTriangle className="h-5 w-5" />
+                    Key Tension: Reform vs Enforcement
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="p-4 bg-emerald/10 border border-emerald/30 rounded-lg">
+                      <h4 className="font-bold text-emerald mb-2">Reform Momentum</h4>
+                      <p className="text-sm text-platinum-300">{keyTension.reform}</p>
+                    </div>
+                    <div className="p-4 bg-rose/10 border border-rose/30 rounded-lg">
+                      <h4 className="font-bold text-rose mb-2">Enforcement Gap</h4>
+                      <p className="text-sm text-platinum-300">{keyTension.enforcement}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </GlassPanel>
         </TabsContent>
 
-        {/* Stakeholders */}
-        <TabsContent value="stakeholders" className="space-y-6">
-          <GlassPanel title="Key Stakeholders" description="Entities and actors in labor and employment">
-            <div className="space-y-4">
-              {stakeholders.map((stakeholder: string, index: number) => (
-                <div
-                  key={index}
-                  className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-platinum/20 text-platinum">
-                      <Briefcase className="h-5 w-5" />
+        {/* Workforce Tab */}
+        <TabsContent value="workforce" className="space-y-6">
+          <GlassPanel
+            title="Workforce Overview & Demographics"
+            description="Population composition, migrant worker origins, and labor force statistics"
+            badge="Core"
+          >
+            <div className="space-y-6">
+              {/* Key Metrics */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Users className="h-5 w-5 text-gold" />
+                    Key Workforce Metrics
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {workforceMetrics.slice(0, 8).map((metric, idx) => (
+                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg text-center">
+                        <p className="text-2xl font-bold text-gold">{metric.figure}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{metric.metric}</p>
+                        <p className="text-xs text-platinum-500">{metric.source}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Migrant Worker Origins */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Globe className="h-5 w-5 text-platinum" />
+                    Migrant Worker Origins
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <BarChart
+                    data={migrantOriginsChart}
+                    xAxisKey="name"
+                    bars={[{ dataKey: 'value', name: 'Workers (millions)', color: CHART_COLORS.navy }]}
+                    height={250}
+                    showGrid={true}
+                    horizontal={true}
+                  />
+                </CardContent>
+              </Card>
+
+              {/* ILO Context */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Building className="h-5 w-5 text-emerald" />
+                    ILO Context
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="p-4 bg-slate-800/50 rounded-lg">
+                      <p className="text-sm text-platinum-400">Member Since</p>
+                      <p className="text-2xl font-bold text-platinum">{iloContext.memberSince}</p>
                     </div>
-                    <div>
-                      <p className="font-semibold text-slate-200">{stakeholder}</p>
-                      <p className="text-sm text-slate-400">Labor & Employment</p>
+                    <div className="p-4 bg-slate-800/50 rounded-lg">
+                      <p className="text-sm text-platinum-400">Migrant Workers</p>
+                      <p className="text-2xl font-bold text-platinum">{iloContext.migrantWorkers}</p>
                     </div>
                   </div>
-                  <Badge variant="outline" className="text-platinum border-platinum/50">Active</Badge>
-                </div>
-              ))}
+                  <div className="mt-4 space-y-2">
+                    <p className="text-sm text-platinum-400">Collaboration Areas:</p>
+                    <div className="flex flex-wrap gap-2">
+                      {iloContext.collaborationAreas.split(', ').map((area, idx) => (
+                        <Badge key={idx} variant="outline" className="text-platinum border-platinum/30">{area}</Badge>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Kafala Tab */}
+        <TabsContent value="kafala" className="space-y-6">
+          <GlassPanel
+            title="Kafala System — Legislation vs Reality"
+            description="Work permit system, reforms, and documented abuses"
+            badge="Critical"
+          >
+            <div className="space-y-6">
+              {/* Legislative Reforms */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <FileText className="h-5 w-5 text-emerald" />
+                    Legislative Reforms
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {kafalaLegislativeReforms.map((reform, idx) => (
+                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg border border-slate-700">
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="font-bold text-platinum">{reform.reform}</span>
+                          <Badge variant="outline" className="text-emerald border-emerald/50">{reform.year}</Badge>
+                        </div>
+                        <p className="text-sm text-platinum-400">{reform.keyProvision}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Persistent Abuses */}
+              <Card className="glass-card border-rose-500/50">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-rose-400">
+                    <AlertTriangle className="h-5 w-5" />
+                    Persistent Abuses (Documented)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {kafalaPersistentAbuses.map((abuse, idx) => (
+                      <div key={idx} className="p-3 bg-rose/5 border border-rose/20 rounded-lg">
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="font-medium text-rose-300">{abuse.issue}</span>
+                          <Badge variant="destructive" className="text-xs">{abuse.source}</Badge>
+                        </div>
+                        <p className="text-sm text-platinum-300">{abuse.evidence}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Government Response Rating */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Shield className="h-5 w-5 text-platinum" />
+                    Government Response Rating (Walk Free)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {governmentResponseRating.map((rating, idx) => (
+                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg text-center">
+                        <p className="text-2xl font-bold text-platinum">{rating.score}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{rating.category}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Vulnerable Groups */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <UsersRound className="h-5 w-5 text-gold" />
+                    Vulnerable Groups
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      'Domestic workers (excluded from labor law)',
+                      'Agricultural/farm workers',
+                      'Shepherds, camel herders',
+                      'Construction and manual laborers',
+                    ].map((group, idx) => (
+                      <Badge key={idx} variant="outline" className="text-platinum border-gold/30">{group}</Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Wages Tab */}
+        <TabsContent value="wages" className="space-y-6">
+          <GlassPanel
+            title="Wages & Worker Protections"
+            description="Wage Protection System, minimum wage, gratuity, and benefits"
+            badge="Core"
+          >
+            <div className="space-y-6">
+              {/* WPS Overview */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Shield className="h-5 w-5 text-emerald" />
+                    Wage Protection System (WPS)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-3">
+                    <div className="p-4 bg-emerald/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-emerald">99%+</p>
+                      <p className="text-sm text-platinum-400">Coverage</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-platinum">{wpsOverview.monthlyTransfers}</p>
+                      <p className="text-sm text-platinum-400">Monthly Transfers</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-platinum">2009</p>
+                      <p className="text-sm text-platinum-400">Launched</p>
+                    </div>
+                  </div>
+                  <div className="mt-4">
+                    <p className="text-sm text-platinum-400 mb-2">2025 WPS Updates:</p>
+                    <div className="grid gap-2 md:grid-cols-2">
+                      {wps2025Updates.map((update, idx) => (
+                        <div key={idx} className="flex items-center gap-2 p-2 bg-slate-800/50 rounded-lg">
+                          <CheckCircle className="h-4 w-4 text-emerald shrink-0" />
+                          <span className="text-sm text-platinum-300">{update.item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Minimum Wages */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <DollarSign className="h-5 w-5 text-gold" />
+                    Minimum Wages
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="p-4 bg-emerald/10 border border-emerald/30 rounded-lg">
+                      <h4 className="font-bold text-emerald mb-2">Emiratis (Private Sector)</h4>
+                      <div className="space-y-2">
+                        {emiratiMinimumWages.map((wage, idx) => (
+                          <div key={idx} className="flex justify-between p-2 bg-slate-800/50 rounded">
+                            <span className="text-sm text-platinum-400">{wage.effectiveDate}</span>
+                            <span className="font-bold text-platinum">{wage.minimumMonthlySalary}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="p-4 bg-rose/10 border border-rose/30 rounded-lg">
+                      <h4 className="font-bold text-rose mb-2">Expatriates</h4>
+                      <div className="space-y-2">
+                        <div className="p-2 bg-slate-800/50 rounded">
+                          <p className="text-sm text-rose-400">Status</p>
+                          <p className="font-bold text-platinum">{expatriateMinimumWage.status}</p>
+                        </div>
+                        <div className="p-2 bg-slate-800/50 rounded">
+                          <p className="text-sm text-rose-400">Lowest Observed</p>
+                          <p className="font-bold text-platinum">{expatriateMinimumWage.lowestObserved}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* End of Service Gratuity */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Award className="h-5 w-5 text-platinum" />
+                    End-of-Service Gratuity
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div>
+                      <h4 className="text-sm font-semibold text-gold mb-2">Traditional (Fixed-Term Contracts)</h4>
+                      <div className="space-y-2">
+                        {traditionalGratuity.calculations.map((calc, idx) => (
+                          <div key={idx} className="flex justify-between p-2 bg-slate-800/50 rounded-lg">
+                            <span className="text-sm text-platinum-300">{calc.servicePeriod}</span>
+                            <span className="text-sm font-medium text-platinum">{calc.calculation}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <p className="text-xs text-platinum-500 mt-2">Payment deadline: {traditionalGratuity.paymentDeadline}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-emerald mb-2">Alternative EOSB Scheme (Since Oct 2023)</h4>
+                      <div className="space-y-2">
+                        {voluntaryAlternativeEOSB.employerContributionRates.map((rate, idx) => (
+                          <div key={idx} className="flex justify-between p-2 bg-slate-800/50 rounded-lg">
+                            <span className="text-sm text-platinum-300">{rate.category}</span>
+                            <span className="text-sm font-medium text-emerald">{rate.rate}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <p className="text-xs text-platinum-500 mt-2">Approved providers: {voluntaryAlternativeEOSB.approvedProviders.length}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Unemployment Insurance */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Heart className="h-5 w-5 text-emerald" />
+                    Unemployment Insurance (ILOE)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-3">
+                    <div className="p-4 bg-emerald/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-emerald">90%</p>
+                      <p className="text-sm text-platinum-400">Registration Rate</p>
+                    </div>
+                    <div className="p-4 bg-gold/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-gold">AED 350M</p>
+                      <p className="text-sm text-platinum-400">Compensation Paid</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-platinum">60%</p>
+                      <p className="text-sm text-platinum-400">Payout Rate</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 grid gap-3 md:grid-cols-2">
+                    {iloePremiumStructure.map((premium, idx) => (
+                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                        <p className="text-sm text-platinum-400">Category {premium.category}</p>
+                        <p className="text-lg font-bold text-platinum">{premium.basicMonthlySalary}</p>
+                        <p className="text-sm text-emerald">Max premium: {premium.monthlyPremium}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Midday Break */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Clock className="h-5 w-5 text-gold" />
+                    Midday Break Enforcement
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="p-4 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between mb-2">
+                        <span className="text-platinum-400">Period</span>
+                        <span className="font-bold text-platinum">{middayBreakDetails.period}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-platinum-400">Hours</span>
+                        <span className="font-bold text-platinum">{middayBreakDetails.hours}</span>
+                      </div>
+                    </div>
+                    <div className="p-4 bg-emerald/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-emerald">99%+</p>
+                      <p className="text-sm text-platinum-400">Compliance Rate</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 grid gap-2 md:grid-cols-2">
+                    <div className="p-2 bg-slate-800/50 rounded-lg text-center">
+                      <p className="text-sm text-rose-400">Penalty per worker</p>
+                      <p className="font-bold text-platinum">{middayBreakPenalties.perWorkerViolation}</p>
+                    </div>
+                    <div className="p-2 bg-slate-800/50 rounded-lg text-center">
+                      <p className="text-sm text-rose-400">Maximum penalty</p>
+                      <p className="font-bold text-platinum">{middayBreakPenalties.maximumMultipleViolations}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Emiratization Tab */}
+        <TabsContent value="emiratization" className="space-y-6">
+          <GlassPanel
+            title="Emiratization Policy"
+            description="Nafis programme, quotas, achievements, and challenges"
+            badge="Key Policy"
+          >
+            <div className="space-y-6">
+              {/* Nafis Programme */}
+              <Card className="glass-card border-gold/50">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-gold">
+                    <Award className="h-5 w-5" />
+                    Nafis Programme
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-4">
+                    <div className="p-4 bg-gold/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-gold">2021</p>
+                      <p className="text-sm text-platinum-400">Launched</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-platinum">AED 24B</p>
+                      <p className="text-sm text-platinum-400">Budget</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-platinum">75K</p>
+                      <p className="text-sm text-platinum-400">Original Target</p>
+                    </div>
+                    <div className="p-4 bg-emerald/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-emerald">92%</p>
+                      <p className="text-sm text-platinum-400">Target Achieved</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Achievements */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <TrendingUp className="h-5 w-5 text-emerald" />
+                    Nafis Achievements
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {nafisAchievements.map((achievement, idx) => (
+                      <div key={idx} className="p-4 bg-slate-800/50 rounded-lg">
+                        <p className="text-sm text-platinum-400">{achievement.metric}</p>
+                        <p className="text-2xl font-bold text-gold">{achievement.figure}</p>
+                        {achievement.growth && (
+                          <p className="text-sm text-emerald mt-1">{achievement.growth}</p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Quotas */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Scale className="h-5 w-5 text-platinum" />
+                    2025 Emiratization Quotas
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {emiratizationQuotas2025.map((quota, idx) => (
+                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg flex items-center justify-between">
+                        <div>
+                          <p className="font-medium text-platinum">{quota.companySize}</p>
+                          <p className="text-sm text-emerald">{quota.requirement}</p>
+                        </div>
+                        <Badge variant="outline" className="text-rose border-rose/50">{quota.fine}</Badge>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Minimum Salary */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <DollarSign className="h-5 w-5 text-gold" />
+                    Minimum Salary for Emiratis
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="p-4 bg-gold/20 rounded-lg text-center mb-4">
+                    <p className="text-4xl font-bold text-gold">{minimumSalaryEmiratis.amount}</p>
+                  </div>
+                  <div className="grid gap-2 md:grid-cols-2">
+                    <div className="p-3 bg-slate-800/50 rounded-lg">
+                      <p className="text-sm text-platinum-400">Existing employees</p>
+                      <p className="text-sm text-platinum-300">Must be adjusted by {minimumSalaryEmiratis.existingEmployees}</p>
+                    </div>
+                    <div className="p-3 bg-rose/10 border border-rose/30 rounded-lg">
+                      <p className="text-sm text-rose-400">Non-compliance</p>
+                      <p className="text-sm text-platinum-300">{minimumSalaryEmiratis.nonCompliance}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Incentives */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-emerald" />
+                    Emirati Incentives
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    {emiratiIncentives.map((incentive, idx) => (
+                      <div key={idx} className="flex items-center gap-2 p-2 bg-slate-800/50 rounded-lg">
+                        <CheckCircle className="h-4 w-4 text-emerald shrink-0" />
+                        <span className="text-sm text-platinum-300">{incentive}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Challenges */}
+              <Card className="glass-card border-yellow-500/50">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-yellow-400">
+                    <AlertTriangle className="h-5 w-5" />
+                    Challenges
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    {emiratiChallenges.map((challenge, idx) => (
+                      <div key={idx} className="flex items-start gap-2 p-2 bg-yellow-500/5 border border-yellow-500/20 rounded-lg">
+                        <AlertTriangle className="h-4 w-4 text-yellow-400 shrink-0 mt-0.5" />
+                        <span className="text-sm text-platinum-300">{challenge}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Worker Rights Tab */}
+        <TabsContent value="workerrights" className="space-y-6">
+          <GlassPanel
+            title="Worker Rights & ILO Compliance"
+            description="ILO conventions, domestic workers, occupational health, and labor inspections"
+            badge="Comprehensive"
+          >
+            <div className="space-y-6">
+              {/* ILO Conventions */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Beaker className="h-5 w-5 text-emerald" />
+                    ILO Conventions Ratified
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mb-4">
+                    <div className="p-3 bg-emerald/20 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-emerald">{iloConventionsRatified.length}</p>
+                      <p className="text-xs text-platinum-400">Total Ratified</p>
+                    </div>
+                    <div className="p-3 bg-slate-800/50 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-platinum">6</p>
+                      <p className="text-xs text-platinum-400">Core Conventions</p>
+                    </div>
+                    <div className="p-3 bg-slate-800/50 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-rose">3</p>
+                      <p className="text-xs text-platinum-400">Not Ratified</p>
+                    </div>
+                    <div className="p-3 bg-gold/20 rounded-lg text-center col-span-2">
+                      <p className="text-2xl font-bold text-gold">Jan 2026</p>
+                      <p className="text-xs text-platinum-400">Protocol C29 Ratified</p>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    {iloConventionsRatified.slice(0, 6).map((conv, idx) => (
+                      <div key={idx} className="flex items-center justify-between p-2 bg-slate-800/50 rounded-lg">
+                        <span className="text-sm font-medium text-platinum">{conv.convention}</span>
+                        <span className="text-xs text-platinum-500">{conv.name}</span>
+                        <Badge variant="outline" className="text-emerald border-emerald/50 text-xs">{conv.ratificationYear}</Badge>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Not Ratified */}
+              <Card className="glass-card border-rose-500/50">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-rose-400">
+                    <XCircle className="h-5 w-5" />
+                    Conventions NOT Ratified
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    {iloConventionsNotRatified.map((conv, idx) => (
+                      <div key={idx} className="p-3 bg-rose/5 border border-rose/20 rounded-lg">
+                        <div className="flex items-center justify-between">
+                          <span className="font-medium text-rose-300">{conv.convention}: {conv.name}</span>
+                        </div>
+                        <p className="text-sm text-platinum-400 mt-1">Reason: {conv.reason}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Domestic Workers */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Users className="h-5 w-5 text-gold" />
+                    Domestic Workers (Federal Decree-Law No. 9/2022)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div>
+                      <h4 className="text-sm font-semibold text-emerald mb-2">Rights</h4>
+                      <div className="space-y-1">
+                        {domesticWorkerRights.map((right, idx) => (
+                          <div key={idx} className="flex items-center gap-2 p-1.5 bg-slate-800/50 rounded">
+                            <CheckCircle className="h-3 w-3 text-emerald shrink-0" />
+                            <span className="text-xs text-platinum-300">{right.right}: {right.provision}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-rose mb-2">Prohibited</h4>
+                      <div className="space-y-1">
+                        {domesticWorkerProhibitedActions.map((proh, idx) => (
+                          <div key={idx} className="flex items-center gap-2 p-1.5 bg-rose/5 border border-rose/20 rounded">
+                            <XCircle className="h-3 w-3 text-rose shrink-0" />
+                            <span className="text-xs text-platinum-300">{proh.prohibition}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-sm text-platinum-400 mt-4">
+                    {domesticWorkerLaw.coveredOccupations}
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* OHS */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Wrench className="h-5 w-5 text-platinum" />
+                    Occupational Health & Safety (12 Employer Obligations)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-2 md:grid-cols-2">
+                    {ohsEmployerObligations.map((obligation, idx) => (
+                      <div key={idx} className="flex items-center gap-2 p-2 bg-slate-800/50 rounded-lg">
+                        <span className="text-xs font-bold text-gold w-6">{obligation.number}</span>
+                        <span className="text-xs text-platinum-300">{obligation.obligation}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Labor Inspections */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Eye className="h-5 w-5 text-emerald" />
+                    Labor Inspections 2025
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                    {laborInspectionScale.slice(0, 4).map((metric, idx) => (
+                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg text-center">
+                        <p className="text-2xl font-bold text-platinum">{metric.figure}</p>
+                        <p className="text-xs text-platinum-400">{metric.metric}</p>
+                        {metric.changeVs2024 && metric.changeVs2024 !== '—' && (
+                          <Badge variant="outline" className="text-emerald border-emerald/50 text-xs mt-1">{metric.changeVs2024}</Badge>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="grid gap-2 md:grid-cols-2">
+                    {laborInspectionFramework.map((item, idx) => (
+                      <div key={idx} className="p-2 bg-slate-800/50 rounded-lg">
+                        <p className="text-sm font-medium text-platinum">{item.item}</p>
+                        <p className="text-xs text-platinum-500">{item.details}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Trade Unions */}
+              <Card className="glass-card border-rose-500/50">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-rose-400">
+                    <XCircle className="h-5 w-5" />
+                    Trade Unions & Right to Strike
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="p-4 bg-rose/10 border border-rose/30 rounded-lg">
+                      <h4 className="font-bold text-rose mb-2">Trade Unions</h4>
+                      <p className="text-sm text-platinum-300">{tradeUnionStatus.status}</p>
+                      <p className="text-sm text-platinum-500 mt-1">{tradeUnionStatus.professionalAssociations}</p>
+                    </div>
+                    <div className="p-4 bg-rose/10 border border-rose/30 rounded-lg">
+                      <h4 className="font-bold text-rose mb-2">Right to Strike</h4>
+                      <p className="text-sm text-platinum-300">{rightToStrike.status}</p>
+                      <p className="text-xs text-platinum-500 mt-1">{rightToStrike.legalBasis}</p>
+                    </div>
+                  </div>
+                  <div className="mt-4">
+                    <p className="text-sm font-semibold text-rose-300 mb-2">Penalties:</p>
+                    <div className="flex flex-wrap gap-2">
+                      {strikePenalties.map((penalty, idx) => (
+                        <Badge key={idx} variant="outline" className="text-rose border-rose/50">{penalty}</Badge>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Nationality Segmentation */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Users className="h-5 w-5 text-platinum" />
+                    Labor Market Segmentation by Nationality
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {nationalityBasedSegmentation.map((seg, idx) => (
+                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                        <p className="font-medium text-gold">{seg.nationalityGroup}</p>
+                        <p className="text-sm text-platinum-400">{seg.typicalSectors}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </GlassPanel>
         </TabsContent>
       </Tabs>
-    </div>
+    </motion.div>
   )
 }

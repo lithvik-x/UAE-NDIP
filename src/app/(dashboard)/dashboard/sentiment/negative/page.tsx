@@ -1,6 +1,7 @@
-// @ts-nocheck
 'use client'
 
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -27,15 +28,67 @@ import {
   Frown,
   Shield,
   Eye,
+  Scale,
+  Globe,
+  UsersRound,
+  Factory,
+  Ban,
+  Siren,
+  Clock,
+  Database,
+  ShieldAlert,
+  CheckCircle,
+  XCircle,
+  ChevronRight,
+  Activity,
+  BarChart3,
+  FileSearch,
+  CheckSquare,
+  AlertOctagon,
 } from 'lucide-react'
 import {
-  useTrendsDataArrayData,
-} from '@/lib/data-loader'
+  useNegativeSentimentData,
+  useFearUncertaintyData,
+} from '@/lib/data-loader/sentiment-data'
+import {
+  SourceCredibilitySection,
+  UAERelevanceSection,
+  CategoryDetailSection,
+  EntitiesSection,
+  DataQualitySection,
+} from './components'
+
+// Animation variants for framer-motion
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -20 },
+}
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+}
+
+const cardHover = {
+  hover: { scale: 1.02, transition: { duration: 0.2 } },
+}
+
+const listItem = {
+  initial: { opacity: 0, x: -20 },
+  animate: { opacity: 1, x: 0 },
+}
 
 export default function NegativeSentimentPage() {
-  const { data: trendsData } = useTrendsDataArrayData()
+  const data = useNegativeSentimentData()
+  const fearData = useFearUncertaintyData()
+  const [selectedCategory, setSelectedCategory] = useState<number | null>(null)
+  const [selectedFearTopic, setSelectedFearTopic] = useState<number | null>(null)
 
-  if (!trendsData || trendsData.length === 0) {
+  if (!data || !fearData) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
         <div className="text-platinum-400">Loading Negative Sentiment data...</div>
@@ -43,73 +96,84 @@ export default function NegativeSentimentPage() {
     )
   }
 
-  // Sort by negative sentiment (highest first)
-  const sortedByNegative = [...trendsData].sort((a, b) =>
-    (b.sentiment?.negative || 0) - (a.sentiment?.negative || 0)
-  )
+  // Extract metrics
+  const criticalCount = data.relevanceAssessment.filter(r => r.uaeRelevance === 'CRITICAL').length
+  const highCount = data.relevanceAssessment.filter(r => r.uaeRelevance === 'HIGH').length
 
-  // Top negative trends
-  const topNegative = sortedByNegative.slice(0, 5)
+  // Severity status colors
+  const getSeverityColor = (severity: string) => {
+    switch (severity) {
+      case 'CRITICAL': return 'text-red-400 bg-red-500/20'
+      case 'HIGH': return 'text-amber-400 bg-amber-500/20'
+      case 'MEDIUM': return 'text-yellow-400 bg-yellow-500/20'
+      case 'LOW': return 'text-green-400 bg-green-500/20'
+      default: return 'text-slate-400 bg-slate-500/20'
+    }
+  }
 
-  // Calculate metrics
-  const totalNegative = trendsData.reduce((sum, t) => sum + (t.sentiment?.negative || 0), 0)
-  const avgNegative = totalNegative / trendsData.length
-  const highestNegative = sortedByNegative[0]?.sentiment?.negative || 0
-  const totalNegativeVolume = trendsData.reduce((sum, t) => sum + ((t.sentiment?.negative || 0) / 100) * (t.sentiment?.volume || 0), 0)
+  const getSeverityBorder = (severity: string) => {
+    switch (severity) {
+      case 'CRITICAL': return 'border-red-500/50'
+      case 'HIGH': return 'border-amber-500/50'
+      case 'MEDIUM': return 'border-yellow-500/50'
+      case 'LOW': return 'border-green-500/50'
+      default: return 'border-slate-500/50'
+    }
+  }
 
-  // Sentiment data
-  const sentimentData = [
-    { name: 'Positive', value: 100 - Math.round(avgNegative) - 20, color: CHART_COLORS.emerald },
-    { name: 'Neutral', value: 20, color: CHART_COLORS.platinum },
-    { name: 'Negative', value: Math.round(avgNegative), color: CHART_COLORS.rose },
-  ]
-
-  // Negative drivers/concerns
-  const negativeDrivers = [
-    { driver: 'Regional Geopolitical Tensions', impact: 78, icon: AlertTriangle },
-    { driver: 'Climate Change Concerns', impact: 65, icon: Frown },
-    { driver: 'Economic Uncertainty', impact: 58, icon: TrendingUp },
-    { driver: 'Privacy & AI Concerns', impact: 52, icon: AlertCircle },
-    { driver: 'Cost of Living', impact: 48, icon: AlertCircle },
-  ]
-
-  // Monthly negative trend
-  const monthlyNegative = [
-    { month: 'Jan', negative: 24, concern: 72 },
-    { month: 'Feb', negative: 22, concern: 68 },
-    { month: 'Mar', negative: 20, concern: 65 },
-    { month: 'Apr', negative: 23, concern: 70 },
-    { month: 'May', negative: 18, concern: 62 },
-    { month: 'Jun', negative: 16, concern: 58 },
-    { month: 'Jul', negative: 19, concern: 64 },
-    { month: 'Aug', negative: 17, concern: 60 },
-    { month: 'Sep', negative: 15, concern: 55 },
-    { month: 'Oct', negative: 14, concern: 52 },
-    { month: 'Nov', negative: 15, concern: 54 },
-    { month: 'Dec', negative: 13, concern: 48 },
-  ]
-
-  // Alert concerns
-  const alertConcerns = [
-    { concern: 'Geopolitical tensions in region', level: 'HIGH', trend: 'stable' },
-    { concern: 'Climate impact on infrastructure', level: 'MEDIUM', trend: 'decreasing' },
-    { concern: 'AI regulation uncertainty', level: 'MEDIUM', trend: 'decreasing' },
-    { concern: 'Global economic volatility', level: 'LOW', trend: 'decreasing' },
-    { concern: 'Social media misinformation', level: 'MEDIUM', trend: 'stable' },
-  ]
+  const severityToNumber = (severity: string) => {
+    switch (severity) {
+      case 'CRITICAL': return 10
+      case 'HIGH': return 7.5
+      case 'MEDIUM': return 5
+      case 'LOW': return 2.5
+      default: return 0
+    }
+  }
 
   return (
     <div className="space-y-8 p-8">
-      {/* Header */}
-      <div className="flex items-start justify-between">
+      {/* Enhanced Header */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex items-start justify-between"
+      >
         <div>
-          <Badge variant="destructive" className="mb-2 bg-rose-500/20 text-rose-400 border-rose-500/50">NEGATIVE SENTIMENT</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-rose">Negative Sentiment Analysis</h1>
-          <p className="mt-2 text-slate-400">
-            Concern areas, risk indicators, and factors driving negative perception
-          </p>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.1 }}
+          >
+            <Badge variant="destructive" className="mb-2 bg-rose-500/20 text-rose-400 border-rose-500/50">
+              <Siren className="w-3 h-3 mr-1" />
+              NEGATIVE SENTIMENT
+            </Badge>
+          </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-3xl font-extrabold gradient-text-rose"
+            style={{ fontFamily: 'Rajdhani, sans-serif' }}
+          >
+            Negative Sentiment Analysis
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="mt-2 text-slate-400"
+          >
+            {data.overview.totalCategories} distinct negative sentiment categories • {data.overview.totalSourcesConsulted}+ authoritative sources • {data.overview.temporalCoverage}
+          </motion.p>
         </div>
-        <div className="flex gap-3">
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4 }}
+          className="flex gap-3"
+        >
           <Button variant="outline" className="gap-2 border-rose-500/50 text-rose-400 hover:bg-rose-500/10">
             <Eye className="h-4 w-4" />
             Monitor Risks
@@ -118,254 +182,785 @@ export default function NegativeSentimentPage() {
             <Shield className="h-4 w-4" />
             Mitigation Actions
           </Button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      {/* Key Metrics */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <MetricCard
-          title="Avg Negative"
-          value={`${Math.round(avgNegative)}%`}
-          previousValue={Math.round(avgNegative) + 3}
-          icon={<ThumbsDown className="h-6 w-6" />}
-          gradient="rose"
-          status="info"
-        />
-        <MetricCard
-          title="Peak Negative"
-          value={`${highestNegative}%`}
-          previousValue={highestNegative + 8}
-          icon={<AlertCircle className="h-6 w-6" />}
-          gradient="gold"
-        />
-        <MetricCard
-          title="Negative Volume"
-          value={totalNegativeVolume > 1000000 ? `${(totalNegativeVolume / 1000000).toFixed(1)}M` : `${(totalNegativeVolume / 1000).toFixed(0)}K`}
-          previousValue={totalNegativeVolume * 1.15}
-          icon={<Frown className="h-6 w-6" />}
-          gradient="navy"
-        />
-        <MetricCard
-          title="Decline Rate"
-          value="-6%"
-          previousValue={-8}
-          icon={<TrendingUp className="h-6 w-6" />}
-          gradient="emerald"
-        />
-      </div>
+      {/* Enhanced Key Metrics - Cycle A: Critical Metrics */}
+      <motion.div
+        variants={staggerContainer}
+        initial="initial"
+        animate="animate"
+        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+      >
+        <motion.div variants={fadeInUp}>
+          <MetricCard
+            title="Critical Categories"
+            value={criticalCount.toString()}
+            icon={<AlertTriangle className="h-6 w-6" />}
+            gradient="rose"
+            status="error"
+          />
+        </motion.div>
+        <motion.div variants={fadeInUp}>
+          <MetricCard
+            title="High Severity"
+            value={highCount.toString()}
+            icon={<AlertCircle className="h-6 w-6" />}
+            gradient="gold"
+            status="warning"
+          />
+        </motion.div>
+        <motion.div variants={fadeInUp}>
+          <MetricCard
+            title="Sources Consulted"
+            value={`${data.overview.totalSourcesConsulted}+`}
+            icon={<Database className="h-6 w-6" />}
+            gradient="denim"
+          />
+        </motion.div>
+        <motion.div variants={fadeInUp}>
+          <MetricCard
+            title="Fear Topics"
+            value={fearData.overview.queryCategories.toString()}
+            icon={<Siren className="h-6 w-6" />}
+            gradient="rose"
+            status="error"
+          />
+        </motion.div>
+      </motion.div>
 
       <Tabs defaultValue="overview" className="space-y-6">
         <TabsList className="glass-panel" scrollable>
           <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="concerns">Concerns</TabsTrigger>
-          <TabsTrigger value="trends">Risk Areas</TabsTrigger>
-          <TabsTrigger value="alerts">Alerts</TabsTrigger>
+          <TabsTrigger value="credibility">Credibility</TabsTrigger>
+          <TabsTrigger value="relevance">Relevance</TabsTrigger>
+          <TabsTrigger value="categories">Categories</TabsTrigger>
+          <TabsTrigger value="themes">Narratives</TabsTrigger>
+          <TabsTrigger value="entities">Entities</TabsTrigger>
+          <TabsTrigger value="statistics">Statistics</TabsTrigger>
+          <TabsTrigger value="quality">Data Quality</TabsTrigger>
+          <TabsTrigger value="fear">Fear & Uncertainty</TabsTrigger>
         </TabsList>
 
-        {/* Overview Tab */}
+        {/* Enhanced Overview Tab - Cycle B: Glassmorphism Charts */}
         <TabsContent value="overview" className="space-y-6">
-          <GlassPanel title="Negative Sentiment Overview" description="Key negative sentiment metrics and trends">
+          <GlassPanel title="Negative Sentiment Overview" description="Key negative sentiment metrics and severity distribution">
             <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Negative Sentiment Trend</CardTitle>
-                  <CardDescription>Monthly negative sentiment evolution (declining)</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <AreaChart
-                    data={monthlyNegative}
-                    xAxisKey="month"
-                    areas={[
-                      { dataKey: 'negative', name: 'Negative %', color: CHART_COLORS.rose },
-                    ]}
-                    height={300}
-                    showGrid={true}
-                  />
-                </CardContent>
-              </Card>
-
               <div className="grid gap-6 lg:grid-cols-2">
-                <Card className="glass-card">
+                <motion.div
+                  variants={cardHover}
+                  initial="initial"
+                  animate="animate"
+                  whileHover="hover"
+                  className="glass-card border-rose-500/30"
+                >
                   <CardHeader>
-                    <CardTitle className="text-lg">Sentiment Distribution</CardTitle>
-                    <CardDescription>Overall sentiment breakdown</CardDescription>
+                    <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                      <Scale className="w-4 h-4 inline mr-2" />
+                      Severity Distribution
+                    </CardTitle>
+                    <CardDescription>Categories by severity level</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <PieChart
-                      data={sentimentData}
+                      data={data.severityDistribution}
                       height={280}
                       showLegend={true}
                     />
                   </CardContent>
-                </Card>
+                </motion.div>
 
-                <Card className="glass-card">
+                <motion.div
+                  variants={cardHover}
+                  initial="initial"
+                  animate="animate"
+                  whileHover="hover"
+                  className="glass-card border-amber-500/30"
+                >
                   <CardHeader>
-                    <CardTitle className="text-lg">Concern Level Trend</CardTitle>
-                    <CardDescription>Aggregate concern index</CardDescription>
+                    <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                      <Activity className="w-4 h-4 inline mr-2" />
+                      Sentiment Trend
+                    </CardTitle>
+                    <CardDescription>Negative sentiment intensity over time</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <LineChart
-                      data={monthlyNegative}
+                    <AreaChart
+                      data={data.sentimentTrend}
                       xAxisKey="month"
-                      lines={[
-                        { dataKey: 'concern', name: 'Concern Index', color: CHART_COLORS.gold },
+                      areas={[
+                        { dataKey: 'negative', name: 'Negative %', color: CHART_COLORS.rose },
                       ]}
                       height={280}
                       showGrid={true}
                     />
                   </CardContent>
-                </Card>
+                </motion.div>
               </div>
-            </div>
-          </GlassPanel>
-        </TabsContent>
 
-        {/* Concerns Tab */}
-        <TabsContent value="concerns" className="space-y-6">
-          <GlassPanel title="Negative Sentiment Drivers" description="Key factors driving negative sentiment">
-            <div className="space-y-6">
-              <Card className="glass-card">
+              {/* Category Severity Bar Chart */}
+              <motion.div
+                variants={cardHover}
+                initial="initial"
+                animate="animate"
+                whileHover="hover"
+                className="glass-card border-slate-500/30"
+              >
                 <CardHeader>
-                  <CardTitle className="text-lg">Concern Impact Analysis</CardTitle>
-                  <CardDescription>Major factors influencing negative sentiment</CardDescription>
+                  <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <TrendingUp className="w-4 h-4 inline mr-2" />
+                    Category Severity Scores
+                  </CardTitle>
+                  <CardDescription>Top negative sentiment categories ranked by severity</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <BarChart
-                    data={negativeDrivers}
-                    xAxisKey="driver"
+                    data={data.categorySeverity.slice(0, 8)}
+                    xAxisKey="category"
                     bars={[
-                      { dataKey: 'impact', name: 'Impact %', color: CHART_COLORS.rose },
+                      { dataKey: 'severity', name: 'Severity Score', color: CHART_COLORS.rose },
                     ]}
                     height={350}
                     showGrid={true}
                   />
                 </CardContent>
-              </Card>
+              </motion.div>
+            </div>
+          </GlassPanel>
+        </TabsContent>
 
+        {/* Categories Tab - Cycle C: Detailed Categories */}
+        <TabsContent value="categories" className="space-y-6">
+          <GlassPanel title="Negative Sentiment Categories" description="16 distinct categories of negative sentiment toward UAE">
+            <div className="space-y-6">
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {negativeDrivers.map((driver, idx) => (
-                  <Card key={idx} className="glass-card border-rose-500/30">
-                    <CardContent className="p-4">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-rose-500/20 text-rose-400">
-                          <driver.icon className="h-5 w-5" />
-                        </div>
-                        <span className="font-medium text-slate-200">{driver.driver}</span>
+                <AnimatePresence>
+                  {data.categories.map((category, idx) => (
+                    <motion.div
+                      key={category.id}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ delay: idx * 0.05 }}
+                      whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
+                      onClick={() => setSelectedCategory(selectedCategory === category.id ? null : category.id)}
+                      className={`glass-card border ${getSeverityBorder(category.severity)} p-4 cursor-pointer`}
+                    >
+                      <div className="flex items-center justify-between mb-3">
+                        <Badge className={getSeverityColor(category.severity)}>
+                          {category.severity}
+                        </Badge>
+                        <span className="text-xs text-slate-500">#{category.id}</span>
                       </div>
-                      <div className="space-y-2">
-                        <div className="flex justify-between text-sm">
-                          <span className="text-slate-400">Impact Score</span>
-                          <span className="text-rose-400 font-bold">{driver.impact}%</span>
-                        </div>
-                        <Progress value={driver.impact} className="h-2" />
+                      <h4 className="font-semibold text-slate-200 mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                        {category.name}
+                      </h4>
+                      <div className="flex items-center gap-2 text-xs text-slate-400 mb-3">
+                        <Badge variant="outline" className="text-xs">
+                          Tier {category.tier}
+                        </Badge>
+                        <Badge variant="outline" className="text-xs">
+                          {category.sentimentIntensity}
+                        </Badge>
                       </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                      <Progress
+                        value={(severityToNumber(category.severity) / 10) * 100}
+                        className="h-1"
+                      />
+                      <AnimatePresence>
+                        {selectedCategory === category.id && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="mt-3 pt-3 border-t border-slate-700"
+                          >
+                            <p className="text-xs text-slate-400 mb-2">
+                              Primary Concerns:
+                            </p>
+                            <div className="flex flex-wrap gap-1">
+                              {category.primaryConcerns.map((concern, i) => (
+                                <Badge key={i} variant="secondary" className="text-xs">
+                                  {concern}
+                                </Badge>
+                              ))}
+                            </div>
+                            {category.keyQuotes.length > 0 && (
+                              <blockquote className="mt-3 text-xs text-slate-500 italic border-l-2 border-slate-600 pl-2">
+                                {category.keyQuotes[0].substring(0, 100)}...
+                              </blockquote>
+                            )}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
               </div>
             </div>
           </GlassPanel>
         </TabsContent>
 
-        {/* Risk Areas Tab */}
-        <TabsContent value="trends" className="space-y-6">
-          <GlassPanel title="High Risk Categories" description="Categories with highest negative sentiment">
+        {/* Themes Tab - Cycle D: Narrative Themes */}
+        <TabsContent value="themes" className="space-y-6">
+          <GlassPanel title="Key Narrative Themes" description="Core negative narratives identified in sentiment analysis">
             <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Top 5 Negative Categories</CardTitle>
-                  <CardDescription>Ranked by negative sentiment percentage</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ScrollArea className="h-[400px]">
-                    <div className="space-y-3">
-                      {topNegative.map((trend, idx) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-rose-500/30 bg-rose-500/10 p-4">
-                          <div className="flex items-center gap-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-rose-500/20 text-rose-400 font-bold">
-                              #{idx + 1}
-                            </div>
-                            <div>
-                              <p className="font-semibold text-slate-200">{trend.name}</p>
-                              <p className="text-sm text-slate-400">{trend.category}</p>
-                            </div>
-                          </div>
-                          <div className="text-right">
-                            <div className="flex items-center gap-2">
-                              <AlertCircle className="h-5 w-5 text-rose-400" />
-                              <span className="text-2xl font-bold text-rose-400">
-                                {Math.round(trend.sentiment?.negative || 0)}%
-                              </span>
-                            </div>
-                            <p className="text-xs text-slate-400 mt-1">
-                              Volume: {(trend.sentiment?.volume || 0).toLocaleString()}
-                            </p>
-                          </div>
+              {data.themes.map((theme, idx) => (
+                <motion.div
+                  key={theme.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="glass-card border-rose-500/30 p-6"
+                >
+                  <div className="flex items-start gap-4">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: idx * 0.1 + 0.2 }}
+                      className="flex h-12 w-12 items-center justify-center rounded-full bg-rose-500/20 text-rose-400"
+                    >
+                      <ThumbsDown className="h-6 w-6" />
+                    </motion.div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-lg text-slate-200 mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                        {theme.name}
+                      </h4>
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {theme.coreElements.map((element, i) => (
+                          <Badge key={i} variant="outline" className="text-amber-400 border-amber-400/50">
+                            {element}
+                          </Badge>
+                        ))}
+                      </div>
+                      {theme.dataPoints.length > 0 && (
+                        <div className="bg-navy-900/50 rounded-lg p-3 mt-3">
+                          <p className="text-xs text-slate-500 mb-2">Key Data Points:</p>
+                          <ul className="space-y-1">
+                            {theme.dataPoints.map((dp, i) => (
+                              <li key={i} className="text-sm text-slate-300 flex items-center gap-2">
+                                <XCircle className="w-3 h-3 text-red-400" />
+                                {dp}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                      ))}
+                      )}
+                      <div className="flex items-center gap-2 mt-3">
+                        <span className="text-xs text-slate-500">Sources:</span>
+                        {theme.sources.map((source, i) => (
+                          <Badge key={i} variant="secondary" className="text-xs">
+                            {source}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
-                  </ScrollArea>
-                </CardContent>
-              </Card>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </GlassPanel>
         </TabsContent>
 
-        {/* Alerts Tab */}
-        <TabsContent value="alerts" className="space-y-6">
-          <GlassPanel title="Risk Alerts" description="Current alert levels for negative sentiment concerns">
-            <div className="space-y-6">
-              {alertConcerns.map((alert, idx) => (
-                <Card key={idx} className={`glass-card border-${alert.level === 'HIGH' ? 'rose' : alert.level === 'MEDIUM' ? 'yellow' : 'emerald'}-500/30`}>
-                  <CardContent className="p-4">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-4">
-                        <div className={`flex h-10 w-10 items-center justify-center rounded-full ${
-                          alert.level === 'HIGH' ? 'bg-rose-500/20 text-rose-400' :
-                          alert.level === 'MEDIUM' ? 'bg-yellow-500/20 text-yellow-400' :
-                          'bg-emerald-500/20 text-emerald-400'
-                        }`}>
-                          <AlertTriangle className="h-5 w-5" />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-slate-200">{alert.concern}</p>
-                          <p className="text-sm text-slate-400">Trend: {alert.trend}</p>
-                        </div>
+        {/* Entities Tab - Cycle E: Human Rights Defenders & Government Entities */}
+        <TabsContent value="entities" className="space-y-6">
+          <div className="grid gap-6 lg:grid-cols-2">
+            <GlassPanel title="Human Rights Defenders" description="Political prisoners and human rights defenders documented">
+              <ScrollArea className="h-[400px]">
+                <div className="space-y-3">
+                  {data.humanRightsDefenders.map((defender, idx) => (
+                    <motion.div
+                      key={defender.name}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: idx * 0.05 }}
+                      className="glass-card border-rose-500/30 p-4"
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="font-semibold text-slate-200">{defender.name}</h4>
+                        <Badge variant="destructive" className="text-xs">
+                          {defender.status}
+                        </Badge>
                       </div>
-                      <Badge variant={
-                        alert.level === 'HIGH' ? 'destructive' :
-                        alert.level === 'MEDIUM' ? 'warning' :
-                        'success'
-                      }>
-                        {alert.level}
-                      </Badge>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                      <p className="text-sm text-slate-400 mb-1">
+                        <span className="text-slate-500">Charges:</span> {defender.charges}
+                      </p>
+                      <p className="text-xs text-slate-500">
+                        Source: {defender.source}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </ScrollArea>
+            </GlassPanel>
 
-              <Card className="glass-card">
+            <GlassPanel title="Government & Corporate Entities" description="Entities implicated in negative sentiment">
+              <ScrollArea className="h-[400px]">
+                <div className="space-y-3">
+                  {data.governmentEntities.map((entity, idx) => (
+                    <motion.div
+                      key={entity.entity}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: idx * 0.05 }}
+                      className="glass-card border-amber-500/30 p-4"
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="font-semibold text-slate-200">{entity.entity}</h4>
+                        <Badge variant="outline" className="text-xs">
+                          {entity.role}
+                        </Badge>
+                      </div>
+                      <p className="text-sm text-slate-400">
+                        {entity.allegation}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+              </ScrollArea>
+            </GlassPanel>
+          </div>
+
+          {/* Arrest Cases */}
+          <GlassPanel title="Documented Arrest Cases" description="Cases of arrests for online criticism">
+            <ScrollArea className="h-[300px]">
+              <div className="space-y-3">
+                {data.arrestCases.map((arrest, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                    className="glass-card border-red-500/30 p-4"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/20 text-red-400">
+                        <Ban className="h-4 w-4" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between mb-1">
+                          <h4 className="font-semibold text-slate-200">{arrest.person}</h4>
+                          <Badge variant="secondary" className="text-xs">
+                            {arrest.nationality}
+                          </Badge>
+                        </div>
+                        <p className="text-sm text-slate-400 mb-1">
+                          <span className="text-slate-500">Reason:</span> {arrest.reason}
+                        </p>
+                        <p className="text-sm text-red-400">
+                          <span className="text-slate-500">Consequence:</span> {arrest.consequence}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </ScrollArea>
+          </GlassPanel>
+
+          {/* Military Interventions */}
+          <GlassPanel title="Military Interventions" description="Documented UAE military interventions abroad">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {data.militaryInterventions.map((intervention, idx) => (
+                <motion.div
+                  key={intervention.operation}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="glass-card border-amber-500/30 p-4 text-center"
+                >
+                  <Globe className="h-8 w-8 mx-auto mb-2 text-amber-400" />
+                  <h4 className="font-bold text-slate-200 mb-1" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    {intervention.operation}
+                  </h4>
+                  <p className="text-sm text-slate-400 mb-2">{intervention.location}</p>
+                  <p className="text-xs text-slate-500">{intervention.details}</p>
+                </motion.div>
+              ))}
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Statistics Tab - Cycle F: Comprehensive Statistics */}
+        <TabsContent value="statistics" className="space-y-6">
+          <div className="grid gap-6 lg:grid-cols-2">
+            {/* Human Rights Statistics */}
+            <GlassPanel title="Human Rights Statistics" description="Key human rights violation metrics">
+              <div className="space-y-4">
+                {Object.entries(data.statistics.humanRights).map(([key, value], idx) => (
+                  <motion.div
+                    key={key}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                    className="flex items-center justify-between p-3 glass-card border-red-500/20"
+                  >
+                    <span className="text-sm text-slate-300">{key}</span>
+                    <Badge variant="destructive" className="font-mono">
+                      {value}
+                    </Badge>
+                  </motion.div>
+                ))}
+              </div>
+            </GlassPanel>
+
+            {/* Labor Statistics */}
+            <GlassPanel title="Labor Exploitation Statistics" description="Key labor and migration metrics">
+              <div className="space-y-4">
+                {Object.entries(data.statistics.labor).map(([key, value], idx) => (
+                  <motion.div
+                    key={key}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                    className="flex items-center justify-between p-3 glass-card border-amber-500/20"
+                  >
+                    <span className="text-sm text-slate-300">{key}</span>
+                    <Badge variant="outline" className="font-mono text-amber-400">
+                      {value}
+                    </Badge>
+                  </motion.div>
+                ))}
+              </div>
+            </GlassPanel>
+
+            {/* Environment Statistics */}
+            <GlassPanel title="Environmental Statistics" description="Air pollution and environmental metrics">
+              <div className="space-y-4">
+                {Object.entries(data.statistics.environment).map(([key, value], idx) => (
+                  <motion.div
+                    key={key}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                    className="flex items-center justify-between p-3 glass-card border-green-500/20"
+                  >
+                    <span className="text-sm text-slate-300">{key}</span>
+                    <Badge variant="secondary" className="font-mono">
+                      {value}
+                    </Badge>
+                  </motion.div>
+                ))}
+              </div>
+            </GlassPanel>
+
+            {/* Corruption Statistics */}
+            <GlassPanel title="Corruption Statistics" description="Corruption perception index data">
+              <div className="space-y-4">
+                {Object.entries(data.statistics.corruption).map(([key, value], idx) => (
+                  <motion.div
+                    key={key}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                    className="flex items-center justify-between p-3 glass-card border-yellow-500/20"
+                  >
+                    <span className="text-sm text-slate-300">{key}</span>
+                    <Badge variant="outline" className="font-mono text-yellow-400">
+                      {value}
+                    </Badge>
+                  </motion.div>
+                ))}
+              </div>
+            </GlassPanel>
+          </div>
+
+          {/* Demographics */}
+          <GlassPanel title="Demographics" description="Population and migration statistics">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {Object.entries(data.statistics.demographics).map(([key, value], idx) => (
+                <motion.div
+                  key={key}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: idx * 0.05 }}
+                  className="glass-card border-slate-500/30 p-4 text-center"
+                >
+                  <UsersRound className="h-6 w-6 mx-auto mb-2 text-slate-400" />
+                  <p className="text-sm text-slate-400 mb-1">{key}</p>
+                  <p className="text-lg font-bold text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    {value}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Source Credibility Tab */}
+        <TabsContent value="credibility" className="space-y-6">
+          <SourceCredibilitySection />
+        </TabsContent>
+
+        {/* UAE Relevance Tab */}
+        <TabsContent value="relevance" className="space-y-6">
+          <UAERelevanceSection />
+        </TabsContent>
+
+        {/* Category Detail Tab */}
+        <TabsContent value="categories" className="space-y-6">
+          <CategoryDetailSection />
+        </TabsContent>
+
+        {/* Entities Tab */}
+        <TabsContent value="entities" className="space-y-6">
+          <EntitiesSection />
+        </TabsContent>
+
+        {/* Data Quality Tab */}
+        <TabsContent value="quality" className="space-y-6">
+          <DataQualitySection />
+        </TabsContent>
+
+        {/* Fear & Uncertainty Tab - Cycle A-F: Fear Content */}
+        <TabsContent value="fear" className="space-y-6">
+          {/* Fear Overview */}
+          <GlassPanel title="Fear & Uncertainty Overview" description={`${fearData.overview.queryCategories} distinct fear topics from ${fearData.overview.totalSourcesConsulted} authoritative sources`}>
+            <div className="space-y-6">
+              {/* Fear Metrics */}
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <motion.div variants={fadeInUp}>
+                  <MetricCard
+                    title="Critical Fears"
+                    value={fearData.aggregateSummary.filter(f => f.severity === 'CRITICAL').length.toString()}
+                    icon={<AlertTriangle className="h-6 w-6" />}
+                    gradient="rose"
+                    status="error"
+                  />
+                </motion.div>
+                <motion.div variants={fadeInUp}>
+                  <MetricCard
+                    title="Fear Topics"
+                    value={fearData.overview.queryCategories.toString()}
+                    icon={<Siren className="h-6 w-6" />}
+                    gradient="gold"
+                  />
+                </motion.div>
+                <motion.div variants={fadeInUp}>
+                  <MetricCard
+                    title="Sources"
+                    value={fearData.overview.totalSourcesConsulted.toString()}
+                    icon={<Database className="h-6 w-6" />}
+                    gradient="denim"
+                  />
+                </motion.div>
+                <motion.div variants={fadeInUp}>
+                  <MetricCard
+                    title="Highest Fear"
+                    value="Expat Exodus"
+                    icon={<Users className="h-6 w-6" />}
+                    gradient="rose"
+                    status="error"
+                  />
+                </motion.div>
+              </div>
+
+              {/* Fear Charts */}
+              <div className="grid gap-6 lg:grid-cols-2">
+                <motion.div
+                  variants={cardHover}
+                  initial="initial"
+                  animate="animate"
+                  whileHover="hover"
+                  className="glass-card border-red-500/30"
+                >
+                  <CardHeader>
+                    <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                      <TrendingUp className="w-4 h-4 inline mr-2" />
+                      Fear by Category
+                    </CardTitle>
+                    <CardDescription>Intensity of fear across different topics</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <BarChart
+                      data={fearData.byCategory}
+                      xAxisKey="category"
+                      bars={[
+                        { dataKey: 'fear', name: 'Fear Index', color: CHART_COLORS.rose },
+                      ]}
+                      height={300}
+                      showGrid={true}
+                    />
+                  </CardContent>
+                </motion.div>
+
+                <motion.div
+                  variants={cardHover}
+                  initial="initial"
+                  animate="animate"
+                  whileHover="hover"
+                  className="glass-card border-amber-500/30"
+                >
+                  <CardHeader>
+                    <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                      <Activity className="w-4 h-4 inline mr-2" />
+                      Fear Trend
+                    </CardTitle>
+                    <CardDescription>Fear and uncertainty intensity over time</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <LineChart
+                      data={fearData.trendData}
+                      xAxisKey="month"
+                      lines={[
+                        { dataKey: 'fear', name: 'Fear Index', color: CHART_COLORS.rose },
+                        { dataKey: 'uncertainty', name: 'Uncertainty', color: CHART_COLORS.gold },
+                        { dataKey: 'economicRisk', name: 'Economic Risk', color: CHART_COLORS.warning },
+                      ]}
+                      height={300}
+                      showGrid={true}
+                    />
+                  </CardContent>
+                </motion.div>
+              </div>
+
+              {/* Sentiment Distribution */}
+              <motion.div
+                variants={cardHover}
+                initial="initial"
+                animate="animate"
+                whileHover="hover"
+                className="glass-card border-slate-500/30"
+              >
                 <CardHeader>
-                  <CardTitle className="text-lg">Year-over-Year Comparison</CardTitle>
-                  <CardDescription>Negative sentiment trajectory</CardDescription>
+                  <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <Scale className="w-4 h-4 inline mr-2" />
+                    Sentiment Distribution
+                  </CardTitle>
+                  <CardDescription>Fear sentiment across topics</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <BarChart
-                    data={[
-                      { year: '2024', negative: 22 },
-                      { year: '2025', negative: 18 },
-                      { year: '2026', negative: 13 },
-                    ]}
-                    xAxisKey="year"
-                    bars={[
-                      { dataKey: 'negative', name: 'Negative %', color: CHART_COLORS.rose },
-                    ]}
-                    height={300}
-                    showGrid={true}
+                  <PieChart
+                    data={fearData.sentimentDistribution}
+                    height={280}
+                    showLegend={true}
                   />
                 </CardContent>
-              </Card>
+              </motion.div>
+            </div>
+          </GlassPanel>
+
+          {/* Fear Topics Grid */}
+          <GlassPanel title="Fear & Uncertainty Topics" description="9 distinct fear and uncertainty categories">
+            <div className="space-y-6">
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <AnimatePresence>
+                  {fearData.topics.map((topic, idx) => (
+                    <motion.div
+                      key={topic.id}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ delay: idx * 0.05 }}
+                      whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
+                      onClick={() => setSelectedFearTopic(selectedFearTopic === topic.id ? null : topic.id)}
+                      className={`glass-card border ${topic.severity === 'CRITICAL' ? 'border-red-500/50' : topic.severity === 'HIGH' ? 'border-amber-500/50' : 'border-yellow-500/50'} p-4 cursor-pointer`}
+                    >
+                      <div className="flex items-center justify-between mb-3">
+                        <Badge className={topic.severity === 'CRITICAL' ? 'bg-red-500/20 text-red-400' : topic.severity === 'HIGH' ? 'bg-amber-500/20 text-amber-400' : 'bg-yellow-500/20 text-yellow-400'}>
+                          {topic.severity}
+                        </Badge>
+                        <span className="text-xs text-slate-500">#{topic.id}</span>
+                      </div>
+                      <h4 className="font-semibold text-slate-200 mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                        {topic.name}
+                      </h4>
+                      <div className="flex items-center gap-2 text-xs text-slate-400 mb-3">
+                        <Badge variant="outline" className="text-xs">
+                          Sentiment: {topic.aggregateSentiment > 0 ? '+' : ''}{topic.aggregateSentiment}
+                        </Badge>
+                      </div>
+                      <Progress
+                        value={Math.abs(topic.aggregateSentiment) * 100}
+                        className="h-1"
+                      />
+                      <AnimatePresence>
+                        {selectedFearTopic === topic.id && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            className="mt-3 pt-3 border-t border-slate-700"
+                          >
+                            <p className="text-xs text-slate-500 mb-2">
+                              Primary Fears:
+                            </p>
+                            <div className="flex flex-wrap gap-1 mb-3">
+                              {topic.primaryFears.map((fear, i) => (
+                                <Badge key={i} variant="secondary" className="text-xs">
+                                  {fear}
+                                </Badge>
+                              ))}
+                            </div>
+                            <p className="text-xs text-slate-500 mb-2">Key KPIs:</p>
+                            <div className="space-y-1">
+                              {topic.kpis.slice(0, 3).map((kpi, i) => (
+                                <div key={i} className="flex justify-between text-xs">
+                                  <span className="text-slate-400">{kpi.kpi}:</span>
+                                  <span className="text-rose-400 font-semibold">{kpi.value}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
+              </div>
+            </div>
+          </GlassPanel>
+
+          {/* Fear Aggregate Summary */}
+          <GlassPanel title="Fear Aggregate Summary" description="Key fear and uncertainty aggregates">
+            <div className="space-y-4">
+              {fearData.aggregateSummary.map((aggregate, idx) => (
+                <motion.div
+                  key={aggregate.category}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.1 }}
+                  className={`glass-card border ${aggregate.severity === 'CRITICAL' ? 'border-red-500/50' : 'border-amber-500/50'} p-6`}
+                >
+                  <div className="flex items-start gap-4">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: idx * 0.1 + 0.2 }}
+                      className={`flex h-12 w-12 items-center justify-center rounded-full ${aggregate.severity === 'CRITICAL' ? 'bg-red-500/20 text-red-400' : 'bg-amber-500/20 text-amber-400'}`}
+                    >
+                      <AlertTriangle className="h-6 w-6" />
+                    </motion.div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="font-bold text-lg text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                          {aggregate.category}
+                        </h4>
+                        <Badge className={aggregate.severity === 'CRITICAL' ? 'bg-red-500/20 text-red-400' : 'bg-amber-500/20 text-amber-400'}>
+                          {aggregate.severity}
+                        </Badge>
+                      </div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xs text-slate-500">Sentiment:</span>
+                        <Badge variant="outline" className={aggregate.aggregateSentiment < 0 ? 'text-red-400 border-red-500/50' : 'text-green-400 border-green-500/50'}>
+                          {aggregate.aggregateSentiment > 0 ? '+' : ''}{aggregate.aggregateSentiment}
+                        </Badge>
+                      </div>
+                      <div className="bg-navy-900/50 rounded-lg p-3">
+                        <p className="text-xs text-slate-500 mb-2">Evidence:</p>
+                        <ul className="space-y-1">
+                          {aggregate.evidence.map((ev, i) => (
+                            <li key={i} className="text-sm text-slate-300 flex items-center gap-2">
+                              <XCircle className="w-3 h-3 text-red-400 flex-shrink-0" />
+                              {ev}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </GlassPanel>
         </TabsContent>

@@ -29,19 +29,55 @@ import {
   Video,
   Radio,
   Globe,
+  TrendingDown,
+  Users,
+  Activity,
+  AlertTriangle,
 } from 'lucide-react'
 import {
   useYoutubeIntelligenceData,
 } from '@/lib/data-loader'
+import { motion, AnimatePresence } from 'framer-motion'
+
+// Animation variants
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -20 },
+}
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+}
+
+const scaleHover = {
+  whileHover: { scale: 1.02 },
+  transition: { duration: 0.2 },
+}
+
+const glowHover = {
+  whileHover: {
+    boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)',
+    borderColor: 'rgba(59, 130, 246, 0.5)',
+  },
+}
 
 export default function YouTubePage() {
   const { data } = useYoutubeIntelligenceData()
 
   if (!data) {
     return (
-      <div className="flex items-center justify-center min-h-[400px]">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="flex items-center justify-center min-h-[400px]"
+      >
         <div className="text-platinum-400">Loading YouTube intelligence data...</div>
-      </div>
+      </motion.div>
     )
   }
 
@@ -53,18 +89,18 @@ export default function YouTubePage() {
     { name: 'Neutral', value: metrics.sentiment.breakdown.neutral, color: CHART_COLORS.platinum },
     { name: 'Negative', value: metrics.sentiment.breakdown.negative, color: CHART_COLORS.rose },
   ] : [
-    { name: 'Positive', value: 52, color: CHART_COLORS.emerald },
-    { name: 'Neutral', value: 31, color: CHART_COLORS.platinum },
-    { name: 'Negative', value: 17, color: CHART_COLORS.rose },
+    { name: 'Positive', value: 28, color: CHART_COLORS.emerald },
+    { name: 'Neutral', value: 25, color: CHART_COLORS.platinum },
+    { name: 'Negative', value: 47, color: CHART_COLORS.rose },
   ]
 
   // Content category data
   const contentCategoryData = [
-    { name: 'Tourism', value: 35, color: CHART_COLORS.gold },
-    { name: 'Business', value: 25, color: CHART_COLORS.navy },
-    { name: 'News', value: 20, color: CHART_COLORS.platinum },
-    { name: 'Entertainment', value: 12, color: CHART_COLORS.emerald },
-    { name: 'Education', value: 8, color: CHART_COLORS.rose },
+    { name: 'News', value: 35, color: CHART_COLORS.navy },
+    { name: 'Entertainment', value: 25, color: CHART_COLORS.gold },
+    { name: 'Travel', value: 20, color: CHART_COLORS.emerald },
+    { name: 'Lifestyle', value: 12, color: CHART_COLORS.platinum },
+    { name: 'Documentary', value: 8, color: CHART_COLORS.rose },
   ]
 
   // Engagement metrics
@@ -98,19 +134,39 @@ export default function YouTubePage() {
     { format: 'Live Stream', avgViews: 18000, color: CHART_COLORS.emerald },
   ]
 
+  // Crisis data for special section
+  const crisisData = [
+    { metric: 'Attacks', value: '2,819+', icon: AlertTriangle, color: 'text-rose' },
+    { metric: 'Market Loss', value: '$240B', icon: TrendingDown, color: 'text-rose' },
+    { metric: 'Exodus', value: 'Thousands', icon: Users, color: 'text-gold' },
+  ]
+
   return (
-    <div className="space-y-8 p-8">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="space-y-8 p-8"
+    >
       {/* Header */}
-      <div className="flex items-start justify-between">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex items-start justify-between"
+      >
         <div>
-          <Badge variant="navy" className="mb-2">SOCIAL INTELLIGENCE</Badge>
+          <Badge variant="denim" className="mb-2">SOCIAL INTELLIGENCE</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-navy">YouTube & Video Content</h1>
           <p className="mt-2 text-slate-400">
-            Video content intelligence in UAE — YouTube channels, viewership, and government control
+            Video platform intelligence in UAE - channels, viewership, and government control
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-navy/50 text-navy hover:bg-navy/10">
+          <Button
+            variant="outline"
+            className="gap-2 border-navy/50 text-navy hover:bg-navy/10 glass-panel"
+          >
             <Video className="h-4 w-4" />
             View Channels
           </Button>
@@ -119,315 +175,965 @@ export default function YouTubePage() {
             Analyze Trends
           </Button>
         </div>
-      </div>
+      </motion.div>
+
+      {/* Crisis Alert Banner */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.2 }}
+        className="rounded-lg border border-rose/50 bg-rose/10 p-4 glass-panel"
+      >
+        <div className="flex items-center gap-3 mb-3">
+          <AlertTriangle className="h-5 w-5 text-rose" />
+          <span className="font-semibold text-rose">April 2026 Crisis Alert</span>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {crisisData.map((item, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-3 rounded-lg bg-slate-900/50 p-3"
+            >
+              <item.icon className={`h-5 w-5 ${item.color}`} />
+              <div>
+                <p className="text-sm text-slate-400">{item.metric}</p>
+                <p className={`font-bold ${item.color}`}>{item.value}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
 
       {/* Key Metrics */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <MetricCard
-          title="UAE Users"
-          value={metrics?.users ? `${(metrics.users / 1000000).toFixed(1)}M` : '9.5M'}
-          previousValue={9.2}
-          icon={<Eye className="h-6 w-6" />}
-          gradient="navy"
-          status="success"
-        />
-        <MetricCard
-          title="Penetration Rate"
-          value={`${metrics?.penetration || 98}%`}
-          icon={<TrendingUp className="h-6 w-6" />}
-          gradient="gold"
-        />
-        <MetricCard
-          title="Avg Views/Video"
-          value={(metrics?.engagement?.avgViews || 45000).toLocaleString()}
-          previousValue={42000}
-          icon={<Play className="h-6 w-6" />}
-          gradient="emerald"
-          status="success"
-        />
-        <MetricCard
-          title="Bot Activity"
-          value={`${botActivity?.estimatedBotPercent || 12}%`}
-          icon={<AlertCircle className="h-6 w-6" />}
-          gradient="platinum"
-        />
-      </div>
+      <motion.div
+        variants={staggerContainer}
+        initial="initial"
+        animate="animate"
+        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+      >
+        <motion.div variants={fadeInUp} whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
+          <MetricCard
+            title="UAE Users"
+            value={metrics?.users ? `${(metrics.users / 1000000).toFixed(1)}M` : '9.5M'}
+            previousValue={9.2}
+            icon={<Eye className="h-6 w-6" />}
+            gradient="denim"
+            status="success"
+          />
+        </motion.div>
+        <motion.div variants={fadeInUp} whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
+          <MetricCard
+            title="Penetration Rate"
+            value={`${metrics?.penetration || 98}%`}
+            icon={<TrendingUp className="h-6 w-6" />}
+            gradient="gold"
+          />
+        </motion.div>
+        <motion.div variants={fadeInUp} whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
+          <MetricCard
+            title="Avg Views/Video"
+            value={(metrics?.engagement?.avgViews || 45000).toLocaleString()}
+            previousValue={42000}
+            icon={<Play className="h-6 w-6" />}
+            gradient="emerald"
+            status="success"
+          />
+        </motion.div>
+        <motion.div variants={fadeInUp} whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
+          <MetricCard
+            title="Bot Activity"
+            value={`${botActivity?.estimatedBotPercent || 12}%`}
+            icon={<AlertCircle className="h-6 w-6" />}
+            gradient="platinum"
+            status={botActivity?.estimatedBotPercent > 15 ? 'danger' : 'warning'}
+          />
+        </motion.div>
+      </motion.div>
 
-      <Tabs defaultValue="overview" className="space-y-6">
-        <TabsList className="glass-panel" scrollable>
-          <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="content">Content Analysis</TabsTrigger>
-          <TabsTrigger value="channels">Top Channels</TabsTrigger>
-          <TabsTrigger value="government">Government Presence</TabsTrigger>
-        </TabsList>
+      <AnimatePresence mode="wait">
+        <Tabs defaultValue="overview" className="space-y-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <TabsList className="glass-panel" scrollable>
+              <TabsTrigger value="overview">Overview</TabsTrigger>
+              <TabsTrigger value="content">Content Analysis</TabsTrigger>
+              <TabsTrigger value="channels">Top Channels</TabsTrigger>
+              <TabsTrigger value="government">Government Presence</TabsTrigger>
+              <TabsTrigger value="crisis">Crisis Coverage</TabsTrigger>
+              <TabsTrigger value="investigative">Investigative</TabsTrigger>
+              <TabsTrigger value="humanrights">Human Rights</TabsTrigger>
+              <TabsTrigger value="propaganda">Propaganda</TabsTrigger>
+              <TabsTrigger value="economics">Economics</TabsTrigger>
+            </TabsList>
+          </motion.div>
 
-        {/* Overview Tab */}
-        <TabsContent value="overview" className="space-y-6">
-          <GlassPanel title="YouTube Intelligence Overview" description="Video platform activity in UAE">
-            <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Viewership & Engagement Trend</CardTitle>
-                  <CardDescription>12-month viewership growth in UAE</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <AreaChart
-                    data={monthlyTrendData}
-                    xAxisKey="month"
-                    areas={[
-                      { dataKey: 'views', name: 'Views (K)', color: CHART_COLORS.navy },
-                      { dataKey: 'engagement', name: 'Engagement %', color: CHART_COLORS.gold },
-                    ]}
-                    height={300}
-                    showGrid={true}
-                  />
-                </CardContent>
-              </Card>
+          {/* Overview Tab */}
+          <TabsContent value="overview" className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <GlassPanel title="YouTube Intelligence Overview" description="Video platform activity in UAE">
+                <div className="space-y-6">
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Viewership & Engagement Trend</CardTitle>
+                      <CardDescription>12-month viewership growth in UAE</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <AreaChart
+                        data={monthlyTrendData}
+                        xAxisKey="month"
+                        areas={[
+                          { dataKey: 'views', name: 'Views (K)', color: CHART_COLORS.navy },
+                          { dataKey: 'engagement', name: 'Engagement %', color: CHART_COLORS.gold },
+                        ]}
+                        height={300}
+                        showGrid={true}
+                      />
+                    </CardContent>
+                  </Card>
 
-              <div className="grid gap-6 lg:grid-cols-2">
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Sentiment Distribution</CardTitle>
-                    <CardDescription>Overall sentiment on YouTube</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <PieChart
-                      data={sentimentData}
-                      height={280}
-                      showLegend={true}
-                    />
-                  </CardContent>
-                </Card>
+                  <div className="grid gap-6 lg:grid-cols-2">
+                    <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
+                      <Card className="glass-card">
+                        <CardHeader>
+                          <CardTitle className="text-lg">Sentiment Distribution</CardTitle>
+                          <CardDescription>Overall sentiment on YouTube</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <PieChart
+                            data={sentimentData}
+                            height={280}
+                            showLegend={true}
+                          />
+                        </CardContent>
+                      </Card>
+                    </motion.div>
 
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Content Categories</CardTitle>
-                    <CardDescription>Video content by category</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <BarChart
-                      data={contentCategoryData}
-                      xAxisKey="name"
-                      bars={[
-                        { dataKey: 'value', name: '% Share', color: CHART_COLORS.gold },
-                      ]}
-                      height={280}
-                      showGrid={true}
-                    />
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </GlassPanel>
-        </TabsContent>
+                    <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.2 }}>
+                      <Card className="glass-card">
+                        <CardHeader>
+                          <CardTitle className="text-lg">Content Categories</CardTitle>
+                          <CardDescription>Video content by category</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <BarChart
+                            data={contentCategoryData}
+                            xAxisKey="name"
+                            bars={[
+                              { dataKey: 'value', name: '% Share', color: CHART_COLORS.gold },
+                            ]}
+                            height={280}
+                            showGrid={true}
+                          />
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  </div>
+                </div>
+              </GlassPanel>
+            </motion.div>
+          </TabsContent>
 
-        {/* Content Analysis Tab */}
-        <TabsContent value="content" className="space-y-6">
-          <GlassPanel title="Content Performance Analysis" description="Video format and content type performance">
-            <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Video Format Performance</CardTitle>
-                  <CardDescription>Average views by video format</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <BarChart
-                    data={videoPerformanceData}
-                    xAxisKey="format"
-                    bars={[
-                      { dataKey: 'avgViews', name: 'Avg Views', color: CHART_COLORS.navy },
-                    ]}
-                    height={300}
-                    showGrid={true}
-                  />
-                </CardContent>
-              </Card>
+          {/* Content Analysis Tab */}
+          <TabsContent value="content" className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <GlassPanel title="Content Performance Analysis" description="Video format and content type performance">
+                <div className="space-y-6">
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Video Format Performance</CardTitle>
+                      <CardDescription>Average views by video format</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <BarChart
+                        data={videoPerformanceData}
+                        xAxisKey="format"
+                        bars={[
+                          { dataKey: 'avgViews', name: 'Avg Views', color: CHART_COLORS.navy },
+                        ]}
+                        height={300}
+                        showGrid={true}
+                      />
+                    </CardContent>
+                  </Card>
 
-              <div className="grid gap-6 lg:grid-cols-2">
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Trending Topics</CardTitle>
-                    <CardDescription>Most viewed content categories</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ScrollArea className="h-[250px]">
-                      <div className="space-y-2">
-                        {(metrics?.sentiment?.trending || ['UAE documentaries', 'Dubai vlogs', 'Business setup guides', 'Tourism content']).map((topic: string, idx: number) => (
-                          <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
-                            <div className="flex items-center gap-3">
-                              <Play className="h-4 w-4 text-navy" />
-                              <span className="text-sm font-medium text-slate-200">{topic}</span>
+                  <div className="grid gap-6 lg:grid-cols-2">
+                    <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
+                      <Card className="glass-card">
+                        <CardHeader>
+                          <CardTitle className="text-lg">Trending Topics</CardTitle>
+                          <CardDescription>Most viewed content categories</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <ScrollArea className="h-[250px]">
+                            <div className="space-y-2">
+                              {(metrics?.sentiment?.trending || ['Iran conflict coverage', 'Exit narratives', 'UAE documentary', 'Dubai vlogs', 'Missile attack footage']).map((topic: string, idx: number) => (
+                                <motion.div
+                                  key={idx}
+                                  initial={{ opacity: 0, x: -20 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: idx * 0.1 }}
+                                  className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 hover:bg-slate-800/70 cursor-pointer"
+                                >
+                                  <div className="flex items-center gap-3">
+                                    <Play className="h-4 w-4 text-navy" />
+                                    <span className="text-sm font-medium text-slate-200">{topic}</span>
+                                  </div>
+                                  <Badge variant="outline" className="text-navy">#{idx + 1}</Badge>
+                                </motion.div>
+                              ))}
                             </div>
-                            <Badge variant="outline" className="text-navy">#{idx + 1}</Badge>
+                          </ScrollArea>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+
+                    <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
+                      <Card className="glass-card">
+                        <CardHeader>
+                          <CardTitle className="text-lg">Key Concerns</CardTitle>
+                          <CardDescription>User-reported concerns</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-3">
+                            {(metrics?.sentiment?.keyConcerns || ['Government control of major channels', 'Censorship of critical content', 'Bot activity on government videos']).map((concern: string, idx: number) => (
+                              <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: idx * 0.1 }}
+                                className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3"
+                              >
+                                <AlertCircle className="h-4 w-4 text-rose mt-0.5" />
+                                <span className="text-sm text-slate-300">{concern}</span>
+                              </motion.div>
+                            ))}
                           </div>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  </div>
+                </div>
+              </GlassPanel>
+            </motion.div>
+          </TabsContent>
+
+          {/* Channels Tab */}
+          <TabsContent value="channels" className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <GlassPanel title="Top YouTube Channels" description="Most subscribed channels in UAE">
+                <div className="space-y-6">
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Government & Official Channels</CardTitle>
+                      <CardDescription>Channels with largest UAE subscriber base</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ScrollArea className="h-[400px]">
+                        <div className="space-y-3">
+                          {governmentAccounts?.map((account: { handle: string; followers?: number; platform: string; verified: boolean }, idx: number) => (
+                            <motion.div
+                              key={idx}
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: idx * 0.1 }}
+                              whileHover={{ scale: 1.02, x: 5 }}
+                              className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70 cursor-pointer glass-panel"
+                            >
+                              <div className="flex items-center gap-4">
+                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-navy/20 text-navy">
+                                  <Radio className="h-6 w-6" />
+                                </div>
+                                <div>
+                                  <div className="flex items-center gap-2">
+                                    <p className="font-semibold text-slate-200">{account.handle}</p>
+                                    {account.verified && (
+                                      <Badge variant="outline" className="text-navy border-navy">Verified</Badge>
+                                    )}
+                                  </div>
+                                  <p className="text-sm text-slate-400">{account.platform}</p>
+                                </div>
+                              </div>
+                              <div className="text-right">
+                                <p className="text-lg font-bold text-gold">{account.followers ? `${(account.followers / 1000000).toFixed(1)}M` : 'N/A'}</p>
+                                <p className="text-xs text-slate-400">subscribers</p>
+                              </div>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </ScrollArea>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Video Engagement Metrics</CardTitle>
+                      <CardDescription>Average per-video engagement</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid gap-4 sm:grid-cols-3">
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 glass-panel"
+                        >
+                          <div className="flex items-center gap-3">
+                            <Eye className="h-5 w-5 text-gold" />
+                            <span className="text-sm font-medium text-slate-200">Avg Views</span>
+                          </div>
+                          <span className="text-xl font-bold text-gold">{(metrics?.engagement?.avgViews || 45000).toLocaleString()}</span>
+                        </motion.div>
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 glass-panel"
+                        >
+                          <div className="flex items-center gap-3">
+                            <ThumbsUp className="h-5 w-5 text-navy" />
+                            <span className="text-sm font-medium text-slate-200">Avg Likes</span>
+                          </div>
+                          <span className="text-xl font-bold text-navy">{(metrics?.engagement?.avgLikes || 2100).toLocaleString()}</span>
+                        </motion.div>
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 glass-panel"
+                        >
+                          <div className="flex items-center gap-3">
+                            <MessageSquare className="h-5 w-5 text-platinum" />
+                            <span className="text-sm font-medium text-slate-200">Avg Comments</span>
+                          </div>
+                          <span className="text-xl font-bold text-platinum">{(metrics?.engagement?.avgComments || 340).toLocaleString()}</span>
+                        </motion.div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </GlassPanel>
+            </motion.div>
+          </TabsContent>
+
+          {/* Government Presence Tab */}
+          <TabsContent value="government" className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <GlassPanel title="Government Control & Censorship" description="UAE government influence on YouTube">
+                <div className="space-y-6">
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Censorship Statistics</CardTitle>
+                      <CardDescription>YouTube compliance in UAE</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid gap-4 sm:grid-cols-3">
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 glass-panel"
+                        >
+                          <div className="flex items-center gap-3">
+                            <Shield className="h-5 w-5 text-gold" />
+                            <span className="text-sm font-medium text-slate-200">Compliance Rate</span>
+                          </div>
+                          <span className="text-xl font-bold text-gold">{censorship?.complianceRate || 75}%</span>
+                        </motion.div>
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 glass-panel"
+                        >
+                          <div className="flex items-center gap-3">
+                            <Globe className="h-5 w-5 text-navy" />
+                            <span className="text-sm font-medium text-slate-200">Gov Requests</span>
+                          </div>
+                          <span className="text-xl font-bold text-navy">{censorship?.governmentRequests || 234}</span>
+                        </motion.div>
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 glass-panel"
+                        >
+                          <div className="flex items-center gap-3">
+                            <AlertCircle className="h-5 w-5 text-rose" />
+                            <span className="text-sm font-medium text-slate-200">Content Removed</span>
+                          </div>
+                          <span className="text-xl font-bold text-rose">{censorship?.contentRemoved?.toLocaleString() || '1,247'}</span>
+                        </motion.div>
+                      </div>
+                      <p className="mt-4 text-sm text-slate-400">
+                        {censorship?.notes || 'Selective removal; government channels dominate recommendations'}
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Bot Activity Indicators</CardTitle>
+                      <CardDescription>Suspected inauthentic activity</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        {botActivity?.indicators?.map((indicator: string, i: number) => (
+                          <motion.div
+                            key={i}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: i * 0.1 }}
+                            className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3"
+                          >
+                            <AlertCircle className="h-4 w-4 text-rose mt-0.5" />
+                            <span className="text-sm text-slate-300">{indicator}</span>
+                          </motion.div>
+                        )) || [
+                          'View botting on government channels',
+                          'Inflated subscriber counts suspected',
+                          'Coordinated commenting during crisis events',
+                        ].map((indicator: string, i: number) => (
+                          <motion.div
+                            key={i}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: i * 0.1 }}
+                            className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3"
+                          >
+                            <AlertCircle className="h-4 w-4 text-rose mt-0.5" />
+                            <span className="text-sm text-slate-300">{indicator}</span>
+                          </motion.div>
                         ))}
                       </div>
-                    </ScrollArea>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
 
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Key Concerns</CardTitle>
-                    <CardDescription>User-reported concerns</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      {(metrics?.sentiment?.keyConcerns || ['Government control of major channels', 'Limited critical content', 'Algorithmic bias']).map((concern: string, idx: number) => (
-                        <div key={idx} className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3">
-                          <AlertCircle className="h-4 w-4 text-rose mt-0.5" />
-                          <span className="text-sm text-slate-300">{concern}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </GlassPanel>
-        </TabsContent>
-
-        {/* Channels Tab */}
-        <TabsContent value="channels" className="space-y-6">
-          <GlassPanel title="Top YouTube Channels" description="Most subscribed channels in UAE">
-            <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Government & Official Channels</CardTitle>
-                  <CardDescription>Channels with largest UAE subscriber base</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ScrollArea className="h-[400px]">
-                    <div className="space-y-3">
-                      {governmentAccounts?.map((account: { handle: string; subscribers: number; type: string; verified: boolean }, idx: number) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70">
-                          <div className="flex items-center gap-4">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-navy/20 text-navy">
-                              <Radio className="h-6 w-6" />
-                            </div>
-                            <div>
-                              <div className="flex items-center gap-2">
-                                <p className="font-semibold text-slate-200">{account.handle}</p>
-                                {account.verified && (
-                                  <Badge variant="outline" className="text-navy border-navy">Verified</Badge>
-                                )}
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Key Narratives</CardTitle>
+                      <CardDescription>Dominant themes on platform</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ScrollArea className="h-[300px]">
+                        <div className="space-y-3">
+                          {keyNarratives?.slice(0, 6).map((narrative: { topic: string; narrative: string; sentiment: string }, idx: number) => (
+                            <motion.div
+                              key={idx}
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: idx * 0.1 }}
+                              className="rounded-lg bg-slate-800/50 p-4"
+                            >
+                              <div className="flex items-center gap-2 mb-2">
+                                <Badge
+                                  variant="outline"
+                                  className={
+                                    narrative.sentiment === 'positive' ? 'text-emerald border-emerald' :
+                                    narrative.sentiment === 'negative' ? 'text-rose border-rose' :
+                                    'text-platinum border-platinum'
+                                  }
+                                >
+                                  {narrative.topic}
+                                </Badge>
                               </div>
-                              <p className="text-sm text-slate-400">{account.type}</p>
-                            </div>
-                          </div>
-                          <div className="text-right">
-                            <p className="text-lg font-bold text-gold">{(account.subscribers / 1000000).toFixed(1)}M</p>
-                            <p className="text-xs text-slate-400">subscribers</p>
-                          </div>
+                              <p className="text-sm text-slate-300">{narrative.narrative}</p>
+                            </motion.div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
-                  </ScrollArea>
-                </CardContent>
-              </Card>
+                      </ScrollArea>
+                    </CardContent>
+                  </Card>
+                </div>
+              </GlassPanel>
+            </motion.div>
+          </TabsContent>
 
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Video Engagement Metrics</CardTitle>
-                  <CardDescription>Average per-video engagement</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid gap-4 sm:grid-cols-3">
-                    <div className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
-                      <div className="flex items-center gap-3">
-                        <Eye className="h-5 w-5 text-gold" />
-                        <span className="text-sm font-medium text-slate-200">Avg Views</span>
+          {/* Crisis Coverage Tab */}
+          <TabsContent value="crisis" className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <GlassPanel title="April 2026 Crisis Coverage" description="Current Iran-UAE conflict impact on YouTube">
+                <div className="space-y-6">
+                  <Card className="glass-card border-rose/30">
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        <AlertTriangle className="h-5 w-5 text-rose" />
+                        Crisis Statistics
+                      </CardTitle>
+                      <CardDescription>April 2026 Iran-UAE conflict impact</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          className="rounded-lg bg-rose/10 border border-rose/30 p-4 text-center"
+                        >
+                          <p className="text-3xl font-bold text-rose">2,819+</p>
+                          <p className="text-sm text-slate-400">Missile/Drone Attacks</p>
+                        </motion.div>
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          className="rounded-lg bg-rose/10 border border-rose/30 p-4 text-center"
+                        >
+                          <p className="text-3xl font-bold text-rose">$240B</p>
+                          <p className="text-sm text-slate-400">Stock Market Losses</p>
+                        </motion.div>
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          className="rounded-lg bg-gold/10 border border-gold/30 p-4 text-center"
+                        >
+                          <p className="text-3xl font-bold text-gold">5x</p>
+                          <p className="text-sm text-slate-400">vs Israel Attacks</p>
+                        </motion.div>
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          className="rounded-lg bg-gold/10 border border-gold/30 p-4 text-center"
+                        >
+                          <p className="text-3xl font-bold text-gold">1st</p>
+                          <p className="text-sm text-slate-400">Iron Dome Overseas</p>
+                        </motion.div>
                       </div>
-                      <span className="text-xl font-bold text-gold">{(metrics?.engagement?.avgViews || 45000).toLocaleString()}</span>
-                    </div>
-                    <div className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
-                      <div className="flex items-center gap-3">
-                        <ThumbsUp className="h-5 w-5 text-navy" />
-                        <span className="text-sm font-medium text-slate-200">Avg Likes</span>
-                      </div>
-                      <span className="text-xl font-bold text-navy">{(metrics?.engagement?.avgLikes || 2100).toLocaleString()}</span>
-                    </div>
-                    <div className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
-                      <div className="flex items-center gap-3">
-                        <MessageSquare className="h-5 w-5 text-platinum" />
-                        <span className="text-sm font-medium text-slate-200">Avg Comments</span>
-                      </div>
-                      <span className="text-xl font-bold text-platinum">{(metrics?.engagement?.avgComments || 340).toLocaleString()}</span>
-                    </div>
+                    </CardContent>
+                  </Card>
+
+                  <div className="grid gap-6 lg:grid-cols-2">
+                    <Card className="glass-card">
+                      <CardHeader>
+                        <CardTitle className="text-lg">Crisis Response</CardTitle>
+                        <CardDescription>Government and social media actions</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="space-y-3">
+                          {[
+                            '21 people charged for missile footage on social media',
+                            '100+ accounts blocked for inciting violence',
+                            '1,000+ Google employees evacuated',
+                            'Remote learning continues across UAE schools',
+                            'Travel advisories: Do Not Travel issued',
+                          ].map((item: string, idx: number) => (
+                            <motion.div
+                              key={idx}
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: idx * 0.1 }}
+                              className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3"
+                            >
+                              <Activity className="h-4 w-4 text-rose mt-0.5" />
+                              <span className="text-sm text-slate-300">{item}</span>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+
+                    <Card className="glass-card">
+                      <CardHeader>
+                        <CardTitle className="text-lg">Propaganda Indicators</CardTitle>
+                        <CardDescription>Coordinated influence operations</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="space-y-3">
+                          {[
+                            '7 fake X accounts created December 2024',
+                            '5 fake news websites created Oct-Nov 2024',
+                            '8+ AI-generated books published July-Sept 2025',
+                            'Same studio with black-and-silver globe set dressing',
+                            '"Muslim Brotherhood" most frequent topic',
+                          ].map((item: string, idx: number) => (
+                            <motion.div
+                              key={idx}
+                              initial={{ opacity: 0, x: -20 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: idx * 0.1 }}
+                              className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3"
+                            >
+                              <AlertCircle className="h-4 w-4 text-gold mt-0.5" />
+                              <span className="text-sm text-slate-300">{item}</span>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
-          </GlassPanel>
-        </TabsContent>
+                </div>
+              </GlassPanel>
+            </motion.div>
+          </TabsContent>
 
-        {/* Government Presence Tab */}
-        <TabsContent value="government" className="space-y-6">
-          <GlassPanel title="Government Control & Censorship" description="UAE government influence on YouTube">
-            <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Censorship Statistics</CardTitle>
-                  <CardDescription>YouTube compliance in UAE</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid gap-4 sm:grid-cols-3">
-                    <div className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
-                      <div className="flex items-center gap-3">
-                        <Shield className="h-5 w-5 text-gold" />
-                        <span className="text-sm font-medium text-slate-200">Compliance Rate</span>
+          {/* Investigative Reports Tab */}
+          <TabsContent value="investigative" className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <GlassPanel title="Documented Investigative Reports" description="Key investigations into UAE activities">
+                <div className="space-y-6">
+                  {/* Abu Dhabi Secrets */}
+                  <Card className="glass-card border-rose/30">
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        <Shield className="h-5 w-5 text-rose" />
+                        Abu Dhabi Secrets Investigation
+                      </CardTitle>
+                      <CardDescription>UAE influence strategy in Europe via Swiss company Alp Services</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-4">
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <p className="text-2xl font-bold text-rose">78,000</p>
+                          <p className="text-xs text-slate-400">Documents</p>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <p className="text-2xl font-bold text-rose">€5.7M</p>
+                          <p className="text-xs text-slate-400">Payments</p>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <p className="text-2xl font-bold text-gold">18</p>
+                          <p className="text-xs text-slate-400">Countries</p>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <p className="text-2xl font-bold text-gold">3</p>
+                          <p className="text-xs text-slate-400">Prosecutors</p>
+                        </motion.div>
                       </div>
-                      <span className="text-xl font-bold text-gold">{censorship?.complianceRate || 75}%</span>
-                    </div>
-                    <div className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
-                      <div className="flex items-center gap-3">
+                      <div className="space-y-2">
+                        <p className="text-sm font-medium text-slate-300">Key Individuals:</p>
+                        <div className="flex flex-wrap gap-2">
+                          {['Mario Brero (Alp Services)', 'Roland Jacquard (300K+10%)', 'Sheikh Matar (Spy Supervisor)', 'Ali Saeed al-Neyadi'].map((item, idx) => (
+                            <Badge key={idx} variant="outline" className="text-rose border-rose">{item}</Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Equidem Expo 2020 */}
+                  <Card className="glass-card border-gold/30">
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        <AlertTriangle className="h-5 w-5 text-gold" />
+                        Equidem Expo 2020 Report
+                      </CardTitle>
+                      <CardDescription>Labor exploitation at Dubai Expo 2020</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-5 mb-4">
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <p className="text-2xl font-bold text-rose">83%</p>
+                          <p className="text-xs text-slate-400">Forced Labor</p>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <p className="text-2xl font-bold text-gold">57%</p>
+                          <p className="text-xs text-slate-400">Illegal Fees</p>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <p className="text-2xl font-bold text-gold">$1,006</p>
+                          <p className="text-xs text-slate-400">Avg Fee</p>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <p className="text-2xl font-bold text-rose">0</p>
+                          <p className="text-xs text-slate-400">Complaints</p>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <p className="text-2xl font-bold text-rose">2/3</p>
+                          <p className="text-xs text-slate-400">Unpaid Wages</p>
+                        </motion.div>
+                      </div>
+                      <p className="text-sm text-slate-400">69 interviews conducted September-December 2021 across 11 nationalities</p>
+                    </CardContent>
+                  </Card>
+
+                  {/* Abu Dhabi Data Leak */}
+                  <Card className="glass-card border-navy/30">
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
                         <Globe className="h-5 w-5 text-navy" />
-                        <span className="text-sm font-medium text-slate-200">Gov Requests</span>
+                        Abu Dhabi Finance Week Data Leak
+                      </CardTitle>
+                      <CardDescription>February 2026 - 700+ passports exposed</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        <p className="text-sm text-slate-300">Exposed Individuals:</p>
+                        <div className="flex flex-wrap gap-2">
+                          {['David Cameron (Former UK PM)', 'Anthony Scaramucci (White House Comms)', 'UBS/Blackstone/Barclays/Morgan Stanley Execs', 'Tether Crypto Executives'].map((item, idx) => (
+                            <Badge key={idx} variant="outline" className="text-navy border-navy">{item}</Badge>
+                          ))}
+                        </div>
                       </div>
-                      <span className="text-xl font-bold text-navy">{censorship?.governmentRequests || 234}</span>
-                    </div>
-                    <div className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
-                      <div className="flex items-center gap-3">
-                        <AlertCircle className="h-5 w-5 text-rose" />
-                        <span className="text-sm font-medium text-slate-200">Content Removed</span>
-                      </div>
-                      <span className="text-xl font-bold text-rose">{censorship?.contentRemoved?.toLocaleString() || '1,247'}</span>
-                    </div>
-                  </div>
-                  <p className="mt-4 text-sm text-slate-400">
-                    {censorship?.notes || 'Selective removal; government channels dominate recommendations'}
-                  </p>
-                </CardContent>
-              </Card>
+                    </CardContent>
+                  </Card>
+                </div>
+              </GlassPanel>
+            </motion.div>
+          </TabsContent>
 
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Bot Activity Indicators</CardTitle>
-                  <CardDescription>Suspected inauthentic activity</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {botActivity?.indicators?.map((indicator: string, i: number) => (
-                      <div key={i} className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3">
-                        <AlertCircle className="h-4 w-4 text-rose mt-0.5" />
-                        <span className="text-sm text-slate-300">{indicator}</span>
+          {/* Human Rights Tab */}
+          <TabsContent value="humanrights" className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <GlassPanel title="Human Rights Documentation" description="Documented human rights cases and violations">
+                <div className="space-y-6">
+                  <Card className="glass-card border-rose/30">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Key Cases</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <ScrollArea className="h-[300px]">
+                        <div className="space-y-3">
+                          {[
+                            { name: 'Matthew Hedges', details: 'British PhD researcher; 7 months solitary confinement; drugged; falsely confessed to spying for M16; sentenced to life; released after UK diplomatic intervention' },
+                            { name: 'Ahmed Mansoor', details: 'Leading human rights defender; 10-year sentence for "insulting UAE leaders" online; held in isolation 4+ years' },
+                            { name: 'Nasser bin-Ghaith', details: 'Prominent academic; sentenced to 10 years; held incommunicado 10+ months' },
+                            { name: 'Mohammed al-Roken', details: 'Human rights lawyer; 10-year sentence' },
+                            { name: 'Ryan Cornelius', details: 'British businessman; held 18+ years; solitary confinement' },
+                            { name: 'Billy Hood', details: 'British football coach; sentenced 10 years over CBD oil left in car' },
+                          ].map((item, idx) => (
+                            <motion.div
+                              key={idx}
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: idx * 0.1 }}
+                              className="rounded-lg bg-slate-800/50 p-4"
+                            >
+                              <div className="flex items-center gap-2 mb-2">
+                                <AlertCircle className="h-4 w-4 text-rose" />
+                                <span className="font-semibold text-slate-200">{item.name}</span>
+                              </div>
+                              <p className="text-sm text-slate-400">{item.details}</p>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </ScrollArea>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Structural Issues</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        <div className="space-y-2">
+                          <p className="text-sm font-medium text-slate-300">Kafala System</p>
+                          <p className="text-xs text-slate-400">Workers bound to employers; wage theft, excessive hours, recruitment fee debt documented</p>
+                        </div>
+                        <div className="space-y-2">
+                          <p className="text-sm font-medium text-slate-300">Women's Rights</p>
+                          <p className="text-xs text-slate-400">Domestic violence law allows beating "if no physical marks remain"; male guardian permission required</p>
+                        </div>
+                        <div className="space-y-2">
+                          <p className="text-sm font-medium text-slate-300">LGBTQ Rights</p>
+                          <p className="text-xs text-slate-400">Illegal; minimum 6-month prison term</p>
+                        </div>
+                        <div className="space-y-2">
+                          <p className="text-sm font-medium text-slate-300">Secret Prisons</p>
+                          <p className="text-xs text-slate-400">16 torture methods documented; 100+ Emirati activists jailed post-Arab Spring</p>
+                        </div>
                       </div>
-                    )) || [
-                      'View botting on government channels',
-                      'Inflated subscriber counts suspected',
-                    ].map((indicator: string, i: number) => (
-                      <div key={i} className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3">
-                        <AlertCircle className="h-4 w-4 text-rose mt-0.5" />
-                        <span className="text-sm text-slate-300">{indicator}</span>
+                    </CardContent>
+                  </Card>
+                </div>
+              </GlassPanel>
+            </motion.div>
+          </TabsContent>
+
+          {/* Propaganda Tab */}
+          <TabsContent value="propaganda" className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <GlassPanel title="Documented Propaganda Channels" description="Government-aligned and dis-influencer networks">
+                <div className="space-y-6">
+                  <Card className="glass-card border-gold/30">
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        <Globe className="h-5 w-5 text-gold" />
+                        Dis-Influencer Network
+                      </CardTitle>
+                      <CardDescription>Fake news ecosystem exposed by Marc Owen Jones</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-4">
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <p className="text-2xl font-bold text-gold">7+</p>
+                          <p className="text-xs text-slate-400">X Accounts</p>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <p className="text-2xl font-bold text-gold">5</p>
+                          <p className="text-xs text-slate-400">Fake News Sites</p>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <p className="text-2xl font-bold text-gold">8+</p>
+                          <p className="text-xs text-slate-400">AI Books</p>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <p className="text-2xl font-bold text-gold">1</p>
+                          <p className="text-xs text-slate-400">Studio Set</p>
+                        </motion.div>
                       </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </GlassPanel>
-        </TabsContent>
-      </Tabs>
-    </div>
+                      <div className="space-y-2">
+                        <p className="text-sm font-medium text-slate-300">Fake News Websites:</p>
+                        <div className="flex flex-wrap gap-2">
+                          {['The Washington Eye', 'Daily Euro Times', 'Brieflex', 'AfricaLix', 'InfoFlix'].map((site, idx) => (
+                            <Badge key={idx} variant="outline" className="text-gold border-gold">{site}</Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Key Narratives</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        {[
+                          { topic: 'Primary Narrative', content: '"Muslim Brotherhood" as explanation for conflicts, terrorism, environmental issues' },
+                          { topic: 'Conference Attendance', content: 'Council on Foreign Relations (NYC), Cambridge, UC San Diego, London ARC' },
+                          { topic: 'Studio Evidence', content: 'Same studio with black-and-silver globe set dressing' },
+                          { topic: 'AI Signs', content: 'Formulaic structures, excessive em dashes, no bibliographies' },
+                        ].map((item, idx) => (
+                          <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: idx * 0.1 }}
+                            className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3"
+                          >
+                            <AlertCircle className="h-4 w-4 text-gold mt-0.5" />
+                            <div>
+                              <p className="text-sm font-medium text-slate-200">{item.topic}</p>
+                              <p className="text-xs text-slate-400">{item.content}</p>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </GlassPanel>
+            </motion.div>
+          </TabsContent>
+
+          {/* Economics Tab */}
+          <TabsContent value="economics" className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <GlassPanel title="Economic Data" description="UAE and Dubai key economic indicators">
+                <div className="space-y-6">
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg">UAE Key Indicators</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-4 text-center">
+                          <p className="text-2xl font-bold text-emerald">$1.006T</p>
+                          <p className="text-xs text-slate-400">GDP (PPP 2026)</p>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-4 text-center">
+                          <p className="text-2xl font-bold text-emerald">$87,774</p>
+                          <p className="text-xs text-slate-400">GDP/Capita (PPP)</p>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-4 text-center">
+                          <p className="text-2xl font-bold text-gold">0.940</p>
+                          <p className="text-xs text-slate-400">HDI (15th)</p>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-4 text-center">
+                          <p className="text-2xl font-bold text-navy">11.5M</p>
+                          <p className="text-xs text-slate-400">Population 2025</p>
+                        </motion.div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Dubai Economic Data</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-4 text-center">
+                          <p className="text-2xl font-bold text-gold">$156.3B</p>
+                          <p className="text-xs text-slate-400">GDP Nominal 2024</p>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-4 text-center">
+                          <p className="text-2xl font-bold text-emerald">92M+</p>
+                          <p className="text-xs text-slate-400">Airport Passengers</p>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-4 text-center">
+                          <p className="text-2xl font-bold text-navy">92%</p>
+                          <p className="text-xs text-slate-400">Expat Share</p>
+                        </motion.div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="glass-card border-rose/30">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Trade Partners</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-2">
+                        {[
+                          { rank: 1, partner: 'China', value: '$47.7B' },
+                          { rank: 2, partner: 'India', value: '$29.7B' },
+                          { rank: 3, partner: 'USA', value: '$22.62B' },
+                        ].map((item, idx) => (
+                          <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: idx * 0.1 }}
+                            className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                          >
+                            <div className="flex items-center gap-3">
+                              <Badge variant="outline" className="text-gold border-gold">#{item.rank}</Badge>
+                              <span className="text-sm font-medium text-slate-200">{item.partner}</span>
+                            </div>
+                            <span className="text-lg font-bold text-emerald">{item.value}</span>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </GlassPanel>
+            </motion.div>
+          </TabsContent>
+        </Tabs>
+      </AnimatePresence>
+    </motion.div>
   )
 }

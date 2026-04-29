@@ -74,7 +74,7 @@ export default function ReformChangePage() {
     { sector: 'Governance', impact: 82, color: CHART_COLORS.navy },
     { sector: 'Social', impact: 76, color: CHART_COLORS.platinum },
     { sector: 'Technology', impact: 90, color: CHART_COLORS.emerald },
-    { sector: 'International', impact: 85, color: CHART_COLORS.cyan },
+    { sector: 'International', impact: 85, color: CHART_COLORS.info },
   ]
 
   // Reform types distribution
@@ -82,7 +82,7 @@ export default function ReformChangePage() {
     { name: 'Economic', value: 35, color: CHART_COLORS.gold },
     { name: 'Governance', value: 25, color: CHART_COLORS.navy },
     { name: 'Social', value: 20, color: CHART_COLORS.platinum },
-    { name: 'Diplomatic', value: 15, color: CHART_COLORS.cyan },
+    { name: 'Diplomatic', value: 15, color: CHART_COLORS.info },
     { name: 'Legal', value: 5, color: CHART_COLORS.rose },
   ]
 
@@ -91,7 +91,7 @@ export default function ReformChangePage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="navy" className="mb-2">H-SECTOR</Badge>
+          <Badge variant="denim" className="mb-2">H-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-navy">Reform & Change</h1>
           <p className="mt-2 text-slate-400">
             {data.description || 'Major reforms, policy transformations, and national initiatives'}
@@ -116,7 +116,7 @@ export default function ReformChangePage() {
           value="48"
           previousValue={42}
           icon={<RefreshCw className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="success"
         />
         <MetricCard

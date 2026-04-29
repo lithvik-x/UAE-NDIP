@@ -98,7 +98,7 @@ export default function DiasporaPage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="navy" className="mb-2">INTERNATIONAL</Badge>
+          <Badge variant="denim" className="mb-2">INTERNATIONAL</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-navy">Emirati Diaspora</h1>
           <p className="mt-2 text-slate-400">
             {entity.mandate}
@@ -122,7 +122,7 @@ export default function DiasporaPage() {
           title="Digital Reach"
           value={metrics.digitalReach?.toLocaleString() || 'N/A'}
           icon={<Globe className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="info"
         />
         <MetricCard

@@ -1,6 +1,8 @@
 // @ts-nocheck
 'use client'
 
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -18,418 +20,576 @@ import {
   CHART_COLORS,
 } from '@/components/ui/chart-library'
 import {
-  Newspaper,
-  Wifi,
-  Users,
-  Shield,
   AlertCircle,
-  CheckCircle,
-  Eye,
-  MessageSquare,
-  Share2,
+  AlertTriangle,
+  Globe,
+  Hash,
+  Lightbulb,
+  Shield,
+  Star,
   TrendingUp,
+  Users,
+  Zap,
+  Crown,
+  Newspaper,
+  User,
+  Building,
+  BookOpen,
+  Music,
+  Palette,
+  Landmark,
+  UsersRound,
+  Heart,
+  Calendar,
+  Lock,
+  Unlock,
+  DollarSign,
+  Scale,
+  Globe2,
+  Signal,
+  Wifi,
+  Smartphone,
+  Tv,
+  Radio,
+  FileText,
+  Camera,
+  Ban,
+  CheckCircle,
+  XCircle,
+  Info,
+  ExternalLink,
+  Download,
+  Upload,
+  ShieldAlert,
+  Eye,
+  Filter,
+  Server,
+  Key,
+  CreditCard,
+  UsersIcon,
+  Briefcase,
+  GraduationCap,
+  Mic,
+  Monitor,
+  Gamepad2,
+  ChevronRight,
+  Clock,
 } from 'lucide-react'
+
 import {
-  useMediaCommunicationsData,
-} from '@/lib/data-loader'
+  mediaCommunicationsData,
+  keyMetrics,
+  pressFreedomData,
+  rsfAssessment,
+  freedomHouseAssessment,
+  primaryLegislation,
+  cabinetDecisions2025,
+  nmaInfo,
+  contentStandards,
+  mediaFreeZones,
+  foreignOwnership,
+  mediaTimeline,
+  mediaOutlets,
+  umbrellaGroups,
+  broadcastNetworks,
+  governmentStatement,
+  influencerLicenseDeadline,
+  twoLicenseSystem,
+  eligibilityRequirements,
+  applicationProcess,
+  processingTime,
+  contentCreatorObligations,
+  new2026Restrictions,
+  exemptions,
+  violationCategories,
+  repeatOffenses,
+  enforcementMechanisms,
+  detentionCases2026,
+  totalDetentionCases2026,
+  vpnLegalStatus,
+  vpnDownloads,
+  gulfComparison2025,
+  globalContext,
+  voipBlocked,
+  voipBlockedReason,
+  legalAlternatives,
+  otherBlockedCategories,
+  websiteBlocking,
+  internetInfrastructure,
+  redSeaCableCuts,
+  advertisingMarket,
+  digitalAdvertising,
+  advertisingSegments,
+  dominantPlatforms,
+  majorStreaming,
+  mediaEntertainmentSegments,
+  marketTrends,
+  telegraphAcquisition,
+  otherMediaInvestments,
+  journalistCases,
+  legalFrameworkDetentions,
+  humanRightsConcerns,
+  contentManipulation,
+  alJazeeraBlocking,
+  alJazeeraJustification,
+  blocksImplemented,
+  rsfResponse,
+  otherBlockedMedia,
+  gpsDisruptionEvents,
+  affectedAreas,
+  phenomenaObserved,
+  technicalMethods,
+  expertQuoteGps,
+  gigWorkerImpact,
+  expertWarnings,
+  netflixStreaming,
+  streamingPlatforms,
+  regulatoryApproach,
+  childDigitalSafetyLaw,
+  gamingAgeRating,
+  gamingRequirements,
+  digitalServicesCovered,
+  trainingInstitutions,
+  aiLiteracyStudy,
+  dubaiAiInitiative,
+  journalistSalaries,
+  salaryFactors,
+  uaeContext,
+  unescoPerspective,
+  realityVsNarrative,
+  keyDataSummary,
+  regulatoryTimeline,
+  penaltyStructureSummary,
+  urlSources,
+  overallSentiment,
+  sentimentDimensions,
+  positiveElements,
+  keyNarratives,
+  relevanceScores,
+  dashboardRecommendations,
+  dataGaps,
+  keyDefinitions,
+  enrichmentMetadata,
+} from '@/lib/data/topics/media-communications-data'
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+}
 
 export default function MediaCommunicationsPage() {
-  const { data } = useMediaCommunicationsData()
+  const [activeTab, setActiveTab] = useState('overview')
 
-  // Extract metrics from data
-  const pressFreedomScore = data?.metrics?.pressFreedomScore || 25
-  const censorshipLevel = data?.metrics?.censorshipLevel || 73
-  const trackedInfluencers = data?.metrics?.trackedInfluencers || 847
-  const mediaOutlets = data?.metrics?.mediaOutlets || 156
+  // Extract key metrics for cards
+  const pressFreedom = keyMetrics.find(m => m.label.includes('Press Freedom'))
+  const internetFreedom = keyMetrics.find(m => m.label.includes('Internet Freedom'))
+  const adMarket = keyMetrics.find(m => m.label.includes('Advertising Market'))
+  const websitesBlocked = keyMetrics.find(m => m.label.includes('Websites Blocked'))
 
-  // Sentiment distribution data
+  // VPN Chart data
+  const vpnChartData = vpnDownloads.map(v => ({
+    year: v.year.toString(),
+    uae: v.uaeDownloads,
+    global: v.globalDownloads,
+  }))
+
+  // Sentiment data for pie chart
   const sentimentData = [
-    { name: 'Positive', value: 45, color: CHART_COLORS.emerald },
-    { name: 'Neutral', value: 35, color: CHART_COLORS.platinum },
-    { name: 'Negative', value: 20, color: CHART_COLORS.danger },
+    { name: 'Negative', value: 50, color: CHART_COLORS.rose },
+    { name: 'Neutral', value: 20, color: CHART_COLORS.platinum },
+    { name: 'Positive', value: 30, color: CHART_COLORS.emerald },
   ]
 
-  // Platform distribution data
-  const platformData = [
-    { name: 'Twitter/X', value: 38, color: CHART_COLORS.navy },
-    { name: 'Instagram', value: 27, color: CHART_COLORS.rose },
-    { name: 'TikTok', value: 18, color: CHART_COLORS.cyan },
-    { name: 'LinkedIn', value: 10, color: CHART_COLORS.indigo },
-    { name: 'Facebook', value: 7, color: CHART_COLORS.blue },
+  // Press freedom trend data
+  const pressFreedomChartData = pressFreedomData.filter(p => p.score > 0).map(p => ({
+    year: p.year.toString(),
+    score: p.score,
+    rank: p.rank,
+  }))
+
+  // Penalty severity data
+  const penaltyChartData = [
+    { name: 'Religious', value: 1000000, color: CHART_COLORS.rose },
+    { name: 'UAE Symbol', value: 500000, color: CHART_COLORS.orange },
+    { name: 'Foreign Rel.', value: 250000, color: CHART_COLORS.gold },
+    { name: 'Inciting', value: 150000, color: CHART_COLORS.denim },
+    { name: 'License', value: 40000, color: CHART_COLORS.platinum },
   ]
 
-  // Influencer tier data
-  const influencerTierData = [
-    { name: 'Mega (1M+)', value: 23, color: CHART_COLORS.gold },
-    { name: 'Macro (100K-1M)', value: 87, color: CHART_COLORS.navy },
-    { name: 'Mid (10K-100K)', value: 312, color: CHART_COLORS.platinum },
-    { name: 'Micro (<10K)', value: 425, color: CHART_COLORS.teal },
+  // Violation count by severity
+  const violationBySeverity = [
+    { severity: 'Fourth Degree', count: 2, color: CHART_COLORS.rose },
+    { severity: 'Third Degree', count: 3, color: CHART_COLORS.orange },
+    { severity: 'Second Degree', count: 4, color: CHART_COLORS.gold },
+    { severity: 'First Degree', count: 5, color: CHART_COLORS.platinum },
   ]
-
-  // Content themes data
-  const contentThemesData = [
-    { name: 'Government Initiatives', value: 28, color: CHART_COLORS.gold },
-    { name: 'Economy/Business', value: 22, color: CHART_COLORS.navy },
-    { name: 'Tourism/Culture', value: 18, color: CHART_COLORS.platinum },
-    { name: 'Sports', value: 15, color: CHART_COLORS.emerald },
-    { name: 'Technology', value: 10, color: CHART_COLORS.cyan },
-    { name: 'Social Issues', value: 7, color: CHART_COLORS.rose },
-  ]
-
-  // Monthly reach trend
-  const reachTrendData = [
-    { month: 'Jan', reach: 2.4, engagement: 180 },
-    { month: 'Feb', reach: 2.6, engagement: 195 },
-    { month: 'Mar', reach: 2.8, engagement: 210 },
-    { month: 'Apr', reach: 3.0, engagement: 225 },
-    { month: 'May', reach: 3.2, engagement: 240 },
-    { month: 'Jun', reach: 3.4, engagement: 255 },
-    { month: 'Jul', reach: 3.1, engagement: 235 },
-    { month: 'Aug', reach: 3.3, engagement: 248 },
-    { month: 'Sep', reach: 3.5, engagement: 262 },
-    { month: 'Oct', reach: 3.7, engagement: 278 },
-    { month: 'Nov', reach: 3.8, engagement: 285 },
-    { month: 'Dec', reach: 3.9, engagement: 292 },
-  ]
-
-  // Key influencers
-  const keyInfluencers = [
-    { name: 'Ahmed Alnaqbi', handle: '@ahmeduae', followers: 2.3, tier: 'Mega', sentiment: 78, category: 'Business' },
-    { name: 'Fatima Almarri', handle: '@fatima_media', followers: 1.8, tier: 'Mega', sentiment: 82, category: 'Lifestyle' },
-    { name: 'Khalid bin Rashid', handle: '@kbr_dxb', followers: 890, tier: 'Macro', sentiment: 85, category: 'Tech' },
-    { name: 'Mariam Alkaabi', handle: '@mariamae', followers: 650, tier: 'Macro', sentiment: 71, category: 'Fashion' },
-    { name: 'Omar Alhammadi', handle: '@omardxb', followers: 420, tier: 'Mid', sentiment: 79, category: 'Sports' },
-  ]
-
-  const getSentimentColor = (score: number) => {
-    if (score >= 70) return 'text-emerald-400'
-    if (score >= 50) return 'text-yellow-400'
-    return 'text-red-400'
-  }
-
-  const getTierBadge = (tier: string) => {
-    switch (tier) {
-      case 'Mega': return <Badge variant="gold" className="text-xs">{tier}</Badge>
-      case 'Macro': return <Badge variant="navy" className="text-xs">{tier}</Badge>
-      case 'Mid': return <Badge variant="platinum" className="text-xs">{tier}</Badge>
-      default: return <Badge variant="outline" className="text-xs">{tier}</Badge>
-    }
-  }
 
   return (
     <div className="space-y-8 p-8">
       {/* Header */}
-      <div className="flex items-start justify-between">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="flex items-start justify-between"
+      >
         <div>
-          <Badge variant="platinum" className="mb-2">S-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-platinum">Media & Communications</h1>
+          <Badge variant="gold" className="mb-2">M-SECTOR</Badge>
+          <h1 className="text-3xl font-extrabold gradient-text-gold">Media & Communications</h1>
           <p className="mt-2 text-slate-400">
-            Press freedom tracking, censorship monitoring, and influencer intelligence
+            Comprehensive analysis of UAE media environment including regulation, press freedom,
+            influencer licensing, internet restrictions, and media market dynamics
           </p>
+          <div className="mt-2 flex items-center gap-4 text-sm text-slate-500">
+            <span>Queries: 26</span>
+            <span>Pages: 18</span>
+            <span>Sources: 45+ URLs</span>
+          </div>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-platinum/50 text-platinum hover:bg-platinum/10">
-            <Eye className="h-4 w-4" />
-            Media Monitor
+          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+            <Newspaper className="h-4 w-4" />
+            Media Outlets
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2">
-            <MessageSquare className="h-4 w-4" />
-            Track Influencer
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+            <Zap className="h-4 w-4" />
+            Analyze
           </Button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Key Metrics */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+      >
         <MetricCard
           title="Press Freedom Index"
-          value={pressFreedomScore}
-          previousValue={pressFreedomScore - 3}
-          icon={<Newspaper className="h-6 w-6" />}
-          gradient="platinum"
-          status="warning"
-        />
-        <MetricCard
-          title="Censorship Level"
-          value={censorshipLevel}
-          previousValue={censorshipLevel + 2}
+          value="26.91"
+          unit="/100"
+          previousValue={30.62}
           icon={<Shield className="h-6 w-6" />}
-          gradient="navy"
-          status="warning"
+          gradient="rose"
+          status="error"
         />
         <MetricCard
-          title="Tracked Influencers"
-          value={trackedInfluencers}
-          previousValue={trackedInfluencers - 23}
-          icon={<Users className="h-6 w-6" />}
+          title="Internet Freedom"
+          value="28"
+          unit="/100"
+          previousValue={27}
+          icon={<Globe className="h-6 w-6" />}
+          gradient="denim"
+          status="error"
+        />
+        <MetricCard
+          title="Ad Market Size"
+          value="$3.6B"
+          previousValue={3.4}
+          icon={<DollarSign className="h-6 w-6" />}
           gradient="gold"
           status="success"
         />
         <MetricCard
-          title="Media Outlets"
-          value={mediaOutlets}
-          previousValue={mediaOutlets - 4}
-          icon={<Wifi className="h-6 w-6" />}
-          gradient="emerald"
+          title="Websites Blocked"
+          value="160K+"
+          previousValue={150}
+          icon={<Ban className="h-6 w-6" />}
+          gradient="orange"
+          status="warning"
         />
-      </div>
+      </motion.div>
 
-      <Tabs defaultValue="overview" className="space-y-6">
+      <Tabs defaultValue="overview" className="space-y-6" onValueChange={setActiveTab}>
         <TabsList className="glass-panel" scrollable>
           <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="influencers">Influencer Network</TabsTrigger>
-          <TabsTrigger value="sentiment">Sentiment Analysis</TabsTrigger>
-          <TabsTrigger value="trends">Reach Trends</TabsTrigger>
+          <TabsTrigger value="regulation">Regulation</TabsTrigger>
+          <TabsTrigger value="pressfreedom">Press Freedom</TabsTrigger>
+          <TabsTrigger value="influencers">Influencers</TabsTrigger>
+          <TabsTrigger value="violations">Violations</TabsTrigger>
+          <TabsTrigger value="internet">Internet</TabsTrigger>
+          <TabsTrigger value="market">Market</TabsTrigger>
+          <TabsTrigger value="journalists">Journalists</TabsTrigger>
+          <TabsTrigger value="gps">GPS</TabsTrigger>
+          <TabsTrigger value="training">Training</TabsTrigger>
+          <TabsTrigger value="sentiment">Sentiment</TabsTrigger>
         </TabsList>
 
         {/* Overview Tab */}
         <TabsContent value="overview" className="space-y-6">
-          <GlassPanel title="Media & Communications Overview" description="Landscape of UAE media environment">
-            <div className="space-y-6">
-              <div className="grid gap-6 lg:grid-cols-2">
+          <motion.div variants={containerVariants} initial="hidden" animate="visible">
+            <GlassPanel title="Media & Communications Overview" description="Key metrics and executive summary">
+              <div className="space-y-6">
+                {/* Key Metrics Grid */}
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                  {keyMetrics.slice(0, 6).map((metric, idx) => (
+                    <motion.div
+                      key={idx}
+                      variants={itemVariants}
+                      className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50"
+                    >
+                      <p className="text-sm text-slate-400">{metric.label}</p>
+                      <p className="mt-1 text-xl font-bold text-platinum">{metric.value}</p>
+                      {metric.trend && (
+                        <p className="mt-1 text-xs text-slate-500">{metric.trend}</p>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Sentiment Distribution */}
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Platform Distribution</CardTitle>
-                    <CardDescription>Social media presence by platform</CardDescription>
+                    <CardTitle className="text-lg">Overall Sentiment</CardTitle>
+                    <CardDescription>Media environment sentiment analysis</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <PieChart
-                      data={platformData}
-                      height={280}
-                      showLegend={true}
-                    />
+                    <div className="grid gap-6 lg:grid-cols-2">
+                      <PieChart
+                        data={sentimentData}
+                        height={250}
+                        showLegend={true}
+                      />
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between">
+                          <Badge variant="destructive" className="gap-1">
+                            <AlertCircle className="h-3 w-3" /> Negative
+                          </Badge>
+                          <span className="text-2xl font-bold text-rose">50%</span>
+                        </div>
+                        <p className="text-sm text-slate-400">
+                          Press freedom restrictions, internet controls, severe penalties
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <Badge variant="outline" className="gap-1">
+                            <Info className="h-3 w-3" /> Neutral
+                          </Badge>
+                          <span className="text-2xl font-bold text-platinum">20%</span>
+                        </div>
+                        <p className="text-sm text-slate-400">
+                          Foreign investment openness, some regulatory aspects
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <Badge variant="success" className="gap-1">
+                            <CheckCircle className="h-3 w-3" /> Positive
+                          </Badge>
+                          <span className="text-2xl font-bold text-emerald">30%</span>
+                        </div>
+                        <p className="text-sm text-slate-400">
+                          Digital infrastructure, market growth, training programs
+                        </p>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
 
+                {/* Key Findings */}
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Content Theme Distribution</CardTitle>
-                    <CardDescription>Prevalence of content categories</CardDescription>
+                    <CardTitle className="text-lg">Critical Findings</CardTitle>
+                    <CardDescription>High-priority intelligence findings</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <BarChart
-                      data={contentThemesData}
-                      xAxisKey="name"
-                      bars={[
-                        { dataKey: 'value', name: 'Percentage', color: CHART_COLORS.gold },
-                      ]}
-                      height={280}
-                      showGrid={true}
-                    />
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-3 rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
+                        <AlertCircle className="h-5 w-5 text-rose mt-0.5" />
+                        <div>
+                          <p className="font-medium text-slate-200">Press Freedom at Critical Low</p>
+                          <p className="mt-1 text-sm text-slate-400">164th of 180 countries, declining 5+ years</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3 rounded-lg bg-orange-500/10 p-4 border border-orange-500/30">
+                        <AlertTriangle className="h-5 w-5 text-orange mt-0.5" />
+                        <div>
+                          <p className="font-medium text-slate-200">Influencer License Deadline Imminent</p>
+                          <p className="mt-1 text-sm text-slate-400">January 31, 2026 - mandatory licensing enforcement</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3 rounded-lg bg-gold-500/10 p-4 border border-gold-500/30">
+                        <Lock className="h-5 w-5 text-gold mt-0.5" />
+                        <div>
+                          <p className="font-medium text-slate-200">VPN Restrictions Intensifying</p>
+                          <p className="mt-1 text-sm text-slate-400">9.6M downloads, 85.5% adoption rate</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3 rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
+                        <ShieldAlert className="h-5 w-5 text-rose mt-0.5" />
+                        <div>
+                          <p className="font-medium text-slate-200">21 Detention Cases (2026)</p>
+                          <p className="mt-1 text-sm text-slate-400">Iran conflict-related charges under cybercrime laws</p>
+                        </div>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
-
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Media Freedom Metrics</CardTitle>
-                  <CardDescription>Press freedom and censorship indicators</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Press Freedom Score (0-100, lower is better)</span>
-                        <span className="font-medium text-platinum">{pressFreedomScore}</span>
-                      </div>
-                      <Progress value={pressFreedomScore} className="h-3" />
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Censorship Level (0-100)</span>
-                        <span className="font-medium text-navy">{censorshipLevel}%</span>
-                      </div>
-                      <Progress value={censorshipLevel} className="h-3" />
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Internet Freedom Score</span>
-                        <span className="font-medium text-yellow-400">58</span>
-                      </div>
-                      <Progress value={58} className="h-3" />
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </GlassPanel>
+            </GlassPanel>
+          </motion.div>
         </TabsContent>
 
-        {/* Influencer Network Tab */}
-        <TabsContent value="influencers" className="space-y-6">
-          <GlassPanel title="Influencer Intelligence Network" description="Top influencers and their sentiment positioning">
-            <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Influencer Tier Distribution</CardTitle>
-                  <CardDescription>Classification by follower count</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <BarChart
-                    data={influencerTierData}
-                    xAxisKey="name"
-                    bars={[
-                      { dataKey: 'value', name: 'Count', color: CHART_COLORS.platinum },
-                    ]}
-                    height={250}
-                    showGrid={true}
-                  />
-                </CardContent>
-              </Card>
-
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Key Influencers</CardTitle>
-                  <CardDescription>Top tracked personalities</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ScrollArea className="h-[400px]">
-                    <div className="space-y-3">
-                      {keyInfluencers.map((inf, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70"
-                        >
-                          <div className="flex items-center gap-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-platinum/20 text-platinum">
-                              <Users className="h-5 w-5" />
-                            </div>
-                            <div>
-                              <p className="font-semibold text-slate-200">{inf.name}</p>
-                              <p className="text-sm text-slate-400">{inf.handle} · {inf.category}</p>
-                            </div>
-                          </div>
-                          <div className="flex items-center gap-6">
-                            <div className="text-center">
-                              <div className="text-lg font-bold text-slate-200">{inf.followers}K</div>
-                              <p className="text-xs text-slate-400">Followers</p>
-                            </div>
-                            <div className="text-center">
-                              {getTierBadge(inf.tier)}
-                              <p className="text-xs text-slate-400 mt-1">Tier</p>
-                            </div>
-                            <div className="text-center">
-                              <div className={`text-lg font-bold ${getSentimentColor(inf.sentiment)}`}>
-                                {inf.sentiment}%
-                              </div>
-                              <p className="text-xs text-slate-400">Sentiment</p>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </ScrollArea>
-                </CardContent>
-              </Card>
-            </div>
-          </GlassPanel>
-        </TabsContent>
-
-        {/* Sentiment Analysis Tab */}
-        <TabsContent value="sentiment" className="space-y-6">
-          <GlassPanel title="Media Sentiment Analysis" description="Aggregated sentiment across all media channels">
-            <div className="space-y-6">
-              <div className="grid gap-6 lg:grid-cols-2">
+        {/* Regulation Tab */}
+        <TabsContent value="regulation" className="space-y-6">
+          <motion.div variants={containerVariants} initial="hidden" animate="visible">
+            <GlassPanel title="UAE Media Regulatory Framework" description="Primary legislation and regulatory bodies">
+              <div className="space-y-6">
+                {/* Primary Legislation */}
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Overall Sentiment Distribution</CardTitle>
-                    <CardDescription>Positive, neutral, and negative coverage</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <PieChart
-                      data={sentimentData}
-                      height={280}
-                      showLegend={true}
-                    />
-                  </CardContent>
-                </Card>
-
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Sentiment by Platform</CardTitle>
-                    <CardDescription>Platform-specific sentiment scores</CardDescription>
+                    <CardTitle className="text-lg">Primary Legislation</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      {platformData.slice(0, 4).map((plat, index) => (
-                        <div key={index} className="space-y-2">
-                          <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-slate-200">{plat.name}</span>
-                            <span className="text-sm font-bold text-emerald-400">
-                              {Math.floor(Math.random() * 30) + 60}%
-                            </span>
+                      {primaryLegislation.map((leg, idx) => (
+                        <div key={idx} className="rounded-lg border border-slate-700 p-4">
+                          <h4 className="font-semibold text-platinum">{leg.name}</h4>
+                          <p className="mt-1 text-sm text-slate-400">Effective: {leg.effectiveDate}</p>
+                          {leg.significance && (
+                            <p className="mt-2 text-sm">{leg.significance}</p>
+                          )}
+                          {leg.penalties && (
+                            <p className="mt-2 text-sm text-rose">Penalties: {leg.penalties}</p>
+                          )}
+                          {leg.mediaActivities && (
+                            <div className="mt-3 flex flex-wrap gap-2">
+                              {leg.mediaActivities.map((activity, i) => (
+                                <Badge key={i} variant="outline" className="text-xs">{activity}</Badge>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Cabinet Decisions 2025 */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Cabinet Decisions 2025</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {cabinetDecisions2025.map((decision, idx) => (
+                        <div key={idx} className="rounded-lg border border-gold-500/30 bg-gold-500/5 p-4">
+                          <div className="flex items-center gap-2">
+                            <Badge variant="gold">{decision.number}</Badge>
+                            {decision.effectiveDate && (
+                              <span className="text-xs text-slate-500">{decision.effectiveDate}</span>
+                            )}
                           </div>
-                          <Progress
-                            value={Math.floor(Math.random() * 30) + 60}
-                            className="h-2"
-                          />
+                          <p className="mt-2 font-medium">{decision.name}</p>
+                          <p className="mt-1 text-sm text-slate-400">{decision.details}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* NMA Info */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Building className="h-5 w-5 text-gold" />
+                      National Media Authority (NMA)
+                    </CardTitle>
+                    <CardDescription>Established December 2025</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div>
+                        <p className="text-sm font-medium text-slate-300">Consolidated from:</p>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                          {nmaInfo.consolidatedFrom.map((item, i) => (
+                            <Badge key={i} variant="outline">{item}</Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-slate-300">Core Competencies:</p>
+                        <div className="mt-2 space-y-2">
+                          {nmaInfo.coreCompetencies.map((comp, i) => (
+                            <div key={i} className="flex items-start gap-2 text-sm">
+                              <ChevronRight className="h-4 w-4 text-gold mt-0.5" />
+                              <span className="text-slate-400">{comp}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Content Standards */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Media Content Standards (Required Compliance)</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3 md:grid-cols-2">
+                      {contentStandards.map((standard, idx) => (
+                        <div key={idx} className="flex items-start gap-2 rounded-lg bg-slate-800/50 p-3">
+                          <CheckCircle className="h-4 w-4 text-emerald mt-0.5" />
+                          <span className="text-sm">{standard.requirement}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Media Free Zones */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Media-Free Zones</CardTitle>
+                    <CardDescription>Four operational zones with 100% foreign ownership</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                      {mediaFreeZones.map((zone, idx) => (
+                        <div key={idx} className="rounded-lg border border-slate-700 p-4">
+                          <h4 className="font-semibold text-gold">{zone.emirate}</h4>
+                          <div className="mt-2 space-y-1">
+                            {zone.benefits.map((benefit, i) => (
+                              <p key={i} className="text-xs text-slate-400">{benefit}</p>
+                            ))}
+                          </div>
                         </div>
                       ))}
                     </div>
                   </CardContent>
                 </Card>
               </div>
-
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Narrative Theme Sentiment</CardTitle>
-                  <CardDescription>Sentiment scores by topic category</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid gap-4 sm:grid-cols-3">
-                    {contentThemesData.slice(0, 6).map((theme, index) => (
-                      <div
-                        key={index}
-                        className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center"
-                      >
-                        <div className="text-2xl font-bold text-emerald-400">
-                          {Math.floor(Math.random() * 30) + 60}%
-                        </div>
-                        <p className="text-sm text-slate-400 mt-1">{theme.name}</p>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </GlassPanel>
+            </GlassPanel>
+          </motion.div>
         </TabsContent>
 
-        {/* Reach Trends Tab */}
-        <TabsContent value="trends" className="space-y-6">
-          <GlassPanel title="Media Reach & Engagement Trends" description="12-month trajectory of media impact">
-            <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Audience Reach & Engagement</CardTitle>
-                  <CardDescription>Monthly combined reach (millions) and engagement (millions)</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <LineChart
-                    data={reachTrendData}
-                    xAxisKey="month"
-                    lines={[
-                      { dataKey: 'reach', name: 'Reach (M)', color: CHART_COLORS.gold },
-                      { dataKey: 'engagement', name: 'Engagement (M)', color: CHART_COLORS.navy },
-                    ]}
-                    height={350}
-                    showGrid={true}
-                  />
-                </CardContent>
-              </Card>
-
-              <div className="grid gap-6 lg:grid-cols-2">
+        {/* Press Freedom Tab */}
+        <TabsContent value="pressfreedom" className="space-y-6">
+          <motion.div variants={containerVariants} initial="hidden" animate="visible">
+            <GlassPanel title="Press Freedom & Censorship" description="RSF Index and Freedom House assessments">
+              <div className="space-y-6">
+                {/* Press Freedom Index Chart */}
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Reach Growth Trend</CardTitle>
-                    <CardDescription>Monthly audience reach in millions</CardDescription>
+                    <CardTitle className="text-lg">RSF World Press Freedom Index Trend</CardTitle>
+                    <CardDescription>2021-2025 Press Freedom Score</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <AreaChart
-                      data={reachTrendData}
-                      xAxisKey="month"
-                      areas={[
-                        { dataKey: 'reach', name: 'Reach', color: CHART_COLORS.platinum },
+                    <BarChart
+                      data={pressFreedomChartData}
+                      xAxisKey="year"
+                      bars={[
+                        { dataKey: 'score', name: 'Score', color: CHART_COLORS.rose },
                       ]}
                       height={250}
                       showGrid={true}
@@ -437,26 +597,1332 @@ export default function MediaCommunicationsPage() {
                   </CardContent>
                 </Card>
 
+                {/* Current Rankings */}
+                <div className="grid gap-6 lg:grid-cols-2">
+                  <Card className="glass-card border-rose-500/50">
+                    <CardHeader>
+                      <CardTitle className="text-lg text-rose">RSF 2025 Assessment</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between">
+                          <span className="text-slate-400">Score</span>
+                          <span className="text-2xl font-bold text-rose">26.91/100</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-slate-400">Rank</span>
+                          <span className="text-2xl font-bold text-rose">164th of 180</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-slate-400">Trend</span>
+                          <Badge variant="destructive">Down 12.1%</Badge>
+                        </div>
+                        <p className="mt-4 text-sm text-slate-400">{rsfAssessment.text}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="glass-card border-orange-500/50">
+                    <CardHeader>
+                      <CardTitle className="text-lg text-orange">Freedom House Assessment</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between">
+                          <span className="text-slate-400">Internet Freedom</span>
+                          <span className="text-2xl font-bold text-orange">28/100</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-slate-400">Classification</span>
+                          <Badge variant="warning">"Not Free"</Badge>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-slate-400">Previous Year</span>
+                          <span className="text-lg">27/100</span>
+                        </div>
+                        <p className="mt-4 text-sm text-slate-400">{freedomHouseAssessment.text}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Media Milestones */}
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Engagement Growth Trend</CardTitle>
-                    <CardDescription>Monthly engagement in millions</CardDescription>
+                    <CardTitle className="text-lg">Key Media Milestones</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <AreaChart
-                      data={reachTrendData}
-                      xAxisKey="month"
-                      areas={[
-                        { dataKey: 'engagement', name: 'Engagement', color: CHART_COLORS.emerald },
-                      ]}
-                      height={250}
-                      showGrid={true}
-                    />
+                    <ScrollArea className="h-[300px]">
+                      <div className="space-y-2">
+                        {mediaTimeline.map((event, idx) => (
+                          <div key={idx} className="flex items-center gap-4 rounded-lg border border-slate-700 p-3">
+                            <Badge variant="gold" className="w-16 justify-center">{event.year}</Badge>
+                            <span className="text-sm">{event.event}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </CardContent>
+                </Card>
+
+                {/* Major Media Outlets */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Major Media Outlets</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div>
+                        <p className="text-sm font-medium text-gold mb-2">Government-owned</p>
+                        <div className="flex flex-wrap gap-2">
+                          {mediaOutlets.filter(o => o.ownership === 'Government-owned').map((outlet, i) => (
+                            <Badge key={i} variant="gold">{outlet.name}</Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-platinum mb-2">Privately owned (with government ties)</p>
+                        <div className="flex flex-wrap gap-2">
+                          {mediaOutlets.filter(o => o.ownership.includes('Privately')).map((outlet, i) => (
+                            <Badge key={i} variant="outline">{outlet.name}</Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-slate-400 mb-2">Umbrella Groups</p>
+                        <div className="flex flex-wrap gap-2">
+                          {umbrellaGroups.map((group, i) => (
+                            <Badge key={i} variant="secondary">{group}</Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Government Statement */}
+                <Card className="glass-card border-gold-500/30">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Government Statement</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <blockquote className="border-l-4 border-gold pl-4 italic text-slate-300">
+                      "{governmentStatement.quote}"
+                    </blockquote>
+                    <p className="mt-2 text-sm text-slate-500">— {governmentStatement.speaker}</p>
                   </CardContent>
                 </Card>
               </div>
-            </div>
-          </GlassPanel>
+            </GlassPanel>
+          </motion.div>
+        </TabsContent>
+
+        {/* Influencers Tab */}
+        <TabsContent value="influencers" className="space-y-6">
+          <motion.div variants={containerVariants} initial="hidden" animate="visible">
+            <GlassPanel title="Influencer & Social Media Licensing" description="Mandatory licensing requirements and regulations">
+              <div className="space-y-6">
+                {/* Deadline Alert */}
+                <Card className="glass-card border-gold-500/50 bg-gold-500/5">
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-sm text-slate-400">License Deadline</p>
+                        <p className="mt-1 text-3xl font-bold text-gold">{influencerLicenseDeadline.deadline}</p>
+                      </div>
+                      <Badge variant="gold" className="text-lg px-4 py-2">MANDATORY</Badge>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Two License System */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Two-License System</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {twoLicenseSystem.map((license, idx) => (
+                        <div key={idx} className="rounded-lg border border-slate-700 p-4">
+                          <div className="flex items-center justify-between">
+                            <h4 className="font-semibold text-platinum">{license.license}</h4>
+                            <Badge variant="gold">{license.cost}</Badge>
+                          </div>
+                          <p className="mt-2 text-sm text-slate-400">{license.purpose || license.covers}</p>
+                          {license.visitorPermit && (
+                            <p className="mt-1 text-sm text-slate-500">Visitor permit: {license.visitorPermit}</p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Eligibility Requirements */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Eligibility Requirements</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      {eligibilityRequirements.map((req, idx) => (
+                        <div key={idx} className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-emerald" />
+                          <span className="text-sm">{req}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Processing Time */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Application Process</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {applicationProcess.map((step, idx) => (
+                        <div key={idx} className="flex items-center gap-3">
+                          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gold text-navy-950 text-sm font-bold">
+                            {idx + 1}
+                          </div>
+                          <span className="text-sm">{step}</span>
+                        </div>
+                      ))}
+                      <div className="mt-4 flex items-center gap-2 rounded-lg bg-slate-800/50 p-3">
+                        <Clock className="h-4 w-4 text-gold" />
+                        <span className="text-sm">Processing time: {processingTime}</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Content Creator Obligations */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Content Creator Obligations</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      {contentCreatorObligations.map((obligation, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
+                          <AlertTriangle className="h-4 w-4 text-gold mt-0.5" />
+                          <span className="text-sm">{obligation}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* 2026 Restrictions */}
+                <Card className="glass-card border-rose-500/50">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-rose">New 2026 Restrictions</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {new2026Restrictions.map((restriction, idx) => (
+                        <div key={idx} className="flex items-center gap-2 rounded-lg bg-rose-500/10 p-3">
+                          <XCircle className="h-4 w-4 text-rose" />
+                          <span className="text-sm">{restriction}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Exemptions */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Exemptions</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      {exemptions.map((exemption, idx) => (
+                        <div key={idx} className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-emerald" />
+                          <span className="text-sm">{exemption}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </GlassPanel>
+          </motion.div>
+        </TabsContent>
+
+        {/* Violations Tab */}
+        <TabsContent value="violations" className="space-y-6">
+          <motion.div variants={containerVariants} initial="hidden" animate="visible">
+            <GlassPanel title="Content Violations & Penalties" description="Cabinet Decision No. 42 of 2025 penalty structure">
+              <div className="space-y-6">
+                {/* Penalty Chart */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Maximum Fines by Violation Category (AED)</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <BarChart
+                      data={penaltyChartData}
+                      xAxisKey="name"
+                      bars={[
+                        { dataKey: 'value', name: 'Max Fine (AED)', color: CHART_COLORS.rose },
+                      ]}
+                      height={300}
+                      showGrid={true}
+                    />
+                  </CardContent>
+                </Card>
+
+                {/* Violations by Severity */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Violations by Severity Level</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {violationBySeverity.map((item, idx) => (
+                        <div key={idx} className="space-y-2">
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm font-medium">{item.severity}</span>
+                            <Badge style={{ backgroundColor: item.color, color: 'white' }}>{item.count} violations</Badge>
+                          </div>
+                          <Progress value={(item.count / 5) * 100} className="h-2" />
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Detailed Violations Table */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Detailed Penalty Structure</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ScrollArea className="h-[400px]">
+                      <div className="space-y-2">
+                        {violationCategories.map((violation, idx) => (
+                          <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 p-3">
+                            <div className="flex-1">
+                              <p className="text-sm font-medium">{violation.violationType}</p>
+                              <p className="text-xs text-slate-500">{violation.severity}</p>
+                            </div>
+                            <div className="text-right">
+                              <p className="text-sm font-bold text-rose">
+                                {violation.maxFine.toLocaleString()} AED
+                              </p>
+                              <p className="text-xs text-slate-500">
+                                Min: {violation.minFine.toLocaleString()} AED
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </CardContent>
+                </Card>
+
+                {/* Repeat Offenses */}
+                <Card className="glass-card border-rose-500/50">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-rose">Repeat Offenses</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-lg font-bold">Penalties double for each recurrence</p>
+                  </CardContent>
+                </Card>
+
+                {/* Enforcement Mechanisms */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Enforcement Mechanisms</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 md:grid-cols-2">
+                      {enforcementMechanisms.map((mech, idx) => (
+                        <div key={idx} className="rounded-lg bg-slate-800/50 p-4">
+                          <h4 className="font-semibold text-gold">{mech.mechanism}</h4>
+                          <p className="mt-1 text-sm text-slate-400">{mech.details}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* 2026 Detention Cases */}
+                <Card className="glass-card border-rose-500/50">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-rose">2026 Detention Cases (Iran Conflict)</CardTitle>
+                    <CardDescription>{totalDetentionCases2026} people facing charges</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {detentionCases2026.map((caseItem, idx) => (
+                        <div key={idx} className="flex items-start justify-between rounded-lg bg-rose-500/10 p-3 border border-rose-500/30">
+                          <div>
+                            <p className="font-medium">{caseItem.case}</p>
+                            <p className="mt-1 text-sm text-slate-400">{caseItem.details}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </GlassPanel>
+          </motion.div>
+        </TabsContent>
+
+        {/* Internet Tab */}
+        <TabsContent value="internet" className="space-y-6">
+          <motion.div variants={containerVariants} initial="hidden" animate="visible">
+            <GlassPanel title="VPN & Internet Restrictions" description="Internet freedom, VPN usage, and blocked services">
+              <div className="space-y-6">
+                {/* VPN Downloads Chart */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">VPN Downloads Trend (UAE vs Global)</CardTitle>
+                    <CardDescription>2021-2025 VPN adoption</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <LineChart
+                      data={vpnChartData}
+                      lines={[
+                        { dataKey: 'uae', name: 'UAE (millions)', color: CHART_COLORS.gold },
+                        { dataKey: 'global', name: 'Global (millions)', color: CHART_COLORS.platinum },
+                      ]}
+                      height={300}
+                      showGrid={true}
+                    />
+                  </CardContent>
+                </Card>
+
+                {/* Gulf Comparison */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Gulf VPN Comparison 2025</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {gulfComparison2025.map((country, idx) => (
+                        <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
+                          <span className="font-medium">{country.country}</span>
+                          <div className="flex gap-4">
+                            <div className="text-right">
+                              <p className="text-sm text-slate-400">Downloads</p>
+                              <p className="font-bold">{country.downloads}</p>
+                            </div>
+                            <div className="text-right">
+                              <p className="text-sm text-slate-400">Adoption</p>
+                              <p className="font-bold text-gold">{country.adoption}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* VPN Legal Status */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">VPN Legal Status</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 md:grid-cols-2">
+                      <div className="rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30">
+                        <div className="flex items-center gap-2">
+                          <CheckCircle className="h-5 w-5 text-emerald" />
+                          <span className="font-medium text-emerald">Legal When</span>
+                        </div>
+                        <p className="mt-2 text-sm">{vpnLegalStatus.legalWhen}</p>
+                      </div>
+                      <div className="rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
+                        <div className="flex items-center gap-2">
+                          <XCircle className="h-5 w-5 text-rose" />
+                          <span className="font-medium text-rose">Illegal When</span>
+                        </div>
+                        <p className="mt-2 text-sm">{vpnLegalStatus.illegalWhen}</p>
+                        <p className="mt-2 text-sm text-rose font-medium">
+                          Fine: {vpnLegalStatus.penalties.fine}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* VoIP Blocked */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">VoIP Services Blocked</CardTitle>
+                    <CardDescription>{voipBlockedReason}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+                      {voipBlocked.map((service, idx) => (
+                        <div key={idx} className="flex items-center gap-2 rounded-lg bg-rose-500/10 p-3">
+                          <XCircle className="h-4 w-4 text-rose" />
+                          <span className="text-sm">{service.service}</span>
+                          <Badge variant="destructive" className="ml-auto text-xs">{service.status}</Badge>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-4">
+                      <p className="text-sm font-medium text-slate-300">Legal Alternatives:</p>
+                      <div className="mt-2 flex gap-2">
+                        {legalAlternatives.map((alt, idx) => (
+                          <Badge key={idx} variant="success">{alt}</Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Other Blocked Categories */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Other Blocked Categories</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      {otherBlockedCategories.map((category, idx) => (
+                        <Badge key={idx} variant="outline" className="text-rose">{category}</Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Website Blocking */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Website Blocking Statistics</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 md:grid-cols-3">
+                      <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                        <p className="text-3xl font-bold text-rose">160,000+</p>
+                        <p className="text-sm text-slate-400">Total Blocked</p>
+                      </div>
+                      <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                        <p className="text-3xl font-bold text-gold">883</p>
+                        <p className="text-sm text-slate-400">Q1 2022</p>
+                      </div>
+                      <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                        <p className="text-sm font-medium">TDRA</p>
+                        <p className="text-sm text-slate-400">Managed by</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Internet Infrastructure */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Internet Infrastructure</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                      {internetInfrastructure.map((infra, idx) => (
+                        <div key={idx} className="rounded-lg bg-slate-800/50 p-4">
+                          <p className="text-sm text-slate-400">{infra.metric}</p>
+                          <p className="mt-1 text-lg font-bold text-gold">{infra.value}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Red Sea Cable Cuts */}
+                <Card className="glass-card border-orange-500/50">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-orange">Red Sea Cable Cuts (September 2025)</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      <p>{redSeaCableCuts.details}</p>
+                      <p className="text-sm text-slate-400">Impact: {redSeaCableCuts.impact}</p>
+                      <p className="text-sm text-slate-400">Repair duration: {redSeaCableCuts.repairDuration}</p>
+                      <p className="text-xs text-slate-500">{redSeaCableCuts.context}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </GlassPanel>
+          </motion.div>
+        </TabsContent>
+
+        {/* Market Tab */}
+        <TabsContent value="market" className="space-y-6">
+          <motion.div variants={containerVariants} initial="hidden" animate="visible">
+            <GlassPanel title="Media Market & Advertising" description="Advertising market size, digital ad spend, and market trends">
+              <div className="space-y-6">
+                {/* Market Metrics */}
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                  <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <p className="text-3xl font-bold text-gold">$3.6B</p>
+                    <p className="text-sm text-slate-400">Ad Market 2025</p>
+                  </div>
+                  <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <p className="text-3xl font-bold text-emerald">$18.5B</p>
+                    <p className="text-sm text-slate-400">Digital Market 2030</p>
+                  </div>
+                  <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <p className="text-3xl font-bold text-platinum">68%</p>
+                    <p className="text-sm text-slate-400">Digital Ad Share</p>
+                  </div>
+                  <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <p className="text-3xl font-bold text-diamond">12.2%</p>
+                    <p className="text-sm text-slate-400">Digital CAGR</p>
+                  </div>
+                </div>
+
+                {/* Digital Advertising Metrics */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Digital Advertising Metrics</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {digitalAdvertising.map((metric, idx) => (
+                        <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <div>
+                            <p className="font-medium">{metric.metric}</p>
+                            <p className="text-xs text-slate-500">Source: {metric.source}</p>
+                          </div>
+                          <p className="text-lg font-bold text-gold">{metric.value}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Ad Segments */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Advertising Segments (2022)</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <PieChart
+                      data={advertisingSegments.map((seg, idx) => ({
+                        name: seg.segment,
+                        value: parseFloat(seg.revenue.replace(/[$M]/g, '')),
+                        color: Object.values(CHART_COLORS)[idx % Object.values(CHART_COLORS).length],
+                      }))}
+                      height={300}
+                      showLegend={true}
+                    />
+                  </CardContent>
+                </Card>
+
+                {/* Dominant Platforms */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Dominant Platforms</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      {dominantPlatforms.map((platform, idx) => (
+                        <Badge key={idx} variant="gold">{platform}</Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Major Streaming */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Major Streaming/Entertainment</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3 md:grid-cols-2">
+                      {majorStreaming.map((platform, idx) => (
+                        <div key={idx} className="flex items-center gap-2 rounded-lg bg-slate-800/50 p-3">
+                          <Tv className="h-5 w-5 text-gold" />
+                          <span className="text-sm">{platform}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Media & Entertainment Segments */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Media & Entertainment Segments</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      {mediaEntertainmentSegments.map((segment, idx) => (
+                        <Badge key={idx} variant="outline">{segment}</Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Market Trends */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Market Trends</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      {marketTrends.map((trend, idx) => (
+                        <div key={idx} className="flex items-center gap-2">
+                          <TrendingUp className="h-4 w-4 text-emerald" />
+                          <span className="text-sm">{trend}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Foreign Investment - Telegraph */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Foreign Media Investment - The Telegraph</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        <Badge variant="gold">2023</Badge>
+                        <span className="text-sm">{telegraphAcquisition.year2023}</span>
+                      </div>
+                      {telegraphAcquisition.year2025Details.map((detail, idx) => (
+                        <div key={idx} className="flex items-center gap-2">
+                          <Badge variant="outline">2025</Badge>
+                          <span className="text-sm">{detail}</span>
+                        </div>
+                      ))}
+                      <div className="mt-4 space-y-2">
+                        {telegraphAcquisition.keyEntities.map((entity, idx) => (
+                          <div key={idx} className="rounded-lg bg-slate-800/50 p-3">
+                            <p className="text-sm font-medium text-gold">{entity.name}</p>
+                            <p className="text-xs text-slate-400">{entity.role}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </GlassPanel>
+          </motion.div>
+        </TabsContent>
+
+        {/* Journalists Tab */}
+        <TabsContent value="journalists" className="space-y-6">
+          <motion.div variants={containerVariants} initial="hidden" animate="visible">
+            <GlassPanel title="Journalist Cases & Detentions" description="Documented cases and legal framework">
+              <div className="space-y-6">
+                {/* Documented Cases */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Documented Cases</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {journalistCases.map((journalist, idx) => (
+                        <div key={idx} className="flex items-start justify-between rounded-lg border border-slate-700 p-4">
+                          <div>
+                            <p className="font-medium">{journalist.individual}</p>
+                            <p className="mt-1 text-sm text-slate-400">{journalist.details}</p>
+                          </div>
+                          <Badge variant={journalist.status === 'Detained' ? 'destructive' : 'warning'}>
+                            {journalist.status}
+                          </Badge>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Legal Framework */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Legal Framework for Detentions</CardTitle>
+                    <CardDescription>{legalFrameworkDetentions.law}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      {legalFrameworkDetentions.provisions.map((provision, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
+                          <AlertCircle className="h-4 w-4 text-rose mt-0.5" />
+                          <span className="text-sm">{provision}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Human Rights Concerns */}
+                <Card className="glass-card border-rose-500/50">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-rose">Human Rights Concerns</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {humanRightsConcerns.map((concern, idx) => (
+                        <div key={idx} className="rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
+                          <p className="font-medium text-rose">{concern.organization}</p>
+                          <div className="mt-2 space-y-1">
+                            {concern.details.map((detail, i) => (
+                              <p key={i} className="text-sm text-slate-400">{detail}</p>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Content Manipulation */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Content Manipulation</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {contentManipulation.map((item, idx) => (
+                        <div key={idx} className="flex items-center gap-4 rounded-lg bg-slate-800/50 p-3">
+                          <Badge variant="gold">{item.year}</Badge>
+                          <span className="text-sm">{item.activity}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Journalist Salaries */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Journalist Salaries</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {journalistSalaries.map((salary, idx) => (
+                        <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <div>
+                            <p className="font-medium">{salary.source}</p>
+                            <p className="text-xs text-slate-500">{salary.details}</p>
+                          </div>
+                          <p className="text-lg font-bold text-gold">{salary.averageSalary}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Salary Factors */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Salary Range Factors</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      {salaryFactors.map((factor, idx) => (
+                        <Badge key={idx} variant="outline">{factor}</Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </GlassPanel>
+          </motion.div>
+        </TabsContent>
+
+        {/* GPS Tab */}
+        <TabsContent value="gps" className="space-y-6">
+          <motion.div variants={containerVariants} initial="hidden" animate="visible">
+            <GlassPanel title="GPS Jamming & Satellite Issues" description="GPS disruption during Iran conflict 2026">
+              <div className="space-y-6">
+                {/* GPS Disruption Events */}
+                <Card className="glass-card border-orange-500/50">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-orange">GPS Disruption During Iran War (2026)</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {gpsDisruptionEvents.map((event, idx) => (
+                        <div key={idx} className="rounded-lg bg-orange-500/10 p-4 border border-orange-500/30">
+                          <div className="flex items-center justify-between">
+                            <Badge variant="warning">{event.date}</Badge>
+                            <span className="text-2xl font-bold text-orange">{event.shipsAffected}</span>
+                          </div>
+                          {event.increase && (
+                            <p className="mt-2 text-sm text-orange">+{event.increase}</p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Affected Areas */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Affected Areas</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      {affectedAreas.map((area, idx) => (
+                        <Badge key={idx} variant="gold">{area}</Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Phenomena Observed */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Phenomena Observed</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      {phenomenaObserved.map((phenomenon, idx) => (
+                        <div key={idx} className="flex items-center gap-2">
+                          <AlertTriangle className="h-4 w-4 text-orange" />
+                          <span className="text-sm">{phenomenon}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Technical Methods */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Technical Methods</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 md:grid-cols-2">
+                      {technicalMethods.map((method, idx) => (
+                        <div key={idx} className="rounded-lg bg-slate-800/50 p-4">
+                          <h4 className="font-semibold text-gold">{method.method}</h4>
+                          <p className="mt-1 text-sm text-slate-400">{method.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Expert Quote */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Expert Warning</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <blockquote className="border-l-4 border-gold pl-4 italic text-slate-300">
+                      "{expertQuoteGps.quote}"
+                    </blockquote>
+                    <p className="mt-2 text-sm text-slate-500">— {expertQuoteGps.speaker}</p>
+                  </CardContent>
+                </Card>
+
+                {/* Gig Worker Impact */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Impact on Gig Workers</CardTitle>
+                    <CardDescription>Delivery drivers affected by GPS disruptions</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div className="flex flex-wrap gap-2">
+                        {gigWorkerImpact.affectedCompanies.map((company, idx) => (
+                          <Badge key={idx} variant="outline">{company}</Badge>
+                        ))}
+                      </div>
+                      <div className="space-y-2">
+                        {gigWorkerImpact.issues.map((issue, idx) => (
+                          <div key={idx} className="flex items-start gap-2">
+                            <AlertTriangle className="h-4 w-4 text-orange mt-0.5" />
+                            <span className="text-sm">{issue}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <blockquote className="border-l-4 border-platinum pl-4 italic text-slate-400">
+                        "{gigWorkerImpact.quote}"
+                      </blockquote>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Expert Warnings */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Expert Warnings</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {expertWarnings.map((warning, idx) => (
+                        <div key={idx} className="rounded-lg bg-slate-800/50 p-4">
+                          <p className="text-sm font-medium text-gold">{warning.speaker}</p>
+                          <p className="mt-1 text-sm text-slate-400">"{warning.quote}"</p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </GlassPanel>
+          </motion.div>
+        </TabsContent>
+
+        {/* Training Tab */}
+        <TabsContent value="training" className="space-y-6">
+          <motion.div variants={containerVariants} initial="hidden" animate="visible">
+            <GlassPanel title="Media Training & Education" description="Key institutions and programs">
+              <div className="space-y-6">
+                {/* Training Institutions */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Training Institutions</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {trainingInstitutions.map((institution, idx) => (
+                        <div key={idx} className="rounded-lg border border-slate-700 p-4">
+                          <div className="flex items-center justify-between">
+                            <h4 className="font-semibold text-gold">{institution.name}</h4>
+                            {institution.location && (
+                              <Badge variant="outline">{institution.location}</Badge>
+                            )}
+                          </div>
+                          {institution.launched && (
+                            <p className="mt-1 text-sm text-slate-500">Launched: {institution.launched}</p>
+                          )}
+                          {institution.founder && (
+                            <p className="mt-1 text-sm text-slate-400">Founder: {institution.founder}</p>
+                          )}
+                          {institution.mission && (
+                            <p className="mt-2 text-sm">{institution.mission}</p>
+                          )}
+                          {institution.programs && (
+                            <div className="mt-2">
+                              <p className="text-xs font-medium text-slate-400">Programs:</p>
+                              <p className="text-sm">{institution.programs}</p>
+                            </div>
+                          )}
+                          {institution.courses && (
+                            <div className="mt-2">
+                              <p className="text-xs font-medium text-slate-400">Courses:</p>
+                              <p className="text-sm">{institution.courses}</p>
+                            </div>
+                          )}
+                          {institution.contact && (
+                            <p className="mt-2 text-xs text-slate-500">{institution.contact}</p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* AI Literacy Study */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">AI Literacy in Media Education</CardTitle>
+                    <CardDescription>Study: UAE vs Pakistan (536 mass communication students)</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {aiLiteracyStudy.findings.map((finding, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
+                          <Lightbulb className="h-4 w-4 text-gold mt-0.5" />
+                          <span className="text-sm">{finding}</span>
+                        </div>
+                      ))}
+                      <p className="mt-4 text-sm font-medium">Recommendation: {aiLiteracyStudy.recommendations}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Dubai AI Initiative */}
+                <Card className="glass-card border-gold-500/50">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Dubai AI Initiative</CardTitle>
+                    <CardDescription>{dubaiAiInitiative.name}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      <div>
+                        <p className="text-sm font-medium">Program:</p>
+                        <p className="text-sm text-slate-400">{dubaiAiInitiative.program}</p>
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium">Focus Areas:</p>
+                        <div className="mt-1 flex flex-wrap gap-2">
+                          {dubaiAiInitiative.focusAreas.map((area, idx) => (
+                            <Badge key={idx} variant="gold">{area}</Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <p className="text-sm font-medium text-emerald">Benefit: {dubaiAiInitiative.benefit}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Streaming Regulation */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">OTT/Streaming Regulation</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {netflixStreaming.map((item, idx) => (
+                        <div key={idx} className="rounded-lg bg-slate-800/50 p-4">
+                          <p className="font-medium">{item.issue}</p>
+                          <p className="mt-1 text-sm text-slate-400">{item.details}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Gaming & Digital Safety */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Gaming & Digital Safety</CardTitle>
+                    <CardDescription>Child Digital Safety Law (2025-2026)</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div className="space-y-2">
+                        {childDigitalSafetyLaw.keyProvisions.map((provision, idx) => (
+                          <div key={idx} className="flex items-start gap-2">
+                            <CheckCircle className="h-4 w-4 text-emerald mt-0.5" />
+                            <span className="text-sm">{provision}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="rounded-lg bg-slate-800/50 p-4">
+                        <p className="text-sm font-medium">Video Game Age Rating</p>
+                        <div className="mt-2 grid gap-2 md:grid-cols-2">
+                          <p className="text-sm">Administering: {gamingAgeRating.administeringBody}</p>
+                          <p className="text-sm">Fee: {gamingAgeRating.fee}</p>
+                          <p className="text-sm">Processing: {gamingAgeRating.processingDays}</p>
+                          <p className="text-sm">Type: {gamingAgeRating.requirement}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </GlassPanel>
+          </motion.div>
+        </TabsContent>
+
+        {/* Sentiment Tab */}
+        <TabsContent value="sentiment" className="space-y-6">
+          <motion.div variants={containerVariants} initial="hidden" animate="visible">
+            <GlassPanel title="Sentiment Analysis" description="Comprehensive sentiment assessment of UAE media environment">
+              <div className="space-y-6">
+                {/* Overall Sentiment */}
+                <Card className="glass-card border-rose-500/50">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Overall Sentiment</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-3xl font-bold text-rose">{overallSentiment}</p>
+                  </CardContent>
+                </Card>
+
+                {/* Sentiment Dimensions */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Sentiment by Dimension</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {sentimentDimensions.map((dim, idx) => (
+                        <div key={idx} className="rounded-lg bg-slate-800/50 p-4">
+                          <div className="flex items-center justify-between">
+                            <span className="font-medium">{dim.dimension}</span>
+                            <Badge
+                              variant={
+                                dim.sentiment.includes('Highly Negative') || dim.sentiment === 'Negative'
+                                  ? 'destructive'
+                                  : dim.sentiment === 'Positive'
+                                  ? 'success'
+                                  : 'outline'
+                              }
+                            >
+                              {dim.sentiment}
+                            </Badge>
+                          </div>
+                          <p className="mt-2 text-sm text-slate-400">{dim.evidence}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Positive Elements */}
+                <Card className="glass-card border-emerald-500/50">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-emerald">Positive Elements (Official Narrative)</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {positiveElements.map((element, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
+                          <CheckCircle className="h-4 w-4 text-emerald mt-0.5" />
+                          <div>
+                            <span className="font-medium text-emerald">{element.dimension}:</span>
+                            <span className="text-sm text-slate-400 ml-1">{element.evidence}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Key Narratives */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Key Narratives</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {keyNarratives.map((narrative, idx) => (
+                        <div key={idx} className="rounded-lg border border-slate-700 p-4">
+                          <h4 className="font-semibold text-gold">{narrative.narrative}</h4>
+                          <div className="mt-2 space-y-1">
+                            {narrative.statements.map((statement, i) => (
+                              <p key={i} className="text-sm text-slate-400">• {statement}</p>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Relevance Scores */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">UAE Relevance Assessment</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {relevanceScores.map((rel, idx) => (
+                        <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <span className="text-sm">{rel.topic}</span>
+                          <Badge
+                            variant={
+                              rel.score === 'CRITICAL'
+                                ? 'destructive'
+                                : rel.score === 'HIGH'
+                                ? 'warning'
+                                : 'outline'
+                            }
+                          >
+                            {rel.score}
+                          </Badge>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Dashboard Recommendations */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Dashboard Recommendations</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {dashboardRecommendations.map((rec, idx) => (
+                        <div key={idx} className="rounded-lg bg-slate-800/50 p-4">
+                          <p className="font-medium text-gold">{rec.category}</p>
+                          <div className="mt-2 flex flex-wrap gap-2">
+                            {rec.metrics.map((metric, i) => (
+                              <Badge key={i} variant="outline">{metric}</Badge>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Data Gaps */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Data Gaps Identified</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {dataGaps.map((gap, idx) => (
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 p-3">
+                          <div>
+                            <p className="text-sm font-medium">{gap.gap}</p>
+                            <p className="text-xs text-slate-500">Source: {gap.sourceNeeded}</p>
+                          </div>
+                          <Badge
+                            variant={
+                              gap.priority === 'High'
+                                ? 'destructive'
+                                : gap.priority === 'Medium'
+                                ? 'warning'
+                                : 'outline'
+                            }
+                          >
+                            {gap.priority}
+                          </Badge>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Enrichment Metadata */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Enrichment Metadata</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 md:grid-cols-3">
+                      <div className="text-center">
+                        <p className="text-3xl font-bold text-gold">{enrichmentMetadata.dataPointsExtracted}+</p>
+                        <p className="text-sm text-slate-400">Data Points</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-3xl font-bold text-gold">{enrichmentMetadata.tablesCreated}</p>
+                        <p className="text-sm text-slate-400">Tables Created</p>
+                      </div>
+                      <div className="text-center">
+                        <p className="text-3xl font-bold text-gold">{enrichmentMetadata.entitiesDocumented}</p>
+                        <p className="text-sm text-slate-400">Entities</p>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-center text-sm text-slate-500">
+                      Report generated: {enrichmentMetadata.reportGenerated} | Confidence: {enrichmentMetadata.confidenceLevel}
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Key Definitions */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Appendix: Key Definitions</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3 md:grid-cols-2">
+                      {keyDefinitions.map((def, idx) => (
+                        <div key={idx} className="rounded-lg bg-slate-800/50 p-3">
+                          <p className="font-medium text-gold">{def.term}</p>
+                          <p className="text-sm text-slate-400">{def.definition}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </GlassPanel>
+          </motion.div>
         </TabsContent>
       </Tabs>
     </div>

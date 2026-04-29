@@ -20,17 +20,33 @@ import {
   AlertCircle,
   AlertTriangle,
   TrendingUp,
+  TrendingDown,
   Globe,
   Shield,
   MapPin,
   Crosshair,
   Building,
   Plane,
+  Users,
+  UserX,
+  AlertOctagon,
+  Scale,
+  Gavel,
+  Ban,
+  DollarSign,
+  Clock,
+  Activity,
+  Heart,
+  MessageSquare,
+  Landmark,
 } from 'lucide-react'
 import { useGeopoliticalCrisisData } from '@/lib/data-loader'
+import { socialCrisisExtendedData } from '@/lib/data-loader/crisis-data'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function RegionalInstabilityPage() {
   const { data } = useGeopoliticalCrisisData()
+  const socialData = socialCrisisExtendedData
 
   const getAlertBadge = (level: string) => {
     switch (level) {
@@ -63,7 +79,7 @@ export default function RegionalInstabilityPage() {
     { name: 'Trade Disruption', value: 72, color: CHART_COLORS.gold },
     { name: 'Energy Security', value: 65, color: CHART_COLORS.danger },
     { name: 'Migration Pressure', value: 48, color: CHART_COLORS.navy },
-    { name: 'Security Threat', value: 35, color: CHART_COLORS.cyan },
+    { name: 'Security Threat', value: 35, color: CHART_COLORS.info },
     { name: 'Diplomatic Strain', value: 82, color: CHART_COLORS.purple },
   ]
 
@@ -74,10 +90,23 @@ export default function RegionalInstabilityPage() {
     { name: 'Confident', value: 23, color: CHART_COLORS.emerald },
   ]
 
+  // Social crisis data derived from extended data
+  const laborUnrestTimeline = socialData?.laborUnrest?.majorIncidentTimeline || []
+  const demographics = socialData?.communityTensions?.demographics || { totalPopulation: '3.1M', foreignPopulation: '85%' }
+  const socialMediaArrests = socialData?.publicMoralityCrisis?.socialMediaArrests2026 || []
+  const penalties = socialData?.publicMoralityCrisis?.alcoholPenaltyStructure || []
+  const riskMatrix = socialData?.riskMatrix || []
+  const statistics = socialData?.statistics || {}
+
   return (
-    <div className="space-y-8 p-8">
+    <div className="space-y-8 p-8 font-rajdhani">
       {/* Header */}
-      <div className="flex items-start justify-between">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex items-start justify-between"
+      >
         <div>
           <Badge variant="gold" className="mb-2">PHOENIX PROTOCOL: REGIONAL</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-gold">Regional Instability</h1>
@@ -95,7 +124,7 @@ export default function RegionalInstabilityPage() {
             Security Dashboard
           </Button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Key Metrics */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -112,7 +141,7 @@ export default function RegionalInstabilityPage() {
           value="68/100"
           previousValue="72/100"
           icon={<MapPin className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="success"
         />
         <MetricCard
@@ -134,7 +163,12 @@ export default function RegionalInstabilityPage() {
       </div>
 
       {/* Alert Banner */}
-      <div className={`rounded-xl border p-4 bg-slate-900/50 ${getAlertColor(data.alertLevel)}`}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3 }}
+        className={`rounded-xl border p-4 bg-slate-900/50 ${getAlertColor(data.alertLevel)}`}
+      >
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             {data.alertLevel === 'RED' && <AlertCircle className="h-6 w-6 text-red-400" />}
@@ -149,7 +183,7 @@ export default function RegionalInstabilityPage() {
           </div>
           {getAlertBadge(data.alertLevel)}
         </div>
-      </div>
+      </motion.div>
 
       <Tabs defaultValue="overview" className="space-y-6">
         <TabsList className="glass-panel" scrollable>
@@ -157,6 +191,9 @@ export default function RegionalInstabilityPage() {
           <TabsTrigger value="conflicts">Conflict Analysis</TabsTrigger>
           <TabsTrigger value="exposure">UAE Exposure</TabsTrigger>
           <TabsTrigger value="timeline">Timeline</TabsTrigger>
+          <TabsTrigger value="social">Social Crisis</TabsTrigger>
+          <TabsTrigger value="labor">Labor Unrest</TabsTrigger>
+          <TabsTrigger value="demographics">Demographics</TabsTrigger>
         </TabsList>
 
         {/* Key Findings */}
@@ -164,8 +201,11 @@ export default function RegionalInstabilityPage() {
           <GlassPanel title="Key Findings" description="Critical regional instability metrics and findings">
             <div className="space-y-4">
               {(data.keyFindings || []).map((finding, index) => (
-                <div
+                <motion.div
                   key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
                   className={`flex items-center justify-between rounded-lg border p-4 bg-slate-800/50 hover:bg-slate-800/70 transition-colors ${finding.alert ? getAlertColor(finding.alert) : 'border-slate-700'}`}
                 >
                   <div className="flex items-center gap-4">
@@ -190,7 +230,7 @@ export default function RegionalInstabilityPage() {
                     </div>
                     {finding.alert && getAlertBadge(finding.alert)}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </GlassPanel>
@@ -213,7 +253,7 @@ export default function RegionalInstabilityPage() {
                       { dataKey: 'yemen', name: 'Yemen', color: CHART_COLORS.danger },
                       { dataKey: 'iraq', name: 'Iraq', color: CHART_COLORS.gold },
                       { dataKey: 'syria', name: 'Syria', color: CHART_COLORS.navy },
-                      { dataKey: 'regional', name: 'Regional Avg', color: CHART_COLORS.cyan },
+                      { dataKey: 'regional', name: 'Regional Avg', color: CHART_COLORS.info },
                     ]}
                     height={300}
                     showGrid={true}
@@ -251,13 +291,19 @@ export default function RegionalInstabilityPage() {
                   <ScrollArea className="h-[400px]">
                     <div className="space-y-4">
                       {exposureData.map((item, index) => (
-                        <div key={index} className="space-y-2">
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                          className="space-y-2"
+                        >
                           <div className="flex items-center justify-between">
                             <span className="text-sm font-medium text-slate-200">{item.name}</span>
                             <span className="text-lg font-bold text-gold">{item.value}/100</span>
                           </div>
                           <Progress value={item.value} className="h-3" />
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
                   </ScrollArea>
@@ -299,7 +345,13 @@ export default function RegionalInstabilityPage() {
                 <ScrollArea className="h-[600px]">
                   <div className="relative border-l-2 border-gold/30 pl-8 space-y-8">
                     {(data.timeline || []).map((event, index) => (
-                      <div key={index} className="relative">
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        className="relative"
+                      >
                         <div className="absolute -left-[37px] h-4 w-4 rounded-full bg-gold border-2 border-navy-950" />
                         <div className="flex items-start gap-4">
                           <p className="text-sm font-bold text-gold whitespace-nowrap w-24">{event.date}</p>
@@ -311,12 +363,215 @@ export default function RegionalInstabilityPage() {
                             )}
                           </div>
                         </div>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </ScrollArea>
               </CardContent>
             </Card>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Social Crisis Tab */}
+        <TabsContent value="social" className="space-y-6">
+          <GlassPanel title="UAE Social Crisis Overview" description="Labor unrest, community tensions, and public morality crisis data">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="glass-card rounded-xl border border-glass-border bg-glass-surface p-6"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-500/20">
+                    <Users className="h-6 w-6 text-red-400" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-400">Foreign Population</p>
+                    <p className="text-2xl font-bold text-white">{demographics.foreignPopulation}</p>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500">of {demographics.totalPopulation} total population</p>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="glass-card rounded-xl border border-glass-border bg-glass-surface p-6"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-orange-500/20">
+                    <UserX className="h-6 w-6 text-orange-400" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-400">Social Media Arrests</p>
+                    <p className="text-2xl font-bold text-white">375+</p>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500">March 2026 Iran conflict</p>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="glass-card rounded-xl border border-glass-border bg-glass-surface p-6"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-yellow-500/20">
+                    <AlertOctagon className="h-6 w-6 text-yellow-400" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-400">Wage Complaints</p>
+                    <p className="text-2xl font-bold text-white">20,000</p>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500">2005 strike wave</p>
+              </motion.div>
+            </div>
+
+            <Card className="glass-card mt-6">
+              <CardHeader>
+                <CardTitle className="text-lg">Social Crisis Risk Matrix</CardTitle>
+                <CardDescription>Frequency, severity, and trend analysis</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {riskMatrix.map((risk, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                      className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-3"
+                    >
+                      <span className="text-sm font-medium text-slate-200">{risk.crisisType}</span>
+                      <div className="flex items-center gap-2">
+                        <Badge variant={risk.severity === 'High' ? 'destructive' : risk.severity === 'Medium' ? 'warning' : 'outline'} className="text-xs">
+                          {risk.severity}
+                        </Badge>
+                        <Badge variant={risk.trend === 'Increasing' ? 'destructive' : risk.trend === 'Stable' ? 'secondary' : 'outline'} className="text-xs">
+                          {risk.trend}
+                        </Badge>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Labor Unrest Tab */}
+        <TabsContent value="labor" className="space-y-6">
+          <GlassPanel title="Labor Unrest Incidents" description="Major labor protests and strikes in UAE (2005-2026)">
+            <ScrollArea className="h-[500px]">
+              <div className="space-y-4">
+                {laborUnrestTimeline.map((incident, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-4 hover:bg-slate-800/60 transition-colors"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
+                        <Clock className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-slate-200">{incident.incident}</p>
+                        <p className="text-sm text-slate-400">{incident.location} | {incident.source}</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-lg font-bold text-gold">{incident.workers}</p>
+                      <p className="text-xs text-slate-500">{incident.year}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </ScrollArea>
+
+            <Card className="glass-card mt-6">
+              <CardHeader>
+                <CardTitle className="text-lg">Labor Statistics</CardTitle>
+                <CardDescription>Key metrics from labor unrest data</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div className="space-y-2">
+                    <p className="text-sm text-slate-400">Largest Single Protest</p>
+                    <p className="text-xl font-bold text-gold">13,000 workers (2025 Azizi)</p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-sm text-slate-400">Inspections (2019-2024)</p>
+                    <p className="text-xl font-bold text-gold">688,000</p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-sm text-slate-400">Violations Found</p>
+                    <p className="text-xl font-bold text-orange-400">29,000</p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-sm text-slate-400">Strikes in 2005</p>
+                    <p className="text-xl font-bold text-red-400">24+</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Demographics Tab */}
+        <TabsContent value="demographics" className="space-y-6">
+          <GlassPanel title="UAE Demographics" description="Population breakdown and vulnerability analysis">
+            <div className="space-y-6">
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Population Distribution</CardTitle>
+                  <CardDescription>National vs Expat breakdown</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="h-[300px]">
+                    <PieChart
+                      data={[
+                        { name: 'Indian', value: 54, color: CHART_COLORS.gold },
+                        { name: 'Pakistani', value: 18, color: CHART_COLORS.navy },
+                        { name: 'Other Asians', value: 15, color: CHART_COLORS.emerald },
+                        { name: 'Arabs', value: 11, color: CHART_COLORS.purple },
+                        { name: 'Westerners', value: 2, color: CHART_COLORS.rose },
+                      ]}
+                      height={280}
+                      showLegend={true}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {[
+                  { group: 'South Asian construction workers', risk: 'Critical', vulnerability: 'High', protection: 'Low', color: 'red' },
+                  { group: 'Domestic workers (female)', risk: 'Critical', vulnerability: 'Very High', protection: 'Very Low', color: 'red' },
+                  { group: 'Taxi/transport drivers', risk: 'Medium-High', vulnerability: 'Medium', protection: 'Medium', color: 'orange' },
+                  { group: 'Western expats', risk: 'Low', vulnerability: 'Low', protection: 'High', color: 'emerald' },
+                  { group: 'Bangladeshi migrants', risk: 'High', vulnerability: 'High', protection: 'Low', color: 'orange' },
+                  { group: 'Nepali workers', risk: 'High', vulnerability: 'High', protection: 'Low', color: 'orange' },
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.02 }}
+                    className={`rounded-lg border p-4 ${
+                      item.color === 'red' ? 'border-red-500/30 bg-red-500/10' :
+                      item.color === 'orange' ? 'border-orange-500/30 bg-orange-500/10' :
+                      'border-emerald-500/30 bg-emerald-500/10'
+                    }`}
+                  >
+                    <p className="text-sm font-medium text-slate-200 mb-2">{item.group}</p>
+                    <div className="flex items-center justify-between">
+                      <Badge variant={item.risk === 'Critical' ? 'destructive' : item.risk === 'High' || item.risk === 'Medium-High' ? 'warning' : 'secondary'} className="text-xs">
+                        {item.risk}
+                      </Badge>
+                      <span className="text-xs text-slate-400">V: {item.vulnerability} | P: {item.protection}</span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </GlassPanel>
         </TabsContent>
       </Tabs>

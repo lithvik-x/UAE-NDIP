@@ -91,7 +91,7 @@ export default function ContentModerationPage() {
       case 'Removed': return <Badge variant="destructive" className="text-xs">{action}</Badge>
       case 'Hidden': return <Badge variant="warning" className="text-xs">{action}</Badge>
       case 'Warning': return <Badge variant="outline" className="text-xs">{action}</Badge>
-      case 'Redirected': return <Badge variant="navy" className="text-xs">{action}</Badge>
+      case 'Redirected': return <Badge variant="denim" className="text-xs">{action}</Badge>
       default: return <Badge variant="outline" className="text-xs">{action}</Badge>
     }
   }
@@ -101,7 +101,7 @@ export default function ContentModerationPage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="navy" className="mb-2">S-SECTOR</Badge>
+          <Badge variant="denim" className="mb-2">S-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-navy">Content Moderation & Censorship</h1>
           <p className="mt-2 text-slate-400">
             Automated content filtering and censorship operations across platforms
@@ -126,7 +126,7 @@ export default function ContentModerationPage() {
           value={(totalPostsMonitored / 1000000).toFixed(1) + 'M'}
           previousValue={27.2}
           icon={<Eye className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="info"
         />
         <MetricCard
@@ -317,7 +317,7 @@ export default function ContentModerationPage() {
                     bars={[
                       { dataKey: 'censored', name: 'Censored', color: CHART_COLORS.rose },
                       { dataKey: 'removed', name: 'Removed', color: CHART_COLORS.orange },
-                      { dataKey: 'suspended', name: 'Suspended', color: CHART_COLORS.red },
+                      { dataKey: 'suspended', name: 'Suspended', color: CHART_COLORS.danger },
                     ]}
                     height={300}
                     showGrid={true}

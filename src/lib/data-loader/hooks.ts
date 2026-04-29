@@ -48,8 +48,43 @@ import {
   trendsDataArray,
   // Verification Data
   verificationOverview,
+  omissionSilenceData,
+  omissionSilenceOverview,
+  // Bot Data
+  botInauthenticData,
   // Monitoring Data
   monitoringOverview,
+  // Crisis Response Deep Data (MD 12-3)
+  crisisResponseDeepData,
+  uaeCrisisInfrastructure,
+  crisisManagementLessons,
+  realTimeMonitoringSystems,
+  aiMediaMonitoring,
+  osintTools,
+  darkWebTools,
+  narrativeAttacks,
+  crossPlatformTracking,
+  sentimentAnalysisCrisis,
+  socialMediaTrendVelocity,
+  factCheckVerification,
+  governmentEmergencyResponse,
+  postCrisisAssessment,
+  influencerCrisisResponse,
+  internationalCrisisMonitoring,
+  misinformationTracking,
+  crisisCommunicationBestPractices,
+  mediaFramingAnalysis,
+  disasterMisinformationDetection,
+  crisisManagementGovernance,
+  crisisQueryPhases,
+  crisisPerformanceMetrics,
+  toolsRecommended,
+  sourceCitations,
+  sourceCredibilityMatrix as crisisSourceCredibilityMatrix,
+  uaeRelevanceAssessment as crisisUaeRelevanceAssessment,
+  crisisEntityRegistry,
+  crisisLevels,
+  crisisSentimentByTopic,
   // Crisis Data
   naturalDisasterData,
   geopoliticalCrisisData,
@@ -131,13 +166,16 @@ import {
   tourismHospitalityData,
   realEstateData,
   foodSecurityData,
-  transportationLogisticsData,
+  transportationData,
   legalRegulatoryData,
   laborEmploymentData,
   demographicsMigrationData,
   religionInterfaithData,
   topicsOverview,
+  // Gap Analysis Data (MD 12-8)
+  gapAnalysisOverview,
 } from './index'
+
 import type {
   ClairvoyanceKPIs,
   Campaign,
@@ -795,6 +833,16 @@ export function useTrendsDataArrayData() {
   return { data, loading, error, refresh: () => setData(trendsDataArray) }
 }
 
+/**
+ * useRegulatoryTrendsData - Hook for Regulatory Trends data (10-7)
+ */
+export function useRegulatoryTrendsData() {
+  const [data, setData] = useState(trendsOverview['regulatory'])
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(trendsOverview['regulatory']) }
+}
+
 // ============================================================================
 // UAE NDIP — VERIFICATION / FACT-CHECK HOOKS
 // ============================================================================
@@ -809,6 +857,36 @@ export function useVerificationOverviewData() {
   return { data, loading, error, refresh: () => setData(verificationOverview) }
 }
 
+/**
+ * useOmissionSilenceData - Hook for Omission & Silence Detection data
+ */
+export function useOmissionSilenceData() {
+  const [data, setData] = useState(omissionSilenceData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(omissionSilenceData) }
+}
+
+/**
+ * useOmissionSilenceOverviewData - Hook for Omission & Silence Overview data
+ */
+export function useOmissionSilenceOverviewData() {
+  const [data, setData] = useState(omissionSilenceOverview)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(omissionSilenceOverview) }
+}
+
+/**
+ * useBotInauthenticData - Hook for Bot & Inauthentic Behavior data
+ */
+export function useBotInauthenticData() {
+  const [data, setData] = useState(botInauthenticData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(botInauthenticData) }
+}
+
 // ============================================================================
 // UAE NDIP — MONITORING / REAL-TIME COMMAND HOOKS
 // ============================================================================
@@ -821,6 +899,26 @@ export function useMonitoringOverviewData() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
   return { data, loading, error, refresh: () => setData(monitoringOverview) }
+}
+
+/**
+ * useCrisisResponseDeepData - Hook for Crisis Response Deep Research data (MD 12-3)
+ */
+export function useCrisisResponseDeepData() {
+  const [data, setData] = useState(crisisResponseDeepData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(crisisResponseDeepData) }
+}
+
+/**
+ * useGapAnalysisData - Hook for Gap Analysis data (MD 12-8)
+ */
+export function useGapAnalysisData() {
+  const [data, setData] = useState(gapAnalysisOverview)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(gapAnalysisOverview) }
 }
 
 // ============================================================================
@@ -1095,10 +1193,10 @@ export function useFoodSecurityData() {
  * useTransportationLogisticsData - Hook for Transportation & Logistics topic data
  */
 export function useTransportationLogisticsData() {
-  const [data, setData] = useState(transportationLogisticsData)
+  const [data, setData] = useState(transportationData)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
-  return { data, loading, error, refresh: () => setData(transportationLogisticsData) }
+  return { data, loading, error, refresh: () => setData(transportationData) }
 }
 
 /**
@@ -1869,9 +1967,13 @@ export const dataHooks = {
 
   // UAE NDIP — Verification / Fact-Check
   useVerificationOverviewData,
+  useOmissionSilenceData,
+  useOmissionSilenceOverviewData,
+  useBotInauthenticData,
 
   // UAE NDIP — Monitoring / Real-Time Command
   useMonitoringOverviewData,
+  useCrisisResponseDeepData,
 
   // UAE NDIP — Entity Intelligence
   useFederalOfficialsData,
@@ -1962,6 +2064,9 @@ export const dataHooks = {
   useTransliterationData,
   useCodeSwitchingData,
   useLanguageOverviewData,
+
+  // Criticism & Complaint Data (MD 9-6)
+  useCriticismComplaintData,
 
   // Generic
   useAllClairvoyanceData,

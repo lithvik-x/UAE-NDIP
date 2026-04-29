@@ -67,7 +67,7 @@ export default function DarkWebMonitoringPage() {
     { name: 'Marketplaces', value: 28, color: CHART_COLORS.gold },
     { name: 'Paste Sites', value: 15, color: CHART_COLORS.platinum },
     { name: 'Social', value: 10, color: CHART_COLORS.rose },
-    { name: 'IM Channels', value: 5, color: CHART_COLORS.cyan },
+    { name: 'IM Channels', value: 5, color: CHART_COLORS.info },
   ]
 
   // Recent threat listings
@@ -102,7 +102,7 @@ export default function DarkWebMonitoringPage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="navy" className="mb-2">M-SECTOR</Badge>
+          <Badge variant="denim" className="mb-2">M-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-navy">Dark Web Monitoring</h1>
           <p className="mt-2 text-slate-400">
             Surveillance of underground forums, marketplaces, and illicit activity tracking
@@ -127,7 +127,7 @@ export default function DarkWebMonitoringPage() {
           value={activeMarkets}
           previousValue={activeMarkets + 3}
           icon={<Radio className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="warning"
         />
         <MetricCard

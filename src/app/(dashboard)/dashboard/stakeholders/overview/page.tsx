@@ -73,7 +73,7 @@ export default function StakeholderOverviewPage() {
     { name: 'Media', value: mediaStakeholders.length, color: CHART_COLORS.gold },
     { name: 'Corporate', value: corporateStakeholders.length, color: CHART_COLORS.emerald },
     { name: 'Civil Society', value: civilSocietyStakeholders.length, color: CHART_COLORS.platinum },
-    { name: 'International', value: internationalStakeholders.length, color: CHART_COLORS.cyan },
+    { name: 'International', value: internationalStakeholders.length, color: CHART_COLORS.info },
   ]
 
   // Alert level distribution
@@ -126,7 +126,7 @@ export default function StakeholderOverviewPage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="platinum" className="mb-2">STAKEHOLDER INTELLIGENCE</Badge>
+          <Badge variant="default" className="mb-2">STAKEHOLDER INTELLIGENCE</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-platinum">Stakeholder Overview</h1>
           <p className="mt-2 text-slate-400">
             Comprehensive view of all UAE stakeholder entities across government, media, corporate, civil society, and international sectors
@@ -164,7 +164,7 @@ export default function StakeholderOverviewPage() {
           title="Total Reach"
           value={totalReach > 1000000 ? `${(totalReach / 1000000).toFixed(1)}M` : totalReach.toLocaleString()}
           icon={<Globe className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
         />
         <MetricCard
           title="Avg Sentiment"

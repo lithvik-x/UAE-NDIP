@@ -52,7 +52,7 @@ export default function CrisisOverviewPage() {
     { name: 'Geopolitical', value: 1, color: CHART_COLORS.rose },
     { name: 'Economic', value: 1, color: CHART_COLORS.orange },
     { name: 'Cyber', value: 1, color: CHART_COLORS.purple },
-    { name: 'Terrorism', value: 1, color: CHART_COLORS.red },
+    { name: 'Terrorism', value: 1, color: CHART_COLORS.danger },
     { name: 'Natural', value: 1, color: CHART_COLORS.emerald },
     { name: 'Social', value: 1, color: CHART_COLORS.gold },
   ]
@@ -112,7 +112,7 @@ export default function CrisisOverviewPage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="navy" className="mb-2">PHOENIX PROTOCOL</Badge>
+          <Badge variant="denim" className="mb-2">PHOENIX PROTOCOL</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-navy">Crisis Overview</h1>
           <p className="mt-2 text-slate-400">
             UAE National Digital Intelligence Platform — All Crisis Types Summary

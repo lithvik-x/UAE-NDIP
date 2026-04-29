@@ -129,7 +129,7 @@ export default function UnionPage() {
           title="Founding Fathers"
           value={federationDetails.length}
           icon={<Crown className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
         />
         <MetricCard
           title="Milestones"

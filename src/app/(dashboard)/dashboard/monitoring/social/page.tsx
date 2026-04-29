@@ -47,7 +47,7 @@ export default function SocialMediaMonitoringPage() {
   const platformData = [
     { name: 'Twitter/X', value: 38, color: CHART_COLORS.navy },
     { name: 'Instagram', value: 27, color: CHART_COLORS.rose },
-    { name: 'TikTok', value: 18, color: CHART_COLORS.cyan },
+    { name: 'TikTok', value: 18, color: CHART_COLORS.info },
     { name: 'LinkedIn', value: 10, color: CHART_COLORS.indigo },
     { name: 'Facebook', value: 7, color: CHART_COLORS.blue },
   ]
@@ -156,7 +156,7 @@ export default function SocialMediaMonitoringPage() {
           value={influencers}
           previousValue={influencers - 47}
           icon={<Users className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="info"
         />
         <MetricCard

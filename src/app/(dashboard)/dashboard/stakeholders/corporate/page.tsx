@@ -192,7 +192,7 @@ export default function CorporateStakeholdersPage() {
     { name: 'Energy', value: 25, color: CHART_COLORS.gold },
     { name: 'Finance', value: 15, color: CHART_COLORS.emerald },
     { name: 'Real Estate', value: 10, color: CHART_COLORS.platinum },
-    { name: 'Technology', value: 5, color: CHART_COLORS.cyan },
+    { name: 'Technology', value: 5, color: CHART_COLORS.info },
   ]
 
   const getAlertBadge = (level?: string) => {
@@ -254,7 +254,7 @@ export default function CorporateStakeholdersPage() {
           value={avgEngagement.toFixed(1)}
           previousValue={avgEngagement - 0.3}
           icon={<TrendingUp className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
         />
       </div>
 

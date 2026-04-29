@@ -153,7 +153,7 @@ export default function AudiencePage() {
           value="3.2h"
           previousValue={3.0}
           icon={<Clock className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="success"
         />
         <MetricCard

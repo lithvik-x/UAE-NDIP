@@ -1,20 +1,20 @@
 // @ts-nocheck
 'use client'
 
+import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Progress } from '@/components/ui/progress'
 import { MetricCard } from '@/components/dashboard/metric-card'
-import { GlassPanel } from '@/components/dashboard/glass-card'
+import { GlassCard, GlassPanel } from '@/components/dashboard/glass-card'
 import {
   LineChart,
   BarChart,
   AreaChart,
   PieChart,
-  RadarChart,
   CHART_COLORS,
 } from '@/components/ui/chart-library'
 import {
@@ -22,352 +22,437 @@ import {
   Activity,
   Users,
   Building,
-  TrendingUp,
-  Shield,
-  Stethoscope,
   Plane,
   AlertCircle,
+  Shield,
+  Stethoscope,
+  Pill,
+  Ambulance,
+  Brain,
+  Baby,
+  AlertTriangle,
+  Globe,
+  Award,
+  Clock,
+  Bed,
+  UsersRound,
+  Syringe,
+  FileCheck,
+  HeartPulse,
+  Scale,
+  TestTube,
+  Video,
 } from 'lucide-react'
 import {
-  useHealthcareData,
-} from '@/lib/data-loader'
+  healthcareData,
+  healthcareSystemStructure,
+  healthcareAuthoritiesGovernance,
+  healthcareInfrastructure,
+  hospitalQualityRankings,
+  covid19PandemicResponse,
+  vaccinationCampaign,
+  healthInsuranceSystem,
+  medicalTourism,
+  mentalHealthServices,
+  healthcareWorkforce,
+  pharmaceuticalRegulation,
+  organTransplantation,
+  chronicDiseaseBurden,
+  foodSafety,
+  telemedicineDigitalHealth,
+  ivfReproductiveHealth,
+  medicalMalpracticeLiability,
+  healthcareFraud,
+  whoInternationalCollaboration,
+  healthEmergencies,
+  dashboardDataTables,
+  reportMetadata,
+} from '@/lib/data/topics/healthcare-data'
+
+// Animation variants for staggered mount
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+}
 
 export default function HealthcarePage() {
-  const { data } = useHealthcareData()
+  // Key metrics from dashboard data
+  const keyMetrics = dashboardDataTables.healthcareSystemKPIs
+  const covidMetrics = dashboardDataTables.covid19Metrics
+  const tourismMetrics = dashboardDataTables.medicalTourismKPIs
+  const organMetrics = dashboardDataTables.organTransplantationKPIs
+  const mentalHealthMetrics = dashboardDataTables.mentalHealthMetrics
 
-  // Extract metrics from data
-  const healthcareIndex = data?.metrics?.healthcareIndex || 82
-  const hospitalBeds = data?.metrics?.hospitalBeds || 18
-  const medicalTourism = data?.metrics?.medicalTourism || 350
-  const chronicDisease = data?.metrics?.chronicDisease || 23
-
-  // Disease prevalence data
-  const diseaseData = [
-    { name: 'Cardiovascular', value: 28, color: CHART_COLORS.danger },
-    { name: 'Diabetes', value: 24, color: CHART_COLORS.warning },
-    { name: 'Respiratory', value: 15, color: CHART_COLORS.navy },
-    { name: 'Cancer', value: 12, color: CHART_COLORS.rose },
-    { name: 'Other', value: 21, color: CHART_COLORS.platinum },
+  // Sentiment distribution data
+  const sentimentData = [
+    { name: 'Positive', value: 45, color: CHART_COLORS.emerald },
+    { name: 'Neutral', value: 25, color: CHART_COLORS.platinum },
+    { name: 'Negative', value: 30, color: CHART_COLORS.rose },
   ]
 
-  // Facility distribution
-  const facilityData = [
-    { name: 'Hospitals', value: 75, color: CHART_COLORS.navy },
-    { name: 'Clinics', value: 450, color: CHART_COLORS.gold },
-    { name: 'Specialty Centers', value: 120, color: CHART_COLORS.platinum },
-    { name: 'Pharmacies', value: 1200, color: CHART_COLORS.emerald },
+  // Chronic disease chart data
+  const chronicDiseaseData = chronicDiseaseBurden.diseasePrevalence.slice(0, 6).map(item => ({
+    name: item.condition.split(' ').slice(0, 2).join(' '),
+    value: parseFloat(item.prevalence.replace(/[^0-9.]/g, '')) || 0,
+    color: CHART_COLORS.warning,
+  }))
+
+  // Hospital ranking data
+  const hospitalRankingData = hospitalQualityRankings.newsweekWorldsBestHospitals2025.slice(0, 5).map(item => ({
+    name: item.hospital.split(' ').slice(0, 2).join(' '),
+    value: parseFloat(item.score.replace('%', '')),
+    color: CHART_COLORS.emerald,
+  }))
+
+  // Vaccination trend data
+  const vaccinationData = [
+    { month: 'Dec 2020', doses: 5, color: CHART_COLORS.navy },
+    { month: 'Mar 2021', doses: 25, color: CHART_COLORS.navy },
+    { month: 'Jun 2021', doses: 50, color: CHART_COLORS.navy },
+    { month: 'Sep 2021', doses: 75, color: CHART_COLORS.navy },
+    { month: 'Dec 2021', doses: 90, color: CHART_COLORS.navy },
+    { month: 'Mar 2022', doses: 100, color: CHART_COLORS.navy },
   ]
 
-  // Medical tourism by country
-  const tourismData = [
-    { name: 'GCC States', value: 35, color: CHART_COLORS.gold },
-    { name: 'Other MENA', value: 28, color: CHART_COLORS.navy },
-    { name: 'Asia', value: 20, color: CHART_COLORS.platinum },
-    { name: 'Europe', value: 12, color: CHART_COLORS.cyan },
-    { name: 'Africa', value: 5, color: CHART_COLORS.emerald },
+  // Medical tourism by region
+  const tourismRegionData = [
+    { name: 'Asia', value: 33, color: CHART_COLORS.warning },
+    { name: 'GCC', value: 28, color: CHART_COLORS.gold },
+    { name: 'Europe/CIS', value: 23, color: CHART_COLORS.platinum },
+    { name: 'Other', value: 16, color: CHART_COLORS.navy },
   ]
 
-  // Monthly health metrics trend
-  const healthTrendData = [
-    { month: 'Jan', index: 78, tourism: 28, beds: 17.8 },
-    { month: 'Feb', index: 79, tourism: 29, beds: 17.9 },
-    { month: 'Mar', index: 80, tourism: 30, beds: 18.0 },
-    { month: 'Apr', index: 80, tourism: 31, beds: 18.0 },
-    { month: 'May', index: 81, tourism: 32, beds: 18.1 },
-    { month: 'Jun', index: 81, tourism: 33, beds: 18.1 },
-    { month: 'Jul', index: 82, tourism: 34, beds: 18.2 },
-    { month: 'Aug', index: 82, tourism: 34, beds: 18.2 },
-    { month: 'Sep', index: 83, tourism: 35, beds: 18.3 },
-    { month: 'Oct', index: 83, tourism: 35, beds: 18.3 },
-    { month: 'Nov', index: 84, tourism: 36, beds: 18.4 },
-    { month: 'Dec', index: 84, tourism: 36, beds: 18.4 },
+  // Healthcare workforce data
+  const workforceData = [
+    { role: 'Nurses', count: 55000, color: CHART_COLORS.info },
+    { role: 'Doctors', count: 18100, color: CHART_COLORS.navy },
+    { role: 'Technicians', count: 8500, color: CHART_COLORS.gold },
   ]
-
-  // Key health indicators
-  const healthIndicators = [
-    { indicator: 'Life Expectancy', value: 78.5, target: 80, unit: 'years' },
-    { indicator: 'Infant Mortality', value: 6.2, target: 5, unit: 'per 1000' },
-    { indicator: 'Physician Density', value: 2.8, target: 3.5, unit: 'per 1000' },
-    { indicator: 'Healthcare Spending', value: 4.2, target: 5.0, unit: 'GDP %' },
-  ]
-
-  const getIndicatorColor = (value: number, target: number) => {
-    const ratio = value / target
-    if (ratio >= 0.9) return 'text-emerald-400'
-    if (ratio >= 0.7) return 'text-yellow-400'
-    return 'text-red-400'
-  }
 
   return (
-    <div className="space-y-8 p-8">
+    <motion.div
+      className="space-y-8 p-8"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       {/* Header */}
-      <div className="flex items-start justify-between">
+      <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
-          <Badge variant="navy" className="mb-2">C-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-navy">Healthcare Intelligence</h1>
-          <p className="mt-2 text-slate-400">
-            Healthcare infrastructure, chronic disease tracking, and medical tourism
+          <Badge variant="default" className="mb-2">C-SECTOR</Badge>
+          <h1 className="text-4xl font-extrabold gradient-text-emerald">Healthcare Intelligence</h1>
+          <p className="mt-2 text-emerald-400">
+            {healthcareData.description}
           </p>
+          <div className="mt-2 flex items-center gap-4 text-sm text-emerald-500">
+            <span className="flex items-center gap-1">
+              <Clock className="h-4 w-4" />
+              {reportMetadata?.reportCompiled || '2026-04-27'}
+            </span>
+            <span className="flex items-center gap-1">
+              <Globe className="h-4 w-4" />
+              {reportMetadata?.sourcesFetched || '45+ sources'}
+            </span>
+          </div>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-navy/50 text-navy hover:bg-navy/10">
+          <Button variant="outline" className="gap-2 border-emerald/50 text-emerald hover:bg-emerald/10">
             <Stethoscope className="h-4 w-4" />
             Health Monitor
           </Button>
-          <Button className="bg-gradient-navy hover:opacity-90 text-white gap-2">
-            <Activity className="h-4 w-4" />
-            Track Facility
+          <Button className="bg-gradient-emerald hover:opacity-90 text-white gap-2">
+            <HeartPulse className="h-4 w-4" />
+            Track Metrics
           </Button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Key Metrics */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <motion.div variants={itemVariants} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <MetricCard
-          title="Healthcare Index"
-          value={healthcareIndex}
-          previousValue={healthcareIndex - 2}
-          icon={<Heart className="h-6 w-6" />}
-          gradient="navy"
-          status="success"
+          title="Population"
+          value="10.08M"
+          previousValue={9.9}
+          icon={<Users className="h-6 w-6" />}
+          gradient="emerald"
+          status="info"
         />
         <MetricCard
-          title="Hospital Beds (per 1000)"
-          value={hospitalBeds}
-          previousValue={hospitalBeds - 0.2}
-          icon={<Building className="h-6 w-6" />}
+          title="Life Expectancy"
+          value="79"
+          previousValue={78.5}
+          icon={<Heart className="h-6 w-6" />}
           gradient="gold"
         />
         <MetricCard
-          title="Medical Tourism (K)"
-          value={medicalTourism}
-          previousValue={medicalTourism - 15}
-          icon={<Plane className="h-6 w-6" />}
-          gradient="emerald"
+          title="JCI Accredited"
+          value="214+"
+          previousValue={180}
+          icon={<Award className="h-6 w-6" />}
+          gradient="denim"
           status="success"
         />
         <MetricCard
-          title="Chronic Disease Rate"
-          value={chronicDisease}
-          previousValue={chronicDisease + 1}
-          icon={<AlertCircle className="h-6 w-6" />}
+          title="Hospital Market"
+          value="$10.9B"
+          previousValue={9.8}
+          icon={<Building className="h-6 w-6" />}
           gradient="platinum"
-          status="warning"
+          status="success"
         />
-      </div>
+      </motion.div>
+
+      {/* Focus Areas */}
+      <motion.div variants={itemVariants}>
+        <div className="flex flex-wrap gap-2">
+          {[
+            { id: 'HLT-1', name: 'Healthcare System' },
+            { id: 'HLT-2', name: 'COVID-19 Response' },
+            { id: 'HLT-3', name: 'Medical Tourism' },
+            { id: 'HLT-4', name: 'Health Insurance' },
+            { id: 'HLT-5', name: 'Organ Transplant' },
+            { id: 'HLT-6', name: 'Mental Health' },
+          ].map((area) => (
+            <Badge key={area.id} variant="outline" className="border-emerald/30 text-emerald">
+              {area.id} - {area.name}
+            </Badge>
+          ))}
+        </div>
+      </motion.div>
 
       <Tabs defaultValue="overview" className="space-y-6">
         <TabsList className="glass-panel" scrollable>
           <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="infrastructure">Infrastructure</TabsTrigger>
-          <TabsTrigger value="diseases">Disease Tracking</TabsTrigger>
+          <TabsTrigger value="covid">COVID-19</TabsTrigger>
           <TabsTrigger value="tourism">Medical Tourism</TabsTrigger>
+          <TabsTrigger value="insurance">Health Insurance</TabsTrigger>
+          <TabsTrigger value="infrastructure">Infrastructure</TabsTrigger>
+          <TabsTrigger value="mental">Mental Health</TabsTrigger>
         </TabsList>
 
         {/* Overview Tab */}
         <TabsContent value="overview" className="space-y-6">
-          <GlassPanel title="Healthcare Overview" description="UAE healthcare system performance">
+          <GlassPanel
+            title="Healthcare System Overview"
+            description="Key metrics and healthcare indicators"
+            badge="Comprehensive"
+          >
             <div className="space-y-6">
               <div className="grid gap-6 lg:grid-cols-2">
+                {/* Sentiment Distribution */}
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Healthcare Index Trend</CardTitle>
-                    <CardDescription>12-month performance</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <AreaChart
-                      data={healthTrendData}
-                      xAxisKey="month"
-                      areas={[
-                        { dataKey: 'index', name: 'Healthcare Index', color: CHART_COLORS.navy },
-                      ]}
-                      height={280}
-                      showGrid={true}
-                    />
-                  </CardContent>
-                </Card>
-
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Chronic Disease Distribution</CardTitle>
-                    <CardDescription>Prevalence by condition</CardDescription>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <HeartPulse className="h-5 w-5 text-emerald" />
+                      Sentiment Distribution
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <PieChart
-                      data={diseaseData}
-                      height={280}
+                      data={sentimentData}
+                      height={200}
                       showLegend={true}
+                      donut={true}
+                    />
+                    <div className="mt-4 grid grid-cols-3 gap-2">
+                      <div className="text-center p-2 bg-emerald/20 rounded-lg">
+                        <p className="text-lg font-bold text-emerald">45%</p>
+                        <p className="text-xs text-emerald-500">Positive</p>
+                      </div>
+                      <div className="text-center p-2 bg-platinum/20 rounded-lg">
+                        <p className="text-lg font-bold text-platinum">25%</p>
+                        <p className="text-xs text-platinum-500">Neutral</p>
+                      </div>
+                      <div className="text-center p-2 bg-rose/20 rounded-lg">
+                        <p className="text-lg font-bold text-rose">30%</p>
+                        <p className="text-xs text-rose-500">Negative</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Chronic Disease Burden */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <AlertTriangle className="h-5 w-5 text-warning" />
+                      Chronic Disease Burden
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <BarChart
+                      data={chronicDiseaseData}
+                      xAxisKey="name"
+                      bars={[{ dataKey: 'value', name: 'Prevalence %', color: CHART_COLORS.warning }]}
+                      height={200}
+                      showGrid={true}
                     />
                   </CardContent>
                 </Card>
               </div>
 
+              {/* Key Healthcare Metrics */}
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">Key Health Indicators</CardTitle>
-                  <CardDescription>Performance vs targets</CardDescription>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Building className="h-5 w-5 text-gold" />
+                    Healthcare System Key Metrics
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    {healthIndicators.map((item, index) => (
-                      <div
-                        key={index}
-                        className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center"
-                      >
-                        <div className={`text-2xl font-bold ${getIndicatorColor(item.value, item.target)}`}>
-                          {item.value}
-                        </div>
-                        <p className="text-sm text-slate-400 mt-1">{item.indicator}</p>
-                        <p className="text-xs text-slate-500">Target: {item.target} {item.unit}</p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {keyMetrics.slice(0, 8).map((metric, idx) => (
+                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg text-center">
+                        <p className="text-2xl font-bold text-gold">{metric.value}</p>
+                        <p className="text-sm text-emerald-400 mt-1">{metric.kpi}</p>
+                        <p className="text-xs text-platinum-500">{metric.trend}</p>
                       </div>
                     ))}
                   </div>
                 </CardContent>
               </Card>
-            </div>
-          </GlassPanel>
-        </TabsContent>
 
-        {/* Infrastructure Tab */}
-        <TabsContent value="infrastructure" className="space-y-6">
-          <GlassPanel title="Healthcare Infrastructure" description="Facilities, capacity, and resources">
-            <div className="space-y-6">
+              {/* Hospital Quality Rankings */}
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">Healthcare Facility Distribution</CardTitle>
-                  <CardDescription>By facility type</CardDescription>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Award className="h-5 w-5 text-emerald" />
+                    Newsweek World's Best Hospitals 2025 - UAE
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <BarChart
-                    data={facilityData}
+                    data={hospitalRankingData}
                     xAxisKey="name"
-                    bars={[
-                      { dataKey: 'value', name: 'Count', color: CHART_COLORS.navy },
-                    ]}
-                    height={300}
+                    bars={[{ dataKey: 'value', name: 'Score %', color: CHART_COLORS.emerald }]}
+                    height={250}
                     showGrid={true}
                   />
                 </CardContent>
               </Card>
-
-              <div className="grid gap-6 lg:grid-cols-2">
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Hospital Bed Capacity</CardTitle>
-                    <CardDescription>Monthly trend (per 1000)</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <AreaChart
-                      data={healthTrendData}
-                      xAxisKey="month"
-                      areas={[
-                        { dataKey: 'beds', name: 'Beds per 1000', color: CHART_COLORS.gold },
-                      ]}
-                      height={250}
-                      showGrid={true}
-                    />
-                  </CardContent>
-                </Card>
-
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Healthcare Workforce</CardTitle>
-                    <CardDescription>Staff distribution</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      {[
-                        { role: 'Physicians', count: 14500, color: CHART_COLORS.navy },
-                        { role: 'Nurses', count: 32000, color: CHART_COLORS.gold },
-                        { role: 'Technicians', count: 8500, color: CHART_COLORS.platinum },
-                        { role: 'Administrative', count: 12000, color: CHART_COLORS.teal },
-                      ].map((staff, index) => (
-                        <div key={index} className="space-y-2">
-                          <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-slate-200">{staff.role}</span>
-                            <span className="text-sm font-bold" style={{ color: staff.color }}>
-                              {staff.count.toLocaleString()}
-                            </span>
-                          </div>
-                          <Progress
-                            value={(staff.count / 32000) * 100}
-                            className="h-2"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
             </div>
           </GlassPanel>
         </TabsContent>
 
-        {/* Disease Tracking Tab */}
-        <TabsContent value="diseases" className="space-y-6">
-          <GlassPanel title="Disease Tracking Intelligence" description="Chronic disease monitoring and prevalence">
+        {/* COVID-19 Tab */}
+        <TabsContent value="covid" className="space-y-6">
+          <GlassPanel
+            title="COVID-19 Pandemic Response"
+            description="UAE's response to the COVID-19 pandemic"
+            badge="Critical"
+          >
             <div className="space-y-6">
+              {/* COVID Timeline */}
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">Chronic Disease Prevalence</CardTitle>
-                  <CardDescription>By condition type</CardDescription>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Clock className="h-5 w-5 text-navy" />
+                    COVID-19 Timeline
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <BarChart
-                    data={diseaseData}
-                    xAxisKey="name"
-                    bars={[
-                      { dataKey: 'value', name: 'Prevalence %', color: CHART_COLORS.warning },
-                    ]}
-                    height={300}
-                    showGrid={true}
-                  />
+                  <div className="grid gap-4 md:grid-cols-4">
+                    {covid19PandemicResponse.timeline.slice(0, 4).map((item, idx) => (
+                      <div key={idx} className="p-4 bg-slate-800/50 rounded-lg border border-slate-700">
+                        <p className="text-sm font-semibold text-navy">{item.date}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{item.event}</p>
+                      </div>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
 
+              {/* COVID Statistics */}
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">Disease Management Programs</CardTitle>
-                  <CardDescription>Active monitoring initiatives</CardDescription>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Activity className="h-5 w-5 text-emerald" />
+                    COVID-19 Statistics (as of May 24, 2023)
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid gap-4 sm:grid-cols-3">
-                    <div className="rounded-lg border border-red-900/50 bg-red-900/20 p-4">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Heart className="h-5 w-5 text-red-400" />
-                        <span className="font-semibold text-slate-200">Cardiovascular</span>
+                  <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                    {covidMetrics.map((metric, idx) => (
+                      <div key={idx} className="p-3 bg-emerald/10 border border-emerald/30 rounded-lg text-center">
+                        <p className="text-2xl font-bold text-emerald">{metric.value}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{metric.metric}</p>
                       </div>
-                      <div className="text-2xl font-bold text-red-400">28%</div>
-                      <p className="text-xs text-slate-400">Prevalence Rate</p>
-                      <div className="mt-2 flex items-center gap-1 text-xs text-emerald-400">
-                        <Shield className="h-3 w-3" />
-                        Screening: 65% coverage
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Vaccination Campaign */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Syringe className="h-5 w-5 text-gold" />
+                    Vaccination Campaign
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-6 lg:grid-cols-2">
+                    <div>
+                      <AreaChart
+                        data={vaccinationData}
+                        xAxisKey="month"
+                        areas={[{ dataKey: 'doses', name: 'Doses per 100', color: CHART_COLORS.navy }]}
+                        height={200}
+                        showGrid={true}
+                      />
+                    </div>
+                    <div className="space-y-3">
+                      <div className="p-4 bg-navy/20 rounded-lg">
+                        <p className="text-sm text-platinum-400">Total Doses</p>
+                        <p className="text-2xl font-bold text-navy">16.4M</p>
+                      </div>
+                      <div className="p-4 bg-emerald/20 rounded-lg">
+                        <p className="text-sm text-platinum-400">Fully Vaccinated</p>
+                        <p className="text-2xl font-bold text-emerald">68.4%</p>
+                      </div>
+                      <div className="p-4 bg-gold/20 rounded-lg">
+                        <p className="text-sm text-platinum-400">At Least One Dose</p>
+                        <p className="text-2xl font-bold text-gold">77.7%</p>
                       </div>
                     </div>
-                    <div className="rounded-lg border border-yellow-900/50 bg-yellow-900/20 p-4">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Activity className="h-5 w-5 text-yellow-400" />
-                        <span className="font-semibold text-slate-200">Diabetes</span>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Response Achievements */}
+              <Card className="glass-card border-emerald-500/50">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-emerald">
+                    <Shield className="h-5 w-5" />
+                    Response Achievements
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-2 md:grid-cols-2">
+                    {covid19PandemicResponse.responseAchievements.map((achievement, idx) => (
+                      <div key={idx} className="p-3 bg-emerald/5 border border-emerald/20 rounded-lg flex items-start gap-2">
+                        <div className="w-2 h-2 bg-emerald rounded-full mt-1.5"></div>
+                        <span className="text-sm text-platinum-200">{achievement}</span>
                       </div>
-                      <div className="text-2xl font-bold text-yellow-400">24%</div>
-                      <p className="text-xs text-slate-400">Prevalence Rate</p>
-                      <div className="mt-2 flex items-center gap-1 text-xs text-emerald-400">
-                        <Shield className="h-3 w-3" />
-                        Management: 72% enrolled
-                      </div>
-                    </div>
-                    <div className="rounded-lg border border-blue-900/50 bg-blue-900/20 p-4">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Activity className="h-5 w-5 text-blue-400" />
-                        <span className="font-semibold text-slate-200">Respiratory</span>
-                      </div>
-                      <div className="text-2xl font-bold text-blue-400">15%</div>
-                      <p className="text-xs text-slate-400">Prevalence Rate</p>
-                      <div className="mt-2 flex items-center gap-1 text-xs text-emerald-400">
-                        <Shield className="h-3 w-3" />
-                        Treatment: 58% access
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
@@ -377,95 +462,363 @@ export default function HealthcarePage() {
 
         {/* Medical Tourism Tab */}
         <TabsContent value="tourism" className="space-y-6">
-          <GlassPanel title="Medical Tourism Intelligence" description="Healthcare tourism revenue and patient flows">
+          <GlassPanel
+            title="Medical Tourism Intelligence"
+            description="Healthcare tourism revenue and patient flows"
+            badge="Growing"
+          >
             <div className="space-y-6">
+              {/* Market Size */}
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">Medical Tourism Trend</CardTitle>
-                  <CardDescription>Monthly patient arrivals (thousands)</CardDescription>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Plane className="h-5 w-5 text-gold" />
+                    Medical Tourism Market Size
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <AreaChart
-                    data={healthTrendData}
-                    xAxisKey="month"
-                    areas={[
-                      { dataKey: 'tourism', name: 'Medical Tourists (K)', color: CHART_COLORS.emerald },
-                    ]}
-                    height={300}
-                    showGrid={true}
-                  />
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="p-4 bg-gold/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-gold">$865.8M</p>
+                      <p className="text-sm text-platinum-400">2025 Market</p>
+                    </div>
+                    <div className="p-4 bg-emerald/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-emerald">$4.5B</p>
+                      <p className="text-sm text-platinum-400">2034 Projection</p>
+                    </div>
+                    <div className="p-4 bg-navy/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-navy">19.63%</p>
+                      <p className="text-sm text-platinum-400">CAGR</p>
+                    </div>
+                    <div className="p-4 bg-platinum/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-platinum">691K+</p>
+                      <p className="text-sm text-platinum-400">Dubai Tourists 2023</p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
 
-              <div className="grid gap-6 lg:grid-cols-2">
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Patient Origin Distribution</CardTitle>
-                    <CardDescription>By region</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <PieChart
-                      data={tourismData}
-                      height={280}
-                      showLegend={true}
-                    />
-                  </CardContent>
-                </Card>
-
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Medical Tourism Revenue</CardTitle>
-                    <CardDescription>Annual metrics</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50">
-                        <span className="text-sm text-slate-300">Total Patients</span>
-                        <span className="text-xl font-bold text-emerald-400">350K+</span>
-                      </div>
-                      <div className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50">
-                        <span className="text-sm text-slate-300">Revenue</span>
-                        <span className="text-xl font-bold text-emerald-400">$2.1B</span>
-                      </div>
-                      <div className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50">
-                        <span className="text-sm text-slate-300">Avg. Spend</span>
-                        <span className="text-xl font-bold text-emerald-400">$6,000</span>
-                      </div>
-                      <div className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50">
-                        <span className="text-sm text-slate-300">Top Specialty</span>
-                        <span className="text-xl font-bold text-emerald-400">Orthopedics</span>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-
+              {/* Patient Origin */}
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">Top Source Markets</CardTitle>
-                  <CardDescription>Patient volume by country</CardDescription>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Globe className="h-5 w-5 text-platinum" />
+                    Patient Origin Distribution
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-3">
-                    {[
-                      { country: 'Saudi Arabia', patients: 85000, growth: 12 },
-                      { country: 'Kuwait', patients: 45000, growth: 8 },
-                      { country: 'Qatar', patients: 32000, growth: 15 },
-                      { country: 'Oman', patients: 28000, growth: 10 },
-                      { country: 'Bahrain', patients: 18000, growth: 7 },
-                    ].map((market, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
-                      >
-                        <div className="flex items-center gap-3">
-                          <Plane className="h-4 w-4 text-emerald-400" />
-                          <span className="text-sm font-medium text-slate-200">{market.country}</span>
+                  <div className="grid gap-6 lg:grid-cols-2">
+                    <PieChart
+                      data={tourismRegionData}
+                      height={200}
+                      showLegend={true}
+                    />
+                    <div className="space-y-3">
+                      {medicalTourism.topSpecialties.slice(0, 5).map((specialty, idx) => (
+                        <div key={idx} className="p-3 bg-slate-800/50 rounded-lg flex justify-between items-center">
+                          <div className="flex items-center gap-2">
+                            <span className="text-gold font-bold">#{specialty.rank}</span>
+                            <span className="text-platinum-200">{specialty.specialty}</span>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-4">
-                          <span className="text-sm font-bold text-slate-200">{market.patients.toLocaleString()}</span>
-                          <span className="text-xs text-emerald-400">+{market.growth}%</span>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Abu Dhabi Statistics */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Building className="h-5 w-5 text-emerald" />
+                    Abu Dhabi Medical Tourism
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div className="p-4 bg-slate-800/50 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-emerald">15,000+</p>
+                      <p className="text-sm text-platinum-400">Annual Tourists</p>
+                    </div>
+                    <div className="p-4 bg-gold/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-gold">8th</p>
+                      <p className="text-sm text-platinum-400">Global Rank (MTA)</p>
+                    </div>
+                    <div className="p-4 bg-navy/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-navy">9th</p>
+                      <p className="text-sm text-platinum-400">Quality Rank</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Health Insurance Tab */}
+        <TabsContent value="insurance" className="space-y-6">
+          <GlassPanel
+            title="Health Insurance System"
+            description="Coverage, Thiqa program, and insurance obligations"
+            badge="Critical"
+          >
+            <div className="space-y-6">
+              {/* Coverage Overview */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Shield className="h-5 w-5 text-emerald" />
+                    Coverage by Category
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {healthInsuranceSystem.systemOverview.map((item, idx) => (
+                      <div key={idx} className="p-4 bg-slate-800/50 rounded-lg border border-slate-700">
+                        <div className="flex justify-between items-start">
+                          <div>
+                            <p className="font-semibold text-platinum-200">{item.category}</p>
+                            <p className="text-sm text-emerald-400 mt-1">{item.coverage}</p>
+                          </div>
+                          <Badge variant="outline" className="text-xs">{item.sourceOfFunding}</Badge>
                         </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Thiqa Program */}
+              <Card className="glass-card border-gold-500/50">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-gold">
+                    <Award className="h-5 w-5" />
+                    Thiqa Program (Abu Dhabi)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-3">
+                    <div className="p-4 bg-gold/20 rounded-lg text-center">
+                      <p className="text-sm text-platinum-400">Managed By</p>
+                      <p className="text-lg font-bold text-gold">Daman (since 2008)</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-lg text-center">
+                      <p className="text-sm text-platinum-400">Eligible</p>
+                      <p className="text-lg font-bold text-platinum">UAE Nationals</p>
+                    </div>
+                    <div className="p-4 bg-emerald/20 rounded-lg text-center">
+                      <p className="text-sm text-platinum-400">Annual Limit</p>
+                      <p className="text-lg font-bold text-emerald">None</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 p-4 bg-slate-800/50 rounded-lg">
+                    <p className="text-sm font-semibold text-gold mb-2">Benefits Include:</p>
+                    <div className="grid grid-cols-2 gap-2 text-xs text-platinum-400">
+                      <span>- Inpatient: Day surgery, private room</span>
+                      <span>- Outpatient: Consultations, diagnostics</span>
+                      <span>- Maternity: Inpatient and outpatient</span>
+                      <span>- Dental, rehabilitation, check-ups</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Employer Obligations */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Users className="h-5 w-5 text-navy" />
+                    Employer Obligations (2025)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    {healthInsuranceSystem.employerObligations.map((oblig, idx) => (
+                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg flex justify-between">
+                        <span className="text-platinum-400 text-sm">{oblig.requirement}</span>
+                        <span className="text-navy font-medium text-sm">{oblig.detail}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-4 p-4 bg-rose/10 border border-rose/30 rounded-lg">
+                    <p className="text-sm text-rose-300">
+                      <span className="font-semibold">Penalty:</span> AED 500/employee/month for no coverage or lapsed coverage
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Infrastructure Tab */}
+        <TabsContent value="infrastructure" className="space-y-6">
+          <GlassPanel
+            title="Healthcare Infrastructure"
+            description="Facilities, hospitals, and workforce"
+            badge="Core"
+          >
+            <div className="space-y-6">
+              {/* Hospital Distribution */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Building className="h-5 w-5 text-navy" />
+                    Hospital Distribution
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="p-4 bg-navy/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-navy">40+</p>
+                      <p className="text-sm text-platinum-400">Public</p>
+                    </div>
+                    <div className="p-4 bg-gold/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-gold">79+</p>
+                      <p className="text-sm text-platinum-400">Private</p>
+                    </div>
+                    <div className="p-4 bg-emerald/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-emerald">119+</p>
+                      <p className="text-sm text-platinum-400">Total</p>
+                    </div>
+                    <div className="p-4 bg-platinum/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-platinum">214+</p>
+                      <p className="text-sm text-platinum-400">JCI Accredited</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Healthcare Workforce */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <UsersRound className="h-5 w-5 text-emerald" />
+                    Healthcare Workforce
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {healthcareWorkforce.nursingStatistics.slice(0, 4).map((stat, idx) => (
+                      <div key={idx} className="space-y-2">
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm font-medium text-platinum-200">{stat.metric}</span>
+                          <span className="text-sm font-bold text-emerald">{stat.value}</span>
+                        </div>
+                        <Progress value={70 + Math.random() * 30} className="h-2" />
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Major Public Hospitals */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Bed className="h-5 w-5 text-gold" />
+                    Major Public Hospitals
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    {healthcareInfrastructure.majorPublicHospitals.map((hospital, idx) => (
+                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg flex justify-between">
+                        <div>
+                          <p className="font-medium text-platinum-200">{hospital.hospital}</p>
+                          <p className="text-xs text-platinum-500">{hospital.location}</p>
+                        </div>
+                        <Badge variant="outline" className="text-xs">{hospital.specialty}</Badge>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Mental Health Tab */}
+        <TabsContent value="mental" className="space-y-6">
+          <GlassPanel
+            title="Mental Health Services"
+            description="Prevalence, facilities, and legal framework"
+            badge="Growing"
+          >
+            <div className="space-y-6">
+              {/* Prevalence Statistics */}
+              <Card className="glass-card border-warning-500/50">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-warning">
+                    <Brain className="h-5 w-5" />
+                    Mental Health Prevalence
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {mentalHealthMetrics.map((metric, idx) => (
+                      <div key={idx} className="p-4 bg-warning/10 border border-warning/30 rounded-lg text-center">
+                        <p className="text-2xl font-bold text-warning">{metric.value}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{metric.metric}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Federal Law No. 10 of 2023 */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Scale className="h-5 w-5 text-emerald" />
+                    Federal Law No. 10 of 2023
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-3">
+                    <div className="p-4 bg-emerald/20 rounded-lg text-center">
+                      <p className="text-sm text-platinum-400">Effective Date</p>
+                      <p className="text-lg font-bold text-emerald">May 30, 2024</p>
+                    </div>
+                    <div className="p-4 bg-gold/20 rounded-lg text-center">
+                      <p className="text-sm text-platinum-400">Replaced</p>
+                      <p className="text-lg font-bold text-gold">Federal Law 28/1981</p>
+                    </div>
+                    <div className="p-4 bg-rose/20 rounded-lg text-center">
+                      <p className="text-sm text-platinum-400">Penalties</p>
+                      <p className="text-lg font-bold text-rose">AED 50K-200K</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 p-4 bg-slate-800/50 rounded-lg">
+                    <p className="text-sm font-semibold text-gold mb-2">Key Provisions:</p>
+                    <div className="grid gap-2 text-xs text-platinum-400">
+                      <span>- Employment protections (Article 9)</span>
+                      <span>- Employer termination requires specialized committee report</span>
+                      <span>- Confidentiality rights extend to employees</span>
+                      <span>- Monitoring committees required in each emirate</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Key Facilities */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Building className="h-5 w-5 text-platinum" />
+                    Key Facilities
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3">
+                    {mentalHealthServices.keyFacilities.map((facility, idx) => (
+                      <div key={idx} className="p-4 bg-slate-800/50 rounded-lg flex justify-between items-center">
+                        <div>
+                          <p className="font-medium text-platinum-200">{facility.facility}</p>
+                          <p className="text-sm text-platinum-500">{facility.location}</p>
+                        </div>
+                        <Badge variant="outline" className="text-xs">{facility.notes}</Badge>
                       </div>
                     ))}
                   </div>
@@ -475,6 +828,6 @@ export default function HealthcarePage() {
           </GlassPanel>
         </TabsContent>
       </Tabs>
-    </div>
+    </motion.div>
   )
 }

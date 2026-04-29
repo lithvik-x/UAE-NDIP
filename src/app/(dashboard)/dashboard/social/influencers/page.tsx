@@ -159,7 +159,7 @@ export default function InfluencersPage() {
     { category: 'Entertainment', percentage: 18, color: CHART_COLORS.navy },
     { category: 'Business/Tech', percentage: 12, color: CHART_COLORS.platinum },
     { category: 'Food/Dining', percentage: 10, color: CHART_COLORS.emerald },
-    { category: 'Travel/Tourism', percentage: 10, color: CHART_COLORS.cyan },
+    { category: 'Travel/Tourism', percentage: 10, color: CHART_COLORS.info },
   ]
 
   // Tier distribution
@@ -241,7 +241,7 @@ export default function InfluencersPage() {
           value="3.2%"
           previousValue={2.9}
           icon={<TrendingUp className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="success"
         />
         <MetricCard

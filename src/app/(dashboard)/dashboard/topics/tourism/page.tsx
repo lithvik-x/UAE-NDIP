@@ -1,14 +1,15 @@
 // @ts-nocheck
 'use client'
 
+import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Progress } from '@/components/ui/progress'
 import { MetricCard } from '@/components/dashboard/metric-card'
-import { GlassPanel } from '@/components/dashboard/glass-card'
+import { GlassCard, GlassPanel } from '@/components/dashboard/glass-card'
 import {
   LineChart,
   BarChart,
@@ -19,103 +20,194 @@ import {
 import {
   AlertCircle,
   AlertTriangle,
-  TrendingUp,
-  TrendingDown,
-  Plane,
+  Globe,
   Hotel,
   Users,
   DollarSign,
-  Globe,
-  Star,
+  TrendingUp,
+  TrendingDown,
+  Plane,
+  Building,
+  MapPin,
   Briefcase,
+  Star,
+  Crown,
+  Shield,
+  Calendar,
+  Crosshair,
+  Anchor,
+  Home,
+  Camera,
+  UserCheck,
+  UsersRound,
+  Activity,
+  Palmtree,
+  Heart,
+  Ship,
+  Instagram,
+  Castle,
+  Waves,
+  PlaneLanding,
+  AlertOctagon,
 } from 'lucide-react'
-import { useTourismHospitalityData } from '@/lib/data-loader'
+import {
+  tourismHospitalityData,
+  visitorStatistics,
+  hotelAccommodation,
+  businessTourism,
+  tourismRevenueGdp,
+  tourismEmployment,
+  sourceMarkets,
+  perceptionReputation,
+  laborHumanRights,
+  overtourismInfrastructure,
+  halalTourism,
+  medicalTourism,
+  cruiseTourism,
+  shortTermRentals,
+  influencerMarketing,
+  heritageDarkTourism,
+  adventureSafety,
+  tourismSeasonality,
+  crisisResilience,
+  dashboardSummaryTables,
+  reportMetadata,
+} from '@/lib/data/topics/tourism-data'
+
+// Animation variants for staggered mount
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+}
+
+// Alert color helper
+const getAlertColor = (alert?: string) => {
+  if (alert === 'RED') return 'border-red-500/50'
+  if (alert === 'YELLOW') return 'border-yellow-500/50'
+  return 'border-emerald-500/50'
+}
 
 export default function TourismHospitalityPage() {
-  const { data } = useTourismHospitalityData()
-  const { keyFindings, metrics, sentiment, emotions, trends, stakeholders, uaeRelevance, alertLevel } = data
+  // Key metrics from dashboard data
+  const kpis = dashboardSummaryTables.keyPerformanceIndicators
+  const sentiment = dashboardSummaryTables.sentimentAnalysis
 
-  // Sentiment breakdown
+  // Sentiment distribution data
   const sentimentData = [
-    { name: 'Positive', value: sentiment.positive, color: CHART_COLORS.emerald },
-    { name: 'Negative', value: sentiment.negative, color: CHART_COLORS.danger },
-    { name: 'Neutral', value: sentiment.neutral, color: CHART_COLORS.gold },
+    { name: 'Positive', value: 65, color: CHART_COLORS.emerald },
+    { name: 'Negative', value: 20, color: CHART_COLORS.rose },
+    { name: 'Neutral', value: 15, color: CHART_COLORS.gold },
   ]
 
-  // Emotion distribution
-  const emotionData = [
-    { name: 'Joy', value: emotions.joy, color: CHART_COLORS.gold },
-    { name: 'Trust', value: emotions.trust, color: CHART_COLORS.navy },
-    { name: 'Fear', value: emotions.fear, color: CHART_COLORS.danger },
-    { name: 'Surprise', value: emotions.surprise, color: CHART_COLORS.purple },
-    { name: 'Sadness', value: emotions.sadness, color: CHART_COLORS.cyan },
-    { name: 'Disgust', value: emotions.disgust, color: CHART_COLORS.orange },
-    { name: 'Anger', value: emotions.anger, color: CHART_COLORS.rose },
-    { name: 'Anticipation', value: emotions.anticipation, color: CHART_COLORS.emerald },
+  // Dubai visitor trends chart data
+  const visitorTrendsData = visitorStatistics.dubaiVisitors.map(v => ({
+    year: v.year.toString(),
+    visitors: v.visitorsMillions,
+    color: CHART_COLORS.gold,
+  }))
+
+  // Hotel occupancy data
+  const occupancyData = [
+    { name: 'Dubai 2025', value: 80.7, color: CHART_COLORS.gold },
+    { name: 'Dubai 2024', value: 78.2, color: CHART_COLORS.platinum },
+    { name: 'Abu Dhabi 2025', value: 81, color: CHART_COLORS.navy },
   ]
 
-  // Visitor trends
-  const visitorTrendData = [
-    { year: '2020', dubai: 5.5, abudhabi: 10.1 },
-    { year: '2021', dubai: 7.3, abudhabi: 14.2 },
-    { year: '2022', dubai: 14.0, abudhabi: 18.0 },
-    { year: '2023', dubai: 17.2, abudhabi: 22.0 },
-    { year: '2024', dubai: 18.6, abudhabi: 24.2 },
-    { year: '2025', dubai: 19.6, abudhabi: 26.6 },
+  // Source markets data
+  const sourceMarketsData = sourceMarkets.dubaiSourceMarkets2024.map(s => ({
+    name: s.region.split(' ')[0],
+    value: s.percentOfVisitors,
+    color: Object.values(CHART_COLORS)[sourceMarkets.dubaiSourceMarkets2024.indexOf(s) % Object.values(CHART_COLORS).length],
+  }))
+
+  // Top source countries
+  const topCountriesData = sourceMarkets.dubaiTopSourceCountries2023.slice(0, 5).map(c => ({
+    name: c.country,
+    value: parseFloat(c.visitors.replace(/[^0-9.]/g, '')),
+    color: CHART_COLORS.gold,
+  }))
+
+  // Medical tourism market share
+  const medicalMarketShare = [
+    { name: 'Dubai', value: 45, color: CHART_COLORS.gold },
+    { name: 'Abu Dhabi', value: 30, color: CHART_COLORS.navy },
+    { name: 'Sharjah', value: 12, color: CHART_COLORS.platinum },
+    { name: 'RAK', value: 8, color: CHART_COLORS.emerald },
   ]
 
-  // Hotel metrics
-  const hotelMetricsData = [
-    { name: 'Dubai Occupancy', value: 80.7, unit: '%', color: CHART_COLORS.gold },
-    { name: 'Abu Dhabi Occupancy', value: 73.2, unit: '%', color: CHART_COLORS.navy },
-    { name: 'RevPAR Dubai', value: 467, unit: 'AED', color: CHART_COLORS.emerald },
-    { name: 'Avg Daily Rate', value: 578, unit: 'AED', color: CHART_COLORS.platinum },
-  ]
-
-  const getAlertBadge = (level: string) => {
-    switch (level) {
-      case 'RED': return <Badge variant="destructive" className="text-xs"><AlertCircle className="h-3 w-3 mr-1" />RED</Badge>
-      case 'YELLOW': return <Badge variant="warning" className="text-xs"><AlertTriangle className="h-3 w-3 mr-1" />YELLOW</Badge>
-      case 'GREEN': return <Badge variant="success" className="text-xs"><TrendingUp className="h-3 w-3 mr-1" />GREEN</Badge>
-      default: return <Badge variant="outline" className="text-xs">{level}</Badge>
-    }
-  }
-
-  const getAlertColor = (alert?: string) => {
-    if (alert === 'RED') return 'border-red-500/50'
-    if (alert === 'YELLOW') return 'border-yellow-500/50'
-    return 'border-emerald-500/50'
-  }
+  // Influencer earnings data
+  const influencerEarningsData = influencerMarketing.influencerEarnings.map(tier => ({
+    name: tier.tier,
+    value: parseInt(tier.earningsPerPost.replace(/[^0-9]/g, '')),
+    color: tier.tier === 'Mega' ? CHART_COLORS.gold : CHART_COLORS.platinum,
+  }))
 
   return (
-    <div className="space-y-8 p-8">
+    <motion.div
+      className="space-y-8 p-8"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       {/* Header */}
-      <div className="flex items-start justify-between">
+      <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
-          <Badge variant="gold" className="mb-2">P-SECTOR: TOURISM & HOSPITALITY</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Tourism & Hospitality</h1>
+          <Badge variant="default" className="mb-2 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 text-amber-400 border-amber-500/30">P-SECTOR</Badge>
+          <h1 className="text-4xl font-extrabold gradient-text-gold">Tourism & Hospitality</h1>
           <p className="mt-2 text-slate-400">
-            {data.description}
+            {tourismHospitalityData.description}
           </p>
+          <div className="mt-2 flex items-center gap-4 text-sm text-slate-500">
+            <span className="flex items-center gap-1">
+              <Calendar className="h-4 w-4" />
+              {reportMetadata.reportCompleted}
+            </span>
+            <span className="flex items-center gap-1">
+              <Crosshair className="h-4 w-4" />
+              {reportMetadata.totalDataPoints} data points
+            </span>
+            <span className="flex items-center gap-1">
+              <Globe className="h-4 w-4" />
+              {reportMetadata.sourceUrlsValidated} sources
+            </span>
+          </div>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
-            <Plane className="h-4 w-4" />
-            Dubai Tourism
+          <Button variant="outline" className="gap-2 border-amber-500/50 text-amber-400 hover:bg-amber-500/10">
+            <Hotel className="h-4 w-4" />
+            Hotels
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
-            <Globe className="h-4 w-4" />
-            Tourism Stats
+          <Button className="bg-gradient-to-r from-amber-500 to-yellow-500 hover:opacity-90 text-navy-950 gap-2">
+            <TrendingUp className="h-4 w-4" />
+            Analyze
           </Button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Key Metrics */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <motion.div variants={itemVariants} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <MetricCard
           title="Dubai Visitors"
           value="19.59M"
-          previousValue="18.6M"
+          previousValue={18.72}
           icon={<Plane className="h-6 w-6" />}
           gradient="gold"
           status="success"
@@ -123,183 +215,354 @@ export default function TourismHospitalityPage() {
         <MetricCard
           title="Abu Dhabi Visitors"
           value="26.6M"
-          previousValue="24.2M"
+          previousValue={24.2}
           icon={<Users className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="success"
         />
         <MetricCard
-          title="Tourism GDP"
-          value="13-14%"
-          previousValue="12-13%"
-          icon={<DollarSign className="h-6 w-6" />}
+          title="Hotel Occupancy"
+          value="80.7%"
+          previousValue={78.2}
+          icon={<Hotel className="h-6 w-6" />}
           gradient="emerald"
           status="success"
         />
         <MetricCard
-          title="Sentiment Score"
-          value={sentiment.overall}
-          previousValue={sentiment.overall - 2}
-          icon={<Star className="h-6 w-6" />}
+          title="Tourism Employment"
+          value="925K"
+          previousValue={898.6}
+          icon={<Briefcase className="h-6 w-6" />}
           gradient="platinum"
           status="success"
         />
-      </div>
+      </motion.div>
 
-      {/* Alert Banner */}
-      <div className={`rounded-xl border p-4 bg-slate-900/50 ${getAlertColor(alertLevel)}`}>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            {alertLevel === 'RED' && <AlertCircle className="h-6 w-6 text-red-400" />}
-            {alertLevel === 'YELLOW' && <AlertTriangle className="h-6 w-6 text-yellow-400" />}
-            {alertLevel === 'GREEN' && <TrendingUp className="h-6 w-6 text-emerald-400" />}
-            <div>
-              <p className="font-semibold text-slate-200">Intelligence Alert Level: {alertLevel}</p>
-              <p className="text-sm text-slate-400">UAE Relevance: {uaeRelevance.score}/100 — {uaeRelevance.justification}</p>
-            </div>
-          </div>
-          {getAlertBadge(alertLevel)}
+      {/* Focus Areas */}
+      <motion.div variants={itemVariants}>
+        <div className="flex flex-wrap gap-2">
+          {[
+            { id: 'TH-1', name: 'Visitor Stats' },
+            { id: 'TH-2', name: 'Hotels' },
+            { id: 'TH-3', name: 'MICE' },
+            { id: 'TH-4', name: 'Source Markets' },
+            { id: 'TH-5', name: 'Overtourism' },
+            { id: 'TH-6', name: 'Medical Tourism' },
+          ].map((area) => (
+            <Badge key={area.id} variant="outline" className="border-amber-500/30 text-amber-400">
+              {area.id} - {area.name}
+            </Badge>
+          ))}
         </div>
-      </div>
+      </motion.div>
 
       <Tabs defaultValue="overview" className="space-y-6">
         <TabsList className="glass-panel" scrollable>
-          <TabsTrigger value="overview">Key Findings</TabsTrigger>
+          <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="visitors">Visitors</TabsTrigger>
-          <TabsTrigger value="sentiment">Sentiment</TabsTrigger>
-          <TabsTrigger value="stakeholders">Stakeholders</TabsTrigger>
+          <TabsTrigger value="hotels">Hotels</TabsTrigger>
+          <TabsTrigger value="mice">MICE</TabsTrigger>
+          <TabsTrigger value="markets">Source Markets</TabsTrigger>
+          <TabsTrigger value="overtourism">Overtourism</TabsTrigger>
+          <TabsTrigger value="medical">Medical Tourism</TabsTrigger>
         </TabsList>
 
-        {/* Key Findings */}
+        {/* Overview Tab */}
         <TabsContent value="overview" className="space-y-6">
-          <GlassPanel title="Key Findings" description="Critical metrics and findings for Tourism & Hospitality">
-            <div className="space-y-4">
-              {keyFindings.map((finding, index) => (
-                <div
-                  key={index}
-                  className={`flex items-center justify-between rounded-lg border p-4 bg-slate-800/50 hover:bg-slate-800/70 transition-colors ${finding.alert ? getAlertColor(finding.alert) : 'border-slate-700'}`}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className={`flex h-10 w-10 items-center justify-center rounded-full ${
-                      finding.tier === 0 ? 'bg-gold/20 text-gold' :
-                      finding.tier === 1 ? 'bg-emerald/20 text-emerald' :
-                      'bg-red-500/20 text-red-400'
-                    }`}>
-                      {finding.tier === 0 ? <Star className="h-5 w-5" /> :
-                       finding.tier === 1 ? <Hotel className="h-5 w-5" /> :
-                       <AlertCircle className="h-5 w-5" />}
-                    </div>
-                    <div>
-                      <p className="font-medium text-slate-200">{finding.finding}</p>
-                      <p className="text-sm text-slate-400">Source: {finding.source}</p>
-                    </div>
+          <GlassPanel
+            title="Tourism & Hospitality Overview"
+            description="Key metrics and performance indicators"
+            badge="Comprehensive"
+          >
+            <div className="space-y-6">
+              <div className="grid gap-6 lg:grid-cols-2">
+                {/* Visitor Trends */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Plane className="h-5 w-5 text-amber-400" />
+                      Dubai Visitor Trends (Millions)
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <BarChart
+                      data={visitorTrendsData}
+                      xAxisKey="year"
+                      bars={[{ dataKey: 'visitors', name: 'Visitors (M)', color: CHART_COLORS.gold }]}
+                      height={200}
+                      showGrid={true}
+                    />
+                  </CardContent>
+                </Card>
+
+                {/* Sentiment Distribution */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <TrendingUp className="h-5 w-5 text-platinum" />
+                      Sentiment Distribution
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <PieChart
+                      data={sentimentData}
+                      height={200}
+                      showLegend={true}
+                      donut={true}
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* KPIs */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Star className="h-5 w-5 text-amber-400" />
+                    Key Performance Indicators
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {kpis.map((kpi, idx) => (
+                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg text-center">
+                        <p className="text-2xl font-bold text-amber-400">{kpi.value}</p>
+                        <p className="text-sm text-slate-400 mt-1">{kpi.kpi}</p>
+                        <p className="text-xs text-emerald-400 mt-1">{kpi.trend}</p>
+                      </div>
+                    ))}
                   </div>
-                  <div className="flex items-center gap-3">
-                    <div className="text-right">
-                      <p className="text-xl font-bold text-gold">{finding.metric}</p>
-                      <p className="text-xs text-slate-400">Tier {finding.tier}</p>
-                    </div>
-                    {finding.alert && getAlertBadge(finding.alert)}
+                </CardContent>
+              </Card>
+
+              {/* Sentiment Analysis */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Heart className="h-5 w-5 text-rose" />
+                    Sentiment Analysis
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    {sentiment.map((item, idx) => (
+                      <div key={idx} className={`p-3 rounded-lg border ${
+                        item.sentiment === 'Positive' ? 'bg-emerald-500/10 border-emerald-500/30' :
+                        item.sentiment === 'Negative' ? 'bg-rose-500/10 border-rose-500/30' :
+                        'bg-yellow-500/10 border-yellow-500/30'
+                      }`}>
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm font-medium text-slate-200">{item.topic}</span>
+                          <Badge variant={item.sentiment === 'Positive' ? 'success' : item.sentiment === 'Negative' ? 'destructive' : 'warning'} className="text-xs">
+                            {item.sentiment}
+                          </Badge>
+                        </div>
+                        <p className="text-xs text-slate-400 mt-1">{item.notes}</p>
+                      </div>
+                    ))}
                   </div>
-                </div>
-              ))}
+                </CardContent>
+              </Card>
             </div>
           </GlassPanel>
         </TabsContent>
 
         {/* Visitors Tab */}
         <TabsContent value="visitors" className="space-y-6">
-          <GlassPanel title="Visitor Analytics" description="Tourism performance across UAE destinations">
+          <GlassPanel
+            title="Visitor Statistics"
+            description="Dubai and Abu Dhabi visitor numbers"
+            badge="Core"
+          >
             <div className="space-y-6">
-              <div className="grid gap-6 lg:grid-cols-2">
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Visitor Trends (Million)</CardTitle>
-                    <CardDescription>Dubai vs Abu Dhabi annual visitors</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <BarChart
-                      data={visitorTrendData}
-                      xAxisKey="year"
-                      bars={[
-                        { dataKey: 'dubai', name: 'Dubai', color: CHART_COLORS.gold },
-                        { dataKey: 'abudhabi', name: 'Abu Dhabi', color: CHART_COLORS.navy },
-                      ]}
-                      height={280}
-                      showGrid={true}
-                    />
-                  </CardContent>
-                </Card>
-
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Hotel Performance</CardTitle>
-                    <CardDescription>Occupancy and revenue metrics</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <BarChart
-                      data={hotelMetricsData}
-                      xAxisKey="name"
-                      bars={[
-                        { dataKey: 'value', name: 'Value', color: CHART_COLORS.gold },
-                      ]}
-                      height={280}
-                      showGrid={true}
-                    />
-                  </CardContent>
-                </Card>
-              </div>
-
+              {/* Dubai Visitors */}
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">Tourism Sector KPIs</CardTitle>
-                  <CardDescription>Year-over-year performance comparison</CardDescription>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Plane className="h-5 w-5 text-amber-400" />
+                    Dubai Visitor Numbers
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <AreaChart
-                    data={[
-                      { metric: 'Visitors', y2024: 42.8, y2025: 46.2 },
-                      { metric: 'Hotel Rooms', y2024: 148000, y2025: 156000 },
-                      { metric: 'Employment (K)', y2024: 899, y2025: 925 },
-                      { metric: 'RevPAR Growth', y2024: 8, y2025: 11 },
-                    ]}
-                    xAxisKey="metric"
-                    areas={[
-                      { dataKey: 'y2024', name: '2024', color: CHART_COLORS.navy },
-                      { dataKey: 'y2025', name: '2025', color: CHART_COLORS.gold },
-                    ]}
-                    height={300}
-                    showGrid={true}
-                  />
+                  <div className="space-y-3">
+                    {visitorStatistics.dubaiVisitors.map((year, idx) => (
+                      <div key={idx} className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                        <div className="flex items-center gap-3">
+                          <div className="w-16 text-center font-bold text-amber-400">{year.year}</div>
+                          <div className="w-32 font-medium text-slate-200">{year.visitorsMillions}M</div>
+                        </div>
+                        <div className="flex items-center gap-4">
+                          <span className={`text-sm ${year.growthRate.includes('+') ? 'text-emerald-400' : 'text-slate-500'}`}>
+                            {year.growthRate}
+                          </span>
+                          <span className="text-xs text-slate-500 max-w-xs">{year.notes}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
 
+              {/* Abu Dhabi Visitors */}
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">MICE & Events</CardTitle>
-                  <CardDescription>GITEX and business events performance</CardDescription>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Users className="h-5 w-5 text-navy" />
+                    Abu Dhabi Visitors (2025)
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ScrollArea className="h-[300px]">
-                    <div className="space-y-3">
-                      {[
-                        { event: 'GITEX 2025', attendees: '180,000+', exhibitors: '6,500+', economic_impact: '$350M+', status: 'Record' },
-                        { event: 'Abu Dhabi F1 GP', attendees: '190,000+', exhibitors: 'N/A', economic_impact: '$150M+', status: 'Growing' },
-                        { event: 'World Economic Forum', attendees: '3,000+', exhibitors: '200+', economic_impact: '$50M+', status: 'Annual' },
-                        { event: 'Arab Health', attendees: '60,000+', exhibitors: '3,000+', economic_impact: '$80M+', status: 'Stable' },
-                        { event: 'Dubai Shopping Festival', attendees: '1.2M+', exhibitors: 'N/A', economic_impact: '$500M+', status: 'Annual' },
-                      ].map((item, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
-                          <div>
-                            <p className="font-medium text-slate-200">{item.event}</p>
-                            <p className="text-sm text-slate-400">{item.attendees} attendees</p>
-                          </div>
-                          <div className="flex items-center gap-4">
-                            <div className="text-right">
-                              <p className="text-sm font-bold text-gold">{item.economic_impact}</p>
-                              <p className="text-xs text-slate-400">Impact</p>
-                            </div>
-                            <Badge variant="success" className="text-xs">{item.status}</Badge>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {Object.entries(visitorStatistics.abuDhabiVisitors).map(([key, value]) => (
+                      <div key={key} className="p-4 bg-navy/20 rounded-lg text-center">
+                        <p className="text-2xl font-bold text-navy">{value}</p>
+                        <p className="text-sm text-slate-400 mt-1">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* UAE Global Rankings */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Globe className="h-5 w-5 text-platinum" />
+                    UAE Global Rankings
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {visitorStatistics.uaeGlobalRankings.map((rank, idx) => (
+                      <div key={idx} className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                        <span className="text-slate-300">{rank.index}</span>
+                        <div className="flex items-center gap-3">
+                          <span className="text-xl font-bold text-amber-400">{rank.ranking}</span>
+                          <span className="text-xs text-slate-500">{rank.year}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Hotels Tab */}
+        <TabsContent value="hotels" className="space-y-6">
+          <GlassPanel
+            title="Hotel & Accommodation"
+            description="Hotel performance across UAE"
+            badge="Key Sector"
+          >
+            <div className="space-y-6">
+              {/* Dubai Hotels */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Hotel className="h-5 w-5 text-amber-400" />
+                    Dubai Hotels (2024)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="p-4 bg-amber-500/10 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-amber-400">832</p>
+                      <p className="text-sm text-slate-400">Hotels</p>
+                    </div>
+                    <div className="p-4 bg-amber-500/10 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-amber-400">154K</p>
+                      <p className="text-sm text-slate-400">Rooms</p>
+                    </div>
+                    <div className="p-4 bg-amber-500/10 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-amber-400">AED 538</p>
+                      <p className="text-sm text-slate-400">Avg Nightly Rate</p>
+                    </div>
+                    <div className="p-4 bg-amber-500/10 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-amber-400">80.7%</p>
+                      <p className="text-sm text-slate-400">Occupancy</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 p-3 bg-slate-800/50 rounded-lg">
+                    <p className="text-sm text-slate-400">RevPAR: <span className="text-amber-400 font-bold">AED 467</span> (+11% YoY)</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Abu Dhabi Hotels */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Building className="h-5 w-5 text-navy" />
+                    Abu Dhabi Hotels (2025)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div className="p-4 bg-navy/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-navy">81%</p>
+                      <p className="text-sm text-slate-400">Occupancy</p>
+                    </div>
+                    <div className="p-4 bg-navy/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-navy">Dh9.1B</p>
+                      <p className="text-sm text-slate-400">Hotel Revenues</p>
+                    </div>
+                    <div className="p-4 bg-navy/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-navy">+19.5%</p>
+                      <p className="text-sm text-slate-400">YoY Growth</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* UAE Hotel Sector */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <MapPin className="h-5 w-5 text-emerald" />
+                    UAE Hotel Sector Overview
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="p-3 bg-slate-800/50 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-emerald">1,252</p>
+                      <p className="text-xs text-slate-400">Total Hotels</p>
+                    </div>
+                    <div className="p-3 bg-slate-800/50 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-emerald">217K</p>
+                      <p className="text-xs text-slate-400">Total Rooms</p>
+                    </div>
+                    <div className="p-3 bg-slate-800/50 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-emerald">AED 44.8B</p>
+                      <p className="text-xs text-slate-400">2024 Revenue</p>
+                    </div>
+                    <div className="p-3 bg-slate-800/50 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-emerald">71%</p>
+                      <p className="text-xs text-slate-400">2022 Occupancy</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Major Abu Dhabi Attractions */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Castle className="h-5 w-5 text-amber-400" />
+                    Major Abu Dhabi Attractions (2025)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[200px]">
+                    <div className="space-y-2">
+                      {hotelAccommodation.majorAbuDhabiAttractions.map((attr, idx) => (
+                        <div key={idx} className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                          <span className="text-slate-200 font-medium">{attr.attraction}</span>
+                          <div className="flex items-center gap-3">
+                            <span className="text-amber-400 font-bold">{attr.visitors}</span>
+                            {attr.notes && <span className="text-xs text-emerald-400">{attr.notes}</span>}
                           </div>
                         </div>
                       ))}
@@ -311,100 +574,383 @@ export default function TourismHospitalityPage() {
           </GlassPanel>
         </TabsContent>
 
-        {/* Sentiment Tab */}
-        <TabsContent value="sentiment" className="space-y-6">
-          <GlassPanel title="Sentiment & Emotion Analysis" description="Emotional breakdown of Tourism & Hospitality discourse">
+        {/* MICE Tab */}
+        <TabsContent value="mice" className="space-y-6">
+          <GlassPanel
+            title="Business Tourism (MICE)"
+            description="Major events and conferences"
+            badge="Economic Driver"
+          >
             <div className="space-y-6">
-              <div className="grid gap-6 lg:grid-cols-2">
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Sentiment Distribution</CardTitle>
-                    <CardDescription>Positive, negative, and neutral ratio</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <PieChart
-                      data={sentimentData}
-                      height={280}
-                      showLegend={true}
-                    />
-                  </CardContent>
-                </Card>
-
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Emotion Breakdown</CardTitle>
-                    <CardDescription>Plutchik emotion model distribution</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <BarChart
-                      data={emotionData}
-                      xAxisKey="name"
-                      bars={[
-                        { dataKey: 'value', name: 'Score', color: CHART_COLORS.gold },
-                      ]}
-                      height={280}
-                      showGrid={true}
-                    />
-                  </CardContent>
-                </Card>
-              </div>
-
-              <Card className="glass-card">
+              {/* GITEX */}
+              <Card className="glass-card border-amber-500/30">
                 <CardHeader>
-                  <CardTitle className="text-lg">Sentiment Trends</CardTitle>
-                  <CardDescription>Year-over-year sentiment comparison</CardDescription>
+                  <CardTitle className="text-lg flex items-center gap-2 text-amber-400">
+                    <Crosshair className="h-5 w-5" />
+                    GITEX GLOBAL 2025
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <LineChart
-                    data={[
-                      { year: '2021', positive: 58, negative: 22, neutral: 20 },
-                      { year: '2022', positive: 65, negative: 20, neutral: 15 },
-                      { year: '2023', positive: 68, negative: 19, neutral: 13 },
-                      { year: '2024', positive: 67, negative: 18, neutral: 15 },
-                      { year: '2025', positive: 72, negative: 18, neutral: 10 },
-                    ]}
-                    xAxisKey="year"
-                    lines={[
-                      { dataKey: 'positive', name: 'Positive', color: CHART_COLORS.emerald },
-                      { dataKey: 'negative', name: 'Negative', color: CHART_COLORS.danger },
-                      { dataKey: 'neutral', name: 'Neutral', color: CHART_COLORS.gold },
-                    ]}
-                    height={300}
-                    showGrid={true}
-                  />
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="p-4 bg-amber-500/10 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-amber-400">6,800+</p>
+                      <p className="text-sm text-slate-400">Exhibitors</p>
+                    </div>
+                    <div className="p-4 bg-amber-500/10 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-amber-400">2,000</p>
+                      <p className="text-sm text-slate-400">Startups</p>
+                    </div>
+                    <div className="p-4 bg-amber-500/10 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-amber-400">1,200</p>
+                      <p className="text-sm text-slate-400">Investors</p>
+                    </div>
+                    <div className="p-4 bg-amber-500/10 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-amber-400">45th</p>
+                      <p className="text-sm text-slate-400">Edition</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 p-3 bg-amber-500/10 rounded-lg">
+                    <p className="text-sm text-slate-300">Economic Output (2024): <span className="text-amber-400 font-bold">AED 22.35 billion ($6 billion)</span></p>
+                    <p className="text-xs text-slate-500 mt-1">Venue: Dubai World Trade Centre</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* ADIPEC */}
+              <Card className="glass-card border-emerald-500/30">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-emerald-400">
+                    <Activity className="h-5 w-5" />
+                    ADIPEC 2025
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                    <div className="p-3 bg-emerald-500/10 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-emerald-400">205K+</p>
+                      <p className="text-xs text-slate-400">Attendees</p>
+                    </div>
+                    <div className="p-3 bg-emerald-500/10 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-emerald-400">2,250+</p>
+                      <p className="text-xs text-slate-400">Companies</p>
+                    </div>
+                    <div className="p-3 bg-emerald-500/10 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-emerald-400">1,800+</p>
+                      <p className="text-xs text-slate-400">Speakers</p>
+                    </div>
+                    <div className="p-3 bg-emerald-500/10 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-emerald-400">$46B</p>
+                      <p className="text-xs text-slate-400">Cross-Sector Deals</p>
+                    </div>
+                    <div className="p-3 bg-emerald-500/10 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-emerald-400">30</p>
+                      <p className="text-xs text-slate-400">Country Pavilions</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 p-3 bg-slate-800/50 rounded-lg">
+                    <p className="text-sm text-slate-300">Dates: <span className="text-emerald-400">November 3-6, 2025</span></p>
+                    <p className="text-sm text-slate-300">Location: <span className="text-emerald-400">ADNEC, Abu Dhabi</span></p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* ATM */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <PlaneLanding className="h-5 w-5 text-platinum" />
+                    Arab Travel Market (ATM) 2025
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="p-4 bg-platinum/10 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-platinum">55,000+</p>
+                      <p className="text-sm text-slate-400">Delegates</p>
+                    </div>
+                    <div className="p-4 bg-platinum/10 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-platinum">2,800+</p>
+                      <p className="text-sm text-slate-400">Exhibitors</p>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>
           </GlassPanel>
         </TabsContent>
 
-        {/* Stakeholders Tab */}
-        <TabsContent value="stakeholders" className="space-y-6">
-          <GlassPanel title="Key Stakeholders" description="Entities and actors in the Tourism & Hospitality sector">
-            <Card className="glass-card">
-              <CardHeader>
-                <CardTitle className="text-lg">Tourism & Hospitality Stakeholders</CardTitle>
-                <CardDescription>Primary and secondary actors in UAE tourism ecosystem</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ScrollArea className="h-[500px]">
-                  <div className="space-y-4">
-                    {stakeholders.map((stakeholder, index) => (
-                      <div key={index} className="flex items-center gap-4 rounded-lg bg-slate-800/50 p-4 hover:bg-slate-800/70 transition-colors">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
-                          <Briefcase className="h-5 w-5" />
+        {/* Source Markets Tab */}
+        <TabsContent value="markets" className="space-y-6">
+          <GlassPanel
+            title="Source Markets"
+            description="Visitor origins and demographics"
+            badge="Key Data"
+          >
+            <div className="space-y-6">
+              {/* Dubai Source Markets */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Globe className="h-5 w-5 text-amber-400" />
+                    Dubai Source Markets (2024)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <BarChart
+                    data={sourceMarketsData}
+                    xAxisKey="name"
+                    bars={[{ dataKey: 'value', name: '% of Visitors', color: CHART_COLORS.gold }]}
+                    height={250}
+                    showGrid={true}
+                  />
+                </CardContent>
+              </Card>
+
+              {/* Top Source Countries */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Users className="h-5 w-5 text-platinum" />
+                    Dubai Top Source Countries (2023)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[250px]">
+                    <div className="space-y-2">
+                      {sourceMarkets.dubaiTopSourceCountries2023.map((country, idx) => (
+                        <div key={idx} className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                          <div className="flex items-center gap-3">
+                            <span className="w-8 h-8 flex items-center justify-center bg-amber-500/20 rounded-full text-amber-400 font-bold text-sm">
+                              {country.rank}
+                            </span>
+                            <span className="text-slate-200 font-medium">{country.country}</span>
+                          </div>
+                          <div className="flex items-center gap-4">
+                            <span className="text-amber-400 font-bold">{country.visitors}</span>
+                            <span className="text-xs text-slate-500">{country.percentOfTotal}</span>
+                          </div>
                         </div>
-                        <p className="flex-1 font-medium text-slate-200">{stakeholder}</p>
-                        <Badge variant="outline" className="text-xs">Tier 1</Badge>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+
+              {/* Abu Dhabi Source Markets */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <MapPin className="h-5 w-5 text-navy" />
+                    Abu Dhabi Source Markets (2025)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {sourceMarkets.abuDhabiSourceMarkets2025.map((market, idx) => (
+                      <div key={idx} className="p-3 bg-navy/20 rounded-lg">
+                        <div className="flex justify-between items-center">
+                          <span className="text-slate-200 font-medium">{market.country}</span>
+                          {market.growth && (
+                            <Badge variant="success" className="text-xs">{market.growth}</Badge>
+                          )}
+                        </div>
+                        <p className="text-sm text-slate-400 mt-1">{market.hotelGuests}</p>
                       </div>
                     ))}
                   </div>
-                </ScrollArea>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Overtourism Tab */}
+        <TabsContent value="overtourism" className="space-y-6">
+          <GlassPanel
+            title="Overtourism & Infrastructure"
+            description="Growth pressures and capacity concerns"
+            badge="Warning"
+          >
+            <div className="space-y-6">
+              {/* Overtourism Statistics */}
+              <Card className="glass-card border-yellow-500/50">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-yellow-400">
+                    <AlertTriangle className="h-5 w-5" />
+                    Overtourism Statistics
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div className="p-4 bg-yellow-500/10 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-yellow-400">19M</p>
+                      <p className="text-sm text-slate-400">Dubai Visitors 2024</p>
+                    </div>
+                    <div className="p-4 bg-yellow-500/10 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-yellow-400">25M</p>
+                      <p className="text-sm text-slate-400">Forecast 2040</p>
+                    </div>
+                    <div className="p-4 bg-yellow-500/10 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-yellow-400">7:1</p>
+                      <p className="text-sm text-slate-400">Visitor-to-Resident (2034)</p>
+                    </div>
+                    <div className="p-4 bg-yellow-500/10 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-yellow-400">+20%</p>
+                      <p className="text-sm text-slate-400">Housing Costs 2024</p>
+                    </div>
+                    <div className="p-4 bg-yellow-500/10 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-yellow-400">45hrs</p>
+                      <p className="text-sm text-slate-400">Traffic Lost (2025)</p>
+                    </div>
+                    <div className="p-4 bg-yellow-500/10 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-yellow-400">29mph</p>
+                      <p className="text-sm text-slate-400">Peak Speed (2025)</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Expert Warnings */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <AlertOctagon className="h-5 w-5 text-rose" />
+                    Expert Warnings
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[250px]">
+                    <div className="space-y-3">
+                      {overtourismInfrastructure.expertWarnings.map((warning, idx) => (
+                        <div key={idx} className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-lg">
+                          <p className="text-sm font-semibold text-rose-400">{warning.expert}</p>
+                          <p className="text-sm text-slate-300 mt-2 italic">{warning.quote}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+
+              {/* Infrastructure Investment */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Building className="h-5 w-5 text-emerald" />
+                    Infrastructure Investment
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {overtourismInfrastructure.infrastructureInvestment.map((project, idx) => (
+                      <div key={idx} className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                        <span className="text-slate-300">{project.project}</span>
+                        <span className="text-emerald-400 font-bold">{project.investment}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Medical Tourism Tab */}
+        <TabsContent value="medical" className="space-y-6">
+          <GlassPanel
+            title="Medical Tourism"
+            description="Healthcare tourism market and infrastructure"
+            badge="Growth Sector"
+          >
+            <div className="space-y-6">
+              {/* Market Size */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Heart className="h-5 w-5 text-rose" />
+                    UAE Medical Tourism Market
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="p-4 bg-rose-500/10 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-rose-400">$334.94M</p>
+                      <p className="text-sm text-slate-400">Market Size 2024</p>
+                    </div>
+                    <div className="p-4 bg-rose-500/10 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-rose-400">$975.02M</p>
+                      <p className="text-sm text-slate-400">Market Size 2032</p>
+                    </div>
+                    <div className="p-4 bg-rose-500/10 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-rose-400">14.29%</p>
+                      <p className="text-sm text-slate-400">CAGR</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Regional Market Share */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Palmtree className="h-5 w-5 text-emerald" />
+                    Regional Market Share
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <PieChart
+                    data={medicalMarketShare}
+                    height={200}
+                    showLegend={true}
+                    donut={true}
+                  />
+                </CardContent>
+              </Card>
+
+              {/* Healthcare Infrastructure */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Shield className="h-5 w-5 text-platinum" />
+                    Healthcare Infrastructure
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    {medicalTourism.healthcareInfrastructure.map((item, idx) => (
+                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                        <p className="text-xs text-slate-500">{item.metric}</p>
+                        <p className="text-lg font-bold text-platinum">{item.value}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Key Companies */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Briefcase className="h-5 w-5 text-amber-400" />
+                    Key Medical Tourism Companies
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[150px]">
+                    <div className="space-y-2">
+                      {medicalTourism.keyMedicalTourismCompanies.map((company, idx) => (
+                        <div key={idx} className="p-2 bg-slate-800/50 rounded-lg">
+                          <p className="text-sm text-slate-300">{company.company}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+            </div>
           </GlassPanel>
         </TabsContent>
       </Tabs>
-    </div>
+    </motion.div>
   )
 }

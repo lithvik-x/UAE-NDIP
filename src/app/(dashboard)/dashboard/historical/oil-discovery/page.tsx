@@ -125,7 +125,7 @@ export default function OilDiscoveryPage() {
           title="Oil Events"
           value={oilEvents.length}
           icon={<Star className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
         />
         <MetricCard
           title="Key Concessions"

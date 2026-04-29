@@ -49,7 +49,7 @@ export default function EngagementAnalyticsPage() {
     { platform: 'TikTok', likes: 2.4, comments: 0.38, shares: 0.12, saves: 0.08, color: CHART_COLORS.rose },
     { platform: 'Instagram', likes: 1.8, comments: 0.12, shares: 0.05, saves: 0.15, color: CHART_COLORS.pink },
     { platform: 'Twitter/X', likes: 0.8, comments: 0.15, shares: 0.18, saves: 0.03, color: CHART_COLORS.navy },
-    { platform: 'YouTube', likes: 0.45, comments: 0.08, shares: 0.02, saves: 0.12, color: CHART_COLORS.red },
+    { platform: 'YouTube', likes: 0.45, comments: 0.08, shares: 0.02, saves: 0.12, color: CHART_COLORS.danger },
     { platform: 'Facebook', likes: 0.62, comments: 0.06, shares: 0.08, saves: 0.02, color: CHART_COLORS.blue },
   ]
 
@@ -101,7 +101,7 @@ export default function EngagementAnalyticsPage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="platinum" className="mb-2">S-SECTOR</Badge>
+          <Badge variant="default" className="mb-2">S-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-platinum">Engagement Analytics</h1>
           <p className="mt-2 text-slate-400">
             Audience interaction metrics and content performance analytics
@@ -142,7 +142,7 @@ export default function EngagementAnalyticsPage() {
           value={avgSessionTime + 'min'}
           previousValue={avgSessionTime - 2.1}
           icon={<Clock className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="info"
         />
         <MetricCard
@@ -197,7 +197,7 @@ export default function EngagementAnalyticsPage() {
                         { name: 'TikTok', value: 35, color: CHART_COLORS.rose },
                         { name: 'Instagram', value: 28, color: CHART_COLORS.pink },
                         { name: 'Twitter/X', value: 18, color: CHART_COLORS.navy },
-                        { name: 'YouTube', value: 12, color: CHART_COLORS.red },
+                        { name: 'YouTube', value: 12, color: CHART_COLORS.danger },
                         { name: 'Facebook', value: 7, color: CHART_COLORS.blue },
                       ]}
                       height={280}
@@ -466,7 +466,7 @@ export default function EngagementAnalyticsPage() {
                     <div className="text-4xl font-bold text-navy">{avgSessionTime}min</div>
                     <p className="text-sm text-slate-400 mt-2">Across all demographics</p>
                     <div className="mt-4">
-                      <Badge variant="navy">Above average</Badge>
+                      <Badge variant="denim">Above average</Badge>
                     </div>
                   </CardContent>
                 </Card>

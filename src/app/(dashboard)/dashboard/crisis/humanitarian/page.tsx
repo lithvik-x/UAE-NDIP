@@ -64,7 +64,7 @@ export default function HumanitarianCrisesPage() {
     { name: 'Medical', value: 27, color: CHART_COLORS.danger },
     { name: 'Shelter', value: 20, color: CHART_COLORS.navy },
     { name: 'Education', value: 9, color: CHART_COLORS.emerald },
-    { name: 'Other', value: 6, color: CHART_COLORS.cyan },
+    { name: 'Other', value: 6, color: CHART_COLORS.info },
   ]
 
   // Sentiment data
@@ -112,7 +112,7 @@ export default function HumanitarianCrisesPage() {
           value="$1.58B"
           previousValue="$1.35B"
           icon={<Utensils className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="success"
         />
         <MetricCard
@@ -245,7 +245,7 @@ export default function HumanitarianCrisesPage() {
                       { name: 'Syria', value: 14200, color: CHART_COLORS.danger },
                       { name: 'Yemen', value: 11800, color: CHART_COLORS.gold },
                       { name: 'Afghanistan', value: 7200, color: CHART_COLORS.navy },
-                      { name: 'Iraq', value: 4800, color: CHART_COLORS.cyan },
+                      { name: 'Iraq', value: 4800, color: CHART_COLORS.info },
                       { name: 'Somalia', value: 4000, color: CHART_COLORS.emerald },
                     ]}
                     xAxisKey="name"

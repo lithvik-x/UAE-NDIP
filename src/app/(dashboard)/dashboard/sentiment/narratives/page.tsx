@@ -28,9 +28,29 @@ import {
   Globe,
   Shield,
   Lightbulb,
+  AlertTriangle,
+  Flame,
+  Eye,
+  Scale,
+  DollarSign,
 } from 'lucide-react'
 
+// Controversy data imports
+import {
+  controversyTopicsData,
+  controversySentimentSummary,
+  controversySourceCredibilityMatrix,
+  controversyHumanRightsKPIs,
+  controversyMilitaryKPIs,
+  controversyFinancialKPIs,
+  controversyClimateKPIs,
+  useControversyData,
+} from '@/lib/data-loader'
+
 export default function NarrativeAnalysisPage() {
+  // Hook for controversy data
+  const controversyData = useControversyData()
+
   // Sentiment trend data
   const sentimentTrendData = [
     { month: 'Jan', positive: 58, negative: 18, neutral: 24 },
@@ -155,7 +175,7 @@ export default function NarrativeAnalysisPage() {
           value={45.2}
           previousValue={42.8}
           icon={<Globe className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="success"
         />
         <MetricCard
@@ -174,6 +194,7 @@ export default function NarrativeAnalysisPage() {
           <TabsTrigger value="narratives">Dominant Narratives</TabsTrigger>
           <TabsTrigger value="themes">Theme Analysis</TabsTrigger>
           <TabsTrigger value="misinformation">Misinformation</TabsTrigger>
+          <TabsTrigger value="controversy">Controversy</TabsTrigger>
         </TabsList>
 
         {/* Overview Tab */}
@@ -601,6 +622,245 @@ export default function NarrativeAnalysisPage() {
                       ))}
                     </div>
                   </ScrollArea>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Controversy Tab */}
+        <TabsContent value="controversy" className="space-y-6">
+          <GlassPanel title="Controversy & Debate Analysis" description="Controversial topics and debate angles">
+            <div className="space-y-6">
+              {/* Controversy Metrics */}
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <MetricCard
+                  title="Total Controversies"
+                  value={controversyData.overview.totalTopics}
+                  icon={<AlertTriangle className="h-6 w-6" />}
+                  gradient="gold"
+                  status="warning"
+                />
+                <MetricCard
+                  title="Avg Sentiment"
+                  value={(controversyData.overview.averageSentiment * 100).toFixed(0)}
+                  unit="%"
+                  icon={<Scale className="h-6 w-6" />}
+                  gradient="rose"
+                  status="critical"
+                />
+                <MetricCard
+                  title="Critical Issues"
+                  value={controversyData.overview.criticalCount}
+                  icon={<Flame className="h--6 w-6" />}
+                  gradient="rose"
+                  status="critical"
+                />
+                <MetricCard
+                  title="Red Alerts"
+                  value={controversyData.overview.redAlerts}
+                  icon={<AlertCircle className="h-6 w-6" />}
+                  gradient="rose"
+                  status="critical"
+                />
+              </div>
+
+              {/* Controversy Topics Grid */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Controversy Topics</CardTitle>
+                  <CardDescription>11 controversial topics ranked by sentiment</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[400px]">
+                    <div className="space-y-4">
+                      {controversyData.topics.map((topic, index) => (
+                        <div key={index} className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                          <div className="flex items-start justify-between mb-3">
+                            <div className="flex items-center gap-3">
+                              <div className={`flex h-8 w-8 items-center justify-center rounded-full ${
+                                topic.alertLevel === 'RED' ? 'bg-rose-500/20' :
+                                topic.alertLevel === 'ORANGE' ? 'bg-orange-500/20' :
+                                topic.alertLevel === 'YELLOW' ? 'bg-yellow-500/20' :
+                                'bg-emerald-500/20'
+                              }`}>
+                                {topic.alertLevel === 'RED' ? <Flame className="h-4 w-4 text-rose" /> :
+                                 topic.alertLevel === 'ORANGE' ? <AlertTriangle className="h-4 w-4 text-orange" /> :
+                                 topic.alertLevel === 'YELLOW' ? <Eye className="h-4 w-4 text-yellow" /> :
+                                 <CheckCircle className="h-4 w-4 text-emerald" />}
+                              </div>
+                              <div>
+                                <p className="font-semibold text-slate-200">{topic.title}</p>
+                                <p className="text-sm text-slate-400">{topic.sentiment.volume.toLocaleString()} mentions</p>
+                              </div>
+                            </div>
+                            <Badge variant={topic.alertLevel === 'RED' ? 'destructive' : 'outline'} className="text-xs">
+                              {topic.alertLevel}
+                            </Badge>
+                          </div>
+                          <p className="text-sm text-slate-300 mb-3 line-clamp-2">{topic.description}</p>
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-slate-400">Sentiment Score</span>
+                            <div className="flex items-center gap-2">
+                              <Progress
+                                value={(topic.sentimentScore + 1) * 50}
+                                className="h-2 w-24"
+                              />
+                              <span className={`text-sm font-bold ${
+                                topic.sentimentScore >= 0 ? 'text-emerald' : 'text-rose'
+                              }`}>
+                                {topic.sentimentScore >= 0 ? '+' : ''}{(topic.sentimentScore * 100).toFixed(0)}%
+                              </span>
+                            </div>
+                          </div>
+                          <div className="flex flex-wrap gap-2 mt-3">
+                            {topic.keyDrivers.slice(0, 3).map((driver, idx) => (
+                              <Badge key={idx} variant="outline" className="text-xs text-slate-400">
+                                {driver}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+
+              {/* Alert Level Distribution */}
+              <div className="grid gap-6 lg:grid-cols-2">
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Alert Level Distribution</CardTitle>
+                    <CardDescription>Controversy severity breakdown</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <PieChart
+                      data={[
+                        { name: 'Red', value: controversyData.overview.redAlerts, color: CHART_COLORS.rose },
+                        { name: 'Orange', value: controversyData.overview.orangeAlerts, color: '#f97316' },
+                        { name: 'Yellow', value: controversyData.overview.yellowAlerts, color: CHART_COLORS.gold },
+                        { name: 'Green', value: controversyData.overview.greenAlerts, color: CHART_COLORS.emerald },
+                      ]}
+                      height={280}
+                      showLegend={true}
+                    />
+                  </CardContent>
+                </Card>
+
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Severity Distribution</CardTitle>
+                    <CardDescription>Controversy count by severity</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <BarChart
+                      data={[
+                        { name: 'Critical', value: controversyData.overview.criticalCount, color: CHART_COLORS.rose },
+                        { name: 'High', value: controversyData.overview.highCount, color: '#f97316' },
+                        { name: 'Medium', value: controversyData.overview.mediumCount, color: CHART_COLORS.gold },
+                        { name: 'Low', value: controversyData.overview.lowCount, color: CHART_COLORS.emerald },
+                      ]}
+                      xAxisKey="name"
+                      bars={[
+                        { dataKey: 'value', name: 'Count', color: CHART_COLORS.gold },
+                      ]}
+                      height={280}
+                      showGrid={true}
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* KPI Sections */}
+              <div className="grid gap-6 lg:grid-cols-2">
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Human Rights KPIs</CardTitle>
+                    <CardDescription>Critical human rights metrics</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {controversyData.humanRightsKPIs.map((kpi, idx) => (
+                        <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <div className="flex items-center gap-3">
+                            <Shield className="h-4 w-4 text-rose" />
+                            <span className="text-sm font-medium text-slate-200">{kpi.kpi}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm font-bold text-gold">{kpi.currentValue}</span>
+                            <Badge variant={kpi.status === 'CRITICAL' ? 'destructive' : 'outline'} className="text-xs">
+                              {kpi.status}
+                            </Badge>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Climate KPIs</CardTitle>
+                    <CardDescription>Climate leadership metrics</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {controversyData.climateKPIs.map((kpi, idx) => (
+                        <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <div className="flex items-center gap-3">
+                            <Flame className="h-4 w-4 text-orange" />
+                            <span className="text-sm font-medium text-slate-200">{kpi.kpi}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="text-sm font-bold text-gold">{kpi.currentValue}</span>
+                            <Badge variant={kpi.status === 'CRITICAL' ? 'destructive' : 'outline'} className="text-xs">
+                              {kpi.status}
+                            </Badge>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Most Controversial Topic Details</CardTitle>
+                  <CardDescription>Surveillance - {surveillanceData?.description?.slice(0, 100)}...</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div className="grid gap-4 sm:grid-cols-3">
+                      <div className="rounded-lg bg-rose-500/10 p-4 text-center border border-rose-500/20">
+                        <AlertTriangle className="mx-auto h-6 w-6 text-rose mb-2" />
+                        <p className="text-xs text-slate-400">Sentiment Score</p>
+                        <p className="text-xl font-bold text-rose">-90%</p>
+                      </div>
+                      <div className="rounded-lg bg-rose-500/10 p-4 text-center border border-rose-500/20">
+                        <Eye className="mx-auto h-6 w-6 text-rose mb-2" />
+                        <p className="text-xs text-slate-400">Alert Level</p>
+                        <p className="text-xl font-bold text-rose">RED</p>
+                      </div>
+                      <div className="rounded-lg bg-rose-500/10 p-4 text-center border border-rose-500/20">
+                        <Globe className="mx-auto h-6 w-6 text-rose mb-2" />
+                        <p className="text-xs text-slate-400">UAE Relevance</p>
+                        <p className="text-xl font-bold text-rose">96/100</p>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <h4 className="text-sm font-semibold text-slate-300">Key Debate Angles</h4>
+                      {surveillanceData?.debateAngles?.map((angle, idx) => (
+                        <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
+                          <span className="text-sm text-slate-300">{angle.angle}</span>
+                          <Badge variant="outline" className="text-xs">
+                            {angle.evidenceStrength}
+                          </Badge>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>

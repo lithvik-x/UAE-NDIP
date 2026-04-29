@@ -226,7 +226,7 @@ export default function ReligiousStakeholdersPage() {
   const denominationData = [
     { name: 'Sunni/Ibadhi', value: 85, color: CHART_COLORS.navy },
     { name: 'Shia', value: 10, color: CHART_COLORS.gold },
-    { name: 'Interfaith', value: 5, color: CHART_COLORS.cyan },
+    { name: 'Interfaith', value: 5, color: CHART_COLORS.info },
   ]
 
   const getAlertBadge = (level?: string) => {
@@ -243,7 +243,7 @@ export default function ReligiousStakeholdersPage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="navy" className="mb-2">RELIGIOUS</Badge>
+          <Badge variant="denim" className="mb-2">RELIGIOUS</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-navy">Religious Institutions</h1>
           <p className="mt-2 text-slate-400">
             Islamic authorities, mosques, religious education bodies, and interfaith organizations in the UAE
@@ -267,7 +267,7 @@ export default function ReligiousStakeholdersPage() {
           title="Religious Entities"
           value={religiousEntities.length}
           icon={<Building className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="info"
         />
         <MetricCard

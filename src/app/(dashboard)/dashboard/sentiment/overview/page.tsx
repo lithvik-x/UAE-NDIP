@@ -32,13 +32,21 @@ import {
   ThumbsUp,
   ThumbsDown,
   Activity,
+  Target,
+  MessageSquare,
+  Languages,
+  AlertOctagon,
 } from 'lucide-react'
 import {
   useTrendsDataArrayData,
+  useSarcasmData,
+  useNeutralSentimentData,
 } from '@/lib/data-loader'
 
 export default function SentimentOverviewPage() {
   const { data: trendsData } = useTrendsDataArrayData()
+  const sarcasmData = useSarcasmData()
+  const neutralData = useNeutralSentimentData()
 
   if (!trendsData || trendsData.length === 0) {
     return (
@@ -94,7 +102,7 @@ export default function SentimentOverviewPage() {
     { emotion: 'Trust', value: 68, color: CHART_COLORS.navy },
     { emotion: 'Fear', value: 32, color: CHART_COLORS.rose },
     { emotion: 'Surprise', value: 45, color: CHART_COLORS.platinum },
-    { emotion: 'Sadness', value: 28, color: CHART_COLORS.cyan },
+    { emotion: 'Sadness', value: 28, color: CHART_COLORS.info },
     { emotion: 'Disgust', value: 22, color: CHART_COLORS.emerald },
     { emotion: 'Anger', value: 25, color: CHART_COLORS.rose },
     { emotion: 'Anticipation', value: 65, color: CHART_COLORS.gold },
@@ -152,7 +160,37 @@ export default function SentimentOverviewPage() {
           value={totalVolume > 1000000 ? `${(totalVolume / 1000000).toFixed(1)}M` : `${(totalVolume / 1000).toFixed(0)}K`}
           previousValue={totalVolume * 0.9}
           icon={<Users className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
+        />
+      </div>
+
+      {/* Sarcasm Metrics */}
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <MetricCard
+          title="Irony Themes"
+          value={sarcasmData.ironyThemes.length}
+          icon={<MessageSquare className="h-6 w-6" />}
+          gradient="orange"
+          status="warning"
+        />
+        <MetricCard
+          title="English Patterns"
+          value={sarcasmData.englishPatterns.length}
+          icon={<Languages className="h-6 w-6" />}
+          gradient="fuchsia"
+        />
+        <MetricCard
+          title="Arabic Patterns"
+          value={sarcasmData.arabicPatterns.length}
+          icon={<Languages className="h-6 w-6" />}
+          gradient="indigo"
+        />
+        <MetricCard
+          title="Critical KPIs"
+          value={sarcasmData.criticalKPIs.filter(k => k.status === 'CRITICAL').length}
+          icon={<AlertOctagon className="h-6 w-6" />}
+          gradient="rose"
+          status="error"
         />
       </div>
 
@@ -162,6 +200,8 @@ export default function SentimentOverviewPage() {
           <TabsTrigger value="emotions">Emotions</TabsTrigger>
           <TabsTrigger value="trends">Trend Analysis</TabsTrigger>
           <TabsTrigger value="breakdown">Category Breakdown</TabsTrigger>
+          <TabsTrigger value="factual">Factual Data</TabsTrigger>
+          <TabsTrigger value="sarcasm">Sarcasm/Irony</TabsTrigger>
         </TabsList>
 
         {/* Overview Tab */}
@@ -412,6 +452,382 @@ export default function SentimentOverviewPage() {
                   </Card>
                 ))}
               </div>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Factual Data Tab */}
+        <TabsContent value="factual" className="space-y-6">
+          <GlassPanel title="Neutral Factual Data" description="Objective data coverage across UAE sectors (MD 9-3)">
+            <div className="space-y-6">
+              {/* Data Quality Metrics */}
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <MetricCard
+                  title="Total Data Points"
+                  value={neutralData.overview.totalDataPoints}
+                  icon={<Activity className="h-6 w-6" />}
+                  gradient="denim"
+                  status="success"
+                />
+                <MetricCard
+                  title="Categories Covered"
+                  value={neutralData.overview.totalCategories}
+                  icon={<Target className="h-6 w-6" />}
+                  gradient="gold"
+                />
+                <MetricCard
+                  title="Source Reliability"
+                  value={neutralData.metrics[0].value}
+                  icon={<AlertCircle className="h-6 w-6" />}
+                  gradient="emerald"
+                />
+                <MetricCard
+                  title="Coverage Score"
+                  value="85%"
+                  icon={<TrendingUp className="h-6 w-6" />}
+                  gradient="fuchsia"
+                />
+              </div>
+
+              {/* Category Distribution */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Data Distribution by Category</CardTitle>
+                  <CardDescription>Coverage and data points across sectors</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <PieChart
+                    data={neutralData.sentimentDistribution}
+                    height={300}
+                    showLegend={true}
+                  />
+                </CardContent>
+              </Card>
+
+              {/* Population KPIs */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Population Statistics</CardTitle>
+                  <CardDescription>Key demographic indicators (47 data points, 95% coverage)</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {neutralData.populationKPIs.slice(0, 12).map((kpi, idx) => (
+                      <div key={idx} className="p-3 rounded-lg bg-glass-surface/50 border border-glass-border">
+                        <p className="text-xs text-platinum-400 truncate">{kpi.indicator}</p>
+                        <p className="text-lg font-bold text-platinum-100">{kpi.value}</p>
+                        <p className="text-xs text-platinum-500">{kpi.year}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Economic KPIs */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Economic Indicators</CardTitle>
+                  <CardDescription>GDP, trade, and financial metrics (35 data points, 90% coverage)</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {neutralData.economicKPIs.slice(0, 12).map((kpi, idx) => (
+                      <div key={idx} className="p-3 rounded-lg bg-glass-surface/50 border border-glass-border">
+                        <p className="text-xs text-platinum-400 truncate">{kpi.indicator}</p>
+                        <p className="text-lg font-bold text-platinum-100">{kpi.value}</p>
+                        <p className="text-xs text-platinum-500">{kpi.year}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Climate Policy KPIs */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Climate & Sustainability</CardTitle>
+                  <CardDescription>Environmental targets and current status (25 data points, 80% coverage)</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {neutralData.climatePolicyKPIs.slice(0, 12).map((kpi, idx) => (
+                      <div key={idx} className="p-3 rounded-lg bg-glass-surface/50 border border-glass-border">
+                        <p className="text-xs text-platinum-400 truncate">{kpi.indicator}</p>
+                        <p className="text-lg font-bold text-emerald-400">{kpi.value}</p>
+                        <p className="text-xs text-platinum-500">{kpi.year}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Rankings KPIs */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Global Rankings</CardTitle>
+                  <CardDescription>UAE position in international indices (18 data points, 85% coverage)</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <BarChart
+                    data={neutralData.rankingKPIs.slice(0, 8).map(r => ({
+                      indicator: r.indicator,
+                      rank: parseInt(String(r.value)),
+                    }))}
+                    xAxisKey="indicator"
+                    bars={[
+                      { dataKey: 'rank', name: 'Rank', color: CHART_COLORS.gold },
+                    ]}
+                    height={300}
+                    showGrid={true}
+                  />
+                </CardContent>
+              </Card>
+
+              {/* Future Roadmap */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Future Roadmap Targets</CardTitle>
+                  <CardDescription>National 2030-2050 strategic targets (15 data points, 70% coverage)</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {neutralData.futureRoadmapKPIs.slice(0, 8).map((kpi, idx) => (
+                      <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-glass-surface/50 border border-glass-border">
+                        <div className="flex-1">
+                          <p className="text-sm font-medium text-platinum-200">{kpi.indicator}</p>
+                          {kpi.currentValue && (
+                            <p className="text-xs text-platinum-400">Current: {kpi.currentValue}</p>
+                          )}
+                        </div>
+                        <div className="text-right">
+                          <p className="text-lg font-bold text-gold">{kpi.target}</p>
+                          <p className="text-xs text-platinum-500">by {kpi.targetYear}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Sources Consulted */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Sources Consulted</CardTitle>
+                  <CardDescription>Government, international, and think tank sources (Tier 1-2)</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {neutralData.sourcesConsulted.slice(0, 12).map((source, idx) => (
+                      <div key={idx} className="flex items-center gap-3 p-3 rounded-lg bg-glass-surface/50 border border-glass-border">
+                        <Badge variant={source.tier === 1 ? 'default' : 'secondary'} className="shrink-0">
+                          T{source.tier}
+                        </Badge>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-medium text-platinum-200 truncate">{source.source}</p>
+                          <p className="text-xs text-platinum-500">{source.type}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Sarcasm/Irony Tab */}
+        <TabsContent value="sarcasm" className="space-y-6">
+          <GlassPanel title="Irony Detection Analysis" description="Cross-cutting sarcasm and irony patterns in UAE discourse">
+            <div className="space-y-6">
+              {/* Irony Intensity by Theme */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Irony Intensity by Theme</CardTitle>
+                  <CardDescription>Severity scores for major irony markers</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <BarChart
+                    data={sarcasmData.ironyIntensityData.map(d => ({ theme: d.theme, score: d.score, color: d.color }))}
+                    xAxisKey="theme"
+                    bars={[
+                      { dataKey: 'score', name: 'Irony Score', color: CHART_COLORS.rose },
+                    ]}
+                    height={350}
+                    showGrid={true}
+                  />
+                </CardContent>
+              </Card>
+
+              {/* Sentiment Distribution with Irony */}
+              <div className="grid gap-6 lg:grid-cols-2">
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Sentiment Distribution</CardTitle>
+                    <CardDescription>Overall sentiment including ironic sentiment</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <PieChart
+                      data={sarcasmData.sentimentDistributionData}
+                      height={300}
+                      showLegend={true}
+                    />
+                  </CardContent>
+                </Card>
+
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Topic Sentiment</CardTitle>
+                    <CardDescription>Sentiment breakdown by topic with irony overlay</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <BarChart
+                      data={sarcasmData.sentimentByTopic.slice(0, 6).map(t => ({
+                        topic: t.topic,
+                        positive: t.positivePercent,
+                        negative: t.negativePercent,
+                        ironic: t.ironicPercent,
+                      }))}
+                      xAxisKey="topic"
+                      bars={[
+                        { dataKey: 'positive', name: 'Positive', color: CHART_COLORS.emerald },
+                        { dataKey: 'ironic', name: 'Ironic', color: CHART_COLORS.orange },
+                        { dataKey: 'negative', name: 'Negative', color: CHART_COLORS.rose },
+                      ]}
+                      height={280}
+                      showGrid={true}
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* English Sarcasm Patterns */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">English Sarcasm Patterns</CardTitle>
+                  <CardDescription>Common ironic phrases and their intensity</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {sarcasmData.englishPatterns.map((pattern, idx) => (
+                      <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-glass-surface/50 border border-glass-border">
+                        <div className="flex-1">
+                          <p className="font-mono text-sm text-platinum-200">{pattern.pattern}</p>
+                          <p className="text-xs text-platinum-400 mt-1">{pattern.context}</p>
+                        </div>
+                        <Badge
+                          variant={pattern.ironyIntensity.includes('Very High') ? 'destructive' : pattern.ironyIntensity.includes('High') ? 'warning' : 'secondary'}
+                          className="ml-4"
+                        >
+                          {pattern.ironyIntensity}
+                        </Badge>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Arabic Sarcasm Patterns */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Arabic Sarcasm Patterns</CardTitle>
+                  <CardDescription>Arabic phrases with ironic usage</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {sarcasmData.arabicPatterns.map((pattern, idx) => (
+                      <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-glass-surface/50 border border-glass-border">
+                        <div className="flex-1">
+                          <p className="font-mono text-lg text-platinum-200 text-right" dir="rtl">{pattern.arabicPattern}</p>
+                          <p className="text-sm text-platinum-300 mt-1">{pattern.translation}</p>
+                          <p className="text-xs text-platinum-400">{pattern.context}</p>
+                        </div>
+                        <Badge
+                          variant={pattern.ironyIntensity.includes('Very High') ? 'destructive' : pattern.ironyIntensity.includes('Medium-High') ? 'warning' : 'secondary'}
+                          className="ml-4"
+                        >
+                          {pattern.ironyIntensity}
+                        </Badge>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Documented Contradictions */}
+              <Card className="glass-card border-rose-500/30">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <AlertTriangle className="h-5 w-5 text-rose-400" />
+                    Documented Contradictions
+                  </CardTitle>
+                  <CardDescription>Official claims vs documented realities</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {sarcasmData.documentedContradictions.map((c, idx) => (
+                      <div key={idx} className="p-3 rounded-lg bg-rose-950/20 border border-rose-500/20">
+                        <div className="flex items-start gap-3">
+                          <div className="flex-1">
+                            <p className="text-sm font-medium text-rose-300">"{c.officialClaim}"</p>
+                            <p className="text-sm text-platinum-400 mt-1">{c.reality}</p>
+                            <p className="text-xs text-platinum-500 mt-1">Source: {c.source}</p>
+                          </div>
+                          <Badge variant="destructive" className="shrink-0">
+                            {c.ironyMarker}
+                          </Badge>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Critical KPIs */}
+              <Card className="glass-card border-amber-500/30">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Target className="h-5 w-5 text-amber-400" />
+                    Critical KPIs for Monitoring
+                  </CardTitle>
+                  <CardDescription>Key metrics requiring ongoing attention</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {sarcasmData.criticalKPIs.map((kpi, idx) => (
+                      <div key={idx} className="p-4 rounded-lg bg-glass-surface/50 border border-glass-border">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-sm font-medium text-platinum-200">{kpi.kpi}</span>
+                          <Badge
+                            variant={kpi.status === 'CRITICAL' ? 'destructive' : kpi.status === 'AT RISK' ? 'warning' : 'secondary'}
+                          >
+                            {kpi.status}
+                          </Badge>
+                        </div>
+                        <p className="text-xl font-bold text-platinum-100">{kpi.currentValue}</p>
+                        <p className="text-xs text-platinum-400 mt-1">Threshold: {kpi.threshold}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Key Quotations */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Key Quotations</CardTitle>
+                  <CardDescription>Significant statements from credible sources</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {sarcasmData.keyQuotations.slice(0, 6).map((q, idx) => (
+                      <div key={idx} className="p-4 rounded-lg bg-glass-surface/50 border border-glass-border">
+                        <p className="text-sm text-platinum-200 italic">"{q.quote}"</p>
+                        <p className="text-xs text-platinum-400 mt-2">— {q.source}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </GlassPanel>
         </TabsContent>

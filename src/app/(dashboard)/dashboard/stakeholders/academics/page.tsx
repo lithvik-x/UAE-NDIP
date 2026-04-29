@@ -98,7 +98,7 @@ export default function AcademicsPage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="platinum" className="mb-2">CIVIL SOCIETY</Badge>
+          <Badge variant="default" className="mb-2">CIVIL SOCIETY</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-platinum">Academic Institutions</h1>
           <p className="mt-2 text-slate-400">
             {entity.mandate}
@@ -129,7 +129,7 @@ export default function AcademicsPage() {
           title="Engagement"
           value={metrics.engagement?.toFixed(1) || 'N/A'}
           icon={<TrendingUp className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
         />
         <MetricCard
           title="Credibility Score"

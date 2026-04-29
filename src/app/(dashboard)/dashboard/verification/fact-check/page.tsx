@@ -1,6 +1,7 @@
-// @ts-nocheck
 'use client'
 
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -14,6 +15,7 @@ import {
   BarChart,
   AreaChart,
   PieChart,
+  RadarChart,
   CHART_COLORS,
 } from '@/components/ui/chart-library'
 import {
@@ -31,389 +33,764 @@ import {
   Check,
   XCircle,
   Database,
+  Eye,
+  EyeOff,
+  Ban,
+  Gavel,
+  Users,
+  AlertOctagon,
+  Quote,
+  Target,
+  Activity,
+  Video,
 } from 'lucide-react'
+import {
+  factCheckVerificationData,
+  type VerificationResult,
+} from '@/lib/data-loader/verification-data'
+
+// ============================================================================
+// ENHANCEMENT CYCLE A: Header & Key Metrics
+// ============================================================================
 
 export default function FactCheckDashboardPage() {
-  // UAE Fact-Check specific metrics
-  const claimsProcessed = 8423
-  const trueClaims = 5234
-  const falseClaims = 1523
-  const misleadingClaims = 892
-  const pendingClaims = 774
+  const [selectedTab, setSelectedTab] = useState<string>('overview')
 
-  // Monthly fact-check trend
-  const factCheckTrendData = [
-    { month: 'Jan', checked: 1234, accuracy: 91 },
-    { month: 'Feb', checked: 1345, accuracy: 92 },
-    { month: 'Mar', checked: 1456, accuracy: 93 },
-    { month: 'Apr', checked: 1567, accuracy: 94 },
-    { month: 'May', checked: 1678, accuracy: 94.5 },
-    { month: 'Jun', checked: 1143, accuracy: 94.7 },
-  ]
+  const data = factCheckVerificationData.extendedData
 
-  // Category distribution
-  const categoryData = [
-    { name: 'Economy', value: 28, checked: 2359, accuracy: 96 },
-    { name: 'Health', value: 22, checked: 1853, accuracy: 93 },
-    { name: 'Politics', value: 20, checked: 1685, accuracy: 91 },
-    { name: 'Social', value: 15, checked: 1263, accuracy: 89 },
-    { name: 'Security', value: 10, checked: 842, accuracy: 97 },
-    { name: 'Other', value: 5, checked: 421, accuracy: 94 },
-  ]
-
-  // Recent fact-checks
-  const recentFactChecks = [
-    { id: 1, claim: 'UAE GDP grew 4.3% in Q1 2026', verdict: 'TRUE', sources: 5, confidence: 98 },
-    { id: 2, claim: 'Dubai announces new metro line', verdict: 'FALSE', sources: 3, confidence: 95 },
-    { id: 3, claim: 'UAE ranked safest travel destination', verdict: 'TRUE', sources: 4, confidence: 97 },
-    { id: 4, claim: 'New retirement visa program launched', verdict: 'TRUE', sources: 6, confidence: 99 },
-    { id: 5, claim: 'Free zone companies exempt from all taxes', verdict: 'MISLEADING', sources: 4, confidence: 92 },
-    { id: 6, claim: 'Abu Dhabi metro construction begins', verdict: 'FALSE', sources: 2, confidence: 88 },
-  ]
-
-  // Top fact-checkers
-  const topFactCheckers = [
-    { name: 'Government Fact-Check Unit', checks: 2341, accuracy: 98 },
-    { name: 'UAE Media Council', checks: 1876, accuracy: 95 },
-    { name: 'Independent Fact-Checkers', checks: 1245, accuracy: 92 },
-    { name: 'Academic Review Board', checks: 876, accuracy: 97 },
-    { name: 'AI Verification System', checks: 2085, accuracy: 94 },
-  ]
-
-  // Common misinformation themes
-  const misinformationThemes = [
-    { theme: 'Economic Statistics', frequency: 1247, accuracy: 94 },
-    { theme: 'Visa & Immigration', frequency: 982, accuracy: 78 },
-    { theme: 'Government Announcements', frequency: 876, accuracy: 96 },
-    { theme: 'Tourism Claims', frequency: 765, accuracy: 91 },
-    { theme: 'Security Advisories', frequency: 543, accuracy: 98 },
-    { theme: 'Cultural Information', frequency: 432, accuracy: 87 },
-  ]
-
-  const getVerdictBadge = (verdict: string) => {
-    switch (verdict) {
-      case 'TRUE': return <Badge variant="success" className="text-xs bg-emerald-500/20 text-emerald-400 border-emerald-500/50">TRUE</Badge>
-      case 'FALSE': return <Badge variant="destructive" className="text-xs bg-red-500/20 text-red-400 border-red-500/50">FALSE</Badge>
-      case 'MISLEADING': return <Badge variant="warning" className="text-xs bg-orange-500/20 text-orange-400 border-orange-500/50">MISLEADING</Badge>
-      default: return <Badge variant="outline" className="text-xs">PENDING</Badge>
+  // Get alert color for status
+  const getAlertBadge = (status: string) => {
+    switch (status) {
+      case 'RED':
+        return <Badge variant="destructive" className="text-xs bg-red-500/20 text-red-400 border-red-500/50">RED</Badge>
+      case 'YELLOW':
+        return <Badge variant="warning" className="text-xs bg-yellow-500/20 text-yellow-400 border-yellow-500/50">YELLOW</Badge>
+      case 'GREEN':
+        return <Badge variant="success" className="text-xs bg-emerald-500/20 text-emerald-400 border-emerald-500/50">GREEN</Badge>
+      default:
+        return <Badge variant="outline" className="text-xs">{status}</Badge>
     }
   }
 
+  // Format tier display
+  const getTierBadge = (tier: number) => {
+    switch (tier) {
+      case 0:
+        return <Badge variant="success" className="text-xs">Tier 0</Badge>
+      case 1:
+        return <Badge variant="default" className="text-xs">Tier 1</Badge>
+      case 2:
+        return <Badge variant="secondary" className="text-xs">Tier 2</Badge>
+      default:
+        return <Badge variant="outline" className="text-xs">Tier {tier}</Badge>
+    }
+  }
+
+  // KPI metrics from extended data
+  const criticalKPIs = data.kpis?.filter(k => k.uaeRelevance === 'Critical') || []
+  const enforcementActions = data.enforcementActions || []
+  const miscaptionedVideos = data.miscaptionedVideos || []
+  const aiContentCases = data.aiContentCases || []
+  const factCheckCases = data.factCheckCases || []
+  const expertQuotes = data.expertQuotes || []
+  const governmentOrgs = data.governmentOrgs || []
+  const legalPenalties = data.legalPenalties || []
+  const deepfakeRisks = data.deepfakeRisks || []
+  const factCheckOrgs = data.factCheckOrgs || []
+  const sourceCredibilityMatrix = data.sourceCredibilityMatrix || []
+  const sentimentAnalysis = data.sentimentAnalysis || []
+
+  // Verdict distribution for fact-checks
+  const verdictCounts = {
+    verified: factCheckCases.filter(c => c.verdict === 'TRUE' || c.verdict === 'VERIFIED').length,
+    false: factCheckCases.filter(c => c.verdict === 'FALSE' || c.verdict === 'FAKE').length,
+    misleading: factCheckCases.filter(c => c.verdict === 'MISLEADING').length,
+    unverified: factCheckCases.filter(c => c.verdict === 'UNVERIFIED' || c.verdict === 'Not Rated').length,
+  }
+
   return (
-    <div className="space-y-8 p-8">
+    <div className="space-y-8 p-8" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+      {/* ============================================================================
+      ENHANCEMENT CYCLE A: Header & Key Metrics
+      ============================================================================ */}
       {/* Header */}
-      <div className="flex items-start justify-between">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex items-start justify-between"
+      >
         <div>
           <Badge variant="emerald" className="mb-2">V-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-emerald">Fact-Check Dashboard</h1>
+          <h1 className="text-3xl font-extrabold gradient-text-emerald">Fact-Check Verification Dashboard</h1>
           <p className="mt-2 text-slate-400">
-            Comprehensive fact-checking operations and misinformation tracking
+            {data.kpis?.length || 0}+ KPIs tracking misinformation, AI content detection, and enforcement actions
           </p>
         </div>
         <div className="flex gap-3">
           <Button variant="outline" className="gap-2 border-emerald/50 text-emerald hover:bg-emerald/10">
             <Search className="h-4 w-4" />
-            New Check
+            Verify Content
           </Button>
           <Button className="bg-gradient-emerald hover:opacity-90 text-navy-950 gap-2">
-            <CheckCircle className="h-4 w-4" />
-            Quick Verify
+            <Shield className="h-4 w-4" />
+            Export Report
           </Button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Key Metrics */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5"
+      >
         <MetricCard
-          title="Total Claims"
-          value={claimsProcessed}
-          previousValue={claimsProcessed - 842}
-          icon={<FileQuestion className="h-6 w-6" />}
-          gradient="emerald"
-          status="info"
-        />
-        <MetricCard
-          title="Verified True"
-          value={trueClaims}
-          previousValue={trueClaims - 523}
-          icon={<ThumbsUp className="h-6 w-6" />}
-          gradient="navy"
-          status="success"
-        />
-        <MetricCard
-          title="Verified False"
-          value={falseClaims}
-          previousValue={falseClaims + 145}
-          icon={<ThumbsDown className="h-6 w-6" />}
+          title="Miscaptioned Videos"
+          value={data.kpis?.find(k => k.kpi.includes('Miscaptioned'))?.value || '15+'}
+          icon={<Video className="h-6 w-6" />}
           gradient="rose"
+          status="error"
+        />
+        <MetricCard
+          title="AI Images Detected"
+          value={data.kpis?.find(k => k.kpi.includes('AI-Generated'))?.value || '8+'}
+          icon={<Eye className="h-6 w-6" />}
+          gradient="orange"
           status="warning"
         />
         <MetricCard
-          title="Misleading"
-          value={misleadingClaims}
-          icon={<AlertTriangle className="h-6 w-6" />}
-          gradient="gold"
+          title="Prison Term (Standard)"
+          value={data.kpis?.find(k => k.kpi.includes('Prison Term') && k.kpi.includes('Standard'))?.value || '1+ year'}
+          icon={<Gavel className="h-6 w-6" />}
+          gradient="denim"
+          status="info"
         />
         <MetricCard
-          title="Pending"
-          value={pendingClaims}
-          previousValue={pendingClaims + 45}
-          icon={<Clock className="h-6 w-6" />}
-          gradient="platinum"
+          title="Arrests (March 2026)"
+          value={data.kpis?.find(k => k.kpi.includes('Arrested'))?.value || '70'}
+          icon={<Users className="h-6 w-6" />}
+          gradient="purple"
+          status="error"
         />
-      </div>
+        <MetricCard
+          title="Data Completeness"
+          value="85%"
+          icon={<CheckCircle className="h-6 w-6" />}
+          gradient="emerald"
+          status="success"
+        />
+      </motion.div>
 
+      {/* ============================================================================
+      ENHANCEMENT CYCLE B: Main Dashboard Overview
+      ============================================================================ */}
       <Tabs defaultValue="overview" className="space-y-6">
         <TabsList className="glass-panel" scrollable>
           <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="recent">Recent Checks</TabsTrigger>
-          <TabsTrigger value="themes">Misinformation Themes</TabsTrigger>
-          <TabsTrigger value="sources">Source Analysis</TabsTrigger>
+          <TabsTrigger value="cases">Fact-Check Cases</TabsTrigger>
+          <TabsTrigger value="ai-content">AI Content</TabsTrigger>
+          <TabsTrigger value="legal">Legal Framework</TabsTrigger>
+          <TabsTrigger value="enforcement">Enforcement</TabsTrigger>
+          <TabsTrigger value="experts">Expert Insights</TabsTrigger>
+          <TabsTrigger value="sources">Sources</TabsTrigger>
         </TabsList>
 
         {/* Overview Tab */}
         <TabsContent value="overview" className="space-y-6">
-          <GlassPanel title="Fact-Check Overview" description="Summary of fact-checking operations">
+          <GlassPanel title="Fact-Check Verification Overview" description="Summary of fact-checking activities and misinformation tracking">
             <div className="space-y-6">
               <div className="grid gap-6 lg:grid-cols-2">
-                <Card className="glass-card">
+                {/* Verdict Distribution */}
+                <motion.Card
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="glass-card"
+                  style={{ background: 'var(--glass-surface)', border: '1px solid var(--glass-border)' }}
+                >
                   <CardHeader>
                     <CardTitle className="text-lg">Verdict Distribution</CardTitle>
-                    <CardDescription>Overall fact-check results</CardDescription>
+                    <CardDescription>Fact-check cases by outcome</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <PieChart
-                      data={[
-                        { name: 'True', value: trueClaims, color: CHART_COLORS.emerald },
-                        { name: 'False', value: falseClaims, color: CHART_COLORS.rose },
-                        { name: 'Misleading', value: misleadingClaims, color: CHART_COLORS.gold },
-                        { name: 'Pending', value: pendingClaims, color: CHART_COLORS.platinum },
-                      ]}
-                      height={280}
-                      showLegend={true}
-                    />
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <div className="h-3 w-3 rounded-full bg-emerald-500" />
+                          <span className="text-sm text-slate-300">False/Fake</span>
+                        </div>
+                        <span className="font-bold text-red-400">{verdictCounts.false}</span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <div className="h-3 w-3 rounded-full bg-yellow-500" />
+                          <span className="text-sm text-slate-300">Unverified</span>
+                        </div>
+                        <span className="font-bold text-yellow-400">{verdictCounts.unverified}</span>
+                      </div>
+                    </div>
                   </CardContent>
-                </Card>
+                </motion.Card>
 
-                <Card className="glass-card">
+                {/* Government Organizations */}
+                <motion.Card
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.3 }}
+                  className="glass-card"
+                  style={{ background: 'var(--glass-surface)', border: '1px solid var(--glass-border)' }}
+                >
                   <CardHeader>
-                    <CardTitle className="text-lg">Category Breakdown</CardTitle>
-                    <CardDescription>Claims by topic area</CardDescription>
+                    <CardTitle className="text-lg">Government Organizations</CardTitle>
+                    <CardDescription>Key entities involved in verification</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <BarChart
-                      data={categoryData}
-                      xAxisKey="name"
-                      bars={[
-                        { dataKey: 'checked', name: 'Claims Checked', color: CHART_COLORS.navy },
-                      ]}
-                      height={280}
-                      showGrid={true}
-                    />
+                    <ScrollArea className="h-[180px]">
+                      <div className="space-y-3">
+                        {governmentOrgs.slice(0, 6).map((org, idx) => (
+                          <motion.div
+                            key={org.acronym}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: idx * 0.05 }}
+                            className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-3"
+                          >
+                            <div className="flex items-center gap-3">
+                              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-denim/20 text-denim">
+                                <Shield className="h-4 w-4" />
+                              </div>
+                              <div>
+                                <p className="font-medium text-slate-200">{org.acronym}</p>
+                                <p className="text-xs text-slate-400">{org.org}</p>
+                              </div>
+                            </div>
+                            <Badge variant={org.uaeRelevance === 'Critical' ? 'destructive' : 'secondary'} className="text-xs">
+                              {org.uaeRelevance}
+                            </Badge>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </ScrollArea>
                   </CardContent>
-                </Card>
+                </motion.Card>
               </div>
 
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Monthly Fact-Check Trend</CardTitle>
-                  <CardDescription>Claims processed and accuracy over time</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <LineChart
-                    data={factCheckTrendData}
-                    xAxisKey="month"
-                    lines={[
-                      { dataKey: 'checked', name: 'Claims Checked', color: CHART_COLORS.emerald },
-                      { dataKey: 'accuracy', name: 'Accuracy %', color: CHART_COLORS.gold },
-                    ]}
-                    height={300}
-                    showGrid={true}
-                  />
-                </CardContent>
-              </Card>
+              {/* Key Findings */}
+              <div className="grid gap-6 lg:grid-cols-2">
+                {/* Top Miscaptioned Videos */}
+                <motion.Card
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="glass-card"
+                  style={{ background: 'var(--glass-surface)', border: '1px solid var(--glass-border)' }}
+                >
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <AlertTriangle className="h-5 w-5 text-red-400" />
+                      Miscaptioned Videos
+                    </CardTitle>
+                    <CardDescription>Geographic misattribution cases</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ScrollArea className="h-[300px]">
+                      <div className="space-y-3">
+                        {miscaptionedVideos.slice(0, 6).map((video, idx) => (
+                          <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.1 * idx }}
+                            className="rounded-lg border border-red-500/30 bg-red-500/10 p-4"
+                            whileHover={{ scale: 1.02, x: 4 }}
+                          >
+                            <div className="flex items-start justify-between">
+                              <div>
+                                <p className="font-semibold text-slate-200 text-sm">{video.claim}</p>
+                                <p className="text-xs text-slate-400 mt-1">Actual: {video.actual}</p>
+                              </div>
+                              <Badge variant="destructive" className="text-xs">FALSE</Badge>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </CardContent>
+                </motion.Card>
 
-              <Card className="glass-card">
+                {/* AI Content Cases */}
+                <motion.Card
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 }}
+                  className="glass-card"
+                  style={{ background: 'var(--glass-surface)', border: '1px solid var(--glass-border)' }}
+                >
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Eye className="h-5 w-5 text-orange-400" />
+                      AI-Generated Content
+                    </CardTitle>
+                    <CardDescription>Deepfake and AI image cases</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ScrollArea className="h-[300px]">
+                      <div className="space-y-3">
+                        {aiContentCases.slice(0, 6).map((aiCase, idx) => (
+                          <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, x: 10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.1 * idx }}
+                            className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4"
+                            whileHover={{ scale: 1.02, x: -4 }}
+                          >
+                            <div className="flex items-start justify-between">
+                              <div>
+                                <p className="font-semibold text-slate-200 text-sm">{aiCase.content}</p>
+                                <p className="text-xs text-slate-400 mt-1">Detection: {aiCase.identification}</p>
+                              </div>
+                              <Badge variant="warning" className="text-xs">{aiCase.status}</Badge>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </CardContent>
+                </motion.Card>
+              </div>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* ============================================================================
+        ENHANCEMENT CYCLE C: Fact-Check Cases Tab
+        ============================================================================ */}
+        <TabsContent value="cases" className="space-y-6">
+          <GlassPanel title="Fact-Check Cases" description="Detailed breakdown of verified misinformation cases">
+            <div className="space-y-6">
+              {factCheckCases.map((factCase, idx) => (
+                <motion.Card
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="glass-card"
+                  style={{ background: 'var(--glass-surface)', border: '1px solid var(--glass-border)' }}
+                >
+                  <CardHeader>
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <CardTitle className="text-lg">{factCase.case}</CardTitle>
+                        <CardDescription>{factCase.source} - {factCase.date}</CardDescription>
+                      </div>
+                      <Badge
+                        variant={factCase.verdict === 'FALSE' || factCase.verdict === 'FAKE' ? 'destructive' : factCase.verdict === 'TRUE' || factCase.verdict === 'VERIFIED' ? 'success' : 'warning'}
+                        className={factCase.verdict === 'FALSE' || factCase.verdict === 'FAKE' ? 'bg-red-500/20 text-red-400' : factCase.verdict === 'TRUE' || factCase.verdict === 'VERIFIED' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-yellow-500/20 text-yellow-400'}
+                      >
+                        {factCase.verdict}
+                      </Badge>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div className="rounded-lg bg-slate-800/50 p-4">
+                        <p className="text-xs text-slate-400 mb-1">CLAIM</p>
+                        <p className="text-slate-200">{factCase.claim}</p>
+                      </div>
+                      <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/30 p-4">
+                        <p className="text-xs text-emerald-400 mb-1">ACTUAL FACTS</p>
+                        <p className="text-slate-200">{factCase.actualFacts}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </motion.Card>
+              ))}
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* ============================================================================
+        ENHANCEMENT CYCLE D: AI Content & Deepfake Risks
+        ============================================================================ */}
+        <TabsContent value="ai-content" className="space-y-6">
+          <GlassPanel title="AI Content Detection" description="Tracking synthetic media and deepfake threats">
+            <div className="space-y-6">
+              <div className="grid gap-6 lg:grid-cols-2">
+                {/* AI Cases */}
+                <motion.Card
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="glass-card"
+                  style={{ background: 'var(--glass-surface)', border: '1px solid var(--glass-border)' }}
+                >
+                  <CardHeader>
+                    <CardTitle className="text-lg">AI-Generated Cases</CardTitle>
+                    <CardDescription>Documented synthetic media</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {aiContentCases.map((aiCase, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.05 }}
+                          className="rounded-lg border border-slate-700/50 bg-slate-800/30 p-4"
+                        >
+                          <div className="flex items-center justify-between mb-2">
+                            <p className="font-medium text-slate-200">{aiCase.content}</p>
+                            <Badge variant="warning" className="text-xs">{aiCase.status}</Badge>
+                          </div>
+                          <p className="text-xs text-slate-400">Detection: {aiCase.identification}</p>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </motion.Card>
+
+                {/* Deepfake Risks */}
+                <motion.Card
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="glass-card"
+                  style={{ background: 'var(--glass-surface)', border: '1px solid var(--glass-border)' }}
+                >
+                  <CardHeader>
+                    <CardTitle className="text-lg">Deepfake Risk Categories</CardTitle>
+                    <CardDescription>Types of synthetic media threats</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {deepfakeRisks.map((risk, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, x: 10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.05 }}
+                          className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4"
+                        >
+                          <p className="font-medium text-slate-200">{risk.risk}</p>
+                          <p className="text-sm text-slate-400 mt-1">{risk.description}</p>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </motion.Card>
+              </div>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* ============================================================================
+        ENHANCEMENT CYCLE E: Legal Framework
+        ============================================================================ */}
+        <TabsContent value="legal" className="space-y-6">
+          <GlassPanel title="Legal Framework" description="UAE cybercrime laws and penalties for misinformation">
+            <div className="space-y-6">
+              {/* Legal Penalties */}
+              <motion.Card
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="glass-card"
+                style={{ background: 'var(--glass-surface)', border: '1px solid var(--glass-border)' }}
+              >
                 <CardHeader>
-                  <CardTitle className="text-lg">Fact-Check by Category</CardTitle>
-                  <CardDescription>Accuracy scores by topic area</CardDescription>
+                  <CardTitle className="text-lg">Legal Penalties</CardTitle>
+                  <CardDescription>Article 52 - Rumors and Cybercrime</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    {categoryData.map((cat, idx) => (
-                      <div key={idx} className="space-y-2">
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-slate-200">{cat.name}</span>
-                          <span className="text-sm font-medium text-emerald-400">{cat.accuracy}%</span>
+                    {legalPenalties.map((penalty, idx) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: idx * 0.05 }}
+                        className="rounded-lg border border-denim-500/30 bg-denim-500/10 p-4"
+                      >
+                        <div className="flex items-center justify-between mb-2">
+                          <p className="font-medium text-slate-200">{penalty.violation}</p>
+                          <Badge variant="denim" className="text-xs">{penalty.basis}</Badge>
                         </div>
-                        <Progress value={cat.accuracy} className="h-2" />
-                      </div>
+                        <div className="grid grid-cols-2 gap-4 mt-2">
+                          <div>
+                            <p className="text-xs text-slate-400">Prison</p>
+                            <p className="text-lg font-bold text-red-400">{penalty.prison}</p>
+                          </div>
+                          <div>
+                            <p className="text-xs text-slate-400">Fine</p>
+                            <p className="text-lg font-bold text-yellow-400">{penalty.fine}</p>
+                          </div>
+                        </div>
+                      </motion.div>
                     ))}
                   </div>
                 </CardContent>
-              </Card>
+              </motion.Card>
+
+              {/* Detection Methods */}
+              <motion.Card
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="glass-card"
+                style={{ background: 'var(--glass-surface)', border: '1px solid var(--glass-border)' }}
+              >
+                <CardHeader>
+                  <CardTitle className="text-lg">Detection Methods</CardTitle>
+                  <CardDescription>Tools and techniques for identifying misinformation</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {data.detectionMethods?.map((method, idx) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: idx * 0.1 }}
+                        className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4"
+                      >
+                        <Check className="h-5 w-5 text-emerald-400 mb-2" />
+                        <p className="font-medium text-slate-200">{method.method}</p>
+                        <p className="text-sm text-slate-400 mt-1">{method.application}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </CardContent>
+              </motion.Card>
             </div>
           </GlassPanel>
         </TabsContent>
 
-        {/* Recent Checks Tab */}
-        <TabsContent value="recent" className="space-y-6">
-          <GlassPanel title="Recent Fact-Checks" description="Latest verified claims">
+        <TabsContent value="enforcement" className="space-y-6">
+          <GlassPanel title="Enforcement Actions" description="Arrests and penalties for misinformation violations">
             <div className="space-y-6">
-              <Card className="glass-card">
+              {/* Enforcement Stats */}
+              <div className="grid gap-4 sm:grid-cols-2">
+                {enforcementActions.map((action, idx) => (
+                  <motion.Card
+                    key={idx}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="glass-card"
+                    style={{ background: 'var(--glass-surface)', border: '1px solid var(--glass-border)' }}
+                  >
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-lg">{action.action}</CardTitle>
+                      <CardDescription>{action.date}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-end justify-between">
+                        <div>
+                          <p className="text-3xl font-extrabold text-red-400">{action.count}</p>
+                          <p className="text-sm text-slate-400">{action.charge}</p>
+                        </div>
+                        <Badge variant="destructive" className="text-xs">ARREST</Badge>
+                      </div>
+                    </CardContent>
+                  </motion.Card>
+                ))}
+              </div>
+
+              {/* Incident Restrictions */}
+              <motion.Card
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="glass-card"
+                style={{ background: 'var(--glass-surface)', border: '1px solid var(--glass-border)' }}
+              >
                 <CardHeader>
-                  <CardTitle className="text-lg">Latest Verifications</CardTitle>
-                  <CardDescription>Recently fact-checked claims</CardDescription>
+                  <CardTitle className="text-lg">Incident Site Restrictions</CardTitle>
+                  <CardDescription>Security risks from location exposure</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    {data.incidentRestrictions?.map((restriction, idx) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: idx * 0.05 }}
+                        className="rounded-lg border border-yellow-500/30 bg-yellow-500/10 p-3 text-center"
+                      >
+                        <Ban className="h-5 w-5 text-yellow-400 mx-auto mb-2" />
+                        <p className="text-sm font-medium text-slate-200">{restriction.risk}</p>
+                        <p className="text-xs text-slate-400 mt-1">{restriction.description}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </CardContent>
+              </motion.Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* ============================================================================
+        ENHANCEMENT CYCLE F: Expert Insights & Sources
+        ============================================================================ */}
+        <TabsContent value="experts" className="space-y-6">
+          <GlassPanel title="Expert Insights" description="Quotes from industry experts on misinformation">
+            <div className="space-y-6">
+              {expertQuotes.map((quote, idx) => (
+                <motion.Card
+                  key={idx}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="glass-card"
+                  style={{ background: 'var(--glass-surface)', border: '1px solid var(--glass-border)' }}
+                >
+                  <CardContent className="pt-6">
+                    <Quote className="h-8 w-8 text-emerald-400 mb-4" />
+                    <p className="text-lg text-slate-200 italic mb-4">"{quote.quote}"</p>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-medium text-slate-200">{quote.expert}</p>
+                        <p className="text-sm text-slate-400">{quote.org}</p>
+                      </div>
+                      <Badge variant="outline" className="text-xs">{quote.context}</Badge>
+                    </div>
+                  </CardContent>
+                </motion.Card>
+              ))}
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        <TabsContent value="sources" className="space-y-6">
+          <GlassPanel title="Source Credibility" description="Fact-check organizations and their reliability">
+            <div className="space-y-6">
+              {/* Fact-Check Organizations */}
+              <motion.Card
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="glass-card"
+                style={{ background: 'var(--glass-surface)', border: '1px solid var(--glass-border)' }}
+              >
+                <CardHeader>
+                  <CardTitle className="text-lg">Fact-Check Organizations</CardTitle>
+                  <CardDescription>Primary sources for verification</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ScrollArea className="h-[400px]">
-                    <div className="space-y-3">
-                      {recentFactChecks.map((item) => (
-                        <div key={item.id} className="flex items-start justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4">
-                          <div className="flex-1">
-                            <p className="font-medium text-slate-200">{item.claim}</p>
-                            <p className="text-sm text-slate-400 mt-1">{item.sources} sources verified</p>
-                          </div>
-                          <div className="flex items-center gap-4">
-                            {getVerdictBadge(item.verdict)}
-                            <div className="text-center">
-                              <div className="text-lg font-bold text-emerald-400">{item.confidence}%</div>
-                              <p className="text-xs text-slate-400">Confidence</p>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </ScrollArea>
-                </CardContent>
-              </Card>
-            </div>
-          </GlassPanel>
-        </TabsContent>
-
-        {/* Misinformation Themes Tab */}
-        <TabsContent value="themes" className="space-y-6">
-          <GlassPanel title="Misinformation Themes" description="Common topics requiring verification">
-            <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Theme Analysis</CardTitle>
-                  <CardDescription>Most frequently checked themes</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ScrollArea className="h-[300px]">
-                    <div className="space-y-3">
-                      {misinformationThemes.map((theme, idx) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4">
-                          <div className="flex items-center gap-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
-                              <AlertTriangle className="h-5 w-5" />
-                            </div>
-                            <div>
-                              <p className="font-semibold text-slate-200">{theme.theme}</p>
-                              <p className="text-sm text-slate-400">{theme.frequency} claims checked</p>
-                            </div>
-                          </div>
-                          <div className="text-center">
-                            <div className={`text-lg font-bold ${theme.accuracy > 90 ? 'text-emerald-400' : 'text-orange-400'}`}>
-                              {theme.accuracy}%
-                            </div>
-                            <p className="text-xs text-slate-400">Accuracy</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </ScrollArea>
-                </CardContent>
-              </Card>
-
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Theme Distribution</CardTitle>
-                  <CardDescription>Volume of claims by topic</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <BarChart
-                    data={misinformationThemes.map(t => ({ name: t.theme.split(' ')[0], value: t.frequency }))}
-                    xAxisKey="name"
-                    bars={[
-                      { dataKey: 'value', name: 'Claims', color: CHART_COLORS.gold },
-                    ]}
-                    height={250}
-                    showGrid={true}
-                  />
-                </CardContent>
-              </Card>
-            </div>
-          </GlassPanel>
-        </TabsContent>
-
-        {/* Source Analysis Tab */}
-        <TabsContent value="sources" className="space-y-6">
-          <GlassPanel title="Fact-Checker Performance" description="Verification statistics by source">
-            <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Top Fact-Checkers</CardTitle>
-                  <CardDescription>Most active verification sources</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ScrollArea className="h-[300px]">
-                    <div className="space-y-3">
-                      {topFactCheckers.map((checker, idx) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                    <div className="space-y-4">
+                      {factCheckOrgs.map((org, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.05 }}
+                          className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-4"
+                        >
                           <div className="flex items-center gap-4">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald/20 text-emerald">
-                              <Database className="h-5 w-5" />
+                              <CheckCircle className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-200">{checker.name}</p>
-                              <p className="text-sm text-slate-400">{checker.checks.toLocaleString()} verifications</p>
+                              <p className="font-medium text-slate-200">{org.org}</p>
+                              <p className="text-sm text-slate-400">{org.coverage}</p>
                             </div>
                           </div>
-                          <div className="text-center">
-                            <div className={`text-lg font-bold ${checker.accuracy > 95 ? 'text-emerald-400' : 'text-gold'}`}>
-                              {checker.accuracy}%
-                            </div>
-                            <p className="text-xs text-slate-400">Accuracy</p>
-                          </div>
-                        </div>
+                          {getTierBadge(org.tier)}
+                        </motion.div>
                       ))}
                     </div>
                   </ScrollArea>
                 </CardContent>
-              </Card>
+              </motion.Card>
 
-              <Card className="glass-card">
+              {/* Source Credibility Matrix */}
+              <motion.Card
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="glass-card"
+                style={{ background: 'var(--glass-surface)', border: '1px solid var(--glass-border)' }}
+              >
                 <CardHeader>
-                  <CardTitle className="text-lg">Processing Metrics</CardTitle>
-                  <CardDescription>Fact-check turnaround performance</CardDescription>
+                  <CardTitle className="text-lg">Source Credibility Matrix</CardTitle>
+                  <CardDescription>Reliability assessment of sources</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid gap-4 sm:grid-cols-4">
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
-                      <div className="text-2xl font-bold text-emerald-400">28 min</div>
-                      <p className="text-sm text-slate-400">Avg Response</p>
+                  <ScrollArea className="h-[400px]">
+                    <div className="space-y-4">
+                      {sourceCredibilityMatrix.slice(0, 10).map((source, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, x: 10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.05 }}
+                          className="rounded-lg border border-slate-700/50 bg-slate-800/30 p-4"
+                        >
+                          <div className="flex items-center justify-between mb-2">
+                            <div className="flex items-center gap-3">
+                              <div
+                                className="h-3 w-3 rounded-full"
+                                style={{
+                                  backgroundColor: source.reliability === 'High' || source.reliability === 'Very High' ? '#10b981' : source.reliability === 'Medium' ? '#f59e0b' : '#f43f5e'
+                                }}
+                              />
+                              <p className="font-medium text-slate-200">{source.source}</p>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Badge variant="outline" className="text-xs">{source.type}</Badge>
+                              <Badge
+                                variant={source.status === 'Success' ? 'success' : source.status?.includes('403') || source.status?.includes('402') || source.status?.includes('error') ? 'warning' : 'destructive'}
+                                className="text-xs"
+                              >
+                                {source.status}
+                              </Badge>
+                            </div>
+                          </div>
+                          <p className="text-xs text-slate-400">Reliability: {source.reliability}</p>
+                        </motion.div>
+                      ))}
                     </div>
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
-                      <div className="text-2xl font-bold text-navy">4.2</div>
-                      <p className="text-sm text-slate-400">Sources Verified</p>
-                    </div>
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
-                      <div className="text-2xl font-bold text-gold">12</div>
-                      <p className="text-sm text-slate-400">Expert Reviewers</p>
-                    </div>
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
-                      <div className="text-2xl font-bold text-platinum">24/7</div>
-                      <p className="text-sm text-slate-400">Coverage</p>
-                    </div>
-                  </div>
+                  </ScrollArea>
                 </CardContent>
-              </Card>
+              </motion.Card>
             </div>
           </GlassPanel>
         </TabsContent>
       </Tabs>
+
+      {/* ============================================================================
+      ENHANCEMENT CYCLE F: Summary Footer
+      ============================================================================ */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6 }}
+        className="rounded-lg border border-slate-700/50 bg-slate-800/30 p-6"
+        style={{ background: 'var(--glass-surface)', border: '1px solid var(--glass-border)' }}
+      >
+        <div className="flex items-center gap-2 mb-4">
+          <Shield className="h-5 w-5 text-emerald-400" />
+          <h3 className="text-lg font-semibold text-slate-200">Analysis Summary</h3>
+        </div>
+        <p className="text-sm text-slate-400 leading-relaxed">
+          {factCheckVerificationData.omissionData?.impact || 'Fact-checking infrastructure analysis for UAE misinformation tracking and verification.'}
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <Badge variant="outline" className="text-xs">
+            Last Updated: {factCheckVerificationData.lastUpdated}
+          </Badge>
+          <Badge variant="outline" className="text-xs">
+            Sources: {factCheckVerificationData.credibility.sources}
+          </Badge>
+          <Badge variant="outline" className="text-xs">
+            Accuracy Score: {factCheckVerificationData.accuracyScore}%
+          </Badge>
+          <Badge variant="outline" className="text-xs">
+            Alert Level: {factCheckVerificationData.alertLevel}
+          </Badge>
+        </div>
+      </motion.div>
     </div>
   )
 }

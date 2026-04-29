@@ -20,6 +20,7 @@ import {
   AlertCircle,
   AlertTriangle,
   TrendingUp,
+  TrendingDown,
   Activity,
   Shield,
   CheckCircle,
@@ -30,8 +31,28 @@ import {
   Building,
   Siren,
   HandHeart,
+  Wifi,
+  WifiOff,
+  Lock,
+  Unlock,
+  Eye,
+  EyeOff,
+  Server,
+  Bug,
+  ShieldAlert,
+  Globe,
+  Mail,
+  Phone,
+  UserCheck,
+  UserX,
+  Scale,
+  Landmark,
 } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useCrisisOverviewData } from '@/lib/data-loader'
+import { communicationCrisisExtendedData } from '@/lib/data-loader/crisis-data'
+
+const ext = communicationCrisisExtendedData
 
 export default function CrisisResponseRecoveryPage() {
   const { data } = useCrisisOverviewData()
@@ -51,50 +72,60 @@ export default function CrisisResponseRecoveryPage() {
     return 'border-emerald-500/50'
   }
 
-  // Recovery metrics data
-  const recoveryData = [
-    { month: 'Jan', resolved: 12, active: 18, recovered: 8 },
-    { month: 'Feb', resolved: 15, active: 16, recovered: 11 },
-    { month: 'Mar', resolved: 18, active: 14, recovered: 14 },
-    { month: 'Apr', resolved: 22, active: 11, recovered: 17 },
-    { month: 'May', resolved: 25, active: 8, recovered: 20 },
-    { month: 'Jun', resolved: 28, active: 5, recovered: 24 },
+  // DDoS Statistics Chart Data
+  const ddosChartData = ext.cyberAttacks.ddosStatistics.map(d => ({
+    period: d.period,
+    incidents: d.incidents,
+    duration: d.period === 'H1 2025' ? 27 : 720, // minutes
+  }))
+
+  // Platform Control Data
+  const platformControlData = ext.informationSuppression.socialMediaControls.map(p => ({
+    platform: p.platform,
+    status: p.status === 'BLOCKED' ? 'Blocked' : 'Available',
+    color: p.status === 'BLOCKED' ? CHART_COLORS.danger : CHART_COLORS.emerald,
+  }))
+
+  // Sentiment Distribution
+  const sentimentData = ext.sentimentByCategory.map((s, i) => ({
+    name: s.category.split(' ')[0],
+    value: s.sentiment === 'Negative' ? 60 : s.sentiment === 'Mixed' ? 30 : 10,
+    color: s.sentiment === 'Negative' ? CHART_COLORS.danger : s.sentiment === 'Mixed' ? CHART_COLORS.gold : CHART_COLORS.emerald,
+  }))
+
+  // Threat Level Assessment
+  const threatLevelData = ext.threatLevelAssessment.map(t => ({
+    threat: t.threatType,
+    level: t.level === 'HIGH' ? 3 : t.level === 'MEDIUM-HIGH' ? 2 : 1,
+    color: t.level === 'HIGH' ? CHART_COLORS.danger : t.level === 'MEDIUM-HIGH' ? CHART_COLORS.gold : CHART_COLORS.emerald,
+  }))
+
+  // Disinformation Campaign Funding
+  const alpData = [
+    { name: 'Alp Services Contract', value: 5.7, label: '€5.7M' },
   ]
 
-  // Response time data
-  const responseTimeData = [
-    { phase: 'Detection', avg: 2.4, target: 4.0, color: CHART_COLORS.emerald },
-    { phase: 'Assessment', avg: 4.2, target: 6.0, color: CHART_COLORS.gold },
-    { phase: 'Containment', avg: 8.6, target: 12.0, color: CHART_COLORS.navy },
-    { phase: 'Resolution', avg: 18.3, target: 24.0, color: CHART_COLORS.cyan },
-    { phase: 'Recovery', avg: 32.5, target: 48.0, color: CHART_COLORS.purple },
-  ]
-
-  // Phoenix stage distribution
-  const stageData = [
-    { name: 'Detection', value: 8, color: CHART_COLORS.danger },
-    { name: 'Assessment', value: 12, color: CHART_COLORS.gold },
-    { name: 'Containment', value: 24, color: CHART_COLORS.navy },
-    { name: 'Resolution', value: 35, color: CHART_COLORS.cyan },
-    { name: 'Recovery', value: 21, color: CHART_COLORS.emerald },
-  ]
-
-  // Sentiment data
-  const sentimentData = [
-    { name: 'Confident', value: 44, color: CHART_COLORS.emerald },
-    { name: 'Vigilant', value: 31, color: CHART_COLORS.gold },
-    { name: 'Concerned', value: 25, color: CHART_COLORS.danger },
-  ]
+  // Iran Strike Discrepancies Severity
+  const discrepancyData = ext.iranStrikeDiscrepancies.map(d => ({
+    location: d.location.split(' ')[0],
+    severity: d.severity === 'Critical' ? 3 : d.severity === 'High' ? 2 : 1,
+    color: d.severity === 'Critical' ? CHART_COLORS.danger : d.severity === 'High' ? CHART_COLORS.gold : CHART_COLORS.emerald,
+  }))
 
   return (
     <div className="space-y-8 p-8">
       {/* Header */}
-      <div className="flex items-start justify-between">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex items-start justify-between"
+      >
         <div>
-          <Badge variant="gold" className="mb-2">PHOENIX PROTOCOL: RESPONSE</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Crisis Response & Recovery</h1>
+          <Badge variant="gold" className="mb-2">PHOENIX PROTOCOL: COMMUNICATION</Badge>
+          <h1 className="text-3xl font-extrabold gradient-text-gold">Crisis Communication & Information Warfare</h1>
           <p className="mt-2 text-slate-400">
-            UAE crisis response capabilities, recovery indicators, and Phoenix Protocol effectiveness
+            UAE communication crisis management, misinformation ecosystem, and information warfare capabilities
           </p>
         </div>
         <div className="flex gap-3">
@@ -104,97 +135,103 @@ export default function CrisisResponseRecoveryPage() {
           </Button>
           <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
             <RefreshCcw className="h-4 w-4" />
-            Recovery Dashboard
+            Analysis Dashboard
           </Button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Key Metrics */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+      >
         <MetricCard
-          title="Active Crises"
-          value={data.activeCrises || 8}
-          previousValue={10}
-          icon={<Siren className="h-6 w-6" />}
+          title="DDoS Attacks (H2 2025)"
+          value="10,303"
+          previousValue="3,477"
+          icon={<Server className="h-6 w-6" />}
+          gradient="danger"
+          status="critical"
+        />
+        <MetricCard
+          title="State-Sponsored Threats"
+          value="71.4%"
+          previousValue="65.2%"
+          icon={<ShieldAlert className="h-6 w-6" />}
+          gradient="danger"
+          status="critical"
+        />
+        <MetricCard
+          title="Blocked Platforms"
+          value="7"
+          previousValue={5}
+          icon={<WifiOff className="h-6 w-6" />}
           gradient="gold"
-          status="success"
+          status="warning"
         />
         <MetricCard
-          title="Avg Response Time"
-          value="4.2hrs"
-          previousValue="6.8hrs"
-          icon={<Clock className="h-6 w-6" />}
-          gradient="navy"
-          status="success"
+          title="Internet Freedom Score"
+          value="30/100"
+          previousValue="28/100"
+          icon={<Globe className="h-6 w-6" />}
+          gradient="danger"
+          status="critical"
         />
-        <MetricCard
-          title="Resolution Rate"
-          value="94.2%"
-          previousValue="89.7%"
-          icon={<CheckCircle className="h-6 w-6" />}
-          gradient="emerald"
-          status="success"
-        />
-        <MetricCard
-          title="Recovery Index"
-          value="78/100"
-          previousValue="71/100"
-          icon={<HandHeart className="h-6 w-6" />}
-          gradient="platinum"
-          status="success"
-        />
-      </div>
+      </motion.div>
 
       {/* Alert Banner */}
-      <div className={`rounded-xl border p-4 bg-slate-900/50 ${getAlertColor(data.alertSummary?.RED?.length ? 'RED' : data.alertSummary?.YELLOW?.length ? 'YELLOW' : 'GREEN')}`}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className={`rounded-xl border p-4 bg-slate-900/50 ${getAlertColor('RED')}`}
+      >
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            {data.alertSummary?.RED?.length > 0 && <AlertCircle className="h-6 w-6 text-red-400" />}
-            {data.alertSummary?.RED?.length === 0 && data.alertSummary?.YELLOW?.length > 0 && <AlertTriangle className="h-6 w-6 text-yellow-400" />}
-            {data.alertSummary?.RED?.length === 0 && data.alertSummary?.YELLOW?.length === 0 && <TrendingUp className="h-6 w-6 text-emerald-400" />}
+            <AlertCircle className="h-6 w-6 text-red-400" />
             <div>
-              <p className="font-semibold text-slate-200">Crisis Alert Summary</p>
+              <p className="font-semibold text-slate-200">Communication Crisis Alert</p>
               <p className="text-sm text-slate-400">
-                {data.alertSummary?.RED?.length || 0} RED | {data.alertSummary?.YELLOW?.length || 0} YELLOW | {data.alertSummary?.GREEN?.length || 0} GREEN
+                Active misinformation campaigns, deepfake threats, and information suppression operations
               </p>
             </div>
           </div>
-          {data.alertSummary?.RED?.length > 0 && getAlertBadge('RED')}
-          {data.alertSummary?.RED?.length === 0 && data.alertSummary?.YELLOW?.length > 0 && getAlertBadge('YELLOW')}
-          {data.alertSummary?.RED?.length === 0 && data.alertSummary?.YELLOW?.length === 0 && getAlertBadge('GREEN')}
+          {getAlertBadge('RED')}
         </div>
-      </div>
+      </motion.div>
 
-      <Tabs defaultValue="overview" className="space-y-6">
+      <Tabs defaultValue="misinformation" className="space-y-6">
         <TabsList className="glass-panel" scrollable>
-          <TabsTrigger value="overview">Crisis Overview</TabsTrigger>
-          <TabsTrigger value="response">Response Metrics</TabsTrigger>
-          <TabsTrigger value="recovery">Recovery Indicators</TabsTrigger>
-          <TabsTrigger value="capabilities">Capabilities</TabsTrigger>
+          <TabsTrigger value="misinformation">Misinformation</TabsTrigger>
+          <TabsTrigger value="deepfakes">Deepfakes</TabsTrigger>
+          <TabsTrigger value="cyber">Cyber Attacks</TabsTrigger>
+          <TabsTrigger value="suppression">Suppression</TabsTrigger>
+          <TabsTrigger value="entities">Entity Registry</TabsTrigger>
         </TabsList>
 
-        {/* Crisis Overview */}
-        <TabsContent value="overview" className="space-y-6">
-          <GlassPanel title="Active Crisis Distribution" description="Current crisis status by type and severity">
+        {/* Misinformation Tab */}
+        <TabsContent value="misinformation" className="space-y-6">
+          <GlassPanel title="Misinformation Ecosystem" description="UAE misinformation landscape during crisis events">
             <div className="space-y-6">
-              <div className="grid gap-6 lg:grid-cols-2">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="grid gap-6 lg:grid-cols-2"
+              >
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Crises by Type</CardTitle>
-                    <CardDescription>Distribution of active crises</CardDescription>
+                    <CardTitle className="text-lg">DDoS Attack Surge</CardTitle>
+                    <CardDescription>H1 2025 vs H2 2025 - 196% increase</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <BarChart
-                      data={[
-                        { name: 'Natural', count: 2, color: CHART_COLORS.emerald },
-                        { name: 'Economic', count: 3, color: CHART_COLORS.gold },
-                        { name: 'Geopolitical', count: 2, color: CHART_COLORS.danger },
-                        { name: 'Health', count: 1, color: CHART_COLORS.cyan },
-                        { name: 'Cyber', count: 1, color: CHART_COLORS.navy },
-                      ]}
-                      xAxisKey="name"
+                      data={ddosChartData}
+                      xAxisKey="period"
                       bars={[
-                        { dataKey: 'count', name: 'Count', color: CHART_COLORS.gold },
+                        { dataKey: 'incidents', name: 'Incidents', color: CHART_COLORS.danger },
                       ]}
                       height={280}
                       showGrid={true}
@@ -204,85 +241,73 @@ export default function CrisisResponseRecoveryPage() {
 
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Phoenix Protocol Stages</CardTitle>
-                    <CardDescription>Crises by current stage</CardDescription>
+                    <CardTitle className="text-lg">Iran Strike Discrepancies</CardTitle>
+                    <CardDescription>Official claims vs documented evidence</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <PieChart
-                      data={stageData}
+                      data={ext.iranStrikeDiscrepancies.map(d => ({
+                        name: d.location,
+                        value: d.severity === 'Critical' ? 3 : d.severity === 'High' ? 2 : 1,
+                        color: d.severity === 'Critical' ? CHART_COLORS.danger : d.severity === 'High' ? CHART_COLORS.gold : CHART_COLORS.emerald,
+                      }))}
                       height={280}
                       showLegend={true}
                     />
                   </CardContent>
                 </Card>
-              </div>
+              </motion.div>
 
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">Crisis Sentiment</CardTitle>
-                  <CardDescription>Overall public sentiment toward crisis management</CardDescription>
+                  <CardTitle className="text-lg">Key Government Quotes</CardTitle>
+                  <CardDescription>Official statements on misinformation</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <PieChart
-                    data={sentimentData}
-                    height={280}
-                    showLegend={true}
-                  />
-                </CardContent>
-              </Card>
-            </div>
-          </GlassPanel>
-        </TabsContent>
-
-        {/* Response Metrics */}
-        <TabsContent value="response" className="space-y-6">
-          <GlassPanel title="Crisis Response Metrics" description="UAE crisis response time and effectiveness">
-            <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Response Time by Phase</CardTitle>
-                  <CardDescription>Average hours vs target (lower is better)</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <BarChart
-                    data={responseTimeData}
-                    xAxisKey="phase"
-                    bars={[
-                      { dataKey: 'avg', name: 'Actual (hrs)', color: CHART_COLORS.gold },
-                      { dataKey: 'target', name: 'Target (hrs)', color: CHART_COLORS.navy },
-                    ]}
-                    height={300}
-                    showGrid={true}
-                  />
-                </CardContent>
-              </Card>
-
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Critical Response KPIs</CardTitle>
-                  <CardDescription>Key performance indicators for crisis response</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ScrollArea className="h-[400px]">
+                  <ScrollArea className="h-[300px]">
                     <div className="space-y-4">
-                      {[
-                        { kpi: 'First Response Time', value: '2.4 hrs', target: '4.0 hrs', status: 'success' },
-                        { kpi: 'Crisis Declaration Speed', value: '1.8 hrs', target: '3.0 hrs', status: 'success' },
-                        { kpi: 'Stakeholder Mobilization', value: '4.2 hrs', target: '6.0 hrs', status: 'success' },
-                        { kpi: 'Resource Deployment', value: '8.6 hrs', target: '12.0 hrs', status: 'success' },
-                        { kpi: 'Containment Achievement', value: '18.3 hrs', target: '24.0 hrs', status: 'success' },
-                        { kpi: 'Public Communication', value: '1.2 hrs', target: '2.0 hrs', status: 'success' },
-                        { kpi: 'Media Response Time', value: '0.8 hrs', target: '1.5 hrs', status: 'success' },
-                        { kpi: 'Inter-Agency Coordination', value: '3.5 hrs', target: '5.0 hrs', status: 'success' },
-                      ].map((item, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
-                          <p className="font-medium text-slate-200">{item.kpi}</p>
-                          <div className="flex items-center gap-3">
-                            <p className="text-lg font-bold text-gold">{item.value}</p>
-                            <p className="text-xs text-slate-400">/ {item.target}</p>
-                            <Badge variant="success" className="text-xs">On Target</Badge>
+                      {ext.misinformationEcosystem.keyQuotes.map((q, i) => (
+                        <motion.div
+                          key={i}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.3, delay: i * 0.05 }}
+                          className="rounded-lg bg-slate-800/50 p-4 border border-gold/20"
+                        >
+                          <p className="text-sm italic text-slate-300">"{q.quote}"</p>
+                          <div className="mt-2 flex items-center justify-between">
+                            <span className="text-xs text-gold">{q.source}</span>
+                            <span className="text-xs text-slate-500">{q.date}</span>
                           </div>
-                        </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Misinformation Cases (March 2026)</CardTitle>
+                  <CardDescription>False claims and official responses</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[300px]">
+                    <div className="space-y-3">
+                      {ext.misinformationEcosystem.misinformationCasesMarch2026.map((c, i) => (
+                        <motion.div
+                          key={i}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.3, delay: i * 0.05 }}
+                          className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                        >
+                          <div className="flex items-center gap-3">
+                            <AlertTriangle className="h-4 w-4 text-yellow-400" />
+                            <span className="text-sm text-slate-200">{c.claim}</span>
+                          </div>
+                          <Badge variant="success" className="text-xs">{c.response}</Badge>
+                        </motion.div>
                       ))}
                     </div>
                   </ScrollArea>
@@ -292,131 +317,365 @@ export default function CrisisResponseRecoveryPage() {
           </GlassPanel>
         </TabsContent>
 
-        {/* Recovery Indicators */}
-        <TabsContent value="recovery" className="space-y-6">
-          <GlassPanel title="Recovery Indicators" description="Crisis recovery progress and effectiveness">
+        {/* Deepfakes Tab */}
+        <TabsContent value="deepfakes" className="space-y-6">
+          <GlassPanel title="Deepfake Threat Landscape" description="AI-generated content threats to UAE">
             <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Crisis Recovery Trend</CardTitle>
-                  <CardDescription>Monthly active vs resolved crises</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <AreaChart
-                    data={recoveryData}
-                    xAxisKey="month"
-                    areas={[
-                      { dataKey: 'active', name: 'Active', color: CHART_COLORS.danger },
-                      { dataKey: 'resolved', name: 'Resolved', color: CHART_COLORS.emerald },
-                      { dataKey: 'recovered', name: 'Recovered', color: CHART_COLORS.gold },
-                    ]}
-                    height={300}
-                    showGrid={true}
-                  />
-                </CardContent>
-              </Card>
-
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Recovery Metrics by Sector</CardTitle>
-                  <CardDescription>Recovery progress across key sectors</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ScrollArea className="h-[400px]">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="grid gap-6 lg:grid-cols-2"
+              >
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Deepfake Statistics</CardTitle>
+                    <CardDescription>AI-generated content threat metrics</CardDescription>
+                  </CardHeader>
+                  <CardContent>
                     <div className="space-y-4">
-                      {[
-                        { sector: 'Infrastructure', progress: 94, days: 28, status: 'On Track' },
-                        { sector: 'Economy', progress: 87, days: 45, status: 'On Track' },
-                        { sector: 'Tourism', progress: 72, days: 60, status: 'Delayed' },
-                        { sector: 'Trade & Logistics', progress: 91, days: 32, status: 'On Track' },
-                        { sector: 'Healthcare', progress: 98, days: 18, status: 'Complete' },
-                        { sector: 'Education', progress: 85, days: 40, status: 'On Track' },
-                        { sector: 'Real Estate', progress: 68, days: 75, status: 'Delayed' },
-                        { sector: 'Financial Services', progress: 92, days: 25, status: 'On Track' },
-                      ].map((item, index) => (
-                        <div key={index} className="space-y-2">
-                          <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-slate-200">{item.sector}</span>
-                            <div className="flex items-center gap-3">
-                              <span className="text-sm text-slate-400">{item.days} days</span>
-                              <Badge
-                                variant={item.status === 'Complete' ? 'success' : item.status === 'Delayed' ? 'warning' : 'default'}
-                                className="text-xs"
-                              >
-                                {item.status}
-                              </Badge>
-                            </div>
-                          </div>
-                          <Progress value={item.progress} className="h-3" />
+                      <div className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
+                        <div className="flex items-center gap-3">
+                          <Bug className="h-5 w-5 text-danger" />
+                          <span className="text-sm text-slate-200">Threat Level</span>
                         </div>
-                      ))}
+                        <Badge variant="destructive">{ext.deepfakeThreats.threatLevel}</Badge>
+                      </div>
+                      <div className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
+                        <div className="flex items-center gap-3">
+                          <Clock className="h-5 w-5 text-gold" />
+                          <span className="text-sm text-slate-200">Surge Timeline</span>
+                        </div>
+                        <span className="text-sm text-gold">{ext.deepfakeThreats.surgeTimeline}</span>
+                      </div>
+                      <div className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
+                        <div className="flex items-center gap-3">
+                          <Scale className="h-5 w-5 text-emerald" />
+                          <span className="text-sm text-slate-200">Financial Impact</span>
+                        </div>
+                        <span className="text-sm text-danger font-bold">$35M</span>
+                      </div>
                     </div>
-                  </ScrollArea>
-                </CardContent>
-              </Card>
-            </div>
-          </GlassPanel>
-        </TabsContent>
+                  </CardContent>
+                </Card>
 
-        {/* Capabilities */}
-        <TabsContent value="capabilities" className="space-y-6">
-          <GlassPanel title="Crisis Response Capabilities" description="UAE crisis response infrastructure and readiness">
-            <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Response Infrastructure</CardTitle>
-                  <CardDescription>Crisis response capabilities and capacity</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ScrollArea className="h-[400px]">
-                    <div className="space-y-4">
-                      {[
-                        { capability: 'National Crisis Center', capacity: '24/7', status: 'Operational', readiness: 98 },
-                        { capability: 'Emergency Response Teams', capacity: '12 units', status: 'Deployed', readiness: 95 },
-                        { capability: 'Medical Strike Teams', capacity: '48 teams', status: 'Standby', readiness: 99 },
-                        { capability: 'Search & Rescue', capacity: '6 units', status: 'Operational', readiness: 97 },
-                        { capability: 'Evacuation Capacity', capacity: '50,000', status: 'Available', readiness: 92 },
-                        { capability: 'Shelter Facilities', capacity: '120 sites', status: 'Ready', readiness: 94 },
-                        { capability: 'Communication Systems', capacity: 'Redundant', status: 'Active', readiness: 99 },
-                        { capability: 'Logistics Support', capacity: '24/7', status: 'Operational', readiness: 96 },
-                      ].map((item, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
-                          <div className="flex items-center gap-3">
-                            <Activity className="h-5 w-5 text-gold" />
-                            <div>
-                              <p className="font-medium text-slate-200">{item.capability}</p>
-                              <p className="text-xs text-slate-400">{item.capacity}</p>
-                            </div>
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Notable Incidents</CardTitle>
+                    <CardDescription>Documented deepfake cases</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ScrollArea className="h-[200px]">
+                      <div className="space-y-3">
+                        {ext.deepfakeThreats.notableIncidents.map((inc, i) => (
+                          <div key={i} className="rounded-lg bg-slate-800/50 p-3">
+                            <p className="text-sm font-medium text-slate-200">{inc.incident}</p>
+                            <p className="text-xs text-slate-400 mt-1">{inc.target}</p>
+                            <p className="text-xs text-slate-500 mt-1">{inc.details}</p>
                           </div>
-                          <div className="flex items-center gap-3">
-                            <Badge variant="success" className="text-xs">{item.status}</Badge>
-                            <p className="text-lg font-bold text-gold">{item.readiness}%</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </ScrollArea>
-                </CardContent>
-              </Card>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </CardContent>
+                </Card>
+              </motion.div>
 
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">Phoenix Protocol Effectiveness</CardTitle>
-                  <CardDescription>Cross-crisis performance metrics</CardDescription>
+                  <CardTitle className="text-lg">Counter-Measures</CardTitle>
+                  <CardDescription>UAE response to deepfake threats</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 lg:grid-cols-3">
-                    {[
-                      { metric: 'Containment Success Rate', value: '97.2%', icon: <Shield className="h-6 w-6" /> },
-                      { metric: 'Stakeholder Satisfaction', value: '94.8%', icon: <Users className="h-6 w-6" /> },
-                      { metric: 'Media Handling Score', value: '91.3%', icon: <Activity className="h-6 w-6" /> },
-                    ].map((item, index) => (
-                      <div key={index} className="flex flex-col items-center justify-center rounded-xl bg-slate-800/50 p-6 text-center">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/20 text-gold mb-3">
-                          {item.icon}
+                    {ext.deepfakeThreats.counterMeasures.map((cm, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3, delay: i * 0.1 }}
+                        className="rounded-xl bg-slate-800/50 p-4 text-center border border-emerald-500/20"
+                      >
+                        <Shield className="h-8 w-8 text-emerald mx-auto mb-2" />
+                        <p className="text-sm font-medium text-slate-200">{cm.measure}</p>
+                        <p className="text-xs text-slate-400 mt-1">{cm.description}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Cyber Attacks Tab */}
+        <TabsContent value="cyber" className="space-y-6">
+          <GlassPanel title="Cyber Attack Statistics" description="DDoS and cyber threat landscape">
+            <div className="space-y-6">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="grid gap-6 lg:grid-cols-2"
+              >
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">DDoS Attack Comparison</CardTitle>
+                    <CardDescription>H1 2025 vs H2 2025</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <BarChart
+                      data={[
+                        { period: 'H1 2025', incidents: 3477, duration: 27 },
+                        { period: 'H2 2025', incidents: 10303, duration: 720 },
+                      ]}
+                      xAxisKey="period"
+                      bars={[
+                        { dataKey: 'incidents', name: 'Incidents', color: CHART_COLORS.danger },
+                      ]}
+                      height={280}
+                      showGrid={true}
+                    />
+                  </CardContent>
+                </Card>
+
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Most Targeted Sectors</CardTitle>
+                    <CardDescription>H2 2025 incident distribution</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <PieChart
+                      data={ext.cyberAttacks.mostTargetedSectorsH2_2025.slice(0, 4).map((s, i) => ({
+                        name: s.sector.split(' ')[0],
+                        value: typeof s.incidents === 'number' ? s.incidents : 500,
+                        color: [CHART_COLORS.danger, CHART_COLORS.gold, CHART_COLORS.navy, CHART_COLORS.emerald][i],
+                      }))}
+                      height={280}
+                      showLegend={true}
+                    />
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Notable Cyber Attacks</CardTitle>
+                  <CardDescription>Significant incidents targeting UAE</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[300px]">
+                    <div className="space-y-3">
+                      {ext.cyberAttacks.notableAttacks.map((atk, i) => (
+                        <motion.div
+                          key={i}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.3, delay: i * 0.05 }}
+                          className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4"
+                        >
+                          <div className="flex items-center gap-3">
+                            <Server className="h-5 w-5 text-danger" />
+                            <div>
+                              <p className="text-sm font-medium text-slate-200">{atk.target}</p>
+                              <p className="text-xs text-slate-400">{atk.actor} - {atk.date}</p>
+                            </div>
+                          </div>
+                          <Badge variant="destructive" className="text-xs">{atk.details}</Badge>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">State-Sponsored Threat Assessment</CardTitle>
+                  <CardDescription>{ext.cyberAttacks.stateSponsoredThreats.percentage} of threats are state-sponsored</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Progress value={71.4} className="h-3" />
+                  <p className="text-xs text-slate-400 mt-2">{ext.cyberAttacks.stateSponsoredThreats.threatTypes}</p>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Suppression Tab */}
+        <TabsContent value="suppression" className="space-y-6">
+          <GlassPanel title="Information Suppression Mechanisms" description="Platform controls and legal framework">
+            <div className="space-y-6">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="grid gap-6 lg:grid-cols-2"
+              >
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Platform Status</CardTitle>
+                    <CardDescription>Communication platform availability</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ScrollArea className="h-[300px]">
+                      <div className="space-y-2">
+                        {platformControlData.map((p, i) => (
+                          <div key={i} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                            <span className="text-sm text-slate-200">{p.platform}</span>
+                            {p.status === 'Blocked' ? (
+                              <WifiOff className="h-4 w-4 text-danger" />
+                            ) : (
+                              <Wifi className="h-4 w-4 text-emerald" />
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </CardContent>
+                </Card>
+
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Legal Penalties</CardTitle>
+                    <CardDescription>Cybercrime law enforcement</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ScrollArea className="h-[300px]">
+                      <div className="space-y-3">
+                        {ext.legalPenalties.map((lp, i) => (
+                          <div key={i} className="rounded-lg bg-slate-800/50 p-3">
+                            <p className="text-sm font-medium text-slate-200">{lp.violation}</p>
+                            <p className="text-xs text-danger mt-1">{lp.penalty}</p>
+                            <p className="text-xs text-slate-500 mt-1">Source: {lp.source}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Platform Takedown Statistics</CardTitle>
+                  <CardDescription>Government content removal requests</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 lg:grid-cols-3">
+                    {ext.informationSuppression.platformTakedownStats.map((ps, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3, delay: i * 0.1 }}
+                        className="rounded-xl bg-slate-800/50 p-4 text-center"
+                      >
+                        <p className="text-2xl font-bold text-gold">{ps.blocked || ps.requests.split(' ')[0]}</p>
+                        <p className="text-sm text-slate-400 mt-1">{ps.platform}</p>
+                        <p className="text-xs text-slate-500 mt-1">{ps.period}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Citizenship Revocation Cases</CardTitle>
+                  <CardDescription>Documented cases of citizenship stripping</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[200px]">
+                    <div className="space-y-3">
+                      {ext.informationSuppression.citizenshipRevocationCases.map((c, i) => (
+                        <div key={i} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <div>
+                            <p className="text-sm font-medium text-slate-200">{c.case}</p>
+                            <p className="text-xs text-slate-400">{c.year}</p>
+                          </div>
+                          <Badge variant="destructive" className="text-xs">{c.details.split(';')[0]}</Badge>
                         </div>
-                        <p className="text-sm text-slate-400 mb-1">{item.metric}</p>
-                        <p className="text-2xl font-bold text-gold">{item.value}</p>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Entities Tab */}
+        <TabsContent value="entities" className="space-y-6">
+          <GlassPanel title="Entity Registry" description="Key officials and organizations">
+            <div className="space-y-6">
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Government Officials</CardTitle>
+                  <CardDescription>Key stakeholders in communication crisis</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[400px]">
+                    <div className="space-y-3">
+                      {ext.governmentEntities.map((e, i) => (
+                        <motion.div
+                          key={i}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.3, delay: i * 0.03 }}
+                          className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4"
+                        >
+                          <div className="flex items-center gap-3">
+                            <UserCheck className="h-5 w-5 text-gold" />
+                            <div>
+                              <p className="text-sm font-medium text-slate-200">{e.name}</p>
+                              <p className="text-xs text-slate-400">{e.role}</p>
+                            </div>
+                          </div>
+                          <Badge variant="outline" className="text-xs">{e.organization}</Badge>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Organizations</CardTitle>
+                  <CardDescription>Entities involved in communication crisis</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[300px]">
+                    <div className="space-y-3">
+                      {ext.organizations.map((o, i) => (
+                        <div key={i} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <div className="flex items-center gap-3">
+                            <Building className="h-5 w-5 text-emerald" />
+                            <div>
+                              <p className="text-sm font-medium text-slate-200">{o.name}</p>
+                              <p className="text-xs text-slate-400">{o.type}</p>
+                            </div>
+                          </div>
+                          <span className="text-xs text-slate-500 max-w-[200px] truncate">{o.notes}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Key Terms Glossary</CardTitle>
+                  <CardDescription>Important terminology</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 lg:grid-cols-2">
+                    {ext.keyTerms.map((kt, i) => (
+                      <div key={i} className="rounded-lg bg-slate-800/50 p-3">
+                        <p className="text-sm font-medium text-gold">{kt.term}</p>
+                        <p className="text-xs text-slate-400 mt-1">{kt.definition}</p>
                       </div>
                     ))}
                   </div>
@@ -426,6 +685,53 @@ export default function CrisisResponseRecoveryPage() {
           </GlassPanel>
         </TabsContent>
       </Tabs>
+
+      {/* Comprehensive Timeline */}
+      <GlassPanel title="Communication Crisis Timeline" description="Key events in UAE communication crisis">
+        <ScrollArea className="h-[400px]">
+          <div className="space-y-4">
+            {ext.comprehensiveTimeline.map((event, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: i * 0.02 }}
+                className="relative flex gap-4 border-l-2 border-gold/30 pl-6"
+              >
+                <div className="absolute -left-[13px] top-0 h-6 w-6 rounded-full bg-gold/20 border-2 border-gold flex items-center justify-center">
+                  <div className="h-2 w-2 rounded-full bg-gold" />
+                </div>
+                <div className="flex-1 rounded-lg bg-slate-800/50 p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs text-gold font-mono">{event.date}</span>
+                    <Badge variant="outline" className="text-xs">{event.category}</Badge>
+                  </div>
+                  <p className="text-sm text-slate-200">{event.event}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </ScrollArea>
+      </GlassPanel>
+
+      {/* Source Credibility */}
+      <GlassPanel title="Source Credibility Assessment" description="Information source reliability">
+        <div className="grid gap-4 lg:grid-cols-5">
+          {ext.sourceCredibility.map((sc, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: i * 0.05 }}
+              className="rounded-xl bg-slate-800/50 p-4 text-center"
+            >
+              <p className="text-lg font-bold text-gold">{sc.count}</p>
+              <p className="text-xs text-slate-400 mt-1">{sc.tier.split(' - ')[0]}</p>
+              <p className="text-xs text-slate-500 mt-2 truncate">{sc.examples.split(',')[0]}</p>
+            </motion.div>
+          ))}
+        </div>
+      </GlassPanel>
     </div>
   )
 }

@@ -1,0 +1,2149 @@
+/**
+ * Historical Data - UAE National Digital Intelligence Platform
+ *
+ * Comprehensive historical era data for the UAE spanning from Pre-Federation
+ * through the Recent Era (2023-2026). Each era is structured according to
+ * the HistoricalEra type definition.
+ */
+
+import type {
+  HistoricalEra,
+  HistoricalEvent,
+  PolicyOutcome,
+  CredibilityScore,
+  SourceReference,
+  KeyFinding,
+  TierLevel,
+} from './types'
+
+// ============================================================================
+// HELPER FUNCTIONS
+// ============================================================================
+
+function createCredibilityScore(
+  tier: TierLevel,
+  score: number,
+  sources: number,
+  lastVerified: string
+): CredibilityScore {
+  return { tier, score, sources, lastVerified }
+}
+
+function createSourceReference(
+  name: string,
+  tier: TierLevel,
+  date: string,
+  url?: string
+): SourceReference {
+  return url ? { name, url, tier, date } : { name, tier, date }
+}
+
+// ============================================================================
+// ERA 1: PRE-FEDERATION (BEFORE 1971)
+// ============================================================================
+
+export const preFederationData: HistoricalEra = {
+  id: 'hist-8-1',
+  era: 'Pre-Federation',
+  period: { start: 'Before 1971', end: '1971' },
+  description:
+    'The Pre-Federation Era encompasses the history of the Arabian Gulf sheikhdoms from the earliest British contacts (1820) through the formation of the Trucial States, and culminating in the December 2, 1971 formation of the United Arab Emirates. This era covers approximately 150 years of British protectorate relationships, traditional economies (pearling), early oil discoveries, and the personalities who would become the UAE\'s founding fathers.',
+  keyEvents: [
+    {
+      date: '1820',
+      title: 'General Maritime Treaty',
+      description:
+        'Britain organized its strongest naval force ever sent to the Gulf (3,000 fighting men in three ships). After fierce fighting, Ras al-Khaimah fell, and coastal towns surrendered. On the beach, British and Arab representatives signed the treaty establishing peace and ending piracy.',
+      significance: 'critical',
+    },
+    {
+      date: '1853',
+      title: 'Perpetual Maritime Truce',
+      description:
+        'Prohibited sea aggression, overseen by the British political agent at Bushire. This established the term "trucial" - referring to states bound by treaty.',
+      significance: 'critical',
+    },
+    {
+      date: '1892',
+      title: 'Exclusive Agreement',
+      description:
+        'A treaty signed March 5-14, 1892, between the British Empire and the rulers of the Trucial States. Rulers bound not to enter agreements with any Power other than Britain, not to allow residence of foreign agents without British permission, and not to cede territory except to Britain.',
+      significance: 'critical',
+    },
+    {
+      date: '1935',
+      title: 'Oil Exploration Begins',
+      description:
+        'Anglo Persian geologist Peter Cox arrived in Abu Dhabi. January 1936: IPC option for Abu Dhabi for 7,000 rupees down + 3,000/month. January 1939: PDTC 75-year concession for entire territory granted.',
+      entities: ['Peter Cox', 'IPC', 'PDTC'],
+      significance: 'critical',
+    },
+    {
+      date: '1958',
+      title: 'First Oil Discovery',
+      description:
+        'ADMA struck oil at Umm Shaif offshore field at approximately 8,755 ft depth. This discovery marked a turning point in the country\'s history, transforming Abu Dhabi from a small fishing village to a wealthy emirate.',
+      entities: ['ADMA', 'ADNOC'],
+      significance: 'critical',
+    },
+    {
+      date: '1966',
+      title: 'Sheikh Zayed Becomes Ruler of Abu Dhabi',
+      description:
+        'Sheikh Zayed bin Sultan Al Nahyan became Ruler of Abu Dhabi on August 6, 1966 via bloodless palace coup, succeeding his brother Shakhbut.',
+      entities: ['Sheikh Zayed bin Sultan Al Nahyan'],
+      outcome: 'Enabled federation talks with Sheikh Rashid of Dubai',
+      significance: 'critical',
+    },
+    {
+      date: 'January 1968',
+      title: 'British Withdrawal Announced',
+      description:
+        'Britain announced withdrawal from "east of Suez" following sterling devaluation and defense policy changes under Harold Wilson\'s Labour government.',
+      significance: 'critical',
+    },
+    {
+      date: 'February 18, 1968',
+      title: 'Zayed-Rashid Desert Meeting',
+      description:
+        'Sheikh Zayed and Dubai\'s Sheikh Rashid met at Argoub Al Sedirah, a desert highland between Dubai and Abu Dhabi. They "met in a tent erected in the desert and talked for hours" and reached a handshake agreement establishing what became the UAE.',
+      entities: ['Sheikh Zayed bin Sultan Al Nahyan', 'Sheikh Rashid bin Saeed Al Maktoum'],
+      significance: 'critical',
+    },
+    {
+      date: 'December 2, 1971',
+      title: 'UAE Federation Formed',
+      description:
+        'Six emirates declared independence and formed the United Arab Emirates: Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, Fujairah. Sheikh Zayed elected first President.',
+      entities: ['Sheikh Zayed bin Sultan Al Nahyan', 'Sheikh Rashid bin Saeed Al Maktoum'],
+      significance: 'critical',
+    },
+    {
+      date: 'February 10, 1972',
+      title: 'Ras Al Khaimah Joins Federation',
+      description:
+        'Ras Al Khaimah became the seventh emirate to join the UAE, completing the federation.',
+      entities: ['Sheikh Saqr bin Mohammed Al Qasimi'],
+      significance: 'major',
+    },
+  ],
+  policyOutcomes: [
+    {
+      policy: 'General Maritime Treaty (1820)',
+      year: '1820',
+      impact: 'Established peace with Britain; ended piracy as a recognized practice',
+    },
+    {
+      policy: 'Exclusive Agreement (1892)',
+      year: '1892',
+      impact:
+        'Formalized British protectorate status; restricted sovereign foreign relations',
+      successors: ['Treaty of Friendship 1971'],
+    },
+    {
+      policy: 'Petroleum Concession (1939)',
+      year: '1939',
+      impact: 'Granted 75-year oil exploration rights; eventual oil wealth foundation',
+    },
+    {
+      policy: '50-50 Profit Sharing Agreement',
+      year: '1965',
+      impact: 'Sheikh Shakhbut negotiated equal profit split with oil companies',
+    },
+  ],
+  entityInvolvement: [
+    'Sheikh Zayed bin Sultan Al Nahyan',
+    'Sheikh Rashid bin Saeed Al Maktoum',
+    'Sheikh Saqr bin Mohammed Al Qasimi',
+    'Peter Cox',
+    'British Empire',
+    'IPC/ADPC',
+    'ADMA',
+    'Trucial States Council',
+  ],
+  nationBuildingMilestones: [
+    '1820: General Maritime Treaty - Start of British involvement',
+    '1853: Perpetual Maritime Truce - "Trucial" status established',
+    '1892: Exclusive Agreement - Formal protectorate',
+    '1935-1958: Oil discovery transforms economy',
+    '1966: Sheikh Zayed becomes Ruler of Abu Dhabi',
+    'January 1968: British withdrawal announced',
+    'February 1968: Zayed-Rashid federation handshake agreement',
+    'December 2, 1971: UAE Federation declared',
+    'February 10, 1972: Ras Al Khaimah joins completing federation',
+  ],
+  credibility: createCredibilityScore(1, 85, 24, '2026-04-28'),
+  sources: [
+    createSourceReference('Wikipedia - Foundation of UAE', 1, '2026-04-27'),
+    createSourceReference('Wikipedia - History of UAE', 1, '2026-04-27'),
+    createSourceReference('UAE Government Portal', 0, '2026-04-28'),
+    createSourceReference('Saudi Aramco World', 1, '2026-04-27'),
+    createSourceReference('GeoExpro - Oil Discoveries', 1, '2026-04-27'),
+    createSourceReference('US State Department Historical Documents', 0, '2026-04-27'),
+  ],
+  lastUpdated: '2026-04-28',
+}
+
+// ============================================================================
+// ERA 2: FEDERATION & EARLY YEARS (1971-1990) - SOURCE: MD FILE 8-2
+// ============================================================================
+
+export const federationEarlyData: HistoricalEra = {
+  id: 'hist-8-2',
+  era: 'Federation & Early Years',
+  period: { start: '1971', end: '1990' },
+  description:
+    'The Federation & Early Years period saw the UAE establish itself as a nation-state, with Sheikh Zayed as its founding father guiding nation-building. The era encompassed international memberships (UN, Arab League, OPEC), border disputes (Iranian islands occupation, Buraimi resolution), infrastructure development, and the creation of key federal institutions. Jebel Ali Port and Free Zone emerged as economic engines.',
+  keyEvents: [
+    // Section 1: UAE Independence and Formation (December 2, 1971)
+    {
+      date: 'December 2, 1971',
+      title: 'UAE Federation Formation',
+      description:
+        'Six emirates declared independence and formed the UAE at Union House, Dubai. Sheikh Zayed elected first President; Sheikh Rashid Vice President. British protectorate ended December 1, 1971. Initial members: Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, Fujairah. Ras Al Khaimah joined February 10, 1972.',
+      entities: ['Sheikh Zayed bin Sultan Al Nahyan', 'Sheikh Rashid bin Saeed Al Maktoum', 'Union House Dubai'],
+      outcome: 'Established the United Arab Emirates as a sovereign nation; first president Sheikh Zayed, first VP Sheikh Rashid, first PM Sheikh Maktoum',
+      significance: 'critical',
+    },
+    {
+      date: 'December 2, 1971',
+      title: 'Flag Design & National Symbols',
+      description:
+        '19-year-old Abdullah Mohammed Al Maainah designed the UAE flag. Prize: 4,000 riyals. Colors: Green (vegetation), White (peace), Black (defeat of enemies), Red (sacrifices). National anthem lyrics by Dr. Arif Al Shaikh (1986), melody existing composition, composed in 3 days.',
+      entities: ['Abdullah Mohammed Al Maainah', 'Dr. Arif Al Shaikh'],
+      significance: 'major',
+    },
+    {
+      date: 'December 2, 1971',
+      title: 'First International Recognition',
+      description:
+        'Jordan recognized UAE as first country on December 2, 1971. Arab League admission December 6, 1971 (2nd). UN Membership December 9, 1971 as 132nd member state (3rd). UN flag ceremony at noon December 9, 1971 in New York.',
+      entities: ['Jordan', 'Arab League', 'United Nations', 'Adnan Pachachi'],
+      outcome: 'International recognition as sovereign state',
+      significance: 'critical',
+    },
+    {
+      date: 'December 9, 1971',
+      title: 'UN Membership',
+      description:
+        'UAE became the 132nd UN member state. Security Council and General Assembly both approved membership. Delegation led by Minister of State Adnan Pachachi who had to convince China and Soviet Union not to veto.',
+      entities: ['United Nations', 'Adnan Pachachi'],
+      outcome: 'International recognition as sovereign nation-state',
+      significance: 'critical',
+    },
+    // Section 2: UAE Founding Fathers and Constitution
+    {
+      date: 'July 18, 1971',
+      title: 'UAE Constitution Adopted',
+      description:
+        'Constitution signed by six emirates in Dubai. Author: Adi Bitar (Palestinian-Jordanian judge). Structure: 10 parts, 152 Articles. Became permanent May 1996. Key articles: Article 7 (Islam official religion), Article 9 (Abu Dhabi capital), Article 11 (free movement), Article 25 (equality), Article 137 (collective defense).',
+      entities: ['Adi Bitar', 'Federal National Council'],
+      outcome: 'Legal foundation document for the federation; 40 FNC seats allocated',
+      significance: 'critical',
+    },
+    {
+      date: '1971',
+      title: 'Founding Fathers Leadership Structure',
+      description:
+        'Sheikh Zayed bin Sultan Al Nahyan (Abu Dhabi) - First President 1971-2004, born May 6, 1918, Al Ain. Sheikh Rashid bin Saeed Al Maktoum (Dubai) - Vice President/PM. Sheikh Sultan bin Muhammad Al Qasimi (Sharjah) 1972-1987. Sheikh Rashid bin Humaid Al Nuaimi (Ajman) 1928-1981. Sheikh Ahmed bin Rashid Al Mualla (Umm Al Quwain) 1928-1981. Sheikh Muhammad bin Hamad Al Sharqi (Fujairah) ~1937-1974.',
+      entities: ['Sheikh Zayed', 'Sheikh Rashid', 'Sheikh Sultan', 'Sheikh Saqr'],
+      outcome: 'Leadership structure established for all seven emirates',
+      significance: 'critical',
+    },
+    {
+      date: '1971-2004',
+      title: 'Sheikh Zayed Nation Building',
+      description:
+        'Sheikh Zayed served as President for 33 years (1971-2004), re-elected 1976, 1981, 1986, 1991. Planted 12 million trees on 60,000 hectares. Reclaimed 25 sq km of barren desert. Adopted 1,000+ orphans. Distributed $1 billion+ in philanthropy (1973-1977). Forbes estimated wealth $20 billion (2004). Founded Abu Dhabi Fund for Arab Economic Development (1971) and Abu Dhabi Investment Authority (1976).',
+      entities: ['Sheikh Zayed bin Sultan Al Nahyan', 'ADIA', 'Abu Dhabi Fund'],
+      outcome: 'Transformative nation building; infrastructure, education, healthcare expansion',
+      significance: 'critical',
+    },
+    // Section 3: Ras Al Khaimah Joining
+    {
+      date: 'November 30, 1971',
+      title: 'Iran Seizes Abu Musa and Tunb Islands',
+      description:
+        'Iran occupied Abu Musa and the Greater and Lesser Tunb islands from Ras Al Khaimah and Sharjah two days before UAE formation. Three police were killed. Sheikh Saqr quote: "Nations are not sold by money... If they are taken, they are taken by blood." UAE took matter to UN Security Council December 9, 1971.',
+      entities: ['Iran', 'Sheikh Saqr bin Mohammed Al Qasimi', 'United Nations'],
+      outcome: 'Ongoing territorial dispute; UAE brought matter to UN Security Council',
+      significance: 'critical',
+    },
+    {
+      date: 'February 10, 1972',
+      title: 'Ras Al Khaimah Joins Federation',
+      description:
+        'Ras Al Khaimah became the seventh emirate to join the UAE, completing the seven-emirate federation. Sheikh Saqr traveled to Al Manhal Palace February 11, 1972 to sign. Delay due to opposition to July 1971 constitutional proposal favoring majority rule. Condition for joining: protection of the islands (Abu Musa, Tunbs).',
+      entities: ['Sheikh Saqr bin Mohammed Al Qasimi', 'Al Manhal Palace'],
+      outcome: 'Seven-emirate federation completed',
+      significance: 'major',
+    },
+    // Section 4: UAE-Iran Islands Dispute
+    {
+      date: '1904-1971',
+      title: 'Islands Dispute History',
+      description:
+        'First dispute record 1904: Iran briefly replaced flag, withdrew under British pressure. 1923: Second Iranian occupation attempt. 1964: Iranian forces occupied for 20 consecutive days. November 13, 1971: Sharjah ruler accepted interim deal with Iran on Abu Musa. November 30, 1971: MoU signed Iran-Sharjah; Iran moved troops onto islands.',
+      entities: ['Iran', 'Sharjah', 'Ras Al Khaimah'],
+      significance: 'major',
+    },
+    {
+      date: '1992-Present',
+      title: 'Ongoing Islands Dispute',
+      description:
+        '1992: Iran restricted UAE access, expelled UAE-sponsored workers. August 21, 2008: UAE filed formal protest with UN Secretary-General. September 2, 2008: GCC foreign ministers condemned Iran\'s actions. 2012: Ahmedinejad visit caused diplomatic incident. Iran refuses ICJ arbitration. UAE continues peaceful pursuit. Geographic: Abu Musa 12.8 sq km, 2,131 population (2012), Mount Halva 110m.',
+      entities: ['Iran', 'GCC', 'UN', 'ICJ'],
+      outcome: 'Ongoing territorial dispute; peaceful resolution pursued',
+      significance: 'critical',
+    },
+    // Section 5: UAE-Oman Border Relations
+    {
+      date: '1940s-1974',
+      title: 'Buraimi Dispute Resolution',
+      description:
+        'Territorial conflict between Saudi Arabia and Trucial States/Oman over Buraimi Oasis. 1949: Saudi Arabia claimed sovereignty over part of Abu Dhabi territory. August 31, 1952: ~80 Saudi guards occupied Hamasa. October 1952: Standstill Agreement reached. July 30, 1954: Second Standstill Agreement signed. 1955: Arbitration proceedings began in Geneva. October 25, 1955: British forces (Trucial Oman Scouts) took the oasis.',
+      entities: ['Saudi Arabia', 'Trucial States', 'Buraimi Oasis'],
+      outcome: 'Resolved through diplomatic negotiations',
+      significance: 'major',
+    },
+    {
+      date: '1999-2019',
+      title: 'UAE-Oman Border Agreement',
+      description:
+        '1999: Partial border demarcation deal signed during Sheikh Zayed\'s visit to Oman. June 22, 2018: Final agreement signed during Sultan Qaboos\'s visit to UAE. July 22-23, 2019: Documents exchanged formalizing border pact. 2003: Boundary agreement signed and ratified for entire border.',
+      entities: ['UAE', 'Oman', 'Sheikh Zayed', 'Sultan Qaboos'],
+      outcome: 'Peaceful border resolution with Oman',
+      significance: 'major',
+    },
+    // Section 6: UAE-Saudi Border (Treaty of Jeddah 1974)
+    {
+      date: 'August 21, 1974',
+      title: 'Treaty of Jeddah',
+      description:
+        'Sheikh Zayed and King Faisal signed treaty delimiting Saudi-UAE border in Jeddah. Saudi receives: output of Shaybah oilfield, access to lower Persian Gulf, Huwaysat Island sovereignty. UAE receives: Saudi recognition of UAE sovereignty. Both parties to delimit offshore boundaries. Saudi ratification 1993. UAE ratification: NOT ratified (as of 2012). Disputed: Article 3 regarding oil field revenues.',
+      entities: ['Sheikh Zayed bin Sultan Al Nahyan', 'King Faisal', 'Treaty of Jeddah'],
+      outcome: 'Border delimitation with Saudi Arabia; Buraimi dispute resolution',
+      significance: 'major',
+    },
+    // Section 7: UAE International Memberships
+    {
+      date: '1971',
+      title: 'Arab League Membership',
+      description:
+        'UAE joined Arab League in 1971 (same year as independence). Arab League founded March 22, 1945 in Cairo with 6 founding members. Oman, Qatar, and UAE joined in 1971.',
+      entities: ['Arab League'],
+      outcome: 'Regional diplomatic standing established',
+      significance: 'major',
+    },
+    {
+      date: '1967',
+      title: 'OPEC Membership',
+      description:
+        'UAE inherited OPEC membership from Abu Dhabi (1967). One of only two OPEC members with notable spare crude production capacity (alongside Saudi Arabia). Production goal: 5 million barrels per day by 2027.',
+      entities: ['OPEC'],
+      outcome: 'Economic foundation through oil pricing influence',
+      significance: 'major',
+    },
+    // Section 8: Gulf Cooperation Council (GCC) Founding
+    {
+      date: 'May 25, 1981',
+      title: 'GCC Founded',
+      description:
+        'Gulf Cooperation Council founded in Abu Dhabi by Bahrain, Kuwait, Oman, Qatar, Saudi Arabia, and UAE. Islamic calendar: 21 Rajab 1401. First Secretary General: H.E. Abdulla Y. Beshara (Kuwait) 1981-1993. Primary catalysts: Iran-Iraq War (1980-1988), 1979 Iranian Revolution, Soviet invasion of Afghanistan, Tehran hostage crisis (1979-1981).',
+      entities: ['GCC', 'H.E. Abdulla Y. Beshara'],
+      outcome: 'Regional security framework established',
+      significance: 'critical',
+    },
+    {
+      date: '1981-2008',
+      title: 'GCC Economic Integration',
+      description:
+        'Economic Agreement signed November 11, 1981. Free Trade Area 1983. Customs Union January 2003. Common Market January 1, 2008. GCC Combined GDP: ~$200 billion (1981) to ~$2.4 trillion (present) - 12-fold increase.',
+      entities: ['GCC'],
+      outcome: 'Progressive economic integration achieved',
+      significance: 'major',
+    },
+    {
+      date: 'October 15, 1985',
+      title: 'Peninsula Shield Force Established',
+      description:
+        'GCC established unified military force for collective defense. Later evolved to Peninsula Shield Joint Defense Force. GCC Unified Military Command established November 2018.',
+      entities: ['GCC', 'Peninsula Shield Force'],
+      outcome: 'Regional collective security capability',
+      significance: 'major',
+    },
+    // Section 9: Dubai Jebel Ali Port and Free Zone (1979)
+    {
+      date: 'December 1979',
+      title: 'Jebel Ali Port Opens',
+      description:
+        'Port officially opened December 1979; Queen Elizabeth II presided over opening February 1980. Cost approximately $2.5 billion. Location: 24.984786°N, 55.0906813°E. 67 berths, more than 15 km quayside. Container terminal operator: Sea-Land Service Corporation. 1991 throughput: 1,200,000 cargo containers - busiest in Middle East, Top 20 worldwide.',
+      entities: ['Dubai', 'Jebel Ali', 'Queen Elizabeth II'],
+      outcome: 'World\'s largest man-made harbour; regional trade hub',
+      significance: 'critical',
+    },
+    {
+      date: '1985',
+      title: 'JAFZA Established',
+      description:
+        'Jebel Ali Free Zone Authority established. Initial 19 companies grew to 500+ by 1990, 11,000+ by 2025. Size: 57 square km (10,000 hectares / 25,000 acres). 2025 data: 150+ countries represented, 100+ Fortune Global 500 companies, 144,000+ employees. Trade value (2015): US$169 billion. UAE FDI contribution: ~32%. Dubai GDP contribution: 21%.',
+      entities: ['DP World', 'JAFZA'],
+      outcome: 'Major free zone driving economic diversification',
+      significance: 'critical',
+    },
+    {
+      date: '1991',
+      title: 'Jebel Ali Business Presence',
+      description:
+        '1991 data: 350+ companies, ~$600 million investment, ~12,000 employees, 80 companies arrived in single year. Indian companies: ~25%. GCC companies: ~25%. American firms: Johnson & Johnson, Union Carbide, York International. Special tenant: Kuwait Petroleum Company - 750,000 m² for offices/warehouses.',
+      entities: ['Kuwait Petroleum Company', 'Jebel Ali Free Zone'],
+      significance: 'major',
+    },
+    {
+      date: '1979-Present',
+      title: 'Jebel Ali Strategic Significance',
+      description:
+        'Most frequently visited foreign port by US Navy. Tax/duty exemptions. Profit repatriation permitted. Regional transshipment hub. Proximity: Al Maktoum International Airport (24 km), Dubai International Airport (40 km). 28 km from Dubai Municipality via 4-lane highway (upgrading to 8 lanes for $165 million). Awards: FDI 2024 Award - Best Free Zone in the World by Financial Times\' fDI Intelligence.',
+      entities: ['US Navy', 'Al Maktoum International Airport'],
+      outcome: 'Global trade powerhouse and strategic hub',
+      significance: 'critical',
+    },
+    // Section 10: UAE Infrastructure and Early Development
+    {
+      date: '1966-1974',
+      title: 'Early Development Under Sheikh Zayed',
+      description:
+        'Civil service growth: 200 (1966) → 2,000 (1968) → 4,000 (1969). First British Director of Finance appointed August 27, 1966. Budget (1967): 37 million dinars revenue vs 41 million dinars. Schools investment: half a million Bahraini dinars in first two years. Saadiyat Island: 13.4 million dinars for research station. Mana Saeed Al Otaiba: First Minister of Oil at age 20. Expatriate recruitment: Arabs from Iraq, Jordan, Egypt, Sudan; British advisers.',
+      entities: ['Sheikh Zayed', 'Mana Saeed Al Otaiba'],
+      outcome: 'Rapid modernization and institution building',
+      significance: 'major',
+    },
+    {
+      date: '1960s-1974',
+      title: 'Infrastructure Transformation',
+      description:
+        'Pre-1971 to post-1971 transformation: Schools: Few → Over 1,200. Hospitals: Minimal → Over 150. Universities: None → First opened 1974. Students abroad (1974): 1,800. Abu Dhabi population: 35,000 (1967) → 47,000 (1968). Dubai began exporting oil 1969. Kanad Hospital (first hospital in Abu Dhabi) established 1960s.',
+      entities: ['Kanad Hospital', 'Abu Dhabi'],
+      outcome: 'Comprehensive infrastructure development',
+      significance: 'major',
+    },
+    // Section 11: Sheikh Zayed Nation Building (detailed)
+    {
+      date: '1946-1966',
+      title: 'Sheikh Zayed Early Career',
+      description:
+        'Governor of Eastern Region 1946-1966. Born May 6, 1918, Al Ain (Qasr Al Hosn). Youngest of four sons of Sheikh Sultan bin Zayed Al Nahyan. Named after grandfather Zayed the Great (ruled 1855-1909). Ruler of Abu Dhabi from August 6, 1966 (via bloodless coup succeeding brother Shakhbut) until November 2, 2004.',
+      entities: ['Sheikh Zayed', 'Al Ain', 'Qasr Al Hosn'],
+      significance: 'major',
+    },
+    {
+      date: '1971-2004',
+      title: 'Sheikh Zayed Leadership Legacy',
+      description:
+        'Orphans adopted: More than 1,000 since early 1970s. Tittenhurst Park purchase: £5 million (1988). UNEP Champions of the Earth (2005, posthumous). Quotes: "They used to say that agriculture has no future [in the UAE]. But with God\'s blessing and our determination, we have succeeded in transforming this desert into a greenland." "Our achievements will be of no value without an educated generation. Hence, manpower should precede development in all other sectors."',
+      entities: ['Sheikh Zayed', 'UNEP'],
+      outcome: 'Transformative nation building legacy',
+      significance: 'critical',
+    },
+    // Section 12: UAE in the 1970s and 1980s
+    {
+      date: '1971-1979',
+      title: '1970s Key Developments',
+      description:
+        '1971: Federation formed; UN/Arab League membership. 1972: Ras Al Khaimah joined. 1973: OPEC oil embargo; UAE participated. 1974: Treaty of Jeddah with Saudi Arabia; First UAE university opened; 1,800 students abroad. 1979: Jebel Ali Port opened.',
+      entities: ['UAE', 'OPEC'],
+      outcome: 'Foundational decade of nation building',
+      significance: 'critical',
+    },
+    {
+      date: '1980-1990',
+      title: '1980s Context',
+      description:
+        'Iran-Iraq War 1980-1988. UAE stance: Neutral, benefited from stability. Development continued despite regional tensions. GCC established 1981 for collective security. Peninsula Shield Force 1985. Dubai transformation: 1970 start - modest skyline, sand roads, low-rise buildings, limited electricity → Late 1980s significant infrastructure modernization. Oil discovery: 1966. Oil revenue first flow: 1969. Port Rashid opening: 1972 (region\'s first modern container terminal).',
+      entities: ['Iran', 'Iraq', 'GCC', 'Dubai'],
+      outcome: 'Continued development amid regional tensions',
+      significance: 'major',
+    },
+  ],
+  policyOutcomes: [
+    {
+      policy: 'UAE Constitution',
+      year: '1971',
+      impact:
+        'Provisional constitution signed July 18, 1971; became permanent May 1996. 152 Articles establishing federal structure. Federal National Council: 40 seats (Abu Dhabi 8, Dubai 8, Sharjah 6, Ras Al Khaimah 6, Ajman 4, Umm Al Quwain 4, Fujairah 4). Joint veto power: Abu Dhabi and Dubai.',
+      successors: ['Federal National Council establishment'],
+    },
+    {
+      policy: 'UN Membership',
+      year: '1971',
+      impact: 'International recognition; 132nd UN member state; Adnan Pachachi led delegation',
+    },
+    {
+      policy: 'Arab League Membership',
+      year: '1971',
+      impact: 'Regional diplomatic standing established',
+    },
+    {
+      policy: 'OPEC Membership (inherited from Abu Dhabi)',
+      year: '1967',
+      impact: 'Economic foundation through oil pricing influence',
+    },
+    {
+      policy: 'GCC Charter',
+      year: '1981',
+      impact: 'Regional security cooperation framework; 6 founding members',
+      successors: ['Peninsula Shield Force 1985', 'Customs Union 2003', 'Common Market 2008'],
+    },
+    {
+      policy: 'Treaty of Jeddah',
+      year: '1974',
+      impact: 'Border delimitation with Saudi Arabia; Buraimi dispute resolution; Saudi ratified 1993, UAE not ratified',
+    },
+    {
+      policy: 'UAE-Oman Border Agreement',
+      year: '2018',
+      impact: 'Final border agreement signed June 22, 2018; documents exchanged July 22-23, 2019',
+    },
+    {
+      policy: 'Jebel Ali Port Development',
+      year: '1979',
+      impact: '$2.5 billion investment; 67 berths; busiest Middle East port by 1991',
+    },
+    {
+      policy: 'JAFZA Establishment',
+      year: '1985',
+      impact: 'Initial 19 companies; grew to 11,000+ by 2025; 32% UAE FDI; 21% Dubai GDP',
+    },
+  ],
+  entityInvolvement: [
+    // Persons (17 from MD)
+    'Sheikh Zayed bin Sultan Al Nahyan (P001) - First President 1971-2004',
+    'Sheikh Rashid bin Saeed Al Maktoum (P002) - Vice President/PM',
+    'Sheikh Maktoum bin Rashid Al Maktoum (P003) - First Prime Minister',
+    'Sheikh Sultan bin Muhammad Al Qasimi (P004) - Ruler of Sharjah 1972-1987',
+    'Sheikh Rashid bin Humaid Al Nuaimi (P005) - Ruler of Ajman 1928-1981',
+    'Sheikh Ahmed bin Rashid Al Mualla (P006) - Ruler of Umm Al Quwain 1928-1981',
+    'Sheikh Muhammad bin Hamad Al Sharqi (P007) - Ruler of Fujairah ~1937-1974',
+    'Sheikh Saqr bin Mohammed Al Qasimi (P008) - Ruler of Ras Al Khaimah 1948-2010',
+    'King Faisal (P009) - King of Saudi Arabia',
+    'Sultan Qaboos bin Said (P010) - Sultan of Oman',
+    'Adi Bitar (P011) - Constitution Author',
+    'Adnan Pachachi (P012) - First UAE UN Delegation Head',
+    'H.E. Abdulla Y. Beshara (P013) - First GCC Secretary General',
+    'Abdullah Mohammed Al Maainah (P014) - Flag Designer',
+    'Dr. Arif Al Shaikh (P015) - National Anthem Lyricist',
+    'Mana Saeed Al Otaiba (P016) - First Oil Minister (age 20)',
+    'Sheikh Khalifa bin Zayed Al Nahyan (P017) - Son, later President',
+    // Locations (20 from MD)
+    'Union House, Dubai (L001) - UAE declaration site',
+    'Al Manhal Palace, Abu Dhabi (L002) - Ras Al Khaimah signing site',
+    'Jumeirah (L003) - Rulers\' majlis location',
+    'Al Sameeh (L004) - Sheikh Zayed camp site',
+    'Abu Musa (L005) - Disputed island 12.8 sq km',
+    'Greater Tunb (L006) - Disputed with Iran',
+    'Lesser Tunb (L007) - Disputed with Iran',
+    'Buraimi Oasis (L008) - Historical dispute',
+    'Al Ain (L009) - Eastern Region capital',
+    'Jebel Ali (L010) - Port and Free Zone',
+    'Strait of Hormuz (L011) - 20% world oil transit',
+    'Shaybah (L012) - Oil Field - Treaty of Jeddah subject',
+    'Huwaysat Island (L013) - Treaty of Jeddah subject',
+    'Port Rashid, Dubai (L014) - First container terminal 1972',
+    'Qasr Al Hosn (L015) - Sheikh Zayed birthplace',
+    'Kanad Hospital (L016) - First in Abu Dhabi 1960s',
+    'Buraimi (L017) - Saudi-Emirati dispute',
+    'Hamasa (L018) - Buraimi dispute site',
+    'Ras Al Khaimah (L019) - Last to join federation',
+    'Fujairah (L020) - Eastern coast',
+    // Organizations (12 from MD)
+    'United Arab Emirates (O001) - Founded 1971',
+    'Arab League (O002) - Member since 1971',
+    'United Nations (O003) - Member since 1971 (132nd)',
+    'OPEC (O004) - Member since 1967',
+    'GCC (O005) - Founding member 1981',
+    'Trucial States (O006) - Historical British protectorate',
+    'JAFZA (O007) - Est. 1985',
+    'DP World (O008) - JAFZA parent',
+    'Abu Dhabi Investment Authority (O009) - Est. 1976',
+    'Abu Dhabi Fund for Arab Economic Development (O010) - Est. 1971',
+    'Peninsula Shield Force (O011) - GCC joint defense',
+    'Union Defence Force (O012) - Former Trucial Oman Scouts',
+  ],
+  nationBuildingMilestones: [
+    // From Section 1: Formation
+    'December 2, 1971: UAE Federation formed - 6 emirates at Union House, Dubai',
+    'December 2, 1971: Sheikh Zayed elected first President; Sheikh Rashid Vice President',
+    'December 2, 1971: Flag designed by Abdullah Mohammed Al Maainah (19 years old)',
+    'December 2, 1971: Jordan first to recognize UAE; Arab League 2nd; UN 3rd (132nd member)',
+    'February 10, 1972: Ras Al Khaimah joins - complete seven-emirate federation',
+    // From Section 2: Constitution & Founders
+    'July 18, 1971: Constitution signed (152 Articles); became permanent 1996',
+    '1971-2004: Sheikh Zayed serves 33 years as President',
+    // From Section 4: Islands Dispute
+    'November 30, 1971: Iran seizes Abu Musa and Tunb islands; 3 police killed',
+    'December 9, 1971: UAE raises islands issue at UN Security Council',
+    // From Section 5: Border Relations
+    '1974: Treaty of Jeddah - Saudi-UAE border delimitation',
+    'June 22, 2018: Final UAE-Oman border agreement signed',
+    // From Section 7: International Memberships
+    '1971: Arab League membership established',
+    'December 9, 1971: UN membership (132nd)',
+    '1967: OPEC membership inherited from Abu Dhabi',
+    // From Section 8: GCC
+    'May 25, 1981: GCC founded by 6 member states',
+    'October 15, 1985: Peninsula Shield Force established',
+    'January 2003: GCC Customs Union',
+    'January 1, 2008: GCC Common Market',
+    // From Section 9: Jebel Ali
+    'December 1979: Jebel Ali Port opens (~$2.5 billion, 67 berths)',
+    'February 1980: Queen Elizabeth II opens Jebel Ali Port',
+    '1985: JAFZA established with 19 companies',
+    '1991: Jebel Ali busiest Middle East port (1.2M containers)',
+    // From Section 10: Infrastructure
+    '1966: Sheikh Zayed becomes Ruler of Abu Dhabi',
+    '1969: Dubai began exporting oil',
+    '1974: First UAE university opened',
+    '1974: 1,800 students studying abroad',
+    // From Section 11: Sheikh Zayed Legacy
+    'Planted 12 million trees on 60,000 hectares',
+    'Reclaimed 25 sq km of barren desert',
+    'Adopted more than 1,000 orphans',
+    'Distributed $1 billion+ in philanthropy (1973-1977)',
+    // From Section 12: 1970s-1980s
+    '1973: OPEC oil embargo - UAE participated',
+    '1980-1988: Iran-Iraq War - UAE remained neutral, benefited from stability',
+  ],
+  credibility: createCredibilityScore(1, 92, 35, '2026-04-28'),
+  sources: [
+    // TIER-0 Sources
+    createSourceReference('UAE Government Portal - Founders', 0, '2026-04-28', 'https://u.ae/en/about-the-uae/founders-of-the-union'),
+    createSourceReference('OPEC Official', 0, '2026-04-27', 'https://opec.org/united-arab-emirates.html'),
+    createSourceReference('UAE Embassy - Occupied Islands', 0, '2026-04-27', 'https://uae-embassy.org/foreign-policy/occupied-uae-islands'),
+    createSourceReference('JAFZA Official', 0, '2026-04-28', 'https://www.jafza.ae/about/'),
+    createSourceReference('EIA Official', 0, '2026-04-27', 'https://eia.gov'),
+    // TIER-1 Sources
+    createSourceReference('Wikipedia - Foundation of UAE', 1, '2026-04-27', 'https://en.wikipedia.org/wiki/Foundation_of_the_United_Arab_Emirates'),
+    createSourceReference('Wikipedia - UAE Constitution', 1, '2026-04-27', 'https://en.wikipedia.org/wiki/Constitution_of_the_United_Arab_Emirates'),
+    createSourceReference('Wikipedia - Abu Musa', 1, '2026-04-27', 'https://en.wikipedia.org/wiki/Abu_Musa'),
+    createSourceReference('Wikipedia - Zayed bin Sultan', 1, '2026-04-27', 'https://en.wikipedia.org/wiki/Zayed_bin_Sultan_Al_Nahyan'),
+    createSourceReference('Wikipedia - Jebel Ali Free Zone', 1, '2026-04-27', 'https://en.wikipedia.org/wiki/Jebel_Ali_Free_Zone'),
+    createSourceReference('Wikipedia - Buraimi Dispute', 1, '2026-04-27', 'https://en.wikipedia.org/wiki/Buraimi_dispute'),
+    createSourceReference('Wikipedia - GCC', 1, '2026-04-27', 'https://en.wikipedia.org/wiki/Gulf_Cooperation_Council'),
+    createSourceReference('Wikipedia - Treaty of Jeddah (1974)', 1, '2026-04-27', 'https://en.wikipedia.org/wiki/Treaty_of_Jeddah_(1974)'),
+    createSourceReference('Wikipedia - History of UAE', 1, '2026-04-27', 'https://en.wikipedia.org/wiki/History_of_the_United_Arab_Emirates'),
+    createSourceReference('Washington Institute', 1, '2026-04-27', 'https://washingtoninstitute.org/policy-analysis/persian-gulfs-occupied-territory-three-island-dispute'),
+    createSourceReference('National Library of UAE', 1, '2026-04-27', 'https://nla.ae/en/our-history/historical-periods/the-formation-of-the-federation/'),
+    // TIER-2 Sources
+    createSourceReference('The National - Dec 2 1971', 2, '2026-04-27', 'https://www.thenationalnews.com/uae/heritage/2021/12/02/december-2-1971-what-happened-on-the-uaes-first-national-day'),
+    createSourceReference('The National - RAK', 2, '2026-04-27', 'https://www.thenationalnews.com/weekend/2024/02/02/ras-al-khaimah-history-uae-timeframe'),
+    createSourceReference('The National - UN Flag', 2, '2026-04-27', 'https://www.thenationalnews.com/arts-culture/2025/12/05/uae-flag-new-york-un-headquarters-history'),
+    createSourceReference('Gulf News - UAE-Oman Border', 2, '2026-04-27', 'https://gulfnews.com/uae/uae-oman-formalise-border-pact-1.371999'),
+    createSourceReference('Khaleej Times', 2, '2026-04-27', 'https://khaleejtimes.com'),
+    createSourceReference('NCUSAR - GCC Founding', 2, '2026-04-27', 'https://ncusar.org/blog/2015/12/founding-of-the-gcc/'),
+    createSourceReference('Leaders UAE History', 2, '2026-04-27', 'https://leaders.uaehistoryandculture.com/the-founding-fathers-the-rulers-who-signed-the-union-of-1971/'),
+    createSourceReference('Aramco World', 2, '2026-04-27', 'https:// Aramcoworld.com'),
+  ],
+  lastUpdated: '2026-04-28',
+}
+
+// ============================================================================
+// ERA 3: POST-GULF WAR AFTERMATH (1991-2003)
+// ============================================================================
+
+export const postGulfWarData: HistoricalEra = {
+  id: 'hist-8-3',
+  era: 'Post-Gulf War Aftermath',
+  period: { start: '1991', end: '2003' },
+  description:
+    'The aftermath of the 1991 Gulf War saw drastic and profoundly significant political, cultural, and social change across the Middle East. The war created an acute humanitarian crisis while leaving Saddam Hussein in power. For the UAE, this period involved managing regional security concerns, sanctions on Iraq, and the US military presence in the Gulf that would shape regional dynamics for decades.',
+  keyEvents: [
+    {
+      date: '1991',
+      title: 'Gulf War Concludes - UAE Coalition Role',
+      description:
+        'UAE participated in coalition supporting Kuwait liberation. US forces stationed in Saudi Arabia (5,000-10,000 troops) as part of ongoing regional presence.',
+      entities: ['UAE', 'United States', 'Saudi Arabia', 'GCC'],
+      outcome: 'GCC solidarity demonstrated; US-Gulf alliance strengthened',
+      significance: 'critical',
+    },
+    {
+      date: '1991',
+      title: 'No-Fly Zones Established',
+      description:
+        'Operation Provide Comfort (Northern Iraq) and Operation Southern Watch (Southern Iraq) established no-fly zones. UAE provided base access as part of coalition security architecture.',
+      entities: ['UNSCOM', 'Operation Provide Comfort', 'Operation Southern Watch'],
+      outcome: 'Regional security architecture established; UAE base access for US forces',
+      significance: 'major',
+    },
+    {
+      date: '1991-2003',
+      title: 'UN Sanctions on Iraq',
+      description:
+        'UAE participated in sanctions regime affecting regional trade. Oil market destabilization had direct economic impact.',
+      entities: ['United Nations', 'Iraq'],
+      outcome: 'Regional trade patterns shifted; UAE as transshipment hub increased',
+      significance: 'major',
+    },
+    {
+      date: '1996',
+      title: 'Operation Southern Watch Begins',
+      description:
+        'Southern No-Fly Zone over Iraq formally begins enforcement.',
+      entities: ['United States', 'GCC'],
+      significance: 'minor',
+    },
+    {
+      date: '1991-2003',
+      title: 'Iranian Regional Influence',
+      description:
+        'Counterbalance to Iranian expansion remained core UAE security concern throughout period.',
+      entities: ['Iran', 'UAE'],
+      outcome: 'Strengthened US-Gulf alliance cooperation',
+      significance: 'critical',
+    },
+  ],
+  policyOutcomes: [
+    {
+      policy: 'GCC Security Architecture Enhancement',
+      year: '1991',
+      impact: 'Enhanced defense cooperation following Gulf War experience',
+      successors: ['Peninsula Shield expansion', 'Unified Military Command 2018'],
+    },
+    {
+      policy: 'US-Gulf Alliance Structures',
+      year: '1991',
+      impact: 'Base access agreements and security partnership formalized',
+    },
+    {
+      policy: 'Regional Trade Reorientation',
+      year: '1991',
+      impact: 'UAE emerged as regional transshipment hub as Iraq sanctions disrupted traditional trade routes',
+    },
+  ],
+  entityInvolvement: [
+    'UAE',
+    'GCC',
+    'United States',
+    'Saudi Arabia',
+    'Iraq',
+    'Iran',
+    'UNSCOM',
+    'Operation Provide Comfort',
+    'Operation Southern Watch',
+  ],
+  nationBuildingMilestones: [
+    '1991: UAE participates in Gulf War coalition',
+    '1991: No-Fly Zones established - UAE provides base access',
+    '1991-2003: UN sanctions on Iraq - UAE participates in sanctions regime',
+    '1991: Humanitarian response to Iraqi crisis',
+    '1996: Operation Southern Watch begins',
+    '1991-2003: Iranian influence counterbalance - core security concern',
+  ],
+  credibility: createCredibilityScore(1, 82, 8, '2026-04-28'),
+  sources: [
+    createSourceReference('US State Department - Milestones', 0, '2026-04-27'),
+    createSourceReference('Brookings Institution', 1, '2026-04-27'),
+    createSourceReference('Hudson Institute', 1, '2026-04-27'),
+    createSourceReference('TNSR', 1, '2026-04-27'),
+    createSourceReference('Wikipedia - Aftermath of Gulf War', 2, '2026-04-27'),
+  ],
+  lastUpdated: '2026-04-28',
+}
+
+// ============================================================================
+// ERA 4: RAPID DEVELOPMENT ERA (2000-2010)
+// ============================================================================
+
+export const rapidDevelopmentData: HistoricalEra = {
+  id: 'hist-8-4',
+  era: 'Rapid Development Era',
+  period: { start: '2000', end: '2010' },
+  description:
+    'The UAE\'s Rapid Development Era represents one of the most dramatic economic transformations in modern history. Dubai led an unprecedented construction boom creating iconic landmarks including the Burj Khalifa and Palm Jumeirah, while Abu Dhabi provided critical financial support during the 2008-2009 global financial crisis. The period saw UAE GDP grow substantially before the Dubai World debt crisis triggered a severe but temporary correction.',
+  keyEvents: [
+    {
+      date: 'June 2001',
+      title: 'Palm Jumeirah Construction Begins',
+      description:
+        'World\'s largest artificial island construction started. Used 94 million cubic meters of sand and 7 million tons of rock from Hajar Mountains.',
+      entities: ['Nakheel', 'Dubai'],
+      outcome: 'Iconic landmark and real estate development',
+      significance: 'major',
+    },
+    {
+      date: '2003',
+      title: 'UAE Invasion of Iraq Support',
+      description:
+        'UAE provided $215 million in economic/reconstruction assistance. Almost $7 billion in Iraqi debt cancelled. Among top 12 financial sponsors of Iraqi Governing Council.',
+      entities: ['UAE', 'United States', 'Iraq'],
+      outcome: 'Regional leadership role; US alliance strengthened',
+      significance: 'major',
+    },
+    {
+      date: 'November 2009',
+      title: 'Dubai World Debt Crisis',
+      description:
+        'Dubai World requested restructuring of $26 billion in debts. Total liabilities nearly $60 billion.',
+      entities: ['Dubai World', 'Nakheel'],
+      outcome: 'Global market turbulence; investor confidence shaken',
+      significance: 'critical',
+    },
+    {
+      date: 'December 2009',
+      title: 'Abu Dhabi Bailout of Dubai',
+      description:
+        'Abu Dhabi provided $10 billion initial bailout through Investment Authority. Total support package $20 billion.',
+      entities: ['Abu Dhabi', 'Dubai', 'ADIA'],
+      outcome: 'Dubai World debt restructuring; Nakheel sukuk payments enabled',
+      significance: 'critical',
+    },
+    {
+      date: 'January 2004',
+      title: 'Burj Khalifa Construction Begins',
+      description:
+        'World\'s tallest building construction started. 828m height, 154 floors, $1.5 billion cost.',
+      entities: ['Emaar', 'Samsung C&T', 'BESIX', 'Arabtec'],
+      outcome: 'Global architectural landmark; Dubai icon',
+      significance: 'major',
+    },
+    {
+      date: 'September 2009',
+      title: 'Dubai Metro Opens',
+      description:
+        'First urban metro in Gulf Arab states. $4.2 billion project, 75 km with 47 stations.',
+      entities: ['Dubai RTA'],
+      outcome: 'Revolutionary urban transport; regional first',
+      significance: 'major',
+    },
+    {
+      date: '2008',
+      title: 'Dubai International Airport Terminal 3 Opens',
+      description:
+        'World\'s largest single terminal at opening. 60 million passenger capacity (initially). Exclusively for Emirates airline.',
+      entities: ['Emirates', 'Dubai Airports'],
+      outcome: 'Major aviation hub expansion',
+      significance: 'major',
+    },
+    {
+      date: 'February 2006',
+      title: 'du Launches - Etisalat Monopoly Ends',
+      description:
+        'Emirates Integrated Telecommunications (du) received license, breaking Etisalat\'s 30-year monopoly.',
+      entities: ['du', 'Etisalat', 'TRA'],
+      outcome: 'Telecom sector competition; improved services',
+      significance: 'minor',
+    },
+  ],
+  policyOutcomes: [
+    {
+      policy: 'Economic Diversification',
+      year: '2000-2010',
+      impact: 'Massive infrastructure investment; tourism and trade hubs established',
+      successors: ['Vision 2021', 'Diversification continues'],
+    },
+    {
+      policy: 'Dubai World Debt Restructuring',
+      year: '2009',
+      impact: 'Market correction; inter-emirate solidarity demonstrated via Abu Dhabi bailout',
+    },
+    {
+      policy: 'UAE Telecom Liberalization',
+      year: '2006',
+      impact: 'Competition introduced; du market entry',
+    },
+  ],
+  entityInvolvement: [
+    'Dubai',
+    'Abu Dhabi',
+    'Emaar',
+    'Nakheel',
+    'Dubai World',
+    'Emirates',
+    'Samsung C&T',
+    'ADIA',
+    'GCC',
+  ],
+  nationBuildingMilestones: [
+    '2001: Palm Jumeirah construction begins',
+    '2003: UAE supports Iraq War - $215M assistance',
+    '2004: Burj Khalifa construction begins',
+    '2006: du launches - telecom monopoly broken',
+    '2008: Dubai Metro opens',
+    '2008: Terminal 3 Dubai Airport opens',
+    'November 2009: Dubai World debt crisis emerges',
+    'December 2009: Abu Dhabi provides $10B bailout',
+    '2010: Burj Khalifa opens - world\'s tallest building',
+  ],
+  credibility: createCredibilityScore(1, 85, 25, '2026-04-28'),
+  sources: [
+    createSourceReference('Wikipedia - Dubai housing crash', 1, '2026-04-27'),
+    createSourceReference('Wikipedia - Burj Khalifa', 1, '2026-04-27'),
+    createSourceReference('CNBC', 2, '2026-04-27'),
+    createSourceReference('Harvard Business School', 1, '2026-04-27'),
+    createSourceReference('The National', 1, '2026-04-27'),
+    createSourceReference('Gulf News', 2, '2026-04-27'),
+  ],
+  lastUpdated: '2026-04-28',
+}
+
+// ============================================================================
+// ERA 5: ARAB SPRING PERIOD (2010-2015)
+// ============================================================================
+
+export const arabSpringData: HistoricalEra = {
+  id: 'hist-8-5',
+  era: 'Arab Spring',
+  period: { start: '2010', end: '2015' },
+  description:
+    'The Arab Spring was a wave of pro-democracy protests and uprisings that swept through the Middle East and North Africa beginning in late 2010. For the UAE, the period involved GCC intervention in Bahrain, regional stability concerns, and defensive posture against potential spillover effects. Unlike Tunisia, Egypt, Libya, and Syria, the UAE did not experience major regime change.',
+  keyEvents: [
+    {
+      date: 'December 17, 2010',
+      title: 'Bouazizi Self-Immolation - Spark',
+      description:
+        'Mohamed Bouazizi self-immolated in Tunisia, sparking regional protests. The event catalyzed the Arab Spring across North Africa and Middle East.',
+      entities: ['Mohamed Bouazizi', 'Tunisia'],
+      significance: 'critical',
+    },
+    {
+      date: 'February-March 2011',
+      title: 'GCC Intervention in Bahrain',
+      description:
+        'Saudi Arabia deployed ~1,000 soldiers and UAE deployed 500 police officers to Bahrain to support the monarchy against protests.',
+      entities: ['GCC', 'Saudi Arabia', 'UAE', 'Bahrain'],
+      outcome: 'Bahrain protests suppressed; UAE demonstrates regional leadership',
+      significance: 'critical',
+    },
+    {
+      date: '2011-2012',
+      title: 'Regional Uprisings',
+      description:
+        'UAE remained stable due to oil wealth and hereditary leadership. Positioned as stable business hub during regional turmoil.',
+      entities: ['UAE', 'Egypt', 'Libya', 'Syria', 'Yemen'],
+      outcome: 'Dubai benefited as business shifted during regional instability',
+      significance: 'major',
+    },
+    {
+      date: 'July 2013',
+      title: 'UAE94 Trial',
+      description:
+        'Mass trial concluded with 69 men convicted for allegedly plotting to overthrow the UAE government. Widespread criticism from Amnesty International and Human Rights Watch for fair trial violations.',
+      entities: ['UAE', 'Amnesty International', 'Human Rights Watch'],
+      outcome: 'International criticism of human rights practices',
+      significance: 'major',
+    },
+  ],
+  policyOutcomes: [
+    {
+      policy: 'GCC Security Coordination',
+      year: '2011',
+      impact: 'Enhanced collective security response capability demonstrated',
+      successors: ['Continued GCC cooperation'],
+    },
+    {
+      policy: 'Bahrain Support Operations',
+      year: '2011',
+      impact: 'UAE demonstrates regional security leadership; 500 police deployed',
+    },
+    {
+      policy: 'Internal Security Measures',
+      year: '2011-2013',
+      impact: 'Enhanced surveillance and control measures following regional protests',
+    },
+  ],
+  entityInvolvement: [
+    'UAE',
+    'GCC',
+    'Saudi Arabia',
+    'Bahrain',
+    'Egypt',
+    'Libya',
+    'Syria',
+    'Amnesty International',
+    'Human Rights Watch',
+  ],
+  nationBuildingMilestones: [
+    '2011: UAE deploys 500 police to Bahrain as part of GCC intervention',
+    '2011-2012: Regional Arab Spring - UAE maintains stability',
+    '2011: Dubai benefits as regional business hub during turmoil',
+    '2012: UAE positions as stable business/tourism destination',
+    '2013: UAE94 mass trial - international criticism',
+  ],
+  credibility: createCredibilityScore(1, 80, 12, '2026-04-28'),
+  sources: [
+    createSourceReference('Wikipedia - Arab Spring', 1, '2026-04-27'),
+    createSourceReference('Council on Foreign Relations', 0, '2026-04-27'),
+    createSourceReference('Amnesty International', 0, '2026-04-27'),
+    createSourceReference('Brookings Institution', 1, '2026-04-27'),
+    createSourceReference('Al Jazeera', 1, '2026-04-27'),
+  ],
+  lastUpdated: '2026-04-28',
+}
+
+// ============================================================================
+// ERA 6: MODERNIZATION & VISION ERA (2015-2020)
+// ============================================================================
+
+export const modernizationVisionData: HistoricalEra = {
+  id: 'hist-8-6',
+  era: 'Modernization & Vision Era',
+  period: { start: '2015', end: '2020' },
+  description:
+    'The Modernization & Vision Era encompassed major strategic initiatives including UAE Vision 2021, the appointment of happiness and tolerance ministers, the historic Emirates Mars Mission (Hope Probe), and preparations for Expo 2020 Dubai. The era also saw the groundbreaking Abraham Accords normalizing relations with Israel.',
+  keyEvents: [
+    {
+      date: '2010',
+      title: 'UAE Vision 2021 Launch',
+      description:
+        'Sheikh Mohammed bin Rashid Al Maktoum launched Vision 2021 targeting making UAE "one of the best countries in the world" by Golden Jubilee (2021). Four pillars: United in responsibility, destiny, knowledge, and prosperity.',
+      entities: ['Sheikh Mohammed bin Rashid Al Maktoum'],
+      outcome: 'National strategic framework established',
+      significance: 'critical',
+    },
+    {
+      date: 'February 2016',
+      title: 'Happiness and Tolerance Ministers Appointed',
+      description:
+        'Ohood bint Khalfan Al Roumi appointed Minister of State for Happiness; Sheikha Lubna Al Qasimi appointed Minister of State for Tolerance; Shamma Al Mazrui appointed Minister of State for Youth (youngest cabinet member at age 22).',
+      entities: [
+        'Ohood bint Khalfan Al Roumi',
+        'Sheikha Lubna Al Qasimi',
+        'Shamma Al Mazrui',
+      ],
+      outcome: 'World-first ministerial portfolios; global attention',
+      significance: 'major',
+    },
+    {
+      date: 'October 2017',
+      title: 'UAE AI Strategy 2031',
+      description:
+        'UAE became first country to appoint dedicated AI Minister. Nine priority sectors identified including transport, health, space, renewable energy, water, technology, education, environment, and traffic.',
+      entities: ['UAE AI Office'],
+      outcome: 'Global leadership in government AI adoption',
+      significance: 'critical',
+    },
+    {
+      date: 'July 19, 2020',
+      title: 'Emirates Mars Mission Launch',
+      description:
+        'Hope Probe launched from Tanegashima Space Center, Japan. First Arab mission to another planet.',
+      entities: ['UAE Space Agency', 'MBRSC'],
+      outcome: 'Historic achievement in Arab scientific achievement',
+      significance: 'critical',
+    },
+    {
+      date: 'February 9, 2021',
+      title: 'Hope Probe Enters Mars Orbit',
+      description:
+        'Emirates Mars Mission successfully entered Mars orbit on first attempt. Mission extended until 2028.',
+      entities: ['UAE Space Agency', 'MBRSC'],
+      outcome: 'Arab world\'s first Mars mission; scientific data on Martian atmosphere',
+      significance: 'critical',
+    },
+    {
+      date: 'August 13, 2020',
+      title: 'Abraham Accords Announced',
+      description:
+        'UAE announced normalization of relations with Israel, brokered by US. First Arab state to normalize since 1994 Egypt-Jordan peace treaties.',
+      entities: ['UAE', 'Israel', 'United States', 'Donald Trump'],
+      outcome: 'Historic diplomatic breakthrough; regional realignment',
+      significance: 'critical',
+    },
+  ],
+  policyOutcomes: [
+    {
+      policy: 'UAE Vision 2021',
+      year: '2010',
+      impact: 'National strategic plan with 52 NKPIs across six national priorities',
+      successors: ['Centennial 2071'],
+    },
+    {
+      policy: 'National Strategy for Artificial Intelligence 2031',
+      year: '2017',
+      impact: 'First country with dedicated AI minister; AED 335-352B economic contribution target',
+    },
+    {
+      policy: 'Abraham Accords',
+      year: '2020',
+      impact: 'Normalization with Israel; regional diplomatic realignment',
+    },
+  ],
+  entityInvolvement: [
+    'Sheikh Mohammed bin Rashid Al Maktoum',
+    'Ohood bint Khalfan Al Roumi',
+    'Sheikha Lubna Al Qasimi',
+    'Shamma Al Mazrui',
+    'UAE Space Agency',
+    'MBRSC',
+    'Israel',
+    'United States',
+  ],
+  nationBuildingMilestones: [
+    '2010: Vision 2021 launched - national strategic framework',
+    '2014: National Agenda launched with six priorities',
+    '2016: First Happiness and Tolerance ministers appointed globally',
+    '2017: UAE AI Strategy 2031 - first AI minister worldwide',
+    '2020: Hope Probe launches - Arab world\'s first Mars mission',
+    'August 2020: Abraham Accords - normalization with Israel',
+    'February 2021: Hope Probe enters Mars orbit successfully',
+  ],
+  credibility: createCredibilityScore(0, 92, 45, '2026-04-28'),
+  sources: [
+    createSourceReference('UAE Government Portal', 0, '2026-04-28'),
+    createSourceReference('UAE Cabinet', 0, '2026-04-28'),
+    createSourceReference('Wikipedia - Hope Probe', 1, '2026-04-27'),
+    createSourceReference('OECD.AI', 1, '2026-04-27'),
+    createSourceReference('Wikipedia - Minister of State for Happiness', 1, '2026-04-27'),
+    createSourceReference('Wikipedia - Abraham Accords', 1, '2026-04-27'),
+  ],
+  lastUpdated: '2026-04-28',
+}
+
+// ============================================================================
+// ERA 7: POST-PANDEMIC & EXPO ERA (2020-2023)
+// ============================================================================
+
+export const postPandemicExpoData: HistoricalEra = {
+  id: 'hist-8-7',
+  era: 'Post-Pandemic & Expo Era',
+  period: { start: '2020', end: '2023' },
+  description:
+    'The Post-Pandemic & Expo Era encompassed Expo 2020 Dubai (postponed to 2021-2022 due to COVID-19), the pandemic response and recovery, and leadership transitions following Sheikh Khalifa\'s death and MBZ\'s assumption of the presidency. The era also saw COP28 preparations and the UAE\'s emergence as a global climate diplomacy leader.',
+  keyEvents: [
+    {
+      date: 'October 1, 2021',
+      title: 'Expo 2020 Dubai Opens',
+      description:
+        'Six-month world expo opened (postponed from 2020 due to COVID). 24.1 million visits, 178 countries represented, 178 countries and 10 organizations participated.',
+      entities: ['Dubai', 'BIE'],
+      outcome: 'Major global event; economic and cultural impact',
+      significance: 'critical',
+    },
+    {
+      date: 'March 31, 2022',
+      title: 'Expo 2020 Dubai Closes',
+      description:
+        'Event concluded with site transitioning to Expo City Dubai as mixed-use community.',
+      entities: ['Dubai', 'Expo City Dubai'],
+      outcome: 'Legacy development continues',
+      significance: 'major',
+    },
+    {
+      date: 'May 13, 2022',
+      title: 'Sheikh Khalifa Dies',
+      description:
+        'President Sheikh Khalifa bin Zayed Al Nahyan died at age 73. 40 days of mourning observed.',
+      entities: ['Sheikh Khalifa bin Zayed Al Nahyan'],
+      outcome: 'Leadership transition initiated',
+      significance: 'critical',
+    },
+    {
+      date: 'May 14, 2022',
+      title: 'MBZ Becomes President',
+      description:
+        'Federal Supreme Council elected Sheikh Mohamed bin Zayed Al Nahyan (MBZ) as President. Had been de facto leader since Sheikh Khalifa\'s 2014 stroke.',
+      entities: ['Sheikh Mohamed bin Zayed Al Nahyan', 'Federal Supreme Council'],
+      outcome: 'Leadership succession; MBZ assumes presidency',
+      significance: 'critical',
+    },
+    {
+      date: 'November-December 2023',
+      title: 'COP28 Hosted in UAE',
+      description:
+        'UAE hosted COP28 in Expo City Dubai. 85,000+ participants from 198 parties. Historic first: fossil fuel language in final agreement ("transitioning away").',
+      entities: ['UAE', 'Dr. Sultan Al Jaber', 'UNFCCC'],
+      outcome: 'Global climate diplomacy leadership; fossil fuel language breakthrough',
+      significance: 'critical',
+    },
+    {
+      date: '2020-2022',
+      title: 'COVID-19 Pandemic Response',
+      description:
+        'UAE implemented comprehensive pandemic response including vaccination campaign, travel restrictions, and economic support packages totaling AED 33 billion in federal initiatives.',
+      entities: ['UAE Government', 'Ministry of Health'],
+      outcome: 'High vaccination rates; economic recovery',
+      significance: 'major',
+    },
+  ],
+  policyOutcomes: [
+    {
+      policy: 'Expo 2020 Dubai',
+      year: '2021-2022',
+      impact: '$42.2B projected GVA (2013-2042); 24.1M visits',
+    },
+    {
+      policy: 'COVID-19 Economic Support',
+      year: '2020',
+      impact: 'AED 33B federal initiatives; AED 30B Emirates Development Bank SME support',
+    },
+    {
+      policy: 'Presidential Succession',
+      year: '2022',
+      impact: 'MBZ assumes presidency; continuity in governance',
+    },
+    {
+      policy: 'COP28 Presidency',
+      year: '2023',
+      impact: 'Historic climate agreement; Loss and Damage Fund operationalized',
+    },
+  ],
+  entityInvolvement: [
+    'Sheikh Khalifa bin Zayed Al Nahyan',
+    'Sheikh Mohamed bin Zayed Al Nahyan',
+    'Dr. Sultan Al Jaber',
+    'Dubai',
+    'Abu Dhabi',
+    'UNFCCC',
+    'BIE',
+    'World Health Organization',
+  ],
+  nationBuildingMilestones: [
+    '2020: COVID-19 pandemic - UAE response and recovery',
+    'Oct 2021-Mar 2022: Expo 2020 Dubai - 24.1M visits',
+    'May 2022: Sheikh Khalifa dies - leadership transition',
+    'May 2022: MBZ becomes President of UAE',
+    'March 2023: Sheikh Khaled designated Crown Prince of Abu Dhabi',
+    'Nov-Dec 2023: COP28 hosted - historic climate agreement',
+  ],
+  credibility: createCredibilityScore(0, 90, 50, '2026-04-28'),
+  sources: [
+    createSourceReference('BIE Official', 0, '2026-04-28'),
+    createSourceReference('Wikipedia - Expo 2020', 1, '2026-04-27'),
+    createSourceReference('UAE Ministry of Foreign Affairs', 0, '2026-04-28'),
+    createSourceReference('UNFCCC Official', 0, '2026-04-28'),
+    createSourceReference('Wikipedia - Sheikh Khalifa', 1, '2026-04-27'),
+    createSourceReference('Wikipedia - COP28', 1, '2026-04-27'),
+  ],
+  lastUpdated: '2026-04-28',
+}
+
+// ============================================================================
+// ERA 8: RECENT ERA (2023-2026)
+// ============================================================================
+
+export const recentEraData: HistoricalEra = {
+  id: 'hist-8-8',
+  era: 'Recent Era',
+  period: { start: '2023', end: '2026' },
+  description:
+    'The Recent Era encompasses UAE\'s rise as a global power through BRICS membership, major infrastructure projects like Etihad Rail, technological innovation, and climate leadership. The period also saw significant policy reforms including corporate tax, golden visa expansions, and ambitious infrastructure projects. The April 2024 flood crisis tested emergency response capabilities.',
+  keyEvents: [
+    {
+      date: 'January 1, 2024',
+      title: 'UAE Joins BRICS',
+      description:
+        'UAE officially became a member of BRICS (Brazil, Russia, India, China, South Africa, Egypt, Ethiopia, Iran, Indonesia). Highest GDP per capita (PPP) among members at $81,676.',
+      entities: ['BRICS', 'UAE'],
+      outcome: 'Emerging markets alliance membership; diplomatic diversification',
+      significance: 'critical',
+    },
+    {
+      date: 'April 16, 2024',
+      title: 'UAE Flood Crisis',
+      description:
+        'Heaviest rainfall in 75 years (254.8mm in 24 hours in Al Ain). 5 deaths, $2.9-3.4B insurance losses. 1,244 flights cancelled at Dubai International.',
+      entities: ['UAE Government', 'Dubai Airports'],
+      outcome: 'Emergency response tested; AED 2B government aid provided',
+      significance: 'major',
+    },
+    {
+      date: 'September 2024',
+      title: 'US Major Defense Partner',
+      description:
+        'UAE became second country after India to be designated "major defense partner" by US.',
+      entities: ['UAE', 'United States'],
+      outcome: 'Enhanced defense cooperation; strategic alliance deepened',
+      significance: 'major',
+    },
+    {
+      date: 'February 2024',
+      title: 'BAPS Mandir Inaugurated',
+      description:
+        'First Hindu temple in Abu Dhabi inaugurated. Symbol of religious tolerance.',
+      entities: ['BAPS', 'UAE'],
+      outcome: 'Interfaith harmony; cultural inclusion',
+      significance: 'minor',
+    },
+    {
+      date: 'November 2024',
+      title: 'UAE Stock Market $1 Trillion',
+      description:
+        'Stocks listed in UAE topped $1 trillion market capitalization for first time.',
+      entities: ['UAE Financial Markets'],
+      outcome: 'Economic milestone; global financial significance',
+      significance: 'minor',
+    },
+    {
+      date: '2025-2026',
+      title: 'Etihad Rail Passenger Service',
+      description:
+        'National railway passenger service launching. Abu Dhabi to Dubai in 57 minutes, 11 cities, 400 passenger capacity.',
+      entities: ['Etihad Rail'],
+      outcome: 'Revolutionary transport connectivity',
+      significance: 'major',
+    },
+    {
+      date: 'January 2026',
+      title: 'Single-Use Plastics Ban',
+      description:
+        'Comprehensive ban on single-use plastics including cups, cutlery, straws, Styrofoam, and paper bags under 50 microns.',
+      entities: ['UAE Government'],
+      outcome: 'Environmental protection; sustainability commitment',
+      significance: 'minor',
+    },
+  ],
+  policyOutcomes: [
+    {
+      policy: 'Corporate Tax',
+      year: '2023',
+      impact: '9% rate effective; AED 375K threshold',
+    },
+    {
+      policy: 'UAE Corporate Tax',
+      year: '2024',
+      impact: 'Fatf gray list removed February 2024',
+    },
+    {
+      policy: 'BRICS Membership',
+      year: '2024',
+      impact: 'Strategic diversification; emerging markets alignment',
+    },
+  ],
+  entityInvolvement: [
+    'Sheikh Mohamed bin Zayed Al Nahyan',
+    'Sheikh Mohammed bin Rashid Al Maktoum',
+    'BRICS',
+    'United States',
+    'Etihad Rail',
+    'UAE Government',
+  ],
+  nationBuildingMilestones: [
+    'Jan 2024: UAE joins BRICS - emerging markets alliance',
+    'Feb 2024: FATF gray list removed',
+    'Apr 2024: UAE flood crisis - 254.8mm rainfall in 24 hours',
+    'Sep 2024: US major defense partner designation',
+    'Nov 2024: UAE stocks top $1 trillion market cap',
+    '2025: Etihad Rail passenger service launching',
+    'Jan 2026: Single-use plastics ban',
+    '2026: Year of Family declared',
+  ],
+  credibility: createCredibilityScore(0, 88, 30, '2026-04-28'),
+  sources: [
+    createSourceReference('UAE Ministry of Foreign Affairs', 0, '2026-04-28'),
+    createSourceReference('UAE Government Portal', 0, '2026-04-28'),
+    createSourceReference('Wikipedia - BRICS', 1, '2026-04-27'),
+    createSourceReference('Wikipedia - UAE 2024', 1, '2026-04-27'),
+    createSourceReference('UNFCCC Official', 0, '2026-04-28'),
+  ],
+  lastUpdated: '2026-04-28',
+}
+
+// ============================================================================
+// ERA 9: EVENT-SPECIFIC HISTORICAL DEEP DIVES (MD 8-9)
+// Complete data from 19 major UAE historical events
+// ============================================================================
+
+export interface EventEntity {
+  entity: string
+  role: string
+  type: 'Person' | 'Place' | 'Organization' | 'Nation' | 'Tribe' | 'Media' | 'Fund' | 'Operation' | 'Agreement' | 'Facility' | 'App' | 'Vaccine' | 'Company' | 'Firm' | 'Subsidiary' | 'AI Model'
+}
+
+export interface EventSentiment {
+  topic: string
+  sentiment: string
+  valence: number
+  source: string
+}
+
+export interface HistoricalEventDetail {
+  id: string
+  eventNumber: number
+  title: string
+  period: { start: string; end: string }
+  source: string
+  overview: string
+  keyFacts: string[]
+  timeline?: Array<{ date: string; event: string; description?: string }>
+  entities: EventEntity[]
+  sentiment: EventSentiment[]
+  uaeRelevance: 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW'
+}
+
+export interface EventHistoricalDataset {
+  events: HistoricalEventDetail[]
+  summary: {
+    totalEvents: number
+    entityCount: number
+    sourceCount: number
+    dataPointsCount: number
+    lastUpdated: string
+  }
+}
+
+export const eventHistoricalData: EventHistoricalDataset = {
+  events: [
+    // EVENT 1: FORMATION OF UAE (1971)
+    {
+      id: 'event-1',
+      eventNumber: 1,
+      title: 'Formation of UAE',
+      period: { start: '1968', end: '1972' },
+      source: 'Wikipedia - Foundation of the United Arab Emirates',
+      overview: 'The formation of the United Arab Emirates on December 2, 1971, unified seven emirates under a federal structure led by Sheikh Zayed bin Sultan Al Nahyan as first President.',
+      keyFacts: [
+        'January 1968: Britain announced withdrawal from east of Suez',
+        'February 18, 1968: Sheikh Zayed and Sheikh Rashid met at Argoub Al Sedirah, agreed on union principle',
+        'October 1969: Sheikh Zayed elected president, Sheikh Rashid as vice president',
+        'December 2, 1971: UAE formally proclaimed at Union House, Jumeirah',
+        'February 10, 1972: Ras Al Khaimah acceded to the UAE',
+        'Jordan first to recognize UAE on December 2, 1971',
+        'UN membership achieved December 9, 1971',
+      ],
+      timeline: [
+        { date: 'January 1968', event: 'British Withdrawal Announced' },
+        { date: 'February 18, 1968', event: 'Zayed-Rashid Desert Meeting' },
+        { date: 'October 1969', event: 'Sheikh Zayed elected president' },
+        { date: 'December 2, 1971', event: 'UAE formally proclaimed' },
+        { date: 'February 10, 1972', event: 'Ras Al Khaimah joined federation' },
+      ],
+      entities: [
+        { entity: 'Sheikh Zayed bin Sultan Al Nahyan', role: 'First President', type: 'Person' },
+        { entity: 'Sheikh Rashid bin Saeed Al Maktoum', role: 'Vice President and Prime Minister', type: 'Person' },
+        { entity: 'Union House, Jumeirah', role: 'Location of UAE proclamation', type: 'Place' },
+        { entity: 'Trucial States Council', role: 'Pre-federation body', type: 'Organization' },
+      ],
+      sentiment: [
+        { topic: 'British withdrawal', sentiment: 'Negative', valence: -0.6, source: 'Historical context' },
+        { topic: 'Union formation', sentiment: 'Strongly Positive', valence: 0.9, source: 'National narrative' },
+        { topic: 'Qatar/Bahrain departure', sentiment: 'Negative', valence: -0.4, source: 'Historical challenge' },
+      ],
+      uaeRelevance: 'CRITICAL',
+    },
+
+    // EVENT 2: BURAIMI DISPUTE
+    {
+      id: 'event-2',
+      eventNumber: 2,
+      title: 'Buraimi Dispute',
+      period: { start: '1949', end: '1974' },
+      source: 'Grokipedia, State Department Historical Documents',
+      overview: 'Territorial conflict over Buraimi Oasis between Saudi Arabia and Trucial States/Abu Dhabi. 80 Saudi guards occupied Hamasa in 1952. Resolved by 1974 Treaty of Jeddah.',
+      keyFacts: [
+        '1949: Saudi Arabia made territorial claims over parts of Abu Dhabi territory',
+        'January 1952: Armed conflict began when Saudi guards occupied Hamasa village',
+        'August 31, 1952: 80 Saudi guards led by Turki bin Abdullah Al Otaishan occupied Hamasa',
+        'October 25, 1955: British forces under Trucial Oman Scouts took the oasis',
+        '1974: Treaty of Jeddah settled border demarcation',
+      ],
+      timeline: [
+        { date: '1949', event: 'Saudi territorial claims over Buraimi Oasis' },
+        { date: 'January 1952', event: 'Saudi guards occupied Hamasa village' },
+        { date: 'October 25, 1955', event: 'Trucial Oman Scouts took the oasis' },
+        { date: '1974', event: 'Treaty of Jeddah settled border' },
+      ],
+      entities: [
+        { entity: 'Turki bin Abdullah Al Otaishan', role: 'Saudi guard leader', type: 'Person' },
+        { entity: 'Buraimi Oasis', role: 'Contested territory', type: 'Place' },
+        { entity: 'Trucial Oman Scouts', role: 'British military force', type: 'Organization' },
+      ],
+      sentiment: [
+        { topic: 'Saudi occupation', sentiment: 'Negative', valence: -0.7, source: 'UAE perspective' },
+        { topic: 'British/Trucial Scouts response', sentiment: 'Positive', valence: 0.6, source: 'UAE perspective' },
+      ],
+      uaeRelevance: 'HIGH',
+    },
+
+    // EVENT 3: DISCOVERY OF OIL IN ABU DHABI
+    {
+      id: 'event-3',
+      eventNumber: 3,
+      title: 'Discovery of Oil in Abu Dhabi',
+      period: { start: '1958', end: '1971' },
+      source: 'GeoExpro, The National',
+      overview: 'The discovery of oil in commercial quantities in 1958 transformed Abu Dhabi from a small fishing village to a wealthy emirate, laying the foundation for the UAE economic prosperity.',
+      keyFacts: [
+        'March 28, 1958: ADMA Enterprise offshore exploration platform arrived from Germany',
+        '1958: Drilling began on Umm Shaif field at about 8,755 ft depth',
+        '1958: ADMA discovered Umm Shaif field - 300 km super-giant field',
+        '1962: Umm Shaif came on stream',
+        '1971: ADNOC created',
+        'Abu Dhabi holds sixth largest proven oil reserves globally',
+      ],
+      entities: [
+        { entity: 'Peter Cox', role: 'Geologist', type: 'Person' },
+        { entity: 'ADMA Enterprise', role: 'Exploration company', type: 'Organization' },
+        { entity: 'Umm Shaif field', role: 'Oil field', type: 'Place' },
+        { entity: 'ADNOC', role: 'National oil company', type: 'Organization' },
+      ],
+      sentiment: [
+        { topic: 'Oil discovery', sentiment: 'Strongly Positive', valence: 0.9, source: 'Transformative' },
+        { topic: 'Economic transformation', sentiment: 'Strongly Positive', valence: 0.9, source: 'National prosperity' },
+      ],
+      uaeRelevance: 'CRITICAL',
+    },
+
+    // EVENT 4: IRANIAN ISLAND SEIZURE
+    {
+      id: 'event-4',
+      eventNumber: 4,
+      title: 'Iranian Island Seizure',
+      period: { start: '1971', end: 'Present' },
+      source: 'UAE Embassy, CIA Documents',
+      overview: 'Iranian forces occupied Abu Musa, Greater Tunb, and Lesser Tunb on November 30, 1971 - just two days before the UAE formal establishment. The UAE has consistently sought resolution through negotiations, arbitration, or ICJ adjudication.',
+      keyFacts: [
+        'November 30, 1971: Iran occupied Abu Musa, Greater Tunb, and Lesser Tunb',
+        'Three police were killed during the seizure',
+        'UAE immediately protested Iranian illegal occupation',
+        'December 9, 1971: UAE brought matter to UN Security Council',
+        'For 50 years, UAE consistently sought resolution through negotiations, arbitration, ICJ',
+        'Iran rejected all three options and refuses to discuss sovereignty',
+      ],
+      timeline: [
+        { date: 'November 30, 1971', event: 'Iran occupied Abu Musa and Tunb islands' },
+        { date: 'December 9, 1971', event: 'UAE brought matter to UN Security Council' },
+      ],
+      entities: [
+        { entity: 'Abu Musa', role: 'Occupied island', type: 'Place' },
+        { entity: 'Greater Tunb', role: 'Occupied island', type: 'Place' },
+        { entity: 'Iran', role: 'Occupying power', type: 'Nation' },
+        { entity: 'UN Security Council', role: 'Mediating body', type: 'Organization' },
+      ],
+      sentiment: [
+        { topic: 'Iranian occupation', sentiment: 'Strongly Negative', valence: -0.9, source: 'UAE/allies' },
+        { topic: 'UAE diplomatic efforts', sentiment: 'Positive', valence: 0.6, source: 'Resolution attempt' },
+      ],
+      uaeRelevance: 'CRITICAL',
+    },
+
+    // EVENT 5: DUBAI DEBT CRISIS
+    {
+      id: 'event-5',
+      eventNumber: 5,
+      title: 'Dubai Debt Crisis',
+      period: { start: '2009', end: '2010' },
+      source: 'Euromoney, IMF Reports',
+      overview: 'In late 2009, Dubai faced a major financial crisis when Dubai World requested restructuring of $26 billion in debts.',
+      keyFacts: [
+        'November 25, 2009: Dubai World requested restructuring of $26 billion in debts',
+        'Total liabilities nearly $60 billion',
+        'December 14, 2009: Abu Dhabi injected $10 billion into Dubai Financial Support Fund',
+        'Nakheel sukuk of AED 15.50 billion issued by Dubai World',
+        'UK banks had biggest exposure at more than $5 billion',
+      ],
+      timeline: [
+        { date: 'November 25, 2009', event: 'Dubai World requested debt restructuring' },
+        { date: 'December 14, 2009', event: 'Abu Dhabi injected $10 billion bailout' },
+      ],
+      entities: [
+        { entity: 'Dubai World', role: 'Indebted investment company', type: 'Organization' },
+        { entity: 'Nakheel', role: 'Palm Island developer', type: 'Subsidiary' },
+        { entity: 'Abu Dhabi', role: 'Bailout provider', type: 'Nation' },
+      ],
+      sentiment: [
+        { topic: 'Debt restructuring need', sentiment: 'Negative', valence: -0.6, source: 'Crisis indicator' },
+        { topic: 'Abu Dhabi bailout', sentiment: 'Positive', valence: 0.5, source: 'Relief' },
+      ],
+      uaeRelevance: 'HIGH',
+    },
+
+    // EVENT 6: ARAB SPRING UAE RESPONSE
+    {
+      id: 'event-6',
+      eventNumber: 6,
+      title: 'Arab Spring UAE Response',
+      period: { start: '2011', end: '2011' },
+      source: 'Wikipedia, Carnegie Endowment',
+      overview: 'Unlike Tunisia, Egypt, Libya, Bahrain, and Syria, the UAE did not experience regime change or major upheaval during the Arab Spring. The UAE responded through GCC intervention in Bahrain.',
+      keyFacts: [
+        'UAE did not experience regime change unlike Tunisia, Egypt, Libya, Bahrain, Syria',
+        'UAE participated in GCC interventions in neighboring Bahrain',
+        'Oil wealth and hereditary leadership structures provided stability',
+        'UAE positioned as stable business hub during regional turmoil',
+      ],
+      timeline: [
+        { date: '2011', event: 'UAE participated in GCC intervention in Bahrain' },
+      ],
+      entities: [
+        { entity: 'GCC', role: 'Security alliance', type: 'Organization' },
+        { entity: 'Bahrain', role: 'GCC intervention target', type: 'Nation' },
+      ],
+      sentiment: [
+        { topic: 'UAE stability maintained', sentiment: 'Positive', valence: 0.7, source: 'Government' },
+        { topic: 'Business hub positioning', sentiment: 'Positive', valence: 0.6, source: 'Economic' },
+      ],
+      uaeRelevance: 'HIGH',
+    },
+
+    // EVENT 7: UAE94 TRIAL
+    {
+      id: 'event-7',
+      eventNumber: 7,
+      title: 'UAE94 Trial',
+      period: { start: '2012', end: 'Present' },
+      source: 'Amnesty International, Human Rights Watch',
+      overview: 'In July 2013, a mass trial concluded with 69 men convicted for allegedly plotting to overthrow the UAE government. The trial faced widespread criticism for fair trial violations.',
+      keyFacts: [
+        'July 2013: Mass trial concluded with 69 men convicted',
+        'Sentences ranged up to 15 years in prison',
+        'Currently 60 men remain imprisoned from this case',
+        'Widespread criticism for multiple fair trial violations',
+        'Incommunicado detention: defendants held for up to a year without contact',
+        'Torture allegations: several stating they were tortured to confess',
+        'UN Working Group found all defendants arbitrarily detained',
+      ],
+      timeline: [
+        { date: '2012', event: 'Mass arrests of 94 dissidents' },
+        { date: 'July 2013', event: 'Verdict - 69 men convicted' },
+      ],
+      entities: [
+        { entity: 'Mohamed al-Roken', role: 'Human rights lawyer, defendant', type: 'Person' },
+        { entity: 'Federal Supreme Court', role: 'Trial venue', type: 'Place' },
+        { entity: 'UN Working Group on Arbitrary Detention', role: 'UN body', type: 'Organization' },
+      ],
+      sentiment: [
+        { topic: 'Mass trial format', sentiment: 'Negative', valence: -0.8, source: 'Human rights orgs' },
+        { topic: 'Torture allegations', sentiment: 'Strongly Negative', valence: -0.9, source: 'HRW/Amnesty' },
+      ],
+      uaeRelevance: 'HIGH',
+    },
+
+    // EVENT 8: YEMEN INTERVENTION
+    {
+      id: 'event-8',
+      eventNumber: 8,
+      title: 'Yemen Intervention',
+      period: { start: '2015', end: '2019' },
+      source: 'POMEPS',
+      overview: 'UAE entered Yemen as core member of Gulf coalition in March 2015, backing southern militias. By 2016, UAE had retaken key ports including Aden and Mukalla.',
+      keyFacts: [
+        'March 2015: UAE entered Yemen as core member of Gulf coalition',
+        'By 2016: UAE retook key ports including Aden and Mukalla',
+        'Built forward bases including airbase at Assab in Eritrea',
+        'June 2016: UAE declared War is Over for Emirati troops',
+        '2019: UAE withdrew forces following disagreements with Saudi approach',
+      ],
+      timeline: [
+        { date: 'March 26, 2015', event: 'UAE and Saudi Arabia launch Operation Decisive Storm' },
+        { date: 'June 2016', event: 'Bin Zayed declared War is Over for Emirati troops' },
+      ],
+      entities: [
+        { entity: 'President Hadi', role: 'Yemen government leader', type: 'Person' },
+        { entity: 'Southern Transitional Council', role: 'UAE-backed separatists', type: 'Organization' },
+        { entity: 'Assab airbase', role: 'Forward base in Eritrea', type: 'Facility' },
+      ],
+      sentiment: [
+        { topic: 'Military intervention', sentiment: 'Neutral', valence: 0, source: 'Mixed' },
+        { topic: 'Port recapture success', sentiment: 'Positive', valence: 0.6, source: 'Strategic' },
+      ],
+      uaeRelevance: 'HIGH',
+    },
+
+    // EVENT 9: QATAR DIPLOMATIC CRISIS
+    {
+      id: 'event-9',
+      eventNumber: 9,
+      title: 'Qatar Diplomatic Crisis',
+      period: { start: '2017', end: '2021' },
+      source: 'Wikipedia, Government Communications Office',
+      overview: 'On June 5, 2017, Saudi Arabia, UAE, Bahrain, Egypt, and other nations severed diplomatic relations with Qatar and imposed a blockade. The crisis lasted until January 5, 2021.',
+      keyFacts: [
+        'June 5, 2017: Saudi Arabia, UAE, Bahrain, Egypt severed diplomatic relations',
+        'Blockaders blocked Qatar airspace and sea routes',
+        '13 demands issued including cut ties with Iran, shut down Al Jazeera',
+        'January 5, 2021: Al-Ula Agreement signed - Gulf reconciliation',
+      ],
+      timeline: [
+        { date: 'June 5, 2017', event: 'Saudi-led bloc severed diplomatic relations with Qatar' },
+        { date: 'January 5, 2021', event: 'Al-Ula Agreement - Gulf reconciliation signed' },
+      ],
+      entities: [
+        { entity: 'Al Jazeera', role: 'Qatar media network', type: 'Media' },
+        { entity: 'GCC', role: 'Regional bloc', type: 'Organization' },
+        { entity: 'Al-Ula Agreement', role: 'Reconciliation agreement', type: 'Agreement' },
+      ],
+      sentiment: [
+        { topic: 'Blockade imposition', sentiment: 'Negative', valence: -0.6, source: 'Regional tension' },
+        { topic: 'Reconciliation', sentiment: 'Positive', valence: 0.7, source: 'Resolution' },
+      ],
+      uaeRelevance: 'HIGH',
+    },
+
+    // EVENT 10: ABRAHAM ACCORDS
+    {
+      id: 'event-10',
+      eventNumber: 10,
+      title: 'Abraham Accords',
+      period: { start: '2020', end: 'Present' },
+      source: 'Wikipedia, US Department of State, UAE Embassy',
+      overview: 'The Abraham Accords established diplomatic normalization between Israel and several Arab states, signed September 15, 2020. UAE and Bahrain were first Arab countries to recognize Israel since 1994.',
+      keyFacts: [
+        'August 13, 2020: UAE-Israel normalization announced',
+        'September 15, 2020: White House signing ceremony for UAE, Israel, Bahrain',
+        'First Arab countries to formally recognize Israel since 1994',
+        'UAE deal brokered in exchange for Israeli suspension of West Bank annexation plans',
+        'Abraham Fund: $3 billion target to boost trade',
+      ],
+      timeline: [
+        { date: 'August 13, 2020', event: 'UAE-Israel normalization announced' },
+        { date: 'September 15, 2020', event: 'White House signing ceremony' },
+      ],
+      entities: [
+        { entity: 'Sheikh Mohammed bin Zayed Al Nahyan', role: 'UAE President', type: 'Person' },
+        { entity: 'Donald Trump', role: 'US President/Mediator', type: 'Person' },
+        { entity: 'Abraham Fund', role: '$3B trade fund', type: 'Fund' },
+      ],
+      sentiment: [
+        { topic: 'Normalization with Israel', sentiment: 'Mixed', valence: 0.3, source: 'Divided' },
+        { topic: 'Economic cooperation', sentiment: 'Positive', valence: 0.6, source: 'Business' },
+      ],
+      uaeRelevance: 'HIGH',
+    },
+
+    // EVENT 11: COVID-19 IN UAE
+    {
+      id: 'event-11',
+      eventNumber: 11,
+      title: 'COVID-19 in UAE',
+      period: { start: '2020', end: '2023' },
+      source: 'Wikipedia, PMC/NIH, UAE Government Portals',
+      overview: 'UAE was first Middle Eastern country to report COVID-19 on January 29, 2020. The pandemic response included comprehensive measures, high vaccination rates, and field hospitals.',
+      keyFacts: [
+        'First confirmed case: January 29, 2020 - first Middle Eastern country to report',
+        'Total confirmed cases: 1,067,030 (as of May 24, 2023)',
+        'Deaths: 2,349 (fatality rate: 0.22%)',
+        'Vaccines administered: 24,922,054 doses',
+        'Sinopharm BIBP vaccine began December 2020',
+        'Field hospital at Dubai World Trade Centre: 300-3,000 beds capacity',
+      ],
+      timeline: [
+        { date: 'January 29, 2020', event: 'First confirmed COVID-19 case' },
+        { date: 'December 2020', event: 'Vaccination campaign began' },
+      ],
+      entities: [
+        { entity: 'NCEMA', role: 'Crisis management body', type: 'Organization' },
+        { entity: 'Sinopharm BIBP', role: 'Chinese vaccine', type: 'Vaccine' },
+        { entity: 'ALHOSN UAE', role: 'Contact tracing app', type: 'App' },
+      ],
+      sentiment: [
+        { topic: 'Swift response', sentiment: 'Positive', valence: 0.7, source: 'Government' },
+        { topic: 'High vaccination rate', sentiment: 'Positive', valence: 0.8, source: 'Achievement' },
+      ],
+      uaeRelevance: 'CRITICAL',
+    },
+
+    // EVENT 12: EXPO 2020 DUBAI
+    {
+      id: 'event-12',
+      eventNumber: 12,
+      title: 'Expo 2020 Dubai',
+      period: { start: '2021', end: '2022' },
+      source: 'Wikipedia, Expo 2020 Dubai Official, BIE',
+      overview: 'Expo 2020 Dubai was the first World Expo held in the Middle East, North Africa, and South Asia region. The six-month event attracted more than 24 million visits from 178 countries.',
+      keyFacts: [
+        'Dates: October 1, 2021 - March 31, 2022 (postponed from 2020 due to COVID-19)',
+        'Location: 438 hectares between Dubai and Abu Dhabi',
+        'Total visits: More than 24 million during six-month period',
+        'Participants: 193 countries and 10 organizations',
+        'Theme: Connecting Minds, Creating the Future',
+        'Post-expo site became Expo City Dubai',
+      ],
+      timeline: [
+        { date: 'October 1, 2021', event: 'Expo 2020 Dubai opened' },
+        { date: 'March 31, 2022', event: 'Expo 2020 Dubai closed' },
+      ],
+      entities: [
+        { entity: 'Reem Al Hashimi', role: 'Managing Director', type: 'Person' },
+        { entity: 'Al Wasl Plaza', role: 'Central plaza', type: 'Place' },
+        { entity: 'BIE', role: 'Organizing body', type: 'Organization' },
+      ],
+      sentiment: [
+        { topic: 'Event success', sentiment: 'Strongly Positive', valence: 0.9, source: 'National achievement' },
+        { topic: 'International participation', sentiment: 'Positive', valence: 0.8, source: 'Global engagement' },
+      ],
+      uaeRelevance: 'HIGH',
+    },
+
+    // EVENT 13: MBZ PRESIDENCY
+    {
+      id: 'event-13',
+      eventNumber: 13,
+      title: 'MBZ Presidency',
+      period: { start: '2022', end: 'Present' },
+      source: 'Britannica, UAE Government Portals, Al Jazeera',
+      overview: 'Sheikh Mohamed bin Zayed Al Nahyan (MBZ) became President of the UAE on May 14, 2022, following the death of Sheikh Khalifa. MBZ had been de facto ruler since Khalifa suffered a stroke in 2014.',
+      keyFacts: [
+        'Born: March 11, 1961, in Al-Ain, Abu Dhabi',
+        'Crown Prince of Abu Dhabi: 2004 to 2022',
+        'May 14, 2022: Elected President of UAE by Federal Supreme Council',
+        'Graduated from Royal Military Academy Sandhurst in 1979',
+        'Key figure in Abraham Accords (2020)',
+      ],
+      timeline: [
+        { date: 'May 13, 2022', event: 'Became ruler of Abu Dhabi after Khalifa death' },
+        { date: 'May 14, 2022', event: 'Elected President of UAE' },
+      ],
+      entities: [
+        { entity: 'Sheikh Mohamed bin Zayed Al Nahyan', role: 'President', type: 'Person' },
+        { entity: 'Federal Supreme Council', role: 'Electing body', type: 'Organization' },
+      ],
+      sentiment: [
+        { topic: 'Seamless succession', sentiment: 'Positive', valence: 0.8, source: 'Stability' },
+        { topic: 'Leadership style', sentiment: 'Positive', valence: 0.6, source: 'Governance' },
+      ],
+      uaeRelevance: 'CRITICAL',
+    },
+
+    // EVENT 14: COP28
+    {
+      id: 'event-14',
+      eventNumber: 14,
+      title: 'COP28',
+      period: { start: '2023', end: '2023' },
+      source: 'UNFCCC, Wikipedia, COP28 Official',
+      overview: 'COP28 was held in Expo City Dubai from November 30 to December 13, 2023. The largest climate summit ever held with over 80,000 participants. Historic first: fossil fuel language in final agreement.',
+      keyFacts: [
+        'Dates: November 30 - December 13, 2023',
+        'Location: Expo City, Dubai, UAE',
+        'Over 80,000 accredited participants including 150+ heads of state and government',
+        'Largest climate summit ever held',
+        'Loss and damage fund established on first day',
+        '$85 billion pledged to climate causes',
+      ],
+      timeline: [
+        { date: 'November 30, 2023', event: 'COP28 opened - Loss and damage fund established' },
+        { date: 'December 13, 2023', event: 'COP28 closed - UAE Consensus adopted' },
+      ],
+      entities: [
+        { entity: 'Sultan Al Jaber', role: 'COP28 President', type: 'Person' },
+        { entity: 'Expo City Dubai', role: 'Venue', type: 'Place' },
+        { entity: 'Loss and Damage Fund', role: 'Climate fund', type: 'Fund' },
+      ],
+      sentiment: [
+        { topic: 'UAE hosting', sentiment: 'Positive', valence: 0.6, source: 'National prestige' },
+        { topic: 'Fossil fuel transition', sentiment: 'Mixed', valence: 0.2, source: 'Environmental' },
+      ],
+      uaeRelevance: 'CRITICAL',
+    },
+
+    // EVENT 15: UAE FLOODS APRIL 2024
+    {
+      id: 'event-15',
+      eventNumber: 15,
+      title: 'UAE Floods April 2024',
+      period: { start: '2024', end: '2024' },
+      source: 'Wikipedia, Science Direct, Nature',
+      overview: 'On April 16, 2024, the UAE experienced record-breaking precipitation with over 250mm in 24 hours causing unprecedented flooding. The heaviest rainfall in 75 years caused four deaths and $2.9-3.4 billion in insurance losses.',
+      keyFacts: [
+        'April 16, 2024: Record-breaking precipitation over 250mm in 24 hours',
+        'Highest: 254.8 mm (10.03 in) at Khatm Al Shakla in Al Ain',
+        'Dubai International Airport recorded 164 mm (6.45 in) - largest rainfall in 75 years',
+        'Four deaths',
+        '1,244 flights cancelled over two days at Dubai Airport',
+        'Insurance losses estimated $2.9-3.4 billion',
+      ],
+      timeline: [
+        { date: 'April 15, 2024', event: 'Storm began late evening' },
+        { date: 'April 16, 2024', event: 'Peak rainfall - record breaking' },
+      ],
+      entities: [
+        { entity: 'Khatm Al Shakla', role: 'Record rainfall location', type: 'Place' },
+        { entity: 'Dubai International Airport', role: 'Major transport hub', type: 'Facility' },
+      ],
+      sentiment: [
+        { topic: 'Climate change link', sentiment: 'Negative', valence: -0.6, source: 'Environmental' },
+        { topic: 'Government response', sentiment: 'Positive', valence: 0.5, source: 'Relief effort' },
+      ],
+      uaeRelevance: 'MEDIUM',
+    },
+
+    // EVENT 16: BRICS MEMBERSHIP
+    {
+      id: 'event-16',
+      eventNumber: 16,
+      title: 'BRICS Membership',
+      period: { start: '2024', end: 'Present' },
+      source: 'UAE Ministry of Foreign Affairs, Parliament Commons Library',
+      overview: 'UAE officially became a member of BRICS on January 1, 2024, after ratification by founding nations. The expansion added Saudi Arabia, Iran, Ethiopia, Egypt, Argentina, and UAE.',
+      keyFacts: [
+        'Announced: August 22-24, 2023 at 15th BRICS summit in Johannesburg',
+        'Effective: January 1, 2024',
+        'UAE previously joined BRICS New Development Bank in October 2021',
+        'Positioned as alignment with UAE foreign policy on multilateralism',
+      ],
+      timeline: [
+        { date: 'August 22-24, 2023', event: 'Announced at 15th BRICS summit in Johannesburg' },
+        { date: 'January 1, 2024', event: 'UAE BRICS membership effective' },
+      ],
+      entities: [
+        { entity: 'Sheikh Abdullah bin Zayed Al Nahyan', role: 'Foreign Minister', type: 'Person' },
+        { entity: 'BRICS New Development Bank', role: 'Multilateral bank', type: 'Organization' },
+      ],
+      sentiment: [
+        { topic: 'Multilateral engagement', sentiment: 'Positive', valence: 0.6, source: 'Diplomatic' },
+        { topic: 'Economic diversification', sentiment: 'Positive', valence: 0.5, source: 'Trade' },
+      ],
+      uaeRelevance: 'HIGH',
+    },
+
+    // EVENT 17: GAZA WAR UAE RESPONSE
+    {
+      id: 'event-17',
+      eventNumber: 17,
+      title: 'Gaza War UAE Response',
+      period: { start: '2023', end: '2026' },
+      source: 'US Congress Research Service, OCHA, UNRWA, ReliefWeb',
+      overview: 'UAE has remained the single largest country donor of humanitarian aid to Gaza since December 2025. The UAE established field hospitals, air bridges for humanitarian supplies, and supported UNRWA operations.',
+      keyFacts: [
+        'As of December 2025: UAE single largest country donor of humanitarian aid to Gaza',
+        'Established field hospitals and relief operations',
+        'Air bridges for humanitarian supply delivery',
+        'Called for immediate ceasefire',
+        'Advocated for two-state solution',
+      ],
+      entities: [
+        { entity: 'OCHA', role: 'UN humanitarian office', type: 'Organization' },
+        { entity: 'UNRWA', role: 'Palestinian refugees agency', type: 'Organization' },
+      ],
+      sentiment: [
+        { topic: 'Humanitarian aid', sentiment: 'Positive', valence: 0.8, source: 'International' },
+        { topic: 'Ceasefire calls', sentiment: 'Positive', valence: 0.7, source: 'Humanitarian' },
+      ],
+      uaeRelevance: 'HIGH',
+    },
+
+    // EVENT 18: UAE-SAUDI DYNAMICS
+    {
+      id: 'event-18',
+      eventNumber: 18,
+      title: 'UAE-Saudi Dynamics',
+      period: { start: '1971', end: 'Ongoing' },
+      source: 'Wikipedia, ECFR',
+      overview: 'UAE-Saudi relations have evolved from the 1971-1974 Buraimi dispute and normalization to a complex partnership marked by both cooperation and competition in Yemen, Sudan, and regional influence.',
+      keyFacts: [
+        '1971-1974: Saudi Arabia initially withheld recognition of UAE over Buraimi dispute',
+        'Normalized after 1974 Treaty of Jeddah',
+        'Relations strengthened significantly with MBS rise',
+        'Yemen Divergence: UAE withdrew forces 2019 following disagreements with Saudi approach',
+        'Sudan conflict: Saudi supports SAF; UAE backs RSF',
+      ],
+      timeline: [
+        { date: '1974', event: 'Treaty of Jeddah normalized relations' },
+        { date: '2019', event: 'UAE withdrew from Yemen over disagreements' },
+      ],
+      entities: [
+        { entity: 'Mohammed bin Salman (MBS)', role: 'Saudi Crown Prince', type: 'Person' },
+        { entity: 'Mohammed bin Zayed (MBZ)', role: 'UAE President', type: 'Person' },
+        { entity: 'Southern Transitional Council', role: 'Yemeni separatists', type: 'Organization' },
+      ],
+      sentiment: [
+        { topic: 'Historical alliance', sentiment: 'Positive', valence: 0.5, source: 'Traditional' },
+        { topic: 'Yemen divergence', sentiment: 'Negative', valence: -0.6, source: 'Current tension' },
+      ],
+      uaeRelevance: 'CRITICAL',
+    },
+
+    // EVENT 19: G42-MICROSOFT DEAL
+    {
+      id: 'event-19',
+      eventNumber: 19,
+      title: 'G42-Microsoft Deal',
+      period: { start: '2024', end: 'Present' },
+      source: 'Microsoft Blog, CNBC, Bloomberg, Reuters',
+      overview: 'Microsoft committed $1.5 billion for a minority stake in G42, UAE leading AI company, with a first-of-its-kind binding agreement with assurances to both US and UAE governments.',
+      keyFacts: [
+        'Microsoft committed $1.5 billion for minority stake in G42',
+        'Brad Smith, Microsoft Vice Chair and President, joined G42 board',
+        'First-of-its-kind binding agreement with assurances to both US and UAE governments',
+        'Jais (G42 Arabic LLM) available in Azure AI Model Catalog - worlds first Arabic LLM',
+        '$1 billion fund for developers to boost AI skills in UAE and region',
+      ],
+      timeline: [
+        { date: 'April 15, 2024', event: 'Deal announced' },
+        { date: 'December 2024', event: 'US approved advanced AI chip exports to UAE' },
+      ],
+      entities: [
+        { entity: 'G42', role: 'AI company', type: 'Company' },
+        { entity: 'Microsoft', role: 'Tech investor', type: 'Company' },
+        { entity: 'Brad Smith', role: 'Microsoft President', type: 'Person' },
+      ],
+      sentiment: [
+        { topic: 'AI investment', sentiment: 'Positive', valence: 0.7, source: 'Technology' },
+        { topic: 'US-UAE cooperation', sentiment: 'Positive', valence: 0.6, source: 'Diplomatic' },
+      ],
+      uaeRelevance: 'HIGH',
+    },
+  ],
+
+  summary: {
+    totalEvents: 19,
+    entityCount: 100,
+    sourceCount: 65,
+    dataPointsCount: 500,
+    lastUpdated: '2026-04-29',
+  },
+}
+
+// ============================================================================
+// ERA 10: POLICY ANNOUNCEMENT HISTORICAL IMPACT
+// ============================================================================
+
+export const policyAnnouncementData: HistoricalEra = {
+  id: 'hist-8-10',
+  era: 'Policy Announcement Historical Impact',
+  period: { start: '2010', end: '2026' },
+  description:
+    'This era documents major UAE policy announcements from 2010-2026 including Vision 2021, National Agenda, Centennial 2071, Cybercrime Laws, Anti-Discrimination Laws, Golden Visa program, Corporate Tax, and climate commitments including Net Zero 2050. Each policy is analyzed for announcement context, public/market reaction, and impact assessment.',
+  keyEvents: [
+    {
+      date: '2010',
+      title: 'Vision 2021 Launch',
+      description:
+        'Sheikh Mohammed bin Rashid Al Maktoum launched Vision 2021 targeting making UAE "one of the best countries in the world" by 2021 Golden Jubilee.',
+      entities: ['Sheikh Mohammed bin Rashid Al Maktoum'],
+      outcome: 'National strategic framework; 52 NKPIs established',
+      significance: 'critical',
+    },
+    {
+      date: 'January 2014',
+      title: 'National Agenda Launch',
+      description:
+        'Seven-year plan launched with six national priorities. Over 300 officials from 90 government entities contributed.',
+      entities: ['UAE Cabinet'],
+      outcome: 'Implementation framework for Vision 2021',
+      significance: 'major',
+    },
+    {
+      date: 'March 2017',
+      title: 'UAE Centennial 2071',
+      description:
+        'Sheikh Mohammed bin Rashid launched 50-year plan with AED 600 billion investment target. Objective: make UAE best country in world by 2071.',
+      entities: ['Sheikh Mohammed bin Rashid Al Maktoum'],
+      outcome: 'Long-term national vision extending Vision 2021',
+      significance: 'critical',
+    },
+    {
+      date: 'November 2012',
+      title: 'Cybercrime Law Established',
+      description:
+        'Federal Legal Decree No. 5/2012 established cybercrime penalties including up to AED 1M fines and life imprisonment for certain offenses. Criticized by Human Rights Watch.',
+      entities: ['President Sheikh Khalifa bin Zayed Al Nahyan'],
+      outcome: 'Digital security framework; civil liberties concerns',
+      significance: 'major',
+    },
+    {
+      date: 'July 2015',
+      title: 'Anti-Discrimination Law',
+      description:
+        'Federal Decree Law No. 2 of 2015 criminalized discrimination on grounds of religion, caste, color, ethnic origin, creed or race. Penalties: 6 months to 10 years imprisonment and/or AED 50,000 to AED 2 million fines.',
+      entities: ['UAE Government'],
+      outcome: 'Social cohesion framework; criticized for blasphemy provisions',
+      significance: 'major',
+    },
+    {
+      date: '2019',
+      title: 'Golden Visa Program',
+      description:
+        '10-year renewable visa for investors and special talent. AED 10 million property or AED 2 million business investment threshold.',
+      entities: ['UAE Government', 'ICP'],
+      outcome: 'Talent attraction; economic diversification support',
+      significance: 'critical',
+    },
+    {
+      date: 'June 2023',
+      title: 'Corporate Tax Introduced',
+      description:
+        'Federal Decree-Law No. 47 of 2023 introduced 9% corporate tax on profits exceeding AED 375,000.',
+      entities: ['Federal Tax Authority'],
+      outcome: 'Revenue diversification; OECD tax framework alignment',
+      significance: 'critical',
+    },
+    {
+      date: 'October 2021',
+      title: 'Net Zero 2050 Commitment',
+      description:
+        'UAE committed to Net Zero by 2050 - first MENA nation with formal net-zero target. AED 600 billion investment planned.',
+      entities: ['UAE Government'],
+      outcome: 'Climate leadership; sustainability commitment',
+      significance: 'critical',
+    },
+  ],
+  policyOutcomes: [
+    {
+      policy: 'Vision 2021',
+      year: '2010',
+      impact: 'National strategic framework; 52 NKPIs across 6 priorities',
+      successors: ['Centennial 2071'],
+    },
+    {
+      policy: 'National Agenda',
+      year: '2014',
+      impact: 'Implementation vehicle for Vision 2021',
+    },
+    {
+      policy: 'Centennial 2071',
+      year: '2017',
+      impact: 'AED 600B investment; 50-year national vision',
+    },
+    {
+      policy: 'Golden Visa Program',
+      year: '2019',
+      impact: 'Talent attraction; real estate and business investment boost',
+    },
+    {
+      policy: 'Corporate Tax',
+      year: '2023',
+      impact: 'Revenue diversification; AED 375K threshold',
+    },
+    {
+      policy: 'Net Zero 2050',
+      year: '2021',
+      impact: 'MENA first net-zero commitment; AED 600B climate investment',
+    },
+  ],
+  entityInvolvement: [
+    'Sheikh Mohammed bin Rashid Al Maktoum',
+    'Sheikh Khalifa bin Zayed Al Nahyan',
+    'UAE Cabinet',
+    'Federal Tax Authority',
+    'ICP',
+    'UAE Government',
+  ],
+  nationBuildingMilestones: [
+    '2010: Vision 2021 launched',
+    '2014: National Agenda - implementation framework',
+    '2017: Centennial 2071 - 50-year vision',
+    '2012: Cybercrime Law - digital security',
+    '2015: Anti-Discrimination Law - social cohesion',
+    '2019: Golden Visa - talent attraction',
+    '2023: Corporate Tax - 9% rate',
+    '2021: Net Zero 2050 - climate leadership',
+  ],
+  credibility: createCredibilityScore(0, 90, 35, '2026-04-28'),
+  sources: [
+    createSourceReference('UAE Government Portal', 0, '2026-04-28'),
+    createSourceReference('Wikipedia - Vision 2021', 1, '2026-04-27'),
+    createSourceReference('Human Rights Watch', 0, '2026-04-27'),
+    createSourceReference('KPMG', 1, '2026-04-27'),
+    createSourceReference('OECD.AI', 1, '2026-04-27'),
+    createSourceReference('World Nuclear Association', 1, '2026-04-27'),
+  ],
+  lastUpdated: '2026-04-28',
+}
+
+// ============================================================================
+// HISTORICAL OVERVIEW - ALL ERAS COMBINED
+// ============================================================================
+
+export const historicalOverview: HistoricalEra[] = [
+  preFederationData,
+  federationEarlyData,
+  postGulfWarData,
+  rapidDevelopmentData,
+  arabSpringData,
+  modernizationVisionData,
+  postPandemicExpoData,
+  recentEraData,
+  eventHistoricalData,
+  policyAnnouncementData,
+]

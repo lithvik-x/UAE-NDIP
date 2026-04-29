@@ -40,6 +40,10 @@ import {
   Star,
   ChevronRight,
   MapPin,
+  Eye,
+  Heart,
+  Scale,
+  Database,
 } from 'lucide-react'
 import {
   useHistoricalOverviewData,
@@ -51,7 +55,58 @@ import {
   useModernizationVisionData,
   usePostPandemicExpoData,
   useRecentEraData,
+  eventHistoricalData,
 } from '@/lib/data-loader'
+import { motion, AnimatePresence } from 'framer-motion'
+
+// Event History Data - 19 Major UAE Historical Events
+const eventHistoryData = eventHistoricalData.events
+const eventSummary = eventHistoricalData.summary
+
+// Relevance color mapping
+const relevanceColors: Record<string, string> = {
+  'CRITICAL': CHART_COLORS.rose,
+  'HIGH': CHART_COLORS.gold,
+  'MEDIUM': CHART_COLORS.info,
+  'LOW': CHART_COLORS.platinum,
+}
+
+// Sentiment chart data
+const sentimentChartData = eventHistoryData.map(e => ({
+  name: e.title.length > 15 ? e.title.substring(0, 15) + '...' : e.title,
+  sentiment: Math.round((e.sentiment.reduce((acc, s) => acc + s.valence, 0) / e.sentiment.length) * 100) / 100,
+  relevance: e.uaeRelevance === 'CRITICAL' ? 4 : e.uaeRelevance === 'HIGH' ? 3 : e.uaeRelevance === 'MEDIUM' ? 2 : 1,
+}))
+
+// Entity type distribution
+const entityTypeDistribution = eventHistoryData.reduce((acc, event) => {
+  event.entities.forEach(entity => {
+    acc[entity.type] = (acc[entity.type] || 0) + 1
+  })
+  return acc
+}, {} as Record<string, number>)
+
+const entityTypeData = Object.entries(entityTypeDistribution).map(([type, count]) => ({
+  type,
+  count,
+  color: type === 'Person' ? CHART_COLORS.rose :
+         type === 'Place' ? CHART_COLORS.gold :
+         type === 'Organization' ? CHART_COLORS.info :
+         type === 'Nation' ? CHART_COLORS.emerald :
+         type === 'Media' ? CHART_COLORS.platinum : CHART_COLORS.navy,
+}))
+
+// Relevance distribution
+const relevanceDistribution = eventHistoryData.reduce((acc, event) => {
+  acc[event.uaeRelevance] = (acc[event.uaeRelevance] || 0) + 1
+  return acc
+}, {} as Record<string, number>)
+
+const relevanceData = Object.entries(relevanceDistribution).map(([level, count]) => ({
+  level,
+  count,
+  color: relevanceColors[level] || CHART_COLORS.platinum,
+}))
 
 export default function HistoricalTimelinePage() {
   const { data: overview } = useHistoricalOverviewData()
@@ -102,7 +157,7 @@ export default function HistoricalTimelinePage() {
     { era: 'Federation', events: 5, color: CHART_COLORS.gold },
     { era: 'Post-Gulf War', events: 1, color: CHART_COLORS.navy },
     { era: 'Rapid Development', events: 5, color: CHART_COLORS.platinum },
-    { era: 'Arab Spring', events: 2, color: CHART_COLORS.cyan },
+    { era: 'Arab Spring', events: 2, color: CHART_COLORS.info },
     { era: 'Modernization', events: 3, color: CHART_COLORS.emerald },
     { era: 'Post-Pandemic', events: 2, color: CHART_COLORS.rose },
     { era: 'Recent', events: 3, color: CHART_COLORS.gold },
@@ -138,7 +193,7 @@ export default function HistoricalTimelinePage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="platinum" className="mb-2">H-SECTOR</Badge>
+          <Badge variant="default" className="mb-2">H-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-platinum">Historical Timeline</h1>
           <p className="mt-2 text-slate-400">
             Complete chronological record of UAE history from 1820 to present
@@ -185,7 +240,7 @@ export default function HistoricalTimelinePage() {
           value="156"
           previousValue={142}
           icon={<Landmark className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
         />
       </div>
 
@@ -195,6 +250,7 @@ export default function HistoricalTimelinePage() {
           <TabsTrigger value="eras">Era Breakdown</TabsTrigger>
           <TabsTrigger value="significance">Significance</TabsTrigger>
           <TabsTrigger value="explore">Era Explorer</TabsTrigger>
+          <TabsTrigger value="events">Event History</TabsTrigger>
         </TabsList>
 
         {/* Timeline Tab */}
@@ -437,6 +493,277 @@ export default function HistoricalTimelinePage() {
                   </div>
                 </CardContent>
               </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Event History Tab - MD 8-9 Enhancement Cycles A-F */}
+        <TabsContent value="events" className="space-y-6">
+          <GlassPanel title="Event Historical Deep Dives" description="Comprehensive analysis of 19 major UAE historical events from MD 8-9">
+            <div className="space-y-6">
+              {/* ENHANCEMENT A: Key Metrics */}
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+                <MetricCard
+                  title="Total Events"
+                  value={eventSummary.totalEvents}
+                  icon={<Calendar className="h-5 w-5" />}
+                  gradient="platinum"
+                />
+                <MetricCard
+                  title="Entities"
+                  value={eventSummary.entityCount}
+                  icon={<Database className="h-5 w-5" />}
+                  gradient="gold"
+                />
+                <MetricCard
+                  title="Sources"
+                  value={eventSummary.sourceCount}
+                  icon={<Landmark className="h-5 w-5" />}
+                  gradient="denim"
+                />
+                <MetricCard
+                  title="Critical Events"
+                  value={eventHistoryData.filter(e => e.uaeRelevance === 'CRITICAL').length}
+                  icon={<AlertCircle className="h-5 w-5" />}
+                  gradient="rose"
+                  status="success"
+                />
+                <MetricCard
+                  title="Data Points"
+                  value={eventSummary.dataPointsCount}
+                  icon={<TrendingUp className="h-5 w-5" />}
+                  gradient="emerald"
+                />
+              </div>
+
+              {/* ENHANCEMENT B: Relevance Distribution */}
+              <div className="grid gap-4 md:grid-cols-2">
+                <Card className="glass-card">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-sm flex items-center gap-2">
+                      <Eye className="h-4 w-4 text-platinum" />
+                      UAE Relevance Distribution
+                    </CardTitle>
+                    <CardDescription>Events by strategic importance</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <PieChart
+                      data={relevanceData}
+                      height={250}
+                      showLegend={true}
+                    />
+                  </CardContent>
+                </Card>
+
+                <Card className="glass-card">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-sm flex items-center gap-2">
+                      <Users className="h-4 w-4 text-gold" />
+                      Entity Type Distribution
+                    </CardTitle>
+                    <CardDescription>Breakdown of involved entities</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <BarChart
+                      data={entityTypeData}
+                      xAxisKey="type"
+                      bars={[{ dataKey: 'count', name: 'Count', color: CHART_COLORS.gold }]}
+                      height={250}
+                      showGrid={false}
+                    />
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* ENHANCEMENT C: Sentiment Analysis */}
+              <Card className="glass-card">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-sm flex items-center gap-2">
+                    <Heart className="h-4 w-4 text-rose" />
+                    Sentiment Analysis by Event
+                  </CardTitle>
+                  <CardDescription>Average sentiment valence across all topics per event</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <BarChart
+                    data={sentimentChartData}
+                    xAxisKey="name"
+                    bars={[{ dataKey: 'sentiment', name: 'Sentiment', color: CHART_COLORS.rose }]}
+                    height={300}
+                    showGrid={true}
+                    layout="vertical"
+                  />
+                </CardContent>
+              </Card>
+
+              {/* ENHANCEMENT D: Events Grid */}
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <AnimatePresence mode="popLayout">
+                  {eventHistoryData.map((event, idx) => (
+                    <motion.div
+                      key={event.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.3, delay: idx * 0.05 }}
+                      whileHover={{ scale: 1.02, y: -4 }}
+                      className="glass-card rounded-lg p-4 cursor-pointer"
+                      style={{ borderColor: `${relevanceColors[event.uaeRelevance]}40` }}
+                    >
+                      <div className="flex items-start justify-between mb-2">
+                        <Badge
+                          variant="outline"
+                          className="text-xs"
+                          style={{ borderColor: relevanceColors[event.uaeRelevance], color: relevanceColors[event.uaeRelevance] }}
+                        >
+                          {event.uaeRelevance}
+                        </Badge>
+                        <span className="text-xs text-slate-500">
+                          {event.period.start} - {event.period.end}
+                        </span>
+                      </div>
+                      <h4 className="font-semibold text-slate-200 mb-1 text-sm">{event.title}</h4>
+                      <p className="text-xs text-slate-400 line-clamp-2">{event.overview}</p>
+                      <div className="mt-3 flex items-center gap-2">
+                        <Badge variant="secondary" className="text-xs">
+                          {event.entities.length} entities
+                        </Badge>
+                        <Badge variant="secondary" className="text-xs">
+                          {event.sentiment.length} topics
+                        </Badge>
+                      </div>
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
+              </div>
+
+              {/* ENHANCEMENT E: Entity Registry by Event */}
+              <Card className="glass-card">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-sm flex items-center gap-2">
+                    <Database className="h-4 w-4 text-info" />
+                    Entity Registry
+                  </CardTitle>
+                  <CardDescription>Key entities involved in each event</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[400px]">
+                    <div className="space-y-4">
+                      {eventHistoryData.slice(0, 8).map((event) => (
+                        <div key={event.id} className="rounded-lg border border-slate-700/50 bg-slate-800/30 p-3">
+                          <h5 className="font-semibold text-sm text-slate-200 mb-2" style={{ color: relevanceColors[event.uaeRelevance] }}>
+                            {event.eventNumber}. {event.title}
+                          </h5>
+                          <div className="flex flex-wrap gap-2">
+                            {event.entities.slice(0, 5).map((entity, idx) => (
+                              <Badge key={idx} variant="outline" className="text-xs">
+                                {entity.entity}
+                              </Badge>
+                            ))}
+                            {event.entities.length > 5 && (
+                              <Badge variant="outline" className="text-xs text-slate-500">
+                                +{event.entities.length - 5} more
+                              </Badge>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+
+              {/* ENHANCEMENT F: Source Credibility Matrix */}
+              <Card className="glass-card">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-sm flex items-center gap-2">
+                    <Scale className="h-4 w-4 text-emerald" />
+                    Source Credibility Matrix
+                  </CardTitle>
+                  <CardDescription>Top sources by tier for event verification</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {[
+                      { tier: 'Tier 1', desc: 'Government/UN/Academic', examples: 'State Department, UNFCCC, NIH, Amnesty', color: CHART_COLORS.emerald },
+                      { tier: 'Tier 2', desc: 'Established Media/Think Tanks', examples: 'Wikipedia, Britannica, Carnegie, ECFR', color: CHART_COLORS.info },
+                      { tier: 'Tier 3', desc: 'News/Blog', examples: 'CNBC, Axios, Reuters, The National', color: CHART_COLORS.gold },
+                    ].map((tier, idx) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: idx * 0.1 }}
+                        className="flex items-center gap-4 rounded-lg border border-slate-700/50 bg-slate-800/30 p-3"
+                      >
+                        <div
+                          className="h-12 w-12 rounded-full flex items-center justify-center text-sm font-bold"
+                          style={{ backgroundColor: `${tier.color}20`, color: tier.color }}
+                        >
+                          {tier.tier}
+                        </div>
+                        <div className="flex-1">
+                          <p className="font-semibold text-sm text-slate-200">{tier.desc}</p>
+                          <p className="text-xs text-slate-400">{tier.examples}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Event Details Cards */}
+              <div className="grid gap-4 md:grid-cols-2">
+                {eventHistoryData.slice(0, 4).map((event) => (
+                  <Card key={event.id} className="glass-card overflow-hidden">
+                    <CardHeader className="pb-2" style={{ borderBottom: `2px solid ${relevanceColors[event.uaeRelevance]}40` }}>
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <Badge variant="outline" className="mb-2" style={{ borderColor: relevanceColors[event.uaeRelevance], color: relevanceColors[event.uaeRelevance] }}>
+                            {event.uaeRelevance}
+                          </Badge>
+                          <CardTitle className="text-lg">{event.title}</CardTitle>
+                        </div>
+                        <div className="text-right">
+                          <p className="text-xs text-slate-400">{event.period.start} - {event.period.end}</p>
+                          <p className="text-xs text-slate-500">Event #{event.eventNumber}</p>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="pt-4">
+                      <p className="text-sm text-slate-300 mb-4">{event.overview}</p>
+                      <div className="mb-3">
+                        <p className="text-xs font-semibold text-slate-400 mb-2">Key Facts:</p>
+                        <ul className="text-xs text-slate-400 space-y-1">
+                          {event.keyFacts.slice(0, 3).map((fact, idx) => (
+                            <li key={idx} className="flex items-start gap-2">
+                              <span className="text-platinum">•</span>
+                              {fact}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-700/50">
+                        <div className="flex -space-x-2">
+                          {event.sentiment.slice(0, 3).map((s, idx) => (
+                            <div
+                              key={idx}
+                              className="h-6 w-6 rounded-full flex items-center justify-center text-xs border border-slate-800"
+                              style={{ backgroundColor: s.valence > 0 ? `${CHART_COLORS.emerald}40` : s.valence < 0 ? `${CHART_COLORS.rose}40` : `${CHART_COLORS.platinum}40` }}
+                              title={`${s.topic}: ${s.valence}`}
+                            >
+                              {s.valence > 0 ? '+' : ''}{s.valence}
+                            </div>
+                          ))}
+                        </div>
+                        <Badge variant="secondary" className="text-xs">
+                          {event.source.split(',')[0]}
+                        </Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </GlassPanel>
         </TabsContent>

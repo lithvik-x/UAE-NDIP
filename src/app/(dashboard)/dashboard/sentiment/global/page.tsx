@@ -73,7 +73,7 @@ export default function GlobalPerceptionPage() {
     { region: 'Europe', sentiment: 76, volume: 18200, color: CHART_COLORS.navy },
     { region: 'Asia Pacific', sentiment: 78, volume: 22000, color: CHART_COLORS.emerald },
     { region: 'Middle East', sentiment: 82, volume: 8500, color: CHART_COLORS.rose },
-    { region: 'Africa', sentiment: 72, volume: 4500, color: CHART_COLORS.cyan },
+    { region: 'Africa', sentiment: 72, volume: 4500, color: CHART_COLORS.info },
     { region: 'Latin America', sentiment: 68, volume: 2200, color: CHART_COLORS.purple },
   ]
 
@@ -161,7 +161,7 @@ export default function GlobalPerceptionPage() {
           value={145}
           previousValue={138}
           icon={<Flag className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="success"
         />
         <MetricCard
@@ -199,7 +199,7 @@ export default function GlobalPerceptionPage() {
                       { dataKey: 'global', name: 'Global', color: CHART_COLORS.gold },
                       { dataKey: 'middleEast', name: 'Middle East', color: CHART_COLORS.emerald },
                       { dataKey: 'europe', name: 'Europe', color: CHART_COLORS.navy },
-                      { dataKey: 'asia', name: 'Asia', color: CHART_COLORS.cyan },
+                      { dataKey: 'asia', name: 'Asia', color: CHART_COLORS.info },
                     ]}
                     height={300}
                     showGrid={true}

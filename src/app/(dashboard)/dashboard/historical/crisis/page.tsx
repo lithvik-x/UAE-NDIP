@@ -70,7 +70,7 @@ export default function HistoricalCrisisPage() {
     { method: 'Inter-Emirate Solidarity', effectiveness: 92, color: CHART_COLORS.navy },
     { method: 'GCC Cooperation', effectiveness: 78, color: CHART_COLORS.platinum },
     { method: 'Regional Diplomacy', effectiveness: 72, color: CHART_COLORS.emerald },
-    { method: 'Infrastructure Investment', effectiveness: 88, color: CHART_COLORS.cyan },
+    { method: 'Infrastructure Investment', effectiveness: 88, color: CHART_COLORS.info },
   ]
 
   // Crisis type distribution
@@ -127,7 +127,7 @@ export default function HistoricalCrisisPage() {
           value="48h"
           previousValue={72}
           icon={<Clock className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
         />
         <MetricCard
           title="Recovery Investment"

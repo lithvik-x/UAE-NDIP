@@ -1,309 +1,1507 @@
-// @ts-nocheck
 'use client'
 
+import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Progress } from '@/components/ui/progress'
 import { MetricCard } from '@/components/dashboard/metric-card'
-import { GlassPanel } from '@/components/dashboard/glass-card'
+import { GlassCard, GlassPanel } from '@/components/dashboard/glass-card'
 import {
   LineChart,
   BarChart,
   AreaChart,
   PieChart,
+  RadarChart,
   CHART_COLORS,
 } from '@/components/ui/chart-library'
 import {
-  AlertCircle,
-  AlertTriangle,
-  TrendingUp,
-  Zap,
   Fuel,
+  Zap,
   Sun,
+  Atom,
+  Droplets,
   Leaf,
+  AlertTriangle,
+  CheckCircle,
+  XCircle,
+  Clock,
+  Target,
   Globe,
-  Activity,
+  TrendingUp,
+  TrendingDown,
+  DollarSign,
+  Factory,
+  Car,
+  TreePine,
+  Wind,
+  Gauge,
+  Landmark,
   Shield,
+  AlertOctagon,
+  Eye,
+  Scale,
 } from 'lucide-react'
-import { useEnergySustainabilityData } from '@/lib/data-loader'
+import {
+  useEnergySustainabilityData,
+} from '@/lib/data/topics/energy-data'
+
+// Animation variants for staggered mount
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.1,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  },
+}
 
 export default function EnergySustainabilityPage() {
   const { data } = useEnergySustainabilityData()
-  const { keyFindings, metrics, sentiment, emotions, trends, stakeholders, uaeRelevance, alertLevel } = data
 
-  // Sentiment breakdown
-  const sentimentData = [
-    { name: 'Positive', value: sentiment.positive, color: CHART_COLORS.emerald },
-    { name: 'Negative', value: sentiment.negative, color: CHART_COLORS.danger },
-    { name: 'Neutral', value: sentiment.neutral, color: CHART_COLORS.gold },
+  // Oil & Gas KPIs chart data
+  const oilProductionData = [
+    { name: 'Current Production', value: 3, color: CHART_COLORS.gold },
+    { name: 'Production Capacity', value: 4.85, color: CHART_COLORS.emerald },
+    { name: 'Production Target', value: 5, color: CHART_COLORS.info },
   ]
 
-  // Emotion distribution
-  const emotionData = [
-    { name: 'Joy', value: emotions.joy, color: CHART_COLORS.gold },
-    { name: 'Trust', value: emotions.trust, color: CHART_COLORS.navy },
-    { name: 'Fear', value: emotions.fear, color: CHART_COLORS.danger },
-    { name: 'Surprise', value: emotions.surprise, color: CHART_COLORS.purple },
-    { name: 'Sadness', value: emotions.sadness, color: CHART_COLORS.cyan },
-    { name: 'Disgust', value: emotions.disgust, color: CHART_COLORS.orange },
-    { name: 'Anger', value: emotions.anger, color: CHART_COLORS.rose },
-    { name: 'Anticipation', value: emotions.anticipation, color: CHART_COLORS.emerald },
+  // Renewable capacity data
+  const renewableCapacityData = [
+    { name: 'Solar', value: 7525, color: CHART_COLORS.gold },
+    { name: 'Wind', value: 110, color: CHART_COLORS.info },
+    { name: 'Bioenergy', value: 272, color: CHART_COLORS.emerald },
   ]
 
-  // Energy mix data
-  const energyMixData = [
-    { name: 'Oil & Gas', value: 55, color: CHART_COLORS.gold },
-    { name: 'Nuclear', value: 25, color: CHART_COLORS.navy },
-    { name: 'Solar', value: 12, color: CHART_COLORS.gold },
-    { name: 'Other Renewables', value: 8, color: CHART_COLORS.emerald },
+  // Sentiment radar data
+  const sentimentRadarData = [
+    { subject: 'Renewables', A: 85, fullMark: 100 },
+    { subject: 'Nuclear', A: 90, fullMark: 100 },
+    { subject: 'EV Adoption', A: 75, fullMark: 100 },
+    { subject: 'Climate Law', A: 70, fullMark: 100 },
+    { subject: 'Hydrogen', A: 55, fullMark: 100 },
+    { subject: 'CCUS', A: 25, fullMark: 100 },
   ]
-
-  // Production trend data
-  const productionTrendData = [
-    { year: '2020', oil: 3.2, renewables: 3.1 },
-    { year: '2021', oil: 3.4, renewables: 4.2 },
-    { year: '2022', oil: 3.6, renewables: 5.5 },
-    { year: '2023', oil: 3.8, renewables: 6.1 },
-    { year: '2024', oil: 4.1, renewables: 7.2 },
-    { year: '2025', oil: 4.3, renewables: 7.9 },
-    { year: '2027 Target', oil: 5.0, renewables: 23.0 },
-  ]
-
-  const getAlertBadge = (level: string) => {
-    switch (level) {
-      case 'RED': return <Badge variant="destructive" className="text-xs"><AlertCircle className="h-3 w-3 mr-1" />RED</Badge>
-      case 'YELLOW': return <Badge variant="warning" className="text-xs"><AlertTriangle className="h-3 w-3 mr-1" />YELLOW</Badge>
-      case 'GREEN': return <Badge variant="success" className="text-xs"><TrendingUp className="h-3 w-3 mr-1" />GREEN</Badge>
-      default: return <Badge variant="outline" className="text-xs">{level}</Badge>
-    }
-  }
-
-  const getAlertColor = (alert?: string) => {
-    if (alert === 'RED') return 'border-red-500/50'
-    if (alert === 'YELLOW') return 'border-yellow-500/50'
-    return 'border-emerald-500/50'
-  }
 
   return (
-    <div className="space-y-8 p-8">
+    <motion.div
+      className="space-y-8 p-8"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       {/* Header */}
-      <div className="flex items-start justify-between">
+      <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
-          <Badge variant="gold" className="mb-2">P-SECTOR: ENERGY & SUSTAINABILITY</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Energy & Sustainability</h1>
-          <p className="mt-2 text-slate-400">
-            {data.description}
+          <Badge variant="gold" className="mb-2">P-SECTOR</Badge>
+          <h1 className="text-4xl font-extrabold gradient-text-gold">Energy & Sustainability</h1>
+          <p className="mt-2 text-platinum-400">
+            ADNOC, oil production, OPEC+, energy transition, renewables, nuclear, hydrogen, CCUS, COP28, EV adoption, climate law
           </p>
+          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500">
+            <span className="flex items-center gap-1">
+              <Clock className="h-4 w-4" />
+              {data.reportMetadata.reportCompiled}
+            </span>
+            <span className="flex items-center gap-1">
+              <Target className="h-4 w-4" />
+              {data.reportMetadata.queriesExecuted} queries
+            </span>
+            <span className="flex items-center gap-1">
+              <Globe className="h-4 w-4" />
+              {data.reportMetadata.pagesAnalyzed} sources
+            </span>
+          </div>
         </div>
         <div className="flex gap-3">
           <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
             <Fuel className="h-4 w-4" />
-            ADNOC Portal
+            Oil & Gas
           </Button>
           <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
             <Zap className="h-4 w-4" />
-            Energy Dashboard
+            Renewables
           </Button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Key Metrics */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <motion.div variants={itemVariants} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <MetricCard
           title="Oil Reserves"
-          value="105-111B"
-          previousValue="100-105B"
+          value={108}
+          unit="B barrels"
+          previousValue={0}
           icon={<Fuel className="h-6 w-6" />}
           gradient="gold"
-          status="success"
-        />
-        <MetricCard
-          title="ADNOC Target"
-          value="5M bpd"
-          previousValue="4.3M bpd"
-          icon={<Activity className="h-6 w-6" />}
-          gradient="navy"
         />
         <MetricCard
           title="Renewable Capacity"
-          value="7.9 GW"
-          previousValue="6.5 GW"
+          value={7.9}
+          unit="GW"
+          previousValue={6.85}
           icon={<Sun className="h-6 w-6" />}
           gradient="emerald"
-          status="success"
         />
         <MetricCard
-          title="Sentiment Score"
-          value={sentiment.overall}
-          previousValue={sentiment.overall - 2}
-          icon={<Leaf className="h-6 w-6" />}
-          gradient="platinum"
-          status={sentiment.overall > 0 ? 'success' : 'error'}
+          title="Nuclear Capacity"
+          value={5.6}
+          unit="GW"
+          previousValue={0}
+          icon={<Atom className="h-6 w-6" />}
+          gradient="cyan"
         />
-      </div>
+        <MetricCard
+          title="CAT Rating"
+          value="Insufficient"
+          previousValue={0}
+          icon={<AlertTriangle className="h-6 w-6" />}
+          gradient="rose"
+          status="error"
+        />
+      </motion.div>
 
-      {/* Alert Banner */}
-      <div className={`rounded-xl border p-4 bg-slate-900/50 ${getAlertColor(alertLevel)}`}>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            {alertLevel === 'RED' && <AlertCircle className="h-6 w-6 text-red-400" />}
-            {alertLevel === 'YELLOW' && <AlertTriangle className="h-6 w-6 text-yellow-400" />}
-            {alertLevel === 'GREEN' && <TrendingUp className="h-6 w-6 text-emerald-400" />}
-            <div>
-              <p className="font-semibold text-slate-200">Intelligence Alert Level: {alertLevel}</p>
-              <p className="text-sm text-slate-400">UAE Relevance: {uaeRelevance.score}/100 — {uaeRelevance.justification}</p>
-            </div>
-          </div>
-          {getAlertBadge(alertLevel)}
+      {/* Focus Areas */}
+      <motion.div variants={itemVariants}>
+        <div className="flex flex-wrap gap-2">
+          {['ADNOC', 'OPEC+', 'Net Zero 2050', 'Barakah', 'Hydrogen', 'CCUS', 'COP28', 'EVs'].map((area) => (
+            <Badge key={area} variant="outline" className="border-platinum/30 text-platinum">
+              {area}
+            </Badge>
+          ))}
         </div>
-      </div>
+      </motion.div>
 
       <Tabs defaultValue="overview" className="space-y-6">
         <TabsList className="glass-panel" scrollable>
-          <TabsTrigger value="overview">Key Findings</TabsTrigger>
-          <TabsTrigger value="production">Production</TabsTrigger>
+          <TabsTrigger value="overview">Overview</TabsTrigger>
+          <TabsTrigger value="oil">Oil & Gas</TabsTrigger>
+          <TabsTrigger value="opec">OPEC+</TabsTrigger>
+          <TabsTrigger value="transition">Energy Transition</TabsTrigger>
+          <TabsTrigger value="renewables">Renewables</TabsTrigger>
+          <TabsTrigger value="nuclear">Nuclear</TabsTrigger>
+          <TabsTrigger value="hydrogen">Hydrogen</TabsTrigger>
+          <TabsTrigger value="ccus">CCUS</TabsTrigger>
+          <TabsTrigger value="cop28">COP28</TabsTrigger>
+          <TabsTrigger value="ev">EV Adoption</TabsTrigger>
+          <TabsTrigger value="climate">Climate Law</TabsTrigger>
+          <TabsTrigger value="tensions">Key Tensions</TabsTrigger>
           <TabsTrigger value="sentiment">Sentiment</TabsTrigger>
-          <TabsTrigger value="stakeholders">Stakeholders</TabsTrigger>
         </TabsList>
 
-        {/* Key Findings */}
+        {/* Overview Tab */}
         <TabsContent value="overview" className="space-y-6">
-          <GlassPanel title="Key Findings" description="Critical metrics and findings for Energy & Sustainability">
-            <div className="space-y-4">
-              {keyFindings.map((finding, index) => (
-                <div
-                  key={index}
-                  className={`flex items-center justify-between rounded-lg border p-4 bg-slate-800/50 hover:bg-slate-800/70 transition-colors ${finding.alert ? getAlertColor(finding.alert) : 'border-slate-700'}`}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className={`flex h-10 w-10 items-center justify-center rounded-full ${
-                      finding.tier === 0 ? 'bg-gold/20 text-gold' :
-                      finding.tier === 1 ? 'bg-emerald/20 text-emerald' :
-                      'bg-red-500/20 text-red-400'
-                    }`}>
-                      {finding.tier === 0 ? <Zap className="h-5 w-5" /> :
-                       finding.tier === 1 ? <Sun className="h-5 w-5" /> :
-                       <AlertCircle className="h-5 w-5" />}
-                    </div>
-                    <div>
-                      <p className="font-medium text-slate-200">{finding.finding}</p>
-                      <p className="text-sm text-slate-400">Source: {finding.source}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="text-right">
-                      <p className="text-xl font-bold text-gold">{finding.metric}</p>
-                      <p className="text-xs text-slate-400">Tier {finding.tier}</p>
-                    </div>
-                    {finding.alert && getAlertBadge(finding.alert)}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </GlassPanel>
-        </TabsContent>
-
-        {/* Production Tab */}
-        <TabsContent value="production" className="space-y-6">
-          <GlassPanel title="Energy Production" description="Oil, gas, and renewable capacity analysis">
+          <GlassPanel
+            title="Energy & Sustainability Overview"
+            description="Key metrics and strategic data for UAE energy sector"
+            badge="Comprehensive"
+          >
             <div className="space-y-6">
+              {/* Key KPIs Grid */}
               <div className="grid gap-6 lg:grid-cols-2">
+                {/* Oil & Gas Overview */}
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Energy Mix 2025</CardTitle>
-                    <CardDescription>Share of total generation capacity</CardDescription>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Fuel className="h-5 w-5 text-gold" />
+                      Oil & Gas KPIs
+                    </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <PieChart
-                      data={energyMixData}
-                      height={280}
-                      showLegend={true}
-                    />
+                  <CardContent className="space-y-4">
+                    <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <span className="text-platinum-300">Proved Reserves</span>
+                      <span className="text-xl font-bold text-gold">105-111 B barrels</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <span className="text-platinum-300">Production Capacity</span>
+                      <span className="text-xl font-bold text-emerald">4.85 M b/d</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <span className="text-platinum-300">Production Target</span>
+                      <span className="text-xl font-bold text-cyan">5 M b/d by 2027</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <span className="text-platinum-300">ADNOC Capex</span>
+                      <span className="text-xl font-bold text-gold">$150B (2023-27)</span>
+                    </div>
                   </CardContent>
                 </Card>
 
+                {/* Renewable Overview */}
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Production Trends</CardTitle>
-                    <CardDescription>Oil production vs renewables (million bpd / GW)</CardDescription>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Sun className="h-5 w-5 text-emerald" />
+                      Renewable Energy KPIs
+                    </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <LineChart
-                      data={productionTrendData}
-                      xAxisKey="year"
-                      lines={[
-                        { dataKey: 'oil', name: 'Oil (M bpd)', color: CHART_COLORS.gold },
-                        { dataKey: 'renewables', name: 'Renewables (GW)', color: CHART_COLORS.emerald },
-                      ]}
-                      height={280}
-                      showGrid={true}
-                    />
+                  <CardContent className="space-y-4">
+                    <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <span className="text-platinum-300">Total Capacity</span>
+                      <span className="text-xl font-bold text-emerald">7.9 GW</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <span className="text-platinum-300">Solar Capacity</span>
+                      <span className="text-xl font-bold text-gold">7,525 MW</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <span className="text-platinum-300">2031 Target</span>
+                      <span className="text-xl font-bold text-cyan">23 GW</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <span className="text-platinum-300">YoY Growth</span>
+                      <span className="text-xl font-bold text-emerald">+15.4%</span>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
 
+              {/* Nuclear Overview */}
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">Strategic Energy Targets</CardTitle>
-                  <CardDescription>UAE 2031 energy diversification roadmap</CardDescription>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Atom className="h-5 w-5 text-cyan" />
+                    Barakah Nuclear Plant
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-4">
-                    {[
-                      { target: 'ADNOC Production', current: '4.3M bpd', goal: '5M bpd by 2027', progress: 86, color: CHART_COLORS.gold },
-                      { target: 'Renewable Capacity', current: '7.9 GW', goal: '23 GW by 2031', progress: 34, color: CHART_COLORS.emerald },
-                      { target: 'Nuclear Share', current: '25%', goal: '30%+ by 2031', progress: 83, color: CHART_COLORS.navy },
-                      { target: 'Hydrogen Production', current: 'Pilot', goal: '1.4 MTPA by 2031', progress: 15, color: CHART_COLORS.cyan },
-                      { target: 'Non-Oil GDP', current: '75.5%', goal: '85% by 2031', progress: 89, color: CHART_COLORS.platinum },
-                    ].map((item, index) => (
-                      <div key={index} className="space-y-2">
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-slate-200">{item.target}</span>
-                          <div className="text-right">
-                            <span className="text-sm font-bold text-slate-200">{item.current}</span>
-                            <span className="text-xs text-slate-400 ml-2">→ {item.goal}</span>
-                          </div>
-                        </div>
-                        <Progress
-                          value={item.progress}
-                          className="h-3"
-                        />
+                  <div className="grid gap-4 md:grid-cols-4">
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-3xl font-bold text-cyan">5.6 GW</p>
+                      <p className="text-sm text-platinum-400">Total Capacity</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-3xl font-bold text-emerald">25%</p>
+                      <p className="text-sm text-platinum-400">Electricity Share</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-3xl font-bold text-gold">$32B</p>
+                      <p className="text-sm text-platinum-400">Construction Cost</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-3xl font-bold text-cyan">4</p>
+                      <p className="text-sm text-platinum-400">Units Operational</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Sentiment Radar */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Eye className="h-5 w-5 text-gold" />
+                    Sentiment Analysis by Theme
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <RadarChart
+                    data={sentimentRadarData}
+                    metrics={[{ dataKey: 'A', name: 'Score', color: CHART_COLORS.gold }]}
+                    height={300}
+                  />
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Oil & Gas Tab */}
+        <TabsContent value="oil" className="space-y-6">
+          <GlassPanel
+            title="Oil & Hydrocarbons Strategy"
+            description="ADNOC overview, production capacity, and financials"
+            badge="ADNOC"
+          >
+            <div className="space-y-6">
+              {/* ADNOC Overview */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Fuel className="h-5 w-5 text-gold" />
+                    {data.adnocOverview.overview.entity}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="space-y-3">
+                      <div className="flex justify-between p-3 bg-slate-800/50 rounded-lg">
+                        <span className="text-platinum-400">Founded</span>
+                        <span className="font-bold text-gold">{data.adnocOverview.overview.founded}</span>
+                      </div>
+                      <div className="flex justify-between p-3 bg-slate-800/50 rounded-lg">
+                        <span className="text-platinum-400">Headquarters</span>
+                        <span className="font-bold text-platinum">{data.adnocOverview.overview.headquarters}</span>
+                      </div>
+                      <div className="flex justify-between p-3 bg-slate-800/50 rounded-lg">
+                        <span className="text-platinum-400">Chairman</span>
+                        <span className="font-bold text-platinum">{data.adnocOverview.overview.chairman}</span>
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="flex justify-between p-3 bg-slate-800/50 rounded-lg">
+                        <span className="text-platinum-400">CEO</span>
+                        <span className="font-bold text-platinum text-sm">{data.adnocOverview.overview.ceo}</span>
+                      </div>
+                      <div className="flex justify-between p-3 bg-slate-800/50 rounded-lg">
+                        <span className="text-platinum-400">Global Ranking</span>
+                        <span className="font-bold text-gold">12th largest</span>
+                      </div>
+                      <div className="flex justify-between p-3 bg-slate-800/50 rounded-lg">
+                        <span className="text-platinum-400">Employees</span>
+                        <span className="font-bold text-emerald">207,356</span>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Key Attributes */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Gauge className="h-5 w-5 text-gold" />
+                    Key Production Metrics
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {data.adnocOverview.keyAttributes.map((attr, idx) => (
+                      <div key={idx} className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                        <span className="text-platinum-400 text-sm">{attr.attribute}</span>
+                        <span className="font-bold text-gold text-sm text-right">{attr.value}</span>
                       </div>
                     ))}
                   </div>
                 </CardContent>
               </Card>
 
+              {/* Subsidiaries */}
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">ADNOC Valuation Metrics</CardTitle>
-                  <CardDescription>Company performance and market position</CardDescription>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Factory className="h-5 w-5 text-emerald" />
+                    ADNOC Subsidiaries
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ScrollArea className="h-[300px]">
-                    <div className="space-y-3">
-                      {[
-                        { metric: 'Production Target', value: '5M bpd by 2027', status: 'On Track' },
-                        { metric: 'Market Valuation', value: '$100B+', status: 'Growing' },
-                        { metric: 'OPEC+ Quota Compliance', value: '100%', status: 'Compliant' },
-                        { metric: 'Downstream Investment', value: '$23B program', status: 'Active' },
-                        { metric: 'Carbon Intensity Target', value: '25% reduction by 2030', status: 'In Progress' },
-                      ].map((item, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
-                          <p className="font-medium text-slate-200">{item.metric}</p>
-                          <div className="flex items-center gap-3">
-                            <p className="text-lg font-bold text-gold">{item.value}</p>
-                            <Badge variant={item.status === 'On Track' ? 'success' : item.status === 'Compliant' ? 'success' : item.status === 'Growing' ? 'default' : 'warning'} className="text-xs">
-                              {item.status}
-                            </Badge>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div>
+                      <h4 className="text-sm text-platinum-400 mb-2">Upstream</h4>
+                      <div className="space-y-2">
+                        {data.adnocOverview.subsidiaries.upstream.map((sub, idx) => (
+                          <div key={idx} className="p-2 bg-slate-800/50 rounded text-center">
+                            <span className="text-platinum-200 text-sm">{sub}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-sm text-platinum-400 mb-2">Midstream/Downstream</h4>
+                      <div className="space-y-2">
+                        {data.adnocOverview.subsidiaries.midstreamDownstream.map((sub, idx) => (
+                          <div key={idx} className="p-2 bg-slate-800/50 rounded text-center">
+                            <span className="text-platinum-200 text-sm">{sub}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Production Capacity */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <TrendingUp className="h-5 w-5 text-cyan" />
+                    Production Capacity Targets
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <BarChart
+                    data={oilProductionData}
+                    xAxisKey="name"
+                    bars={[{ dataKey: 'value', name: 'Million b/d', color: CHART_COLORS.gold }]}
+                    height={250}
+                    showGrid={true}
+                  />
+                  <div className="grid gap-2 mt-4">
+                    {data.productionCapacity.oilPriceAnalysis.map((item, idx) => (
+                      <div key={idx} className="flex justify-between items-center p-2 bg-slate-800/50 rounded">
+                        <span className="text-platinum-400 text-sm">{item.metric}</span>
+                        <span className="font-bold text-cyan text-sm">{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* ADNOC Decarbonization */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Leaf className="h-5 w-5 text-emerald" />
+                    ADNOC Decarbonization Claims
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    {data.adnocDecarbonization.sustainabilityReport.map((item, idx) => (
+                      <div key={idx} className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                        <span className="text-platinum-400 text-sm">{item.metric}</span>
+                        <span className="font-bold text-emerald text-sm text-right">{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-4 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl">
+                    <p className="text-emerald font-bold">OGMP 2.0 Gold Standard Signatory</p>
+                    <p className="text-sm text-platinum-400 mt-1">Target: 30% methane reduction by 2030 vs 2020</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Greenwashing Criticisms */}
+              <Card className="glass-card border-rose-500/30">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-rose">
+                    <AlertOctagon className="h-5 w-5" />
+                    Greenwashing Criticisms
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {data.greenwashingCriticism.oilChangeInternational.map((crit, idx) => (
+                      <div key={idx} className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg">
+                        <p className="font-medium text-rose text-sm">{crit.source}</p>
+                        <p className="text-platinum-300 mt-1">{crit.criticism}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* OPEC+ Tab */}
+        <TabsContent value="opec" className="space-y-6">
+          <GlassPanel
+            title="OPEC+ Dynamics"
+            description="UAE quotas, extended cuts, and Rystad analysis"
+            badge="OPEC+"
+          >
+            <div className="space-y-6">
+              {/* OPEC Structure */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Globe className="h-5 w-5 text-gold" />
+                    OPEC+ Structure (September 2025)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-3xl font-bold text-gold">39.725M</p>
+                      <p className="text-sm text-platinum-400">b/d combined target</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-3xl font-bold text-emerald">8</p>
+                      <p className="text-sm text-platinum-400">Countries reaffirming commitment</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* UAE Quotas */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Scale className="h-5 w-5 text-cyan" />
+                    UAE OPEC+ Quotas
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {data.opecDynamics.uaeQuotas.map((quota, idx) => (
+                      <div key={idx} className="flex items-start justify-between p-3 bg-slate-800/50 rounded-lg">
+                        <div>
+                          <p className="font-medium text-platinum-200">{quota.period}</p>
+                          <p className="text-xs text-platinum-500">{quota.source}</p>
+                        </div>
+                        <Badge variant="gold" className="text-sm">{quota.productionQuota}</Badge>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Extended Cuts */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <TrendingDown className="h-5 w-5 text-rose" />
+                    Extended Cuts
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {data.opecDynamics.extendedCuts.map((cut, idx) => (
+                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                        <p className="font-medium text-rose">{cut.description}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{cut.details}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Rystad Analysis */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Gauge className="h-5 w-5 text-emerald" />
+                    Rystad Energy Analysis (2026)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {data.opecDynamics.rystadEnergyAnalysis2026.map((item, idx) => (
+                      <div key={idx} className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                        <span className="text-platinum-400 text-sm">{item.metric}</span>
+                        <span className="font-bold text-emerald text-sm text-right">{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* ADNOC Financials */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <DollarSign className="h-5 w-5 text-gold" />
+                    ADNOC Financials & Dividends
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-3xl font-bold text-gold">$43B</p>
+                      <p className="text-sm text-platinum-400">Dividends to 2030</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-3xl font-bold text-emerald">52%</p>
+                      <p className="text-sm text-platinum-400">Dividend Growth</p>
+                    </div>
+                  </div>
+                  <div className="grid gap-2 mt-4">
+                    {data.adnocFinancials.contractsNovember2025.map((item, idx) => (
+                      <div key={idx} className="flex justify-between items-center p-2 bg-slate-800/50 rounded">
+                        <span className="text-platinum-400 text-sm">{item.metric}</span>
+                        <span className="font-bold text-gold text-sm">{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Energy Transition Tab */}
+        <TabsContent value="transition" className="space-y-6">
+          <GlassPanel
+            title="Energy Transition - Narrative vs Reality"
+            description="Climate commitments, CAT assessment, and credibility concerns"
+            badge="Critical"
+          >
+            <div className="space-y-6">
+              {/* UAE Climate Commitments */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Leaf className="h-5 w-5 text-emerald" />
+                    UAE Energy Strategy 2050
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-3">
+                    {data.energyTransitionNarrative.uaeEnergyStrategy2050.map((item, idx) => (
+                      <div key={idx} className="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-center">
+                        <p className="text-lg font-bold text-emerald">{item.value}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{item.target}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Climate Action Tracker Assessment */}
+              <Card className="glass-card border-rose-500/30">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-rose">
+                    <AlertTriangle className="h-5 w-5" />
+                    Climate Action Tracker Assessment
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-xl mb-4">
+                    <p className="text-2xl font-bold text-rose">INSUFFICIENT</p>
+                    <p className="text-platinum-400">Overall Rating - Below 3°C pathway</p>
+                  </div>
+                  <div className="grid gap-3">
+                    {data.energyTransitionNarrative.climateActionTrackerAssessment.map((rating, idx) => (
+                      <div key={idx} className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                        <span className="text-platinum-400 text-sm">{rating.ratingCategory}</span>
+                        <Badge variant={rating.rating === 'Insufficient' ? 'rose' : 'outline'} className="text-sm">{rating.rating}</Badge>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Critical Findings */}
+              <Card className="glass-card border-rose-500/30">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-rose">
+                    <AlertOctagon className="h-5 w-5" />
+                    Critical Findings
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {data.energyTransitionNarrative.criticalFindings.map((finding, idx) => (
+                      <div key={idx} className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg">
+                        <p className="font-medium text-rose text-sm">{finding.finding}</p>
+                        <p className="text-platinum-300 mt-1 text-sm">{finding.details}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Credibility Concerns */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Eye className="h-5 w-5 text-gold" />
+                    Credibility Concerns
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    {data.energyTransitionNarrative.credibilityConcerns.map((concern, idx) => (
+                      <div key={idx} className="flex items-start gap-3 p-3 bg-slate-800/50 rounded-lg">
+                        <XCircle className="h-5 w-5 text-rose shrink-0 mt-0.5" />
+                        <span className="text-platinum-300 text-sm">{concern}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Positive Developments */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-emerald" />
+                    Positive Developments
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    {data.energyTransitionNarrative.positiveDevelopments.map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-3 p-3 bg-slate-800/50 rounded-lg">
+                        <CheckCircle className="h-5 w-5 text-emerald shrink-0 mt-0.5" />
+                        <span className="text-platinum-300 text-sm">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Renewables Tab */}
+        <TabsContent value="renewables" className="space-y-6">
+          <GlassPanel
+            title="Renewable Energy"
+            description="Current capacity, solar parks, and grid modernization"
+            badge="7.9 GW"
+          >
+            <div className="space-y-6">
+              {/* Current Capacity */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Sun className="h-5 w-5 text-gold" />
+                    Current Capacity (2025)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <BarChart
+                    data={renewableCapacityData}
+                    xAxisKey="name"
+                    bars={[{ dataKey: 'value', name: 'MW', color: CHART_COLORS.gold }]}
+                    height={250}
+                    showGrid={true}
+                  />
+                </CardContent>
+              </Card>
+
+              {/* Solar Parks */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <TreePine className="h-5 w-5 text-emerald" />
+                    Major Solar Parks
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {data.renewableEnergy.majorSolarParks.map((park, idx) => (
+                      <div key={idx} className="p-4 bg-slate-800/50 rounded-xl">
+                        <div className="flex justify-between items-start">
+                          <div>
+                            <p className="font-bold text-gold">{park.project}</p>
+                            <p className="text-sm text-platinum-400 mt-1">Capacity: {park.capacity}</p>
+                          </div>
+                          <Badge variant="emerald">{park.status}</Badge>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* PV Magazine Data */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <TrendingUp className="h-5 w-5 text-cyan" />
+                    Solar Projections (PV Magazine)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-gold">6.7 GW</p>
+                      <p className="text-sm text-platinum-400">End 2025</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-emerald">9.4 GW</p>
+                      <p className="text-sm text-platinum-400">End 2026 (proj)</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-cyan">20 GW</p>
+                      <p className="text-sm text-platinum-400">2030 Target</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-platinum">30 GW</p>
+                      <p className="text-sm text-platinum-400">2035 Threshold</p>
+                    </div>
+                  </div>
+                  <div className="grid gap-2 mt-4">
+                    {data.renewableEnergy.pvMagazineMarch2026.map((item, idx) => (
+                      <div key={idx} className="flex justify-between items-center p-2 bg-slate-800/50 rounded">
+                        <span className="text-platinum-400 text-sm">{item.metric}</span>
+                        <span className="font-bold text-cyan text-sm">{item.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Grid Modernization */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Wind className="h-5 w-5 text-cyan" />
+                    Grid Modernization
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-3">
+                    {data.renewableEnergy.gridModernization.map((item, idx) => (
+                      <div key={idx} className="p-4 bg-slate-800/50 rounded-xl text-center">
+                        <p className="text-2xl font-bold text-cyan">{item.value}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{item.metric}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Nuclear Tab */}
+        <TabsContent value="nuclear" className="space-y-6">
+          <GlassPanel
+            title="Nuclear Energy - Barakah Plant"
+            description="Plant overview, construction timeline, and operational impact"
+            badge="5.6 GW"
+          >
+            <div className="space-y-6">
+              {/* Plant Overview */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Atom className="h-5 w-5 text-cyan" />
+                    Barakah Nuclear Power Plant
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {data.nuclearEnergyBarakah.plantOverview.map((attr, idx) => (
+                      <div key={idx} className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                        <span className="text-platinum-400 text-sm">{attr.attribute}</span>
+                        <span className="font-bold text-cyan text-sm text-right">{attr.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Construction Timeline */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Clock className="h-5 w-5 text-gold" />
+                    Construction Timeline
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {data.nuclearEnergyBarakah.constructionTimeline.map((milestone, idx) => (
+                      <div key={idx} className="flex items-start gap-4 p-3 bg-slate-800/50 rounded-lg">
+                        <div className="w-24 shrink-0 text-center">
+                          <span className="text-sm font-bold text-gold">{milestone.date}</span>
+                        </div>
+                        <span className="text-platinum-300 text-sm">{milestone.milestone}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Commercial Operation */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Zap className="h-5 w-5 text-emerald" />
+                    Commercial Operation Dates
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-4">
+                    {data.nuclearEnergyBarakah.commercialOperationDates.map((unit, idx) => (
+                      <div key={idx} className="p-4 bg-slate-800/50 rounded-xl text-center">
+                        <p className="text-xl font-bold text-emerald">{unit.unit}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{unit.commercialOperation}</p>
+                        {unit.gridConnection && unit.gridConnection !== '-' && (
+                          <p className="text-xs text-platinum-500 mt-1">Grid: {unit.gridConnection}</p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Operational Impact */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Gauge className="h-5 w-5 text-cyan" />
+                    Operational Impact
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-3">
+                    <div className="p-4 bg-cyan-500/10 border border-cyan-500/30 rounded-xl text-center">
+                      <p className="text-3xl font-bold text-cyan">25%</p>
+                      <p className="text-sm text-platinum-400">Electricity Share</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-3xl font-bold text-gold">$9B+</p>
+                      <p className="text-sm text-platinum-400">LNG Cost Savings</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-3xl font-bold text-emerald">13-year</p>
+                      <p className="text-sm text-platinum-400">Low Gas Consumption</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Security Concerns */}
+              <Card className="glass-card border-rose-500/30">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-rose">
+                    <Shield className="h-5 w-5" />
+                    Security Concerns
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {data.nuclearEnergyBarakah.securityConcerns.map((concern, idx) => (
+                      <div key={idx} className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg">
+                        <p className="font-medium text-rose text-sm">{concern.metric}</p>
+                        <p className="text-platinum-300 mt-1 text-sm">{concern.value}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Hydrogen Tab */}
+        <TabsContent value="hydrogen" className="space-y-6">
+          <GlassPanel
+            title="Hydrogen Strategy"
+            description="National Hydrogen Strategy 2050 and production economics"
+            badge="15 mtpa by 2050"
+          >
+            <div className="space-y-6">
+              {/* Targets */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Atom className="h-5 w-5 text-gold" />
+                    Production Targets
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-3">
+                    {data.hydrogenStrategy.nationalHydrogenStrategy2050.targets.map((target, idx) => (
+                      <div key={idx} className="p-4 bg-slate-800/50 rounded-xl text-center">
+                        <p className="text-2xl font-bold text-gold">{target.productionTarget}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{target.targetYear}</p>
+                        {target.typeBreakdown && target.typeBreakdown !== '-' && (
+                          <p className="text-xs text-cyan mt-1">{target.typeBreakdown}</p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Strategic Objectives */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Target className="h-5 w-5 text-emerald" />
+                    Strategic Objectives
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    {data.hydrogenStrategy.strategicObjectives.map((obj, idx) => (
+                      <div key={idx} className="flex items-start gap-3 p-3 bg-slate-800/50 rounded-lg">
+                        <CheckCircle className="h-5 w-5 text-emerald shrink-0 mt-0.5" />
+                        <span className="text-platinum-300 text-sm">{obj}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Production Economics */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <DollarSign className="h-5 w-5 text-gold" />
+                    Production Economics (GPCA March 2025)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {data.hydrogenStrategy.productionEconomics.gpcaMarch2025.map((item, idx) => (
+                      <div key={idx} className="p-4 bg-slate-800/50 rounded-xl">
+                        <p className="font-bold text-gold">{item.hydrogenType}</p>
+                        <p className="text-2xl text-emerald mt-2">{item.productionCost}</p>
+                        {item.notes && <p className="text-sm text-platinum-400 mt-1">{item.notes}</p>}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* CCUS Tab */}
+        <TabsContent value="ccus" className="space-y-6">
+          <GlassPanel
+            title="Carbon Capture & CCUS"
+            description="Policy framework, MENA projects, and market data"
+            badge="$160M Market"
+          >
+            <div className="space-y-6">
+              {/* MENA Projects */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Globe className="h-5 w-5 text-gold" />
+                    MENA CCUS Projects
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-5">
+                    {data.carbonCaptureCCUS.menaRegionalProjects.projects.map((project, idx) => (
+                      <div key={idx} className="p-4 bg-slate-800/50 rounded-xl text-center">
+                        <p className="text-2xl font-bold text-gold">{project.ccusProjects}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{project.country}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-4 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-center">
+                    <p className="text-lg font-bold text-emerald">35 Million Tons/Year</p>
+                    <p className="text-sm text-platinum-400">MENA Capacity Target by 2035</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* UAE Market Data */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <TrendingUp className="h-5 w-5 text-cyan" />
+                    UAE CCUS Market (Guidehouse 2025)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-4">
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-gold">$160M</p>
+                      <p className="text-sm text-platinum-400">2024 Market</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-emerald">$205M</p>
+                      <p className="text-sm text-platinum-400">2030 Projected</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-cyan">2.3 MTPA</p>
+                      <p className="text-sm text-platinum-400">Total UAE Capacity</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-cyan">5 MTPA</p>
+                      <p className="text-sm text-platinum-400">2030 Target</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Policy Framework */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Scale className="h-5 w-5 text-emerald" />
+                    Policy Framework Objectives
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {data.carbonCaptureCCUS.policyFramework.objectives.map((obj, idx) => (
+                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                        <p className="font-medium text-emerald text-sm">{obj.objective}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* COP28 Tab */}
+        <TabsContent value="cop28" className="space-y-6">
+          <GlassPanel
+            title="COP28 - Legacy & Controversies"
+            description="Conference outcomes, Al Jaber controversy, and greenwashing allegations"
+            badge="Controversial"
+          >
+            <div className="space-y-6">
+              {/* Conference Overview */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Globe className="h-5 w-5 text-gold" />
+                    Conference Overview
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-3">
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-lg font-bold text-gold">COP28 UAE</p>
+                      <p className="text-sm text-platinum-400">United Nations Climate Conference</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-lg font-bold text-emerald">Sultan Ahmed Al Jaber</p>
+                      <p className="text-sm text-platinum-400">President (also ADNOC CEO)</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-lg font-bold text-cyan">Dubai Expo City</p>
+                      <p className="text-sm text-platinum-400">Venue</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Positive Outcomes */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-emerald" />
+                    Positive Outcomes
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    {data.cop28Legacy.positiveOutcomes.map((outcome, idx) => (
+                      <div key={idx} className="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl">
+                        <p className="font-bold text-emerald">{outcome.outcome}</p>
+                        <p className="text-sm text-platinum-300 mt-1">{outcome.details}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Al Jaber Controversy */}
+              <Card className="glass-card border-rose-500/30">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-rose">
+                    <AlertTriangle className="h-5 w-5" />
+                    Sultan Al Jaber Controversy
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {data.cop28Legacy.sultanAlJaberControversy.map((item, idx) => (
+                      <div key={idx} className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg">
+                        <p className="text-xs text-platinum-500">{item.source}</p>
+                        <p className="text-platinum-300 mt-1 text-sm">"{item.statement}"</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Greenwashing Allegations */}
+              <Card className="glass-card border-rose-500/30">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-rose">
+                    <AlertOctagon className="h-5 w-5" />
+                    Greenwashing Allegations
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {data.cop28Legacy.greenwashingAllegations.slice(0, 6).map((item, idx) => (
+                      <div key={idx} className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg">
+                        <p className="text-xs text-platinum-500">{item.source}</p>
+                        <p className="text-platinum-300 mt-1 text-sm">{item.allegation}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* EV Adoption Tab */}
+        <TabsContent value="ev" className="space-y-6">
+          <GlassPanel
+            title="EV Adoption & Transportation"
+            description="Market size, growth, and infrastructure development"
+            badge="$2.2B Market"
+          >
+            <div className="space-y-6">
+              {/* Market Size */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Car className="h-5 w-5 text-gold" />
+                    EV Market Size
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-4">
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-gold">$2.2B</p>
+                      <p className="text-sm text-platinum-400">2024 Market</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-emerald">$1.25B</p>
+                      <p className="text-sm text-platinum-400">2030 Projection</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-cyan">13%</p>
+                      <p className="text-sm text-platinum-400">EV Share of Sales</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-emerald">38%</p>
+                      <p className="text-sm text-platinum-400">YoY Growth</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Sales Data */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <TrendingUp className="h-5 w-5 text-emerald" />
+                    2024 EV Sales
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-3xl font-bold text-gold">~24,000</p>
+                      <p className="text-sm text-platinum-400">UAE Units (BEV + PHEV)</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-3xl font-bold text-cyan">11,000+</p>
+                      <p className="text-sm text-platinum-400">Saudi Arabia (10x increase)</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Infrastructure */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Zap className="h-5 w-5 text-cyan" />
+                    Charging Infrastructure
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-3">
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-emerald">70,000</p>
+                      <p className="text-sm text-platinum-400">Abu Dhabi Plan by 2030</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-gold">1,270+</p>
+                      <p className="text-sm text-platinum-400">Dubai Points (Aug 2025)</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-cyan">500</p>
+                      <p className="text-sm text-platinum-400">ADNOC-TAQA by 2028</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-center">
+                    <p className="font-bold text-emerald">95% Charging Satisfaction</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Barriers */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <AlertTriangle className="h-5 w-5 text-rose" />
+                    Barriers to Adoption
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {data.evAdoption.barriers.map((barrier, idx) => (
+                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                        <p className="text-platinum-300 text-sm">{barrier.barrier}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Climate Law Tab */}
+        <TabsContent value="climate" className="space-y-6">
+          <GlassPanel
+            title="Climate Law & Compliance"
+            description="Federal climate legislation and corporate compliance"
+            badge="Effective May 2025"
+          >
+            <div className="space-y-6">
+              {/* Climate Law */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Scale className="h-5 w-5 text-gold" />
+                    Federal Decree-Law No. 11 of 2024
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    {data.climateLawCompliance.lawAttributes.map((attr, idx) => (
+                      <div key={idx} className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                        <span className="text-platinum-400 text-sm">{attr.attribute}</span>
+                        <span className="font-bold text-emerald text-sm text-right">{attr.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* MRV System */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-emerald" />
+                    National MRV System (October 2025)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-3">
+                    <div className="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-emerald">75%</p>
+                      <p className="text-sm text-platinum-400">Time Reduction</p>
+                      <p className="text-xs text-platinum-500 mt-1">15 months → 3 months</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-gold">63%</p>
+                      <p className="text-sm text-platinum-400">Workflow Reduction</p>
+                      <p className="text-xs text-platinum-500 mt-1">11 steps → 4</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-cyan">240+</p>
+                      <p className="text-sm text-platinum-400">Entities → 7 Bodies</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Methane Emissions */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Wind className="h-5 w-5 text-emerald" />
+                    Methane Emissions Reduction
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-4">
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-emerald">22%</p>
+                      <p className="text-sm text-platinum-400">2024 vs 2023</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-gold">47%</p>
+                      <p className="text-sm text-platinum-400">Cumulative (Since 2020)</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-cyan">&lt;0.15%</p>
+                      <p className="text-sm text-platinum-400">Intensity (Lowest ME)</p>
+                    </div>
+                    <div className="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-center">
+                      <p className="text-2xl font-bold text-emerald">OGMP 2.0</p>
+                      <p className="text-sm text-platinum-400">Gold Standard</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Key Tensions Tab */}
+        <TabsContent value="tensions" className="space-y-6">
+          <GlassPanel
+            title="Key Tensions Identified"
+            description="Climate narrative vs reality, energy security, COP28 contradictions"
+            badge="Critical Analysis"
+          >
+            <div className="space-y-6">
+              {/* Climate Narrative vs Reality */}
+              <Card className="glass-card border-rose-500/30">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-rose">
+                    <AlertTriangle className="h-5 w-5" />
+                    Climate Leader Narrative vs Reality
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {data.keyTensions.climateLeaderNarrativeVsReality.map((item, idx) => (
+                      <div key={idx} className="p-4 bg-slate-800/50 rounded-lg">
+                        <div className="flex items-start gap-3">
+                          <XCircle className="h-5 w-5 text-rose shrink-0 mt-0.5" />
+                          <div>
+                            <p className="text-sm text-platinum-400">Narrative: {item.narrative}</p>
+                            <p className="text-sm text-rose mt-1">Reality: {item.reality}</p>
                           </div>
                         </div>
-                      ))}
-                    </div>
-                  </ScrollArea>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* COP28 Contradictions */}
+              <Card className="glass-card border-rose-500/30">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2 text-rose">
+                    <AlertOctagon className="h-5 w-5" />
+                    COP28 Contradictions
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {data.keyTensions.cop28Contradictions.map((item, idx) => (
+                      <div key={idx} className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg">
+                        <p className="font-medium text-rose text-sm">{item.issue}</p>
+                        <p className="text-platinum-300 mt-1 text-sm">{item.details}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Energy Security vs Climate */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Gauge className="h-5 w-5 text-gold" />
+                    Energy Security vs Climate Ambition
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {data.keyTensions.energySecurityVsClimateAmbition.map((item, idx) => (
+                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                        <p className="font-medium text-gold text-sm">{item.tension}</p>
+                        <p className="text-platinum-300 mt-1 text-sm">{item.details}</p>
+                      </div>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -312,96 +1510,104 @@ export default function EnergySustainabilityPage() {
 
         {/* Sentiment Tab */}
         <TabsContent value="sentiment" className="space-y-6">
-          <GlassPanel title="Sentiment & Emotion Analysis" description="Emotional breakdown of Energy & Sustainability discourse">
+          <GlassPanel
+            title="Sentiment Analysis"
+            description="Source credibility and sentiment by topic"
+            badge="Comprehensive"
+          >
             <div className="space-y-6">
-              <div className="grid gap-6 lg:grid-cols-2">
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Sentiment Distribution</CardTitle>
-                    <CardDescription>Positive, negative, and neutral ratio</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <PieChart
-                      data={sentimentData}
-                      height={280}
-                      showLegend={true}
-                    />
-                  </CardContent>
-                </Card>
-
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Emotion Breakdown</CardTitle>
-                    <CardDescription>Plutchik emotion model distribution</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <BarChart
-                      data={emotionData}
-                      xAxisKey="name"
-                      bars={[
-                        { dataKey: 'value', name: 'Score', color: CHART_COLORS.gold },
-                      ]}
-                      height={280}
-                      showGrid={true}
-                    />
-                  </CardContent>
-                </Card>
-              </div>
-
+              {/* Sentiment by Topic */}
               <Card className="glass-card">
                 <CardHeader>
-                  <CardTitle className="text-lg">Sentiment Trends</CardTitle>
-                  <CardDescription>Year-over-year sentiment comparison</CardDescription>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Eye className="h-5 w-5 text-gold" />
+                    Sentiment by Topic
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <AreaChart
-                    data={[
-                      { year: '2021', value: 48 },
-                      { year: '2022', value: 52 },
-                      { year: '2023', value: 55 },
-                      { year: '2024', value: 53 },
-                      { year: '2025', value: 55 },
-                    ]}
-                    xAxisKey="year"
-                    bars={[
-                      { dataKey: 'value', name: 'Score', color: CHART_COLORS.gold },
-                    ]}
-                    height={280}
-                    showGrid={true}
-                  />
+                  <div className="space-y-3">
+                    {data.sentimentAnalysis.sentimentByTopic.map((topic, idx) => (
+                      <div key={idx} className="p-4 bg-slate-800/50 rounded-xl">
+                        <div className="flex justify-between items-start mb-2">
+                          <p className="font-bold text-platinum-200">{topic.topic}</p>
+                          <Badge
+                            variant={
+                              topic.overallSentiment.includes('Positive')
+                                ? 'emerald'
+                                : topic.overallSentiment.includes('Negative')
+                                ? 'rose'
+                                : 'outline'
+                            }
+                          >
+                            {topic.overallSentiment}
+                          </Badge>
+                        </div>
+                        <p className="text-sm text-platinum-400">{topic.keyNarrative}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* UAE Relevance */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Globe className="h-5 w-5 text-cyan" />
+                    UAE Relevance Assessment
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    {data.sentimentAnalysis.uaeRelevanceAssessment.map((dim, idx) => (
+                      <div key={idx} className="p-4 bg-slate-800/50 rounded-xl">
+                        <p className="font-bold text-cyan">{dim.dimension}</p>
+                        <p className="text-sm text-platinum-300 mt-1">{dim.assessment}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Source Credibility */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Shield className="h-5 w-5 text-emerald" />
+                    Source Credibility Assessment
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {data.sentimentAnalysis.sourceCredibilityAssessment.map((source, idx) => (
+                      <div key={idx} className="flex items-start justify-between p-3 bg-slate-800/50 rounded-lg">
+                        <div>
+                          <p className="font-medium text-platinum-200">{source.sourceType}</p>
+                          {source.examples && <p className="text-xs text-platinum-500">{source.examples}</p>}
+                        </div>
+                        <Badge variant={source.credibility.includes('High') ? 'emerald' : 'outline'} className="text-xs">
+                          {source.credibility}
+                        </Badge>
+                      </div>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             </div>
           </GlassPanel>
         </TabsContent>
-
-        {/* Stakeholders Tab */}
-        <TabsContent value="stakeholders" className="space-y-6">
-          <GlassPanel title="Key Stakeholders" description="Entities and actors in the Energy & Sustainability sector">
-            <Card className="glass-card">
-              <CardHeader>
-                <CardTitle className="text-lg">Energy & Sustainability Stakeholders</CardTitle>
-                <CardDescription>Primary and secondary actors in UAE energy ecosystem</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ScrollArea className="h-[500px]">
-                  <div className="space-y-4">
-                    {stakeholders.map((stakeholder, index) => (
-                      <div key={index} className="flex items-center gap-4 rounded-lg bg-slate-800/50 p-4 hover:bg-slate-800/70 transition-colors">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
-                          <Fuel className="h-5 w-5" />
-                        </div>
-                        <p className="flex-1 font-medium text-slate-200">{stakeholder}</p>
-                        <Badge variant="outline" className="text-xs">Tier 1</Badge>
-                      </div>
-                    ))}
-                  </div>
-                </ScrollArea>
-              </CardContent>
-            </Card>
-          </GlassPanel>
-        </TabsContent>
       </Tabs>
-    </div>
+
+      {/* Footer */}
+      <motion.div variants={itemVariants} className="text-center text-sm text-platinum-500">
+        <p>Last Updated: {data.reportMetadata.reportCompiled}</p>
+        <p className="mt-1">
+          Enrichment Status: <Badge variant="success" className="text-xs">{data.reportMetadata.confidenceLevel}</Badge>
+        </p>
+        <p className="mt-1 text-platinum-600">
+          Data Completeness: {data.reportMetadata.queriesExecuted} queries, {data.reportMetadata.pagesAnalyzed} pages analyzed
+        </p>
+      </motion.div>
+    </motion.div>
   )
 }

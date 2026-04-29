@@ -26,142 +26,67 @@ import {
   Users,
   Landmark,
   Handshake,
+  Activity,
+  Calendar,
+  Target,
+  Radio,
+  Award,
+  FileText,
+  AlertOctagon,
+  Crosshair,
+  MapPin,
 } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import {
   useStakeholderOverviewData,
   useIntlRelationsData,
 } from '@/lib/data-loader'
 import type { StakeholderIntelligence } from '@/lib/data-loader'
+import {
+  intlRelationsData,
+  gccSoftPowerData,
+  gccSummitData,
+  arabLeagueIntlData,
+  oicIntlData,
+  bilateralRelationsData,
+  crisisResponseIntlData,
+  multilateralPositioningIntlData,
+  threatIndicatorIntlData,
+  intlRelationsSourceCredibility,
+} from '@/lib/data-loader/stakeholder-data'
 
-// Mock international organization data
-const mockIntlOrgStakeholders: StakeholderIntelligence[] = [
-  {
-    id: 'intl-un',
-    name: 'United Nations (UAE Presence)',
-    nameAr: 'الأمم المتحدة',
-    type: 'international',
-    mandate: 'UN agencies operating in UAE including UNDP, UNHCR, UN Women, and UNESCO. Focus on development programs, humanitarian aid, and cultural preservation.',
-    metrics: {
-      digitalReach: 15000000,
-      engagement: 2.8,
-      sentiment: { positive: 58, negative: 22, neutral: 20, overall: 62, volume: 450000 },
-      credibility: { tier: 1, score: 90, sources: 25, lastVerified: '2026-04-20' },
-      programs: [
-        { name: 'UNDP Programs', description: 'Sustainable development initiatives', status: 'active' },
-        { name: 'UNHCR Operations', description: 'Refugee support in region', status: 'active' },
-      ],
-    },
-    uaeRelevance: { score: 85, level: 'high', justification: 'Major development partner' },
-    alertLevel: 'GREEN',
-    sources: [],
-    lastUpdated: '2026-04-20',
-  },
-  {
-    id: 'intl-wto',
-    name: 'World Trade Organization',
-    nameAr: 'منظمة التجارة العالمية',
-    type: 'international',
-    mandate: 'WTO trade facilitation and dispute resolution services for UAE. Supports UAE\'s role as global trade hub and arbitration services.',
-    metrics: {
-      digitalReach: 8500000,
-      engagement: 2.2,
-      sentiment: { positive: 52, negative: 28, neutral: 20, overall: 55, volume: 220000 },
-      credibility: { tier: 1, score: 88, sources: 20, lastVerified: '2026-04-20' },
-      programs: [
-        { name: 'Trade Facilitation', description: 'Customs and trade streamlining', status: 'active' },
-        { name: 'Dispute Resolution', description: 'Trade arbitration services', status: 'active' },
-      ],
-    },
-    uaeRelevance: { score: 78, level: 'high', justification: 'Trade policy engagement' },
-    alertLevel: 'YELLOW',
-    sources: [],
-    lastUpdated: '2026-04-20',
-  },
-  {
-    id: 'intl-imf',
-    name: 'International Monetary Fund',
-    nameAr: 'صندوق النقد الدولي',
-    type: 'international',
-    mandate: 'IMF surveillance and technical assistance in UAE. Monitors economic developments and provides policy recommendations.',
-    metrics: {
-      digitalReach: 12000000,
-      engagement: 2.5,
-      sentiment: { positive: 48, negative: 32, neutral: 20, overall: 52, volume: 310000 },
-      credibility: { tier: 1, score: 92, sources: 22, lastVerified: '2026-04-20' },
-      programs: [
-        { name: 'Economic Surveillance', description: 'Financial sector monitoring', status: 'active' },
-        { name: 'Technical Assistance', description: 'Policy capacity building', status: 'active' },
-      ],
-    },
-    uaeRelevance: { score: 75, level: 'medium', justification: 'Economic policy advisor' },
-    alertLevel: 'YELLOW',
-    sources: [],
-    lastUpdated: '2026-04-20',
-  },
-  {
-    id: 'intl-wb',
-    name: 'World Bank Group',
-    nameAr: 'مجموعة البنك الدولي',
-    type: 'international',
-    mandate: 'World Bank financing and knowledge services in UAE. Supports infrastructure development and economic diversification projects.',
-    metrics: {
-      digitalReach: 9800000,
-      engagement: 2.4,
-      sentiment: { positive: 55, negative: 25, neutral: 20, overall: 58, volume: 280000 },
-      credibility: { tier: 1, score: 91, sources: 21, lastVerified: '2026-04-20' },
-      programs: [
-        { name: 'Infrastructure Financing', description: 'Major project funding', status: 'active' },
-        { name: 'Knowledge Exchange', description: 'Best practice sharing', status: 'active' },
-      ],
-    },
-    uaeRelevance: { score: 72, level: 'medium', justification: 'Development finance partner' },
-    alertLevel: 'GREEN',
-    sources: [],
-    lastUpdated: '2026-04-20',
-  },
-  {
-    id: 'intl-wto-dubai',
-    name: 'WTO Dubai Office',
-    nameAr: 'مكتب منظمة التجارة العالمية في دبي',
-    type: 'international',
-    mandate: 'Regional hub for WTO activities in Middle East. Handles trade negotiations and dispute resolution for the region.',
-    metrics: {
-      digitalReach: 4200000,
-      engagement: 1.9,
-      sentiment: { positive: 45, negative: 35, neutral: 20, overall: 48, volume: 95000 },
-      credibility: { tier: 1, score: 86, sources: 15, lastVerified: '2026-04-20' },
-      programs: [
-        { name: 'Regional Trade', description: 'Middle East trade facilitation', status: 'active' },
-        { name: 'Training Programs', description: 'Trade policy workshops', status: 'active' },
-      ],
-    },
-    uaeRelevance: { score: 68, level: 'medium', justification: 'Regional trade hub' },
-    alertLevel: 'YELLOW',
-    sources: [],
-    lastUpdated: '2026-04-20',
-  },
-  {
-    id: 'intl-redcross',
-    name: 'International Red Cross (GCC)',
-    nameAr: 'الصليب الأحمر الدولي',
-    type: 'international',
-    mandate: 'Regional delegation overseeing humanitarian operations across GCC. Coordinates disaster response and humanitarian aid programs.',
-    metrics: {
-      digitalReach: 6500000,
-      engagement: 2.6,
-      sentiment: { positive: 65, negative: 15, neutral: 20, overall: 70, volume: 180000 },
-      credibility: { tier: 1, score: 89, sources: 18, lastVerified: '2026-04-20' },
-      programs: [
-        { name: 'Humanitarian Aid', description: 'Regional relief operations', status: 'active' },
-        { name: 'Disaster Response', description: 'Emergency preparedness', status: 'active' },
-      ],
-    },
-    uaeRelevance: { score: 80, level: 'high', justification: 'Humanitarian coordination' },
-    alertLevel: 'GREEN',
-    sources: [],
-    lastUpdated: '2026-04-20',
-  },
-]
+// Key metrics from MD 7-10
+const softPowerMetrics = {
+  gspiRank: 10,
+  gccRank: 1,
+  softPowerScore: 59.4,
+  pillars: gccSoftPowerData.softPowerPillars,
+}
+
+const gccSummits = gccSummitData.filter(s => s.tier === 0)
+
+const crisisMetrics = {
+  attacksSinceFeb2026: crisisResponseIntlData.attacksSinceFeb2026,
+  coordinationMeetings: crisisResponseIntlData.coordinationMeetings,
+  lebanonDisplaced: crisisResponseIntlData.lebanonDisplaced,
+  lebanonCasualties: crisisResponseIntlData.lebanonCasualties,
+}
+
+const multilateralMetrics = {
+  bricsMember: multilateralPositioningIntlData.bricsMember,
+  cepaAgreements: multilateralPositioningIntlData.cepaAgreements,
+  dialoguePartnerships: multilateralPositioningIntlData.dialoguePartnerships.length,
+}
+
+const threatData = {
+  arabOpinionIsrael: threatIndicatorIntlData.arabOpinionIndex?.israelThreat || 28,
+  arabOpinionUS: threatIndicatorIntlData.arabOpinionIndex?.usThreat || 10,
+  gulfUSThreat: threatIndicatorIntlData.gulfThreatData?.usPoliciesThreat || 77,
+  gulfIsraelThreat: threatIndicatorIntlData.gulfThreatData?.israelPoliciesThreat || 84,
+  redSeaFoodImports: threatIndicatorIntlData.redSeaThreat?.foodImportsDisrupted || 70,
+}
+
+const bilateralPartners = bilateralRelationsData.slice(0, 7)
 
 export default function IntlOrgsStakeholdersPage() {
   const { data: overviewData } = useStakeholderOverviewData()
@@ -169,27 +94,12 @@ export default function IntlOrgsStakeholdersPage() {
 
   const overviewStakeholders = (overviewData?.stakeholders as StakeholderIntelligence[] || []).filter(s => s.type === 'international')
   const allIntlData = [intlData].filter(Boolean) as StakeholderIntelligence[]
-  const intlOrgs = overviewStakeholders.length > 0 ? overviewStakeholders : (allIntlData.length > 0 ? allIntlData : mockIntlOrgStakeholders)
+  const intlOrgs = overviewStakeholders.length > 0 ? overviewStakeholders : (allIntlData.length > 0 ? allIntlData : [intlRelationsData])
 
-  // Calculate aggregate metrics
+  // Aggregate metrics
   const totalReach = intlOrgs.reduce((sum, s) => sum + (s.metrics?.digitalReach || 0), 0)
   const avgCredibility = intlOrgs.reduce((sum, s) => sum + (s.metrics?.credibility?.score || 0), 0) / Math.max(intlOrgs.length, 1)
   const avgEngagement = intlOrgs.reduce((sum, s) => sum + (s.metrics?.engagement || 0), 0) / Math.max(intlOrgs.length, 1)
-
-  // Sentiment data
-  const sentimentData = [
-    { name: 'Positive', value: 54, color: CHART_COLORS.emerald },
-    { name: 'Neutral', value: 26, color: CHART_COLORS.platinum },
-    { name: 'Negative', value: 20, color: CHART_COLORS.rose },
-  ]
-
-  // Type breakdown
-  const typeData = [
-    { name: 'UN Agencies', value: 40, color: CHART_COLORS.navy },
-    { name: 'Financial', value: 28, color: CHART_COLORS.gold },
-    { name: 'Trade', value: 18, color: CHART_COLORS.emerald },
-    { name: 'Humanitarian', value: 14, color: CHART_COLORS.rose },
-  ]
 
   const getAlertBadge = (level?: string) => {
     switch (level) {
@@ -203,12 +113,16 @@ export default function IntlOrgsStakeholdersPage() {
   return (
     <div className="space-y-8 p-8">
       {/* Header */}
-      <div className="flex items-start justify-between">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex items-start justify-between"
+      >
         <div>
           <Badge variant="cyan" className="mb-2">INTERNATIONAL</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-cyan">International Organizations</h1>
+          <h1 className="text-3xl font-extrabold gradient-text-cyan">International Relations Body</h1>
           <p className="mt-2 text-slate-400">
-            UN agencies, multilateral institutions, and international bodies with presence in the UAE
+            GCC, Arab League, OIC, UN coordination, bilateral partnerships, and multilateral positioning
           </p>
         </div>
         <div className="flex gap-3">
@@ -221,274 +135,710 @@ export default function IntlOrgsStakeholdersPage() {
             Analyze
           </Button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Key Metrics */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+      >
         <MetricCard
-          title="Organizations"
-          value={intlOrgs.length}
-          icon={<Globe2 className="h-6 w-6" />}
+          title="Soft Power Rank"
+          value={`#${softPowerMetrics.gspiRank}`}
+          previousValue={11}
+          unit="/100"
+          icon={<Award className="h-6 w-6" />}
           gradient="cyan"
           status="info"
         />
         <MetricCard
-          title="Total Reach"
-          value={totalReach > 1000000 ? `${(totalReach / 1000000).toFixed(1)}M` : totalReach.toLocaleString()}
-          icon={<Globe className="h-6 w-6" />}
-          gradient="navy"
+          title="GCC Summits 2024-26"
+          value={gccSummits.length}
+          icon={<Calendar className="h-6 w-6" />}
+          gradient="denim"
+          status="info"
         />
         <MetricCard
-          title="Avg Credibility"
-          value={avgCredibility.toFixed(1)}
-          previousValue={avgCredibility - 1.5}
-          icon={<Shield className="h-6 w-6" />}
+          title="Bilateral Partners"
+          value={bilateralPartners.length}
+          icon={<Handshake className="h-6 w-6" />}
           gradient="gold"
+          status="info"
         />
         <MetricCard
-          title="Avg Engagement"
-          value={avgEngagement.toFixed(1)}
-          previousValue={avgEngagement - 0.2}
-          icon={<TrendingUp className="h-6 w-6" />}
-          gradient="platinum"
+          title="UAE Relevance"
+          value={intlRelationsData.uaeRelevance.score}
+          unit="%"
+          icon={<Target className="h-6 w-6" />}
+          gradient="emerald"
+          status="critical"
         />
-      </div>
+      </motion.div>
+
+      {/* Crisis Alert Banner */}
+      <AnimatePresence>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          className="bg-gradient-to-r from-red-900/30 to-red-800/30 border border-red-500/50 rounded-lg p-4"
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <AlertOctagon className="h-6 w-6 text-red-400" />
+              <div>
+                <h3 className="font-bold text-red-400">CRISIS COORDINATION ACTIVE</h3>
+                <p className="text-sm text-slate-300">
+                  {crisisMetrics.attacksSinceFeb2026.toLocaleString()}+ missile/drone attacks tracked | {crisisMetrics.coordinationMeetings}+ coordination meetings
+                </p>
+              </div>
+            </div>
+            {getAlertBadge(intlRelationsData.alertLevel)}
+          </div>
+        </motion.div>
+      </AnimatePresence>
 
       <Tabs defaultValue="overview" className="space-y-6">
         <TabsList className="glass-panel" scrollable>
           <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="entities">Organizations</TabsTrigger>
-          <TabsTrigger value="types">Categories</TabsTrigger>
-          <TabsTrigger value="sentiment">Sentiment</TabsTrigger>
+          <TabsTrigger value="gcc">GCC Relations</TabsTrigger>
+          <TabsTrigger value="arableague">Arab League</TabsTrigger>
+          <TabsTrigger value="oic">OIC & UN</TabsTrigger>
+          <TabsTrigger value="bilateral">Bilateral</TabsTrigger>
+          <TabsTrigger value="crisis">Crisis Response</TabsTrigger>
+          <TabsTrigger value="multilateral">Multilateral</TabsTrigger>
+          <TabsTrigger value="threats">Threat Indicators</TabsTrigger>
         </TabsList>
 
         {/* Overview Tab */}
         <TabsContent value="overview" className="space-y-6">
-          <GlassPanel title="International Organizations Overview" description="Key metrics for international bodies in UAE">
-            <div className="space-y-6">
-              <Card className="glass-card">
+          <div className="grid gap-6 lg:grid-cols-2">
+            {/* Soft Power Card */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <Card className="glass-card h-full">
                 <CardHeader>
-                  <CardTitle className="text-lg">Organization Reach</CardTitle>
-                  <CardDescription>Digital reach by international organization</CardDescription>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Award className="h-5 w-5 text-cyan-400" />
+                    GCC Soft Power Leadership
+                  </CardTitle>
+                  <CardDescription>UAE ranked #1 in GCC, 10th globally</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <BarChart
-                    data={intlOrgs.slice(0, 6).map(s => ({
-                      name: s.name.split(' ').slice(0, 2).join(' '),
-                      value: s.metrics?.digitalReach || 0,
-                      color: CHART_COLORS.cyan,
-                    }))}
-                    xAxisKey="name"
-                    bars={[
-                      { dataKey: 'value', name: 'Reach', color: CHART_COLORS.cyan },
-                    ]}
-                    height={300}
-                    showGrid={true}
-                  />
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-5xl font-extrabold text-cyan-400">{softPowerMetrics.softPowerScore}</span>
+                      <span className="text-slate-400">/100</span>
+                    </div>
+                    <Progress value={softPowerMetrics.softPowerScore} className="h-2" />
+                    <div className="grid grid-cols-2 gap-2 mt-4">
+                      <div className="text-center p-2 rounded bg-cyan-500/10">
+                        <div className="text-xl font-bold text-cyan-400">#{softPowerMetrics.gspiRank}</div>
+                        <div className="text-xs text-slate-400">Global Rank</div>
+                      </div>
+                      <div className="text-center p-2 rounded bg-cyan-500/10">
+                        <div className="text-xl font-bold text-cyan-400">#1</div>
+                        <div className="text-xs text-slate-400">GCC Rank</div>
+                      </div>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
+            </motion.div>
 
-              <div className="grid gap-6 lg:grid-cols-2">
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Sentiment Distribution</CardTitle>
-                    <CardDescription>Overall sentiment toward international orgs</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <PieChart
-                      data={sentimentData}
-                      height={280}
-                      showLegend={true}
-                    />
-                  </CardContent>
-                </Card>
+            {/* Six Pillars */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <Card className="glass-card h-full">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Shield className="h-5 w-5 text-emerald-400" />
+                    Soft Power Pillars
+                  </CardTitle>
+                  <CardDescription>6 strategic pillars</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-2 gap-2">
+                    {softPowerMetrics.pillars.map((pillar, idx) => (
+                      <motion.div
+                        key={pillar}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.1 * idx }}
+                        className="p-2 rounded bg-emerald-500/10 text-xs text-emerald-300 text-center"
+                      >
+                        {pillar}
+                      </motion.div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
 
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Organization Types</CardTitle>
-                    <CardDescription>Distribution by category</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <PieChart
-                      data={typeData}
-                      height={280}
-                      showLegend={true}
-                    />
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </GlassPanel>
+          {/* Key Summits Timeline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <Card className="glass-card">
+              <CardHeader>
+                <CardTitle className="text-lg flex items-center gap-2">
+                  <Calendar className="h-5 w-5 text-gold-400" />
+                  Key GCC-EU Summits 2024-2026
+                </CardTitle>
+                <CardDescription>Strategic Partnership for Peace and Prosperity</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {gccSummits.slice(0, 5).map((summit, idx) => (
+                    <motion.div
+                      key={summit.name}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 * idx }}
+                      className="flex items-center justify-between p-3 rounded bg-gold-500/5 hover:bg-gold-500/10 transition-colors"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-2 h-2 rounded-full bg-gold-400" />
+                        <div>
+                          <div className="font-medium text-slate-200">{summit.name}</div>
+                          <div className="text-xs text-slate-400">{summit.location}</div>
+                        </div>
+                      </div>
+                      <Badge variant="outline" className="text-xs">{summit.date}</Badge>
+                    </motion.div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
         </TabsContent>
 
-        {/* Entities Tab */}
-        <TabsContent value="entities" className="space-y-6">
-          <GlassPanel title="International Organization Directory" description="Detailed profiles of international bodies in UAE">
-            <ScrollArea className="h-[700px]">
-              <div className="space-y-4">
-                {intlOrgs.map((entity) => (
-                  <Card key={entity.id} className="glass-card">
-                    <CardHeader>
-                      <div className="flex items-start justify-between">
-                        <div className="flex items-center gap-3">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400">
-                            <Globe2 className="h-6 w-6" />
-                          </div>
-                          <div>
-                            <CardTitle className="text-lg text-slate-200">{entity.name}</CardTitle>
-                            {entity.nameAr && <p className="text-sm text-slate-400">{entity.nameAr}</p>}
-                          </div>
-                        </div>
-                        {getAlertBadge(entity.alertLevel)}
+        {/* GCC Relations Tab */}
+        <TabsContent value="gcc" className="space-y-6">
+          <div className="grid gap-6 lg:grid-cols-3">
+            <Card className="glass-card">
+              <CardHeader>
+                <CardTitle className="text-lg">GCC Soft Power</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="text-center">
+                  <div className="text-4xl font-extrabold text-cyan-400">10th</div>
+                  <div className="text-sm text-slate-400">Global Soft Power Index</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-extrabold text-emerald-400">#1</div>
+                  <div className="text-sm text-slate-400">GCC Ranking</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-extrabold text-gold-400">59.4</div>
+                  <div className="text-sm text-slate-400">Soft Power Score</div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="glass-card">
+              <CardHeader>
+                <CardTitle className="text-lg">Major Initiatives</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ScrollArea className="h-[200px]">
+                  <div className="space-y-2">
+                    {gccSoftPowerData.majorInitiatives.map((initiative, idx) => (
+                      <div key={idx} className="text-sm p-2 rounded bg-cyan-500/5 hover:bg-cyan-500/10">
+                        {initiative}
                       </div>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-slate-300 mb-4">{entity.mandate}</p>
-                      <div className="grid gap-4 sm:grid-cols-4">
-                        <div className="text-center">
-                          <div className="text-xl font-bold text-cyan-400">
-                            {entity.metrics?.digitalReach?.toLocaleString() || 'N/A'}
-                          </div>
-                          <div className="text-xs text-slate-400">Digital Reach</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-xl font-bold text-gold-400">
-                            {entity.metrics?.engagement?.toFixed(1) || 'N/A'}
-                          </div>
-                          <div className="text-xs text-slate-400">Engagement</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-xl font-bold text-platinum-400">
-                            {entity.metrics?.credibility?.score || 'N/A'}
-                          </div>
-                          <div className="text-xs text-slate-400">Credibility</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-xl font-bold text-navy-400">
-                            {entity.uaeRelevance?.level || 'N/A'}
-                          </div>
-                          <div className="text-xs text-slate-400">UAE Relevance</div>
-                        </div>
+                    ))}
+                  </div>
+                </ScrollArea>
+              </CardContent>
+            </Card>
+
+            <Card className="glass-card">
+              <CardHeader>
+                <CardTitle className="text-lg">First-Time Summits</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {['GCC-China', 'GCC-ASEAN', 'GCC-EU', 'GCC-Central Asia'].map((summit) => (
+                    <div key={summit} className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-emerald-400" />
+                      <span className="text-sm">{summit}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card className="glass-card">
+            <CardHeader>
+              <CardTitle className="text-lg">GCC-EU Summits (2024-2026)</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <BarChart
+                data={gccSummits.map(s => ({
+                  name: s.name.length > 20 ? s.name.substring(0, 20) + '...' : s.name,
+                  value: 1,
+                  date: s.date,
+                }))}
+                xAxisKey="name"
+                bars={[{ dataKey: 'value', name: 'Summit', color: CHART_COLORS.cyan }]}
+                height={300}
+                showGrid={true}
+              />
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* Arab League Tab */}
+        <TabsContent value="arableague" className="space-y-6">
+          <div className="grid gap-6 lg:grid-cols-3">
+            <Card className="glass-card">
+              <CardHeader>
+                <CardTitle className="text-lg">Arab League</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="text-center">
+                  <div className="text-4xl font-extrabold text-emerald-400">{arabLeagueIntlData.memberCount}</div>
+                  <div className="text-sm text-slate-400">Member States</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-lg font-bold text-gold-400">{arabLeagueIntlData.mediaCooperationDate}</div>
+                  <div className="text-sm text-slate-400">Media Forum</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-lg font-bold text-red-400">{arabLeagueIntlData.mediaActionPlanDate}</div>
+                  <div className="text-sm text-slate-400">Media Action Plan</div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="glass-card lg:col-span-2">
+              <CardHeader>
+                <CardTitle className="text-lg">Key Initiatives</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ScrollArea className="h-[200px]">
+                  <div className="space-y-2">
+                    {arabLeagueIntlData.keyInitiatives.map((initiative, idx) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.05 * idx }}
+                        className="flex items-start gap-2 p-2 rounded bg-emerald-500/5 hover:bg-emerald-500/10"
+                      >
+                        <div className="w-2 h-2 mt-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
+                        <span className="text-sm">{initiative}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </ScrollArea>
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+
+        {/* OIC & UN Tab */}
+        <TabsContent value="oic" className="space-y-6">
+          <div className="grid gap-6 lg:grid-cols-2">
+            <Card className="glass-card">
+              <CardHeader>
+                <CardTitle className="text-lg flex items-center gap-2">
+                  <Globe className="h-5 w-5 text-cyan-400" />
+                  OIC Coordination
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="text-center p-3 rounded bg-cyan-500/10">
+                    <div className="text-3xl font-extrabold text-cyan-400">{oicIntlData.memberCount}</div>
+                    <div className="text-xs text-slate-400">Member States</div>
+                  </div>
+                  <div className="text-center p-3 rounded bg-cyan-500/10">
+                    <div className="text-lg font-bold text-cyan-400">1969</div>
+                    <div className="text-xs text-slate-400">Established</div>
+                  </div>
+                </div>
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between p-2 rounded bg-slate-800/50">
+                    <span className="text-slate-400">Headquarters</span>
+                    <span>{oicIntlData.headquarters}</span>
+                  </div>
+                  <div className="flex justify-between p-2 rounded bg-slate-800/50">
+                    <span className="text-slate-400">UN Observer</span>
+                    <span>{oicIntlData.unObserverStatus}</span>
+                  </div>
+                  <div className="flex justify-between p-2 rounded bg-slate-800/50">
+                    <span className="text-slate-400">Framework</span>
+                    <span className="text-right text-xs">{oicIntlData.conferenceFramework}</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="glass-card">
+              <CardHeader>
+                <CardTitle className="text-lg flex items-center gap-2">
+                  <Radio className="h-5 w-5 text-emerald-400" />
+                  UN Information Integrity
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <div className="p-3 rounded bg-emerald-500/10">
+                    <div className="text-lg font-bold text-emerald-400">November 4, 2025</div>
+                    <div className="text-sm text-slate-300">UAE at UN Fourth Committee</div>
+                  </div>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-emerald-400" />
+                      <span>Information Integrity</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-emerald-400" />
+                      <span>AI Governance</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-emerald-400" />
+                      <span>Multilingualism</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-emerald-400" />
+                      <span>Journalist Protection</span>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </TabsContent>
+
+        {/* Bilateral Tab */}
+        <TabsContent value="bilateral" className="space-y-6">
+          <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+            {bilateralPartners.map((partner, idx) => (
+              <motion.div
+                key={partner.partner}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * idx }}
+              >
+                <Card className="glass-card h-full">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <MapPin className="h-4 w-4 text-cyan-400" />
+                      {partner.partner}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    {partner.tradeVolume && (
+                      <div className="text-sm">
+                        <span className="text-slate-400">Trade: </span>
+                        <span className="text-emerald-400 font-medium">{partner.tradeVolume}</span>
                       </div>
-                    </CardContent>
-                  </Card>
+                    )}
+                    {partner.investment && (
+                      <div className="text-sm">
+                        <span className="text-slate-400">Investment: </span>
+                        <span className="text-gold-400 font-medium">{partner.investment}</span>
+                      </div>
+                    )}
+                    {partner.agreements && partner.agreements.length > 0 && (
+                      <div className="space-y-1">
+                        <div className="text-xs text-slate-400">Key Agreements:</div>
+                        {partner.agreements.slice(0, 2).map((agreement, i) => (
+                          <div key={i} className="text-xs p-1 rounded bg-cyan-500/5">
+                            {agreement}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {partner.keyMeetings && partner.keyMeetings.length > 0 && (
+                      <div className="pt-2 border-t border-slate-700">
+                        <div className="text-xs text-slate-400 mb-1">Recent Meetings:</div>
+                        {partner.keyMeetings.slice(0, 2).map((meeting, i) => (
+                          <div key={i} className="text-xs">
+                            <span className="text-cyan-400">{meeting.date}: </span>
+                            <span>{meeting.event}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </TabsContent>
+
+        {/* Crisis Response Tab */}
+        <TabsContent value="crisis" className="space-y-6">
+          <div className="grid gap-6 lg:grid-cols-4">
+            <Card className="glass-card">
+              <CardContent className="text-center p-6">
+                <div className="text-4xl font-extrabold text-red-400">
+                  {crisisMetrics.attacksSinceFeb2026.toLocaleString()}+
+                </div>
+                <div className="text-sm text-slate-400 mt-2">Attacks Since Feb 2026</div>
+              </CardContent>
+            </Card>
+            <Card className="glass-card">
+              <CardContent className="text-center p-6">
+                <div className="text-4xl font-extrabold text-gold-400">
+                  {crisisMetrics.coordinationMeetings}+
+                </div>
+                <div className="text-sm text-slate-400 mt-2">Coordination Meetings</div>
+              </CardContent>
+            </Card>
+            <Card className="glass-card">
+              <CardContent className="text-center p-6">
+                <div className="text-4xl font-extrabold text-cyan-400">
+                  {(crisisMetrics.lebanonDisplaced / 1000000).toFixed(1)}M
+                </div>
+                <div className="text-sm text-slate-400 mt-2">Lebanon Displaced</div>
+              </CardContent>
+            </Card>
+            <Card className="glass-card">
+              <CardContent className="text-center p-6">
+                <div className="text-4xl font-extrabold text-red-400">
+                  {crisisMetrics.lebanonCasualties.toLocaleString()}+
+                </div>
+                <div className="text-sm text-slate-400 mt-2">Lebanon Casualties</div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card className="glass-card">
+            <CardHeader>
+              <CardTitle className="text-lg flex items-center gap-2">
+                <AlertOctagon className="h-5 w-5 text-red-400" />
+                Condemnations
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-2">
+                {crisisResponseIntlData.condemnations.map((condemnation, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 * idx }}
+                    className="flex items-center gap-2 p-3 rounded bg-red-500/10 hover:bg-red-500/15"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-red-400" />
+                    <span className="text-sm">{condemnation}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* Multilateral Tab */}
+        <TabsContent value="multilateral" className="space-y-6">
+          <div className="grid gap-6 lg:grid-cols-3">
+            <Card className="glass-card">
+              <CardHeader>
+                <CardTitle className="text-lg">BRICS Membership</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center p-6">
+                <div className={`text-6xl font-extrabold ${multilateralMetrics.bricsMember ? 'text-emerald-400' : 'text-slate-400'}`}>
+                  {multilateralMetrics.bricsMember ? 'YES' : 'NO'}
+                </div>
+                <div className="text-sm text-slate-400 mt-2">Member since early 2024</div>
+                <div className="text-xs text-slate-500 mt-1">Kazan Summit October 2024</div>
+              </CardContent>
+            </Card>
+
+            <Card className="glass-card">
+              <CardHeader>
+                <CardTitle className="text-lg">CEPA Agreements</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center p-6">
+                <div className="text-6xl font-extrabold text-gold-400">
+                  {multilateralMetrics.cepaAgreements}
+                </div>
+                <div className="text-sm text-slate-400 mt-2">Since September 2021</div>
+              </CardContent>
+            </Card>
+
+            <Card className="glass-card">
+              <CardHeader>
+                <CardTitle className="text-lg">COP28 & G20</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="p-3 rounded bg-emerald-500/10">
+                  <div className="text-lg font-bold text-emerald-400">COP28 Host 2023</div>
+                  <div className="text-xs text-slate-400">UAE Consensus adopted</div>
+                </div>
+                <div className="p-3 rounded bg-cyan-500/10">
+                  <div className="text-lg font-bold text-cyan-400">G20 Guest</div>
+                  <div className="text-xs text-slate-400">Brazil November 2024</div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card className="glass-card">
+            <CardHeader>
+              <CardTitle className="text-lg">Dialogue Partnerships</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {multilateralPositioningIntlData.dialoguePartnerships.map((partnership, idx) => (
+                  <motion.div
+                    key={partnership}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.05 * idx }}
+                    className="p-3 rounded bg-cyan-500/10 hover:bg-cyan-500/20 transition-colors"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-cyan-400 mb-2" />
+                    <div className="text-sm">{partnership}</div>
+                  </motion.div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* Threat Indicators Tab */}
+        <TabsContent value="threats" className="space-y-6">
+          <div className="grid gap-6 lg:grid-cols-2">
+            <Card className="glass-card">
+              <CardHeader>
+                <CardTitle className="text-lg flex items-center gap-2">
+                  <Crosshair className="h-5 w-5 text-red-400" />
+                  Arab Opinion - Greatest Threats
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-3">
+                  <div>
+                    <div className="flex justify-between mb-1">
+                      <span className="text-sm">Israel</span>
+                      <span className="text-red-400 font-bold">{threatData.arabOpinionIsrael}%</span>
+                    </div>
+                    <Progress value={threatData.arabOpinionIsrael} className="h-2 bg-slate-700" />
+                  </div>
+                  <div>
+                    <div className="flex justify-between mb-1">
+                      <span className="text-sm">US</span>
+                      <span className="text-orange-400 font-bold">{threatData.arabOpinionUS}%</span>
+                    </div>
+                    <Progress value={threatData.arabOpinionUS} className="h-2 bg-slate-700" />
+                  </div>
+                </div>
+                <div className="pt-4 border-t border-slate-700">
+                  <div className="text-xs text-slate-400 mb-2">Survey: 15 Arab countries, 40,130 respondents</div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="glass-card">
+              <CardHeader>
+                <CardTitle className="text-lg flex items-center gap-2">
+                  <AlertTriangle className="h-5 w-5 text-red-400" />
+                  Gulf Threat Perception
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-3">
+                  <div>
+                    <div className="flex justify-between mb-1">
+                      <span className="text-sm">Israeli Policies</span>
+                      <span className="text-red-400 font-bold">{threatData.gulfIsraelThreat}%</span>
+                    </div>
+                    <Progress value={threatData.gulfIsraelThreat} className="h-2 bg-slate-700" />
+                  </div>
+                  <div>
+                    <div className="flex justify-between mb-1">
+                      <span className="text-sm">US Policies</span>
+                      <span className="text-orange-400 font-bold">{threatData.gulfUSThreat}%</span>
+                    </div>
+                    <Progress value={threatData.gulfUSThreat} className="h-2 bg-slate-700" />
+                  </div>
+                </div>
+                <div className="pt-4 border-t border-slate-700">
+                  <div className="text-xs text-slate-400">Source: Arab Center DC</div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card className="glass-card">
+            <CardHeader>
+              <CardTitle className="text-lg flex items-center gap-2">
+                <Activity className="h-5 w-5 text-red-400" />
+                Red Sea Threat Assessment
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-6 sm:grid-cols-2">
+                <div className="text-center p-6 rounded bg-red-500/10">
+                  <div className="text-5xl font-extrabold text-red-400">{threatData.redSeaFoodImports}%</div>
+                  <div className="text-sm text-slate-400 mt-2">Food Imports Disrupted</div>
+                </div>
+                <div className="text-center p-6 rounded bg-red-500/10">
+                  <div className="text-5xl font-extrabold text-red-400">{threatIndicatorIntlData.redSeaThreat?.desalinationThreat || 90}%</div>
+                  <div className="text-sm text-slate-400 mt-2">Desalination Under Threat</div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
+
+      {/* Source Credibility Footer */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+        className="mt-8"
+      >
+        <Card className="glass-card">
+          <CardHeader>
+            <CardTitle className="text-sm flex items-center gap-2">
+              <FileText className="h-4 w-4 text-slate-400" />
+              Source Credibility Matrix ({intlRelationsSourceCredibility.length} sources)
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ScrollArea className="h-[150px]">
+              <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {intlRelationsSourceCredibility.map((source, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-2 p-2 rounded bg-slate-800/50 hover:bg-slate-800"
+                  >
+                    <div className={`w-2 h-2 rounded-full ${
+                      source.tier === 0 ? 'bg-emerald-400' :
+                      source.tier === 1 ? 'bg-cyan-400' :
+                      source.tier === 2 ? 'bg-gold-400' : 'bg-slate-400'
+                    }`} />
+                    <div className="flex-1 min-w-0">
+                      <div className="text-xs font-medium truncate">{source.source}</div>
+                      <div className="text-xs text-slate-500">{source.uaeRelevance}</div>
+                    </div>
+                  </div>
                 ))}
               </div>
             </ScrollArea>
-          </GlassPanel>
-        </TabsContent>
-
-        {/* Types Tab */}
-        <TabsContent value="types" className="space-y-6">
-          <GlassPanel title="Organization Categories" description="Breakdown by international organization type">
-            <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Category Distribution</CardTitle>
-                  <CardDescription>International presence by category</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <BarChart
-                    data={typeData}
-                    xAxisKey="name"
-                    bars={[
-                      { dataKey: 'value', name: 'Percentage', color: CHART_COLORS.cyan },
-                    ]}
-                    height={350}
-                    showGrid={true}
-                  />
-                </CardContent>
-              </Card>
-
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {typeData.map((type, idx) => (
-                  <Card key={idx} className="glass-card">
-                    <CardContent className="p-4">
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center gap-2">
-                          <div
-                            className="h-3 w-3 rounded-full"
-                            style={{ backgroundColor: type.color }}
-                          />
-                          <span className="font-medium text-slate-200">{type.name}</span>
-                        </div>
-                        <span className="text-xl font-bold text-cyan-400">{type.value}%</span>
-                      </div>
-                      <Progress
-                        value={type.value}
-                        className="h-2"
-                      />
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </GlassPanel>
-        </TabsContent>
-
-        {/* Sentiment Tab */}
-        <TabsContent value="sentiment" className="space-y-6">
-          <GlassPanel title="Sentiment Analysis" description="Detailed sentiment breakdown for international organizations">
-            <div className="space-y-6">
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Aggregate Sentiment</CardTitle>
-                  <CardDescription>Overall sentiment distribution</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <PieChart
-                    data={sentimentData}
-                    height={300}
-                    showLegend={true}
-                  />
-                </CardContent>
-              </Card>
-
-              <Card className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg">Entity Sentiment Breakdown</CardTitle>
-                  <CardDescription>Sentiment scores by organization</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ScrollArea className="h-[400px]">
-                    <div className="space-y-3">
-                      {intlOrgs.map((entity) => {
-                        const sentiment = entity.metrics?.sentiment
-                        return (
-                          <div key={entity.id} className="space-y-2">
-                            <div className="flex items-center justify-between">
-                              <span className="text-sm font-medium text-slate-200">{entity.name}</span>
-                              <div className="flex items-center gap-4 text-xs">
-                                <span className="text-emerald-400">+{sentiment?.positive || 0}%</span>
-                                <span className="text-platinum-400">{sentiment?.neutral || 0}%</span>
-                                <span className="text-rose-400">-{sentiment?.negative || 0}%</span>
-                              </div>
-                            </div>
-                            <div className="flex h-2 overflow-hidden rounded-full bg-slate-700">
-                              <div
-                                className="bg-emerald-500"
-                                style={{ width: `${sentiment?.positive || 0}%` }}
-                              />
-                              <div
-                                className="bg-platinum-500"
-                                style={{ width: `${sentiment?.neutral || 0}%` }}
-                              />
-                              <div
-                                className="bg-rose-500"
-                                style={{ width: `${sentiment?.negative || 0}%` }}
-                              />
-                            </div>
-                          </div>
-                        )
-                      })}
-                    </div>
-                  </ScrollArea>
-                </CardContent>
-              </Card>
-            </div>
-          </GlassPanel>
-        </TabsContent>
-      </Tabs>
+          </CardContent>
+        </Card>
+      </motion.div>
     </div>
   )
 }

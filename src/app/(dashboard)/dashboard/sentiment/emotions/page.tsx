@@ -54,7 +54,7 @@ export default function EmotionAnalysisPage() {
     { emotion: 'Trust', value: 68, intensity: 'High', icon: Heart, color: CHART_COLORS.navy, category: 'positive' },
     { emotion: 'Fear', value: 32, intensity: 'Moderate', icon: AlertTriangle, color: CHART_COLORS.rose, category: 'negative' },
     { emotion: 'Surprise', value: 45, intensity: 'Moderate', icon: AlertCircle, color: CHART_COLORS.platinum, category: 'neutral' },
-    { emotion: 'Sadness', value: 28, intensity: 'Low', icon: Frown, color: CHART_COLORS.cyan, category: 'negative' },
+    { emotion: 'Sadness', value: 28, intensity: 'Low', icon: Frown, color: CHART_COLORS.info, category: 'negative' },
     { emotion: 'Disgust', value: 22, intensity: 'Low', icon: Feather, color: CHART_COLORS.emerald, category: 'negative' },
     { emotion: 'Anger', value: 25, intensity: 'Low', icon: Angry, color: CHART_COLORS.rose, category: 'negative' },
     { emotion: 'Anticipation', value: 65, intensity: 'High', icon: Clock, color: CHART_COLORS.gold, category: 'positive' },
@@ -152,7 +152,7 @@ export default function EmotionAnalysisPage() {
           value="+32"
           previousValue={27}
           icon={<Brain className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
         />
       </div>
 

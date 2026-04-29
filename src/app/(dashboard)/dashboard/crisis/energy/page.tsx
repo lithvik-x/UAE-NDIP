@@ -64,7 +64,7 @@ export default function EnergyCrisesPage() {
     { name: 'Oil & Gas', value: 58, risk: 32, color: CHART_COLORS.gold },
     { name: 'Nuclear', value: 25, risk: 15, color: CHART_COLORS.navy },
     { name: 'Solar', value: 12, risk: 8, color: CHART_COLORS.emerald },
-    { name: 'Other Renewables', value: 5, risk: 5, color: CHART_COLORS.cyan },
+    { name: 'Other Renewables', value: 5, risk: 5, color: CHART_COLORS.info },
   ]
 
   // Sentiment data
@@ -112,7 +112,7 @@ export default function EnergyCrisesPage() {
           value="$76/bbl"
           previousValue="$82/bbl"
           icon={<DollarSign className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="success"
         />
         <MetricCard

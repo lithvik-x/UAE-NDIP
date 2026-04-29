@@ -86,7 +86,7 @@ export default function LevantineArabicPage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="platinum" className="mb-2">MULTI-LINGUAL</Badge>
+          <Badge variant="default" className="mb-2">MULTI-LINGUAL</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-platinum">Levantine Arabic Dialect</h1>
           <p className="mt-2 text-slate-400">
             {data.description || 'Intelligence on Levantine Arabic dialect: Syria, Lebanon, Jordan, Palestine, Iraq'}
@@ -119,7 +119,7 @@ export default function LevantineArabicPage() {
           value={uaeSpeakerPopulation?.toLocaleString() || '1,722,000'}
           previousValue={(uaeSpeakerPopulation || 1722000) + 50000}
           icon={<Users className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
         />
         <MetricCard
           title="Sentiment Score"

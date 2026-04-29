@@ -156,7 +156,7 @@ export default function RegionalSentimentPage() {
           value={7}
           previousValue={7}
           icon={<MapPin className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
         />
         <MetricCard
           title="Need Attention"

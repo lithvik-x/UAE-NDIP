@@ -69,7 +69,7 @@ export default function EntityIntelligenceOverviewPage() {
     { name: 'Journalist', value: byType.journalist || 0, color: CHART_COLORS.rose },
     { name: 'Influencer', value: byType.influencer || 0, color: CHART_COLORS.emerald },
     { name: 'Corporate', value: byType.corporate || 0, color: CHART_COLORS.orange },
-    { name: 'International', value: byType.international || 0, color: CHART_COLORS.cyan },
+    { name: 'International', value: byType.international || 0, color: CHART_COLORS.info },
     { name: 'Infrastructure', value: byType.infrastructure || 0, color: CHART_COLORS.teal },
     { name: 'Event', value: byType.event || 0, color: CHART_COLORS.denim },
   ]
@@ -229,7 +229,7 @@ export default function EntityIntelligenceOverviewPage() {
           value={federalEmirateCount}
           previousValue={federalEmirateCount - 2}
           icon={<Shield className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
         />
         <MetricCard
           title="Media / Journalists"

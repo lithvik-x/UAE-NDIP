@@ -204,7 +204,7 @@ export default function CivilSocietyStakeholdersPage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="platinum" className="mb-2">CIVIL SOCIETY</Badge>
+          <Badge variant="default" className="mb-2">CIVIL SOCIETY</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-platinum">Civil Society Stakeholders</h1>
           <p className="mt-2 text-slate-400">
             Charitable organizations, humanitarian groups, and civil society actors operating in the UAE
@@ -249,7 +249,7 @@ export default function CivilSocietyStakeholdersPage() {
           value={avgEngagement.toFixed(1)}
           previousValue={avgEngagement - 0.2}
           icon={<TrendingUp className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
         />
       </div>
 

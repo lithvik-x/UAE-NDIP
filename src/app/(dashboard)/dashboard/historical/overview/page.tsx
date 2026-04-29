@@ -33,7 +33,7 @@ import {
   Flag,
   Calendar,
 } from 'lucide-react'
-import type { HistoricalEra, HistoricalEvent } from '@/lib/data-loader'
+import type { HistoricalEra, HistoricalEvent, PolicyAnnouncement } from '@/lib/data-loader'
 
 export default function HistoricalOverviewPage() {
   const { data } = useHistoricalOverviewData()
@@ -144,7 +144,7 @@ export default function HistoricalOverviewPage() {
           title="Key Events"
           value={totalEvents}
           icon={<Star className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
         />
         <MetricCard
           title="Policy Outcomes"
@@ -166,6 +166,7 @@ export default function HistoricalOverviewPage() {
           <TabsTrigger value="eras">Eras Overview</TabsTrigger>
           <TabsTrigger value="events">Key Events</TabsTrigger>
           <TabsTrigger value="analysis">Analysis</TabsTrigger>
+          <TabsTrigger value="policies">Policies</TabsTrigger>
         </TabsList>
 
         {/* Timeline Tab */}
@@ -407,6 +408,201 @@ export default function HistoricalOverviewPage() {
                       ).slice(0, 15)}
                     </div>
                   </ScrollArea>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Policies Tab */}
+        <TabsContent value="policies" className="space-y-6">
+          <GlassPanel title="Policy Announcements" description="Major UAE policy announcements from 2010-2026">
+            <div className="space-y-6">
+              <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
+                <MetricCard
+                  title="Total Policies"
+                  value={23}
+                  icon={<Crown className="h-6 w-6" />}
+                  gradient="gold"
+                  status="success"
+                />
+                <MetricCard
+                  title="Critical"
+                  value={12}
+                  icon={<AlertCircle className="h-6 w-6" />}
+                  gradient="rose"
+                  status="critical"
+                />
+                <MetricCard
+                  title="Major"
+                  value={9}
+                  icon={<TrendingUp className="h-6 w-6" />}
+                  gradient="navy"
+                  status="warning"
+                />
+                <MetricCard
+                  title="Data Points"
+                  value="500+"
+                  icon={<Zap className="h-6 w-6" />}
+                  gradient="emerald"
+                  status="success"
+                />
+              </div>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Policy Significance Distribution</CardTitle>
+                  <CardDescription>Classification by policy importance</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <PieChart
+                    data={[
+                      { name: 'Critical', value: 12, color: CHART_COLORS.rose },
+                      { name: 'Major', value: 9, color: CHART_COLORS.gold },
+                      { name: 'Minor', value: 2, color: CHART_COLORS.platinum },
+                    ]}
+                    height={250}
+                    showLegend={true}
+                  />
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Policy Relevance Matrix</CardTitle>
+                  <CardDescription>UAE relevance assessment of major policies</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[300px]">
+                    <div className="space-y-2">
+                      {[
+                        { policy: 'Vision 2021', relevance: 'CRITICAL', kpis: 'GDP per capita -35%, FDI 3.3% of GDP' },
+                        { policy: 'National Agenda 2014', relevance: 'CRITICAL', kpis: '6 national priorities, 300+ officials' },
+                        { policy: 'Golden Visa', relevance: 'CRITICAL', kpis: '10-year renewable, AED 2M threshold' },
+                        { policy: 'Corporate Tax', relevance: 'CRITICAL', kpis: '9% rate, AED 375K threshold' },
+                        { policy: 'Nuclear Energy', relevance: 'CRITICAL', kpis: '25% electricity, 22M tonnes avoided' },
+                        { policy: 'Net Zero 2050', relevance: 'CRITICAL', kpis: 'AED 600B investment, MENA first' },
+                        { policy: 'AI Strategy', relevance: 'CRITICAL', kpis: 'AED 335B economic boost' },
+                        { policy: 'Energy Strategy 2050', relevance: 'CRITICAL', kpis: '42-45% efficiency, 50,000 green jobs' },
+                        { policy: 'Cybercrime Laws', relevance: 'CRITICAL', kpis: 'Fines up to AED 10M, life imprisonment' },
+                        { policy: 'Climate Change Law', relevance: 'CRITICAL', kpis: 'AED 50K-2M fines, Scope 1-3' },
+                      ].map((item, idx) => (
+                        <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700">
+                          <div className="flex-1">
+                            <span className="text-sm font-medium text-gold">{item.policy}</span>
+                            <p className="text-xs text-slate-400 mt-1">{item.kpis}</p>
+                          </div>
+                          <Badge variant={item.relevance === 'CRITICAL' ? 'destructive' : 'outline'} className="ml-2">
+                            {item.relevance}
+                          </Badge>
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Sentiment Analysis</CardTitle>
+                  <CardDescription>Public and expert sentiment by policy</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[300px]">
+                    <div className="space-y-3">
+                      {[
+                        { policy: 'Unemployment Insurance', positive: 90, negative: 5, neutral: 5 },
+                        { policy: '4-Day Work Week', positive: 88, negative: 5, neutral: 7 },
+                        { policy: 'Golden Visa', positive: 85, negative: 5, neutral: 10 },
+                        { policy: 'Green Visa', positive: 85, negative: 5, neutral: 10 },
+                        { policy: 'National Agenda', positive: 80, negative: 10, neutral: 10 },
+                        { policy: 'AI Strategy', positive: 80, negative: 10, neutral: 10 },
+                        { policy: 'Food Security', positive: 80, negative: 5, neutral: 15 },
+                        { policy: 'Cybercrime Law 2021', positive: 5, negative: 90, neutral: 5 },
+                        { policy: 'Cybercrime Law 2012', positive: 10, negative: 85, neutral: 5 },
+                        { policy: 'Vision 2021', positive: 30, negative: 50, neutral: 20 },
+                      ].map((item, idx) => (
+                        <div key={idx} className="space-y-2">
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm font-medium text-slate-200">{item.policy}</span>
+                            <div className="flex gap-2 text-xs">
+                              <span className="text-emerald-400">{item.positive}%</span>
+                              <span className="text-rose-400">{item.negative}%</span>
+                              <span className="text-slate-400">{item.neutral}%</span>
+                            </div>
+                          </div>
+                          <div className="flex h-2 overflow-hidden rounded-full bg-slate-700">
+                            <div className="bg-emerald-500" style={{ width: `${item.positive}%` }} />
+                            <div className="bg-rose-500" style={{ width: `${item.negative}%` }} />
+                            <div className="bg-slate-500" style={{ width: `${item.neutral}%` }} />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">Dashboard KPIs</CardTitle>
+                  <CardDescription>Key performance indicators across policy areas</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-6 lg:grid-cols-2">
+                    <div className="space-y-4">
+                      <h4 className="text-sm font-semibold text-gold">Economic Diversification</h4>
+                      {[
+                        { kpi: 'FDI as % of GDP', value: '3.3%', status: 'Stagnant' },
+                        { kpi: 'Non-oil GDP contribution', value: '-', status: 'Progressing' },
+                        { kpi: 'Tourism GDP (Dubai)', value: '20%', status: 'Stable' },
+                      ].map((item, idx) => (
+                        <div key={idx} className="flex items-center justify-between">
+                          <span className="text-sm text-slate-300">{item.kpi}</span>
+                          <Badge variant="outline" className="text-xs">{item.status}</Badge>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="space-y-4">
+                      <h4 className="text-sm font-semibold text-gold">Energy & Climate</h4>
+                      {[
+                        { kpi: 'Nuclear electricity share', value: '25%', status: 'Achieved' },
+                        { kpi: 'Clean energy capacity', value: '14.2 GW', status: 'In Progress' },
+                        { kpi: 'Carbon avoided (nuclear)', value: '22 MT/year', status: 'Achieved' },
+                      ].map((item, idx) => (
+                        <div key={idx} className="flex items-center justify-between">
+                          <span className="text-sm text-slate-300">{item.kpi}</span>
+                          <Badge variant="outline" className="text-xs">{item.status}</Badge>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="space-y-4">
+                      <h4 className="text-sm font-semibold text-gold">Visa & Immigration</h4>
+                      {[
+                        { kpi: 'Golden Visa validity', value: '10 years', status: 'Active' },
+                        { kpi: 'Unemployment insurance', value: '1M+', status: 'Exceeded' },
+                        { kpi: 'Green Visa validity', value: '5 years', status: 'Active' },
+                      ].map((item, idx) => (
+                        <div key={idx} className="flex items-center justify-between">
+                          <span className="text-sm text-slate-300">{item.kpi}</span>
+                          <Badge variant="outline" className="text-xs">{item.status}</Badge>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="space-y-4">
+                      <h4 className="text-sm font-semibold text-gold">Nuclear Program</h4>
+                      {[
+                        { kpi: 'Reactors operational', value: '4/4', status: 'Complete' },
+                        { kpi: 'Total capacity', value: '5.6 GWe', status: 'Achieved' },
+                        { kpi: 'Electricity share', value: '25%', status: 'Achieved' },
+                      ].map((item, idx) => (
+                        <div key={idx} className="flex items-center justify-between">
+                          <span className="text-sm text-slate-300">{item.kpi}</span>
+                          <Badge variant="outline" className="text-xs">{item.status}</Badge>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>

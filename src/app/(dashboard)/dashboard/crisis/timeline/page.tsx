@@ -164,7 +164,7 @@ export default function CrisisTimelinePage() {
           value={peakIncidents.toString()}
           previousValue={peakIncidents + 8}
           icon={<TrendingUp className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="warning"
         />
         <MetricCard

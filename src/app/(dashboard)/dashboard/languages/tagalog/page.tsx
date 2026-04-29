@@ -43,7 +43,7 @@ export default function TagalogLanguagePage() {
   // Platform distribution for Tagalog
   const platformDistribution = [
     { platform: 'Facebook', percentage: 38, speakers: 323000, color: CHART_COLORS.blue },
-    { platform: 'YouTube', percentage: 25, speakers: 212500, color: CHART_COLORS.red },
+    { platform: 'YouTube', percentage: 25, speakers: 212500, color: CHART_COLORS.danger },
     { platform: 'WhatsApp', percentage: 20, speakers: 170000, color: CHART_COLORS.emerald },
     { platform: 'TikTok', percentage: 10, speakers: 85000, color: CHART_COLORS.rose },
     { platform: 'Instagram', percentage: 5, speakers: 42500, color: CHART_COLORS.pink },
@@ -153,7 +153,7 @@ export default function TagalogLanguagePage() {
           value={sentimentScore + '%'}
           previousValue={sentimentScore - 2}
           icon={<TrendingUp className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
           status="success"
         />
         <MetricCard

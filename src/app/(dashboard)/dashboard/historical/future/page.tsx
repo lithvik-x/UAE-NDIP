@@ -76,7 +76,7 @@ export default function FutureProjectionsPage() {
   // Future sectors
   const sectorProjectionData = [
     { sector: 'Technology & AI', growth: 125, color: CHART_COLORS.emerald },
-    { sector: 'Clean Energy', growth: 95, color: CHART_COLORS.cyan },
+    { sector: 'Clean Energy', growth: 95, color: CHART_COLORS.info },
     { sector: 'Tourism', growth: 78, color: CHART_COLORS.gold },
     { sector: 'Finance', growth: 65, color: CHART_COLORS.navy },
     { sector: 'Manufacturing', growth: 55, color: CHART_COLORS.platinum },
@@ -136,7 +136,7 @@ export default function FutureProjectionsPage() {
           value="$400B+"
           previousValue={280}
           icon={<Banknote className="h-6 w-6" />}
-          gradient="navy"
+          gradient="denim"
         />
         <MetricCard
           title="Investment Pipeline"
@@ -276,7 +276,7 @@ export default function FutureProjectionsPage() {
                       { name: 'Infrastructure', value: 25, color: CHART_COLORS.navy },
                       { name: 'Energy', value: 20, color: CHART_COLORS.gold },
                       { name: 'Healthcare', value: 15, color: CHART_COLORS.platinum },
-                      { name: 'Education', value: 10, color: CHART_COLORS.cyan },
+                      { name: 'Education', value: 10, color: CHART_COLORS.info },
                     ]}
                     height={280}
                     showLegend={true}

@@ -68,7 +68,7 @@ export default function SentimentAnalysisDashboardPage() {
     { name: 'Twitter/X', data: twitter, color: CHART_COLORS.platinum },
     { name: 'TikTok', data: tiktok, color: CHART_COLORS.rose },
     { name: 'Instagram', data: instagram, color: CHART_COLORS.purple },
-    { name: 'LinkedIn', data: linkedin, color: CHART_COLORS.cyan },
+    { name: 'LinkedIn', data: linkedin, color: CHART_COLORS.info },
     { name: 'YouTube', data: youtube, color: CHART_COLORS.rose },
     { name: 'Facebook', data: facebook, color: CHART_COLORS.indigo },
   ]
@@ -177,7 +177,7 @@ export default function SentimentAnalysisDashboardPage() {
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <Badge variant="platinum" className="mb-2">SENTIMENT INTELLIGENCE</Badge>
+          <Badge variant="default" className="mb-2">SENTIMENT INTELLIGENCE</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-platinum">Sentiment Analysis Dashboard</h1>
           <p className="mt-2 text-slate-400">
             Cross-platform sentiment analysis: overall {overallScore > 50 ? 'positive' : 'mixed'} outlook
@@ -204,7 +204,7 @@ export default function SentimentAnalysisDashboardPage() {
             value={stat.value}
             previousValue={stat.value}
             icon={<stat.icon className="h-6 w-6" />}
-            gradient="navy"
+            gradient="denim"
           />
         ))}
       </div>
