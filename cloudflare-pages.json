@@ -1,5 +1,5 @@
 {
-  "build_command": "SKIP_WRANGLER_CONFIG_CHECK=yes npm run pages:build",
+  "build_command": "npm run pages:build",
   "build_output_dir": ".open-next/cloudflare-templates",
   "framework": null,
   "dev_debug": false
