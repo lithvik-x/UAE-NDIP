@@ -1,0 +1,6 @@
+{
+  "build_command": "npm run pages:build",
+  "build_output_dir": ".open-next/cloudflare-templates",
+  "framework": null,
+  "dev_debug": false
+}
