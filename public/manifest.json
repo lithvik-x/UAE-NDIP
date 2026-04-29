@@ -1,0 +1,25 @@
+{
+  "name": "LITHVIK NEXUS",
+  "short_name": "LITHVIK",
+  "description": "Enterprise-grade healthcare analytics and intelligence platform for Abu Dhabi. Powered by CLAIRVOYANCE-CX, PERCEPTION-X2, and RICOCHET-CATALYST-X.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4F46E5",
+  "orientation": "portrait-primary",
+  "categories": ["healthcare", "medical", "analytics", "business", "productivity"],
+  "shortcuts": [
+    {
+      "name": "Executive Bridge",
+      "short_name": "Dashboard",
+      "description": "View your healthcare intelligence dashboard",
+      "url": "/dashboard/clairvoyance-cx/executive-bridge"
+    },
+    {
+      "name": "Command Palette",
+      "short_name": "Commands",
+      "description": "Quick access to all platform commands",
+      "url": "/dashboard"
+    }
+  ]
+}
