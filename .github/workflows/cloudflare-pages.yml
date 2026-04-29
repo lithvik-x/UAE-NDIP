@@ -31,6 +31,18 @@ jobs:
         env:
           NODE_ENV: production
 
+      - name: Fix OpenNext output structure
+        run: |
+          # OpenNext bug: it puts files in cloudflare-templates/ but worker.js imports from cloudflare/
+          # This fix copies files to the correct locations
+          mkdir -p .open-next/cloudflare
+          cp .open-next/cloudflare-templates/images.js .open-next/cloudflare/ 2>/dev/null || true
+          cp .open-next/cloudflare-templates/init.js .open-next/cloudflare/ 2>/dev/null || true
+          cp .open-next/cloudflare-templates/skew-protection.js .open-next/cloudflare/ 2>/dev/null || true
+          # Ensure _worker.js exists (entry point for Cloudflare Pages)
+          cp .open-next/worker.js .open-next/_worker.js 2>/dev/null || true
+          echo "Fixed OpenNext output structure"
+
       - name: Deploy to Cloudflare Pages
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
