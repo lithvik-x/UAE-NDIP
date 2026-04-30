@@ -2,64 +2,84 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { GlassPanel } from '@/components/ui/glass-panel'
 import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { Shield, Globe, Target, Radar, Users, Clock, TrendingUp, Eye, BookOpen, Languages, Activity } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Documentation | LITHVIK NEXUS',
-  description: 'Complete documentation for LITHVIK NEXUS healthcare intelligence platform.',
+  title: 'Documentation | UAE National Digital Intelligence Platform',
+  description: 'Complete documentation for the UAE National Digital Intelligence Platform (DOSSIER).',
 }
 
-const docs = [
+const sections = [
   {
-    platform: 'CLAIRVOYANCE-CX',
-    tagline: 'The Omni-Sovereign Listening Platform',
-    color: 'from-red-500 to-rose-600',
-    icon: '📡',
-    description: 'Detection & Intelligence Layer - Monitors 52,401+ active sources with 15-second update intervals',
-    modules: [
-      { name: 'Executive Bridge', path: '/dashboard/clairvoyance-cx/executive-bridge' },
-      { name: 'Omni-Surveillance', path: '/dashboard/clairvoyance-cx/omni-surveillance' },
-      { name: 'Crisis War Room', path: '/dashboard/clairvoyance-cx/crisis-war-room' },
-      { name: 'Narrative Lab', path: '/dashboard/clairvoyance-cx/narrative-lab' },
-      { name: 'Strategic Action', path: '/dashboard/clairvoyance-cx/strategic-action' },
-      { name: 'Geo-Intelligence', path: '/dashboard/clairvoyance-cx/geo-intelligence' },
-      { name: 'System Governance', path: '/dashboard/clairvoyance-cx/system-governance' },
-      { name: 'Competitive Intel', path: '/dashboard/clairvoyance-cx/competitive-intel' },
-    ],
+    title: 'Entity Intelligence',
+    href: '/dashboard/entity/overview',
+    icon: Shield,
+    description: 'Federal officials, royal family, media, journalists, influencers, corporate entities, and international organizations.',
+    gradient: 'from-gold-500 to-amber-600',
   },
   {
-    platform: 'PERCEPTION-X2',
-    tagline: 'The Narrative Engineering Platform',
-    color: 'from-indigo-500 to-purple-600',
-    icon: '🧠',
-    description: 'Analysis & Shaping Layer - Maps collective psyche using CRT and NLA',
-    modules: [
-      { name: 'Omniscient Intelligence', path: '/dashboard/perception-x2/omniscient-intelligence' },
-      { name: 'Strategy & Targeting', path: '/dashboard/perception-x2/strategy-targeting' },
-      { name: 'Production', path: '/dashboard/perception-x2/production' },
-      { name: 'Influence', path: '/dashboard/perception-x2/influence' },
-      { name: 'Operations', path: '/dashboard/perception-x2/operations' },
-      { name: 'Analytics', path: '/dashboard/perception-x2/analytics' },
-      { name: 'Governance', path: '/dashboard/perception-x2/governance' },
-      { name: 'The Void Filler', path: '/dashboard/perception-x2/void-filler' },
-    ],
+    title: 'Topics & Issues',
+    href: '/dashboard/topics/politics',
+    icon: Globe,
+    description: 'Politics, economy, security, culture, environment, international relations, media, technology, healthcare, and more.',
+    gradient: 'from-indigo-500 to-purple-600',
   },
   {
-    platform: 'RICOCHET-CATALYST-X',
-    tagline: 'The Content Distribution Platform',
-    color: 'from-cyan-400 to-blue-600',
-    icon: '🚀',
-    description: 'Action & Distribution Layer - Deploys to 15+ platforms simultaneously in <5 minutes',
-    modules: [
-      { name: 'Command Prime', path: '/dashboard/ricochet-catalyst-x/command-prime' },
-      { name: 'Ricochet Distribution', path: '/dashboard/ricochet-catalyst-x/ricochet-distribution' },
-      { name: 'Catalyst Optimization', path: '/dashboard/ricochet-catalyst-x/catalyst-optimization' },
-      { name: 'Amplification & Viral', path: '/dashboard/ricochet-catalyst-x/amplification-viral' },
-      { name: 'X-Factor Forensics', path: '/dashboard/ricochet-catalyst-x/x-factor-forensics' },
-      { name: 'Phoenix Crisis Protocol', path: '/dashboard/ricochet-catalyst-x/phoenix-crisis' },
-      { name: 'User Experience', path: '/dashboard/ricochet-catalyst-x/user-experience' },
-      { name: 'Automated Logic Gates', path: '/dashboard/ricochet-catalyst-x/automated-logic' },
-      { name: 'Global Kinetic Shell', path: '/dashboard/ricochet-catalyst-x/global-kinetic' },
-    ],
+    title: 'Crisis Management',
+    href: '/dashboard/crisis/overview',
+    icon: Target,
+    description: 'Geopolitical, cybersecurity, climate, economic, health, humanitarian crises with Phoenix Protocol.',
+    gradient: 'from-red-500 to-orange-600',
+  },
+  {
+    title: 'Social Media',
+    href: '/dashboard/social/overview',
+    icon: Radar,
+    description: 'Cross-platform monitoring across TikTok, Twitter/X, Instagram, LinkedIn, Facebook, YouTube, WhatsApp, Telegram, Snapchat, Reddit, and Threads.',
+    gradient: 'from-pink-500 to-rose-600',
+  },
+  {
+    title: 'Multi-Lingual',
+    href: '/dashboard/languages/overview',
+    icon: Languages,
+    description: 'MSA Arabic, Emirati Arabic, English, French, Gulf Arabic, Levantine, Maghrebi, Hindi, Urdu, Tagalog, and Asian languages.',
+    gradient: 'from-emerald-500 to-teal-600',
+  },
+  {
+    title: 'Stakeholders',
+    href: '/dashboard/stakeholders/overview',
+    icon: Users,
+    description: 'Government, corporate, civil society, diaspora, NGOs, religious groups, tribal networks, youth, and women.',
+    gradient: 'from-violet-500 to-purple-600',
+  },
+  {
+    title: 'Historical',
+    href: '/dashboard/historical/overview',
+    icon: Clock,
+    description: 'UAE founding, oil discovery, nation building, modernization, reform era, and future projections.',
+    gradient: 'from-amber-500 to-yellow-600',
+  },
+  {
+    title: 'Trends & Sentiment',
+    href: '/dashboard/trends/overview',
+    icon: TrendingUp,
+    description: 'Cultural, economic, social, political, technological, environmental, and demographic trends with real-time sentiment analysis.',
+    gradient: 'from-cyan-500 to-blue-600',
+  },
+  {
+    title: 'Monitoring',
+    href: '/dashboard/monitoring/overview',
+    icon: Eye,
+    description: 'Real-time media monitoring, social listening, dark web surveillance, and emerging threat detection.',
+    gradient: 'from-orange-500 to-amber-600',
+  },
+  {
+    title: 'Verification',
+    href: '/dashboard/verification/overview',
+    icon: BookOpen,
+    description: 'Fact-checking, bot detection, echo chamber analysis, omission analysis, visual forensics, and source credibility.',
+    gradient: 'from-teal-500 to-emerald-600',
   },
 ]
 
@@ -67,99 +87,92 @@ export default function DocsPage() {
   return (
     <div className="container mx-auto px-4 py-12 max-w-7xl">
       <div className="mb-12 text-center">
-        <h1 className="text-5xl font-bold text-platinum-900 mb-4">Documentation</h1>
+        <Badge variant="outline" className="mb-4 border-gold-300/50 text-gold-700">
+          <Activity className="mr-1 h-3 w-3" />
+          Documentation
+        </Badge>
+        <h1 className="text-5xl font-rajdhani font-bold text-platinum-900 mb-4">UAE National Digital Intelligence Platform</h1>
         <p className="text-xl text-platinum-600 max-w-2xl mx-auto">
-          Complete guide to the LITHVIK NEXUS healthcare intelligence platform ecosystem
+          DOSSIER — Comprehensive intelligence for the United Arab Emirates. Ten integrated sections delivering situational awareness across all domains.
         </p>
       </div>
 
       <div className="mb-12">
         <GlassPanel className="p-8">
-          <h2 className="text-3xl font-bold text-navy-900 mb-4">Quick Start</h2>
-          <p className="text-platinum-700 mb-6">
-            The LITHVIK NEXUS platform consists of three integrated systems that work together in a detection → analysis → action cycle.
+          <h2 className="text-3xl font-rajdhani font-bold text-navy-900 mb-4">Platform Overview</h2>
+          <p className="text-platinum-700 mb-6 leading-relaxed">
+            The UAE National Digital Intelligence Platform monitors, analyzes, and reports on all aspects of the UAE digital landscape — from government officials and corporate entities to social media sentiment and geopolitical trends. The platform processes data in 12 languages across 52,401+ active sources.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-gradient-to-br from-red-50 to-rose-50 p-6 rounded-xl border border-red-200">
-              <div className="text-4xl mb-3">📡</div>
-              <h3 className="text-xl font-semibold text-red-900 mb-2">Detection</h3>
-              <p className="text-red-700 text-sm">CLAIRVOYANCE-CX monitors 52,401+ sources in real-time</p>
-            </div>
-            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl border border-indigo-200">
-              <div className="text-4xl mb-3">🧠</div>
-              <h3 className="text-xl font-semibold text-indigo-900 mb-2">Analysis</h3>
-              <p className="text-indigo-700 text-sm">PERCEPTION-X2 maps 144-dimensional emotional data</p>
-            </div>
-            <div className="bg-gradient-to-br from-cyan-50 to-blue-50 p-6 rounded-xl border border-cyan-200">
-              <div className="text-4xl mb-3">🚀</div>
-              <h3 className="text-xl font-semibold text-cyan-900 mb-2">Action</h3>
-              <p className="text-cyan-700 text-sm">RICOCHET-CATALYST-X deploys to 15+ platforms instantly</p>
-            </div>
+            {[
+              { label: 'Dashboard Sections', value: '10', icon: Globe, color: 'gold' },
+              { label: 'Languages Tracked', value: '12', icon: Languages, color: 'indigo' },
+              { label: 'Active Sources', value: '52,401+', icon: Activity, color: 'emerald' },
+            ].map(({ label, value, icon: Icon, color }) => (
+              <div key={label} className={`bg-gradient-to-br from-${color}-50 to-${color}-100 p-6 rounded-xl border border-${color}-200`}>
+                <Icon className={`h-8 w-8 text-${color}-600 mb-3`} />
+                <div className="font-rajdhani text-3xl font-bold text-platinum-900">{value}</div>
+                <div className="text-sm text-platinum-600 mt-1">{label}</div>
+              </div>
+            ))}
           </div>
         </GlassPanel>
       </div>
 
-      <div className="space-y-8">
-        <h2 className="text-3xl font-bold text-navy-900">Platform Documentation</h2>
-
-        {docs.map((platform) => (
-          <GlassPanel key={platform.platform} className="overflow-hidden">
-            <div className={`bg-gradient-to-r ${platform.color} p-8 text-white`}>
+      <div className="mb-12">
+        <h2 className="text-3xl font-rajdhani font-bold text-navy-900 mb-6">Intelligence Sections</h2>
+        <div className="grid gap-6 md:grid-cols-2">
+          {sections.map(({ title, href, icon: Icon, description, gradient }) => (
+            <GlassPanel key={href} className="p-6">
               <div className="flex items-start gap-4">
-                <div className="text-5xl">{platform.icon}</div>
-                <div className="flex-1">
-                  <h3 className="text-3xl font-bold mb-2">{platform.platform}</h3>
-                  <p className="text-lg opacity-90 mb-2">{platform.tagline}</p>
-                  <p className="text-sm opacity-80">{platform.description}</p>
+                <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} text-white shadow-premium-md`}>
+                  <Icon className="h-6 w-6" />
                 </div>
-              </div>
-            </div>
-            <div className="p-6">
-              <h4 className="text-lg font-semibold text-platinum-900 mb-4">Modules</h4>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                {platform.modules.map((module) => (
-                  <Link key={module.path} href={module.path}>
-                    <Button
-                      variant="outline"
-                      className="w-full justify-start text-left"
-                    >
-                      {module.name}
+                <div className="flex-1">
+                  <h3 className="font-rajdhani text-xl font-bold text-platinum-900 mb-1">{title}</h3>
+                  <p className="text-sm text-platinum-600 leading-relaxed mb-3">{description}</p>
+                  <Link href={href}>
+                    <Button size="sm" variant="outline" className="text-xs">
+                      Open Section
                     </Button>
                   </Link>
-                ))}
+                </div>
               </div>
-            </div>
-          </GlassPanel>
-        ))}
+            </GlassPanel>
+          ))}
+        </div>
       </div>
 
-      <div className="mt-12 grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-6">
         <GlassPanel className="p-6">
-          <h3 className="text-xl font-semibold text-navy-900 mb-3">Keyboard Shortcuts</h3>
+          <h3 className="text-xl font-rajdhani font-semibold text-navy-900 mb-3">Keyboard Shortcuts</h3>
           <div className="space-y-2 text-sm text-platinum-700">
             <div className="flex justify-between">
               <span>Command Palette</span>
-              <kbd className="px-2 py-1 bg-platinum-100 rounded">⌘K</kbd>
+              <kbd className="px-2 py-1 bg-platinum-100 rounded text-xs font-mono">⌘K</kbd>
             </div>
             <div className="flex justify-between">
               <span>Search</span>
-              <kbd className="px-2 py-1 bg-platinum-100 rounded">/</kbd>
+              <kbd className="px-2 py-1 bg-platinum-100 rounded text-xs font-mono">/</kbd>
             </div>
             <div className="flex justify-between">
               <span>Close</span>
-              <kbd className="px-2 py-1 bg-platinum-100 rounded">Esc</kbd>
+              <kbd className="px-2 py-1 bg-platinum-100 rounded text-xs font-mono">Esc</kbd>
             </div>
           </div>
         </GlassPanel>
 
         <GlassPanel className="p-6">
-          <h3 className="text-xl font-semibold text-navy-900 mb-3">Resources</h3>
+          <h3 className="text-xl font-rajdhani font-semibold text-navy-900 mb-3">Resources</h3>
           <div className="space-y-2">
-            <Link href="/privacy" className="block text-platinum-700 hover:text-navy-600 transition-colors">
+            <Link href="/privacy" className="block text-sm text-platinum-700 hover:text-navy-600 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/support" className="block text-platinum-700 hover:text-navy-600 transition-colors">
+            <Link href="/support" className="block text-sm text-platinum-700 hover:text-navy-600 transition-colors">
               Support Center
+            </Link>
+            <Link href="/settings" className="block text-sm text-platinum-700 hover:text-navy-600 transition-colors">
+              Platform Settings
             </Link>
           </div>
         </GlassPanel>

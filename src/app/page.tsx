@@ -26,7 +26,7 @@ const intelligenceSections = [
     title: 'Entity Intelligence',
     description: 'Advanced entity detection and tracking',
     icon: Globe,
-    href: '/dashboard/entity-intelligence',
+    href: '/dashboard/entity/overview',
     gradient: 'from-blue-500 to-cyan-500',
     bgClass: 'bg-blue-100',
     textClass: 'text-blue-600',
@@ -35,7 +35,7 @@ const intelligenceSections = [
     title: 'Topics & Issues',
     description: 'Real-time topic monitoring and analysis',
     icon: BarChart3,
-    href: '/dashboard/topics-issues',
+    href: '/dashboard/topics/politics',
     gradient: 'from-indigo-500 to-purple-500',
     bgClass: 'bg-indigo-100',
     textClass: 'text-indigo-600',
@@ -44,7 +44,7 @@ const intelligenceSections = [
     title: 'Crisis Management',
     description: 'Early warning and rapid response system',
     icon: Shield,
-    href: '/dashboard/crisis-management',
+    href: '/dashboard/crisis/overview',
     gradient: 'from-red-500 to-orange-500',
     bgClass: 'bg-red-100',
     textClass: 'text-red-600',
@@ -53,7 +53,7 @@ const intelligenceSections = [
     title: 'Social Media',
     description: 'Cross-platform social intelligence',
     icon: Activity,
-    href: '/dashboard/social-media',
+    href: '/dashboard/social/overview',
     gradient: 'from-pink-500 to-rose-500',
     bgClass: 'bg-pink-100',
     textClass: 'text-pink-600',
@@ -62,7 +62,7 @@ const intelligenceSections = [
     title: 'Languages',
     description: 'Multi-language content processing',
     icon: Globe,
-    href: '/dashboard/languages',
+    href: '/dashboard/languages/overview',
     gradient: 'from-emerald-500 to-teal-500',
     bgClass: 'bg-emerald-100',
     textClass: 'text-emerald-600',
@@ -71,7 +71,7 @@ const intelligenceSections = [
     title: 'Stakeholders',
     description: 'Stakeholder mapping and engagement',
     icon: Brain,
-    href: '/dashboard/stakeholders',
+    href: '/dashboard/stakeholders/overview',
     gradient: 'from-violet-500 to-purple-500',
     bgClass: 'bg-violet-100',
     textClass: 'text-violet-600',
@@ -80,7 +80,7 @@ const intelligenceSections = [
     title: 'Historical',
     description: 'Historical data and trend analysis',
     icon: BookOpen,
-    href: '/dashboard/historical',
+    href: '/dashboard/historical/overview',
     gradient: 'from-amber-500 to-yellow-500',
     bgClass: 'bg-amber-100',
     textClass: 'text-amber-600',
@@ -89,7 +89,7 @@ const intelligenceSections = [
     title: 'Trends & Sentiment',
     description: 'Sentiment analysis and trend prediction',
     icon: Sparkles,
-    href: '/dashboard/trends-sentiment',
+    href: '/dashboard/trends/overview',
     gradient: 'from-cyan-500 to-blue-500',
     bgClass: 'bg-cyan-100',
     textClass: 'text-cyan-600',
@@ -98,7 +98,7 @@ const intelligenceSections = [
     title: 'Monitoring',
     description: 'Real-time monitoring and alerts',
     icon: Radar,
-    href: '/dashboard/monitoring',
+    href: '/dashboard/monitoring/overview',
     gradient: 'from-navy-500 to-blue-500',
     bgClass: 'bg-navy-100',
     textClass: 'text-navy-600',
@@ -107,7 +107,7 @@ const intelligenceSections = [
     title: 'Verification',
     description: 'Source verification and fact-checking',
     icon: Target,
-    href: '/dashboard/verification',
+    href: '/dashboard/verification/overview',
     gradient: 'from-gold-500 to-amber-500',
     bgClass: 'bg-gold-100',
     textClass: 'text-gold-600',
@@ -316,10 +316,10 @@ export default function HomePage() {
             <div>
               <h3 className="font-rajdhani text-lg font-bold text-platinum-900 mb-4">Intelligence Sections</h3>
               <ul className="space-y-2 text-sm text-platinum-600">
-                <li><Link href="/dashboard/entity-intelligence" className="hover:text-navy-600 transition-colors">Entity Intelligence</Link></li>
-                <li><Link href="/dashboard/topics-issues" className="hover:text-navy-600 transition-colors">Topics & Issues</Link></li>
-                <li><Link href="/dashboard/crisis-management" className="hover:text-navy-600 transition-colors">Crisis Management</Link></li>
-                <li><Link href="/dashboard/social-media" className="hover:text-navy-600 transition-colors">Social Media</Link></li>
+                <li><Link href="/dashboard/entity/overview" className="hover:text-navy-600 transition-colors">Entity Intelligence</Link></li>
+                <li><Link href="/dashboard/topics/politics" className="hover:text-navy-600 transition-colors">Topics & Issues</Link></li>
+                <li><Link href="/dashboard/crisis/overview" className="hover:text-navy-600 transition-colors">Crisis Management</Link></li>
+                <li><Link href="/dashboard/social/overview" className="hover:text-navy-600 transition-colors">Social Media</Link></li>
               </ul>
             </div>
 
@@ -327,10 +327,10 @@ export default function HomePage() {
             <div>
               <h3 className="font-rajdhani text-lg font-bold text-platinum-900 mb-4">More Sections</h3>
               <ul className="space-y-2 text-sm text-platinum-600">
-                <li><Link href="/dashboard/languages" className="hover:text-navy-600 transition-colors">Languages</Link></li>
-                <li><Link href="/dashboard/stakeholders" className="hover:text-navy-600 transition-colors">Stakeholders</Link></li>
-                <li><Link href="/dashboard/historical" className="hover:text-navy-600 transition-colors">Historical</Link></li>
-                <li><Link href="/dashboard/trends-sentiment" className="hover:text-navy-600 transition-colors">Trends & Sentiment</Link></li>
+                <li><Link href="/dashboard/languages/overview" className="hover:text-navy-600 transition-colors">Languages</Link></li>
+                <li><Link href="/dashboard/stakeholders/overview" className="hover:text-navy-600 transition-colors">Stakeholders</Link></li>
+                <li><Link href="/dashboard/historical/overview" className="hover:text-navy-600 transition-colors">Historical</Link></li>
+                <li><Link href="/dashboard/trends/overview" className="hover:text-navy-600 transition-colors">Trends & Sentiment</Link></li>
               </ul>
             </div>
 
