@@ -83,7 +83,7 @@ const scaleIn = {
 function getSentimentColor(score: number): string {
   if (score >= 0.7) return 'text-emerald-500'
   if (score >= 0.3) return 'text-emerald-400'
-  if (score >= -0.2) return 'text-gold-500'
+  if (score >= -0.2) return 'text-gold-700'
   if (score >= -0.6) return 'text-orange-500'
   return 'text-red-500'
 }
@@ -99,7 +99,7 @@ function getSentimentBg(score: number): string {
 function getUAEIcon(relevance: string) {
   switch (relevance) {
     case 'Critical': return <AlertTriangle className="h-4 w-4 text-red-500" />
-    case 'High': return <Shield className="h-4 w-4 text-gold-500" />
+    case 'High': return <Shield className="h-4 w-4 text-gold-700" />
     case 'Medium': return <Scale className="h-4 w-4 text-platinum-500" />
     default: return <CheckCircle className="h-4 w-4 text-platinum-400" />
   }
@@ -461,7 +461,7 @@ export default function GeopoliticalTrendsPage() {
                       className="glass-panel p-4 rounded-xl border border-gold-500/30"
                     >
                       <div className="flex items-center gap-2 mb-2">
-                        <Shield className="h-5 w-5 text-gold-500" />
+                        <Shield className="h-5 w-5 text-gold-700" />
                         <span className="text-sm font-medium text-slate-200">BRICS Membership</span>
                       </div>
                       <p className="text-2xl font-bold text-gold">Jan 2024</p>
@@ -1001,7 +1001,7 @@ export default function GeopoliticalTrendsPage() {
                     className="glass-panel p-4 rounded-xl"
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <Sun className="h-4 w-4 text-gold-500" />
+                      <Sun className="h-4 w-4 text-gold-700" />
                       <span className="text-xs text-platinum-500">{commitment.commitment}</span>
                     </div>
                     {commitment.targetYear && (
@@ -1072,7 +1072,7 @@ export default function GeopoliticalTrendsPage() {
                     className="glass-panel p-4 rounded-xl"
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <Building className="h-4 w-4 text-gold-500" />
+                      <Building className="h-4 w-4 text-gold-700" />
                       <span className="text-sm font-medium text-slate-200">{org.organization}</span>
                     </div>
                     <p className="text-xs text-platinum-500 mb-2">{org.uaeStatus}</p>
@@ -1225,7 +1225,7 @@ export default function GeopoliticalTrendsPage() {
                     className="glass-panel p-4 rounded-xl"
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      <Shield className="h-4 w-4 text-gold-500" />
+                      <Shield className="h-4 w-4 text-gold-700" />
                       <span className="text-xs text-platinum-500">{def.metric}</span>
                     </div>
                     <p className="text-xl font-bold text-gold">{def.value}</p>

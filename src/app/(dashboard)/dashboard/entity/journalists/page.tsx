@@ -929,7 +929,7 @@ export default function JournalistsPage() {
                       <div className="mt-3 space-y-2">
                         {writer.keyFindings.map((finding, idx) => (
                           <p key={idx} className="text-sm text-platinum-600 dark:text-platinum-400 flex items-start gap-2">
-                            <ChevronRight className="h-4 w-4 mt-0.5 shrink-0 text-gold-500" />
+                            <ChevronRight className="h-4 w-4 mt-0.5 shrink-0 text-gold-700" />
                             {finding}
                           </p>
                         ))}

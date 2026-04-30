@@ -305,7 +305,7 @@ export default function WhatsAppPage() {
                   <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                     <CardHeader className="px-0 pt-0">
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <MessageSquare className="h-5 w-5 text-gold-500" />
+                        <MessageSquare className="h-5 w-5 text-gold-700" />
                         Usage Patterns
                       </CardTitle>
                       <CardDescription>WhatsApp activity breakdown in UAE</CardDescription>
@@ -435,7 +435,7 @@ export default function WhatsAppPage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0 pb-4">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Server className="h-5 w-5 text-gold-500" />
+                      <Server className="h-5 w-5 text-gold-700" />
                       Technical Surveillance Methods
                     </CardTitle>
                   </CardHeader>
@@ -480,7 +480,7 @@ export default function WhatsAppPage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0 pb-4">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Eye className="h-5 w-5 text-gold-500" />
+                      <Eye className="h-5 w-5 text-gold-700" />
                       Metadata Access — What Government Can See
                     </CardTitle>
                   </CardHeader>
@@ -720,7 +720,7 @@ export default function WhatsAppPage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0 pb-4">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Info className="h-5 w-5 text-gold-500" />
+                      <Info className="h-5 w-5 text-gold-700" />
                       Key Legal Principles
                     </CardTitle>
                   </CardHeader>
@@ -836,7 +836,7 @@ export default function WhatsAppPage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0 pb-4">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <TrendingUp className="h-5 w-5 text-gold-500" />
+                      <TrendingUp className="h-5 w-5 text-gold-700" />
                       Top WhatsApp Channels — September 2025
                     </CardTitle>
                     <CardDescription>Sports channels dominate (6 of top 10)</CardDescription>
@@ -1011,7 +1011,7 @@ export default function WhatsAppPage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0 pb-4">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <MessageSquare className="h-5 w-5 text-gold-500" />
+                      <MessageSquare className="h-5 w-5 text-gold-700" />
                       Key WhatsApp Narratives in UAE
                     </CardTitle>
                   </CardHeader>
