@@ -147,7 +147,7 @@ export default function SupportPage() {
             <GlassPanel key={category.title} className="p-6">
               <div className="flex items-start gap-4 mb-4">
                 <div className="text-3xl">{category.icon}</div>
-                <h3 className="text-xl font-semibold text-navy-900">{category.title}</h3>
+                <h3 className="text-xl font-semibold font-rajdhani text-navy-900">{category.title}</h3>
               </div>
               <ul className="space-y-2">
                 {category.items.map((item, idx) => (
@@ -168,7 +168,7 @@ export default function SupportPage() {
         <div className="space-y-4">
           {faqs.map((faq, idx) => (
             <GlassPanel key={idx} className="p-6">
-              <h3 className="text-lg font-semibold text-navy-900 mb-2">{faq.q}</h3>
+              <h3 className="text-lg font-semibold font-rajdhani text-navy-900 mb-2">{faq.q}</h3>
               <p className="text-platinum-700">{faq.a}</p>
             </GlassPanel>
           ))}
