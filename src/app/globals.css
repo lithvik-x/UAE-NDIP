@@ -319,8 +319,7 @@
     content: '';
     position: absolute;
     inset: -2px;
-    background: linear-gradient(45deg,
-      #D97706, #6366F1, #94A3B8, #D97706);
+    background: linear-gradient(45deg, hsl(var(--chart-gold)), hsl(var(--chart-indigo)), hsl(var(--chart-platinum)), hsl(var(--chart-gold)));
     border-radius: inherit;
     z-index: -1;
     filter: blur(8px);
@@ -400,7 +399,7 @@
   /* Premium gradient text combining all premium colors */
   .gradient-text-premium {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #D97706 0%, #6366F1 50%, #94A3B8 100%);
+    background-image: linear-gradient(135deg, hsl(var(--chart-gold)) 0%, hsl(var(--chart-indigo)) 50%, hsl(var(--chart-platinum)) 100%);
   }
 
   /* Platform gradient text */
@@ -771,8 +770,7 @@
     content: '';
     position: absolute;
     inset: -2px;
-    background: linear-gradient(135deg,
-      #D97706, #6366F1, #94A3B8);
+    background: linear-gradient(135deg, hsl(var(--chart-gold)), hsl(var(--chart-indigo)), hsl(var(--chart-platinum)));
     border-radius: inherit;
     z-index: -1;
     opacity: 0.6;

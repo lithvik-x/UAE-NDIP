@@ -354,11 +354,11 @@ export default function MSALanguagePage() {
 
   // Source tier data from MD
   const sourceTiers = data?.extendedData?.sourceCredibilityTiers ? [
-    { tier: 'Tier 0 (Government)', count: data.extendedData.sourceCredibilityTiers.tier0.count, color: '#FFD700' },
-    { tier: 'Tier 1 (Academic)', count: data.extendedData.sourceCredibilityTiers.tier1.count, color: '#22D3EE' },
-    { tier: 'Tier 2 (International)', count: data.extendedData.sourceCredibilityTiers.tier2.count, color: '#6366F1' },
-    { tier: 'Tier 3 (Research)', count: data.extendedData.sourceCredibilityTiers.tier3.count, color: '#A855F7' },
-    { tier: 'Tier 4 (Media)', count: data.extendedData.sourceCredibilityTiers.tier4.count, color: '#94A3B8' },
+    { tier: 'Tier 0 (Government)', count: data.extendedData.sourceCredibilityTiers.tier0.count, color: 'var(--gold)' },
+    { tier: 'Tier 1 (Academic)', count: data.extendedData.sourceCredibilityTiers.tier1.count, color: 'var(--cyan-600)' },
+    { tier: 'Tier 2 (International)', count: data.extendedData.sourceCredibilityTiers.tier2.count, color: 'var(--indigo-700)' },
+    { tier: 'Tier 3 (Research)', count: data.extendedData.sourceCredibilityTiers.tier3.count, color: 'var(--purple-700)' },
+    { tier: 'Tier 4 (Media)', count: data.extendedData.sourceCredibilityTiers.tier4.count, color: 'var(--platinum-600)' },
   ] : []
 
   // Regional reach from MD

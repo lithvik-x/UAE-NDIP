@@ -108,7 +108,7 @@ export default function SupportPage() {
                 <BookOpen className="h-5 w-5" />
                 <div className="text-center">
                   <div className="font-semibold">Documentation</div>
-                  <div className="text-xs text-platinum-500">Browse guides</div>
+                  <div className="text-xs text-platinum-600">Browse guides</div>
                 </div>
               </Button>
             </Link>
@@ -120,7 +120,7 @@ export default function SupportPage() {
                 <LayoutDashboard className="h-5 w-5" />
                 <div className="text-center">
                   <div className="font-semibold">Dashboard</div>
-                  <div className="text-xs text-platinum-500">Go to platform</div>
+                  <div className="text-xs text-platinum-600">Go to platform</div>
                 </div>
               </Button>
             </Link>
@@ -132,7 +132,7 @@ export default function SupportPage() {
                 <Mail className="h-5 w-5" />
                 <div className="text-center">
                   <div className="font-semibold">Email Support</div>
-                  <div className="text-xs text-platinum-500">Response within 24h</div>
+                  <div className="text-xs text-platinum-600">Response within 24h</div>
                 </div>
               </Button>
             </a>
@@ -185,15 +185,15 @@ export default function SupportPage() {
           </p>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-white p-4 rounded-lg">
-              <div className="text-sm text-platinum-500 mb-1">Email</div>
+              <div className="text-sm text-platinum-600 mb-1">Email</div>
               <div className="font-semibold text-navy-900">support@ndip.dossier.li</div>
             </div>
             <div className="bg-white p-4 rounded-lg">
-              <div className="text-sm text-platinum-500 mb-1">Phone</div>
+              <div className="text-sm text-platinum-600 mb-1">Phone</div>
               <div className="font-semibold text-navy-900">(+91) 9999 455 667</div>
             </div>
             <div className="bg-white p-4 rounded-lg">
-              <div className="text-sm text-platinum-500 mb-1">Location</div>
+              <div className="text-sm text-platinum-600 mb-1">Location</div>
               <div className="font-semibold text-navy-900">New Delhi, India</div>
             </div>
           </div>

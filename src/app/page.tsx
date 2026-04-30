@@ -194,7 +194,7 @@ export default function HomePage() {
                     <Icon className="h-4 w-4 text-amber-700 shrink-0" />
                     <div className="text-left">
                       <div className="text-xs font-semibold text-platinum-800 leading-tight">{pillar.label}</div>
-                      <div className="text-[10px] text-platinum-500 leading-tight">{pillar.detail}</div>
+                      <div className="text-[10px] text-platinum-600 leading-tight">{pillar.detail}</div>
                     </div>
                   </div>
                 )

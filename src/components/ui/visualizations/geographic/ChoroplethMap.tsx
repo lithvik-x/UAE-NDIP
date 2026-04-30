@@ -111,9 +111,23 @@ export function ChoroplethMap({
             RISK_COLORS.extreme,
           ]
         case 'diverging':
-          return ['#3b82f6', '#e0e7ff', '#ffffff', '#fef3c7', '#f59e0b']
+          return [
+            'hsl(var(--chart-deni))',       // blue
+            'hsl(var(--chart-info))',        // light blue
+            '#ffffff',                        // white (background)
+            'hsl(var(--chart-warning))',     // amber
+            'hsl(var(--chart-gold))',        // gold
+          ]
         default:
-          return ['#e0f2fe', '#bae6fd', '#7dd3fc', '#38bdf8', '#0ea5e9', '#0284c7', '#0369a1']
+          return [
+            'hsl(var(--chart-info))',
+            'hsl(var(--chart-primary))',
+            'hsl(var(--chart-secondary))',
+            'hsl(var(--chart-purple))',
+            'hsl(var(--chart-pink))',
+            'hsl(var(--chart-rose))',
+            '#1e3a8a',                       // dark blue - keep
+          ]
       }
     }
 

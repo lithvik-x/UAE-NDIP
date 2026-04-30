@@ -114,15 +114,15 @@ export function VisualizationTooltip({
 
   const themeStyles: Record<string, React.CSSProperties> = {
     light: {
-      background: '#ffffff',
-      border: '1px solid #e2e8f0',
-      color: '#1e293b',
+      background: 'hsl(var(--background))',
+      border: '1px solid hsl(var(--border))',
+      color: 'hsl(var(--foreground))',
       boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
     },
     dark: {
-      background: '#1e293b',
-      border: '1px solid #334155',
-      color: '#f1f5f9',
+      background: 'hsl(var(--background))',
+      border: '1px solid hsl(var(--border))',
+      color: 'hsl(var(--foreground))',
       boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2)',
     },
     glass: {
@@ -130,7 +130,7 @@ export function VisualizationTooltip({
       backdropFilter: 'blur(12px)',
       WebkitBackdropFilter: 'blur(12px)',
       border: '1px solid rgba(255, 255, 255, 0.3)',
-      color: '#1e293b',
+      color: 'hsl(var(--foreground))',
       boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
     },
   }

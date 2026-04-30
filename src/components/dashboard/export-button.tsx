@@ -143,7 +143,7 @@ export function ExportButton({
       {isOpen && (
         <div className="absolute right-0 top-full mt-2 z-50 w-56 glass-premium rounded-xl shadow-premium-xl border border-white/30 overflow-hidden">
           <div className="p-2">
-            <div className="px-3 py-2 text-xs font-semibold text-platinum-500 uppercase tracking-wider">
+            <div className="px-3 py-2 text-xs font-semibold text-platinum-600 uppercase tracking-wider">
               Export As
             </div>
             {availableFormats.map((format) => (
@@ -164,7 +164,7 @@ export function ExportButton({
                 )} />
                 <div className="flex-1 min-w-0">
                   <div className="text-sm font-medium">{format.label}</div>
-                  <div className="text-xs text-platinum-500 truncate">{format.description}</div>
+                  <div className="text-xs text-platinum-600 truncate">{format.description}</div>
                 </div>
               </button>
             ))}
@@ -352,7 +352,7 @@ export function ExportToolbar({
     <div className={cn('glass-premium rounded-xl p-4 space-y-4', className)}>
       <div>
         <h3 className="text-sm font-semibold text-platinum-900">{title}</h3>
-        <p className="text-xs text-platinum-500 mt-1">{description}</p>
+        <p className="text-xs text-platinum-600 mt-1">{description}</p>
       </div>
 
       <div className="grid grid-cols-2 gap-2">

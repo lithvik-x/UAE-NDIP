@@ -520,7 +520,7 @@ export default function RankingDashboardPage() {
                             </div>
                             {typeof index.score === 'number' && index.maxScore && Number(index.maxScore) > 0 && (
                               <div className="text-right">
-                                <p className="text-2xl font-bold" style={{ color: index.sentiment.includes('positive') ? '#10b981' : index.sentiment.includes('negative') ? '#f43f5e' : '#f59e0b' }}>
+                                <p className={`text-2xl font-bold ${index.sentiment.includes('positive') ? 'text-emerald-600' : index.sentiment.includes('negative') ? 'text-rose-600' : 'text-gold'}`}>
                                   {index.score}
                                 </p>
                                 <p className="text-xs text-slate-400">/ {index.maxScore}</p>

@@ -96,7 +96,7 @@ export function StatusCard({ status, title, value, description, icon, trend, cla
         <div className="flex-1">
           <p className={cn('text-sm font-medium', config.text)}>{title}</p>
           {value !== undefined && <p className="mt-1 font-rajdhani text-2xl font-bold text-platinum-900">{value}</p>}
-          {description && <p className="mt-1 text-sm text-platinum-500">{description}</p>}
+          {description && <p className="mt-1 text-sm text-platinum-600">{description}</p>}
         </div>
         {trend && (
           <Badge

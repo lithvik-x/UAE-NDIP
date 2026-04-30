@@ -382,7 +382,7 @@ export default function DashboardHomePage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="font-semibold text-sm text-platinum-900">{section.title}</p>
-                      <p className="text-xs text-platinum-500 truncate">{section.badge}</p>
+                      <p className="text-xs text-platinum-600 truncate">{section.badge}</p>
                     </div>
                     <ArrowUpRight className="h-4 w-4 text-gold shrink-0" />
                   </div>

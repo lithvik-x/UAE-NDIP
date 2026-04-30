@@ -47,11 +47,11 @@ export function CalendarHeatmap({
   height = 150,
   year,
   colors = [
-    '#ebedf0', // No activity
-    '#9be9a8', // Low
-    '#40c463', // Medium
-    '#30a14e', // High
-    '#216e39', // Very high
+    'hsl(var(--chart-grid))',         // No activity - slate-200
+    'hsl(var(--chart-success))',      // Low - green-500
+    'hsl(var(--chart-emerald))',      // Medium - emerald
+    'hsl(var(--chart-teal))',         // High - teal
+    '#14532d',                         // Very high - keep dark green (no CSS var)
   ],
   cellSize = 12,
   cellGap = 3,
