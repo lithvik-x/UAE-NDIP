@@ -4,6 +4,16 @@ import { GlassPanel } from '@/components/ui/glass-panel'
 export const metadata: Metadata = {
   title: 'Privacy Policy | UAE National Digital Intelligence Platform',
   description: 'Privacy policy for the UAE National Digital Intelligence Platform (Clairvoyance-CX). A CryptoMize Product.',
+  openGraph: {
+    title: 'Privacy Policy | UAE National Digital Intelligence Platform',
+    description: 'Privacy policy for the UAE National Digital Intelligence Platform (Clairvoyance-CX). A CryptoMize Product.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | UAE NDIP - Clairvoyance-CX',
+    description: 'Privacy policy for UAE National Digital Intelligence Platform.',
+  },
 }
 
 export default function PrivacyPage() {

@@ -510,7 +510,7 @@ export default function InfluencersPage() {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium text-platinum-700 dark:text-platinum-300">Emirati</span>
-                    <span className="text-sm font-bold text-gold-600">{emiratiCount}</span>
+                    <span className="text-sm font-bold text-gold-700">{emiratiCount}</span>
                   </div>
                   <Progress value={(emiratiCount / allInfluencers.length) * 100} className="h-3" />
                   <div className="flex items-center justify-between">
@@ -596,7 +596,7 @@ export default function InfluencersPage() {
                         <p className="text-xs text-platinum-500">{inf.platform.join(', ')} | {inf.contentFocus?.join(', ')}</p>
                       </div>
                       <div className="text-right">
-                        <p className="text-sm font-bold text-gold-600">{getFollowerDisplay(inf)}</p>
+                        <p className="text-sm font-bold text-gold-700">{getFollowerDisplay(inf)}</p>
                         <p className="text-xs text-emerald-600">+ {inf.notableClients?.join(', ')}</p>
                       </div>
                     </div>
@@ -653,7 +653,7 @@ export default function InfluencersPage() {
                         <p className="text-xs text-platinum-500">{inf.handle} | {inf.notes?.join(' | ')}</p>
                       </div>
                       <div className="text-right">
-                        <p className="text-sm font-bold text-gold-600">{getFollowerDisplay(inf)}</p>
+                        <p className="text-sm font-bold text-gold-700">{getFollowerDisplay(inf)}</p>
                         <Badge variant="success" className="text-xs mt-1">Licensed</Badge>
                       </div>
                     </div>
@@ -807,7 +807,7 @@ export default function InfluencersPage() {
                   {industryStatistics.map((stat) => (
                     <div key={stat.metric} className="flex items-center justify-between p-3 glass-subtle rounded-lg">
                       <span className="text-sm text-platinum-700 dark:text-platinum-300">{stat.metric}</span>
-                      <span className="text-sm font-bold text-gold-600">{stat.value}</span>
+                      <span className="text-sm font-bold text-gold-700">{stat.value}</span>
                     </div>
                   ))}
                 </div>
@@ -1225,7 +1225,7 @@ export default function InfluencersPage() {
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {dataTablesIndex.map((t) => (
                   <div key={t.tableNumber} className="flex items-center gap-3 p-3 glass-subtle rounded-lg">
-                    <span className="text-xs font-bold text-gold-600 bg-gold-50 dark:bg-gold-950/30 px-2 py-1 rounded">#{t.tableNumber}</span>
+                    <span className="text-xs font-bold text-gold-700 bg-gold-50 dark:bg-gold-950/30 px-2 py-1 rounded">#{t.tableNumber}</span>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium text-navy-900 dark:text-platinum-100 truncate">{t.title}</p>
                       <p className="text-xs text-platinum-500">{t.rows} rows</p>

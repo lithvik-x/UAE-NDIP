@@ -868,7 +868,7 @@ export default function MediaOrganizationsPage() {
               <div className="space-y-3">
                 {controversies.slice(0, 6).map((c, i) => (
                   <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-platinum-50/50 dark:bg-platinum-800/25">
-                    <AlertCircle className="h-4 w-4 text-gold-500 mt-0.5" />
+                    <AlertCircle className="h-4 w-4 text-gold-700 mt-0.5" />
                     <div>
                       <p className="font-medium text-navy-900 dark:text-platinum-100">{c.organization}</p>
                       <p className="text-xs text-platinum-600 dark:text-platinum-400 mt-1">{c.year}: {c.incident}</p>

@@ -474,7 +474,7 @@ export default function InternationalOrgsPage() {
                             ) : idx === 1 ? (
                               <Activity className="h-4 w-4 text-cyan-500" />
                             ) : idx === 2 ? (
-                              <Plane className="h-4 w-4 text-gold-500" />
+                              <Plane className="h-4 w-4 text-gold-700" />
                             ) : idx === 3 ? (
                               <Briefcase className="h-4 w-4 text-rose-500" />
                             ) : (
@@ -548,7 +548,7 @@ export default function InternationalOrgsPage() {
                 <Card className="glass-card">
                   <CardHeader className="pb-3">
                     <CardTitle className="text-base flex items-center gap-2">
-                      <Gem className="h-4 w-4 text-gold-500" />
+                      <Gem className="h-4 w-4 text-gold-700" />
                       GCC Secretary-General
                     </CardTitle>
                   </CardHeader>
@@ -690,7 +690,7 @@ export default function InternationalOrgsPage() {
                   <Card className="glass-card border-l-4 border-l-gold-500">
                     <CardHeader className="pb-3">
                       <CardTitle className="text-base flex items-center gap-2">
-                        <Calendar className="h-4 w-4 text-gold-500" />
+                        <Calendar className="h-4 w-4 text-gold-700" />
                         Emergency Meeting - February 11, 2026
                       </CardTitle>
                     </CardHeader>
@@ -1064,7 +1064,7 @@ export default function InternationalOrgsPage() {
                   <Card className="glass-card bg-gradient-to-br from-gold-50/50 to-transparent dark:from-gold-900/10">
                     <CardHeader className="pb-3">
                       <CardTitle className="text-base flex items-center gap-2">
-                        <Award className="h-4 w-4 text-gold-500" />
+                        <Award className="h-4 w-4 text-gold-700" />
                         2025 Trade Achievement
                       </CardTitle>
                     </CardHeader>
@@ -1182,7 +1182,7 @@ export default function InternationalOrgsPage() {
                   <Card className="glass-card bg-gradient-to-br from-gold-50/50 to-transparent dark:from-gold-900/10">
                     <CardHeader className="pb-3">
                       <CardTitle className="text-base flex items-center gap-2">
-                        <Crown className="h-4 w-4 text-gold-500" />
+                        <Crown className="h-4 w-4 text-gold-700" />
                         First Olympic Medal
                       </CardTitle>
                     </CardHeader>
@@ -1486,7 +1486,7 @@ export default function InternationalOrgsPage() {
               </Card>
               <Card className="glass-card">
                 <CardContent className="p-4 text-center">
-                  <Zap className="h-8 w-8 mx-auto text-gold-500 mb-2" />
+                  <Zap className="h-8 w-8 mx-auto text-gold-700 mb-2" />
                   <p className="text-lg font-bold">{data.overview.executionMetadata.queriesExecuted}</p>
                   <p className="text-xs text-platinum-500">Queries Executed</p>
                 </CardContent>

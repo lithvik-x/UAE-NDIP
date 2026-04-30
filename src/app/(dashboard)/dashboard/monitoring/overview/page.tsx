@@ -1,6 +1,12 @@
+import type { Metadata } from 'next'
 import { GlassPanel } from '@/components/dashboard/glass-card'
 import { Badge } from '@/components/ui/badge'
 import { Radar, Eye, Globe, AlertTriangle, Activity } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Monitoring Overview | UAE NDIP - Clairvoyance-CX',
+  description: 'Monitoring overview — real-time media monitoring, social listening, dark web surveillance, emerging threat detection, and configurable alert thresholds.',
+}
 
 export default function MonitoringOverviewPage() {
   return (

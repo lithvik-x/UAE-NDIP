@@ -366,7 +366,7 @@ const SelectItem = React.forwardRef<
         <Check
           className={cn(
             'h-4 w-4',
-            'text-gold-600',
+            'text-amber-700',
             'dark:text-gold-400'
           )}
         />

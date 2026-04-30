@@ -273,7 +273,7 @@ export const SliderWithLabel = React.forwardRef<
             <span
               className={cn(
                 'text-sm font-semibold',
-                'text-gold-600 dark:text-gold-400',
+                'text-amber-700 dark:text-gold-400',
                 'font-mono',
                 'tabular-nums',
                 'transition-colors duration-200'

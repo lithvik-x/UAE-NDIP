@@ -387,7 +387,7 @@ export function Sidebar({ className }: SidebarProps) {
           variant="ghost"
           size="icon"
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="h-8 w-8 text-platinum-500 hover:text-gold-600 hover:bg-gold-500/10 transition-colors"
+          className="h-8 w-8 text-platinum-500 hover:text-gold-700 hover:bg-gold-500/10 transition-colors"
         >
           {isCollapsed ? <PanelLeftOpen className="h-4 w-4" /> : <PanelLeftClose className="h-4 w-4" />}
         </Button>
@@ -589,7 +589,7 @@ export function Sidebar({ className }: SidebarProps) {
           <Button
             variant="ghost"
             asChild
-            className="w-full justify-start text-platinum-500 hover:text-gold-600 hover:bg-gold-500/10 transition-all duration-200"
+            className="w-full justify-start text-platinum-500 hover:text-gold-700 hover:bg-gold-500/10 transition-all duration-200"
           >
             <Link href="/">
               <X className="mr-2 h-4 w-4" />
@@ -602,7 +602,7 @@ export function Sidebar({ className }: SidebarProps) {
             variant="ghost"
             asChild
             size="icon"
-            className="w-full h-10 text-platinum-500 hover:text-gold-600 hover:bg-gold-500/10 transition-all duration-200"
+            className="w-full h-10 text-platinum-500 hover:text-gold-700 hover:bg-gold-500/10 transition-all duration-200"
             title="Exit Dashboard"
           >
             <Link href="/">
@@ -677,7 +677,7 @@ function Header({
             variant="ghost"
             size="icon"
             onClick={onToggleMobileMenu}
-            className="lg:hidden h-9 w-9 text-platinum-500 hover:text-gold-600 hover:bg-gold-500/10 transition-colors shrink-0"
+            className="lg:hidden h-9 w-9 text-platinum-500 hover:text-gold-700 hover:bg-gold-500/10 transition-colors shrink-0"
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>}
           </Button>
@@ -703,7 +703,7 @@ function Header({
 
           <Separator orientation="vertical" className="hidden sm:block h-6 bg-platinum-300/30" />
 
-          <Button variant="ghost" size="icon" className="h-9 w-9 text-platinum-500 hover:text-gold-600 hover:bg-gold-500/10 transition-colors relative shrink-0">
+          <Button variant="ghost" size="icon" className="h-9 w-9 text-platinum-500 hover:text-gold-700 hover:bg-gold-500/10 transition-colors relative shrink-0">
             <Bell className="h-4 w-4" />
             <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-red-500" />
           </Button>
@@ -744,15 +744,15 @@ function DashboardFooter() {
 
         {/* Center Section - Quick Links */}
         <div className="hidden md:flex items-center gap-4">
-          <Link href="/docs" className="flex items-center gap-1.5 text-xs text-platinum-500 hover:text-gold-600 transition-colors">
+          <Link href="/docs" className="flex items-center gap-1.5 text-xs text-platinum-500 hover:text-gold-700 transition-colors">
             <FileText className="h-3.5 w-3.5" />
             <span>Documentation</span>
           </Link>
-          <Link href="/support" className="flex items-center gap-1.5 text-xs text-platinum-500 hover:text-gold-600 transition-colors">
+          <Link href="/support" className="flex items-center gap-1.5 text-xs text-platinum-500 hover:text-gold-700 transition-colors">
             <Mail className="h-3.5 w-3.5" />
             <span>Support</span>
           </Link>
-          <Link href="/privacy" className="flex items-center gap-1.5 text-xs text-platinum-500 hover:text-gold-600 transition-colors">
+          <Link href="/privacy" className="flex items-center gap-1.5 text-xs text-platinum-500 hover:text-gold-700 transition-colors">
             <Shield className="h-3.5 w-3.5" />
             <span>Privacy</span>
           </Link>
@@ -761,13 +761,13 @@ function DashboardFooter() {
         {/* Right Section - Social & Copyright */}
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" className="h-7 w-7 text-platinum-400 hover:text-gold-600 hover:bg-gold-500/10 transition-colors">
+            <Button variant="ghost" size="icon" className="h-7 w-7 text-platinum-400 hover:text-gold-700 hover:bg-gold-500/10 transition-colors">
               <Twitter className="h-3.5 w-3.5" />
             </Button>
-            <Button variant="ghost" size="icon" className="h-7 w-7 text-platinum-400 hover:text-gold-600 hover:bg-gold-500/10 transition-colors">
+            <Button variant="ghost" size="icon" className="h-7 w-7 text-platinum-400 hover:text-gold-700 hover:bg-gold-500/10 transition-colors">
               <Linkedin className="h-3.5 w-3.5" />
             </Button>
-            <Button variant="ghost" size="icon" className="h-7 w-7 text-platinum-400 hover:text-gold-600 hover:bg-gold-500/10 transition-colors">
+            <Button variant="ghost" size="icon" className="h-7 w-7 text-platinum-400 hover:text-gold-700 hover:bg-gold-500/10 transition-colors">
               <Github className="h-3.5 w-3.5" />
             </Button>
           </div>

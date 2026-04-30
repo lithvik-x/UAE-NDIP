@@ -794,18 +794,18 @@ export default function InfrastructurePage() {
                   <div className="space-y-2">
                     {mbrSolarPark.phase4Features.map((f, i) => (
                       <div key={i} className="flex items-start gap-2 p-2 bg-gold-50/50 dark:bg-gold-900/20 rounded">
-                        <Sun className="h-4 w-4 text-gold-500 mt-0.5" />
+                        <Sun className="h-4 w-4 text-gold-700 mt-0.5" />
                         <span className="text-sm">{f.feature}</span>
                       </div>
                     ))}
                   </div>
                   <div className="mt-4 grid grid-cols-2 gap-2">
                     <div className="p-2 glass-subtle rounded text-center">
-                      <p className="text-lg font-bold text-gold-600">77 km²</p>
+                      <p className="text-lg font-bold text-gold-700">77 km²</p>
                       <p className="text-xs text-platinum-500">Area</p>
                     </div>
                     <div className="p-2 glass-subtle rounded text-center">
-                      <p className="text-lg font-bold text-gold-600">$7.11B</p>
+                      <p className="text-lg font-bold text-gold-700">$7.11B</p>
                       <p className="text-xs text-platinum-500">Total Investment</p>
                     </div>
                   </div>
@@ -915,7 +915,7 @@ export default function InfrastructurePage() {
                 </GlassCard>
                 <GlassCard hover intensity="low">
                   <p className="text-xs text-platinum-500 mb-1">Construction Cost</p>
-                  <p className="text-2xl font-bold text-gold-600">$1.5B</p>
+                  <p className="text-2xl font-bold text-gold-700">$1.5B</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
                   <p className="text-xs text-platinum-500 mb-1">Observatory</p>
@@ -939,7 +939,7 @@ export default function InfrastructurePage() {
                   <div className="space-y-2">
                     {burjKhalifa.worldRecords.slice(0, 5).map((r, i) => (
                       <div key={i} className="flex items-center gap-2 p-2 bg-gold-50/50 dark:bg-gold-900/20 rounded">
-                        <Star className="h-4 w-4 text-gold-500" />
+                        <Star className="h-4 w-4 text-gold-700" />
                         <span className="text-sm font-medium">{r.record}</span>
                       </div>
                     ))}
@@ -1049,7 +1049,7 @@ export default function InfrastructurePage() {
                     {louvreAbuDhabi.costStructure.map((c, i) => (
                       <div key={i} className="flex justify-between p-2 glass-subtle rounded">
                         <span className="text-sm text-platinum-600">{c.component}</span>
-                        <span className="text-sm font-medium text-gold-600">{c.cost}</span>
+                        <span className="text-sm font-medium text-gold-700">{c.cost}</span>
                       </div>
                     ))}
                   </div>
@@ -1079,7 +1079,7 @@ export default function InfrastructurePage() {
               <div className="grid gap-6 lg:grid-cols-4 mb-4">
                 <GlassCard hover intensity="low">
                   <p className="text-xs text-platinum-500 mb-1">Cost</p>
-                  <p className="text-xl font-bold text-gold-600">$545M</p>
+                  <p className="text-xl font-bold text-gold-700">$545M</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
                   <p className="text-xs text-platinum-500 mb-1">Domes</p>
@@ -1290,7 +1290,7 @@ export default function InfrastructurePage() {
                         {v.status === 'Yes' ? (
                           <CheckCircle2 className="h-4 w-4 text-emerald-500" />
                         ) : (
-                          <AlertTriangle className="h-4 w-4 text-amber-500" />
+                          <AlertTriangle className="h-4 w-4 text-amber-700" />
                         )}
                         <span className="text-sm text-platinum-700">{v.item}</span>
                       </div>

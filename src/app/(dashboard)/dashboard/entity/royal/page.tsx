@@ -501,7 +501,7 @@ export default function RoyalFamilyPage() {
                     <p className="text-xs text-platinum-500">ADIA Assets</p>
                   </div>
                   <div className="text-center p-3 rounded-lg bg-platinum-50 dark:bg-platinum-800/30 col-span-2">
-                    <p className="text-2xl font-bold text-gold-600 dark:text-gold-400">MBZ</p>
+                    <p className="text-2xl font-bold text-gold-700 dark:text-gold-400">MBZ</p>
                     <p className="text-xs text-platinum-500">Current President — Since May 14, 2022</p>
                   </div>
                 </div>

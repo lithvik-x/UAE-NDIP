@@ -8,6 +8,16 @@ import { Shield, Globe, Target, Radar, Users, Clock, TrendingUp, Eye, BookOpen, 
 export const metadata: Metadata = {
   title: 'Documentation | UAE National Digital Intelligence Platform',
   description: 'Complete documentation for the UAE National Digital Intelligence Platform (Clairvoyance-CX). A CryptoMize Product.',
+  openGraph: {
+    title: 'Documentation | UAE National Digital Intelligence Platform',
+    description: 'Complete documentation for the UAE National Digital Intelligence Platform (Clairvoyance-CX). A CryptoMize Product.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Documentation | UAE NDIP - Clairvoyance-CX',
+    description: 'Complete documentation for the UAE National Digital Intelligence Platform.',
+  },
 }
 
 const sections = [

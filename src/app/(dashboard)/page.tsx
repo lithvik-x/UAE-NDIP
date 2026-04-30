@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -21,6 +22,11 @@ import {
   Users,
   Zap,
 } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Dashboard Hub | UAE National Digital Intelligence Platform',
+  description: 'Clairvoyance-CX dashboard hub — access all ten intelligence sections: Entity Intelligence, Topics & Issues, Crisis Management, Social Media, Multi-Lingual, Stakeholders, Historical, Trends & Sentiment, Monitoring, and Verification.',
+}
 
 // Navigation section definitions
 const navigationSections = [

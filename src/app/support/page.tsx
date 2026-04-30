@@ -6,6 +6,16 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Support | UAE NDIP - Clairvoyance-CX by CryptoMize',
   description: 'Get help and support for the UAE National Digital Intelligence Platform (Clairvoyance-CX). A CryptoMize Product. ndip.dossier.li',
+  openGraph: {
+    title: 'Support Center | UAE National Digital Intelligence Platform',
+    description: 'Get help and support for the UAE National Digital Intelligence Platform (Clairvoyance-CX). A CryptoMize Product.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Support | UAE NDIP - Clairvoyance-CX',
+    description: 'Get help and support for UAE National Digital Intelligence Platform.',
+  },
 }
 
 const supportCategories = [
