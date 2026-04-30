@@ -1,6 +1,0 @@
-{
-  "build_command": "echo 'Using pre-built output from .open-next'",
-  "build_output_dir": ".open-next",
-  "framework": null,
-  "dev_debug": false
-}
