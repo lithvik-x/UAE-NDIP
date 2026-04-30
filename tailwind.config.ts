@@ -251,8 +251,8 @@ const config = {
           400: '#FBBF24',
           500: '#F59E0B',
           600: '#D97706',
-          700: '#B45309',
-          800: '#92400E',
+          700: 'hsl(var(--text-gold))',
+          800: 'hsl(var(--text-gold-muted))',
           900: '#78350F',
         },
         platinum: {
