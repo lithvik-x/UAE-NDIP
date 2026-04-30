@@ -18,20 +18,61 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'UAE - National Digital Intelligence Platform | Clairvoyance-CX',
-  description: 'Comprehensive intelligence platform for UAE national security, media monitoring, crisis management, and strategic analysis. Covers all 7 Emirates with 142 data categories. A CryptoMize Product.',
-  keywords: ['UAE', 'intelligence', 'national security', 'media monitoring', 'crisis management', 'Abu Dhabi', 'Dubai', 'Sharjah', 'Ajman', 'Fujairah', 'Umm Al Quwain', 'Rak', 'dashboard', 'Clairvoyance', 'CryptoMize'],
-  authors: [{ name: 'CryptoMize' }],
+  metadataBase: new URL('https://ndip.dossier.li'),
+  title: {
+    default: 'UAE National Digital Intelligence Platform | Clairvoyance-CX',
+    template: '%s | Clairvoyance-CX',
+  },
+  description: 'AI-powered digital intelligence platform delivering real-time situational awareness for UAE Federal decision-makers. Entity Intelligence, Crisis Management, Social Media, Multi-Lingual analysis, and more. A CryptoMize Product.',
+  keywords: [
+    'UAE intelligence platform',
+    'national security dashboard',
+    'federal decision support',
+    'Crisis management',
+    'media monitoring UAE',
+    'social media intelligence',
+    'entity resolution',
+    'sentiment analysis',
+    'Clairvoyance-CX',
+    'CryptoMize',
+    'UAE Federal',
+    'ndip.dossier.li',
+  ],
+  authors: [{ name: 'CryptoMize', url: 'https://cryptomize.com' }],
+  creator: 'CryptoMize',
+  publisher: 'CryptoMize',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+  },
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   openGraph: {
-    title: 'UAE - National Digital Intelligence Platform | Clairvoyance-CX',
-    description: 'Comprehensive intelligence platform for UAE national security, media monitoring, crisis management, and strategic analysis. A CryptoMize Product.',
-    type: 'website',
+    title: 'UAE National Digital Intelligence Platform | Clairvoyance-CX',
+    description: 'AI-powered digital intelligence platform for UAE Federal decision-makers. Ten integrated sections delivering real-time situational awareness across all domains.',
+    url: 'https://ndip.dossier.li',
+    siteName: 'Clairvoyance-CX',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Clairvoyance-CX — UAE National Digital Intelligence Platform',
+      },
+    ],
     locale: 'en_AE',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'UAE - National Digital Intelligence Platform | Clairvoyance-CX',
-    description: 'Comprehensive intelligence platform for UAE national security, media monitoring, crisis management, and strategic analysis.',
+    title: 'UAE National Digital Intelligence Platform | Clairvoyance-CX',
+    description: 'AI-powered digital intelligence platform for UAE Federal decision-makers.',
+    images: ['/og-image.png'],
+    creator: '@CryptoMize',
   },
   manifest: '/manifest.json',
 }
@@ -47,10 +88,19 @@ export default function RootLayout({
         <SkipLink />
         <div className="relative flex min-h-screen flex-col">
           <div className="fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
-            {/* UAE Theme Animated Background Gradients - Navy and Gold */}
-            <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-gradient-to-br from-amber-900/20 via-yellow-900/10 to-transparent blur-3xl animate-pulse-slow" />
-            <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-gradient-to-tr from-slate-900/30 via-blue-900/10 to-transparent blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-yellow-600/10 via-amber-600/5 to-transparent blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+            {/* UAE Theme Animated Background Gradients — ultra-slow pulse, no transform jitter */}
+            <div
+              className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-gradient-to-br from-amber-900/20 via-yellow-900/10 to-transparent blur-3xl animate-pulse-slow will-change-transform"
+              style={{ animationDelay: '0ms' }}
+            />
+            <div
+              className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-gradient-to-tr from-slate-900/30 via-blue-900/10 to-transparent blur-3xl animate-pulse-slow will-change-transform"
+              style={{ animationDelay: '4000ms' }}
+            />
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-yellow-600/10 via-amber-600/5 to-transparent blur-3xl animate-pulse-slow will-change-transform"
+              style={{ animationDelay: '8000ms' }}
+            />
           </div>
           <main id="main-content" tabIndex={-1} className="flex-1">
             {children}

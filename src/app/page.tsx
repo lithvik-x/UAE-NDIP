@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -22,6 +23,16 @@ import {
   Users,
   TrendingUp,
 } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'UAE National Digital Intelligence Platform | Clairvoyance-CX',
+  description: 'AI-powered digital intelligence platform for UAE Federal decision-makers. Ten integrated sections — Entity Intelligence, Crisis Management, Social Media, Multi-Lingual, Stakeholders, Historical, Trends & Sentiment, Monitoring, and Verification.',
+  openGraph: {
+    title: 'UAE National Digital Intelligence Platform | Clairvoyance-CX',
+    description: 'AI-powered digital intelligence platform delivering real-time situational awareness for UAE Federal decision-makers.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+  },
+}
 
 const intelligenceSections = [
   {
@@ -109,22 +120,22 @@ const intelligenceSections = [
 const platformPillars = [
   {
     label: 'Entity Resolution',
-    detail: 'AI-powered deduplication across 52K+ sources',
+    detail: 'AI deduplication across 52K+ sources',
     icon: Brain,
   },
   {
     label: 'Crisis Early Warning',
-    detail: 'Phoenix Protocol with tiered alert system',
+    detail: 'Phoenix Protocol with tiered alerts',
     icon: Shield,
   },
   {
-    label: 'Multi-Lingual Processing',
-    detail: 'Native intelligence across 12 languages',
+    label: 'Multi-Lingual',
+    detail: 'Native processing across 12 languages',
     icon: Globe,
   },
   {
     label: 'Real-Time Sentiment',
-    detail: 'Dynamic sentiment tracking with trend prediction',
+    detail: 'Dynamic tracking with trend prediction',
     icon: TrendingUp,
   },
 ]
@@ -134,23 +145,28 @@ export default function HomePage() {
     <main className="flex-1 bg-gradient-to-b from-bg-primary via-bg-secondary to-bg-primary">
       {/* Hero Section */}
       <section className="relative px-6 py-28 lg:py-36 overflow-hidden">
-        {/* Stable background orbs — slow pulse only */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-[480px] h-[480px] bg-gradient-gold opacity-[0.08] rounded-full blur-3xl animate-pulse-slow will-change-transform" />
-          <div className="absolute bottom-0 right-1/4 w-[480px] h-[480px] bg-gradient-navy opacity-[0.08] rounded-full blur-3xl animate-pulse-slow delay-[4000ms] will-change-transform" />
+        {/* Background orbs — ultra-slow, no jitter */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          <div
+            className="absolute top-0 left-1/4 w-[480px] h-[480px] bg-gradient-gold opacity-[0.07] rounded-full blur-3xl animate-pulse-slow will-change-transform"
+            style={{ animationDelay: '0ms' }}
+          />
+          <div
+            className="absolute bottom-0 right-1/4 w-[480px] h-[480px] bg-gradient-navy opacity-[0.07] rounded-full blur-3xl animate-pulse-slow will-change-transform"
+            style={{ animationDelay: '4000ms' }}
+          />
         </div>
 
         <div className="mx-auto max-w-7xl relative">
           <div className="text-center">
-            {/* Classification Badge */}
+            {/* Classification Badge — NO animation, static elegant */}
             <div className="mb-8 inline-flex">
-              <Badge
-                variant="premium"
-                className="px-5 py-2 text-xs font-bold tracking-[0.2em] uppercase shadow-premium-md animate-float border border-gold-400/30"
-              >
-                <Lock className="mr-2 h-3 w-3" />
-                UAE Federal // Clairvoyance-CX // Restricted
-              </Badge>
+              <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-gold-400/40 bg-gradient-to-r from-amber-900/20 to-amber-800/10 shadow-[0_0_20px_rgba(245,158,11,0.12)]">
+                <Lock className="h-3 w-3 text-amber-500 shrink-0" />
+                <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-amber-300">
+                  UAE Federal&nbsp;&#47;&#47;&#47;&nbsp;Clairvoyance-CX&nbsp;&#47;&#47;&#47;&nbsp;Restricted
+                </span>
+              </div>
             </div>
 
             {/* Main Title */}
@@ -158,21 +174,24 @@ export default function HomePage() {
               Clairvoyance-CX
             </h1>
 
-            {/* Mission-Critical Subheading */}
-            <p className="mt-8 mx-auto max-w-3xl text-balance text-base sm:text-lg font-medium text-platinum-500 leading-relaxed">
+            {/* Subheading — improved contrast */}
+            <p className="mt-8 mx-auto max-w-3xl text-balance text-base sm:text-lg font-medium text-platinum-600 leading-relaxed px-4">
               AI-powered digital intelligence platform delivering real-time situational awareness
               for UAE Federal decision-makers. Ten integrated sections — Entity Intelligence,
               Topics & Issues, Crisis Management, Social Media, Multi-Lingual, Stakeholders,
               Historical, Trends & Sentiment, Monitoring, and Verification.
             </p>
 
-            {/* Platform Pillars — subtle credibility strip */}
-            <div className="mt-10 mx-auto max-w-3xl grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {/* Platform Pillars */}
+            <div className="mt-10 mx-auto max-w-3xl grid grid-cols-2 sm:grid-cols-4 gap-3 px-4">
               {platformPillars.map((pillar) => {
                 const Icon = pillar.icon
                 return (
-                  <div key={pillar.label} className="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-white/40 border border-white/60 backdrop-blur-sm">
-                    <Icon className="h-4 w-4 text-gold-600 shrink-0" />
+                  <div
+                    key={pillar.label}
+                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-white/50 border border-white/70 backdrop-blur-sm shadow-sm"
+                  >
+                    <Icon className="h-4 w-4 text-amber-600 shrink-0" />
                     <div className="text-left">
                       <div className="text-xs font-semibold text-platinum-800 leading-tight">{pillar.label}</div>
                       <div className="text-[10px] text-platinum-500 leading-tight">{pillar.detail}</div>
@@ -211,17 +230,17 @@ export default function HomePage() {
             </div>
 
             {/* Compliance Strip */}
-            <div className="mt-16 flex flex-wrap items-center justify-center gap-6 text-xs text-platinum-400">
+            <div className="mt-16 flex flex-wrap items-center justify-center gap-6 text-xs text-platinum-500">
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
+                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
                 <span>UAE Federal Decree-Law No. 45 of 2021</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
+                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
                 <span>Data Residency: Abu Dhabi (UAE North)</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
+                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
                 <span>Federal Intelligence Infrastructure</span>
               </div>
             </div>
@@ -240,7 +259,7 @@ export default function HomePage() {
             <h2 className="font-rajdhani text-4xl font-bold tracking-tight sm:text-5xl gradient-text-premium">
               Ten Intelligence Sections
             </h2>
-            <p className="mt-4 text-base text-platinum-600 max-w-2xl mx-auto">
+            <p className="mt-4 text-base text-platinum-600 max-w-2xl mx-auto px-4">
               Integrated intelligence modules operating across federal ministries, media networks,
               social platforms, and geopolitical domains — delivering comprehensive situational awareness.
             </p>
@@ -252,14 +271,13 @@ export default function HomePage() {
               return (
                 <Card
                   key={section.title}
-                  className="group relative overflow-hidden card-metallic-platinum border-2 transition-all duration-700 hover:shadow-premium-2xl hover:-translate-y-1.5 hover:scale-[1.01]"
-                  style={{ animationDelay: `${index * 80}ms` }}
+                  className="group relative overflow-hidden card-metallic-platinum border-2 transition-all duration-500 hover:shadow-premium-2xl hover:-translate-y-1 hover:scale-[1.01]"
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${section.gradient} opacity-[0.025] group-hover:opacity-[0.06] transition-opacity duration-700`} />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${section.gradient} opacity-[0.03] group-hover:opacity-[0.07] transition-opacity duration-500`} />
                   <CardHeader className="relative pb-2">
                     <div className="flex items-start justify-between mb-3">
                       <div
-                        className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${section.gradient} text-white shadow-premium-md group-hover:scale-105 transition-transform duration-500`}
+                        className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${section.gradient} text-white shadow-premium-md group-hover:scale-105 transition-transform duration-300`}
                       >
                         <IconComponent className="h-6 w-6" />
                       </div>
@@ -267,7 +285,7 @@ export default function HomePage() {
                         {section.badge}
                       </Badge>
                     </div>
-                    <CardTitle className="font-rajdhani text-lg leading-tight">{section.title}</CardTitle>
+                    <CardTitle className="font-rajdhani text-lg text-platinum-900 leading-tight">{section.title}</CardTitle>
                     <CardDescription className="text-xs font-medium text-platinum-600 leading-relaxed mt-1.5">
                       {section.description}
                     </CardDescription>
@@ -291,7 +309,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Platform Capabilities — replaces fake metrics */}
+      {/* Platform Capabilities */}
       <section className="px-6 py-20 bg-gradient-to-b from-transparent via-bg-secondary/50 to-transparent">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-16">
@@ -356,63 +374,56 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Premium Footer */}
+      {/* Footer */}
       <footer className="border-t border-platinum-200/50 px-6 py-12 bg-gradient-to-b from-transparent to-bg-secondary/50">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
-            {/* Intelligence Sections */}
             <div>
               <h3 className="font-rajdhani text-base font-bold text-platinum-900 mb-4">Intelligence Sections</h3>
               <ul className="space-y-2 text-sm text-platinum-600">
-                <li><Link href="/dashboard/entity/overview" className="hover:text-gold-600 transition-colors">Entity Intelligence</Link></li>
-                <li><Link href="/dashboard/topics/politics" className="hover:text-gold-600 transition-colors">Topics & Issues</Link></li>
-                <li><Link href="/dashboard/crisis/overview" className="hover:text-gold-600 transition-colors">Crisis Management</Link></li>
-                <li><Link href="/dashboard/social/overview" className="hover:text-gold-600 transition-colors">Social Media</Link></li>
+                <li><Link href="/dashboard/entity/overview" className="hover:text-amber-600 transition-colors">Entity Intelligence</Link></li>
+                <li><Link href="/dashboard/topics/politics" className="hover:text-amber-600 transition-colors">Topics & Issues</Link></li>
+                <li><Link href="/dashboard/crisis/overview" className="hover:text-amber-600 transition-colors">Crisis Management</Link></li>
+                <li><Link href="/dashboard/social/overview" className="hover:text-amber-600 transition-colors">Social Media</Link></li>
               </ul>
             </div>
-
-            {/* More Sections */}
             <div>
               <h3 className="font-rajdhani text-base font-bold text-platinum-900 mb-4">More Sections</h3>
               <ul className="space-y-2 text-sm text-platinum-600">
-                <li><Link href="/dashboard/languages/overview" className="hover:text-gold-600 transition-colors">Multi-Lingual</Link></li>
-                <li><Link href="/dashboard/stakeholders/overview" className="hover:text-gold-600 transition-colors">Stakeholders</Link></li>
-                <li><Link href="/dashboard/historical/overview" className="hover:text-gold-600 transition-colors">Historical</Link></li>
-                <li><Link href="/dashboard/trends/overview" className="hover:text-gold-600 transition-colors">Trends & Sentiment</Link></li>
+                <li><Link href="/dashboard/languages/overview" className="hover:text-amber-600 transition-colors">Multi-Lingual</Link></li>
+                <li><Link href="/dashboard/stakeholders/overview" className="hover:text-amber-600 transition-colors">Stakeholders</Link></li>
+                <li><Link href="/dashboard/historical/overview" className="hover:text-amber-600 transition-colors">Historical</Link></li>
+                <li><Link href="/dashboard/trends/overview" className="hover:text-amber-600 transition-colors">Trends & Sentiment</Link></li>
               </ul>
             </div>
-
-            {/* Resources */}
             <div>
               <h3 className="font-rajdhani text-base font-bold text-platinum-900 mb-4">Resources</h3>
               <ul className="space-y-2 text-sm text-platinum-600">
-                <li><Link href="/docs" className="hover:text-gold-600 transition-colors">Documentation</Link></li>
-                <li><Link href="/dashboard" className="hover:text-gold-600 transition-colors">Dashboard Hub</Link></li>
-                <li><Link href="/support" className="hover:text-gold-600 transition-colors">Support Center</Link></li>
-                <li><Link href="/privacy" className="hover:text-gold-600 transition-colors">Privacy Policy</Link></li>
+                <li><Link href="/docs" className="hover:text-amber-600 transition-colors">Documentation</Link></li>
+                <li><Link href="/dashboard" className="hover:text-amber-600 transition-colors">Dashboard Hub</Link></li>
+                <li><Link href="/support" className="hover:text-amber-600 transition-colors">Support Center</Link></li>
+                <li><Link href="/privacy" className="hover:text-amber-600 transition-colors">Privacy Policy</Link></li>
               </ul>
             </div>
-
-            {/* Company */}
             <div>
               <h3 className="font-rajdhani text-base font-bold text-platinum-900 mb-4">Connect</h3>
               <ul className="space-y-2 text-sm text-platinum-600">
-                <li><a href="https://www.linkedin.com/in/CryptoMize" target="_blank" rel="noopener noreferrer" className="hover:text-gold-600 transition-colors">LinkedIn</a></li>
-                <li><a href="https://twitter.com/CryptoMize" target="_blank" rel="noopener noreferrer" className="hover:text-gold-600 transition-colors">Twitter / X</a></li>
-                <li><a href="https://cryptomize.com" target="_blank" rel="noopener noreferrer" className="hover:text-gold-600 transition-colors">CryptoMize.com</a></li>
-                <li><a href="mailto:info@cryptomize.com" className="hover:text-gold-600 transition-colors">Contact</a></li>
+                <li><a href="https://www.linkedin.com/in/CryptoMize" target="_blank" rel="noopener noreferrer" className="hover:text-amber-600 transition-colors">LinkedIn</a></li>
+                <li><a href="https://twitter.com/CryptoMize" target="_blank" rel="noopener noreferrer" className="hover:text-amber-600 transition-colors">Twitter / X</a></li>
+                <li><a href="https://cryptomize.com" target="_blank" rel="noopener noreferrer" className="hover:text-amber-600 transition-colors">CryptoMize.com</a></li>
+                <li><a href="mailto:info@cryptomize.com" className="hover:text-amber-600 transition-colors">Contact</a></li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-platinum-200/50 pt-8 text-center">
             <div className="flex items-center justify-center gap-2 text-sm text-platinum-500 mb-2">
-              <Crown className="h-4 w-4 text-gold-500" />
+              <Crown className="h-4 w-4 text-amber-500" />
               <span className="font-bold">
                 <span className="gradient-text-premium font-rajdhani">Clairvoyance-CX</span>
                 <span className="text-platinum-400 font-normal ml-2">| ndip.dossier.li</span>
               </span>
-              <Gem className="h-4 w-4 text-gold-500" />
+              <Gem className="h-4 w-4 text-amber-500" />
             </div>
             <p className="text-sm text-platinum-500">
               A <span className="font-semibold text-platinum-700">CryptoMize</span> Product
