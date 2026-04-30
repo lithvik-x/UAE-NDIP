@@ -224,7 +224,7 @@ function ProfileCard({ official, index }: { official: typeof supremeCouncilMembe
 
         {official.controversies && official.controversies.length > 0 && (
           <div className="pt-2 border-t border-platinum-200/50 dark:border-platinum-700/50">
-            <p className="text-xs font-semibold text-red-500 mb-1">Controversies</p>
+            <p className="text-xs font-semibold text-red-600 mb-1">Controversies</p>
             <ul className="space-y-0.5">
               {official.controversies.slice(0, 2).map((c, i) => (
                 <li key={i} className="flex items-start gap-1.5 text-xs text-platinum-600 dark:text-platinum-400">
@@ -1129,7 +1129,7 @@ export default function FederalOfficialsPage() {
               <div key={i} className="flex items-start gap-2 text-sm">
                 <AlertTriangle className="h-4 w-4 mt-0.5 text-orange-500 shrink-0" />
                 <div>
-                  <span className="text-orange-500 font-medium">{t.issue}:</span>
+                  <span className="text-orange-600 font-medium">{t.issue}:</span>
                   <span className="text-platinum-700 dark:text-platinum-300 ml-1">{t.details}</span>
                 </div>
               </div>
@@ -1148,7 +1148,7 @@ export default function FederalOfficialsPage() {
                 <div key={i} className="flex items-start gap-3 p-3 glass-subtle rounded-lg">
                   <AlertTriangle className="h-5 w-5 text-red-400 shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-sm font-semibold text-red-500">{c.issue}</p>
+                    <p className="text-sm font-semibold text-red-600">{c.issue}</p>
                     <p className="text-sm text-platinum-600 dark:text-platinum-400 mt-0.5">{c.details}</p>
                   </div>
                 </div>
@@ -1295,7 +1295,7 @@ export default function FederalOfficialsPage() {
                       ))}
                     </div>
                     <div>
-                      <p className="text-xs font-semibold text-red-400 mb-1">Negative Signals</p>
+                      <p className="text-xs font-semibold text-red-500 mb-1">Negative Signals</p>
                       {(s.negativeSignals ?? []).map((ns, j) => (
                         <p key={j} className="text-xs text-platinum-600 dark:text-platinum-400 flex items-start gap-1">
                           <TrendingDown className="h-3 w-3 mt-0.5 text-red-400 shrink-0" />

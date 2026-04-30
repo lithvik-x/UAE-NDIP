@@ -1102,7 +1102,7 @@ export default function EventsPage() {
                   <div className="space-y-1">
                     {gulfWarData.uaeRole.map((r, i) => (
                       <div key={i} className="flex items-start gap-2 text-xs text-platinum-700 dark:text-platinum-300">
-                        <span className="text-rose-500 font-medium">{r.aspect}:</span>
+                        <span className="text-rose-600 font-medium">{r.aspect}:</span>
                         <span>{r.details}</span>
                       </div>
                     ))}

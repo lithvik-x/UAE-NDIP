@@ -537,7 +537,7 @@ function HumanRightsViolatorContent() {
             <div key={idx} className="bg-white/50 rounded p-3">
               <div className="text-sm text-slate-600">{rating.metric}</div>
               <div className="text-2xl font-bold text-rose-600">{rating.score}</div>
-              <div className="text-xs text-rose-500">Rating: {rating.rating}</div>
+              <div className="text-xs text-rose-600">Rating: {rating.rating}</div>
             </div>
           ))}
         </div>
@@ -551,7 +551,7 @@ function HumanRightsViolatorContent() {
             <div key={idx} className="bg-white/50 rounded p-2">
               <div className="font-medium text-rose-700">{trial.trial}</div>
               <div className="text-sm text-slate-600">{trial.details}</div>
-              <div className="text-xs text-rose-500">Sentences: {trial.sentences}</div>
+              <div className="text-xs text-rose-600">Sentences: {trial.sentences}</div>
             </div>
           ))}
         </div>

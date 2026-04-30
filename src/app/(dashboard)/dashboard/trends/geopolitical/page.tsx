@@ -270,7 +270,7 @@ export default function GeopoliticalTrendsPage() {
               className="glass-panel p-4 rounded-xl"
             >
               <p className="text-xs text-platinum-500">Critical UAE Relevance</p>
-              <p className="mt-1 text-2xl font-bold text-red-500">{geoData.executionMetadata.uaeRelevanceCritical}</p>
+              <p className="mt-1 text-2xl font-bold text-red-600">{geoData.executionMetadata.uaeRelevanceCritical}</p>
               <p className="text-xs text-platinum-600">Sources</p>
             </motion.div>
             <motion.div
@@ -281,7 +281,7 @@ export default function GeopoliticalTrendsPage() {
               className="glass-panel p-4 rounded-xl"
             >
               <p className="text-xs text-platinum-500">Failed (403/Access)</p>
-              <p className="mt-1 text-2xl font-bold text-orange-500">{geoData.executionMetadata.sourcesFailed}</p>
+              <p className="mt-1 text-2xl font-bold text-orange-600">{geoData.executionMetadata.sourcesFailed}</p>
               <p className="text-xs text-platinum-600">Blocked</p>
             </motion.div>
           </div>
@@ -478,7 +478,7 @@ export default function GeopoliticalTrendsPage() {
                         <AlertTriangle className="h-5 w-5 text-red-500" />
                         <span className="text-sm font-medium text-slate-200">Saudi-UAE Tensions</span>
                       </div>
-                      <p className="text-2xl font-bold text-red-500">Critical</p>
+                      <p className="text-2xl font-bold text-red-600">Critical</p>
                       <p className="text-xs text-platinum-500">December 2025 confrontation</p>
                     </motion.div>
                   </div>

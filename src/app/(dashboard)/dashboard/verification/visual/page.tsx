@@ -196,13 +196,13 @@ export default function VisualMultimediaPage() {
             <Brain className="h-6 w-6 text-red-400" />
           </div>
           <div className="flex-1">
-            <h3 className="text-lg font-bold text-red-400">Deepfake Threat Level: CRITICAL</h3>
+            <h3 className="text-lg font-bold text-red-500">Deepfake Threat Level: CRITICAL</h3>
             <p className="text-sm text-slate-400 mt-1">
               +900% increase in deepfakes (Q1 2024) — Fake news spreads 70% faster than genuine content
             </p>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-red-400">+900%</div>
+            <div className="text-3xl font-bold text-red-500">+900%</div>
             <p className="text-xs text-slate-500">Deepfake Increase</p>
           </div>
         </div>
@@ -760,7 +760,7 @@ export default function VisualMultimediaPage() {
                       <p className="text-sm text-slate-400 mt-1">Clear Atmosphere Enhancement</p>
                     </div>
                     <div className="rounded-lg border border-yellow-500/30 bg-yellow-500/10 p-4 text-center">
-                      <div className="text-3xl font-bold text-yellow-400">{extended.cloudSeedingData.effectivenessHumid}</div>
+                      <div className="text-3xl font-bold text-yellow-500">{extended.cloudSeedingData.effectivenessHumid}</div>
                       <p className="text-sm text-slate-400 mt-1">Humid Atmosphere Enhancement</p>
                     </div>
                   </div>

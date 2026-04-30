@@ -786,8 +786,8 @@ export default function EmiratiArabicPage() {
                               transition={{ delay: index * 0.1 }}
                               className="rounded-lg border border-red-700/50 bg-red-900/20 p-3 backdrop-blur-sm"
                             >
-                              <p className="font-mono text-red-400 text-lg">{marker.expression}</p>
-                              <p className="text-sm text-red-500 font-arabic">{marker.arabic}</p>
+                              <p className="font-mono text-red-500 text-lg">{marker.expression}</p>
+                              <p className="text-sm text-red-600 font-arabic">{marker.arabic}</p>
                               <p className="text-xs text-slate-400 mt-1">{marker.meaning}</p>
                             </motion.div>
                           ))}

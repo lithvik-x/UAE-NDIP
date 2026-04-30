@@ -356,11 +356,11 @@ export default function InternationalPerceptionPage() {
                       <div className="text-xs text-slate-500">Positive</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-amber-500">{mixedCount}</div>
+                      <div className="text-2xl font-bold text-amber-600">{mixedCount}</div>
                       <div className="text-xs text-slate-500">Mixed</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-red-500">{negativeCount}</div>
+                      <div className="text-2xl font-bold text-red-600">{negativeCount}</div>
                       <div className="text-xs text-slate-500">Negative</div>
                     </div>
                   </div>
