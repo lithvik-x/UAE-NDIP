@@ -38,7 +38,7 @@ const navigationSections = [
     href: '/dashboard/topics/economy',
     icon: <Target className="h-7 w-7" />,
     gradient: 'navy',
-    badge: '21 Topics',
+    badge: '20 Topics',
   },
   {
     title: 'Crisis Management',
@@ -46,7 +46,7 @@ const navigationSections = [
     href: '/dashboard/crisis/overview',
     icon: <AlertTriangle className="h-7 w-7" />,
     gradient: 'rose',
-    badge: '12 Areas',
+    badge: '14 Areas',
   },
   {
     title: 'Social Media',
@@ -54,7 +54,7 @@ const navigationSections = [
     href: '/dashboard/social/overview',
     icon: <Users className="h-7 w-7" />,
     gradient: 'indigo',
-    badge: '10 Platforms',
+    badge: '18 Platforms',
   },
   {
     title: 'Languages',
@@ -70,7 +70,7 @@ const navigationSections = [
     href: '/dashboard/stakeholders/overview',
     icon: <Shield className="h-7 w-7" />,
     gradient: 'emerald',
-    badge: '10 Groups',
+    badge: '14 Groups',
   },
   {
     title: 'Historical Archive',
@@ -86,7 +86,7 @@ const navigationSections = [
     href: '/dashboard/trends/overview',
     icon: <TrendingUp className="h-7 w-7" />,
     gradient: 'purple',
-    badge: '8 Categories',
+    badge: '28 Categories',
   },
   {
     title: 'Monitoring',
@@ -94,7 +94,7 @@ const navigationSections = [
     href: '/dashboard/monitoring/overview',
     icon: <Radar className="h-7 w-7" />,
     gradient: 'orange',
-    badge: 'Live',
+    badge: '10 Modules',
   },
   {
     title: 'Verification',
@@ -112,21 +112,21 @@ const recentAlerts = [
     severity: 'high',
     title: 'Regional Geopolitical Tension Detected',
     description: 'Escalating rhetoric detected across Gulf media channels regarding maritime boundaries',
-    source: 'CLAIRVOYANCE-CX / Omni-Surveillance',
+    source: 'Crisis / Geopolitical',
   },
   {
     time: '47 min ago',
     severity: 'medium',
     title: 'Economic Indicator Shift',
     description: 'Oil price volatility linked to OPEC+ production discussion signals economic monitoring alert',
-    source: 'PERCEPTION-X2 / Strategy & Targeting',
+    source: 'Crisis / Economic',
   },
   {
     time: '2h ago',
     severity: 'low',
     title: 'Social Sentiment Anomaly - Tourism',
     description: 'Unusual positive sentiment spike detected around UAE tourism sector on regional social platforms',
-    source: 'RICOCHET-CATALYST-X / Velocity Launcher',
+    source: 'Social / Sentiment',
   },
   {
     time: '4h ago',
@@ -140,7 +140,7 @@ const recentAlerts = [
     severity: 'low',
     title: 'Narrative Formation - Climate',
     description: 'New environmental narrative forming around COP28 follow-up commitments in regional media',
-    source: 'PERCEPTION-X2 / Narrative Lab',
+    source: 'Trends / Environment',
   },
 ]
 
