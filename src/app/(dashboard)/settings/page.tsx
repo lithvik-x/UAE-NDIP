@@ -42,7 +42,7 @@ export default function SettingsPage() {
     email: 'sarah.almansoori@adphc.gov.ae',
     role: 'Platform Administrator',
     department: 'Digital Health',
-    avatar: '/api/placeholder/40/40'
+    avatar: ''
   }
 
   const notifications = [

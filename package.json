@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "pages:build": "npm run build && npx @opennextjs/cloudflare build --skipWranglerConfigCheck && cp .open-next/worker.js .open-next/_worker.js",
+    "pages:build": "next build",
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit"

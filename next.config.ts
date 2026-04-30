@@ -1,6 +1,8 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
+  output: 'export',
+  trailingSlash: true,
   reactStrictMode: true,
   typescript: {
     ignoreBuildErrors: false,
@@ -10,7 +12,7 @@ const nextConfig: NextConfig = {
   },
   images: {
     domains: [],
-    unoptimized: false,
+    unoptimized: true,
   },
 }
 
