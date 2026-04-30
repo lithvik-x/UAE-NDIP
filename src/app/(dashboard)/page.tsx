@@ -304,7 +304,7 @@ export default function DashboardHomePage() {
                   <p className="line-clamp-2 text-xs text-platinum-500 leading-relaxed">
                     {section.description}
                   </p>
-                  <div className="flex items-center gap-1 text-gold-600 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="flex items-center gap-1 text-gold text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                     <span>Navigate</span>
                     <ChevronRight className="h-3 w-3" />
                   </div>
@@ -384,7 +384,7 @@ export default function DashboardHomePage() {
                       <p className="font-semibold text-sm text-platinum-900">{section.title}</p>
                       <p className="text-xs text-platinum-500 truncate">{section.badge}</p>
                     </div>
-                    <ArrowUpRight className="h-4 w-4 text-gold-600 shrink-0" />
+                    <ArrowUpRight className="h-4 w-4 text-gold shrink-0" />
                   </div>
                 </Link>
               ))}

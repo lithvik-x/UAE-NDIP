@@ -193,7 +193,7 @@ const ToastIcon = React.memo<{
   const icons = {
     success: <Check className="h-5 w-5 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />,
     error: <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400" aria-hidden="true" />,
-    warning: <AlertTriangle className="h-5 w-5 text-gold-600 dark:text-gold-400" aria-hidden="true" />,
+    warning: <AlertTriangle className="h-5 w-5 text-gold dark:text-gold-400" aria-hidden="true" />,
     info: <Info className="h-5 w-5 text-navy-600 dark:text-navy-400" aria-hidden="true" />,
     default: <Info className="h-5 w-5 text-platinum-600 dark:text-platinum-400" aria-hidden="true" />,
     premium: <Check className="h-5 w-5 text-navy-600 dark:text-navy-400" aria-hidden="true" />,

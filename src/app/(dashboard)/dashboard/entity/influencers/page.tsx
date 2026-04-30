@@ -322,7 +322,7 @@ export default function InfluencersPage() {
               <TableBody>
                 {top10Influencers.map((inf) => (
                   <TableRow key={inf.rank} className="border-b border-platinum-100/50 dark:border-platinum-800/50 hover:bg-platinum-50/50 dark:hover:bg-platinum-800/25 transition-colors">
-                    <TableCell><span className="font-bold text-gold-600">{inf.rank}</span></TableCell>
+                    <TableCell><span className="font-bold text-gold">{inf.rank}</span></TableCell>
                     <TableCell><span className="font-semibold text-navy-900 dark:text-platinum-100">{inf.name}</span></TableCell>
                     <TableCell><span className="text-sm text-platinum-600 dark:text-platinum-400 font-mono">{inf.handle}</span></TableCell>
                     <TableCell><span className="text-sm text-platinum-700 dark:text-platinum-300">{inf.platform}</span></TableCell>
@@ -355,7 +355,7 @@ export default function InfluencersPage() {
               <TableBody>
                 {richestUaeInfluencers.map((inf) => (
                   <TableRow key={inf.rank} className="border-b border-platinum-100/50 dark:border-platinum-800/50 hover:bg-platinum-50/50 dark:hover:bg-platinum-800/25 transition-colors">
-                    <TableCell><span className="font-bold text-gold-600">{inf.rank}</span></TableCell>
+                    <TableCell><span className="font-bold text-gold">{inf.rank}</span></TableCell>
                     <TableCell><span className="font-semibold text-navy-900 dark:text-platinum-100">{inf.name}</span></TableCell>
                     <TableCell><span className="text-sm font-bold text-navy-900 dark:text-platinum-100">{inf.followers}</span></TableCell>
                     <TableCell><span className="text-sm text-emerald-600 dark:text-emerald-400">{inf.estimatedEarningsPost}</span></TableCell>
@@ -630,7 +630,7 @@ export default function InfluencersPage() {
                       </div>
                       <div className="text-right">
                         <Badge variant="outline" className="text-xs">{(inf.platform || []).join(', ')}</Badge>
-                        {inf.followersExact && <p className="text-xs font-bold text-gold-600 mt-1">{getFollowerDisplay(inf)}</p>}
+                        {inf.followersExact && <p className="text-xs font-bold text-gold mt-1">{getFollowerDisplay(inf)}</p>}
                       </div>
                     </div>
                   ))}

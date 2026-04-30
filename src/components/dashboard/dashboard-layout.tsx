@@ -37,6 +37,7 @@ import {
   Shield,
   Heart,
   Eye,
+  Menu,
 } from 'lucide-react'
 
 interface NavItem {
@@ -50,11 +51,36 @@ interface NavItem {
 
 // Platform-specific color themes
 const platformColors = {
-  gold: { primary: '#D4AF37', secondary: '#FEF3C7', gradient: 'from-yellow-500 to-amber-600', glow: 'rgba(212, 175, 55, 0.3)' },
-  navy: { primary: '#1E3A5F', secondary: '#E0E7FF', gradient: 'from-blue-600 to-blue-800', glow: 'rgba(30, 58, 95, 0.3)' },
-  platinum: { primary: '#64748B', secondary: '#F1F5F9', gradient: 'from-slate-400 to-slate-600', glow: 'rgba(148, 163, 184, 0.3)' },
-  red: { primary: '#DC2626', secondary: '#FEE2E2', gradient: 'from-red-500 to-red-700', glow: 'rgba(220, 38, 38, 0.3)' },
-  emerald: { primary: '#059669', secondary: '#D1FAE5', gradient: 'from-emerald-500 to-emerald-700', glow: 'rgba(5, 150, 105, 0.3)' },
+  gold: {
+    primary: 'hsl(var(--platform-gold-primary))',
+    secondary: 'hsl(var(--platform-gold-secondary))',
+    gradient: 'from-amber-400 to-amber-600',
+    glow: 'hsla(43, 96%, 47%, 0.3)'
+  },
+  navy: {
+    primary: 'hsl(var(--platform-navy-primary))',
+    secondary: 'hsl(var(--platform-navy-secondary))',
+    gradient: 'from-indigo-600 to-indigo-800',
+    glow: 'hsla(213, 44%, 24%, 0.3)'
+  },
+  platinum: {
+    primary: 'hsl(var(--platform-platinum-primary))',
+    secondary: '#F1F5F9',
+    gradient: 'from-slate-400 to-slate-600',
+    glow: 'hsla(215, 20%, 50%, 0.3)'
+  },
+  red: {
+    primary: 'hsl(var(--platform-red-primary))',
+    secondary: '#FEE2E2',
+    gradient: 'from-red-500 to-red-700',
+    glow: 'hsla(0, 72%, 51%, 0.3)'
+  },
+  emerald: {
+    primary: 'hsl(var(--platform-emerald-primary))',
+    secondary: '#D1FAE5',
+    gradient: 'from-emerald-500 to-emerald-700',
+    glow: 'hsla(160, 84%, 39%, 0.3)'
+  },
 }
 
 const navigation: NavItem[] = [
@@ -679,7 +705,7 @@ function Header({
             onClick={onToggleMobileMenu}
             className="lg:hidden h-9 w-9 text-platinum-500 hover:text-gold-700 hover:bg-gold-500/10 transition-colors shrink-0"
           >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>}
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
 
           <h1 className="text-xs lg:text-sm font-medium text-platinum-500 uppercase tracking-wider truncate">

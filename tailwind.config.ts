@@ -249,10 +249,10 @@ const config = {
           200: '#FDE68A',
           300: '#FCD34D',
           400: '#FBBF24',
-          500: '#F59E0B',
-          600: '#D97706',
-          700: 'hsl(var(--text-gold))',
-          800: 'hsl(var(--text-gold-muted))',
+          500: 'hsl(var(--text-gold-bright))',  /* was hardcoded - accessible now */
+          600: 'hsl(var(--text-gold-bright))',  /* was #D97706 - remapped */
+          700: 'hsl(var(--text-gold))',          /* was hardcoded - accessible 4.7:1 */
+          800: 'hsl(var(--text-gold-muted))',    /* was hardcoded - accessible 5.9:1 */
           900: '#78350F',
         },
         platinum: {

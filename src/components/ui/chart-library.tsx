@@ -67,25 +67,25 @@ import { cn } from '@/lib/utils'
  * @property {string} danger - Danger/red
  */
 export const CHART_COLORS = {
-  primary: '#0ea5e9',      // sky-500
-  secondary: '#8b5cf6',    // violet-500
-  success: '#22c55e',      // green-500
-  warning: '#f59e0b',      // amber-500
-  danger: '#ef4444',       // red-500
-  info: '#06b6d4',         // cyan-500
-  purple: '#a855f7',       // purple-500
-  pink: '#ec4899',         // pink-500
-  orange: '#f97316',       // orange-500
-  teal: '#14b8a6',         // teal-500
-  denim: '#3b82f6',        // blue-500
-  rose: '#f43f5e',         // rose-500
-  gold: '#F59E0B',         // gold-500 (design system)
-  lime: '#84cc16',         // lime-500
-  emerald: '#10b981',      // emerald-500
-  indigo: '#6366f1',       // indigo-500
-  fuchsia: '#d946ef',      // fuchsia-500
-  navy: '#6366F1',         // navy-500 (design system)
-  platinum: '#64748B',     // platinum-500 (design system)
+  primary: 'hsl(var(--chart-primary))',
+  secondary: 'hsl(var(--chart-secondary))',
+  success: 'hsl(var(--chart-success))',
+  warning: 'hsl(var(--chart-warning))',
+  danger: 'hsl(var(--chart-danger))',
+  info: 'hsl(var(--chart-info))',
+  purple: 'hsl(var(--chart-purple))',
+  pink: 'hsl(var(--chart-pink))',
+  orange: 'hsl(var(--chart-orange))',
+  teal: 'hsl(var(--chart-teal))',
+  denim: 'hsl(var(--chart-denim))',
+  rose: 'hsl(var(--chart-rose))',
+  gold: 'hsl(var(--chart-gold))',
+  lime: 'hsl(var(--chart-lime))',
+  emerald: 'hsl(var(--chart-emerald))',
+  indigo: 'hsl(var(--chart-indigo))',
+  fuchsia: 'hsl(var(--chart-fuchsia))',
+  navy: 'hsl(var(--chart-navy))',
+  platinum: 'hsl(var(--chart-platinum))',
 } as const
 
 export type ChartColor = keyof typeof CHART_COLORS
@@ -241,15 +241,15 @@ export function LineChart({
     >
       <ResponsiveContainer width="100%" height={height}>
         <RechartsLineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-          {showGrid && <CartesianGrid strokeDasharray="3 3" stroke="#334155" className="dark:stroke-platinum-700/30" />}
+          {showGrid && <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--chart-text))" className="dark:stroke-platinum-700/30" />}
           <XAxis
             dataKey={xAxisKey}
-            stroke="#94a3b8"
+            stroke="hsl(var(--chart-grid))"
             className="dark:stroke-platinum-500"
             style={{ fontSize: '12px' }}
           />
           <YAxis
-            stroke="#94a3b8"
+            stroke="hsl(var(--chart-grid))"
             className="dark:stroke-platinum-500"
             style={{ fontSize: '12px' }}
           />
@@ -376,18 +376,18 @@ export function BarChart({
           layout={horizontal ? 'vertical' : 'horizontal'}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
         >
-          {showGrid && <CartesianGrid strokeDasharray="3 3" stroke="#334155" className="dark:stroke-platinum-700/30" />}
+          {showGrid && <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--chart-text))" className="dark:stroke-platinum-700/30" />}
           <XAxis
             dataKey={horizontal ? undefined : xAxisKey}
             type={horizontal ? 'number' : 'category'}
-            stroke="#94a3b8"
+            stroke="hsl(var(--chart-grid))"
             className="dark:stroke-platinum-500"
             style={{ fontSize: '12px' }}
           />
           <YAxis
             dataKey={horizontal ? xAxisKey : undefined}
             type={horizontal ? 'category' : 'number'}
-            stroke="#94a3b8"
+            stroke="hsl(var(--chart-grid))"
             className="dark:stroke-platinum-500"
             style={{ fontSize: '12px' }}
           />
@@ -495,15 +495,15 @@ export function AreaChart({
     >
       <ResponsiveContainer width="100%" height={height}>
         <RechartsAreaChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-          {showGrid && <CartesianGrid strokeDasharray="3 3" stroke="#334155" className="dark:stroke-platinum-700/30" />}
+          {showGrid && <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--chart-text))" className="dark:stroke-platinum-700/30" />}
           <XAxis
             dataKey={xAxisKey}
-            stroke="#94a3b8"
+            stroke="hsl(var(--chart-grid))"
             className="dark:stroke-platinum-500"
             style={{ fontSize: '12px' }}
           />
           <YAxis
-            stroke="#94a3b8"
+            stroke="hsl(var(--chart-grid))"
             className="dark:stroke-platinum-500"
             style={{ fontSize: '12px' }}
           />
@@ -715,17 +715,17 @@ export function RadarChart({
     >
       <ResponsiveContainer width="100%" height={height}>
         <RechartsRadarChart data={data} margin={{ top: 20, right: 80, bottom: 20, left: 80 }}>
-          {showGrid && <PolarGrid stroke="#334155" className="dark:stroke-platinum-700/30" />}
+          {showGrid && <PolarGrid stroke="hsl(var(--chart-text))" className="dark:stroke-platinum-700/30" />}
           <PolarAngleAxis
             dataKey="name"
-            stroke="#94a3b8"
+            stroke="hsl(var(--chart-grid))"
             className="dark:stroke-platinum-500"
             style={{ fontSize: '11px' }}
           />
           <PolarRadiusAxis
             angle={90}
             domain={[0, 100]}
-            stroke="#94a3b8"
+            stroke="hsl(var(--chart-grid))"
             className="dark:stroke-platinum-500"
             style={{ fontSize: '10px' }}
           />

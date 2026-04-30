@@ -684,7 +684,7 @@ export default function RoyalFamilyPage() {
                   <ul className="space-y-1">
                     {wealthMetrics.slice(0, 4).map((w, i) => (
                       <li key={i} className="text-xs text-platinum-600 dark:text-platinum-400 flex items-start gap-1.5">
-                        <DollarSign className="h-3.5 w-3.5 mt-0.5 text-gold-500 shrink-0" />
+                        <DollarSign className="h-3.5 w-3.5 mt-0.5 text-gold shrink-0" />
                         <span>{w.entity}: <strong>{w.amount}</strong></span>
                       </li>
                     ))}
@@ -1180,7 +1180,7 @@ export default function RoyalFamilyPage() {
                         <p className="text-sm font-semibold text-navy-900 dark:text-platinum-100 truncate">{member.name}</p>
                         <p className="text-xs text-platinum-500 truncate">{member.role}</p>
                         <div className="flex items-center gap-2 mt-0.5">
-                          <span className="text-sm font-bold text-gold-600">{member.uaeRelevance}/10</span>
+                          <span className="text-sm font-bold text-gold">{member.uaeRelevance}/10</span>
                           <div className="w-12">
                             <Progress value={member.uaeRelevance * 10} className="h-1" />
                           </div>

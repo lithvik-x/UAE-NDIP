@@ -416,7 +416,7 @@ const MetricCard = React.forwardRef<
     red: { bg: 'bg-red-500/10', text: 'text-red-600', border: 'border-red-200/50' },
     indigo: { bg: 'bg-indigo-500/10', text: 'text-indigo-600', border: 'border-indigo-200/50' },
     cyan: { bg: 'bg-cyan-500/10', text: 'text-cyan-600', border: 'border-cyan-200/50' },
-    gold: { bg: 'bg-gold-500/10', text: 'text-gold-600', border: 'border-gold-200/50' },
+    gold: { bg: 'bg-gold-500/10', text: 'text-gold', border: 'border-gold-200/50' },
     emerald: { bg: 'bg-emerald-500/10', text: 'text-emerald-600', border: 'border-emerald-200/50' },
     navy: { bg: 'bg-navy-500/10', text: 'text-navy-600', border: 'border-navy-200/50' },
   }

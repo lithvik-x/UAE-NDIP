@@ -549,7 +549,7 @@ export default function MediaOrganizationsPage() {
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               <div className="p-4 rounded-lg bg-gradient-gold/10 border border-gold-200/50">
                 <div className="flex items-center gap-2 mb-2">
-                  <Crown className="h-5 w-5 text-gold-600" />
+                  <Crown className="h-5 w-5 text-gold" />
                   <span className="font-semibold text-navy-900 dark:text-platinum-100">Sheikh Mansour</span>
                 </div>
                 <p className="text-xs text-platinum-600 dark:text-platinum-400">UAE Vice President</p>
@@ -573,7 +573,7 @@ export default function MediaOrganizationsPage() {
               </div>
               <div className="p-4 rounded-lg bg-gradient-gold/10 border border-gold-200/50">
                 <div className="flex items-center gap-2 mb-2">
-                  <Crown className="h-5 w-5 text-gold-600" />
+                  <Crown className="h-5 w-5 text-gold" />
                   <span className="font-semibold text-navy-900 dark:text-platinum-100">Saudi PIF</span>
                 </div>
                 <p className="text-xs text-platinum-600 dark:text-platinum-400">Public Investment Fund</p>

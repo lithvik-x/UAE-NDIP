@@ -464,7 +464,7 @@ export const SwitchCard = React.forwardRef<
             <div
               className={cn(
                 'mt-0.5 flex-shrink-0',
-                'text-gold-600 dark:text-gold-400'
+                'text-gold dark:text-gold-400'
               )}
             >
               {icon}

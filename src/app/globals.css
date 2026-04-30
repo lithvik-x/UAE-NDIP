@@ -62,7 +62,34 @@
     /* WCAG-accessible gold text — 4.7:1+ contrast on white */
     --text-gold: hsl(37 92% 47%);   /* #B45309 gold-700, 4.7:1 PASSES AA */
     --text-gold-muted: hsl(43 90% 40%); /* #92400E gold-800, 5.9:1 PASSES AAA */
+    /* === WCAG-ACCESSIBLE TEXT GOLDS === */
+    /* text-gold-600 on white = 3.2:1 FAIL → remap to accessible */
+    --text-gold-bright: hsl(43 90% 40%); /* #92400E gold-800, 5.9:1 PASSES */
     --text-platinum: #64748B;
+
+    /* === CHART COLOR PALETTE === */
+    /* These use HSL values so alpha variants (e.g. /20) work via Tailwind's slash notation */
+    --chart-primary: 199 89% 48%;     /* sky-500 #0ea5e9 */
+    --chart-secondary: 262 83% 68%;   /* violet-500 #8b5cf6 */
+    --chart-success: 142 71% 45%;     /* green-500 #22c55e */
+    --chart-warning: 38 92% 50%;      /* amber-500 #f59e0b */
+    --chart-danger: 0 84% 60%;        /* red-500 #ef4444 */
+    --chart-info: 187 85% 44%;       /* cyan-500 #06b6d4 */
+    --chart-purple: 283 71% 59%;     /* purple-500 #a855f7 */
+    --chart-pink: 330 81% 65%;       /* pink-500 #ec4899 */
+    --chart-orange: 24 95% 53%;      /* orange-500 #f97316 */
+    --chart-teal: 171 84% 39%;       /* teal-500 #14b8a6 */
+    --chart-denim: 217 91% 67%;       /* blue-500 #3b82f6 */
+    --chart-rose: 350 89% 71%;       /* rose-500 #f43f5e */
+    --chart-gold: 38 92% 50%;        /* amber-500 #f59e0b */
+    --chart-lime: 82 85% 49%;        /* lime-500 #84cc16 */
+    --chart-emerald: 160 84% 39%;    /* emerald-500 #10b981 */
+    --chart-indigo: 239 84% 67%;     /* indigo-500 #6366f1 */
+    --chart-fuchsia: 291 71% 71%;    /* fuchsia-500 #d946ef */
+    --chart-navy: 239 84% 67%;       /* indigo-500 #6366f1 */
+    --chart-platinum: 215 20% 50%;   /* slate-500 #64748b */
+    --chart-text: 215 20% 30%;       /* slate-700 #475569 - for axis labels */
+    --chart-grid: 214 32% 87%;       /* slate-200 #e2e8f0 - for grid lines */
 
     /* === SEMANTIC COLORS === */
     --color-success: #10B981;
@@ -140,6 +167,15 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
     --radius: 0.75rem;
+
+    /* === PLATFORM COLORS (Dashboard Layout) === */
+    --platform-gold-primary: 43 96% 47%;    /* #D4AF37 */
+    --platform-gold-secondary: 48 96% 90%;  /* #FEF3C7 */
+    --platform-navy-primary: 213 44% 24%;   /* #1E3A5F */
+    --platform-navy-secondary: 237 75% 90%;  /* #E0E7FF */
+    --platform-platinum-primary: 215 20% 50%; /* #64748B */
+    --platform-red-primary: 0 72% 51%;       /* #DC2626 */
+    --platform-emerald-primary: 160 84% 39%; /* #059669 */
   }
 
   /* Dark Mode Tokens */
@@ -745,6 +781,11 @@
 }
 
 @layer utilities {
+  /* Accessible gold text utility - maps to gold-700 (4.7:1 contrast) */
+  .text-gold {
+    color: hsl(var(--text-gold));
+  }
+
   /* Premium Shadows */
   .shadow-premium-sm {
     box-shadow: var(--shadow-sm);

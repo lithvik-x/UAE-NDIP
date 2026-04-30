@@ -1071,7 +1071,7 @@ export default function InternationalOrgsPage() {
                     <CardContent>
                       <div className="space-y-4">
                         <div className="text-center">
-                          <p className="text-4xl font-extrabold text-gold-600 dark:text-gold-400">
+                          <p className="text-4xl font-extrabold text-gold dark:text-gold-400">
                             {data.wto.tradeAchievement2025.value}
                           </p>
                           <p className="text-sm text-platinum-500 mt-1">{data.wto.tradeAchievement2025.metric}</p>
@@ -1193,7 +1193,7 @@ export default function InternationalOrgsPage() {
                           {data.ioc.historicalAchievement.athlete}
                         </p>
                         <p className="text-sm text-platinum-500">{data.ioc.historicalAchievement.event}</p>
-                        <p className="text-2xl font-extrabold text-gold-600 dark:text-gold-400 mt-2">
+                        <p className="text-2xl font-extrabold text-gold dark:text-gold-400 mt-2">
                           {data.ioc.historicalAchievement.medal}
                         </p>
                       </div>
@@ -1425,7 +1425,7 @@ export default function InternationalOrgsPage() {
                         }`}>
                           <div className={
                             finding.color === 'emerald' ? 'text-emerald-600 dark:text-emerald-400' :
-                            finding.color === 'gold' ? 'text-gold-600 dark:text-gold-400' :
+                            finding.color === 'gold' ? 'text-gold dark:text-gold-400' :
                             finding.color === 'denim' ? 'text-denim-600 dark:text-denim-400' :
                             finding.color === 'rose' ? 'text-rose-600 dark:text-rose-400' :
                             finding.color === 'cyan' ? 'text-cyan-600 dark:text-cyan-400' :
