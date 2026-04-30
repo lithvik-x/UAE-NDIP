@@ -18,19 +18,19 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'UAE NATIONAL DIGITAL INTELLIGENCE PLATFORM | DOSSIER',
-  description: 'Comprehensive intelligence platform for UAE national security, media monitoring, crisis management, and strategic analysis. Covers all 7 Emirates with 142 data categories.',
-  keywords: ['UAE', 'intelligence', 'national security', 'media monitoring', 'crisis management', 'Abu Dhabi', 'Dubai', 'Sharjah', 'AJMAN', 'FUJAIRAH', 'Umm Al Quwain', 'RAK', 'dashboard'],
-  authors: [{ name: 'DOSSIER' }],
+  title: 'UAE - National Digital Intelligence Platform | Clairvoyance-CX',
+  description: 'Comprehensive intelligence platform for UAE national security, media monitoring, crisis management, and strategic analysis. Covers all 7 Emirates with 142 data categories. A CryptoMize Product.',
+  keywords: ['UAE', 'intelligence', 'national security', 'media monitoring', 'crisis management', 'Abu Dhabi', 'Dubai', 'Sharjah', 'Ajman', 'Fujairah', 'Umm Al Quwain', 'Rak', 'dashboard', 'Clairvoyance', 'CryptoMize'],
+  authors: [{ name: 'CryptoMize' }],
   openGraph: {
-    title: 'UAE NATIONAL DIGITAL INTELLIGENCE PLATFORM | DOSSIER',
-    description: 'Comprehensive intelligence platform for UAE national security, media monitoring, crisis management, and strategic analysis.',
+    title: 'UAE - National Digital Intelligence Platform | Clairvoyance-CX',
+    description: 'Comprehensive intelligence platform for UAE national security, media monitoring, crisis management, and strategic analysis. A CryptoMize Product.',
     type: 'website',
     locale: 'en_AE',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'UAE NATIONAL DIGITAL INTELLIGENCE PLATFORM | DOSSIER',
+    title: 'UAE - National Digital Intelligence Platform | Clairvoyance-CX',
     description: 'Comprehensive intelligence platform for UAE national security, media monitoring, crisis management, and strategic analysis.',
   },
   manifest: '/manifest.json',

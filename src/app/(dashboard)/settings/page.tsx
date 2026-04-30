@@ -38,10 +38,10 @@ import {
 
 export default function SettingsPage() {
   const user = {
-    name: 'Dr. Sarah Al Mansoori',
-    email: 'sarah.almansoori@adphc.gov.ae',
-    role: 'Platform Administrator',
-    department: 'Digital Health',
+    name: 'Lithvik Mukesh Sharma',
+    email: 'lithvik@cryptomize.com',
+    role: 'Group CEO',
+    department: 'CryptoMize',
     avatar: ''
   }
 

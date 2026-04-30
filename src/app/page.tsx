@@ -7,110 +7,125 @@ import {
   BarChart3,
   BookOpen,
   Brain,
-  Flame,
   Globe,
   Radar,
-  Rocket,
   Shield,
   Sparkles,
   Target,
-  Zap,
-  Gem,
-  Crown,
   ChevronRight,
   ArrowUpRight,
+  Gem,
+  Crown,
+  Lock,
+  CheckCircle2,
+  Eye,
+  Users,
+  TrendingUp,
 } from 'lucide-react'
 
 const intelligenceSections = [
   {
     title: 'Entity Intelligence',
-    description: 'Advanced entity detection and tracking',
-    icon: Globe,
+    description: 'Federal officials, royal family, media, corporate entities, and international organizations — tracked with AI-powered resolution across 52,401+ active sources.',
+    icon: Shield,
     href: '/dashboard/entity/overview',
     gradient: 'from-blue-500 to-cyan-500',
-    bgClass: 'bg-blue-100',
-    textClass: 'text-blue-600',
+    badge: '12 Pages',
   },
   {
     title: 'Topics & Issues',
-    description: 'Real-time topic monitoring and analysis',
+    description: 'Politics, economy, security, culture, environment — real-time monitoring across 12 languages with sentiment analysis and trend prediction.',
     icon: BarChart3,
     href: '/dashboard/topics/politics',
     gradient: 'from-indigo-500 to-purple-500',
-    bgClass: 'bg-indigo-100',
-    textClass: 'text-indigo-600',
+    badge: '20 Pages',
   },
   {
     title: 'Crisis Management',
-    description: 'Early warning and rapid response system',
-    icon: Shield,
+    description: 'Early warning system with Phoenix Protocol — geopolitical, cybersecurity, climate, economic, and humanitarian crisis monitoring with automated alert tiers.',
+    icon: Target,
     href: '/dashboard/crisis/overview',
     gradient: 'from-red-500 to-orange-500',
-    bgClass: 'bg-red-100',
-    textClass: 'text-red-600',
+    badge: '14 Pages',
   },
   {
     title: 'Social Media',
-    description: 'Cross-platform social intelligence',
+    description: 'Cross-platform intelligence across TikTok, X, Instagram, LinkedIn, Facebook, YouTube, WhatsApp, Telegram, Snapchat, Reddit, and Threads.',
     icon: Activity,
     href: '/dashboard/social/overview',
     gradient: 'from-pink-500 to-rose-500',
-    bgClass: 'bg-pink-100',
-    textClass: 'text-pink-600',
+    badge: '18 Pages',
   },
   {
-    title: 'Languages',
-    description: 'Multi-language content processing',
+    title: 'Multi-Lingual',
+    description: 'Arabic (MSA, Emirati, Gulf, Levantine, Maghrebi), English, French, Hindi, Urdu, Tagalog, and major Asian languages — all processed natively.',
     icon: Globe,
     href: '/dashboard/languages/overview',
     gradient: 'from-emerald-500 to-teal-500',
-    bgClass: 'bg-emerald-100',
-    textClass: 'text-emerald-600',
+    badge: '12 Pages',
   },
   {
     title: 'Stakeholders',
-    description: 'Stakeholder mapping and engagement',
-    icon: Brain,
+    description: 'Government ministries, corporate sector, civil society, diaspora communities, NGOs, tribal networks, youth organizations, and women\'s groups.',
+    icon: Users,
     href: '/dashboard/stakeholders/overview',
     gradient: 'from-violet-500 to-purple-500',
-    bgClass: 'bg-violet-100',
-    textClass: 'text-violet-600',
+    badge: '14 Pages',
   },
   {
     title: 'Historical',
-    description: 'Historical data and trend analysis',
+    description: 'UAE founding, oil discovery, nation building, modernization, reform era — decades of contextual intelligence for pattern recognition.',
     icon: BookOpen,
     href: '/dashboard/historical/overview',
     gradient: 'from-amber-500 to-yellow-500',
-    bgClass: 'bg-amber-100',
-    textClass: 'text-amber-600',
+    badge: '12 Pages',
   },
   {
     title: 'Trends & Sentiment',
-    description: 'Sentiment analysis and trend prediction',
-    icon: Sparkles,
+    description: 'Cultural, economic, social, political, technological, environmental, and demographic trends with real-time sentiment analysis across all monitored platforms.',
+    icon: TrendingUp,
     href: '/dashboard/trends/overview',
     gradient: 'from-cyan-500 to-blue-500',
-    bgClass: 'bg-cyan-100',
-    textClass: 'text-cyan-600',
+    badge: '28 Pages',
   },
   {
     title: 'Monitoring',
-    description: 'Real-time monitoring and alerts',
-    icon: Radar,
+    description: 'Real-time media monitoring, social listening, dark web surveillance, and emerging threat detection with configurable alert thresholds.',
+    icon: Eye,
     href: '/dashboard/monitoring/overview',
     gradient: 'from-navy-500 to-blue-500',
-    bgClass: 'bg-navy-100',
-    textClass: 'text-navy-600',
+    badge: '10 Pages',
   },
   {
     title: 'Verification',
-    description: 'Source verification and fact-checking',
-    icon: Target,
+    description: 'Fact-checking, bot detection, echo chamber analysis, omission analysis, visual forensics, and source credibility scoring — against a 52,401+ source database.',
+    icon: Radar,
     href: '/dashboard/verification/overview',
     gradient: 'from-gold-500 to-amber-500',
-    bgClass: 'bg-gold-100',
-    textClass: 'text-gold-600',
+    badge: '11 Pages',
+  },
+]
+
+const platformPillars = [
+  {
+    label: 'Entity Resolution',
+    detail: 'AI-powered deduplication across 52K+ sources',
+    icon: Brain,
+  },
+  {
+    label: 'Crisis Early Warning',
+    detail: 'Phoenix Protocol with tiered alert system',
+    icon: Shield,
+  },
+  {
+    label: 'Multi-Lingual Processing',
+    detail: 'Native intelligence across 12 languages',
+    icon: Globe,
+  },
+  {
+    label: 'Real-Time Sentiment',
+    detail: 'Dynamic sentiment tracking with trend prediction',
+    icon: TrendingUp,
   },
 ]
 
@@ -118,40 +133,56 @@ export default function HomePage() {
   return (
     <main className="flex-1 bg-gradient-to-b from-bg-primary via-bg-secondary to-bg-primary">
       {/* Hero Section */}
-      <section className="relative px-6 py-24 lg:py-32 overflow-hidden">
-        {/* Animated background orbs */}
+      <section className="relative px-6 py-28 lg:py-36 overflow-hidden">
+        {/* Stable background orbs — slow pulse only */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-gold opacity-10 rounded-full blur-3xl animate-pulse-slow" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-navy opacity-10 rounded-full blur-3xl animate-pulse-slow delay-1000" />
+          <div className="absolute top-0 left-1/4 w-[480px] h-[480px] bg-gradient-gold opacity-[0.08] rounded-full blur-3xl animate-pulse-slow will-change-transform" />
+          <div className="absolute bottom-0 right-1/4 w-[480px] h-[480px] bg-gradient-navy opacity-[0.08] rounded-full blur-3xl animate-pulse-slow delay-[4000ms] will-change-transform" />
         </div>
 
         <div className="mx-auto max-w-7xl relative">
           <div className="text-center">
-            {/* Premium Badge */}
+            {/* Classification Badge */}
             <div className="mb-8 inline-flex">
               <Badge
                 variant="premium"
-                className="px-6 py-2 text-sm font-semibold tracking-wide shadow-premium-md animate-float"
+                className="px-5 py-2 text-xs font-bold tracking-[0.2em] uppercase shadow-premium-md animate-float border border-gold-400/30"
               >
-                <Crown className="mr-2 h-4 w-4" />
-                UAE National Digital Intelligence Platform v1.0
-                <Sparkles className="ml-2 h-4 w-4" />
+                <Lock className="mr-2 h-3 w-3" />
+                UAE Federal // Clairvoyance-CX // Restricted
               </Badge>
             </div>
 
             {/* Main Title */}
-            <h1 className="mx-auto max-w-4xl font-rajdhani text-balance text-6xl font-bold tracking-tight sm:text-8xl lg:text-9xl gradient-text-premium animate-fade-in">
-              DOSSIER
+            <h1 className="mx-auto max-w-4xl font-rajdhani text-balance text-6xl font-bold tracking-tight sm:text-8xl lg:text-9xl gradient-text-premium">
+              Clairvoyance-CX
             </h1>
 
-            {/* Subtitle */}
-            <p className="mt-8 mx-auto max-w-3xl text-balance text-lg font-medium text-platinum-600 sm:text-xl leading-relaxed">
-              The UAE&apos;s premier digital intelligence platform delivering comprehensive insights for
-              <span className="text-gold-600 font-semibold"> national decision-makers</span>.
-              Powered by ten integrated intelligence sections delivering unprecedented situational awareness.
+            {/* Mission-Critical Subheading */}
+            <p className="mt-8 mx-auto max-w-3xl text-balance text-base sm:text-lg font-medium text-platinum-500 leading-relaxed">
+              AI-powered digital intelligence platform delivering real-time situational awareness
+              for UAE Federal decision-makers. Ten integrated sections — Entity Intelligence,
+              Topics & Issues, Crisis Management, Social Media, Multi-Lingual, Stakeholders,
+              Historical, Trends & Sentiment, Monitoring, and Verification.
             </p>
 
-            {/* Premium CTA Buttons */}
+            {/* Platform Pillars — subtle credibility strip */}
+            <div className="mt-10 mx-auto max-w-3xl grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {platformPillars.map((pillar) => {
+                const Icon = pillar.icon
+                return (
+                  <div key={pillar.label} className="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-white/40 border border-white/60 backdrop-blur-sm">
+                    <Icon className="h-4 w-4 text-gold-600 shrink-0" />
+                    <div className="text-left">
+                      <div className="text-xs font-semibold text-platinum-800 leading-tight">{pillar.label}</div>
+                      <div className="text-[10px] text-platinum-500 leading-tight">{pillar.detail}</div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+
+            {/* CTA Buttons */}
             <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
               <Button
                 asChild
@@ -162,7 +193,7 @@ export default function HomePage() {
                 <Link href="/dashboard">
                   <Activity className="mr-2 h-5 w-5" />
                   Launch Dashboard
-                  <ArrowUpRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:translate-y-1" />
+                  <ArrowUpRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </Button>
               <Button
@@ -171,27 +202,27 @@ export default function HomePage() {
                 variant="outline"
                 className="px-10 py-6 text-lg font-semibold border-2 border-gold-300/50 hover:bg-gold-50/50 hover:border-gold-400 text-platinum-700"
               >
-                <Link href="https://github.com/uae-dossier/docs" target="_blank" rel="noopener noreferrer">
+                <Link href="/docs">
                   <BookOpen className="mr-2 h-5 w-5" />
-                  Documentation
+                  Platform Documentation
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="mt-16 flex flex-wrap items-center justify-center gap-8 text-sm text-platinum-500">
-              <div className="flex items-center gap-2">
-                <Shield className="h-5 w-5 text-emerald-500" />
-                <span>UAE Data Protection Compliant</span>
+            {/* Compliance Strip */}
+            <div className="mt-16 flex flex-wrap items-center justify-center gap-6 text-xs text-platinum-400">
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
+                <span>UAE Federal Decree-Law No. 45 of 2021</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Globe className="h-5 w-5 text-navy-500" />
-                <span>Data Residency: UAE</span>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
+                <span>Data Residency: Abu Dhabi (UAE North)</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Gem className="h-5 w-5 text-gold-500" />
-                <span>Federal Government Infrastructure</span>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
+                <span>Federal Intelligence Infrastructure</span>
               </div>
             </div>
           </div>
@@ -207,41 +238,49 @@ export default function HomePage() {
               Platform Ecosystem
             </Badge>
             <h2 className="font-rajdhani text-4xl font-bold tracking-tight sm:text-5xl gradient-text-premium">
-              Intelligence Sections
+              Ten Intelligence Sections
             </h2>
-            <p className="mt-4 text-lg text-platinum-600 max-w-2xl mx-auto">
-              Ten integrated intelligence modules working in concert to deliver comprehensive digital situational awareness
+            <p className="mt-4 text-base text-platinum-600 max-w-2xl mx-auto">
+              Integrated intelligence modules operating across federal ministries, media networks,
+              social platforms, and geopolitical domains — delivering comprehensive situational awareness.
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {intelligenceSections.map((section) => {
+            {intelligenceSections.map((section, index) => {
               const IconComponent = section.icon
               return (
                 <Card
                   key={section.title}
-                  className="group relative overflow-hidden card-metallic-platinum border-2 transition-all duration-500 hover:shadow-premium-2xl hover:-translate-y-2 hover:scale-[1.02]"
+                  className="group relative overflow-hidden card-metallic-platinum border-2 transition-all duration-700 hover:shadow-premium-2xl hover:-translate-y-1.5 hover:scale-[1.01]"
+                  style={{ animationDelay: `${index * 80}ms` }}
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${section.gradient} opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500`} />
-                  <CardHeader className="relative">
-                    <div
-                      className={`mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${section.gradient} text-white shadow-premium-lg group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <IconComponent className="h-7 w-7" />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${section.gradient} opacity-[0.025] group-hover:opacity-[0.06] transition-opacity duration-700`} />
+                  <CardHeader className="relative pb-2">
+                    <div className="flex items-start justify-between mb-3">
+                      <div
+                        className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${section.gradient} text-white shadow-premium-md group-hover:scale-105 transition-transform duration-500`}
+                      >
+                        <IconComponent className="h-6 w-6" />
+                      </div>
+                      <Badge variant="outline" className="text-[10px] tracking-wide shrink-0 mt-0.5">
+                        {section.badge}
+                      </Badge>
                     </div>
-                    <CardTitle className="font-rajdhani text-xl">{section.title}</CardTitle>
-                    <CardDescription className="text-sm font-medium text-platinum-600">
+                    <CardTitle className="font-rajdhani text-lg leading-tight">{section.title}</CardTitle>
+                    <CardDescription className="text-xs font-medium text-platinum-600 leading-relaxed mt-1.5">
                       {section.description}
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="relative">
+                  <CardContent className="relative pt-0">
                     <Button
                       asChild
-                      className={`w-full bg-gradient-to-r ${section.gradient} hover:opacity-90 text-white shadow-premium-md group-hover:shadow-premium-lg transition-all`}
+                      size="sm"
+                      className={`w-full bg-gradient-to-r ${section.gradient} hover:opacity-90 text-white shadow-premium-sm text-xs group-hover:shadow-premium-md transition-all`}
                     >
                       <Link href={section.href}>
-                        Explore Section
-                        <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        Open Section
+                        <ChevronRight className="ml-1.5 h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                       </Link>
                     </Button>
                   </CardContent>
@@ -252,58 +291,67 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Key Metrics - Premium Glass Cards */}
+      {/* Platform Capabilities — replaces fake metrics */}
       <section className="px-6 py-20 bg-gradient-to-b from-transparent via-bg-secondary/50 to-transparent">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4 border-navy-300/50 text-navy-700">
               <BarChart3 className="mr-1 h-3 w-3" />
-              Platform Metrics
+              Platform Capabilities
             </Badge>
             <h2 className="font-rajdhani text-4xl font-bold tracking-tight sm:text-5xl gradient-text-premium">
-              Unprecedented Scale
+              Built for Federal Intelligence
             </h2>
-            <p className="mt-4 text-lg text-platinum-600">
-              Enterprise-grade capabilities delivering measurable results
+            <p className="mt-4 text-base text-platinum-600">
+              Enterprise-grade infrastructure aligned with UAE Federal standards
             </p>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {/* Metric 1 */}
-            <div className="glass-premium-premium rounded-2xl p-8 border border-white/20 text-center transition-all duration-300 hover:shadow-premium-2xl hover:-translate-y-1">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-500 text-white shadow-premium-md mx-auto">
-                <BarChart3 className="h-7 w-7" />
+            {[
+              {
+                value: '52,401+',
+                label: 'Active Intelligence Sources',
+                sub: 'Government feeds, media, social platforms, and dark web surveillance',
+                gradient: 'from-blue-500 to-cyan-500',
+                icon: Globe,
+              },
+              {
+                value: '12',
+                label: 'Languages Natively Processed',
+                sub: 'Arabic (5 dialects), English, French, Hindi, Urdu, Tagalog, Asian languages',
+                gradient: 'from-indigo-500 to-purple-500',
+                icon: Activity,
+              },
+              {
+                value: '10',
+                label: 'Integrated Intelligence Sections',
+                sub: 'Entity, Topics, Crisis, Social, Languages, Stakeholders, Historical, Trends, Monitoring, Verification',
+                gradient: 'from-emerald-500 to-teal-500',
+                icon: Brain,
+              },
+              {
+                value: '198',
+                label: 'Dashboard Pages',
+                sub: 'Deep-dive analytics, entity profiles, crisis dashboards, trend charts, and source verification',
+                gradient: 'from-gold-500 to-amber-500',
+                icon: Sparkles,
+              },
+            ].map(({ value, label, sub, gradient, icon: Icon }) => (
+              <div
+                key={label}
+                className="glass-premium rounded-2xl p-6 border border-white/20 text-center transition-all duration-500 hover:shadow-premium-xl hover:-translate-y-1 group"
+              >
+                <div
+                  className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} text-white shadow-premium-md mx-auto group-hover:scale-110 transition-transform duration-500`}
+                >
+                  <Icon className="h-6 w-6" />
+                </div>
+                <div className="font-rajdhani text-4xl font-bold gradient-text-premium mb-1">{value}</div>
+                <div className="text-sm font-semibold text-platinum-800 mb-2 leading-tight">{label}</div>
+                <div className="text-xs text-platinum-500 leading-relaxed">{sub}</div>
               </div>
-              <div className="font-rajdhani text-5xl font-bold gradient-text-indigo">300K+</div>
-              <div className="mt-2 text-sm font-medium text-platinum-600">Tokens of Data</div>
-            </div>
-
-            {/* Metric 2 */}
-            <div className="glass-premium-premium rounded-2xl p-8 border border-white/20 text-center transition-all duration-300 hover:shadow-premium-2xl hover:-translate-y-1">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-red-500 to-orange-500 text-white shadow-premium-md mx-auto">
-                <Globe className="h-7 w-7" />
-              </div>
-              <div className="font-rajdhani text-5xl font-bold gradient-text-rose">52,401+</div>
-              <div className="mt-2 text-sm font-medium text-platinum-600">Active Sources</div>
-            </div>
-
-            {/* Metric 3 */}
-            <div className="glass-premium-premium rounded-2xl p-8 border border-white/20 text-center transition-all duration-300 hover:shadow-premium-2xl hover:-translate-y-1">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 text-white shadow-premium-md mx-auto">
-                <Activity className="h-7 w-7" />
-              </div>
-              <div className="font-rajdhani text-5xl font-bold gradient-text-emerald">18</div>
-              <div className="mt-2 text-sm font-medium text-platinum-600">Platforms</div>
-            </div>
-
-            {/* Metric 4 */}
-            <div className="glass-premium-premium rounded-2xl p-8 border border-white/20 text-center transition-all duration-300 hover:shadow-premium-2xl hover:-translate-y-1">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-500 text-white shadow-premium-md mx-auto">
-                <Sparkles className="h-7 w-7" />
-              </div>
-              <div className="font-rajdhani text-5xl font-bold gradient-text-cyan">120+</div>
-              <div className="mt-2 text-sm font-medium text-platinum-600">Dashboard Pages</div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -314,43 +362,45 @@ export default function HomePage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
             {/* Intelligence Sections */}
             <div>
-              <h3 className="font-rajdhani text-lg font-bold text-platinum-900 mb-4">Intelligence Sections</h3>
+              <h3 className="font-rajdhani text-base font-bold text-platinum-900 mb-4">Intelligence Sections</h3>
               <ul className="space-y-2 text-sm text-platinum-600">
-                <li><Link href="/dashboard/entity/overview" className="hover:text-navy-600 transition-colors">Entity Intelligence</Link></li>
-                <li><Link href="/dashboard/topics/politics" className="hover:text-navy-600 transition-colors">Topics & Issues</Link></li>
-                <li><Link href="/dashboard/crisis/overview" className="hover:text-navy-600 transition-colors">Crisis Management</Link></li>
-                <li><Link href="/dashboard/social/overview" className="hover:text-navy-600 transition-colors">Social Media</Link></li>
+                <li><Link href="/dashboard/entity/overview" className="hover:text-gold-600 transition-colors">Entity Intelligence</Link></li>
+                <li><Link href="/dashboard/topics/politics" className="hover:text-gold-600 transition-colors">Topics & Issues</Link></li>
+                <li><Link href="/dashboard/crisis/overview" className="hover:text-gold-600 transition-colors">Crisis Management</Link></li>
+                <li><Link href="/dashboard/social/overview" className="hover:text-gold-600 transition-colors">Social Media</Link></li>
               </ul>
             </div>
 
             {/* More Sections */}
             <div>
-              <h3 className="font-rajdhani text-lg font-bold text-platinum-900 mb-4">More Sections</h3>
+              <h3 className="font-rajdhani text-base font-bold text-platinum-900 mb-4">More Sections</h3>
               <ul className="space-y-2 text-sm text-platinum-600">
-                <li><Link href="/dashboard/languages/overview" className="hover:text-navy-600 transition-colors">Languages</Link></li>
-                <li><Link href="/dashboard/stakeholders/overview" className="hover:text-navy-600 transition-colors">Stakeholders</Link></li>
-                <li><Link href="/dashboard/historical/overview" className="hover:text-navy-600 transition-colors">Historical</Link></li>
-                <li><Link href="/dashboard/trends/overview" className="hover:text-navy-600 transition-colors">Trends & Sentiment</Link></li>
+                <li><Link href="/dashboard/languages/overview" className="hover:text-gold-600 transition-colors">Multi-Lingual</Link></li>
+                <li><Link href="/dashboard/stakeholders/overview" className="hover:text-gold-600 transition-colors">Stakeholders</Link></li>
+                <li><Link href="/dashboard/historical/overview" className="hover:text-gold-600 transition-colors">Historical</Link></li>
+                <li><Link href="/dashboard/trends/overview" className="hover:text-gold-600 transition-colors">Trends & Sentiment</Link></li>
               </ul>
             </div>
 
             {/* Resources */}
             <div>
-              <h3 className="font-rajdhani text-lg font-bold text-platinum-900 mb-4">Resources</h3>
+              <h3 className="font-rajdhani text-base font-bold text-platinum-900 mb-4">Resources</h3>
               <ul className="space-y-2 text-sm text-platinum-600">
-                <li><Link href="https://github.com/uae-dossier/docs" target="_blank" rel="noopener noreferrer" className="hover:text-navy-600 transition-colors">Documentation</Link></li>
-                <li><Link href="/dashboard" className="hover:text-navy-600 transition-colors">Dashboard Hub</Link></li>
-                <li><Link href="/settings" className="hover:text-navy-600 transition-colors">Settings</Link></li>
+                <li><Link href="/docs" className="hover:text-gold-600 transition-colors">Documentation</Link></li>
+                <li><Link href="/dashboard" className="hover:text-gold-600 transition-colors">Dashboard Hub</Link></li>
+                <li><Link href="/support" className="hover:text-gold-600 transition-colors">Support Center</Link></li>
+                <li><Link href="/privacy" className="hover:text-gold-600 transition-colors">Privacy Policy</Link></li>
               </ul>
             </div>
 
-            {/* Data Sovereignty */}
+            {/* Company */}
             <div>
-              <h3 className="font-rajdhani text-lg font-bold text-platinum-900 mb-4">Data Sovereignty</h3>
+              <h3 className="font-rajdhani text-base font-bold text-platinum-900 mb-4">Connect</h3>
               <ul className="space-y-2 text-sm text-platinum-600">
-                <li>Primary: UAE Federal Cloud</li>
-                <li>Complete data residency enforced</li>
-                <li>Federal Decree-Law No. 45 of 2021</li>
+                <li><a href="https://www.linkedin.com/in/CryptoMize" target="_blank" rel="noopener noreferrer" className="hover:text-gold-600 transition-colors">LinkedIn</a></li>
+                <li><a href="https://twitter.com/CryptoMize" target="_blank" rel="noopener noreferrer" className="hover:text-gold-600 transition-colors">Twitter / X</a></li>
+                <li><a href="https://cryptomize.com" target="_blank" rel="noopener noreferrer" className="hover:text-gold-600 transition-colors">CryptoMize.com</a></li>
+                <li><a href="mailto:info@cryptomize.com" className="hover:text-gold-600 transition-colors">Contact</a></li>
               </ul>
             </div>
           </div>
@@ -358,14 +408,17 @@ export default function HomePage() {
           <div className="border-t border-platinum-200/50 pt-8 text-center">
             <div className="flex items-center justify-center gap-2 text-sm text-platinum-500 mb-2">
               <Crown className="h-4 w-4 text-gold-500" />
-              <span className="font-semibold">UAE National Digital Intelligence Platform</span>
+              <span className="font-bold">
+                <span className="gradient-text-premium font-rajdhani">Clairvoyance-CX</span>
+                <span className="text-platinum-400 font-normal ml-2">| ndip.dossier.li</span>
+              </span>
               <Gem className="h-4 w-4 text-gold-500" />
             </div>
             <p className="text-sm text-platinum-500">
-              © 2026 UAE National Digital Intelligence Platform
+              A <span className="font-semibold text-platinum-700">CryptoMize</span> Product
             </p>
-            <p className="text-xs text-platinum-400 mt-2">
-              DOSSIER — Empowering national decision-making through digital intelligence
+            <p className="text-xs text-platinum-400 mt-1.5">
+              © 2026 CryptoMize. All rights reserved. | Group CEO: Lithvik Mukesh Sharma
             </p>
           </div>
         </div>

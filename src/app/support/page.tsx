@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Support Center | UAE National Digital Intelligence Platform',
-  description: 'Get help and support for the UAE National Digital Intelligence Platform (DOSSIER).',
+  title: 'Support | UAE NDIP - Clairvoyance-CX by CryptoMize',
+  description: 'Get help and support for the UAE National Digital Intelligence Platform (Clairvoyance-CX). A CryptoMize Product. ndip.dossier.li',
 }
 
 const supportCategories = [
@@ -54,7 +54,7 @@ const supportCategories = [
 const faqs = [
   {
     q: 'What is the UAE National Digital Intelligence Platform?',
-    a: 'DOSSIER is the UAE\'s premier digital intelligence platform delivering comprehensive insights across ten integrated sections — Entity Intelligence, Topics & Issues, Crisis Management, Social Media, Multi-Lingual, Stakeholders, Historical, Trends & Sentiment, Monitoring, and Verification — for national decision-makers.',
+    a: 'Clairvoyance-CX is the UAE\'s premier digital intelligence platform — a CryptoMize product — delivering comprehensive insights across ten integrated sections — Entity Intelligence, Topics & Issues, Crisis Management, Social Media, Multi-Lingual, Stakeholders, Historical, Trends & Sentiment, Monitoring, and Verification — for national decision-makers.',
   },
   {
     q: 'How do I access the different sections?',
@@ -113,7 +113,7 @@ export default function SupportPage() {
                 </div>
               </Button>
             </Link>
-            <a href="mailto:support@uae-dossier.gov.ae">
+            <a href="mailto:support@ndip.dossier.li">
               <Button
                 variant="outline"
                 className="h-auto flex-col gap-3 p-6 w-full"
@@ -175,15 +175,15 @@ export default function SupportPage() {
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-white p-4 rounded-lg">
               <div className="text-sm text-platinum-500 mb-1">Email</div>
-              <div className="font-semibold text-navy-900">support@uae-dossier.gov.ae</div>
+              <div className="font-semibold text-navy-900">support@ndip.dossier.li</div>
             </div>
             <div className="bg-white p-4 rounded-lg">
               <div className="text-sm text-platinum-500 mb-1">Phone</div>
-              <div className="font-semibold text-navy-900">+971 2 XXX XXXX</div>
+              <div className="font-semibold text-navy-900">(+91) 9999 455 667</div>
             </div>
             <div className="bg-white p-4 rounded-lg">
               <div className="text-sm text-platinum-500 mb-1">Location</div>
-              <div className="font-semibold text-navy-900">Abu Dhabi, UAE</div>
+              <div className="font-semibold text-navy-900">New Delhi, India</div>
             </div>
           </div>
         </GlassPanel>

@@ -191,7 +191,7 @@ export default function DashboardHomePage() {
             INTELLIGENCE PLATFORM
           </h2>
           <p className="mt-3 text-platinum-500">
-            DOSSIER | Comprehensive Intelligence for the United Arab Emirates
+            Clairvoyance-CX | A CryptoMize Product
           </p>
         </div>
         <div className="hidden items-center gap-3 lg:flex">

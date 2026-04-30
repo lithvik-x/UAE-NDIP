@@ -7,7 +7,7 @@ import { Shield, Globe, Target, Radar, Users, Clock, TrendingUp, Eye, BookOpen, 
 
 export const metadata: Metadata = {
   title: 'Documentation | UAE National Digital Intelligence Platform',
-  description: 'Complete documentation for the UAE National Digital Intelligence Platform (DOSSIER).',
+  description: 'Complete documentation for the UAE National Digital Intelligence Platform (Clairvoyance-CX). A CryptoMize Product.',
 }
 
 const sections = [
@@ -93,7 +93,7 @@ export default function DocsPage() {
         </Badge>
         <h1 className="text-5xl font-rajdhani font-bold text-platinum-900 mb-4">UAE National Digital Intelligence Platform</h1>
         <p className="text-xl text-platinum-600 max-w-2xl mx-auto">
-          DOSSIER — Comprehensive intelligence for the United Arab Emirates. Ten integrated sections delivering situational awareness across all domains.
+          Clairvoyance-CX — A CryptoMize Product. Comprehensive intelligence for the United Arab Emirates. Ten integrated sections delivering situational awareness across all domains.
         </p>
       </div>
 

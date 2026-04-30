@@ -3,7 +3,7 @@ import { GlassPanel } from '@/components/ui/glass-panel'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | UAE National Digital Intelligence Platform',
-  description: 'Privacy policy for the UAE National Digital Intelligence Platform (DOSSIER).',
+  description: 'Privacy policy for the UAE National Digital Intelligence Platform (Clairvoyance-CX). A CryptoMize Product.',
 }
 
 export default function PrivacyPage() {
@@ -85,8 +85,9 @@ export default function PrivacyPage() {
             For any privacy-related questions or concerns, please contact us at:
           </p>
           <div className="bg-platinum-50 p-4 rounded-lg">
-            <p className="text-platinum-900 font-medium">Email: privacy@uae-dossier.gov.ae</p>
-            <p className="text-platinum-900 font-medium">Location: Abu Dhabi, UAE</p>
+            <p className="text-platinum-900 font-medium">Email: privacy@ndip.dossier.li</p>
+            <p className="text-platinum-900 font-medium">Company: CryptoMize | cryptomize.com</p>
+            <p className="text-platinum-900 font-medium">HQ: New Delhi, India</p>
           </div>
         </GlassPanel>
       </div>
