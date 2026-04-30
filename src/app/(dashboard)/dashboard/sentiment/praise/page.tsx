@@ -141,7 +141,7 @@ export default function PraiseEndorsementPage() {
           <Badge variant="emerald" className="mb-2 bg-emerald-500/20 text-emerald-400 border-emerald-500/50">
             PRAISE & ENDORSEMENT
           </Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-emerald">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">
             Praise & Endorsement Sentiment
           </h1>
           <p className="mt-2 text-slate-400">

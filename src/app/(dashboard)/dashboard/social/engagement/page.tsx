@@ -102,7 +102,7 @@ export default function EngagementAnalyticsPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="default" className="mb-2">S-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-platinum">Engagement Analytics</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">Engagement Analytics</h1>
           <p className="mt-2 text-slate-400">
             Audience interaction metrics and content performance analytics
           </p>

@@ -367,7 +367,7 @@ export default function HomePage() {
                 </div>
                 <div className="font-rajdhani text-4xl font-bold gradient-text-premium mb-1">{value}</div>
                 <div className="text-sm font-semibold text-platinum-800 mb-2 leading-tight">{label}</div>
-                <div className="text-xs text-platinum-500 leading-relaxed">{sub}</div>
+                <div className="text-xs text-platinum-600 leading-relaxed">{sub}</div>
               </div>
             ))}
           </div>

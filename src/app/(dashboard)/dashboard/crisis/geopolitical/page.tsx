@@ -176,7 +176,7 @@ export default function GeopoliticalCrisisPage() {
       >
         <div>
           <Badge variant="denim" className="mb-2">CRISIS TYPE</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-navy">Geopolitical Crises</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Geopolitical Crises</h1>
           <p className="mt-2 text-slate-400">
             Iran-UAE tensions, Yemen conflict, Gulf security, regional alignment
           </p>

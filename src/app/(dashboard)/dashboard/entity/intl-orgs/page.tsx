@@ -286,7 +286,7 @@ export default function InternationalOrgsPage() {
             <Badge variant="denim" className="mb-2 text-xs font-bold tracking-wider">
               DIPLOMATIC INTELLIGENCE
             </Badge>
-            <h1 className="text-3xl font-extrabold gradient-text-navy">
+            <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">
               International Organizations & Diplomatic Corps
             </h1>
             <p className="mt-2 text-platinum-600 dark:text-platinum-400 font-rajdhani font-medium">

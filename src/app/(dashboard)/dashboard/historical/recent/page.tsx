@@ -104,7 +104,7 @@ export default function RecentHistoryPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">H-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Recent History (2010-2026)</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Recent History (2010-2026)</h1>
           <p className="mt-2 text-slate-400">
             {data.description || 'The modern era of transformation, achievement, and global leadership'}
           </p>

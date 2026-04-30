@@ -113,7 +113,7 @@ export default function StrategyTargetingPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="indigo" className="mb-2">PERCEPTION-X2</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-indigo">Strategy & Targeting</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-indigo">Strategy & Targeting</h1>
           <p className="mt-2 text-slate-600">
             Persona lab, pain point matrix, and void scanner for precision targeting
           </p>

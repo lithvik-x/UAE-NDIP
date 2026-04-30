@@ -163,7 +163,7 @@ export default function SportsIntelligencePage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="default" className="mb-2">S-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-platinum">Sports Intelligence</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">Sports Intelligence</h1>
           <p className="mt-2 text-slate-400">
             Sportswashing analysis, F1 monitoring, and sports diplomacy tracking
           </p>

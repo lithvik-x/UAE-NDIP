@@ -150,7 +150,7 @@ export default function CrisisResponsePage() {
       <motion.div variants={item} className="flex items-start justify-between">
         <div>
           <Badge variant="denim" className="mb-2">DEEP RESEARCH</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-navy">Crisis Response Intelligence</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Crisis Response Intelligence</h1>
           <p className="mt-2 text-slate-400">
             UAE National Digital Intelligence Platform — Comprehensive crisis response framework
           </p>

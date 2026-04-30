@@ -432,7 +432,7 @@ export default function RedditPage() {
           <Badge variant="default" className="mb-2 bg-gradient-to-r from-rose-500/20 to-purple-500/20 text-rose-400 border-rose-500/30">
             SOCIAL MEDIA INTELLIGENCE
           </Badge>
-          <h1 className="text-4xl font-extrabold gradient-text-platinum tracking-tight">
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-platinum tracking-tight">
             Reddit & Community Platforms
           </h1>
           <p className="mt-2 text-slate-400 text-lg">

@@ -204,7 +204,7 @@ export default function EmiratiArabicPage() {
   }
 
   return (
-    <div className="space-y-8 p-8 min-h-screen" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+    <div className="space-y-8 p-8 min-h-screen font-rajdhani">
       {/* ENHANCEMENT A: Header with glassmorphism and motion */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}

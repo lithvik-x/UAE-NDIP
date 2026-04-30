@@ -99,7 +99,7 @@ export default function LaborUnionsPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">CIVIL SOCIETY</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Labor Unions & Worker Groups</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Labor Unions & Worker Groups</h1>
           <p className="mt-2 text-slate-400">
             {entity.mandate}
           </p>

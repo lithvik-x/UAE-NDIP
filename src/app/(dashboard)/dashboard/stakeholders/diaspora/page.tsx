@@ -99,7 +99,7 @@ export default function DiasporaPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="denim" className="mb-2">INTERNATIONAL</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-navy">Emirati Diaspora</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Emirati Diaspora</h1>
           <p className="mt-2 text-slate-400">
             {entity.mandate}
           </p>

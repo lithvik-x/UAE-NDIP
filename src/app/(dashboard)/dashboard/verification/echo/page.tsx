@@ -88,7 +88,7 @@ export default function EchoChamberDashboardPage() {
           <Badge variant="emerald" className="mb-2 bg-emerald-500/20 text-emerald-400 border-emerald-500/50">
             V-SECTOR
           </Badge>
-          <h1 className="text-3xl font-extrabold text-slate-900 dark:text-slate-100" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+          <h1 className="text-3xl font-extrabold text-slate-900 dark:text-slate-100 font-rajdhani">
             Echo Chamber & Filter Bubble Analysis
           </h1>
           <p className="mt-2 text-slate-500 dark:text-slate-400">

@@ -159,7 +159,7 @@ export default function MediaVerificationPage() {
       >
         <div>
           <Badge variant="emerald" className="mb-2">V-SECTOR 11-1</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-emerald">Media About Media</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Media About Media</h1>
           <p className="mt-2 text-slate-400">
             UAE press freedom, censorship, and media control intelligence
           </p>

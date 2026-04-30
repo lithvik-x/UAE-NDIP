@@ -120,7 +120,7 @@ export function CategoryDetailSection({ className }: CategoryDetailSectionProps)
                     <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${colorClass}`}>
                       <Icon className="h-5 w-5" />
                     </div>
-                    <h4 className="font-semibold text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <h4 className="font-semibold text-slate-200 font-rajdhani">
                       {category.name}
                     </h4>
                   </div>
@@ -318,7 +318,7 @@ export function CategoryDetailSection({ className }: CategoryDetailSectionProps)
               transition={{ delay: idx * 0.05 }}
               className="glass-card border border-slate-500/30 p-4"
             >
-              <h4 className="font-semibold text-slate-200 mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+              <h4 className="font-semibold text-slate-200 mb-2 font-rajdhani">
                 {item.queryTheme}
               </h4>
               <Badge

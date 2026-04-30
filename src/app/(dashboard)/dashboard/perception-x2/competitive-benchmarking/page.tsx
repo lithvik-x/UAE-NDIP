@@ -278,7 +278,7 @@ export default function CompetitiveBenchmarkingPage() {
       >
         <div>
           <Badge variant="indigo" className="mb-2">PERCEPTION-X2</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-indigo">Competitive Benchmarking</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-indigo">Competitive Benchmarking</h1>
           <p className="mt-2 text-slate-600">
             UAE competitive positioning vs. regional and global peers across economic, military, and social dimensions
           </p>

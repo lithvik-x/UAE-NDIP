@@ -115,7 +115,7 @@ export default function ReligionInterfaithPage() {
       <div className="flex items-start justify-between">
         <div>
           {getSectorBadge()}
-          <h1 className="text-3xl font-extrabold gradient-text-platinum">Religion & Interfaith Affairs</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">Religion & Interfaith Affairs</h1>
           <p className="mt-2 text-slate-400">
             Comprehensive data on religious demographics, tolerance initiatives, interfaith infrastructure, and restrictions
           </p>

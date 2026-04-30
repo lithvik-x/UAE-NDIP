@@ -154,8 +154,7 @@ export default function NegativeSentimentPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-3xl font-extrabold gradient-text-rose"
-            style={{ fontFamily: 'Rajdhani, sans-serif' }}
+            className="text-3xl font-extrabold gradient-text-rose font-rajdhani"
           >
             Negative Sentiment Analysis
           </motion.h1>
@@ -255,7 +254,7 @@ export default function NegativeSentimentPage() {
                   className="glass-card border-rose-500/30"
                 >
                   <CardHeader>
-                    <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <CardTitle className="text-lg font-rajdhani">
                       <Scale className="w-4 h-4 inline mr-2" />
                       Severity Distribution
                     </CardTitle>
@@ -278,7 +277,7 @@ export default function NegativeSentimentPage() {
                   className="glass-card border-amber-500/30"
                 >
                   <CardHeader>
-                    <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <CardTitle className="text-lg font-rajdhani">
                       <Activity className="w-4 h-4 inline mr-2" />
                       Sentiment Trend
                     </CardTitle>
@@ -307,7 +306,7 @@ export default function NegativeSentimentPage() {
                 className="glass-card border-slate-500/30"
               >
                 <CardHeader>
-                  <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <CardTitle className="text-lg font-rajdhani">
                     <TrendingUp className="w-4 h-4 inline mr-2" />
                     Category Severity Scores
                   </CardTitle>
@@ -352,7 +351,7 @@ export default function NegativeSentimentPage() {
                         </Badge>
                         <span className="text-xs text-slate-500">#{category.id}</span>
                       </div>
-                      <h4 className="font-semibold text-slate-200 mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                      <h4 className="font-semibold text-slate-200 mb-2 font-rajdhani">
                         {category.name}
                       </h4>
                       <div className="flex items-center gap-2 text-xs text-slate-400 mb-3">
@@ -423,7 +422,7 @@ export default function NegativeSentimentPage() {
                       <ThumbsDown className="h-6 w-6" />
                     </motion.div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-lg text-slate-200 mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                      <h4 className="font-bold text-lg text-slate-200 mb-2 font-rajdhani">
                         {theme.name}
                       </h4>
                       <div className="flex flex-wrap gap-2 mb-3">
@@ -570,7 +569,7 @@ export default function NegativeSentimentPage() {
                   className="glass-card border-amber-500/30 p-4 text-center"
                 >
                   <Globe className="h-8 w-8 mx-auto mb-2 text-amber-400" />
-                  <h4 className="font-bold text-slate-200 mb-1" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <h4 className="font-bold text-slate-200 mb-1 font-rajdhani">
                     {intervention.operation}
                   </h4>
                   <p className="text-sm text-slate-400 mb-2">{intervention.location}</p>
@@ -678,7 +677,7 @@ export default function NegativeSentimentPage() {
                 >
                   <UsersRound className="h-6 w-6 mx-auto mb-2 text-slate-400" />
                   <p className="text-sm text-slate-400 mb-1">{key}</p>
-                  <p className="text-lg font-bold text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <p className="text-lg font-bold text-slate-200 font-rajdhani">
                     {value}
                   </p>
                 </motion.div>
@@ -765,7 +764,7 @@ export default function NegativeSentimentPage() {
                   className="glass-card border-red-500/30"
                 >
                   <CardHeader>
-                    <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <CardTitle className="text-lg font-rajdhani">
                       <TrendingUp className="w-4 h-4 inline mr-2" />
                       Fear by Category
                     </CardTitle>
@@ -792,7 +791,7 @@ export default function NegativeSentimentPage() {
                   className="glass-card border-amber-500/30"
                 >
                   <CardHeader>
-                    <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <CardTitle className="text-lg font-rajdhani">
                       <Activity className="w-4 h-4 inline mr-2" />
                       Fear Trend
                     </CardTitle>
@@ -823,7 +822,7 @@ export default function NegativeSentimentPage() {
                 className="glass-card border-slate-500/30"
               >
                 <CardHeader>
-                  <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <CardTitle className="text-lg font-rajdhani">
                     <Scale className="w-4 h-4 inline mr-2" />
                     Sentiment Distribution
                   </CardTitle>
@@ -862,7 +861,7 @@ export default function NegativeSentimentPage() {
                         </Badge>
                         <span className="text-xs text-slate-500">#{topic.id}</span>
                       </div>
-                      <h4 className="font-semibold text-slate-200 mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                      <h4 className="font-semibold text-slate-200 mb-2 font-rajdhani">
                         {topic.name}
                       </h4>
                       <div className="flex items-center gap-2 text-xs text-slate-400 mb-3">
@@ -933,7 +932,7 @@ export default function NegativeSentimentPage() {
                     </motion.div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-bold text-lg text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                        <h4 className="font-bold text-lg text-slate-200 font-rajdhani">
                           {aggregate.category}
                         </h4>
                         <Badge className={aggregate.severity === 'CRITICAL' ? 'bg-red-500/20 text-red-400' : 'bg-amber-500/20 text-amber-400'}>

@@ -177,7 +177,7 @@ export default function CultureSocietyPage() {
       <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">S-SECTOR</Badge>
-          <h1 className="text-4xl font-extrabold gradient-text-gold">Culture & Society</h1>
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold">Culture & Society</h1>
           <p className="mt-2 text-platinum-400">
             Heritage, demographics, traditions, arts, religion, social dynamics
           </p>

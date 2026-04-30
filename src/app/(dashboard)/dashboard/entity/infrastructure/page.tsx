@@ -189,7 +189,7 @@ export default function InfrastructurePage() {
       >
         <div>
           <Badge variant="emerald" className="mb-2">INFRASTRUCTURE</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-emerald">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">
             Infrastructure & Landmark Intelligence
           </h1>
           <p className="mt-2 text-platinum-600 dark:text-platinum-400">

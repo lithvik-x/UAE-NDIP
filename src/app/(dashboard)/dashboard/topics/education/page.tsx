@@ -281,7 +281,7 @@ export default function EducationYouthPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="default" className="mb-2">S-SECTOR: EDUCATION & YOUTH</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-platinum">Education & Youth</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">Education & Youth</h1>
           <p className="mt-2 text-slate-400">
             {educationYouthData.description}
           </p>

@@ -189,7 +189,7 @@ export default function EnvironmentInfrastructurePage() {
             <Leaf className="h-3 w-3" />
             E-SECTOR
           </Badge>
-          <h1 className="text-4xl font-extrabold gradient-text-emerald">Environment & Infrastructure</h1>
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-emerald">Environment & Infrastructure</h1>
           <p className="mt-2 text-platinum-400 max-w-2xl">
             {data.description || 'Climate action, net zero strategy, renewable energy, desalination, biodiversity, conservation, waste management, mega infrastructure, road safety, traffic congestion, sustainability strategies'}
           </p>

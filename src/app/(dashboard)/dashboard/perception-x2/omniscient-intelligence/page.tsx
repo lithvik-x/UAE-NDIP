@@ -123,7 +123,7 @@ export default function OmniscientIntelligencePage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="indigo" className="mb-2">PERCEPTION-X2</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-indigo">Omniscient Intelligence</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-indigo">Omniscient Intelligence</h1>
           <p className="mt-2 text-slate-600">
             Dark social interception grid with 144-dimensional cognitive resonance mapping
           </p>

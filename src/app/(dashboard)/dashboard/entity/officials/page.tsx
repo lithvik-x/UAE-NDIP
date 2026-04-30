@@ -141,7 +141,7 @@ export default function FederalOfficialsPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">FEDERAL OFFICIALS</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Entity Intelligence</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Entity Intelligence</h1>
           <p className="mt-2 text-platinum-600 dark:text-platinum-400">
             Federal officials and government leadership — {totalCount} entities tracked
           </p>

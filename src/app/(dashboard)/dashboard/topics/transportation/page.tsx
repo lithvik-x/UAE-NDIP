@@ -173,7 +173,7 @@ export default function TransportationLogisticsPage() {
       <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
           <SectorBadge />
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Transportation & Logistics</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Transportation & Logistics</h1>
           <p className="mt-2 text-slate-400">
             UAE logistics market intelligence: ports, aviation, rail, public transport, cold chain, sanctions, and infrastructure
           </p>

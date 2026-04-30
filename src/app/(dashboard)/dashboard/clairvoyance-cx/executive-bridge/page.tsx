@@ -950,7 +950,7 @@ export default function ExecutiveBridgePage() {
           <div className="flex items-center gap-3">
             <Badge variant="rose" className="mb-2">CLAIRVOYANCE-CX</Badge>
           </div>
-          <h1 className="text-3xl font-extrabold gradient-text-red">Executive Bridge</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-red">Executive Bridge</h1>
           <p className="mt-2 text-slate-600">
             Strategic oversight with real-time intelligence and leadership KPIs
           </p>

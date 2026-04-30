@@ -145,7 +145,7 @@ export default function HistoricalBaselinePage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">HISTORICAL BASELINE</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Historical Baseline Research</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Historical Baseline Research</h1>
           <p className="mt-2 text-slate-400">
             Comprehensive archival intelligence across Pre-Modern, Early Internet, Social Media, and Recent Eras
           </p>

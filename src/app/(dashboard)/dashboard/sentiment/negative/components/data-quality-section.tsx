@@ -55,7 +55,7 @@ export function DataQualitySection({ className }: DataQualitySectionProps) {
               >
                 <div className="flex items-center gap-2 mb-2">
                   <Icon className={`h-5 w-5 ${colorClass}`} />
-                  <h4 className="font-semibold text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <h4 className="font-semibold text-slate-200 font-rajdhani">
                     {note.aspect}
                   </h4>
                 </div>
@@ -85,7 +85,7 @@ export function DataQualitySection({ className }: DataQualitySectionProps) {
                 <AlertCircle className="h-5 w-5 text-amber-400 mt-0.5" />
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-semibold text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <h4 className="font-semibold text-slate-200 font-rajdhani">
                       {note.claim}
                     </h4>
                     <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/50 text-xs">
@@ -129,7 +129,7 @@ export function DataQualitySection({ className }: DataQualitySectionProps) {
               >
                 <div className="flex items-center gap-2 mb-2">
                   <Icon className="h-5 w-5 text-denim-400" />
-                  <span className="text-xs text-denim-400 font-semibold" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <span className="text-xs text-denim-400 font-semibold font-rajdhani">
                     Method {idx + 1}
                   </span>
                 </div>
@@ -149,7 +149,7 @@ export function DataQualitySection({ className }: DataQualitySectionProps) {
         <div className="grid gap-6 lg:grid-cols-2">
           {/* Demographics */}
           <div className="space-y-3">
-            <h4 className="font-semibold text-slate-200 flex items-center gap-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+            <h4 className="font-semibold text-slate-200 flex items-center gap-2 font-rajdhani">
               <Users className="h-4 w-4 text-denim-400" />
               Demographics
             </h4>
@@ -168,7 +168,7 @@ export function DataQualitySection({ className }: DataQualitySectionProps) {
 
           {/* Corruption */}
           <div className="space-y-3">
-            <h4 className="font-semibold text-slate-200 flex items-center gap-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+            <h4 className="font-semibold text-slate-200 flex items-center gap-2 font-rajdhani">
               <Scale className="h-4 w-4 text-amber-400" />
               Corruption
             </h4>
@@ -187,7 +187,7 @@ export function DataQualitySection({ className }: DataQualitySectionProps) {
 
           {/* Human Rights */}
           <div className="space-y-3">
-            <h4 className="font-semibold text-slate-200 flex items-center gap-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+            <h4 className="font-semibold text-slate-200 flex items-center gap-2 font-rajdhani">
               <AlertCircle className="h-4 w-4 text-rose-400" />
               Human Rights
             </h4>
@@ -208,7 +208,7 @@ export function DataQualitySection({ className }: DataQualitySectionProps) {
 
           {/* Environment */}
           <div className="space-y-3">
-            <h4 className="font-semibold text-slate-200 flex items-center gap-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+            <h4 className="font-semibold text-slate-200 flex items-center gap-2 font-rajdhani">
               <Globe className="h-4 w-4 text-emerald-400" />
               Environment
             </h4>
@@ -228,7 +228,7 @@ export function DataQualitySection({ className }: DataQualitySectionProps) {
 
           {/* Labor */}
           <div className="space-y-3 lg:col-span-2">
-            <h4 className="font-semibold text-slate-200 flex items-center gap-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+            <h4 className="font-semibold text-slate-200 flex items-center gap-2 font-rajdhani">
               <Users className="h-4 w-4 text-orange-400" />
               Labor
             </h4>

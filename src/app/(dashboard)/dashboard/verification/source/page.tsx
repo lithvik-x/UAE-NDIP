@@ -236,7 +236,7 @@ export default function StatisticalDatapointsPage() {
       >
         <div>
           <Badge variant="default" className="mb-2 bg-gold/20 text-gold border-gold/50">STATISTICAL DATA</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-platinum" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+          <h1 className="text-3xl font-extrabold gradient-text-platinum font-rajdhani">
             UAE Statistical Datapoints
           </h1>
           <p className="mt-2 text-slate-400">

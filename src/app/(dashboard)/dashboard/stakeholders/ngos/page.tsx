@@ -247,7 +247,7 @@ export default function NgosStakeholdersPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="rose" className="mb-2">NGOs & NON-PROFITS</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-rose">NGOs & Non-Profit Organizations</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-rose">NGOs & Non-Profit Organizations</h1>
           <p className="mt-2 text-slate-400">
             Non-governmental organizations, charitable foundations, and non-profit entities operating in the UAE
           </p>

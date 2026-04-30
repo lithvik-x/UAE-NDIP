@@ -718,7 +718,7 @@ export default function RegulatoryTrendsPage() {
       >
         <div>
           <Badge variant="gold" className="mb-2">REGULATORY INTELLIGENCE</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Regulatory Trends</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Regulatory Trends</h1>
           <p className="mt-2 text-slate-400 max-w-2xl">
             Comprehensive analysis of UAE regulatory environment 2025-2026: Climate law, AML enforcement,
             PDPL compliance, ESG mandates, and AI governance frameworks.

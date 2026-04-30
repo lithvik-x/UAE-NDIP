@@ -113,7 +113,7 @@ export default function TagalogLanguagePage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">L-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Filipino/Tagalog Media</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Filipino/Tagalog Media</h1>
           <p className="mt-2 text-slate-400">
             Filipino-language content monitoring and analysis in the UAE
           </p>

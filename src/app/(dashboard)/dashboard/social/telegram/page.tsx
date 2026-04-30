@@ -268,7 +268,7 @@ export default function TelegramPage() {
           <Badge variant="default" className="mb-3 bg-gradient-to-r from-platinum-600 to-denim-600 text-navy-950 border-0">
             <Shield className="h-3 w-3 mr-1" /> SOCIAL MEDIA
           </Badge>
-          <h1 className="text-4xl font-extrabold gradient-text-platinum tracking-tight">
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-platinum tracking-tight">
             Telegram & Encrypted Messaging
           </h1>
           <p className="mt-3 text-slate-400 text-lg max-w-2xl">

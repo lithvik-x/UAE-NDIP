@@ -389,8 +389,7 @@ export default function MSALanguagePage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="space-y-8 p-8 min-h-screen"
-      style={{ fontFamily: 'Rajdhani, sans-serif' }}
+      className="space-y-8 p-8 min-h-screen font-rajdhani"
     >
       {/* ENHANCEMENT A: Animated Header */}
       <motion.div

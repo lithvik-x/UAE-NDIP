@@ -240,7 +240,7 @@ export default function SecurityDefensePage() {
               <Shield className="h-3 w-3" />
               S-SECTOR
             </Badge>
-            <h1 className="text-3xl font-extrabold gradient-text-platinum">Security & Defense</h1>
+            <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">Security & Defense</h1>
             <p className="mt-2 text-slate-400 max-w-2xl">
               {data.description ||
                 'Armed forces, EDGE Group, nuclear program, missile defense, military operations, cyber security, regional conflicts'}

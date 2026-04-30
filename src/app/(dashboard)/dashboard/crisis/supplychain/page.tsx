@@ -87,7 +87,7 @@ export default function SupplyChainDisruptionsPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">PHOENIX PROTOCOL: SUPPLY CHAIN</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Supply Chain Disruptions</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Supply Chain Disruptions</h1>
           <p className="mt-2 text-slate-400">
             Global supply chain vulnerabilities, shipping disruptions, and logistics resilience for UAE
           </p>

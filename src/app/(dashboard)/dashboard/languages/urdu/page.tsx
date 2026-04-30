@@ -198,7 +198,7 @@ export default function UrduLanguagePage() {
       >
         <div>
           <Badge variant="denim" className="mb-2">L-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-navy">Urdu/Hindi Language Media</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Urdu/Hindi Language Media</h1>
           <p className="mt-2 text-slate-400">
             South Asian diaspora media monitoring - India, Pakistan, Bangladesh in UAE
           </p>

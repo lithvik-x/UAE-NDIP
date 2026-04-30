@@ -120,7 +120,7 @@ export default function SocialMonitoringPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="denim" className="mb-2">S-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-navy">Social Media Monitoring</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Social Media Monitoring</h1>
           <p className="mt-2 text-slate-400">
             Real-time surveillance and analytics across all major social platforms
           </p>

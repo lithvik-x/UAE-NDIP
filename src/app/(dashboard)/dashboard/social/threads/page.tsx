@@ -182,7 +182,7 @@ export default function ThreadsLandscapePage() {
       >
         <div>
           <Badge variant="default" className="mb-2">PLATFORM ANALYSIS</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-platinum">Threads Landscape</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">Threads Landscape</h1>
           <p className="mt-2 text-slate-400">
             Meta's text-based platform: 893K UAE users, NO official government accounts, highest engagement rate (6.25%)
           </p>

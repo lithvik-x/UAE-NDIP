@@ -373,7 +373,7 @@ export default function FederalOfficialsPage() {
       >
         <div>
           <Badge variant="gold" className="mb-2">FEDERAL OFFICIALS</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">
             Entity Intelligence — Federal Government
           </h1>
           <p className="mt-2 text-platinum-600 dark:text-platinum-400 text-sm">

@@ -188,8 +188,7 @@ export default function RankingDashboardPage() {
       exit="exit"
       variants={pageVariants}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="space-y-8 p-8"
-      style={{ fontFamily: 'Rajdhani, sans-serif' }}
+      className="space-y-8 p-8 font-rajdhani"
     >
       {/* ============================================================================
       HEADER & KEY METRICS
@@ -202,7 +201,7 @@ export default function RankingDashboardPage() {
       >
         <div>
           <Badge variant="emerald" className="mb-2">V-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-emerald">Comparative Ranking Dashboard</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Comparative Ranking Dashboard</h1>
           <p className="mt-2 text-slate-400">
             UAE global index rankings across 19+ international indices | Research Date: 2026-04-27
           </p>

@@ -138,7 +138,7 @@ export default function SystemGovernancePage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="purple" className="mb-2">CLAIRVOYANCE-CX</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-purple">System Governance & Compliance</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-purple">System Governance & Compliance</h1>
           <p className="mt-2 text-slate-600">
             ADHICS V2.0, Federal Data Protection, Sovereign Cloud Infrastructure & Operational Compliance
           </p>

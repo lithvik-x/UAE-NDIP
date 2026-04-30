@@ -1956,7 +1956,7 @@ export default function ClimateTrendsPage() {
       >
         <div>
           <Badge variant="emerald" className="mb-2">TRENDS</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-emerald">Climate & Sustainability</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Climate & Sustainability</h1>
           <p className="mt-2 text-slate-400">
             UAE net zero strategy, renewable energy, carbon markets, and environmental intelligence
           </p>

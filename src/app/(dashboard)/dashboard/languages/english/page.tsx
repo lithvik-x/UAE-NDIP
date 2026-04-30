@@ -414,7 +414,7 @@ export default function EnglishLanguagePage() {
             <Badge variant="denim" className="mb-2 bg-indigo-500/20 text-indigo-300 border-indigo-500/30">
               ENGLISH REGIONAL VARIANTS
             </Badge>
-            <h1 className="text-3xl font-extrabold gradient-text-navy">English Language Media</h1>
+            <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">English Language Media</h1>
             <p className="mt-2 text-sm text-slate-400 max-w-xl">
               British, American, Indian, Australian, and Nigerian English coverage of UAE in global media —
               <span className="text-amber-400"> structural placeholder awaiting query population</span>

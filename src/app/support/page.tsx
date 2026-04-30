@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { GlassPanel } from '@/components/ui/glass-panel'
 import { Button } from '@/components/ui/button'
+import { BookOpen, LayoutDashboard, Mail } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -104,7 +105,7 @@ export default function SupportPage() {
                 variant="outline"
                 className="h-auto flex-col gap-3 p-6 w-full"
               >
-                <span className="text-4xl">📖</span>
+                <BookOpen className="h-5 w-5" />
                 <div className="text-center">
                   <div className="font-semibold">Documentation</div>
                   <div className="text-xs text-platinum-500">Browse guides</div>
@@ -116,7 +117,7 @@ export default function SupportPage() {
                 variant="outline"
                 className="h-auto flex-col gap-3 p-6 w-full"
               >
-                <span className="text-4xl">🖥️</span>
+                <LayoutDashboard className="h-5 w-5" />
                 <div className="text-center">
                   <div className="font-semibold">Dashboard</div>
                   <div className="text-xs text-platinum-500">Go to platform</div>
@@ -128,7 +129,7 @@ export default function SupportPage() {
                 variant="outline"
                 className="h-auto flex-col gap-3 p-6 w-full"
               >
-                <span className="text-4xl">📧</span>
+                <Mail className="h-5 w-5" />
                 <div className="text-center">
                   <div className="font-semibold">Email Support</div>
                   <div className="text-xs text-platinum-500">Response within 24h</div>

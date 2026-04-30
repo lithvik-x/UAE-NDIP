@@ -158,7 +158,7 @@ export default function HealthcarePage() {
       <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
           <Badge variant="default" className="mb-2">C-SECTOR</Badge>
-          <h1 className="text-4xl font-extrabold gradient-text-emerald">Healthcare Intelligence</h1>
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-emerald">Healthcare Intelligence</h1>
           <p className="mt-2 text-emerald-400">
             {healthcareData.description}
           </p>

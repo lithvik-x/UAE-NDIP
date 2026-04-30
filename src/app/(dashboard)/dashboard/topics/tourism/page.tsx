@@ -171,7 +171,7 @@ export default function TourismHospitalityPage() {
       <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
           <Badge variant="default" className="mb-2 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 text-amber-400 border-amber-500/30">P-SECTOR</Badge>
-          <h1 className="text-4xl font-extrabold gradient-text-gold">Tourism & Hospitality</h1>
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold">Tourism & Hospitality</h1>
           <p className="mt-2 text-slate-400">
             {tourismHospitalityData.description}
           </p>

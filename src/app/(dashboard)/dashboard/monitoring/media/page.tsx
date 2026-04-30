@@ -112,7 +112,7 @@ export default function MediaMonitoringPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="denim" className="mb-2">M-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-navy">Media Monitoring</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Media Monitoring</h1>
           <p className="mt-2 text-slate-400">
             Real-time tracking of news outlets, broadcast media, and print publications
           </p>

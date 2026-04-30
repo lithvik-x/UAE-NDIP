@@ -202,7 +202,7 @@ export default function GapAnalysisPage() {
       >
         <div>
           <Badge variant="gold" className="mb-2">M-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Gap Analysis Dashboard</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Gap Analysis Dashboard</h1>
           <p className="mt-2 text-slate-400">
             Comprehensive coverage gap analysis across UAE media, regulatory, and digital landscape (12-8)
           </p>

@@ -80,7 +80,7 @@ export default function EnergyCrisesPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">PHOENIX PROTOCOL: ENERGY</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Energy Crises</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Energy Crises</h1>
           <p className="mt-2 text-slate-400">
             Oil, gas, electricity disruptions, and energy security threats affecting UAE and the region
           </p>

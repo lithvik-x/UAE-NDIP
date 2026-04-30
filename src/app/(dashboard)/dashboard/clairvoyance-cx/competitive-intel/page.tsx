@@ -140,7 +140,7 @@ export default function CompetitiveIntelligencePage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="purple" className="mb-2">CLAIRVOYANCE-CX</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-purple">Competitive Intelligence</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-purple">Competitive Intelligence</h1>
           <p className="mt-2 text-slate-600">
             Share of Voice radar and influencer landscape analysis
           </p>

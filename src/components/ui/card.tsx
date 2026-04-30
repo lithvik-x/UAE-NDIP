@@ -305,7 +305,7 @@ const CardDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-  <p ref={ref} className={cn('text-sm text-platinum-500 leading-relaxed', className)} {...props} />
+  <p ref={ref} className={cn('text-sm text-platinum-600 leading-relaxed', className)} {...props} />
 ))
 CardDescription.displayName = 'CardDescription'
 
@@ -537,7 +537,7 @@ const StatCard = React.forwardRef<
           )}
         </div>
         <div className="text-3xl font-bold gradient-text mb-1">{value}</div>
-        <div className="text-sm text-platinum-500">{label}</div>
+        <div className="text-sm text-platinum-600">{label}</div>
       </div>
     </div>
   )

@@ -181,7 +181,7 @@ export default function HealthCrisesPage() {
       >
         <div>
           <Badge variant="gold" className="mb-2">PHOENIX PROTOCOL: PUBLIC HEALTH</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Health Crises</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Health Crises</h1>
           <p className="mt-2 text-slate-400">
             Pandemic preparedness, disease outbreaks, and public health emergencies affecting the UAE
           </p>

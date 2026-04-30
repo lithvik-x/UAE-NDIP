@@ -114,7 +114,7 @@ export default function SentimentOverviewPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">SENTIMENT INTELLIGENCE</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Sentiment Overview</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Sentiment Overview</h1>
           <p className="mt-2 text-slate-400">
             Cross-sector sentiment analysis, emotion tracking, and public perception metrics
           </p>

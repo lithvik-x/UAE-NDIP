@@ -99,7 +99,7 @@ export default function UnionPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">H-ERA-1</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Union & Nation Building</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Union & Nation Building</h1>
           <p className="mt-2 text-slate-400">
             The formation of the UAE federation and establishment of national institutions (1971-1976)
           </p>

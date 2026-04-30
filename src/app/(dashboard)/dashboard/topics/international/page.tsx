@@ -163,7 +163,7 @@ export default function InternationalRelationsPage() {
       >
         <div>
           <Badge variant="default" className="mb-2">I-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-platinum">International Relations & Diplomacy</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">International Relations & Diplomacy</h1>
           <p className="mt-2 text-slate-400">
             {data.executionMetadata.enrichmentStatus} | {data.executionMetadata.queriesExecuted} queries executed across {data.executionMetadata.pagesFetched} sources
           </p>

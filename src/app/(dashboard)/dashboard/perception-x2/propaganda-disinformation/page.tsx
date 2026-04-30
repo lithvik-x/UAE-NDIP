@@ -158,7 +158,7 @@ export default function PropagandaDisinformationPage() {
       >
         <div>
           <Badge variant="indigo" className="mb-2">PERCEPTION-X2</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-indigo">Propaganda & Disinformation</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-indigo">Propaganda & Disinformation</h1>
           <p className="mt-2 text-slate-600">
             Comprehensive tracking of UAE-linked influence operations and disinformation campaigns
           </p>

@@ -120,7 +120,7 @@ export default function ModernizationPage() {
             </Button>
           </div>
           <Badge variant="gold" className="mb-2">H-ERA-{isRapidDevelopment ? '8-4' : '6'}</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">
             {isRapidDevelopment ? 'Rapid Development Era' : 'Modernization Era'}
           </h1>
           <p className="mt-2 text-slate-400">

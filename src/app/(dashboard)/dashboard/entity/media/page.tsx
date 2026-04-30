@@ -237,7 +237,7 @@ export default function MediaOrganizationsPage() {
       >
         <div>
           <Badge variant="denim" className="mb-2">MEDIA ORGANIZATIONS</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-navy">Entity Intelligence</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Entity Intelligence</h1>
           <p className="mt-2 text-platinum-600 dark:text-platinum-400">
             UAE-based, international, and regional media organizations — {totalOrgs} entities tracked
           </p>

@@ -110,7 +110,7 @@ export default function EnergySustainabilityPage() {
       <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">P-SECTOR</Badge>
-          <h1 className="text-4xl font-extrabold gradient-text-gold">Energy & Sustainability</h1>
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold">Energy & Sustainability</h1>
           <p className="mt-2 text-platinum-400">
             ADNOC, oil production, OPEC+, energy transition, renewables, nuclear, hydrogen, CCUS, COP28, EV adoption, climate law
           </p>

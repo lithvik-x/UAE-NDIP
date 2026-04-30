@@ -166,7 +166,7 @@ export default function TechnologyInnovationPage() {
       <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">P-SECTOR</Badge>
-          <h1 className="text-4xl font-extrabold gradient-text-gold">Technology & Innovation</h1>
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold">Technology & Innovation</h1>
           <p className="mt-2 text-platinum-400">
             AI ecosystem, G42, space program, startup intelligence, and digital infrastructure
           </p>

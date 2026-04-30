@@ -139,7 +139,7 @@ export default function CrisisWarRoomPage() {
         <div>
           <Badge variant="red" className="mb-2">CLAIRVOYANCE-CX</Badge>
           <div className="flex items-center gap-3">
-            <h1 className="text-3xl font-extrabold gradient-text-red">Crisis War Room</h1>
+            <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-red">Crisis War Room</h1>
             <div className="flex h-3 w-3 animate-pulse">
               <span className="relative inline-flex rounded-full h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>

@@ -87,7 +87,7 @@ export default function LevantineArabicPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="default" className="mb-2">MULTI-LINGUAL</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-platinum">Levantine Arabic Dialect</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">Levantine Arabic Dialect</h1>
           <p className="mt-2 text-slate-400">
             {data.description || 'Intelligence on Levantine Arabic dialect: Syria, Lebanon, Jordan, Palestine, Iraq'}
           </p>

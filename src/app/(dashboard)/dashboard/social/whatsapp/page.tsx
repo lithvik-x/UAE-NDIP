@@ -192,8 +192,7 @@ export default function WhatsAppPage() {
       initial="initial"
       animate="animate"
       variants={staggerContainer}
-      className="space-y-8 p-8"
-      style={{ fontFamily: 'Rajdhani, sans-serif' }}
+      className="space-y-8 p-8 font-rajdhani"
     >
       {/* Header */}
       <motion.div variants={fadeInUp} className="flex items-start justify-between">
@@ -202,7 +201,7 @@ export default function WhatsAppPage() {
             <Lock className="w-3 h-3 mr-1" />
             DARK SOCIAL
           </Badge>
-          <h1 className="text-4xl font-extrabold tracking-tight" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+          <h1 className="text-4xl font-extrabold tracking-tight font-rajdhani">
             <span className="bg-gradient-to-r from-platinum-100 via-platinum-200 to-platinum-400 bg-clip-text text-transparent">
               WhatsApp & Messaging
             </span>

@@ -293,7 +293,7 @@ export default function FramingAnalysisPage() {
       >
         <div>
           <Badge variant="indigo" className="mb-2">PERCEPTION-X2</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-indigo">Framing Analysis</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-indigo">Framing Analysis</h1>
           <p className="mt-2 text-slate-600">
             Comprehensive tracking of UAE media framing across Western vs Regional vs Gulf sources
           </p>

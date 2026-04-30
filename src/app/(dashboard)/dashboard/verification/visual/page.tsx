@@ -135,7 +135,7 @@ export default function VisualMultimediaPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="emerald" className="mb-2">V-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-emerald">Visual & Multimedia</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Visual & Multimedia</h1>
           <p className="mt-2 text-slate-400">
             AI-generated content, deepfakes, viral media, and visual misinformation intelligence
           </p>

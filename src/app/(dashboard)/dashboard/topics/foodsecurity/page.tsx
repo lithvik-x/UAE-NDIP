@@ -176,7 +176,7 @@ export default function FoodSecurityPage() {
       <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
           <Badge variant="denim" className="mb-2">C-SECTOR: FOOD SECURITY</Badge>
-          <h1 className="text-4xl font-extrabold gradient-text-navy">Food Security</h1>
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-navy">Food Security</h1>
           <p className="mt-2 text-slate-400 max-w-2xl">
             {data?.description}
           </p>

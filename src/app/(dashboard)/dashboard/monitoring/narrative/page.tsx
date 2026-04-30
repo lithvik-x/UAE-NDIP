@@ -217,7 +217,7 @@ export default function NarrativeReconstructionPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">NARRATIVE INTELLIGENCE</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Narrative Reconstruction</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Narrative Reconstruction</h1>
           <p className="mt-2 text-slate-400">
             Comprehensive playbook for tracking narrative lifecycle from origin through evolution to battle analysis
           </p>

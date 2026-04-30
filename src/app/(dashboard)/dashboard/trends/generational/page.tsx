@@ -317,7 +317,7 @@ export default function GenerationalTrendsPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">GENERATIONAL INSIGHTS</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Generational Shift Trends</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Generational Shift Trends</h1>
           <p className="mt-2 text-slate-400">
             Gen Z, Millennials, and Gen Alpha dynamics in the UAE - values, employment, identity, and digital behaviors
           </p>

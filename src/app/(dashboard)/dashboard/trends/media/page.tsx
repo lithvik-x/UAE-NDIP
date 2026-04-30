@@ -176,7 +176,7 @@ export default function MediaTrendsPage() {
       >
         <div>
           <Badge variant="gold" className="mb-2">TRENDS INTELLIGENCE</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Media Industry Trends</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Media Industry Trends</h1>
           <p className="mt-2 text-slate-400">
             Comprehensive analysis of global media and entertainment trends, streaming maturation, AI disruption, creator economy evolution, and shifting consumption patterns
           </p>

@@ -736,7 +736,7 @@ export default function IntlRelationsPage() {
       >
         <div>
           <Badge variant="cyan" className="mb-2">INTERNATIONAL RELATIONS</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-cyan">International Relations Body</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-cyan">International Relations Body</h1>
           <p className="mt-2 text-slate-400">
             GCC, Arab League, OIC, UN coordination, bilateral partnerships, and multilateral positioning
           </p>

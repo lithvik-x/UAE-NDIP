@@ -124,7 +124,7 @@ export default function CrisisTimelinePage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="rose" className="mb-2">C-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-rose">Crisis Timeline Dashboard</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-rose">Crisis Timeline Dashboard</h1>
           <p className="mt-2 text-slate-400">
             Historical crisis tracking and temporal analysis
           </p>

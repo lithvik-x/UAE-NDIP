@@ -197,8 +197,7 @@ export default function CriticismComplaintPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-3xl font-extrabold gradient-text-rose"
-            style={{ fontFamily: 'Rajdhani, sans-serif' }}
+            className="text-3xl font-extrabold gradient-text-rose font-rajdhani"
           >
             Criticism & Complaint Analysis
           </motion.h1>
@@ -307,7 +306,7 @@ export default function CriticismComplaintPage() {
                           </Badge>
                           <IconComponent className="h-5 w-5 text-slate-400" />
                         </div>
-                        <h4 className="font-semibold text-slate-200 mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                        <h4 className="font-semibold text-slate-200 mb-2 font-rajdhani">
                           {risk.riskCategory}
                         </h4>
                         <div className="flex items-center gap-2">
@@ -330,7 +329,7 @@ export default function CriticismComplaintPage() {
               <div className="grid gap-6 lg:grid-cols-2">
                 <Card className="glass-card border-rose-500/30">
                   <CardHeader>
-                    <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <CardTitle className="text-lg font-rajdhani">
                       <Scale className="w-4 h-4 inline mr-2" />
                       Stress Component Breakdown
                     </CardTitle>
@@ -355,14 +354,14 @@ export default function CriticismComplaintPage() {
 
                 <Card className="glass-card border-amber-500/30">
                   <CardHeader>
-                    <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <CardTitle className="text-lg font-rajdhani">
                       <Activity className="w-4 h-4 inline mr-2" />
                       Composite Stress Score
                     </CardTitle>
                     <CardDescription>Overall economic stress assessment</CardDescription>
                   </CardHeader>
                   <CardContent className="flex flex-col items-center justify-center">
-                    <div className="text-6xl font-extrabold text-rose-400 mb-4" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <div className="text-6xl font-extrabold text-rose-400 mb-4 font-rajdhani">
                       {data.economicStressCompositeTotal.composite}
                     </div>
                     <Badge className="bg-rose-500/20 text-rose-400 border-rose-500/50 text-sm px-4 py-2">
@@ -391,7 +390,7 @@ export default function CriticismComplaintPage() {
                     </Badge>
                     <Globe className="h-4 w-4 text-slate-400" />
                   </div>
-                  <h4 className="font-semibold text-slate-200 text-sm mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <h4 className="font-semibold text-slate-200 text-sm mb-2 font-rajdhani">
                     {ctx.factor}
                   </h4>
                   <p className="text-xs text-slate-400">{ctx.impact}</p>
@@ -422,7 +421,7 @@ export default function CriticismComplaintPage() {
                       <span className="text-xs text-slate-500">{metric.yearPeriod}</span>
                     </div>
                     <p className="text-sm text-slate-300 mb-1">{metric.metric}</p>
-                    <p className="text-xl font-bold text-platinum-100" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <p className="text-xl font-bold text-platinum-100 font-rajdhani">
                       {metric.value}
                     </p>
                     <p className="text-xs text-slate-500 mt-1">Source: {metric.source}</p>
@@ -451,7 +450,7 @@ export default function CriticismComplaintPage() {
                       <DollarSign className="h-4 w-4 text-amber-400" />
                     </div>
                     <p className="text-sm text-slate-300 mb-1">{metric.metric}</p>
-                    <p className="text-xl font-bold text-amber-400" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <p className="text-xl font-bold text-amber-400 font-rajdhani">
                       {metric.value}
                     </p>
                     <p className="text-xs text-slate-500 mt-1">{metric.period} • {metric.source}</p>
@@ -491,7 +490,7 @@ export default function CriticismComplaintPage() {
                         </div>
                         <div>
                           <p className="text-xs text-slate-500">{metric.metric}</p>
-                          <p className="text-lg font-bold text-orange-400" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                          <p className="text-lg font-bold text-orange-400 font-rajdhani">
                             {metric.value}
                           </p>
                         </div>
@@ -522,7 +521,7 @@ export default function CriticismComplaintPage() {
                       </Badge>
                     </div>
                     <p className="text-sm text-slate-300 mb-1">{metric.metric}</p>
-                    <p className="text-xl font-bold text-cyan-400" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <p className="text-xl font-bold text-cyan-400 font-rajdhani">
                       {metric.value}
                     </p>
                   </motion.div>
@@ -548,7 +547,7 @@ export default function CriticismComplaintPage() {
                       <span className="text-xs text-slate-500">{metric.notes}</span>
                     </div>
                     <p className="text-sm text-slate-300 mb-1">{metric.schoolLevel}</p>
-                    <p className="text-lg font-bold text-indigo-400" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <p className="text-lg font-bold text-indigo-400 font-rajdhani">
                       {metric.annualCostUSD}
                     </p>
                   </motion.div>
@@ -596,7 +595,7 @@ export default function CriticismComplaintPage() {
               <div className="grid gap-6 lg:grid-cols-2">
                 <Card className="glass-card border-rose-500/30">
                   <CardHeader>
-                    <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <CardTitle className="text-lg font-rajdhani">
                       <ThumbsDown className="w-4 h-4 inline mr-2" />
                       Negative Sentiment by Category
                     </CardTitle>
@@ -617,7 +616,7 @@ export default function CriticismComplaintPage() {
 
                 <Card className="glass-card border-slate-500/30">
                   <CardHeader>
-                    <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <CardTitle className="text-lg font-rajdhani">
                       <PieChartIcon className="w-4 h-4 inline mr-2" />
                       Sentiment Composition
                     </CardTitle>
@@ -645,7 +644,7 @@ export default function CriticismComplaintPage() {
               <div className="grid gap-6 lg:grid-cols-2">
                 <Card className="glass-card border-cyan-500/30">
                   <CardHeader>
-                    <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <CardTitle className="text-lg font-rajdhani">
                       <Activity className="w-4 h-4 inline mr-2" />
                       Platform Sentiment Scores
                     </CardTitle>
@@ -667,7 +666,7 @@ export default function CriticismComplaintPage() {
                 <Card className="glass-card border-amber-500/30"
                 >
                   <CardHeader>
-                    <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <CardTitle className="text-lg font-rajdhani">
                       <Scale className="w-4 h-4 inline mr-2" />
                       Sentiment by Credibility Tier
                     </CardTitle>
@@ -700,7 +699,7 @@ export default function CriticismComplaintPage() {
             <div className="space-y-6">
               <Card className="glass-card border-slate-500/30">
                 <CardHeader>
-                  <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <CardTitle className="text-lg font-rajdhani">
                     <TrendingUp className="w-4 h-4 inline mr-2" />
                     Category Severity Progression
                   </CardTitle>
@@ -993,7 +992,7 @@ export default function CriticismComplaintPage() {
                     </motion.div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-bold text-lg text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                        <h4 className="font-bold text-lg text-slate-200 font-rajdhani">
                           {finding.category}
                         </h4>
                         <Badge className={getSeverityColor(finding.uaeRelevance)}>
@@ -1051,7 +1050,7 @@ export default function CriticismComplaintPage() {
             <div className="space-y-6">
               <Card className="glass-card border-slate-500/30">
                 <CardHeader>
-                  <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <CardTitle className="text-lg font-rajdhani">
                     <Users className="w-4 h-4 inline mr-2" />
                     Issue Relevance vs Population Impact
                   </CardTitle>
@@ -1098,7 +1097,7 @@ export default function CriticismComplaintPage() {
                         <span className="text-sm text-slate-300">{stat.metric}</span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <span className="text-lg font-bold text-cyan-400" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                        <span className="text-lg font-bold text-cyan-400 font-rajdhani">
                           {stat.value}
                         </span>
                         <span className="text-xs text-slate-500">{stat.unit}</span>

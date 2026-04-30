@@ -103,7 +103,7 @@ export default function DarkWebMonitoringPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="denim" className="mb-2">M-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-navy">Dark Web Monitoring</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Dark Web Monitoring</h1>
           <p className="mt-2 text-slate-400">
             Surveillance of underground forums, marketplaces, and illicit activity tracking
           </p>

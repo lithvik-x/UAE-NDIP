@@ -236,7 +236,7 @@ export default function InfluencersPage() {
       >
         <div>
           <Badge variant="denim" className="mb-2">INFLUENCER REGISTRY</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-navy">Influencer Intelligence</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Influencer Intelligence</h1>
           <p className="mt-2 text-platinum-600 dark:text-platinum-400">
             UAE influencer landscape — {totalInfluencerCount} entities tracked across {dataTablesIndex.length} categories
           </p>

@@ -199,7 +199,7 @@ export default function DemographicTrendsPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="denim" className="mb-2">TRENDS</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-navy">Demographic Trends</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Demographic Trends</h1>
           <p className="mt-2 text-slate-400">
             Population dynamics, migration patterns, and workforce trends
           </p>

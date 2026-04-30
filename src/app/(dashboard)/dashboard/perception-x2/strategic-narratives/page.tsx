@@ -914,7 +914,7 @@ export default function StrategicNarrativesPage() {
       >
         <div>
           <Badge variant="indigo" className="mb-2">PERCEPTION-X2</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-indigo">Strategic Narratives</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-indigo">Strategic Narratives</h1>
           <p className="mt-2 text-slate-600">
             Comprehensive tracking of 12 dominant UAE narratives with pro/counter analysis
           </p>

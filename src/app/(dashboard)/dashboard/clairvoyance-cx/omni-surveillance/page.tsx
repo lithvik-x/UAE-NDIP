@@ -230,7 +230,7 @@ export default function OmniSurveillancePage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="red" className="mb-2">CLAIRVOYANCE-CX</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-red">Omni-Surveillance</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-red">Omni-Surveillance</h1>
           <p className="mt-2 text-slate-600">
             Monitoring 52,401+ active sources with 15-second update intervals
           </p>

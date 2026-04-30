@@ -159,7 +159,7 @@ export default function PoliticsGovernancePage() {
       <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
           <Badge variant="default" className="mb-2">H-SECTOR</Badge>
-          <h1 className="text-4xl font-extrabold gradient-text-platinum">Politics & Governance</h1>
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-platinum">Politics & Governance</h1>
           <p className="mt-2 text-platinum-400">
             {politicsGovernanceData.description}
           </p>

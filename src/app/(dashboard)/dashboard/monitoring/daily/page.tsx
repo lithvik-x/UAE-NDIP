@@ -198,7 +198,7 @@ export default function DailyMonitoringPage() {
       >
         <div>
           <Badge variant="gold" className="mb-2">MD 12-1</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">
             Daily Monitoring
           </h1>
           <p className="mt-2 text-slate-400 font-rajdhani">

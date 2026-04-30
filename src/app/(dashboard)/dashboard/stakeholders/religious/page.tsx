@@ -244,7 +244,7 @@ export default function ReligiousStakeholdersPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="denim" className="mb-2">RELIGIOUS</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-navy">Religious Institutions</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Religious Institutions</h1>
           <p className="mt-2 text-slate-400">
             Islamic authorities, mosques, religious education bodies, and interfaith organizations in the UAE
           </p>

@@ -1172,7 +1172,7 @@ export default function EnvironmentalTrendsPage() {
       >
         <div>
           <Badge variant="emerald" className="mb-2">TRENDS</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-emerald">Environmental Trends</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Environmental Trends</h1>
           <p className="mt-2 text-slate-400">
             Climate action, sustainability initiatives, and environmental intelligence
           </p>

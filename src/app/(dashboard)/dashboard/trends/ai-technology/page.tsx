@@ -1795,7 +1795,7 @@ export default function AITechnologyPage() {
   const data = aiTechnologyData
 
   return (
-    <div className="space-y-8 p-8 min-h-screen" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+    <div className="space-y-8 p-8 min-h-screen font-rajdhani">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -1804,7 +1804,7 @@ export default function AITechnologyPage() {
       >
         <div>
           <Badge variant="gold" className="mb-2 font-bold tracking-wider">TRENDS</Badge>
-          <h1 className="text-4xl font-extrabold gradient-text-gold tracking-tight">AI Technology</h1>
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold tracking-tight">AI Technology</h1>
           <p className="mt-2 text-platinum-400 max-w-xl">
             Comprehensive AI & Technology trends intelligence — ENRICHED SSOT
           </p>

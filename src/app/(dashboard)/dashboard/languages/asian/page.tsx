@@ -124,7 +124,7 @@ export default function AsianLanguagesPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="orange" className="mb-2">ASIAN LANGUAGES</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-orange">Asian Languages</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-orange">Asian Languages</h1>
           <p className="mt-2 text-slate-400">
             South Asian and Southeast Asian language communities: Hindi, Urdu, Malay, Tagalog
           </p>

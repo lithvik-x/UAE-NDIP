@@ -154,7 +154,7 @@ export default function DemographicsMigrationPage() {
       <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
           <Badge variant="default" className="mb-2">S-SECTOR</Badge>
-          <h1 className="text-4xl font-extrabold gradient-text-platinum">Demographics & Migration</h1>
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-platinum">Demographics & Migration</h1>
           <p className="mt-2 text-platinum-400">
             {demographicsMigrationData.description}
           </p>

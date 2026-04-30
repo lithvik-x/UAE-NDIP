@@ -158,7 +158,7 @@ export default function RealEstatePage() {
       <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
           <Badge variant="default" className="mb-2">P-SECTOR: REAL ESTATE</Badge>
-          <h1 className="text-4xl font-extrabold gradient-text-gold">Real Estate & Urban Development</h1>
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold">Real Estate & Urban Development</h1>
           <p className="mt-2 text-slate-400">
             {realEstateData.description}
           </p>

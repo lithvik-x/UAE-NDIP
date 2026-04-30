@@ -189,7 +189,7 @@ export default function BrandUaePage() {
       >
         <div>
           <Badge variant="indigo" className="mb-2">PERCEPTION-X2</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-indigo">Brand UAE</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-indigo">Brand UAE</h1>
           <p className="mt-2 text-slate-600">
             Comprehensive analysis of UAE nation brand, corporate brands, and brand value rankings
           </p>

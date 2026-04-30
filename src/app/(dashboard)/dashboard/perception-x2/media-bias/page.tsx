@@ -100,7 +100,7 @@ export default function MediaBiasPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="indigo" className="mb-2">PERCEPTION-X2</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-indigo">Media Bias & Agenda Setting</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-indigo">Media Bias & Agenda Setting</h1>
           <p className="mt-2 text-slate-600">
             Comprehensive analysis of UAE media control, censorship mechanisms, and narrative manipulation
           </p>

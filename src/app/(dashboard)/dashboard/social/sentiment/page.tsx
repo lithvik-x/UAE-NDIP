@@ -178,7 +178,7 @@ export default function SentimentAnalysisDashboardPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="default" className="mb-2">SENTIMENT INTELLIGENCE</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-platinum">Sentiment Analysis Dashboard</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">Sentiment Analysis Dashboard</h1>
           <p className="mt-2 text-slate-400">
             Cross-platform sentiment analysis: overall {overallScore > 50 ? 'positive' : 'mixed'} outlook
           </p>

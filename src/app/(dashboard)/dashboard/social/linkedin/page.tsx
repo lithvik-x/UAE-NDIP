@@ -243,7 +243,7 @@ export default function LinkedInProfessionalPage() {
             <BriefcaseIcon className="h-3 w-3 mr-1" />
             PROFESSIONAL INTELLIGENCE
           </Badge>
-          <h1 className="text-3xl font-extrabold" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+          <h1 className="text-3xl font-extrabold font-rajdhani">
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-platinum-300 bg-clip-text text-transparent">
               LinkedIn & Professional Networks
             </span>

@@ -97,7 +97,7 @@ export default function FutureProjectionsPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="emerald" className="mb-2">H-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-emerald">Future Projections</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Future Projections</h1>
           <p className="mt-2 text-slate-400">
             {data.description || 'Centennial 2071 vision, strategic goals, and projected milestones'}
           </p>

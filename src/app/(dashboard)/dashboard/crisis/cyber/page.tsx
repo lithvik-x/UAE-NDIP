@@ -139,7 +139,7 @@ export default function CyberThreatsPage() {
       >
         <div>
           <Badge variant="denim" className="mb-2">CRISIS TYPE</Badge>
-          <h1 className="text-4xl font-extrabold gradient-text-navy">Cybersecurity Threats</h1>
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-navy">Cybersecurity Threats</h1>
           <p className="mt-2 text-slate-400">
             State-sponsored attacks, ransomware, Bybit hack, Handala, AI-powered threats
           </p>

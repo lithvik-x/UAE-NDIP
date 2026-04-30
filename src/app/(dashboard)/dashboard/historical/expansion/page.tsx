@@ -178,7 +178,7 @@ export default function ExpansionPage() {
       >
         <div>
           <Badge variant="gold" className="mb-2">H-ERA-3</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Post-Gulf War Aftermath</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Post-Gulf War Aftermath</h1>
           <p className="mt-2 text-slate-400">
             Regional transformation and humanitarian crisis (1991-2003) - The legacy of Operation Desert Storm
           </p>

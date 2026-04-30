@@ -389,7 +389,7 @@ export default function DomesticPerceptionPage() {
       >
         <div>
           <Badge variant="indigo" className="mb-2">PERCEPTION-X2</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-indigo">Domestic Perception</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-indigo">Domestic Perception</h1>
           <p className="mt-2 text-slate-600">
             What UAE residents (nationals AND expats) actually think - trust, happiness, and sentiment analysis
           </p>

@@ -317,7 +317,7 @@ export default function CrisisAlertsPage() {
       >
         <div>
           <Badge variant="rose" className="mb-2">C-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-rose">Real-time Crisis Alerts</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-rose">Real-time Crisis Alerts</h1>
           <p className="mt-2 text-slate-400">
             Live alert monitoring and early warning system
           </p>

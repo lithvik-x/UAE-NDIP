@@ -152,7 +152,7 @@ export default function VerificationOverviewPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="emerald" className="mb-2">V-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-emerald">Verification Overview</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Verification Overview</h1>
           <p className="mt-2 text-slate-400">
             Fact-checking and content verification intelligence for UAE narratives
           </p>

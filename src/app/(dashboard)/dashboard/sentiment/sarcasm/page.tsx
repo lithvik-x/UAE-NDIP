@@ -158,8 +158,7 @@ export default function SarcasmIronyPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-3xl font-extrabold gradient-text-gold"
-            style={{ fontFamily: 'Rajdhani, sans-serif' }}
+            className="text-3xl font-extrabold gradient-text-gold font-rajdhani"
           >
             Sarcasm & Irony Detection
           </motion.h1>

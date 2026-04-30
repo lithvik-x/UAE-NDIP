@@ -95,7 +95,7 @@ export default function OilDiscoveryPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">H-PRE</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Oil Discovery & Development</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Oil Discovery & Development</h1>
           <p className="mt-2 text-slate-400">
             The discovery and development of petroleum resources - Transforming a region (1935-1971)
           </p>

@@ -104,7 +104,7 @@ export default function EmotionAnalysisPage() {
         >
           <div>
             <Badge variant="gold" className="mb-2">EMOTION ANALYSIS</Badge>
-            <h1 className="text-4xl font-extrabold gradient-text-gold">
+            <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold">
               Emotion-Specific Results
             </h1>
             <p className="mt-2 text-slate-400 max-w-2xl">

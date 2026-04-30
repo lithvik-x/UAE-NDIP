@@ -232,7 +232,7 @@ export default function CorporateEntitiesPage() {
       >
         <div>
           <Badge variant="gold" className="mb-2">CORPORATE ENTITIES</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-navy">Entity Intelligence</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Entity Intelligence</h1>
           <p className="mt-2 text-platinum-600 dark:text-platinum-400">
             Major UAE corporations — SOEs, banks, airlines, telcos, real estate & retail — {overview.totalEntities} entities tracked
           </p>

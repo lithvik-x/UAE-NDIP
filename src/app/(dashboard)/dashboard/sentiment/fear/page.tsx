@@ -512,8 +512,7 @@ export default function FearUncertaintyPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-3xl font-extrabold gradient-text-rose"
-            style={{ fontFamily: 'Rajdhani, sans-serif' }}
+            className="text-3xl font-extrabold gradient-text-rose font-rajdhani"
           >
             Fear & Uncertainty Analysis
           </motion.h1>
@@ -604,7 +603,7 @@ export default function FearUncertaintyPage() {
               <div className="grid gap-6 lg:grid-cols-2">
                 <Card className="glass-card border-red-500/30">
                   <CardHeader>
-                    <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <CardTitle className="text-lg font-rajdhani">
                       <TrendingUp className="w-4 h-4 inline mr-2" />
                       Fear by Category
                     </CardTitle>
@@ -626,7 +625,7 @@ export default function FearUncertaintyPage() {
                 <Card className="glass-card border-amber-500/30"
                 >
                   <CardHeader>
-                    <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                    <CardTitle className="text-lg font-rajdhani">
                       <Activity className="w-4 h-4 inline mr-2" />
                       Fear Trend
                     </CardTitle>
@@ -651,7 +650,7 @@ export default function FearUncertaintyPage() {
               {/* Sentiment Distribution */}
               <Card className="glass-card border-slate-500/30">
                 <CardHeader>
-                  <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <CardTitle className="text-lg font-rajdhani">
                     <Scale className="w-4 h-4 inline mr-2" />
                     Sentiment Distribution
                   </CardTitle>
@@ -669,7 +668,7 @@ export default function FearUncertaintyPage() {
               {/* Severity Distribution */}
               <Card className="glass-card border-slate-500/30">
                 <CardHeader>
-                  <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <CardTitle className="text-lg font-rajdhani">
                     <AlertTriangle className="w-4 h-4 inline mr-2" />
                     Severity Distribution
                   </CardTitle>
@@ -708,7 +707,7 @@ export default function FearUncertaintyPage() {
                     </motion.div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-bold text-lg text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                        <h4 className="font-bold text-lg text-slate-200 font-rajdhani">
                           {aggregate.category}
                         </h4>
                         <Badge className={aggregate.severity === 'CRITICAL' ? 'bg-red-500/20 text-red-400' : 'bg-amber-500/20 text-amber-400'}>
@@ -763,7 +762,7 @@ export default function FearUncertaintyPage() {
                         </Badge>
                         <span className="text-xs text-slate-500">#{topic.id}</span>
                       </div>
-                      <h4 className="font-semibold text-slate-200 mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                      <h4 className="font-semibold text-slate-200 mb-2 font-rajdhani">
                         {topic.name}
                       </h4>
                       <div className="flex items-center gap-2 text-xs text-slate-400 mb-3">
@@ -830,7 +829,7 @@ export default function FearUncertaintyPage() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <TrendingUp className="h-5 w-5 text-emerald-400" />
-                  <h4 className="font-semibold text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <h4 className="font-semibold text-slate-200 font-rajdhani">
                     Macroeconomic KPIs
                   </h4>
                 </div>
@@ -853,7 +852,7 @@ export default function FearUncertaintyPage() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Flame className="h-5 w-5 text-orange-400" />
-                  <h4 className="font-semibold text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <h4 className="font-semibold text-slate-200 font-rajdhani">
                     Oil & Energy KPIs
                   </h4>
                 </div>
@@ -876,7 +875,7 @@ export default function FearUncertaintyPage() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Building className="h-5 w-5 text-purple-400" />
-                  <h4 className="font-semibold text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <h4 className="font-semibold text-slate-200 font-rajdhani">
                     Real Estate KPIs
                   </h4>
                 </div>
@@ -899,7 +898,7 @@ export default function FearUncertaintyPage() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Plane className="h-5 w-5 text-red-400" />
-                  <h4 className="font-semibold text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <h4 className="font-semibold text-slate-200 font-rajdhani">
                     Conflict/War KPIs
                   </h4>
                 </div>
@@ -922,7 +921,7 @@ export default function FearUncertaintyPage() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Thermometer className="h-5 w-5 text-orange-400" />
-                  <h4 className="font-semibold text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <h4 className="font-semibold text-slate-200 font-rajdhani">
                     Climate/Heat KPIs
                   </h4>
                 </div>
@@ -945,7 +944,7 @@ export default function FearUncertaintyPage() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Coins className="h-5 w-5 text-amber-400" />
-                  <h4 className="font-semibold text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <h4 className="font-semibold text-slate-200 font-rajdhani">
                     Household Debt KPIs
                   </h4>
                 </div>
@@ -968,7 +967,7 @@ export default function FearUncertaintyPage() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Users className="h-5 w-5 text-blue-400" />
-                  <h4 className="font-semibold text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <h4 className="font-semibold text-slate-200 font-rajdhani">
                     Demographics/Expat KPIs
                   </h4>
                 </div>
@@ -1067,7 +1066,7 @@ export default function FearUncertaintyPage() {
                       <Database className="h-5 w-5" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-lg text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                      <h4 className="font-bold text-lg text-slate-200 font-rajdhani">
                         {tier.tier}
                       </h4>
                       <p className="text-sm text-slate-400 mb-2">{tier.description}</p>
@@ -1098,7 +1097,7 @@ export default function FearUncertaintyPage() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-bold text-lg text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                        <h4 className="font-bold text-lg text-slate-200 font-rajdhani">
                           {item.topic}
                         </h4>
                         <Badge className={item.assessment === 'CRITICAL' ? 'bg-red-500/20 text-red-400' : 'bg-amber-500/20 text-amber-400'}>

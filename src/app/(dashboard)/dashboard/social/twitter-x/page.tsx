@@ -175,7 +175,7 @@ export default function TwitterXAnalysisPage() {
             <Bot className="h-3 w-3 mr-1" />
             PLATFORM INTELLIGENCE
           </Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-platinum">Twitter/X Analysis</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">Twitter/X Analysis</h1>
           <p className="mt-2 text-slate-400 font-rajdhani">
             UAE Twitter/X intelligence: 91% bot activity, coordinated inauthentic behavior, extreme censorship
           </p>

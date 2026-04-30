@@ -64,7 +64,7 @@ export default function InfluencerHubPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="indigo" className="mb-2">PERCEPTION-X2</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-indigo">Health Influence Matrix</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-indigo">Health Influence Matrix</h1>
           <p className="mt-2 text-slate-600">
             Comprehensive profiling of 50 healthcare influencers across Abu Dhabi and UAE (2025-2026)
           </p>

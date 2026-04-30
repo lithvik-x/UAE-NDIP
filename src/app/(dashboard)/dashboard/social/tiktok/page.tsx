@@ -206,7 +206,7 @@ export default function TikTokLandscapePage() {
             <Video className="h-3 w-3 mr-1" />
             PLATFORM ANALYSIS
           </Badge>
-          <h1 className="text-4xl font-bold gradient-text-platinum">TikTok UAE Intelligence</h1>
+          <h1 className="text-4xl font-bold font-rajdhani gradient-text-platinum">TikTok UAE Intelligence</h1>
           <p className="mt-2 text-slate-400">
             Comprehensive TikTok landscape analysis: 122,014 UAE influencers, 24 queries executed, 18 pages fetched
           </p>

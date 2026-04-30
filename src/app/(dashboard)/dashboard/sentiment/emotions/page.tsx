@@ -106,7 +106,7 @@ export default function EmotionAnalysisPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">EMOTION ANALYSIS</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Emotion Analysis</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Emotion Analysis</h1>
           <p className="mt-2 text-slate-400">
             Plutchik emotion model analysis, intensity metrics, and emotional patterns
           </p>

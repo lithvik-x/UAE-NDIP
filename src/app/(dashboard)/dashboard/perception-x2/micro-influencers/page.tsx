@@ -68,7 +68,7 @@ export default function MicroInfluencersPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="emerald" className="mb-2">PERCEPTION-X2</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-emerald">Micro-Influencer Network</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Micro-Influencer Network</h1>
           <p className="mt-2 text-slate-600">
             Comprehensive analysis of 50 grassroots health influencers driving behavior change in Abu Dhabi (2025-2026)
           </p>

@@ -245,7 +245,7 @@ export default function MediaCommunicationsPage() {
       >
         <div>
           <Badge variant="gold" className="mb-2">M-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Media & Communications</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Media & Communications</h1>
           <p className="mt-2 text-slate-400">
             Comprehensive analysis of UAE media environment including regulation, press freedom,
             influencer licensing, internet restrictions, and media market dynamics

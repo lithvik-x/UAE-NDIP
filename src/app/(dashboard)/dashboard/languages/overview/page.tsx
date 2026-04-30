@@ -120,7 +120,7 @@ export default function LanguagesOverviewPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="default" className="mb-2">MULTI-LINGUAL INTELLIGENCE</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-platinum">Languages Overview</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">Languages Overview</h1>
           <p className="mt-2 text-slate-400">
             UAE language demographics, sentiment by community, and cross-linguistic intelligence
           </p>

@@ -104,7 +104,7 @@ export default function EmergingThreatsPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="rose" className="mb-2">M-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-rose">Emerging Threats</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-rose">Emerging Threats</h1>
           <p className="mt-2 text-slate-400">
             AI-powered threat prediction and early warning system for UAE digital assets
           </p>

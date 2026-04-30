@@ -109,7 +109,7 @@ export default function FactCheckDashboardPage() {
   }
 
   return (
-    <div className="space-y-8 p-8" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+    <div className="space-y-8 p-8 font-rajdhani">
       {/* ============================================================================
       ENHANCEMENT CYCLE A: Header & Key Metrics
       ============================================================================ */}
@@ -121,7 +121,7 @@ export default function FactCheckDashboardPage() {
       >
         <div>
           <Badge variant="emerald" className="mb-2">V-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-emerald">Fact-Check Verification Dashboard</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Fact-Check Verification Dashboard</h1>
           <p className="mt-2 text-slate-400">
             {data.kpis?.length || 0}+ KPIs tracking misinformation, AI content detection, and enforcement actions
           </p>

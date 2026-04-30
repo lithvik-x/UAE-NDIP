@@ -88,7 +88,7 @@ export default function HistoricalCrisisPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">H-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Historical Crises</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Historical Crises</h1>
           <p className="mt-2 text-slate-400">
             {data.description || 'Major crises, their management, and lessons learned'}
           </p>

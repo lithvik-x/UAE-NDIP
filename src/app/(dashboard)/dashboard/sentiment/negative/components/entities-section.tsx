@@ -197,7 +197,7 @@ export function EntitiesSection({ className }: EntitiesSectionProps) {
                 className="glass-card border border-amber-500/30 p-4 text-center"
               >
                 <Icon className="h-8 w-8 mx-auto mb-2 text-amber-400" />
-                <h4 className="font-bold text-slate-200 mb-1" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                <h4 className="font-bold text-slate-200 mb-1 font-rajdhani">
                   {intervention.operation}
                 </h4>
                 <p className="text-sm text-slate-400 mb-2">{intervention.location}</p>

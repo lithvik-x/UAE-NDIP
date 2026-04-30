@@ -165,8 +165,7 @@ export default function MaghrebiArabicPage() {
       initial="initial"
       animate="animate"
       variants={staggerContainer}
-      className="space-y-8 p-8 font-rajdhani"
-      style={{ fontFamily: 'Rajdhani, sans-serif' }}
+      className="space-y-8 p-8 font-rajdhani font-rajdhani"
     >
       {/* Enhanced Header with motion */}
       <motion.div

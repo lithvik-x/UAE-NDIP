@@ -309,7 +309,7 @@ export default function RoyalFamilyPage() {
       >
         <div>
           <Badge variant="gold" className="mb-2 text-xs font-semibold tracking-wider uppercase">Royal Family</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">
             UAE Royal Family Intelligence
           </h1>
           <p className="mt-2 text-platinum-600 dark:text-platinum-400 text-sm max-w-2xl">

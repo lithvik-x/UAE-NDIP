@@ -162,7 +162,7 @@ export default function WeeklyDeepDivePage() {
       >
         <div>
           <Badge variant="gold" className="mb-2">M-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Weekly Deep-Dive Analysis</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Weekly Deep-Dive Analysis</h1>
           <p className="mt-2 text-slate-400 font-rajdhani">
             5-phase methodology with NMA stakeholder mapping, GMO frameworks, and AMEC evaluation
           </p>

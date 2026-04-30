@@ -121,7 +121,7 @@ export default function TrendsOverviewPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">TRENDS INTELLIGENCE</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Trends Overview</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Trends Overview</h1>
           <p className="mt-2 text-slate-400">
             Cross-sector trend analysis, adoption metrics, and predictive foresight for the UAE
           </p>

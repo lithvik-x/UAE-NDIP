@@ -59,7 +59,7 @@ export function SourceCredibilitySection({ className }: SourceCredibilitySection
               >
                 <div className="flex items-center gap-2 mb-2">
                   <Icon className="h-4 w-4" />
-                  <span className="text-sm font-bold" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                  <span className="text-sm font-bold font-rajdhani">
                     Tier {tier.tier}
                   </span>
                 </div>
@@ -95,7 +95,7 @@ export function SourceCredibilitySection({ className }: SourceCredibilitySection
                         <Icon className="h-5 w-5" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-slate-200" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                        <h4 className="font-semibold text-slate-200 font-rajdhani">
                           {source.source}
                         </h4>
                         <p className="text-xs text-slate-500">{source.type}</p>

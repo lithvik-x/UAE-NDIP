@@ -202,8 +202,7 @@ export default function ControversyDebatePage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-3xl font-extrabold gradient-text-gold"
-            style={{ fontFamily: 'Rajdhani, sans-serif' }}
+            className="text-3xl font-extrabold font-rajdhani gradient-text-gold"
           >
             Controversy & Debate Analysis
           </motion.h1>
@@ -296,7 +295,7 @@ export default function ControversyDebatePage() {
               className="glass-card border-amber-500/30"
             >
               <CardHeader>
-                <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                <CardTitle className="text-lg font-rajdhani">
                   <Scale className="w-4 h-4 inline mr-2" />
                   Sentiment Distribution
                 </CardTitle>
@@ -320,7 +319,7 @@ export default function ControversyDebatePage() {
               className="glass-card border-amber-500/30"
             >
               <CardHeader>
-                <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                <CardTitle className="text-lg font-rajdhani">
                   <TrendingUp className="w-4 h-4 inline mr-2" />
                   Sentiment by Topic
                 </CardTitle>
@@ -349,7 +348,7 @@ export default function ControversyDebatePage() {
             className="glass-card border-red-500/30"
           >
             <CardHeader>
-              <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+              <CardTitle className="text-lg font-rajdhani">
                 <AlertTriangle className="w-4 h-4 inline mr-2 text-red-400" />
                 Critical Priority Topics
               </CardTitle>
@@ -431,7 +430,7 @@ export default function ControversyDebatePage() {
                 <CardHeader className="pb-2">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                      <CardTitle className="text-lg font-rajdhani">
                         {topic.title}
                       </CardTitle>
                       <div className="flex gap-2 mt-2">
@@ -519,7 +518,7 @@ export default function ControversyDebatePage() {
               className="glass-card border-amber-500/30"
             >
               <CardHeader>
-                <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                <CardTitle className="text-lg font-rajdhani">
                   <Activity className="w-4 h-4 inline mr-2" />
                   Sentiment Score Distribution
                 </CardTitle>
@@ -550,7 +549,7 @@ export default function ControversyDebatePage() {
               className="glass-card border-amber-500/30"
             >
               <CardHeader>
-                <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                <CardTitle className="text-lg font-rajdhani">
                   <TrendingUp className="w-4 h-4 inline mr-2" />
                   Positive vs Negative Breakdown
                 </CardTitle>
@@ -654,7 +653,7 @@ export default function ControversyDebatePage() {
             className="glass-card border-amber-500/30"
           >
             <CardHeader>
-              <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+              <CardTitle className="text-lg font-rajdhani">
                 <Database className="w-4 h-4 inline mr-2" />
                 Source Credibility Matrix
               </CardTitle>
@@ -706,7 +705,7 @@ export default function ControversyDebatePage() {
               className="glass-card border-red-500/30"
             >
               <CardHeader>
-                <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                <CardTitle className="text-lg font-rajdhani">
                   <ShieldAlert className="w-4 h-4 inline mr-2 text-red-400" />
                   Human Rights KPIs
                 </CardTitle>
@@ -734,7 +733,7 @@ export default function ControversyDebatePage() {
               className="glass-card border-orange-500/30"
             >
               <CardHeader>
-                <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                <CardTitle className="text-lg font-rajdhani">
                   <Shield className="w-4 h-4 inline mr-2 text-orange-400" />
                   Military KPIs
                 </CardTitle>
@@ -762,7 +761,7 @@ export default function ControversyDebatePage() {
               className="glass-card border-emerald-500/30"
             >
               <CardHeader>
-                <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                <CardTitle className="text-lg font-rajdhani">
                   <DollarSign className="w-4 h-4 inline mr-2 text-emerald-400" />
                   Financial KPIs
                 </CardTitle>
@@ -790,7 +789,7 @@ export default function ControversyDebatePage() {
               className="glass-card border-teal-500/30"
             >
               <CardHeader>
-                <CardTitle className="text-lg" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+                <CardTitle className="text-lg font-rajdhani">
                   <Leaf className="w-4 h-4 inline mr-2 text-teal-400" />
                   Climate KPIs
                 </CardTitle>

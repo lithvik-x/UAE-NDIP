@@ -1171,7 +1171,7 @@ export default function SoftPowerPage() {
       >
         <div>
           <Badge variant="indigo" className="mb-2">PERCEPTION-X2</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-indigo">UAE Soft Power & Public Diplomacy</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-indigo">UAE Soft Power & Public Diplomacy</h1>
           <p className="mt-2 text-slate-600">
             Only Arab nation in global top 10 soft power rankings for four consecutive years
           </p>

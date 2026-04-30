@@ -476,7 +476,7 @@ export default function EconomyBusinessPage() {
       <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">P-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold">Economy & Business</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Economy & Business</h1>
           <p className="mt-2 text-slate-400">
             Comprehensive analysis of UAE macroeconomic indicators, GDP, banking, sovereign wealth funds, diversification, trade, and business climate
           </p>

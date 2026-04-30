@@ -51,29 +51,6 @@ export const metadata: Metadata = {
     shortcut: '/favicon.svg',
     apple: '/favicon.svg',
   },
-  openGraph: {
-    title: 'UAE National Digital Intelligence Platform | Clairvoyance-CX',
-    description: 'AI-powered digital intelligence platform for UAE Federal decision-makers. Ten integrated sections delivering real-time situational awareness across all domains.',
-    url: 'https://ndip.dossier.li',
-    siteName: 'Clairvoyance-CX',
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Clairvoyance-CX — UAE National Digital Intelligence Platform',
-      },
-    ],
-    locale: 'en_AE',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'UAE National Digital Intelligence Platform | Clairvoyance-CX',
-    description: 'AI-powered digital intelligence platform for UAE Federal decision-makers.',
-    images: ['/og-image.png'],
-    creator: '@CryptoMize',
-  },
   manifest: '/manifest.json',
 }
 

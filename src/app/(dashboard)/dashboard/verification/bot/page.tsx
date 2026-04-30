@@ -138,7 +138,7 @@ export default function BotDashboardPage() {
   }
 
   return (
-    <div className="space-y-8 p-8" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
+    <div className="space-y-8 p-8 font-rajdhani">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -147,7 +147,7 @@ export default function BotDashboardPage() {
       >
         <div>
           <Badge variant="emerald" className="mb-2">V-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-emerald">Bot & Inauthentic Behavior</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Bot & Inauthentic Behavior</h1>
           <p className="mt-2 text-slate-400">
             UAE-linked bot networks, troll farms, and coordinated inauthentic behavior analysis
           </p>

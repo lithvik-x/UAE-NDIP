@@ -240,7 +240,7 @@ export default function InternationalPerceptionPage() {
       >
         <div>
           <Badge variant="indigo" className="mb-2">PERCEPTION-X2</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-indigo">International Perception</h1>
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-indigo">International Perception</h1>
           <p className="mt-2 text-slate-600">
             Comprehensive research on UAE global image, reputation indices, and sentiment analysis
           </p>

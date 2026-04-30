@@ -176,7 +176,7 @@ export default function SnapchatPage() {
             <Ghost className="h-3 w-3 mr-1" />
             SOCIAL MEDIA
           </Badge>
-          <h1 className="text-4xl font-extrabold gradient-text-platinum tracking-tight">
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-platinum tracking-tight">
             Snapchat & Ephemeral Content
           </h1>
           <p className="mt-2 text-slate-400 text-lg">

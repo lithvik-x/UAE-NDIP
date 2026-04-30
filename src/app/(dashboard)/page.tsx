@@ -301,7 +301,7 @@ export default function DashboardHomePage() {
                   <CardTitle className="font-rajdhani text-lg font-bold text-platinum-900 group-hover:text-gold-700 transition-colors">
                     {section.title}
                   </CardTitle>
-                  <p className="line-clamp-2 text-xs text-platinum-500 leading-relaxed">
+                  <p className="line-clamp-2 text-xs text-platinum-600 leading-relaxed">
                     {section.description}
                   </p>
                   <div className="flex items-center gap-1 text-gold text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
