@@ -1742,6 +1742,106 @@ export function useLanguageOverviewData() {
 }
 
 // ============================================================================
+// SENTIMENT HOOKS
+// ============================================================================
+
+/**
+ * useNeutralSentimentData - Hook for Neutral Sentiment data
+ */
+export function useNeutralSentimentData() {
+  const [data, setData] = useState({
+    metrics: { total: '559', verified: '404', accuracy: '92%', categories: '6', coverage: 'BROAD', risk: 'LOW' },
+    neutralTopics: [],
+    sources: []
+  })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(data) }
+}
+
+/**
+ * useHopeSentimentData - Hook for Hope & Optimism Sentiment data
+ */
+export function useHopeSentimentData() {
+  const [data, setData] = useState({
+    metrics: { hopeIndex: '78%', optimism: 'HIGH', vision: 'STRONG', youth: 'VERY HIGH', future: '85%', risk: 'LOW' },
+    hopeTopics: [],
+    expressions: []
+  })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(data) }
+}
+
+// ============================================================================
+// TRENDS HOOKS
+// ============================================================================
+
+/**
+ * usePredictiveData - Hook for Predictive Trends data
+ */
+export function usePredictiveData() {
+  const [data, setData] = useState({
+    metrics: { accuracy: '82%', window: '6 MO', signals: '24', confidence: '78%', velocity: 'MEDIUM', risk: 'LOW' },
+    forecasts: [],
+    signals: []
+  })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(data) }
+}
+
+// ============================================================================
+// VERIFICATION HOOKS
+// ============================================================================
+
+/**
+ * useSelfReferenceData - Hook for Self-Reference Verification data
+ */
+export function useSelfReferenceData() {
+  const [data, setData] = useState({
+    metrics: { total: '3,490', verification: '94%', accuracy: '89%', patterns: '156', crossRef: '78%', risk: 'LOW' },
+    patterns: [],
+    sources: []
+  })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(data) }
+}
+
+/**
+ * useStatisticalDataPointsData - Hook for Statistical Datapoints data
+ */
+export function useStatisticalDataPointsData() {
+  const [data, setData] = useState({
+    metrics: { total: '559', verified: '404', accuracy: '92%', categories: '6', coverage: 'BROAD', risk: 'LOW' },
+    statistics: [],
+    claims: []
+  })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(data) }
+}
+
+// ============================================================================
+// MONITORING HOOKS
+// ============================================================================
+
+/**
+ * useEntityInvestigationData - Hook for Entity Investigation data
+ */
+export function useEntityInvestigationData() {
+  const [data, setData] = useState({
+    metrics: { total: '5,885', investigations: '24', connections: '1,240', riskFlagged: '18%', coverage: 'BROAD', risk: 'MEDIUM' },
+    entities: [],
+    connections: []
+  })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(data) }
+}
+
+// ============================================================================
 // GENERIC HOOKS
 // ============================================================================
 
