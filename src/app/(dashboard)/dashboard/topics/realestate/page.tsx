@@ -39,6 +39,7 @@ import {
   Leaf,
   Train,
 } from 'lucide-react'
+import { Calendar, BookOpen, Crosshair } from 'lucide-react'
 import {
   realEstateData,
   executiveSummary,
@@ -840,6 +841,3 @@ export default function RealEstatePage() {
     </motion.div>
   )
 }
-
-// Import missing icons
-import { Calendar, BookOpen, Crosshair } from 'lucide-react'
