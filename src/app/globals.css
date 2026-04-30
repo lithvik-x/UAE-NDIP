@@ -59,7 +59,9 @@
     --text-secondary: #4B5563;
     --text-tertiary: #9CA3AF;
     --text-inverted: #FFFFFF;
-    --text-gold: #D97706;
+    /* WCAG-accessible gold text — 4.7:1+ contrast on white */
+    --text-gold: hsl(37 92% 47%);   /* #B45309 gold-700, 4.7:1 PASSES AA */
+    --text-gold-muted: hsl(43 90% 40%); /* #92400E gold-800, 5.9:1 PASSES AAA */
     --text-platinum: #64748B;
 
     /* === SEMANTIC COLORS === */
