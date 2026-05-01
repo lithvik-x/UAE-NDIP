@@ -60,6 +60,8 @@ import {
   cop28Outcomes,
   geographicAssets,
   conflicts,
+  sourceTierDistribution,
+  verificationStatus,
 } from '@/lib/data/topics/international-relations-data'
 
 // Animation variants for staggered mount
@@ -150,6 +152,14 @@ export default function InternationalRelationsPage() {
       icon: <Globe className="h-6 w-6" />,
       gradient: 'emerald' as const,
     },
+    {
+      title: 'Intelligence Sources',
+      value: '40+',
+      previousValue: 0,
+      unit: '',
+      icon: <FileText className="h-6 w-6" />,
+      gradient: 'platinum' as const,
+    },
   ]
 
   return (
@@ -185,7 +195,7 @@ export default function InternationalRelationsPage() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5"
       >
         {keyMetrics.map((metric, idx) => (
           <motion.div key={idx} variants={itemVariants}>
@@ -211,6 +221,7 @@ export default function InternationalRelationsPage() {
           <TabsTrigger value="entities">Entities & Assets</TabsTrigger>
           <TabsTrigger value="statistics">Statistics</TabsTrigger>
           <TabsTrigger value="outlook">Future Outlook</TabsTrigger>
+          <TabsTrigger value="quality">Research Quality</TabsTrigger>
         </TabsList>
 
         {/* Overview Tab */}
@@ -1021,6 +1032,138 @@ export default function InternationalRelationsPage() {
                     </div>
                     <div className="rounded-lg bg-slate-800/50 p-4 text-center">
                       <p className="text-2xl font-bold text-platinum">{data.metrics.totalDataPoints}</p>
+                      <p className="text-sm text-slate-400">Data Points Extracted</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex items-center justify-between rounded-lg bg-gold-500/10 p-3 border border-gold-500/30">
+                    <span className="text-sm text-slate-300">Enrichment Status</span>
+                    <Badge variant="gold">{data.executionMetadata.enrichmentStatus}</Badge>
+                  </div>
+                  <div className="mt-4 flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
+                    <span className="text-sm text-slate-300">Last Updated</span>
+                    <span className="text-sm text-slate-400">{data.lastUpdated}</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
+        {/* Research Quality Tab */}
+        <TabsContent value="quality" className="space-y-6">
+          <GlassPanel
+            title="Research Quality & Verification"
+            description="Source validation, tier distribution, and verification status for this intelligence report"
+          >
+            <div className="space-y-6">
+              {/* Verification Status */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Shield className="h-5 w-5 text-emerald" />
+                    Verification Status
+                  </CardTitle>
+                  <CardDescription>Quality checks passed for all research data</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+                    {verificationStatus.verificationDetails.map((v, idx) => (
+                      <div key={idx} className="flex items-start gap-3 rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30">
+                        <CheckCircle className="h-5 w-5 shrink-0 text-emerald-500 mt-0.5" />
+                        <div>
+                          <p className="font-medium text-slate-200">{v.label}</p>
+                          <p className="text-sm text-slate-400 mt-1">{v.detail}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-4 flex items-center gap-2 rounded-lg bg-slate-800/50 p-3">
+                    <span className="text-sm text-slate-300">Temporal Coverage:</span>
+                    <Badge variant="emerald">{verificationStatus.temporalCoverage}</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Source Tier Distribution */}
+              <div className="grid gap-6 lg:grid-cols-2">
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Landmark className="h-5 w-5 text-navy" />
+                      Source Tier Distribution
+                    </CardTitle>
+                    <CardDescription>Breakdown of sources by credibility tier</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <PieChart
+                      data={sourceTierDistribution.map((t, idx) => ({
+                        name: t.tier,
+                        value: t.sources,
+                        color: idx === 0 ? CHART_COLORS.gold : idx === 1 ? CHART_COLORS.navy : idx === 2 ? CHART_COLORS.emerald : idx === 3 ? CHART_COLORS.teal : CHART_COLORS.platinum,
+                      }))}
+                      height={280}
+                      showLegend={true}
+                    />
+                  </CardContent>
+                </Card>
+
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Tier Definitions</CardTitle>
+                    <CardDescription>Source credibility classification</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {sourceTierDistribution.map((tier, idx) => (
+                        <div key={idx} className="flex items-start gap-3 rounded-lg bg-slate-800/30 p-3">
+                          <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg font-bold text-xs ${
+                            idx === 0 ? 'bg-gold-500/20 text-gold-400' :
+                            idx === 1 ? 'bg-navy-500/20 text-navy-400' :
+                            idx === 2 ? 'bg-emerald-500/20 text-emerald-400' :
+                            idx === 3 ? 'bg-cyan-500/20 text-cyan-400' :
+                            'bg-platinum-500/20 text-platinum-400'
+                          }`}>
+                            {idx + 1}
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center justify-between">
+                              <p className="font-medium text-slate-200">{tier.tier}</p>
+                              <Badge variant="outline" className="text-xs">{tier.sources} sources</Badge>
+                            </div>
+                            <p className="text-xs text-slate-400 mt-1">{tier.description}</p>
+                            <p className="text-xs text-slate-500 mt-1 italic">{tier.examples}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Research Summary */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <FileText className="h-5 w-5 text-gold" />
+                    Research Execution Summary
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-4">
+                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                      <p className="text-2xl font-bold text-platinum">{data.executionMetadata.queriesExecuted}</p>
+                      <p className="text-sm text-slate-400">Queries Executed</p>
+                    </div>
+                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                      <p className="text-2xl font-bold text-platinum">{data.executionMetadata.pagesFetched}</p>
+                      <p className="text-sm text-slate-400">Pages Fetched</p>
+                    </div>
+                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                      <p className="text-2xl font-bold text-platinum">{data.sources.length}</p>
+                      <p className="text-sm text-slate-400">Sources Analyzed</p>
+                    </div>
+                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                      <p className="text-2xl font-bold text-gold">{data.metrics.totalDataPoints}</p>
                       <p className="text-sm text-slate-400">Data Points Extracted</p>
                     </div>
                   </div>

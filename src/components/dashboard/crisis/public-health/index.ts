@@ -1,0 +1,6 @@
+export { CovidOverview } from './CovidOverview'
+export { VaccinationSection } from './VaccinationSection'
+export { DiseaseOutbreaks } from './DiseaseOutbreaks'
+export { DigitalHealth } from './DigitalHealth'
+export { MentalHealthImpact } from './MentalHealthImpact'
+export { HumanitarianResponse } from './HumanitarianResponse'

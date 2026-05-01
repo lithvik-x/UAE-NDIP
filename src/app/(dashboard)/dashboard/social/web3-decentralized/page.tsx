@@ -37,10 +37,10 @@ export default function Web3DecentralizedPage() {
   ]
 
   const platformData = [
-    { name: 'NFTs', share: 42, color: CHART_COLORS.violet },
+    { name: 'NFTs', share: 42, color: CHART_COLORS.purple },
     { name: 'DeFi', share: 31, color: CHART_COLORS.emerald },
     { name: 'GameFi', share: 18, color: CHART_COLORS.rose },
-    { name: 'DAO/Governance', share: 9, color: CHART_COLORS.sky },
+    { name: 'DAO/Governance', share: 9, color: CHART_COLORS.info },
   ]
 
   return (

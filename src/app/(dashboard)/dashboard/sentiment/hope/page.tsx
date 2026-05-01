@@ -42,7 +42,7 @@ export default function HopeSentimentPage() {
   const sentimentData = [
     { name: 'Very Hopeful', value: 35, color: CHART_COLORS.emerald },
     { name: 'Hopeful', value: 45, color: CHART_COLORS.teal },
-    { name: 'Cautiously Optimistic', value: 20, color: CHART_COLORS.cyan },
+    { name: 'Cautiously Optimistic', value: 20, color: CHART_COLORS.teal },
   ]
 
   return (

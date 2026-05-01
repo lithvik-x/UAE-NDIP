@@ -52,6 +52,7 @@ import {
   Landmark,
   MonitorDot,
   GraduationCap,
+  Moon,
 } from 'lucide-react'
 import {
   useTechnologyInnovationData,
@@ -251,10 +252,12 @@ export default function TechnologyInnovationPage() {
           <TabsTrigger value="datacenter">Data Centers</TabsTrigger>
           <TabsTrigger value="surveillance">Surveillance</TabsTrigger>
           <TabsTrigger value="crypto">Crypto</TabsTrigger>
+          <TabsTrigger value="fintech">FinTech</TabsTrigger>
           <TabsTrigger value="infrastructure">Digital Infra</TabsTrigger>
           <TabsTrigger value="av">Autonomous</TabsTrigger>
           <TabsTrigger value="semiconductor">Semiconductor</TabsTrigger>
           <TabsTrigger value="startups">Startups</TabsTrigger>
+          <TabsTrigger value="labor">Labor Market</TabsTrigger>
           <TabsTrigger value="findings">Findings</TabsTrigger>
           <TabsTrigger value="sentiment">Sentiment</TabsTrigger>
         </TabsList>
@@ -1021,6 +1024,92 @@ export default function TechnologyInnovationPage() {
           </GlassPanel>
         </TabsContent>
 
+        {/* FinTech Tab */}
+        <TabsContent value="fintech" className="space-y-6">
+          <GlassPanel
+            title="FinTech & Innovation Hubs"
+            description="DIFC Innovation Hub and Dubai FinTech Hive ecosystem"
+            badge="Innovation"
+          >
+            <div className="space-y-6">
+              {/* DIFC Innovation Hub */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Building className="h-5 w-5 text-gold" />
+                    DIFC Innovation Hub
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="p-4 bg-gold-500/10 border border-gold-500/30 rounded-xl mb-4">
+                    <p className="text-gold font-bold">Home to first and largest FinTech accelerator in MEASA region</p>
+                  </div>
+                  <div className="grid gap-2">
+                    {data.difcInnovationHub.map((item, idx) => (
+                      <div key={idx} className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                        <span className="text-platinum-400 text-sm">{item.aspect}:</span>
+                        <span className="text-platinum-200 text-sm text-right">{item.details}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Dubai FinTech Hive */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Star className="h-5 w-5 text-emerald" />
+                    Dubai FinTech Hive
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div className="p-4 bg-slate-800/50 rounded-xl">
+                      <p className="text-platinum-400 text-sm">Launch Year</p>
+                      <p className="text-2xl font-bold text-emerald">{data.dubaiFinTechHive.details}</p>
+                    </div>
+                    <div className="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl">
+                      <p className="text-emerald font-bold mb-2">Inaugural Batch</p>
+                      <p className="text-platinum-300">11 finalists</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl">
+                      <p className="text-platinum-400 text-sm mb-2">Key Partnership</p>
+                      <p className="text-platinum-200">Emirates NBD for API sandbox certification</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Flagship Events */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Award className="h-5 w-5 text-gold" />
+                    Flagship Events
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="font-bold text-gold">Dubai FinTech Summit</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="font-bold text-gold">Dubai AI & Web3 Festival</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="font-bold text-gold">Future Sustainability Forum</p>
+                    </div>
+                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <p className="font-bold text-gold">AccelerateHER Program</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
         {/* Digital Infrastructure Tab */}
         <TabsContent value="infrastructure" className="space-y-6">
           <GlassPanel
@@ -1412,6 +1501,94 @@ export default function TechnologyInnovationPage() {
           </GlassPanel>
         </TabsContent>
 
+        {/* Labor Market Tab */}
+        <TabsContent value="labor" className="space-y-6">
+          <GlassPanel
+            title="Tech Sector Labor Market"
+            description="Layoffs data, regional disruptions, and workforce trends"
+            badge="Market Conditions"
+          >
+            <div className="space-y-6">
+              {/* Layoff Metrics */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <TrendingDown className="h-5 w-5 text-rose" />
+                    Tech Sector Layoffs
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {data.layoffMetrics.map((metric, idx) => (
+                      <div key={idx} className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-xl text-center">
+                        <p className="text-3xl font-bold text-rose">{metric.value}</p>
+                        <p className="text-platinum-400 mt-1">{metric.metric}</p>
+                        <p className="text-xs text-platinum-500 mt-1">Source: {metric.source}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Regional Disruptions */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <AlertTriangle className="h-5 w-5 text-rose" />
+                    Regional Disruptions
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {data.regionalDisruptions.map((disruption, idx) => (
+                      <div key={idx} className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-xl">
+                        <p className="font-bold text-rose">{disruption.event}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{disruption.impact}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Workforce Impact */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Users className="h-5 w-5 text-emerald" />
+                    UAE Job Market Impact
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="p-4 bg-slate-800/50 rounded-xl">
+                    <div className="flex justify-between items-center mb-4">
+                      <span className="text-platinum-400">UAE Companies Cutting Jobs</span>
+                      <Badge variant="rose" className="text-lg px-3">29%</Badge>
+                    </div>
+                    <p className="text-sm text-platinum-500">Source: Cooper Fitch Report</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Global Tech Layoffs Context */}
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Globe className="h-5 w-5 text-gold" />
+                    Global Tech Layoffs (2026)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                    <p className="text-4xl font-bold text-rose">30,000+</p>
+                    <p className="text-platinum-400 mt-2">Global tech employees affected</p>
+                    <p className="text-xs text-platinum-500 mt-1">Source: Gulf News</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </GlassPanel>
+        </TabsContent>
+
         {/* Synthesized Findings Tab */}
         <TabsContent value="findings" className="space-y-6">
           <GlassPanel
@@ -1618,23 +1795,5 @@ export default function TechnologyInnovationPage() {
         </p>
       </motion.div>
     </motion.div>
-  )
-}
-
-// Need to import Moon for space tab
-function Moon(props: React.SVGProps<SVGSVGElement> & { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-    </svg>
   )
 }

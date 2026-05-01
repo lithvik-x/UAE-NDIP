@@ -1696,3 +1696,207 @@ export const sourceCredibility = [
   { sourceType: 'Tactical/Media reports', count: 3, credibility: 'Medium-High' },
   { sourceType: 'Government media offices', count: 5, credibility: 'Very High' },
 ]
+
+// ============================================================================
+// BLOOMBERG RICH FAMILY RANKINGS (Section I)
+// ============================================================================
+
+export const bloombergRichRankings = [
+  { rank: '#1', family: 'House of Saud', country: 'Saudi Arabia', wealthEstimate: 'Est. $1.4 trillion', source: 'Bloomberg 2024' },
+  { rank: '#2', family: 'House of Nahyan (Al Nahyan)', country: 'UAE — Abu Dhabi', wealthEstimate: '$1 trillion+', source: 'Bloomberg 2024' },
+  { rank: '#3', family: 'House of Maktoum (Al Maktoum)', country: 'UAE — Dubai', wealthEstimate: 'Substantial', source: 'Bloomberg 2024' },
+]
+
+// ============================================================================
+// TOP SCORED INDIVIDUALS (Section K - UAE Relevance Scores)
+// ============================================================================
+
+export const topScoredIndividuals = [
+  { score: 10, person: 'Sheikh Mohamed bin Zayed Al Nahyan', role: 'President of UAE', emirate: 'Abu Dhabi', sentiment: 'Positive' },
+  { score: 10, person: 'Sheikh Zayed bin Sultan Al Nahyan', role: 'Founding Father', emirate: 'Abu Dhabi', sentiment: 'Overwhelmingly Positive' },
+  { score: 10, person: 'Sheikh Mohammed bin Rashid Al Maktoum', role: 'Ruler of Dubai, PM', emirate: 'Dubai', sentiment: 'Mixed' },
+  { score: 10, person: 'House of Nahyan', role: 'Ruling dynasty Abu Dhabi', emirate: 'Abu Dhabi', sentiment: 'Positive' },
+  { score: 10, person: 'Al Maktoum Family', role: 'Ruling dynasty Dubai', emirate: 'Dubai', sentiment: 'Mixed' },
+  { score: 9, person: 'Sheikh Mansour bin Zayed Al Nahyan', role: 'Vice President', emirate: 'Abu Dhabi', sentiment: 'Mixed' },
+  { score: 9, person: 'Sheikh Khaled bin Mohamed Al Nahyan', role: 'Crown Prince Abu Dhabi', emirate: 'Abu Dhabi', sentiment: 'Positive' },
+  { score: 9, person: 'Sheikh Tahnoon bin Zayed Al Nahyan', role: 'National Security', emirate: 'Abu Dhabi', sentiment: 'Mixed/Suspicious' },
+  { score: 9, person: 'Sheikh Abdullah bin Zayed Al Nahyan', role: 'Foreign Minister', emirate: 'Abu Dhabi', sentiment: 'Positive' },
+  { score: 9, person: 'Sheikh Hamdan bin Mohammed Al Maktoum', role: 'Crown Prince Dubai', emirate: 'Dubai', sentiment: 'Positive' },
+  { score: 9, person: 'Sheikh Ahmed bin Saeed Al Maktoum', role: 'Emirates Chairman', emirate: 'Dubai', sentiment: 'Positive' },
+  { score: 9, person: 'Sultan bin Muhammad Al Qasimi', role: 'Ruler of Sharjah', emirate: 'Sharjah', sentiment: 'Positive' },
+]
+
+// ============================================================================
+// SENTIMENT BY INDIVIDUAL (Section J)
+// ============================================================================
+
+export const sentimentByIndividual = [
+  { person: 'MBZ', sentiment: 'Positive', notes: 'Nation builder, regional leader' },
+  { person: 'Zayed (Founder)', sentiment: 'Overwhelmingly Positive', notes: 'Father of Nation' },
+  { person: 'Khalifa', sentiment: 'Positive', notes: 'Continuer of legacy' },
+  { person: 'Mansour', sentiment: 'Mixed', notes: 'Business success vs. controversies' },
+  { person: 'Khaled', sentiment: 'Positive', notes: 'Emerging leader' },
+  { person: 'Tahnoon', sentiment: 'Mixed/Suspicious', notes: 'Security roles, multiple controversies' },
+  { person: 'Hazza', sentiment: 'Mixed', notes: 'Security past, Pandora Papers' },
+  { person: 'Falah', sentiment: 'Negative', notes: 'Assault allegations' },
+  { person: 'Mohammed bin Rashid', sentiment: 'Mixed', notes: 'Visionary vs. family issues' },
+  { person: 'Hamdan', sentiment: 'Positive', notes: 'Young leader, athlete' },
+  { person: 'Sultan (Sharjah)', sentiment: 'Positive', notes: 'Historian, educator' },
+  { person: 'Saud (RAK)', sentiment: 'Positive', notes: 'Economic transformer' },
+]
+
+// ============================================================================
+// AL MAKTOUM FAMILY OVERVIEW (Section B.11)
+// ============================================================================
+
+export const alMaktoumFamilyOverview = {
+  fullName: 'House of Maktoum',
+  type: 'Ruling royal family of Dubai',
+  branch: 'House of Al Falasi',
+  founded: 'July 9, 1833 by Maktoum bin Butti (died 1852)',
+  currentHead: 'Mohammed bin Rashid Al Maktoum',
+  lineage: 'Traces to House of Al Falasi; part of Bani Yas clan',
+  foundingStory: 'About 800 members of Bani Yas tribe under Sheikh Maktoum bin Butti took control of Dubai',
+  keyCurrentMembers: [
+    'Sheikh Mohammed bin Rashid Al Maktoum (Ruler)',
+    'Sheikha Hind bint Maktoum Al Maktoum (First Lady of Dubai)',
+    'Hamdan bin Mohammed Al Maktoum (Crown Prince)',
+    'Maktoum bin Mohammed Al Maktoum (Deputy Ruler)',
+    'Ahmed bin Saeed Al Maktoum (Emirates Chairman)',
+  ],
+  assets: [
+    'Owns Godolphin (private Thoroughbred horseracing stable)',
+    'Controls substantial portions of Dubai\'s government and economy',
+  ],
+  notableControversies: [
+    'Allegations of kidnapping/detention of Sheikha Shamsa and Sheikha Latifa',
+    'Princess Haya\'s 2019 flight from Dubai',
+  ],
+  sentiment: 'Mixed',
+  uaeRelevance: 10,
+}
+
+// ============================================================================
+// AL QASIMI FAMILY OVERVIEW (Section C.3)
+// ============================================================================
+
+export const alQasimiFamilyOverview = {
+  type: 'Arab dynasty and tribe',
+  rules: 'Sharjah and Ras Al Khaimah in UAE',
+  heritage: 'One of longest-reigning royal families in Arabian Peninsula',
+  descent: 'From Husayn ibn Ali through Al Qasimi bin Idris',
+  historyHighlights: [
+    { period: 'Early 19th century', event: 'Emerged as maritime power' },
+    { period: '1779-1887', event: 'Controlled Bandar Lengeh on Iranian coast' },
+    { period: 'British era', event: 'Labeled "pirots" due to naval conflicts' },
+    { period: '1820', event: 'Signed General Maritime Treaty with Britain' },
+  ],
+  academicContribution: 'Sultan bin Muhammad Al Qasimi authored "The Myth of Arab Piracy in the Gulf," challenging British historical accounts',
+  sentiment: 'Positive',
+  uaeRelevance: 9,
+}
+
+// ============================================================================
+// HOUSE OF NAHYAN OVERVIEW (Section A.16)
+// ============================================================================
+
+export const houseOfNahyanOverview = {
+  fullName: 'House of Nahyan (Al Nahyan)',
+  type: 'Ruling royal family of Emirate of Abu Dhabi',
+  branch: 'House of Al Falahi, tracing back to Bani Yas tribe',
+  related: 'Dubai\'s Al Maktoum family (through House of Al Falasi)',
+  founded: '1761 by Dhiyab bin Isa Al Nahyan',
+  currentHead: 'Sheikh Mohamed bin Zayed Al Nahyan (born 1961)',
+  historicalRulersOverthrown: 'Five rulers overthrown, eight killed in coups (1793-1966)',
+  dynastyEstablished: '1793 by Dhiyab bin Isa Al Nahyan',
+  totalAssets: 'Estimated $1 trillion+',
+  adiaRank: 'World\'s third-largest sovereign wealth fund',
+  bloomberg2024: '#2 richest family in world',
+  controversies: [
+    { year: '2009', detail: 'Allegations of torture involving Sheikh Issa bin Zayed' },
+    { year: '2017', detail: 'Al Nahyan princesses convicted in Belgium for servant abuse' },
+  ],
+  sentiment: 'Mixed',
+  uaeRelevance: 10,
+}
+
+// ============================================================================
+// UAE RELEVANCE SCORING GUIDE
+// ============================================================================
+
+export const relevanceScoringGuide = [
+  { score: '10/10', label: 'SUPREME', description: 'President, Ruler, founding figure' },
+  { score: '9/10', label: 'CRITICAL', description: 'Crown Prince, Vice President, key minister' },
+  { score: '8/10', label: 'HIGH', description: 'Deputy ruler, major business leaders' },
+  { score: '7/10', label: 'MODERATE', description: 'Crown princes, regional representatives' },
+  { score: '6/10', label: 'NOTABLE', description: 'Specialized roles, deceased members' },
+  { score: '5/10', label: 'LOW', description: 'Controversial or less prominent members' },
+]
+
+// ============================================================================
+// ALL SOURCE URLS (Section M)
+// ============================================================================
+
+export const allSourceUrls = {
+  abuDhabi: [
+    'https://en.wikipedia.org/wiki/Mohamed_bin_Zayed_Al_Nahyan',
+    'https://www.britannica.com/biography/Mohamed-bin-Zayed',
+    'https://www.mohamedbinzayed.ae/en/',
+    'https://www.uae-embassy.org/discover-uae/governance/about-uae-president-sheikh-mohamed-bin-zayed',
+    'https://en.wikipedia.org/wiki/Zayed_bin_Sultan_Al_Nahyan',
+    'https://en.wikipedia.org/wiki/Khalifa_bin_Zayed_Al_Nahyan',
+    'https://en.wikipedia.org/wiki/Mansour_bin_Zayed_Al_Nahyan',
+    'https://en.wikipedia.org/wiki/Khaled_bin_Mohamed_Al_Nahyan',
+    'https://manhom.com/en/profiles/sheikh-theyab-bin-mohamed-bin-zayed-al-nahyan/',
+    'https://www.mediaoffice.abudhabi/en/topic/zayed-bin-mohamed-bin-zayed-al-nahyan/',
+    'https://en.wikipedia.org/wiki/Tahnoon_bin_Zayed_Al_Nahyan',
+    'https://en.wikipedia.org/wiki/Hazza_bin_Zayed_Al_Nahyan',
+    'https://en.wikipedia.org/wiki/Saeed_bin_Zayed_Al_Nahyan',
+    'https://en.wikipedia.org/wiki/Abdullah_bin_Zayed_Al_Nahyan',
+    'https://en.wikipedia.org/wiki/Hamdan_bin_Zayed_Al_Nahyan_(born_1963)',
+    'https://en.wikipedia.org/wiki/Sultan_bin_Zayed_Al_Nahyan',
+    'https://www.gsn-online.com/news-centre/article/uae-falah-bin-zayed-bin-sultan-al-nahyan-1970',
+    'https://about.me/FalahBinZayedAlNahyanSwitzerland',
+    'https://www.gsn-online.com/news-centre/article/uae-nahyan-bin-zayed-bin-sultan-al-nahyan-1968',
+    'https://en.wikipedia.org/wiki/House_of_Nahyan',
+  ],
+  dubai: [
+    'https://en.wikipedia.org/wiki/Mohammed_bin_Rashid_Al_Maktoum',
+    'https://en.wikipedia.org/wiki/Hamdan_bin_Mohammed_Al_Maktoum',
+    'https://en.wikipedia.org/wiki/Maktoum_bin_Mohammed_Al_Maktoum',
+    'https://en.wikipedia.org/wiki/Ahmed_bin_Mohammed_Al_Maktoum',
+    'https://en.wikipedia.org/wiki/Ahmed_bin_Saeed_Al_Maktoum',
+    'https://www.aljazeera.com/economy/2021/12/21/dubai-ruler-ordered-to-pay-princess-734m-in-royal-divorce-case',
+    'https://en.wikipedia.org/wiki/Saeed_bin_Maktoum_bin_Rashid_Al_Maktoum',
+    'https://en.wikipedia.org/wiki/Rashid_bin_Mohammed_Al_Maktoum',
+    'https://en.wikipedia.org/wiki/Maktoum_bin_Rashid_Al_Maktoum',
+    'https://en.wikipedia.org/wiki/Rashid_bin_Saeed_Al_Maktoum',
+    'https://en.wikipedia.org/wiki/Al_Maktoum_family',
+  ],
+  sharjah: [
+    'https://en.wikipedia.org/wiki/Sultan_bin_Muhammad_Al-Qasimi',
+    'https://en.wikipedia.org/wiki/Sultan_bin_Ahmed_Al_Qasimi',
+    'https://en.wikipedia.org/wiki/Al_Qasimi',
+  ],
+  ajman: [
+    'https://en.wikipedia.org/wiki/Humaid_bin_Rashid_Al_Nuaimi_III',
+    'https://en.wikipedia.org/wiki/Ammar_bin_Humaid_Al_Nuaimi',
+  ],
+  ummAlQuwain: [
+    'https://monarchies.fandom.com/wiki/Saud_bin_Rashid_Al_Mualla',
+    'https://www.uaq.ae/ar/changeLanguage.html?fromPage=umm-al-quwain/the-ruler.html&ignore=&languageCode=ar',
+    'https://manhom.com/en/profiles/sheikh-rashid-bin-saud-bin-rashid-al-mualla/',
+  ],
+  rasAlKhaimah: [
+    'https://en.wikipedia.org/wiki/Saud_bin_Saqr_Al_Qasimi',
+    'https://www.raudbinsaqr.ae/',
+    'https://en.wikipedia.org/wiki/Mohammed_bin_Saud_Al_Qasimi',
+  ],
+  fujairah: [
+    'https://en.wikipedia.org/wiki/Hamad_bin_Mohammed_Al_Sharqi',
+    'https://en.wikipedia.org/wiki/Mohammed_bin_Hamad_bin_Mohammed_Al_Sharqi',
+  ],
+  overview: [
+    'https://en.wikipedia.org/wiki/Royal_families_of_the_United_Arab_Emirates',
+  ],
+}

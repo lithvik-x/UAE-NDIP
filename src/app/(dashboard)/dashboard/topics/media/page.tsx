@@ -77,100 +77,103 @@ import {
 } from 'lucide-react'
 
 import {
-  mediaCommunicationsData,
-  keyMetrics,
-  pressFreedomData,
-  rsfAssessment,
-  freedomHouseAssessment,
+  // Import from new comprehensive media-data.ts
+  executionMetadata,
+  tableOfContents,
+  executiveSummary,
+  keyMetricsAtGlance,
   primaryLegislation,
   cabinetDecisions2025,
   nmaInfo,
   contentStandards,
   mediaFreeZones,
   foreignOwnership,
-  mediaTimeline,
-  mediaOutlets,
+  pressFreedomIndex,
+  rsfAssessment2025,
+  freedomHouseAssessment,
+  mediaMilestones,
+  majorMediaOutlets,
   umbrellaGroups,
   broadcastNetworks,
-  governmentStatement,
-  influencerLicenseDeadline,
+  governmentStatementMedia,
+  influencerDeadline,
   twoLicenseSystem,
-  eligibilityRequirements,
-  applicationProcess,
-  processingTime,
+  influencerEligibilityRequirements,
+  influencerApplicationProcess,
+  influencerProcessingTime,
   contentCreatorObligations,
   new2026Restrictions,
-  exemptions,
+  influencerExemptions,
   violationCategories,
   repeatOffenses,
   enforcementMechanisms,
   detentionCases2026,
   totalDetentionCases2026,
   vpnLegalStatus,
-  vpnDownloads,
-  gulfComparison2025,
-  globalContext,
-  voipBlocked,
+  vpnDownloadsTrend,
+  gulfVpnComparison2025,
+  globalVpnContext,
+  voipServicesBlocked,
   voipBlockedReason,
-  legalAlternatives,
+  legalVoipAlternatives,
   otherBlockedCategories,
-  websiteBlocking,
+  websiteBlockingStats,
   internetInfrastructure,
   redSeaCableCuts,
-  advertisingMarket,
-  digitalAdvertising,
-  advertisingSegments,
-  dominantPlatforms,
-  majorStreaming,
+  advertisingMarketSize,
+  digitalAdvertisingMetrics,
+  advertisingSegments2022,
+  dominantSocialPlatforms,
+  majorStreamingEntertainment,
   mediaEntertainmentSegments,
-  marketTrends,
+  mediaMarketTrends,
   telegraphAcquisition,
   otherMediaInvestments,
   journalistCases,
-  legalFrameworkDetentions,
+  detentionLegalFramework,
   humanRightsConcerns,
-  contentManipulation,
-  alJazeeraBlocking,
+  contentManipulationHistory,
+  alJazeeraBlockingTimeline,
   alJazeeraJustification,
-  blocksImplemented,
-  rsfResponse,
-  otherBlockedMedia,
+  alJazeeraBlocksImplemented,
+  rsfResponseAlJazeera,
+  otherBlockedMediaList,
   gpsDisruptionEvents,
-  affectedAreas,
-  phenomenaObserved,
-  technicalMethods,
-  expertQuoteGps,
+  gpsAffectedAreas,
+  gpsPhenomenaObserved,
+  gpsTechnicalMethods,
+  gpsExpertQuote,
   gigWorkerImpact,
-  expertWarnings,
-  netflixStreaming,
+  gpsExpertWarnings,
+  streamingRegulationIssues,
   streamingPlatforms,
-  regulatoryApproach,
+  streamingRegulatoryApproach,
   childDigitalSafetyLaw,
-  gamingAgeRating,
-  gamingRequirements,
+  gamingAgeRatingSystem,
   digitalServicesCovered,
   trainingInstitutions,
   aiLiteracyStudy,
   dubaiAiInitiative,
   journalistSalaries,
-  salaryFactors,
-  uaeContext,
+  salaryRangeFactors,
+  mediaDiversityUaeContext,
   unescoPerspective,
-  realityVsNarrative,
-  keyDataSummary,
+  mediaDiversityRealityVsNarrative,
+  keyDataSummaryTable,
   regulatoryTimeline,
   penaltyStructureSummary,
+  vpnDownloadTrend,
   urlSources,
   overallSentiment,
-  sentimentDimensions,
-  positiveElements,
-  keyNarratives,
+  sentimentByDimension,
+  positiveSentimentElements,
+  keyNarrativesAnalysis,
   relevanceScores,
   dashboardRecommendations,
-  dataGaps,
+  dataGapsIdentified,
   keyDefinitions,
   enrichmentMetadata,
-} from '@/lib/data/topics/media-communications-data'
+} from '@/lib/data/topics/media-data'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -191,13 +194,13 @@ export default function MediaCommunicationsPage() {
   const [activeTab, setActiveTab] = useState('overview')
 
   // Extract key metrics for cards
-  const pressFreedom = keyMetrics.find(m => m.label.includes('Press Freedom'))
-  const internetFreedom = keyMetrics.find(m => m.label.includes('Internet Freedom'))
-  const adMarket = keyMetrics.find(m => m.label.includes('Advertising Market'))
-  const websitesBlocked = keyMetrics.find(m => m.label.includes('Websites Blocked'))
+  const pressFreedom = keyMetricsAtGlance.find(m => m.metric.includes('Press Freedom'))
+  const internetFreedom = keyMetricsAtGlance.find(m => m.metric.includes('Internet Freedom'))
+  const adMarket = keyMetricsAtGlance.find(m => m.metric.includes('Advertising Market'))
+  const websitesBlocked = keyMetricsAtGlance.find(m => m.metric.includes('Websites Blocked'))
 
   // VPN Chart data
-  const vpnChartData = vpnDownloads.map(v => ({
+  const vpnChartData = vpnDownloadsTrend.map(v => ({
     year: v.year.toString(),
     uae: v.uaeDownloads,
     global: v.globalDownloads,
@@ -211,7 +214,7 @@ export default function MediaCommunicationsPage() {
   ]
 
   // Press freedom trend data
-  const pressFreedomChartData = pressFreedomData.filter(p => p.score > 0).map(p => ({
+  const pressFreedomChartData = pressFreedomIndex.filter(p => p.score > 0).map(p => ({
     year: p.year.toString(),
     score: p.score,
     rank: p.rank,
@@ -333,13 +336,13 @@ export default function MediaCommunicationsPage() {
               <div className="space-y-6">
                 {/* Key Metrics Grid */}
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                  {keyMetrics.slice(0, 6).map((metric, idx) => (
+                  {keyMetricsAtGlance.slice(0, 6).map((metric, idx) => (
                     <motion.div
                       key={idx}
                       variants={itemVariants}
                       className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50"
                     >
-                      <p className="text-sm text-slate-400">{metric.label}</p>
+                      <p className="text-sm text-slate-400">{metric.metric}</p>
                       <p className="mt-1 text-xl font-bold text-platinum">{metric.value}</p>
                       {metric.trend && (
                         <p className="mt-1 text-xs text-slate-500">{metric.trend}</p>
@@ -617,7 +620,7 @@ export default function MediaCommunicationsPage() {
                           <span className="text-slate-400">Trend</span>
                           <Badge variant="destructive">Down 12.1%</Badge>
                         </div>
-                        <p className="mt-4 text-sm text-slate-400">{rsfAssessment.text}</p>
+                        <p className="mt-4 text-sm text-slate-400">{rsfAssessment2025.text}</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -654,7 +657,7 @@ export default function MediaCommunicationsPage() {
                   <CardContent>
                     <ScrollArea className="h-[300px]">
                       <div className="space-y-2">
-                        {mediaTimeline.map((event, idx) => (
+                        {mediaMilestones.map((event, idx) => (
                           <div key={idx} className="flex items-center gap-4 rounded-lg border border-slate-700 p-3">
                             <Badge variant="gold" className="w-16 justify-center">{event.year}</Badge>
                             <span className="text-sm">{event.event}</span>
@@ -675,7 +678,7 @@ export default function MediaCommunicationsPage() {
                       <div>
                         <p className="text-sm font-medium text-gold mb-2">Government-owned</p>
                         <div className="flex flex-wrap gap-2">
-                          {mediaOutlets.filter(o => o.ownership === 'Government-owned').map((outlet, i) => (
+                          {majorMediaOutlets.filter(o => o.ownership === 'Government-owned').map((outlet, i) => (
                             <Badge key={i} variant="gold">{outlet.name}</Badge>
                           ))}
                         </div>
@@ -683,7 +686,7 @@ export default function MediaCommunicationsPage() {
                       <div>
                         <p className="text-sm font-medium text-platinum mb-2">Privately owned (with government ties)</p>
                         <div className="flex flex-wrap gap-2">
-                          {mediaOutlets.filter(o => o.ownership.includes('Privately')).map((outlet, i) => (
+                          {majorMediaOutlets.filter(o => o.ownership.includes('Privately')).map((outlet, i) => (
                             <Badge key={i} variant="outline">{outlet.name}</Badge>
                           ))}
                         </div>
@@ -707,9 +710,9 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <blockquote className="border-l-4 border-gold pl-4 italic text-slate-300">
-                      "{governmentStatement.quote}"
+                      "{governmentStatementMedia.quote}"
                     </blockquote>
-                    <p className="mt-2 text-sm text-slate-500">— {governmentStatement.speaker}</p>
+                    <p className="mt-2 text-sm text-slate-500">— {governmentStatementMedia.speaker}</p>
                   </CardContent>
                 </Card>
               </div>
@@ -728,7 +731,7 @@ export default function MediaCommunicationsPage() {
                     <div className="flex items-center justify-between">
                       <div>
                         <p className="text-sm text-slate-400">License Deadline</p>
-                        <p className="mt-1 text-3xl font-bold text-gold">{influencerLicenseDeadline.deadline}</p>
+                        <p className="mt-1 text-3xl font-bold text-gold">{influencerDeadline.deadline}</p>
                       </div>
                       <Badge variant="gold" className="text-lg px-4 py-2">MANDATORY</Badge>
                     </div>
@@ -765,7 +768,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2">
-                      {eligibilityRequirements.map((req, idx) => (
+                      {influencerEligibilityRequirements.map((req, idx) => (
                         <div key={idx} className="flex items-center gap-2">
                           <CheckCircle className="h-4 w-4 text-emerald" />
                           <span className="text-sm">{req}</span>
@@ -782,7 +785,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      {applicationProcess.map((step, idx) => (
+                      {influencerApplicationProcess.map((step, idx) => (
                         <div key={idx} className="flex items-center gap-3">
                           <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gold text-navy-950 text-sm font-bold">
                             {idx + 1}
@@ -792,7 +795,7 @@ export default function MediaCommunicationsPage() {
                       ))}
                       <div className="mt-4 flex items-center gap-2 rounded-lg bg-slate-800/50 p-3">
                         <Clock className="h-4 w-4 text-gold" />
-                        <span className="text-sm">Processing time: {processingTime}</span>
+                        <span className="text-sm">Processing time: {influencerProcessingTime}</span>
                       </div>
                     </div>
                   </CardContent>
@@ -839,7 +842,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2">
-                      {exemptions.map((exemption, idx) => (
+                      {influencerExemptions.map((exemption, idx) => (
                         <div key={idx} className="flex items-center gap-2">
                           <CheckCircle className="h-4 w-4 text-emerald" />
                           <span className="text-sm">{exemption}</span>
@@ -1007,7 +1010,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      {gulfComparison2025.map((country, idx) => (
+                      {gulfVpnComparison2025.map((country, idx) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
                           <span className="font-medium">{country.country}</span>
                           <div className="flex gap-4">
@@ -1062,7 +1065,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-                      {voipBlocked.map((service, idx) => (
+                      {voipServicesBlocked.map((service, idx) => (
                         <div key={idx} className="flex items-center gap-2 rounded-lg bg-rose-500/10 p-3">
                           <XCircle className="h-4 w-4 text-rose" />
                           <span className="text-sm">{service.service}</span>
@@ -1073,7 +1076,7 @@ export default function MediaCommunicationsPage() {
                     <div className="mt-4">
                       <p className="text-sm font-medium text-slate-300">Legal Alternatives:</p>
                       <div className="mt-2 flex gap-2">
-                        {legalAlternatives.map((alt, idx) => (
+                        {legalVoipAlternatives.map((alt, idx) => (
                           <Badge key={idx} variant="success">{alt}</Badge>
                         ))}
                       </div>
@@ -1186,7 +1189,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      {digitalAdvertising.map((metric, idx) => (
+                      {digitalAdvertisingMetrics.map((metric, idx) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
                           <div>
                             <p className="font-medium">{metric.metric}</p>
@@ -1206,7 +1209,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <PieChart
-                      data={advertisingSegments.map((seg, idx) => ({
+                      data={advertisingSegments2022.map((seg, idx) => ({
                         name: seg.segment,
                         value: parseFloat(seg.revenue.replace(/[$M]/g, '')),
                         color: Object.values(CHART_COLORS)[idx % Object.values(CHART_COLORS).length],
@@ -1224,7 +1227,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
-                      {dominantPlatforms.map((platform, idx) => (
+                      {dominantSocialPlatforms.map((platform, idx) => (
                         <Badge key={idx} variant="gold">{platform}</Badge>
                       ))}
                     </div>
@@ -1238,7 +1241,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-3 md:grid-cols-2">
-                      {majorStreaming.map((platform, idx) => (
+                      {majorStreamingEntertainment.map((platform, idx) => (
                         <div key={idx} className="flex items-center gap-2 rounded-lg bg-slate-800/50 p-3">
                           <Tv className="h-5 w-5 text-gold" />
                           <span className="text-sm">{platform}</span>
@@ -1269,7 +1272,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2">
-                      {marketTrends.map((trend, idx) => (
+                      {mediaMarketTrends.map((trend, idx) => (
                         <div key={idx} className="flex items-center gap-2">
                           <TrendingUp className="h-4 w-4 text-emerald" />
                           <span className="text-sm">{trend}</span>
@@ -1343,11 +1346,11 @@ export default function MediaCommunicationsPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg">Legal Framework for Detentions</CardTitle>
-                    <CardDescription>{legalFrameworkDetentions.law}</CardDescription>
+                    <CardDescription>{detentionLegalFramework.law}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2">
-                      {legalFrameworkDetentions.provisions.map((provision, idx) => (
+                      {detentionLegalFramework.provisions.map((provision, idx) => (
                         <div key={idx} className="flex items-start gap-2">
                           <AlertCircle className="h-4 w-4 text-rose mt-0.5" />
                           <span className="text-sm">{provision}</span>
@@ -1385,7 +1388,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      {contentManipulation.map((item, idx) => (
+                      {contentManipulationHistory.map((item, idx) => (
                         <div key={idx} className="flex items-center gap-4 rounded-lg bg-slate-800/50 p-3">
                           <Badge variant="gold">{item.year}</Badge>
                           <span className="text-sm">{item.activity}</span>
@@ -1422,7 +1425,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
-                      {salaryFactors.map((factor, idx) => (
+                      {salaryRangeFactors.map((factor, idx) => (
                         <Badge key={idx} variant="outline">{factor}</Badge>
                       ))}
                     </div>
@@ -1467,7 +1470,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
-                      {affectedAreas.map((area, idx) => (
+                      {gpsAffectedAreas.map((area, idx) => (
                         <Badge key={idx} variant="gold">{area}</Badge>
                       ))}
                     </div>
@@ -1481,7 +1484,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-2">
-                      {phenomenaObserved.map((phenomenon, idx) => (
+                      {gpsPhenomenaObserved.map((phenomenon, idx) => (
                         <div key={idx} className="flex items-center gap-2">
                           <AlertTriangle className="h-4 w-4 text-orange" />
                           <span className="text-sm">{phenomenon}</span>
@@ -1498,7 +1501,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-4 md:grid-cols-2">
-                      {technicalMethods.map((method, idx) => (
+                      {gpsTechnicalMethods.map((method, idx) => (
                         <div key={idx} className="rounded-lg bg-slate-800/50 p-4">
                           <h4 className="font-semibold text-gold">{method.method}</h4>
                           <p className="mt-1 text-sm text-slate-400">{method.description}</p>
@@ -1515,9 +1518,9 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <blockquote className="border-l-4 border-gold pl-4 italic text-slate-300">
-                      "{expertQuoteGps.quote}"
+                      "{gpsExpertQuote.quote}"
                     </blockquote>
-                    <p className="mt-2 text-sm text-slate-500">— {expertQuoteGps.speaker}</p>
+                    <p className="mt-2 text-sm text-slate-500">— {gpsExpertQuote.speaker}</p>
                   </CardContent>
                 </Card>
 
@@ -1556,7 +1559,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      {expertWarnings.map((warning, idx) => (
+                      {gpsExpertWarnings.map((warning, idx) => (
                         <div key={idx} className="rounded-lg bg-slate-800/50 p-4">
                           <p className="text-sm font-medium text-gold">{warning.speaker}</p>
                           <p className="mt-1 text-sm text-slate-400">"{warning.quote}"</p>
@@ -1671,7 +1674,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      {netflixStreaming.map((item, idx) => (
+                      {streamingRegulationIssues.map((item, idx) => (
                         <div key={idx} className="rounded-lg bg-slate-800/50 p-4">
                           <p className="font-medium">{item.issue}</p>
                           <p className="mt-1 text-sm text-slate-400">{item.details}</p>
@@ -1700,10 +1703,10 @@ export default function MediaCommunicationsPage() {
                       <div className="rounded-lg bg-slate-800/50 p-4">
                         <p className="text-sm font-medium">Video Game Age Rating</p>
                         <div className="mt-2 grid gap-2 md:grid-cols-2">
-                          <p className="text-sm">Administering: {gamingAgeRating.administeringBody}</p>
-                          <p className="text-sm">Fee: {gamingAgeRating.fee}</p>
-                          <p className="text-sm">Processing: {gamingAgeRating.processingDays}</p>
-                          <p className="text-sm">Type: {gamingAgeRating.requirement}</p>
+                          <p className="text-sm">Administering: {gamingAgeRatingSystem.administeringBody}</p>
+                          <p className="text-sm">Fee: {gamingAgeRatingSystem.fee}</p>
+                          <p className="text-sm">Processing: {gamingAgeRatingSystem.processingDays}</p>
+                          <p className="text-sm">Type: {gamingAgeRatingSystem.requirement}</p>
                         </div>
                       </div>
                     </div>
@@ -1736,7 +1739,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      {sentimentDimensions.map((dim, idx) => (
+                      {sentimentByDimension.map((dim, idx) => (
                         <div key={idx} className="rounded-lg bg-slate-800/50 p-4">
                           <div className="flex items-center justify-between">
                             <span className="font-medium">{dim.dimension}</span>
@@ -1766,7 +1769,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      {positiveElements.map((element, idx) => (
+                      {positiveSentimentElements.map((element, idx) => (
                         <div key={idx} className="flex items-start gap-2">
                           <CheckCircle className="h-4 w-4 text-emerald mt-0.5" />
                           <div>
@@ -1786,7 +1789,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      {keyNarratives.map((narrative, idx) => (
+                      {keyNarrativesAnalysis.map((narrative, idx) => (
                         <div key={idx} className="rounded-lg border border-slate-700 p-4">
                           <h4 className="font-semibold text-gold">{narrative.narrative}</h4>
                           <div className="mt-2 space-y-1">
@@ -1855,7 +1858,7 @@ export default function MediaCommunicationsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      {dataGaps.map((gap, idx) => (
+                      {dataGapsIdentified.map((gap, idx) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 p-3">
                           <div>
                             <p className="text-sm font-medium">{gap.gap}</p>

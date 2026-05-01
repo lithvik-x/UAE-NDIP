@@ -50,7 +50,7 @@ export default function SocialMonitoringPage() {
     { name: 'Twitter/X', reach: 4.2, sentiment: 68, posts: 1250000, color: CHART_COLORS.navy },
     { name: 'TikTok', reach: 6.8, sentiment: 72, posts: 890000, color: CHART_COLORS.rose },
     { name: 'Instagram', reach: 5.1, sentiment: 75, posts: 670000, color: CHART_COLORS.pink },
-    { name: 'Facebook', reach: 3.4, sentiment: 62, posts: 450000, color: CHART_COLORS.blue },
+    { name: 'Facebook', reach: 3.4, sentiment: 62, posts: 450000, color: CHART_COLORS.denim },
     { name: 'YouTube', reach: 4.8, sentiment: 70, posts: 380000, color: CHART_COLORS.danger },
     { name: 'Snapchat', reach: 3.9, sentiment: 78, posts: 520000, color: CHART_COLORS.gold },
   ]

@@ -132,7 +132,7 @@ export default function GoogleSerpPage() {
                       <CardDescription>Highest-volume UAE search terms</CardDescription>
                     </CardHeader>
                     <CardContent className="px-0 pb-0">
-                      <BarChart data={queryData.slice(0, 5)} xAxisKey="query" bars={[{ dataKey: 'volume', name: 'Volume', color: CHART_COLORS.sky }]} height={280} showGrid={true} />
+                      <BarChart data={queryData.slice(0, 5)} xAxisKey="query" bars={[{ dataKey: 'volume', name: 'Volume', color: CHART_COLORS.info }]} height={280} showGrid={true} />
                     </CardContent>
                   </motion.div>
                 </div>

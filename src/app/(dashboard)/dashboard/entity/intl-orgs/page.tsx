@@ -1,7 +1,6 @@
 // @ts-nocheck
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -24,18 +23,15 @@ import {
   BarChart,
   PieChart,
   AreaChart,
+  RadarChart,
   CHART_COLORS,
 } from '@/components/ui/chart-library'
 import {
   Globe,
   Building,
   TrendingUp,
-  Users,
   AlertCircle,
-  CheckCircle,
-  XCircle,
   Activity,
-  Heart,
   Shield,
   Star,
   Award,
@@ -61,14 +57,21 @@ import {
   Landmark,
   Scale,
   Building2,
-  TreePine,
-  Wrench,
   HeartHandshake,
 } from 'lucide-react'
 import { internationalOrgsData, summaryMetrics } from '@/lib/data/entity/international-orgs-data'
+import {
+  UNSystemSection,
+  HumanitarianSection,
+  KeyFindingsSection,
+  EmbassiesSection,
+  TimelineSection,
+  EntityRegistrySection,
+  SourcesSection,
+} from '@/components/dashboard/entity/intl-orgs'
 
 // Animation variants
-const containerVariants = {
+const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -79,7 +82,7 @@ const containerVariants = {
   },
 }
 
-const itemVariants = {
+const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -91,7 +94,7 @@ const itemVariants = {
   },
 }
 
-const cardHoverVariants = {
+const cardHover = {
   rest: { scale: 1, opacity: 1 },
   hover: {
     scale: 1.02,
@@ -187,6 +190,24 @@ export default function InternationalOrgsPage() {
     }))
     .sort((a, b) => b.relevance - a.relevance)
 
+  // UN Agency Radar Chart Data (multi-dimensional comparison)
+  const getSentimentScore = (sentiment: string) => {
+    switch (sentiment) {
+      case 'POSITIVE': return 100
+      case 'MIXED': return 50
+      case 'NEGATIVE': return 0
+      default: return 50
+    }
+  }
+
+  const radarData = unAgencies.map((a) => ({
+    name: a.name.replace(' UAE', ''),
+    relevance: a.uaeRelevance,
+    sentiment: getSentimentScore(a.sentiment),
+    activity: Math.min(a.keyActivities.length * 25, 100), // Scale activities to max 100
+    reach: a.metrics?.countriesServed ? Math.min((a.metrics.countriesServed / 70) * 100, 100) : 50,
+  }))
+
   // Timeline data for 2026
   const timelineData = data.keyDevelopments2026.timeline.map((t) => ({
     date: t.date,
@@ -275,13 +296,13 @@ export default function InternationalOrgsPage() {
   return (
     <div className="space-y-8 p-8">
       <motion.div
-        variants={containerVariants}
+        variants={staggerContainer}
         initial="hidden"
         animate="visible"
         className="space-y-8"
       >
         {/* Premium Header */}
-        <motion.div variants={itemVariants} className="flex items-start justify-between">
+        <motion.div variants={fadeInUp} className="flex items-start justify-between">
           <div>
             <Badge variant="denim" className="mb-2 text-xs font-bold tracking-wider">
               DIPLOMATIC INTELLIGENCE
@@ -309,11 +330,11 @@ export default function InternationalOrgsPage() {
         </motion.div>
 
         {/* Summary Metrics */}
-        <motion.div variants={itemVariants} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <motion.div variants={fadeInUp} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {metricCards.map((metric, idx) => (
             <motion.div
               key={idx}
-              variants={cardHoverVariants}
+              variants={cardHover}
               initial="rest"
               whileHover="hover"
             >
@@ -329,7 +350,7 @@ export default function InternationalOrgsPage() {
         </motion.div>
 
         {/* UN System Overview */}
-        <motion.div variants={itemVariants}>
+        <motion.div variants={fadeInUp}>
           <GlassPanel
             title="UN System in UAE"
             description={`${data.unSystem.overview.agenciesCount} agencies with UAE presence`}
@@ -363,7 +384,7 @@ export default function InternationalOrgsPage() {
               </Card>
 
               {/* UN Agencies Chart */}
-              <Card className="glass-card col-span-2">
+              <Card className="glass-card col-span-1">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-base flex items-center gap-2">
                     <Building className="h-4 w-4 text-denim-500" />
@@ -378,6 +399,29 @@ export default function InternationalOrgsPage() {
                     height={200}
                     showGrid={false}
                     showLegend={false}
+                  />
+                </CardContent>
+              </Card>
+
+              {/* UN Agencies Radar Chart */}
+              <Card className="glass-card col-span-1">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-base flex items-center gap-2">
+                    <Globe className="h-4 w-4 text-emerald-500" />
+                    UN Agencies - Multi-Dimensional Comparison
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <RadarChart
+                    data={radarData}
+                    metrics={[
+                      { dataKey: 'relevance', name: 'Relevance', color: CHART_COLORS.denim },
+                      { dataKey: 'sentiment', name: 'Sentiment', color: CHART_COLORS.emerald },
+                      { dataKey: 'activity', name: 'Activity', color: CHART_COLORS.gold },
+                      { dataKey: 'reach', name: 'Global Reach', color: CHART_COLORS.rose },
+                    ]}
+                    height={200}
+                    showLegend={true}
                   />
                 </CardContent>
               </Card>
@@ -426,7 +470,7 @@ export default function InternationalOrgsPage() {
         </motion.div>
 
         {/* Humanitarian Leadership */}
-        <motion.div variants={itemVariants}>
+        <motion.div variants={fadeInUp}>
           <GlassPanel
             title="Humanitarian Leadership"
             description="UAE as global humanitarian hub capabilities and commitments"
@@ -524,7 +568,7 @@ export default function InternationalOrgsPage() {
         </motion.div>
 
         {/* Tabs for Multiple Sections */}
-        <motion.div variants={itemVariants}>
+        <motion.div variants={fadeInUp}>
           <Tabs defaultValue="overview" className="space-y-6">
             <TabsList className="glass-panel" scrollable>
               <TabsTrigger value="overview">UN Overview</TabsTrigger>
@@ -1402,13 +1446,13 @@ export default function InternationalOrgsPage() {
         </motion.div>
 
         {/* Key Findings Grid */}
-        <motion.div variants={itemVariants}>
+        <motion.div variants={fadeInUp}>
           <GlassPanel title="Key Findings" description="Critical intelligence from the analysis">
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {keyFindings.map((finding, idx) => (
                 <motion.div
                   key={idx}
-                  variants={cardHoverVariants}
+                  variants={cardHover}
                   initial="rest"
                   whileHover="hover"
                 >
@@ -1448,7 +1492,7 @@ export default function InternationalOrgsPage() {
         </motion.div>
 
         {/* Entity Registry */}
-        <motion.div variants={itemVariants}>
+        <motion.div variants={fadeInUp}>
           <GlassPanel title="Entity Registry" description="International organizations with UAE presence">
             <Table variant="medium">
               <TableHeader>
@@ -1474,7 +1518,7 @@ export default function InternationalOrgsPage() {
         </motion.div>
 
         {/* Sources Index */}
-        <motion.div variants={itemVariants}>
+        <motion.div variants={fadeInUp}>
           <GlassPanel title="Sources Index" description="Data sources for this report">
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <Card className="glass-card">

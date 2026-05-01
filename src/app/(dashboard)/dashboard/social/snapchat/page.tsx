@@ -109,7 +109,7 @@ export default function SnapchatPage() {
 
   // Platform comparison data
   const platformComparisonData = platformComparison ? [
-    { platform: 'Facebook', users: platformComparison.facebook, color: CHART_COLORS.blue },
+    { platform: 'Facebook', users: platformComparison.facebook, color: CHART_COLORS.denim },
     { platform: 'LinkedIn', users: platformComparison.linkedin, color: CHART_COLORS.platinum },
     { platform: 'YouTube', users: platformComparison.youtube, color: CHART_COLORS.rose },
     { platform: 'Instagram', users: platformComparison.instagram, color: CHART_COLORS.purple },
@@ -122,7 +122,7 @@ export default function SnapchatPage() {
     { country: 'Saudi Arabia', users: middleEastBreakdown.uae?.istizada || 13400000, color: CHART_COLORS.emerald },
     { country: 'UAE', users: middleEastBreakdown.uae?.istizada || 1950000, color: CHART_COLORS.gold },
     { country: 'Egypt', users: middleEastBreakdown.egypt?.istizada || 2650000, color: CHART_COLORS.platinum },
-    { country: 'Turkey', users: middleEastBreakdown.turkey?.istizada || 8500000, color: CHART_COLORS.blue },
+    { country: 'Turkey', users: middleEastBreakdown.turkey?.istizada || 8500000, color: CHART_COLORS.denim },
   ] : []
 
   // Bot activity data
@@ -144,7 +144,7 @@ export default function SnapchatPage() {
     { metric: 'Love to Shop', value: shoppingBehavior.loveToShop, color: CHART_COLORS.emerald },
     { metric: 'Primary Hobby', value: shoppingBehavior.shoppingAsPrimaryHobby, color: CHART_COLORS.gold },
     { metric: 'Discover via Ads', value: shoppingBehavior.discoverViaSocialAds, color: CHART_COLORS.platinum },
-    { metric: 'Share Brands', value: shoppingBehavior.shareBrandsWithFriends, color: CHART_COLORS.blue },
+    { metric: 'Share Brands', value: shoppingBehavior.shareBrandsWithFriends, color: CHART_COLORS.denim },
   ] : []
 
   // Key narratives formatted
@@ -563,7 +563,7 @@ export default function SnapchatPage() {
                       data={meBreakdownData}
                       xAxisKey="country"
                       bars={[
-                        { dataKey: 'users', name: 'Users', color: CHART_COLORS.blue },
+                        { dataKey: 'users', name: 'Users', color: CHART_COLORS.denim },
                       ]}
                       height={300}
                       showGrid={true}

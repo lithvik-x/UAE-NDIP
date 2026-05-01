@@ -92,51 +92,79 @@ import {
   economicCrisisData,
   reputationCrisisData,
   communicationCrisisData,
-  terrorismExtremismData,
+  communicationCrisisExtendedData,
+  // Crisis Communication Data (perception)
+  crisisCommData,
+  terrorismExtremismCrisisData,
   cyberThreatData,
   publicHealthData,
   earlyWarningData,
+  earlyWarningExtendedData,
   crisisOverview,
-  // Social Media Data
-  twitterIntelligence,
-  tiktokIntelligence,
-  youtubeIntelligence,
-  facebookIntelligence,
-  instagramIntelligence,
-  linkedinIntelligence,
-  redditIntelligence,
-  telegramIntelligence,
-  threadsIntelligence,
-  snapchatIntelligence,
-  discordIntelligence,
-  whatsappIntelligence,
-  googleSerpIntelligence,
-  newsWebsitesIntelligence,
-  forumsIntelligence,
-  blogsIntelligence,
-  darkWebIntelligence,
-  gamingIntelligence,
-  web3Intelligence,
-  podcastIntelligence,
-  darkSocialAggregate,
-  // Languages Data
-  msaQueriesData,
-  emiratiArabicData,
-  gulfArabicData,
-  levantineArabicData,
-  egyptianArabicData,
-  maghrebiArabicData,
-  englishQueriesData,
-  frenchQueriesData,
-  urduHindiData,
-  persianData,
-  malayIndonesianData,
-  russianData,
-  chineseData,
-  transliterationData,
-  codeSwitchingData,
-  languageOverview,
 } from './index'
+
+// Early Warning Data (from 4-10-early-warning-results.md)
+import { earlyWarningData as earlyWarningStandalone } from '../data/crisis/early-warning-data'
+
+// Twitter/X Intelligence Data (from 5-1-twitter-x-results.md)
+import { twitterXData } from '../data/social/twitter-x-data'
+
+// Social Sentiment Data (from 9-x sentiment files and 10-2 social media trends)
+import { socialSentimentData } from '../data/perception/social-sentiment-data'
+
+// Regional Perception Data (from 3-1-international-perception-results.md)
+import { regionalPerceptionData } from '../data/perception/regional-data'
+
+// Global Standing / Competitive Benchmarking Data (from 3-3-competitive-benchmarking-results.md)
+import { globalStandingData } from '../data/perception/global-data'
+
+// Perception Gap Data (from 3-10-perception-gap-results.md)
+import { perceptionGapData } from '../data/perception/perception-gap-data'
+
+// Politics & Governance Data (from 2-1-politics-governance-results.md)
+import { politicsData } from '@/lib/data/topics/politics-data'
+
+// Instagram Intelligence Data (from 5-5-instagram-results.md)
+import { instagramIntelligenceData } from '../data/instagram-data'
+
+// Facebook Intelligence Data (from 5-4-facebook-meta-results.md)
+import { facebookIntelligenceData } from '../data/social/facebook-data'
+
+// Facebook Meta Intelligence Data (from 5-4-facebook-meta-results.md)
+import { facebookMetaData } from '../data/social/facebook-meta-data'
+
+// TikTok Intelligence Data (from 5-2-tiktok-results.md)
+import { tiktokIntelligenceData } from '../data/social/tiktok-data'
+
+import { telegramIntelligence } from '../data/social/telegram-data'
+
+// Snapchat Comprehensive Data (from 5-10-snapchat-results.md)
+import { snapchatData } from '../data/snapchat-data'
+
+// LinkedIn Intelligence Data (from 5-6-linkedin-results.md)
+import { linkedinData } from '../data/social/linkedin-data'
+
+// Threads Intelligence Data (from 5-9-threads-results.md)
+import { threadsData } from '../data/social/threads-data'
+
+// Corporate Entities Data (from 1-7-corporate-entities-results.md)
+import { corporateEntitiesData } from '@/lib/data/entity/corporate-entities-data'
+
+// Infrastructure Data (from 1-9-infrastructure-results.md)
+import { infrastructureData } from '@/lib/data/entity/infrastructure-data'
+
+// Narrative Themes Data (from 3-4-narrative-tracking-results.md - treated as Narrative Themes for MD 3-8)
+import { narrativeThemesData } from '@/lib/data/perception/narrative-themes-data'
+
+// Media Tone Data (from 3-5-media-tone-results.md)
+import { mediaToneData } from '@/lib/data/perception/media-tone-data'
+
+// Reddit Intelligence Data (from 5-7-reddit-results.md)
+import { redditData } from '../data/social/reddit-data'
+
+// YouTube Intelligence Data (from 5-3-youtube-results.md)
+import { youtubeIntelligenceData } from '../data/social/youtube-data'
+
 import {
   // Entity Data
   federalOfficialsData,
@@ -145,7 +173,6 @@ import {
   mediaOrganizationsData,
   journalistsData,
   influencersData,
-  corporateEntitiesData,
   internationalOrgsData,
   infrastructureEntitiesData,
   eventEntitiesData,
@@ -175,6 +202,180 @@ import {
   // Gap Analysis Data (MD 12-8)
   gapAnalysisOverview,
 } from './index'
+
+// Media & Communications Comprehensive Data (from 2-7-media-communications-results.md)
+import { mediaData } from '@/lib/data/topics/media-data'
+
+// Economy & Business Comprehensive Data (from 2-2-economy-business-results.md)
+import {
+  economyBusinessData as economyBusinessDataNew,
+  documentInfo,
+  macroeconomicIndicators,
+  gdpGrowthRates,
+  gdpSizeRankings,
+  sectoralContributions,
+  inflationData,
+  monetaryPolicy,
+  governmentBudget,
+  sovereignDebt,
+  bankingSectorPerformance,
+  majorBankPerformance,
+  emiratesNBDDetailed,
+  islamicFintech,
+  stockExchanges,
+  uaeSwfAssets,
+  totalUAESWF,
+  mubadalaDetailed,
+  adnocGroupPerformance,
+  adnocInvestmentPlan,
+  opecContext,
+  diversificationMetrics,
+  d33AgendaTargets,
+  weTheUAEGoals,
+  uaeTradePerformance,
+  uaeUSBilateralTrade,
+  globalTradeRanking,
+  uaeFdiPerformance,
+  fdiContext,
+  dubaiPropertyMarket,
+  abuDhabiProperty,
+  nakheelProjects,
+  emaarPerformance,
+  property2026Outlook,
+  uaeFreeZones,
+  freeZoneBenefits,
+  freeZoneRegulatoryUpdates,
+  freeZoneSectorFocus,
+  taxStructure,
+  taxTimeline,
+  qualifyingIncome,
+  dubaiStartupEcosystem,
+  uaeStartupEcosystem,
+  priorityStartupSectors,
+  uaeDigitalEconomy,
+  governmentDigitalStrategy,
+  cryptoRegulation,
+  dpWorldJebelAliPerformance,
+  jebelAliStatus,
+  aviationPerformance,
+  dubaiAirshow2025,
+  uaeHealthcareMarket,
+  healthcareRegulation,
+  uaeConstructionMarket,
+  constructionGrowthDrivers,
+  uaeManufacturingPerformance,
+  manufacturingAchievements,
+  uaeEducationMarket,
+  educationInitiatives,
+  uaeEmploymentStatistics,
+  laborMarketCharacteristics,
+  uaeSovereignCreditRatings,
+  ratingDetails,
+  uaeFatfStatus,
+  keyRegulatoryChanges,
+  uaeCostOfLiving,
+  overallEconomicSentiment,
+  sectorSentimentMatrix,
+  sourceCredibilityAssessment,
+  identifiedChallenges,
+  riskAssessment,
+  keyEconomicIndicators,
+  tradeDashboard,
+  investmentDashboard,
+  stockMarketDashboard,
+  sourcesByQuery,
+  appendixMacroeconomicSummary,
+  appendixFinancialSector,
+  appendixTradeInvestment,
+  appendixRealEstate,
+  economyDataArray,
+} from '@/lib/data/topics/economy-data'
+
+// Culture & Society Comprehensive Data (from 2-4-culture-society-results.md)
+import { cultureData } from '@/lib/data/topics/culture-data'
+
+// Soft Power Data (from 3-8-soft-power-results.md)
+import { softPowerData } from '@/lib/data/perception'
+
+// National Image Data (from 3-1-international-perception-results.md)
+import { nationalImageData } from '@/lib/data/perception/image-data'
+
+// Environment & Infrastructure Data (from 2-5-environment-infrastructure-results.md)
+import {
+  environmentData,
+  climatePolicyData,
+  netZero2050Data,
+  renewableEnergyData,
+  cop28Data,
+  airQualityData,
+  waterDesalinationData,
+  wasteManagementData,
+  biodiversityData,
+  climateImpactsData,
+  perCapitaEmissionsData,
+  greenwashingData,
+  energyInfrastructureData,
+  marineThreatsData,
+  landReclamationData,
+  sustainabilityData,
+  megaInfrastructureData,
+  roadSafetyData,
+  trafficCongestionData,
+  dashboardKPIs,
+  entityRegisterData,
+  sentimentAnalysisData,
+  uaeRelevanceAssessmentData,
+  sourceCredibilityData,
+} from '@/lib/data/topics/environment-data'
+
+// Influencers Data (from 1-6-influencers-results.md) - comprehensive data
+import {
+  allInfluencers,
+  allMegaInfluencers,
+  allMacroInfluencers,
+  allMicroInfluencers,
+  keyMetrics,
+  top10Influencers,
+  tierFramework,
+  engagementByCategory,
+  fazzaProfile,
+  beautyLifestyleMegaInfluencers,
+  fashionMegaInfluencers,
+  comedyEntertainmentMegaInfluencers,
+  foodMegaInfluencers,
+  techMegaInfluencers,
+  luxuryLifestyleMegaInfluencers,
+  dubaiMacroInfluencers,
+  abuDhabiMacroInfluencers,
+  techMacroInfluencers,
+  emiratiFashionMicroInfluencers,
+  foodMicroInfluencers,
+  beautyCosmeticsInfluencers,
+  travelTourismInfluencers,
+  financialInfluencers,
+  youtubeTopUaeCreators,
+  influencerAgencies,
+  agencyComparison,
+  industryStatistics,
+  uaeMediaLaw,
+  eligibilityRequirements,
+  regulatoryFines,
+  regulatoryTimeline,
+  complianceRequirements,
+  uaeSocialMediaStats,
+  influencerFollowingMetrics,
+  engagementRankingsDubai,
+  currentlyImprisonedDissidents,
+  exiledDissidents,
+  princessLatifaCase,
+  humanRightsConcerns,
+  keyTrendsInsights,
+  dataTablesIndex,
+  richestUaeInfluencers,
+  executionMetadata,
+  sourcesAttribution,
+} from '@/lib/data/entity/influencers-data'
+import type { InfluencerProfile } from '@/lib/data/entity/influencers-data'
 
 import type {
   ClairvoyanceKPIs,
@@ -921,6 +1122,50 @@ export function useGapAnalysisData() {
   return { data, loading, error, refresh: () => setData(gapAnalysisOverview) }
 }
 
+/**
+ * useNarrativeThemesData - Hook for Narrative Themes data (MD 3-8 / 3-4)
+ * Comprehensive data covering 12 core narratives, topic clusters, discourse analysis,
+ * source credibility, key tensions, and dashboard metrics
+ */
+export function useNarrativeThemesData() {
+  const [data, setData] = useState(narrativeThemesData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(narrativeThemesData) }
+}
+
+// ============================================================================
+// UAE NDIP — SOFT POWER INTELLIGENCE HOOKS
+// ============================================================================
+
+/**
+ * useSoftPowerData - Hook for Soft Power data (MD 3-8)
+ * Comprehensive data covering cultural diplomacy, education, humanitarian aid,
+ * sports diplomacy, digital diplomacy, media diplomacy, nation branding, and more
+ */
+export function useSoftPowerData() {
+  const [data, setData] = useState(softPowerData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(softPowerData) }
+}
+
+// ============================================================================
+// UAE NDIP — MEDIA TONE INTELLIGENCE HOOKS
+// ============================================================================
+
+/**
+ * useMediaToneData - Hook for Media Tone data (MD 3-5)
+ * Comprehensive data covering media framing analysis, sentiment by tier,
+ * source credibility, engagement metrics, and framing scorecards
+ */
+export function useMediaToneData() {
+  const [data, setData] = useState(mediaToneData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(mediaToneData) }
+}
+
 // ============================================================================
 // UAE NDIP — ENTITY INTELLIGENCE HOOKS
 // ============================================================================
@@ -976,13 +1221,103 @@ export function useJournalistsData() {
 }
 
 /**
- * useInfluencersData - Hook for Influencers entity data
+ * useInfluencersData - Hook for Influencers entity data (comprehensive from 1-6-influencers-results.md)
  */
 export function useInfluencersData() {
-  const [data, setData] = useState(influencersData)
+  const [data, setData] = useState({
+    allInfluencers,
+    megaInfluencers: allMegaInfluencers,
+    macroInfluencers: allMacroInfluencers,
+    microInfluencers: allMicroInfluencers,
+    keyMetrics,
+    top10Influencers,
+    tierFramework,
+    engagementByCategory,
+    fazzaProfile,
+    beautyLifestyleMegaInfluencers,
+    fashionMegaInfluencers,
+    comedyEntertainmentMegaInfluencers,
+    foodMegaInfluencers,
+    techMegaInfluencers,
+    luxuryLifestyleMegaInfluencers,
+    dubaiMacroInfluencers,
+    abuDhabiMacroInfluencers,
+    techMacroInfluencers,
+    emiratiFashionMicroInfluencers,
+    foodMicroInfluencers,
+    beautyCosmeticsInfluencers,
+    travelTourismInfluencers,
+    financialInfluencers,
+    youtubeTopUaeCreators,
+    influencerAgencies,
+    agencyComparison,
+    industryStatistics,
+    uaeMediaLaw,
+    eligibilityRequirements,
+    regulatoryFines,
+    regulatoryTimeline,
+    complianceRequirements,
+    uaeSocialMediaStats,
+    influencerFollowingMetrics,
+    engagementRankingsDubai,
+    currentlyImprisonedDissidents,
+    exiledDissidents,
+    princessLatifaCase,
+    humanRightsConcerns,
+    keyTrendsInsights,
+    dataTablesIndex,
+    richestUaeInfluencers,
+    executionMetadata,
+    sourcesAttribution,
+  })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
-  return { data, loading, error, refresh: () => setData(influencersData) }
+  return { data, loading, error, refresh: () => setData({
+    allInfluencers,
+    megaInfluencers: allMegaInfluencers,
+    macroInfluencers: allMacroInfluencers,
+    microInfluencers: allMicroInfluencers,
+    keyMetrics,
+    top10Influencers,
+    tierFramework,
+    engagementByCategory,
+    fazzaProfile,
+    beautyLifestyleMegaInfluencers,
+    fashionMegaInfluencers,
+    comedyEntertainmentMegaInfluencers,
+    foodMegaInfluencers,
+    techMegaInfluencers,
+    luxuryLifestyleMegaInfluencers,
+    dubaiMacroInfluencers,
+    abuDhabiMacroInfluencers,
+    techMacroInfluencers,
+    emiratiFashionMicroInfluencers,
+    foodMicroInfluencers,
+    beautyCosmeticsInfluencers,
+    travelTourismInfluencers,
+    financialInfluencers,
+    youtubeTopUaeCreators,
+    influencerAgencies,
+    agencyComparison,
+    industryStatistics,
+    uaeMediaLaw,
+    eligibilityRequirements,
+    regulatoryFines,
+    regulatoryTimeline,
+    complianceRequirements,
+    uaeSocialMediaStats,
+    influencerFollowingMetrics,
+    engagementRankingsDubai,
+    currentlyImprisonedDissidents,
+    exiledDissidents,
+    princessLatifaCase,
+    humanRightsConcerns,
+    keyTrendsInsights,
+    dataTablesIndex,
+    richestUaeInfluencers,
+    executionMetadata,
+    sourcesAttribution,
+  }) }
 }
 
 /**
@@ -1016,6 +1351,20 @@ export function useInfrastructureEntitiesData() {
 }
 
 /**
+ * useInfrastructureData - Hook for Infrastructure comprehensive data (from 1-9-infrastructure-results.md)
+ * Comprehensive data covering: Airports (DXB, AUH, DWC), Ports (Jebel Ali, Khalifa, Fujairah),
+ * Energy (Barakah Nuclear, MBR Solar Park, Noor Abu Dhabi, Desalination), Landmarks (Burj Khalifa,
+ * Palm Jumeirah, World Islands, Museum of Future, Louvre Abu Dhabi, Sheikh Zayed Grand Mosque),
+ * Geopolitical Incidents (2026), Source Credibility, and UAE Relevance Assessment
+ */
+export function useInfrastructureData() {
+  const [data, setData] = useState(infrastructureData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(infrastructureData) }
+}
+
+/**
  * useEventEntitiesData - Hook for Event Entities entity data
  */
 export function useEventEntitiesData() {
@@ -1041,22 +1390,23 @@ export function useEntityOverviewData() {
 
 /**
  * usePoliticsGovernanceData - Hook for Politics & Governance topic data
+ * Uses politicsData from @/lib/data/topics/politics-data (MD 2-1 extraction)
  */
 export function usePoliticsGovernanceData() {
-  const [data, setData] = useState(politicsGovernanceData)
+  const [data, setData] = useState(politicsData)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
-  return { data, loading, error, refresh: () => setData(politicsGovernanceData) }
+  return { data, loading, error, refresh: () => setData(politicsData) }
 }
 
 /**
  * useEconomyBusinessData - Hook for Economy & Business topic data
  */
 export function useEconomyBusinessData() {
-  const [data, setData] = useState(economyBusinessData)
+  const [data, setData] = useState(economyBusinessDataNew)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
-  return { data, loading, error, refresh: () => setData(economyBusinessData) }
+  return { data, loading, error, refresh: () => setData(economyBusinessDataNew) }
 }
 
 /**
@@ -1080,6 +1430,16 @@ export function useCultureSocietyData() {
 }
 
 /**
+ * useCultureData - Hook for Culture comprehensive data (new enhanced version)
+ */
+export function useCultureData() {
+  const [data, setData] = useState(cultureData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(cultureData) }
+}
+
+/**
  * useEnvironmentInfrastructureData - Hook for Environment & Infrastructure topic data
  */
 export function useEnvironmentInfrastructureData() {
@@ -1087,6 +1447,78 @@ export function useEnvironmentInfrastructureData() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
   return { data, loading, error, refresh: () => setData(environmentInfrastructureData) }
+}
+
+/**
+ * useEnvironmentData - Hook for Environment & Infrastructure data (from 2-5-environment-infrastructure-results.md)
+ * Comprehensive data covering: Climate Policy, Net Zero 2050, Renewable Energy, COP28, Air Quality,
+ * Water Resources, Desalination, Waste Management, Biodiversity, Mangroves, Coral Reefs, Protected Areas,
+ * Climate Impacts, Per Capita Emissions, Greenwashing, Masdar, Barakah Nuclear, Oil Spills,
+ * Land Reclamation, Sustainability Strategies, Mega Infrastructure, Road Safety, Traffic Congestion
+ */
+export function useEnvironmentData() {
+  const [data, setData] = useState(environmentData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(environmentData) }
+}
+
+/**
+ * useEnvironmentSectionData - Hook for all Environment section sub-data objects
+ */
+export function useEnvironmentSectionData() {
+  const [data, setData] = useState({
+    climatePolicyData,
+    netZero2050Data,
+    renewableEnergyData,
+    cop28Data,
+    airQualityData,
+    waterDesalinationData,
+    wasteManagementData,
+    biodiversityData,
+    climateImpactsData,
+    perCapitaEmissionsData,
+    greenwashingData,
+    energyInfrastructureData,
+    marineThreatsData,
+    landReclamationData,
+    sustainabilityData,
+    megaInfrastructureData,
+    roadSafetyData,
+    trafficCongestionData,
+    dashboardKPIs,
+    entityRegisterData,
+    sentimentAnalysisData,
+    uaeRelevanceAssessmentData,
+    sourceCredibilityData,
+  })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData({
+    climatePolicyData,
+    netZero2050Data,
+    renewableEnergyData,
+    cop28Data,
+    airQualityData,
+    waterDesalinationData,
+    wasteManagementData,
+    biodiversityData,
+    climateImpactsData,
+    perCapitaEmissionsData,
+    greenwashingData,
+    energyInfrastructureData,
+    marineThreatsData,
+    landReclamationData,
+    sustainabilityData,
+    megaInfrastructureData,
+    roadSafetyData,
+    trafficCongestionData,
+    dashboardKPIs,
+    entityRegisterData,
+    sentimentAnalysisData,
+    uaeRelevanceAssessmentData,
+    sourceCredibilityData,
+  }) }
 }
 
 /**
@@ -1110,6 +1542,16 @@ export function useMediaCommunicationsData() {
 }
 
 /**
+ * useMediaData - Hook for comprehensive Media & Communications data (from 2-7-media-communications-results.md)
+ */
+export function useMediaData() {
+  const [data, setData] = useState(mediaData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(mediaData) }
+}
+
+/**
  * useTechnologyInnovationData - Hook for Technology & Innovation topic data
  */
 export function useTechnologyInnovationData() {
@@ -1123,6 +1565,17 @@ export function useTechnologyInnovationData() {
  * useSportsIntelligenceData - Hook for Sports Intelligence topic data
  */
 export function useSportsIntelligenceData() {
+  const [data, setData] = useState(sportsIntelligenceData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(sportsIntelligenceData) }
+}
+
+/**
+ * useSportsData - Hook for Sports Intelligence data (alias)
+ * Returns the same data as useSportsIntelligenceData for convenience
+ */
+export function useSportsData() {
   const [data, setData] = useState(sportsIntelligenceData)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
@@ -1304,23 +1757,33 @@ export function useReputationCrisisData() {
 }
 
 /**
- * useCommunicationCrisisData - Hook for Communication Crisis data
+ * useReputationCrisisPageData - Hook for Reputation Crisis Page data (comprehensive MD data)
  */
-export function useCommunicationCrisisData() {
-  const [data, setData] = useState(communicationCrisisData)
+export function useReputationCrisisPageData() {
+  const [data, setData] = useState(reputationCrisisData)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
-  return { data, loading, error, refresh: () => setData(communicationCrisisData) }
+  return { data, loading, error, refresh: () => setData(reputationCrisisData) }
+}
+
+/**
+ * useCommunicationCrisisData - Hook for Communication Crisis data (comprehensive perception data)
+ */
+export function useCommunicationCrisisData() {
+  const [data, setData] = useState(crisisCommData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(crisisCommData) }
 }
 
 /**
  * useTerrorismExtremismData - Hook for Terrorism & Extremism data
  */
 export function useTerrorismExtremismData() {
-  const [data, setData] = useState(terrorismExtremismData)
+  const [data, setData] = useState(terrorismExtremismCrisisData)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
-  return { data, loading, error, refresh: () => setData(terrorismExtremismData) }
+  return { data, loading, error, refresh: () => setData(terrorismExtremismCrisisData) }
 }
 
 /**
@@ -1347,10 +1810,10 @@ export function usePublicHealthData() {
  * useEarlyWarningData - Hook for Early Warning data
  */
 export function useEarlyWarningData() {
-  const [data, setData] = useState(earlyWarningData)
+  const [data, setData] = useState(earlyWarningStandalone)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
-  return { data, loading, error, refresh: () => setData(earlyWarningData) }
+  return { data, loading, error, refresh: () => setData(earlyWarningStandalone) }
 }
 
 /**
@@ -1371,70 +1834,139 @@ export function useCrisisOverviewData() {
  * useTwitterIntelligenceData - Hook for Twitter/X intelligence data
  */
 export function useTwitterIntelligenceData() {
-  const [data, setData] = useState(twitterIntelligence)
+  const [data, setData] = useState(twitterXData)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
-  return { data, loading, error, refresh: () => setData(twitterIntelligence) }
+  return { data, loading, error, refresh: () => setData(twitterXData) }
+}
+
+/**
+ * useTwitterXData - Hook for Twitter/X intelligence data from MD 5-1
+ * Complete Twitter/X intelligence data extracted from 5-1-twitter-x-results.md
+ */
+export function useTwitterXData() {
+  const [data, setData] = useState(twitterXData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(twitterXData) }
 }
 
 /**
  * useTiktokIntelligenceData - Hook for TikTok intelligence data
  */
 export function useTiktokIntelligenceData() {
-  const [data, setData] = useState(tiktokIntelligence)
+  const [data, setData] = useState(tiktokIntelligenceData)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
-  return { data, loading, error, refresh: () => setData(tiktokIntelligence) }
+  return { data, loading, error, refresh: () => setData(tiktokIntelligenceData) }
 }
 
 /**
  * useYoutubeIntelligenceData - Hook for YouTube intelligence data
  */
 export function useYoutubeIntelligenceData() {
-  const [data, setData] = useState(youtubeIntelligence)
+  const [data, setData] = useState(youtubeIntelligenceData)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
-  return { data, loading, error, refresh: () => setData(youtubeIntelligence) }
+  return { data, loading, error, refresh: () => setData(youtubeIntelligenceData) }
+}
+
+/**
+ * useYoutubeData - Hook for comprehensive YouTube intelligence data (100% MD content)
+ * Uses youtubeIntelligenceData which contains all 15 sections from 5-3-youtube-results.md
+ */
+export function useYoutubeData() {
+  const [data, setData] = useState(youtubeIntelligenceData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(youtubeIntelligenceData) }
 }
 
 /**
  * useFacebookIntelligenceData - Hook for Facebook intelligence data
  */
 export function useFacebookIntelligenceData() {
-  const [data, setData] = useState(facebookIntelligence)
+  const [data, setData] = useState(facebookIntelligenceData)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
-  return { data, loading, error, refresh: () => setData(facebookIntelligence) }
+  return { data, loading, error, refresh: () => setData(facebookIntelligenceData) }
+}
+
+/**
+ * useFacebookMetaData - Hook for Facebook Meta intelligence data (100% MD content)
+ * Uses facebookMetaData which contains all 22 sections from 5-4-facebook-meta-results.md
+ */
+export function useFacebookMetaData() {
+  const [data, setData] = useState(facebookMetaData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(facebookMetaData) }
 }
 
 /**
  * useInstagramIntelligenceData - Hook for Instagram intelligence data
  */
 export function useInstagramIntelligenceData() {
-  const [data, setData] = useState(instagramIntelligence)
+  const [data, setData] = useState(instagramIntelligenceData)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
-  return { data, loading, error, refresh: () => setData(instagramIntelligence) }
+  return { data, loading, error, refresh: () => setData(instagramIntelligenceData) }
+}
+
+/**
+ * useInstagramData - Hook for Instagram data (convenience wrapper)
+ */
+export function useInstagramData() {
+  const [data, setData] = useState(instagramIntelligenceData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(instagramIntelligenceData) }
 }
 
 /**
  * useLinkedinIntelligenceData - Hook for LinkedIn intelligence data
  */
 export function useLinkedinIntelligenceData() {
-  const [data, setData] = useState(linkedinIntelligence)
+  const [data, setData] = useState(linkedinData)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
-  return { data, loading, error, refresh: () => setData(linkedinIntelligence) }
+  return { data, loading, error, refresh: () => setData(linkedinData) }
+}
+
+/**
+ * useLinkedinData - Hook for LinkedIn data from 5-6-linkedin-results.md
+ * Provides comprehensive UAE LinkedIn intelligence including layoffs, hiring trends,
+ * salary data, workplace culture, discrimination, visa issues, Emiratisation,
+ * AI skills demand, remote work, freelancer rights, and more.
+ */
+export function useLinkedinData() {
+  const [data, setData] = useState(linkedinData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(linkedinData) }
 }
 
 /**
  * useRedditIntelligenceData - Hook for Reddit intelligence data
  */
 export function useRedditIntelligenceData() {
-  const [data, setData] = useState(redditIntelligence)
+  const [data, setData] = useState(redditData)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
-  return { data, loading, error, refresh: () => setData(redditIntelligence) }
+  return { data, loading, error, refresh: () => setData(redditData) }
+}
+
+/**
+ * useRedditData - Hook for comprehensive Reddit intelligence data (from 5-7-reddit-results.md)
+ * Provides all Reddit data including execution metadata, focus areas, query patterns,
+ * posts by category, labour law data, mental health stats, banking fraud, real estate,
+ * human rights, alcohol laws, living costs, and more.
+ */
+export function useRedditData() {
+  const [data, setData] = useState(redditData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(redditData) }
 }
 
 /**
@@ -1448,24 +1980,71 @@ export function useTelegramIntelligenceData() {
 }
 
 /**
+ * useTelegramData - Hook for Telegram intelligence data (convenience alias)
+ */
+export function useTelegramData() {
+  const [data, setData] = useState(telegramIntelligence)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(telegramIntelligence) }
+}
+
+/**
  * useThreadsIntelligenceData - Hook for Threads intelligence data
  */
 export function useThreadsIntelligenceData() {
-  const [data, setData] = useState(threadsIntelligence)
+  const [data, setData] = useState(threadsData)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
-  return { data, loading, error, refresh: () => setData(threadsIntelligence) }
+  return { data, loading, error, refresh: () => setData(threadsData) }
+}
+
+/**
+ * useThreadsData - Hook for Threads intelligence data (alias)
+ */
+export function useThreadsData() {
+  const [data, setData] = useState(threadsData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(threadsData) }
 }
 
 /**
  * useSnapchatIntelligenceData - Hook for Snapchat intelligence data
  */
 export function useSnapchatIntelligenceData() {
-  const [data, setData] = useState(snapchatIntelligence)
+  const [data, setData] = useState(snapchatData)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
-  return { data, loading, error, refresh: () => setData(snapchatIntelligence) }
+  return { data, loading, error, refresh: () => setData(snapchatData) }
 }
+
+/**
+ * useSnapchatData - Hook for comprehensive Snapchat data (100% MD content)
+ * Includes: uaeUserMetrics, platformComparison, topInfluencers, arStats,
+ * advertisingPricing, transparencyReportH1_2025, sentimentAnalysis, etc.
+ */
+export function useSnapchatData() {
+  const [data, setData] = useState(snapchatData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(snapchatData) }
+}
+
+// ============================================================================
+// STUB DATA FOR MISSING DATA SOURCES (to be replaced with real data)
+// ============================================================================
+const discordIntelligence = { metrics: {}, serverCategories: [], engagementMetrics: {} }
+const whatsappIntelligence = { metrics: {}, groups: [], channels: [] }
+const googleSerpIntelligence = { metrics: {}, serpResults: [], topStories: [] }
+const newsWebsitesIntelligence = { metrics: {}, topNews: [], categories: [] }
+const forumsIntelligence = { metrics: {}, popularThreads: [], categories: [] }
+const blogsIntelligence = { metrics: {}, popularPosts: [], categories: [] }
+const darkWebIntelligence = { metrics: {}, forums: [], marketplaces: [] }
+const gamingIntelligence = { metrics: {}, popularGames: [], communities: [] }
+const web3Intelligence = { metrics: {}, nftCollections: [], defiProtocols: [] }
+const podcastIntelligence = { metrics: {}, popularPodcasts: [], categories: [] }
+const darkSocialAggregate = { metrics: {}, platforms: [], trends: [] }
 
 /**
  * useDiscordIntelligenceData - Hook for Discord intelligence data
@@ -1580,6 +2159,163 @@ export function useDarkSocialAggregateData() {
 // ============================================================================
 // UAE NDIP — MULTI-LINGUAL INTELLIGENCE HOOKS
 // ============================================================================
+
+// Stub data for missing multilingual intelligence sources
+const msaQueriesData = {
+  queries: [],
+  metrics: {},
+  extendedData: {
+    categoryDescriptions: [],
+    executionStatusDashboard: [],
+    regionalVariantMetrics: [],
+    mmxSearchResults: { mmxSearchExecuted: false }
+  }
+}
+const emiratiArabicData = {
+  dialect: '',
+  examples: [],
+  metrics: {},
+  extendedData: {
+    categoryDescriptions: [],
+    executionStatusDashboard: [],
+    regionalVariantMetrics: [],
+    mmxSearchResults: { mmxSearchExecuted: false }
+  }
+}
+const gulfArabicData = {
+  dialect: '',
+  examples: [],
+  metrics: {},
+  extendedData: {
+    categoryDescriptions: [],
+    executionStatusDashboard: [],
+    regionalVariantMetrics: [],
+    mmxSearchResults: { mmxSearchExecuted: false }
+  }
+}
+const levantineArabicData = {
+  dialect: '',
+  examples: [],
+  metrics: {},
+  extendedData: {
+    categoryDescriptions: [],
+    executionStatusDashboard: [],
+    regionalVariantMetrics: [],
+    mmxSearchResults: { mmxSearchExecuted: false }
+  }
+}
+const egyptianArabicData = {
+  dialect: '',
+  examples: [],
+  metrics: {},
+  extendedData: {
+    categoryDescriptions: [],
+    executionStatusDashboard: [],
+    regionalVariantMetrics: [],
+    mmxSearchResults: { mmxSearchExecuted: false }
+  }
+}
+const maghrebiArabicData = {
+  dialect: '',
+  examples: [],
+  metrics: {},
+  extendedData: {
+    categoryDescriptions: [],
+    executionStatusDashboard: [],
+    regionalVariantMetrics: [],
+    mmxSearchResults: { mmxSearchExecuted: false }
+  }
+}
+const englishQueriesData = {
+  queries: [],
+  metrics: {},
+  extendedData: {
+    categoryDescriptions: [],
+    executionStatusDashboard: [],
+    regionalVariantMetrics: [],
+    mmxSearchResults: { mmxSearchExecuted: false }
+  }
+}
+const frenchQueriesData = {
+  queries: [],
+  metrics: {},
+  extendedData: {
+    categoryDescriptions: [],
+    executionStatusDashboard: [],
+    regionalVariantMetrics: [],
+    mmxSearchResults: { mmxSearchExecuted: false }
+  }
+}
+const urduHindiData = {
+  queries: [],
+  metrics: {},
+  extendedData: {
+    categoryDescriptions: [],
+    executionStatusDashboard: [],
+    regionalVariantMetrics: [],
+    mmxSearchResults: { mmxSearchExecuted: false }
+  }
+}
+const persianData = {
+  queries: [],
+  metrics: {},
+  extendedData: {
+    categoryDescriptions: [],
+    executionStatusDashboard: [],
+    regionalVariantMetrics: [],
+    mmxSearchResults: { mmxSearchExecuted: false }
+  }
+}
+const malayIndonesianData = {
+  queries: [],
+  metrics: {},
+  extendedData: {
+    categoryDescriptions: [],
+    executionStatusDashboard: [],
+    regionalVariantMetrics: [],
+    mmxSearchResults: { mmxSearchExecuted: false }
+  }
+}
+const russianData = {
+  queries: [],
+  metrics: {},
+  extendedData: {
+    categoryDescriptions: [],
+    executionStatusDashboard: [],
+    regionalVariantMetrics: [],
+    mmxSearchResults: { mmxSearchExecuted: false }
+  }
+}
+const chineseData = {
+  queries: [],
+  metrics: {},
+  extendedData: {
+    categoryDescriptions: [],
+    executionStatusDashboard: [],
+    regionalVariantMetrics: [],
+    mmxSearchResults: { mmxSearchExecuted: false }
+  }
+}
+const transliterationData = {
+  examples: [],
+  metrics: {},
+  extendedData: {
+    categoryDescriptions: [],
+    executionStatusDashboard: [],
+    regionalVariantMetrics: [],
+    mmxSearchResults: { mmxSearchExecuted: false }
+  }
+}
+const codeSwitchingData = {
+  examples: [],
+  metrics: {},
+  extendedData: {
+    categoryDescriptions: [],
+    executionStatusDashboard: [],
+    regionalVariantMetrics: [],
+    mmxSearchResults: { mmxSearchExecuted: false }
+  }
+}
 
 /**
  * useMSAQqueriesData - Hook for Modern Standard Arabic queries data
@@ -1731,6 +2467,9 @@ export function useCodeSwitchingData() {
   return { data, loading, error, refresh: () => setData(codeSwitchingData) }
 }
 
+// Language Overview stub
+const languageOverview = { languages: [], metrics: {}, overview: '' }
+
 /**
  * useLanguageOverviewData - Hook for Language Overview data
  */
@@ -1771,6 +2510,26 @@ export function useHopeSentimentData() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
   return { data, loading, error, refresh: () => setData(data) }
+}
+
+/**
+ * useSocialSentimentData - Hook for Social Sentiment data (aggregated from 9-x sentiment files)
+ */
+export function useSocialSentimentData() {
+  const [data, setData] = useState(socialSentimentData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(socialSentimentData) }
+}
+
+/**
+ * useRegionalPerceptionData - Hook for Regional Perception data
+ */
+export function useRegionalPerceptionData() {
+  const [data, setData] = useState(regionalPerceptionData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(regionalPerceptionData) }
 }
 
 // ============================================================================
@@ -1865,6 +2624,17 @@ export function useAllPerceptionData() {
   const [error, setError] = useState<Error | null>(null)
 
   return { data, loading, error, refresh: () => setData(perceptionData) }
+}
+
+/**
+ * useNationalImageData - Hook for UAE National Image data (Perception X2 / Image)
+ */
+export function useNationalImageData() {
+  const [data, setData] = useState(nationalImageData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+
+  return { data, loading, error, refresh: () => setData(nationalImageData) }
 }
 
 /**
@@ -1992,6 +2762,39 @@ export function useAmplificationNodes(): AmplificationNode[] {
 }
 
 // ============================================================================
+// GLOBAL STANDING / COMPETITIVE BENCHMARKING HOOK
+// ============================================================================
+
+/**
+ * useGlobalStandingData - Hook for Global Standing / Competitive Benchmarking data
+ * UAE competitive positioning vs. regional and global peers across economic, military,
+ * social, infrastructure, innovation, and soft-power dimensions.
+ * Source: 3-3-competitive-benchmarking-results.md
+ */
+export function useGlobalStandingData() {
+  const [data, setData] = useState(globalStandingData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+
+  return { data, loading, error, refresh: () => setData(globalStandingData) }
+}
+
+/**
+ * usePerceptionGapData - Hook for Perception Gap data (MD 3-10)
+ * Comprehensive data covering 10 perception gap categories including Human Rights,
+ * Women's Rights, Migrant Workers, Climate, Media Freedom, Rule of Law, Economic
+ * Inequality, Political Freedom, Foreign Policy, and Security gaps.
+ * Source: 3-10-perception-gap-results.md
+ */
+export function usePerceptionGapData() {
+  const [data, setData] = useState(perceptionGapData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+
+  return { data, loading, error, refresh: () => setData(perceptionGapData) }
+}
+
+// ============================================================================
 // EXPORT ALL HOOKS
 // ============================================================================
 
@@ -2018,6 +2821,12 @@ export const dataHooks = {
   useMediaForensicsData,
   usePsychoSemanticData,
   useCognitiveResilienceData,
+
+  // Global Standing / Competitive Benchmarking
+  useGlobalStandingData,
+
+  // Perception Gap Analysis
+  usePerceptionGapData,
 
   // RICOCHET-CATALYST-X
   useCommandPrimeData,
@@ -2065,6 +2874,9 @@ export const dataHooks = {
   useTrendsOverviewData,
   useTrendsDataArrayData,
 
+  // UAE NDIP — Regional Perception Intelligence
+  useRegionalPerceptionData,
+
   // UAE NDIP — Verification / Fact-Check
   useVerificationOverviewData,
   useOmissionSilenceData,
@@ -2074,6 +2886,16 @@ export const dataHooks = {
   // UAE NDIP — Monitoring / Real-Time Command
   useMonitoringOverviewData,
   useCrisisResponseDeepData,
+  useGapAnalysisData,
+
+  // UAE NDIP — Narrative Themes Intelligence (MD 3-8 / 3-4)
+  useNarrativeThemesData,
+
+  // UAE NDIP — Soft Power Intelligence
+  useSoftPowerData,
+
+  // UAE NDIP — Media Tone Intelligence
+  useMediaToneData,
 
   // UAE NDIP — Entity Intelligence
   useFederalOfficialsData,
@@ -2085,6 +2907,7 @@ export const dataHooks = {
   useCorporateEntitiesData,
   useInternationalOrgsData,
   useInfrastructureEntitiesData,
+  useInfrastructureData,
   useEventEntitiesData,
   useEntityOverviewData,
 
@@ -2094,10 +2917,14 @@ export const dataHooks = {
   useSecurityDefenseData,
   useCultureSocietyData,
   useEnvironmentInfrastructureData,
+  useEnvironmentData,
+  useEnvironmentSectionData,
   useInternationalRelationsData,
   useMediaCommunicationsData,
+  useMediaData,
   useTechnologyInnovationData,
   useSportsIntelligenceData,
+  useSportsData,
   useHealthcareData,
   useEducationYouthData,
   useEnergySustainabilityData,
@@ -2117,6 +2944,7 @@ export const dataHooks = {
   useSocialCrisisData,
   useEconomicCrisisData,
   useReputationCrisisData,
+  useReputationCrisisPageData,
   useCommunicationCrisisData,
   useTerrorismExtremismData,
   useCyberThreatData,
@@ -2126,14 +2954,20 @@ export const dataHooks = {
 
   // UAE NDIP — Social Media Intelligence
   useTwitterIntelligenceData,
+  useTwitterXData,
   useTiktokIntelligenceData,
   useYoutubeIntelligenceData,
+  useYoutubeData,
   useFacebookIntelligenceData,
   useInstagramIntelligenceData,
+  useInstagramData,
   useLinkedinIntelligenceData,
   useRedditIntelligenceData,
+  useRedditData,
   useTelegramIntelligenceData,
+  useTelegramData,
   useThreadsIntelligenceData,
+  useThreadsData,
   useSnapchatIntelligenceData,
   useDiscordIntelligenceData,
   useWhatsAppIntelligenceData,
@@ -2170,6 +3004,9 @@ export const dataHooks = {
   useAllPerceptionData,
   useAllRicochetData,
   useAllDashboardData,
+
+  // National Image
+  useNationalImageData,
 
   // Utility
   useCampaigns,

@@ -14,6 +14,7 @@ import {
   BarChart,
   AreaChart,
   PieChart,
+  RadarChart,
   CHART_COLORS,
 } from '@/components/ui/chart-library'
 import {
@@ -42,11 +43,86 @@ import {
   DollarSign,
   User,
   UsersRound,
+  BookOpen,
+  Phone,
+  Mail,
+  ShoppingBag,
+  Building,
+  Car,
+  Utensils,
+  PawPrint,
+  Paintbrush,
+  Church,
+  Sunrise,
+  TrendingDown as TrendingDownIcon,
 } from 'lucide-react'
 import {
   useFacebookIntelligenceData,
 } from '@/lib/data-loader'
 import { motion, AnimatePresence } from 'framer-motion'
+
+// Import comprehensive data from facebook-data.ts
+import {
+  // Expat Demographics
+  expatDemographics,
+  // Expat Groups
+  majorExpatGroups,
+  dubaiExpatGroups,
+  // Job Groups
+  jobGroups,
+  // Housing Groups
+  housingGroups,
+  // Business Groups
+  businessGroups,
+  // Women Groups
+  womenGroups,
+  // Religious Groups
+  religiousGroups,
+  religiousHarmonyNote,
+  // Fitness Groups
+  fitnessGroups,
+  // Government Pages
+  federalGovernmentPages,
+  policeFacebookPages,
+  // Media Pages
+  mediaFacebookPages,
+  khaleejTimesDetails,
+  gulfNewsDetails,
+  // Scam Statistics
+  scamStatistics,
+  recentScamAlerts,
+  abuDhabiPoliceContact,
+  organizedTourismScam,
+  aiPoweredScamsStats,
+  commonScamTypes,
+  preventionTips,
+  commonScamsInUAE,
+  // Price Tracking
+  priceTrackingPlatform,
+  // Facebook Statistics
+  facebookUserStatistics,
+  datareportalStats,
+  napoleonCatStats,
+  ageDemographics,
+  statcounterStats,
+  // CIB Operations
+  cibOperations,
+  commonTactics,
+  // Regulations
+  traRegulations,
+  // Trending
+  trendingContent,
+  // Priority Areas
+  priorityIntelligenceAreas,
+  // Cultural Events
+  culturalEvents,
+  // Key Persons
+  keyPersons,
+  // Key Organizations
+  keyOrganizations,
+  // Sources
+  sources,
+} from '@/lib/data/social/facebook-data'
 
 export default function FacebookPage() {
   const { data } = useFacebookIntelligenceData()
@@ -72,13 +148,21 @@ export default function FacebookPage() {
     { name: 'Negative', value: 30, color: CHART_COLORS.rose },
   ]
 
-  // Age demographics breakdown
-  const ageDemographicsData = [
-    { age: '18-24', female: 15.5, male: 13.1, color: CHART_COLORS.gold },
-    { age: '25-34', female: 43.7, male: 8.1, color: CHART_COLORS.navy },
-    { age: '35-44', female: 26.8, male: 3.1, color: CHART_COLORS.platinum },
-    { age: '45-54', female: 10.0, male: 0.9, color: CHART_COLORS.emerald },
-    { age: '55-64', female: 2.7, male: 0.5, color: CHART_COLORS.rose },
+  // Age demographics breakdown (from comprehensive MD data)
+  const ageDemographicsData = ageDemographics.map((item) => ({
+    age: item.ageGroup,
+    female: item.femalePercent,
+    male: item.malePercent,
+  }))
+
+  // Market share data (from MD file)
+  const marketShareData = [
+    { name: 'Facebook', value: statcounterStats.facebookMarketShare, color: CHART_COLORS.navy },
+    { name: 'Twitter (X)', value: statcounterStats.twitterXMarketShare, color: CHART_COLORS.platinum },
+    { name: 'YouTube', value: statcounterStats.youtubeMarketShare, color: CHART_COLORS.rose },
+    { name: 'Instagram', value: statcounterStats.instagramMarketShare, color: CHART_COLORS.gold },
+    { name: 'Pinterest', value: statcounterStats.pinterestMarketShare, color: CHART_COLORS.emerald },
+    { name: 'Reddit', value: statcounterStats.redditMarketShare, color: CHART_COLORS.denim },
   ]
 
   // Engagement metrics
@@ -88,21 +172,13 @@ export default function FacebookPage() {
     { name: 'Shares', value: metrics?.engagement?.shares || 42, color: CHART_COLORS.platinum },
   ]
 
-  // Monthly trend data
-  const monthlyTrendData = [
-    { month: 'Jan', users: 9.2, engagement: 142 },
-    { month: 'Feb', users: 9.3, engagement: 148 },
-    { month: 'Mar', users: 9.4, engagement: 155 },
-    { month: 'Apr', users: 9.5, engagement: 151 },
-    { month: 'May', users: 9.6, engagement: 163 },
-    { month: 'Jun', users: 9.6, engagement: 158 },
-    { month: 'Jul', users: 9.7, engagement: 172 },
-    { month: 'Aug', users: 9.7, engagement: 168 },
-    { month: 'Sep', users: 9.8, engagement: 175 },
-    { month: 'Oct', users: 9.8, engagement: 182 },
-    { month: 'Nov', users: 9.9, engagement: 188 },
-    { month: 'Dec', users: 9.9, engagement: 195 },
-  ]
+  // User statistics comparison
+  const userStatsComparison = facebookUserStatistics.map((stat) => ({
+    source: stat.source,
+    users: parseFloat(stat.users.replace(/[^0-9.]/g, '')),
+    female: stat.femalePercent,
+    male: stat.malePercent,
+  }))
 
   // Narrative prevalence data
   const narrativeData = keyNarratives?.map((n, i) => ({
@@ -110,36 +186,58 @@ export default function FacebookPage() {
     prevalence: n.prevalence,
     sentiment: n.sentiment,
     color: i === 0 ? CHART_COLORS.gold : i === 1 ? CHART_COLORS.navy : i === 2 ? CHART_COLORS.platinum : CHART_COLORS.emerald,
-  })) || [
-    { topic: 'Expat Life', prevalence: 85, sentiment: 'positive', color: CHART_COLORS.gold },
-    { topic: 'Safety & Security', prevalence: 80, sentiment: 'positive', color: CHART_COLORS.navy },
-    { topic: 'Business Opportunity', prevalence: 72, sentiment: 'positive', color: CHART_COLORS.platinum },
-  ]
+  })) || []
 
   // Scam statistics data
   const scamStatsData = [
-    { label: 'Meta Removed Ads', value: '159M+', icon: Shield, color: CHART_COLORS.rose },
-    { label: 'Scam Accounts', value: '10.9M', icon: AlertTriangle, color: CHART_COLORS.gold },
-    { label: 'Residents Targeted', value: '70%', icon: Users, color: CHART_COLORS.navy },
-    { label: 'Avg Loss', value: '$2,194', icon: DollarSign, color: CHART_COLORS.rose },
+    { label: 'Meta Removed Ads', value: scamStatistics.metaRemovedAds2025, icon: Shield, color: CHART_COLORS.rose },
+    { label: 'Scam Accounts', value: scamStatistics.metaRemovedAccounts2025, icon: AlertTriangle, color: CHART_COLORS.gold },
+    { label: 'Residents Targeted', value: scamStatistics.residentsExperiencingScams, icon: Users, color: CHART_COLORS.navy },
+    { label: 'Avg Loss', value: scamStatistics.averageLoss, icon: DollarSign, color: CHART_COLORS.rose },
   ]
 
-  // CIB operation data
-  const cibData = {
-    accountsRemoved: 259,
-    pagesRemoved: 102,
-    groupsRemoved: 5,
-    pageFollowers: '13.7M+',
-    advertisingSpend: '$167,000',
-    attribution: 'Newave (UAE) & New Waves (Egypt)',
+  // CIB operation data (UAE/Egypt)
+  const cibDataUAE = {
+    accountsRemoved: cibOperations[0].accountsRemoved,
+    pagesRemoved: cibOperations[0].pagesRemoved,
+    groupsRemoved: cibOperations[0].groupsRemoved,
+    pageFollowers: cibOperations[0].pageFollowers,
+    advertisingSpend: cibOperations[0].advertisingSpend,
+    attribution: cibOperations[0].attribution,
   }
 
-  // Expat groups data
-  const expatGroupsData = [
-    { name: 'Dubai Expat Community', members: '110,000+', icon: Users, color: CHART_COLORS.gold },
-    { name: 'Dirham Stretcher', members: '108,000+', icon: DollarSign, color: CHART_COLORS.emerald },
-    { name: 'Abu Dhabi Q&A', members: '93,000', icon: MessageSquare, color: CHART_COLORS.navy },
-    { name: 'Best Bites Abu Dhabi', members: '56,000+', icon: Heart, color: CHART_COLORS.rose },
+  // CIB operation data (Saudi Arabia)
+  const cibDataKSA = {
+    accountsRemoved: cibOperations[1].accountsRemoved,
+    pagesRemoved: cibOperations[1].pagesRemoved,
+    groupsRemoved: cibOperations[1].groupsRemoved,
+    pageFollowers: cibOperations[1].pageFollowers,
+    advertisingSpend: cibOperations[1].advertisingSpend,
+    attribution: cibOperations[1].attribution,
+  }
+
+  // Expat groups data (top 4)
+  const expatGroupsData = majorExpatGroups.slice(0, 4).map((group) => ({
+    name: group.name,
+    members: group.members,
+    icon: group.name.includes('Cats') || group.name.includes('Dogs') ? PawPrint :
+          group.name.includes('Bites') ? Utensils :
+          group.name.includes('Interior') ? Paintbrush : Users,
+    color: group.name.includes('Dubai') ? CHART_COLORS.gold :
+           group.name.includes('Dirham') ? CHART_COLORS.emerald :
+           group.name.includes('Abu Dhabi') ? CHART_COLORS.navy : CHART_COLORS.rose,
+  }))
+
+  // Expat demographics data
+  const expatDemographicsData = expatDemographics.breakdown.map((item) => ({
+    nationality: item.nationality,
+    percent: item.percent,
+  }))
+
+  // Gender distribution for NapoleonCat
+  const genderDistribution = [
+    { name: 'Female', value: napoleonCatStats.womenPercent, color: CHART_COLORS.rose },
+    { name: 'Male', value: napoleonCatStats.menPercent, color: CHART_COLORS.navy },
   ]
 
   return (
@@ -172,18 +270,18 @@ export default function FacebookPage() {
           </div>
         </motion.div>
 
-        {/* Key Metrics - Cycle A: Premium Glassmorphism Cards */}
+        {/* Key Metrics - Premium Glassmorphism Cards */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5"
         >
           <AnimatePresence>
             <MetricCard
-              title="UAE Users"
-              value={metrics?.users ? `${(metrics.users / 1000000).toFixed(1)}M` : '9.7M'}
+              title="UAE Users (NapoleonCat)"
+              value={`${(napoleonCatStats.totalUsers / 1000000).toFixed(1)}M`}
               previousValue={9.6}
               unit="million"
               icon={<Users className="h-6 w-6" />}
@@ -193,7 +291,7 @@ export default function FacebookPage() {
             />
             <MetricCard
               title="Market Share"
-              value="76.27%"
+              value={`${statcounterStats.facebookMarketShare}%`}
               previousValue={74.5}
               icon={<TrendingUp className="h-6 w-6" />}
               gradient="denim"
@@ -216,10 +314,18 @@ export default function FacebookPage() {
               gradient="indigo"
               className="glass-panel"
             />
+            <MetricCard
+              title="Expat Population"
+              value="88%"
+              icon={<Globe className="h-6 w-6" />}
+              gradient="denim"
+              status="success"
+              className="glass-panel"
+            />
           </AnimatePresence>
         </motion.div>
 
-        {/* Cycle B: Scam Alert Banner */}
+        {/* Scam Alert Banner */}
         {botActivity?.coordinatedInauthentic && (
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -247,29 +353,45 @@ export default function FacebookPage() {
             <TabsTrigger value="government">Government</TabsTrigger>
             <TabsTrigger value="scams">Scam Center</TabsTrigger>
             <TabsTrigger value="groups">Expat Groups</TabsTrigger>
+            <TabsTrigger value="media">Media</TabsTrigger>
+            <TabsTrigger value="regulations">Regulations</TabsTrigger>
           </TabsList>
 
-          {/* Overview Tab - Cycle C: Enhanced Charts */}
+          {/* Overview Tab - Enhanced Charts */}
           <TabsContent value="overview" className="space-y-6">
             <GlassPanel title="Facebook Intelligence Overview" description="Meta platform activity in UAE">
               <div className="space-y-6">
-                <Card className="glass-card">
-                  <CardHeader>
-                    <CardTitle className="text-lg">User Growth & Engagement Trend</CardTitle>
-                    <CardDescription>12-month trend of UAE Facebook users</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <AreaChart
-                      data={monthlyTrendData}
-                      xAxisKey="month"
-                      areas={[
-                        { dataKey: 'users', name: 'Users (M)', color: CHART_COLORS.gold },
-                      ]}
-                      height={300}
-                      showGrid={true}
-                    />
-                  </CardContent>
-                </Card>
+                <div className="grid gap-6 lg:grid-cols-2">
+                  {/* Market Share */}
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg">UAE Social Media Market Share</CardTitle>
+                      <CardDescription>Platform distribution (March 2026)</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <PieChart
+                        data={marketShareData}
+                        height={280}
+                        showLegend={true}
+                      />
+                    </CardContent>
+                  </Card>
+
+                  {/* Gender Distribution */}
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg">Gender Distribution (UAE)</CardTitle>
+                      <CardDescription>NapoleonCat December 2025: {napoleonCatStats.totalUsers.toLocaleString()} users</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <PieChart
+                        data={genderDistribution}
+                        height={280}
+                        showLegend={true}
+                      />
+                    </CardContent>
+                  </Card>
+                </div>
 
                 <div className="grid gap-6 lg:grid-cols-2">
                   <Card className="glass-card">
@@ -319,7 +441,31 @@ export default function FacebookPage() {
                   </Card>
                 </div>
 
-                {/* CIB Alert */}
+                {/* User Statistics Comparison */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Facebook User Statistics Comparison</CardTitle>
+                    <CardDescription>Data from multiple sources</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <BarChart
+                      data={userStatsComparison.map((stat) => ({
+                        source: stat.source.replace('Social Media Stats', '').replace('Digital ', ''),
+                        users: stat.users,
+                        color: stat.source.includes('DataReportal') ? CHART_COLORS.gold :
+                               stat.source.includes('NapoleonCat') ? CHART_COLORS.navy : CHART_COLORS.platinum,
+                      }))}
+                      xAxisKey="source"
+                      bars={[
+                        { dataKey: 'users', name: 'Users (millions)', color: CHART_COLORS.gold },
+                      ]}
+                      height={300}
+                      showGrid={true}
+                    />
+                  </CardContent>
+                </Card>
+
+                {/* CIB Alert - Both Operations */}
                 {botActivity?.coordinatedInauthentic && (
                   <Card className="glass-card border-rose-500/50">
                     <CardHeader className="pb-2">
@@ -329,40 +475,83 @@ export default function FacebookPage() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <div className="grid gap-4 sm:grid-cols-4 mb-4">
-                        <motion.div
-                          whileHover={{ scale: 1.05 }}
-                          className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30"
-                        >
-                          <p className="text-xs text-slate-400">Accounts Removed</p>
-                          <p className="text-xl font-bold text-rose-400">{cibData.accountsRemoved}</p>
-                        </motion.div>
-                        <motion.div
-                          whileHover={{ scale: 1.05 }}
-                          className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30"
-                        >
-                          <p className="text-xs text-slate-400">Pages Removed</p>
-                          <p className="text-xl font-bold text-rose-400">{cibData.pagesRemoved}</p>
-                        </motion.div>
-                        <motion.div
-                          whileHover={{ scale: 1.05 }}
-                          className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30"
-                        >
-                          <p className="text-xs text-slate-400">Page Followers</p>
-                          <p className="text-xl font-bold text-rose-400">{cibData.pageFollowers}</p>
-                        </motion.div>
-                        <motion.div
-                          whileHover={{ scale: 1.05 }}
-                          className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30"
-                        >
-                          <p className="text-xs text-slate-400">Ad Spend</p>
-                          <p className="text-xl font-bold text-rose-400">{cibData.advertisingSpend}</p>
-                        </motion.div>
+                      {/* UAE/Egypt Operation */}
+                      <div className="mb-6">
+                        <h4 className="text-sm font-semibold text-rose-300 mb-3">Operation 1: UAE & Egypt (August 2019)</h4>
+                        <div className="grid gap-4 sm:grid-cols-4 mb-3">
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30"
+                          >
+                            <p className="text-xs text-slate-400">Accounts Removed</p>
+                            <p className="text-xl font-bold text-rose-400">{cibDataUAE.accountsRemoved}</p>
+                          </motion.div>
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30"
+                          >
+                            <p className="text-xs text-slate-400">Pages Removed</p>
+                            <p className="text-xl font-bold text-rose-400">{cibDataUAE.pagesRemoved}</p>
+                          </motion.div>
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30"
+                          >
+                            <p className="text-xs text-slate-400">Page Followers</p>
+                            <p className="text-xl font-bold text-rose-400">{cibDataUAE.pageFollowers}</p>
+                          </motion.div>
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30"
+                          >
+                            <p className="text-xs text-slate-400">Ad Spend</p>
+                            <p className="text-xl font-bold text-rose-400">{cibDataUAE.advertisingSpend}</p>
+                          </motion.div>
+                        </div>
+                        <p className="text-sm text-slate-400">
+                          Attribution: <span className="text-rose-400">{cibDataUAE.attribution}</span>
+                        </p>
                       </div>
-                      <p className="text-sm text-slate-400">
-                        Attribution: <span className="text-rose-400">{cibData.attribution}</span>
-                      </p>
-                      <div className="flex flex-wrap gap-2 mt-3">
+
+                      {/* Saudi Arabia Operation */}
+                      <div>
+                        <h4 className="text-sm font-semibold text-rose-300 mb-3">Operation 2: Saudi Arabia (August 2019)</h4>
+                        <div className="grid gap-4 sm:grid-cols-4 mb-3">
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30"
+                          >
+                            <p className="text-xs text-slate-400">Accounts Removed</p>
+                            <p className="text-xl font-bold text-rose-400">{cibDataKSA.accountsRemoved}</p>
+                          </motion.div>
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30"
+                          >
+                            <p className="text-xs text-slate-400">Pages Removed</p>
+                            <p className="text-xl font-bold text-rose-400">{cibDataKSA.pagesRemoved}</p>
+                          </motion.div>
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30"
+                          >
+                            <p className="text-xs text-slate-400">Page Followers</p>
+                            <p className="text-xl font-bold text-rose-400">{cibDataKSA.pageFollowers}</p>
+                          </motion.div>
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30"
+                          >
+                            <p className="text-xs text-slate-400">Ad Spend</p>
+                            <p className="text-xl font-bold text-rose-400">{cibDataKSA.advertisingSpend}</p>
+                          </motion.div>
+                        </div>
+                        <p className="text-sm text-slate-400">
+                          Attribution: <span className="text-rose-400">{cibDataKSA.attribution}</span>
+                        </p>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 mt-4">
                         {(botActivity?.indicators || ['CIB operations detected', 'UAE/Egypt influence operation']).map((indicator: string, i: number) => (
                           <Badge key={i} variant="outline" className="text-rose-400 border-rose-500/50">
                             {indicator}
@@ -372,6 +561,34 @@ export default function FacebookPage() {
                     </CardContent>
                   </Card>
                 )}
+
+                {/* Trending Content */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Trending Content in UAE Facebook</CardTitle>
+                    <CardDescription>Popular content categories (2025-2026)</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+                      {trendingContent.map((item, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: idx * 0.1 }}
+                          whileHover={{ scale: 1.05 }}
+                          className="rounded-lg bg-slate-800/50 p-3 text-center"
+                        >
+                          <span className={`text-2xl mb-2 block ${item.sentiment === 'Positive' ? 'text-emerald-400' : item.sentiment === 'Negative' ? 'text-rose-400' : 'text-slate-400'}`}>
+                            {item.sentiment === 'Positive' ? '✓' : item.sentiment === 'Negative' ? '!' : '•'}
+                          </span>
+                          <p className="text-sm font-medium text-slate-200">{item.contentCategory}</p>
+                          <p className="text-xs text-slate-400 mt-1">{item.description}</p>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </GlassPanel>
           </TabsContent>
@@ -459,11 +676,37 @@ export default function FacebookPage() {
                     </CardContent>
                   </Card>
                 </div>
+
+                {/* Cultural Events */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Cultural Events</CardTitle>
+                    <CardDescription>Major events in UAE</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                      {culturalEvents.map((event, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: idx * 0.1 }}
+                          whileHover={{ scale: 1.05 }}
+                          className="rounded-lg bg-slate-800/50 p-3 text-center"
+                        >
+                          <p className="text-sm font-medium text-slate-200">{event.event}</p>
+                          <p className="text-xs text-slate-400 mt-1">{event.description}</p>
+                          <Badge variant="success" className="mt-2 text-xs">{event.sentiment}</Badge>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </GlassPanel>
           </TabsContent>
 
-          {/* Narratives Tab - Cycle D: Enhanced Narrative Cards */}
+          {/* Narratives Tab - Enhanced Narrative Cards */}
           <TabsContent value="narratives" className="space-y-6">
             <GlassPanel title="Key Narratives Analysis" description="Prevailing narratives on Facebook in UAE">
               <div className="space-y-6">
@@ -514,6 +757,35 @@ export default function FacebookPage() {
                     </motion.Card>
                   ))}
                 </div>
+
+                {/* Priority Intelligence Areas */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Priority Intelligence Areas</CardTitle>
+                    <CardDescription>Ranked by importance for UAE monitoring</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {priorityIntelligenceAreas.map((area, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.1 }}
+                          className="flex items-center gap-4 rounded-lg bg-slate-800/50 p-3"
+                        >
+                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold/20 text-gold font-bold">
+                            {area.priority}
+                          </div>
+                          <div className="flex-1">
+                            <p className="font-medium text-slate-200">{area.area}</p>
+                            <p className="text-xs text-slate-400">{area.justification}</p>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </GlassPanel>
           </TabsContent>
@@ -522,41 +794,67 @@ export default function FacebookPage() {
           <TabsContent value="government" className="space-y-6">
             <GlassPanel title="Government Accounts" description="Official UAE government presence on Facebook">
               <div className="space-y-6">
+                {/* Police Pages */}
                 <Card className="glass-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Official Government Accounts</CardTitle>
-                    <CardDescription>Verified government pages with largest followings</CardDescription>
+                    <CardTitle className="text-lg">Police Facebook Pages</CardTitle>
+                    <CardDescription>Law enforcement presence with largest followings</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <ScrollArea className="h-[400px]">
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      {policeFacebookPages.filter(p => p.likes > 0).map((page, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.1 }}
+                          whileHover={{ scale: 1.02 }}
+                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+                        >
+                          <div className="flex items-center gap-3">
+                            <Shield className="h-6 w-6 text-gold" />
+                            <div>
+                              <p className="font-semibold text-slate-200">{page.entity}</p>
+                              <p className="text-xs text-slate-400">{page.url}</p>
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <p className="text-lg font-bold text-gold">{(page.likes / 1000000).toFixed(2)}M</p>
+                            <p className="text-xs text-slate-400">likes</p>
+                            {page.talkingAbout && (
+                              <p className="text-xs text-navy-400">{page.talkingAbout.toLocaleString()} talking</p>
+                            )}
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Federal Government Pages */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Federal Government Pages</CardTitle>
+                    <CardDescription>Ministry and official accounts</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ScrollArea className="h-[300px]">
                       <div className="space-y-3">
-                        {governmentAccounts?.map((account: { handle: string; followers: number; type: string; verified: boolean; url?: string }, idx: number) => (
+                        {federalGovernmentPages.map((page, idx) => (
                           <motion.div
                             key={idx}
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.05 }}
-                            whileHover={{ scale: 1.01, x: 5 }}
-                            className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70 transition-all cursor-pointer"
+                            className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3"
                           >
-                            <div className="flex items-center gap-4">
-                              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-navy/20 text-navy">
-                                <UserCheck className="h-6 w-6" />
-                              </div>
-                              <div>
-                                <div className="flex items-center gap-2">
-                                  <p className="font-semibold text-slate-200">{account.handle}</p>
-                                  {account.verified && (
-                                    <Badge variant="outline" className="text-navy border-navy text-xs">Verified</Badge>
-                                  )}
-                                </div>
-                                <p className="text-sm text-slate-400">{account.type}</p>
-                              </div>
+                            <div className="flex items-center gap-3">
+                              <Building className="h-5 w-5 text-navy" />
+                              <span className="text-sm text-slate-200">{page.entity}</span>
                             </div>
-                            <div className="text-right">
-                              <p className="text-lg font-bold text-gold">{(account.followers / 1000000).toFixed(1)}M</p>
-                              <p className="text-xs text-slate-400">followers</p>
-                            </div>
+                            <span className="text-sm font-medium text-gold">
+                              {page.likes > 0 ? page.likes.toLocaleString() : 'N/A'} likes
+                            </span>
                           </motion.div>
                         ))}
                       </div>
@@ -564,6 +862,7 @@ export default function FacebookPage() {
                   </CardContent>
                 </Card>
 
+                {/* Censorship Statistics */}
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg">Censorship Statistics</CardTitle>
@@ -611,12 +910,12 @@ export default function FacebookPage() {
             </GlassPanel>
           </TabsContent>
 
-          {/* Scam Center Tab - Cycle E: Comprehensive Scam Data */}
+          {/* Scam Center Tab - Comprehensive Scam Data */}
           <TabsContent value="scams" className="space-y-6">
             <GlassPanel title="Scam Alert Center" description="Facebook marketplace and platform scam intelligence">
               <div className="space-y-6">
                 {/* Scam Statistics Grid */}
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
                   {scamStatsData.map((stat, idx) => (
                     <motion.Card
                       key={idx}
@@ -637,6 +936,69 @@ export default function FacebookPage() {
                   ))}
                 </div>
 
+                {/* Additional Scam Statistics */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Scam Impact Statistics</CardTitle>
+                    <CardDescription>GASA/Trend Micro 2024 Report</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                      <div className="rounded-lg bg-slate-800/50 p-3">
+                        <p className="text-xs text-slate-400">Yearly Victims</p>
+                        <p className="text-xl font-bold text-rose">{scamStatistics.yearlyResidentsLosingToScams}</p>
+                      </div>
+                      <div className="rounded-lg bg-slate-800/50 p-3">
+                        <p className="text-xs text-slate-400">Monthly Targeting Rate</p>
+                        <p className="text-xl font-bold text-rose">{scamStatistics.monthlyScamAttemptRate}</p>
+                      </div>
+                      <div className="rounded-lg bg-slate-800/50 p-3">
+                        <p className="text-xs text-slate-400">Victims Losing Money</p>
+                        <p className="text-xl font-bold text-rose">{scamStatistics.victimsLosingMoney}</p>
+                      </div>
+                      <div className="rounded-lg bg-slate-800/50 p-3">
+                        <p className="text-xs text-slate-400">Recovery Rate</p>
+                        <p className="text-xl font-bold text-emerald">{scamStatistics.recoveryRate}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Abu Dhabi Police Contact */}
+                <Card className="glass-card border-emerald-500/30">
+                  <CardHeader className="pb-2">
+                    <CardTitle className="flex items-center gap-2 text-lg text-emerald-400">
+                      <Phone className="h-5 w-5" />
+                      Abu Dhabi Police Scam Reporting
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 sm:grid-cols-3">
+                      <div className="flex items-center gap-3">
+                        <Phone className="h-5 w-5 text-gold" />
+                        <div>
+                          <p className="text-xs text-slate-400">Hotline</p>
+                          <p className="text-lg font-bold text-slate-200">{abuDhabiPoliceContact.hotline}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <MessageSquare className="h-5 w-5 text-gold" />
+                        <div>
+                          <p className="text-xs text-slate-400">Text</p>
+                          <p className="text-lg font-bold text-slate-200">{abuDhabiPoliceContact.text}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Mail className="h-5 w-5 text-gold" />
+                        <div>
+                          <p className="text-xs text-slate-400">Email</p>
+                          <p className="text-lg font-bold text-slate-200">{abuDhabiPoliceContact.email}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
                 {/* Common Scam Types */}
                 <Card className="glass-card">
                   <CardHeader>
@@ -645,16 +1007,7 @@ export default function FacebookPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-3 sm:grid-cols-2">
-                      {[
-                        { type: 'Google Voice Scams', desc: 'Verification code fraud', severity: 'high' },
-                        { type: 'Defective Items', desc: 'Products that look fine in photos', severity: 'medium' },
-                        { type: 'Counterfeit Goods', desc: 'Fake designer items', severity: 'medium' },
-                        { type: 'Overpayment Scams', desc: 'Fake refunds', severity: 'high' },
-                        { type: 'Non-Delivery', desc: 'Advance fee fraud', severity: 'high' },
-                        { type: 'Fake Giveaways', desc: 'Phishing for personal info', severity: 'high' },
-                        { type: 'Insurance Scams', desc: 'Fake shipping insurance', severity: 'medium' },
-                        { type: 'Bait-and-Switch', desc: 'Different item delivered', severity: 'medium' },
-                      ].map((scam, idx) => (
+                      {commonScamTypes.map((scam, idx) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: -10 }}
@@ -664,14 +1017,14 @@ export default function FacebookPage() {
                           className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
                         >
                           <div className="flex items-center gap-3">
-                            <AlertTriangle className={`h-4 w-4 ${scam.severity === 'high' ? 'text-rose-500' : 'text-gold'}`} />
+                            <AlertTriangle className={`h-4 w-4 ${scam.severity === 'High' ? 'text-rose-500' : 'text-gold'}`} />
                             <div>
-                              <p className="text-sm font-medium text-slate-200">{scam.type}</p>
-                              <p className="text-xs text-slate-400">{scam.desc}</p>
+                              <p className="text-sm font-medium text-slate-200">{scam.scamType}</p>
+                              <p className="text-xs text-slate-400">{scam.description}</p>
                             </div>
                           </div>
-                          <Badge variant={scam.severity === 'high' ? 'destructive' : 'outline'} className="text-xs">
-                            {scam.severity}
+                          <Badge variant={scam.severity === 'High' ? 'destructive' : 'outline'} className="text-xs">
+                            {scam.severity.toLowerCase()}
                           </Badge>
                         </motion.div>
                       ))}
@@ -689,18 +1042,7 @@ export default function FacebookPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
-                      {[
-                        'Buy only from local sellers',
-                        'Meet in public well-lit places',
-                        'Check seller profiles and ratings',
-                        'Compare original vs listing prices',
-                        'Keep conversations on platform',
-                        'Never send 2FA codes to buyers',
-                        'Use trusted payment methods',
-                        'Never ship before receiving payment',
-                        'Avoid deals requesting personal info',
-                        'Watch for price changes',
-                      ].map((tip, idx) => (
+                      {preventionTips.map((tip, idx) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0 }}
@@ -719,7 +1061,7 @@ export default function FacebookPage() {
             </GlassPanel>
           </TabsContent>
 
-          {/* Expat Groups Tab - Cycle F: Community Data */}
+          {/* Expat Groups Tab - Community Data */}
           <TabsContent value="groups" className="space-y-6">
             <GlassPanel title="Expat Community Groups" description="Major Facebook groups for UAE expats">
               <div className="space-y-6">
@@ -744,6 +1086,38 @@ export default function FacebookPage() {
                   ))}
                 </div>
 
+                {/* All Major Groups */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">All Major Expat Groups</CardTitle>
+                    <CardDescription>Groups with 10,000+ members</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ScrollArea className="h-[300px]">
+                      <div className="space-y-2">
+                        {majorExpatGroups.map((group, idx) => (
+                          <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: idx * 0.05 }}
+                            className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3"
+                          >
+                            <div className="flex items-center gap-3">
+                              <Users className="h-4 w-4 text-gold" />
+                              <span className="text-sm text-slate-200">{group.name}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Badge variant="outline" className="text-gold">{group.members}</Badge>
+                              <ExternalLink className="h-3 w-3 text-slate-500" />
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </CardContent>
+                </Card>
+
                 {/* Group Categories */}
                 <div className="grid gap-6 lg:grid-cols-3">
                   {/* Job Groups */}
@@ -751,20 +1125,20 @@ export default function FacebookPage() {
                     <CardHeader className="pb-2">
                       <CardTitle className="flex items-center gap-2 text-sm">
                         <Briefcase className="h-4 w-4 text-gold" />
-                        Job Groups
+                        Job Groups ({jobGroups.length})
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <ScrollArea className="h-[200px]">
                         <div className="space-y-2">
-                          {['UAE Jobs & Classifieds', 'JOBS IN UAE', 'UAE Vacancies', 'JOB VACANCIES IN UAE'].map((name, idx) => (
+                          {jobGroups.slice(0, 6).map((group, idx) => (
                             <motion.div
                               key={idx}
                               whileHover={{ x: 5 }}
                               className="flex items-center justify-between rounded bg-slate-800/30 p-2 text-sm"
                             >
-                              <span className="text-slate-300 truncate">{name}</span>
-                              <ExternalLink className="h-3 w-3 text-slate-500" />
+                              <span className="text-slate-300 truncate flex-1">{group.name}</span>
+                              <ExternalLink className="h-3 w-3 text-slate-500 flex-shrink-0" />
                             </motion.div>
                           ))}
                         </div>
@@ -777,20 +1151,20 @@ export default function FacebookPage() {
                     <CardHeader className="pb-2">
                       <CardTitle className="flex items-center gap-2 text-sm">
                         <Home className="h-4 w-4 text-navy" />
-                        Housing Groups
+                        Housing Groups ({housingGroups.length})
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <ScrollArea className="h-[200px]">
                         <div className="space-y-2">
-                          {['Apartments Homes For Rent in Dubai', 'Dubai Villas, Plots and Apartments', 'Abu Dhabi Rent My Villas', 'Rentals in Dubai'].map((name, idx) => (
+                          {housingGroups.slice(0, 6).map((group, idx) => (
                             <motion.div
                               key={idx}
                               whileHover={{ x: 5 }}
                               className="flex items-center justify-between rounded bg-slate-800/30 p-2 text-sm"
                             >
-                              <span className="text-slate-300 truncate">{name}</span>
-                              <ExternalLink className="h-3 w-3 text-slate-500" />
+                              <span className="text-slate-300 truncate flex-1">{group.name}</span>
+                              <ExternalLink className="h-3 w-3 text-slate-500 flex-shrink-0" />
                             </motion.div>
                           ))}
                         </div>
@@ -803,21 +1177,93 @@ export default function FacebookPage() {
                     <CardHeader className="pb-2">
                       <CardTitle className="flex items-center gap-2 text-sm">
                         <ShoppingCart className="h-4 w-4 text-emerald" />
-                        Business Groups
+                        Business Groups ({businessGroups.length})
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <ScrollArea className="h-[200px]">
                         <div className="space-y-2">
-                          {['UAE Startups and Entrepreneurs', 'Entrepreneurs Networking Group', 'Dubai Business Networking', 'Arab Business Club'].map((name, idx) => (
+                          {businessGroups.slice(0, 6).map((group, idx) => (
                             <motion.div
                               key={idx}
                               whileHover={{ x: 5 }}
                               className="flex items-center justify-between rounded bg-slate-800/30 p-2 text-sm"
                             >
-                              <span className="text-slate-300 truncate">{name}</span>
-                              <ExternalLink className="h-3 w-3 text-slate-500" />
+                              <span className="text-slate-300 truncate flex-1">{group.name}</span>
+                              <ExternalLink className="h-3 w-3 text-slate-500 flex-shrink-0" />
                             </motion.div>
+                          ))}
+                        </div>
+                      </ScrollArea>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Women/Mother Groups */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-sm">
+                      <Heart className="h-4 w-4 text-rose" />
+                      Women & Mother Groups
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                      {womenGroups.slice(0, 4).map((group, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: idx * 0.1 }}
+                          className="rounded-lg bg-slate-800/50 p-3"
+                        >
+                          <p className="text-sm font-medium text-slate-200 truncate">{group.name}</p>
+                          <p className="text-xs text-slate-400">{group.members} members</p>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Religious & Fitness Groups */}
+                <div className="grid gap-6 lg:grid-cols-2">
+                  {/* Religious Groups */}
+                  <Card className="glass-card">
+                    <CardHeader className="pb-2">
+                      <CardTitle className="flex items-center gap-2 text-sm">
+                        <Church className="h-4 w-4 text-navy" />
+                        Religious Groups
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-2">
+                        {religiousGroups.map((group, idx) => (
+                          <div key={idx} className="flex items-center justify-between rounded bg-slate-800/30 p-2">
+                            <span className="text-sm text-slate-300">{group.name}</span>
+                            <Badge variant="outline" className="text-xs">{group.focus}</Badge>
+                          </div>
+                        ))}
+                      </div>
+                      <p className="text-xs text-emerald-400 mt-3">{religiousHarmonyNote.text}</p>
+                    </CardContent>
+                  </Card>
+
+                  {/* Fitness Groups */}
+                  <Card className="glass-card">
+                    <CardHeader className="pb-2">
+                      <CardTitle className="flex items-center gap-2 text-sm">
+                        <Dumbbell className="h-4 w-4 text-gold" />
+                        Fitness & Hobby Groups
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <ScrollArea className="h-[150px]">
+                        <div className="space-y-2">
+                          {fitnessGroups.map((group, idx) => (
+                            <div key={idx} className="flex items-center justify-between rounded bg-slate-800/30 p-2">
+                              <span className="text-sm text-slate-300">{group.name}</span>
+                              <ExternalLink className="h-3 w-3 text-slate-500" />
+                            </div>
                           ))}
                         </div>
                       </ScrollArea>
@@ -833,12 +1279,7 @@ export default function FacebookPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      {[
-                        { nationality: 'Indian', percent: 37.96, color: CHART_COLORS.gold },
-                        { nationality: 'Pakistani', percent: 16.72, color: CHART_COLORS.emerald },
-                        { nationality: 'Emirati', percent: 11.5, color: CHART_COLORS.navy },
-                        { nationality: 'Other Nationalities', percent: 22.72, color: CHART_COLORS.platinum },
-                      ].map((item, idx) => (
+                      {expatDemographicsData.map((item, idx) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: -20 }}
@@ -854,9 +1295,256 @@ export default function FacebookPage() {
                         </motion.div>
                       ))}
                       <p className="text-xs text-slate-500 mt-4">
-                        Source: Remitly 2025 | Total expats as % of UAE population: <span className="text-gold font-semibold">88%</span>
+                        Source: {expatDemographics.source} | Total expats as % of UAE population: <span className="text-gold font-semibold">{expatDemographics.expatsAsPercentOfPopulation}%</span>
                       </p>
                     </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </GlassPanel>
+          </TabsContent>
+
+          {/* Media Tab */}
+          <TabsContent value="media" className="space-y-6">
+            <GlassPanel title="Media Presence" description="Major news organizations on Facebook">
+              <div className="space-y-6">
+                {/* Media Pages */}
+                <div className="grid gap-4 lg:grid-cols-2">
+                  {mediaFacebookPages.map((media, idx) => (
+                    <motion.Card
+                      key={idx}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: idx * 0.1 }}
+                      whileHover={{ scale: 1.02 }}
+                      className="glass-card"
+                    >
+                      <CardContent className="p-6">
+                        <div className="flex items-start justify-between mb-4">
+                          <div>
+                            <h3 className="text-xl font-bold text-slate-200">{media.outlet}</h3>
+                            <p className="text-sm text-slate-400">{media.description}</p>
+                          </div>
+                          <Badge variant="outline" className="text-gold border-gold">Very High Credibility</Badge>
+                        </div>
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                            <p className="text-2xl font-bold text-gold">{(media.likes / 1000000).toFixed(2)}M</p>
+                            <p className="text-xs text-slate-400">Total Likes</p>
+                          </div>
+                          <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                            <p className="text-2xl font-bold text-navy">{media.talkingAbout.toLocaleString()}</p>
+                            <p className="text-xs text-slate-400">Talking About</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </motion.Card>
+                  ))}
+                </div>
+
+                {/* Gulf News Details */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Gulf News Platform Details</CardTitle>
+                    <CardDescription>Social media operations</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                      <div className="rounded-lg bg-slate-800/50 p-3">
+                        <p className="text-xs text-slate-400">Facebook Launch</p>
+                        <p className="text-lg font-bold text-slate-200">{gulfNewsDetails.facebookLaunchDate}</p>
+                      </div>
+                      <div className="rounded-lg bg-slate-800/50 p-3">
+                        <p className="text-xs text-slate-400">Twitter Launch</p>
+                        <p className="text-lg font-bold text-slate-200">{gulfNewsDetails.twitterLaunchDate}</p>
+                      </div>
+                      <div className="rounded-lg bg-slate-800/50 p-3">
+                        <p className="text-xs text-slate-400">Operating Model</p>
+                        <p className="text-lg font-bold text-slate-200">24/7</p>
+                      </div>
+                      <div className="rounded-lg bg-slate-800/50 p-3">
+                        <p className="text-xs text-slate-400">Historical Daily Growth</p>
+                        <p className="text-lg font-bold text-emerald">{gulfNewsDetails.historicalDailyGrowth}</p>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-sm text-slate-400 italic">"{gulfNewsDetails.quote}"</p>
+                    <p className="text-xs text-slate-500 mt-2">- {gulfNewsDetails.portalManager}, Gulf News Portal Manager</p>
+                  </CardContent>
+                </Card>
+
+                {/* Khaleej Times Details */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Khaleej Times Platform Details</CardTitle>
+                    <CardDescription>UAE's first English newspaper</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                      <div className="rounded-lg bg-slate-800/50 p-3">
+                        <p className="text-xs text-slate-400">Location</p>
+                        <p className="text-lg font-bold text-slate-200">{khaleejTimesDetails.location}</p>
+                      </div>
+                      <div className="rounded-lg bg-slate-800/50 p-3">
+                        <p className="text-xs text-slate-400">Established</p>
+                        <p className="text-lg font-bold text-slate-200">1979</p>
+                      </div>
+                      <div className="rounded-lg bg-slate-800/50 p-3">
+                        <p className="text-xs text-slate-400">Anniversary</p>
+                        <p className="text-lg font-bold text-gold">{khaleejTimesDetails.anniversary}</p>
+                      </div>
+                      <div className="rounded-lg bg-slate-800/50 p-3">
+                        <p className="text-xs text-slate-400">Credibility</p>
+                        <p className="text-lg font-bold text-emerald">{khaleejTimesDetails.credibility}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </GlassPanel>
+          </TabsContent>
+
+          {/* Regulations Tab */}
+          <TabsContent value="regulations" className="space-y-6">
+            <GlassPanel title="UAE Social Media Regulations" description="TRA regulatory framework for Facebook">
+              <div className="space-y-6">
+                {/* Governing Authority */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Governing Authority</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex items-center gap-3">
+                      <Shield className="h-8 w-8 text-gold" />
+                      <div>
+                        <p className="text-xl font-bold text-slate-200">{traRegulations.governingAuthority}</p>
+                        <p className="text-sm text-slate-400">Social media governance in UAE</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Penalties */}
+                <Card className="glass-card border-rose-500/30">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-rose-400">Penalties for Violations</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {traRegulations.penalties.map((penalty, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: idx * 0.1 }}
+                          className="rounded-lg bg-slate-800/50 p-4"
+                        >
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="font-medium text-slate-200">{penalty.violation}</span>
+                            <Badge variant="destructive">{penalty.imprisonment}</Badge>
+                          </div>
+                          <p className="text-lg font-bold text-rose-400">{penalty.fine}</p>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Criminal Offenses */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Criminal Offenses</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-2 sm:grid-cols-2">
+                      {traRegulations.criminalOffenses.map((offense, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: idx * 0.05 }}
+                          className="flex items-start gap-2 text-sm"
+                        >
+                          <AlertCircle className="h-4 w-4 text-rose-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-slate-300">{offense}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Influencer Regulations 2026 */}
+                <Card className="glass-card border-gold/30">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-gold">Influencer Regulations (2026)</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {traRegulations.influencerRegulations2026.map((rule, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: idx * 0.1 }}
+                          className="rounded-lg bg-slate-800/50 p-3"
+                        >
+                          <p className="font-medium text-slate-200">{rule.rule}</p>
+                          <p className="text-sm text-slate-400">{rule.description}</p>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Price Tracking Platform */}
+                <Card className="glass-card border-emerald-500/30">
+                  <CardHeader>
+                    <CardTitle className="text-lg text-emerald-400">UAE Essential Goods Price Platform</CardTitle>
+                    <CardDescription>Launched April 2026</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                      <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                        <p className="text-2xl font-bold text-emerald">{priceTrackingPlatform.itemsTracked}</p>
+                        <p className="text-xs text-slate-400">Items Tracked</p>
+                      </div>
+                      <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                        <p className="text-2xl font-bold text-emerald">{priceTrackingPlatform.retailOutlets}</p>
+                        <p className="text-xs text-slate-400">Retail Outlets</p>
+                      </div>
+                      <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                        <p className="text-lg font-bold text-emerald">Daily</p>
+                        <p className="text-xs text-slate-400">Update Frequency</p>
+                      </div>
+                      <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                        <p className="text-sm font-bold text-emerald">{priceTrackingPlatform.initiativeBy}</p>
+                        <p className="text-xs text-slate-400">Initiative By</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Sources */}
+                <Card className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">Data Sources</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ScrollArea className="h-[300px]">
+                      <div className="space-y-2">
+                        {sources.map((source, idx) => (
+                          <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: idx * 0.03 }}
+                            className="flex items-center justify-between rounded bg-slate-800/30 p-2"
+                          >
+                            <span className="text-sm text-slate-300 truncate flex-1">{source.name}</span>
+                            <Badge variant="outline" className="text-xs ml-2">Tier {source.tier}</Badge>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </ScrollArea>
                   </CardContent>
                 </Card>
               </div>

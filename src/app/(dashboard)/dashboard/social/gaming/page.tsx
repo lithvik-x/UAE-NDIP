@@ -40,8 +40,8 @@ export default function GamingPage() {
 
   const platformData = [
     { name: 'Mobile', share: 62, color: CHART_COLORS.emerald },
-    { name: 'PC', share: 24, color: CHART_COLORS.sky },
-    { name: 'Console', share: 14, color: CHART_COLORS.violet },
+    { name: 'PC', share: 24, color: CHART_COLORS.info },
+    { name: 'Console', share: 14, color: CHART_COLORS.purple },
   ]
 
   return (

@@ -100,6 +100,32 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 }
 
+// Premium animation variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+}
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
+    },
+  },
+}
+
+const cardHover = {
+  rest: { scale: 1, opacity: 1 },
+  hover: {
+    scale: 1.02,
+    opacity: 1,
+    transition: { duration: 0.3, ease: 'easeOut' },
+  },
+}
+
 // Icon getters
 const getInfrastructureIcon = (type: string) => {
   switch (type) {
@@ -552,16 +578,30 @@ export default function InfrastructurePage() {
             transition={{ delay: 0.2 }}
           >
             <GlassPanel title="Port Capacity Comparison" description="UAE Major Ports TEU Capacity">
-              <BarChart
-                data={portChartData}
-                bars={[
-                  { dataKey: 'teuCapacity', name: 'TEU Capacity (M)', color: CHART_COLORS.navy },
-                ]}
-                xAxisKey="name"
-                height={300}
-                showGrid
-                showLegend
-              />
+              <div className="grid gap-6 lg:grid-cols-2">
+                <BarChart
+                  data={portChartData}
+                  bars={[
+                    { dataKey: 'teuCapacity', name: 'TEU Capacity (M)', color: CHART_COLORS.navy },
+                  ]}
+                  xAxisKey="name"
+                  height={300}
+                  showGrid
+                  showLegend
+                />
+                <div className="space-y-4">
+                  <h4 className="font-semibold text-sm">Port Market Share - TEU Capacity</h4>
+                  <PieChart
+                    data={[
+                      { name: 'Jebel Ali', value: 13.7, color: CHART_COLORS.navy },
+                      { name: 'Khalifa', value: 7.8, color: CHART_COLORS.info },
+                      { name: 'Fujairah', value: 0.72, color: CHART_COLORS.emerald },
+                    ]}
+                    height={280}
+                    showLegend
+                  />
+                </div>
+              </div>
             </GlassPanel>
           </motion.div>
 
@@ -692,24 +732,38 @@ export default function InfrastructurePage() {
 
         {/* ENERGY TAB */}
         <TabsContent value="energy" className="space-y-6">
-          {/* Energy Overview Chart */}
+          {/* Energy Overview Charts */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
             <GlassPanel title="Energy Infrastructure Overview" description="Capacity and Output Comparison">
-              <BarChart
-                data={energyChartData}
-                bars={[
-                  { dataKey: 'capacity', name: 'Capacity (MW)', color: CHART_COLORS.gold },
-                  { dataKey: 'output', name: 'Output (GWh)', color: CHART_COLORS.emerald },
-                ]}
-                xAxisKey="name"
-                height={300}
-                showGrid
-                showLegend
-              />
+              <div className="grid gap-6 lg:grid-cols-2">
+                <BarChart
+                  data={energyChartData}
+                  bars={[
+                    { dataKey: 'capacity', name: 'Capacity (MW)', color: CHART_COLORS.gold },
+                    { dataKey: 'output', name: 'Output (GWh)', color: CHART_COLORS.emerald },
+                  ]}
+                  xAxisKey="name"
+                  height={300}
+                  showGrid
+                  showLegend
+                />
+                <div className="space-y-4">
+                  <h4 className="font-semibold text-sm">Energy Mix - Installed Capacity</h4>
+                  <PieChart
+                    data={[
+                      { name: 'Barakah Nuclear', value: 5600, color: CHART_COLORS.emerald },
+                      { name: 'MBR Solar Park', value: 1800, color: CHART_COLORS.gold },
+                      { name: 'Noor Abu Dhabi', value: 1200, color: CHART_COLORS.info },
+                    ]}
+                    height={280}
+                    showLegend
+                  />
+                </div>
+              </div>
             </GlassPanel>
           </motion.div>
 
@@ -1126,6 +1180,76 @@ export default function InfrastructurePage() {
               </div>
             </GlassPanel>
           </motion.div>
+
+          {/* World Islands Dubai */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+          >
+            <GlassPanel title="World Islands Dubai" description="Artificial Archipelago Shaped Like World Map" badge="ICONIC">
+              <div className="grid gap-6 lg:grid-cols-4 mb-4">
+                <GlassCard hover intensity="low">
+                  <p className="text-xs text-platinum-500 mb-1">Islands</p>
+                  <p className="text-2xl font-bold text-navy-900">260-300</p>
+                  <p className="text-xs text-platinum-500">individual islands</p>
+                </GlassCard>
+                <GlassCard hover intensity="low">
+                  <p className="text-xs text-platinum-500 mb-1">Sand Used</p>
+                  <p className="text-2xl font-bold text-cyan-600">321M</p>
+                  <p className="text-xs text-platinum-500">cubic metres</p>
+                </GlassCard>
+                <GlassCard hover intensity="low">
+                  <p className="text-xs text-platinum-500 mb-1">Rock Used</p>
+                  <p className="text-2xl font-bold text-cyan-600">386M</p>
+                  <p className="text-xs text-platinum-500">tons</p>
+                </GlassCard>
+                <GlassCard hover intensity="low">
+                  <p className="text-xs text-platinum-500 mb-1">Cost</p>
+                  <p className="text-2xl font-bold text-gold-700">$13B</p>
+                  <p className="text-xs text-platinum-500">CAD (2005)</p>
+                </GlassCard>
+              </div>
+              <div className="grid gap-6 lg:grid-cols-2">
+                <div>
+                  <h4 className="font-semibold text-sm mb-3">Continent Groups</h4>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {worldIslands.continentGroups.map((c, i) => (
+                      <Badge key={i} variant="cyan" className="text-xs">{c.continent}</Badge>
+                    ))}
+                  </div>
+                  <h4 className="font-semibold text-sm mb-3">Sales & Financial</h4>
+                  <div className="space-y-2">
+                    {worldIslands.salesFinancial.map((s, i) => (
+                      <div key={i} className="flex justify-between p-2 glass-subtle rounded">
+                        <span className="text-sm text-platinum-600">{s.date}</span>
+                        <span className="text-sm font-medium text-navy-900">{s.status}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-sm mb-3">Construction Timeline</h4>
+                  <div className="space-y-2">
+                    {worldIslands.constructionTimeline.map((t, i) => (
+                      <div key={i} className="flex items-start gap-2 p-2 glass-subtle rounded">
+                        <MapPin className="h-4 w-4 text-emerald-500 mt-0.5" />
+                        <div>
+                          <span className="text-xs font-semibold text-navy-900">{t.date}</span>
+                          <p className="text-sm text-platinum-600">{t.event}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <h4 className="font-semibold text-sm mb-3 mt-4">Heart of Europe</h4>
+                  <div className="p-3 bg-gold-50/50 dark:bg-gold-900/20 rounded-lg">
+                    <p className="text-sm font-medium text-gold-700">Germany, Netherlands, Sweden, Ukraine, Main Europe, Switzerland, Monaco</p>
+                    <p className="text-xs text-platinum-500 mt-1">Features outdoor snow, euro-only currency</p>
+                  </div>
+                </div>
+              </div>
+            </GlassPanel>
+          </motion.div>
         </TabsContent>
 
         {/* INCIDENTS TAB */}
@@ -1256,11 +1380,28 @@ export default function InfrastructurePage() {
             transition={{ delay: 0.3 }}
           >
             <GlassPanel title="UAE Relevance Assessment" description="Infrastructure Criticality Ratings">
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {uaeRelevanceAssessment.map((r, i) => (
-                  <div key={i} className="p-3 glass-subtle rounded-lg">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-sm font-medium text-navy-900 dark:text-platinum-100">{r.infrastructure}</span>
+              <div className="grid gap-6 lg:grid-cols-2">
+                <div>
+                  <h4 className="font-semibold text-sm mb-3">Criticality Score</h4>
+                  <RadarChart
+                    data={uaeRelevanceAssessment.map(r => ({
+                      name: r.infrastructure,
+                      score: r.uaeRelevanceScore === 'Critical' ? 100 : r.uaeRelevanceScore === 'High' ? 75 : 50,
+                      fullMark: 100,
+                    }))}
+                    metrics={[
+                      { dataKey: 'score', name: 'Criticality Score', color: CHART_COLORS.danger },
+                    ]}
+                    height={300}
+                    showLegend={false}
+                  />
+                </div>
+                <div className="space-y-3">
+                  {uaeRelevanceAssessment.map((r, i) => (
+                    <div key={i} className="p-3 glass-subtle rounded-lg flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm font-medium text-navy-900 dark:text-platinum-100">{r.infrastructure}</span>
+                      </div>
                       <Badge
                         variant={r.uaeRelevanceScore === 'Critical' ? 'destructive' : r.uaeRelevanceScore === 'High' ? 'warning' : 'outline'}
                         className="text-xs"
@@ -1268,9 +1409,8 @@ export default function InfrastructurePage() {
                         {r.uaeRelevanceScore}
                       </Badge>
                     </div>
-                    <p className="text-xs text-platinum-500">{r.justification}</p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </GlassPanel>
           </motion.div>

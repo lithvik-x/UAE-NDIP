@@ -33,7 +33,7 @@ export default function PodcastAudioPage() {
   const genreData = [
     { name: 'News & Politics', share: 35, color: CHART_COLORS.navy },
     { name: 'Business', share: 24, color: CHART_COLORS.gold },
-    { name: 'Technology', share: 18, color: CHART_COLORS.sky },
+    { name: 'Technology', share: 18, color: CHART_COLORS.info },
     { name: 'Culture & Society', share: 15, color: CHART_COLORS.rose },
     { name: 'Sports', share: 8, color: CHART_COLORS.emerald },
   ]

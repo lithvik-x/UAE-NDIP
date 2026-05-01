@@ -1098,6 +1098,9 @@ export interface EngagementMetrics {
   avgViews?: number
   avgComments?: number
   avgShares?: number
+  avgTimeSpent?: number
+  avgSnaps?: number
+  dailyOpens?: number
 }
 
 export interface BotActivity {
@@ -1112,6 +1115,7 @@ export interface PlatformMetrics {
   users: number
   penetration: number
   dailyActive: number
+  demographics?: string
   sentiment: SentimentBreakdown & {
     score?: number
     trending?: string[]

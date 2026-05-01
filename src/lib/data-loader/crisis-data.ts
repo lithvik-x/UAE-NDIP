@@ -15,6 +15,34 @@ import type {
   SentimentBreakdown,
 } from './types'
 
+// Import comprehensive terrorism extremism data from MD 4-7
+import { terrorismExtremismData } from '../data/crisis/terrorism-extremism-data'
+
+// Import comprehensive social crisis data
+export {
+  socialCrisisData,
+  socialCrisisMetrics,
+  laborUnrestTimeline,
+  queryPatterns,
+  sourceRegistry,
+  laborIncidents,
+  primaryGrievances,
+  governmentMechanisms,
+  demographicData,
+  socialMediaArrests,
+  alcoholPenalties,
+  cybercrimePenalties,
+  domesticWorkerStats,
+  kafalaSystem,
+  riskMatrix,
+  sentimentAnalysis,
+  sourceTierBreakdown,
+  crisisTypes,
+  affectedGroups,
+  supportServices,
+  socialCrisisOverview,
+} from '../data/crisis/social-crisis-data'
+
 // Natural Disaster — file 4-1
 export const naturalDisasterData: CrisisEvent = {
   id: 'crisis-4-1',
@@ -1415,6 +1443,16 @@ export const economicCrisisData: CrisisEvent = {
 
 // Extended Economic Crisis Data for enhanced visualizations
 export const economicCrisisExtendedData = {
+  // Document metadata from MD file
+  documentMetadata: {
+    dateExecuted: '2026-04-27',
+    dateEnriched: '2026-04-27',
+    frameworkVersion: '2.0 (enriched)',
+    queriesExecuted: 28,
+    pagesFetched: 22,
+    pagesSuccessfullyFetched: 16,
+    pagesBlocked: 6,
+  },
   dubaiDebtCrisis2009: {
     debtStructure: {
       dubaiWorldTotal: 59000000000,
@@ -1436,6 +1474,8 @@ export const economicCrisisExtendedData = {
       dowJones: '-155 points (-1.5%)',
       oilPrices: '-7%',
       nasdaq: '-37 points to 2,138',
+      asianMarkets: 'Tumbled for second consecutive day',
+      goldAndOil: 'Dipped amid trader uncertainty',
     },
     resolution: {
       abuDhabiBailout: 10000000000,
@@ -1445,8 +1485,43 @@ export const economicCrisisExtendedData = {
       nakheelRecoveryTotal: 16000000000,
       nakheelFinalRepayment: 1200000000,
     },
+    expatImpact: [
+      { quote: '"Changed" Dubai - desert city-state hit hard as tourism and property-driven boom ground to halt', source: 'Guardian, November 2009' },
+      { quote: 'Foreign professionals hastened retreat from city-state', source: 'Multiple sources' },
+      { quote: 'Laid-off foreigners fleeing Dubai', source: 'NYT, February 2009' },
+      { quote: 'Job losses → reduced spending → housing vacancies → price falls', source: 'Reuters' },
+      { quote: '"After tough year, expats packed up and eyed Asia"', source: 'Reuters, December 2009' },
+      { quote: '"It was scary. Things went upside down suddenly. Many friends who were working at good companies got fired"', source: 'Reddit testimony' },
+    ],
+    nakheelDetails: {
+      fullName: 'Nakheel PJSC',
+      type: 'State-owned property developer',
+      parent: 'Dubai World',
+      keyProjects: ['Palm Islands', 'The World archipelago', 'Palm Jumeirah'],
+      recoveryTimeline: [
+        { date: 'July 2011', milestone: 'Contractor repayment', amount: 681000000 },
+        { date: 'August 2016', milestone: 'Trade creditor sukuk repayment', amount: 1200000000 },
+        { date: 'August 2016', milestone: 'Declared debt-free', amount: 0 },
+        { date: '2016', milestone: 'Total recovery from crisis', amount: 16000000000 },
+      ],
+      initialSukukAmount: 4000000000,
+      dueDate: 'December 14, 2009',
+      finalRepaymentDate: 'August 22, 2016',
+      timeToFullRepayment: 'Nearly 7 years',
+    },
+    dubaiWorldStructure: [
+      { entity: 'Dubai World (parent)', debtAmount: 59000000000, status: 'Restructured' },
+      { entity: 'Nakheel (property arm)', debtAmount: 0, status: 'Recovered' },
+      { entity: 'Istithmar (investment)', debtAmount: 0, status: 'Restructured' },
+      { entity: 'Ports and free zones', debtAmount: 0, status: 'Operational' },
+    ],
   },
   iranWarCrisis2026: {
+    crisisOrigin: {
+      conflictStartDate: 'February 28, 2026',
+      iranianAttacks: '137 missiles, 209 drones',
+      strikeOnAbuDhabi: '1 killed, 7 wounded',
+    },
     stockMarketImpact: {
       totalMarketCapLost: 120000000000,
       dubaiMarketCapLoss: 45000000000,
@@ -1454,6 +1529,13 @@ export const economicCrisisExtendedData = {
       dubaiIndexDecline: -16,
       abuDhabiIndexDecline: -9,
       dubaiWorstDay: -4.7,
+      dubaiBearMarket: '>20% from February peak',
+    },
+    exchangeClosures: {
+      closureDates: 'March 2-3, 2026',
+      combinedMarketCapAffected: 1100000000000,
+      firstClosureInRecentMemory: true,
+      previousClosures: '2022 (Khalifa death), 2006 (ruler death)',
     },
     centralBankResponse: {
       initialCLIFAuction: 500000000,
@@ -1461,11 +1543,90 @@ export const economicCrisisExtendedData = {
       totalEstimated: 8200000000,
       capitalAdequacyRatio: 17,
       totalBankingAssets: 5420000000000,
+      capitalBufferRelief: 'Temporary',
+    },
+    economicImpactSectors: {
+      tourism: { impact: 'Severely affected', value: 70000000000, percentOfGDP: 13 },
+      aviation: { impact: 'Tens of thousands flights cancelled', value: 0 },
+      business: { impact: 'Topping $200 billion', value: 200000000000 },
+      construction: { impact: 'Early signs of weakness', value: 0 },
+      retail: { impact: 'Mass exodus of expats', value: 0 },
+    },
+    regionalContext: {
+      gccProjectedGrowth2026: 1.3,
+      gccGrowth2025: 4.4,
+      uaeGdpGrowthForecast: 5.6,
+      worldBankRevision: '5% (revised from 4%)',
+      dubaiSafeHavenStatus: 'Being tested',
+      saudiTadawulFall: '>4% on Sunday post-attack',
+    },
+    expertAssessments: [
+      { source: 'Burdin Hickok (NYU Professor)', quote: '"This move has the potential of diminishing the status of Dubai as a true major market and weaken investor confidence in the Dubai markets."' },
+      { source: 'Jefferies analysts', quote: 'Estimated $8.2 billion injection needs' },
+    ],
+  },
+  sovereignDebt: {
+    dubaiPublicDebt: 112400000000,
+    asOf: 'March 31, 2026',
+    debtToGdpRatio: 20.8,
+    uaeDebtRelief2025: {
+      date: 'November 2025',
+      amountWaived: 475000000,
+      citizensHelped: 1435,
+      mechanism: 'Defaulted Debts Settlement Fund initiative',
+    },
+  },
+  bankingSector: {
+    centralBankResilience: {
+      initialCLIFAuction: 500000000,
+      byApril1: 31000000000,
+      totalEstimated: 8200000000,
+      capitalBufferRelief: 'Temporary',
+      capitalAdequacyRatio: 17,
+      totalBankingAssets: 5420000000000,
+    },
+    performanceDuringCrisis: {
+      stockLosses: 'Double-digit since war began',
+      shockAbsorbers: 'UAE banks strongest in region',
+      normalOperations: 'Central Bank maintaining',
+      withdrawalRestrictions: 'Claims on social media (unconfirmed)',
+      capitalControls: 'Claims on social media (unconfirmed)',
+    },
+    bankRunPrevention: {
+      claimsOfUnableToWithdraw: 'Social media, March 2026',
+      centralBankStatement: 'Maintaining normal operations',
+      preventionMeasure: 'UAE prevented bank run to avoid system collapse',
+      largeBanksAction: 'Evacuated Dubai offices (NYT, March 2026)',
+    },
+    globalFinancialCrisis2008: {
+      uaeInsulation: '"Pretty insulated" but bankers still lost jobs',
+      constructionProjectsAffected: 582000000000,
+      stockMarketDrop: '30-60% in Q4 2008',
+      arabInvestorLosses: 600000000000,
+      inflation2008Peak: 11.1,
+      inflation2009: 2.5,
+      housingBubbles: 'Burst across GCC',
+    },
+  },
+  legalRegulatory: {
+    bankruptcyLaw2024: {
+      law: 'Federal Decree-Law No. 51 of 2023',
+      inForce: 'May 1, 2024',
+      executiveRegulations: 'Cabinet Resolution No. 94 of 2024',
+      replaces: 'Federal Law No. 9 of 2016',
+      newFeatures: 'Specialist bankruptcy unit, bankruptcy court',
+      scope: '"Onshore" companies and DIFC entities',
+    },
+    fatfStatus: {
+      preFebruary2024: 'Grey list',
+      february2024: 'Removed from grey list',
     },
   },
   corporateFraudScale: [
-    { company: 'NMC Health', year: 2020, fraudAmount: 5400000000, founderCeo: 'B.R. Shetty' },
-    { company: 'Abraaj Group', year: 2018, fraudAmount: 230000000, founderCeo: 'Arif Naqvi' },
+    { company: 'NMC Health', year: 2020, fraudAmount: 5400000000, founderCeo: 'B.R. Shetty', notes: 'Largest in UAE history' },
+    { company: 'Abraaj Group', year: 2018, fraudAmount: 230000000, founderCeo: 'Arif Naqvi', notes: '$1.1B total debt' },
+    { company: 'Gulf First Forex', year: 2024, fraudAmount: 0, founderCeo: 'Unknown', notes: 'Millions lost via Sigma-One Capital' },
+    { company: 'Gold Refineries', year: 2024, fraudAmount: 0, founderCeo: '32 suspended', notes: '256 AML violations' },
   ],
   financialImpactSummary: [
     { category: 'Dubai World debt', amount: 59000000000, currency: 'USD' },
@@ -1475,7 +1636,48 @@ export const economicCrisisExtendedData = {
     { category: 'NMC Health fraud', amount: 5400000000, currency: 'USD' },
     { category: 'Abraaj fraud', amount: 230000000, currency: 'USD' },
     { category: 'Central Bank injection (2026)', amount: 8200000000, currency: 'USD' },
+    { category: 'Gold laundering (exposed)', amount: 174500000, currency: 'USD' },
   ],
+  crisisFrequency: [
+    { year: 2009, crisisCount: 1, severity: 'High', crisis: 'Dubai Debt Crisis' },
+    { year: 2018, crisisCount: 1, severity: 'Medium', crisis: 'Abraaj Collapse' },
+    { year: 2020, crisisCount: 1, severity: 'Extreme', crisis: 'NMC Health Fraud' },
+    { year: 2024, crisisCount: 1, severity: 'Medium', crisis: 'Gold Refineries Scandal' },
+    { year: 2026, crisisCount: 1, severity: 'Extreme', crisis: 'Iran War Impact' },
+  ],
+  propertyPriceCrashes: [
+    { period: 'Q1 2009', event: 'Post-2008 GFC', priceDrop: -40, maxDrop: -60, duration: 'Quarterly collapse' },
+    { period: '2009-2012', event: 'Post-boom correction', priceDrop: -30, maxDrop: -40, duration: 'Prolonged correction over 6 years' },
+    { period: '2026', event: 'Iran war', priceDrop: -14, maxDrop: 0, duration: 'Early indication, ongoing' },
+  ],
+  centralBankLiquidityInjections: [
+    { crisis: '2009 Dubai Crisis', amount: 10000000000, method: 'Direct bailout (Abu Dhabi)', date: 'December 2009' },
+    { crisis: '2026 Iran War', amount: 8200000000, method: 'CLIF auctions, liquidity facilities', date: 'March-April 2026' },
+  ],
+  verificationStatus: {
+    allQueriesExecuted: 'PASS',
+    allPagesFetched: 'PARTIAL',
+    pagesSuccessfullyFetched: '16 of 22 (73%)',
+    allDataExtracted: 'PASS',
+    noFabricationDetected: 'PASS',
+    multipleSourceVerification: 'PASS',
+    blockedSourcesCompensated: 'PASS',
+  },
+  sentimentAnalysis: {
+    crisisSentimentByPeriod: [
+      { period: '2009 Dubai Crisis', sentiment: 'Negative', keyDrivers: 'Mass expat exodus, construction halt, market panic' },
+      { period: '2018-2026 Abraaj', sentiment: 'Negative', keyDrivers: 'Investor fraud, $13.6B fund collapse' },
+      { period: '2020 NMC Health', sentiment: 'Extremely Negative', keyDrivers: '$5.4B fraud, largest in UAE history' },
+      { period: '2024 Gold Refineries', sentiment: 'Negative', keyDrivers: 'AML violations, FATF scrutiny' },
+      { period: '2026 Iran War', sentiment: 'Extremely Negative', keyDrivers: '$120B market losses, mass exodus, exchange closures' },
+    ],
+    sourceTone: [
+      { source: 'Guardian (2009)', tone: 'somber', language: '"Changed Dubai", "exodus"' },
+      { source: 'Reddit testimonies', tone: 'distressed', language: '"Scary", "things went upside down suddenly"' },
+      { source: 'NYU Professor', tone: 'concerned', language: '"Diminishing status", "weaken investor confidence"' },
+      { source: 'Whalesbook (2026)', tone: 'alarmist', language: '"$200 billion hit", "economic freefall"' },
+    ],
+  },
 }
 
 // Reputation Crisis — file 4-5
@@ -2190,247 +2392,34 @@ export const communicationCrisisExtendedData = {
   },
 }
 
-// Terrorism/Extremism — file 4-7
+// Terrorism/Extremism — file 4-7 (using comprehensive MD 4-7 data)
 export const terrorismCrisisData: CrisisEvent = {
   id: 'crisis-4-7',
   type: 'terrorism',
   name: 'UAE Terrorism and Extremism',
   severity: 5,
-  phoenixStage: 'containment',
+  phoenixStage: 'ACTIVE THREAT',
   alertLevel: 'RED',
-  timeline: [
-    {
-      date: '1973-07-20',
-      event: 'Japan Airlines Flight 404 hijacking',
-      description: 'JRA/PFLP-EO hijacked Boeing 747; landed in Dubai; plane later destroyed in Benghazi',
-    },
-    {
-      date: '1973-11-25',
-      event: 'KLM Flight 861 hijacking',
-      description: 'Arab Youth Organization hijacked Boeing 747; landed in Dubai; 0 deaths',
-    },
-    {
-      date: '1983',
-      event: 'Gulf Air Flight 771 bombing',
-      description: 'Abu Nidal Organization bombed plane near Abu Dhabi; 112 dead',
-    },
-    {
-      date: '1999',
-      event: 'Indian Airlines Flight 814 hijacking',
-      description: 'Harkat-ul-Mujahideen hijacked; 1 dead',
-    },
-    {
-      date: '2014-12-01',
-      event: 'Ibolya Ryan murder',
-      description: 'Hungarian-American teacher Ala\'a Badr Abdullah al-Hashemi stabbed in Abu Dhabi mall; executed July 13, 2015',
-    },
-    {
-      date: '2022-01-17',
-      event: 'Houthi Abu Dhabi attack',
-      description: '3 killed (Hardeep Singh 28, Hardev Singh 35, Mamoor Khan 29), 6 injured at ADNOC refinery and airport extension',
-    },
-    {
-      date: '2024-11',
-      event: 'Zvi Kogan disappearance',
-      description: 'Chabad rabbi missing; later found dead in UAE; classified as antisemitic terror incident',
-    },
-    {
-      date: '2025-03-31',
-      event: 'Zvi Kogan murder trial verdict',
-      description: '3 sentenced to death, 1 to life for premeditated murder',
-    },
-    {
-      date: '2026-03',
-      event: 'Iran-linked network dismantled',
-      description: 'Money laundering and terror financing network broken up; multiple arrests',
-    },
-    {
-      date: '2026-03-01',
-      event: 'Iranian strikes on UAE begin',
-      description: 'Over 100 injured, 4 killed; hundreds of missiles and drones fired at Gulf cities',
-    },
-    {
-      date: '2026-03-29',
-      event: 'Iranian strike on aluminium plant',
-      description: 'Key aluminium plant in Abu Dhabi hit; multiple injuries',
-    },
-    {
-      date: '2026-04-20',
-      event: '27 suspects arrested',
-      description: 'Iran-linked terror cell dismantled by UAE State Security; linked to Velayat-e Faqih doctrine',
-    },
-    {
-      date: '2026-04',
-      event: 'UAE direct strikes on Iran',
-      description: 'First direct UAE strikes against Iran in history',
-    },
-  ],
-  keyFindings: [
-    'UAE designated 83 organizations as terrorist entities under Federal Law No. 7 (November 2014)',
-    'UAE Local Terrorist List: 714 total entities (326 searchable): 174 people, 141 organizations, 10 addresses, 1 vessel',
-    '17 of 19 9/11 hijackers transited through UAE; received funding from UAE-based terror investors',
-    'UAE armed forces nicknamed "Little Sparta" by US Defense Secretary James Mattis',
-    '2022 Houthi Abu Dhabi attack: 3 killed, 6 injured; Iranian strikes 2026: 3,000+ missiles/drones over 5 weeks',
-    'Zvi Kogan murder (Nov 2024): Chabad rabbi killed; 3 sentenced to death (March 2025)',
-    'Iran-linked cells: March and April 2026 networks dismantled (37+ arrests total)',
-    'UAE on FATF grey list 2019-2024 for AML/CFT concerns; removed February 2024',
-    'Hedayah International Centre of Excellence for Countering Violent Extremism headquartered in Abu Dhabi',
-    'UAE 94 trial (2013): 94 activists tried, 56 convicted; UAE 84 trial (2024): 43 activists sentenced to life',
-    'Munasaha rehabilitation centres criticized for indefinite detention; 2019 expansion allowed detention of "extremist thought"',
-    'Al Islah (MB affiliate) designated terrorist 2014; revived organization uncovered August 2024',
-    'AQAP called for global attack on UAE interests (November 2025)',
-    'Federal Law No. 10 of 2025: Combating Money Laundering, Terrorism Financing, and Financing of Illegal Organizations',
-    'Iran war period (2026): UAE weathered more Iranian strikes than any other country; 550+ ballistic missiles, 2,200+ drones',
-    'UAE recruits former al-Qaeda members and American mercenaries for Yemen operations (January 2024)',
-    'UN experts expressed grave concern at trial of 84 civil society members on spurious terrorism charges (January 2024)',
-    'Counter-terrorism legislation criticized by HRW as "overly broad"',
-    'UAE dismantled Hezbollah and Iran-linked network for money laundering and terror financing (March 2026)',
-    'Six Nigerians identified as terrorism supporters on UAE terror list (recent)',
-  ] as KeyFinding[],
-  stakeholderImpacts: [
-    {
-      stakeholder: 'Citizens',
-      impact: 'Direct attacks (3 killed 2022 Houthi, multiple killed in 2026 Iran strikes)',
-      sentiment: 'Fear' as SentimentBreakdown,
-    },
-    {
-      stakeholder: 'Foreign Nationals/Jews',
-      impact: 'Zvi Kogan murder (antisemitic terror); Ibolya Ryan murder',
-      sentiment: 'Outrage' as SentimentBreakdown,
-    },
-    {
-      stakeholder: 'Government/Military',
-      impact: 'Active counter-terrorism operations; Little Sparta nickname; direct Iran strikes (April 2026)',
-      sentiment: 'Resolute' as SentimentBreakdown,
-    },
-    {
-      stakeholder: 'Regional Partners',
-      impact: 'Iran escalation; coordinated defense with Saudi Arabia, Egypt, OIC support',
-      sentiment: 'Alarmed' as SentimentBreakdown,
-    },
-    {
-      stakeholder: 'Expatriate Community',
-      impact: 'Increased scrutiny; social media arrests (35+ March 2026)',
-      sentiment: 'Anxious' as SentimentBreakdown,
-    },
-    {
-      stakeholder: 'Financial Sector',
-      impact: 'FATF grey list 2019-2024; ongoing AML/CFT concerns despite removal',
-      sentiment: 'Concerned' as SentimentBreakdown,
-    },
-  ],
+  timeline: terrorismExtremismData.timeline as CrisisTimelineEvent[],
+  keyFindings: terrorismExtremismData.keyFindings as KeyFinding[],
+  stakeholderImpacts: terrorismExtremismData.stakeholderImpacts.map(s => ({
+    stakeholder: s.stakeholder,
+    impact: s.impact || '',
+    sentiment: s.sentiment as SentimentBreakdown,
+  })),
   responseMetrics: {
     containmentTime: 'Ongoing',
     recoveryTime: 'Unknown',
-    casualties: 9,
+    casualties: terrorismExtremismData.responseMetrics.casualties,
     economicLoss: 0,
-    affectedPopulation: 9900000,
+    affectedPopulation: terrorismExtremismData.responseMetrics.affectedPopulation,
     fundingAllocated: 0,
   },
-  sources: [
-    {
-      source: 'UAE Mission to UN statements',
-      tier: 'TIER_0' as TierLevel,
-      credibility: 'Very High' as CredibilityScore,
-      url: 'https://uaeun.org',
-    },
-    {
-      source: 'UAE EOCN / Executive Office for Control & Non-proliferation',
-      tier: 'TIER_0' as TierLevel,
-      credibility: 'Very High' as CredibilityScore,
-      url: 'https://government.ae',
-    },
-    {
-      source: 'NAMLCFTC (National Anti Money Laundering and Combatting Financing of Terrorism Committee)',
-      tier: 'TIER_0' as TierLevel,
-      credibility: 'Very High' as CredibilityScore,
-      url: 'https://government.ae',
-    },
-    {
-      source: 'UAE Ministry of Interior / State Security',
-      tier: 'TIER_0' as TierLevel,
-      credibility: 'Very High' as CredibilityScore,
-      url: 'https://government.ae',
-    },
-    {
-      source: 'Reuters',
-      tier: 'TIER_1' as TierLevel,
-      credibility: 'High' as CredibilityScore,
-      url: 'https://reuters.com',
-    },
-    {
-      source: 'Al Jazeera',
-      tier: 'TIER_1' as TierLevel,
-      credibility: 'High' as CredibilityScore,
-      url: 'https://aljazeera.com',
-    },
-    {
-      source: 'BBC',
-      tier: 'TIER_1' as TierLevel,
-      credibility: 'High' as CredibilityScore,
-      url: 'https://bbc.com',
-    },
-    {
-      source: 'The Guardian',
-      tier: 'TIER_1' as TierLevel,
-      credibility: 'High' as CredibilityScore,
-      url: 'https://theguardian.com',
-    },
-    {
-      source: 'Human Rights Watch',
-      tier: 'TIER_2' as TierLevel,
-      credibility: 'High' as CredibilityScore,
-      url: 'https://hrw.org',
-    },
-    {
-      source: 'Washington Institute',
-      tier: 'TIER_2' as TierLevel,
-      credibility: 'High' as CredibilityScore,
-      url: 'https://washingtoninstitute.org',
-    },
-    {
-      source: 'Jamestown Foundation',
-      tier: 'TIER_2' as TierLevel,
-      credibility: 'High' as CredibilityScore,
-      url: 'https://jamestown.org',
-    },
-    {
-      source: 'The Sentry',
-      tier: 'TIER_2' as TierLevel,
-      credibility: 'High' as CredibilityScore,
-      url: 'https://thesentry.org',
-    },
-    {
-      source: 'CounterExtremism.com',
-      tier: 'TIER_2' as TierLevel,
-      credibility: 'High' as CredibilityScore,
-      url: 'https://counterextremism.com',
-    },
-    {
-      source: 'Hedayah',
-      tier: 'TIER_2' as TierLevel,
-      credibility: 'High' as CredibilityScore,
-      url: 'https://hedayah.ae',
-    },
-    {
-      source: 'Wikipedia - Terrorism in UAE',
-      tier: 'TIER_3' as TierLevel,
-      credibility: 'Medium' as CredibilityScore,
-      url: 'https://en.wikipedia.org/wiki/Terrorism_in_the_United_Arab_Emirates',
-    },
-    {
-      source: 'US Congressional Research Service',
-      tier: 'TIER_5' as TierLevel,
-      credibility: 'High' as CredibilityScore,
-      url: 'https://crs.gov',
-    },
-    {
-      source: 'UK Parliament Committees',
-      tier: 'TIER_5' as TierLevel,
-      credibility: 'High' as CredibilityScore,
-      url: 'https://parliament.uk',
-    },
-  ] as SourceReference[],
+  sources: terrorismExtremismData.sources.map(s => ({
+    source: s.source,
+    tier: s.tier as TierLevel,
+    credibility: s.credibility as CredibilityScore,
+  })) as SourceReference[],
 }
 
 // Cyber Threat — file 4-8
@@ -3771,8 +3760,8 @@ export const crisisOverview: CrisisOverview = {
   criticalCrises: [geopoliticalCrisisData, economicCrisisData, terrorismCrisisData, cyberThreatData, earlyWarningData],
 }
 
-// Alias for index.ts compatibility
-export const terrorismExtremismData = terrorismCrisisData;
+// Alias for index.ts compatibility — use comprehensive MD 4-7 data
+export const terrorismExtremismCrisisData = terrorismExtremismData;
 
 
 // Extended Social Crisis Data for enhanced visualizations

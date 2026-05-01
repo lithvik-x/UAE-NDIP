@@ -61,6 +61,7 @@ import {
   abuDhabiGPData,
   dubaiWorldCupData,
   gitexData,
+  dubaiAirshowData,
   adipecData,
   gulfoodData,
   artDubaiData,
@@ -870,6 +871,48 @@ export default function EventsPage() {
                 </div>
                 <div className="pt-2 border-t border-platinum-200/50">
                   <p className="text-xs text-platinum-500">Largest tech and startup show in region</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Dubai Airshow */}
+            <Card className="glass-premium border-sky/30">
+              <CardHeader className="pb-3">
+                <div className="flex items-start justify-between">
+                  <div>
+                    <Badge variant="cyan" className="mb-1 text-xs">CRITICAL</Badge>
+                    <CardTitle className="text-base font-rajdhani font-semibold">Dubai Airshow</CardTitle>
+                    <p className="text-xs text-platinum-500">Al Maktoum International Airport</p>
+                  </div>
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-sky text-white">
+                    <TrendingUp className="h-4 w-4" />
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="space-y-1">
+                    <p className="text-xs text-platinum-500">First Held</p>
+                    <p className="text-sm font-semibold">1989</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-xs text-platinum-500">Frequency</p>
+                    <p className="text-sm font-semibold">Biennial</p>
+                  </div>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-xs font-semibold">2023 Scale</p>
+                  <div className="space-y-1">
+                    {dubaiAirshowData['2023Scale'].slice(0, 3).map((s, i) => (
+                      <div key={i} className="flex items-center justify-between text-xs">
+                        <span className="text-platinum-600 dark:text-platinum-400">{s.metric}</span>
+                        <span className="font-medium">{s.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="pt-2 border-t border-platinum-200/50">
+                  <p className="text-xs text-platinum-500">Emirates: 90 777X jets ($52B list)</p>
                 </div>
               </CardContent>
             </Card>

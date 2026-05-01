@@ -15,6 +15,7 @@ import {
   BarChart,
   AreaChart,
   PieChart,
+  RadarChart,
   CHART_COLORS,
 } from '@/components/ui/chart-library'
 import {
@@ -53,116 +54,36 @@ import {
   Landmark,
   ShieldAlert,
   Bug,
+  Gavel,
+  FileText,
+  Target,
+  Layers,
 } from 'lucide-react'
 import {
   useTiktokIntelligenceData,
 } from '@/lib/data-loader'
 
-// Enhancement A: Key Statistics Cards
-const TikTokStats = {
-  influencers: { value: '122,014', label: 'UAE Influencers', trend: 'up', icon: Users, color: CHART_COLORS.rose },
-  contentRemoved: { value: '1M+', label: 'Videos Removed', trend: 'stable', icon: XCircle, color: CHART_COLORS.orange },
-  peopleCharged: { value: '21', label: 'Charged (Mar 2026)', trend: 'up', icon: AlertOctagon, color: CHART_COLORS.rose },
-  scamLosses: { value: '$442B', label: 'Global Scam Losses', trend: 'up', icon: DollarSign, color: CHART_COLORS.rose },
-  workersDetained: { value: '375+', label: 'Workers Detained', trend: 'stable', icon: UserX, color: CHART_COLORS.rose },
-  aiFakeViews: { value: '12M+', label: 'AI Fake Video Views', trend: 'up', icon: Bot, color: CHART_COLORS.gold },
+// Icon mapping for dynamic icon rendering
+const iconMap: Record<string, React.ComponentType<{ className?: string; style?: React.CSSProperties }>> = {
+  Users,
+  XCircle,
+  AlertOctagon,
+  DollarSign,
+  UserX,
+  Bot,
+  AlertTriangle,
+  AlertCircle,
+  Lock,
+  Scale,
+  Brain,
+  Shield,
+  Globe,
+  Hash,
+  Landmark,
+  Video,
+  Zap,
+  ExternalLink,
 }
-
-// Enhancement B: Sentiment Distribution
-const sentimentData = [
-  { name: 'Positive', value: 42, color: CHART_COLORS.emerald },
-  { name: 'Neutral', value: 28, color: CHART_COLORS.platinum },
-  { name: 'Negative', value: 30, color: CHART_COLORS.rose },
-]
-
-// Enhancement C: Critical Risk Topics
-const criticalRisks = [
-  {
-    id: 'iran',
-    title: 'Iran Conflict Response',
-    riskLevel: 'CRITICAL',
-    description: '21 people charged for filming missile strikes. 1,800+ drones/missiles, 6 deaths, 141 injuries. Coordinated influencer content with near-identical videos.',
-    metric: '21 charged',
-    icon: AlertOctagon,
-    color: CHART_COLORS.rose,
-  },
-  {
-    id: 'labor',
-    title: 'Labor Conditions',
-    riskLevel: 'CRITICAL',
-    description: '$400/month wages, 16 roommates in small rooms, "No Work, No Pay" policy, AED 1M fines for overcrowded housing.',
-    metric: '375+ detained',
-    icon: Scale,
-    color: CHART_COLORS.rose,
-  },
-  {
-    id: 'racism',
-    title: 'Racism & Discrimination',
-    riskLevel: 'CRITICAL',
-    description: '375+ African workers detained June 2021. Al-Wathba prison: 220 detainees, 4 toilets. Pregnant woman lost child.',
-    metric: '375+ workers',
-    icon: AlertTriangle,
-    color: CHART_COLORS.rose,
-  },
-  {
-    id: 'scams',
-    title: 'Scam Documentation',
-    riskLevel: 'CRITICAL',
-    description: 'Fake Dubai Prince romance fraud ($442B global losses). Rental car extortion. Crypto scams by influencers.',
-    metric: '$442B lost',
-    icon: AlertCircle,
-    color: CHART_COLORS.rose,
-  },
-  {
-    id: 'freespeech',
-    title: 'Free Speech Suppression',
-    riskLevel: 'CRITICAL',
-    description: 'Tierra Allen arrested for "shouting". Hamdan Al Rind arrested for satire (2.6M followers).',
-    metric: '2 arrests',
-    icon: Lock,
-    color: CHART_COLORS.rose,
-  },
-  {
-    id: 'ai',
-    title: 'AI Deepfake Threat',
-    riskLevel: 'HIGH',
-    description: 'AI-generated Burj Khalifa collapse (12M+ views). 1B+ views of AI war content on X.',
-    metric: '12M+ views',
-    icon: Bot,
-    color: CHART_COLORS.gold,
-  },
-]
-
-// Enhancement D: Hashtag Performance
-const hashtagData = [
-  { hashtag: '#UAE', posts: '19M', sentiment: 'positive', trend: 85 },
-  { hashtag: '#dubailife', posts: '2.6M', sentiment: 'positive', trend: 78 },
-  { hashtag: '#realityofdubai', posts: 'Active', sentiment: 'negative', trend: 25 },
-  { hashtag: '#leavingdubai', posts: 'Active', sentiment: 'negative', trend: 30 },
-  { hashtag: '#uaeracism', posts: 'Active', sentiment: 'negative', trend: 20 },
-  { hashtag: '#uaelabors', posts: 'Active', sentiment: 'negative', trend: 22 },
-]
-
-// Enhancement E: Media Law Fines
-const mediaLawFines = [
-  { violation: 'Religious offences/inciting violence', fine: 'Up to Dh1 million' },
-  { violation: 'Murder, rape, drug abuse content', fine: 'Up to Dh150,000' },
-  { violation: 'Undermining social cohesion', fine: 'Up to Dh250,000' },
-  { violation: 'National symbol disrespect', fine: 'Dh50,000 - Dh500,000' },
-  { violation: 'Domestic/foreign policy offense', fine: 'Dh50,000 - Dh500,000' },
-  { violation: 'False information (first)', fine: 'Dh5,000' },
-  { violation: 'False information (repeat)', fine: 'Dh10,000' },
-  { violation: 'Operating without licence (first)', fine: 'Dh10,000' },
-  { violation: 'Operating without licence (repeat)', fine: 'Dh40,000' },
-]
-
-// Enhancement F: Key Persons
-const keyPersons = [
-  { name: 'Hamdan Al Rind', handle: '@hamdan_alrind', followers: '2.6M', status: 'Arrested July 2023', charge: 'Satire' },
-  { name: 'Tierra Allen', handle: '@sassy_trucker', followers: 'N/A', status: 'Released Aug 2023', charge: '"Shouting"' },
-  { name: 'Sheikh Hamdan (Fazza)', handle: '@fazza', followers: 'Impersonated', status: 'Scam target', charge: 'Romance fraud' },
-  { name: '@3lowlow', handle: '@3lowlow', followers: '35.2k', status: 'Top UAE TikToker', charge: '6.92% engagement' },
-]
 
 // Animation variants
 const fadeInUp = {
@@ -191,7 +112,23 @@ export default function TikTokLandscapePage() {
     )
   }
 
-  const { metrics, keyNarratives, governmentAccounts } = data
+  // Destructure all data from the hook
+  const {
+    stats,
+    sentimentDistribution,
+    criticalRisks,
+    hashtagPerformance,
+    mediaLawFines,
+    keyPersons,
+    influencerLicensing,
+    aiDeepfakeThreats,
+    queryPatternsExecuted,
+    sourceCredibilityMatrix,
+    platformData,
+    executionMetadata,
+  } = data
+
+  const { metrics, keyNarratives, governmentAccounts, sources, botActivity } = platformData
 
   return (
     <div className="space-y-8 p-8 font-rajdhani">
@@ -208,7 +145,7 @@ export default function TikTokLandscapePage() {
           </Badge>
           <h1 className="text-4xl font-bold font-rajdhani gradient-text-platinum">TikTok UAE Intelligence</h1>
           <p className="mt-2 text-slate-400">
-            Comprehensive TikTok landscape analysis: 122,014 UAE influencers, 24 queries executed, 18 pages fetched
+            Comprehensive TikTok landscape analysis: {executionMetadata.queriesExecuted} queries executed, {executionMetadata.pagesFetched} pages fetched
           </p>
         </div>
         <div className="flex gap-3">
@@ -223,24 +160,27 @@ export default function TikTokLandscapePage() {
         </div>
       </motion.div>
 
-      {/* Key Metrics Grid */}
+      {/* Key Metrics Grid - from data.stats */}
       <motion.div
         variants={staggerContainer}
         initial="initial"
         animate="animate"
         className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6"
       >
-        {Object.entries(TikTokStats).map(([key, stat]) => (
-          <motion.div key={key} variants={fadeInUp}>
-            <MetricCard
-              title={stat.label}
-              value={stat.value}
-              icon={<stat.icon className="h-5 w-5" style={{ color: stat.color }} />}
-              gradient="denim"
-              className="hover:scale-105 transition-transform duration-200"
-            />
-          </motion.div>
-        ))}
+        {stats.map((stat, idx) => {
+          const IconComponent = iconMap[stat.icon] || Users
+          return (
+            <motion.div key={idx} variants={fadeInUp}>
+              <MetricCard
+                title={stat.label}
+                value={stat.value}
+                icon={<IconComponent className="h-5 w-5" style={{ color: stat.color }} />}
+                gradient="denim"
+                className="hover:scale-105 transition-transform duration-200"
+              />
+            </motion.div>
+          )
+        })}
       </motion.div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
@@ -255,7 +195,7 @@ export default function TikTokLandscapePage() {
         {/* Overview Tab */}
         <TabsContent value="overview" className="space-y-6">
           <div className="grid gap-6 lg:grid-cols-2">
-            {/* Sentiment Analysis */}
+            {/* Sentiment Analysis - from data.sentimentDistribution */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -267,11 +207,11 @@ export default function TikTokLandscapePage() {
                     <Brain className="h-5 w-5 text-rose-400" />
                     Sentiment Analysis
                   </CardTitle>
-                  <CardDescription>Overall: {metrics.sentiment.overall}</CardDescription>
+                  <CardDescription>Overall: {metrics.sentiment.overall} (Score: {metrics.sentiment.score})</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <PieChart
-                    data={sentimentData}
+                    data={sentimentDistribution}
                     height={220}
                     showLegend={true}
                   />
@@ -279,7 +219,7 @@ export default function TikTokLandscapePage() {
               </Card>
             </motion.div>
 
-            {/* Key Concerns */}
+            {/* Key Concerns - from metrics.sentiment.keyConcerns */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -315,7 +255,7 @@ export default function TikTokLandscapePage() {
             </motion.div>
           </div>
 
-          {/* Trending Hashtags */}
+          {/* Trending Hashtags - from data.hashtagPerformance */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -331,17 +271,24 @@ export default function TikTokLandscapePage() {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-3">
-                  {metrics.engagement.trendingHashtags?.map((tag, idx) => (
+                  {hashtagPerformance.map((tag, idx) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: idx * 0.03 }}
                       whileHover={{ scale: 1.05 }}
-                      className="px-4 py-2 rounded-full bg-gradient-to-r from-gold-500/20 to-yellow-500/20 border border-gold-500/30 text-gold"
+                      className={`px-4 py-2 rounded-full border ${
+                        tag.sentiment === 'positive'
+                          ? 'bg-emerald-500/20 border-emerald-500/30 text-emerald-400'
+                          : tag.sentiment === 'negative'
+                          ? 'bg-rose-500/20 border-rose-500/30 text-rose-400'
+                          : 'bg-platinum-500/20 border-platinum-500/30 text-platinum-400'
+                      }`}
                     >
                       <Hash className="h-3 w-3 inline mr-1" />
-                      {tag}
+                      {tag.hashtag}
+                      <span className="ml-2 text-xs opacity-70">({tag.posts})</span>
                     </motion.div>
                   ))}
                 </div>
@@ -349,7 +296,7 @@ export default function TikTokLandscapePage() {
             </Card>
           </motion.div>
 
-          {/* Bot Activity */}
+          {/* Bot Activity Analysis - from platformData.botActivity */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -361,62 +308,154 @@ export default function TikTokLandscapePage() {
                   <Bot className="h-5 w-5 text-rose-400" />
                   Bot Activity Analysis
                 </CardTitle>
-                <CardDescription>{metrics.botActivity?.estimatedBotPercent}% estimated bots</CardDescription>
+                <CardDescription>{metrics.botActivity?.estimatedBotPercent ?? botActivity?.estimatedBotPercent ?? 0}% estimated bots</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-slate-300">Coordinated Activity</span>
-                    <Badge variant={metrics.botActivity?.coordinatedInauthentic ? 'destructive' : 'success'}>
-                      {metrics.botActivity?.coordinatedInauthentic ? 'Detected' : 'None'}
+                    <Badge variant={metrics.botActivity?.coordinatedInauthentic ?? botActivity?.coordinatedInauthentic ? 'destructive' : 'success'}>
+                      {metrics.botActivity?.coordinatedInauthentic ?? botActivity?.coordinatedInauthentic ? 'Detected' : 'None'}
                     </Badge>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-slate-300">Confidence Level</span>
-                    <span className="text-lg font-bold text-gold">{Math.round((metrics.botActivity?.confidence ?? 0) * 100)}%</span>
+                    <span className="text-lg font-bold text-gold">
+                      {Math.round((metrics.botActivity?.confidence ?? botActivity?.confidence ?? 0) * 100)}%
+                    </span>
                   </div>
-                  <Progress value={metrics.botActivity?.estimatedBotPercent ?? 0} className="h-2" />
+                  <Progress value={metrics.botActivity?.estimatedBotPercent ?? botActivity?.estimatedBotPercent ?? 0} className="h-2" />
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* Key Narratives Summary */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <Card className="glass-card border-platinum-500/20">
+              <CardHeader>
+                <CardTitle className="text-lg flex items-center gap-2">
+                  <Layers className="h-5 w-5 text-platinum" />
+                  Key Narratives
+                </CardTitle>
+                <CardDescription>Dominant themes on TikTok UAE</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {keyNarratives.slice(0, 6).map((narrative, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1 * idx }}
+                      className="rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
+                    >
+                      <div className="flex items-center gap-2 mb-1">
+                        <Badge
+                          variant="outline"
+                          className={`text-xs ${
+                            narrative.sentiment === 'positive'
+                              ? 'border-emerald-500/50 text-emerald-400'
+                              : narrative.sentiment === 'negative'
+                              ? 'border-rose-500/50 text-rose-400'
+                              : 'border-platinum-500/50 text-platinum-400'
+                          }`}
+                        >
+                          {narrative.sentiment}
+                        </Badge>
+                        <span className="text-xs text-slate-500">{narrative.prevalence}%</span>
+                      </div>
+                      <p className="text-sm font-medium text-slate-200">{narrative.topic}</p>
+                    </motion.div>
+                  ))}
                 </div>
               </CardContent>
             </Card>
           </motion.div>
         </TabsContent>
 
-        {/* Critical Risks Tab */}
+        {/* Critical Risks Tab - from data.criticalRisks */}
         <TabsContent value="critical" className="space-y-6">
           <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
-            {criticalRisks.map((risk, idx) => (
-              <motion.div
-                key={risk.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1 }}
-                whileHover={{ scale: 1.02 }}
-              >
-                <Card className="glass-card border-rose-500/30 overflow-hidden">
-                  <div className="h-1 bg-gradient-to-r from-rose-500 to-pink-500" />
-                  <CardHeader>
-                    <div className="flex items-center justify-between">
-                      <CardTitle className="text-lg">{risk.title}</CardTitle>
-                      <Badge variant="destructive" className="text-xs">
-                        {risk.riskLevel}
-                      </Badge>
-                    </div>
-                    <CardDescription className="flex items-center gap-2">
-                      <risk.icon className="h-4 w-4" style={{ color: risk.color }} />
-                      {risk.metric}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-slate-300">{risk.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+            {criticalRisks.map((risk, idx) => {
+              const IconComponent = iconMap[risk.icon] || AlertOctagon
+              return (
+                <motion.div
+                  key={risk.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.1 }}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <Card className="glass-card border-rose-500/30 overflow-hidden">
+                    <div className={`h-1 bg-gradient-to-r ${
+                      risk.riskLevel === 'CRITICAL' ? 'from-rose-500 to-pink-500' : 'from-gold-500 to-yellow-500'
+                    }`} />
+                    <CardHeader>
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-lg">{risk.title}</CardTitle>
+                        <Badge variant="destructive" className="text-xs">
+                          {risk.riskLevel}
+                        </Badge>
+                      </div>
+                      <CardDescription className="flex items-center gap-2">
+                        <IconComponent className="h-4 w-4" style={{ color: risk.color }} />
+                        {risk.metric}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-slate-300">{risk.description}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              )
+            })}
           </div>
+
+          {/* AI Deepfake Threats Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+          >
+            <Card className="glass-card border-gold-500/20">
+              <CardHeader>
+                <CardTitle className="text-lg flex items-center gap-2">
+                  <Bot className="h-5 w-5 text-gold" />
+                  AI Deepfake Threat Landscape
+                </CardTitle>
+                <CardDescription>Documented AI-generated misinformation cases</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {aiDeepfakeThreats.map((threat, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: idx * 0.1 }}
+                      className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4"
+                    >
+                      <div>
+                        <p className="font-medium text-slate-200">{threat.example}</p>
+                        <p className="text-xs text-slate-400">{threat.source}</p>
+                      </div>
+                      <Badge variant="outline" className="text-gold border-gold-500/30">
+                        {threat.views} views
+                      </Badge>
+                    </motion.div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
         </TabsContent>
 
-        {/* Influencers Tab */}
+        {/* Influencers Tab - from data.keyPersons */}
         <TabsContent value="influencers" className="space-y-6">
           <Card className="glass-card border-gold-500/20">
             <CardHeader>
@@ -443,10 +482,14 @@ export default function TikTokLandscapePage() {
                       <div>
                         <p className="font-medium text-slate-200">{person.name}</p>
                         <p className="text-sm text-slate-400">{person.handle}</p>
+                        <p className="text-xs text-slate-500">Followers: {person.followers}</p>
                       </div>
                     </div>
                     <div className="text-right">
-                      <Badge variant={person.status.includes('Arrested') ? 'destructive' : 'default'} className="mb-1">
+                      <Badge
+                        variant={person.status.includes('Arrested') ? 'destructive' : person.status.includes('Released') ? 'success' : 'default'}
+                        className="mb-1"
+                      >
                         {person.status}
                       </Badge>
                       <p className="text-xs text-slate-400">{person.charge}</p>
@@ -456,14 +499,47 @@ export default function TikTokLandscapePage() {
               </div>
             </CardContent>
           </Card>
+
+          {/* Government Accounts */}
+          <Card className="glass-card border-platinum-500/20">
+            <CardHeader>
+              <CardTitle className="text-lg flex items-center gap-2">
+                <Shield className="h-5 w-5 text-platinum" />
+                Government & Official Accounts
+              </CardTitle>
+              <CardDescription>Verified official TikTok presence</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3">
+                {(governmentAccounts || []).map((account, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                    className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                  >
+                    <div className="flex items-center gap-3">
+                      <Globe className="h-4 w-4 text-platinum" />
+                      <span className="text-sm text-slate-200">{account.handle}</span>
+                      {account.verified && <CheckCircle className="h-4 w-4 text-emerald-400" />}
+                    </div>
+                    <Badge variant="outline" className="text-xs">
+                      {account.verified ? 'Verified' : 'Unverified'}
+                    </Badge>
+                  </motion.div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </TabsContent>
 
-        {/* Compliance Tab */}
+        {/* Compliance Tab - from data.mediaLawFines and data.influencerLicensing */}
         <TabsContent value="compliance" className="space-y-6">
           <Card className="glass-card border-rose-500/20">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Shield className="h-5 w-5 text-rose-400" />
+                <Gavel className="h-5 w-5 text-rose-400" />
                 UAE Media Law Fines
               </CardTitle>
               <CardDescription>Federal Decree-Law No. 55 of 2023 - Penalty Schedule</CardDescription>
@@ -491,39 +567,73 @@ export default function TikTokLandscapePage() {
           <Card className="glass-card border-gold-500/20">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Landmark className="h-5 w-5 text-gold" />
+                <FileText className="h-5 w-5 text-gold" />
                 Influencer Licensing (Effective Feb 1, 2026)
               </CardTitle>
               <CardDescription>Mandatory licensing requirements</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-lg bg-gold-500/10 p-4 border border-gold-500/30">
-                  <h4 className="font-semibold text-gold mb-2">UAE Citizens</h4>
-                  <p className="text-sm text-slate-300">First 3 years: FREE</p>
-                  <p className="text-sm text-slate-300">After 3 years: AED 500/year</p>
-                </div>
-                <div className="rounded-lg bg-gold-500/10 p-4 border border-gold-500/30">
-                  <h4 className="font-semibold text-gold mb-2">Residents</h4>
-                  <p className="text-sm text-slate-300">First 3 years: FREE</p>
-                  <p className="text-sm text-slate-300">After 3 years: AED 1,000/year</p>
-                </div>
-                <div className="rounded-lg bg-gold-500/10 p-4 border border-gold-500/30">
-                  <h4 className="font-semibold text-gold mb-2">Visitors</h4>
-                  <p className="text-sm text-slate-300">AED 2,000 for 3 months</p>
-                  <p className="text-sm text-slate-300">Max 6 months</p>
-                </div>
-                <div className="rounded-lg bg-gold-500/10 p-4 border border-gold-500/30">
-                  <h4 className="font-semibold text-gold mb-2">Trade License</h4>
-                  <p className="text-sm text-slate-300">Media license cost</p>
-                  <p className="text-sm text-slate-300">AED 15,000-20,000</p>
-                </div>
+                {influencerLicensing.map((license, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="rounded-lg bg-gold-500/10 p-4 border border-gold-500/30"
+                  >
+                    <h4 className="font-semibold text-gold mb-2">{license.category}</h4>
+                    <p className="text-sm text-slate-300">First 3 years: {license.first3Years}</p>
+                    <p className="text-sm text-slate-300">After 3 years: {license.after3Years}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Query Patterns Executed */}
+          <Card className="glass-card border-platinum-500/20">
+            <CardHeader>
+              <CardTitle className="text-lg flex items-center gap-2">
+                <Target className="h-5 w-5 text-platinum" />
+                Query Patterns Executed
+              </CardTitle>
+              <CardDescription>{executionMetadata.queriesExecuted} total queries across {queryPatternsExecuted.length} categories</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                {queryPatternsExecuted.map((pattern, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="rounded-lg bg-slate-800/50 p-4"
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-medium text-slate-200">{pattern.category}</h4>
+                      <Badge variant="outline" className="text-platinum border-platinum-500/30">
+                        {pattern.count} queries
+                      </Badge>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {pattern.queries.slice(0, 5).map((query, qIdx) => (
+                        <span key={qIdx} className="text-xs text-slate-400 bg-slate-700/50 px-2 py-1 rounded">
+                          {query}
+                        </span>
+                      ))}
+                      {pattern.queries.length > 5 && (
+                        <span className="text-xs text-slate-500">+{pattern.queries.length - 5} more</span>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </CardContent>
           </Card>
         </TabsContent>
 
-        {/* Sources Tab */}
+        {/* Sources Tab - from sources */}
         <TabsContent value="sources" className="space-y-6">
           <Card className="glass-card border-platinum-500/20">
             <CardHeader>
@@ -531,12 +641,12 @@ export default function TikTokLandscapePage() {
                 <Globe className="h-5 w-5 text-platinum" />
                 Source References
               </CardTitle>
-              <CardDescription>16 enriched sources from the intelligence report</CardDescription>
+              <CardDescription>{sources?.length ?? 0} enriched sources from the intelligence report</CardDescription>
             </CardHeader>
             <CardContent>
               <ScrollArea className="h-[400px]">
                 <div className="space-y-3">
-                  {data.sources && data.sources.map((source, idx) => (
+                  {sources?.map((source, idx) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, y: 10 }}
@@ -549,7 +659,18 @@ export default function TikTokLandscapePage() {
                         <p className="text-xs text-slate-400 truncate">{source.url}</p>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Badge variant="outline" className="text-xs">
+                        <Badge
+                          variant="outline"
+                          className={`text-xs ${
+                            source.tier === 1
+                              ? 'border-emerald-500/50 text-emerald-400'
+                              : source.tier === 2
+                              ? 'border-blue-500/50 text-blue-400'
+                              : source.tier === 3
+                              ? 'border-yellow-500/50 text-yellow-400'
+                              : 'border-slate-500/50 text-slate-400'
+                          }`}
+                        >
                           TIER {source.tier}
                         </Badge>
                         <Badge variant="outline" className="text-xs text-slate-400">
@@ -560,6 +681,66 @@ export default function TikTokLandscapePage() {
                   ))}
                 </div>
               </ScrollArea>
+            </CardContent>
+          </Card>
+
+          {/* Source Credibility Matrix */}
+          <Card className="glass-card border-platinum-500/20">
+            <CardHeader>
+              <CardTitle className="text-lg flex items-center gap-2">
+                <Shield className="h-5 w-5 text-platinum" />
+                Source Credibility Matrix
+              </CardTitle>
+              <CardDescription>Distribution of sources by tier and credibility</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                {sourceCredibilityMatrix.map((tier, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="rounded-lg bg-slate-800/50 p-4"
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <Badge
+                        variant="outline"
+                        className={`${
+                          tier.tier === 'TIER 1'
+                            ? 'border-emerald-500/50 text-emerald-400'
+                            : tier.tier === 'TIER 2'
+                            ? 'border-blue-500/50 text-blue-400'
+                            : tier.tier === 'TIER 3'
+                            ? 'border-yellow-500/50 text-yellow-400'
+                            : 'border-slate-500/50 text-slate-400'
+                        }`}
+                      >
+                        {tier.tier}
+                      </Badge>
+                      <span className="text-xs text-slate-400">Credibility: {tier.credibility}</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {tier.sources.map((source, sIdx) => (
+                        <span
+                          key={sIdx}
+                          className={`text-xs px-2 py-1 rounded ${
+                            tier.tier === 'TIER 1'
+                              ? 'bg-emerald-500/10 text-emerald-300'
+                              : tier.tier === 'TIER 2'
+                              ? 'bg-blue-500/10 text-blue-300'
+                              : tier.tier === 'TIER 3'
+                              ? 'bg-yellow-500/10 text-yellow-300'
+                              : 'bg-slate-700/50 text-slate-400'
+                          }`}
+                        >
+                          {source}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </CardContent>
           </Card>
         </TabsContent>

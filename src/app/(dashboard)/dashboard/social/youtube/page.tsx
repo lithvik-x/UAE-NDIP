@@ -33,6 +33,9 @@ import {
   Users,
   Activity,
   AlertTriangle,
+  Building2,
+  Building,
+  Waves,
 } from 'lucide-react'
 import {
   useYoutubeIntelligenceData,
@@ -268,6 +271,8 @@ export default function YouTubePage() {
               <TabsTrigger value="humanrights">Human Rights</TabsTrigger>
               <TabsTrigger value="propaganda">Propaganda</TabsTrigger>
               <TabsTrigger value="economics">Economics</TabsTrigger>
+              <TabsTrigger value="news">News Sources</TabsTrigger>
+              <TabsTrigger value="infrastructure">Infrastructure</TabsTrigger>
             </TabsList>
           </motion.div>
 
@@ -1126,6 +1131,235 @@ export default function YouTubePage() {
                           </motion.div>
                         ))}
                       </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </GlassPanel>
+            </motion.div>
+          </TabsContent>
+
+          {/* News Sources Tab */}
+          <TabsContent value="news" className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <GlassPanel title="UAE News Sources" description="Major news organizations covering UAE">
+                <div className="space-y-6">
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg font-rajdhani">Major News Organizations</CardTitle>
+                      <CardDescription>Trusted news outlets covering UAE events</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        {[
+                          { outlet: 'The National', lang: 'English', focus: 'UAE news, government', url: 'thenationalnews.com', tier: 1 },
+                          { outlet: 'Emirates 24|7', lang: 'English', focus: 'Business, lifestyle', url: 'emirates247.com', tier: 1 },
+                          { outlet: 'Gulf News', lang: 'English', focus: 'Regional news', url: 'gulfnews.com', tier: 1 },
+                          { outlet: 'Khaleej Times', lang: 'English', focus: 'Dubai news', url: 'khaleejtimes.com', tier: 1 },
+                          { outlet: 'Al Jazeera UAE', lang: 'Arabic/English', focus: 'Regional', url: 'aljazeera.net', tier: 1 },
+                          { outlet: 'Emarat Al Youm', lang: 'Arabic', focus: 'UAE news', url: 'emaratalyoum.com', tier: 1 },
+                        ].map((source, idx) => (
+                          <motion.div
+                            key={idx}
+                            whileHover={{ scale: 1.03, y: -2 }}
+                            className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 glass-panel"
+                          >
+                            <div className="flex items-center justify-between mb-2">
+                              <p className="font-semibold text-slate-200">{source.outlet}</p>
+                              <Badge variant="outline" className="text-navy border-navy text-xs">Tier {source.tier}</Badge>
+                            </div>
+                            <p className="text-xs text-slate-400 mb-1">{source.lang} | {source.focus}</p>
+                            <p className="text-xs text-platinum">{source.url}</p>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg font-rajdhani">Al Jazeera Headlines (April 2026)</CardTitle>
+                      <CardDescription>Critical Iran war and Gulf coverage</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ScrollArea className="h-[300px]">
+                        <div className="space-y-2">
+                          {[
+                            { date: 'April 24', headline: 'Pakistan Central Bank repaid final $1bn of $3.45bn UAE deposit; reserves at $20.6B' },
+                            { date: 'April 24', headline: 'Iran\'s war fallout shifted from energy to real estate sectors' },
+                            { date: 'April 23', headline: 'Gulf banks reported profits in Q1 despite war; Qatar National Bank profits +2%' },
+                            { date: 'April 21', headline: 'Gulf aluminum production declined 6% due to supply disruptions; ~15,963 tons/day' },
+                            { date: 'April 20', headline: 'UAE announced dismantling of "Iran-linked terrorist organization"' },
+                            { date: 'April 16', headline: 'UAE summoned Iraq\'s acting ambassador over attacks on GCC from Iraqi territory' },
+                            { date: 'April 16', headline: 'UAE and Iran discussed de-escalation pathways' },
+                            { date: 'April 13', headline: 'Gulf central banks launched support packages (liquidity injection, reserve requirement reductions, loan deferrals)' },
+                            { date: 'April 7', headline: 'Iranian attacks targeted Saudi Arabia, Bahrain, Kuwait, UAE, Qatar' },
+                            { date: 'April 5', headline: 'UAE intercepted Iranian attacks targeting Borouge petrochemicals plant; material damage, no casualties' },
+                          ].map((item, idx) => (
+                            <motion.div
+                              key={idx}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: idx * 0.05 }}
+                              className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3"
+                            >
+                              <Badge variant="outline" className="text-gold border-gold shrink-0 text-xs mt-0.5">{item.date}</Badge>
+                              <p className="text-sm text-slate-300">{item.headline}</p>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </ScrollArea>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg font-rajdhani">Source Credibility Tiers</CardTitle>
+                      <CardDescription>Information source reliability assessment</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        {[
+                          { tier: 'Tier 0', sources: 'UAE Government Portal (u.ae), Gov social media', reliability: 'Official but potentially biased', colorClass: 'text-emerald border-emerald' },
+                          { tier: 'Tier 1', sources: 'The National, Khaleej Times, Gulf News, Al Jazeera, Reuters', reliability: 'High credibility', colorClass: 'text-navy border-navy' },
+                          { tier: 'Tier 2', sources: 'CSIS, Amnesty International, Wikipedia', reliability: 'Academic/media credibility', colorClass: 'text-gold border-gold' },
+                          { tier: 'Tier 3', sources: 'Individual news aggregators', reliability: 'Variable', colorClass: 'text-platinum border-platinum' },
+                          { tier: 'Tier 4', sources: 'YouTube (gov channels, influencers, documentary makers)', reliability: 'Variable', colorClass: 'text-rose border-rose' },
+                          { tier: 'Tier 5', sources: 'Academic sources (Matthew Hedges case)', reliability: 'High for specific cases', colorClass: 'text-indigo border-indigo' },
+                        ].map((item, idx) => (
+                          <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: idx * 0.1 }}
+                            className="flex items-center gap-4 rounded-lg bg-slate-800/50 p-3"
+                          >
+                            <Badge variant="outline" className={`${item.colorClass} shrink-0`}>{item.tier}</Badge>
+                            <div className="flex-1">
+                              <p className="text-sm font-medium text-slate-200">{item.sources}</p>
+                              <p className="text-xs text-slate-400">{item.reliability}</p>
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </GlassPanel>
+            </motion.div>
+          </TabsContent>
+
+          {/* Infrastructure Tab */}
+          <TabsContent value="infrastructure" className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <GlassPanel title="Infrastructure & Environmental Failures" description="Documented infrastructure issues and environmental concerns">
+                <div className="space-y-6">
+                  {/* April 2024 Rainstorm */}
+                  <Card className="glass-card border-rose/30">
+                    <CardHeader>
+                      <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
+                        <AlertTriangle className="h-5 w-5 text-rose" />
+                        April 2024 Rainstorm Crisis
+                      </CardTitle>
+                      <CardDescription>Historic flooding event - 254mm rainfall in one day</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-4">
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-rose/10 border border-rose/30 p-4 text-center">
+                          <p className="text-3xl font-bold text-rose">254mm</p>
+                          <p className="text-sm text-slate-400">Rainfall (highest since 1949)</p>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-rose/10 border border-rose/30 p-4 text-center">
+                          <p className="text-3xl font-bold text-rose">2 Years</p>
+                          <p className="text-sm text-slate-400">Worth of rain in one day</p>
+                        </motion.div>
+                        <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-rose/10 border border-rose/30 p-4 text-center">
+                          <p className="text-3xl font-bold text-rose">23+</p>
+                          <p className="text-sm text-slate-400">Total deaths (UAE+Oman)</p>
+                        </motion.div>
+                      </div>
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        {[
+                          { metric: 'Dubai Airport', value: 'Closed during crisis' },
+                          { metric: 'Cause', value: 'Strong, slow-moving low-pressure system' },
+                          { metric: 'Cloud Seeding', value: 'UAE did not conduct on April 16, 2024' },
+                          { metric: 'Climate Link', value: 'Heavy rainfall events more common with rising temps' },
+                          { metric: 'NASA Warning', value: '"Primary cause of deaths in deserts is not thirst but drowning"' },
+                          { metric: 'Historical', value: 'October 1925: 8,000 Gulf citizens died in single day storm' },
+                        ].map((item, idx) => (
+                          <div key={idx} className="flex items-center gap-3 rounded-lg bg-slate-800/50 p-3">
+                            <AlertCircle className="h-4 w-4 text-gold shrink-0" />
+                            <div>
+                              <p className="text-xs text-slate-400">{item.metric}</p>
+                              <p className="text-sm text-slate-200">{item.value}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Property Market Issues */}
+                  <Card className="glass-card border-gold/30">
+                    <CardHeader>
+                      <CardTitle className="text-lg font-rajdhani">Property Market Issues</CardTitle>
+                      <CardDescription>Documented property and urban development concerns</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-4">
+                        {[
+                          { icon: Building2, issue: 'Burj Khalifa', detail: 'Mostly empty luxury apartments owned by overseas investors' },
+                          { icon: Building, issue: 'Ghost Towns', detail: 'Neighborhoods with towering flats but few residents' },
+                          { icon: TrendingUp, issue: 'Cost of Living', detail: 'Rose from 90th to 31st most expensive city globally' },
+                          { icon: Users, issue: 'Middle-Class Exodus', detail: 'Thousands leaving due to costs' },
+                          { icon: Waves, issue: 'Palm Jumeirah', detail: 'Construction disrupted marine ecosystems' },
+                        ].map((item, idx) => (
+                          <motion.div
+                            key={idx}
+                            whileHover={{ scale: 1.03, y: -2 }}
+                            className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 glass-panel"
+                          >
+                            <item.icon className="h-5 w-5 text-gold mb-2" />
+                            <p className="font-semibold text-slate-200 text-sm">{item.issue}</p>
+                            <p className="text-xs text-slate-400 mt-1">{item.detail}</p>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Sentiment Trend Chart */}
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg font-rajdhani">April 2026 Crisis Sentiment Impact</CardTitle>
+                      <CardDescription>How current crisis affects YouTube narrative tone</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <BarChart
+                        data={[
+                          { factor: 'Iran War', impact: 95, color: CHART_COLORS.rose },
+                          { factor: 'Iron Dome', impact: 88, color: CHART_COLORS.rose },
+                          { factor: 'Stock Loss', impact: 92, color: CHART_COLORS.rose },
+                          { factor: 'Expat Exodus', impact: 85, color: CHART_COLORS.rose },
+                          { factor: 'Travel Advisory', impact: 80, color: CHART_COLORS.rose },
+                          { factor: 'Propaganda', impact: 45, color: CHART_COLORS.emerald },
+                          { factor: 'Gov Messaging', impact: 55, color: CHART_COLORS.gold },
+                        ]}
+                        xAxisKey="factor"
+                        bars={[{ dataKey: 'impact', name: 'Negative Impact %', color: CHART_COLORS.rose }]}
+                        height={280}
+                        showGrid={true}
+                      />
+                      <p className="text-xs text-slate-400 mt-2 text-center">Rose = Negative sentiment pressure | Emerald = Positive counter-narrative</p>
                     </CardContent>
                   </Card>
                 </div>

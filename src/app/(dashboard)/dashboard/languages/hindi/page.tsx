@@ -46,7 +46,7 @@ export default function HindiLanguagePage() {
     { platform: 'WhatsApp', percentage: 28, speakers: 504000, color: CHART_COLORS.emerald },
     { platform: 'Instagram', percentage: 15, speakers: 270000, color: CHART_COLORS.pink },
     { platform: 'Twitter/X', percentage: 8, speakers: 144000, color: CHART_COLORS.navy },
-    { platform: 'Facebook', percentage: 5, speakers: 90000, color: CHART_COLORS.blue },
+    { platform: 'Facebook', percentage: 5, speakers: 90000, color: CHART_COLORS.denim },
     { platform: 'TikTok', percentage: 2, speakers: 36000, color: CHART_COLORS.rose },
   ]
 

@@ -15,7 +15,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import { PieChart, BarChart, CHART_COLORS } from '@/components/ui/chart-library'
+import { PieChart, BarChart, AreaChart, RadarChart, CHART_COLORS } from '@/components/ui/chart-library'
 import {
   journalistsOverview,
   summaryMetrics,
@@ -51,6 +51,9 @@ import {
   verificationStatus,
   minaAlOraibiProfile,
   ghinwaIbrahimProfile,
+  keyStatistics,
+  overallSentiment,
+  coverageAreaAnalysis,
 } from '@/lib/data/entity/journalists-data'
 import {
   Newspaper,
@@ -72,15 +75,29 @@ import {
   BarChart3,
   PieChart as PieChartIcon,
   Linkedin,
+  MapPin,
+  Globe2,
+  Mail,
+  Phone,
+  Crown,
+  Mic,
+  MessageSquare,
+  Edit3,
+  Camera,
+  Sparkles,
+  Target,
+  Shield,
+  LineChart as LineChartIcon,
+  Radar,
 } from 'lucide-react'
 
-// Animation variants for staggered mount
+// Animation variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.08,
+      staggerChildren: 0.06,
       delayChildren: 0.1,
     },
   },
@@ -103,6 +120,15 @@ const fadeInVariants = {
   },
 }
 
+const cardHoverVariants = {
+  rest: { scale: 1, opacity: 1 },
+  hover: {
+    scale: 1.02,
+    opacity: 1,
+    transition: { duration: 0.2, ease: 'easeOut' },
+  },
+}
+
 function getSentimentColor(sentiment: string): string {
   if (sentiment.includes('POSITIVE') || sentiment.includes('positive')) return 'text-emerald-500'
   if (sentiment.includes('NEGATIVE') || sentiment.includes('negative')) return 'text-red-500'
@@ -119,13 +145,6 @@ function getAlertBadgeVariant(alertLevel: string): 'success' | 'warning' | 'dest
   }
 }
 
-function getRelevanceBadgeVariant(relevance: number): 'gold' | 'navy-solid' | 'emerald' | 'outline' {
-  if (relevance >= 85) return 'gold'
-  if (relevance >= 70) return 'navy-solid'
-  if (relevance >= 50) return 'emerald'
-  return 'outline'
-}
-
 function formatCount(count: number | string): string {
   return count.toString()
 }
@@ -134,7 +153,7 @@ export default function JournalistsPage() {
   const metrics = summaryMetrics
   const overview = journalistsOverview
 
-  // Sentiment data for chart
+  // Sentiment data for pie chart
   const sentimentData = [
     { name: 'Neutral', value: 65, color: CHART_COLORS.platinum },
     { name: 'Positive', value: 28, color: CHART_COLORS.success },
@@ -165,6 +184,38 @@ export default function JournalistsPage() {
     { name: 'The National', value: 16, color: CHART_COLORS.navy },
     { name: 'International', value: 12, color: CHART_COLORS.indigo },
     { name: 'Other', value: 20, color: CHART_COLORS.secondary },
+  ]
+
+  // Outlet capability radar data
+  const radarData = [
+    { outlet: 'Gulf News', political: 85, business: 90, cultural: 75, regional: 88, international: 80 },
+    { outlet: 'The National', political: 88, business: 82, cultural: 78, regional: 85, international: 90 },
+    { outlet: 'Al Arabiya', political: 92, business: 78, cultural: 70, regional: 95, international: 85 },
+    { outlet: 'Al Jazeera', political: 95, business: 75, cultural: 82, regional: 92, international: 95 },
+    { outlet: 'MBC Group', political: 70, business: 85, cultural: 95, regional: 88, international: 75 },
+  ]
+
+  // Coverage area area chart data
+  const coverageTrendData = [
+    { year: '2022', political: 78, business: 85, cultural: 72, regional: 80 },
+    { year: '2023', political: 82, business: 88, cultural: 76, regional: 83 },
+    { year: '2024', political: 85, business: 90, cultural: 80, regional: 86 },
+    { year: '2025', political: 88, business: 92, cultural: 84, regional: 89 },
+    { year: '2026', political: 90, business: 93, cultural: 87, regional: 92 },
+  ]
+
+  // Gender distribution data
+  const genderDistData = [
+    { name: 'Male', value: 8, color: CHART_COLORS.info },
+    { name: 'Female', value: 6, color: CHART_COLORS.rose },
+  ]
+
+  // Nationality distribution for international journalists
+  const nationalityData = [
+    { name: 'Lebanese', value: 8, color: CHART_COLORS.gold },
+    { name: 'British', value: 5, color: CHART_COLORS.navy },
+    { name: 'Egyptian', value: 2, color: CHART_COLORS.success },
+    { name: 'Other', value: 7, color: CHART_COLORS.platinum },
   ]
 
   return (
@@ -199,7 +250,7 @@ export default function JournalistsPage() {
         </motion.div>
       </motion.div>
 
-      {/* Summary Metrics */}
+      {/* Summary Metrics - Enhanced with more MetricCards */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -236,6 +287,38 @@ export default function JournalistsPage() {
             value={formatCount(metrics.totalTwitterAccounts)}
             icon={<Twitter className="h-6 w-6" />}
             gradient="purple"
+          />
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <MetricCard
+            title="Al Jazeera Arabic"
+            value={formatCount(metrics.totalAlJazeeraArabicPresenters)}
+            icon={<Tv className="h-6 w-6" />}
+            gradient="danger"
+          />
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <MetricCard
+            title="Al Jazeera English"
+            value={formatCount(metrics.totalAlJazeeraEnglishPresenters)}
+            icon={<Globe className="h-6 w-6" />}
+            gradient="info"
+          />
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <MetricCard
+            title="Bureau Chiefs"
+            value={formatCount(metrics.totalAlJazeeraBureauChiefs)}
+            icon={<MapPin className="h-6 w-6" />}
+            gradient="rose"
+          />
+        </motion.div>
+        <motion.div variants={itemVariants}>
+          <MetricCard
+            title="Female Media Figures"
+            value={formatCount(metrics.totalFemaleMediaPersonalities)}
+            icon={<Sparkles className="h-6 w-6" />}
+            gradient="emerald"
           />
         </motion.div>
       </motion.div>
@@ -289,6 +372,31 @@ export default function JournalistsPage() {
                 </div>
               </GlassPanel>
             </motion.div>
+          </motion.div>
+
+          {/* Coverage Trend Area Chart */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <GlassPanel title="Coverage Depth Trend" description="Media coverage intensity across focus areas 2022-2026">
+              <div className="h-72">
+                <AreaChart
+                  data={coverageTrendData}
+                  xAxisKey="year"
+                  height={280}
+                  showGrid={true}
+                  ariaLabel="Coverage depth trend over years"
+                  areas={[
+                    { dataKey: 'political', name: 'Political', color: CHART_COLORS.gold, fill: 'url(#politicalGradient)' },
+                    { dataKey: 'business', name: 'Business', color: CHART_COLORS.success, fill: 'url(#businessGradient)' },
+                    { dataKey: 'cultural', name: 'Cultural', color: CHART_COLORS.info, fill: 'url(#culturalGradient)' },
+                    { dataKey: 'regional', name: 'Regional', color: CHART_COLORS.navy, fill: 'url(#regionalGradient)' },
+                  ]}
+                />
+              </div>
+            </GlassPanel>
           </motion.div>
 
           {/* Priority Coverage Areas */}
@@ -403,6 +511,29 @@ export default function JournalistsPage() {
                 </div>
               </GlassPanel>
             </motion.div>
+          </motion.div>
+
+          {/* Outlet Capability Radar */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <GlassPanel title="Outlet Capability Radar" description="Multi-dimensional comparison of major outlets">
+              <div className="h-80 flex items-center justify-center">
+                <RadarChart
+                  data={radarData}
+                  height={300}
+                  metrics={[
+                    { dataKey: 'political', name: 'Political', color: CHART_COLORS.gold },
+                    { dataKey: 'business', name: 'Business', color: CHART_COLORS.success },
+                    { dataKey: 'cultural', name: 'Cultural', color: CHART_COLORS.info },
+                    { dataKey: 'regional', name: 'Regional', color: CHART_COLORS.navy },
+                  ]}
+                  ariaLabel="Outlet capability comparison"
+                />
+              </div>
+            </GlassPanel>
           </motion.div>
 
           {/* Gulf News */}
@@ -944,6 +1075,42 @@ export default function JournalistsPage() {
 
         {/* Demographics Tab */}
         <TabsContent value="demographics" className="space-y-6">
+          {/* Gender Distribution Charts */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="grid grid-cols-1 gap-6 lg:grid-cols-2"
+          >
+            <motion.div variants={itemVariants}>
+              <GlassPanel title="Emirati Journalists Gender Distribution" description="Gender breakdown of Emirati national journalists">
+                <div className="flex items-center justify-center py-4">
+                  <PieChart
+                    data={genderDistData}
+                    donut={true}
+                    height={280}
+                    showLegend={true}
+                    ariaLabel="Gender distribution of Emirati journalists"
+                  />
+                </div>
+              </GlassPanel>
+            </motion.div>
+
+            <motion.div variants={itemVariants}>
+              <GlassPanel title="International Journalists Nationality" description="Nationality breakdown of international correspondents">
+                <div className="flex items-center justify-center py-4">
+                  <PieChart
+                    data={nationalityData}
+                    donut={true}
+                    height={280}
+                    showLegend={true}
+                    ariaLabel="Nationality distribution of international journalists"
+                  />
+                </div>
+              </GlassPanel>
+            </motion.div>
+          </motion.div>
+
           {/* Emirati Women */}
           <motion.div variants={itemVariants} initial="hidden" animate="visible">
             <GlassPanel

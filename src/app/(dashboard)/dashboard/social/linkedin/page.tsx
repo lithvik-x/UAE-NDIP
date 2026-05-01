@@ -59,95 +59,8 @@ import {
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 
-// Enhancement A: Premium Glassmorphism Data Interfaces
-interface LayoffStat { label: string; value: string; source: string; credibility: string }
-interface HiringStat { label: string; value: string; source: string }
-interface SalaryStat { label: string; value: string; context: string }
-interface WorkPlaceStat { label: string; value: string; context: string }
-interface EmiratisationStat { label: string; value: string; deadline?: string }
-interface VisaStat { label: string; value: string; context: string }
-interface AISkillStat { label: string; value: string; context: string }
-interface RemoteWorkStat { label: string; value: string }
-interface CareerStat { label: string; value: string }
-interface EngagementStat { name: string; value: number; color: string }
 
 // Enhancement B: Comprehensive Data from MD file
-const ENHANCEMENT_A_DATA = {
-  layoffs: [
-    { label: 'Job cuts expected (Indians)', value: '30%', source: 'YouTube', credibility: 'Medium' },
-    { label: 'Salary reduction range', value: '20-50%', source: 'Times of India', credibility: 'High' },
-    { label: 'Indian workers terminated (one firm)', value: '90%', source: 'YouTube', credibility: 'Medium' },
-    { label: 'Companies cutting staff (2026)', value: '29%', source: 'Cooper Fitch', credibility: 'High' },
-    { label: 'Companies increasing headcount', value: '48%', source: 'Cooper Fitch', credibility: 'High' },
-    { label: 'Companies staying flat', value: '23%', source: 'Cooper Fitch', credibility: 'High' },
-  ] as LayoffStat[],
-
-  hiring: [
-    { label: 'Employers planning expansion', value: '56%', source: 'Taaeen Group' },
-    { label: 'Employers struggling to hire', value: '76%', source: 'ManpowerGroup' },
-    { label: 'Dubai share of financial services talent', value: '32%', source: 'deVere Group' },
-    { label: 'UAE job opening increase rate', value: '35.2%', source: 'Bloomberg' },
-    { label: 'UAE hiring outlook', value: '48%', source: 'ManPowerGroup' },
-    { label: 'Workforce affected by hiring challenges', value: '45%', source: 'ManpowerGroup' },
-  ] as HiringStat[],
-
-  salaries: [
-    { label: 'Minimum wage standard', value: '1,200 AED/month', context: '~$326 USD' },
-    { label: 'Average annual salary', value: '177,279 AED', context: '~$48,300 USD' },
-    { label: 'Average hourly rate', value: '85 AED', context: '~$23 USD' },
-    { label: 'CFO/Finance Director', value: '60,000-120,000 AED/month', context: 'Senior roles' },
-    { label: 'Basic salary ratio', value: '40-60%', context: 'of total compensation' },
-    { label: 'Expected salary increase 2026', value: '4.1%', context: 'Deloitte forecast' },
-  ] as SalaryStat[],
-
-  workplace: [
-    { label: 'Employees engaged', value: '27%', context: 'Gallup 2025 vs 14% MENA avg' },
-    { label: 'Cost of disengaged employees', value: '$10.3B', context: 'to UAE economy' },
-    { label: 'Women in public sector', value: '66%', context: 'as of 2018' },
-    { label: 'Emirati women university grads', value: '71%', context: 'as of 2018' },
-    { label: 'Global harassment victims', value: '23%', context: 'ILO/Gallup 2022' },
-    { label: 'Harassment fines', value: '5K-1M AED', context: 'Article 14 penalties' },
-  ] as WorkPlaceStat[],
-
-  emiratisaton: [
-    { label: 'Monthly fine per unfilled role', value: 'AED 9,000', deadline: '2025' },
-    { label: 'Annual fine per missing Emirati', value: 'AED 108,000', deadline: '2026' },
-    { label: 'Fake Emiratisation companies caught', value: '1,202', deadline: 'March 2024' },
-    { label: 'Emiratis employed in private sector', value: '136,000+', deadline: 'Current' },
-    { label: 'Target 2025', value: '8%', deadline: 'Dec 31, 2025' },
-    { label: 'Final target 2026', value: '10%', deadline: 'Dec 31, 2026' },
-  ] as EmiratisationStat[],
-
-  visas: [
-    { label: 'Restricted countries', value: '9', context: 'Afghanistan, Bangladesh, etc.' },
-    { label: 'Overstay fine (daily)', value: 'AED 50-100', context: 'after grace period' },
-    { label: 'Exit ban trigger', value: '6 months', context: 'overstay duration' },
-    { label: 'New visa deposit', value: 'AED 3,000', context: 'refundable security' },
-  ] as VisaStat[],
-
-  aiSkills: [
-    { label: 'New workers needed by 2030', value: '1 million', context: 'Gulf News' },
-    { label: 'Employment increase projected', value: '12.1%', context: 'by 2030' },
-    { label: 'Technology roles increase', value: '54%', context: 'demand growth' },
-    { label: 'Technical specialists needed', value: '91,000+', context: 'by 2030' },
-    { label: 'AI jobs doubling (2021-2024)', value: '100%', context: 'Indian Express' },
-    { label: 'Recruiters who cannot do job without AI', value: '47%', context: 'LinkedIn research' },
-  ] as AISkillStat[],
-
-  remoteWork: [
-    { label: 'Remote work visa minimum salary', value: '$3,500/month' },
-    { label: 'Remote work visa validity', value: '1 year' },
-    { label: 'Cross-border work limit', value: '30 days/year' },
-    { label: 'Standard working hours', value: '8 hrs/day, 48 hrs/week' },
-  ] as RemoteWorkStat[],
-
-  careers: [
-    { label: 'Open to career change', value: '60%', context: 'of UAE professionals' },
-    { label: 'Typical transition timeline', value: '3-6 months', context: 'Labeeb' },
-    { label: 'Jobs displaced by automation', value: '85 million', context: 'World Economic Forum' },
-    { label: 'Laid off finding equal/better job', value: '92%', context: 'Korn Ferry' },
-  ] as CareerStat[],
-}
 
 export default function LinkedInProfessionalPage() {
   const { data } = useLinkedinIntelligenceData()
@@ -479,7 +392,7 @@ export default function LinkedInProfessionalPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
-                          {ENHANCEMENT_A_DATA.layoffs.map((stat, idx) => (
+                          {data.statistics.layoffs.map((stat, idx) => (
                             <motion.div
                               key={idx}
                               className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
@@ -553,7 +466,7 @@ export default function LinkedInProfessionalPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
-                          {ENHANCEMENT_A_DATA.hiring.map((stat, idx) => (
+                          {data.statistics.hiring.map((stat, idx) => (
                             <motion.div
                               key={idx}
                               className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
@@ -642,7 +555,7 @@ export default function LinkedInProfessionalPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
-                          {ENHANCEMENT_A_DATA.salaries.map((stat, idx) => (
+                          {data.statistics.salaries.map((stat, idx) => (
                             <motion.div
                               key={idx}
                               className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
@@ -717,7 +630,7 @@ export default function LinkedInProfessionalPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
-                          {ENHANCEMENT_A_DATA.workplace.map((stat, idx) => (
+                          {data.statistics.workplace.map((stat, idx) => (
                             <motion.div
                               key={idx}
                               className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
@@ -777,7 +690,7 @@ export default function LinkedInProfessionalPage() {
                     </CardHeader>
                     <CardContent>
                       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                        {ENHANCEMENT_A_DATA.careers.map((stat, idx) => (
+                        {data.statistics.careers.map((stat, idx) => (
                           <motion.div
                             key={idx}
                             className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50 text-center"
@@ -816,7 +729,7 @@ export default function LinkedInProfessionalPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
-                          {ENHANCEMENT_A_DATA.emiratisaton.map((stat, idx) => (
+                          {data.statistics.emiratisaton.map((stat, idx) => (
                             <motion.div
                               key={idx}
                               className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
@@ -926,7 +839,7 @@ export default function LinkedInProfessionalPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
-                          {ENHANCEMENT_A_DATA.aiSkills.map((stat, idx) => (
+                          {data.statistics.aiSkills.map((stat, idx) => (
                             <motion.div
                               key={idx}
                               className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
@@ -1016,7 +929,7 @@ export default function LinkedInProfessionalPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
-                          {ENHANCEMENT_A_DATA.remoteWork.map((stat, idx) => (
+                          {data.statistics.remoteWork.map((stat, idx) => (
                             <motion.div
                               key={idx}
                               className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"

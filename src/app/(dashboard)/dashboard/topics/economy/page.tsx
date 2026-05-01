@@ -57,12 +57,11 @@ import {
   gdpGrowthRates,
   bankingSectorPerformance,
   uaeSwfAssets,
-  emiratesNbdDetailed,
-  emiratesNbdDetailed as oilGasProduction,
+  emiratesNBDDetailed,
   diversificationMetrics,
   uaeFdiPerformance,
   dubaiPropertyMarket,
-  uaeStartupEcosystem,
+  dubaiStartupEcosystem,
   uaeEmploymentStatistics as employmentData,
   overallEconomicSentiment,
   identifiedChallenges,
@@ -76,7 +75,69 @@ import {
   aviationPerformance,
   sectoralContributions,
   documentInfo,
-} from '@/lib/data/topics/economy-business-data'
+  // Additional data from economy-data.ts
+  gdpSizeRankings,
+  monetaryPolicy,
+  governmentBudget,
+  sovereignDebt,
+  majorBankPerformance,
+  islamicFintech,
+  totalUAESWF,
+  mubadalaDetailed,
+  adnocGroupPerformance,
+  adnocInvestmentPlan,
+  opecContext,
+  d33AgendaTargets,
+  weTheUAEGoals,
+  uaeTradePerformance,
+  uaeUSBilateralTrade,
+  globalTradeRanking,
+  fdiContext,
+  abuDhabiProperty,
+  nakheelProjects,
+  emaarPerformance,
+  property2026Outlook,
+  freeZoneBenefits,
+  freeZoneRegulatoryUpdates,
+  freeZoneSectorFocus,
+  taxStructure,
+  taxTimeline,
+  qualifyingIncome,
+  uaeStartupEcosystem,
+  priorityStartupSectors,
+  uaeDigitalEconomy,
+  governmentDigitalStrategy,
+  cryptoRegulation,
+  uaeHealthcareMarket,
+  healthcareRegulation,
+  uaeConstructionMarket,
+  constructionGrowthDrivers,
+  uaeManufacturingPerformance,
+  manufacturingAchievements,
+  uaeEducationMarket,
+  educationInitiatives,
+  laborMarketCharacteristics,
+  uaeSovereignCreditRatings,
+  ratingDetails,
+  uaeFatfStatus,
+  uaeCostOfLiving,
+  sectorSentimentMatrix,
+  sourceCredibilityAssessment,
+  riskAssessment,
+  keyEconomicIndicators,
+  tradeDashboard,
+  investmentDashboard,
+  stockMarketDashboard,
+  sourcesByQuery,
+  appendixMacroeconomicSummary,
+  appendixFinancialSector,
+  appendixTradeInvestment,
+  appendixRealEstate,
+  economyDataArray,
+} from '@/lib/data/topics/economy-data'
+
+// Alias for backward compatibility
+const oilGasProduction = adnocGroupPerformance
 
 // Fallback data for missing exports
 const swfAssets = uaeSwfAssets?.map(s => ({
@@ -1026,7 +1087,7 @@ export default function EconomyBusinessPage() {
                         ${s.assetsBillions}Bn
                       </div>
                       <div className="text-xs text-slate-400">
-                        {s.focus?.join(' | ') || 'Diversified investments'}
+                        {Array.isArray(s.focus) ? s.focus.join(' | ') : s.focus || 'Diversified investments'}
                       </div>
                     </div>
                   ))}

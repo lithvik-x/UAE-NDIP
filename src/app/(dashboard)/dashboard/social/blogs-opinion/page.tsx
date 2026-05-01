@@ -100,7 +100,7 @@ export default function BlogsOpinionPage() {
                 </motion.div>
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><TrendingUp className="h-5 w-5 text-violet-500" />Top Blogs</CardTitle></CardHeader>
-                  <CardContent className="px-0 pb-0"><BarChart data={blogData.slice(0,5)} xAxisKey="name" bars={[{ dataKey: 'reach', name: 'Reach (K)', color: CHART_COLORS.violet }]} height={280} showGrid={true} /></CardContent>
+                  <CardContent className="px-0 pb-0"><BarChart data={blogData.slice(0,5)} xAxisKey="name" bars={[{ dataKey: 'reach', name: 'Reach (K)', color: CHART_COLORS.purple }]} height={280} showGrid={true} /></CardContent>
                 </motion.div>
               </div>
             </GlassPanel>

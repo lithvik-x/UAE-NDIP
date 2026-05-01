@@ -222,8 +222,8 @@ export interface LineChartProps {
  * ```
  */
 export function LineChart({
-  data,
-  lines,
+  data = [],
+  lines = [],
   xAxisKey = 'name',
   height = 300,
   showGrid = true,
@@ -350,8 +350,8 @@ export interface BarChartProps {
  * ```
  */
 export function BarChart({
-  data,
-  bars,
+  data = [],
+  bars = [],
   xAxisKey = 'name',
   horizontal = false,
   height = 300,
@@ -476,8 +476,8 @@ export interface AreaChartProps {
  * ```
  */
 export function AreaChart({
-  data,
-  areas,
+  data = [],
+  areas = [],
   xAxisKey = 'name',
   height = 300,
   showGrid = true,
@@ -589,7 +589,7 @@ export interface PieChartProps {
  * ```
  */
 export function PieChart({
-  data,
+  data = [],
   donut = false,
   height = 300,
   showLegend = true,
@@ -698,8 +698,8 @@ export interface RadarChartProps {
  * ```
  */
 export function RadarChart({
-  data,
-  metrics,
+  data = [],
+  metrics = [],
   height = 400,
   showGrid = true,
   showLegend = true,
@@ -793,7 +793,7 @@ export interface SparklineProps {
  * ```
  */
 export function Sparkline({
-  data,
+  data = [],
   width = 100,
   height = 40,
   color = CHART_COLORS.primary,
@@ -1006,7 +1006,7 @@ export interface HeatmapProps {
  * ```
  */
 export function Heatmap({
-  data,
+  data = [],
   xAxisLabel,
   yAxisLabel,
   height = 300,

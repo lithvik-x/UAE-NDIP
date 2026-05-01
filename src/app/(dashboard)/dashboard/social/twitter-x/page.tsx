@@ -56,6 +56,8 @@ import {
   Scale,
   EyeOff,
   Ban,
+  Network,
+  MapPin,
 } from 'lucide-react'
 import {
   useTwitterIntelligenceData,
@@ -82,7 +84,8 @@ export default function TwitterXAnalysisPage() {
     )
   }
 
-  const { metrics, keyNarratives, governmentAccounts, censorship, keyFindings, sources, timeline, humanRightsCases, surveillance, influenceOperations, internetStats } = data
+  const { metrics, keyNarratives, governmentAccounts, censorship, keyFindings, sources, timeline, humanRightsCases, surveillance, internetStats, botActivity } = data
+  const influenceOperations = metrics.influenceOperations
 
   // A. Enhancement Cycle A: Key Metrics from MD File
   const uaeTwitterStats = [
@@ -107,9 +110,9 @@ export default function TwitterXAnalysisPage() {
   ]
 
   // A. Enhancement Cycle C: Bot Network Chart Data
-  const botNetworkData = influenceOperations?.map(op => ({
+  const botNetworkData = influenceOperations?.map((op: { operation: string; year: number | string; accounts: number | string; target: string }) => ({
     name: op.operation,
-    accounts: typeof op.accounts === 'number' ? op.accounts : parseInt(op.accounts) || 0,
+    accounts: typeof op.accounts === 'number' ? op.accounts : parseInt(String(op.accounts)) || 0,
     color: op.operation.includes('2019') ? CHART_COLORS.rose :
            op.operation.includes('COP28') ? CHART_COLORS.gold :
            op.operation.includes('Africa') ? CHART_COLORS.info :
@@ -117,7 +120,7 @@ export default function TwitterXAnalysisPage() {
   })) || []
 
   // A. Enhancement Cycle D: Timeline Chart Data
-  const timelineData = timeline?.map(t => ({
+  const timelineData = timeline?.map((t: { year: number | string; event: string }) => ({
     year: String(t.year),
     event: t.event,
     impact: t.event.includes('suspended') || t.event.includes('arrested') || t.event.includes('blocking') ? 3 :
@@ -125,42 +128,82 @@ export default function TwitterXAnalysisPage() {
   })) || []
 
   // A. Enhancement Cycle E: Source Credibility Data
-  const sourceCredibilityData = sources?.slice(0, 8).map((s, i) => ({
+  const sourceCredibilityData = sources?.slice(0, 8).map((s: { name: string; tier: number; credibility: string; sentiment: string; uaeRelevance: string; type: string }) => ({
     name: s.name,
     tier: s.tier,
     color: s.tier === 1 ? CHART_COLORS.emerald : s.tier === 2 ? CHART_COLORS.gold : CHART_COLORS.rose,
   })) || []
 
   // A. Enhancement Cycle F: Human Rights Cases Data
-  const humanRightsData = humanRightsCases?.map(hc => ({
-    name: hc.name,
-    sentence: 'sentence' in hc ? hc.sentence : 'N/A',
-    year: 'arrest' in hc ? hc.arrest : 'date' in hc && hc.date ? new Date(hc.date).getFullYear() : 'N/A',
-    reason: 'context' in hc ? hc.context : 'charges' in hc ? (hc.charges as string[])[0] : 'N/A',
+  const humanRightsData = humanRightsCases?.map((hc: Record<string, unknown>) => ({
+    name: hc.name as string,
+    sentence: 'sentence' in hc ? hc.sentence as string : 'N/A',
+    year: 'arrest' in hc ? hc.arrest : 'date' in hc && hc.date ? new Date(hc.date as string).getFullYear() : 'N/A',
+    reason: 'context' in hc ? hc.context as string : 'charges' in hc ? (hc.charges as string[])[0] : 'N/A',
   })) || []
 
   // B. Enhancement Cycle B: Surveillance Programs Data
-  const surveillanceData = surveillance?.programs?.map(p => ({
+  const surveillanceData = surveillance?.programs?.map((p: { name: string; year: number | string; target: string; likelyRequestor?: string; method?: string }) => ({
     name: p.name,
-    year: typeof p.year === 'number' ? p.year : parseInt(p.year) || 0,
+    year: typeof p.year === 'number' ? p.year : parseInt(String(p.year)) || 0,
     target: p.target,
   })) || []
 
   // B. Enhancement Cycle C: Government Accounts Data
-  const govAccountTypes = governmentAccounts?.reduce((acc, account) => {
-    const type = account.type || 'Other'
+  const govAccountTypes = (governmentAccounts as any)?.reduce?.((acc: Record<string, unknown[]>, account: Record<string, unknown>) => {
+    const type = (account.type as string) || 'Other'
     if (!acc[type]) acc[type] = []
     acc[type].push(account)
     return acc
-  }, {} as Record<string, typeof governmentAccounts>) || {}
+  }, {} as Record<string, unknown[]>) || {}
 
   // B. Enhancement Cycle D: Key Findings Alert Distribution
-  const alertDistribution = keyFindings?.reduce((acc, kf) => {
+  const alertDistribution = keyFindings?.reduce((acc: Record<string, number>, kf: { alert?: string }) => {
     const alert = kf.alert || 'YELLOW'
     if (!acc[alert]) acc[alert] = 0
     acc[alert]++
     return acc
   }, {} as Record<string, number>) || {}
+
+  // C. Enhancement: Dis-Influencer Network Data (from twitterIntelligence)
+  const disInfluencerData = (data as any).disInfluencerNetwork
+  const disInfluencerWebsites = disInfluencerData?.websites || []
+  const disInfluencerTalkingPoints = disInfluencerData?.keyTalkingPoints || []
+  const disInfluencerConferences = disInfluencerData?.conferenceAppearances || []
+
+  // C. Enhancement: Qatar Blockade 2017 Data
+  const qatarBlockadeData = (data as any).qatarBlockade2017
+  const qatarBlockadeTimeline = qatarBlockadeData?.timeline || []
+
+  // C. Enhancement: COP28 Campaign Data
+  const cop28Data = (data as any).cop28Campaign
+  const cop28NetworkStructure = cop28Data?.networkStructure || []
+  const sultanAlJaber = cop28Data?.sultanAlJaberProfile
+
+  // C. Enhancement: Alp Services Campaign
+  const alpServicesData = (data as any).alpServicesCampaign
+
+  // C. Enhancement: September 2019 Takedown Details
+  const takedownData = (data as any).september2019Takedown
+  const fakeAccountChars = (data as any).fakeAccountCharacteristics || []
+  const paidInfluencerArmy = (data as any).paidInfluencerArmy
+
+  // C. Enhancement: Africa Propaganda Data
+  const africaData = (data as any).africaPropaganda
+
+  // C. Enhancement: Leadership Activity
+  const leadershipData = (data as any).leadershipActivity
+  const mohamedBinZayed = leadershipData?.mohamedBinZayed
+  const sheikhMohammed = leadershipData?.sheikhMohammed
+
+  // C. Enhancement: Agentic AI
+  const agenticAIData = (data as any).agenticAI
+
+  // C. Enhancement: Dubai Police Monitoring
+  const monitoringData = (data as any).dubaiPoliceMonitoring
+
+  // C. Enhancement: Freedom House 2023
+  const freedomHouseData = (data as any).freedomHouse2023
 
   return (
     <div className="space-y-8 p-8 font-rajdhani">
@@ -229,7 +272,7 @@ export default function TwitterXAnalysisPage() {
           <div>
             <h3 className="text-rose-400 font-bold font-rajdhani">Critical Findings</h3>
             <p className="text-sm text-slate-400">
-              {keyFindings?.filter(kf => kf.alert === 'RED').length || 0} RED alerts, {keyFindings?.filter(kf => kf.alert === 'YELLOW').length || 0} YELLOW warnings
+              {keyFindings?.filter((kf: { alert?: string }) => kf.alert === 'RED').length || 0} RED alerts, {keyFindings?.filter((kf: { alert?: string }) => kf.alert === 'YELLOW').length || 0} YELLOW warnings
             </p>
           </div>
           <div className="ml-auto flex gap-2">
@@ -248,6 +291,8 @@ export default function TwitterXAnalysisPage() {
         <TabsList className="glass-panel border-glass" scrollable>
           <TabsTrigger value="overview" className="data-[state=active]:bg-platinum/20">Overview</TabsTrigger>
           <TabsTrigger value="influence" className="data-[state=active]:bg-platinum/20">Influence Ops</TabsTrigger>
+          <TabsTrigger value="campaigns" className="data-[state=active]:bg-platinum/20">Campaigns</TabsTrigger>
+          <TabsTrigger value="disinfluencer" className="data-[state=active]:bg-platinum/20">Dis-Influencer</TabsTrigger>
           <TabsTrigger value="censorship" className="data-[state=active]:bg-platinum/20">Censorship</TabsTrigger>
           <TabsTrigger value="surveillance" className="data-[state=active]:bg-platinum/20">Surveillance</TabsTrigger>
           <TabsTrigger value="human-rights" className="data-[state=active]:bg-platinum/20">Human Rights</TabsTrigger>
@@ -357,7 +402,7 @@ export default function TwitterXAnalysisPage() {
                     </CardHeader>
                     <CardContent>
                       <div className="flex flex-wrap gap-2">
-                        {metrics.engagement.trendingHashtags.map((tag, idx) => (
+                        {metrics.engagement.trendingHashtags.map((tag: string, idx: number) => (
                           <motion.div
                             key={idx}
                             whileHover={{ scale: 1.05 }}
@@ -423,16 +468,16 @@ export default function TwitterXAnalysisPage() {
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
                           <span className="text-sm text-slate-300">Estimated Bot Percentage</span>
-                          <span className="text-2xl font-bold text-rose-400">{metrics.botActivity.estimatedBotPercent}%</span>
+                          <span className="text-2xl font-bold text-rose-400">{botActivity.estimatedBotPercent}%</span>
                         </div>
-                        <Progress value={metrics.botActivity.estimatedBotPercent} className="h-3" />
+                        <Progress value={botActivity.estimatedBotPercent} className="h-3" />
                         <div className="flex items-center justify-between mt-4">
                           <span className="text-sm text-slate-300">Coordinated Inauthentic Behavior</span>
                           <Badge variant="destructive">Detected</Badge>
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-sm text-slate-300">Confidence Level</span>
-                          <span className="text-lg font-bold text-gold">{Math.round(metrics.botActivity.confidence * 100)}%</span>
+                          <span className="text-lg font-bold text-gold">{Math.round(botActivity.confidence * 100)}%</span>
                         </div>
                       </div>
                     </CardContent>
@@ -470,7 +515,7 @@ export default function TwitterXAnalysisPage() {
                     <CardContent>
                       <ScrollArea className="h-[200px]">
                         <div className="space-y-3">
-                          {metrics.botActivity.indicators.map((indicator, idx) => (
+                          {botActivity.indicators.map((indicator: string, idx: number) => (
                             <motion.div
                               key={idx}
                               initial={{ opacity: 0, x: -20 }}
@@ -500,14 +545,380 @@ export default function TwitterXAnalysisPage() {
                     <CardContent>
                       <PieChart
                         data={[
-                          { name: 'Bot Activity', value: metrics.botActivity.estimatedBotPercent, color: CHART_COLORS.rose },
-                          { name: 'Real Users', value: 100 - metrics.botActivity.estimatedBotPercent, color: CHART_COLORS.emerald },
+                          { name: 'Bot Activity', value: botActivity.estimatedBotPercent, color: CHART_COLORS.rose },
+                          { name: 'Real Users', value: 100 - botActivity.estimatedBotPercent, color: CHART_COLORS.emerald },
                         ]}
                         height={280}
                         showLegend={true}
                       />
                     </CardContent>
                   </Card>
+                </div>
+              </GlassPanel>
+            </motion.div>
+          </TabsContent>
+        </AnimatePresence>
+
+        {/* C. Enhancement: Campaigns Tab - COP28, Africa, September 2019 Takedown */}
+        <AnimatePresence mode="wait">
+          <TabsContent value="campaigns" className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+            >
+              <GlassPanel title="Information Campaigns" description="Coordinated influence operations and propaganda campaigns">
+                <div className="space-y-6">
+                  {/* C. Enhancement: September 2019 Takedown Details */}
+                  {takedownData && (
+                    <Card className="glass-card border-rose-500/30 bg-rose-500/5">
+                      <CardHeader>
+                        <CardTitle className="flex items-center gap-2 text-lg text-rose-400">
+                          <AlertOctagon className="h-5 w-5" />
+                          September 2019 Twitter Takedown
+                        </CardTitle>
+                        <CardDescription>UAE-operated network targeting Qatar, Yemen, Iran</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="grid gap-4 lg:grid-cols-3 mb-4">
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                            <span className="text-2xl font-bold text-rose-400">{takedownData.totalAccountsSuspended?.toLocaleString()}</span>
+                            <span className="text-xs text-slate-400">Accounts Suspended</span>
+                          </div>
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                            <span className="text-2xl font-bold text-rose-400">{takedownData.accountsTargetingQatar?.toLocaleString()}</span>
+                            <span className="text-xs text-slate-400">Targeting Qatar</span>
+                          </div>
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                            <span className="text-2xl font-bold text-gold">{takedownData.facebookAccountsRemoved}</span>
+                            <span className="text-xs text-slate-400">Facebook Accounts</span>
+                          </div>
+                        </div>
+                        {takedownData.operationDetails && (
+                          <div className="space-y-3 mt-4">
+                            <div className="p-3 rounded-lg bg-slate-800/50">
+                              <span className="font-bold text-gold">Managing Company:</span>
+                              <p className="text-sm text-slate-300">{takedownData.operationDetails.managingCompany?.name} - {takedownData.operationDetails.managingCompany?.description}</p>
+                            </div>
+                            {takedownData.operationDetails.saudAlQahtani && (
+                              <div className="p-3 rounded-lg bg-slate-800/50">
+                                <span className="font-bold text-rose-400">Saud al-Qahtani:</span>
+                                <p className="text-sm text-slate-300">{takedownData.operationDetails.saudAlQahtani.role}</p>
+                                <p className="text-xs text-slate-400 mt-1">{takedownData.operationDetails.saudAlQahtani.suspectedRole}</p>
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </CardContent>
+                    </Card>
+                  )}
+
+                  {/* C. Enhancement: COP28 Greenwashing Campaign */}
+                  {cop28Data && (
+                    <Card className="glass-card border-gold/30 bg-gold/5">
+                      <CardHeader>
+                        <CardTitle className="flex items-center gap-2 text-lg text-gold">
+                          <TrendingUp className="h-5 w-5" />
+                          COP28 Greenwashing Campaign (Dec 2023)
+                        </CardTitle>
+                        <CardDescription>1,900+ bot accounts promoting UAE environmental image</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="grid gap-4 lg:grid-cols-4 mb-4">
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                            <span className="text-2xl font-bold text-gold">~{cop28Data.botAccounts?.toLocaleString()}</span>
+                            <span className="text-xs text-slate-400">Bot Accounts</span>
+                          </div>
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                            <span className="text-2xl font-bold text-gold">{cop28Data.generalAccounts}</span>
+                            <span className="text-xs text-slate-400">General Accounts</span>
+                          </div>
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                            <span className="text-2xl font-bold text-gold">{cop28Data.minionAccounts}+</span>
+                            <span className="text-xs text-slate-400">Minion Accounts</span>
+                          </div>
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                            <span className="text-2xl font-bold text-info">{cop28Data.totalNetworkAccounts?.toLocaleString()}</span>
+                            <span className="text-xs text-slate-400">Total Network</span>
+                          </div>
+                        </div>
+
+                        {cop28NetworkStructure.length > 0 && (
+                          <div className="mb-4">
+                            <h4 className="text-sm font-bold text-slate-300 mb-2">Network Structure</h4>
+                            <div className="grid gap-2 lg:grid-cols-3">
+                              {cop28NetworkStructure.map((item: any, idx: number) => (
+                                <div key={idx} className="p-3 rounded-lg bg-slate-800/50">
+                                  <span className="font-bold text-gold">{item.role}</span>
+                                  <p className="text-xs text-slate-400 mt-1">{item.function}</p>
+                                  <p className="text-xs text-slate-500 mt-1">Ex: {item.examples}</p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {sultanAlJaber && (
+                          <div className="p-3 rounded-lg bg-slate-800/50">
+                            <h4 className="font-bold text-gold mb-2">Sultan Al Jaber Profile</h4>
+                            <div className="grid gap-2 lg:grid-cols-2 text-sm">
+                              <div><span className="text-slate-400">Full Name:</span> <span className="text-slate-200">{sultanAlJaber.fullName}</span></div>
+                              <div><span className="text-slate-400">COP28 Role:</span> <span className="text-slate-200">{sultanAlJaber.cop28Role}</span></div>
+                              <div><span className="text-slate-400">Primary Role:</span> <span className="text-slate-200">{sultanAlJaber.primaryRole}</span></div>
+                              <div><span className="text-slate-400">Historical:</span> <span className="text-slate-200">{sultanAlJaber.historical}</span></div>
+                            </div>
+                          </div>
+                        )}
+                      </CardContent>
+                    </Card>
+                  )}
+
+                  {/* C. Enhancement: Africa Propaganda Network */}
+                  {africaData && (
+                    <Card className="glass-card border-info/30 bg-info/5">
+                      <CardHeader>
+                        <CardTitle className="flex items-center gap-2 text-lg text-info">
+                          <Globe className="h-5 w-5" />
+                          Africa Propaganda Network (BBC Oct 2025)
+                        </CardTitle>
+                        <CardDescription>100+ fake accounts targeting Somali women influencers</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="grid gap-4 lg:grid-cols-2 mb-4">
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                            <span className="text-2xl font-bold text-info">{africaData.fakeAccountsIdentified}+</span>
+                            <span className="text-xs text-slate-400">Fake Accounts</span>
+                          </div>
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                            <span className="text-2xl font-bold text-info">{africaData.platforms?.join(', ')}</span>
+                            <span className="text-xs text-slate-400">Platforms</span>
+                          </div>
+                        </div>
+                        {africaData.campaignObjectives?.map((obj: any, idx: number) => (
+                          <div key={idx} className="flex items-center gap-3 p-2 rounded bg-slate-800/30 mb-2">
+                            <Badge variant="outline" className="border-info/50 text-info">{obj.type}</Badge>
+                            <span className="text-sm text-slate-300">{obj.description}</span>
+                          </div>
+                        ))}
+                      </CardContent>
+                    </Card>
+                  )}
+
+                  {/* C. Enhancement: Alp Services Campaign */}
+                  {alpServicesData && (
+                    <Card className="glass-card border-rose-500/30">
+                      <CardHeader>
+                        <CardTitle className="flex items-center gap-2 text-lg text-rose-400">
+                          <AlertTriangle className="h-5 w-5" />
+                          Alp Services Disinformation Campaign
+                        </CardTitle>
+                        <CardDescription>Swiss firm hired by UAE for smear campaigns</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="grid gap-4 lg:grid-cols-2 text-sm">
+                          <div><span className="text-slate-400">Company:</span> <span className="text-slate-200">{alpServicesData.company}</span></div>
+                          <div><span className="text-slate-400">Client:</span> <span className="text-slate-200">{alpServicesData.client}</span></div>
+                          <div><span className="text-slate-400">Year Hired:</span> <span className="text-slate-200">{alpServicesData.yearHired}</span></div>
+                          <div><span className="text-slate-400">Countries Targeted:</span> <span className="text-slate-200">{alpServicesData.targets?.countries}</span></div>
+                          <div className="col-span-2"><span className="text-slate-400">Method:</span> <span className="text-slate-200">{alpServicesData.targets?.method}</span></div>
+                        </div>
+                        <p className="text-sm text-slate-300 mt-3 italic">"{alpServicesData.consequences}"</p>
+                      </CardContent>
+                    </Card>
+                  )}
+
+                  {/* C. Enhancement: Fake Account Characteristics & Paid Influencers */}
+                  <div className="grid gap-6 lg:grid-cols-2">
+                    {fakeAccountChars.length > 0 && (
+                      <Card className="glass-card border-glass">
+                        <CardHeader>
+                          <CardTitle className="text-lg flex items-center gap-2">
+                            <Bot className="h-5 w-5 text-rose" />
+                            Fake Account Characteristics
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <ScrollArea className="h-[150px]">
+                            <div className="space-y-2">
+                              {fakeAccountChars.map((item: any, idx: number) => (
+                                <div key={idx} className="p-2 rounded bg-slate-800/50">
+                                  <span className="font-bold text-gold text-sm">{item.characteristic}:</span>
+                                  <span className="text-slate-300 text-sm ml-2">{item.description}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </ScrollArea>
+                        </CardContent>
+                      </Card>
+                    )}
+
+                    {paidInfluencerArmy && (
+                      <Card className="glass-card border-glass">
+                        <CardHeader>
+                          <CardTitle className="text-lg flex items-center gap-2">
+                            <Users className="h-5 w-5 text-gold" />
+                            Paid Influencer Army
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="space-y-2">
+                            <div className="p-2 rounded bg-slate-800/50">
+                              <span className="font-bold text-gold text-sm">Platform:</span>
+                              <span className="text-slate-300 text-sm ml-2">{paidInfluencerArmy.platform}</span>
+                            </div>
+                            <div className="p-2 rounded bg-slate-800/50">
+                              <span className="font-bold text-gold text-sm">Tactics:</span>
+                              <span className="text-slate-300 text-sm ml-2">{paidInfluencerArmy.tactics}</span>
+                            </div>
+                            <div className="p-2 rounded bg-slate-800/50">
+                              <span className="font-bold text-gold text-sm">Motivation:</span>
+                              <span className="text-slate-300 text-sm ml-2">{paidInfluencerArmy.motivation?.join(', ')}</span>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    )}
+                  </div>
+                </div>
+              </GlassPanel>
+            </motion.div>
+          </TabsContent>
+        </AnimatePresence>
+
+        {/* C. Enhancement: Dis-Influencer Network Tab */}
+        <AnimatePresence mode="wait">
+          <TabsContent value="disinfluencer" className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+            >
+              <GlassPanel title="Emirati Dis-Influencer Network" description="Pseudo-news operations and influence infrastructure">
+                <div className="space-y-6">
+                  {/* Dis-Influencer Overview */}
+                  {disInfluencerData && (
+                    <Card className="glass-card border-rose-500/30 bg-rose-500/5">
+                      <CardHeader>
+                        <CardTitle className="flex items-center gap-2 text-lg text-rose-400">
+                          <Network className="h-5 w-5" />
+                          Network Overview
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="grid gap-4 lg:grid-cols-4">
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                            <span className="text-2xl font-bold text-rose-400">{disInfluencerData.xAccountsCreated}</span>
+                            <span className="text-xs text-slate-400">X Accounts</span>
+                          </div>
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                            <span className="text-2xl font-bold text-gold">{disInfluencerData.pseudoNewsWebsites}</span>
+                            <span className="text-xs text-slate-400">Pseudo-News Sites</span>
+                          </div>
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                            <span className="text-2xl font-bold text-info">{disInfluencerData.earlierSites}</span>
+                            <span className="text-xs text-slate-400">Earlier Sites</span>
+                          </div>
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                            <span className="text-2xl font-bold text-emerald">{disInfluencerData.booksPublished}</span>
+                            <span className="text-xs text-slate-400">Books Published</span>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  )}
+
+                  {/* Pseudo-News Websites */}
+                  {disInfluencerWebsites.length > 0 && (
+                    <Card className="glass-card border-glass">
+                      <CardHeader>
+                        <CardTitle className="text-lg flex items-center gap-2">
+                          <Globe className="h-5 w-5 text-gold" />
+                          Pseudo-News Websites
+                        </CardTitle>
+                        <CardDescription>Fake news sites registered Oct-Nov 2024</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="grid gap-3 lg:grid-cols-2">
+                          {disInfluencerWebsites.map((site: any, idx: number) => (
+                            <div key={idx} className="p-3 rounded-lg bg-slate-800/50">
+                              <div className="flex items-center justify-between mb-1">
+                                <span className="font-bold text-gold">{site.name}</span>
+                                <Badge variant="outline" className="border-platinum/50 text-platinum text-xs">
+                                  {site.registration}
+                                </Badge>
+                              </div>
+                              {site.notes && <p className="text-xs text-slate-400">{site.notes}</p>}
+                            </div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  )}
+
+                  {/* Key Talking Points */}
+                  {disInfluencerTalkingPoints.length > 0 && (
+                    <Card className="glass-card border-glass">
+                      <CardHeader>
+                        <CardTitle className="text-lg flex items-center gap-2">
+                          <MessageSquare className="h-5 w-5 text-rose" />
+                          Key Narratives & Talking Points
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <ScrollArea className="h-[200px]">
+                          <div className="space-y-2">
+                            {disInfluencerTalkingPoints.map((point: any, idx: number) => (
+                              <div key={idx} className="p-3 rounded-lg bg-slate-800/50">
+                                <span className="font-bold text-rose-400">{point.narrative}:</span>
+                                <span className="text-slate-300 ml-2">{point.description}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </ScrollArea>
+                      </CardContent>
+                    </Card>
+                  )}
+
+                  {/* Conference Appearances */}
+                  {disInfluencerConferences.length > 0 && (
+                    <Card className="glass-card border-glass">
+                      <CardHeader>
+                        <CardTitle className="text-lg flex items-center gap-2">
+                          <MapPin className="h-5 w-5 text-info" />
+                          Conference Appearances
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="space-y-2">
+                          {disInfluencerConferences.map((conf: any, idx: number) => (
+                            <div key={idx} className="flex items-center justify-between p-2 rounded bg-slate-800/50">
+                              <span className="text-slate-200">{conf.venue}</span>
+                              <Badge variant="outline" className="border-info/50 text-info">{conf.location}</Badge>
+                            </div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  )}
+
+                  {/* Key Figure */}
+                  {disInfluencerData?.keyFigure && (
+                    <Card className="glass-card border-rose-500/30">
+                      <CardHeader>
+                        <CardTitle className="text-lg flex items-center gap-2 text-rose-400">
+                          <UserX className="h-5 w-5" />
+                          Key Figure
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="grid gap-2 lg:grid-cols-3 text-sm">
+                          <div><span className="text-slate-400">Name:</span> <span className="text-slate-200 font-bold">{disInfluencerData.keyFigure.name}</span></div>
+                          <div><span className="text-slate-400">Nationality:</span> <span className="text-slate-200">{disInfluencerData.keyFigure.nationality}</span></div>
+                          <div><span className="text-slate-400">Role:</span> <span className="text-slate-200">{disInfluencerData.keyFigure.role}</span></div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  )}
                 </div>
               </GlassPanel>
             </motion.div>
@@ -580,17 +991,10 @@ export default function TwitterXAnalysisPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-3">
-                          <p className="text-sm text-slate-300">{censorship.notes}</p>
+                          <p className="text-sm text-slate-300 italic">"{censorship.legalFramework.quote.split('—')[0]}"</p>
                           <div className="flex flex-wrap gap-2 mt-2">
-                            {censorship.march2026Blocking.blocked.map((item, idx) => (
+                            {(censorship.march2026Blocking.additionalPenalties || []).map((penalty: string, idx: number) => (
                               <Badge key={idx} variant="outline" className="border-rose-500/50 text-rose-400">
-                                {item}
-                              </Badge>
-                            ))}
-                          </div>
-                          <div className="flex flex-wrap gap-2 mt-2">
-                            {censorship.march2026Blocking.penalties.map((penalty, idx) => (
-                              <Badge key={idx} variant="destructive" className="bg-rose-500/20">
                                 {penalty}
                               </Badge>
                             ))}
@@ -612,7 +1016,7 @@ export default function TwitterXAnalysisPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-3">
-                          {censorship.legalFramework.restrictions.map((restriction, idx) => (
+                          {censorship.legalFramework.restrictions.map((restriction: string, idx: number) => (
                             <div key={idx} className="flex items-center gap-3 rounded-lg bg-slate-800/50 p-3">
                               <AlertTriangle className="h-4 w-4 text-yellow-400 flex-shrink-0" />
                               <span className="text-sm text-slate-200">{restriction}</span>
@@ -638,7 +1042,7 @@ export default function TwitterXAnalysisPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
-                          {censorship.twitterCompliance.map((item, idx) => (
+                          {censorship.twitterCompliance.map((item: { year: string | number; requests: number; complianceRate: number }, idx: number) => (
                             <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
                               <div>
                                 <span className="text-sm font-medium text-slate-200">{item.year}</span>
@@ -665,7 +1069,7 @@ export default function TwitterXAnalysisPage() {
                       <CardContent>
                         <ScrollArea className="h-[200px]">
                           <div className="space-y-3">
-                            {censorship.historicalSuspensions.map((suspension, idx) => (
+                            {censorship.historicalSuspensions.map((suspension: { date: string; accounts: string; reason: string }, idx: number) => (
                               <div key={idx} className="p-3 rounded-lg bg-slate-800/50">
                                 <div className="flex items-center justify-between mb-1">
                                   <span className="text-sm font-medium text-rose-400">{suspension.date}</span>
@@ -705,8 +1109,8 @@ export default function TwitterXAnalysisPage() {
                     </CardHeader>
                     <CardContent>
                       <blockquote className="border-l-4 border-info p-4 bg-slate-800/30">
-                        <p className="text-sm text-slate-300 italic">"{surveillance?.monitoringQuote?.split(' — ')[0]}"</p>
-                        <p className="text-xs text-slate-400 mt-2">— {surveillance?.monitoringQuote?.split(' — ')[1]}</p>
+                        <p className="text-sm text-slate-300 italic">"{surveillance?.dubaiPoliceMonitoring?.monitoringQuote?.split(' — ')[0]}"</p>
+                        <p className="text-xs text-slate-400 mt-2">— {surveillance?.dubaiPoliceMonitoring?.monitoringQuote?.split(' — ')[1]}</p>
                       </blockquote>
                     </CardContent>
                   </Card>
@@ -722,7 +1126,7 @@ export default function TwitterXAnalysisPage() {
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-4">
-                        {surveillanceData.map((program, idx) => (
+                        {surveillanceData.map((program: { name: string; year: string | number; target: string }, idx: number) => (
                           <motion.div
                             key={idx}
                             initial={{ opacity: 0, y: 10 }}
@@ -781,7 +1185,7 @@ export default function TwitterXAnalysisPage() {
             >
               <GlassPanel title="Human Rights Cases" description="Documented cases of censorship and repression">
                 <div className="space-y-6">
-                  {humanRightsCases?.map((caseItem, idx) => (
+                  {humanRightsCases?.map((caseItem: Record<string, unknown>, idx: number) => (
                     <Card
                       key={idx}
                       className="glass-card border-rose-500/30 bg-rose-500/5"
@@ -790,7 +1194,7 @@ export default function TwitterXAnalysisPage() {
                         <div className="flex items-center justify-between">
                           <CardTitle className="text-lg text-rose-400 flex items-center gap-2">
                             <UserX className="h-5 w-5" />
-                            {caseItem.name}
+                            {(caseItem as { name: string }).name}
                           </CardTitle>
                           {'sentence' in caseItem && (
                             <Badge variant="destructive" className="bg-rose-500/20 text-rose-400">
@@ -853,7 +1257,7 @@ export default function TwitterXAnalysisPage() {
                 <Card className="glass-card border-glass">
                   <CardContent className="pt-6">
                     <div className="space-y-4">
-                      {timeline?.map((event, idx) => (
+                      {timeline?.map((event: { year: string | number; event: string }, idx: number) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: -20 }}
@@ -903,7 +1307,7 @@ export default function TwitterXAnalysisPage() {
                     </CardHeader>
                     <CardContent>
                       <PieChart
-                        data={sourceCredibilityData.map(s => ({
+                        data={sourceCredibilityData.map((s: { name: string; tier: number; color: string }) => ({
                           name: s.name,
                           value: s.tier === 1 ? 70 : s.tier === 2 ? 25 : 5,
                           color: s.color,
@@ -925,7 +1329,7 @@ export default function TwitterXAnalysisPage() {
                     <CardContent>
                       <ScrollArea className="h-[400px]">
                         <div className="space-y-3">
-                          {sources?.map((source, idx) => (
+                          {sources?.map((source: { tier: number; name: string; credibility: string; sentiment: string; uaeRelevance: string; type: string }, idx: number) => (
                             <motion.div
                               key={idx}
                               initial={{ opacity: 0, y: 10 }}
@@ -943,7 +1347,7 @@ export default function TwitterXAnalysisPage() {
                                 </Badge>
                                 <span className="text-sm text-slate-200">{source.name}</span>
                               </div>
-                              <span className="text-xs text-slate-400">{source.date}</span>
+                              <span className="text-xs text-slate-400">{source.type}</span>
                             </motion.div>
                           ))}
                         </div>

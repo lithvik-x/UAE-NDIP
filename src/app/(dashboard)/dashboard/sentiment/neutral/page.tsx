@@ -41,7 +41,7 @@ export default function NeutralSentimentPage() {
   const sentimentBreakdown = [
     { name: 'Neutral-Factual', value: 55, color: CHART_COLORS.platinum },
     { name: 'Neutral-Formal', value: 30, color: CHART_COLORS.denim },
-    { name: 'Neutral-Objective', value: 15, color: CHART_COLORS.slate },
+    { name: 'Neutral-Objective', value: 15, color: CHART_COLORS.platinum },
   ]
 
   return (

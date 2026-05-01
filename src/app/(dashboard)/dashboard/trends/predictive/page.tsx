@@ -86,7 +86,7 @@ export default function PredictiveTrendsPage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><LineChart className="h-5 w-5 text-violet-500" />Trend Projection</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0">
-                    <AreaChart data={areaData} xAxisKey="month" areas={[{ dataKey: 'value', name: 'Sentiment', color: CHART_COLORS.violet }, { dataKey: 'secondary', name: 'Topics', color: CHART_COLORS.cyan }]} height={280} showGrid={true} />
+                    <AreaChart data={areaData} xAxisKey="month" areas={[{ dataKey: 'value', name: 'Sentiment', color: CHART_COLORS.purple }, { dataKey: 'secondary', name: 'Topics', color: CHART_COLORS.teal }]} height={280} showGrid={true} />
                   </CardContent>
                 </motion.div>
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">

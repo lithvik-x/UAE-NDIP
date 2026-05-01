@@ -47,7 +47,7 @@ export default function ContentModerationPage() {
     { category: 'Religious Content', count: 189000, percentage: 22, color: CHART_COLORS.orange },
     { category: 'Social Issues', count: 156000, percentage: 18, color: CHART_COLORS.gold },
     { category: 'External Affairs', count: 134000, percentage: 16, color: CHART_COLORS.purple },
-    { category: 'Privacy Violations', count: 89000, percentage: 11, color: CHART_COLORS.blue },
+    { category: 'Privacy Violations', count: 89000, percentage: 11, color: CHART_COLORS.denim },
     { category: 'Other', count: 45000, percentage: 5, color: CHART_COLORS.platinum },
   ]
 

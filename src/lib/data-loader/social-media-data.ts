@@ -16,11 +16,14 @@ import type {
 } from './types';
 
 // Twitter/X Platform Intelligence — 100% MD File 5-1 Content
+// Complete Twitter/X intelligence data extracted from 5-1-twitter-x-results.md
 export const twitterIntelligence = {
+  id: 'twitter-x-uae-2026',
   platform: 'Twitter' as SocialPlatform,
   metrics: {
     users: 9380000,
     penetration: 99,
+    dailyActive: 0,
     demographics: 'Wide demographic reach across UAE population; 9.38M users, 99% internet penetration, 94% 5G coverage',
     sentiment: {
       overall: 'Critical',
@@ -53,6 +56,7 @@ export const twitterIntelligence = {
         { name: 'Africa Propaganda', accounts: 100, target: 'Sudan RSF whitewash' },
       ],
     },
+    censorshipLevel: 'extreme' as const,
   },
   censorship: {
     level: 'extreme' as const,
@@ -277,6 +281,246 @@ export const twitterIntelligence = {
     fiveGCoverage: '94% of population',
     twitterUsersHistorical: '360,000 (2014)',
     dailyTweetsHistorical: '2.5 million (2014)',
+  },
+  // September 2019 Twitter Takedown - Full Operation Details
+  september2019Takedown: {
+    totalAccountsSuspended: 4258,
+    uaeOnlyAccounts: 4258,
+    additionalAccounts: 267,
+    facebookAccountsRemoved: '350+',
+    accountsTargetingQatar: 4248,
+    primaryTargets: ['Qatar', 'Yemen', 'Iran'],
+    operationDetails: {
+      managingCompany: {
+        name: 'DotDev',
+        description: 'Custom software solutions company based in Abu Dhabi',
+      },
+      egyptianAffiliate: 'Giza',
+      objective: 'Multi-faceted information operation amplifying Saudi government narratives',
+      saudAlQahtani: {
+        role: 'Former Saudi royal court adviser',
+        connection: 'Close confidante of Crown Prince Mohammed bin Salman (MBS)',
+        responsibilities: 'Ran royal court\'s media centre and "electronic army"',
+        suspectedRole: 'Suspected role in murder of journalist Jamal Khashoggi',
+        lastTweet: 'October 22, 2018 (shortly after being fired)',
+        suspensionReason: 'Platform manipulation',
+      },
+    },
+  },
+  // Fake Account Characteristics
+  fakeAccountCharacteristics: [
+    { characteristic: 'Registration', description: 'Often US-registered but accessed via web only' },
+    { characteristic: 'Usernames', description: 'Frequent changes' },
+    { characteristic: 'Followers', description: 'Low counts' },
+    { characteristic: 'Behavior', description: 'Appear instantly in replies to critical posts' },
+    { characteristic: 'Scripted lines', description: '"Over 100,000 Brits live safely in Dubai"' },
+  ],
+  // Paid Influencer Army
+  paidInfluencerArmy: {
+    platform: 'Facebook',
+    tactics: 'Deliberate mix of fake accounts, paid influencers, and loyal pro-Dubai activists',
+    motivation: ['Tax-free income', 'Residency benefits'],
+    rareConsequences: 'Unlike ordinary residents who face arrest',
+  },
+  // COP28 Greenwashing Campaign - Full Details
+  cop28Campaign: {
+    botAccounts: 1900,
+    totalNetworkAccounts: 7000,
+    generalAccounts: 22,
+    minionAccounts: 1850,
+    eventDates: 'November 30 - December 12, 2023',
+    location: 'Dubai, UAE',
+    networkStructure: [
+      { role: 'Generals', function: 'Create original content, start conversations', examples: 'bint_jumeiraah, BkhetaElbasbosy (verified)' },
+      { role: 'Minions', function: 'Amplify content, boost engagement', examples: '1,850+ accounts' },
+      { role: 'Cells', function: 'Organized into units assigned to specific generals', examples: 'Division of labor' },
+    ],
+    contentThemes: [
+      'Praise of ADNOC chief Sultan Al Jaber',
+      'Positive UAE environmental image',
+      'COP28 presidency advocacy',
+      'Attacks on critics of fossil fuel leadership',
+    ],
+    sultanAlJaberProfile: {
+      fullName: 'Sultan Ahmed al-Jaber',
+      primaryRole: 'CEO, Abu Dhabi National Oil Company (Adnoc)',
+      cop28Role: 'President-designate',
+      additionalRoles: ['Industry minister', 'Advanced technology minister'],
+      renewables: 'Chairman of state-owned Masdar',
+      historical: 'First oil executive to serve as COP president',
+      controversies: [
+        { type: 'Wikipedia edits', details: 'Team edited entries to remove Adnoc references' },
+        { type: 'Oil deals', details: 'Speculation of brokering oil deals before conference' },
+        { type: 'Criticism', details: 'EU and US lawmakers demanded his deposition' },
+        { type: 'Climate assessment', details: 'Climate Action Tracker: UAE 2050 strategy "insufficient"' },
+      ],
+    },
+    fakeBlondesCampaign: {
+      description: 'AI-generated images creating fake Twitter profiles',
+      persona: 'American blondes',
+      focus: 'Boosting UAE\'s COP28 account',
+      researcher: 'Marc Owen Jones',
+    },
+    researchTimeline: [
+      { date: 'May 2023', event: 'Guardian revealed Jaber\'s team edited Wikipedia entries', source: 'The Guardian' },
+      { date: 'June 2023', event: 'Marc Owen Jones reported "large multilingual astroturfing effort around #Cop28"', source: 'Marc Owen Jones' },
+      { date: 'August 2023', event: 'BBC investigation (100+ suspected fake X accounts, 500+ tweets)', source: 'BBC' },
+      { date: 'December 8, 2023', event: 'Marc Owen Jones published bot findings', source: 'Marc Owen Jones' },
+      { date: 'December 11, 2023', event: 'Article publication date', source: 'The Week' },
+    ],
+  },
+  // Africa Propaganda Network - Full BBC Investigation Details
+  africaPropaganda: {
+    fakeAccountsIdentified: 100,
+    platforms: ['X (Twitter)', 'Facebook'],
+    targets: 'Somali women influencers',
+    imageType: 'Stolen and AI-generated',
+    campaignObjectives: [
+      { type: 'Primary', description: 'Whitewash Sudan\'s RSF war crimes' },
+      { type: 'Secondary', description: 'Counter narratives about UAE support for "bloody regimes and rebels in Sudan"' },
+      { type: 'Tertiary', description: 'Spread pro-UAE propaganda to shape public opinion in Africa' },
+    ],
+    methodology: [
+      'Over 100 fake accounts impersonating Somali Muslim women',
+      'Used stolen and AI-generated images',
+      'Focused on denouncing UAE\'s critics',
+    ],
+  },
+  // Emirati Dis-Influencer Network - Full Details
+  disInfluencerNetwork: {
+    xAccountsCreated: '7+ (December 2024)',
+    pseudoNewsWebsites: 5,
+    earlierSites: 2,
+    booksPublished: '8+ (July-September 2025)',
+    websites: [
+      { name: 'The Washington Eye', registration: 'Oct-Nov 2024', notes: 'Published Libya $400M claim (later removed)' },
+      { name: 'Daily Euro Times', registration: 'Oct-Nov 2024', notes: '' },
+      { name: 'Brieflex', registration: 'Oct-Nov 2024', notes: '' },
+      { name: 'AfricaLix', registration: 'Oct-Nov 2024', notes: '' },
+      { name: 'InfoFlix', registration: 'Oct-Nov 2024', notes: '' },
+      { name: 'EuroPost Agency', registration: '2023', notes: 'Earlier launch' },
+      { name: 'New York Insight', registration: '2023', notes: 'Earlier launch' },
+    ],
+    infrastructure: {
+      crestnuxMedia: 'Advertising company for paid amplification',
+      studioRecordings: 'Shared with identical props (black-and-silver globe)',
+      aiAssistedContent: 'Identified by researchers',
+      booksNote: 'Signs of AI generation: "formulaic structures, excessive em dashes"',
+    },
+    keyTalkingPoints: [
+      { narrative: 'Primary frame', description: '"Muslim Brotherhood" as explanation for conflicts, terrorism, environmental issues' },
+      { narrative: 'Environmental', description: 'Environmental degradation attributed to Muslim Brotherhood' },
+      { narrative: 'Sudan', description: 'Civil war blamed on Muslim Brotherhood' },
+      { narrative: 'Islam/Migration', description: 'Securitized portrayals in Europe' },
+      { narrative: 'Pro-Israel', description: 'Security framing' },
+      { narrative: 'UAE positioning', description: 'Depicted as model state' },
+    ],
+    conferenceAppearances: [
+      { venue: 'Council on Foreign Relations', location: 'New York' },
+      { venue: 'Georgetown University', location: 'Washington D.C.' },
+      { venue: 'University of Cambridge', location: 'Pinsker Centre' },
+      { venue: 'UC San Diego', location: 'California' },
+      { venue: 'Alliance for Responsible Citizenship', location: 'London' },
+    ],
+    notableIncidents: [
+      'Washington Eye published "exclusive" claiming Libya PM transferred $400 million to Turkey',
+      'Authors later identified as fictional journalists',
+      'Article removed after Libyan media denial',
+    ],
+    keyFigure: {
+      name: 'Amjad Taha',
+      nationality: 'British-Bahraini',
+      role: 'Central figure in network',
+    },
+  },
+  // Qatar Blockade 2017 - Historical Context
+  qatarBlockade2017: {
+    timeline: [
+      { date: 'May 2017', event: 'Saudi Arabia and UAE block Qatari media over "incendiary statements"' },
+      { date: 'May 2017', event: 'Hack hits Qatar\'s official news agency, Instagram and Twitter accounts' },
+      { date: 'June 5, 2017', event: '"#severing ties with Qatar" hashtag tweeted almost a million times' },
+      { date: 'June 2017', event: 'Emirates Post halted postal services to Qatar' },
+      { date: 'July 2017', event: 'UAE behind cyberattack leading to Qatar boycott (per US officials)' },
+    ],
+    socialMediaImpact: {
+      hashtagTweets: '~1 million',
+      twitterBots: 'Active during crisis',
+      fakeNews: 'Spread during crisis',
+    },
+    impactOnQatar: {
+      foodRequirements: 'Nearly 80% at start of blockade',
+    },
+    notableStatements: 'Dubai police commander called for "invasion of Qatar" (June 2020)',
+  },
+  // Alp Services Disinformation Campaign
+  alpServicesCampaign: {
+    company: 'Alp Services (Swiss firm)',
+    client: 'UAE secret services',
+    yearHired: 2017,
+    specialization: 'Smear campaigns, spreading disinformation and creating fake accounts',
+    targets: {
+      victims: 'Thousands of European citizens',
+      types: 'Organisations, politicians, activists',
+      countries: 18,
+      method: 'Wrongly connecting victims to radical Islamist networks',
+    },
+    consequences: 'Damaged their reputations and contributed to public distrust of Muslims and Islam',
+  },
+  // Freedom House 2023 Additional Findings
+  freedomHouse2023: {
+    freedomOnNetScore: '30/100 ("Not Free")',
+    previousScore: '28/100',
+    additionalFindings: [
+      'Bots promoted pro-UAE positions around 2022 World Cup',
+      'Coordinated campaigns targeting Qatar, Muslim Brotherhood',
+      'Sock puppet accounts impersonating Israeli nationals promoting UAE interests',
+      'Disinformation re: Tunisia, Sudan, Russia-Ukraine conflict',
+    ],
+  },
+  // Leadership Activity Details
+  leadershipActivity: {
+    mohamedBinZayed: {
+      position: 'President of United Arab Emirates',
+      accountDescription: 'الحساب الرسمي لصاحب السمو الشيخ محمد بن زايد آل نهيان (Official account of His Highness Sheikh Mohamed bin Zayed Al Nahyan)',
+      recentDiplomaticEngagement: [
+        'Phone call with King Philippe of Belgium',
+        'Discussion with Zelenskyy about Middle East situation',
+        'Condolences over lives lost from Iran\'s strikes',
+      ],
+      leadershipPhilosophy: 'Believes in the power of all to contribute to building a more peaceful and prosperous world',
+      keyQuote: 'We have achieved significant accomplishments over the years, and with God\'s blessing, we are heading towards a future that is brighter, more hopeful, and more prosperous.',
+      website: 'https://www.mohamedbinzayed.ae/en/',
+    },
+    sheikhMohammed: {
+      position: 'Vice President, Prime Minister, Ruler of Dubai',
+      popularity: 'Most popular Twitter conversations in UAE (2019); generated greatest engagement among UAE leaders',
+      recentAnnouncements: [
+        'Largest transportation project: 42-kilometer metro line with 15 key stations (April 2026)',
+        'Congratulations to Trump on election victory (November 2024)',
+        'Board of directors approval for Dubai Chambers (June 2021)',
+        'Diwali greetings posted',
+      ],
+      quote: 'We are pleased to announce the largest transportation project in Dubai',
+      website: 'https://www.instagram.com/hhshkmohd/',
+    },
+  },
+  // Agentic AI Deployment
+  agenticAI: {
+    framework: 'New UAE government framework for Agentic AI',
+    target: '50% of government sectors within two years',
+    announcement: 'UAE Government Media Briefing (March 2026)',
+  },
+  // Dubai Police Monitoring Details
+  dubaiPoliceMonitoring: {
+    scope: 'Facebook and Twitter monitored 24/7',
+    official: 'Major Salem Obaid Salmeen, Deputy Director of Anti-Electronic Crimes',
+    dataRetention: '18 months on servers',
+    legalBasis: 'Content exists in public space',
+    documentedOffenses: [
+      { category: 'Spreading', examples: 'Rumors' },
+      { category: 'Defamation', examples: 'Criticizing security forces or government officials' },
+      { category: 'Facebook tagging', examples: 'Without permission' },
+    ],
   },
   sourceUrls: [
     'https://x.com/UAEmediaoffice',

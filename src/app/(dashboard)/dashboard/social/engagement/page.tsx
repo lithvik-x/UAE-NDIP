@@ -50,7 +50,7 @@ export default function EngagementAnalyticsPage() {
     { platform: 'Instagram', likes: 1.8, comments: 0.12, shares: 0.05, saves: 0.15, color: CHART_COLORS.pink },
     { platform: 'Twitter/X', likes: 0.8, comments: 0.15, shares: 0.18, saves: 0.03, color: CHART_COLORS.navy },
     { platform: 'YouTube', likes: 0.45, comments: 0.08, shares: 0.02, saves: 0.12, color: CHART_COLORS.danger },
-    { platform: 'Facebook', likes: 0.62, comments: 0.06, shares: 0.08, saves: 0.02, color: CHART_COLORS.blue },
+    { platform: 'Facebook', likes: 0.62, comments: 0.06, shares: 0.08, saves: 0.02, color: CHART_COLORS.denim },
   ]
 
   // Content type engagement
@@ -198,7 +198,7 @@ export default function EngagementAnalyticsPage() {
                         { name: 'Instagram', value: 28, color: CHART_COLORS.pink },
                         { name: 'Twitter/X', value: 18, color: CHART_COLORS.navy },
                         { name: 'YouTube', value: 12, color: CHART_COLORS.danger },
-                        { name: 'Facebook', value: 7, color: CHART_COLORS.blue },
+                        { name: 'Facebook', value: 7, color: CHART_COLORS.denim },
                       ]}
                       height={280}
                       showLegend={true}

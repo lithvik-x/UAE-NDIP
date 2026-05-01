@@ -49,7 +49,7 @@ export default function SocialMediaMonitoringPage() {
     { name: 'Instagram', value: 27, color: CHART_COLORS.rose },
     { name: 'TikTok', value: 18, color: CHART_COLORS.info },
     { name: 'LinkedIn', value: 10, color: CHART_COLORS.indigo },
-    { name: 'Facebook', value: 7, color: CHART_COLORS.blue },
+    { name: 'Facebook', value: 7, color: CHART_COLORS.denim },
   ]
 
   // Sentiment trend data

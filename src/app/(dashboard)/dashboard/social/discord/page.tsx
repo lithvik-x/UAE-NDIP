@@ -114,7 +114,7 @@ export default function DiscordPage() {
                       <CardDescription>Top categories by member count</CardDescription>
                     </CardHeader>
                     <CardContent className="px-0 pb-0">
-                      <BarChart data={serverData} xAxisKey="name" bars={[{ dataKey: 'members', name: 'Members', color: CHART_COLORS.violet }]} height={280} showGrid={true} />
+                      <BarChart data={serverData} xAxisKey="name" bars={[{ dataKey: 'members', name: 'Members', color: CHART_COLORS.purple }]} height={280} showGrid={true} />
                     </CardContent>
                   </motion.div>
 

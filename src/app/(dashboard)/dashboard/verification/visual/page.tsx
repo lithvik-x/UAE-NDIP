@@ -237,7 +237,7 @@ export default function VisualMultimediaPage() {
                     <PieChart
                       data={[
                         { name: 'Tier 1', value: extended.sourceCredibilityMatrix.filter(s => s.tier === 1).length, color: CHART_COLORS.emerald },
-                        { name: 'Tier 2', value: extended.sourceCredibilityMatrix.filter(s => s.tier === 2).length, color: CHART_COLORS.blue },
+                        { name: 'Tier 2', value: extended.sourceCredibilityMatrix.filter(s => s.tier === 2).length, color: CHART_COLORS.denim },
                         { name: 'Tier 3', value: extended.sourceCredibilityMatrix.filter(s => s.tier === 3).length, color: CHART_COLORS.gold },
                         { name: 'Tier 4', value: extended.sourceCredibilityMatrix.filter(s => s.tier === 4).length, color: CHART_COLORS.rose },
                       ]}
@@ -739,7 +739,7 @@ export default function VisualMultimediaPage() {
                     data={cloudSeedingData}
                     xAxisKey="year"
                     areas={[
-                      { dataKey: 'missions', name: 'Missions', color: CHART_COLORS.blue },
+                      { dataKey: 'missions', name: 'Missions', color: CHART_COLORS.denim },
                     ]}
                     height={250}
                     showGrid={true}

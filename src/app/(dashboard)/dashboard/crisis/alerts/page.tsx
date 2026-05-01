@@ -522,7 +522,7 @@ export default function CrisisAlertsPage() {
                         { dataKey: 'critical', name: 'Critical', color: CHART_COLORS.rose },
                         { dataKey: 'high', name: 'High', color: CHART_COLORS.orange },
                         { dataKey: 'medium', name: 'Medium', color: CHART_COLORS.gold },
-                        { dataKey: 'low', name: 'Low', color: CHART_COLORS.blue },
+                        { dataKey: 'low', name: 'Low', color: CHART_COLORS.denim },
                       ]}
                       height={280}
                       showGrid={true}
