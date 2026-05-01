@@ -80,7 +80,10 @@ export {
   economicCrisisExtendedData,
   reputationCrisisData,
   communicationCrisisData,
-  terrorismExtremismData,
+  communicationCrisisExtendedData,
+  // Alias for backward compatibility
+  communicationCrisisData as crisisCommData,
+  terrorismExtremismCrisisData,
   cyberThreatData,
   cyberThreatExtendedData,
   publicHealthData,
@@ -89,6 +92,24 @@ export {
   earlyWarningExtendedData,
   crisisOverview,
 } from './crisis-data'
+
+export {
+  reputationCrisisEventData,
+  reputationCrisisPageData,
+  pressFreedomScores,
+  freedomHouseScores,
+  sudanGoldData,
+  iranWarStats,
+  politicalPrisonerStats,
+  crisisIncidents,
+  mediaCoverage,
+  sentimentBreakdown,
+  threatVectors,
+  tortureMethods,
+  reputationKeyQuotes,
+  reputationKPI,
+  reputationMetrics,
+} from './reputation-crisis-data'
 
 export {
   twitterIntelligence,
