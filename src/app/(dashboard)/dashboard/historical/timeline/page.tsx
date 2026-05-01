@@ -195,7 +195,7 @@ export default function HistoricalTimelinePage() {
         <div>
           <Badge variant="default" className="mb-2">H-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">Historical Timeline</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Complete chronological record of UAE history from 1820 to present
           </p>
         </div>
@@ -287,7 +287,7 @@ export default function HistoricalTimelinePage() {
                           >
                             {getEraIcon(event.era)}
                           </div>
-                          <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70 transition-colors">
+                          <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70 transition-colors">
                             <div className="flex items-center justify-between mb-2">
                               <span className="text-sm font-bold" style={{ color: getEraColor(event.era) }}>
                                 {event.year}
@@ -299,7 +299,7 @@ export default function HistoricalTimelinePage() {
                                 {event.significance}
                               </Badge>
                             </div>
-                            <h4 className="font-semibold text-slate-200">{event.event}</h4>
+                            <h4 className="font-semibold text-platinum-200">{event.event}</h4>
                             <div className="mt-2 flex items-center gap-2">
                               <Badge variant="outline" className="text-xs" style={{ borderColor: getEraColor(event.era) }}>
                                 {event.era}
@@ -348,8 +348,8 @@ export default function HistoricalTimelinePage() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-2xl font-bold text-slate-200">{era.events}</p>
-                      <p className="text-xs text-slate-400">Major events</p>
+                      <p className="text-2xl font-bold text-platinum-200">{era.events}</p>
+                      <p className="text-xs text-platinum-400">Major events</p>
                       <Progress value={(era.events / 7) * 100} className="mt-2 h-1" />
                     </CardContent>
                   </Card>
@@ -378,8 +378,8 @@ export default function HistoricalTimelinePage() {
                         >
                           <span className="text-3xl font-bold" style={{ color: item.color }}>{item.count}</span>
                         </div>
-                        <p className="font-semibold text-slate-200">{item.level}</p>
-                        <p className="text-sm text-slate-400">Events</p>
+                        <p className="font-semibold text-platinum-200">{item.level}</p>
+                        <p className="text-sm text-platinum-400">Events</p>
                       </div>
                     ))}
                   </div>
@@ -397,15 +397,15 @@ export default function HistoricalTimelinePage() {
                       {timelineData
                         .filter(e => e.significance === 'critical')
                         .map((event, idx) => (
-                          <div key={idx} className="flex items-center gap-4 rounded-lg border border-rose/30 bg-slate-800/50 p-4">
+                          <div key={idx} className="flex items-center gap-4 rounded-lg border border-rose/30 bg-platinum-800/50 p-4">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-rose/20 text-rose">
                               <Crown className="h-5 w-5" />
                             </div>
                             <div className="flex-1">
-                              <p className="font-semibold text-slate-200">{event.event}</p>
-                              <p className="text-sm text-slate-400">{event.year} - {event.era}</p>
+                              <p className="font-semibold text-platinum-200">{event.event}</p>
+                              <p className="text-sm text-platinum-400">{event.year} - {event.era}</p>
                             </div>
-                            <ChevronRight className="h-5 w-5 text-slate-500" />
+                            <ChevronRight className="h-5 w-5 text-platinum-500" />
                           </div>
                         ))}
                     </div>
@@ -430,7 +430,7 @@ export default function HistoricalTimelinePage() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-slate-400 mb-2">
+                      <p className="text-sm text-platinum-400 mb-2">
                         {idx === 0 && 'Before 1971 - British protectorate, oil discovery'}
                         {idx === 1 && '1971-1990 - Nation building, institutions'}
                         {idx === 2 && '1991-2003 - Post-Gulf War era'}
@@ -475,12 +475,12 @@ export default function HistoricalTimelinePage() {
                         color: CHART_COLORS.emerald,
                       },
                     ].map((era, idx) => (
-                      <div key={idx} className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                      <div key={idx} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                         <div className="flex items-center gap-2 mb-2">
                           <div className="h-3 w-3 rounded-full" style={{ backgroundColor: era.color }} />
-                          <h4 className="font-semibold text-slate-200">{era.era}</h4>
+                          <h4 className="font-semibold text-platinum-200">{era.era}</h4>
                         </div>
-                        <p className="text-sm text-slate-400 mb-3">{era.description}</p>
+                        <p className="text-sm text-platinum-400 mb-3">{era.description}</p>
                         <div className="flex flex-wrap gap-2">
                           {era.keyThemes.map((theme, i) => (
                             <Badge key={i} variant="outline" className="text-xs" style={{ borderColor: era.color }}>
@@ -618,12 +618,12 @@ export default function HistoricalTimelinePage() {
                         >
                           {event.uaeRelevance}
                         </Badge>
-                        <span className="text-xs text-slate-500">
+                        <span className="text-xs text-platinum-500">
                           {event.period.start} - {event.period.end}
                         </span>
                       </div>
-                      <h4 className="font-semibold text-slate-200 mb-1 text-sm">{event.title}</h4>
-                      <p className="text-xs text-slate-400 line-clamp-2">{event.overview}</p>
+                      <h4 className="font-semibold text-platinum-200 mb-1 text-sm">{event.title}</h4>
+                      <p className="text-xs text-platinum-400 line-clamp-2">{event.overview}</p>
                       <div className="mt-3 flex items-center gap-2">
                         <Badge variant="secondary" className="text-xs">
                           {event.entities.length} entities
@@ -650,8 +650,8 @@ export default function HistoricalTimelinePage() {
                   <ScrollArea className="h-[400px]">
                     <div className="space-y-4">
                       {eventHistoryData.slice(0, 8).map((event) => (
-                        <div key={event.id} className="rounded-lg border border-slate-700/50 bg-slate-800/30 p-3">
-                          <h5 className="font-semibold text-sm text-slate-200 mb-2" style={{ color: relevanceColors[event.uaeRelevance] }}>
+                        <div key={event.id} className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3">
+                          <h5 className="font-semibold text-sm text-platinum-200 mb-2" style={{ color: relevanceColors[event.uaeRelevance] }}>
                             {event.eventNumber}. {event.title}
                           </h5>
                           <div className="flex flex-wrap gap-2">
@@ -661,7 +661,7 @@ export default function HistoricalTimelinePage() {
                               </Badge>
                             ))}
                             {event.entities.length > 5 && (
-                              <Badge variant="outline" className="text-xs text-slate-500">
+                              <Badge variant="outline" className="text-xs text-platinum-500">
                                 +{event.entities.length - 5} more
                               </Badge>
                             )}
@@ -694,7 +694,7 @@ export default function HistoricalTimelinePage() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.1 }}
-                        className="flex items-center gap-4 rounded-lg border border-slate-700/50 bg-slate-800/30 p-3"
+                        className="flex items-center gap-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3"
                       >
                         <div
                           className="h-12 w-12 rounded-full flex items-center justify-center text-sm font-bold"
@@ -703,8 +703,8 @@ export default function HistoricalTimelinePage() {
                           {tier.tier}
                         </div>
                         <div className="flex-1">
-                          <p className="font-semibold text-sm text-slate-200">{tier.desc}</p>
-                          <p className="text-xs text-slate-400">{tier.examples}</p>
+                          <p className="font-semibold text-sm text-platinum-200">{tier.desc}</p>
+                          <p className="text-xs text-platinum-400">{tier.examples}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -725,16 +725,16 @@ export default function HistoricalTimelinePage() {
                           <CardTitle className="text-lg">{event.title}</CardTitle>
                         </div>
                         <div className="text-right">
-                          <p className="text-xs text-slate-400">{event.period.start} - {event.period.end}</p>
-                          <p className="text-xs text-slate-500">Event #{event.eventNumber}</p>
+                          <p className="text-xs text-platinum-400">{event.period.start} - {event.period.end}</p>
+                          <p className="text-xs text-platinum-500">Event #{event.eventNumber}</p>
                         </div>
                       </div>
                     </CardHeader>
                     <CardContent className="pt-4">
-                      <p className="text-sm text-slate-300 mb-4">{event.overview}</p>
+                      <p className="text-sm text-platinum-300 mb-4">{event.overview}</p>
                       <div className="mb-3">
-                        <p className="text-xs font-semibold text-slate-400 mb-2">Key Facts:</p>
-                        <ul className="text-xs text-slate-400 space-y-1">
+                        <p className="text-xs font-semibold text-platinum-400 mb-2">Key Facts:</p>
+                        <ul className="text-xs text-platinum-400 space-y-1">
                           {event.keyFacts.slice(0, 3).map((fact, idx) => (
                             <li key={idx} className="flex items-start gap-2">
                               <span className="text-platinum">•</span>
@@ -743,12 +743,12 @@ export default function HistoricalTimelinePage() {
                           ))}
                         </ul>
                       </div>
-                      <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-700/50">
+                      <div className="flex items-center justify-between mt-4 pt-3 border-t border-platinum-700/50">
                         <div className="flex -space-x-2">
                           {event.sentiment.slice(0, 3).map((s, idx) => (
                             <div
                               key={idx}
-                              className="h-6 w-6 rounded-full flex items-center justify-center text-xs border border-slate-800"
+                              className="h-6 w-6 rounded-full flex items-center justify-center text-xs border border-platinum-800"
                               style={{ backgroundColor: s.valence > 0 ? `${CHART_COLORS.emerald}40` : s.valence < 0 ? `${CHART_COLORS.rose}40` : `${CHART_COLORS.platinum}40` }}
                               title={`${s.topic}: ${s.valence}`}
                             >

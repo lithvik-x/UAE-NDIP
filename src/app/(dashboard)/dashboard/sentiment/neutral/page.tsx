@@ -48,7 +48,7 @@ export default function NeutralSentimentPage() {
     <motion.div initial="initial" animate="animate" variants={staggerContainer} className="space-y-8 p-8 font-rajdhani">
       <motion.div variants={fadeInUp} className="flex items-start justify-between">
         <div>
-          <Badge className="mb-2 bg-gradient-to-r from-slate-500/20 to-gray-600/20 text-slate-400 border-slate-500/50">
+          <Badge className="mb-2 bg-gradient-to-r from-slate-500/20 to-gray-600/20 text-platinum-400 border-platinum-500/50">
             <Minus className="w-3 h-3 mr-1" />
             SENTIMENT
           </Badge>
@@ -86,7 +86,7 @@ export default function NeutralSentimentPage() {
                   <CardContent className="px-0 pb-0"><PieChart data={sentimentBreakdown} height={280} showLegend={true} /></CardContent>
                 </motion.div>
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
-                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Globe className="h-5 w-5 text-slate-500" />Context</CardTitle></CardHeader>
+                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Globe className="h-5 w-5 text-platinum-500" />Context</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0">
                     <div className="space-y-3 text-sm text-platinum-300">
                       <div className="flex items-center gap-2"><ThumbsUp className="h-4 w-4 text-platinum" />Government communications: predominantly neutral</div>
@@ -108,13 +108,13 @@ export default function NeutralSentimentPage() {
                 <div className="space-y-3">
                   {topicData.map((t: any, idx: number) => (
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
-                      className="rounded-lg bg-gradient-to-r from-slate-500/10 to-gray-600/5 p-4 border border-slate-500/30">
+                      className="rounded-lg bg-gradient-to-r from-slate-500/10 to-gray-600/5 p-4 border border-platinum-500/30">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-xl text-platinum-100 font-rajdhani">{t.topic}</span>
-                        <Badge variant="outline" className="border-slate-500/50 text-slate-400">{t.tone}</Badge>
+                        <Badge variant="outline" className="border-platinum-500/50 text-platinum-400">{t.tone}</Badge>
                       </div>
                       <p className="text-sm text-platinum-400 mb-1">Sentiment: {t.sentiment}</p>
-                      <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                      <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                         <motion.div initial={{ width: 0 }} animate={{ width: `${t.coverage}%` }} transition={{ delay: idx * 0.1 + 0.3, duration: 0.5 }}
                           className="h-full rounded-full bg-gradient-to-r from-slate-500 to-gray-500" />
                       </div>
@@ -140,7 +140,7 @@ export default function NeutralSentimentPage() {
                         <span className="text-lg font-bold text-platinum-100">{s.percentage}%</span>
                       </div>
                     </div>
-                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                       <motion.div initial={{ width: 0 }} animate={{ width: `${s.percentage}%` }} transition={{ delay: idx * 0.1 + 0.3, duration: 0.5 }}
                         className="h-full rounded-full bg-gradient-to-r from-slate-500 to-gray-500" />
                     </div>

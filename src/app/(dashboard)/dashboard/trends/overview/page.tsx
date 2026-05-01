@@ -122,7 +122,7 @@ export default function TrendsOverviewPage() {
         <div>
           <Badge variant="gold" className="mb-2">TRENDS INTELLIGENCE</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Trends Overview</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Cross-sector trend analysis, adoption metrics, and predictive foresight for the UAE
           </p>
         </div>
@@ -196,25 +196,25 @@ export default function TrendsOverviewPage() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex justify-between items-center">
-                        <span className="text-xs text-slate-400">UAE Relevance</span>
+                        <span className="text-xs text-platinum-400">UAE Relevance</span>
                         <Badge variant="gold">{foresightTrend.uaeRelevance.score}/100</Badge>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-xs text-slate-400">Adoption Rate</span>
+                        <span className="text-xs text-platinum-400">Adoption Rate</span>
                         <span className="text-sm font-medium text-gold">{foresightTrend.uaeAdoptionRate}%</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-xs text-slate-400">Credibility</span>
+                        <span className="text-xs text-platinum-400">Credibility</span>
                         <span className="text-sm font-medium text-emerald-400">{foresightTrend.credibility.score}%</span>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                <Card className="glass-card border-yellow-500/30">
+                <Card className="glass-card border-amber-500/30">
                   <CardHeader className="pb-2">
                     <CardTitle className="text-sm flex items-center gap-2">
-                      <AlertOctagon className="h-4 w-4 text-yellow-400" />
+                      <AlertOctagon className="h-4 w-4 text-amber-400" />
                       Crisis Indicators
                     </CardTitle>
                   </CardHeader>
@@ -222,15 +222,15 @@ export default function TrendsOverviewPage() {
                     <div className="space-y-2">
                       <div className="flex items-center gap-2 text-xs">
                         <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                        <span className="text-slate-300">Oil: 2.37M bpd (-35%)</span>
+                        <span className="text-platinum-300">Oil: 2.37M bpd (-35%)</span>
                       </div>
                       <div className="flex items-center gap-2 text-xs">
-                        <span className="w-2 h-2 rounded-full bg-yellow-500" />
-                        <span className="text-slate-300">GDP: 3.1% - 5.6% range</span>
+                        <span className="w-2 h-2 rounded-full bg-amber-500" />
+                        <span className="text-platinum-300">GDP: 3.1% - 5.6% range</span>
                       </div>
                       <div className="flex items-center gap-2 text-xs">
-                        <span className="w-2 h-2 rounded-full bg-yellow-500" />
-                        <span className="text-slate-300">Property: -7% annually</span>
+                        <span className="w-2 h-2 rounded-full bg-amber-500" />
+                        <span className="text-platinum-300">Property: -7% annually</span>
                       </div>
                     </div>
                   </CardContent>
@@ -247,15 +247,15 @@ export default function TrendsOverviewPage() {
                     <div className="space-y-2">
                       <div className="flex items-center gap-2 text-xs">
                         <span className="text-gold">•</span>
-                        <span className="text-slate-300">AI: $3.47B to $46.33B (43.9% CAGR)</span>
+                        <span className="text-platinum-300">AI: $3.47B to $46.33B (43.9% CAGR)</span>
                       </div>
                       <div className="flex items-center gap-2 text-xs">
                         <span className="text-gold">•</span>
-                        <span className="text-slate-300">Jobs: +1.03M by 2030</span>
+                        <span className="text-platinum-300">Jobs: +1.03M by 2030</span>
                       </div>
                       <div className="flex items-center gap-2 text-xs">
                         <span className="text-gold">•</span>
-                        <span className="text-slate-300">GDP: AED 3T target by 2031</span>
+                        <span className="text-platinum-300">GDP: AED 3T target by 2031</span>
                       </div>
                     </div>
                   </CardContent>
@@ -264,7 +264,7 @@ export default function TrendsOverviewPage() {
 
               {foresightTrend.keyFindings && foresightTrend.keyFindings.length > 0 && (
                 <div className="mt-6">
-                  <h4 className="text-sm font-medium text-slate-200 mb-3">Key Findings</h4>
+                  <h4 className="text-sm font-medium text-platinum-200 mb-3">Key Findings</h4>
                   <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     {foresightTrend.keyFindings.slice(0, 4).map((finding, idx) => (
                       <motion.div
@@ -272,11 +272,11 @@ export default function TrendsOverviewPage() {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.1 }}
-                        className="flex items-start gap-3 p-3 rounded-lg bg-slate-800/50 border border-slate-700/50"
+                        className="flex items-start gap-3 p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50"
                       >
                         <div className="flex-1 min-w-0">
-                          <p className="text-xs font-medium text-slate-200 truncate">{finding.finding}</p>
-                          <p className="text-xs text-slate-400 mt-1 truncate">{finding.metric}</p>
+                          <p className="text-xs font-medium text-platinum-200 truncate">{finding.finding}</p>
+                          <p className="text-xs text-platinum-400 mt-1 truncate">{finding.metric}</p>
                         </div>
                         <Badge
                           variant={finding.alert === 'RED' ? 'destructive' : finding.alert === 'YELLOW' ? 'warning' : 'secondary'}
@@ -352,21 +352,21 @@ export default function TrendsOverviewPage() {
                       <div className="flex items-center justify-between rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30">
                         <div className="flex items-center gap-3">
                           <Shield className="h-6 w-6 text-emerald-400" />
-                          <span className="font-medium text-slate-200">Green Alerts</span>
+                          <span className="font-medium text-platinum-200">Green Alerts</span>
                         </div>
                         <span className="text-2xl font-bold text-emerald-400">{greenAlerts}</span>
                       </div>
-                      <div className="flex items-center justify-between rounded-lg bg-yellow-500/10 p-4 border border-yellow-500/30">
+                      <div className="flex items-center justify-between rounded-lg bg-amber-500/10 p-4 border border-amber-500/30">
                         <div className="flex items-center gap-3">
-                          <AlertTriangle className="h-6 w-6 text-yellow-400" />
-                          <span className="font-medium text-slate-200">Yellow Alerts</span>
+                          <AlertTriangle className="h-6 w-6 text-amber-400" />
+                          <span className="font-medium text-platinum-200">Yellow Alerts</span>
                         </div>
-                        <span className="text-2xl font-bold text-yellow-400">{yellowAlerts}</span>
+                        <span className="text-2xl font-bold text-amber-400">{yellowAlerts}</span>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-red-500/10 p-4 border border-red-500/30">
                         <div className="flex items-center gap-3">
                           <AlertCircle className="h-6 w-6 text-red-400" />
-                          <span className="font-medium text-slate-200">Red Alerts</span>
+                          <span className="font-medium text-platinum-200">Red Alerts</span>
                         </div>
                         <span className="text-2xl font-bold text-red-400">{redAlerts}</span>
                       </div>
@@ -405,7 +405,7 @@ export default function TrendsOverviewPage() {
                   <Card key={idx} className="glass-card">
                     <CardContent className="p-4">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="font-medium text-slate-200 text-sm">{trend.name}</span>
+                        <span className="font-medium text-platinum-200 text-sm">{trend.name}</span>
                         <Badge
                           variant={trend.alertLevel === 'GREEN' ? 'success' : trend.alertLevel === 'YELLOW' ? 'warning' : 'destructive'}
                           className="text-xs"
@@ -414,7 +414,7 @@ export default function TrendsOverviewPage() {
                         </Badge>
                       </div>
                       <div className="space-y-2">
-                        <div className="flex justify-between text-xs text-slate-400">
+                        <div className="flex justify-between text-xs text-platinum-400">
                           <span>UAE Adoption</span>
                           <span>{trend.uaeAdoptionRate}%</span>
                         </div>
@@ -445,8 +445,8 @@ export default function TrendsOverviewPage() {
                       {trendsData.filter(t => t.alertLevel === 'RED').map((trend, idx) => (
                         <div key={idx} className="flex items-start justify-between rounded-lg bg-red-500/10 p-4 border border-red-500/30">
                           <div className="flex-1">
-                            <p className="font-medium text-slate-200">{trend.name}</p>
-                            <p className="mt-1 text-sm text-slate-400">{trend.description?.slice(0, 150)}...</p>
+                            <p className="font-medium text-platinum-200">{trend.name}</p>
+                            <p className="mt-1 text-sm text-platinum-400">{trend.description?.slice(0, 150)}...</p>
                           </div>
                           <Badge variant="destructive" className="ml-4">RED</Badge>
                         </div>
@@ -457,9 +457,9 @@ export default function TrendsOverviewPage() {
               )}
 
               {trendsData.filter(t => t.alertLevel === 'YELLOW').length > 0 && (
-                <Card className="glass-card border-yellow-500/50">
+                <Card className="glass-card border-amber-500/50">
                   <CardHeader className="pb-2">
-                    <CardTitle className="flex items-center gap-2 text-lg text-yellow-400">
+                    <CardTitle className="flex items-center gap-2 text-lg text-amber-400">
                       <AlertTriangle className="h-5 w-5" />
                       Yellow Alert Trends
                     </CardTitle>
@@ -467,10 +467,10 @@ export default function TrendsOverviewPage() {
                   <CardContent>
                     <div className="space-y-3">
                       {trendsData.filter(t => t.alertLevel === 'YELLOW').map((trend, idx) => (
-                        <div key={idx} className="flex items-start justify-between rounded-lg bg-yellow-500/10 p-4 border border-yellow-500/30">
+                        <div key={idx} className="flex items-start justify-between rounded-lg bg-amber-500/10 p-4 border border-amber-500/30">
                           <div className="flex-1">
-                            <p className="font-medium text-slate-200">{trend.name}</p>
-                            <p className="mt-1 text-sm text-slate-400">UAE Adoption: {trend.uaeAdoptionRate}%</p>
+                            <p className="font-medium text-platinum-200">{trend.name}</p>
+                            <p className="mt-1 text-sm text-platinum-400">UAE Adoption: {trend.uaeAdoptionRate}%</p>
                           </div>
                           <Badge variant="warning" className="ml-4">YELLOW</Badge>
                         </div>
@@ -494,7 +494,7 @@ export default function TrendsOverviewPage() {
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30">
                           <div className="flex items-center gap-3">
                             <TrendingUp className="h-5 w-5 text-emerald-400" />
-                            <span className="font-medium text-slate-200">{trend.name}</span>
+                            <span className="font-medium text-platinum-200">{trend.name}</span>
                           </div>
                           <span className="text-sm text-emerald-400">{trend.uaeAdoptionRate}% adoption</span>
                         </div>
@@ -520,7 +520,7 @@ export default function TrendsOverviewPage() {
                   <CardContent>
                     <div className="space-y-4">
                       {trend.forecasts?.slice(0, 3).map((forecast, fIdx) => (
-                        <div key={fIdx} className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                        <div key={fIdx} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div className="flex items-center justify-between mb-2">
                             <Badge
                               variant={forecast.scenario === 'optimistic' ? 'success' : forecast.scenario === 'baseline' ? 'default' : 'destructive'}
@@ -528,14 +528,14 @@ export default function TrendsOverviewPage() {
                             >
                               {forecast.scenario}
                             </Badge>
-                            <span className="text-sm text-slate-400">
+                            <span className="text-sm text-platinum-400">
                               Probability: {Math.round(forecast.probability * 100)}%
                             </span>
                           </div>
-                          <p className="text-sm text-slate-300 mb-2">Timeline: {forecast.timeline}</p>
+                          <p className="text-sm text-platinum-300 mb-2">Timeline: {forecast.timeline}</p>
                           <div className="space-y-1">
                             {forecast.indicators?.slice(0, 3).map((indicator, iIdx) => (
-                              <p key={iIdx} className="text-xs text-slate-400 flex items-start gap-2">
+                              <p key={iIdx} className="text-xs text-platinum-400 flex items-start gap-2">
                                 <span className="text-gold">•</span>
                                 {indicator}
                               </p>
@@ -579,10 +579,10 @@ export default function TrendsOverviewPage() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className="p-3 rounded-lg bg-slate-800/50 border border-slate-700/50"
+                        className="p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50"
                       >
-                        <p className="text-sm font-medium text-slate-200">{vision.name}</p>
-                        <p className="text-xs text-slate-400 mt-1">{vision.target}</p>
+                        <p className="text-sm font-medium text-platinum-200">{vision.name}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{vision.target}</p>
                         <div className="mt-2 flex items-center gap-2">
                           <Progress value={parseInt(vision.progress)} className="h-1 flex-1" />
                           <span className="text-xs text-gold">{vision.progress}</span>
@@ -605,12 +605,12 @@ export default function TrendsOverviewPage() {
                   <CardContent>
                     <div className="space-y-2">
                       <div className="flex justify-between">
-                        <span className="text-xs text-slate-400">Probability</span>
+                        <span className="text-xs text-platinum-400">Probability</span>
                         <Badge variant="success" className="text-xs">78%</Badge>
                       </div>
                       <div className="space-y-1 mt-3">
                         {['GDP growth 5.6%', 'AI market $46.33B by 2030', 'Workforce +12.1%', 'FDI $45B'].map((item, i) => (
-                          <p key={i} className="text-xs text-slate-300 flex items-center gap-2">
+                          <p key={i} className="text-xs text-platinum-300 flex items-center gap-2">
                             <span className="text-emerald-400">✓</span>
                             {item}
                           </p>
@@ -630,12 +630,12 @@ export default function TrendsOverviewPage() {
                   <CardContent>
                     <div className="space-y-2">
                       <div className="flex justify-between">
-                        <span className="text-xs text-slate-400">Probability</span>
+                        <span className="text-xs text-platinum-400">Probability</span>
                         <Badge variant="secondary" className="text-xs">65%</Badge>
                       </div>
                       <div className="space-y-1 mt-3">
                         {['AI $46-91B by 2030/31', 'Digital economy 20%', 'Population 13.6M', 'Clean energy 14 GW'].map((item, i) => (
-                          <p key={i} className="text-xs text-slate-300 flex items-center gap-2">
+                          <p key={i} className="text-xs text-platinum-300 flex items-center gap-2">
                             <span className="text-platinum-400">•</span>
                             {item}
                           </p>
@@ -655,12 +655,12 @@ export default function TrendsOverviewPage() {
                   <CardContent>
                     <div className="space-y-2">
                       <div className="flex justify-between">
-                        <span className="text-xs text-slate-400">Probability</span>
+                        <span className="text-xs text-platinum-400">Probability</span>
                         <Badge variant="destructive" className="text-xs">35%</Badge>
                       </div>
                       <div className="space-y-1 mt-3">
                         {['Oil 2.37M bpd (-35%)', 'Property -7% annually', 'GDP 3.1% (IMF)', 'Safe haven at risk'].map((item, i) => (
-                          <p key={i} className="text-xs text-slate-300 flex items-center gap-2">
+                          <p key={i} className="text-xs text-platinum-300 flex items-center gap-2">
                             <span className="text-red-400">!</span>
                             {item}
                           </p>
@@ -695,17 +695,17 @@ export default function TrendsOverviewPage() {
                         transition={{ delay: idx * 0.1 }}
                         className={`p-3 rounded-lg border ${
                           item.severity === 'critical' ? 'bg-red-500/10 border-red-500/30' :
-                          item.severity === 'warning' ? 'bg-yellow-500/10 border-yellow-500/30' :
+                          item.severity === 'warning' ? 'bg-amber-500/10 border-amber-500/30' :
                           'bg-emerald-500/10 border-emerald-500/30'
                         }`}
                       >
-                        <p className="text-xs text-slate-400">{item.metric}</p>
+                        <p className="text-xs text-platinum-400">{item.metric}</p>
                         <p className={`text-lg font-bold ${
                           item.severity === 'critical' ? 'text-red-400' :
-                          item.severity === 'warning' ? 'text-yellow-400' :
+                          item.severity === 'warning' ? 'text-amber-400' :
                           'text-emerald-400'
                         }`}>{item.value}</p>
-                        <p className="text-xs text-slate-400">{item.change}</p>
+                        <p className="text-xs text-platinum-400">{item.change}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -730,10 +730,10 @@ export default function TrendsOverviewPage() {
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="flex items-start gap-2 p-2 rounded bg-slate-800/30"
+                          className="flex items-start gap-2 p-2 rounded bg-platinum-800/30"
                         >
                           <span className="text-gold shrink-0">•</span>
-                          <span className="text-xs text-slate-300">{driver}</span>
+                          <span className="text-xs text-platinum-300">{driver}</span>
                         </motion.div>
                       ))
                     })()}
@@ -757,13 +757,13 @@ export default function TrendsOverviewPage() {
                       { tier: 'T2', sources: ['GVR', 'LinkedIn', 'TechSci'], color: 'platinum' },
                       { tier: 'T3', sources: ['Horse & Houses', 'Chainex'], color: 'yellow' },
                     ].map((group, idx) => (
-                      <div key={idx} className="p-3 rounded bg-slate-800/30">
+                      <div key={idx} className="p-3 rounded bg-platinum-800/30">
                         <Badge variant={group.color === 'emerald' ? 'success' : group.color === 'blue' ? 'default' : 'secondary'} className="mb-2">
                           Tier {group.tier}
                         </Badge>
                         <div className="space-y-1">
                           {group.sources.map((source, i) => (
-                            <p key={i} className="text-xs text-slate-400">{source}</p>
+                            <p key={i} className="text-xs text-platinum-400">{source}</p>
                           ))}
                         </div>
                       </div>
@@ -799,15 +799,15 @@ export default function TrendsOverviewPage() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className="p-3 rounded-lg bg-slate-800/50 border border-slate-700/50"
+                        className="p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50"
                       >
-                        <p className="text-xs text-slate-400 truncate">{kpi.kpi}</p>
+                        <p className="text-xs text-platinum-400 truncate">{kpi.kpi}</p>
                         <p className={`text-lg font-bold ${
                           kpi.trend.includes('+') ? 'text-emerald-400' :
                           kpi.trend.includes('New') || kpi.trend.includes('Increased') ? 'text-gold' :
-                          'text-slate-200'
+                          'text-platinum-200'
                         }`}>{kpi.currentValue}</p>
-                        <p className="text-xs text-slate-500 truncate">{kpi.trend}</p>
+                        <p className="text-xs text-platinum-500 truncate">{kpi.trend}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -831,7 +831,7 @@ export default function TrendsOverviewPage() {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.03 }}
-                        className="flex items-start gap-3 p-3 rounded-lg bg-slate-800/30 border border-slate-700/30"
+                        className="flex items-start gap-3 p-3 rounded-lg bg-platinum-800/30 border border-platinum-700/30"
                       >
                         <Badge
                           variant={law.status === 'Active' ? 'success' : law.status === 'Upcoming' ? 'warning' : 'secondary'}
@@ -840,9 +840,9 @@ export default function TrendsOverviewPage() {
                           {law.status}
                         </Badge>
                         <div className="min-w-0 flex-1">
-                          <p className="text-sm font-medium text-slate-200 truncate">{law.lawName}</p>
-                          <p className="text-xs text-slate-400">{law.number}</p>
-                          <p className="text-xs text-slate-500 mt-1">Effective: {law.effectiveDate}</p>
+                          <p className="text-sm font-medium text-platinum-200 truncate">{law.lawName}</p>
+                          <p className="text-xs text-platinum-400">{law.number}</p>
+                          <p className="text-xs text-platinum-500 mt-1">Effective: {law.effectiveDate}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -867,17 +867,17 @@ export default function TrendsOverviewPage() {
                         initial={{ opacity: 0, y: 5 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className="flex items-center justify-between p-3 rounded-lg bg-slate-800/30 border border-slate-700/30"
+                        className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/30 border border-platinum-700/30"
                       >
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm font-medium text-slate-200 truncate">{fine.regulation}</p>
-                          <p className="text-xs text-slate-400">{fine.notes}</p>
+                          <p className="text-sm font-medium text-platinum-200 truncate">{fine.regulation}</p>
+                          <p className="text-xs text-platinum-400">{fine.notes}</p>
                         </div>
                         <div className="text-right shrink-0 ml-4">
                           <p className="text-sm font-bold text-rose-400">
                             {fine.currency} {fine.maxFine.toLocaleString()}
                           </p>
-                          <p className="text-xs text-slate-500">max fine</p>
+                          <p className="text-xs text-platinum-500">max fine</p>
                         </div>
                       </motion.div>
                     ))}
@@ -902,18 +902,18 @@ export default function TrendsOverviewPage() {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.03 }}
-                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-800/30"
+                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-platinum-800/30"
                       >
                         <div className={`w-2 h-2 rounded-full shrink-0 ${
                           event.status === 'Passed' ? 'bg-emerald-400' :
                           event.status === 'Upcoming' ? 'bg-gold' :
-                          'bg-yellow-400'
+                          'bg-amber-400'
                         }`} />
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm text-slate-200 truncate">{event.event}</p>
+                          <p className="text-sm text-platinum-200 truncate">{event.event}</p>
                         </div>
                         <div className="text-right shrink-0">
-                          <p className="text-xs text-slate-400">{event.date}</p>
+                          <p className="text-xs text-platinum-400">{event.date}</p>
                           <Badge
                             variant={event.status === 'Passed' ? 'success' : event.status === 'Upcoming' ? 'warning' : 'secondary'}
                             className="text-xs mt-1"
@@ -931,7 +931,7 @@ export default function TrendsOverviewPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Globe className="h-5 w-5 text-blue-400" />
+                    <Globe className="h-5 w-5 text-navy-400" />
                     Regulatory Bodies
                   </CardTitle>
                   <CardDescription>Key UAE regulatory authorities and jurisdictions</CardDescription>
@@ -944,15 +944,15 @@ export default function TrendsOverviewPage() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: idx * 0.03 }}
-                        className="p-3 rounded-lg bg-slate-800/30 border border-slate-700/30"
+                        className="p-3 rounded-lg bg-platinum-800/30 border border-platinum-700/30"
                       >
                         <div className="flex items-start gap-2">
                           <Badge variant="outline" className="shrink-0 text-xs">
                             {body.jurisdiction}
                           </Badge>
                           <div className="min-w-0 flex-1">
-                            <p className="text-sm font-medium text-slate-200 truncate">{body.entity}</p>
-                            <p className="text-xs text-slate-400 mt-1 line-clamp-2">{body.role}</p>
+                            <p className="text-sm font-medium text-platinum-200 truncate">{body.entity}</p>
+                            <p className="text-xs text-platinum-400 mt-1 line-clamp-2">{body.role}</p>
                           </div>
                         </div>
                       </motion.div>
@@ -978,10 +978,10 @@ export default function TrendsOverviewPage() {
                         initial={{ opacity: 0, y: 5 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className="p-4 rounded-lg bg-slate-800/30 border border-slate-700/30"
+                        className="p-4 rounded-lg bg-platinum-800/30 border border-platinum-700/30"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="text-sm font-medium text-slate-200">{topic.topic}</h4>
+                          <h4 className="text-sm font-medium text-platinum-200">{topic.topic}</h4>
                           <Badge
                             variant={
                               topic.overallSentiment.includes('POSITIVE') ? 'success' :
@@ -993,7 +993,7 @@ export default function TrendsOverviewPage() {
                             {topic.overallSentiment}
                           </Badge>
                         </div>
-                        <p className="text-xs text-slate-400 mb-2">{topic.analysis}</p>
+                        <p className="text-xs text-platinum-400 mb-2">{topic.analysis}</p>
                         <div className="flex flex-wrap gap-1">
                           {topic.sources.slice(0, 3).map((source, sIdx) => (
                             <Badge key={sIdx} variant="outline" className="text-xs">
@@ -1029,7 +1029,7 @@ export default function TrendsOverviewPage() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className="p-3 rounded-lg bg-slate-800/30 border border-slate-700/30"
+                        className="p-3 rounded-lg bg-platinum-800/30 border border-platinum-700/30"
                       >
                         <Badge
                           variant={group.color === 'emerald' ? 'success' : group.color === 'blue' ? 'default' : 'secondary'}
@@ -1039,7 +1039,7 @@ export default function TrendsOverviewPage() {
                         </Badge>
                         <div className="space-y-1">
                           {group.sources.map((source, i) => (
-                            <p key={i} className="text-xs text-slate-400">{source}</p>
+                            <p key={i} className="text-xs text-platinum-400">{source}</p>
                           ))}
                         </div>
                       </motion.div>
@@ -1065,12 +1065,12 @@ export default function TrendsOverviewPage() {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.08 }}
-                        className="p-4 rounded-lg bg-slate-800/30 border border-gold/20"
+                        className="p-4 rounded-lg bg-platinum-800/30 border border-gold/20"
                       >
                         <h4 className="text-sm font-bold text-gold mb-2">{trend.trendName}</h4>
                         <div className="space-y-1">
                           {trend.keyPoints.slice(0, 4).map((point, pIdx) => (
-                            <p key={pIdx} className="text-xs text-slate-300 flex items-start gap-2">
+                            <p key={pIdx} className="text-xs text-platinum-300 flex items-start gap-2">
                               <span className="text-gold shrink-0">•</span>
                               <span>{point}</span>
                             </p>
@@ -1216,7 +1216,7 @@ export default function TrendsOverviewPage() {
                   >
                     <Tv2 className="h-8 w-8 text-gold mb-2" />
                     <p className="text-2xl font-bold text-gold">${mediaIndustryExtendedData.streaming.globalVideoStreamingMarket}B</p>
-                    <p className="text-sm text-slate-400">Video Streaming Market</p>
+                    <p className="text-sm text-platinum-400">Video Streaming Market</p>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
@@ -1224,7 +1224,7 @@ export default function TrendsOverviewPage() {
                   >
                     <Tv2 className="h-8 w-8 text-navy mb-2" />
                     <p className="text-2xl font-bold text-navy">${mediaIndustryExtendedData.streaming.USCTVAdSpending}B</p>
-                    <p className="text-sm text-slate-400">US CTV Ad Spending</p>
+                    <p className="text-sm text-platinum-400">US CTV Ad Spending</p>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
@@ -1232,7 +1232,7 @@ export default function TrendsOverviewPage() {
                   >
                     <TrendingUp className="h-8 w-8 text-emerald mb-2" />
                     <p className="text-2xl font-bold text-emerald">+{mediaIndustryExtendedData.streaming.USCTVAdSpendingGrowth}%</p>
-                    <p className="text-sm text-slate-400">CTV Growth YoY</p>
+                    <p className="text-sm text-platinum-400">CTV Growth YoY</p>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
@@ -1240,7 +1240,7 @@ export default function TrendsOverviewPage() {
                   >
                     <Users className="h-8 w-8 text-platinum mb-2" />
                     <p className="text-2xl font-bold text-platinum">{mediaIndustryExtendedData.streaming.globalSVODSubscriptions}B</p>
-                    <p className="text-sm text-slate-400">SVOD Subscriptions</p>
+                    <p className="text-sm text-platinum-400">SVOD Subscriptions</p>
                   </motion.div>
                 </div>
               </div>
@@ -1260,15 +1260,15 @@ export default function TrendsOverviewPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex justify-between items-center">
-                        <span className="text-slate-400">Global Gaming Market</span>
+                        <span className="text-platinum-400">Global Gaming Market</span>
                         <span className="text-xl font-bold text-emerald">${mediaIndustryExtendedData.gaming.globalGamingMarket}B+</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-slate-400">In-Game Advertising</span>
+                        <span className="text-platinum-400">In-Game Advertising</span>
                         <span className="text-xl font-bold text-emerald">${mediaIndustryExtendedData.gaming.inGameAdvertising}B</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-slate-400">Gaming Employment</span>
+                        <span className="text-platinum-400">Gaming Employment</span>
                         <span className="text-xl font-bold text-emerald">{mediaIndustryExtendedData.gaming.gamingEmployment}M+ roles</span>
                       </div>
                     </div>
@@ -1286,15 +1286,15 @@ export default function TrendsOverviewPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex justify-between items-center">
-                        <span className="text-slate-400">AI in M&E Market (2034)</span>
+                        <span className="text-platinum-400">AI in M&E Market (2034)</span>
                         <span className="text-xl font-bold text-rose">${mediaIndustryExtendedData.ai.aiInMediaMarket}B</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-slate-400">Creators Using GenAI</span>
+                        <span className="text-platinum-400">Creators Using GenAI</span>
                         <span className="text-xl font-bold text-rose">{mediaIndustryExtendedData.ai.creatorsUsingGenAI}%</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-slate-400">AI Content Projection</span>
+                        <span className="text-platinum-400">AI Content Projection</span>
                         <span className="text-xl font-bold text-rose">{mediaIndustryExtendedData.ai.aiGeneratedOnlineContentProjection}%</span>
                       </div>
                     </div>
@@ -1315,16 +1315,16 @@ export default function TrendsOverviewPage() {
                     className={`rounded-lg p-4 border ${
                       item.sentiment === 'Very Positive' ? 'bg-emerald-500/10 border-emerald-500/30' :
                       item.sentiment === 'Positive' ? 'bg-gold/10 border-gold/30' :
-                      item.sentiment === 'Mixed' ? 'bg-yellow-500/10 border-yellow-500/30' :
+                      item.sentiment === 'Mixed' ? 'bg-amber-500/10 border-amber-500/30' :
                       'bg-red-500/10 border-red-500/30'
                     }`}
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex items-start gap-3">
-                        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-800 text-xs font-bold">
+                        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-platinum-800 text-xs font-bold">
                           {item.priority}
                         </span>
-                        <p className="text-sm text-slate-200">{item.takeaway}</p>
+                        <p className="text-sm text-platinum-200">{item.takeaway}</p>
                       </div>
                       <Badge
                         variant={item.uaeRelevance === 'Critical' ? 'destructive' : 'outline'}

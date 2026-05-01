@@ -181,7 +181,7 @@ export function CovidOverview({ data }: CovidOverviewProps) {
               <Users className="w-3 h-3 mr-1" />
               Movement Permits Required
             </Badge>
-            <Badge variant="outline" className="border-sky-500/50 text-sky">
+            <Badge variant="outline" className="border-cyan-500/50 text-sky">
               <Clock className="w-3 h-3 mr-1" />
               {lockdownDetails.nationalSterilizationProgram}
             </Badge>

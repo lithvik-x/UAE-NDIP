@@ -83,7 +83,7 @@ export default function OilDiscoveryPage() {
       case 'critical':
         return <Badge variant="destructive" className="text-xs">Critical</Badge>
       case 'major':
-        return <Badge variant="warning" className="text-xs bg-yellow-500/20 text-yellow-400 border-yellow-500/50">Major</Badge>
+        return <Badge variant="warning" className="text-xs bg-amber-500/20 text-amber-400 border-amber-500/50">Major</Badge>
       default:
         return <Badge variant="outline" className="text-xs">Minor</Badge>
     }
@@ -96,7 +96,7 @@ export default function OilDiscoveryPage() {
         <div>
           <Badge variant="gold" className="mb-2">H-PRE</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Oil Discovery & Development</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             The discovery and development of petroleum resources - Transforming a region (1935-1971)
           </p>
         </div>
@@ -158,7 +158,7 @@ export default function OilDiscoveryPage() {
                   <CardTitle className="text-lg">About This Era</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-300 leading-relaxed">
+                  <p className="text-platinum-300 leading-relaxed">
                     The discovery of oil in the Arabian Gulf region between 1935 and 1971 transformed what were
                     once humble fishing villages and pearl diving centers into some of the world's wealthiest
                     nations. This era chronicles the arrival of Western oil companies, the negotiation of
@@ -196,12 +196,12 @@ export default function OilDiscoveryPage() {
                     <ScrollArea className="h-[200px]">
                       <div className="space-y-3">
                         {data.policyOutcomes?.filter(p => p.policy.toLowerCase().includes('oil') || p.policy.includes('Petroleum')).map((policy, idx) => (
-                          <div key={idx} className="rounded-lg bg-slate-800/50 p-3">
+                          <div key={idx} className="rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center justify-between mb-1">
                               <span className="text-sm font-medium text-gold">{policy.policy}</span>
                               <Badge variant="outline" className="text-xs">{policy.year}</Badge>
                             </div>
-                            <p className="text-xs text-slate-400">{policy.impact}</p>
+                            <p className="text-xs text-platinum-400">{policy.impact}</p>
                           </div>
                         ))}
                       </div>
@@ -241,23 +241,23 @@ export default function OilDiscoveryPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-300 leading-relaxed mb-4">
+                  <p className="text-platinum-300 leading-relaxed mb-4">
                     ADMA struck oil at the Umm Shaif offshore field at approximately 8,755 feet depth.
                     This discovery marked a turning point in the country's history, transforming Abu Dhabi
                     from a small fishing village to a wealthy emirate with global significance.
                   </p>
                   <div className="grid gap-4 sm:grid-cols-3">
-                    <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                       <div className="text-2xl font-bold text-gold">8,755 ft</div>
-                      <div className="text-xs text-slate-400">Depth</div>
+                      <div className="text-xs text-platinum-400">Depth</div>
                     </div>
-                    <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                       <div className="text-2xl font-bold text-gold">ADMA</div>
-                      <div className="text-xs text-slate-400">Company</div>
+                      <div className="text-xs text-platinum-400">Company</div>
                     </div>
-                    <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                       <div className="text-2xl font-bold text-gold">Offshore</div>
-                      <div className="text-xs text-slate-400">Location</div>
+                      <div className="text-xs text-platinum-400">Location</div>
                     </div>
                   </div>
                 </CardContent>
@@ -275,11 +275,11 @@ export default function OilDiscoveryPage() {
                       { challenge: 'Desert Logistics', detail: 'Supplying remote drilling sites' },
                       { challenge: 'Marine Conditions', detail: 'Shallow Gulf waters and storms' },
                     ].map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3">
+                      <div key={idx} className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3">
                         <Cog className="h-5 w-5 text-gold shrink-0 mt-0.5" />
                         <div>
-                          <div className="font-medium text-slate-200">{item.challenge}</div>
-                          <div className="text-xs text-slate-400">{item.detail}</div>
+                          <div className="font-medium text-platinum-200">{item.challenge}</div>
+                          <div className="text-xs text-platinum-400">{item.detail}</div>
                         </div>
                       </div>
                     ))}
@@ -305,8 +305,8 @@ export default function OilDiscoveryPage() {
                         <div className="flex items-center gap-2 mb-1">
                           <span className="text-sm font-mono text-gold">{milestone.year}</span>
                         </div>
-                        <h3 className="text-lg font-bold text-slate-100 mb-1">{milestone.event}</h3>
-                        <p className="text-sm text-slate-400">{milestone.detail}</p>
+                        <h3 className="text-lg font-bold text-platinum-100 mb-1">{milestone.event}</h3>
+                        <p className="text-sm text-platinum-400">{milestone.detail}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -326,7 +326,7 @@ export default function OilDiscoveryPage() {
                   const yearB = parseInt(b.date.replace(/\D/g, '')) || 0
                   return yearA - yearB
                 }).map((event, idx) => (
-                  <div key={idx} className="flex items-start gap-4 rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70">
+                  <div key={idx} className="flex items-start gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/20 text-gold shrink-0">
                       <Droplet className="h-6 w-6" />
                     </div>
@@ -335,8 +335,8 @@ export default function OilDiscoveryPage() {
                         <span className="text-lg font-mono font-bold text-gold">{event.date}</span>
                         {getSignificanceBadge(event.significance)}
                       </div>
-                      <h3 className="text-xl font-bold text-slate-100 mb-2">{event.title}</h3>
-                      <p className="text-slate-400 leading-relaxed">{event.description}</p>
+                      <h3 className="text-xl font-bold text-platinum-100 mb-2">{event.title}</h3>
+                      <p className="text-platinum-400 leading-relaxed">{event.description}</p>
                       {event.entities && event.entities.length > 0 && (
                         <div className="mt-3 flex flex-wrap gap-2">
                           {event.entities.map((entity, eIdx) => (
@@ -347,7 +347,7 @@ export default function OilDiscoveryPage() {
                       {event.outcome && (
                         <div className="mt-3 rounded-lg bg-emerald-500/10 p-2 border border-emerald-500/30">
                           <span className="text-xs text-emerald-400 font-medium">Outcome: </span>
-                          <span className="text-xs text-slate-300">{event.outcome}</span>
+                          <span className="text-xs text-platinum-300">{event.outcome}</span>
                         </div>
                       )}
                     </div>

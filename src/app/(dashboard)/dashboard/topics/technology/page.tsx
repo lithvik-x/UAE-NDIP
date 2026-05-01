@@ -280,15 +280,15 @@ export default function TechnologyInnovationPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                       <span className="text-platinum-300">Target Contribution</span>
                       <span className="text-xl font-bold text-gold">$91 Billion</span>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                       <span className="text-platinum-300">Non-oil GDP Target</span>
                       <span className="text-xl font-bold text-emerald">20%</span>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                       <span className="text-platinum-300">Minister Appointed</span>
                       <span className="text-xl font-bold text-platinum">2017</span>
                     </div>
@@ -306,7 +306,7 @@ export default function TechnologyInnovationPage() {
                   <CardContent>
                     <div className="space-y-3">
                       {data.majorTechnologyInvestments.slice(0, 5).map((inv, idx) => (
-                        <div key={idx} className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                        <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                           <div>
                             <p className="font-medium text-platinum-200">{inv.investment}</p>
                             <p className="text-xs text-platinum-500">{inv.investors}</p>
@@ -330,7 +330,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
                     {data.techRankings.map((rank, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-4 bg-slate-800/50 rounded-xl">
+                      <div key={idx} className="flex items-center justify-between p-4 bg-platinum-800/50 rounded-xl">
                         <span className="text-platinum-300">{rank.index}</span>
                         <Badge variant="emerald" className="text-lg px-3 py-1">{rank.ranking}</Badge>
                       </div>
@@ -399,7 +399,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
                     {data.aiStrategyMetrics.slice(0, 8).map((metric, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-300 text-sm">{metric.metric}</span>
                         <Badge variant="gold" className="text-xs">{metric.value}</Badge>
                       </div>
@@ -419,7 +419,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {data.aiInvestmentTimeline.map((event, idx) => (
-                      <div key={idx} className="flex items-start gap-4 p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex items-start gap-4 p-3 bg-platinum-800/50 rounded-lg">
                         <div className="w-20 shrink-0 text-center">
                           <span className="text-sm font-bold text-gold">{event.date.split(' ')[0]}</span>
                           <span className="text-xs text-platinum-500 block">{event.date.split(' ')[1]}</span>
@@ -453,7 +453,7 @@ export default function TechnologyInnovationPage() {
                     </div>
                     <div className="grid gap-2 md:grid-cols-2">
                       {data.aiEthicsRegulation.map((aspect, idx) => (
-                        <div key={idx} className="flex items-center justify-between p-2 bg-slate-800/50 rounded">
+                        <div key={idx} className="flex items-center justify-between p-2 bg-platinum-800/50 rounded">
                           <span className="text-platinum-400 text-sm">{aspect.aspect}:</span>
                           <span className="text-platinum-200 text-sm text-right">{aspect.details}</span>
                         </div>
@@ -500,29 +500,29 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-3">
-                      <div className="flex justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400">Founded</span>
                         <span className="font-bold text-gold">{data.g42Overview.founded}</span>
                       </div>
-                      <div className="flex justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400">Headquarters</span>
                         <span className="font-bold text-platinum">{data.g42Overview.headquarters}</span>
                       </div>
-                      <div className="flex justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400">Chairman</span>
                         <span className="font-bold text-platinum">{data.g42Overview.chairman}</span>
                       </div>
                     </div>
                     <div className="space-y-3">
-                      <div className="flex justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400">CEO</span>
                         <span className="font-bold text-platinum">{data.g42Overview.ceo}</span>
                       </div>
-                      <div className="flex justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400">Employees</span>
                         <span className="font-bold text-emerald">{data.g42Overview.employees}</span>
                       </div>
-                      <div className="flex justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400">Business Areas</span>
                         <span className="font-bold text-navy text-right text-sm">{data.g42Overview.businessAreas}</span>
                       </div>
@@ -542,7 +542,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                     {data.g42Subsidiaries.map((sub, idx) => (
-                      <div key={idx} className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <div key={idx} className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="font-bold text-gold">{sub.name}</p>
                         <p className="text-sm text-platinum-400 mt-1">{sub.focusArea}</p>
                       </div>
@@ -562,7 +562,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {data.g42Partnerships.map((partnership, idx) => (
-                      <div key={idx} className="flex items-start justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex items-start justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <div>
                           <p className="font-medium text-platinum-200">{partnership.partnership}</p>
                           <p className="text-xs text-platinum-500">{partnership.details}</p>
@@ -616,7 +616,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
                     {data.hopeProbeMetrics.map((metric, idx) => (
-                      <div key={idx} className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400 text-sm">{metric.attribute}</span>
                         <span className="font-bold text-gold text-sm text-right">{metric.value}</span>
                       </div>
@@ -636,7 +636,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
                     {data.marsMissionLeaders.map((leader, idx) => (
-                      <div key={idx} className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <div key={idx} className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="text-sm text-platinum-400">{leader.role}</p>
                         <p className="text-xl font-bold text-gold mt-1">{leader.person}</p>
                       </div>
@@ -656,7 +656,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
                     {data.sultanAlNeyadiAttributes.slice(0, 6).map((attr, idx) => (
-                      <div key={idx} className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400 text-sm">{attr.attribute}</span>
                         <span className="font-bold text-platinum text-sm text-right">{attr.value}</span>
                       </div>
@@ -666,7 +666,7 @@ export default function TechnologyInnovationPage() {
                     <h4 className="text-sm text-platinum-400 mb-2">Space Missions</h4>
                     <div className="space-y-2">
                       {data.sultanSpaceMissions.map((mission, idx) => (
-                        <div key={idx} className="flex items-start gap-3 p-2 bg-slate-800/50 rounded">
+                        <div key={idx} className="flex items-start gap-3 p-2 bg-platinum-800/50 rounded">
                           <Badge variant="gold" className="text-xs shrink-0">{mission.date}</Badge>
                           <span className="text-platinum-200 text-sm">{mission.details}</span>
                         </div>
@@ -687,7 +687,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2">
                     {data.lunarMissionAttributes.map((attr, idx) => (
-                      <div key={idx} className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400 text-sm">{attr.attribute}</span>
                         <span className="font-bold text-cyan text-sm text-right">{attr.value}</span>
                       </div>
@@ -707,7 +707,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {data.upcomingMissions.map((mission, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-4 bg-slate-800/50 rounded-xl">
+                      <div key={idx} className="flex items-center justify-between p-4 bg-platinum-800/50 rounded-xl">
                         <div>
                           <p className="font-bold text-gold">{mission.mission}</p>
                           <p className="text-sm text-platinum-400">Target: {mission.target}</p>
@@ -740,18 +740,18 @@ export default function TechnologyInnovationPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
-                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                    <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                       <p className="text-3xl font-bold text-gold">$2.38B</p>
                       <p className="text-platinum-400">2025 Valuation</p>
                     </div>
-                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                    <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                       <p className="text-3xl font-bold text-emerald">$6.70B</p>
                       <p className="text-platinum-400">2031 Projection</p>
                     </div>
                   </div>
                   <div className="mt-4 grid gap-2">
                     {data.dataCenterMetrics.slice(0, 8).map((metric, idx) => (
-                      <div key={idx} className="flex justify-between items-center p-2 bg-slate-800/50 rounded">
+                      <div key={idx} className="flex justify-between items-center p-2 bg-platinum-800/50 rounded">
                         <span className="text-platinum-400 text-sm">{metric.metric}</span>
                         <span className="font-bold text-platinum text-sm">{metric.value}</span>
                       </div>
@@ -771,7 +771,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {data.majorDataCenterInvestments.map((inv, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-4 bg-slate-800/50 rounded-xl">
+                      <div key={idx} className="flex items-center justify-between p-4 bg-platinum-800/50 rounded-xl">
                         <div>
                           <p className="font-bold text-gold">{inv.investor}</p>
                           <p className="text-sm text-platinum-500">{inv.partner}</p>
@@ -794,7 +794,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
                     {data.dataCenterPlayers.map((player, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg text-center">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="font-bold text-navy">{player.company}</p>
                         <p className="text-xs text-platinum-400 mt-1">{player.role}</p>
                       </div>
@@ -868,7 +868,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-2">
                     {data.oyoonDetails.map((detail, idx) => (
-                      <div key={idx} className="flex justify-between items-center p-2 bg-slate-800/50 rounded">
+                      <div key={idx} className="flex justify-between items-center p-2 bg-platinum-800/50 rounded">
                         <span className="text-platinum-400 text-sm">{detail.aspect}:</span>
                         <span className="text-platinum-200 text-sm text-right">{detail.details}</span>
                       </div>
@@ -908,7 +908,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="space-y-2">
                     {data.internetRestrictions.slice(0, 8).map((rest, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-2 bg-slate-800/50 rounded">
+                      <div key={idx} className="flex items-center justify-between p-2 bg-platinum-800/50 rounded">
                         <span className="text-platinum-300 text-sm">{rest.restriction}</span>
                         <Badge variant={rest.status === 'Blocked' || rest.status === 'Banned' ? 'rose' : 'outline'} className="text-xs">
                           {rest.status}
@@ -930,7 +930,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2">
                     {data.cybersecurityEntities.map((entity, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="font-bold text-emerald">{entity.entity}</p>
                         <p className="text-sm text-platinum-400 mt-1">{entity.role}</p>
                       </div>
@@ -938,7 +938,7 @@ export default function TechnologyInnovationPage() {
                   </div>
                   <div className="mt-4 grid gap-2">
                     {data.dataProtectionLaws.map((law, idx) => (
-                      <div key={idx} className="flex justify-between items-center p-2 bg-slate-800/50 rounded">
+                      <div key={idx} className="flex justify-between items-center p-2 bg-platinum-800/50 rounded">
                         <span className="text-platinum-400 text-sm">{law.jurisdiction}</span>
                         <span className="text-platinum-200 text-sm">{law.law}</span>
                       </div>
@@ -972,7 +972,7 @@ export default function TechnologyInnovationPage() {
                   </div>
                   <div className="grid gap-2">
                     {data.cryptoRegulatoryFramework.map((reg, idx) => (
-                      <div key={idx} className="flex justify-between items-center p-2 bg-slate-800/50 rounded">
+                      <div key={idx} className="flex justify-between items-center p-2 bg-platinum-800/50 rounded">
                         <span className="text-platinum-400 text-sm">{reg.regulator}</span>
                         <span className="text-platinum-200 text-sm text-right">{reg.scope}</span>
                       </div>
@@ -992,7 +992,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
                     {data.cryptoLicensing.map((item, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="text-platinum-400 text-sm">{item.aspect}</p>
                         <p className="font-bold text-emerald mt-1">{item.details}</p>
                       </div>
@@ -1012,7 +1012,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2">
                     {data.cryptoCompliance.map((req, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <Badge variant="gold" className="text-xs mb-2">{req.requirement}</Badge>
                         <p className="text-sm text-platinum-400">{req.description}</p>
                       </div>
@@ -1046,7 +1046,7 @@ export default function TechnologyInnovationPage() {
                   </div>
                   <div className="grid gap-2">
                     {data.difcInnovationHub.map((item, idx) => (
-                      <div key={idx} className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400 text-sm">{item.aspect}:</span>
                         <span className="text-platinum-200 text-sm text-right">{item.details}</span>
                       </div>
@@ -1065,7 +1065,7 @@ export default function TechnologyInnovationPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    <div className="p-4 bg-slate-800/50 rounded-xl">
+                    <div className="p-4 bg-platinum-800/50 rounded-xl">
                       <p className="text-platinum-400 text-sm">Launch Year</p>
                       <p className="text-2xl font-bold text-emerald">{data.dubaiFinTechHive.details}</p>
                     </div>
@@ -1073,7 +1073,7 @@ export default function TechnologyInnovationPage() {
                       <p className="text-emerald font-bold mb-2">Inaugural Batch</p>
                       <p className="text-platinum-300">11 finalists</p>
                     </div>
-                    <div className="p-4 bg-slate-800/50 rounded-xl">
+                    <div className="p-4 bg-platinum-800/50 rounded-xl">
                       <p className="text-platinum-400 text-sm mb-2">Key Partnership</p>
                       <p className="text-platinum-200">Emirates NBD for API sandbox certification</p>
                     </div>
@@ -1091,16 +1091,16 @@ export default function TechnologyInnovationPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2">
-                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                    <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                       <p className="font-bold text-gold">Dubai FinTech Summit</p>
                     </div>
-                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                    <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                       <p className="font-bold text-gold">Dubai AI & Web3 Festival</p>
                     </div>
-                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                    <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                       <p className="font-bold text-gold">Future Sustainability Forum</p>
                     </div>
-                    <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                    <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                       <p className="font-bold text-gold">AccelerateHER Program</p>
                     </div>
                   </div>
@@ -1129,7 +1129,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-2">
                     {data.uaePassFeatures.slice(0, 8).map((feature, idx) => (
-                      <div key={idx} className="flex justify-between items-center p-2 bg-slate-800/50 rounded">
+                      <div key={idx} className="flex justify-between items-center p-2 bg-platinum-800/50 rounded">
                         <span className="text-platinum-400 text-sm">{feature.feature}</span>
                         <span className="text-platinum-200 text-sm text-right">{feature.details}</span>
                       </div>
@@ -1149,7 +1149,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2">
                     {data.eGovernmentApps.slice(0, 6).map((app, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="font-bold text-emerald">{app.application}</p>
                         <p className="text-sm text-platinum-400 mt-1">{app.description}</p>
                       </div>
@@ -1169,7 +1169,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {data.quantumInitiatives.map((init, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="font-bold text-cyan">{init.initiative}</p>
                         <p className="text-sm text-platinum-400 mt-1">{init.details}</p>
                       </div>
@@ -1192,7 +1192,7 @@ export default function TechnologyInnovationPage() {
                   </div>
                   <div className="grid gap-2">
                     {data.mbzuaiGlobalPresence.map((loc, idx) => (
-                      <div key={idx} className="flex justify-between items-center p-2 bg-slate-800/50 rounded">
+                      <div key={idx} className="flex justify-between items-center p-2 bg-platinum-800/50 rounded">
                         <span className="text-platinum-400 text-sm">{loc.location}</span>
                         <span className="text-platinum-200 text-sm text-right">{loc.details}</span>
                       </div>
@@ -1223,7 +1223,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {data.avRegulations.map((reg, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <Badge variant="gold" className="text-xs mb-2">{reg.law}</Badge>
                         <p className="text-sm text-platinum-400">{reg.details}</p>
                       </div>
@@ -1243,7 +1243,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {data.avOperators.map((op, idx) => (
-                      <div key={idx} className="p-4 bg-slate-800/50 rounded-xl">
+                      <div key={idx} className="p-4 bg-platinum-800/50 rounded-xl">
                         <div className="flex justify-between items-start">
                           <div>
                             <p className="font-bold text-emerald">{op.operator}</p>
@@ -1269,7 +1269,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
                     {data.avMarketProjections.map((proj, idx) => (
-                      <div key={idx} className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <div key={idx} className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="text-2xl font-bold text-cyan">{proj.value}</p>
                         <p className="text-sm text-platinum-400 mt-1">{proj.metric}</p>
                         {proj.source && <p className="text-xs text-platinum-500 mt-1">Source: {proj.source}</p>}
@@ -1290,7 +1290,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-2">
                     {data.droneDetails.map((drone, idx) => (
-                      <div key={idx} className="flex justify-between items-center p-2 bg-slate-800/50 rounded">
+                      <div key={idx} className="flex justify-between items-center p-2 bg-platinum-800/50 rounded">
                         <span className="text-platinum-400 text-sm">{drone.aspect}</span>
                         <span className="text-platinum-200 text-sm text-right">{drone.details}</span>
                       </div>
@@ -1321,7 +1321,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {data.semiconductorDevelopments.map((dev, idx) => (
-                      <div key={idx} className="p-4 bg-slate-800/50 rounded-xl">
+                      <div key={idx} className="p-4 bg-platinum-800/50 rounded-xl">
                         <div className="flex justify-between items-start mb-2">
                           <p className="font-bold text-gold">{dev.development}</p>
                           <Badge variant="outline" className="text-xs">{dev.date}</Badge>
@@ -1344,7 +1344,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
                     {data.semiconductorMarkets.map((mkt, idx) => (
-                      <div key={idx} className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <div key={idx} className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="text-2xl font-bold text-emerald">{mkt.value}</p>
                         <p className="text-sm text-platinum-400 mt-1">{mkt.metric}</p>
                         {mkt.year && <p className="text-xs text-platinum-500 mt-1">{mkt.year}</p>}
@@ -1365,7 +1365,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {data.semiconductorInitiatives.map((init, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="font-bold text-navy">{init.initiative}</p>
                         <p className="text-sm text-platinum-400 mt-1">{init.details}</p>
                       </div>
@@ -1396,7 +1396,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {data.unicorns.map((company, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-4 bg-slate-800/50 rounded-xl">
+                      <div key={idx} className="flex items-center justify-between p-4 bg-platinum-800/50 rounded-xl">
                         <div className="flex-1">
                           <p className="font-bold text-gold">{company.company}</p>
                           <p className="text-sm text-platinum-400">{company.sector}</p>
@@ -1463,7 +1463,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {data.vcFirms.slice(0, 5).map((firm, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <div>
                           <p className="font-bold text-navy">{firm.firm}</p>
                           <p className="text-xs text-platinum-500">{firm.location} | Est. {firm.established}</p>
@@ -1489,7 +1489,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2">
                     {data.vcStatistics.map((stat, idx) => (
-                      <div key={idx} className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400 text-sm">{stat.metric}</span>
                         <span className="font-bold text-cyan">{stat.value}</span>
                       </div>
@@ -1559,7 +1559,7 @@ export default function TechnologyInnovationPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="p-4 bg-slate-800/50 rounded-xl">
+                  <div className="p-4 bg-platinum-800/50 rounded-xl">
                     <div className="flex justify-between items-center mb-4">
                       <span className="text-platinum-400">UAE Companies Cutting Jobs</span>
                       <Badge variant="rose" className="text-lg px-3">29%</Badge>
@@ -1578,7 +1578,7 @@ export default function TechnologyInnovationPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                  <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                     <p className="text-4xl font-bold text-rose">30,000+</p>
                     <p className="text-platinum-400 mt-2">Global tech employees affected</p>
                     <p className="text-xs text-platinum-500 mt-1">Source: Gulf News</p>
@@ -1633,7 +1633,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {data.sentimentBySource.map((source, idx) => (
-                      <div key={idx} className="p-4 bg-slate-800/50 rounded-xl">
+                      <div key={idx} className="p-4 bg-platinum-800/50 rounded-xl">
                         <div className="flex justify-between items-start mb-2">
                           <p className="font-bold text-platinum-200">{source.sourceCategory}</p>
                           <Badge
@@ -1666,7 +1666,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2">
                     {data.sentimentByTheme.map((theme, idx) => (
-                      <div key={idx} className="p-4 bg-slate-800/50 rounded-xl">
+                      <div key={idx} className="p-4 bg-platinum-800/50 rounded-xl">
                         <div className="flex justify-between items-start mb-2">
                           <p className="font-bold text-platinum-200">{theme.theme}</p>
                           <Badge
@@ -1699,7 +1699,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {data.globalAIRace.map((dim, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400 text-sm">{dim.dimension}</span>
                         <div className="text-right">
                           <p className="font-bold text-cyan text-sm">{dim.uaePosition}</p>
@@ -1722,7 +1722,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2">
                     {data.strategicAssets.map((asset, idx) => (
-                      <div key={idx} className="p-4 bg-slate-800/50 rounded-xl">
+                      <div key={idx} className="p-4 bg-platinum-800/50 rounded-xl">
                         <p className="font-bold text-gold">{asset.asset}</p>
                         <p className="text-sm text-emerald mt-1">Value: {asset.value}</p>
                         <p className="text-xs text-platinum-400 mt-1">{asset.competitivePosition}</p>
@@ -1766,7 +1766,7 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="space-y-2">
                     {data.verificationChecks.map((check, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-2 bg-slate-800/50 rounded">
+                      <div key={idx} className="flex items-center justify-between p-2 bg-platinum-800/50 rounded">
                         <span className="text-platinum-300 text-sm">{check.check}</span>
                         <Badge
                           variant={check.status === 'PASS' ? 'emerald' : 'rose'}

@@ -39,15 +39,15 @@ export function SectionEntityRegistries() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.05 }}
-                className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-3"
+                className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400">
                     <Building2 className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-slate-200">{inst.entity}</p>
-                    <p className="text-sm text-slate-400">{inst.researchContribution}</p>
+                    <p className="font-semibold text-platinum-200">{inst.entity}</p>
+                    <p className="text-sm text-platinum-400">{inst.researchContribution}</p>
                   </div>
                 </div>
                 <Badge variant="outline" className="text-xs">{inst.role}</Badge>
@@ -71,21 +71,21 @@ export function SectionEntityRegistries() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.04 }}
-                className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-3"
+                className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-500/20 text-indigo-400">
                     <Globe className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-slate-200">{platform.platform}</p>
-                    <p className="text-sm text-slate-400">{platform.type} — {platform.curationMethod}</p>
+                    <p className="font-semibold text-platinum-200">{platform.platform}</p>
+                    <p className="text-sm text-platinum-400">{platform.type} — {platform.curationMethod}</p>
                   </div>
                 </div>
                 <div className="flex flex-col items-end gap-1">
                   <Badge className={
                     platform.bubbleRisk === 'HIGH' ? 'bg-rose-500/20 text-rose-400 border-rose-500/50' :
-                    platform.bubbleRisk === 'MEDIUM' ? 'bg-yellow-500/20 text-yellow-400 border-yellow-500/50' :
+                    platform.bubbleRisk === 'MEDIUM' ? 'bg-amber-500/20 text-amber-400 border-amber-500/50' :
                     'bg-emerald-500/20 text-emerald-400 border-emerald-500/50'
                   }>
                     {platform.bubbleRisk} Risk
@@ -111,15 +111,15 @@ export function SectionEntityRegistries() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.04 }}
-                className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-3"
+                className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-500/20 text-purple-400">
                     <Users className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-slate-200">{researcher.researcher}</p>
-                    <p className="text-sm text-slate-400">{researcher.institution}</p>
+                    <p className="font-semibold text-platinum-200">{researcher.researcher}</p>
+                    <p className="text-sm text-platinum-400">{researcher.institution}</p>
                   </div>
                 </div>
                 <Badge variant="outline" className="text-xs max-w-[200px] text-center">{researcher.contribution}</Badge>
@@ -143,15 +143,15 @@ export function SectionEntityRegistries() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.06 }}
-                className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-3"
+                className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400">
                     <Scale className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-slate-200">{entity.entity}</p>
-                    <p className="text-sm text-slate-400">{entity.type}</p>
+                    <p className="font-semibold text-platinum-200">{entity.entity}</p>
+                    <p className="text-sm text-platinum-400">{entity.type}</p>
                   </div>
                 </div>
                 <Badge variant="outline" className="text-xs max-w-[200px] text-right">{entity.contribution}</Badge>
@@ -174,18 +174,18 @@ export function SectionEntityRegistries() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: idx * 0.06 }}
-              className="rounded-lg border border-slate-700/50 bg-slate-800/30 p-4"
+              className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-4"
             >
               <div className="flex items-center gap-2 mb-2">
                 <Brain className="h-4 w-4 text-purple-400" />
-                <h4 className="font-semibold text-slate-200">{bias.bias}</h4>
+                <h4 className="font-semibold text-platinum-200">{bias.bias}</h4>
               </div>
-              <p className="text-sm text-slate-400 mb-2">{bias.effectOnEchoChambers}</p>
+              <p className="text-sm text-platinum-400 mb-2">{bias.effectOnEchoChambers}</p>
               <div className="flex items-center justify-between">
-                <span className="text-xs text-slate-500">Mitigation:</span>
+                <span className="text-xs text-platinum-500">Mitigation:</span>
                 <Badge className={
                   bias.mitigationDifficulty === 'High' ? 'bg-rose-500/20 text-rose-400 border-rose-500/50 text-xs' :
-                  'bg-yellow-500/20 text-yellow-400 border-yellow-500/50 text-xs'
+                  'bg-amber-500/20 text-amber-400 border-amber-500/50 text-xs'
                 }>
                   {bias.mitigationDifficulty}
                 </Badge>
@@ -208,15 +208,15 @@ export function SectionEntityRegistries() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: idx * 0.06 }}
-              className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-3"
+              className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3"
             >
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-500/20 text-amber-400">
                   <History className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-200">{event.eventPeriod}</p>
-                  <p className="text-sm text-slate-400">{event.era}</p>
+                  <p className="font-semibold text-platinum-200">{event.eventPeriod}</p>
+                  <p className="text-sm text-platinum-400">{event.era}</p>
                 </div>
               </div>
               <Badge variant="outline" className="text-xs max-w-[250px] text-right">{event.echoChamberType}</Badge>

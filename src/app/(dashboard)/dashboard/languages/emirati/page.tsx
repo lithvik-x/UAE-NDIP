@@ -184,7 +184,7 @@ export default function EmiratiArabicPage() {
 
   const getSentimentColor = (score: number) => {
     if (score >= 70) return 'text-emerald-400'
-    if (score >= 50) return 'text-yellow-400'
+    if (score >= 50) return 'text-amber-400'
     return 'text-red-400'
   }
 
@@ -232,7 +232,7 @@ export default function EmiratiArabicPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mt-2 text-slate-400 text-lg"
+            className="mt-2 text-platinum-400 text-lg"
           >
             UAE local dialect intelligence, heritage content, and regional language patterns
           </motion.p>
@@ -374,28 +374,28 @@ export default function EmiratiArabicPage() {
                           className="rounded-lg border border-gold-700/50 bg-gold-900/20 p-4 text-center backdrop-blur-sm transition-all duration-300"
                         >
                           <div className="text-3xl font-bold text-gold">2.1M</div>
-                          <p className="text-sm text-slate-400 mt-1">National Day</p>
+                          <p className="text-sm text-platinum-400 mt-1">National Day</p>
                         </motion.div>
                         <motion.div
                           whileHover={{ scale: 1.05 }}
                           className="rounded-lg border border-navy-700/50 bg-navy-900/20 p-4 text-center backdrop-blur-sm transition-all duration-300"
                         >
                           <div className="text-3xl font-bold text-navy">1.8M</div>
-                          <p className="text-sm text-slate-400 mt-1">Dubai Events</p>
+                          <p className="text-sm text-platinum-400 mt-1">Dubai Events</p>
                         </motion.div>
                         <motion.div
                           whileHover={{ scale: 1.05 }}
                           className="rounded-lg border border-emerald-700/50 bg-emerald-900/20 p-4 text-center backdrop-blur-sm transition-all duration-300"
                         >
                           <div className="text-3xl font-bold text-emerald-400">1.6M</div>
-                          <p className="text-sm text-slate-400 mt-1">Ramadan</p>
+                          <p className="text-sm text-platinum-400 mt-1">Ramadan</p>
                         </motion.div>
                         <motion.div
                           whileHover={{ scale: 1.05 }}
                           className="rounded-lg border border-platinum-700/50 bg-platinum-900/20 p-4 text-center backdrop-blur-sm transition-all duration-300"
                         >
                           <div className="text-3xl font-bold text-platinum">1.4M</div>
-                          <p className="text-sm text-slate-400 mt-1">Heritage</p>
+                          <p className="text-sm text-platinum-400 mt-1">Heritage</p>
                         </motion.div>
                       </div>
                     </CardContent>
@@ -433,29 +433,29 @@ export default function EmiratiArabicPage() {
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: index * 0.1 }}
                               whileHover={{ scale: 1.02, x: 10 }}
-                              className="flex items-center justify-between rounded-lg border border-gold-700/50 bg-slate-800/50 p-4 hover:bg-slate-800/70 cursor-pointer transition-all duration-300"
+                              className="flex items-center justify-between rounded-lg border border-gold-700/50 bg-platinum-800/50 p-4 hover:bg-platinum-800/70 cursor-pointer transition-all duration-300"
                             >
                               <div className="flex items-center gap-4">
                                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
                                   <Flag className="h-5 w-5" />
                                 </div>
                                 <div>
-                                  <p className="font-semibold text-slate-200">{item.term}</p>
+                                  <p className="font-semibold text-platinum-200">{item.term}</p>
                                   {getCategoryBadge(item.category)}
                                 </div>
                               </div>
                               <div className="flex items-center gap-6">
                                 <div className="text-center">
-                                  <div className="text-lg font-bold text-slate-200">
+                                  <div className="text-lg font-bold text-platinum-200">
                                     {(item.volume / 1000000).toFixed(2)}M
                                   </div>
-                                  <p className="text-xs text-slate-400">Volume</p>
+                                  <p className="text-xs text-platinum-400">Volume</p>
                                 </div>
                                 <div className="text-center">
                                   <div className={`text-lg font-bold ${getSentimentColor(item.sentiment)}`}>
                                     {item.sentiment}%
                                   </div>
-                                  <p className="text-xs text-slate-400">Sentiment</p>
+                                  <p className="text-xs text-platinum-400">Sentiment</p>
                                 </div>
                               </div>
                             </motion.div>
@@ -484,7 +484,7 @@ export default function EmiratiArabicPage() {
                             className="space-y-2"
                           >
                             <div className="flex items-center justify-between text-sm">
-                              <span className="font-medium text-slate-200">{item.term}</span>
+                              <span className="font-medium text-platinum-200">{item.term}</span>
                               <span className={`font-bold ${getSentimentColor(item.sentiment)}`}>{item.sentiment}%</span>
                             </div>
                             <Progress value={item.sentiment} className="h-2" />
@@ -525,29 +525,29 @@ export default function EmiratiArabicPage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 }}
                             whileHover={{ scale: 1.02, x: 10 }}
-                            className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70 cursor-pointer transition-all duration-300"
+                            className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70 cursor-pointer transition-all duration-300"
                           >
                             <div className="flex items-center gap-4">
                               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald/20 text-emerald">
                                 <Calendar className="h-5 w-5" />
                               </div>
                               <div>
-                                <p className="font-semibold text-slate-200">{item.term}</p>
+                                <p className="font-semibold text-platinum-200">{item.term}</p>
                                 {getCategoryBadge(item.category)}
                               </div>
                             </div>
                             <div className="flex items-center gap-6">
                               <div className="text-center">
-                                <div className="text-lg font-bold text-slate-200">
+                                <div className="text-lg font-bold text-platinum-200">
                                   {(item.volume / 1000000).toFixed(2)}M
                                 </div>
-                                <p className="text-xs text-slate-400">Volume</p>
+                                <p className="text-xs text-platinum-400">Volume</p>
                               </div>
                               <div className="text-center">
                                 <div className={`text-lg font-bold ${getSentimentColor(item.sentiment)}`}>
                                   {item.sentiment}%
                                 </div>
-                                <p className="text-xs text-slate-400">Sentiment</p>
+                                <p className="text-xs text-platinum-400">Sentiment</p>
                               </div>
                             </div>
                           </motion.div>
@@ -573,29 +573,29 @@ export default function EmiratiArabicPage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 }}
                             whileHover={{ scale: 1.02, x: 10 }}
-                            className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70 cursor-pointer transition-all duration-300"
+                            className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70 cursor-pointer transition-all duration-300"
                           >
                             <div className="flex items-center gap-4">
                               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy">
                                 <Home className="h-5 w-5" />
                               </div>
                               <div>
-                                <p className="font-semibold text-slate-200">{item.term}</p>
+                                <p className="font-semibold text-platinum-200">{item.term}</p>
                                 {getCategoryBadge(item.category)}
                               </div>
                             </div>
                             <div className="flex items-center gap-6">
                               <div className="text-center">
-                                <div className="text-lg font-bold text-slate-200">
+                                <div className="text-lg font-bold text-platinum-200">
                                   {(item.volume / 1000000).toFixed(2)}M
                                 </div>
-                                <p className="text-xs text-slate-400">Volume</p>
+                                <p className="text-xs text-platinum-400">Volume</p>
                               </div>
                               <div className="text-center">
                                 <div className={`text-lg font-bold ${getSentimentColor(item.sentiment)}`}>
                                   {item.sentiment}%
                                 </div>
-                                <p className="text-xs text-slate-400">Sentiment</p>
+                                <p className="text-xs text-platinum-400">Sentiment</p>
                               </div>
                             </div>
                           </motion.div>
@@ -679,8 +679,8 @@ export default function EmiratiArabicPage() {
                               <Badge variant="gold" className="text-xs">{emirate.name}</Badge>
                               <span className="text-xs text-gold font-arabic">{emirate.arabic}</span>
                             </div>
-                            <p className="text-sm text-slate-300 mb-1">{emirate.significance}</p>
-                            <p className="text-xs text-slate-400">{emirate.ruler}</p>
+                            <p className="text-sm text-platinum-300 mb-1">{emirate.significance}</p>
+                            <p className="text-xs text-platinum-400">{emirate.ruler}</p>
                           </motion.div>
                         ))}
                       </div>
@@ -720,7 +720,7 @@ export default function EmiratiArabicPage() {
                             className="space-y-2"
                           >
                             <div className="flex items-center justify-between text-sm">
-                              <span className="font-medium text-slate-200">{feature.feature}</span>
+                              <span className="font-medium text-platinum-200">{feature.feature}</span>
                               <div className="flex items-center gap-2">
                                 <span className="text-gold">{feature.usage}%</span>
                                 {feature.trend === 'rising' && (
@@ -760,7 +760,7 @@ export default function EmiratiArabicPage() {
                             >
                               <p className="font-mono text-gold text-lg">{marker.expression}</p>
                               <p className="text-sm text-emerald-400 font-arabic">{marker.arabic}</p>
-                              <p className="text-xs text-slate-400 mt-1">{marker.meaning}</p>
+                              <p className="text-xs text-platinum-400 mt-1">{marker.meaning}</p>
                             </motion.div>
                           ))}
                         </div>
@@ -788,7 +788,7 @@ export default function EmiratiArabicPage() {
                             >
                               <p className="font-mono text-red-500 text-lg">{marker.expression}</p>
                               <p className="text-sm text-red-600 font-arabic">{marker.arabic}</p>
-                              <p className="text-xs text-slate-400 mt-1">{marker.meaning}</p>
+                              <p className="text-xs text-platinum-400 mt-1">{marker.meaning}</p>
                             </motion.div>
                           ))}
                         </div>
@@ -807,31 +807,31 @@ export default function EmiratiArabicPage() {
                     <CardContent>
                       <div className="grid gap-4 sm:grid-cols-2">
                         <div className="space-y-3">
-                          <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                             <p className="font-mono text-gold">"Ya raiti"</p>
-                            <p className="text-sm text-slate-400 mt-1">My dear / dear friend</p>
+                            <p className="text-sm text-platinum-400 mt-1">My dear / dear friend</p>
                           </div>
-                          <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                             <p className="font-mono text-gold">"Khalas"</p>
-                            <p className="text-sm text-slate-400 mt-1">Done / finished / enough</p>
+                            <p className="text-sm text-platinum-400 mt-1">Done / finished / enough</p>
                           </div>
-                          <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                             <p className="font-mono text-gold">"Yimkin"</p>
-                            <p className="text-sm text-slate-400 mt-1">Maybe / perhaps</p>
+                            <p className="text-sm text-platinum-400 mt-1">Maybe / perhaps</p>
                           </div>
                         </div>
                         <div className="space-y-3">
-                          <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                             <p className="font-mono text-gold">"Ahal"</p>
-                            <p className="text-sm text-slate-400 mt-1">Family / relatives</p>
+                            <p className="text-sm text-platinum-400 mt-1">Family / relatives</p>
                           </div>
-                          <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                             <p className="font-mono text-gold">"Wahan"</p>
-                            <p className="text-sm text-slate-400 mt-1">Go / leave (dialect)</p>
+                            <p className="text-sm text-platinum-400 mt-1">Go / leave (dialect)</p>
                           </div>
-                          <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                             <p className="font-mono text-gold">"Shu haalak"</p>
-                            <p className="text-sm text-slate-400 mt-1">How are you? (Emirati)</p>
+                            <p className="text-sm text-platinum-400 mt-1">How are you? (Emirati)</p>
                           </div>
                         </div>
                       </div>
@@ -858,28 +858,28 @@ export default function EmiratiArabicPage() {
                       className="rounded-lg border border-gold-700/50 bg-gold-900/20 p-4 text-center backdrop-blur-sm"
                     >
                       <div className="text-3xl font-bold text-gold">{governmentKPI.governmentNumber}</div>
-                      <p className="text-sm text-slate-400 mt-1">Government</p>
+                      <p className="text-sm text-platinum-400 mt-1">Government</p>
                     </motion.div>
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       className="rounded-lg border border-navy-700/50 bg-navy-900/20 p-4 text-center backdrop-blur-sm"
                     >
                       <div className="text-3xl font-bold text-navy">{governmentKPI.cabinetSize}</div>
-                      <p className="text-sm text-slate-400 mt-1">Cabinet Members</p>
+                      <p className="text-sm text-platinum-400 mt-1">Cabinet Members</p>
                     </motion.div>
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       className="rounded-lg border border-emerald-700/50 bg-emerald-900/20 p-4 text-center backdrop-blur-sm"
                     >
                       <div className="text-3xl font-bold text-emerald-400">{governmentKPI.ministriesNew}</div>
-                      <p className="text-sm text-slate-400 mt-1">New Ministries</p>
+                      <p className="text-sm text-platinum-400 mt-1">New Ministries</p>
                     </motion.div>
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       className="rounded-lg border border-platinum-700/50 bg-platinum-900/20 p-4 text-center backdrop-blur-sm"
                     >
                       <div className="text-lg font-bold text-platinum">July 14, 2024</div>
-                      <p className="text-sm text-slate-400 mt-1">Formation Date</p>
+                      <p className="text-sm text-platinum-400 mt-1">Formation Date</p>
                     </motion.div>
                   </div>
 

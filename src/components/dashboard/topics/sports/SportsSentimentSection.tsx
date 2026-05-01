@@ -86,7 +86,7 @@ export function SportsSentimentSection({
                     {sportsInvestmentSentimentAnalysis.map((item, index) => (
                       <div key={index} className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-slate-200">
+                          <span className="text-sm font-medium text-platinum-200">
                             {item.perspective}
                           </span>
                           <span
@@ -95,7 +95,7 @@ export function SportsSentimentSection({
                                 ? 'text-emerald-400'
                                 : item.sentiment === 'Negative'
                                   ? 'text-red-400'
-                                  : 'text-yellow-400'
+                                  : 'text-amber-400'
                             }`}
                           >
                             {item.sentiment}
@@ -139,7 +139,7 @@ export function SportsSentimentSection({
                           <span className="font-semibold text-red-400">{item.source}</span>
                           <Badge variant="destructive">{item.sentiment}</Badge>
                         </div>
-                        <p className="text-sm text-slate-300">{item.assessment}</p>
+                        <p className="text-sm text-platinum-300">{item.assessment}</p>
                       </div>
                     ))}
                   </div>
@@ -161,24 +161,24 @@ export function SportsSentimentSection({
                   {governanceReformSentimentAnalysis.map((item, index) => (
                     <div
                       key={index}
-                      className="rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+                      className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <span className="font-semibold text-slate-200">{item.area}</span>
+                        <span className="font-semibold text-platinum-200">{item.area}</span>
                         <Badge
                           variant="outline"
                           className={
                             item.sentiment === 'Positive'
                               ? 'border-emerald-500/50 text-emerald-400'
                               : item.sentiment === 'Cautious positive'
-                                ? 'border-yellow-500/50 text-yellow-400'
+                                ? 'border-amber-500/50 text-amber-400'
                                 : 'border-red-500/50 text-red-400'
                           }
                         >
                           {item.sentiment}
                         </Badge>
                       </div>
-                      <p className="text-sm text-slate-400">{item.notes}</p>
+                      <p className="text-sm text-platinum-400">{item.notes}</p>
                     </div>
                   ))}
                 </div>
@@ -196,10 +196,10 @@ export function SportsSentimentSection({
                   {emiratesSponsorshipDashboard.map((sponsor, index) => (
                     <div
                       key={index}
-                      className="rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                      className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                     >
                       <div className="flex justify-between items-start">
-                        <span className="font-semibold text-slate-200">
+                        <span className="font-semibold text-platinum-200">
                           {sponsor.teamCompetition}
                         </span>
                         <Badge
@@ -209,7 +209,7 @@ export function SportsSentimentSection({
                           Since {sponsor.since}
                         </Badge>
                       </div>
-                      <p className="text-sm text-slate-400 mt-1">{sponsor.status}</p>
+                      <p className="text-sm text-platinum-400 mt-1">{sponsor.status}</p>
                     </div>
                   ))}
                 </div>

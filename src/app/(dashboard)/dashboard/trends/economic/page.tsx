@@ -384,7 +384,7 @@ export default function EconomicTrendsPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="mt-2 text-slate-400"
+            className="mt-2 text-platinum-400"
           >
             GDP growth, trade performance, FDI inflows, and economic diversification metrics
           </motion.p>
@@ -568,10 +568,10 @@ export default function EconomicTrendsPage() {
                               initial={{ opacity: 0, x: -10 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: idx * 0.1 }}
-                              className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3 hover:bg-slate-800/70 transition-colors"
+                              className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3 hover:bg-platinum-800/70 transition-colors"
                             >
                               <TrendingUp className="h-5 w-5 text-gold mt-0.5" />
-                              <span className="text-sm text-slate-200">{driver}</span>
+                              <span className="text-sm text-platinum-200">{driver}</span>
                             </motion.div>
                           ))}
                         </div>
@@ -624,12 +624,12 @@ export default function EconomicTrendsPage() {
                       <CardContent>
                         <div className="space-y-3">
                           {gdpForecasts.map((forecast, idx) => (
-                            <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                            <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                               <div className="flex items-center gap-2">
                                 <Badge variant={forecast.tier === 0 ? 'gold' : forecast.tier === 1 ? 'default' : 'secondary'} className="text-[10px]">
                                   Tier-{forecast.tier}
                                 </Badge>
-                                <span className="text-sm font-medium text-slate-200">{forecast.source}</span>
+                                <span className="text-sm font-medium text-platinum-200">{forecast.source}</span>
                               </div>
                               <div className="flex gap-2 text-xs">
                                 <span className="text-platinum-400">{forecast[2025]}%</span>
@@ -719,7 +719,7 @@ export default function EconomicTrendsPage() {
                               <div
                                 className={`h-2 w-2 rounded-full ${sector.sentiment === 'positive' ? 'bg-emerald-500' : sector.sentiment === 'stable' ? 'bg-gold-500' : 'bg-red-500'}`}
                               />
-                              <span className="text-sm font-medium text-slate-200">{sector.sector}</span>
+                              <span className="text-sm font-medium text-platinum-200">{sector.sector}</span>
                             </div>
                             <p className="text-lg font-bold text-gold">{sector.value}</p>
                             <p className="text-xs text-platinum-500">{sector.period}</p>
@@ -750,7 +750,7 @@ export default function EconomicTrendsPage() {
                             }`}
                           >
                             <div className="flex items-start justify-between">
-                              <span className="text-sm font-medium text-slate-200">{sector.sector}</span>
+                              <span className="text-sm font-medium text-platinum-200">{sector.sector}</span>
                               <Badge
                                 variant={sector.priority === 'Critical' ? 'gold' : 'secondary'}
                                 className="text-[10px]"
@@ -774,9 +774,9 @@ export default function EconomicTrendsPage() {
                     <CardContent>
                       <div className="space-y-3">
                         {tier2SectorKPIs.map((kpi, idx) => (
-                          <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center gap-3">
-                              <span className="text-sm font-medium text-slate-200">{kpi.name}</span>
+                              <span className="text-sm font-medium text-platinum-200">{kpi.name}</span>
                               <Badge variant="outline" className="text-[10px]">{kpi.period}</Badge>
                             </div>
                             <div className="flex items-center gap-2">
@@ -815,9 +815,9 @@ export default function EconomicTrendsPage() {
                     <CardContent>
                       <div className="space-y-3">
                         {tradeData.map((trade, idx) => (
-                          <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
+                          <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4">
                             <div>
-                              <span className="text-sm font-medium text-slate-200">{trade.category}</span>
+                              <span className="text-sm font-medium text-platinum-200">{trade.category}</span>
                               <p className="text-xs text-platinum-500">{trade.period}</p>
                             </div>
                             <div className="flex items-center gap-3">
@@ -864,9 +864,9 @@ export default function EconomicTrendsPage() {
                     <CardContent>
                       <div className="space-y-3">
                         {fdiData.map((fdi, idx) => (
-                          <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
+                          <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4">
                             <div>
-                              <span className="text-sm font-medium text-slate-200">{fdi.year}</span>
+                              <span className="text-sm font-medium text-platinum-200">{fdi.year}</span>
                               {fdi.rank && (
                                 <Badge variant="gold" className="ml-2 text-[10px]">Rank #{fdi.rank}</Badge>
                               )}
@@ -927,8 +927,8 @@ export default function EconomicTrendsPage() {
                     <CardContent>
                       <div className="grid gap-3 sm:grid-cols-2">
                         {bankingData.map((bank, idx) => (
-                          <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
-                            <span className="text-sm font-medium text-slate-200">{bank.metric}</span>
+                          <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4">
+                            <span className="text-sm font-medium text-platinum-200">{bank.metric}</span>
                             <div className="flex items-center gap-2">
                               <span className="text-lg font-bold text-gold">{bank.value || `${bank.change}%`}</span>
                               {bank.change && <Badge variant="success" className="text-xs">+{bank.change}%</Badge>}
@@ -950,8 +950,8 @@ export default function EconomicTrendsPage() {
                       <CardContent>
                         <div className="space-y-3">
                           {startupData.map((startup, idx) => (
-                            <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
-                              <span className="text-sm text-slate-200">{startup.metric}</span>
+                            <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
+                              <span className="text-sm text-platinum-200">{startup.metric}</span>
                               <div className="flex items-center gap-2">
                                 <span className="text-lg font-bold text-gold">{startup.value}</span>
                                 {startup.change && (
@@ -974,8 +974,8 @@ export default function EconomicTrendsPage() {
                       <CardContent>
                         <div className="space-y-3">
                           {laborMarketData.map((labor, idx) => (
-                            <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
-                              <span className="text-sm text-slate-200">{labor.metric}</span>
+                            <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
+                              <span className="text-sm text-platinum-200">{labor.metric}</span>
                               <span className="text-lg font-bold text-gold">{labor.value}</span>
                             </div>
                           ))}
@@ -1000,7 +1000,7 @@ export default function EconomicTrendsPage() {
                         </div>
                         <div className="glass-panel p-4 rounded-xl text-center">
                           <p className="text-xs text-platinum-500">Agency</p>
-                          <p className="mt-1 text-lg font-bold text-slate-200">{creditRating.agency}</p>
+                          <p className="mt-1 text-lg font-bold text-platinum-200">{creditRating.agency}</p>
                         </div>
                         <div className="glass-panel p-4 rounded-xl text-center">
                           <p className="text-xs text-platinum-500">Gov Net Assets</p>
@@ -1034,11 +1034,11 @@ export default function EconomicTrendsPage() {
                           ))}
                         </div>
                         <div className="mt-4">
-                          <p className="text-sm font-medium text-slate-200 mb-3">Component Breakdown (Dubai, Dec 2025)</p>
+                          <p className="text-sm font-medium text-platinum-200 mb-3">Component Breakdown (Dubai, Dec 2025)</p>
                           <div className="space-y-2">
                             {inflationComponents.map((comp, idx) => (
-                              <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
-                                <span className="text-sm text-slate-200">{comp.component}</span>
+                              <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
+                                <span className="text-sm text-platinum-200">{comp.component}</span>
                                 <div className="flex items-center gap-2">
                                   <span className="text-lg font-bold text-gold">{comp.rate}%</span>
                                   <Badge
@@ -1104,10 +1104,10 @@ export default function EconomicTrendsPage() {
                               initial={{ opacity: 0, x: -10 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: iIdx * 0.1 }}
-                              className="flex items-start gap-2 rounded-lg bg-slate-800/50 p-3 hover:bg-slate-800/70 transition-colors"
+                              className="flex items-start gap-2 rounded-lg bg-platinum-800/50 p-3 hover:bg-platinum-800/70 transition-colors"
                             >
                               <TrendingUp className="h-4 w-4 text-gold mt-0.5" />
-                              <span className="text-sm text-slate-200">{indicator}</span>
+                              <span className="text-sm text-platinum-200">{indicator}</span>
                             </motion.div>
                           ))}
                         </div>
@@ -1127,7 +1127,7 @@ export default function EconomicTrendsPage() {
                         {keyGrowthDrivers.map((driver, idx) => (
                           <div key={idx} className="flex items-center gap-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 p-3">
                             <ArrowUpRight className="h-4 w-4 text-emerald-500" />
-                            <span className="text-sm text-slate-200">{driver}</span>
+                            <span className="text-sm text-platinum-200">{driver}</span>
                           </div>
                         ))}
                       </div>
@@ -1149,7 +1149,7 @@ export default function EconomicTrendsPage() {
                         <div className="space-y-2">
                           {upsideRisks.map((risk, idx) => (
                             <div key={idx} className="flex items-center justify-between rounded-lg bg-emerald-500/10 border border-emerald-500/20 p-3">
-                              <span className="text-sm text-slate-200">{risk.risk}</span>
+                              <span className="text-sm text-platinum-200">{risk.risk}</span>
                               <Badge variant="success" className="text-[10px]">{risk.probability}</Badge>
                             </div>
                           ))}
@@ -1171,7 +1171,7 @@ export default function EconomicTrendsPage() {
                         <div className="space-y-2">
                           {downsideRisks.map((risk, idx) => (
                             <div key={idx} className="flex items-center justify-between rounded-lg bg-red-500/10 border border-red-500/20 p-3">
-                              <span className="text-sm text-slate-200">{risk.risk}</span>
+                              <span className="text-sm text-platinum-200">{risk.risk}</span>
                               <Badge variant="destructive" className="text-[10px]">{risk.probability}</Badge>
                             </div>
                           ))}
@@ -1199,7 +1199,7 @@ export default function EconomicTrendsPage() {
                             className="glass-panel p-4 rounded-xl hover:shadow-glass-lg transition-all duration-300 cursor-pointer"
                           >
                             <Badge variant="outline" className="text-[10px] mb-2">{project.sector}</Badge>
-                            <p className="text-sm font-medium text-slate-200 mt-2">{project.project}</p>
+                            <p className="text-sm font-medium text-platinum-200 mt-2">{project.project}</p>
                             {project.value !== '-' && (
                               <p className="text-xs text-gold mt-1">{project.value}</p>
                             )}

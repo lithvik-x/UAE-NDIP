@@ -63,7 +63,7 @@ export default function GoogleSerpPage() {
     <motion.div initial="initial" animate="animate" variants={staggerContainer} className="space-y-8 p-8 font-rajdhani">
       <motion.div variants={fadeInUp} className="flex items-start justify-between">
         <div>
-          <Badge variant="default" className="mb-2 bg-gradient-to-r from-sky-500/20 to-blue-600/20 text-sky-400 border-sky-500/50">
+          <Badge variant="default" className="mb-2 bg-gradient-to-r from-sky-500/20 to-blue-600/20 text-cyan-400 border-cyan-500/50">
             <Search className="w-3 h-3 mr-1" />
             SEARCH INTELLIGENCE
           </Badge>
@@ -126,7 +126,7 @@ export default function GoogleSerpPage() {
                   <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                     <CardHeader className="px-0 pt-0">
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Search className="h-5 w-5 text-sky-500" />
+                        <Search className="h-5 w-5 text-cyan-500" />
                         Top Queries by Volume
                       </CardTitle>
                       <CardDescription>Highest-volume UAE search terms</CardDescription>
@@ -148,14 +148,14 @@ export default function GoogleSerpPage() {
                 <div className="space-y-3">
                   {queryData.map((q: any, idx: number) => (
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.06 }}
-                      className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 border border-slate-700/50">
+                      className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                       <div className="flex items-center gap-3">
                         <span className="text-xs text-platinum-500 w-6">{idx + 1}</span>
-                        <Search className="h-4 w-4 text-sky-400" />
+                        <Search className="h-4 w-4 text-cyan-400" />
                         <span className="text-sm text-platinum-200">{q.query}</span>
                       </div>
                       <div className="flex items-center gap-4">
-                        <Badge variant="outline" className="border-sky-500/50 text-sky-400">{q.volume?.toLocaleString?.() || q.volume}/mo</Badge>
+                        <Badge variant="outline" className="border-cyan-500/50 text-cyan-400">{q.volume?.toLocaleString?.() || q.volume}/mo</Badge>
                         <Badge variant="outline" className="border-emerald-500/50 text-emerald">#{q.position}</Badge>
                       </div>
                     </motion.div>
@@ -174,7 +174,7 @@ export default function GoogleSerpPage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }} whileHover={{ scale: 1.02 }}
                     className="glass-card rounded-xl p-5 bg-glass-surface/50 border-glass-border">
                     <div className="flex items-center justify-between mb-3">
-                      <Eye className="h-5 w-5 text-sky-400" />
+                      <Eye className="h-5 w-5 text-cyan-400" />
                       <Badge variant="outline" className="border-emerald-500/50 text-emerald">{f.coverage}</Badge>
                     </div>
                     <h4 className="font-medium text-platinum-200 mb-1">{f.feature}</h4>
@@ -207,9 +207,9 @@ export default function GoogleSerpPage() {
                       </div>
                       <span className="text-lg font-bold text-platinum-100">{item.visibility}%</span>
                     </div>
-                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                       <motion.div initial={{ width: 0 }} animate={{ width: `${item.visibility}%` }} transition={{ delay: idx * 0.1 + 0.3, duration: 0.5 }}
-                        className={`h-full rounded-full ${item.visibility > 80 ? 'bg-emerald-500' : item.visibility > 60 ? 'bg-sky-500' : 'bg-gold-500'}`} />
+                        className={`h-full rounded-full ${item.visibility > 80 ? 'bg-emerald-500' : item.visibility > 60 ? 'bg-cyan-500' : 'bg-gold-500'}`} />
                     </div>
                   </motion.div>
                 ))}

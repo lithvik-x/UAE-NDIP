@@ -402,7 +402,7 @@ export default function ReputationCrisisPage() {
                       <span className="text-platinum-300">Global Freedom</span>
                       <span className="text-white font-bold">18/100</span>
                     </div>
-                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                       <div className="h-full bg-rose-500 rounded-full" style={{ width: '18%' }} />
                     </div>
                     <p className="text-xs text-rose-400">Not Free</p>
@@ -412,7 +412,7 @@ export default function ReputationCrisisPage() {
                       <span className="text-platinum-300">Political Rights</span>
                       <span className="text-white font-bold">5/40</span>
                     </div>
-                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                       <div className="h-full bg-orange-500 rounded-full" style={{ width: '12.5%' }} />
                     </div>
                   </div>
@@ -421,7 +421,7 @@ export default function ReputationCrisisPage() {
                       <span className="text-platinum-300">Civil Liberties</span>
                       <span className="text-white font-bold">13/60</span>
                     </div>
-                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                       <div className="h-full bg-amber-500 rounded-full" style={{ width: '21.7%' }} />
                     </div>
                   </div>
@@ -430,7 +430,7 @@ export default function ReputationCrisisPage() {
                       <span className="text-platinum-300">Internet Freedom</span>
                       <span className="text-white font-bold">28/100</span>
                     </div>
-                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                       <div className="h-full bg-rose-500 rounded-full" style={{ width: '28%' }} />
                     </div>
                     <p className="text-xs text-rose-400">Not Free</p>
@@ -440,7 +440,7 @@ export default function ReputationCrisisPage() {
                       <span className="text-platinum-300">Obstacles to Access</span>
                       <span className="text-white font-bold">14/25</span>
                     </div>
-                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                       <div className="h-full bg-orange-500 rounded-full" style={{ width: '56%' }} />
                     </div>
                   </div>
@@ -449,7 +449,7 @@ export default function ReputationCrisisPage() {
                       <span className="text-platinum-300">Violations of User Rights</span>
                       <span className="text-white font-bold">5/40</span>
                     </div>
-                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                       <div className="h-full bg-rose-500 rounded-full" style={{ width: '12.5%' }} />
                     </div>
                   </div>
@@ -681,7 +681,7 @@ export default function ReputationCrisisPage() {
                         source.tier === 'TIER_0' || source.tier === 'TIER_1' ? 'border-emerald-500/50 text-emerald-400' :
                         source.tier === 'TIER_2' ? 'border-violet-500/50 text-violet-400' :
                         source.tier === 'TIER_3' ? 'border-amber-500/50 text-amber-400' :
-                        'border-slate-500/50 text-slate-400'
+                        'border-platinum-500/50 text-platinum-400'
                       }`}>
                         {source.tier}
                       </Badge>

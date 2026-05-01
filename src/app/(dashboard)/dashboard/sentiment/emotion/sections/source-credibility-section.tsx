@@ -94,7 +94,7 @@ export function SourceCredibilitySection({
                   return (
                     <div
                       key={item.tier}
-                      className="flex items-start gap-3 p-3 rounded-lg bg-slate-800/30 border border-slate-700/50"
+                      className="flex items-start gap-3 p-3 rounded-lg bg-platinum-800/30 border border-platinum-700/50"
                     >
                       <div
                         className="flex h-8 w-8 items-center justify-center rounded-full"
@@ -104,12 +104,12 @@ export function SourceCredibilitySection({
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
-                          <span className="font-semibold text-slate-200">Tier {item.tier}: {tier.name}</span>
+                          <span className="font-semibold text-platinum-200">Tier {item.tier}: {tier.name}</span>
                           <Badge variant="outline" className="text-xs">
                             {item.count} sources ({item.percentage}%)
                           </Badge>
                         </div>
-                        <p className="text-xs text-slate-400 mt-1">{tier.description}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{tier.description}</p>
                       </div>
                     </div>
                   )
@@ -141,7 +141,7 @@ export function SourceCredibilitySection({
                       >
                         Tier {tier}
                       </Badge>
-                      <span className="text-sm text-slate-400">{tierInfo.name}</span>
+                      <span className="text-sm text-platinum-400">{tierInfo.name}</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {tierSources.slice(0, 6).map((source) => (

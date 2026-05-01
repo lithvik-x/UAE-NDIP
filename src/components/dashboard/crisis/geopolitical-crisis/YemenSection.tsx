@@ -105,13 +105,13 @@ export function YemenSection({ className }: YemenSectionProps) {
                       transition={{ delay: idx * 0.05 }}
                       className="relative"
                     >
-                      <div className="absolute -left-8 top-0 h-4 w-4 rounded-full bg-rose-500 border-2 border-slate-900" />
-                      <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-3 hover:bg-slate-800/70 transition-colors">
+                      <div className="absolute -left-8 top-0 h-4 w-4 rounded-full bg-rose-500 border-2 border-platinum-900" />
+                      <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3 hover:bg-platinum-800/70 transition-colors">
                         <div className="flex items-center justify-between mb-1">
-                          <p className="font-semibold text-slate-200">{item.event}</p>
+                          <p className="font-semibold text-platinum-200">{item.event}</p>
                           <Badge variant="outline" className="text-xs">{item.date}</Badge>
                         </div>
-                        <p className="text-sm text-slate-400">{item.details}</p>
+                        <p className="text-sm text-platinum-400">{item.details}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -138,9 +138,9 @@ export function YemenSection({ className }: YemenSectionProps) {
                     { label: 'Dissolution', value: 'January 9, 2026' },
                     { label: 'UAE Role', value: 'Primary backer throughout conflict' },
                   ].map((item, idx) => (
-                    <div key={idx} className="flex justify-between rounded bg-slate-800/50 p-2">
-                      <span className="text-slate-400 text-sm">{item.label}</span>
-                      <span className="text-slate-200 text-sm font-medium">{item.value}</span>
+                    <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
+                      <span className="text-platinum-400 text-sm">{item.label}</span>
+                      <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -158,10 +158,10 @@ export function YemenSection({ className }: YemenSectionProps) {
                 <ScrollArea className="h-[200px]">
                   <div className="space-y-2">
                     {militaryPositions.map((loc, idx) => (
-                      <div key={idx} className="flex items-center justify-between rounded bg-slate-800/50 p-2">
+                      <div key={idx} className="flex items-center justify-between rounded bg-platinum-800/50 p-2">
                         <div className="flex items-center gap-2">
                           <Map className="h-3 w-3 text-cyan-400" />
-                          <span className="text-slate-200 text-sm">{loc.location}</span>
+                          <span className="text-platinum-200 text-sm">{loc.location}</span>
                         </div>
                         <Badge variant="outline" className="text-xs">{loc.facility}</Badge>
                       </div>
@@ -190,7 +190,7 @@ export function YemenSection({ className }: YemenSectionProps) {
                   { label: 'UN Requested', value: 'Intervention (2020)' },
                 ].map((item, idx) => (
                   <div key={idx} className="rounded bg-rose-500/10 p-3 border border-rose-500/30">
-                    <p className="text-xs text-slate-400">{item.label}</p>
+                    <p className="text-xs text-platinum-400">{item.label}</p>
                     <p className="text-lg font-bold text-rose-300">{item.value}</p>
                   </div>
                 ))}

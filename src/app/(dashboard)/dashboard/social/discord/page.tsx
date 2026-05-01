@@ -193,7 +193,7 @@ export default function DiscordPage() {
                   { risk: 'Privacy Concerns', level: 'MODERATE', severity: 'warning', mitigation: 'Data retention policies, metadata access' },
                 ].map((item, idx) => (
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }}
-                    className="flex items-start gap-4 rounded-lg bg-slate-800/50 p-4 border border-slate-700/50">
+                    className="flex items-start gap-4 rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                     <AlertTriangle className={`h-5 w-5 mt-0.5 shrink-0 ${item.severity === 'error' ? 'text-rose' : item.severity === 'warning' ? 'text-orange' : 'text-emerald'}`} />
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-1">

@@ -45,7 +45,7 @@ export default function SupplyChainDisruptionsPage() {
 
   const getAlertColor = (alert?: string) => {
     if (alert === 'RED') return 'border-red-500/50'
-    if (alert === 'YELLOW') return 'border-yellow-500/50'
+    if (alert === 'YELLOW') return 'border-amber-500/50'
     return 'border-emerald-500/50'
   }
 
@@ -88,7 +88,7 @@ export default function SupplyChainDisruptionsPage() {
         <div>
           <Badge variant="gold" className="mb-2">PHOENIX PROTOCOL: SUPPLY CHAIN</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Supply Chain Disruptions</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Global supply chain vulnerabilities, shipping disruptions, and logistics resilience for UAE
           </p>
         </div>
@@ -141,15 +141,15 @@ export default function SupplyChainDisruptionsPage() {
       </div>
 
       {/* Alert Banner */}
-      <div className={`rounded-xl border p-4 bg-slate-900/50 ${getAlertColor(data.alertLevel)}`}>
+      <div className={`rounded-xl border p-4 bg-platinum-900/50 ${getAlertColor(data.alertLevel)}`}>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             {data.alertLevel === 'RED' && <AlertCircle className="h-6 w-6 text-red-400" />}
-            {data.alertLevel === 'YELLOW' && <AlertTriangle className="h-6 w-6 text-yellow-400" />}
+            {data.alertLevel === 'YELLOW' && <AlertTriangle className="h-6 w-6 text-amber-400" />}
             {data.alertLevel === 'GREEN' && <TrendingUp className="h-6 w-6 text-emerald-400" />}
             <div>
-              <p className="font-semibold text-slate-200">Supply Chain Alert Level: {data.alertLevel}</p>
-              <p className="text-sm text-slate-400">
+              <p className="font-semibold text-platinum-200">Supply Chain Alert Level: {data.alertLevel}</p>
+              <p className="text-sm text-platinum-400">
                 {data.affectedEntities?.length || 0} affected entities | Crisis Stage: {data.phoenixStage}
               </p>
             </div>
@@ -173,7 +173,7 @@ export default function SupplyChainDisruptionsPage() {
               {(data.keyFindings || []).map((finding, index) => (
                 <div
                   key={index}
-                  className={`flex items-center justify-between rounded-lg border p-4 bg-slate-800/50 hover:bg-slate-800/70 transition-colors ${finding.alert ? getAlertColor(finding.alert) : 'border-slate-700'}`}
+                  className={`flex items-center justify-between rounded-lg border p-4 bg-platinum-800/50 hover:bg-platinum-800/70 transition-colors ${finding.alert ? getAlertColor(finding.alert) : 'border-platinum-700'}`}
                 >
                   <div className="flex items-center gap-4">
                     <div className={`flex h-10 w-10 items-center justify-center rounded-full ${
@@ -186,14 +186,14 @@ export default function SupplyChainDisruptionsPage() {
                        <AlertCircle className="h-5 w-5" />}
                     </div>
                     <div>
-                      <p className="font-medium text-slate-200">{finding.finding}</p>
-                      <p className="text-sm text-slate-400">Source: {finding.source}</p>
+                      <p className="font-medium text-platinum-200">{finding.finding}</p>
+                      <p className="text-sm text-platinum-400">Source: {finding.source}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="text-right">
                       <p className="text-xl font-bold text-gold">{finding.metric}</p>
-                      <p className="text-xs text-slate-400">Tier {finding.tier}</p>
+                      <p className="text-xs text-platinum-400">Tier {finding.tier}</p>
                     </div>
                     {finding.alert && getAlertBadge(finding.alert)}
                   </div>
@@ -259,10 +259,10 @@ export default function SupplyChainDisruptionsPage() {
                         { indicator: 'Customs Clearance', status: 'Normal', uptime: 94 },
                         { indicator: 'Fuel Supply', status: 'Normal', uptime: 97 },
                       ].map((item, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4">
                           <div className="flex items-center gap-3">
                             <Factory className="h-5 w-5 text-gold" />
-                            <p className="font-medium text-slate-200">{item.indicator}</p>
+                            <p className="font-medium text-platinum-200">{item.indicator}</p>
                           </div>
                           <div className="flex items-center gap-3">
                             <Badge variant="success" className="text-xs">{item.status}</Badge>
@@ -332,8 +332,8 @@ export default function SupplyChainDisruptionsPage() {
                       ].map((item, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-slate-200">{item.sector}</span>
-                            <span className="text-sm text-slate-400">Reliance: {item.reliance}% | Diversified: {item.diversification}%</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.sector}</span>
+                            <span className="text-sm text-platinum-400">Reliance: {item.reliance}% | Diversified: {item.diversification}%</span>
                           </div>
                           <div className="flex gap-2">
                             <Progress value={item.reliance} className="h-2 flex-1" />
@@ -362,8 +362,8 @@ export default function SupplyChainDisruptionsPage() {
                         <div className="flex items-start gap-4">
                           <p className="text-sm font-bold text-gold whitespace-nowrap w-24">{event.date}</p>
                           <div>
-                            <p className="font-semibold text-slate-200">{event.event}</p>
-                            <p className="text-sm text-slate-400 mt-1">{event.description}</p>
+                            <p className="font-semibold text-platinum-200">{event.event}</p>
+                            <p className="text-sm text-platinum-400 mt-1">{event.description}</p>
                             {event.stage && (
                               <Badge variant="outline" className="mt-2 text-xs">{event.stage}</Badge>
                             )}

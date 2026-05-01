@@ -590,7 +590,7 @@ export function CulturalInstitutionsSection() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="flex items-center gap-4 p-3 rounded-lg bg-slate-800/50"
+                      className="flex items-center gap-4 p-3 rounded-lg bg-platinum-800/50"
                     >
                       <div className="flex-shrink-0 w-20 text-sm font-bold text-gold">{museum.openingDate}</div>
                       <div className="flex-1">
@@ -633,7 +633,7 @@ export function CulturalSentimentSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/80 transition-colors"
+            className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/80 transition-colors"
           >
             <div className="flex-1">
               <p className="font-medium text-platinum-200">{topic.topic}</p>
@@ -709,7 +709,7 @@ export function CulturalSourceCredibilitySection() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                  className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                 >
                   <div className="flex-1">
                     <p className="text-sm font-medium text-platinum-200 truncate">{source.sourceName}</p>
@@ -759,7 +759,7 @@ export function CulturalUAERelevanceSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.05 }}
-            className="flex items-center gap-4 rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+            className="flex items-center gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
           >
             <Badge
               variant="outline"
@@ -807,7 +807,7 @@ export function CulturalGovernmentEntitiesSection() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="flex items-start gap-4 rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+            className="flex items-start gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
           >
             <Building className="h-5 w-5 text-gold flex-shrink-0 mt-1" />
             <div className="flex-1">
@@ -844,7 +844,7 @@ export function CulturalFashionDesignersSection() {
           <motion.div
             key={index}
             whileHover={{ scale: 1.02 }}
-            className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/80 transition-all"
+            className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/80 transition-all"
           >
             <div className="flex items-center gap-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/20">
@@ -888,7 +888,7 @@ export function CulturalYouthInnovatorsSection() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+            className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
           >
             <div className="flex items-center gap-3">
               <Users className="h-5 w-5 text-navy" />
@@ -928,7 +928,7 @@ export function CulturalWeddingEvolutionSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="flex items-center gap-4 rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+            className="flex items-center gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
           >
             <div className="flex-1">
               <p className="text-sm font-medium text-gold">{item.tradition}</p>
@@ -1043,7 +1043,7 @@ export function CulturalNationalIdentitySection() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="flex items-center gap-3 rounded-lg bg-slate-800/50 p-3"
+                      className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-3"
                     >
                       <Gem className="h-5 w-5 text-gold" />
                       <span className="text-sm text-platinum-200">{element}</span>
@@ -1069,7 +1069,7 @@ export function CulturalNationalIdentitySection() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.05 }}
-                      className="flex items-center gap-3 rounded-lg bg-slate-800/50 p-3 hover:bg-slate-800/80 transition-colors"
+                      className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-3 hover:bg-platinum-800/80 transition-colors"
                     >
                       <ChevronRight className="h-4 w-4 text-gold" />
                       <span className="text-sm text-platinum-200">{initiative}</span>
@@ -1108,7 +1108,7 @@ export function CulturalAcademicResearchSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2 }}
-            className="rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+            className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
           >
             <div className="flex items-start gap-3 mb-3">
               <Book className="h-5 w-5 text-info flex-shrink-0 mt-1" />
@@ -1157,7 +1157,7 @@ export function CulturalMajorEventsSection() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+            className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
           >
             <div className="flex items-center gap-3">
               <Calendar className="h-5 w-5 text-rose" />
@@ -1200,7 +1200,7 @@ export function CulturalSourceCitationSection() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className="flex items-center gap-3 rounded-lg bg-slate-800/50 p-2"
+                  className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-2"
                 >
                   <span className="w-6 h-6 rounded-full bg-gold/20 text-gold text-xs flex items-center justify-center flex-shrink-0">
                     {citation.number}

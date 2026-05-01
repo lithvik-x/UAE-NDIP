@@ -141,7 +141,7 @@ export default function EntityInvestigationPage() {
                         <Badge variant="outline" className={`border-${c.risk === 'CRITICAL' || c.risk === 'HIGH' ? 'rose' : 'platinum'}-500/50 text-${c.risk === 'CRITICAL' || c.risk === 'HIGH' ? 'rose' : 'platinum'}`}>{c.risk}</Badge>
                       </div>
                     </div>
-                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                       <motion.div initial={{ width: 0 }} animate={{ width: `${(c.connections / 60) * 100}%` }} transition={{ delay: idx * 0.1 + 0.3, duration: 0.5 }}
                         className="h-full rounded-full bg-gradient-to-r from-violet-500 to-purple-500" />
                     </div>

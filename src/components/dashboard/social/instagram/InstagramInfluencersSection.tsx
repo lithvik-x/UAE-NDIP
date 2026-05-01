@@ -128,11 +128,11 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
                     <CardContent>
                       <div className="space-y-4">
                         <div className="grid grid-cols-2 gap-4">
-                          <div className="p-4 rounded-lg bg-slate-800/30">
+                          <div className="p-4 rounded-lg bg-platinum-800/30">
                             <p className="text-xs text-platinum/50 uppercase">Followers</p>
                             <p className="text-xl font-bold text-gold">{(selectedInfluencer.followers / 1000000).toFixed(1)}M</p>
                           </div>
-                          <div className="p-4 rounded-lg bg-slate-800/30">
+                          <div className="p-4 rounded-lg bg-platinum-800/30">
                             <p className="text-xs text-platinum/50 uppercase">Engagement</p>
                             <p className="text-xl font-bold text-emerald-400">
                               {selectedInfluencer.engagementRate > 0 ? `${selectedInfluencer.engagementRate}%` : 'N/A'}
@@ -148,7 +148,7 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
                         {selectedInfluencer.notes && (
                           <div>
                             <p className="text-xs text-platinum/50 uppercase mb-2">Notes</p>
-                            <p className="text-sm text-slate-300">{selectedInfluencer.notes}</p>
+                            <p className="text-sm text-platinum-300">{selectedInfluencer.notes}</p>
                           </div>
                         )}
                         {selectedInfluencer.category && (
@@ -180,7 +180,7 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
                       <ScrollArea className="h-[400px]">
                         <div className="space-y-2">
                           {lifestyleInfluencers.map((inf: { username: string; followers: number; engagementRate: number; audienceGender: string }, idx: number) => (
-                            <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-slate-800/30">
+                            <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/30">
                               <div>
                                 <span className="text-sm font-medium text-white">{inf.username}</span>
                                 <p className="text-xs text-platinum/50">{inf.audienceGender}</p>
@@ -219,7 +219,7 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
                         {inf.engagementRate}%
                       </Badge>
                     </div>
-                    <p className="text-xs text-slate-400 mb-1">{(inf.followers / 1000000).toFixed(1)}M followers</p>
+                    <p className="text-xs text-platinum-400 mb-1">{(inf.followers / 1000000).toFixed(1)}M followers</p>
                     <p className="text-xs text-platinum/50">{inf.audienceGender}</p>
                   </div>
                 ))}
@@ -249,8 +249,8 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
                         <span className="text-xs text-platinum/50">{vInf.platform}</span>
                       </div>
                     </div>
-                    <p className="text-xs text-slate-300 mb-2">{vInf.description}</p>
-                    <Badge variant="outline" className="text-xs border-blue-500/30 text-blue-300">
+                    <p className="text-xs text-platinum-300 mb-2">{vInf.description}</p>
+                    <Badge variant="outline" className="text-xs border-navy-500/30 text-navy-300">
                       {vInf.location}
                     </Badge>
                   </div>

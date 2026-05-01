@@ -211,7 +211,7 @@ export default function CorporateStakeholdersPage() {
         <div>
           <Badge variant="emerald" className="mb-2">CORPORATE</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Corporate Stakeholders</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Major corporations, sovereign wealth funds, and private sector entities driving UAE economic growth
           </p>
         </div>
@@ -339,39 +339,39 @@ export default function CorporateStakeholdersPage() {
                             <Briefcase className="h-6 w-6" />
                           </div>
                           <div>
-                            <CardTitle className="text-lg text-slate-200">{entity.name}</CardTitle>
-                            {entity.nameAr && <p className="text-sm text-slate-400">{entity.nameAr}</p>}
+                            <CardTitle className="text-lg text-platinum-200">{entity.name}</CardTitle>
+                            {entity.nameAr && <p className="text-sm text-platinum-400">{entity.nameAr}</p>}
                           </div>
                         </div>
                         {getAlertBadge(entity.alertLevel)}
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-slate-300 mb-4">{entity.mandate}</p>
+                      <p className="text-platinum-300 mb-4">{entity.mandate}</p>
                       <div className="grid gap-4 sm:grid-cols-4">
                         <div className="text-center">
                           <div className="text-xl font-bold text-emerald-400">
                             {entity.metrics?.digitalReach?.toLocaleString() || 'N/A'}
                           </div>
-                          <div className="text-xs text-slate-400">Digital Reach</div>
+                          <div className="text-xs text-platinum-400">Digital Reach</div>
                         </div>
                         <div className="text-center">
                           <div className="text-xl font-bold text-gold-400">
                             {entity.metrics?.engagement?.toFixed(1) || 'N/A'}
                           </div>
-                          <div className="text-xs text-slate-400">Engagement</div>
+                          <div className="text-xs text-platinum-400">Engagement</div>
                         </div>
                         <div className="text-center">
                           <div className="text-xl font-bold text-platinum-400">
                             {entity.metrics?.credibility?.score || 'N/A'}
                           </div>
-                          <div className="text-xs text-slate-400">Credibility</div>
+                          <div className="text-xs text-platinum-400">Credibility</div>
                         </div>
                         <div className="text-center">
                           <div className="text-xl font-bold text-navy-400">
                             {entity.uaeRelevance?.level || 'N/A'}
                           </div>
-                          <div className="text-xs text-slate-400">UAE Relevance</div>
+                          <div className="text-xs text-platinum-400">UAE Relevance</div>
                         </div>
                       </div>
                     </CardContent>
@@ -414,7 +414,7 @@ export default function CorporateStakeholdersPage() {
                             className="h-3 w-3 rounded-full"
                             style={{ backgroundColor: sector.color }}
                           />
-                          <span className="font-medium text-slate-200">{sector.name}</span>
+                          <span className="font-medium text-platinum-200">{sector.name}</span>
                         </div>
                         <span className="text-xl font-bold text-emerald-400">{sector.value}%</span>
                       </div>
@@ -461,14 +461,14 @@ export default function CorporateStakeholdersPage() {
                         return (
                           <div key={entity.id} className="space-y-2">
                             <div className="flex items-center justify-between">
-                              <span className="text-sm font-medium text-slate-200">{entity.name}</span>
+                              <span className="text-sm font-medium text-platinum-200">{entity.name}</span>
                               <div className="flex items-center gap-4 text-xs">
                                 <span className="text-emerald-400">+{sentiment?.positive || 0}%</span>
                                 <span className="text-platinum-400">{sentiment?.neutral || 0}%</span>
                                 <span className="text-rose-400">-{sentiment?.negative || 0}%</span>
                               </div>
                             </div>
-                            <div className="flex h-2 overflow-hidden rounded-full bg-slate-700">
+                            <div className="flex h-2 overflow-hidden rounded-full bg-platinum-700">
                               <div
                                 className="bg-emerald-500"
                                 style={{ width: `${sentiment?.positive || 0}%` }}

@@ -108,8 +108,8 @@ export default function FederalOfficialsPage() {
       'bg-gradient-gold text-white',
       'bg-gradient-platinum text-white',
       'bg-gradient-denim text-white',
-      'bg-slate-400 text-white',
-      'bg-slate-300 text-slate-700',
+      'bg-platinum-400 text-white',
+      'bg-platinum-300 text-platinum-700',
     ]
     return (
       <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold ${colors[tier]}`}>
@@ -125,14 +125,14 @@ export default function FederalOfficialsPage() {
           href={`https://twitter.com/${entity.socialAccounts.twitter.replace('@', '')}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-blue-500 hover:text-blue-400 transition-colors"
+          className="inline-flex items-center gap-1 text-navy-500 hover:text-navy-400 transition-colors"
         >
           <Twitter className="h-3.5 w-3.5" />
           <span className="text-xs">{entity.socialAccounts.twitter}</span>
         </a>
       )
     }
-    return <span className="text-slate-500 text-xs">—</span>
+    return <span className="text-platinum-500 text-xs">—</span>
   }
 
   return (

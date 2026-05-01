@@ -93,7 +93,7 @@ export default function EmergingThreatsPage() {
     switch (severity) {
       case 'CRITICAL': return <Badge variant="destructive" className="text-xs bg-red-500/20 text-red-400 border-red-500/50">CRITICAL</Badge>
       case 'HIGH': return <Badge variant="warning" className="text-xs bg-orange-500/20 text-orange-400 border-orange-500/50">HIGH</Badge>
-      case 'MEDIUM': return <Badge variant="outline" className="text-xs text-yellow-400 border-yellow-400/50">MEDIUM</Badge>
+      case 'MEDIUM': return <Badge variant="outline" className="text-xs text-amber-400 border-amber-400/50">MEDIUM</Badge>
       default: return <Badge variant="outline" className="text-xs">LOW</Badge>
     }
   }
@@ -105,7 +105,7 @@ export default function EmergingThreatsPage() {
         <div>
           <Badge variant="rose" className="mb-2">M-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-rose">Emerging Threats</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             AI-powered threat prediction and early warning system for UAE digital assets
           </p>
         </div>
@@ -212,28 +212,28 @@ export default function EmergingThreatsPage() {
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Zero-Day Detection</span>
+                        <span className="text-platinum-400">Zero-Day Detection</span>
                         <span className="font-medium text-emerald-400">94.7%</span>
                       </div>
                       <Progress value={94.7} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Threat Pattern Recognition</span>
+                        <span className="text-platinum-400">Threat Pattern Recognition</span>
                         <span className="font-medium text-emerald-400">91.2%</span>
                       </div>
                       <Progress value={91.2} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Predictive Analysis</span>
+                        <span className="text-platinum-400">Predictive Analysis</span>
                         <span className="font-medium text-emerald-400">87.8%</span>
                       </div>
                       <Progress value={87.8} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Anomaly Detection</span>
+                        <span className="text-platinum-400">Anomaly Detection</span>
                         <span className="font-medium text-emerald-400">96.3%</span>
                       </div>
                       <Progress value={96.3} className="h-3" />
@@ -262,17 +262,17 @@ export default function EmergingThreatsPage() {
                       {emergingThreatsList.map((threat) => (
                         <div key={threat.id} className="flex items-start justify-between rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
                           <div className="flex-1">
-                            <p className="font-semibold text-slate-200">{threat.threat}</p>
-                            <p className="text-sm text-slate-400 mt-1">{threat.description}</p>
+                            <p className="font-semibold text-platinum-200">{threat.threat}</p>
+                            <p className="text-sm text-platinum-400 mt-1">{threat.description}</p>
                           </div>
                           <div className="flex items-center gap-3">
                             <div className="flex flex-col items-end gap-1">
                               {getSeverityBadge(threat.severity)}
-                              <Badge variant="outline" className="text-xs text-slate-400">
+                              <Badge variant="outline" className="text-xs text-platinum-400">
                                 {threat.likelihood} Likelihood
                               </Badge>
                             </div>
-                            <span className="text-xs text-slate-400">{threat.time}</span>
+                            <span className="text-xs text-platinum-400">{threat.time}</span>
                           </div>
                         </div>
                       ))}
@@ -319,19 +319,19 @@ export default function EmergingThreatsPage() {
                       {predictedThreatsList.map((threat) => (
                         <div key={threat.id} className="flex items-start justify-between rounded-lg bg-gold-500/10 p-4 border border-gold-500/30">
                           <div className="flex-1">
-                            <p className="font-semibold text-slate-200">{threat.threat}</p>
-                            <p className="text-sm text-slate-400 mt-1">{threat.prediction}</p>
+                            <p className="font-semibold text-platinum-200">{threat.threat}</p>
+                            <p className="text-sm text-platinum-400 mt-1">{threat.prediction}</p>
                           </div>
                           <div className="flex items-center gap-3">
                             <div className="text-center">
                               <div className="text-lg font-bold text-gold">{threat.confidence}%</div>
-                              <p className="text-xs text-slate-400">Confidence</p>
+                              <p className="text-xs text-platinum-400">Confidence</p>
                             </div>
                             <div className="text-center">
                               <Badge variant="outline" className="text-xs text-gold border-gold-400/50">
                                 {threat.timeframe}
                               </Badge>
-                              <p className="text-xs text-slate-400 mt-1">Timeframe</p>
+                              <p className="text-xs text-platinum-400 mt-1">Timeframe</p>
                             </div>
                           </div>
                         </div>
@@ -348,21 +348,21 @@ export default function EmergingThreatsPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-4">
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">89%</div>
-                      <p className="text-sm text-slate-400">Overall Accuracy</p>
+                      <p className="text-sm text-platinum-400">Overall Accuracy</p>
                     </div>
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-gold">156</div>
-                      <p className="text-sm text-slate-400">Threats Predicted</p>
+                      <p className="text-sm text-platinum-400">Threats Predicted</p>
                     </div>
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-navy">23</div>
-                      <p className="text-sm text-slate-400">Currently Active</p>
+                      <p className="text-sm text-platinum-400">Currently Active</p>
                     </div>
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-rose">47</div>
-                      <p className="text-sm text-slate-400">Mitigated</p>
+                      <p className="text-sm text-platinum-400">Mitigated</p>
                     </div>
                   </div>
                 </CardContent>
@@ -403,13 +403,13 @@ export default function EmergingThreatsPage() {
                   <ScrollArea className="h-[300px]">
                     <div className="space-y-3">
                       {sectorImpactData.map((sector, idx) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div className="flex items-center gap-4">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy">
                               <Globe className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-200">{sector.sector}</p>
+                              <p className="font-semibold text-platinum-200">{sector.sector}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-6">
@@ -417,13 +417,13 @@ export default function EmergingThreatsPage() {
                               <div className={`text-lg font-bold ${sector.risk > 70 ? 'text-rose-400' : 'text-orange-400'}`}>
                                 {sector.risk}%
                               </div>
-                              <p className="text-xs text-slate-400">Risk</p>
+                              <p className="text-xs text-platinum-400">Risk</p>
                             </div>
                             <div className="text-center">
-                              <div className={`text-lg font-bold ${sector.exposure > 85 ? 'text-gold' : 'text-slate-400'}`}>
+                              <div className={`text-lg font-bold ${sector.exposure > 85 ? 'text-gold' : 'text-platinum-400'}`}>
                                 {sector.exposure}%
                               </div>
-                              <p className="text-xs text-slate-400">Exposure</p>
+                              <p className="text-xs text-platinum-400">Exposure</p>
                             </div>
                           </div>
                         </div>

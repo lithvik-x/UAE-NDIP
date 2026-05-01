@@ -308,7 +308,7 @@ function LegislationSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.05 }}
             whileHover={{ scale: 1.02 }}
-            className="rounded-lg border border-slate-700/50 bg-[var(--glass-surface)] p-4 hover:border-emerald-500/30 transition-colors"
+            className="rounded-lg border border-platinum-700/50 bg-[var(--glass-surface)] p-4 hover:border-emerald-500/30 transition-colors"
           >
             <div className="flex items-start justify-between mb-2">
               <Badge
@@ -317,10 +317,10 @@ function LegislationSection() {
               >
                 {law.status}
               </Badge>
-              <span className="text-xs text-slate-500">{law.number}</span>
+              <span className="text-xs text-platinum-500">{law.number}</span>
             </div>
-            <h4 className="font-medium text-slate-200 text-sm mb-1 line-clamp-2">{law.lawName}</h4>
-            <p className="text-xs text-slate-400">{law.effectiveDate}</p>
+            <h4 className="font-medium text-platinum-200 text-sm mb-1 line-clamp-2">{law.lawName}</h4>
+            <p className="text-xs text-platinum-400">{law.effectiveDate}</p>
             <Badge variant="outline" className="mt-2 text-xs border-emerald-500/30 text-emerald">
               {law.category}
             </Badge>
@@ -354,11 +354,11 @@ function FinesSection() {
             key={fine.id}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="rounded-lg border border-slate-700/50 bg-[var(--glass-surface)] p-3"
+            className="rounded-lg border border-platinum-700/50 bg-[var(--glass-surface)] p-3"
           >
-            <p className="text-xs text-slate-400 mb-1">{fine.regulation}</p>
+            <p className="text-xs text-platinum-400 mb-1">{fine.regulation}</p>
             <p className="text-lg font-bold text-rose-400">{fine.maxFine}</p>
-            <p className="text-xs text-slate-500">Max fine</p>
+            <p className="text-xs text-platinum-500">Max fine</p>
           </motion.div>
         ))}
       </div>
@@ -390,8 +390,8 @@ function TimelineSection() {
                   className="flex items-center justify-between rounded-lg bg-emerald-500/10 p-3 border border-emerald-500/20"
                 >
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-slate-200 truncate">{event.event}</p>
-                    <p className="text-xs text-slate-400">{event.date}</p>
+                    <p className="text-sm font-medium text-platinum-200 truncate">{event.event}</p>
+                    <p className="text-xs text-platinum-400">{event.date}</p>
                   </div>
                   <Badge variant="success" className="shrink-0 ml-2">Passed</Badge>
                 </motion.div>
@@ -419,8 +419,8 @@ function TimelineSection() {
                   className="flex items-center justify-between rounded-lg bg-gold-500/10 p-3 border border-gold-500/20"
                 >
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-slate-200 truncate">{event.event}</p>
-                    <p className="text-xs text-slate-400">{event.date}</p>
+                    <p className="text-sm font-medium text-platinum-200 truncate">{event.event}</p>
+                    <p className="text-xs text-platinum-400">{event.date}</p>
                   </div>
                   <Badge variant="warning" className="shrink-0 ml-2">Upcoming</Badge>
                 </motion.div>
@@ -447,7 +447,7 @@ function SentimentSection() {
             className={`rounded-lg border p-4 ${
               topic.color === 'emerald'
                 ? 'border-emerald-500/30 bg-emerald-500/5'
-                : 'border-yellow-500/30 bg-yellow-500/5'
+                : 'border-amber-500/30 bg-amber-500/5'
             }`}
           >
             <div className="flex items-center justify-between mb-2">
@@ -458,8 +458,8 @@ function SentimentSection() {
                 {topic.sentiment}
               </Badge>
             </div>
-            <h4 className="font-medium text-slate-200 text-sm mb-1">{topic.topic}</h4>
-            <p className="text-xs text-slate-400">{topic.analysis}</p>
+            <h4 className="font-medium text-platinum-200 text-sm mb-1">{topic.topic}</h4>
+            <p className="text-xs text-platinum-400">{topic.analysis}</p>
           </motion.div>
         ))}
       </div>
@@ -493,7 +493,7 @@ function RelevanceSection() {
                 ? 'border-rose-500/30 bg-rose-500/5'
                 : cat.relevance === 'HIGH'
                 ? 'border-emerald-500/30 bg-emerald-500/5'
-                : 'border-yellow-500/30 bg-yellow-500/5'
+                : 'border-amber-500/30 bg-amber-500/5'
             }`}
           >
             <div className="flex items-center justify-between mb-2">
@@ -505,7 +505,7 @@ function RelevanceSection() {
               </Badge>
               <Badge variant="outline" className="text-xs">{cat.priority}</Badge>
             </div>
-            <p className="text-sm font-medium text-slate-200">{cat.category}</p>
+            <p className="text-sm font-medium text-platinum-200">{cat.category}</p>
           </motion.div>
         ))}
       </div>
@@ -529,11 +529,11 @@ function StakeholderSection() {
                 ? 'border-rose-500/30 bg-rose-500/5'
                 : item.relevance === 'HIGH'
                 ? 'border-emerald-500/30 bg-emerald-500/5'
-                : 'border-yellow-500/30 bg-yellow-500/5'
+                : 'border-amber-500/30 bg-amber-500/5'
             }`}
           >
             <div className="flex items-center justify-between mb-3">
-              <h4 className="font-medium text-slate-200 text-sm">{item.segment}</h4>
+              <h4 className="font-medium text-platinum-200 text-sm">{item.segment}</h4>
               <Badge
                 variant={item.relevance === 'CRITICAL' ? 'destructive' : item.relevance === 'HIGH' ? 'success' : 'warning'}
                 className="text-xs"
@@ -543,7 +543,7 @@ function StakeholderSection() {
             </div>
             <div className="space-y-1">
               {item.regulations.map((reg, i) => (
-                <p key={i} className="text-xs text-slate-400 flex items-start gap-2">
+                <p key={i} className="text-xs text-platinum-400 flex items-start gap-2">
                   <span className="text-emerald-400 shrink-0">•</span>
                   {reg}
                 </p>
@@ -566,21 +566,21 @@ function RegulatoryBodiesSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: idx * 0.03 }}
           whileHover={{ scale: 1.02 }}
-          className="rounded-lg border border-slate-700/50 bg-[var(--glass-surface)] p-4"
+          className="rounded-lg border border-platinum-700/50 bg-[var(--glass-surface)] p-4"
         >
           <div className="flex items-center gap-2 mb-2">
             <Building className="h-4 w-4 text-emerald-400" />
-            <h4 className="font-medium text-slate-200 text-sm line-clamp-1">{body.entity}</h4>
+            <h4 className="font-medium text-platinum-200 text-sm line-clamp-1">{body.entity}</h4>
           </div>
           <div className="space-y-1">
-            <p className="text-xs text-slate-400">
-              <span className="text-slate-500">Acronym:</span> {body.acronym}
+            <p className="text-xs text-platinum-400">
+              <span className="text-platinum-500">Acronym:</span> {body.acronym}
             </p>
-            <p className="text-xs text-slate-400">
-              <span className="text-slate-500">Jurisdiction:</span> {body.jurisdiction}
+            <p className="text-xs text-platinum-400">
+              <span className="text-platinum-500">Jurisdiction:</span> {body.jurisdiction}
             </p>
-            <p className="text-xs text-slate-400 line-clamp-2">
-              <span className="text-slate-500">Role:</span> {body.role}
+            <p className="text-xs text-platinum-400 line-clamp-2">
+              <span className="text-platinum-500">Role:</span> {body.role}
             </p>
           </div>
         </motion.div>
@@ -598,15 +598,15 @@ function TrendsSummarySection() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: idx * 0.05 }}
-          className="rounded-lg border border-slate-700/50 bg-[var(--glass-surface)] p-5"
+          className="rounded-lg border border-platinum-700/50 bg-[var(--glass-surface)] p-5"
         >
-          <h4 className="font-semibold text-slate-200 mb-3 flex items-center gap-2">
+          <h4 className="font-semibold text-platinum-200 mb-3 flex items-center gap-2">
             <TrendingUp className="h-4 w-4 text-emerald-400" />
             {trend.trendName}
           </h4>
           <div className="grid gap-2 sm:grid-cols-2">
             {trend.keyPoints.map((point, i) => (
-              <p key={i} className="text-xs text-slate-400 flex items-start gap-2">
+              <p key={i} className="text-xs text-platinum-400 flex items-start gap-2">
                 <span className="text-emerald-400 shrink-0">•</span>
                 {point}
               </p>
@@ -628,7 +628,7 @@ function SourceCredibilitySection() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: idx * 0.03 }}
-            className="rounded-lg border border-slate-700/50 bg-[var(--glass-surface)] p-3"
+            className="rounded-lg border border-platinum-700/50 bg-[var(--glass-surface)] p-3"
           >
             <div className="flex items-center justify-between mb-2">
               <Badge
@@ -637,10 +637,10 @@ function SourceCredibilitySection() {
               >
                 Tier {source.tier}
               </Badge>
-              <span className="text-xs text-slate-500">{source.reliability}</span>
+              <span className="text-xs text-platinum-500">{source.reliability}</span>
             </div>
-            <p className="text-sm font-medium text-slate-200 line-clamp-2">{source.source}</p>
-            <p className="text-xs text-slate-500 mt-1">{source.type}</p>
+            <p className="text-sm font-medium text-platinum-200 line-clamp-2">{source.source}</p>
+            <p className="text-xs text-platinum-500 mt-1">{source.type}</p>
           </motion.div>
         ))}
       </div>
@@ -678,14 +678,14 @@ function ResearchQualitySection() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: idx * 0.03 }}
-            className="rounded-lg border border-slate-700/50 bg-[var(--glass-surface)] p-4"
+            className="rounded-lg border border-platinum-700/50 bg-[var(--glass-surface)] p-4"
           >
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-slate-200">{item.metric}</span>
+              <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
               <span className="text-lg font-bold text-gold">{item.score}/10</span>
             </div>
             <Progress value={item.score * 10} className="h-1 mb-2" />
-            <p className="text-xs text-slate-400">{item.notes}</p>
+            <p className="text-xs text-platinum-400">{item.notes}</p>
           </motion.div>
         ))}
       </div>
@@ -719,7 +719,7 @@ export default function RegulatoryTrendsPage() {
         <div>
           <Badge variant="gold" className="mb-2">REGULATORY INTELLIGENCE</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Regulatory Trends</h1>
-          <p className="mt-2 text-slate-400 max-w-2xl">
+          <p className="mt-2 text-platinum-400 max-w-2xl">
             Comprehensive analysis of UAE regulatory environment 2025-2026: Climate law, AML enforcement,
             PDPL compliance, ESG mandates, and AI governance frameworks.
           </p>
@@ -744,16 +744,16 @@ export default function RegulatoryTrendsPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="relative overflow-hidden rounded-2xl border border-yellow-500/20 bg-gradient-to-br from-yellow-900/20 via-yellow-950/40 to-transparent p-6"
+        className="relative overflow-hidden rounded-2xl border border-amber-500/20 bg-gradient-to-br from-yellow-900/20 via-yellow-950/40 to-transparent p-6"
       >
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,158,11,0.15),transparent_50%)]" />
         <div className="relative z-10 flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-yellow-500/20">
-            <AlertTriangle className="h-6 w-6 text-yellow-400" />
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-500/20">
+            <AlertTriangle className="h-6 w-6 text-amber-400" />
           </div>
           <div>
-            <h3 className="text-lg font-bold text-yellow-400">YELLOW Alert Status</h3>
-            <p className="text-sm text-slate-400">
+            <h3 className="text-lg font-bold text-amber-400">YELLOW Alert Status</h3>
+            <p className="text-sm text-platinum-400">
               Multiple CRITICAL regulatory changes active/enforcing. Monitor compliance deadlines: May 30, 2026 (Climate Law) and July 2026 (E-invoicing).
             </p>
           </div>

@@ -97,7 +97,7 @@ export function VaccinationSection({ data }: VaccinationSectionProps) {
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-platinum-400">Local Production:</span>
-                  <span className="text-sky-400">{sinopharmDetails.localProduction}</span>
+                  <span className="text-cyan-400">{sinopharmDetails.localProduction}</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-platinum-400">Capacity Target:</span>
@@ -167,7 +167,7 @@ export function VaccinationSection({ data }: VaccinationSectionProps) {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
-                className="rounded-lg bg-gradient-to-r from-sky-500/10 to-purple-600/5 p-4 border border-sky-500/30"
+                className="rounded-lg bg-gradient-to-r from-sky-500/10 to-purple-600/5 p-4 border border-cyan-500/30"
               >
                 <div className="flex items-center gap-2 mb-2">
                   <Pill className="h-4 w-4 text-sky" />
@@ -189,7 +189,7 @@ export function VaccinationSection({ data }: VaccinationSectionProps) {
             <Star className="w-3 h-3 mr-1" />
             Free for All
           </Badge>
-          <Badge className="bg-sky-500/20 text-sky border-sky-500/50">
+          <Badge className="bg-cyan-500/20 text-sky border-cyan-500/50">
             <Award className="w-3 h-3 mr-1" />
             2nd Fastest Globally
           </Badge>

@@ -67,18 +67,18 @@ export function RegionalSection({ className }: RegionalSectionProps) {
                       initial={{ opacity: 0, y: 5 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
+                      className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                     >
                       <div className="flex items-center gap-3">
                         <Flag className={`h-4 w-4 ${getStatusColor(op.status)}`} />
                         <div>
-                          <p className="font-medium text-slate-200">{op.operation}</p>
-                          <p className="text-xs text-slate-400">{op.country} | {op.start}-{op.end}</p>
+                          <p className="font-medium text-platinum-200">{op.operation}</p>
+                          <p className="text-xs text-platinum-400">{op.country} | {op.start}-{op.end}</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
                         <Badge variant="outline" className={`text-xs ${getStatusColor(op.status)}`}>{op.status}</Badge>
-                        <span className="text-xs text-slate-400">{op.casualties}</span>
+                        <span className="text-xs text-platinum-400">{op.casualties}</span>
                       </div>
                     </motion.div>
                   ))}
@@ -104,9 +104,9 @@ export function RegionalSection({ className }: RegionalSectionProps) {
                     { label: 'Relations Severed', value: 'January 2026' },
                     { label: 'Cancelled', value: 'All defense/port agreements' },
                   ].map((item, idx) => (
-                    <div key={idx} className="flex justify-between rounded bg-slate-800/50 p-2">
-                      <span className="text-slate-400 text-sm">{item.label}</span>
-                      <span className="text-slate-200 text-sm font-medium">{item.value}</span>
+                    <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
+                      <span className="text-platinum-400 text-sm">{item.label}</span>
+                      <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -123,9 +123,9 @@ export function RegionalSection({ className }: RegionalSectionProps) {
               <CardContent>
                 <div className="space-y-3">
                   {eritrea.map((item, idx) => (
-                    <div key={idx} className="flex justify-between rounded bg-slate-800/50 p-2">
-                      <span className="text-slate-400 text-sm">{item.label}</span>
-                      <span className="text-slate-200 text-sm font-medium">{item.value}</span>
+                    <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
+                      <span className="text-platinum-400 text-sm">{item.label}</span>
+                      <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -150,9 +150,9 @@ export function RegionalSection({ className }: RegionalSectionProps) {
                     { label: 'Total Investment', value: '$28B+' },
                     { label: 'Damascus Metro', value: '$2B (National Invest)' },
                   ].map((item, idx) => (
-                    <div key={idx} className="flex justify-between rounded bg-slate-800/50 p-2">
-                      <span className="text-slate-400 text-sm">{item.label}</span>
-                      <span className="text-slate-200 text-sm font-medium">{item.value}</span>
+                    <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
+                      <span className="text-platinum-400 text-sm">{item.label}</span>
+                      <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -174,9 +174,9 @@ export function RegionalSection({ className }: RegionalSectionProps) {
                     { label: 'UAE Pledge', value: '$1B+' },
                     { label: 'Stabilization Force', value: 'Refused (Nov 2025)' },
                   ].map((item, idx) => (
-                    <div key={idx} className="flex justify-between rounded bg-slate-800/50 p-2">
-                      <span className="text-slate-400 text-sm">{item.label}</span>
-                      <span className="text-slate-200 text-sm font-medium">{item.value}</span>
+                    <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
+                      <span className="text-platinum-400 text-sm">{item.label}</span>
+                      <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -195,9 +195,9 @@ export function RegionalSection({ className }: RegionalSectionProps) {
             <CardContent>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {iraqKurdistan.map((item, idx) => (
-                  <div key={idx} className="rounded bg-slate-800/50 p-3 border border-slate-700/50">
-                    <p className="text-xs text-slate-400">{item.label}</p>
-                    <p className="text-sm font-medium text-slate-200">{item.value}</p>
+                  <div key={idx} className="rounded bg-platinum-800/50 p-3 border border-platinum-700/50">
+                    <p className="text-xs text-platinum-400">{item.label}</p>
+                    <p className="text-sm font-medium text-platinum-200">{item.value}</p>
                   </div>
                 ))}
               </div>

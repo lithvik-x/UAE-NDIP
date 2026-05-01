@@ -106,13 +106,13 @@ export default function InfluencerSentimentPage() {
 
   const getSentimentColor = (score: number) => {
     if (score >= 80) return 'text-emerald-400'
-    if (score >= 70) return 'text-yellow-400'
+    if (score >= 70) return 'text-amber-400'
     return 'text-rose-400'
   }
 
   const getSentimentBg = (score: number) => {
     if (score >= 80) return 'bg-emerald-500/20'
-    if (score >= 70) return 'bg-yellow-500/20'
+    if (score >= 70) return 'bg-amber-500/20'
     return 'bg-rose-500/20'
   }
 
@@ -123,7 +123,7 @@ export default function InfluencerSentimentPage() {
         <div>
           <Badge variant="gold" className="mb-2">SENTIMENT</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Influencer Sentiment</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Key opinion leaders, influencer analytics, and sentiment tracking
           </p>
         </div>
@@ -255,21 +255,21 @@ export default function InfluencerSentimentPage() {
                   <ScrollArea className="h-[300px]">
                     <div className="space-y-3">
                       {categorySentimentData.map((cat, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                        <div key={index} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div className="flex items-center gap-4">
                             <div className={`flex h-10 w-10 items-center justify-center rounded-full ${getSentimentBg(cat.sentiment)}`}>
                               <Star className={`h-5 w-5 ${getSentimentColor(cat.sentiment)}`} />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-200">{cat.category}</p>
-                              <p className="text-sm text-slate-400">{cat.influencers} influencers</p>
+                              <p className="font-semibold text-platinum-200">{cat.category}</p>
+                              <p className="text-sm text-platinum-400">{cat.influencers} influencers</p>
                             </div>
                           </div>
                           <div className="text-center">
                             <div className={`text-lg font-bold ${getSentimentColor(cat.sentiment)}`}>
                               {cat.sentiment}%
                             </div>
-                            <p className="text-xs text-slate-400">Sentiment</p>
+                            <p className="text-xs text-platinum-400">Sentiment</p>
                           </div>
                         </div>
                       ))}
@@ -294,15 +294,15 @@ export default function InfluencerSentimentPage() {
                   <ScrollArea className="h-[400px]">
                     <div className="space-y-4">
                       {topInfluencersData.map((influencer, index) => (
-                        <div key={index} className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                        <div key={index} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div className="flex items-start justify-between">
                             <div className="flex items-center gap-4">
                               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/20 text-gold">
                                 <User className="h-6 w-6" />
                               </div>
                               <div>
-                                <p className="font-semibold text-slate-200">{influencer.name}</p>
-                                <p className="text-sm text-slate-400">{influencer.handle}</p>
+                                <p className="font-semibold text-platinum-200">{influencer.name}</p>
+                                <p className="text-sm text-platinum-400">{influencer.handle}</p>
                                 <div className="flex items-center gap-2 mt-1">
                                   <Badge variant="outline" className="text-xs">{influencer.category}</Badge>
                                   <Badge variant="outline" className="text-xs">{influencer.reach}</Badge>
@@ -311,11 +311,11 @@ export default function InfluencerSentimentPage() {
                             </div>
                             <div className="text-right">
                               <div className="text-2xl font-bold text-gold">{influencer.followers}M</div>
-                              <p className="text-xs text-slate-400">Followers</p>
+                              <p className="text-xs text-platinum-400">Followers</p>
                             </div>
                           </div>
                           <div className="mt-3 flex items-center justify-between">
-                            <span className="text-sm text-slate-400">Sentiment Score</span>
+                            <span className="text-sm text-platinum-400">Sentiment Score</span>
                             <div className="flex items-center gap-2">
                               <Progress value={influencer.sentiment} className="h-2 w-24" />
                               <span className={`text-sm font-bold ${getSentimentColor(influencer.sentiment)}`}>
@@ -344,12 +344,12 @@ export default function InfluencerSentimentPage() {
                         { name: 'Layla AlSheikh', handle: '@LaylaStyle', growth: 35, sentiment: 79 },
                         { name: 'Khalid Nasser', handle: '@KNFinance', growth: 32, sentiment: 80 },
                       ].map((influencer, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <TrendingUp className="h-5 w-5 text-emerald" />
                             <div>
-                              <p className="text-sm font-medium text-slate-200">{influencer.name}</p>
-                              <p className="text-xs text-slate-400">{influencer.handle}</p>
+                              <p className="text-sm font-medium text-platinum-200">{influencer.name}</p>
+                              <p className="text-xs text-platinum-400">{influencer.handle}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-3">
@@ -375,10 +375,10 @@ export default function InfluencerSentimentPage() {
                         { name: 'National Initiative Partners', ambassadors: 42, sentiment: 85 },
                         { name: 'Cultural Embassy Voices', ambassadors: 12, sentiment: 86 },
                       ].map((item, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Shield className="h-5 w-5 text-gold" />
-                            <span className="text-sm font-medium text-slate-200">{item.name}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.name}</span>
                           </div>
                           <div className="flex items-center gap-3">
                             <Badge variant="outline" className="text-xs">{item.ambassadors}</Badge>
@@ -472,27 +472,27 @@ export default function InfluencerSentimentPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-4">
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <MessageSquare className="mx-auto h-6 w-6 text-gold mb-2" />
-                      <p className="text-xs text-slate-400">Avg Posts/Week</p>
+                      <p className="text-xs text-platinum-400">Avg Posts/Week</p>
                       <p className="text-xl font-bold text-gold">4.2</p>
                       <span className="text-xs text-emerald">+0.3 YoY</span>
                     </div>
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <Heart className="mx-auto h-6 w-6 text-rose mb-2" />
-                      <p className="text-xs text-slate-400">Avg Engagement</p>
+                      <p className="text-xs text-platinum-400">Avg Engagement</p>
                       <p className="text-xl font-bold text-rose">5.8%</p>
                       <span className="text-xs text-emerald">+0.8% YoY</span>
                     </div>
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <Share2 className="mx-auto h-6 w-6 text-navy mb-2" />
-                      <p className="text-xs text-slate-400">Avg Shares</p>
+                      <p className="text-xs text-platinum-400">Avg Shares</p>
                       <p className="text-xl font-bold text-navy">1.2K</p>
                       <span className="text-xs text-emerald">+15% YoY</span>
                     </div>
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <Eye className="mx-auto h-6 w-6 text-emerald mb-2" />
-                      <p className="text-xs text-slate-400">Avg Reach</p>
+                      <p className="text-xs text-platinum-400">Avg Reach</p>
                       <p className="text-xl font-bold text-emerald">125K</p>
                       <span className="text-xs text-emerald">+22% YoY</span>
                     </div>
@@ -543,8 +543,8 @@ export default function InfluencerSentimentPage() {
                             <div className="flex items-center gap-3">
                               <AlertCircle className="h-5 w-5 text-rose" />
                               <div>
-                                <p className="text-sm font-medium text-slate-200">{influencer.name}</p>
-                                <p className="text-xs text-slate-400">{influencer.reason}</p>
+                                <p className="text-sm font-medium text-platinum-200">{influencer.name}</p>
+                                <p className="text-xs text-platinum-400">{influencer.reason}</p>
                               </div>
                             </div>
                             <Badge variant="destructive" className="text-xs">{influencer.risk}%</Badge>
@@ -567,13 +567,13 @@ export default function InfluencerSentimentPage() {
                         { name: 'Crisis B - Resolved', recovery: 85, time: '1 month' },
                         { name: 'Crisis C - Monitoring', recovery: 72, time: 'Ongoing' },
                       ].map((item, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <CheckCircle className="h-5 w-5 text-emerald" />
-                            <span className="text-sm font-medium text-slate-200">{item.name}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.name}</span>
                           </div>
                           <div className="flex items-center gap-3">
-                            <span className="text-sm text-slate-400">{item.time}</span>
+                            <span className="text-sm text-platinum-400">{item.time}</span>
                             <Badge variant="outline" className="text-xs text-emerald">{item.recovery}%</Badge>
                           </div>
                         </div>
@@ -590,21 +590,21 @@ export default function InfluencerSentimentPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-3">
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <Shield className="mx-auto h-6 w-6 text-emerald mb-2" />
-                      <p className="text-xs text-slate-400">Active Monitoring</p>
+                      <p className="text-xs text-platinum-400">Active Monitoring</p>
                       <p className="text-xl font-bold text-emerald">245</p>
                       <span className="text-xs text-emerald">Influencers</span>
                     </div>
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <CheckCircle className="mx-auto h-6 w-6 text-gold mb-2" />
-                      <p className="text-xs text-slate-400">Pre-approved Content</p>
+                      <p className="text-xs text-platinum-400">Pre-approved Content</p>
                       <p className="text-xl font-bold text-gold">1,250</p>
                       <span className="text-xs text-emerald">Posts</span>
                     </div>
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <AlertCircle className="mx-auto h-6 w-6 text-rose mb-2" />
-                      <p className="text-xs text-slate-400">Escalations</p>
+                      <p className="text-xs text-platinum-400">Escalations</p>
                       <p className="text-xl font-bold text-rose">12</p>
                       <span className="text-xs text-emerald">This Month</span>
                     </div>

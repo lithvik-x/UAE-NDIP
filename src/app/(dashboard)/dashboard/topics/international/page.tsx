@@ -174,7 +174,7 @@ export default function InternationalRelationsPage() {
         <div>
           <Badge variant="default" className="mb-2">I-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">International Relations & Diplomacy</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             {data.executionMetadata.enrichmentStatus} | {data.executionMetadata.queriesExecuted} queries executed across {data.executionMetadata.pagesFetched} sources
           </p>
         </div>
@@ -240,16 +240,16 @@ export default function InternationalRelationsPage() {
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
                     {data.focusAreas.map((area, idx) => (
-                      <div key={idx} className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-4">
+                      <div key={idx} className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-4">
                         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-navy text-white">
                           <Globe className="h-5 w-5" />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2">
-                            <h4 className="font-semibold text-slate-200">{area.name}</h4>
+                            <h4 className="font-semibold text-platinum-200">{area.name}</h4>
                             <Badge variant="outline" className="text-xs">{area.priority}</Badge>
                           </div>
-                          <p className="mt-1 text-sm text-slate-400">{area.description}</p>
+                          <p className="mt-1 text-sm text-platinum-400">{area.description}</p>
                         </div>
                       </div>
                     ))}
@@ -307,8 +307,8 @@ export default function InternationalRelationsPage() {
                       .map((alert, idx) => (
                         <div key={idx} className="flex items-start justify-between rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
                           <div className="flex-1">
-                            <p className="font-medium text-slate-200">{alert.relationship}</p>
-                            <p className="mt-1 text-sm text-slate-400">Key driver: {alert.keyDriver}</p>
+                            <p className="font-medium text-platinum-200">{alert.relationship}</p>
+                            <p className="mt-1 text-sm text-platinum-400">Key driver: {alert.keyDriver}</p>
                           </div>
                           <Badge variant="destructive" className="text-xs">CRITICAL</Badge>
                         </div>
@@ -326,17 +326,17 @@ export default function InternationalRelationsPage() {
                 <CardContent>
                   <div className="space-y-4">
                     {conflicts.map((conflict, idx) => (
-                      <div key={idx} className="flex items-start gap-4 rounded-lg bg-slate-800/50 p-4">
+                      <div key={idx} className="flex items-start gap-4 rounded-lg bg-platinum-800/50 p-4">
                         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-rose text-white">
                           <Crosshair className="h-5 w-5" />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center justify-between">
-                            <h4 className="font-semibold text-slate-200">{conflict.name}</h4>
+                            <h4 className="font-semibold text-platinum-200">{conflict.name}</h4>
                             <Badge variant="outline" className="text-xs">{conflict.currentStatus}</Badge>
                           </div>
-                          <p className="mt-1 text-sm text-slate-400">Involvement: {conflict.involvement}</p>
-                          <p className="mt-1 text-sm text-slate-400">UAE Role: {conflict.uaeRole}</p>
+                          <p className="mt-1 text-sm text-platinum-400">Involvement: {conflict.involvement}</p>
+                          <p className="mt-1 text-sm text-platinum-400">UAE Role: {conflict.uaeRole}</p>
                         </div>
                       </div>
                     ))}
@@ -381,9 +381,9 @@ export default function InternationalRelationsPage() {
                   <CardContent>
                     <div className="space-y-3">
                       {relation.keyPoints.map((point, pIdx) => (
-                        <div key={pIdx} className="flex items-start gap-3 rounded-lg bg-slate-800/30 p-3">
+                        <div key={pIdx} className="flex items-start gap-3 rounded-lg bg-platinum-800/30 p-3">
                           <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
-                          <p className="text-sm text-slate-300">{point}</p>
+                          <p className="text-sm text-platinum-300">{point}</p>
                         </div>
                       ))}
                     </div>
@@ -410,7 +410,7 @@ export default function InternationalRelationsPage() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-slate-300">{org.summary}</p>
+                    <p className="text-sm text-platinum-300">{org.summary}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -432,48 +432,48 @@ export default function InternationalRelationsPage() {
                     <div className="grid gap-4 md:grid-cols-4">
                       <div className="rounded-lg bg-gold-500/10 p-4 text-center border border-gold-500/30">
                         <p className="text-2xl font-bold text-gold-400">{cop28Outcomes.totalMobilized}</p>
-                        <p className="text-sm text-slate-400">Total Mobilized</p>
+                        <p className="text-sm text-platinum-400">Total Mobilized</p>
                       </div>
                       <div className="rounded-lg bg-gold-500/10 p-4 text-center border border-gold-500/30">
                         <p className="text-2xl font-bold text-gold-400">{cop28Outcomes.participants.toLocaleString()}</p>
-                        <p className="text-sm text-slate-400">Participants</p>
+                        <p className="text-sm text-platinum-400">Participants</p>
                       </div>
                       <div className="rounded-lg bg-gold-500/10 p-4 text-center border border-gold-500/30">
                         <p className="text-2xl font-bold text-gold-400">{cop28Outcomes.fourPillars.length}</p>
-                        <p className="text-sm text-slate-400">Key Pillars</p>
+                        <p className="text-sm text-platinum-400">Key Pillars</p>
                       </div>
                       <div className="rounded-lg bg-gold-500/10 p-4 text-center border border-gold-500/30">
                         <p className="text-2xl font-bold text-gold-400">{cop28Outcomes.keyDeclarations.length}</p>
-                        <p className="text-sm text-slate-400">Major Declarations</p>
+                        <p className="text-sm text-platinum-400">Major Declarations</p>
                       </div>
                     </div>
 
                     {/* COP28 Leadership */}
-                    <div className="rounded-lg bg-slate-800/50 p-4">
-                      <h4 className="font-semibold text-slate-200 mb-3">Leadership</h4>
+                    <div className="rounded-lg bg-platinum-800/50 p-4">
+                      <h4 className="font-semibold text-platinum-200 mb-3">Leadership</h4>
                       <div className="grid gap-3 md:grid-cols-3">
                         <div className="flex items-center gap-2">
                           <Scale className="h-4 w-4 text-gold" />
-                          <span className="text-sm text-slate-300">President: {cop28Outcomes.president}</span>
+                          <span className="text-sm text-platinum-300">President: {cop28Outcomes.president}</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <Users className="h-4 w-4 text-gold" />
-                          <span className="text-sm text-slate-300">Youth Champion: {cop28Outcomes.youthChampion}</span>
+                          <span className="text-sm text-platinum-300">Youth Champion: {cop28Outcomes.youthChampion}</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <Activity className="h-4 w-4 text-gold" />
-                          <span className="text-sm text-slate-300">High-Level Champion: {cop28Outcomes.highLevelChampion}</span>
+                          <span className="text-sm text-platinum-300">High-Level Champion: {cop28Outcomes.highLevelChampion}</span>
                         </div>
                       </div>
                     </div>
 
                     {/* COP28 Financial Commitments */}
                     <div>
-                      <h4 className="font-semibold text-slate-200 mb-3">Financial Commitments</h4>
+                      <h4 className="font-semibold text-platinum-200 mb-3">Financial Commitments</h4>
                       <div className="grid gap-2 md:grid-cols-2">
                         {cop28Outcomes.financialCommitments.map((commit, cIdx) => (
-                          <div key={cIdx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
-                            <span className="text-sm text-slate-300">{commit.fund}</span>
+                          <div key={cIdx} className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-3">
+                            <span className="text-sm text-platinum-300">{commit.fund}</span>
                             <Badge variant="gold" className="text-xs">{commit.amount}</Badge>
                           </div>
                         ))}
@@ -482,11 +482,11 @@ export default function InternationalRelationsPage() {
 
                     {/* COP28 Declarations */}
                     <div>
-                      <h4 className="font-semibold text-slate-200 mb-3">Key Declarations & Pledges</h4>
+                      <h4 className="font-semibold text-platinum-200 mb-3">Key Declarations & Pledges</h4>
                       <div className="space-y-2">
                         {cop28Outcomes.keyDeclarations.map((decl, dIdx) => (
-                          <div key={dIdx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
-                            <span className="text-sm text-slate-300">{decl.name}</span>
+                          <div key={dIdx} className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-3">
+                            <span className="text-sm text-platinum-300">{decl.name}</span>
                             <div className="flex gap-2">
                               <Badge variant="outline" className="text-xs">{decl.countries || decl.heads} {decl.companies ? 'companies' : 'countries'}</Badge>
                               {decl.goal && <Badge variant="gold" className="text-xs">{decl.goal}</Badge>}
@@ -520,10 +520,10 @@ export default function InternationalRelationsPage() {
                     {sentimentAnalysis.map((s, idx) => (
                       <div key={idx} className="flex items-center gap-4">
                         <div className="w-40 shrink-0">
-                          <span className="text-sm font-medium text-slate-200">{s.relationship}</span>
+                          <span className="text-sm font-medium text-platinum-200">{s.relationship}</span>
                         </div>
                         <div className="flex-1">
-                          <div className="h-2 w-full rounded-full bg-slate-700">
+                          <div className="h-2 w-full rounded-full bg-platinum-700">
                             <div
                               className="h-2 rounded-full"
                               style={{
@@ -535,7 +535,7 @@ export default function InternationalRelationsPage() {
                         </div>
                         <div className="flex items-center gap-2 w-48 shrink-0">
                           {getTrendIcon(s.trend)}
-                          <span className="text-xs text-slate-400">{s.trend}</span>
+                          <span className="text-xs text-platinum-400">{s.trend}</span>
                           <Badge
                             variant="outline"
                             className={`text-xs ml-auto ${
@@ -624,16 +624,16 @@ export default function InternationalRelationsPage() {
               <ScrollArea className="h-[500px]">
                 <div className="space-y-3 pr-4">
                   {timelineEvents.map((event, idx) => (
-                    <div key={idx} className="flex items-start gap-4 rounded-lg bg-slate-800/30 p-4 hover:bg-slate-800/50 transition-colors">
+                    <div key={idx} className="flex items-start gap-4 rounded-lg bg-platinum-800/30 p-4 hover:bg-platinum-800/50 transition-colors">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-navy text-white">
                         <Clock className="h-5 w-5" />
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
                           <span className="text-xs font-mono text-gold">{event.year}</span>
-                          {event.date && <span className="text-xs text-slate-500">{event.date}</span>}
+                          {event.date && <span className="text-xs text-platinum-500">{event.date}</span>}
                         </div>
-                        <p className="mt-1 text-sm text-slate-200">{event.event}</p>
+                        <p className="mt-1 text-sm text-platinum-200">{event.event}</p>
                       </div>
                     </div>
                   ))}
@@ -659,14 +659,14 @@ export default function InternationalRelationsPage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
                     {keyPersons.map((person, idx) => (
-                      <div key={idx} className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3">
+                      <div key={idx} className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3">
                         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-platinum text-navy-950">
                           <Users className="h-5 w-5" />
                         </div>
                         <div>
-                          <p className="font-medium text-slate-200 text-sm">{person.name}</p>
+                          <p className="font-medium text-platinum-200 text-sm">{person.name}</p>
                           <p className="text-xs text-gold">{person.role}</p>
-                          <p className="text-xs text-slate-400 mt-1">{person.relationToUAE}</p>
+                          <p className="text-xs text-platinum-400 mt-1">{person.relationToUAE}</p>
                         </div>
                       </div>
                     ))}
@@ -683,11 +683,11 @@ export default function InternationalRelationsPage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
                     {keyOrganizations.map((org, idx) => (
-                      <div key={idx} className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3">
+                      <div key={idx} className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3">
                         <Building className="h-5 w-5 shrink-0 text-navy" />
                         <div>
-                          <p className="font-medium text-slate-200 text-sm">{org.name}</p>
-                          <p className="text-xs text-slate-400">{org.type}</p>
+                          <p className="font-medium text-platinum-200 text-sm">{org.name}</p>
+                          <p className="text-xs text-platinum-400">{org.type}</p>
                           <Badge variant="outline" className="text-xs mt-1">{org.uaeRole}</Badge>
                         </div>
                       </div>
@@ -710,8 +710,8 @@ export default function InternationalRelationsPage() {
                     {disputedTerritories.map((territory, idx) => (
                       <div key={idx} className="flex items-center justify-between rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
                         <div>
-                          <p className="font-semibold text-slate-200">{territory.territory}</p>
-                          <p className="text-sm text-slate-400">Occupied by {territory.occupiedBy} since {territory.since}</p>
+                          <p className="font-semibold text-platinum-200">{territory.territory}</p>
+                          <p className="text-sm text-platinum-400">Occupied by {territory.occupiedBy} since {territory.since}</p>
                         </div>
                         <Badge variant="destructive" className="text-xs">{territory.uaePosition}</Badge>
                       </div>
@@ -741,14 +741,14 @@ export default function InternationalRelationsPage() {
                   />
                   <div className="mt-4 space-y-2">
                     {militaryAssets.map((asset, idx) => (
-                      <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
+                      <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-3">
                         <div className="flex items-center gap-3">
                           <Crosshair className="h-4 w-4 text-platinum" />
-                          <span className="text-sm text-slate-200">{asset.asset}</span>
+                          <span className="text-sm text-platinum-200">{asset.asset}</span>
                         </div>
                         <div className="text-right">
                           <Badge variant="outline" className="text-xs">{asset.origin}</Badge>
-                          <span className="text-xs text-slate-400 ml-2">{asset.status}</span>
+                          <span className="text-xs text-platinum-400 ml-2">{asset.status}</span>
                         </div>
                       </div>
                     ))}
@@ -765,13 +765,13 @@ export default function InternationalRelationsPage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2">
                     {geographicAssets.map((asset, idx) => (
-                      <div key={idx} className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-4">
+                      <div key={idx} className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-4">
                         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-emerald text-white">
                           <Plane className="h-5 w-5" />
                         </div>
                         <div>
-                          <p className="font-semibold text-slate-200">{asset.location}</p>
-                          <p className="text-sm text-slate-400">{asset.country} - {asset.type}</p>
+                          <p className="font-semibold text-platinum-200">{asset.location}</p>
+                          <p className="text-sm text-platinum-400">{asset.country} - {asset.type}</p>
                           <p className="text-xs text-emerald-400 mt-1">Purpose: {asset.purpose}</p>
                         </div>
                       </div>
@@ -801,8 +801,8 @@ export default function InternationalRelationsPage() {
                 <CardContent>
                   <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
                     {economicStats.map((stat, idx) => (
-                      <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
-                        <span className="text-sm text-slate-300">{stat.metric}</span>
+                      <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-3">
+                        <span className="text-sm text-platinum-300">{stat.metric}</span>
                         <Badge variant="gold" className="text-xs">{stat.value}</Badge>
                       </div>
                     ))}
@@ -821,8 +821,8 @@ export default function InternationalRelationsPage() {
                 <CardContent>
                   <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-4">
                     {energyStats.map((stat, idx) => (
-                      <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
-                        <span className="text-sm text-slate-300">{stat.metric}</span>
+                      <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-3">
+                        <span className="text-sm text-platinum-300">{stat.metric}</span>
                         <Badge variant="emerald" className="text-xs">{stat.value}</Badge>
                       </div>
                     ))}
@@ -841,8 +841,8 @@ export default function InternationalRelationsPage() {
                 <CardContent>
                   <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
                     {aiTechStats.map((stat, idx) => (
-                      <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
-                        <span className="text-sm text-slate-300">{stat.metric}</span>
+                      <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-3">
+                        <span className="text-sm text-platinum-300">{stat.metric}</span>
                         <Badge variant="cyan" className="text-xs">{stat.value}</Badge>
                       </div>
                     ))}
@@ -861,8 +861,8 @@ export default function InternationalRelationsPage() {
                 <CardContent>
                   <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-4">
                     {militaryStats.map((stat, idx) => (
-                      <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
-                        <span className="text-sm text-slate-300">{stat.metric}</span>
+                      <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-3">
+                        <span className="text-sm text-platinum-300">{stat.metric}</span>
                         <Badge variant="outline" className="text-xs">{stat.value}</Badge>
                       </div>
                     ))}
@@ -881,8 +881,8 @@ export default function InternationalRelationsPage() {
                 <CardContent>
                   <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
                     {diplomaticStats.map((stat, idx) => (
-                      <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
-                        <span className="text-sm text-slate-300">{stat.metric}</span>
+                      <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-3">
+                        <span className="text-sm text-platinum-300">{stat.metric}</span>
                         <Badge variant="denim" className="text-xs">{stat.value}</Badge>
                       </div>
                     ))}
@@ -900,14 +900,14 @@ export default function InternationalRelationsPage() {
                   <ScrollArea className="h-[400px]">
                     <div className="space-y-2">
                       {keyDataPoints.map((dp, idx) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/30 p-3">
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/30 p-3">
                           <div>
                             <span className="text-xs text-gold">{dp.category}</span>
-                            <p className="text-sm text-slate-200">{dp.dataPoint}</p>
+                            <p className="text-sm text-platinum-200">{dp.dataPoint}</p>
                           </div>
                           <div className="text-right">
                             <Badge variant="outline" className="text-xs">{dp.value}</Badge>
-                            <p className="text-xs text-slate-500 mt-1">{dp.source}</p>
+                            <p className="text-xs text-platinum-500 mt-1">{dp.source}</p>
                           </div>
                         </div>
                       ))}
@@ -937,10 +937,10 @@ export default function InternationalRelationsPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {futureIndicators.map((indicator, idx) => (
-                      <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
+                      <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4">
                         <div>
-                          <p className="font-medium text-slate-200">{indicator.indicator}</p>
-                          <p className="text-sm text-slate-400">Current: {indicator.current}</p>
+                          <p className="font-medium text-platinum-200">{indicator.indicator}</p>
+                          <p className="text-sm text-platinum-400">Current: {indicator.current}</p>
                         </div>
                         <div className="text-right">
                           <Badge
@@ -949,13 +949,13 @@ export default function InternationalRelationsPage() {
                               indicator.current === 'HIGH' || indicator.current === 'TENSE'
                                 ? 'border-rose-500/50 text-rose-400'
                                 : indicator.current === 'FROZEN' || indicator.current === 'DIVIDED' || indicator.current === 'STALLED'
-                                ? 'border-yellow-500/50 text-yellow-400'
+                                ? 'border-amber-500/50 text-amber-400'
                                 : 'border-emerald-500/50 text-emerald-400'
                             }
                           >
                             {indicator.current}
                           </Badge>
-                          <p className="text-xs text-slate-500 mt-1">Watch: {indicator.watchFor}</p>
+                          <p className="text-xs text-platinum-500 mt-1">Watch: {indicator.watchFor}</p>
                         </div>
                       </div>
                     ))}
@@ -978,8 +978,8 @@ export default function InternationalRelationsPage() {
                         <div key={idx} className="flex items-start gap-3 rounded-lg bg-rose-500/10 p-3 border border-rose-500/20">
                           <AlertTriangle className="h-4 w-4 shrink-0 text-rose-400 mt-0.5" />
                           <div>
-                            <p className="font-medium text-slate-200 text-sm">{risk.factor}</p>
-                            <p className="text-xs text-slate-400 mt-1">{risk.description}</p>
+                            <p className="font-medium text-platinum-200 text-sm">{risk.factor}</p>
+                            <p className="text-xs text-platinum-400 mt-1">{risk.description}</p>
                           </div>
                         </div>
                       ))}
@@ -1001,8 +1001,8 @@ export default function InternationalRelationsPage() {
                         <div key={idx} className="flex items-start gap-3 rounded-lg bg-emerald-500/10 p-3 border border-emerald-500/20">
                           <TrendingUp className="h-4 w-4 shrink-0 text-emerald-400 mt-0.5" />
                           <div>
-                            <p className="font-medium text-slate-200 text-sm">{opp.factor}</p>
-                            <p className="text-xs text-slate-400 mt-1">{opp.description}</p>
+                            <p className="font-medium text-platinum-200 text-sm">{opp.factor}</p>
+                            <p className="text-xs text-platinum-400 mt-1">{opp.description}</p>
                           </div>
                         </div>
                       ))}
@@ -1018,30 +1018,30 @@ export default function InternationalRelationsPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-4">
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <p className="text-2xl font-bold text-platinum">{data.executionMetadata.queriesExecuted}</p>
-                      <p className="text-sm text-slate-400">Queries Executed</p>
+                      <p className="text-sm text-platinum-400">Queries Executed</p>
                     </div>
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <p className="text-2xl font-bold text-platinum">{data.executionMetadata.pagesFetched}</p>
-                      <p className="text-sm text-slate-400">Pages Fetched</p>
+                      <p className="text-sm text-platinum-400">Pages Fetched</p>
                     </div>
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <p className="text-2xl font-bold text-platinum">{data.sources.length}</p>
-                      <p className="text-sm text-slate-400">Sources Analyzed</p>
+                      <p className="text-sm text-platinum-400">Sources Analyzed</p>
                     </div>
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <p className="text-2xl font-bold text-platinum">{data.metrics.totalDataPoints}</p>
-                      <p className="text-sm text-slate-400">Data Points Extracted</p>
+                      <p className="text-sm text-platinum-400">Data Points Extracted</p>
                     </div>
                   </div>
                   <div className="mt-4 flex items-center justify-between rounded-lg bg-gold-500/10 p-3 border border-gold-500/30">
-                    <span className="text-sm text-slate-300">Enrichment Status</span>
+                    <span className="text-sm text-platinum-300">Enrichment Status</span>
                     <Badge variant="gold">{data.executionMetadata.enrichmentStatus}</Badge>
                   </div>
-                  <div className="mt-4 flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
-                    <span className="text-sm text-slate-300">Last Updated</span>
-                    <span className="text-sm text-slate-400">{data.lastUpdated}</span>
+                  <div className="mt-4 flex items-center justify-between rounded-lg bg-platinum-800/30 p-3">
+                    <span className="text-sm text-platinum-300">Last Updated</span>
+                    <span className="text-sm text-platinum-400">{data.lastUpdated}</span>
                   </div>
                 </CardContent>
               </Card>
@@ -1071,14 +1071,14 @@ export default function InternationalRelationsPage() {
                       <div key={idx} className="flex items-start gap-3 rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30">
                         <CheckCircle className="h-5 w-5 shrink-0 text-emerald-500 mt-0.5" />
                         <div>
-                          <p className="font-medium text-slate-200">{v.label}</p>
-                          <p className="text-sm text-slate-400 mt-1">{v.detail}</p>
+                          <p className="font-medium text-platinum-200">{v.label}</p>
+                          <p className="text-sm text-platinum-400 mt-1">{v.detail}</p>
                         </div>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-4 flex items-center gap-2 rounded-lg bg-slate-800/50 p-3">
-                    <span className="text-sm text-slate-300">Temporal Coverage:</span>
+                  <div className="mt-4 flex items-center gap-2 rounded-lg bg-platinum-800/50 p-3">
+                    <span className="text-sm text-platinum-300">Temporal Coverage:</span>
                     <Badge variant="emerald">{verificationStatus.temporalCoverage}</Badge>
                   </div>
                 </CardContent>
@@ -1115,7 +1115,7 @@ export default function InternationalRelationsPage() {
                   <CardContent>
                     <div className="space-y-3">
                       {sourceTierDistribution.map((tier, idx) => (
-                        <div key={idx} className="flex items-start gap-3 rounded-lg bg-slate-800/30 p-3">
+                        <div key={idx} className="flex items-start gap-3 rounded-lg bg-platinum-800/30 p-3">
                           <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg font-bold text-xs ${
                             idx === 0 ? 'bg-gold-500/20 text-gold-400' :
                             idx === 1 ? 'bg-navy-500/20 text-navy-400' :
@@ -1127,11 +1127,11 @@ export default function InternationalRelationsPage() {
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center justify-between">
-                              <p className="font-medium text-slate-200">{tier.tier}</p>
+                              <p className="font-medium text-platinum-200">{tier.tier}</p>
                               <Badge variant="outline" className="text-xs">{tier.sources} sources</Badge>
                             </div>
-                            <p className="text-xs text-slate-400 mt-1">{tier.description}</p>
-                            <p className="text-xs text-slate-500 mt-1 italic">{tier.examples}</p>
+                            <p className="text-xs text-platinum-400 mt-1">{tier.description}</p>
+                            <p className="text-xs text-platinum-500 mt-1 italic">{tier.examples}</p>
                           </div>
                         </div>
                       ))}
@@ -1150,30 +1150,30 @@ export default function InternationalRelationsPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-4">
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <p className="text-2xl font-bold text-platinum">{data.executionMetadata.queriesExecuted}</p>
-                      <p className="text-sm text-slate-400">Queries Executed</p>
+                      <p className="text-sm text-platinum-400">Queries Executed</p>
                     </div>
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <p className="text-2xl font-bold text-platinum">{data.executionMetadata.pagesFetched}</p>
-                      <p className="text-sm text-slate-400">Pages Fetched</p>
+                      <p className="text-sm text-platinum-400">Pages Fetched</p>
                     </div>
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <p className="text-2xl font-bold text-platinum">{data.sources.length}</p>
-                      <p className="text-sm text-slate-400">Sources Analyzed</p>
+                      <p className="text-sm text-platinum-400">Sources Analyzed</p>
                     </div>
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <p className="text-2xl font-bold text-gold">{data.metrics.totalDataPoints}</p>
-                      <p className="text-sm text-slate-400">Data Points Extracted</p>
+                      <p className="text-sm text-platinum-400">Data Points Extracted</p>
                     </div>
                   </div>
                   <div className="mt-4 flex items-center justify-between rounded-lg bg-gold-500/10 p-3 border border-gold-500/30">
-                    <span className="text-sm text-slate-300">Enrichment Status</span>
+                    <span className="text-sm text-platinum-300">Enrichment Status</span>
                     <Badge variant="gold">{data.executionMetadata.enrichmentStatus}</Badge>
                   </div>
-                  <div className="mt-4 flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
-                    <span className="text-sm text-slate-300">Last Updated</span>
-                    <span className="text-sm text-slate-400">{data.lastUpdated}</span>
+                  <div className="mt-4 flex items-center justify-between rounded-lg bg-platinum-800/30 p-3">
+                    <span className="text-sm text-platinum-300">Last Updated</span>
+                    <span className="text-sm text-platinum-400">{data.lastUpdated}</span>
                   </div>
                 </CardContent>
               </Card>

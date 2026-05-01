@@ -40,7 +40,7 @@ export function TimelineSection({ data }: TimelineSectionProps) {
                 transition={{ delay: idx * 0.1 }}
                 className="relative"
               >
-                <div className="absolute left-[-32px] w-4 h-4 rounded-full bg-cyan-500 border-4 border-slate-900" />
+                <div className="absolute left-[-32px] w-4 h-4 rounded-full bg-cyan-500 border-4 border-platinum-900" />
                 <div className="glass-card rounded-lg p-4 bg-glass-surface/30 border-glass-border">
                   <div className="flex items-center gap-2 mb-1">
                     <Badge variant="outline" className="text-xs border-cyan-500/50 text-cyan-400">

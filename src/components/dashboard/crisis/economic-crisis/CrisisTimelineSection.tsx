@@ -51,7 +51,7 @@ export function CrisisTimelineSection({
               <h4 className="text-lg font-semibold text-rose-400 mb-3">Property Price Crashes</h4>
               <div className="space-y-3">
                 {propertyPriceCrashes?.map((crash: any, idx: number) => (
-                  <div key={idx} className="p-3 rounded-lg bg-slate-800/50 border border-glass-border">
+                  <div key={idx} className="p-3 rounded-lg bg-platinum-800/50 border border-glass-border">
                     <div className="flex justify-between mb-1">
                       <span className="text-platinum-200">{crash.period}</span>
                       <span className="text-rose-400 font-bold">{crash.priceDrop}</span>
@@ -81,7 +81,7 @@ export function CrisisTimelineSection({
               <h4 className="text-lg font-semibold text-platinum-300 mb-3">Corporate Fraud Scale</h4>
               <div className="space-y-3">
                 {corporateFraudScale?.map((fraud: any, idx: number) => (
-                  <div key={idx} className="p-3 rounded-lg bg-slate-800/50 border border-rose-500/30">
+                  <div key={idx} className="p-3 rounded-lg bg-platinum-800/50 border border-rose-500/30">
                     <div className="flex justify-between mb-1">
                       <span className="text-platinum-200">{fraud.company} ({fraud.year})</span>
                       <span className="text-rose-400 font-bold">{fraud.fraudAmount}</span>
@@ -96,7 +96,7 @@ export function CrisisTimelineSection({
               <h4 className="text-lg font-semibold text-platinum-300 mb-3">Sentiment Analysis</h4>
               <div className="space-y-3">
                 {crisisSentimentByPeriod?.map((sent: any, idx: number) => (
-                  <div key={idx} className="p-3 rounded-lg bg-slate-800/50 border border-glass-border">
+                  <div key={idx} className="p-3 rounded-lg bg-platinum-800/50 border border-glass-border">
                     <div className="flex items-center justify-between mb-1">
                       <span className="text-platinum-200">{sent.period}</span>
                       <Badge variant="outline" className={`border-${sent.overallSentiment === 'Extremely Negative' ? 'rose' : 'gold'}-500/50 text-${sent.overallSentiment === 'Extremely Negative' ? 'rose' : 'gold'}`}>{sent.overallSentiment}</Badge>
@@ -111,7 +111,7 @@ export function CrisisTimelineSection({
               <h4 className="text-lg font-semibold text-platinum-300 mb-3">Key Definitions</h4>
               <div className="grid gap-2 sm:grid-cols-2">
                 {keyDefinitions?.map((def: any, idx: number) => (
-                  <div key={idx} className="p-2 rounded bg-slate-800/30 border border-glass-border">
+                  <div key={idx} className="p-2 rounded bg-platinum-800/30 border border-glass-border">
                     <span className="text-amber-400 font-semibold">{def.term}:</span>
                     <span className="text-platinum-300 text-sm ml-2">{def.definition}</span>
                   </div>

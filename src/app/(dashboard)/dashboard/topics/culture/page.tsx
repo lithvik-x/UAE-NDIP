@@ -325,19 +325,19 @@ export default function CultureSocietyPage() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-300 font-rajdhani">Total Population</span>
                         <span className="text-xl font-bold text-gold font-rajdhani">{populationMetrics?.totalPopulation}M</span>
                       </div>
-                      <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-300 font-rajdhani">Median Age</span>
                         <span className="text-xl font-bold text-platinum font-rajdhani">{populationMetrics?.medianAge} years</span>
                       </div>
-                      <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-300 font-rajdhani">Literacy Rate</span>
                         <span className="text-xl font-bold text-emerald font-rajdhani">{populationMetrics?.literacyRate}%</span>
                       </div>
-                      <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-300 font-rajdhani">Urban Population</span>
                         <span className="text-xl font-bold text-navy font-rajdhani">{populationMetrics?.urbanPercentage}%</span>
                       </div>
@@ -388,22 +388,22 @@ export default function CultureSocietyPage() {
                         <span className="text-platinum-300 font-rajdhani">Expatriates</span>
                         <span className="text-gold font-bold font-rajdhani">88.5%</span>
                       </div>
-                      <Progress value={88.5} className="h-3 bg-slate-700" />
+                      <Progress value={88.5} className="h-3 bg-platinum-700" />
                     </div>
                     <div className="mb-4">
                       <div className="flex justify-between mb-2">
                         <span className="text-platinum-300 font-rajdhani">Emirati Nationals</span>
                         <span className="text-platinum font-bold font-rajdhani">11.5%</span>
                       </div>
-                      <Progress value={11.5} className="h-3 bg-slate-700" />
+                      <Progress value={11.5} className="h-3 bg-platinum-700" />
                     </div>
                     <div className="grid grid-cols-2 gap-4 mt-4">
-                      <div className="p-3 bg-slate-800/50 rounded-lg">
+                      <div className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="text-sm text-platinum-400 font-rajdhani">Largest Community</p>
                         <p className="text-lg font-bold text-gold font-rajdhani">Indian</p>
                         <p className="text-sm text-platinum-500 font-rajdhani">37.96%</p>
                       </div>
-                      <div className="p-3 bg-slate-800/50 rounded-lg">
+                      <div className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="text-sm text-platinum-400 font-rajdhani">Second Largest</p>
                         <p className="text-lg font-bold text-platinum font-rajdhani">Pakistani</p>
                         <p className="text-sm text-platinum-500 font-rajdhani">16.72%</p>
@@ -447,7 +447,7 @@ export default function CultureSocietyPage() {
                       {(timelineOfReforms || []).map((reform, idx) => (
                         <motion.div
                           key={idx}
-                          className="flex items-start gap-4 p-3 bg-slate-800/50 rounded-lg"
+                          className="flex items-start gap-4 p-3 bg-platinum-800/50 rounded-lg"
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.1 }}
@@ -511,7 +511,7 @@ export default function CultureSocietyPage() {
                         {(unescoIntangibleHeritage?.categories?.performingArtsPoetry?.elements || []).map((elem, idx) => (
                           <motion.div
                             key={idx}
-                            className="flex items-center justify-between p-2 bg-slate-800/50 rounded-lg"
+                            className="flex items-center justify-between p-2 bg-platinum-800/50 rounded-lg"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: idx * 0.1 }}
@@ -539,7 +539,7 @@ export default function CultureSocietyPage() {
                         {(unescoIntangibleHeritage?.categories?.traditionalCraftsSkills?.elements || []).map((elem, idx) => (
                           <motion.div
                             key={idx}
-                            className="flex items-center justify-between p-2 bg-slate-800/50 rounded-lg"
+                            className="flex items-center justify-between p-2 bg-platinum-800/50 rounded-lg"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: idx * 0.1 }}
@@ -567,7 +567,7 @@ export default function CultureSocietyPage() {
                         {(unescoIntangibleHeritage?.categories?.culinaryHeritage?.elements || []).map((elem, idx) => (
                           <motion.div
                             key={idx}
-                            className="flex items-center justify-between p-2 bg-slate-800/50 rounded-lg"
+                            className="flex items-center justify-between p-2 bg-platinum-800/50 rounded-lg"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: idx * 0.1 }}
@@ -595,7 +595,7 @@ export default function CultureSocietyPage() {
                         {(unescoIntangibleHeritage?.categories?.socialPractices?.elements || []).map((elem, idx) => (
                           <motion.div
                             key={idx}
-                            className="flex items-center justify-between p-2 bg-slate-800/50 rounded-lg"
+                            className="flex items-center justify-between p-2 bg-platinum-800/50 rounded-lg"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: idx * 0.1 }}
@@ -622,7 +622,7 @@ export default function CultureSocietyPage() {
                   <CardContent>
                     <div className="grid gap-6 lg:grid-cols-2">
                       {/* Falconry */}
-                      <motion.div className="p-4 bg-slate-800/50 rounded-xl" whileHover={{ scale: 1.02 }}>
+                      <motion.div className="p-4 bg-platinum-800/50 rounded-xl" whileHover={{ scale: 1.02 }}>
                         <h4 className="font-bold text-gold mb-3 flex items-center gap-2 font-rajdhani">
                           <Crosshair className="h-5 w-5" />
                           Falconry
@@ -644,7 +644,7 @@ export default function CultureSocietyPage() {
                       </motion.div>
 
                       {/* Camel Racing */}
-                      <motion.div className="p-4 bg-slate-800/50 rounded-xl" whileHover={{ scale: 1.02 }}>
+                      <motion.div className="p-4 bg-platinum-800/50 rounded-xl" whileHover={{ scale: 1.02 }}>
                         <h4 className="font-bold text-gold mb-3 flex items-center gap-2 font-rajdhani">
                           <Truck className="h-5 w-5" />
                           Camel Racing
@@ -683,7 +683,7 @@ export default function CultureSocietyPage() {
                       {(majorMuseums || []).map((museum, idx) => (
                         <motion.div
                           key={idx}
-                          className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg"
+                          className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg"
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: idx * 0.1 }}
@@ -722,7 +722,7 @@ export default function CultureSocietyPage() {
                       {(coreCulturalValues || []).map((value, idx) => (
                         <motion.div
                           key={idx}
-                          className="p-4 bg-slate-800/50 rounded-xl"
+                          className="p-4 bg-platinum-800/50 rounded-xl"
                           whileHover={{ scale: 1.05 }}
                           initial={{ opacity: 0, scale: 0.9 }}
                           animate={{ opacity: 1, scale: 1 }}
@@ -753,7 +753,7 @@ export default function CultureSocietyPage() {
                         <h4 className="font-bold text-navy mb-3 font-rajdhani">Men's National Dress</h4>
                         <div className="space-y-2">
                           {(traditionalClothing?.mens || []).map((item, idx) => (
-                            <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                            <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                               <p className="font-medium text-platinum-200 font-rajdhani">{item.item}</p>
                               <p className="text-sm text-platinum-400 font-rajdhani">{item.description}</p>
                             </div>
@@ -764,7 +764,7 @@ export default function CultureSocietyPage() {
                         <h4 className="font-bold text-rose mb-3 font-rajdhani">Women's Traditional Attire</h4>
                         <div className="space-y-2">
                           {(traditionalClothing?.womens || []).map((item, idx) => (
-                            <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                            <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                               <p className="font-medium text-platinum-200 font-rajdhani">{item.item}</p>
                               <p className="text-sm text-platinum-400 font-rajdhani">{item.description}</p>
                             </div>
@@ -883,11 +883,11 @@ export default function CultureSocietyPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      <div className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400 font-rajdhani">2000 (Baseline)</span>
                         <span className="text-lg font-bold text-gold font-rajdhani">917,000</span>
                       </div>
-                      <div className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400 font-rajdhani">2024</span>
                         <span className="text-lg font-bold text-gold font-rajdhani">3,825,000 (+317%)</span>
                       </div>
@@ -911,19 +911,19 @@ export default function CultureSocietyPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-300 font-rajdhani">Private Sector Target</span>
                         <span className="font-bold text-gold font-rajdhani">10%</span>
                       </div>
-                      <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-300 font-rajdhani">Non-compliance Penalty</span>
                         <span className="font-bold text-red font-rajdhani">AED 9,000/mo</span>
                       </div>
-                      <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-300 font-rajdhani">2009 Participation</span>
                         <span className="font-bold text-platinum font-rajdhani">0.34%</span>
                       </div>
-                      <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-300 font-rajdhani">Abu Dhabi Unemployment</span>
                         <span className="font-bold text-rose font-rajdhani">{emiratizationPolicy?.abuDhabiUnemploymentEmiratis || 11.6}%</span>
                       </div>
@@ -968,19 +968,19 @@ export default function CultureSocietyPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                      <motion.div className="p-4 bg-slate-800/50 rounded-xl text-center" whileHover={{ scale: 1.05 }}>
+                      <motion.div className="p-4 bg-platinum-800/50 rounded-xl text-center" whileHover={{ scale: 1.05 }}>
                         <p className="text-3xl font-bold text-gold font-rajdhani">{placesOfWorship?.mosques?.total?.toLocaleString() || '4,818'}</p>
                         <p className="text-platinum-400 font-rajdhani">Mosques</p>
                       </motion.div>
-                      <motion.div className="p-4 bg-slate-800/50 rounded-xl text-center" whileHover={{ scale: 1.05 }}>
+                      <motion.div className="p-4 bg-platinum-800/50 rounded-xl text-center" whileHover={{ scale: 1.05 }}>
                         <p className="text-3xl font-bold text-emerald font-rajdhani">52+</p>
                         <p className="text-platinum-400 font-rajdhani">Churches</p>
                       </motion.div>
-                      <motion.div className="p-4 bg-slate-800/50 rounded-xl text-center" whileHover={{ scale: 1.05 }}>
+                      <motion.div className="p-4 bg-platinum-800/50 rounded-xl text-center" whileHover={{ scale: 1.05 }}>
                         <p className="text-3xl font-bold text-navy font-rajdhani">2</p>
                         <p className="text-platinum-400 font-rajdhani">Synagogues</p>
                       </motion.div>
-                      <motion.div className="p-4 bg-slate-800/50 rounded-xl text-center" whileHover={{ scale: 1.05 }}>
+                      <motion.div className="p-4 bg-platinum-800/50 rounded-xl text-center" whileHover={{ scale: 1.05 }}>
                         <p className="text-3xl font-bold text-rose font-rajdhani">2</p>
                         <p className="text-platinum-400 font-rajdhani">Hindu Temples</p>
                       </motion.div>
@@ -1037,7 +1037,7 @@ export default function CultureSocietyPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-center p-6 bg-slate-800/50 rounded-xl">
+                    <div className="text-center p-6 bg-platinum-800/50 rounded-xl">
                       <p className="text-5xl font-bold text-red font-rajdhani">{religiousFreedom?.freedomHouseScore?.score || 2}/4</p>
                       <p className="text-platinum-400 mt-2 font-rajdhani">Freedom House Score (2023)</p>
                     </div>
@@ -1080,12 +1080,12 @@ export default function CultureSocietyPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-4 md:grid-cols-2">
-                      <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="text-sm text-platinum-400 font-rajdhani">Gender Inequality Index</p>
                         <p className="text-3xl font-bold text-emerald font-rajdhani">{genderEqualityIndices?.[0]?.value || 0.040}</p>
                         <p className="text-platinum-500 font-rajdhani">{genderEqualityIndices?.[0]?.rank || '13th/191 countries'}</p>
                       </div>
-                      <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="text-sm text-platinum-400 font-rajdhani">Global Gender Gap Index</p>
                         <p className="text-3xl font-bold text-gold font-rajdhani">{genderEqualityIndices?.[1]?.value || 0.724}</p>
                         <p className="text-platinum-500 font-rajdhani">{genderEqualityIndices?.[1]?.rank || '69th/146 countries'}</p>
@@ -1109,7 +1109,7 @@ export default function CultureSocietyPage() {
                       {(womenRepresentation || []).map((item, idx) => (
                         <motion.div
                           key={idx}
-                          className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg"
+                          className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ delay: idx * 0.05 }}
@@ -1137,7 +1137,7 @@ export default function CultureSocietyPage() {
                       {(legalReforms || []).map((reform, idx) => (
                         <motion.div
                           key={idx}
-                          className="flex items-start gap-3 p-3 bg-slate-800/50 rounded-lg"
+                          className="flex items-start gap-3 p-3 bg-platinum-800/50 rounded-lg"
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.1 }}
@@ -1195,11 +1195,11 @@ export default function CultureSocietyPage() {
                         ))}
                       </div>
                       <div className="grid gap-2 md:grid-cols-2">
-                        <div className="flex justify-between p-2 bg-slate-800/50 rounded">
+                        <div className="flex justify-between p-2 bg-platinum-800/50 rounded">
                           <span className="text-platinum-400 font-rajdhani">Imprisonment</span>
                           <span className="font-bold text-red font-rajdhani">Up to 6 months</span>
                         </div>
-                        <div className="flex justify-between p-2 bg-slate-800/50 rounded">
+                        <div className="flex justify-between p-2 bg-platinum-800/50 rounded">
                           <span className="text-platinum-400 font-rajdhani">Fine</span>
                           <span className="font-bold text-red font-rajdhani">Dh5,000</span>
                         </div>
@@ -1230,11 +1230,11 @@ export default function CultureSocietyPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-4 md:grid-cols-2">
-                      <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="text-3xl font-bold text-gold font-rajdhani">10 Years</p>
                         <p className="text-platinum-400 font-rajdhani">Standard Duration</p>
                       </div>
-                      <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="text-3xl font-bold text-gold font-rajdhani">5 Years</p>
                         <p className="text-platinum-400 font-rajdhani">Retirement Visa</p>
                       </div>
@@ -1254,15 +1254,15 @@ export default function CultureSocietyPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-4 md:grid-cols-3">
-                      <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="text-3xl font-bold text-emerald font-rajdhani">{youthUnemployment?.uae || 6.43}%</p>
                         <p className="text-platinum-400 font-rajdhani">UAE Rate</p>
                       </div>
-                      <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="text-3xl font-bold text-platinum font-rajdhani">{youthUnemployment?.worldAverage || 15.7}%</p>
                         <p className="text-platinum-400 font-rajdhani">World Average</p>
                       </div>
-                      <div className="p-4 bg-slate-800/50 rounded-xl text-center">
+                      <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="text-3xl font-bold text-gold font-rajdhani">{youthUnemployment?.maximum || 13.48}%</p>
                         <p className="text-platinum-400 font-rajdhani">Peak ({youthUnemployment?.maximumYear || 2020})</p>
                       </div>
@@ -1344,8 +1344,8 @@ export default function CultureSocietyPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-xl mb-4">
-                      <p className="text-center text-yellow-300 italic font-rajdhani">
+                    <div className="p-4 bg-amber-500/10 border border-amber-500/30 rounded-xl mb-4">
+                      <p className="text-center text-amber-300 italic font-rajdhani">
                         "Clear evidence showing Arabic literacy is unquestionably losing ground"
                       </p>
                       <p className="text-center text-sm text-platinum-500 mt-1 font-rajdhani">
@@ -1356,7 +1356,7 @@ export default function CultureSocietyPage() {
                       {(languageShiftResearch?.findings || []).map((finding, idx) => (
                         <motion.div
                           key={idx}
-                          className="flex items-start gap-3 p-3 bg-slate-800/50 rounded-lg"
+                          className="flex items-start gap-3 p-3 bg-platinum-800/50 rounded-lg"
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: idx * 0.1 }}
@@ -1386,7 +1386,7 @@ export default function CultureSocietyPage() {
                       {(identityCrisisQuotes || []).map((quote, idx) => (
                         <motion.div
                           key={idx}
-                          className="p-3 bg-slate-800/50 rounded-lg border-l-2 border-yellow-500"
+                          className="p-3 bg-platinum-800/50 rounded-lg border-l-2 border-amber-500"
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.1 }}
@@ -1414,7 +1414,7 @@ export default function CultureSocietyPage() {
                       {(culturalChangesObserved || []).map((change, idx) => (
                         <motion.div
                           key={idx}
-                          className="flex items-start gap-3 p-3 bg-slate-800/50 rounded-lg"
+                          className="flex items-start gap-3 p-3 bg-platinum-800/50 rounded-lg"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ delay: idx * 0.1 }}
@@ -1445,7 +1445,7 @@ export default function CultureSocietyPage() {
                       {(humanRightsCases || []).map((item, idx) => (
                         <motion.div
                           key={idx}
-                          className="p-3 bg-slate-800/50 rounded-lg"
+                          className="p-3 bg-platinum-800/50 rounded-lg"
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: idx * 0.1 }}
@@ -1510,7 +1510,7 @@ export default function CultureSocietyPage() {
                       {(sentimentAnalysis || []).map((item, idx) => (
                         <motion.div
                           key={idx}
-                          className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg"
+                          className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ delay: idx * 0.05 }}

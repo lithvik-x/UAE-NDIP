@@ -563,7 +563,7 @@ export default function JournalistsPage() {
                         <div className="flex items-center gap-2">
                           <Badge variant="outline" size="sm">{leader.role}</Badge>
                           {leader.twitter && (
-                            <a href={`https://twitter.com/${leader.twitter.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 text-xs">
+                            <a href={`https://twitter.com/${leader.twitter.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-navy-500 hover:text-navy-400 text-xs">
                               {leader.twitter}
                             </a>
                           )}
@@ -677,7 +677,7 @@ export default function JournalistsPage() {
                         <div className="flex items-center gap-2">
                           <Badge variant="outline" size="sm">{leader.role}</Badge>
                           {leader.twitter && (
-                            <a href={`https://twitter.com/${leader.twitter.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 text-xs">
+                            <a href={`https://twitter.com/${leader.twitter.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-navy-500 hover:text-navy-400 text-xs">
                               {leader.twitter}
                             </a>
                           )}
@@ -990,7 +990,7 @@ export default function JournalistsPage() {
                           <p className="text-platinum-700 dark:text-platinum-300"><span className="text-platinum-500">YOE:</span> {anchor.yearsOfExperience}+ years</p>
                         )}
                         {anchor.twitter && (
-                          <a href={`https://twitter.com/${anchor.twitter.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 text-xs flex items-center gap-1">
+                          <a href={`https://twitter.com/${anchor.twitter.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-navy-500 hover:text-navy-400 text-xs flex items-center gap-1">
                             <Twitter className="h-3 w-3" /> {anchor.twitter}
                           </a>
                         )}
@@ -1216,7 +1216,7 @@ export default function JournalistsPage() {
                           href={`https://twitter.com/${account.handle.replace('@', '')}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-blue-500 hover:text-blue-400 flex items-center gap-1"
+                          className="text-navy-500 hover:text-navy-400 flex items-center gap-1"
                         >
                           <Twitter className="h-3 w-3" />
                           <span className="text-sm">{account.handle}</span>

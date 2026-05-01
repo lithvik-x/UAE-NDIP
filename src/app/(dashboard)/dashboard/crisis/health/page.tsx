@@ -105,7 +105,7 @@ const scaleIn = {
 // Helper function for alert colors
 const getAlertColor = (alert?: string) => {
   if (alert === 'RED') return 'border-red-500/50'
-  if (alert === 'YELLOW') return 'border-yellow-500/50'
+  if (alert === 'YELLOW') return 'border-amber-500/50'
   return 'border-emerald-500/50'
 }
 
@@ -202,8 +202,8 @@ export default function HealthCrisesPage() {
 
   const riskLevelColors: Record<string, string> = {
     Low: 'text-emerald-400',
-    Moderate: 'text-yellow-400',
-    Monitor: 'text-blue-400',
+    Moderate: 'text-amber-400',
+    Monitor: 'text-navy-400',
     High: 'text-orange-400',
   }
 
@@ -273,7 +273,7 @@ export default function HealthCrisesPage() {
         <div>
           <Badge variant="gold" className="mb-2">PHOENIX PROTOCOL: PUBLIC HEALTH</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Health Crises</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Pandemic preparedness, disease outbreaks, and public health emergencies affecting the UAE
           </p>
         </div>
@@ -331,16 +331,16 @@ export default function HealthCrisesPage() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className={`rounded-xl border p-4 bg-slate-900/50 ${getAlertColor(data.alertLevel)}`}
+        className={`rounded-xl border p-4 bg-platinum-900/50 ${getAlertColor(data.alertLevel)}`}
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             {data.alertLevel === 'RED' && <AlertCircle className="h-6 w-6 text-red-400" />}
-            {data.alertLevel === 'YELLOW' && <AlertTriangle className="h-6 w-6 text-yellow-400" />}
+            {data.alertLevel === 'YELLOW' && <AlertTriangle className="h-6 w-6 text-amber-400" />}
             {data.alertLevel === 'GREEN' && <TrendingUp className="h-6 w-6 text-emerald-400" />}
             <div>
-              <p className="font-semibold text-slate-200">Health Alert Level: {data.alertLevel}</p>
-              <p className="text-sm text-slate-400">
+              <p className="font-semibold text-platinum-200">Health Alert Level: {data.alertLevel}</p>
+              <p className="text-sm text-platinum-400">
                 WHO described UAE as leading model for highly efficient healthcare delivery (Dec 2025)
               </p>
             </div>
@@ -360,7 +360,7 @@ export default function HealthCrisesPage() {
           <motion.div key={idx} variants={fadeInUp}>
             <Card className="glass-card hover:border-gold/30 transition-colors">
               <CardContent className="p-4">
-                <p className="text-xs text-slate-400 truncate">{kpi.kpi}</p>
+                <p className="text-xs text-platinum-400 truncate">{kpi.kpi}</p>
                 <p className="text-2xl font-bold text-gold mt-1">{kpi.value}</p>
                 <Badge
                   variant={kpi.trend === 'Increasing' ? 'destructive' : kpi.trend === 'Low' ? 'success' : 'outline'}
@@ -398,7 +398,7 @@ export default function HealthCrisesPage() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.05 }}
-                  className={`flex items-center justify-between rounded-lg border p-4 bg-slate-800/50 hover:bg-slate-800/70 transition-colors ${finding.alert ? getAlertColor(finding.alert) : 'border-slate-700'}`}
+                  className={`flex items-center justify-between rounded-lg border p-4 bg-platinum-800/50 hover:bg-platinum-800/70 transition-colors ${finding.alert ? getAlertColor(finding.alert) : 'border-platinum-700'}`}
                 >
                   <div className="flex items-center gap-4">
                     <div className={`flex h-10 w-10 items-center justify-center rounded-full ${
@@ -411,14 +411,14 @@ export default function HealthCrisesPage() {
                        <AlertCircle className="h-5 w-5" />}
                     </div>
                     <div>
-                      <p className="font-medium text-slate-200">{finding.finding}</p>
-                      <p className="text-sm text-slate-400">Source: {finding.source}</p>
+                      <p className="font-medium text-platinum-200">{finding.finding}</p>
+                      <p className="text-sm text-platinum-400">Source: {finding.source}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="text-right">
                       <p className="text-xl font-bold text-gold">{finding.metric}</p>
-                      <p className="text-xs text-slate-400">Tier {finding.tier}</p>
+                      <p className="text-xs text-platinum-400">Tier {finding.tier}</p>
                     </div>
                     {finding.alert && getAlertBadge(finding.alert)}
                   </div>
@@ -436,15 +436,15 @@ export default function HealthCrisesPage() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: idx * 0.1 }}
-                  className="rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+                  className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                 >
                   <div className="flex items-center justify-between">
-                    <p className="text-sm text-slate-300">{risk.risk}</p>
+                    <p className="text-sm text-platinum-300">{risk.risk}</p>
                     <Badge variant="outline" className={`text-xs ${riskLevelColors[risk.level]}`}>
                       {risk.level}
                     </Badge>
                   </div>
-                  <p className="text-xs text-slate-400 mt-2">Trend: {risk.trend}</p>
+                  <p className="text-xs text-platinum-400 mt-2">Trend: {risk.trend}</p>
                 </motion.div>
               ))}
             </div>
@@ -462,7 +462,7 @@ export default function HealthCrisesPage() {
                   className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4"
                 >
                   <CheckCircle2 className="h-5 w-5 text-emerald-400 mb-2" />
-                  <p className="text-sm font-medium text-slate-200">{indicator.indicator}</p>
+                  <p className="text-sm font-medium text-platinum-200">{indicator.indicator}</p>
                   <p className="text-lg font-bold text-emerald-400 mt-1">{indicator.status}</p>
                 </motion.div>
               ))}
@@ -536,11 +536,11 @@ export default function HealthCrisesPage() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: idx * 0.05 }}
-                  className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center"
+                  className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center"
                 >
-                  <p className="text-xs text-slate-400 truncate">{item.metric}</p>
+                  <p className="text-xs text-platinum-400 truncate">{item.metric}</p>
                   <p className="text-xl font-bold text-gold mt-1">{item.value}</p>
-                  <p className="text-xs text-slate-500 mt-1">{item.date}</p>
+                  <p className="text-xs text-platinum-500 mt-1">{item.date}</p>
                 </motion.div>
               ))}
             </div>
@@ -559,7 +559,7 @@ export default function HealthCrisesPage() {
                 >
                   <span className="text-2xl" role="img" aria-label={item.measure}>{item.icon}</span>
                   <div>
-                    <p className="text-sm font-semibold text-slate-200">{item.measure}</p>
+                    <p className="text-sm font-semibold text-platinum-200">{item.measure}</p>
                     <p className="text-xs text-gold">{item.duration}</p>
                   </div>
                 </motion.div>
@@ -584,8 +584,8 @@ export default function HealthCrisesPage() {
                         <div className="flex items-start gap-4">
                           <p className="text-sm font-bold text-gold whitespace-nowrap w-24">{event.date}</p>
                           <div>
-                            <p className="font-semibold text-slate-200">{event.event}</p>
-                            <p className="text-sm text-slate-400 mt-1">{event.detail}</p>
+                            <p className="font-semibold text-platinum-200">{event.event}</p>
+                            <p className="text-sm text-platinum-400 mt-1">{event.detail}</p>
                           </div>
                         </div>
                       </motion.div>
@@ -619,8 +619,8 @@ export default function HealthCrisesPage() {
             <GlassPanel title="Vaccination Statistics (August 2021)" description="Campaign performance metrics">
               <div className="space-y-4">
                 {Object.entries(extendedData.vaccinationStats).map(([key, value]: [string, any]) => (
-                  <div key={key} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
-                    <span className="text-sm text-slate-300 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
+                  <div key={key} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
+                    <span className="text-sm text-platinum-300 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
                     <span className="text-sm font-bold text-gold">{value}</span>
                   </div>
                 ))}
@@ -637,11 +637,11 @@ export default function HealthCrisesPage() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: idx * 0.1 }}
-                  className="rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+                  className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                 >
                   <Syringe className="h-8 w-8 text-emerald-400 mb-3" />
-                  <p className="font-semibold text-slate-200">{vaccine.name}</p>
-                  <p className="text-sm text-slate-400 mt-1">{vaccine.type}</p>
+                  <p className="font-semibold text-platinum-200">{vaccine.name}</p>
+                  <p className="text-sm text-platinum-400 mt-1">{vaccine.type}</p>
                   <Badge variant="outline" className="mt-2 text-xs">{vaccine.source}</Badge>
                 </motion.div>
               ))}
@@ -659,9 +659,9 @@ export default function HealthCrisesPage() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                      className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                     >
-                      <span className="text-sm text-slate-300">{item.metric}</span>
+                      <span className="text-sm text-platinum-300">{item.metric}</span>
                       <div className="flex items-center gap-2">
                         <span className="text-sm font-bold text-gold">{item.value}</span>
                         <Badge variant="outline" className="text-xs">{item.date}</Badge>
@@ -682,14 +682,14 @@ export default function HealthCrisesPage() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.1 }}
-                  className="flex items-center gap-4 rounded-lg bg-slate-800/50 p-4"
+                  className="flex items-center gap-4 rounded-lg bg-platinum-800/50 p-4"
                 >
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20">
                     <Medal className="h-5 w-5 text-gold" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-slate-200">{rank.ranking}</p>
-                    <p className="text-sm text-slate-400">{rank.achievement}</p>
+                    <p className="font-semibold text-platinum-200">{rank.ranking}</p>
+                    <p className="text-sm text-platinum-400">{rank.achievement}</p>
                   </div>
                   <Badge variant="gold" className="text-xs">{rank.source}</Badge>
                 </motion.div>
@@ -702,7 +702,7 @@ export default function HealthCrisesPage() {
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {Object.entries(extendedData.sinopharmDetails).map(([key, value]: [string, any]) => (
                 <div key={key} className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
-                  <p className="text-xs text-slate-400 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
+                  <p className="text-xs text-platinum-400 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
                   <p className="text-lg font-bold text-emerald-400 mt-1">{value}</p>
                 </div>
               ))}
@@ -772,24 +772,24 @@ export default function HealthCrisesPage() {
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4">
                 <Bug className="h-6 w-6 text-orange-400 mb-2" />
-                <p className="text-sm text-slate-400">2022 Outbreak Cases</p>
+                <p className="text-sm text-platinum-400">2022 Outbreak Cases</p>
                 <p className="text-2xl font-bold text-orange-400">{extendedData.mpoxData['2022Outbreak'].cases}</p>
               </div>
               <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4">
-                <p className="text-sm text-slate-400">2022 New Cases</p>
+                <p className="text-sm text-platinum-400">2022 New Cases</p>
                 <p className="text-2xl font-bold text-orange-400">{extendedData.mpoxData['2022NewCases'].cases}</p>
               </div>
-              <div className="rounded-lg border border-yellow-500/30 bg-yellow-500/10 p-4">
-                <Zap className="h-6 w-6 text-yellow-400 mb-2" />
-                <p className="text-sm text-slate-400">Feb 2025 Clade Ib</p>
-                <p className="text-lg font-bold text-yellow-400">First Case</p>
-                <p className="text-xs text-slate-400">Reported to WHO</p>
+              <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
+                <Zap className="h-6 w-6 text-amber-400 mb-2" />
+                <p className="text-sm text-platinum-400">Feb 2025 Clade Ib</p>
+                <p className="text-lg font-bold text-amber-400">First Case</p>
+                <p className="text-xs text-platinum-400">Reported to WHO</p>
               </div>
-              <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
-                <Globe className="h-6 w-6 text-slate-400 mb-2" />
-                <p className="text-sm text-slate-400">Global Context 2022</p>
-                <p className="text-lg font-bold text-slate-300">911+ cases</p>
-                <p className="text-xs text-slate-400">29 countries</p>
+              <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
+                <Globe className="h-6 w-6 text-platinum-400 mb-2" />
+                <p className="text-sm text-platinum-400">Global Context 2022</p>
+                <p className="text-lg font-bold text-platinum-300">911+ cases</p>
+                <p className="text-xs text-platinum-400">29 countries</p>
               </div>
             </div>
           </GlassPanel>
@@ -800,28 +800,28 @@ export default function HealthCrisesPage() {
               <div className="space-y-3">
                 <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4">
                   <Droplets className="h-5 w-5 text-red-400 mb-2" />
-                  <p className="text-sm text-slate-400">Trigger</p>
-                  <p className="font-semibold text-slate-200">{extendedData.dengueOutbreak.trigger}</p>
+                  <p className="text-sm text-platinum-400">Trigger</p>
+                  <p className="font-semibold text-platinum-200">{extendedData.dengueOutbreak.trigger}</p>
                 </div>
                 <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4">
                   <Bug className="h-5 w-5 text-orange-400 mb-2" />
-                  <p className="text-sm text-slate-400">Vector</p>
+                  <p className="text-sm text-platinum-400">Vector</p>
                   <p className="font-semibold text-orange-400">{extendedData.dengueOutbreak.vector}</p>
                 </div>
-                <div className="rounded-lg border border-yellow-500/30 bg-yellow-500/10 p-4">
-                  <FileText className="h-5 w-5 text-yellow-400 mb-2" />
-                  <p className="text-sm text-slate-400">Researcher Quote</p>
-                  <p className="text-sm italic text-slate-300">{extendedData.dengueOutbreak.researcherQuote}</p>
+                <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
+                  <FileText className="h-5 w-5 text-amber-400 mb-2" />
+                  <p className="text-sm text-platinum-400">Researcher Quote</p>
+                  <p className="text-sm italic text-platinum-300">{extendedData.dengueOutbreak.researcherQuote}</p>
                 </div>
               </div>
               <div>
-                <p className="text-sm font-semibold text-slate-300 mb-3 flex items-center gap-2">
+                <p className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
                   <Thermometer className="h-4 w-4" /> Symptoms
                 </p>
                 <div className="space-y-2">
                   {extendedData.dengueOutbreak.symptoms.map((s: any, idx: number) => (
-                    <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-2">
-                      <span className="text-sm text-slate-300">{s.symptom}</span>
+                    <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-2">
+                      <span className="text-sm text-platinum-300">{s.symptom}</span>
                       <Badge variant="outline" className="text-xs">{s.detail}</Badge>
                     </div>
                   ))}
@@ -835,23 +835,23 @@ export default function HealthCrisesPage() {
             <div className="grid gap-4 sm:grid-cols-3">
               <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4">
                 <Apple className="h-6 w-6 text-red-400 mb-2" />
-                <p className="text-sm text-slate-400">Total Cases</p>
+                <p className="text-sm text-platinum-400">Total Cases</p>
                 <p className="text-3xl font-bold text-red-400">{extendedData.foodPoisoningStats.totalCasesH12025}+</p>
               </div>
               <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4">
-                <p className="text-sm text-slate-400">Salmonella Confirmed</p>
+                <p className="text-sm text-platinum-400">Salmonella Confirmed</p>
                 <p className="text-3xl font-bold text-orange-400">{extendedData.foodPoisoningStats.confirmedSalmonella}+</p>
               </div>
-              <div className="rounded-lg border border-yellow-500/30 bg-yellow-500/10 p-4">
-                <Thermometer className="h-6 w-6 text-yellow-400 mb-2" />
-                <p className="text-sm text-slate-400">Primary Cause</p>
-                <p className="text-sm font-semibold text-slate-300">{extendedData.foodPoisoningStats.contributingFactors}</p>
+              <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
+                <Thermometer className="h-6 w-6 text-amber-400 mb-2" />
+                <p className="text-sm text-platinum-400">Primary Cause</p>
+                <p className="text-sm font-semibold text-platinum-300">{extendedData.foodPoisoningStats.contributingFactors}</p>
               </div>
             </div>
 
             {/* Causative Agents Chart */}
             <div className="mt-4">
-              <p className="text-sm font-semibold text-slate-300 mb-3">Causative Agents Distribution</p>
+              <p className="text-sm font-semibold text-platinum-300 mb-3">Causative Agents Distribution</p>
               <Card className="glass-card">
                 <CardContent className="pt-6">
                   <BarChart
@@ -867,7 +867,7 @@ export default function HealthCrisesPage() {
 
             {/* Red Flag Symptoms */}
             <div className="mt-4">
-              <p className="text-sm font-semibold text-slate-300 mb-3">Red-Flag Symptoms</p>
+              <p className="text-sm font-semibold text-platinum-300 mb-3">Red-Flag Symptoms</p>
               <div className="flex flex-wrap gap-2">
                 {extendedData.foodPoisoningStats.redFlagSymptoms.map((s: any, idx: number) => (
                   <Badge key={idx} variant="destructive" className="text-xs">
@@ -891,7 +891,7 @@ export default function HealthCrisesPage() {
                 >
                   <span className="text-2xl" role="img" aria-label={item.method}>{item.icon}</span>
                   <p className="text-xs text-emerald-400 mt-2">{item.method}</p>
-                  <p className="text-sm font-bold text-slate-200">{item.value}</p>
+                  <p className="text-sm font-bold text-platinum-200">{item.value}</p>
                 </motion.div>
               ))}
             </div>
@@ -906,24 +906,24 @@ export default function HealthCrisesPage() {
                 <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
                   <div className="flex items-center gap-3 mb-2">
                     <Smartphone className="h-6 w-6 text-emerald-400" />
-                    <p className="font-semibold text-slate-200">{extendedData.alHosnApp.officialName}</p>
+                    <p className="font-semibold text-platinum-200">{extendedData.alHosnApp.officialName}</p>
                   </div>
-                  <p className="text-sm text-slate-400">{extendedData.alHosnApp.purpose}</p>
+                  <p className="text-sm text-platinum-400">{extendedData.alHosnApp.purpose}</p>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="rounded-lg bg-slate-800/50 p-3">
+                  <div className="rounded-lg bg-platinum-800/50 p-3">
                     <Phone className="h-4 w-4 text-emerald-400 mb-1" />
-                    <p className="text-xs text-slate-400">Support Line</p>
-                    <p className="font-semibold text-slate-200">{extendedData.alHosnApp.supportLine}</p>
+                    <p className="text-xs text-platinum-400">Support Line</p>
+                    <p className="font-semibold text-platinum-200">{extendedData.alHosnApp.supportLine}</p>
                   </div>
-                  <div className="rounded-lg bg-slate-800/50 p-3">
+                  <div className="rounded-lg bg-platinum-800/50 p-3">
                     <Wifi className="h-4 w-4 text-emerald-400 mb-1" />
-                    <p className="text-xs text-slate-400">Tracing Technology</p>
-                    <p className="font-semibold text-slate-200">{extendedData.alHosnApp.tracingTechnology}</p>
+                    <p className="text-xs text-platinum-400">Tracing Technology</p>
+                    <p className="font-semibold text-platinum-200">{extendedData.alHosnApp.tracingTechnology}</p>
                   </div>
                 </div>
                 <div>
-                  <p className="text-xs text-slate-400 mb-2">Languages Supported</p>
+                  <p className="text-xs text-platinum-400 mb-2">Languages Supported</p>
                   <div className="flex flex-wrap gap-2">
                     {extendedData.alHosnApp.languages.map((lang: string, idx: number) => (
                       <Badge key={idx} variant="outline" className="text-xs">{lang}</Badge>
@@ -931,7 +931,7 @@ export default function HealthCrisesPage() {
                   </div>
                 </div>
                 <div>
-                  <p className="text-xs text-slate-400 mb-2">Platforms</p>
+                  <p className="text-xs text-platinum-400 mb-2">Platforms</p>
                   <div className="flex flex-wrap gap-2">
                     {extendedData.alHosnApp.platforms.map((platform: string, idx: number) => (
                       <Badge key={idx} variant="outline" className="text-xs">{platform}</Badge>
@@ -940,25 +940,25 @@ export default function HealthCrisesPage() {
                 </div>
               </div>
               <div>
-                <p className="text-sm font-semibold text-slate-300 mb-3 flex items-center gap-2">
+                <p className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
                   <PieChartIcon className="h-4 w-4" /> Health Status Color Codes
                 </p>
                 <div className="space-y-2">
                   {extendedData.alHosnApp.colorCodes.map((code: any, idx: number) => (
                     <div key={idx} className={`rounded-lg border p-3 ${
                       code.color === 'Green' ? 'border-emerald-500/30 bg-emerald-500/10' :
-                      code.color === 'Grey' ? 'border-slate-500/30 bg-slate-500/10' :
+                      code.color === 'Grey' ? 'border-platinum-500/30 bg-platinum-500/10' :
                       'border-red-500/30 bg-red-500/10'
                     }`}>
                       <div className="flex items-center gap-2">
                         <div className={`h-3 w-3 rounded-full ${
                           code.color === 'Green' ? 'bg-emerald-400' :
-                          code.color === 'Grey' ? 'bg-slate-400' :
+                          code.color === 'Grey' ? 'bg-platinum-400' :
                           'bg-red-400'
                         }`} />
-                        <p className="font-semibold text-slate-200">{code.color}</p>
+                        <p className="font-semibold text-platinum-200">{code.color}</p>
                       </div>
-                      <p className="text-sm text-slate-400 mt-1">{code.meaning}</p>
+                      <p className="text-sm text-platinum-400 mt-1">{code.meaning}</p>
                     </div>
                   ))}
                 </div>
@@ -994,11 +994,11 @@ export default function HealthCrisesPage() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: idx * 0.1 }}
-                  className="rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+                  className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                 >
-                  <Laptop className="h-6 w-6 text-blue-400 mb-3" />
-                  <p className="font-semibold text-slate-200">{tool.tool}</p>
-                  <p className="text-sm text-slate-400 mt-1">{tool.function}</p>
+                  <Laptop className="h-6 w-6 text-navy-400 mb-3" />
+                  <p className="font-semibold text-platinum-200">{tool.tool}</p>
+                  <p className="text-sm text-platinum-400 mt-1">{tool.function}</p>
                   <Badge variant="outline" className="mt-2 text-xs">{tool.authority}</Badge>
                 </motion.div>
               ))}
@@ -1029,7 +1029,7 @@ export default function HealthCrisesPage() {
               <div className="space-y-4">
                 {extendedData.mentalHealthImpact.surveyFindings.map((finding: any, idx: number) => (
                   <div key={idx} className="rounded-lg border border-purple-500/30 bg-purple-500/10 p-4">
-                    <p className="text-sm text-slate-300">{finding.finding}</p>
+                    <p className="text-sm text-platinum-300">{finding.finding}</p>
                     <p className="text-2xl font-bold text-purple-400 mt-1">{finding.value}</p>
                     <Badge variant="outline" className="mt-2 text-xs">{finding.source}</Badge>
                   </div>
@@ -1043,8 +1043,8 @@ export default function HealthCrisesPage() {
               {extendedData.mentalHealthImpact.uaeResponse.map((response: any, idx: number) => (
                 <div key={idx} className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
                   <Brain className="h-6 w-6 text-emerald-400 mb-2" />
-                  <p className="font-semibold text-slate-200">{response.initiative}</p>
-                  <p className="text-sm text-slate-400 mt-1">{response.detail}</p>
+                  <p className="font-semibold text-platinum-200">{response.initiative}</p>
+                  <p className="text-sm text-platinum-400 mt-1">{response.detail}</p>
                 </div>
               ))}
             </div>
@@ -1053,12 +1053,12 @@ export default function HealthCrisesPage() {
           <GlassPanel title="Affected Populations" description="COVID-19 mental health impact by group">
             <div className="space-y-3">
               {extendedData.mentalHealthImpact.affectedPopulations.map((pop: any, idx: number) => (
-                <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                   <div className="flex items-center gap-3">
                     <Users className="h-4 w-4 text-purple-400" />
-                    <span className="text-sm text-slate-300">{pop.group}</span>
+                    <span className="text-sm text-platinum-300">{pop.group}</span>
                   </div>
-                  <span className="text-sm text-slate-400">{pop.impact}</span>
+                  <span className="text-sm text-platinum-400">{pop.impact}</span>
                 </div>
               ))}
             </div>
@@ -1079,7 +1079,7 @@ export default function HealthCrisesPage() {
                 >
                   <div className="flex items-center gap-3">
                     <AlertTriangle className="h-5 w-5 text-red-400" />
-                    <span className="text-sm text-slate-300">{impact.finding}</span>
+                    <span className="text-sm text-platinum-300">{impact.finding}</span>
                   </div>
                   <div className="text-right">
                     <p className="text-sm font-bold text-red-400">{impact.value}</p>
@@ -1101,7 +1101,7 @@ export default function HealthCrisesPage() {
                   className="rounded-lg border border-purple-500/30 bg-purple-500/10 p-4 text-center"
                 >
                   <p className="text-3xl font-bold text-purple-400">{stat.value}</p>
-                  <p className="text-sm text-slate-300 mt-1">{stat.metric}</p>
+                  <p className="text-sm text-platinum-300 mt-1">{stat.metric}</p>
                 </motion.div>
               ))}
             </div>
@@ -1132,12 +1132,12 @@ export default function HealthCrisesPage() {
             <GlassPanel title="Stimulus Package Details" description="Government economic support">
               <div className="space-y-3">
                 {extendedData.economicImpactStimulus.stimulusPackages.map((pkg: any, idx: number) => (
-                  <div key={idx} className="rounded-lg bg-slate-800/50 p-3">
+                  <div key={idx} className="rounded-lg bg-platinum-800/50 p-3">
                     <div className="flex items-center justify-between">
-                      <p className="text-sm font-semibold text-slate-200">{pkg.jurisdiction}</p>
+                      <p className="text-sm font-semibold text-platinum-200">{pkg.jurisdiction}</p>
                       <Badge variant="gold" className="text-xs">{pkg.amount}</Badge>
                     </div>
-                    <p className="text-xs text-slate-400 mt-1">{pkg.duration}</p>
+                    <p className="text-xs text-platinum-400 mt-1">{pkg.duration}</p>
                   </div>
                 ))}
               </div>
@@ -1150,19 +1150,19 @@ export default function HealthCrisesPage() {
                   <div key={idx} className={`rounded-lg border p-3 ${
                     impact.impact === 'Severe impact' || impact.impact === 'Decreased'
                       ? 'border-red-500/30 bg-red-500/10'
-                      : 'border-slate-700 bg-slate-800/50'
+                      : 'border-platinum-700 bg-platinum-800/50'
                   }`}>
                     <div className="flex items-center gap-2">
                       {impact.impact === 'Severe impact' || impact.impact === 'Decreased'
                         ? <AlertTriangle className="h-4 w-4 text-red-400" />
-                        : <TrendingUp className="h-4 w-4 text-slate-400" />
+                        : <TrendingUp className="h-4 w-4 text-platinum-400" />
                       }
-                      <p className="text-sm font-semibold text-slate-200">{impact.sector}</p>
+                      <p className="text-sm font-semibold text-platinum-200">{impact.sector}</p>
                     </div>
                     <p className={`text-sm mt-1 ${
                       impact.impact === 'Severe impact' || impact.impact === 'Decreased'
                         ? 'text-red-400'
-                        : 'text-slate-400'
+                        : 'text-platinum-400'
                     }`}>{impact.impact}</p>
                   </div>
                 ))}
@@ -1176,7 +1176,7 @@ export default function HealthCrisesPage() {
               <DollarSign className="h-6 w-6 text-gold" />
               <div>
                 <p className="text-sm font-semibold text-gold">Targeted Economic Support Scheme (TESS)</p>
-                <p className="text-sm text-slate-300 mt-1">{extendedData.economicImpactStimulus.tessDetails}</p>
+                <p className="text-sm text-platinum-300 mt-1">{extendedData.economicImpactStimulus.tessDetails}</p>
               </div>
             </div>
           </div>
@@ -1192,9 +1192,9 @@ export default function HealthCrisesPage() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                      className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                     >
-                      <p className="text-xs text-slate-400">{item.entity}</p>
+                      <p className="text-xs text-platinum-400">{item.entity}</p>
                       <p className="text-lg font-bold text-gold">{item.amount} {item.currency}</p>
                     </motion.div>
                   ))}
@@ -1229,27 +1229,27 @@ export default function HealthCrisesPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
                   <Truck className="h-5 w-5 text-emerald-400 mb-2" />
-                  <p className="text-sm text-slate-400">Medical Aid Shipped</p>
+                  <p className="text-sm text-platinum-400">Medical Aid Shipped</p>
                   <p className="text-2xl font-bold text-emerald-400">{extendedData.humanitarianResponse.globalMedicalAid.medicalAidShipped}</p>
                 </div>
                 <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
                   <Globe className="h-5 w-5 text-emerald-400 mb-2" />
-                  <p className="text-sm text-slate-400">Countries Received Aid</p>
+                  <p className="text-sm text-platinum-400">Countries Received Aid</p>
                   <p className="text-2xl font-bold text-emerald-400">{extendedData.humanitarianResponse.globalMedicalAid.countriesReceivedAid}</p>
                 </div>
                 <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
                   <Plane className="h-5 w-5 text-emerald-400 mb-2" />
-                  <p className="text-sm text-slate-400">Medical Flights</p>
+                  <p className="text-sm text-platinum-400">Medical Flights</p>
                   <p className="text-2xl font-bold text-emerald-400">{extendedData.humanitarianResponse.globalMedicalAid.medicalFlights}</p>
                 </div>
                 <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
                   <Building2 className="h-5 w-5 text-emerald-400 mb-2" />
-                  <p className="text-sm text-slate-400">Field Hospitals</p>
+                  <p className="text-sm text-platinum-400">Field Hospitals</p>
                   <p className="text-2xl font-bold text-emerald-400">{extendedData.humanitarianResponse.globalMedicalAid.fieldHospitalsEstablished}</p>
                 </div>
               </div>
               <div className="mt-4 rounded-lg border border-gold/30 bg-gold/10 p-3">
-                <p className="text-sm text-slate-400">International Response Share</p>
+                <p className="text-sm text-platinum-400">International Response Share</p>
                 <p className="text-xl font-bold text-gold">{extendedData.humanitarianResponse.globalMedicalAid.shareOfInternationalResponse}</p>
               </div>
             </GlassPanel>
@@ -1266,7 +1266,7 @@ export default function HealthCrisesPage() {
                   transition={{ delay: idx * 0.05 }}
                   className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center"
                 >
-                  <p className="text-xs text-slate-400">{item.metric}</p>
+                  <p className="text-xs text-platinum-400">{item.metric}</p>
                   <p className="text-xl font-bold text-emerald-400 mt-1">{item.value}</p>
                 </motion.div>
               ))}
@@ -1282,15 +1282,15 @@ export default function HealthCrisesPage() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: idx * 0.1 }}
-                  className="rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+                  className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                 >
                   <Heart className="h-6 w-6 text-red-400 mb-2" />
-                  <p className="font-semibold text-slate-200">{initiative.campaign}</p>
+                  <p className="font-semibold text-platinum-200">{initiative.campaign}</p>
                   {initiative.date && initiative.date !== '-' && (
-                    <p className="text-sm text-slate-400 mt-1">{initiative.date}</p>
+                    <p className="text-sm text-platinum-400 mt-1">{initiative.date}</p>
                   )}
                   {initiative.detail && (
-                    <p className="text-xs text-slate-500 mt-1">{initiative.detail}</p>
+                    <p className="text-xs text-platinum-500 mt-1">{initiative.detail}</p>
                   )}
                 </motion.div>
               ))}
@@ -1334,8 +1334,8 @@ export default function HealthCrisesPage() {
                   <div className="flex items-center gap-3">
                     <Medal className="h-6 w-6 text-gold" />
                     <div>
-                      <p className="font-semibold text-slate-200">{rank.ranking}</p>
-                      <p className="text-sm text-slate-400">{rank.rationale}</p>
+                      <p className="font-semibold text-platinum-200">{rank.ranking}</p>
+                      <p className="text-sm text-platinum-400">{rank.rationale}</p>
                       <Badge variant="outline" className="mt-2 text-xs">{rank.source}</Badge>
                     </div>
                   </div>
@@ -1351,7 +1351,7 @@ export default function HealthCrisesPage() {
                 {extendedData.healthSystemPreparedness.enablingFactors.map((factor: string, idx: number) => (
                   <div key={idx} className="flex items-center gap-3 rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3">
                     <Shield className="h-5 w-5 text-emerald-400" />
-                    <p className="text-sm font-semibold text-slate-200">{factor}</p>
+                    <p className="text-sm font-semibold text-platinum-200">{factor}</p>
                   </div>
                 ))}
               </div>
@@ -1361,7 +1361,7 @@ export default function HealthCrisesPage() {
             <GlassPanel title="One Health Approach" description="Multi-sectoral health strategy">
               <div className="rounded-lg border border-purple-500/30 bg-purple-500/10 p-4">
                 <Leaf className="h-6 w-6 text-purple-400 mb-3" />
-                <p className="text-sm text-slate-300">{extendedData.healthSystemPreparedness.oneHealthApproach}</p>
+                <p className="text-sm text-platinum-300">{extendedData.healthSystemPreparedness.oneHealthApproach}</p>
               </div>
             </GlassPanel>
           </div>
@@ -1370,14 +1370,14 @@ export default function HealthCrisesPage() {
           <GlassPanel title="Pandemic Readiness Program" description="One Health approach">
             <div className="space-y-4">
               {extendedData.healthSystemPreparedness.pandemicReadinessProgram.map((program: any, idx: number) => (
-                <div key={idx} className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                <div key={idx} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                   <div className="flex items-center gap-3">
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald/20">
                       <CheckCircle2 className="h-4 w-4 text-emerald-400" />
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-200">{program.component}</p>
-                      <p className="text-sm text-slate-400">{program.detail}</p>
+                      <p className="font-semibold text-platinum-200">{program.component}</p>
+                      <p className="text-sm text-platinum-400">{program.detail}</p>
                     </div>
                   </div>
                 </div>
@@ -1389,20 +1389,20 @@ export default function HealthCrisesPage() {
           <GlassPanel title="International Health Cooperation" description="WHO relations and COVAX">
             <div className="grid gap-6 lg:grid-cols-2">
               {/* WHO Relations */}
-              <div className="rounded-lg border border-blue-500/30 bg-blue-500/10 p-4">
-                <Globe className="h-6 w-6 text-blue-400 mb-3" />
-                <p className="font-semibold text-slate-200">WHO Relations</p>
-                <p className="text-sm text-slate-400 mt-2">{extendedData.internationalHealthCooperation.whoRelations.uaeHealthcareRanking}</p>
-                <p className="text-xs text-slate-500 mt-1">- {extendedData.internationalHealthCooperation.whoRelations.statementBy}</p>
-                <p className="text-xs text-slate-500">{extendedData.internationalHealthCooperation.whoRelations.statementDate}</p>
+              <div className="rounded-lg border border-navy-500/30 bg-navy-500/10 p-4">
+                <Globe className="h-6 w-6 text-navy-400 mb-3" />
+                <p className="font-semibold text-platinum-200">WHO Relations</p>
+                <p className="text-sm text-platinum-400 mt-2">{extendedData.internationalHealthCooperation.whoRelations.uaeHealthcareRanking}</p>
+                <p className="text-xs text-platinum-500 mt-1">- {extendedData.internationalHealthCooperation.whoRelations.statementBy}</p>
+                <p className="text-xs text-platinum-500">{extendedData.internationalHealthCooperation.whoRelations.statementDate}</p>
               </div>
 
               {/* COVAX Participation */}
               <GlassPanel title="COVAX Participation" description="Vaccine equity initiative">
                 <div className="space-y-3">
                   {extendedData.internationalHealthCooperation.covaxParticipation.map((covax: any, idx: number) => (
-                    <div key={idx} className="rounded-lg bg-slate-800/50 p-3">
-                      <p className="text-sm text-slate-300">{covax.donor}</p>
+                    <div key={idx} className="rounded-lg bg-platinum-800/50 p-3">
+                      <p className="text-sm text-platinum-300">{covax.donor}</p>
                       <p className="text-lg font-bold text-gold">{covax.amount || covax.detail}</p>
                     </div>
                   ))}
@@ -1434,27 +1434,27 @@ export default function HealthCrisesPage() {
       <motion.footer
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="flex flex-col lg:flex-row items-start lg:items-center justify-between rounded-lg border border-slate-800 bg-slate-900/50 p-4 gap-4"
+        className="flex flex-col lg:flex-row items-start lg:items-center justify-between rounded-lg border border-platinum-800 bg-platinum-900/50 p-4 gap-4"
         role="contentinfo"
         aria-label="Dashboard footer"
       >
         <div className="flex flex-wrap items-center gap-4">
           <div className="flex items-center gap-2">
-            <Database className="h-4 w-4 text-slate-500" aria-hidden="true" />
-            <p className="text-sm text-slate-400">Confidence: 85%</p>
+            <Database className="h-4 w-4 text-platinum-500" aria-hidden="true" />
+            <p className="text-sm text-platinum-400">Confidence: 85%</p>
           </div>
           <div className="flex items-center gap-2">
-            <Calendar className="h-4 w-4 text-slate-500" aria-hidden="true" />
-            <p className="text-sm text-slate-400">Report: 2026-04-27</p>
+            <Calendar className="h-4 w-4 text-platinum-500" aria-hidden="true" />
+            <p className="text-sm text-platinum-400">Report: 2026-04-27</p>
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle2 className="h-4 w-4 text-emerald-500" aria-hidden="true" />
-            <p className="text-sm text-slate-400">Queries: 25 | Pages: 18</p>
+            <p className="text-sm text-platinum-400">Queries: 25 | Pages: 18</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <ExternalLink className="h-4 w-4 text-slate-500" aria-hidden="true" />
-          <p className="text-sm text-slate-400">Sources: Wikipedia, WHO, UAE Government, PMC, Harvard, Gulf News</p>
+          <ExternalLink className="h-4 w-4 text-platinum-500" aria-hidden="true" />
+          <p className="text-sm text-platinum-400">Sources: Wikipedia, WHO, UAE Government, PMC, Harvard, Gulf News</p>
         </div>
       </motion.footer>
 
@@ -1463,7 +1463,7 @@ export default function HealthCrisesPage() {
         <div className="grid gap-6 lg:grid-cols-2">
           {/* Organizations */}
           <div>
-            <p className="text-sm font-semibold text-slate-300 mb-3 flex items-center gap-2">
+            <p className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
               <Building2 className="h-4 w-4" /> Organizations
             </p>
             <div className="space-y-2">
@@ -1473,10 +1473,10 @@ export default function HealthCrisesPage() {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.05 }}
-                  className="rounded-lg border border-slate-700 bg-slate-800/50 p-2"
+                  className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-2"
                 >
-                  <p className="text-sm font-semibold text-slate-200">{org.organization}</p>
-                  <p className="text-xs text-slate-400">{org.role}</p>
+                  <p className="text-sm font-semibold text-platinum-200">{org.organization}</p>
+                  <p className="text-xs text-platinum-400">{org.role}</p>
                 </motion.div>
               ))}
             </div>
@@ -1484,7 +1484,7 @@ export default function HealthCrisesPage() {
 
           {/* Diseases */}
           <div>
-            <p className="text-sm font-semibold text-slate-300 mb-3 flex items-center gap-2">
+            <p className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
               <Bug className="h-4 w-4" /> Diseases
             </p>
             <div className="flex flex-wrap gap-2">
@@ -1496,7 +1496,7 @@ export default function HealthCrisesPage() {
                     disease.disease === 'COVID-19' ? 'border-gold/50 text-gold' :
                     disease.disease.includes('MERS') ? 'border-red-500/50 text-red-400' :
                     disease.disease.includes('Mpox') ? 'border-orange-500/50 text-orange-400' :
-                    'border-slate-600 text-slate-300'
+                    'border-platinum-600 text-platinum-300'
                   }`}
                 >
                   {disease.disease}: {disease.status}
@@ -1524,7 +1524,7 @@ export default function HealthCrisesPage() {
                   transition={{ delay: idx * 0.05 }}
                   className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3"
                 >
-                  <p className="text-sm text-slate-200">{item.finding}</p>
+                  <p className="text-sm text-platinum-200">{item.finding}</p>
                   <Badge variant="outline" className="mt-2 text-xs">{item.source}</Badge>
                 </motion.div>
               ))}
@@ -1545,7 +1545,7 @@ export default function HealthCrisesPage() {
                   transition={{ delay: idx * 0.05 }}
                   className="rounded-lg border border-red-500/30 bg-red-500/10 p-3"
                 >
-                  <p className="text-sm text-slate-200">{item.finding}</p>
+                  <p className="text-sm text-platinum-200">{item.finding}</p>
                   <Badge variant="outline" className="mt-2 text-xs">{item.source}</Badge>
                 </motion.div>
               ))}

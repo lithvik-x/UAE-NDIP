@@ -156,7 +156,7 @@ export function GapsSection({ data }: GapsSectionProps) {
                 </div>
 
                 {gap.keyQuotes && gap.keyQuotes.length > 0 && (
-                  <div className="bg-slate-800/50 rounded-lg p-3 border border-slate-700">
+                  <div className="bg-platinum-800/50 rounded-lg p-3 border border-platinum-700">
                     <h5 className="text-xs font-semibold text-platinum-400 uppercase tracking-wide mb-2">Key Quote</h5>
                     <p className="text-sm text-platinum-300 italic">
                       {gap.keyQuotes[0].substring(0, 200)}
@@ -165,7 +165,7 @@ export function GapsSection({ data }: GapsSectionProps) {
                   </div>
                 )}
 
-                <div className="flex items-center justify-between mt-4 pt-4 border-t border-slate-700">
+                <div className="flex items-center justify-between mt-4 pt-4 border-t border-platinum-700">
                   <div className="flex items-center gap-4">
                     <span className="text-xs text-platinum-500">
                       Trend: <span className={gap.trend.includes('Worsening') ? 'text-rose-400' : gap.trend.includes('Improvement') ? 'text-emerald-400' : 'text-platinum-300'}>{gap.trend}</span>

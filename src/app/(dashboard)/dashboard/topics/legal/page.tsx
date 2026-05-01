@@ -284,7 +284,7 @@ export default function LegalRegulatoryPage() {
                   </CardHeader>
                   <CardContent className="space-y-3">
                     {keyStatistics.legalSystem.slice(0, 5).map((stat, idx) => (
-                      <div key={idx} className="flex justify-between p-2 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400 text-sm">{stat.metric}</span>
                         <span className="text-gold font-bold text-sm">{stat.value}</span>
                       </div>
@@ -323,19 +323,19 @@ export default function LegalRegulatoryPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="p-3 bg-slate-800/50 rounded-lg text-center">
+                    <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald">98%</p>
                       <p className="text-xs text-platinum-400">Case Completion</p>
                     </div>
-                    <div className="p-3 bg-slate-800/50 rounded-lg text-center">
+                    <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-gold">3,000+</p>
                       <p className="text-xs text-platinum-400">DIFC Companies</p>
                     </div>
-                    <div className="p-3 bg-slate-800/50 rounded-lg text-center">
+                    <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-navy">1,005</p>
                       <p className="text-xs text-platinum-400">Patent Applications</p>
                     </div>
-                    <div className="p-3 bg-slate-800/50 rounded-lg text-center">
+                    <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-platinum">AED 1B</p>
                       <p className="text-xs text-platinum-400">AML Fines Max</p>
                     </div>
@@ -391,7 +391,7 @@ export default function LegalRegulatoryPage() {
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-3">
                     {legalSystemStructure.courtTiers.map((tier, idx) => (
-                      <div key={idx} className="p-4 bg-slate-800/50 rounded-lg border border-slate-700">
+                      <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg border border-platinum-700">
                         <h4 className="font-bold text-platinum mb-2">{tier.tier}</h4>
                         <p className="text-sm text-platinum-400">{tier.jurisdiction}</p>
                       </div>
@@ -439,7 +439,7 @@ export default function LegalRegulatoryPage() {
                 <CardContent>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {keyStatistics.legalSystem.slice(3, 7).map((stat, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg text-center">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-lg font-bold text-rose">{stat.value}</p>
                         <p className="text-xs text-platinum-400">{stat.metric}</p>
                       </div>
@@ -459,7 +459,7 @@ export default function LegalRegulatoryPage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2">
                     {familyLawInheritance.shariaApplication.map((rule, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg flex justify-between">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg flex justify-between">
                         <span className="text-platinum-400 text-sm">{rule.beneficiary}</span>
                         <span className="text-gold font-bold text-sm">{rule.share}</span>
                       </div>
@@ -490,19 +490,19 @@ export default function LegalRegulatoryPage() {
                 <CardContent>
                   <div className="grid gap-6 lg:grid-cols-2">
                     <div className="space-y-3">
-                      <div className="flex justify-between p-2 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400">Established</span>
                         <span className="text-platinum-200">{difcADGMCourts.difcOverview.established}</span>
                       </div>
-                      <div className="flex justify-between p-2 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400">Area</span>
                         <span className="text-platinum-200">{difcADGMCourts.difcOverview.area}</span>
                       </div>
-                      <div className="flex justify-between p-2 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400">Companies (2022)</span>
                         <span className="text-gold font-bold">{difcADGMCourts.difcOverview.companies2022}</span>
                       </div>
-                      <div className="flex justify-between p-2 bg-slate-800/50 rounded-lg">
+                      <div className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400">Legal Framework</span>
                         <span className="text-platinum-200">Common Law, English</span>
                       </div>
@@ -511,7 +511,7 @@ export default function LegalRegulatoryPage() {
                       <h4 className="text-sm font-semibold text-gold mb-3">Court Structure</h4>
                       <div className="space-y-2">
                         {difcADGMCourts.difcCourts.structure.map((court, idx) => (
-                          <div key={idx} className="p-2 bg-slate-800/50 rounded-lg flex justify-between">
+                          <div key={idx} className="p-2 bg-platinum-800/50 rounded-lg flex justify-between">
                             <span className="text-platinum-200 text-sm">{court.name}</span>
                             <span className="text-platinum-500 text-xs">{court.role}</span>
                           </div>
@@ -568,7 +568,7 @@ export default function LegalRegulatoryPage() {
                       <p className="text-3xl font-bold text-emerald">2nd</p>
                       <p className="text-sm text-platinum-400">Most Active FinTech Sandbox Globally</p>
                     </div>
-                    <div className="p-4 bg-slate-800/50 rounded-lg">
+                    <div className="p-4 bg-platinum-800/50 rounded-lg">
                       <h4 className="text-sm font-semibold text-emerald mb-3">Dispute Resolution</h4>
                       <div className="space-y-2">
                         {difcADGMCourts.adgmDisputeResolution.hearingOptions.map((option, idx) => (
@@ -594,7 +594,7 @@ export default function LegalRegulatoryPage() {
                 <CardContent>
                   <div className="grid gap-2 md:grid-cols-2">
                     {arbitrationInstitutions.map((inst, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="font-medium text-platinum-200 text-sm">{inst.name}</p>
                         {inst.established && (
                           <p className="text-xs text-platinum-500">Est. {inst.established}</p>
@@ -636,11 +636,11 @@ export default function LegalRegulatoryPage() {
                     showGrid={true}
                   />
                   <div className="mt-4 grid grid-cols-2 gap-4">
-                    <div className="p-3 bg-slate-800/50 rounded-lg text-center">
+                    <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald">+62%</p>
                       <p className="text-xs text-platinum-400">Resident Applications Growth</p>
                     </div>
-                    <div className="p-3 bg-slate-800/50 rounded-lg text-center">
+                    <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-gold">28.7</p>
                       <p className="text-xs text-platinum-400">Per Million Residents (2023)</p>
                     </div>
@@ -659,7 +659,7 @@ export default function LegalRegulatoryPage() {
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-3">
                     {intellectualProperty.ipTypes.slice(0, 3).map((ip, idx) => (
-                      <div key={idx} className="p-4 bg-slate-800/50 rounded-lg border border-slate-700">
+                      <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg border border-platinum-700">
                         <h4 className="font-bold text-gold mb-3">{ip.type}</h4>
                         <div className="space-y-2 text-sm">
                           <div className="flex justify-between">
@@ -696,11 +696,11 @@ export default function LegalRegulatoryPage() {
                         <p className="text-sm text-navy-400 font-semibold">Effective Date</p>
                         <p className="text-lg font-bold text-platinum">{dataProtectionLaw.primaryLaw.effectiveDate}</p>
                       </div>
-                      <div className="p-3 bg-slate-800/50 rounded-lg">
+                      <div className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="text-sm text-platinum-400">Maximum Fine</p>
                         <p className="text-xl font-bold text-rose">AED 5,000,000</p>
                       </div>
-                      <div className="p-3 bg-slate-800/50 rounded-lg">
+                      <div className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="text-sm text-platinum-400">Children Protection</p>
                         <p className="text-xl font-bold text-gold">Under 13</p>
                       </div>
@@ -709,7 +709,7 @@ export default function LegalRegulatoryPage() {
                       <h4 className="text-sm font-semibold text-navy mb-3">Key Provisions</h4>
                       <div className="space-y-2">
                         {dataProtectionLaw.keyProvisions.map((prov, idx) => (
-                          <div key={idx} className="p-2 bg-slate-800/50 rounded-lg">
+                          <div key={idx} className="p-2 bg-platinum-800/50 rounded-lg">
                             <p className="text-platinum-300 text-sm">{prov}</p>
                           </div>
                         ))}
@@ -788,7 +788,7 @@ export default function LegalRegulatoryPage() {
                 <CardContent>
                   <div className="grid gap-2 md:grid-cols-2">
                     {antiMoneyLaundering.institutions.map((inst, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="font-medium text-platinum-200 text-sm">{inst.name}</p>
                         <p className="text-xs text-platinum-500">{inst.role}</p>
                       </div>
@@ -831,7 +831,7 @@ export default function LegalRegulatoryPage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-3">
                     {regulatorySandboxes.sandboxes.map((sandbox, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg border border-slate-700">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg border border-platinum-700">
                         <p className="font-medium text-platinum-200 text-sm">{sandbox.name}</p>
                         {sandbox.regulator && (
                           <p className="text-xs text-emerald-400 mt-1">{sandbox.regulator}</p>
@@ -856,7 +856,7 @@ export default function LegalRegulatoryPage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2">
                     {legalProfession.categories.map((cat, idx) => (
-                      <div key={idx} className="p-4 bg-slate-800/50 rounded-lg border border-slate-700">
+                      <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg border border-platinum-700">
                         <h4 className="font-bold text-gold mb-2">{cat.category}</h4>
                         <p className="text-xs text-platinum-400 mb-2">{cat.note || cat.courtRights}</p>
                         <div className="flex flex-wrap gap-1">
@@ -893,7 +893,7 @@ export default function LegalRegulatoryPage() {
                   <ScrollArea className="h-[400px]">
                     <div className="space-y-4">
                       {reformsTimeline.map((reform, idx) => (
-                        <div key={idx} className="flex gap-4 p-4 bg-slate-800/50 rounded-lg border border-slate-700">
+                        <div key={idx} className="flex gap-4 p-4 bg-platinum-800/50 rounded-lg border border-platinum-700">
                           <div className="p-2 bg-gold/20 rounded-lg text-center min-w-[60px]">
                             <p className="text-lg font-bold text-gold">{reform.year}</p>
                           </div>
@@ -924,11 +924,11 @@ export default function LegalRegulatoryPage() {
                       <p className="text-3xl font-bold text-emerald">98%</p>
                       <p className="text-sm text-platinum-400">Abu Dhabi Case Completion</p>
                     </div>
-                    <div className="p-4 bg-slate-800/50 rounded-lg text-center">
+                    <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum">40</p>
                       <p className="text-sm text-platinum-400">Days - First Instance</p>
                     </div>
-                    <div className="p-4 bg-slate-800/50 rounded-lg text-center">
+                    <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum">34</p>
                       <p className="text-sm text-platinum-400">Days - Appeals</p>
                     </div>
@@ -963,7 +963,7 @@ export default function LegalRegulatoryPage() {
                       <h4 className="text-sm font-semibold text-gold mb-3">Bilateral Agreements</h4>
                       <div className="space-y-2">
                         {internationalLegalCooperation.agreements.slice(0, 5).map((agg, idx) => (
-                          <div key={idx} className="p-2 bg-slate-800/50 rounded-lg">
+                          <div key={idx} className="p-2 bg-platinum-800/50 rounded-lg">
                             <p className="text-xs text-platinum-400">{agg.type}</p>
                             <p className="text-sm text-platinum-300">{agg.countries.join(', ')}</p>
                           </div>

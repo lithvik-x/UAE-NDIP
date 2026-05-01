@@ -160,7 +160,7 @@ export function HumanitarianResponse({ data }: HumanitarianResponseProps) {
               <Shield className="w-3 h-3 mr-1" />
               #1 Emergency Preparedness Globally
             </Badge>
-            <Badge className="bg-sky-500/20 text-sky border-sky-500/50">
+            <Badge className="bg-cyan-500/20 text-sky border-cyan-500/50">
               <Rocket className="w-3 h-3 mr-1" />
               One Health Multi-sectoral Strategy
             </Badge>

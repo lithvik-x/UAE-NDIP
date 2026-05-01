@@ -19,7 +19,7 @@ const fadeInUp = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }
 const credibilityColors: Record<string, string> = {
   'High': 'text-emerald-400',
   'Medium-High': 'text-cyan-400',
-  'Medium': 'text-yellow-400',
+  'Medium': 'text-amber-400',
 }
 
 const typeColors: Record<string, string> = {
@@ -32,7 +32,7 @@ const typeColors: Record<string, string> = {
 
 const focusColors: Record<string, string> = {
   'Primary': 'bg-rose-500/20 text-rose-400',
-  'Secondary': 'bg-yellow-500/20 text-yellow-400',
+  'Secondary': 'bg-amber-500/20 text-amber-400',
 }
 
 export function SourcesSection({ data }: SourcesSectionProps) {
@@ -77,14 +77,14 @@ export function SourcesSection({ data }: SourcesSectionProps) {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-center justify-between rounded-lg bg-slate-800/30 p-4 border border-slate-700/50"
+                    className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-4 border border-platinum-700/50"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-slate-700/50">
+                      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-platinum-700/50">
                         {source.credibility === 'High' ? (
                           <CheckCircle className="h-4 w-4 text-emerald-400" />
                         ) : (
-                          <AlertCircle className="h-4 w-4 text-yellow-400" />
+                          <AlertCircle className="h-4 w-4 text-amber-400" />
                         )}
                       </div>
                       <div>
@@ -111,7 +111,7 @@ export function SourcesSection({ data }: SourcesSectionProps) {
                       href={data.primarySources?.find((p) => p.source === source.source)?.url || '#'}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg hover:bg-slate-700/50 transition-colors"
+                      className="p-2 rounded-lg hover:bg-platinum-700/50 transition-colors"
                     >
                       <ExternalLink className="h-4 w-4 text-platinum-400" />
                     </a>
@@ -143,7 +143,7 @@ export function SourcesSection({ data }: SourcesSectionProps) {
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-slate-700">
+              <tr className="border-b border-platinum-700">
                 <th className="text-left py-3 px-4 text-xs font-semibold text-platinum-400 uppercase tracking-wide">Gap Category</th>
                 <th className="text-left py-3 px-4 text-xs font-semibold text-platinum-400 uppercase tracking-wide">UAE Narrative</th>
                 <th className="text-center py-3 px-4 text-xs font-semibold text-platinum-400 uppercase tracking-wide">Severity</th>
@@ -158,7 +158,7 @@ export function SourcesSection({ data }: SourcesSectionProps) {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: idx * 0.03 }}
-                  className="border-b border-slate-800 hover:bg-slate-800/30"
+                  className="border-b border-platinum-800 hover:bg-platinum-800/30"
                 >
                   <td className="py-3 px-4">
                     <span className="font-medium text-platinum-200">{row.gapCategory}</span>
@@ -185,7 +185,7 @@ export function SourcesSection({ data }: SourcesSectionProps) {
                       className={`text-xs ${
                         row.trend.includes('Worsening') ? 'border-rose-500/50 text-rose-400' :
                         row.trend.includes('Improvement') ? 'border-emerald-500/50 text-emerald-400' :
-                        'border-yellow-500/50 text-yellow-400'
+                        'border-amber-500/50 text-amber-400'
                       }`}
                     >
                       {row.trend}
@@ -224,19 +224,19 @@ export function SourcesSection({ data }: SourcesSectionProps) {
         </div>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+          <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
             <div className="text-lg font-bold text-emerald-400">100%</div>
             <div className="text-xs text-platinum-400">Queries Executed</div>
           </div>
-          <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+          <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
             <div className="text-lg font-bold text-emerald-400">100%</div>
             <div className="text-xs text-platinum-400">Pages Fetched</div>
           </div>
-          <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+          <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
             <div className="text-lg font-bold text-emerald-400">100%</div>
             <div className="text-xs text-platinum-400">Statistics Verified</div>
           </div>
-          <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+          <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
             <div className="text-lg font-bold text-emerald-400">100%</div>
             <div className="text-xs text-platinum-400">Cross-Referenced</div>
           </div>

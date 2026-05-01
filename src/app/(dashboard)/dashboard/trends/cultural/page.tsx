@@ -72,7 +72,7 @@ export default function CulturalTrendsPage() {
         <div>
           <Badge variant="gold" className="mb-2">TRENDS</Badge>
           <h1 className="text-3xl font-extrabold gradient-text-gold font-rajdhani">Cultural Evolution</h1>
-          <p className="mt-2 text-slate-400 font-rajdhani">
+          <p className="mt-2 text-platinum-400 font-rajdhani">
             Heritage preservation, arts, and cultural engagement intelligence
           </p>
         </div>

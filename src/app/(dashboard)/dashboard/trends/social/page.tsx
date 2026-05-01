@@ -489,7 +489,7 @@ export default function SocialTrendsPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-2 text-slate-400 font-rajdhani"
+            className="mt-2 text-platinum-400 font-rajdhani"
           >
             Social media adoption, platform analytics, engagement metrics, and content trends
           </motion.p>

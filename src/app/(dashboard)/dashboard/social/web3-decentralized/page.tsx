@@ -101,7 +101,7 @@ export default function Web3DecentralizedPage() {
                 <div className="space-y-3">
                   {nftDataArr.map((n: any, idx: number) => (
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
-                      className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 border border-slate-700/50">
+                      className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                       <div className="flex items-center gap-3">
                         <Blocks className="h-4 w-4 text-cyan-400" />
                         <span className="font-medium text-platinum-200">{n.collection}</span>
@@ -162,7 +162,7 @@ export default function Web3DecentralizedPage() {
                         <span>{c.dominance}%</span>
                       </div>
                     </div>
-                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                       <motion.div initial={{ width: 0 }} animate={{ width: `${c.dominance}%` }} transition={{ delay: idx * 0.1 + 0.3, duration: 0.5 }}
                         className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-teal-500" />
                     </div>

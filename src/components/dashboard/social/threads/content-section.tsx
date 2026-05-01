@@ -76,12 +76,12 @@ export function ContentSection({
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.1 }}
-                      className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4"
+                      className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4"
                     >
                       <div className="flex items-center gap-3">
                         <Calendar className="h-5 w-5 text-gold" />
-                        <span className="font-medium text-slate-200">{item.day}</span>
-                        <span className="text-sm text-slate-400">at {item.time}</span>
+                        <span className="font-medium text-platinum-200">{item.day}</span>
+                        <span className="text-sm text-platinum-400">at {item.time}</span>
                       </div>
                       <Badge variant={item.engagement === 'Highest' ? 'default' : 'outline'}>
                         {item.engagement}
@@ -107,11 +107,11 @@ export function ContentSection({
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: idx * 0.05 }}
                       whileHover={{ scale: 1.02 }}
-                      className="rounded-lg bg-slate-800/50 p-4 cursor-pointer"
+                      className="rounded-lg bg-platinum-800/50 p-4 cursor-pointer"
                     >
-                      <p className="font-medium text-slate-200">{item.strategy}</p>
+                      <p className="font-medium text-platinum-200">{item.strategy}</p>
                       <p className="text-sm text-emerald-400">{item.impact}</p>
-                      <p className="text-xs text-slate-500 mt-1">Source: {item.source}</p>
+                      <p className="text-xs text-platinum-500 mt-1">Source: {item.source}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -132,12 +132,12 @@ export function ContentSection({
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.1 }}
-                      className="rounded-lg bg-slate-800/50 p-4"
+                      className="rounded-lg bg-platinum-800/50 p-4"
                     >
                       <div className="flex items-start justify-between">
                         <div>
-                          <p className="font-medium text-slate-200">{item.strategy}</p>
-                          <p className="text-sm text-slate-400 mt-1">{item.details}</p>
+                          <p className="font-medium text-platinum-200">{item.strategy}</p>
+                          <p className="text-sm text-platinum-400 mt-1">{item.details}</p>
                         </div>
                         <Badge variant="default" className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">
                           {item.expectedImpact}
@@ -175,8 +175,8 @@ export function ContentSection({
               <CardContent className="px-0 pb-0">
                 <div className="grid gap-3 sm:grid-cols-2">
                   {usageHabits.map((habit: any, idx: number) => (
-                    <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
-                      <span className="text-sm text-slate-300">{habit.metric}</span>
+                    <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
+                      <span className="text-sm text-platinum-300">{habit.metric}</span>
                       <span className="text-sm font-bold text-gold">{habit.value}</span>
                     </div>
                   ))}

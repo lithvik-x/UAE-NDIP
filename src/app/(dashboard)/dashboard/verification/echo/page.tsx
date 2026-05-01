@@ -88,18 +88,18 @@ export default function EchoChamberDashboardPage() {
           <Badge variant="emerald" className="mb-2 bg-emerald-500/20 text-emerald-400 border-emerald-500/50">
             V-SECTOR
           </Badge>
-          <h1 className="text-3xl font-extrabold text-slate-900 dark:text-slate-100 font-rajdhani">
+          <h1 className="text-3xl font-extrabold text-platinum-900 dark:text-platinum-100 font-rajdhani">
             Echo Chamber & Filter Bubble Analysis
           </h1>
-          <p className="mt-2 text-slate-500 dark:text-slate-400">
+          <p className="mt-2 text-platinum-500 dark:text-platinum-400">
             Deep Research: {echoChamberEnrichmentMetadata.query}
           </p>
           <div className="flex flex-wrap gap-2 mt-2">
-            <Badge variant="outline" className="bg-slate-800/50 text-xs">
+            <Badge variant="outline" className="bg-platinum-800/50 text-xs">
               <Database className="h-3 w-3 mr-1" />
               {echoChamberEnrichmentMetadata.dataPointsExtracted}+ Data Points
             </Badge>
-            <Badge variant="outline" className="bg-slate-800/50 text-xs">
+            <Badge variant="outline" className="bg-platinum-800/50 text-xs">
               <Globe className="h-3 w-3 mr-1" />
               {echoChamberEnrichmentMetadata.totalUrlsProcessed} URLs
             </Badge>
@@ -197,15 +197,15 @@ export default function EchoChamberDashboardPage() {
       <GlassPanel
         title="Research Metadata"
         description="SSOT enrichment completion details"
-        className="border-slate-700/50"
+        className="border-platinum-700/50"
       >
-        <div className="flex flex-wrap gap-4 text-sm text-slate-400">
+        <div className="flex flex-wrap gap-4 text-sm text-platinum-400">
           <div className="flex items-center gap-2">
             <CheckCircle className="h-4 w-4 text-emerald-400" />
             <span>SSOT Status: MASTER</span>
           </div>
           <div className="flex items-center gap-2">
-            <Globe className="h-4 w-4 text-blue-400" />
+            <Globe className="h-4 w-4 text-navy-400" />
             <span>Enrichment Version: 1.0</span>
           </div>
           <div className="flex items-center gap-2">

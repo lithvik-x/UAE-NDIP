@@ -189,8 +189,8 @@ export default function PhoenixProjectPage() {
     switch (severity) {
       case 'CRITICAL': return 'text-rose-400'
       case 'HIGH': return 'text-orange-400'
-      case 'MODERATE': return 'text-yellow-400'
-      default: return 'text-slate-400'
+      case 'MODERATE': return 'text-amber-400'
+      default: return 'text-platinum-400'
     }
   }
 
@@ -198,8 +198,8 @@ export default function PhoenixProjectPage() {
     switch (severity) {
       case 'CRITICAL': return 'bg-rose-500/20'
       case 'HIGH': return 'bg-orange-500/20'
-      case 'MODERATE': return 'bg-yellow-500/20'
-      default: return 'bg-slate-500/20'
+      case 'MODERATE': return 'bg-amber-500/20'
+      default: return 'bg-platinum-500/20'
     }
   }
 
@@ -215,7 +215,7 @@ export default function PhoenixProjectPage() {
         <div>
           <Badge variant="rose" className="mb-2">C-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-rose">Phoenix Project</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Crisis management protocol and rapid response operations
           </p>
         </div>
@@ -297,9 +297,9 @@ export default function PhoenixProjectPage() {
                       <AlertCircle className="h-4 w-4" />
                       <span className="text-xs font-medium uppercase">{crisis.severity}</span>
                     </div>
-                    <h4 className="font-semibold text-slate-200 text-sm">{crisis.name}</h4>
-                    <p className="text-xs text-slate-400 mt-1">{crisis.timeline}</p>
-                    <p className="text-xs text-slate-500 mt-2 line-clamp-2">{crisis.keyIssue}</p>
+                    <h4 className="font-semibold text-platinum-200 text-sm">{crisis.name}</h4>
+                    <p className="text-xs text-platinum-400 mt-1">{crisis.timeline}</p>
+                    <p className="text-xs text-platinum-500 mt-2 line-clamp-2">{crisis.keyIssue}</p>
                   </motion.div>
                 ))}
               </div>
@@ -335,8 +335,8 @@ export default function PhoenixProjectPage() {
                 >
                   <Globe className="h-8 w-8 mx-auto mb-2 text-rose-400" />
                   <div className="text-3xl font-bold text-rose-400">{reputationCrisisExtendedData.metrics.pressFreedomRank.value}</div>
-                  <p className="text-sm text-slate-400 mt-1">RSF Press Freedom Rank</p>
-                  <p className="text-xs text-slate-500">164/180 - 3rd worst in Middle East</p>
+                  <p className="text-sm text-platinum-400 mt-1">RSF Press Freedom Rank</p>
+                  <p className="text-xs text-platinum-500">164/180 - 3rd worst in Middle East</p>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -346,8 +346,8 @@ export default function PhoenixProjectPage() {
                 >
                   <Shield className="h-8 w-8 mx-auto mb-2 text-rose-400" />
                   <div className="text-3xl font-bold text-rose-400">{reputationCrisisExtendedData.metrics.freedomHouseGlobal.value}</div>
-                  <p className="text-sm text-slate-400 mt-1">Freedom House Score</p>
-                  <p className="text-xs text-slate-500">18/100 - Not Free</p>
+                  <p className="text-sm text-platinum-400 mt-1">Freedom House Score</p>
+                  <p className="text-xs text-platinum-500">18/100 - Not Free</p>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -357,8 +357,8 @@ export default function PhoenixProjectPage() {
                 >
                   <Users className="h-8 w-8 mx-auto mb-2 text-orange-400" />
                   <div className="text-3xl font-bold text-orange-400">{reputationCrisisExtendedData.politicalPrisoners.uae94Defendants}+</div>
-                  <p className="text-sm text-slate-400 mt-1">UAE94 Defendants</p>
-                  <p className="text-xs text-slate-500">67+ life sentences</p>
+                  <p className="text-sm text-platinum-400 mt-1">UAE94 Defendants</p>
+                  <p className="text-xs text-platinum-500">67+ life sentences</p>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -368,8 +368,8 @@ export default function PhoenixProjectPage() {
                 >
                   <Activity className="h-8 w-8 mx-auto mb-2 text-orange-400" />
                   <div className="text-3xl font-bold text-orange-400">{reputationCrisisExtendedData.iranWarStats.detentionsIranConflict}+</div>
-                  <p className="text-sm text-slate-400 mt-1">Iran War Detentions</p>
-                  <p className="text-xs text-slate-500">Social media content arrests</p>
+                  <p className="text-sm text-platinum-400 mt-1">Iran War Detentions</p>
+                  <p className="text-xs text-platinum-500">Social media content arrests</p>
                 </motion.div>
               </div>
             </div>
@@ -423,22 +423,22 @@ export default function PhoenixProjectPage() {
                     <div className="grid gap-4 sm:grid-cols-3">
                       <div className="glass-card p-4 rounded-lg">
                         <div className="text-2xl font-bold text-rose-400">{reputationCrisisExtendedData.iranWarStats.influencersInDubai.toLocaleString()}</div>
-                        <p className="text-sm text-slate-400">Influencers in Dubai</p>
+                        <p className="text-sm text-platinum-400">Influencers in Dubai</p>
                       </div>
                       <div className="glass-card p-4 rounded-lg">
                         <div className="text-2xl font-bold text-orange-400">{reputationCrisisExtendedData.iranWarStats.arrestedForContent}</div>
-                        <p className="text-sm text-slate-400">Arrested for Content</p>
+                        <p className="text-sm text-platinum-400">Arrested for Content</p>
                       </div>
                       <div className="glass-card p-4 rounded-lg">
-                        <div className="text-2xl font-bold text-yellow-400">375+</div>
-                        <p className="text-sm text-slate-400">Total Detainees</p>
+                        <div className="text-2xl font-bold text-amber-400">375+</div>
+                        <p className="text-sm text-platinum-400">Total Detainees</p>
                       </div>
                     </div>
-                    <div className="p-4 bg-slate-800/50 rounded-lg border border-slate-700">
-                      <p className="text-sm text-slate-300 italic">
+                    <div className="p-4 bg-platinum-800/50 rounded-lg border border-platinum-700">
+                      <p className="text-sm text-platinum-300 italic">
                         "Really Orwellian – when you've got survivors of drone strikes being taken into custody"
                       </p>
-                      <p className="text-xs text-slate-500 mt-2">— Radha Stirling, Detained in Dubai</p>
+                      <p className="text-xs text-platinum-500 mt-2">— Radha Stirling, Detained in Dubai</p>
                     </div>
                   </div>
                 </CardContent>
@@ -458,10 +458,10 @@ export default function PhoenixProjectPage() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: i * 0.1 }}
-                        className="p-3 bg-slate-800/50 rounded-lg border border-slate-700"
+                        className="p-3 bg-platinum-800/50 rounded-lg border border-platinum-700"
                       >
-                        <p className="text-sm text-slate-200">{q.quote}</p>
-                        <p className="text-xs text-slate-500 mt-1">— {q.source}</p>
+                        <p className="text-sm text-platinum-200">{q.quote}</p>
+                        <p className="text-xs text-platinum-500 mt-1">— {q.source}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -544,13 +544,13 @@ export default function PhoenixProjectPage() {
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="glass-card p-4 rounded-lg">
                       <div className="text-3xl font-bold text-gold">${(reputationCrisisExtendedData.sudanCrisis.uaegiftsToUSUniversities / 1000000).toFixed(0)}M</div>
-                      <p className="text-sm text-slate-400">UAE Gifts to US Universities</p>
-                      <p className="text-xs text-slate-500">Feb 2001 - Apr 2024</p>
+                      <p className="text-sm text-platinum-400">UAE Gifts to US Universities</p>
+                      <p className="text-xs text-platinum-500">Feb 2001 - Apr 2024</p>
                     </div>
                     <div className="glass-card p-4 rounded-lg">
                       <div className="text-3xl font-bold text-emerald-400">${(reputationCrisisExtendedData.sudanCrisis.uaeCulturalInvestment / 1000000000).toFixed(0)}B+</div>
-                      <p className="text-sm text-slate-400">Cultural Investment</p>
-                      <p className="text-xs text-slate-500">Since 2017</p>
+                      <p className="text-sm text-platinum-400">Cultural Investment</p>
+                      <p className="text-xs text-platinum-500">Since 2017</p>
                     </div>
                   </div>
                 </CardContent>
@@ -612,7 +612,7 @@ export default function PhoenixProjectPage() {
                         whileHover={{ scale: 1.05 }}
                         className="glass-card p-3 rounded-lg text-center"
                       >
-                        <p className="text-xs text-slate-300">{method}</p>
+                        <p className="text-xs text-platinum-300">{method}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -638,8 +638,8 @@ export default function PhoenixProjectPage() {
                         <div className="flex items-center gap-3">
                           <Ban className="h-5 w-5 text-rose-400" />
                           <div>
-                            <p className="font-medium text-slate-200">{ban.body} - {ban.year}</p>
-                            <p className="text-sm text-slate-400">{ban.type}</p>
+                            <p className="font-medium text-platinum-200">{ban.body} - {ban.year}</p>
+                            <p className="text-sm text-platinum-400">{ban.type}</p>
                           </div>
                         </div>
                         <Badge variant="outline" className="text-xs">{ban.reason}</Badge>
@@ -667,7 +667,7 @@ export default function PhoenixProjectPage() {
                     {Object.entries(reputationCrisisExtendedData.pressFreedomIndex).map(([key, data]) => (
                       <div key={key} className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-slate-400 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
+                          <span className="text-platinum-400 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
                           <span className="font-medium text-rose-400">{data.score} ({data.rank}/180)</span>
                         </div>
                         <Progress value={(data.score / 50) * 100} className="h-2" />
@@ -688,8 +688,8 @@ export default function PhoenixProjectPage() {
                     {Object.entries(reputationCrisisExtendedData.freedomHouseScores).map(([key, data]) => (
                       <div key={key} className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-slate-400 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
-                          <span className={`font-medium ${data.rating ? 'text-rose-400' : 'text-yellow-400'}`}>
+                          <span className="text-platinum-400 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
+                          <span className={`font-medium ${data.rating ? 'text-rose-400' : 'text-amber-400'}`}>
                             {data.score}/{data.max} {data.rating ? `(${data.rating})` : ''}
                           </span>
                         </div>
@@ -753,9 +753,9 @@ export default function PhoenixProjectPage() {
                           <Heart className={`h-5 w-5 ${
                             item.sentiment === 'VERY NEGATIVE' ? 'text-rose-400' :
                             item.sentiment === 'NEGATIVE' ? 'text-orange-400' :
-                            'text-yellow-400'
+                            'text-amber-400'
                           }`} />
-                          <span className="font-medium text-slate-200">{item.category}</span>
+                          <span className="font-medium text-platinum-200">{item.category}</span>
                         </div>
                         <div className="text-right">
                           <Badge variant={
@@ -765,7 +765,7 @@ export default function PhoenixProjectPage() {
                           } className="text-xs">
                             {item.sentiment}
                           </Badge>
-                          <p className="text-xs text-slate-500 mt-1">{item.tone}</p>
+                          <p className="text-xs text-platinum-500 mt-1">{item.tone}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -808,9 +808,9 @@ export default function PhoenixProjectPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: i * 0.1 }}
-                        className="p-4 bg-slate-800/50 rounded-lg border border-slate-700"
+                        className="p-4 bg-platinum-800/50 rounded-lg border border-platinum-700"
                       >
-                        <p className="text-slate-200 italic">"{q.quote.replace(/"/g, '')}"</p>
+                        <p className="text-platinum-200 italic">"{q.quote.replace(/"/g, '')}"</p>
                         <p className="text-sm text-rose-400 mt-2">— {q.source}</p>
                       </motion.div>
                     ))}

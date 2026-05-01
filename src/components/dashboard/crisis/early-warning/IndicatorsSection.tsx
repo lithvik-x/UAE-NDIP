@@ -89,7 +89,7 @@ export function IndicatorsSection({ data }: IndicatorsSectionProps) {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
-              className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 border border-slate-700/50"
+              className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
             >
               <span className="text-platinum-200 flex-1">{i.indicator}</span>
               <div className="flex items-center gap-3">

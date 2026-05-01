@@ -78,19 +78,19 @@ export function SectionSourceCredibility() {
               transition={{ delay: idx * 0.06 }}
               className={`rounded-lg border p-4 text-center ${
                 tier.tier.includes('1') ? 'border-emerald-500/30 bg-emerald-500/10' :
-                tier.tier.includes('2') ? 'border-blue-500/30 bg-blue-500/10' :
-                tier.tier.includes('3') ? 'border-yellow-500/30 bg-yellow-500/10' :
-                'border-slate-500/30 bg-slate-500/10'
+                tier.tier.includes('2') ? 'border-navy-500/30 bg-navy-500/10' :
+                tier.tier.includes('3') ? 'border-amber-500/30 bg-amber-500/10' :
+                'border-platinum-500/30 bg-platinum-500/10'
               }`}
             >
               <div className={`text-2xl font-bold ${
                 tier.tier.includes('1') ? 'text-emerald-400' :
-                tier.tier.includes('2') ? 'text-blue-400' :
-                tier.tier.includes('3') ? 'text-yellow-400' :
-                'text-slate-400'
+                tier.tier.includes('2') ? 'text-navy-400' :
+                tier.tier.includes('3') ? 'text-amber-400' :
+                'text-platinum-400'
               }`}>{tier.count}</div>
-              <div className="text-sm text-slate-400">{tier.tier}</div>
-              <div className="text-xs text-slate-500 mt-1">{tier.percentage}</div>
+              <div className="text-sm text-platinum-400">{tier.tier}</div>
+              <div className="text-xs text-platinum-500 mt-1">{tier.percentage}</div>
             </motion.div>
           ))}
         </div>
@@ -109,11 +109,11 @@ export function SectionSourceCredibility() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: idx * 0.06 }}
-              className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-3"
+              className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3"
             >
               <div className="flex items-center gap-3">
                 <Award className="h-5 w-5 text-emerald-400" />
-                <span className="font-medium text-slate-200">{item.qualityDimension}</span>
+                <span className="font-medium text-platinum-200">{item.qualityDimension}</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-lg font-bold text-emerald-400">{item.score}</span>
@@ -138,22 +138,22 @@ export function SectionSourceCredibility() {
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.02 }}
-                className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-3"
+                className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3"
               >
                 <div className="flex items-center gap-3 flex-1 min-w-0">
                   <Badge className={
                     source.tier === 'TIER 1' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50 shrink-0' :
-                    source.tier === 'TIER 2' ? 'bg-blue-500/20 text-blue-400 border-blue-500/50 shrink-0' :
-                    'bg-yellow-500/20 text-yellow-400 border-yellow-500/50 shrink-0'
+                    source.tier === 'TIER 2' ? 'bg-navy-500/20 text-navy-400 border-navy-500/50 shrink-0' :
+                    'bg-amber-500/20 text-amber-400 border-amber-500/50 shrink-0'
                   }>
                     {source.tier}
                   </Badge>
                   <div className="min-w-0 flex-1">
-                    <p className="font-medium text-slate-200 truncate">{source.source}</p>
-                    <p className="text-xs text-slate-500 truncate">{source.url}</p>
+                    <p className="font-medium text-platinum-200 truncate">{source.source}</p>
+                    <p className="text-xs text-platinum-500 truncate">{source.url}</p>
                   </div>
                 </div>
-                <p className="text-xs text-slate-400 max-w-[200px] text-right ml-4">{source.rationale}</p>
+                <p className="text-xs text-platinum-400 max-w-[200px] text-right ml-4">{source.rationale}</p>
               </motion.div>
             ))}
           </div>
@@ -173,26 +173,26 @@ export function SectionSourceCredibility() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.08 }}
-              className="rounded-lg border border-slate-700/50 bg-slate-800/30 p-4"
+              className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-4"
             >
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3">
                   <BookOpen className="h-5 w-5 text-indigo-400" />
                   <div>
-                    <h4 className="font-semibold text-slate-200">{source.sourceName}</h4>
-                    <p className="text-xs text-slate-500">{source.url}</p>
+                    <h4 className="font-semibold text-platinum-200">{source.sourceName}</h4>
+                    <p className="text-xs text-platinum-500">{source.url}</p>
                   </div>
                 </div>
                 <Badge className={
                   source.tier === 'TIER 1' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' :
-                  'bg-blue-500/20 text-blue-400 border-blue-500/50'
+                  'bg-navy-500/20 text-navy-400 border-navy-500/50'
                 }>
                   {source.tier}
                 </Badge>
               </div>
               <div className="space-y-1 mb-3">
                 {source.keyData.map((data, i) => (
-                  <p key={i} className="text-xs text-slate-400 flex items-start gap-2">
+                  <p key={i} className="text-xs text-platinum-400 flex items-start gap-2">
                     <span className="text-emerald-400">•</span>
                     {data}
                   </p>
@@ -205,7 +205,7 @@ export function SectionSourceCredibility() {
                   </p>
                 </div>
               )}
-              <p className="text-xs text-slate-500 mt-2">Fetched: {source.dateFetched}</p>
+              <p className="text-xs text-platinum-500 mt-2">Fetched: {source.dateFetched}</p>
             </motion.div>
           ))}
         </div>

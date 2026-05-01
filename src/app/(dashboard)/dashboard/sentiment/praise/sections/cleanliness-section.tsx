@@ -41,7 +41,7 @@ export function CleanlinessSection({ cleanlinessKPIs, wasteManagementInitiatives
             <CardContent className="p-6 text-center">
               <Award className="h-10 w-10 text-cyan-400 mx-auto mb-3" />
               <p className="text-4xl font-bold text-cyan-400">6</p>
-              <p className="text-slate-400 text-sm">Consecutive Years</p>
+              <p className="text-platinum-400 text-sm">Consecutive Years</p>
               <Badge variant="cyan" className="mt-2">World's Cleanest City</Badge>
             </CardContent>
           </Card>
@@ -50,8 +50,8 @@ export function CleanlinessSection({ cleanlinessKPIs, wasteManagementInitiatives
             <CardContent className="p-6 text-center">
               <Sparkles className="h-10 w-10 text-cyan-400 mx-auto mb-3" />
               <p className="text-4xl font-bold text-cyan-400">100%</p>
-              <p className="text-slate-400 text-sm">Satisfaction Rate</p>
-              <p className="text-xs text-slate-500 mt-1">Global Power City Index</p>
+              <p className="text-platinum-400 text-sm">Satisfaction Rate</p>
+              <p className="text-xs text-platinum-500 mt-1">Global Power City Index</p>
             </CardContent>
           </Card>
 
@@ -59,7 +59,7 @@ export function CleanlinessSection({ cleanlinessKPIs, wasteManagementInitiatives
             <CardContent className="p-6 text-center">
               <Trash2 className="h-10 w-10 text-cyan-400 mx-auto mb-3" />
               <p className="text-4xl font-bold text-cyan-400">23,300+</p>
-              <p className="text-slate-400 text-sm">Waste Storage Units</p>
+              <p className="text-platinum-400 text-sm">Waste Storage Units</p>
               <p className="text-xs text-emerald-400 mt-1">+2,300 from last year</p>
             </CardContent>
           </Card>
@@ -74,8 +74,8 @@ export function CleanlinessSection({ cleanlinessKPIs, wasteManagementInitiatives
           <CardContent>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {cleanlinessKPIs.slice(2, 7).map((kpi, idx) => (
-                <div key={idx} className="bg-slate-800/30 rounded-lg p-3">
-                  <p className="text-xs text-slate-400 truncate">{kpi.metric}</p>
+                <div key={idx} className="bg-platinum-800/30 rounded-lg p-3">
+                  <p className="text-xs text-platinum-400 truncate">{kpi.metric}</p>
                   <p className="text-2xl font-bold text-cyan-400">{kpi.value}</p>
                   <p className="text-xs text-emerald-400">{kpi.change}</p>
                 </div>
@@ -95,7 +95,7 @@ export function CleanlinessSection({ cleanlinessKPIs, wasteManagementInitiatives
               {cleanlinessKPIs.slice(6).map((kpi, idx) => (
                 <div key={idx} className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span className="text-slate-300">{kpi.metric}</span>
+                    <span className="text-platinum-300">{kpi.metric}</span>
                     <span className="font-bold text-cyan-400">{kpi.value}</span>
                   </div>
                   <Progress
@@ -119,13 +119,13 @@ export function CleanlinessSection({ cleanlinessKPIs, wasteManagementInitiatives
               {wasteManagementInitiatives.map((initiative, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-3 p-3 bg-slate-800/30 rounded-lg"
+                  className="flex items-start gap-3 p-3 bg-platinum-800/30 rounded-lg"
                 >
                   <TreePine className="h-5 w-5 text-emerald-400 mt-0.5" />
                   <div>
-                    <p className="font-medium text-slate-200 text-sm">{initiative.initiative}</p>
+                    <p className="font-medium text-platinum-200 text-sm">{initiative.initiative}</p>
                     <p className="text-xs text-emerald-400 mt-1">{initiative.targetStatus}</p>
-                    <p className="text-xs text-slate-500">{initiative.timeline}</p>
+                    <p className="text-xs text-platinum-500">{initiative.timeline}</p>
                   </div>
                 </div>
               ))}

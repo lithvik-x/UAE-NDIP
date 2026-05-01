@@ -64,7 +64,7 @@ export default function FactCheckDashboardPage() {
       case 'RED':
         return <Badge variant="destructive" className="text-xs bg-red-500/20 text-red-400 border-red-500/50">RED</Badge>
       case 'YELLOW':
-        return <Badge variant="warning" className="text-xs bg-yellow-500/20 text-yellow-400 border-yellow-500/50">YELLOW</Badge>
+        return <Badge variant="warning" className="text-xs bg-amber-500/20 text-amber-400 border-amber-500/50">YELLOW</Badge>
       case 'GREEN':
         return <Badge variant="success" className="text-xs bg-emerald-500/20 text-emerald-400 border-emerald-500/50">GREEN</Badge>
       default:
@@ -122,7 +122,7 @@ export default function FactCheckDashboardPage() {
         <div>
           <Badge variant="emerald" className="mb-2">V-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Fact-Check Verification Dashboard</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             {data.kpis?.length || 0}+ KPIs tracking misinformation, AI content detection, and enforcement actions
           </p>
         </div>
@@ -218,16 +218,16 @@ export default function FactCheckDashboardPage() {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <div className="h-3 w-3 rounded-full bg-emerald-500" />
-                          <span className="text-sm text-slate-300">False/Fake</span>
+                          <span className="text-sm text-platinum-300">False/Fake</span>
                         </div>
                         <span className="font-bold text-red-400">{verdictCounts.false}</span>
                       </div>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
-                          <div className="h-3 w-3 rounded-full bg-yellow-500" />
-                          <span className="text-sm text-slate-300">Unverified</span>
+                          <div className="h-3 w-3 rounded-full bg-amber-500" />
+                          <span className="text-sm text-platinum-300">Unverified</span>
                         </div>
-                        <span className="font-bold text-yellow-400">{verdictCounts.unverified}</span>
+                        <span className="font-bold text-amber-400">{verdictCounts.unverified}</span>
                       </div>
                     </div>
                   </CardContent>
@@ -254,15 +254,15 @@ export default function FactCheckDashboardPage() {
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.05 }}
-                            className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-3"
+                            className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3"
                           >
                             <div className="flex items-center gap-3">
                               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-denim/20 text-denim">
                                 <Shield className="h-4 w-4" />
                               </div>
                               <div>
-                                <p className="font-medium text-slate-200">{org.acronym}</p>
-                                <p className="text-xs text-slate-400">{org.org}</p>
+                                <p className="font-medium text-platinum-200">{org.acronym}</p>
+                                <p className="text-xs text-platinum-400">{org.org}</p>
                               </div>
                             </div>
                             <Badge variant={org.uaeRelevance === 'Critical' ? 'destructive' : 'secondary'} className="text-xs">
@@ -307,8 +307,8 @@ export default function FactCheckDashboardPage() {
                           >
                             <div className="flex items-start justify-between">
                               <div>
-                                <p className="font-semibold text-slate-200 text-sm">{video.claim}</p>
-                                <p className="text-xs text-slate-400 mt-1">Actual: {video.actual}</p>
+                                <p className="font-semibold text-platinum-200 text-sm">{video.claim}</p>
+                                <p className="text-xs text-platinum-400 mt-1">Actual: {video.actual}</p>
                               </div>
                               <Badge variant="destructive" className="text-xs">FALSE</Badge>
                             </div>
@@ -348,8 +348,8 @@ export default function FactCheckDashboardPage() {
                           >
                             <div className="flex items-start justify-between">
                               <div>
-                                <p className="font-semibold text-slate-200 text-sm">{aiCase.content}</p>
-                                <p className="text-xs text-slate-400 mt-1">Detection: {aiCase.identification}</p>
+                                <p className="font-semibold text-platinum-200 text-sm">{aiCase.content}</p>
+                                <p className="text-xs text-platinum-400 mt-1">Detection: {aiCase.identification}</p>
                               </div>
                               <Badge variant="warning" className="text-xs">{aiCase.status}</Badge>
                             </div>
@@ -387,7 +387,7 @@ export default function FactCheckDashboardPage() {
                       </div>
                       <Badge
                         variant={factCase.verdict === 'FALSE' || factCase.verdict === 'FAKE' ? 'destructive' : factCase.verdict === 'TRUE' || factCase.verdict === 'VERIFIED' ? 'success' : 'warning'}
-                        className={factCase.verdict === 'FALSE' || factCase.verdict === 'FAKE' ? 'bg-red-500/20 text-red-400' : factCase.verdict === 'TRUE' || factCase.verdict === 'VERIFIED' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-yellow-500/20 text-yellow-400'}
+                        className={factCase.verdict === 'FALSE' || factCase.verdict === 'FAKE' ? 'bg-red-500/20 text-red-400' : factCase.verdict === 'TRUE' || factCase.verdict === 'VERIFIED' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-amber-500/20 text-amber-400'}
                       >
                         {factCase.verdict}
                       </Badge>
@@ -395,13 +395,13 @@ export default function FactCheckDashboardPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
-                      <div className="rounded-lg bg-slate-800/50 p-4">
-                        <p className="text-xs text-slate-400 mb-1">CLAIM</p>
-                        <p className="text-slate-200">{factCase.claim}</p>
+                      <div className="rounded-lg bg-platinum-800/50 p-4">
+                        <p className="text-xs text-platinum-400 mb-1">CLAIM</p>
+                        <p className="text-platinum-200">{factCase.claim}</p>
                       </div>
                       <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/30 p-4">
                         <p className="text-xs text-emerald-400 mb-1">ACTUAL FACTS</p>
-                        <p className="text-slate-200">{factCase.actualFacts}</p>
+                        <p className="text-platinum-200">{factCase.actualFacts}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -437,13 +437,13 @@ export default function FactCheckDashboardPage() {
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="rounded-lg border border-slate-700/50 bg-slate-800/30 p-4"
+                          className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-4"
                         >
                           <div className="flex items-center justify-between mb-2">
-                            <p className="font-medium text-slate-200">{aiCase.content}</p>
+                            <p className="font-medium text-platinum-200">{aiCase.content}</p>
                             <Badge variant="warning" className="text-xs">{aiCase.status}</Badge>
                           </div>
-                          <p className="text-xs text-slate-400">Detection: {aiCase.identification}</p>
+                          <p className="text-xs text-platinum-400">Detection: {aiCase.identification}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -472,8 +472,8 @@ export default function FactCheckDashboardPage() {
                           transition={{ delay: idx * 0.05 }}
                           className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4"
                         >
-                          <p className="font-medium text-slate-200">{risk.risk}</p>
-                          <p className="text-sm text-slate-400 mt-1">{risk.description}</p>
+                          <p className="font-medium text-platinum-200">{risk.risk}</p>
+                          <p className="text-sm text-platinum-400 mt-1">{risk.description}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -512,17 +512,17 @@ export default function FactCheckDashboardPage() {
                         className="rounded-lg border border-denim-500/30 bg-denim-500/10 p-4"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <p className="font-medium text-slate-200">{penalty.violation}</p>
+                          <p className="font-medium text-platinum-200">{penalty.violation}</p>
                           <Badge variant="denim" className="text-xs">{penalty.basis}</Badge>
                         </div>
                         <div className="grid grid-cols-2 gap-4 mt-2">
                           <div>
-                            <p className="text-xs text-slate-400">Prison</p>
+                            <p className="text-xs text-platinum-400">Prison</p>
                             <p className="text-lg font-bold text-red-400">{penalty.prison}</p>
                           </div>
                           <div>
-                            <p className="text-xs text-slate-400">Fine</p>
-                            <p className="text-lg font-bold text-yellow-400">{penalty.fine}</p>
+                            <p className="text-xs text-platinum-400">Fine</p>
+                            <p className="text-lg font-bold text-amber-400">{penalty.fine}</p>
                           </div>
                         </div>
                       </motion.div>
@@ -554,8 +554,8 @@ export default function FactCheckDashboardPage() {
                         className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4"
                       >
                         <Check className="h-5 w-5 text-emerald-400 mb-2" />
-                        <p className="font-medium text-slate-200">{method.method}</p>
-                        <p className="text-sm text-slate-400 mt-1">{method.application}</p>
+                        <p className="font-medium text-platinum-200">{method.method}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{method.application}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -587,7 +587,7 @@ export default function FactCheckDashboardPage() {
                       <div className="flex items-end justify-between">
                         <div>
                           <p className="text-3xl font-extrabold text-red-400">{action.count}</p>
-                          <p className="text-sm text-slate-400">{action.charge}</p>
+                          <p className="text-sm text-platinum-400">{action.charge}</p>
                         </div>
                         <Badge variant="destructive" className="text-xs">ARREST</Badge>
                       </div>
@@ -616,11 +616,11 @@ export default function FactCheckDashboardPage() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className="rounded-lg border border-yellow-500/30 bg-yellow-500/10 p-3 text-center"
+                        className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 text-center"
                       >
-                        <Ban className="h-5 w-5 text-yellow-400 mx-auto mb-2" />
-                        <p className="text-sm font-medium text-slate-200">{restriction.risk}</p>
-                        <p className="text-xs text-slate-400 mt-1">{restriction.description}</p>
+                        <Ban className="h-5 w-5 text-amber-400 mx-auto mb-2" />
+                        <p className="text-sm font-medium text-platinum-200">{restriction.risk}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{restriction.description}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -647,11 +647,11 @@ export default function FactCheckDashboardPage() {
                 >
                   <CardContent className="pt-6">
                     <Quote className="h-8 w-8 text-emerald-400 mb-4" />
-                    <p className="text-lg text-slate-200 italic mb-4">"{quote.quote}"</p>
+                    <p className="text-lg text-platinum-200 italic mb-4">"{quote.quote}"</p>
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="font-medium text-slate-200">{quote.expert}</p>
-                        <p className="text-sm text-slate-400">{quote.org}</p>
+                        <p className="font-medium text-platinum-200">{quote.expert}</p>
+                        <p className="text-sm text-platinum-400">{quote.org}</p>
                       </div>
                       <Badge variant="outline" className="text-xs">{quote.context}</Badge>
                     </div>
@@ -685,15 +685,15 @@ export default function FactCheckDashboardPage() {
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-4"
+                          className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-4"
                         >
                           <div className="flex items-center gap-4">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald/20 text-emerald">
                               <CheckCircle className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-medium text-slate-200">{org.org}</p>
-                              <p className="text-sm text-slate-400">{org.coverage}</p>
+                              <p className="font-medium text-platinum-200">{org.org}</p>
+                              <p className="text-sm text-platinum-400">{org.coverage}</p>
                             </div>
                           </div>
                           {getTierBadge(org.tier)}
@@ -725,7 +725,7 @@ export default function FactCheckDashboardPage() {
                           initial={{ opacity: 0, x: 10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="rounded-lg border border-slate-700/50 bg-slate-800/30 p-4"
+                          className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-4"
                         >
                           <div className="flex items-center justify-between mb-2">
                             <div className="flex items-center gap-3">
@@ -735,7 +735,7 @@ export default function FactCheckDashboardPage() {
                                   backgroundColor: source.reliability === 'High' || source.reliability === 'Very High' ? '#10b981' : source.reliability === 'Medium' ? '#f59e0b' : '#f43f5e'
                                 }}
                               />
-                              <p className="font-medium text-slate-200">{source.source}</p>
+                              <p className="font-medium text-platinum-200">{source.source}</p>
                             </div>
                             <div className="flex items-center gap-2">
                               <Badge variant="outline" className="text-xs">{source.type}</Badge>
@@ -747,7 +747,7 @@ export default function FactCheckDashboardPage() {
                               </Badge>
                             </div>
                           </div>
-                          <p className="text-xs text-slate-400">Reliability: {source.reliability}</p>
+                          <p className="text-xs text-platinum-400">Reliability: {source.reliability}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -766,14 +766,14 @@ export default function FactCheckDashboardPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6 }}
-        className="rounded-lg border border-slate-700/50 bg-slate-800/30 p-6"
+        className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-6"
         style={{ background: 'var(--glass-surface)', border: '1px solid var(--glass-border)' }}
       >
         <div className="flex items-center gap-2 mb-4">
           <Shield className="h-5 w-5 text-emerald-400" />
-          <h3 className="text-lg font-semibold text-slate-200">Analysis Summary</h3>
+          <h3 className="text-lg font-semibold text-platinum-200">Analysis Summary</h3>
         </div>
-        <p className="text-sm text-slate-400 leading-relaxed">
+        <p className="text-sm text-platinum-400 leading-relaxed">
           {factCheckVerificationData.omissionData?.impact || 'Fact-checking infrastructure analysis for UAE misinformation tracking and verification.'}
         </p>
         <div className="mt-4 flex flex-wrap gap-2">

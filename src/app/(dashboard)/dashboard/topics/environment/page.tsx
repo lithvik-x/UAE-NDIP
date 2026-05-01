@@ -163,10 +163,10 @@ export default function EnvironmentInfrastructurePage() {
   const getTierBadge = (tier?: number) => {
     const colors: Record<number, string> = {
       0: 'bg-red-500/20 text-red-400 border-red-500/50',
-      1: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/50',
-      2: 'bg-blue-500/20 text-blue-400 border-blue-500/50',
+      1: 'bg-amber-500/20 text-amber-400 border-amber-500/50',
+      2: 'bg-navy-500/20 text-navy-400 border-navy-500/50',
       3: 'bg-platinum-500/20 text-platinum-400 border-platinum-500/50',
-      4: 'bg-slate-500/20 text-slate-400 border-slate-500/50',
+      4: 'bg-platinum-500/20 text-platinum-400 border-platinum-500/50',
     }
     return (
       <Badge variant="outline" className={`text-xs border ${colors[tier || 0]}`}>
@@ -268,7 +268,7 @@ export default function EnvironmentInfrastructurePage() {
                   <CardContent>
                     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                       {dashboardKPIs.climateEmissions.map((kpi, idx) => (
-                        <div key={idx} className="rounded-lg bg-slate-800/50 p-3 border border-slate-700">
+                        <div key={idx} className="rounded-lg bg-platinum-800/50 p-3 border border-platinum-700">
                           <p className="text-xs text-platinum-400 truncate">{kpi.kpi}</p>
                           <p className="text-lg font-bold text-emerald">{kpi.current}</p>
                           <p className="text-xs text-platinum-500">Target: {kpi.target}</p>
@@ -286,9 +286,9 @@ export default function EnvironmentInfrastructurePage() {
                     <CardContent>
                       <div className="grid gap-3">
                         {dashboardKPIs.energyInfrastructure.map((kpi, idx) => (
-                          <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div>
-                              <p className="text-sm font-medium text-slate-200">{kpi.kpi}</p>
+                              <p className="text-sm font-medium text-platinum-200">{kpi.kpi}</p>
                               <p className="text-xs text-platinum-500">{kpi.status}</p>
                             </div>
                             <div className="text-right">
@@ -323,7 +323,7 @@ export default function EnvironmentInfrastructurePage() {
                   <CardContent>
                     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                       {dashboardKPIs.waterEnvironment.map((kpi, idx) => (
-                        <div key={idx} className="rounded-lg bg-slate-800/50 p-3 border border-slate-700">
+                        <div key={idx} className="rounded-lg bg-platinum-800/50 p-3 border border-platinum-700">
                           <p className="text-xs text-platinum-400 truncate">{kpi.kpi}</p>
                           <p className="text-lg font-bold text-cyan">{kpi.current}</p>
                           <p className="text-xs text-platinum-500">Target: {kpi.target}</p>
@@ -366,7 +366,7 @@ export default function EnvironmentInfrastructurePage() {
                           <span className="text-sm text-platinum-400">Legal Character</span>
                           <Badge variant="emerald" className="text-xs">Standalone Primary Legislation</Badge>
                         </div>
-                        <div className="mt-4 p-3 rounded-lg bg-slate-800/50">
+                        <div className="mt-4 p-3 rounded-lg bg-platinum-800/50">
                           <p className="text-xs text-platinum-400 mb-1">Key Provisions</p>
                           <p className="text-sm">Sector-specific climate mitigation plans; National carbon credit registry; Industrial emissions reporting mandate; Regulatory penalties (Article 15)</p>
                         </div>
@@ -414,7 +414,7 @@ export default function EnvironmentInfrastructurePage() {
                   <CardContent>
                     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                       {netZero2050Data.sixSectorFramework.map((sector, idx) => (
-                        <div key={idx} className="rounded-lg bg-slate-800/50 p-4 border border-slate-700">
+                        <div key={idx} className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700">
                           <div className="flex items-center gap-2 mb-2">
                             <Badge variant="denim" className="text-xs">{sector.sector}</Badge>
                           </div>
@@ -562,15 +562,15 @@ export default function EnvironmentInfrastructurePage() {
                       </div>
                     </div>
                     <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                      <div className="p-3 rounded-lg bg-slate-800/50">
+                      <div className="p-3 rounded-lg bg-platinum-800/50">
                         <p className="text-xs text-platinum-400">Reactor Type</p>
                         <p className="text-sm font-medium">APR1400 (Korea)</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-slate-800/50">
+                      <div className="p-3 rounded-lg bg-platinum-800/50">
                         <p className="text-xs text-platinum-400">Grid Connection</p>
                         <p className="text-sm font-medium">Units 1-4: 2020-2024</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-slate-800/50">
+                      <div className="p-3 rounded-lg bg-platinum-800/50">
                         <p className="text-xs text-platinum-400">Operator</p>
                         <p className="text-sm font-medium">Nawah Energy (82% ENEC, 18% KEPCO)</p>
                       </div>
@@ -729,7 +729,7 @@ export default function EnvironmentInfrastructurePage() {
                         { country: 'UAE', value: '42%', color: 'gold' },
                         { country: 'Gulf (overall)', value: '40%', color: 'emerald' },
                       ].map((item, idx) => (
-                        <div key={idx} className="p-3 rounded-lg bg-slate-800/50 border border-slate-700">
+                        <div key={idx} className="p-3 rounded-lg bg-platinum-800/50 border border-platinum-700">
                           <p className="text-sm text-platinum-400">{item.country}</p>
                           <p className="text-xl font-bold text-cyan">{item.value}</p>
                         </div>
@@ -769,7 +769,7 @@ export default function EnvironmentInfrastructurePage() {
                           <p className="text-xs text-platinum-400">Investment Since 2006</p>
                           <p className="text-3xl font-bold text-cyan">$53.4B</p>
                         </div>
-                        <div className="p-3 rounded-lg bg-slate-800/50">
+                        <div className="p-3 rounded-lg bg-platinum-800/50">
                           <p className="text-sm text-platinum-400">Desalination Plants</p>
                           <p className="text-lg font-medium">~5,000 (Middle East) | 400+ (Gulf)</p>
                         </div>
@@ -810,11 +810,11 @@ export default function EnvironmentInfrastructurePage() {
                       </div>
                     </div>
                     <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                      <div className="p-3 rounded-lg bg-slate-800/50">
+                      <div className="p-3 rounded-lg bg-platinum-800/50">
                         <p className="text-xs text-platinum-400">Rainfall (Al Ain — Khatm Shakla)</p>
                         <p className="text-lg font-bold">254.8 mm / &lt;24hr</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-slate-800/50">
+                      <div className="p-3 rounded-lg bg-platinum-800/50">
                         <p className="text-xs text-platinum-400">Rainfall (Dubai Airport)</p>
                         <p className="text-lg font-bold">164 mm</p>
                       </div>
@@ -843,7 +843,7 @@ export default function EnvironmentInfrastructurePage() {
                   <CardContent>
                     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                       {biodiversityData.nationalBiodiversityStrategy2031.categories.map((cat, idx) => (
-                        <div key={idx} className="p-3 rounded-lg bg-slate-800/50 border border-slate-700">
+                        <div key={idx} className="p-3 rounded-lg bg-platinum-800/50 border border-platinum-700">
                           <p className="text-xs text-platinum-400">{cat.name}</p>
                           <p className="text-xl font-bold text-emerald">{cat.assessed}</p>
                         </div>
@@ -875,11 +875,11 @@ export default function EnvironmentInfrastructurePage() {
                           <p className="text-4xl font-bold text-emerald">+150%</p>
                           <p className="text-xs">1987-2024</p>
                         </div>
-                        <div className="flex justify-between p-3 rounded-lg bg-slate-800/50">
+                        <div className="flex justify-between p-3 rounded-lg bg-platinum-800/50">
                           <span className="text-sm text-platinum-400">Coverage (2024)</span>
                           <span className="text-lg font-bold text-cyan">201.4 km2</span>
                         </div>
-                        <div className="flex justify-between p-3 rounded-lg bg-slate-800/50">
+                        <div className="flex justify-between p-3 rounded-lg bg-platinum-800/50">
                           <span className="text-sm text-platinum-400">COP26 Pledge</span>
                           <span className="text-sm font-medium">100 million mangroves by 2030</span>
                         </div>
@@ -898,11 +898,11 @@ export default function EnvironmentInfrastructurePage() {
                           <p className="text-4xl font-bold text-cyan">1M</p>
                           <p className="text-xs">of 4M+ target</p>
                         </div>
-                        <div className="flex justify-between p-3 rounded-lg bg-slate-800/50">
+                        <div className="flex justify-between p-3 rounded-lg bg-platinum-800/50">
                           <span className="text-sm text-platinum-400">Success Rate</span>
                           <span className="text-lg font-bold text-emerald">95%</span>
                         </div>
-                        <div className="flex justify-between p-3 rounded-lg bg-slate-800/50">
+                        <div className="flex justify-between p-3 rounded-lg bg-platinum-800/50">
                           <span className="text-sm text-platinum-400">Fish Biomass Increase</span>
                           <span className="text-lg font-bold text-emerald">50%+</span>
                         </div>
@@ -1031,15 +1031,15 @@ export default function EnvironmentInfrastructurePage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      <div className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
+                      <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
                         <span className="text-sm text-platinum-400">Trend</span>
                         <span className="text-sm font-medium">Increasing occurrences of mild to severe dust storms</span>
                       </div>
-                      <div className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
+                      <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
                         <span className="text-sm text-platinum-400">Visibility</span>
                         <span className="text-sm font-medium text-red-400">Progressive decreasing in mean annual visibility</span>
                       </div>
-                      <div className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
+                      <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
                         <span className="text-sm text-platinum-400">Wind Speeds</span>
                         <span className="text-sm font-medium">Up to 40 kph during sandstorm events</span>
                       </div>
@@ -1104,7 +1104,7 @@ export default function EnvironmentInfrastructurePage() {
                         </div>
                       ))}
                     </div>
-                    <div className="mt-4 p-3 rounded-lg bg-slate-800/50">
+                    <div className="mt-4 p-3 rounded-lg bg-platinum-800/50">
                       <p className="text-xs text-platinum-400">Framework</p>
                       <p className="text-sm">Integrates environmental, economic, and social sustainability pillars</p>
                     </div>
@@ -1146,11 +1146,11 @@ export default function EnvironmentInfrastructurePage() {
                       ))}
                     </div>
                     <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                      <div className="p-3 rounded-lg bg-slate-800/50">
+                      <div className="p-3 rounded-lg bg-platinum-800/50">
                         <p className="text-xs text-platinum-400">Approval Date</p>
                         <p className="text-sm font-medium">April 28, 2024 (Mohammed bin Rashid Al Maktoum)</p>
                       </div>
-                      <div className="p-3 rounded-lg bg-slate-800/50">
+                      <div className="p-3 rounded-lg bg-platinum-800/50">
                         <p className="text-xs text-platinum-400">Initial Operations Target</p>
                         <p className="text-sm font-medium">2032 (accelerated)</p>
                       </div>
@@ -1177,7 +1177,7 @@ export default function EnvironmentInfrastructurePage() {
                       <p className="text-sm font-medium text-red-400 mb-2">Top 5 Violations Causing 68% of Fatalities</p>
                       <div className="grid gap-2 sm:grid-cols-5">
                         {roadSafetyData.topViolationsCausingFatalities.map((v, idx) => (
-                          <div key={idx} className="p-2 rounded-lg bg-slate-800/50 text-center">
+                          <div key={idx} className="p-2 rounded-lg bg-platinum-800/50 text-center">
                             <p className="text-xs font-bold text-rose">{idx + 1}</p>
                             <p className="text-xs">{v.violation}</p>
                           </div>
@@ -1215,7 +1215,7 @@ export default function EnvironmentInfrastructurePage() {
                       <p className="text-sm font-medium mb-2">Top Causes</p>
                       <div className="space-y-2">
                         {trafficCongestionData.topCauses.map((cause, idx) => (
-                          <div key={idx} className="flex items-center justify-between p-2 rounded-lg bg-slate-800/50">
+                          <div key={idx} className="flex items-center justify-between p-2 rounded-lg bg-platinum-800/50">
                             <span className="text-sm">{cause.cause}</span>
                             <Badge variant="outline">{cause.percentage}</Badge>
                           </div>
@@ -1248,7 +1248,7 @@ export default function EnvironmentInfrastructurePage() {
                         {redFindings.map((finding, idx) => (
                           <div key={idx} className="flex items-start justify-between rounded-lg bg-red-500/10 p-4 border border-red-500/30">
                             <div className="flex-1">
-                              <p className="font-medium text-slate-200">{finding.finding}</p>
+                              <p className="font-medium text-platinum-200">{finding.finding}</p>
                               <p className="mt-1 text-sm text-platinum-400">Source: {finding.source}</p>
                             </div>
                             <div className="text-right">
@@ -1264,9 +1264,9 @@ export default function EnvironmentInfrastructurePage() {
 
                 {/* Yellow Alerts */}
                 {yellowFindings.length > 0 && (
-                  <Card className="glass-card border-yellow-500/50">
+                  <Card className="glass-card border-amber-500/50">
                     <CardHeader className="pb-2">
-                      <CardTitle className="flex items-center gap-2 text-lg text-yellow-400">
+                      <CardTitle className="flex items-center gap-2 text-lg text-amber-400">
                         <AlertTriangle className="h-5 w-5" />
                         Yellow Alert Findings ({yellowFindings.length})
                       </CardTitle>
@@ -1274,9 +1274,9 @@ export default function EnvironmentInfrastructurePage() {
                     <CardContent>
                       <div className="space-y-3">
                         {yellowFindings.map((finding, idx) => (
-                          <div key={idx} className="flex items-start justify-between rounded-lg bg-yellow-500/10 p-4 border border-yellow-500/30">
+                          <div key={idx} className="flex items-start justify-between rounded-lg bg-amber-500/10 p-4 border border-amber-500/30">
                             <div className="flex-1">
-                              <p className="font-medium text-slate-200">{finding.finding}</p>
+                              <p className="font-medium text-platinum-200">{finding.finding}</p>
                               <p className="mt-1 text-sm text-platinum-400">Source: {finding.source}</p>
                             </div>
                             <div className="text-right">
@@ -1300,13 +1300,13 @@ export default function EnvironmentInfrastructurePage() {
                     <ScrollArea className="h-[500px]">
                       <div className="space-y-2">
                         {keyFindings.map((finding, idx) => (
-                          <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70">
+                          <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70">
                             <div className="flex items-center gap-4">
                               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald/20 text-emerald">
                                 <Lightbulb className="h-5 w-5" />
                               </div>
                               <div>
-                                <p className="font-semibold text-slate-200">{finding.finding}</p>
+                                <p className="font-semibold text-platinum-200">{finding.finding}</p>
                                 <p className="text-sm text-platinum-400">Source: {finding.source}</p>
                               </div>
                             </div>

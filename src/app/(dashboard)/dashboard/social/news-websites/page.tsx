@@ -147,7 +147,7 @@ export default function NewsWebsitesPage() {
                 <div className="space-y-3">
                   {sourceData.map((s: any, idx: number) => (
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.06 }}
-                      className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 border border-slate-700/50">
+                      className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                       <div className="flex items-center gap-3">
                         <span className="text-xs text-platinum-500 w-6">{idx + 1}</span>
                         <Newspaper className="h-4 w-4 text-emerald-400" />
@@ -181,7 +181,7 @@ export default function NewsWebsitesPage() {
                         <span className="text-lg font-bold text-platinum-100">{t.coverage}%</span>
                       </div>
                     </div>
-                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                       <motion.div initial={{ width: 0 }} animate={{ width: `${t.coverage}%` }} transition={{ delay: idx * 0.1 + 0.3, duration: 0.5 }}
                         className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-500" />
                     </div>
@@ -205,7 +205,7 @@ export default function NewsWebsitesPage() {
                   { source: 'Reuters', credibility: 91, reliability: 'HIGH', factCheck: 89 },
                 ].map((s, idx) => (
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }}
-                    className="flex items-start gap-4 rounded-lg bg-slate-800/50 p-4 border border-slate-700/50">
+                    className="flex items-start gap-4 rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                     <Shield className={`h-5 w-5 mt-0.5 shrink-0 ${s.reliability === 'HIGH' ? 'text-emerald' : s.reliability === 'MIXED' ? 'text-orange' : 'text-rose'}`} />
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-1">

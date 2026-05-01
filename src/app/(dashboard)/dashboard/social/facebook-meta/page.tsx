@@ -420,7 +420,7 @@ export default function FacebookMetaPage() {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: idx * 0.1 }}
                           whileHover={{ scale: 1.05 }}
-                          className="rounded-lg bg-slate-800/50 p-3 text-center"
+                          className="rounded-lg bg-platinum-800/50 p-3 text-center"
                         >
                           <span className={`text-2xl mb-2 block ${item.sentiment === 'Positive' ? 'text-emerald-400' : item.sentiment === 'Negative' ? 'text-rose-400' : 'text-platinum-400'}`}>
                             {item.sentiment === 'Positive' ? '+' : item.sentiment === 'Negative' ? '!' : '•'}
@@ -447,19 +447,19 @@ export default function FacebookMetaPage() {
                       <div className="mb-6">
                         <h4 className="text-sm font-semibold text-rose-300 mb-3">Operation 1: UAE & Egypt (August 2019)</h4>
                         <div className="grid gap-4 sm:grid-cols-4 mb-3">
-                          <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30">
+                          <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 border border-rose-500/30">
                             <p className="text-xs text-platinum-400">Accounts Removed</p>
                             <p className="text-xl font-bold text-rose-400">{cibDataUAE.accountsRemoved}</p>
                           </motion.div>
-                          <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30">
+                          <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 border border-rose-500/30">
                             <p className="text-xs text-platinum-400">Pages Removed</p>
                             <p className="text-xl font-bold text-rose-400">{cibDataUAE.pagesRemoved}</p>
                           </motion.div>
-                          <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30">
+                          <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 border border-rose-500/30">
                             <p className="text-xs text-platinum-400">Page Followers</p>
                             <p className="text-xl font-bold text-rose-400">{cibDataUAE.pageFollowers}</p>
                           </motion.div>
-                          <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30">
+                          <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 border border-rose-500/30">
                             <p className="text-xs text-platinum-400">Ad Spend</p>
                             <p className="text-xl font-bold text-rose-400">{cibDataUAE.advertisingSpend}</p>
                           </motion.div>
@@ -473,19 +473,19 @@ export default function FacebookMetaPage() {
                       <div>
                         <h4 className="text-sm font-semibold text-rose-300 mb-3">Operation 2: Saudi Arabia (August 2019)</h4>
                         <div className="grid gap-4 sm:grid-cols-4 mb-3">
-                          <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30">
+                          <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 border border-rose-500/30">
                             <p className="text-xs text-platinum-400">Accounts Removed</p>
                             <p className="text-xl font-bold text-rose-400">{cibDataKSA.accountsRemoved}</p>
                           </motion.div>
-                          <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30">
+                          <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 border border-rose-500/30">
                             <p className="text-xs text-platinum-400">Pages Removed</p>
                             <p className="text-xl font-bold text-rose-400">{cibDataKSA.pagesRemoved}</p>
                           </motion.div>
-                          <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30">
+                          <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 border border-rose-500/30">
                             <p className="text-xs text-platinum-400">Page Followers</p>
                             <p className="text-xl font-bold text-rose-400">{cibDataKSA.pageFollowers}</p>
                           </motion.div>
-                          <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-slate-800/50 p-3 border border-rose-500/30">
+                          <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 border border-rose-500/30">
                             <p className="text-xs text-platinum-400">Ad Spend</p>
                             <p className="text-xl font-bold text-rose-400">{cibDataKSA.advertisingSpend}</p>
                           </motion.div>
@@ -551,23 +551,23 @@ export default function FacebookMetaPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-5">
-                      <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                      <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                         <p className="text-2xl font-bold text-indigo-400">{platformStatsSummary.totalActiveSocialMediaUsers}</p>
                         <p className="text-xs text-platinum-400">Active Social Users</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                      <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                         <p className="text-2xl font-bold text-emerald-400">{platformStatsSummary.internetPenetration}</p>
                         <p className="text-xs text-platinum-400">Internet Penetration</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                      <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                         <p className="text-2xl font-bold text-gold">{platformStatsSummary.facebookUsersNapoleonCat / 1000000}M</p>
                         <p className="text-xs text-platinum-400">Facebook Users</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                      <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                         <p className="text-2xl font-bold text-rose-400">{platformStatsSummary.facebookMarketShare}%</p>
                         <p className="text-xs text-platinum-400">Market Share</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                      <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                         <p className="text-2xl font-bold text-platinum-400">{platformStatsSummary.yoyGrowth}</p>
                         <p className="text-xs text-platinum-400">YoY Growth</p>
                       </div>
@@ -590,7 +590,7 @@ export default function FacebookMetaPage() {
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ delay: idx * 0.1 }}
                           whileHover={{ scale: 1.05 }}
-                          className="rounded-lg bg-slate-800/50 p-4"
+                          className="rounded-lg bg-platinum-800/50 p-4"
                         >
                           <p className="font-semibold text-platinum-200">{person.name}</p>
                           <p className="text-sm text-indigo-400 mt-1">{person.role}</p>
@@ -640,27 +640,27 @@ export default function FacebookMetaPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
-                      <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                      <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                         <p className="text-xs text-platinum-400">Yearly Victims</p>
                         <p className="text-xl font-bold text-rose">{scamStatistics.yearlyResidentsLosingToScams}</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                      <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                         <p className="text-xs text-platinum-400">Monthly Targeting</p>
                         <p className="text-xl font-bold text-rose">{scamStatistics.monthlyScamAttemptRate}</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                      <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                         <p className="text-xs text-platinum-400">Victims Losing Money</p>
                         <p className="text-xl font-bold text-rose">{scamStatistics.victimsLosingMoney}</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                      <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                         <p className="text-xs text-platinum-400">Average Loss</p>
                         <p className="text-xl font-bold text-rose">{scamStatistics.averageLoss}</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                      <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                         <p className="text-xs text-platinum-400">Recovery Rate</p>
                         <p className="text-xl font-bold text-emerald">{scamStatistics.recoveryRate}</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                      <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                         <p className="text-xs text-platinum-400">Trust Reduction</p>
                         <p className="text-xl font-bold text-rose">{scamStatistics.trustReductionDueToScams}</p>
                       </div>
@@ -718,7 +718,7 @@ export default function FacebookMetaPage() {
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.05 }}
                           whileHover={{ scale: 1.02 }}
-                          className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                          className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                         >
                           <div className="flex items-center gap-3">
                             <AlertTriangle className={`h-4 w-4 ${scam.severity === 'High' ? 'text-rose-500' : 'text-gold'}`} />
@@ -777,7 +777,7 @@ export default function FacebookMetaPage() {
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.05 }}
-                            className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3"
+                            className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-3"
                           >
                             <div className="flex items-center gap-3">
                               <AlertTriangle className="h-4 w-4 text-rose-400" />
@@ -820,7 +820,7 @@ export default function FacebookMetaPage() {
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.1 }}
                           whileHover={{ scale: 1.02 }}
-                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+                          className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                         >
                           <div className="flex items-center gap-3">
                             <Shield className="h-6 w-6 text-gold" />
@@ -857,7 +857,7 @@ export default function FacebookMetaPage() {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.05 }}
-                            className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3"
+                            className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-3"
                           >
                             <div className="flex items-center gap-3">
                               <Building className="h-5 w-5 text-indigo" />
@@ -881,21 +881,21 @@ export default function FacebookMetaPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-4 sm:grid-cols-3">
-                      <motion.div whileHover={{ scale: 1.05 }} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
+                      <motion.div whileHover={{ scale: 1.05 }} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4">
                         <div className="flex items-center gap-3">
                           <Flag className="h-5 w-5 text-gold" />
                           <span className="text-sm font-medium text-platinum-200">Compliance Rate</span>
                         </div>
                         <span className="text-xl font-bold text-gold">{censorship?.complianceRate || 82}%</span>
                       </motion.div>
-                      <motion.div whileHover={{ scale: 1.05 }} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
+                      <motion.div whileHover={{ scale: 1.05 }} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4">
                         <div className="flex items-center gap-3">
                           <FileText className="h-5 w-5 text-indigo" />
                           <span className="text-sm font-medium text-platinum-200">Gov Requests</span>
                         </div>
                         <span className="text-xl font-bold text-indigo">{censorship?.governmentRequests?.toLocaleString() || '1,893'}</span>
                       </motion.div>
-                      <motion.div whileHover={{ scale: 1.05 }} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
+                      <motion.div whileHover={{ scale: 1.05 }} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4">
                         <div className="flex items-center gap-3">
                           <AlertCircle className="h-5 w-5 text-rose" />
                           <span className="text-sm font-medium text-platinum-200">Content Removed</span>
@@ -956,7 +956,7 @@ export default function FacebookMetaPage() {
                             <motion.div
                               key={idx}
                               whileHover={{ x: 5 }}
-                              className="flex items-center justify-between rounded bg-slate-800/30 p-2 text-sm"
+                              className="flex items-center justify-between rounded bg-platinum-800/30 p-2 text-sm"
                             >
                               <span className="text-platinum-300 truncate flex-1">{group.name}</span>
                               <ExternalLink className="h-3 w-3 text-platinum-500 flex-shrink-0" />
@@ -982,7 +982,7 @@ export default function FacebookMetaPage() {
                             <motion.div
                               key={idx}
                               whileHover={{ x: 5 }}
-                              className="flex items-center justify-between rounded bg-slate-800/30 p-2 text-sm"
+                              className="flex items-center justify-between rounded bg-platinum-800/30 p-2 text-sm"
                             >
                               <span className="text-platinum-300 truncate flex-1">{group.name}</span>
                               <ExternalLink className="h-3 w-3 text-platinum-500 flex-shrink-0" />
@@ -1008,7 +1008,7 @@ export default function FacebookMetaPage() {
                             <motion.div
                               key={idx}
                               whileHover={{ x: 5 }}
-                              className="flex items-center justify-between rounded bg-slate-800/30 p-2 text-sm"
+                              className="flex items-center justify-between rounded bg-platinum-800/30 p-2 text-sm"
                             >
                               <span className="text-platinum-300 truncate flex-1">{group.name}</span>
                               <ExternalLink className="h-3 w-3 text-platinum-500 flex-shrink-0" />
@@ -1036,7 +1036,7 @@ export default function FacebookMetaPage() {
                           initial={{ opacity: 0, scale: 0.9 }}
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ delay: idx * 0.1 }}
-                          className="rounded-lg bg-slate-800/50 p-3"
+                          className="rounded-lg bg-platinum-800/50 p-3"
                         >
                           <p className="text-sm font-medium text-platinum-200 truncate">{group.name}</p>
                           <p className="text-xs text-platinum-400">{group.members} members</p>
@@ -1059,7 +1059,7 @@ export default function FacebookMetaPage() {
                     <CardContent>
                       <div className="space-y-2">
                         {religiousGroups.map((group, idx) => (
-                          <div key={idx} className="flex items-center justify-between rounded bg-slate-800/30 p-2">
+                          <div key={idx} className="flex items-center justify-between rounded bg-platinum-800/30 p-2">
                             <span className="text-sm text-platinum-300">{group.name}</span>
                             <Badge variant="outline" className="text-xs">{group.focus}</Badge>
                           </div>
@@ -1081,7 +1081,7 @@ export default function FacebookMetaPage() {
                       <ScrollArea className="h-[150px]">
                         <div className="space-y-2">
                           {fitnessGroups.map((group, idx) => (
-                            <div key={idx} className="flex items-center justify-between rounded bg-slate-800/30 p-2">
+                            <div key={idx} className="flex items-center justify-between rounded bg-platinum-800/30 p-2">
                               <span className="text-sm text-platinum-300">{group.name}</span>
                               <ExternalLink className="h-3 w-3 text-platinum-500" />
                             </div>
@@ -1102,7 +1102,7 @@ export default function FacebookMetaPage() {
                       <ScrollArea className="h-[200px]">
                         <div className="space-y-2">
                           {abuDhabiCommunityGroups.map((group, idx) => (
-                            <div key={idx} className="flex items-center justify-between rounded bg-slate-800/30 p-2">
+                            <div key={idx} className="flex items-center justify-between rounded bg-platinum-800/30 p-2">
                               <div>
                                 <p className="text-sm text-platinum-300">{group.name}</p>
                                 <p className="text-xs text-platinum-500">{group.members !== 'N/A' ? `${group.members} members` : group.purpose}</p>
@@ -1122,7 +1122,7 @@ export default function FacebookMetaPage() {
                       <ScrollArea className="h-[200px]">
                         <div className="space-y-2">
                           {sharjahCommunityGroups.map((group, idx) => (
-                            <div key={idx} className="flex items-center justify-between rounded bg-slate-800/30 p-2">
+                            <div key={idx} className="flex items-center justify-between rounded bg-platinum-800/30 p-2">
                               <div>
                                 <p className="text-sm text-platinum-300">{group.name}</p>
                                 <p className="text-xs text-platinum-500">{group.focus}</p>
@@ -1167,11 +1167,11 @@ export default function FacebookMetaPage() {
                           <Badge variant="outline" className="text-gold border-gold">Very High Credibility</Badge>
                         </div>
                         <div className="grid grid-cols-2 gap-4">
-                          <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                             <p className="text-2xl font-bold text-gold">{(media.likes / 1000000).toFixed(2)}M</p>
                             <p className="text-xs text-platinum-400">Total Likes</p>
                           </div>
-                          <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                             <p className="text-2xl font-bold text-indigo">{media.talkingAbout.toLocaleString()}</p>
                             <p className="text-xs text-platinum-400">Talking About</p>
                           </div>
@@ -1189,19 +1189,19 @@ export default function FacebookMetaPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                      <div className="rounded-lg bg-slate-800/50 p-3">
+                      <div className="rounded-lg bg-platinum-800/50 p-3">
                         <p className="text-xs text-platinum-400">Facebook Launch</p>
                         <p className="text-lg font-bold text-platinum-200">{gulfNewsDetails.facebookLaunchDate}</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-3">
+                      <div className="rounded-lg bg-platinum-800/50 p-3">
                         <p className="text-xs text-platinum-400">Twitter Launch</p>
                         <p className="text-lg font-bold text-platinum-200">{gulfNewsDetails.twitterLaunchDate}</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-3">
+                      <div className="rounded-lg bg-platinum-800/50 p-3">
                         <p className="text-xs text-platinum-400">Operating Model</p>
                         <p className="text-lg font-bold text-platinum-200">24/7</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-3">
+                      <div className="rounded-lg bg-platinum-800/50 p-3">
                         <p className="text-xs text-platinum-400">Daily Growth</p>
                         <p className="text-lg font-bold text-emerald">{gulfNewsDetails.historicalDailyGrowth}</p>
                       </div>
@@ -1219,19 +1219,19 @@ export default function FacebookMetaPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                      <div className="rounded-lg bg-slate-800/50 p-3">
+                      <div className="rounded-lg bg-platinum-800/50 p-3">
                         <p className="text-xs text-platinum-400">Location</p>
                         <p className="text-lg font-bold text-platinum-200">{khaleejTimesDetails.location}</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-3">
+                      <div className="rounded-lg bg-platinum-800/50 p-3">
                         <p className="text-xs text-platinum-400">Established</p>
                         <p className="text-lg font-bold text-platinum-200">1979</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-3">
+                      <div className="rounded-lg bg-platinum-800/50 p-3">
                         <p className="text-xs text-platinum-400">Anniversary</p>
                         <p className="text-lg font-bold text-gold">{khaleejTimesDetails.anniversary}</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-3">
+                      <div className="rounded-lg bg-platinum-800/50 p-3">
                         <p className="text-xs text-platinum-400">Credibility</p>
                         <p className="text-lg font-bold text-emerald">Very High</p>
                       </div>
@@ -1312,7 +1312,7 @@ export default function FacebookMetaPage() {
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.1 }}
-                          className="flex items-center gap-4 rounded-lg bg-slate-800/50 p-3"
+                          className="flex items-center gap-4 rounded-lg bg-platinum-800/50 p-3"
                         >
                           <div className="flex h-8 w-8 items-center justify-center rounded-full bg-indigo-500/20 text-indigo-400 font-bold">
                             {area.priority}
@@ -1337,7 +1337,7 @@ export default function FacebookMetaPage() {
                     <ScrollArea className="h-[300px]">
                       <div className="space-y-3">
                         {sentimentByTopic.map((topic, idx) => (
-                          <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
+                          <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-3">
                             <span className="text-sm text-platinum-200">{topic.topic}</span>
                             <Badge
                               variant={topic.overallSentiment === 'Positive' ? 'default' : topic.overallSentiment === 'Negative' ? 'destructive' : 'outline'}
@@ -1390,7 +1390,7 @@ export default function FacebookMetaPage() {
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.1 }}
-                          className="rounded-lg bg-slate-800/50 p-4"
+                          className="rounded-lg bg-platinum-800/50 p-4"
                         >
                           <div className="flex items-center justify-between mb-2">
                             <span className="font-medium text-platinum-200">{penalty.violation}</span>
@@ -1439,7 +1439,7 @@ export default function FacebookMetaPage() {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: idx * 0.1 }}
-                          className="rounded-lg bg-slate-800/50 p-3"
+                          className="rounded-lg bg-platinum-800/50 p-3"
                         >
                           <p className="font-medium text-platinum-200">{rule.rule}</p>
                           <p className="text-sm text-platinum-400">{rule.description}</p>
@@ -1457,19 +1457,19 @@ export default function FacebookMetaPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                      <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                      <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                         <p className="text-2xl font-bold text-emerald">{priceTrackingPlatform.itemsTracked}</p>
                         <p className="text-xs text-platinum-400">Items Tracked</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                      <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                         <p className="text-2xl font-bold text-emerald">{priceTrackingPlatform.retailOutlets}</p>
                         <p className="text-xs text-platinum-400">Retail Outlets</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                      <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                         <p className="text-lg font-bold text-emerald">Daily</p>
                         <p className="text-xs text-platinum-400">Update Frequency</p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                      <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                         <p className="text-sm font-bold text-emerald">{priceTrackingPlatform.initiativeBy}</p>
                         <p className="text-xs text-platinum-400">Initiative By</p>
                       </div>
@@ -1509,7 +1509,7 @@ export default function FacebookMetaPage() {
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.03 }}
-                            className="flex items-center justify-between rounded bg-slate-800/30 p-2"
+                            className="flex items-center justify-between rounded bg-platinum-800/30 p-2"
                           >
                             <span className="text-sm text-platinum-300 truncate flex-1">{source.name}</span>
                             <Badge variant="outline" className="text-xs ml-2">Tier {source.tier}</Badge>

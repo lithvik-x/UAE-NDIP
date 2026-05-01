@@ -71,7 +71,7 @@ export function SystemsSection({ data }: SystemsSectionProps) {
                   {s.status}
                 </Badge>
               </div>
-              <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+              <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: `${s.coverage}%` }}

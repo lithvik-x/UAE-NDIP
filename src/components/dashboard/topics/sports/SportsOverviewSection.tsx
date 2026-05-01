@@ -109,10 +109,10 @@ export function SportsOverviewSection({ data }: SportsOverviewSectionProps) {
                   {data.dashboardInvestmentSummary.slice(0, 4).map((item, index) => (
                     <div
                       key={index}
-                      className="rounded-lg border border-slate-700 bg-slate-800/50 p-3 text-center"
+                      className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3 text-center"
                     >
                       <div className="text-lg font-bold text-gold">{item.valueUSD}</div>
-                      <p className="text-xs text-slate-400 mt-1">{item.category}</p>
+                      <p className="text-xs text-platinum-400 mt-1">{item.category}</p>
                     </div>
                   ))}
                 </div>
@@ -130,11 +130,11 @@ export function SportsOverviewSection({ data }: SportsOverviewSectionProps) {
                   {data.sportswashingVectors.map((vector, index) => (
                     <div
                       key={index}
-                      className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                      className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                     >
                       <div className="flex-1">
-                        <p className="text-sm font-medium text-slate-200">{vector.vector}</p>
-                        <p className="text-xs text-slate-400">{vector.details}</p>
+                        <p className="text-sm font-medium text-platinum-200">{vector.vector}</p>
+                        <p className="text-xs text-platinum-400">{vector.details}</p>
                       </div>
                       <Badge
                         variant="outline"
@@ -142,8 +142,8 @@ export function SportsOverviewSection({ data }: SportsOverviewSectionProps) {
                           vector.criticismLevel === 'Critical'
                             ? 'border-red-500/50 text-red-400'
                             : vector.criticismLevel === 'High'
-                              ? 'border-yellow-500/50 text-yellow-400'
-                              : 'border-blue-500/50 text-blue-400'
+                              ? 'border-amber-500/50 text-amber-400'
+                              : 'border-navy-500/50 text-navy-400'
                         }`}
                       >
                         {vector.criticismLevel}
@@ -164,7 +164,7 @@ export function SportsOverviewSection({ data }: SportsOverviewSectionProps) {
               </CardHeader>
               <CardContent>
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                  <div className="flex items-center gap-3 rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                  <div className="flex items-center gap-3 rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20">
                       <Globe className="h-5 w-5 text-gold" />
                     </div>
@@ -172,10 +172,10 @@ export function SportsOverviewSection({ data }: SportsOverviewSectionProps) {
                       <p className="text-lg font-bold text-gold">
                         {data.executionMetadata.queriesExecuted}
                       </p>
-                      <p className="text-xs text-slate-400">Queries Executed</p>
+                      <p className="text-xs text-platinum-400">Queries Executed</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3 rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                  <div className="flex items-center gap-3 rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald/20">
                       <Target className="h-5 w-5 text-emerald-400" />
                     </div>
@@ -183,10 +183,10 @@ export function SportsOverviewSection({ data }: SportsOverviewSectionProps) {
                       <p className="text-lg font-bold text-emerald-400">
                         {data.summaryStatistics.find((s) => s.metric === 'URLs successfully fetched')?.count || '28+'}
                       </p>
-                      <p className="text-xs text-slate-400">URLs Fetched</p>
+                      <p className="text-xs text-platinum-400">URLs Fetched</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3 rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                  <div className="flex items-center gap-3 rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/40">
                       <TrendingUp className="h-5 w-5 text-navy-400" />
                     </div>
@@ -194,10 +194,10 @@ export function SportsOverviewSection({ data }: SportsOverviewSectionProps) {
                       <p className="text-lg font-bold text-navy-400">
                         {data.summaryStatistics.find((s) => s.metric === 'Data tables')?.count || '35+'}
                       </p>
-                      <p className="text-xs text-slate-400">Data Tables</p>
+                      <p className="text-xs text-platinum-400">Data Tables</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3 rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                  <div className="flex items-center gap-3 rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-platinum/20">
                       <DollarSign className="h-5 w-5 text-platinum-400" />
                     </div>
@@ -205,7 +205,7 @@ export function SportsOverviewSection({ data }: SportsOverviewSectionProps) {
                       <p className="text-lg font-bold text-platinum-400">
                         {data.summaryStatistics.find((s) => s.metric === 'Organizations referenced')?.count || '50+'}
                       </p>
-                      <p className="text-xs text-slate-400">Orgs Referenced</p>
+                      <p className="text-xs text-platinum-400">Orgs Referenced</p>
                     </div>
                   </div>
                 </div>

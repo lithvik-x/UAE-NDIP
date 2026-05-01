@@ -111,9 +111,9 @@ export default function MediaVerificationPage() {
   const getTierBadge = (tier: number) => {
     switch (tier) {
       case 1: return <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">Tier {tier}</Badge>
-      case 2: return <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/50">Tier {tier}</Badge>
-      case 3: return <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/50">Tier {tier}</Badge>
-      default: return <Badge className="bg-slate-500/20 text-slate-400 border-slate-500/50">Tier {tier}</Badge>
+      case 2: return <Badge className="bg-navy-500/20 text-navy-400 border-navy-500/50">Tier {tier}</Badge>
+      case 3: return <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/50">Tier {tier}</Badge>
+      default: return <Badge className="bg-platinum-500/20 text-platinum-400 border-platinum-500/50">Tier {tier}</Badge>
     }
   }
 
@@ -122,7 +122,7 @@ export default function MediaVerificationPage() {
     switch (relevance) {
       case 'Critical': return <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">CRITICAL</Badge>
       case 'HIGH': return <Badge variant="warning" className="bg-orange-500/20 text-orange-400 border-orange-500/50">HIGH</Badge>
-      case 'Medium': return <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/50">MEDIUM</Badge>
+      case 'Medium': return <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/50">MEDIUM</Badge>
       default: return <Badge variant="outline">LOW</Badge>
     }
   }
@@ -131,7 +131,7 @@ export default function MediaVerificationPage() {
   const getAlertBadge = (alert: string) => {
     switch (alert) {
       case 'RED': return <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">RED</Badge>
-      case 'YELLOW': return <Badge variant="warning" className="bg-yellow-500/20 text-yellow-400 border-yellow-500/50">YELLOW</Badge>
+      case 'YELLOW': return <Badge variant="warning" className="bg-amber-500/20 text-amber-400 border-amber-500/50">YELLOW</Badge>
       case 'GREEN': return <Badge variant="success" className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">GREEN</Badge>
       default: return <Badge variant="outline">{alert}</Badge>
     }
@@ -146,7 +146,7 @@ export default function MediaVerificationPage() {
   const getSentimentBadge = (score: number, sentiment: string) => {
     if (score > 0.5) return <Badge variant="success" className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">{sentiment}</Badge>
     if (score < -0.5) return <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">{sentiment}</Badge>
-    return <Badge variant="warning" className="bg-yellow-500/20 text-yellow-400 border-yellow-500/50">{sentiment}</Badge>
+    return <Badge variant="warning" className="bg-amber-500/20 text-amber-400 border-amber-500/50">{sentiment}</Badge>
   }
 
   return (
@@ -160,7 +160,7 @@ export default function MediaVerificationPage() {
         <div>
           <Badge variant="emerald" className="mb-2">V-SECTOR 11-1</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Media About Media</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             UAE press freedom, censorship, and media control intelligence
           </p>
         </div>
@@ -190,18 +190,18 @@ export default function MediaVerificationPage() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-slate-300 italic mb-4">"{mediaAboutMediaData.claim}"</p>
+            <p className="text-platinum-300 italic mb-4">"{mediaAboutMediaData.claim}"</p>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
                 <Badge variant="destructive" className="text-lg px-4 py-1 bg-red-500/20 text-red-400 border-red-500/50">
                   {mediaAboutMediaData.verdict.toUpperCase()}
                 </Badge>
-                <span className="text-slate-400">Accuracy Score: {mediaAboutMediaData.accuracyScore}/100</span>
+                <span className="text-platinum-400">Accuracy Score: {mediaAboutMediaData.accuracyScore}/100</span>
               </div>
               <div className="flex-1" />
               <div className="text-right">
                 <div className="text-2xl font-bold text-red-400">{mediaAboutMediaData.uaeRelevance.score}%</div>
-                <p className="text-xs text-slate-500">UAE Relevance</p>
+                <p className="text-xs text-platinum-500">UAE Relevance</p>
               </div>
             </div>
           </CardContent>
@@ -311,19 +311,19 @@ export default function MediaVerificationPage() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Data Points Extracted</span>
+                        <span className="text-platinum-400">Data Points Extracted</span>
                         <span className="font-bold text-emerald-400">{data.dataPointsExtracted}+</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Structured Tables</span>
+                        <span className="text-platinum-400">Structured Tables</span>
                         <span className="font-bold text-emerald-400">{data.structuredTablesCreated}+</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Sentiment Analyses</span>
+                        <span className="text-platinum-400">Sentiment Analyses</span>
                         <span className="font-bold text-emerald-400">{data.sentimentAnalysesCompleted}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Sources Assessed</span>
+                        <span className="text-platinum-400">Sources Assessed</span>
                         <span className="font-bold text-emerald-400">{data.sourceCredibilityAssessed}</span>
                       </div>
                     </div>
@@ -337,19 +337,19 @@ export default function MediaVerificationPage() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">URLs Analyzed</span>
-                        <span className="font-bold text-slate-200">{data.urlsAnalyzed}</span>
+                        <span className="text-platinum-400">URLs Analyzed</span>
+                        <span className="font-bold text-platinum-200">{data.urlsAnalyzed}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Successfully Fetched</span>
+                        <span className="text-platinum-400">Successfully Fetched</span>
                         <span className="font-bold text-emerald-400">{data.urlsSuccessfullyFetched}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Blocked/Failed</span>
+                        <span className="text-platinum-400">Blocked/Failed</span>
                         <span className="font-bold text-red-400">{data.urlsBlockedFailed}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Success Rate</span>
+                        <span className="text-platinum-400">Success Rate</span>
                         <span className="font-bold text-emerald-400">
                           {Math.round((data.urlsSuccessfullyFetched / data.urlsAnalyzed) * 100)}%
                         </span>
@@ -374,7 +374,7 @@ export default function MediaVerificationPage() {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: idx * 0.02 }}
-                          className="rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                          className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
                           <div className="flex items-center justify-between mb-1">
                             <Badge variant="outline" className="text-xs">{point.category}</Badge>
@@ -382,10 +382,10 @@ export default function MediaVerificationPage() {
                               {point.extractionStatus}
                             </Badge>
                           </div>
-                          <p className="text-sm text-slate-300 font-medium">{point.metric}</p>
+                          <p className="text-sm text-platinum-300 font-medium">{point.metric}</p>
                           <div className="flex items-center justify-between mt-2">
                             <span className="text-lg font-bold text-emerald-400">{point.value}</span>
-                            <span className="text-xs text-slate-500">{point.source}</span>
+                            <span className="text-xs text-platinum-500">{point.source}</span>
                           </div>
                         </motion.div>
                       ))}
@@ -416,48 +416,48 @@ export default function MediaVerificationPage() {
                   className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-4 text-center"
                 >
                   <div className="text-2xl font-bold text-rose-400">{data.alRoeyaIncident.employeesLostJobs}</div>
-                  <p className="text-sm text-slate-400">Jobs Lost</p>
+                  <p className="text-sm text-platinum-400">Jobs Lost</p>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.1 }}
-                  className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center"
+                  className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center"
                 >
-                  <div className="text-lg font-bold text-slate-200">{data.alRoeyaIncident.incidentDate}</div>
-                  <p className="text-sm text-slate-400">Incident Date</p>
+                  <div className="text-lg font-bold text-platinum-200">{data.alRoeyaIncident.incidentDate}</div>
+                  <p className="text-sm text-platinum-400">Incident Date</p>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.2 }}
-                  className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center"
+                  className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center"
                 >
-                  <div className="text-lg font-bold text-slate-200">IMI</div>
-                  <p className="text-sm text-slate-400">Publisher</p>
+                  <div className="text-lg font-bold text-platinum-200">IMI</div>
+                  <p className="text-sm text-platinum-400">Publisher</p>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center"
+                  className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center"
                 >
-                  <div className="text-sm font-bold text-slate-200">Sheikh Mansour</div>
-                  <p className="text-sm text-slate-400">Owner (Manchester City)</p>
+                  <div className="text-sm font-bold text-platinum-200">Sheikh Mansour</div>
+                  <p className="text-sm text-platinum-400">Owner (Manchester City)</p>
                 </motion.div>
               </div>
               <div className="mt-4 space-y-3">
-                <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-3">
-                  <p className="text-xs text-slate-500 mb-1">Trigger Article Topic</p>
-                  <p className="text-sm text-slate-300">{data.alRoeyaIncident.articleTopic}</p>
+                <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
+                  <p className="text-xs text-platinum-500 mb-1">Trigger Article Topic</p>
+                  <p className="text-sm text-platinum-300">{data.alRoeyaIncident.articleTopic}</p>
                 </div>
                 <div className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-3">
                   <p className="text-xs text-rose-400 mb-1">Official Reason Given</p>
-                  <p className="text-sm text-slate-300">{data.alRoeyaIncident.officialReason}</p>
+                  <p className="text-sm text-platinum-300">{data.alRoeyaIncident.officialReason}</p>
                 </div>
                 <div className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-3">
                   <p className="text-xs text-rose-400 mb-1">Alleged Actual Reason</p>
-                  <p className="text-sm text-slate-300">{data.alRoeyaIncident.actualReasonAlleged}</p>
+                  <p className="text-sm text-platinum-300">{data.alRoeyaIncident.actualReasonAlleged}</p>
                 </div>
               </div>
             </CardContent>
@@ -478,16 +478,16 @@ export default function MediaVerificationPage() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="flex items-start justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+                      className="flex items-start justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                     >
                       <div className="flex items-start gap-3">
                         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald/20 text-emerald">
                           <Newspaper className="h-5 w-5" />
                         </div>
                         <div>
-                          <p className="font-semibold text-slate-200">{outlet.outlet}</p>
-                          <p className="text-sm text-slate-400">{outlet.owner}</p>
-                          <p className="text-sm text-slate-500 mt-1">{outlet.editorialAlignment}</p>
+                          <p className="font-semibold text-platinum-200">{outlet.outlet}</p>
+                          <p className="text-sm text-platinum-400">{outlet.owner}</p>
+                          <p className="text-sm text-platinum-500 mt-1">{outlet.editorialAlignment}</p>
                         </div>
                       </div>
                       <div className="flex flex-col items-end gap-2">
@@ -519,13 +519,13 @@ export default function MediaVerificationPage() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.03 }}
-                    className="rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                    className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <Badge variant="outline" className="text-xs">{body.level}</Badge>
                     </div>
-                    <p className="font-semibold text-slate-200 text-sm">{body.body}</p>
-                    <p className="text-xs text-slate-400 mt-1">{body.function}</p>
+                    <p className="font-semibold text-platinum-200 text-sm">{body.body}</p>
+                    <p className="text-xs text-platinum-400 mt-1">{body.function}</p>
                   </motion.div>
                 ))}
               </div>
@@ -550,10 +550,10 @@ export default function MediaVerificationPage() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="flex items-start gap-3 rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                      className="flex items-start gap-3 rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                     >
-                      <AlertTriangle className="h-5 w-5 text-yellow-400 flex-shrink-0 mt-0.5" />
-                      <p className="text-sm text-slate-300">{driver}</p>
+                      <AlertTriangle className="h-5 w-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                      <p className="text-sm text-platinum-300">{driver}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -576,15 +576,15 @@ export default function MediaVerificationPage() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="flex items-start justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                      className="flex items-start justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                     >
                       <div className="flex items-start gap-3">
                         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-rose/20 text-rose">
                           <AlertOctagon className="h-5 w-5" />
                         </div>
                         <div>
-                          <p className="font-semibold text-slate-200">{restriction.restrictionType}</p>
-                          <p className="text-sm text-slate-400">{restriction.description}</p>
+                          <p className="font-semibold text-platinum-200">{restriction.restrictionType}</p>
+                          <p className="text-sm text-platinum-400">{restriction.description}</p>
                         </div>
                       </div>
                       <Badge variant="outline" className="text-xs">{restriction.frequency}</Badge>
@@ -610,14 +610,14 @@ export default function MediaVerificationPage() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                      className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <Badge variant="outline" className="text-xs">{law.article}</Badge>
                         <Badge variant="destructive" className="text-xs bg-red-500/20 text-red-400 border-red-500/50">{law.penalty}</Badge>
                       </div>
-                      <p className="text-sm text-slate-300">{law.prohibition}</p>
-                      <p className="text-xs text-slate-500 mt-1">{law.law}</p>
+                      <p className="text-sm text-platinum-300">{law.prohibition}</p>
+                      <p className="text-xs text-platinum-500 mt-1">{law.law}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -642,22 +642,22 @@ export default function MediaVerificationPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.1 }}
-                    className="rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+                    className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                   >
                     <div className="flex items-center gap-2 mb-3">
                       <Eye className="h-5 w-5 text-rose-400" />
-                      <h4 className="font-semibold text-slate-200">{sys.system}</h4>
+                      <h4 className="font-semibold text-platinum-200">{sys.system}</h4>
                     </div>
                     <div className="space-y-2 text-sm">
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Location</span>
-                        <span className="text-slate-200">{sys.location}</span>
+                        <span className="text-platinum-400">Location</span>
+                        <span className="text-platinum-200">{sys.location}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Scale</span>
+                        <span className="text-platinum-400">Scale</span>
                         <span className="text-emerald-400 font-medium">{sys.scale}</span>
                       </div>
-                      <p className="text-xs text-slate-500 mt-2">{sys.capability}</p>
+                      <p className="text-xs text-platinum-500 mt-2">{sys.capability}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -680,15 +680,15 @@ export default function MediaVerificationPage() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.1 }}
-                      className="flex items-start justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                      className="flex items-start justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                     >
                       <div className="flex items-start gap-3">
                         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-rose/20 text-rose">
                           <Bug className="h-5 w-5" />
                         </div>
                         <div>
-                          <p className="font-semibold text-slate-200">{program.program}</p>
-                          <p className="text-sm text-slate-400">Operator: {program.operator}</p>
+                          <p className="font-semibold text-platinum-200">{program.program}</p>
+                          <p className="text-sm text-platinum-400">Operator: {program.operator}</p>
                         </div>
                       </div>
                       <Badge variant="outline" className="text-xs">Target: {program.target}</Badge>
@@ -740,10 +740,10 @@ export default function MediaVerificationPage() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.03 }}
-                    className="rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                    className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                   >
-                    <div className="text-xs text-slate-500 mb-1">Standard {standard.standardNumber}</div>
-                    <p className="text-sm text-slate-300">{standard.requirement}</p>
+                    <div className="text-xs text-platinum-500 mb-1">Standard {standard.standardNumber}</div>
+                    <p className="text-sm text-platinum-300">{standard.requirement}</p>
                     <Badge variant="outline" className="text-xs mt-2">{standard.scope}</Badge>
                   </motion.div>
                 ))}
@@ -768,8 +768,8 @@ export default function MediaVerificationPage() {
                     className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-4 text-center"
                   >
                     <div className="text-2xl font-bold text-rose-400">{penalty.fine}</div>
-                    <p className="text-sm text-slate-400 mt-1">{penalty.offense}</p>
-                    <p className="text-xs text-slate-500 mt-2">{penalty.additionalPenalties}</p>
+                    <p className="text-sm text-platinum-400 mt-1">{penalty.offense}</p>
+                    <p className="text-xs text-platinum-500 mt-2">{penalty.additionalPenalties}</p>
                   </motion.div>
                 ))}
               </div>
@@ -793,12 +793,12 @@ export default function MediaVerificationPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.08 }}
-                    className="rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+                    className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                   >
                     <div className="text-2xl font-bold text-emerald-400">{metric.trustLevel}</div>
-                    <p className="text-sm text-slate-300 mt-1">{metric.source}</p>
-                    <p className="text-xs text-slate-500 mt-1">Trend: {metric.trend}</p>
-                    <p className="text-xs text-slate-600 mt-1">Sample: {metric.sample}</p>
+                    <p className="text-sm text-platinum-300 mt-1">{metric.source}</p>
+                    <p className="text-xs text-platinum-500 mt-1">Trend: {metric.trend}</p>
+                    <p className="text-xs text-platinum-600 mt-1">Sample: {metric.sample}</p>
                   </motion.div>
                 ))}
               </div>
@@ -820,11 +820,11 @@ export default function MediaVerificationPage() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                      className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                     >
                       <div className="flex-1">
-                        <p className="text-sm text-slate-300">{bias.metric}</p>
-                        <p className="text-xs text-slate-500">{bias.sample}</p>
+                        <p className="text-sm text-platinum-300">{bias.metric}</p>
+                        <p className="text-xs text-platinum-500">{bias.sample}</p>
                       </div>
                       <div className="flex items-center gap-3">
                         <span className="text-lg font-bold text-emerald-400">{bias.value}</span>
@@ -847,27 +847,27 @@ export default function MediaVerificationPage() {
               <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-6">
                 <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3 text-center">
                   <div className="text-xl font-bold text-emerald-400">{data.crisisCoverageMetrics.potentialImpressions}</div>
-                  <p className="text-xs text-slate-400">Impressions</p>
+                  <p className="text-xs text-platinum-400">Impressions</p>
                 </div>
                 <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3 text-center">
                   <div className="text-xl font-bold text-emerald-400">{data.crisisCoverageMetrics.digitalReach}</div>
-                  <p className="text-xs text-slate-400">Digital Reach</p>
+                  <p className="text-xs text-platinum-400">Digital Reach</p>
                 </div>
                 <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3 text-center">
                   <div className="text-xl font-bold text-emerald-400">{data.crisisCoverageMetrics.websiteVisits}</div>
-                  <p className="text-xs text-slate-400">Website Visits</p>
+                  <p className="text-xs text-platinum-400">Website Visits</p>
                 </div>
                 <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3 text-center">
                   <div className="text-xl font-bold text-emerald-400">{data.crisisCoverageMetrics.engagements}</div>
-                  <p className="text-xs text-slate-400">Engagements</p>
+                  <p className="text-xs text-platinum-400">Engagements</p>
                 </div>
                 <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3 text-center">
                   <div className="text-xl font-bold text-emerald-400">{data.crisisCoverageMetrics.positiveMediaSentiment}</div>
-                  <p className="text-xs text-slate-400">Positive Media</p>
+                  <p className="text-xs text-platinum-400">Positive Media</p>
                 </div>
                 <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3 text-center">
                   <div className="text-xl font-bold text-emerald-400">{data.crisisCoverageMetrics.positivePublicSentiment}</div>
-                  <p className="text-xs text-slate-400">Positive Public</p>
+                  <p className="text-xs text-platinum-400">Positive Public</p>
                 </div>
               </div>
             </CardContent>
@@ -892,7 +892,7 @@ export default function MediaVerificationPage() {
                     transition={{ delay: idx * 0.03 }}
                     className="flex items-center justify-between rounded-lg border border-red-500/30 bg-red-500/10 p-3"
                   >
-                    <span className="text-sm text-slate-300">{service.service}</span>
+                    <span className="text-sm text-platinum-300">{service.service}</span>
                     <Ban className="h-4 w-4 text-red-400" />
                   </motion.div>
                 ))}
@@ -918,11 +918,11 @@ export default function MediaVerificationPage() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.03 }}
-                      className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                      className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                     >
                       <div className="flex-1">
-                        <p className="font-medium text-slate-200 text-sm">{source.source}</p>
-                        <p className="text-xs text-slate-500">Reliability: {source.reliability} | Type: {source.dataType}</p>
+                        <p className="font-medium text-platinum-200 text-sm">{source.source}</p>
+                        <p className="text-xs text-platinum-500">Reliability: {source.reliability} | Type: {source.dataType}</p>
                       </div>
                       {getTierBadge(source.tier)}
                     </motion.div>
@@ -947,13 +947,13 @@ export default function MediaVerificationPage() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                      className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-semibold text-slate-200">{item.topic}</h4>
+                        <h4 className="font-semibold text-platinum-200">{item.topic}</h4>
                         {getSentimentBadge(item.score, item.sentiment)}
                       </div>
-                      <p className="text-xs text-slate-400">Source: {item.source} | Score: {item.score > 0 ? '+' : ''}{item.score}</p>
+                      <p className="text-xs text-platinum-400">Source: {item.source} | Score: {item.score > 0 ? '+' : ''}{item.score}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -975,7 +975,7 @@ export default function MediaVerificationPage() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.1 }}
-                    className="rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+                    className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                   >
                     <div className="flex items-center gap-2 mb-3">
                       <Badge
@@ -987,7 +987,7 @@ export default function MediaVerificationPage() {
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {tier.items.map((item: any, i: any) => (
-                        <Badge key={i} variant="outline" className="text-xs bg-slate-700/50">
+                        <Badge key={i} variant="outline" className="text-xs bg-platinum-700/50">
                           {item}
                         </Badge>
                       ))}
@@ -1013,14 +1013,14 @@ export default function MediaVerificationPage() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.03 }}
-                      className="rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                      className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <p className="font-medium text-slate-200 text-sm">{url.title}</p>
+                        <p className="font-medium text-platinum-200 text-sm">{url.title}</p>
                         <Badge variant="outline" className="text-xs">{url.credibility}</Badge>
                       </div>
-                      <p className="text-xs text-slate-400 mb-1">{url.content}</p>
-                      <p className="text-xs text-slate-600 truncate">{url.url}</p>
+                      <p className="text-xs text-platinum-400 mb-1">{url.content}</p>
+                      <p className="text-xs text-platinum-600 truncate">{url.url}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -1041,22 +1041,22 @@ export default function MediaVerificationPage() {
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                   <div className="text-2xl font-bold text-emerald-400">{data.urlsAnalyzed}</div>
-                  <p className="text-sm text-slate-400">URLs Analyzed</p>
+                  <p className="text-sm text-platinum-400">URLs Analyzed</p>
                 </div>
                 <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                   <div className="text-2xl font-bold text-emerald-400">{data.urlsSuccessfullyFetched}</div>
-                  <p className="text-sm text-slate-400">Successfully Fetched</p>
+                  <p className="text-sm text-platinum-400">Successfully Fetched</p>
                 </div>
                 <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                   <div className="text-2xl font-bold text-emerald-400">{data.dataPointsExtracted}</div>
-                  <p className="text-sm text-slate-400">Data Points</p>
+                  <p className="text-sm text-platinum-400">Data Points</p>
                 </div>
                 <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                   <div className="text-2xl font-bold text-emerald-400">{data.structuredTablesCreated}</div>
-                  <p className="text-sm text-slate-400">Structured Tables</p>
+                  <p className="text-sm text-platinum-400">Structured Tables</p>
                 </div>
               </div>
-              <p className="text-xs text-slate-500 mt-4 text-center">
+              <p className="text-xs text-platinum-500 mt-4 text-center">
                 Enrichment Date: {data.enrichmentDate}
               </p>
             </CardContent>
@@ -1072,42 +1072,42 @@ export default function MediaVerificationPage() {
               <div className="space-y-4">
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-slate-400">Statistics</span>
+                    <span className="text-platinum-400">Statistics</span>
                     <span className="font-medium text-emerald-400">90%</span>
                   </div>
                   <Progress value={90} className="h-3" />
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-slate-400">Entity Names</span>
+                    <span className="text-platinum-400">Entity Names</span>
                     <span className="font-medium text-emerald-400">87%</span>
                   </div>
                   <Progress value={87} className="h-3" />
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-slate-400">Quotes</span>
+                    <span className="text-platinum-400">Quotes</span>
                     <span className="font-medium text-emerald-400">83%</span>
                   </div>
                   <Progress value={83} className="h-3" />
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-slate-400">Legal Articles</span>
+                    <span className="text-platinum-400">Legal Articles</span>
                     <span className="font-medium text-emerald-400">80%</span>
                   </div>
                   <Progress value={80} className="h-3" />
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-slate-400">Regulatory Bodies</span>
+                    <span className="text-platinum-400">Regulatory Bodies</span>
                     <span className="font-medium text-emerald-400">100%</span>
                   </div>
                   <Progress value={100} className="h-3" />
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-slate-400">Media Outlets</span>
+                    <span className="text-platinum-400">Media Outlets</span>
                     <span className="font-medium text-emerald-400">80%</span>
                   </div>
                   <Progress value={80} className="h-3" />

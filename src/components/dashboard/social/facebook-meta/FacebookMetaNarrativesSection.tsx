@@ -94,7 +94,7 @@ export function FacebookMetaNarrativesSection() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-sm text-platinum-300 mb-3">{narrative.narrative}</p>
-                    <div className="flex items-center justify-between text-xs text-slate-500">
+                    <div className="flex items-center justify-between text-xs text-platinum-500">
                       <span>Prevalence: <strong className="text-platinum-300">{narrative.prevalence}%</strong></span>
                       <span>Source: {narrative.source}</span>
                     </div>

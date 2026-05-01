@@ -42,7 +42,7 @@ export function FacebookMetaRegulationsSection() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="p-4 rounded-lg bg-slate-800/50 border border-slate-700/50"
+                    className="p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50"
                   >
                     <h4 className="text-sm font-semibold text-platinum-200 mb-1">{penalty.violation}</h4>
                     <div className="flex items-center gap-2">
@@ -79,7 +79,7 @@ export function FacebookMetaRegulationsSection() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.03 }}
-                    className="flex items-start gap-2 p-3 rounded-lg bg-slate-800/30"
+                    className="flex items-start gap-2 p-3 rounded-lg bg-platinum-800/30"
                   >
                     <div className="h-2 w-2 rounded-full bg-rose-400 mt-2 flex-shrink-0" />
                     <span className="text-sm text-platinum-300">{tactic.tactic}</span>
@@ -100,9 +100,9 @@ export function FacebookMetaRegulationsSection() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <div className="p-4 rounded-lg bg-slate-800/50">
+                <div className="p-4 rounded-lg bg-platinum-800/50">
                   <h4 className="text-sm font-semibold text-platinum-200 mb-2">UAE Price Monitoring</h4>
-                  <p className="text-xs text-slate-400 mb-3">{priceTrackingPlatform.purpose}</p>
+                  <p className="text-xs text-platinum-400 mb-3">{priceTrackingPlatform.purpose}</p>
                   <div className="grid grid-cols-2 gap-2">
                     <div className="text-xs"><span className="text-platinum-400">Items Tracked:</span> <span className="text-platinum-200">{priceTrackingPlatform.itemsTracked}</span></div>
                     <div className="text-xs"><span className="text-platinum-400">Retail Outlets:</span> <span className="text-platinum-200">{priceTrackingPlatform.retailOutlets}</span></div>

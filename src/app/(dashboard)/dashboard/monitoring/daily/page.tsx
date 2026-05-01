@@ -201,7 +201,7 @@ export default function DailyMonitoringPage() {
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">
             Daily Monitoring
           </h1>
-          <p className="mt-2 text-slate-400 font-rajdhani">
+          <p className="mt-2 text-platinum-400 font-rajdhani">
             Comprehensive UAE media intelligence - 4-hour monitoring cycle with tiered source classification
           </p>
         </div>
@@ -268,7 +268,7 @@ export default function DailyMonitoringPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.1 }}
                     whileHover={{ scale: 1.02 }}
-                    className="rounded-lg border border-slate-700/50 bg-slate-800/30 p-4 hover:bg-slate-800/50 transition-colors cursor-pointer"
+                    className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-4 hover:bg-platinum-800/50 transition-colors cursor-pointer"
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <div className={`text-sm font-bold px-2 py-1 rounded ${
@@ -279,10 +279,10 @@ export default function DailyMonitoringPage() {
                         {phase.duration}
                       </div>
                     </div>
-                    <h4 className="font-semibold text-slate-200 mb-2">{phase.name}</h4>
+                    <h4 className="font-semibold text-platinum-200 mb-2">{phase.name}</h4>
                     <div className="space-y-1">
                       {phase.activities.map((activity, i) => (
-                        <p key={i} className="text-xs text-slate-400 flex items-center gap-1">
+                        <p key={i} className="text-xs text-platinum-400 flex items-center gap-1">
                           <CheckCircle className="h-3 w-3 text-emerald" />
                           {activity}
                         </p>
@@ -313,15 +313,15 @@ export default function DailyMonitoringPage() {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: idx * 0.1 }}
-                        className="p-3 rounded-lg bg-slate-800/50 border border-slate-700/50 text-center"
+                        className="p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50 text-center"
                       >
                         <div className="text-2xl font-bold text-gold">{stat.value}</div>
-                        <div className="text-xs text-slate-400">{stat.label}</div>
+                        <div className="text-xs text-platinum-400">{stat.label}</div>
                       </motion.div>
                     ))}
                   </div>
                   <div className="p-3 rounded-lg bg-gold/10 border border-gold/30">
-                    <p className="text-sm text-slate-300">{wamData.officialName}</p>
+                    <p className="text-sm text-platinum-300">{wamData.officialName}</p>
                   </div>
                 </div>
               </CardContent>
@@ -344,13 +344,13 @@ export default function DailyMonitoringPage() {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className="flex items-center justify-between p-2 rounded-lg bg-slate-800/30 hover:bg-slate-800/50 transition-colors"
+                        className="flex items-center justify-between p-2 rounded-lg bg-platinum-800/30 hover:bg-platinum-800/50 transition-colors"
                       >
                         <div className="flex items-center gap-3">
                           <Crown className="h-4 w-4 text-gold" />
-                          <span className="text-xs text-slate-400">{leader.position}</span>
+                          <span className="text-xs text-platinum-400">{leader.position}</span>
                         </div>
-                        <span className="text-xs font-medium text-slate-200">{leader.figure.split(' ').slice(0, 4).join(' ')}</span>
+                        <span className="text-xs font-medium text-platinum-200">{leader.figure.split(' ').slice(0, 4).join(' ')}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -386,10 +386,10 @@ export default function DailyMonitoringPage() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.05 }}
                     whileHover={{ scale: 1.05 }}
-                    className="rounded-lg border border-gold/30 bg-slate-800/30 p-3 text-center hover:bg-slate-800/50 transition-colors cursor-pointer"
+                    className="rounded-lg border border-gold/30 bg-platinum-800/30 p-3 text-center hover:bg-platinum-800/50 transition-colors cursor-pointer"
                   >
                     <div className="text-lg font-bold text-gold">{stat.value}</div>
-                    <div className="text-xs text-slate-400">{stat.label}</div>
+                    <div className="text-xs text-platinum-400">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -429,8 +429,8 @@ export default function DailyMonitoringPage() {
                         tier.tier === 'YELLOW' ? 'text-gold' : 'text-emerald'
                       }`}>{tier.tier}</span>
                     </div>
-                    <div className="text-sm font-medium text-slate-200 mb-1">{tier.responseTime}</div>
-                    <p className="text-xs text-slate-400">{tier.criteria}</p>
+                    <div className="text-sm font-medium text-platinum-200 mb-1">{tier.responseTime}</div>
+                    <p className="text-xs text-platinum-400">{tier.criteria}</p>
                   </motion.div>
                 ))}
               </div>
@@ -455,20 +455,20 @@ export default function DailyMonitoringPage() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.08 }}
-                      className="flex items-center gap-4 p-3 rounded-lg border border-slate-700/50 bg-slate-800/30"
+                      className="flex items-center gap-4 p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
                       <div className={`px-3 py-1 rounded-full text-sm font-bold ${
                         tier.tier === 'Tier 0' ? 'bg-gold/20 text-gold' :
                         tier.tier === 'Tier 1' ? 'bg-emerald/20 text-emerald' :
                         tier.tier === 'Tier 2' ? 'bg-navy/20 text-navy' :
                         tier.tier === 'Tier 3' ? 'bg-platinum/20 text-platinum' :
-                        'bg-slate-600/20 text-slate-400'
+                        'bg-platinum-600/20 text-platinum-400'
                       }`}>
                         {tier.tier}
                       </div>
                       <div className="flex-1">
-                        <div className="text-sm font-medium text-slate-200">{tier.classification}</div>
-                        <div className="text-xs text-slate-400">{tier.sources}</div>
+                        <div className="text-sm font-medium text-platinum-200">{tier.classification}</div>
+                        <div className="text-xs text-platinum-400">{tier.sources}</div>
                       </div>
                       <div className={`text-xs px-2 py-1 rounded ${
                         tier.reliability === 'Very High' ? 'bg-emerald/20 text-emerald' :
@@ -499,7 +499,7 @@ export default function DailyMonitoringPage() {
             <CardContent className="space-y-6">
               {/* TIER 0 Sources */}
               <div>
-                <h4 className="text-sm font-semibold text-slate-300 mb-3 flex items-center gap-2">
+                <h4 className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
                   <Shield className="h-4 w-4 text-gold" />
                   TIER 0 Sources (Government/Official)
                 </h4>
@@ -507,22 +507,22 @@ export default function DailyMonitoringPage() {
                   <div className="p-4 rounded-lg border border-gold/30 bg-gold/5">
                     <div className="flex items-center gap-2 mb-2">
                       <Newspaper className="h-4 w-4 text-gold" />
-                      <span className="font-medium text-slate-200">WAM (Emirates News Agency)</span>
+                      <span className="font-medium text-platinum-200">WAM (Emirates News Agency)</span>
                       <Badge variant="gold" className="text-xs">Tier 0</Badge>
                     </div>
-                    <div className="text-xs text-slate-400 space-y-1">
+                    <div className="text-xs text-platinum-400 space-y-1">
                       <p>Operating since 1976 (50+ years)</p>
                       <p>19 languages, 100+ countries worldwide</p>
                       <p>Official state news service of UAE</p>
                     </div>
                   </div>
-                  <div className="p-4 rounded-lg border border-slate-700/50 bg-slate-800/30">
+                  <div className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
                     <div className="flex items-center gap-2 mb-2">
                       <Building2 className="h-4 w-4 text-emerald" />
-                      <span className="font-medium text-slate-200">UAE Government Media Ecosystem</span>
+                      <span className="font-medium text-platinum-200">UAE Government Media Ecosystem</span>
                     </div>
                     <ScrollArea className="h-[60px]">
-                      <div className="text-xs text-slate-400 space-y-1">
+                      <div className="text-xs text-platinum-400 space-y-1">
                         {uaeGovernmentMediaEcosystem.entities.slice(0, 5).map((e, i) => (
                           <p key={i}>• {e.entity}</p>
                         ))}
@@ -534,7 +534,7 @@ export default function DailyMonitoringPage() {
 
               {/* Media Free Zones */}
               <div>
-                <h4 className="text-sm font-semibold text-slate-300 mb-3 flex items-center gap-2">
+                <h4 className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
                   <Building2 className="h-4 w-4 text-navy" />
                   UAE Media Free Zones (100% Foreign Ownership)
                 </h4>
@@ -545,10 +545,10 @@ export default function DailyMonitoringPage() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: idx * 0.03 }}
-                      className="p-2 rounded-lg border border-slate-700/50 bg-slate-800/30 text-center"
+                      className="p-2 rounded-lg border border-platinum-700/50 bg-platinum-800/30 text-center"
                     >
-                      <div className="text-sm font-medium text-slate-200">{zone.freeZone}</div>
-                      <div className="text-xs text-slate-500">{zone.location}</div>
+                      <div className="text-sm font-medium text-platinum-200">{zone.freeZone}</div>
+                      <div className="text-xs text-platinum-500">{zone.location}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -556,15 +556,15 @@ export default function DailyMonitoringPage() {
 
               {/* Royal Mentions */}
               <div>
-                <h4 className="text-sm font-semibold text-slate-300 mb-3 flex items-center gap-2">
+                <h4 className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
                   <Crown className="h-4 w-4 text-emerald" />
                   Royal/Leadership Mention Queries
                 </h4>
                 <div className="grid gap-2 sm:grid-cols-3 lg:grid-cols-5">
                   {md12LeadershipFigures.slice(0, 5).map((leader, idx) => (
-                    <div key={idx} className="p-2 rounded-lg border border-slate-700/50 bg-slate-800/30">
-                      <div className="text-xs text-slate-400">{leader.position}</div>
-                      <div className="text-xs font-medium text-slate-200 truncate">{leader.figure.split(' ').slice(-2).join(' ')}</div>
+                    <div key={idx} className="p-2 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
+                      <div className="text-xs text-platinum-400">{leader.position}</div>
+                      <div className="text-xs font-medium text-platinum-200 truncate">{leader.figure.split(' ').slice(-2).join(' ')}</div>
                     </div>
                   ))}
                 </div>
@@ -572,7 +572,7 @@ export default function DailyMonitoringPage() {
 
               {/* Sentiment Anomaly Detection */}
               <div>
-                <h4 className="text-sm font-semibold text-slate-300 mb-3 flex items-center gap-2">
+                <h4 className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
                   <Activity className="h-4 w-4 text-rose" />
                   Sentiment Anomaly Detection Methodologies
                 </h4>
@@ -583,10 +583,10 @@ export default function DailyMonitoringPage() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="p-2 rounded-lg border border-slate-700/50 bg-slate-800/30"
+                      className="p-2 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
-                      <div className="text-xs font-medium text-slate-200">{method.methodology}</div>
-                      <div className="text-xs text-slate-500 truncate">{method.description.split(' ').slice(0, 4).join(' ')}...</div>
+                      <div className="text-xs font-medium text-platinum-200">{method.methodology}</div>
+                      <div className="text-xs text-platinum-500 truncate">{method.description.split(' ').slice(0, 4).join(' ')}...</div>
                     </motion.div>
                   ))}
                 </div>
@@ -612,24 +612,24 @@ export default function DailyMonitoringPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.08 }}
                     whileHover={{ scale: 1.02 }}
-                    className="rounded-lg border border-slate-700/50 bg-slate-800/30 p-4 hover:bg-slate-800/50 transition-colors cursor-pointer"
+                    className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-4 hover:bg-platinum-800/50 transition-colors cursor-pointer"
                   >
                     <div className="flex items-center gap-2 mb-3">
                       <div className="h-8 w-8 rounded-full bg-rose/20 flex items-center justify-center">
                         <Radio className="h-4 w-4 text-rose" />
                       </div>
-                      <h4 className="font-semibold text-slate-200">{platform.platform}</h4>
+                      <h4 className="font-semibold text-platinum-200">{platform.platform}</h4>
                     </div>
                     <div className="space-y-1">
                       {platform.capabilities?.slice(0, 3).map((cap, i) => (
-                        <p key={i} className="text-xs text-slate-400 flex items-center gap-1">
+                        <p key={i} className="text-xs text-platinum-400 flex items-center gap-1">
                           <CheckCircle className="h-3 w-3 text-emerald" />
                           {cap}
                         </p>
                       ))}
                     </div>
-                    <div className="mt-3 pt-3 border-t border-slate-700/50">
-                      <span className="text-xs text-slate-500">UAE Use Case: </span>
+                    <div className="mt-3 pt-3 border-t border-platinum-700/50">
+                      <span className="text-xs text-platinum-500">UAE Use Case: </span>
                       <span className="text-xs text-emerald">{platform.uaeUseCase}</span>
                     </div>
                   </motion.div>
@@ -650,7 +650,7 @@ export default function DailyMonitoringPage() {
             <CardContent className="space-y-6">
               {/* News APIs */}
               <div>
-                <h4 className="text-sm font-semibold text-slate-300 mb-3 flex items-center gap-2">
+                <h4 className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
                   <Globe className="h-4 w-4 text-navy" />
                   News APIs
                 </h4>
@@ -661,10 +661,10 @@ export default function DailyMonitoringPage() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="p-3 rounded-lg border border-slate-700/50 bg-slate-800/30"
+                      className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
-                      <div className="text-sm font-medium text-slate-200 mb-1">{api.api}</div>
-                      <div className="text-xs text-slate-400">Sources: {api.sources}</div>
+                      <div className="text-sm font-medium text-platinum-200 mb-1">{api.api}</div>
+                      <div className="text-xs text-platinum-400">Sources: {api.sources}</div>
                       <div className="text-xs text-emerald mt-1">Free: {api.freeTier}</div>
                     </motion.div>
                   ))}
@@ -673,15 +673,15 @@ export default function DailyMonitoringPage() {
 
               {/* Official Media Sources */}
               <div>
-                <h4 className="text-sm font-semibold text-slate-300 mb-3 flex items-center gap-2">
+                <h4 className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
                   <Newspaper className="h-4 w-4 text-gold" />
                   Key Official UAE Media Sources
                 </h4>
                 <div className="grid gap-2 sm:grid-cols-4">
                   {officialMediaSources.map((source, idx) => (
-                    <div key={idx} className="p-2 rounded-lg border border-slate-700/50 bg-slate-800/30">
-                      <div className="text-sm font-medium text-slate-200">{source.outlet}</div>
-                      <div className="text-xs text-slate-500">{source.language}</div>
+                    <div key={idx} className="p-2 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
+                      <div className="text-sm font-medium text-platinum-200">{source.outlet}</div>
+                      <div className="text-xs text-platinum-500">{source.language}</div>
                     </div>
                   ))}
                 </div>
@@ -689,7 +689,7 @@ export default function DailyMonitoringPage() {
 
               {/* Language Tiers */}
               <div>
-                <h4 className="text-sm font-semibold text-slate-300 mb-3 flex items-center gap-2">
+                <h4 className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
                   <Globe2 className="h-4 w-4 text-emerald" />
                   Language Tiers
                 </h4>
@@ -699,14 +699,14 @@ export default function DailyMonitoringPage() {
                     { tier: 'L2', language: 'Arabic', priority: 'Regional primary' },
                     { tier: 'L3', language: 'Urdu, Hindi, Farsi, Chinese', priority: 'Secondary' },
                   ].map((lt, idx) => (
-                    <div key={idx} className="p-3 rounded-lg border border-slate-700/50 bg-slate-800/30 flex items-center gap-3">
+                    <div key={idx} className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30 flex items-center gap-3">
                       <div className={`px-2 py-1 rounded text-sm font-bold ${
                         idx === 0 ? 'bg-gold/20 text-gold' :
                         idx === 1 ? 'bg-emerald/20 text-emerald' : 'bg-navy/20 text-navy'
                       }`}>{lt.tier}</div>
                       <div>
-                        <div className="text-sm font-medium text-slate-200">{lt.language}</div>
-                        <div className="text-xs text-slate-400">{lt.priority}</div>
+                        <div className="text-sm font-medium text-platinum-200">{lt.language}</div>
+                        <div className="text-xs text-platinum-400">{lt.priority}</div>
                       </div>
                     </div>
                   ))}
@@ -736,12 +736,12 @@ export default function DailyMonitoringPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.1 }}
-                    className="p-4 rounded-lg border border-slate-700/50 bg-slate-800/30"
+                    className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
-                    <h4 className="font-semibold text-slate-200 mb-3">{section.title}</h4>
+                    <h4 className="font-semibold text-platinum-200 mb-3">{section.title}</h4>
                     <div className="space-y-2">
                       {section.items.map((item, i) => (
-                        <p key={i} className="text-xs text-slate-400 flex items-center gap-2">
+                        <p key={i} className="text-xs text-platinum-400 flex items-center gap-2">
                           <CheckCircle className="h-3 w-3 text-emerald" />
                           {item}
                         </p>
@@ -764,7 +764,7 @@ export default function DailyMonitoringPage() {
               className="p-4 rounded-lg border border-emerald/50 bg-emerald/10 text-center"
             >
               <div className="text-2xl font-bold text-emerald">{sourceStatusCounts.full}</div>
-              <div className="text-sm text-slate-400">Full Fetch</div>
+              <div className="text-sm text-platinum-400">Full Fetch</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -773,7 +773,7 @@ export default function DailyMonitoringPage() {
               className="p-4 rounded-lg border border-gold/50 bg-gold/10 text-center"
             >
               <div className="text-2xl font-bold text-gold">{sourceStatusCounts.partial}</div>
-              <div className="text-sm text-slate-400">Partial</div>
+              <div className="text-sm text-platinum-400">Partial</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -782,16 +782,16 @@ export default function DailyMonitoringPage() {
               className="p-4 rounded-lg border border-rose/50 bg-rose/10 text-center"
             >
               <div className="text-2xl font-bold text-rose">{sourceStatusCounts.blocked}</div>
-              <div className="text-sm text-slate-400">Blocked</div>
+              <div className="text-sm text-platinum-400">Blocked</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.15 }}
-              className="p-4 rounded-lg border border-slate-500/50 bg-slate-500/10 text-center"
+              className="p-4 rounded-lg border border-platinum-500/50 bg-platinum-500/10 text-center"
             >
-              <div className="text-2xl font-bold text-slate-400">{sourceStatusCounts.notFetched}</div>
-              <div className="text-sm text-slate-400">Not Fetched</div>
+              <div className="text-2xl font-bold text-platinum-400">{sourceStatusCounts.notFetched}</div>
+              <div className="text-sm text-platinum-400">Not Fetched</div>
             </motion.div>
           </div>
 
@@ -813,10 +813,10 @@ export default function DailyMonitoringPage() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.03 }}
-                      className="flex items-center justify-between p-3 rounded-lg border border-slate-700/50 bg-slate-800/30"
+                      className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
                       <div className="flex-1 min-w-0">
-                        <p className="text-xs text-slate-300 truncate">{source.url}</p>
+                        <p className="text-xs text-platinum-300 truncate">{source.url}</p>
                       </div>
                       <div className="flex items-center gap-3 ml-4">
                         <Badge
@@ -825,7 +825,7 @@ export default function DailyMonitoringPage() {
                             source.status === 'Full' ? 'border-emerald/50 text-emerald' :
                             source.status.includes('Partial') ? 'border-gold/50 text-gold' :
                             source.status === 'Blocked' ? 'border-rose/50 text-rose' :
-                            'border-slate-500/50 text-slate-400'
+                            'border-platinum-500/50 text-platinum-400'
                           }`}
                         >
                           {source.status}
@@ -860,11 +860,11 @@ export default function DailyMonitoringPage() {
               <div className="grid gap-6 lg:grid-cols-2">
                 {/* Government Entities */}
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-300 mb-3">Government Entities</h4>
+                  <h4 className="text-sm font-semibold text-platinum-300 mb-3">Government Entities</h4>
                   <div className="space-y-2">
                     {md12GovernmentEntities.slice(0, 5).map((entity, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-2 rounded-lg bg-slate-800/30 border border-slate-700/50">
-                        <span className="text-xs text-slate-200">{entity.entity}</span>
+                      <div key={idx} className="flex items-center justify-between p-2 rounded-lg bg-platinum-800/30 border border-platinum-700/50">
+                        <span className="text-xs text-platinum-200">{entity.entity}</span>
                         <Badge variant="gold" className="text-xs">{entity.credibility}</Badge>
                       </div>
                     ))}
@@ -872,11 +872,11 @@ export default function DailyMonitoringPage() {
                 </div>
                 {/* Technology Platforms */}
                 <div>
-                  <h4 className="text-sm font-semibold text-slate-300 mb-3">Technology Platforms</h4>
+                  <h4 className="text-sm font-semibold text-platinum-300 mb-3">Technology Platforms</h4>
                   <div className="space-y-2">
                     {technologyPlatforms.slice(0, 5).map((platform, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-2 rounded-lg bg-slate-800/30 border border-slate-700/50">
-                        <span className="text-xs text-slate-200">{platform.platform}</span>
+                      <div key={idx} className="flex items-center justify-between p-2 rounded-lg bg-platinum-800/30 border border-platinum-700/50">
+                        <span className="text-xs text-platinum-200">{platform.platform}</span>
                         <Badge variant="outline" className="text-xs border-emerald/50 text-emerald">{platform.credibility}</Badge>
                       </div>
                     ))}
@@ -906,10 +906,10 @@ export default function DailyMonitoringPage() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="p-3 rounded-lg border border-slate-700/50 bg-slate-800/30"
+                    className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-slate-200">{category.category}</span>
+                      <span className="text-sm font-medium text-platinum-200">{category.category}</span>
                       <Badge
                         variant="outline"
                         className={`text-xs ${
@@ -921,7 +921,7 @@ export default function DailyMonitoringPage() {
                     </div>
                     <div className="flex flex-wrap gap-1">
                       {category.examples.map((ex, i) => (
-                        <span key={i} className="text-xs text-slate-400 bg-slate-700/50 px-1.5 py-0.5 rounded">
+                        <span key={i} className="text-xs text-platinum-400 bg-platinum-700/50 px-1.5 py-0.5 rounded">
                           {ex}
                         </span>
                       ))}
@@ -948,12 +948,12 @@ export default function DailyMonitoringPage() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.08 }}
-                    className="p-4 rounded-lg border border-slate-700/50 bg-slate-800/30"
+                    className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
-                    <h4 className="font-medium text-slate-200 mb-2">{tool.category}</h4>
+                    <h4 className="font-medium text-platinum-200 mb-2">{tool.category}</h4>
                     <div className="space-y-1">
                       {tool.features.slice(0, 3).map((feature, i) => (
-                        <p key={i} className="text-xs text-slate-400 flex items-center gap-1">
+                        <p key={i} className="text-xs text-platinum-400 flex items-center gap-1">
                           <CheckCircle className="h-3 w-3 text-emerald" />
                           {feature}
                         </p>
@@ -976,21 +976,21 @@ export default function DailyMonitoringPage() {
             <CardContent>
               <div className="space-y-4">
                 {crisisKPIs.map((kpi, idx) => (
-                  <div key={idx} className="p-4 rounded-lg border border-slate-700/50 bg-slate-800/30">
+                  <div key={idx} className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
                     <div className="flex items-center justify-between mb-3">
-                      <span className="font-medium text-slate-200">{kpi.metric}</span>
+                      <span className="font-medium text-platinum-200">{kpi.metric}</span>
                     </div>
                     <div className="grid grid-cols-3 gap-4 text-center">
-                      <div className="p-2 rounded bg-slate-700/50">
-                        <div className="text-xs text-slate-400">Baseline</div>
-                        <div className="text-sm font-medium text-slate-300">{kpi.baseline}</div>
+                      <div className="p-2 rounded bg-platinum-700/50">
+                        <div className="text-xs text-platinum-400">Baseline</div>
+                        <div className="text-sm font-medium text-platinum-300">{kpi.baseline}</div>
                       </div>
                       <div className="p-2 rounded bg-gold/10 border border-gold/30">
-                        <div className="text-xs text-slate-400">Alert</div>
+                        <div className="text-xs text-platinum-400">Alert</div>
                         <div className="text-sm font-medium text-gold">{kpi.alertThreshold}</div>
                       </div>
                       <div className="p-2 rounded bg-rose/10 border border-rose/30">
-                        <div className="text-xs text-slate-400">Crisis</div>
+                        <div className="text-xs text-platinum-400">Crisis</div>
                         <div className="text-sm font-medium text-rose">{kpi.crisisThreshold}</div>
                       </div>
                     </div>
@@ -1031,8 +1031,8 @@ export default function DailyMonitoringPage() {
                         tier.tier === 'YELLOW' ? 'text-gold' : 'text-emerald'
                       }`}>{tier.tier}</span>
                     </div>
-                    <div className="text-sm text-slate-300 mb-1">{tier.responseTime}</div>
-                    <div className="text-xs text-slate-400">{tier.examples}</div>
+                    <div className="text-sm text-platinum-300 mb-1">{tier.responseTime}</div>
+                    <div className="text-xs text-platinum-400">{tier.examples}</div>
                   </motion.div>
                 ))}
               </div>
@@ -1058,23 +1058,23 @@ export default function DailyMonitoringPage() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-center justify-between p-3 rounded-lg border border-slate-700/50 bg-slate-800/30"
+                    className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
                     <div className="flex items-center gap-3">
                       <Radio className="h-4 w-4 text-rose" />
-                      <span className="font-medium text-slate-200">{kpi.platform}</span>
+                      <span className="font-medium text-platinum-200">{kpi.platform}</span>
                     </div>
                     <div className="flex items-center gap-6">
                       <div className="text-center">
-                        <div className="text-xs text-slate-400">API Access</div>
+                        <div className="text-xs text-platinum-400">API Access</div>
                         <div className="text-xs text-emerald">{kpi.apiAccess}</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-xs text-slate-400">Data Volume</div>
+                        <div className="text-xs text-platinum-400">Data Volume</div>
                         <div className="text-xs text-gold">{kpi.dataVolume}</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-xs text-slate-400">Refresh</div>
+                        <div className="text-xs text-platinum-400">Refresh</div>
                         <div className="text-xs text-navy">{kpi.refreshRate}</div>
                       </div>
                     </div>
@@ -1100,12 +1100,12 @@ export default function DailyMonitoringPage() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="p-3 rounded-lg border border-slate-700/50 bg-slate-800/30 text-center"
+                    className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30 text-center"
                   >
                     <div className={`text-xl font-bold ${
                       metric.value.startsWith('-') ? 'text-rose' : 'text-emerald'
                     }`}>{metric.value}</div>
-                    <div className="text-xs text-slate-400 mt-1">{metric.label}</div>
+                    <div className="text-xs text-platinum-400 mt-1">{metric.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -1129,11 +1129,11 @@ export default function DailyMonitoringPage() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="flex items-center justify-between p-3 rounded-lg border border-slate-700/50 bg-slate-800/30"
+                      className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
-                      <span className="text-xs text-slate-200">{row.sourceCategory}</span>
+                      <span className="text-xs text-platinum-200">{row.sourceCategory}</span>
                       <div className="flex items-center gap-4">
-                        <Badge variant="outline" className="text-xs border-slate-600/50 text-slate-400">
+                        <Badge variant="outline" className="text-xs border-platinum-600/50 text-platinum-400">
                           {row.typicalSentiment}
                         </Badge>
                         <Badge
@@ -1174,16 +1174,16 @@ export default function DailyMonitoringPage() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.05 }}
                     whileHover={{ scale: 1.02 }}
-                    className="p-4 rounded-lg border border-slate-700/50 bg-slate-800/30 hover:bg-slate-800/50 transition-colors cursor-pointer"
+                    className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30 hover:bg-platinum-800/50 transition-colors cursor-pointer"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="font-medium text-slate-200">{platform.platform}</span>
+                      <span className="font-medium text-platinum-200">{platform.platform}</span>
                       <Badge variant={platform.tier === 1 ? "gold" : "outline"} className="text-xs">
                         Tier {platform.tier}
                       </Badge>
                     </div>
-                    <div className="text-xs text-slate-400 mb-2">{platform.bestFor}</div>
-                    <p className="text-xs text-slate-500 line-clamp-2">{platform.features}</p>
+                    <div className="text-xs text-platinum-400 mb-2">{platform.bestFor}</div>
+                    <p className="text-xs text-platinum-500 line-clamp-2">{platform.features}</p>
                   </motion.div>
                 ))}
               </div>
@@ -1206,10 +1206,10 @@ export default function DailyMonitoringPage() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="p-3 rounded-lg border border-slate-700/50 bg-slate-800/30 text-center"
+                    className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30 text-center"
                   >
-                    <div className="font-medium text-slate-200">{tool.tool}</div>
-                    <div className="text-xs text-slate-400">{tool.purpose}</div>
+                    <div className="font-medium text-platinum-200">{tool.tool}</div>
+                    <div className="text-xs text-platinum-400">{tool.purpose}</div>
                     <Badge variant="outline" className="mt-2 text-xs">{tool.language}</Badge>
                   </motion.div>
                 ))}
@@ -1233,14 +1233,14 @@ export default function DailyMonitoringPage() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.1 }}
-                    className="flex items-start gap-4 p-4 rounded-lg border border-slate-700/50 bg-slate-800/30"
+                    className="flex items-start gap-4 p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-navy/20 text-navy font-bold">
                       {step.step}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-slate-200 mb-1">{step.name}</h4>
-                      <p className="text-sm text-slate-400">{step.description}</p>
+                      <h4 className="font-semibold text-platinum-200 mb-1">{step.name}</h4>
+                      <p className="text-sm text-platinum-400">{step.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -1264,7 +1264,7 @@ export default function DailyMonitoringPage() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-center justify-between p-3 rounded-lg border border-slate-700/50 bg-slate-800/30"
+                    className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
                     <div className="flex items-center gap-3">
                       <Badge
@@ -1272,14 +1272,14 @@ export default function DailyMonitoringPage() {
                         className={`text-xs ${
                           resource.credibility === 'Tier 0-1' || resource.credibility === 'Tier 1' ? 'border-emerald/50 text-emerald' :
                           resource.credibility === 'Tier 1-2' ? 'border-gold/50 text-gold' :
-                          'border-slate-500/50 text-slate-400'
+                          'border-platinum-500/50 text-platinum-400'
                         }`}
                       >
                         {resource.credibility}
                       </Badge>
-                      <span className="font-medium text-slate-200">{resource.category}</span>
+                      <span className="font-medium text-platinum-200">{resource.category}</span>
                     </div>
-                    <span className="text-xs text-slate-400">{resource.sources}</span>
+                    <span className="text-xs text-platinum-400">{resource.sources}</span>
                   </motion.div>
                 ))}
               </div>
@@ -1305,23 +1305,23 @@ export default function DailyMonitoringPage() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.08 }}
-                    className="flex items-center justify-between p-3 rounded-lg border border-slate-700/50 bg-slate-800/30"
+                    className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
                     <div className="flex items-center gap-3">
                       <div className={`h-2 w-2 rounded-full ${
                         kpi.status === 'Complete' ? 'bg-emerald' :
                         kpi.status === 'Active' ? 'bg-gold' :
-                        kpi.status === 'On track' ? 'bg-navy' : 'bg-slate-500'
+                        kpi.status === 'On track' ? 'bg-navy' : 'bg-platinum-500'
                       }`} />
-                      <span className="text-sm font-medium text-slate-200">{kpi.kpi}</span>
+                      <span className="text-sm font-medium text-platinum-200">{kpi.kpi}</span>
                     </div>
                     <div className="flex items-center gap-4">
-                      <span className="text-sm text-slate-400">{kpi.currentValue}</span>
+                      <span className="text-sm text-platinum-400">{kpi.currentValue}</span>
                       <Badge variant="outline" className={`text-xs ${
                         kpi.status === 'Complete' ? 'border-emerald/50 text-emerald' :
                         kpi.status === 'Active' ? 'border-gold/50 text-gold' :
                         kpi.status === 'On track' ? 'border-navy/50 text-navy' :
-                        'border-slate-500/50 text-slate-400'
+                        'border-platinum-500/50 text-platinum-400'
                       }`}>
                         {kpi.status}
                       </Badge>
@@ -1348,10 +1348,10 @@ export default function DailyMonitoringPage() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="p-4 rounded-lg border border-slate-700/50 bg-slate-800/30"
+                    className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
-                    <div className="font-medium text-slate-200 mb-1">{cat.category}</div>
-                    <div className="text-xs text-slate-400">{cat.metrics}</div>
+                    <div className="font-medium text-platinum-200 mb-1">{cat.category}</div>
+                    <div className="text-xs text-platinum-400">{cat.metrics}</div>
                   </motion.div>
                 ))}
               </div>
@@ -1374,12 +1374,12 @@ export default function DailyMonitoringPage() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-center gap-4 p-3 rounded-lg border border-slate-700/50 bg-slate-800/30"
+                    className="flex items-center gap-4 p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
                     <Badge variant="outline" className="border-navy/50 text-navy w-[120px] justify-center">
                       {cadence.frequency}
                     </Badge>
-                    <span className="text-sm text-slate-300">{cadence.activity}</span>
+                    <span className="text-sm text-platinum-300">{cadence.activity}</span>
                   </motion.div>
                 ))}
               </div>
@@ -1407,11 +1407,11 @@ export default function DailyMonitoringPage() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.03 }}
                     whileHover={{ scale: 1.05 }}
-                    className="rounded-lg border border-slate-700/50 bg-slate-800/30 p-3 hover:bg-slate-800/50 transition-colors cursor-pointer"
+                    className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3 hover:bg-platinum-800/50 transition-colors cursor-pointer"
                   >
                     <div className="text-lg font-bold text-gold">{metric.value}</div>
-                    <div className="text-xs text-slate-400">{metric.dataPoint}</div>
-                    <div className="text-xs text-slate-500 mt-1">{metric.category}</div>
+                    <div className="text-xs text-platinum-400">{metric.dataPoint}</div>
+                    <div className="text-xs text-platinum-500 mt-1">{metric.category}</div>
                   </motion.div>
                 ))}
               </div>
@@ -1434,13 +1434,13 @@ export default function DailyMonitoringPage() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.08 }}
-                    className="p-4 rounded-lg border border-slate-700/50 bg-slate-800/30"
+                    className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <Badge variant="gold" className="text-xs">{insight.category}</Badge>
-                      <Badge variant="outline" className="text-xs border-slate-600/50 text-slate-400">{insight.source}</Badge>
+                      <Badge variant="outline" className="text-xs border-platinum-600/50 text-platinum-400">{insight.source}</Badge>
                     </div>
-                    <p className="text-sm text-slate-300">{insight.insight}</p>
+                    <p className="text-sm text-platinum-300">{insight.insight}</p>
                   </motion.div>
                 ))}
               </div>
@@ -1464,11 +1464,11 @@ export default function DailyMonitoringPage() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="flex items-start justify-between p-3 rounded-lg border border-slate-700/50 bg-slate-800/30"
+                      className="flex items-start justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
                       <div className="flex-1">
-                        <p className="text-sm font-medium text-slate-200">{assessment.source}</p>
-                        <p className="text-xs text-slate-400 mt-1">{assessment.rationale}</p>
+                        <p className="text-sm font-medium text-platinum-200">{assessment.source}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{assessment.rationale}</p>
                       </div>
                       <Badge
                         variant="outline"
@@ -1503,10 +1503,10 @@ export default function DailyMonitoringPage() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="p-4 rounded-lg border border-navy/30 bg-slate-800/30 text-center"
+                    className="p-4 rounded-lg border border-navy/30 bg-platinum-800/30 text-center"
                   >
                     <div className="text-2xl font-bold text-navy">{stat.value}</div>
-                    <div className="text-xs text-slate-400 mt-1">{stat.label}</div>
+                    <div className="text-xs text-platinum-400 mt-1">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>

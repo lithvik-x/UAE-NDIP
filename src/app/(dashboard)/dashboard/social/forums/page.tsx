@@ -123,7 +123,7 @@ export default function ForumsPage() {
                 <div className="space-y-3">
                   {forumData.map((f: any, idx: number) => (
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
-                      className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 border border-slate-700/50">
+                      className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                       <div className="flex items-center gap-3">
                         <MessageCircle className="h-4 w-4 text-amber-400" />
                         <span className="font-medium text-platinum-200">{f.name}</span>
@@ -146,7 +146,7 @@ export default function ForumsPage() {
               <div className="space-y-3">
                 {threadData.map((t: any, idx: number) => (
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }}
-                    className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 border border-slate-700/50">
+                    className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                     <div className="flex items-center gap-3 flex-1">
                       <span className="text-xs text-platinum-500 w-5">#{idx + 1}</span>
                       <MessageCircle className="h-4 w-4 text-amber-400 shrink-0" />

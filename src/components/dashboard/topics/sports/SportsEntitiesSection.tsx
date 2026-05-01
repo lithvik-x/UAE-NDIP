@@ -67,9 +67,9 @@ export function SportsEntitiesSection({
               {cfgOwnership.map((owner, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50"
+                  className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50"
                 >
-                  <span className="text-sm text-slate-300">{owner.owner}</span>
+                  <span className="text-sm text-platinum-300">{owner.owner}</span>
                   <span className="text-xl font-bold text-gold">{owner.share}</span>
                 </div>
               ))}
@@ -93,9 +93,9 @@ export function SportsEntitiesSection({
               {mancityFinancials.map((item, index) => (
                 <div
                   key={index}
-                  className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50"
+                  className="flex justify-between items-center p-3 rounded-lg bg-platinum-800/50"
                 >
-                  <span className="text-sm text-slate-300">{item.year}</span>
+                  <span className="text-sm text-platinum-300">{item.year}</span>
                   <span className="text-xl font-bold text-gold">{item.revenue}</span>
                 </div>
               ))}
@@ -119,9 +119,9 @@ export function SportsEntitiesSection({
               {f1Impact.map((item, index) => (
                 <div
                   key={index}
-                  className="flex justify-between items-center p-3 rounded-lg bg-slate-800/50"
+                  className="flex justify-between items-center p-3 rounded-lg bg-platinum-800/50"
                 >
-                  <span className="text-sm text-slate-300">{item.metric}</span>
+                  <span className="text-sm text-platinum-300">{item.metric}</span>
                   <span className="text-xl font-bold text-gold">{item.value}</span>
                 </div>
               ))}
@@ -143,14 +143,14 @@ export function SportsEntitiesSection({
                 {f12024Top3.map((result, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-4 p-3 rounded-lg bg-slate-800/50"
+                    className="flex items-center gap-4 p-3 rounded-lg bg-platinum-800/50"
                   >
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold/20 text-gold font-bold">
                       {index + 1}
                     </div>
                     <div className="flex-1">
-                      <p className="font-semibold text-slate-200">{result.driver}</p>
-                      <p className="text-sm text-slate-400">{result.team}</p>
+                      <p className="font-semibold text-platinum-200">{result.driver}</p>
+                      <p className="text-sm text-platinum-400">{result.team}</p>
                     </div>
                     <div className="text-right">
                       <p className="font-bold text-gold">{result.gap !== '—' ? result.gap : 'Winner'}</p>
@@ -171,14 +171,14 @@ export function SportsEntitiesSection({
                 {f12025Top3.map((result, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-4 p-3 rounded-lg bg-slate-800/50"
+                    className="flex items-center gap-4 p-3 rounded-lg bg-platinum-800/50"
                   >
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold/20 text-gold font-bold">
                       {index + 1}
                     </div>
                     <div className="flex-1">
-                      <p className="font-semibold text-slate-200">{result.driver}</p>
-                      <p className="text-sm text-slate-400">{result.team}</p>
+                      <p className="font-semibold text-platinum-200">{result.driver}</p>
+                      <p className="text-sm text-platinum-400">{result.team}</p>
                     </div>
                     <div className="text-right">
                       <p className="font-bold text-gold">{result.gap !== '—' ? result.gap : 'Winner'}</p>
@@ -207,11 +207,11 @@ export function SportsEntitiesSection({
                 {sportsKeyIndividuals.slice(0, 10).map((person, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                    className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                   >
                     <div>
-                      <p className="font-semibold text-slate-200">{person.name}</p>
-                      <p className="text-sm text-slate-400">{person.role}</p>
+                      <p className="font-semibold text-platinum-200">{person.name}</p>
+                      <p className="text-sm text-platinum-400">{person.role}</p>
                     </div>
                     <Badge variant="outline" className="text-platinum border-platinum/50 ml-2">
                       {person.affiliation.split(',')[0]}

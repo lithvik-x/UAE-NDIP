@@ -126,7 +126,7 @@ export default function PersianPage() {
                   { topic: 'Family/Personal', risk: 'LOW', sentiment: 'Neutral' },
                 ].map((t: any, idx: number) => (
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }}
-                    className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50">
+                    className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                     <div className="flex items-center justify-between mb-2">
                       <span className="font-medium text-platinum-200">{t.topic}</span>
                       <Badge variant="outline" className={`${t.risk === 'CRITICAL' ? 'text-rose border-rose-500/50' : t.risk === 'HIGH' ? 'text-orange border-orange-500/50' : 'text-emerald border-emerald-500/50'}`}>{t.risk}</Badge>

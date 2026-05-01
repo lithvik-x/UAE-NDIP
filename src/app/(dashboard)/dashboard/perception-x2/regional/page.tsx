@@ -95,7 +95,7 @@ export default function RegionalPerceptionPage() {
       case 'NEGATIVE':
         return 'text-rose-400'
       default:
-        return 'text-yellow-400'
+        return 'text-amber-400'
     }
   }
 
@@ -110,7 +110,7 @@ export default function RegionalPerceptionPage() {
       case 'NEGATIVE':
         return 'bg-rose-500/20'
       default:
-        return 'bg-yellow-500/20'
+        return 'bg-amber-500/20'
     }
   }
 
@@ -125,7 +125,7 @@ export default function RegionalPerceptionPage() {
       case 'NEGATIVE':
         return <XCircle className="h-4 w-4 text-rose-400" />
       default:
-        return <Minus className="h-4 w-4 text-yellow-400" />
+        return <Minus className="h-4 w-4 text-amber-400" />
     }
   }
 
@@ -180,7 +180,7 @@ export default function RegionalPerceptionPage() {
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">
             Regional Perception
           </h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             UAE's international perception across global regions and bilateral relationships
           </p>
         </div>
@@ -318,7 +318,7 @@ export default function RegionalPerceptionPage() {
                           <motion.div
                             key={finding.id}
                             variants={cardHover}
-                            className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70 transition-colors"
+                            className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70 transition-colors"
                           >
                             <div className="flex items-start justify-between mb-2">
                               <div className="flex items-center gap-3">
@@ -326,12 +326,12 @@ export default function RegionalPerceptionPage() {
                                   <span className="text-sm font-bold text-gold">{finding.id}</span>
                                 </div>
                                 <div>
-                                  <p className="font-semibold text-slate-200 font-rajdhani">{finding.finding}</p>
-                                  <p className="text-sm text-slate-400">{finding.uaeRelevance}</p>
+                                  <p className="font-semibold text-platinum-200 font-rajdhani">{finding.finding}</p>
+                                  <p className="text-sm text-platinum-400">{finding.uaeRelevance}</p>
                                 </div>
                               </div>
                             </div>
-                            <p className="text-sm text-slate-300 ml-11">{finding.summary}</p>
+                            <p className="text-sm text-platinum-300 ml-11">{finding.summary}</p>
                           </motion.div>
                         ))}
                       </div>
@@ -360,8 +360,8 @@ export default function RegionalPerceptionPage() {
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-4">
-                        <div className="rounded-lg bg-slate-800/50 p-4">
-                          <p className="text-sm text-slate-400 mb-3">Asymmetric Perception</p>
+                        <div className="rounded-lg bg-platinum-800/50 p-4">
+                          <p className="text-sm text-platinum-400 mb-3">Asymmetric Perception</p>
                           <BarChart
                             data={usPerceptionData}
                             xAxisKey="label"
@@ -373,20 +373,20 @@ export default function RegionalPerceptionPage() {
                           />
                         </div>
                         <div className="space-y-2">
-                          <div className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
-                            <span className="text-sm text-slate-300">UAE Citizens View US</span>
+                          <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
+                            <span className="text-sm text-platinum-300">UAE Citizens View US</span>
                             <Badge variant="outline" className="text-emerald">82% Positive</Badge>
                           </div>
-                          <div className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
-                            <span className="text-sm text-slate-300">US Citizens View UAE</span>
+                          <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
+                            <span className="text-sm text-platinum-300">US Citizens View UAE</span>
                             <Badge variant="outline" className="text-rose">14% Positive</Badge>
                           </div>
                         </div>
                         <div className="mt-4">
-                          <p className="text-sm font-semibold text-slate-300 mb-2">Key Concerns</p>
+                          <p className="text-sm font-semibold text-platinum-300 mb-2">Key Concerns</p>
                           <div className="space-y-1">
                             {regionalPerception.unitedStates.concerns.slice(0, 3).map((concern, i) => (
-                              <p key={i} className="text-xs text-slate-400 flex items-start gap-2">
+                              <p key={i} className="text-xs text-platinum-400 flex items-start gap-2">
                                 <AlertTriangle className="h-3 w-3 text-rose-400 mt-0.5 shrink-0" />
                                 {concern}
                               </p>
@@ -408,12 +408,12 @@ export default function RegionalPerceptionPage() {
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-4">
-                        <div className="rounded-lg bg-slate-800/50 p-4">
+                        <div className="rounded-lg bg-platinum-800/50 p-4">
                           <p className="text-sm font-semibold text-gold mb-2">Strategic Partnership</p>
                           <div className="space-y-2 text-sm">
-                            <p className="text-slate-300">Status: <span className="text-emerald">Active</span></p>
-                            <p className="text-slate-300">Priorities: <span className="text-gold">Digitalisation, AI</span></p>
-                            <p className="text-slate-300">Framework: <span className="text-gold">EU-UAE SPA (Dec 2025)</span></p>
+                            <p className="text-platinum-300">Status: <span className="text-emerald">Active</span></p>
+                            <p className="text-platinum-300">Priorities: <span className="text-gold">Digitalisation, AI</span></p>
+                            <p className="text-platinum-300">Framework: <span className="text-gold">EU-UAE SPA (Dec 2025)</span></p>
                           </div>
                         </div>
                         <div className="rounded-lg bg-rose-500/10 border border-rose-500/30 p-4">
@@ -421,18 +421,18 @@ export default function RegionalPerceptionPage() {
                             <AlertTriangle className="h-4 w-4" />
                             Shadow Side
                           </p>
-                          <p className="text-xs text-slate-300 mb-2">
+                          <p className="text-xs text-platinum-300 mb-2">
                             {regionalPerception.europe.shadowSide.quote}
                           </p>
-                          <p className="text-xs text-slate-400 italic">
+                          <p className="text-xs text-platinum-400 italic">
                             — {regionalPerception.europe.shadowSide.quoteAuthor}
                           </p>
                         </div>
                         <div className="space-y-2">
-                          <p className="text-sm font-semibold text-slate-300">Documented Meetings</p>
+                          <p className="text-sm font-semibold text-platinum-300">Documented Meetings</p>
                           {regionalPerception.europe.shadowSide.farRightCoordination.documentedMeetings.map((meeting, i) => (
-                            <div key={i} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-2">
-                              <span className="text-xs text-slate-300">{meeting.person}</span>
+                            <div key={i} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-2">
+                              <span className="text-xs text-platinum-300">{meeting.person}</span>
                               <Badge variant="outline" className="text-xs">{meeting.date}</Badge>
                             </div>
                           ))}
@@ -453,28 +453,28 @@ export default function RegionalPerceptionPage() {
                     <CardContent>
                       <div className="space-y-4">
                         <div className="grid grid-cols-2 gap-3">
-                          <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                             <p className="text-2xl font-bold text-gold">$100B</p>
-                            <p className="text-xs text-slate-400">Annual Trade</p>
+                            <p className="text-xs text-platinum-400">Annual Trade</p>
                           </div>
-                          <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                             <p className="text-2xl font-bold text-emerald">+25%</p>
-                            <p className="text-xs text-slate-400">YoY Growth</p>
+                            <p className="text-xs text-platinum-400">YoY Growth</p>
                           </div>
                         </div>
-                        <div className="rounded-lg bg-slate-800/50 p-4">
+                        <div className="rounded-lg bg-platinum-800/50 p-4">
                           <p className="text-sm font-semibold text-gold mb-2">UAE Public Opinion (2023)</p>
                           <div className="space-y-2">
                             <div className="flex items-center justify-between">
-                              <span className="text-xs text-slate-300">Positive view of China</span>
+                              <span className="text-xs text-platinum-300">Positive view of China</span>
                               <span className="text-sm font-bold text-emerald">63%</span>
                             </div>
                             <div className="flex items-center justify-between">
-                              <span className="text-xs text-slate-300">Trust reliable partner</span>
+                              <span className="text-xs text-platinum-300">Trust reliable partner</span>
                               <span className="text-sm font-bold text-emerald">62%</span>
                             </div>
                             <div className="flex items-center justify-between">
-                              <span className="text-xs text-slate-300">Development model positive</span>
+                              <span className="text-xs text-platinum-300">Development model positive</span>
                               <span className="text-sm font-bold text-emerald">74%</span>
                             </div>
                           </div>
@@ -495,22 +495,22 @@ export default function RegionalPerceptionPage() {
                     <CardContent>
                       <div className="space-y-4">
                         <div className="grid grid-cols-2 gap-3">
-                          <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                             <p className="text-2xl font-bold text-gold">$11.5B</p>
-                            <p className="text-xs text-slate-400">Trade (2024)</p>
+                            <p className="text-xs text-platinum-400">Trade (2024)</p>
                           </div>
-                          <div className="rounded-lg bg-slate-800/50 p-3 text-center">
+                          <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
                             <p className="text-2xl font-bold text-emerald">3x</p>
-                            <p className="text-xs text-slate-400">Growth since 2021</p>
+                            <p className="text-xs text-platinum-400">Growth since 2021</p>
                           </div>
                         </div>
-                        <div className="rounded-lg bg-slate-800/50 p-4">
+                        <div className="rounded-lg bg-platinum-800/50 p-4">
                           <p className="text-sm font-semibold text-gold mb-2">Diplomatic Milestones</p>
                           <div className="space-y-2">
                             {regionalPerception.russia.diplomaticMilestones.slice(-3).map((milestone, i) => (
                               <div key={i} className="flex items-center gap-2">
                                 <Badge variant="outline" className="text-xs shrink-0">{milestone.year}</Badge>
-                                <span className="text-xs text-slate-300">{milestone.event}</span>
+                                <span className="text-xs text-platinum-300">{milestone.event}</span>
                               </div>
                             ))}
                           </div>
@@ -534,18 +534,18 @@ export default function RegionalPerceptionPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-6">
-                      <div className="rounded-lg bg-yellow-500/10 border border-yellow-500/30 p-4">
-                        <p className="text-sm font-semibold text-yellow-400 mb-1">Overall Assessment</p>
-                        <p className="text-sm text-slate-300 italic">"{regionalPerception.arabWorld.overallAssessment}"</p>
-                        <p className="text-xs text-slate-400 mt-1">— ISPI, January 2026</p>
+                      <div className="rounded-lg bg-amber-500/10 border border-amber-500/30 p-4">
+                        <p className="text-sm font-semibold text-amber-400 mb-1">Overall Assessment</p>
+                        <p className="text-sm text-platinum-300 italic">"{regionalPerception.arabWorld.overallAssessment}"</p>
+                        <p className="text-xs text-platinum-400 mt-1">— ISPI, January 2026</p>
                       </div>
 
                       <div className="rounded-lg bg-rose-500/10 border border-rose-500/30 p-4">
                         <p className="text-sm font-semibold text-rose-400 mb-2">Saudi-UAE Rift</p>
-                        <p className="text-xs text-slate-300 mb-3">"{regionalPerception.arabWorld.saudUaeRift.expertQuote}"</p>
+                        <p className="text-xs text-platinum-300 mb-3">"{regionalPerception.arabWorld.saudUaeRift.expertQuote}"</p>
                         <div className="space-y-1">
                           {regionalPerception.arabWorld.saudUaeRift.causes.map((cause, i) => (
-                            <p key={i} className="text-xs text-slate-400 flex items-start gap-2">
+                            <p key={i} className="text-xs text-platinum-400 flex items-start gap-2">
                               <ChevronRight className="h-3 w-3 text-rose-400 mt-0.5 shrink-0" />
                               {cause}
                             </p>
@@ -553,13 +553,13 @@ export default function RegionalPerceptionPage() {
                         </div>
                       </div>
 
-                      <div className="rounded-lg bg-slate-800/50 p-4">
+                      <div className="rounded-lg bg-platinum-800/50 p-4">
                         <p className="text-sm font-semibold text-gold mb-3">Arab Opinion Index 2025</p>
-                        <p className="text-xs text-slate-400 mb-3">Sample: {regionalPerception.arabWorld.arabOpinionIndex2025.sample}</p>
+                        <p className="text-xs text-platinum-400 mb-3">Sample: {regionalPerception.arabWorld.arabOpinionIndex2025.sample}</p>
                         <div className="space-y-2">
                           {regionalPerception.arabWorld.arabOpinionIndex2025.keyMetrics.map((metric, i) => (
                             <div key={i} className="flex items-center justify-between">
-                              <span className="text-xs text-slate-300">{metric.metric}</span>
+                              <span className="text-xs text-platinum-300">{metric.metric}</span>
                               <Badge variant="outline" className="text-xs">{metric.value}%</Badge>
                             </div>
                           ))}
@@ -592,21 +592,21 @@ export default function RegionalPerceptionPage() {
                         <div className="flex items-center justify-between rounded-lg bg-emerald-500/20 p-4">
                           <div>
                             <p className="text-3xl font-bold text-emerald">{dimensionPerception.safety.score}</p>
-                            <p className="text-sm text-slate-400">Global Rank</p>
+                            <p className="text-sm text-platinum-400">Global Rank</p>
                           </div>
                           <Badge variant="outline" className="text-emerald border-emerald-500">World #1</Badge>
                         </div>
                         <div className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Perception Score</span>
+                            <span className="text-sm text-platinum-300">Perception Score</span>
                             <span className="text-sm font-bold text-emerald">{dimensionPerception.safety.perceptionScore}/100</span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Residents Feeling Safe</span>
+                            <span className="text-sm text-platinum-300">Residents Feeling Safe</span>
                             <span className="text-sm font-bold text-emerald">{dimensionPerception.safety.residentsFeelingSafe}</span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">OSAC Assessment</span>
+                            <span className="text-sm text-platinum-300">OSAC Assessment</span>
                             <Badge variant="outline" className="text-xs">{dimensionPerception.safety.osacAssessment}</Badge>
                           </div>
                         </div>
@@ -627,21 +627,21 @@ export default function RegionalPerceptionPage() {
                         <div className="flex items-center justify-between rounded-lg bg-rose-500/20 p-4">
                           <div>
                             <p className="text-3xl font-bold text-rose">{dimensionPerception.humanRights.freedomHouseScore}</p>
-                            <p className="text-sm text-slate-400">Freedom House Score</p>
+                            <p className="text-sm text-platinum-400">Freedom House Score</p>
                           </div>
                           <Badge variant="outline" className="text-rose border-rose-500">"Not Free"</Badge>
                         </div>
                         <div className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Political Rights</span>
+                            <span className="text-sm text-platinum-300">Political Rights</span>
                             <span className="text-sm font-bold text-rose">{dimensionPerception.humanRights.politicalRights}/40</span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Civil Liberties</span>
+                            <span className="text-sm text-platinum-300">Civil Liberties</span>
                             <span className="text-sm font-bold text-rose">{dimensionPerception.humanRights.civilLiberties}/60</span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Internet Freedom</span>
+                            <span className="text-sm text-platinum-300">Internet Freedom</span>
                             <span className="text-sm font-bold text-rose">{dimensionPerception.humanRights.internetFreedom}/100</span>
                           </div>
                         </div>
@@ -662,14 +662,14 @@ export default function RegionalPerceptionPage() {
                         <div className="flex items-center justify-between rounded-lg bg-gold/20 p-4">
                           <div>
                             <p className="text-3xl font-bold text-gold">#{dimensionPerception.softPower.globalRank}</p>
-                            <p className="text-sm text-slate-400">Global Soft Power Rank</p>
+                            <p className="text-sm text-platinum-400">Global Soft Power Rank</p>
                           </div>
                           <Badge variant="outline" className="text-gold border-gold-500">Rising</Badge>
                         </div>
                         <div className="space-y-2">
                           {dimensionPerception.softPower.rankings.map((rank, i) => (
-                            <div key={i} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-2">
-                              <span className="text-sm text-slate-300">{rank.category}</span>
+                            <div key={i} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-2">
+                              <span className="text-sm text-platinum-300">{rank.category}</span>
                               <Badge variant="outline" className="text-xs text-gold">{rank.rank}</Badge>
                             </div>
                           ))}
@@ -691,18 +691,18 @@ export default function RegionalPerceptionPage() {
                         <div className="flex items-center justify-between rounded-lg bg-emerald-500/20 p-4">
                           <div>
                             <p className="text-3xl font-bold text-emerald">#{dimensionPerception.happiness.worldRank}</p>
-                            <p className="text-sm text-slate-400">World Happiness Rank</p>
+                            <p className="text-sm text-platinum-400">World Happiness Rank</p>
                           </div>
                           <Badge variant="outline" className="text-emerald border-emerald-500">Highest in Arab World</Badge>
                         </div>
                         <div className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Score</span>
+                            <span className="text-sm text-platinum-300">Score</span>
                             <span className="text-sm font-bold text-emerald">{dimensionPerception.happiness.score}/10</span>
                           </div>
                           {dimensionPerception.happiness.factors.map((factor, i) => (
                             <div key={i} className="flex items-center justify-between">
-                              <span className="text-sm text-slate-300">{factor.factor}</span>
+                              <span className="text-sm text-platinum-300">{factor.factor}</span>
                               <span className="text-sm font-bold text-gold">{factor.value}</span>
                             </div>
                           ))}
@@ -724,11 +724,11 @@ export default function RegionalPerceptionPage() {
                         {perceptionScorecard.map((item, index) => (
                           <div
                             key={index}
-                            className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 hover:bg-slate-800/70 transition-colors"
+                            className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 hover:bg-platinum-800/70 transition-colors"
                           >
                             <div className="flex items-center gap-3">
                               {getSentimentIcon(item.perception)}
-                              <span className="text-sm font-medium text-slate-200">{item.dimension}</span>
+                              <span className="text-sm font-medium text-platinum-200">{item.dimension}</span>
                             </div>
                             <div className="flex items-center gap-3">
                               <span className={`text-sm font-bold ${getSentimentColor(item.perception)}`}>
@@ -761,31 +761,31 @@ export default function RegionalPerceptionPage() {
                   <CardContent>
                     <div className="space-y-6">
                       {/* UAE Views of US */}
-                      <div className="rounded-lg bg-slate-800/50 p-4">
+                      <div className="rounded-lg bg-platinum-800/50 p-4">
                         <p className="text-sm font-semibold text-gold mb-3">UAE Views of United States</p>
                         <div className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Friend</span>
+                            <span className="text-sm text-platinum-300">Friend</span>
                             <div className="flex items-center gap-2">
-                              <div className="w-32 h-2 bg-slate-700 rounded-full overflow-hidden">
+                              <div className="w-32 h-2 bg-platinum-700 rounded-full overflow-hidden">
                                 <div className="h-full bg-navy rounded-full" style={{ width: '17%' }} />
                               </div>
                               <span className="text-sm font-bold text-navy">17%</span>
                             </div>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Security Partner</span>
+                            <span className="text-sm text-platinum-300">Security Partner</span>
                             <div className="flex items-center gap-2">
-                              <div className="w-32 h-2 bg-slate-700 rounded-full overflow-hidden">
+                              <div className="w-32 h-2 bg-platinum-700 rounded-full overflow-hidden">
                                 <div className="h-full bg-navy rounded-full" style={{ width: '30%' }} />
                               </div>
                               <span className="text-sm font-bold text-navy">30%</span>
                             </div>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Economic Partner</span>
+                            <span className="text-sm text-platinum-300">Economic Partner</span>
                             <div className="flex items-center gap-2">
-                              <div className="w-32 h-2 bg-slate-700 rounded-full overflow-hidden">
+                              <div className="w-32 h-2 bg-platinum-700 rounded-full overflow-hidden">
                                 <div className="h-full bg-navy rounded-full" style={{ width: '35%' }} />
                               </div>
                               <span className="text-sm font-bold text-navy">35%</span>
@@ -795,66 +795,66 @@ export default function RegionalPerceptionPage() {
                       </div>
 
                       {/* China Perception */}
-                      <div className="rounded-lg bg-slate-800/50 p-4">
+                      <div className="rounded-lg bg-platinum-800/50 p-4">
                         <p className="text-sm font-semibold text-rose-400 mb-3">China Perception</p>
                         <div className="grid grid-cols-3 gap-3">
                           <div className="text-center">
                             <p className="text-2xl font-bold text-emerald">62%</p>
-                            <p className="text-xs text-slate-400">Economic Partner</p>
+                            <p className="text-xs text-platinum-400">Economic Partner</p>
                           </div>
                           <div className="text-center">
                             <p className="text-2xl font-bold text-emerald">18%</p>
-                            <p className="text-xs text-slate-400">Friend</p>
+                            <p className="text-xs text-platinum-400">Friend</p>
                           </div>
                           <div className="text-center">
                             <p className="text-2xl font-bold text-emerald">10%</p>
-                            <p className="text-xs text-slate-400">Security Partner</p>
+                            <p className="text-xs text-platinum-400">Security Partner</p>
                           </div>
                         </div>
                       </div>
 
                       {/* Russia Perception */}
-                      <div className="rounded-lg bg-slate-800/50 p-4">
+                      <div className="rounded-lg bg-platinum-800/50 p-4">
                         <p className="text-sm font-semibold text-gold mb-3">Russia Perception</p>
                         <div className="grid grid-cols-4 gap-3">
                           <div className="text-center">
                             <p className="text-2xl font-bold text-gold">42%</p>
-                            <p className="text-xs text-slate-400">Economic Partner</p>
+                            <p className="text-xs text-platinum-400">Economic Partner</p>
                           </div>
                           <div className="text-center">
                             <p className="text-2xl font-bold text-gold">32%</p>
-                            <p className="text-xs text-slate-400">Security Partner</p>
+                            <p className="text-xs text-platinum-400">Security Partner</p>
                           </div>
                           <div className="text-center">
                             <p className="text-2xl font-bold text-gold">21%</p>
-                            <p className="text-xs text-slate-400">Friend</p>
+                            <p className="text-xs text-platinum-400">Friend</p>
                           </div>
                           <div className="text-center">
                             <p className="text-2xl font-bold text-emerald">77%</p>
-                            <p className="text-xs text-slate-400">Support Russian Victory</p>
+                            <p className="text-xs text-platinum-400">Support Russian Victory</p>
                           </div>
                         </div>
                       </div>
 
                       {/* Iran Perception */}
-                      <div className="rounded-lg bg-slate-800/50 p-4">
+                      <div className="rounded-lg bg-platinum-800/50 p-4">
                         <p className="text-sm font-semibold text-rose-400 mb-3">Iran Perception</p>
                         <div className="grid grid-cols-4 gap-3">
                           <div className="text-center">
                             <p className="text-2xl font-bold text-rose">55%</p>
-                            <p className="text-xs text-slate-400">Enemy</p>
+                            <p className="text-xs text-platinum-400">Enemy</p>
                           </div>
                           <div className="text-center">
                             <p className="text-2xl font-bold text-yellow">30%</p>
-                            <p className="text-xs text-slate-400">Competitor</p>
+                            <p className="text-xs text-platinum-400">Competitor</p>
                           </div>
                           <div className="text-center">
                             <p className="text-2xl font-bold text-emerald">15%</p>
-                            <p className="text-xs text-slate-400">Friend/Partner</p>
+                            <p className="text-xs text-platinum-400">Friend/Partner</p>
                           </div>
                           <div className="text-center">
                             <p className="text-2xl font-bold text-emerald">34%</p>
-                            <p className="text-xs text-slate-400">Friend (Shia Emiratis)</p>
+                            <p className="text-xs text-platinum-400">Friend (Shia Emiratis)</p>
                           </div>
                         </div>
                       </div>
@@ -871,8 +871,8 @@ export default function RegionalPerceptionPage() {
                   <CardContent>
                     <div className="space-y-3">
                       {washingtonInstituteSurvey.israelPalestine.map((item, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
-                          <span className="text-sm text-slate-300 flex-1">{item.statement}</span>
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
+                          <span className="text-sm text-platinum-300 flex-1">{item.statement}</span>
                           <Badge variant="outline" className="ml-4 shrink-0">{item.percentage}%</Badge>
                         </div>
                       ))}

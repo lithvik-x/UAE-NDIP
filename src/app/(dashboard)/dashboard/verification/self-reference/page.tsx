@@ -115,7 +115,7 @@ export default function SelfReferencePage() {
                       <p className="text-sm text-platinum-400 mb-1">Context: {p.context}</p>
                       <div className="flex items-center gap-2">
                         <span className="text-xs text-platinum-400">Accuracy:</span>
-                        <div className="h-2 bg-slate-800 rounded-full overflow-hidden flex-1">
+                        <div className="h-2 bg-platinum-800 rounded-full overflow-hidden flex-1">
                           <motion.div initial={{ width: 0 }} animate={{ width: `${p.accuracy}%` }} transition={{ delay: idx * 0.1 + 0.3, duration: 0.5 }}
                             className={`h-full rounded-full ${p.accuracy >= 90 ? 'bg-emerald-500' : p.accuracy >= 75 ? 'bg-gold' : 'bg-rose-500'}`} />
                         </div>
@@ -143,7 +143,7 @@ export default function SelfReferencePage() {
                         <span className="text-lg font-bold text-platinum-100">{s.accuracy}%</span>
                       </div>
                     </div>
-                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                       <motion.div initial={{ width: 0 }} animate={{ width: `${s.accuracy}%` }} transition={{ delay: idx * 0.1 + 0.3, duration: 0.5 }}
                         className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-sky-500" />
                     </div>

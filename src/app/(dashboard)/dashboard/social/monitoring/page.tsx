@@ -121,7 +121,7 @@ export default function SocialMonitoringPage() {
         <div>
           <Badge variant="denim" className="mb-2">S-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Social Media Monitoring</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Real-time surveillance and analytics across all major social platforms
           </p>
         </div>
@@ -257,7 +257,7 @@ export default function SocialMonitoringPage() {
                       {platformReachData.map((platform, index) => (
                         <div
                           key={index}
-                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70"
+                          className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70"
                         >
                           <div className="flex items-center gap-4">
                             <div
@@ -267,18 +267,18 @@ export default function SocialMonitoringPage() {
                               <Globe className="h-5 w-5" style={{ color: platform.color }} />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-200">{platform.name}</p>
-                              <p className="text-sm text-slate-400">{platform.posts.toLocaleString()} posts tracked</p>
+                              <p className="font-semibold text-platinum-200">{platform.name}</p>
+                              <p className="text-sm text-platinum-400">{platform.posts.toLocaleString()} posts tracked</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-6">
                             <div className="text-center">
                               <div className="text-lg font-bold text-gold">{platform.reach}M</div>
-                              <p className="text-xs text-slate-400">Reach</p>
+                              <p className="text-xs text-platinum-400">Reach</p>
                             </div>
                             <div className="text-center">
                               <div className="text-lg font-bold text-emerald-400">{platform.sentiment}%</div>
-                              <p className="text-xs text-slate-400">Sentiment</p>
+                              <p className="text-xs text-platinum-400">Sentiment</p>
                             </div>
                           </div>
                         </div>
@@ -327,10 +327,10 @@ export default function SocialMonitoringPage() {
                         { time: '10:00 - 12:00', activity: 'High', posts: 175000 },
                         { time: '08:00 - 10:00', activity: 'Moderate', posts: 142000 },
                       ].map((item, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Clock className="h-4 w-4 text-navy" />
-                            <span className="text-sm font-medium text-slate-200">{item.time}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.time}</span>
                           </div>
                           <div className="flex items-center gap-3">
                             <Badge variant="outline" className="text-emerald-400">{item.activity}</Badge>
@@ -353,10 +353,10 @@ export default function SocialMonitoringPage() {
                         { time: '02:00 - 06:00', activity: 'Very Low', posts: 12000 },
                         { time: '22:00 - 00:00', activity: 'Low', posts: 38000 },
                       ].map((item, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Clock className="h-4 w-4 text-platinum" />
-                            <span className="text-sm font-medium text-slate-200">{item.time}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.time}</span>
                           </div>
                           <div className="flex items-center gap-3">
                             <Badge variant="outline" className="text-platinum-400">{item.activity}</Badge>
@@ -387,35 +387,35 @@ export default function SocialMonitoringPage() {
                       {alertCategories.map((alert, index) => (
                         <div
                           key={index}
-                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70"
+                          className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70"
                         >
                           <div className="flex items-center gap-4">
                             <div
                               className={`h-10 w-10 rounded-full flex items-center justify-center ${
                                 alert.severity > 80 ? 'bg-rose-500/20 text-rose-400' :
-                                alert.severity > 60 ? 'bg-yellow-500/20 text-yellow-400' :
+                                alert.severity > 60 ? 'bg-amber-500/20 text-amber-400' :
                                 'bg-emerald-500/20 text-emerald-400'
                               }`}
                             >
                               <AlertTriangle className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-200">{alert.category}</p>
-                              <p className="text-sm text-slate-400">{alert.count} incidents this month</p>
+                              <p className="font-semibold text-platinum-200">{alert.category}</p>
+                              <p className="text-sm text-platinum-400">{alert.count} incidents this month</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-6">
                             <div className="text-center">
                               <div className={`text-lg font-bold ${
                                 alert.severity > 80 ? 'text-rose-400' :
-                                alert.severity > 60 ? 'text-yellow-400' :
+                                alert.severity > 60 ? 'text-amber-400' :
                                 'text-emerald-400'
                               }`}>{alert.severity}%</div>
-                              <p className="text-xs text-slate-400">Severity</p>
+                              <p className="text-xs text-platinum-400">Severity</p>
                             </div>
                             <div className="text-center">
                               {getTrendIcon(alert.trend)}
-                              <p className="text-xs text-slate-400 mt-1">Trend</p>
+                              <p className="text-xs text-platinum-400 mt-1">Trend</p>
                             </div>
                           </div>
                         </div>

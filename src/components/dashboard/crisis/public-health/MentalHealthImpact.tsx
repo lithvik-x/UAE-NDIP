@@ -54,7 +54,7 @@ export function MentalHealthImpact({ data }: MentalHealthImpactProps) {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="text-center p-4 rounded-lg bg-sky-500/10 border border-sky-500/30">
+              <div className="text-center p-4 rounded-lg bg-cyan-500/10 border border-cyan-500/30">
                 <div className="text-3xl font-bold text-sky">{mentalHealthImpact.surveyFindings[0].value}</div>
                 <div className="text-sm text-platinum-400">Reported Negative Mental Health Impact</div>
                 <div className="text-xs text-platinum-500 mt-1">Source: YouGov Survey (April 2022)</div>
@@ -130,7 +130,7 @@ export function MentalHealthImpact({ data }: MentalHealthImpactProps) {
             <Smile className="w-3 h-3 mr-1" />
             Depression/anxiety levels lower than other countries during pandemic (MDPI Study June 2024)
           </Badge>
-          <Badge className="ml-2 bg-sky-500/20 text-sky border-sky-500/50">
+          <Badge className="ml-2 bg-cyan-500/20 text-sky border-cyan-500/50">
             <Clock className="w-3 h-3 mr-1" />
             Mental health relief from gradual easing of restrictions
           </Badge>

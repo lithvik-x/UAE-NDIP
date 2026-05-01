@@ -120,13 +120,13 @@ export default function NarrativeAnalysisPage() {
 
   const getSentimentColor = (score: number) => {
     if (score >= 70) return 'text-emerald-400'
-    if (score >= 50) return 'text-yellow-400'
+    if (score >= 50) return 'text-amber-400'
     return 'text-rose-400'
   }
 
   const getSentimentBg = (score: number) => {
     if (score >= 70) return 'bg-emerald-500/20'
-    if (score >= 50) return 'bg-yellow-500/20'
+    if (score >= 50) return 'bg-amber-500/20'
     return 'bg-rose-500/20'
   }
 
@@ -137,7 +137,7 @@ export default function NarrativeAnalysisPage() {
         <div>
           <Badge variant="gold" className="mb-2">SENTIMENT</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Narrative Analysis</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Dominant narratives, theme tracking, and sentiment intelligence
           </p>
         </div>
@@ -271,26 +271,26 @@ export default function NarrativeAnalysisPage() {
                   <ScrollArea className="h-[300px]">
                     <div className="space-y-3">
                       {platformNarrativesData.map((platform, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                        <div key={index} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div className="flex items-center gap-4">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
                               <Globe className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-200">{platform.platform}</p>
-                              <p className="text-sm text-slate-400">Dominant: {platform.dominant}</p>
+                              <p className="font-semibold text-platinum-200">{platform.platform}</p>
+                              <p className="text-sm text-platinum-400">Dominant: {platform.dominant}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-6">
                             <div className="text-center">
                               <div className="text-lg font-bold text-gold">{platform.engagement}%</div>
-                              <p className="text-xs text-slate-400">Engagement</p>
+                              <p className="text-xs text-platinum-400">Engagement</p>
                             </div>
                             <div className="text-center">
                               <div className={`text-lg font-bold ${getSentimentColor(platform.sentiment)}`}>
                                 {platform.sentiment}%
                               </div>
-                              <p className="text-xs text-slate-400">Sentiment</p>
+                              <p className="text-xs text-platinum-400">Sentiment</p>
                             </div>
                           </div>
                         </div>
@@ -316,15 +316,15 @@ export default function NarrativeAnalysisPage() {
                   <ScrollArea className="h-[400px]">
                     <div className="space-y-4">
                       {narrativesData.map((narrative, index) => (
-                        <div key={index} className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                        <div key={index} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div className="flex items-start justify-between mb-3">
                             <div className="flex items-center gap-3">
                               <div className={`flex h-8 w-8 items-center justify-center rounded-full ${getSentimentBg(narrative.sentiment)}`}>
                                 <MessageSquare className={`h-4 w-4 ${getSentimentColor(narrative.sentiment)}`} />
                               </div>
                               <div>
-                                <p className="font-semibold text-slate-200">{narrative.narrative}</p>
-                                <p className="text-sm text-slate-400">{narrative.volume.toLocaleString()} mentions</p>
+                                <p className="font-semibold text-platinum-200">{narrative.narrative}</p>
+                                <p className="text-sm text-platinum-400">{narrative.volume.toLocaleString()} mentions</p>
                               </div>
                             </div>
                             <div className="flex items-center gap-2">
@@ -332,7 +332,7 @@ export default function NarrativeAnalysisPage() {
                                 {narrative.trend === 'up' ? (
                                   <TrendingUp className="h-3 w-3 mr-1 text-emerald" />
                                 ) : (
-                                  <Clock className="h-3 w-3 mr-1 text-slate-400" />
+                                  <Clock className="h-3 w-3 mr-1 text-platinum-400" />
                                 )}
                                 {narrative.trend}
                               </Badge>
@@ -342,7 +342,7 @@ export default function NarrativeAnalysisPage() {
                             </div>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-400">Sentiment Score</span>
+                            <span className="text-sm text-platinum-400">Sentiment Score</span>
                             <div className="flex items-center gap-2">
                               <Progress value={narrative.sentiment} className="h-2 w-24" />
                               <span className={`text-sm font-bold ${getSentimentColor(narrative.sentiment)}`}>
@@ -371,10 +371,10 @@ export default function NarrativeAnalysisPage() {
                         { narrative: 'Green Hydrogen Initiative', growth: 32, sentiment: 82 },
                         { narrative: 'Cultural Diplomacy', growth: 28, sentiment: 79 },
                       ].map((item, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Lightbulb className="h-5 w-5 text-gold" />
-                            <span className="text-sm font-medium text-slate-200">{item.narrative}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.narrative}</span>
                           </div>
                           <div className="flex items-center gap-3">
                             <Badge variant="outline" className="text-xs text-emerald">+{item.growth}%</Badge>
@@ -399,10 +399,10 @@ export default function NarrativeAnalysisPage() {
                         { narrative: 'Housing Costs', decline: -8, sentiment: 48 },
                         { narrative: 'Traffic Issues', decline: -5, sentiment: 55 },
                       ].map((item, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <TrendingDown className="h-5 w-5 text-rose" />
-                            <span className="text-sm font-medium text-slate-200">{item.narrative}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.narrative}</span>
                           </div>
                           <div className="flex items-center gap-3">
                             <Badge variant="outline" className="text-xs text-rose">{item.decline}%</Badge>
@@ -494,21 +494,21 @@ export default function NarrativeAnalysisPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-3">
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <Target className="mx-auto h-6 w-6 text-gold mb-2" />
-                      <p className="text-xs text-slate-400">Overlapping Themes</p>
+                      <p className="text-xs text-platinum-400">Overlapping Themes</p>
                       <p className="text-xl font-bold text-gold">42</p>
                       <span className="text-xs text-emerald">+8 this month</span>
                     </div>
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <MessageSquare className="mx-auto h-6 w-6 text-navy mb-2" />
-                      <p className="text-xs text-slate-400">Hybrid Narratives</p>
+                      <p className="text-xs text-platinum-400">Hybrid Narratives</p>
                       <p className="text-xl font-bold text-navy">18</p>
                       <span className="text-xs text-emerald">+3 this month</span>
                     </div>
-                    <div className="rounded-lg bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <Users className="mx-auto h-6 w-6 text-emerald mb-2" />
-                      <p className="text-xs text-slate-400">Audience Segments</p>
+                      <p className="text-xs text-platinum-400">Audience Segments</p>
                       <p className="text-xl font-bold text-emerald">24</p>
                       <span className="text-xs text-emerald">Stable</span>
                     </div>
@@ -559,9 +559,9 @@ export default function NarrativeAnalysisPage() {
                         <div key={index} className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
                             <div className={`h-3 w-3 rounded-full bg-${item.color}-500`} />
-                            <span className="text-sm text-slate-300">{item.status}</span>
+                            <span className="text-sm text-platinum-300">{item.status}</span>
                           </div>
-                          <span className="text-lg font-bold text-slate-200">{item.count}</span>
+                          <span className="text-lg font-bold text-platinum-200">{item.count}</span>
                         </div>
                       ))}
                     </div>
@@ -581,8 +581,8 @@ export default function NarrativeAnalysisPage() {
                         { metric: 'Sentiment Recovery', value: '85%', change: '+8%' },
                         { metric: 'Engagement Lift', value: '+22%', change: '+5%' },
                       ].map((item, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
-                          <span className="text-sm font-medium text-slate-200">{item.metric}</span>
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
+                          <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
                           <div className="flex items-center gap-3">
                             <span className="text-lg font-bold text-gold">{item.value}</span>
                             <Badge variant="outline" className="text-xs text-emerald">{item.change}</Badge>
@@ -608,13 +608,13 @@ export default function NarrativeAnalysisPage() {
                         { topic: 'Environmental Claims Response', status: 'Planned', reach: 1.8 },
                         { topic: 'Cultural Context Education', status: 'Active', reach: 3.1 },
                       ].map((campaign, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Shield className="h-5 w-5 text-gold" />
-                            <span className="text-sm font-medium text-slate-200">{campaign.topic}</span>
+                            <span className="text-sm font-medium text-platinum-200">{campaign.topic}</span>
                           </div>
                           <div className="flex items-center gap-3">
-                            <span className="text-sm text-slate-400">{campaign.reach}M reach</span>
+                            <span className="text-sm text-platinum-400">{campaign.reach}M reach</span>
                             <Badge variant={campaign.status === 'Active' ? 'default' : 'outline'} className="text-xs">
                               {campaign.status}
                             </Badge>
@@ -676,13 +676,13 @@ export default function NarrativeAnalysisPage() {
                   <ScrollArea className="h-[400px]">
                     <div className="space-y-4">
                       {controversyData.topics.map((topic, index) => (
-                        <div key={index} className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                        <div key={index} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div className="flex items-start justify-between mb-3">
                             <div className="flex items-center gap-3">
                               <div className={`flex h-8 w-8 items-center justify-center rounded-full ${
                                 topic.alertLevel === 'RED' ? 'bg-rose-500/20' :
                                 topic.alertLevel === 'ORANGE' ? 'bg-orange-500/20' :
-                                topic.alertLevel === 'YELLOW' ? 'bg-yellow-500/20' :
+                                topic.alertLevel === 'YELLOW' ? 'bg-amber-500/20' :
                                 'bg-emerald-500/20'
                               }`}>
                                 {topic.alertLevel === 'RED' ? <Flame className="h-4 w-4 text-rose" /> :
@@ -691,17 +691,17 @@ export default function NarrativeAnalysisPage() {
                                  <CheckCircle className="h-4 w-4 text-emerald" />}
                               </div>
                               <div>
-                                <p className="font-semibold text-slate-200">{topic.title}</p>
-                                <p className="text-sm text-slate-400">{topic.sentiment.volume.toLocaleString()} mentions</p>
+                                <p className="font-semibold text-platinum-200">{topic.title}</p>
+                                <p className="text-sm text-platinum-400">{topic.sentiment.volume.toLocaleString()} mentions</p>
                               </div>
                             </div>
                             <Badge variant={topic.alertLevel === 'RED' ? 'destructive' : 'outline'} className="text-xs">
                               {topic.alertLevel}
                             </Badge>
                           </div>
-                          <p className="text-sm text-slate-300 mb-3 line-clamp-2">{topic.description}</p>
+                          <p className="text-sm text-platinum-300 mb-3 line-clamp-2">{topic.description}</p>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-400">Sentiment Score</span>
+                            <span className="text-sm text-platinum-400">Sentiment Score</span>
                             <div className="flex items-center gap-2">
                               <Progress
                                 value={(topic.sentimentScore + 1) * 50}
@@ -716,7 +716,7 @@ export default function NarrativeAnalysisPage() {
                           </div>
                           <div className="flex flex-wrap gap-2 mt-3">
                             {topic.keyDrivers.slice(0, 3).map((driver, idx) => (
-                              <Badge key={idx} variant="outline" className="text-xs text-slate-400">
+                              <Badge key={idx} variant="outline" className="text-xs text-platinum-400">
                                 {driver}
                               </Badge>
                             ))}
@@ -783,10 +783,10 @@ export default function NarrativeAnalysisPage() {
                   <CardContent>
                     <div className="space-y-3">
                       {controversyData.humanRightsKPIs.map((kpi, idx) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                        <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Shield className="h-4 w-4 text-rose" />
-                            <span className="text-sm font-medium text-slate-200">{kpi.kpi}</span>
+                            <span className="text-sm font-medium text-platinum-200">{kpi.kpi}</span>
                           </div>
                           <div className="flex items-center gap-2">
                             <span className="text-sm font-bold text-gold">{kpi.currentValue}</span>
@@ -808,10 +808,10 @@ export default function NarrativeAnalysisPage() {
                   <CardContent>
                     <div className="space-y-3">
                       {controversyData.climateKPIs.map((kpi, idx) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                        <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Flame className="h-4 w-4 text-orange" />
-                            <span className="text-sm font-medium text-slate-200">{kpi.kpi}</span>
+                            <span className="text-sm font-medium text-platinum-200">{kpi.kpi}</span>
                           </div>
                           <div className="flex items-center gap-2">
                             <span className="text-sm font-bold text-gold">{kpi.currentValue}</span>
@@ -836,25 +836,25 @@ export default function NarrativeAnalysisPage() {
                     <div className="grid gap-4 sm:grid-cols-3">
                       <div className="rounded-lg bg-rose-500/10 p-4 text-center border border-rose-500/20">
                         <AlertTriangle className="mx-auto h-6 w-6 text-rose mb-2" />
-                        <p className="text-xs text-slate-400">Sentiment Score</p>
+                        <p className="text-xs text-platinum-400">Sentiment Score</p>
                         <p className="text-xl font-bold text-rose">-90%</p>
                       </div>
                       <div className="rounded-lg bg-rose-500/10 p-4 text-center border border-rose-500/20">
                         <Eye className="mx-auto h-6 w-6 text-rose mb-2" />
-                        <p className="text-xs text-slate-400">Alert Level</p>
+                        <p className="text-xs text-platinum-400">Alert Level</p>
                         <p className="text-xl font-bold text-rose">RED</p>
                       </div>
                       <div className="rounded-lg bg-rose-500/10 p-4 text-center border border-rose-500/20">
                         <Globe className="mx-auto h-6 w-6 text-rose mb-2" />
-                        <p className="text-xs text-slate-400">UAE Relevance</p>
+                        <p className="text-xs text-platinum-400">UAE Relevance</p>
                         <p className="text-xl font-bold text-rose">96/100</p>
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <h4 className="text-sm font-semibold text-slate-300">Key Debate Angles</h4>
+                      <h4 className="text-sm font-semibold text-platinum-300">Key Debate Angles</h4>
                       {surveillanceData?.debateAngles?.map((angle, idx) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
-                          <span className="text-sm text-slate-300">{angle.angle}</span>
+                        <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-3">
+                          <span className="text-sm text-platinum-300">{angle.angle}</span>
                           <Badge variant="outline" className="text-xs">
                             {angle.evidenceStrength}
                           </Badge>

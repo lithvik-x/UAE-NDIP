@@ -149,7 +149,7 @@ export default function MediaTonePage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="mt-2 text-slate-400"
+            className="mt-2 text-platinum-400"
           >
             Comprehensive analysis of media framing patterns across Western, Regional, and Gulf sources
           </motion.p>
@@ -354,7 +354,7 @@ export default function MediaTonePage() {
                         {role.role === 'Hero' ? 'Positive' : role.role === 'Villain' || role.role === 'Aggressor' ? 'Negative' : 'Neutral'}
                       </Badge>
                     </div>
-                    <p className="text-sm text-slate-400">{role.evidence}</p>
+                    <p className="text-sm text-platinum-400">{role.evidence}</p>
                   </motion.div>
                 ))}
               </div>
@@ -377,7 +377,7 @@ export default function MediaTonePage() {
                 {framingTypology.powerFraming.map((power, idx) => (
                   <div key={idx} className="bg-navy-800/30 rounded p-2">
                     <span className="text-xs text-violet-400 font-semibold">{power.level}</span>
-                    <p className="text-xs text-slate-400 mt-1">{power.indicators}</p>
+                    <p className="text-xs text-platinum-400 mt-1">{power.indicators}</p>
                   </div>
                 ))}
               </div>
@@ -404,7 +404,7 @@ export default function MediaTonePage() {
                     <XCircle className="w-4 h-4 text-rose-400" />
                     <span className="font-semibold text-platinum-200">{frame.frame}</span>
                   </div>
-                  <p className="text-sm text-slate-400 mb-2">{frame.description}</p>
+                  <p className="text-sm text-platinum-400 mb-2">{frame.description}</p>
                   <p className="text-xs text-violet-400 italic">{frame.example}</p>
                 </motion.div>
               ))}
@@ -430,7 +430,7 @@ export default function MediaTonePage() {
                     <CheckCircle className="w-4 h-4 text-emerald-400" />
                     <span className="font-semibold text-platinum-200">{frame.frame}</span>
                   </div>
-                  <p className="text-sm text-slate-400 mb-2">{frame.description}</p>
+                  <p className="text-sm text-platinum-400 mb-2">{frame.description}</p>
                   <p className="text-xs text-violet-400 italic">{frame.example}</p>
                 </motion.div>
               ))}
@@ -545,7 +545,7 @@ export default function MediaTonePage() {
                   {synthesizedFindings.softPowerHumanitarian.criticism.map((item, idx) => (
                     <div key={idx} className="bg-navy-800/30 rounded p-2">
                       <span className="text-sm text-rose-400">{item.criticism}</span>
-                      <p className="text-xs text-slate-400">Source: {item.source}</p>
+                      <p className="text-xs text-platinum-400">Source: {item.source}</p>
                     </div>
                   ))}
                 </div>
@@ -582,7 +582,7 @@ export default function MediaTonePage() {
                         {source.tier.split(' ')[0]}
                       </Badge>
                     </div>
-                    <p className="text-xs text-slate-400 mb-1">{source.title}</p>
+                    <p className="text-xs text-platinum-400 mb-1">{source.title}</p>
                     <div className="flex items-center gap-2">
                       <Badge
                         variant={source.sentiment.includes('Pro-UAE') || source.sentiment.includes('Positive') ? 'emerald' : 'rose'}
@@ -590,7 +590,7 @@ export default function MediaTonePage() {
                       >
                         {source.sentiment.split('/')[0].trim()}
                       </Badge>
-                      <span className="text-xs text-slate-500">{source.relevance} Relevance</span>
+                      <span className="text-xs text-platinum-500">{source.relevance} Relevance</span>
                     </div>
                   </motion.div>
                 ))}
@@ -610,7 +610,7 @@ export default function MediaTonePage() {
                       <span className="font-semibold text-platinum-200 text-sm">{item.source}</span>
                       <Badge variant="rose" className="font-rajdhani text-xs">{item.issue}</Badge>
                     </div>
-                    <p className="text-xs text-slate-400">{item.impact}</p>
+                    <p className="text-xs text-platinum-400">{item.impact}</p>
                   </div>
                 ))}
               </div>
@@ -633,7 +633,7 @@ export default function MediaTonePage() {
                     {tier.tier}
                   </Badge>
                   <p className="text-sm text-platinum-200 mb-1">{tier.description}</p>
-                  <p className="text-xs text-slate-400">{tier.sources}</p>
+                  <p className="text-xs text-platinum-400">{tier.sources}</p>
                 </div>
               ))}
             </div>
@@ -703,11 +703,11 @@ export default function MediaTonePage() {
             <div className="flex items-center justify-center gap-6 mt-4">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-rose-500" />
-                <span className="text-xs text-slate-400">Western Score</span>
+                <span className="text-xs text-platinum-400">Western Score</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-3 rounded-full bg-emerald-500" />
-                <span className="text-xs text-slate-400">Gulf Score</span>
+                <span className="text-xs text-platinum-400">Gulf Score</span>
               </div>
             </div>
           </GlassPanel>
@@ -754,7 +754,7 @@ export default function MediaTonePage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="text-center text-sm text-slate-500"
+        className="text-center text-sm text-platinum-500"
       >
         <p>
           Data sourced from {executionMetadata.totalSourcesEnriched} sources |

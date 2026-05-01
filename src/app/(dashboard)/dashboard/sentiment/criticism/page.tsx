@@ -99,9 +99,9 @@ const getSeverityColor = (severity: string) => {
     case 'CRITICAL': return 'bg-red-500/20 text-red-400 border-red-500/50'
     case 'HIGH': return 'bg-amber-500/20 text-amber-400 border-amber-500/50'
     case 'MEDIUM-HIGH': return 'bg-orange-500/20 text-orange-400 border-orange-500/50'
-    case 'MEDIUM': return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/50'
-    case 'LOW': return 'bg-green-500/20 text-green-400 border-green-500/50'
-    default: return 'bg-slate-500/20 text-slate-400 border-slate-500/50'
+    case 'MEDIUM': return 'bg-amber-500/20 text-amber-400 border-amber-500/50'
+    case 'LOW': return 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50'
+    default: return 'bg-platinum-500/20 text-platinum-400 border-platinum-500/50'
   }
 }
 
@@ -110,9 +110,9 @@ const getSeverityTextColor = (severity: string) => {
     case 'CRITICAL': return 'text-red-400'
     case 'HIGH': return 'text-amber-400'
     case 'MEDIUM-HIGH': return 'text-orange-400'
-    case 'MEDIUM': return 'text-yellow-400'
-    case 'LOW': return 'text-green-400'
-    default: return 'text-slate-400'
+    case 'MEDIUM': return 'text-amber-400'
+    case 'LOW': return 'text-emerald-400'
+    default: return 'text-platinum-400'
   }
 }
 
@@ -121,9 +121,9 @@ const getTrendColor = (trend: string) => {
     case 'Worsening': return 'text-red-400'
     case 'Rising': return 'text-orange-400'
     case 'Declining': return 'text-amber-400'
-    case 'Static': return 'text-slate-400'
-    case 'Mixed': return 'text-yellow-400'
-    default: return 'text-slate-400'
+    case 'Static': return 'text-platinum-400'
+    case 'Mixed': return 'text-amber-400'
+    default: return 'text-platinum-400'
   }
 }
 
@@ -205,7 +205,7 @@ export default function CriticismComplaintPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="mt-2 text-slate-400"
+            className="mt-2 text-platinum-400"
           >
             {criticismOverview.dataPointsExtracted}+ statistics, {criticismOverview.entitiesCataloged}+ entities, {criticismOverview.legalProvisionsCited}+ legal provisions
           </motion.p>
@@ -304,13 +304,13 @@ export default function CriticismComplaintPage() {
                           <Badge className={getSeverityColor(risk.score)}>
                             {risk.score}
                           </Badge>
-                          <IconComponent className="h-5 w-5 text-slate-400" />
+                          <IconComponent className="h-5 w-5 text-platinum-400" />
                         </div>
-                        <h4 className="font-semibold text-slate-200 mb-2 font-rajdhani">
+                        <h4 className="font-semibold text-platinum-200 mb-2 font-rajdhani">
                           {risk.riskCategory}
                         </h4>
                         <div className="flex items-center gap-2">
-                          <span className="text-xs text-slate-500">Trend:</span>
+                          <span className="text-xs text-platinum-500">Trend:</span>
                           <span className={`text-xs font-semibold ${getTrendColor(risk.trend)}`}>
                             {risk.trend}
                           </span>
@@ -388,12 +388,12 @@ export default function CriticismComplaintPage() {
                     <Badge className={getSeverityColor(ctx.relevance)}>
                       {ctx.relevance}
                     </Badge>
-                    <Globe className="h-4 w-4 text-slate-400" />
+                    <Globe className="h-4 w-4 text-platinum-400" />
                   </div>
-                  <h4 className="font-semibold text-slate-200 text-sm mb-2 font-rajdhani">
+                  <h4 className="font-semibold text-platinum-200 text-sm mb-2 font-rajdhani">
                     {ctx.factor}
                   </h4>
-                  <p className="text-xs text-slate-400">{ctx.impact}</p>
+                  <p className="text-xs text-platinum-400">{ctx.impact}</p>
                 </motion.div>
               ))}
             </div>
@@ -412,19 +412,19 @@ export default function CriticismComplaintPage() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.03 }}
-                    className="glass-card border-slate-500/30 p-4"
+                    className="glass-card border-platinum-500/30 p-4"
                   >
                     <div className="flex items-center justify-between mb-2">
                       <Badge className={getSeverityColor(metric.uaeRelevance)}>
                         {metric.uaeRelevance}
                       </Badge>
-                      <span className="text-xs text-slate-500">{metric.yearPeriod}</span>
+                      <span className="text-xs text-platinum-500">{metric.yearPeriod}</span>
                     </div>
-                    <p className="text-sm text-slate-300 mb-1">{metric.metric}</p>
+                    <p className="text-sm text-platinum-300 mb-1">{metric.metric}</p>
                     <p className="text-xl font-bold text-platinum-100 font-rajdhani">
                       {metric.value}
                     </p>
-                    <p className="text-xs text-slate-500 mt-1">Source: {metric.source}</p>
+                    <p className="text-xs text-platinum-500 mt-1">Source: {metric.source}</p>
                   </motion.div>
                 ))}
               </div>
@@ -449,11 +449,11 @@ export default function CriticismComplaintPage() {
                       </Badge>
                       <DollarSign className="h-4 w-4 text-amber-400" />
                     </div>
-                    <p className="text-sm text-slate-300 mb-1">{metric.metric}</p>
+                    <p className="text-sm text-platinum-300 mb-1">{metric.metric}</p>
                     <p className="text-xl font-bold text-amber-400 font-rajdhani">
                       {metric.value}
                     </p>
-                    <p className="text-xs text-slate-500 mt-1">{metric.period} • {metric.source}</p>
+                    <p className="text-xs text-platinum-500 mt-1">{metric.period} • {metric.source}</p>
                   </motion.div>
                 ))}
               </div>
@@ -489,7 +489,7 @@ export default function CriticismComplaintPage() {
                           <IconComponent className="h-5 w-5" />
                         </div>
                         <div>
-                          <p className="text-xs text-slate-500">{metric.metric}</p>
+                          <p className="text-xs text-platinum-500">{metric.metric}</p>
                           <p className="text-lg font-bold text-orange-400 font-rajdhani">
                             {metric.value}
                           </p>
@@ -520,7 +520,7 @@ export default function CriticismComplaintPage() {
                         {metric.uaeRelevance}
                       </Badge>
                     </div>
-                    <p className="text-sm text-slate-300 mb-1">{metric.metric}</p>
+                    <p className="text-sm text-platinum-300 mb-1">{metric.metric}</p>
                     <p className="text-xl font-bold text-cyan-400 font-rajdhani">
                       {metric.value}
                     </p>
@@ -544,9 +544,9 @@ export default function CriticismComplaintPage() {
                   >
                     <div className="flex items-center gap-3 mb-2">
                       <GraduationCap className="h-5 w-5 text-indigo-400" />
-                      <span className="text-xs text-slate-500">{metric.notes}</span>
+                      <span className="text-xs text-platinum-500">{metric.notes}</span>
                     </div>
-                    <p className="text-sm text-slate-300 mb-1">{metric.schoolLevel}</p>
+                    <p className="text-sm text-platinum-300 mb-1">{metric.schoolLevel}</p>
                     <p className="text-lg font-bold text-indigo-400 font-rajdhani">
                       {metric.annualCostUSD}
                     </p>
@@ -573,7 +573,7 @@ export default function CriticismComplaintPage() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-1">
-                        <h4 className="font-semibold text-slate-200">{penalty.violationType}</h4>
+                        <h4 className="font-semibold text-platinum-200">{penalty.violationType}</h4>
                         <Badge variant="destructive" className="text-xs">
                           {penalty.governingLaw}
                         </Badge>
@@ -614,7 +614,7 @@ export default function CriticismComplaintPage() {
                   </CardContent>
                 </Card>
 
-                <Card className="glass-card border-slate-500/30">
+                <Card className="glass-card border-platinum-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg font-rajdhani">
                       <PieChartIcon className="w-4 h-4 inline mr-2" />
@@ -697,7 +697,7 @@ export default function CriticismComplaintPage() {
           {/* Trend Analysis */}
           <GlassPanel title="Trend Analysis (2024-2026)" description="Complaint category severity progression">
             <div className="space-y-6">
-              <Card className="glass-card border-slate-500/30">
+              <Card className="glass-card border-platinum-500/30">
                 <CardHeader>
                   <CardTitle className="text-lg font-rajdhani">
                     <TrendingUp className="w-4 h-4 inline mr-2" />
@@ -735,7 +735,7 @@ export default function CriticismComplaintPage() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.03 }}
-                    className="glass-card border-slate-500/30 p-4"
+                    className="glass-card border-platinum-500/30 p-4"
                   >
                     <div className="flex items-start gap-4">
                       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-denim-500/20 text-denim-400">
@@ -743,12 +743,12 @@ export default function CriticismComplaintPage() {
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-1">
-                          <h4 className="font-semibold text-slate-200">{entity.entity}</h4>
+                          <h4 className="font-semibold text-platinum-200">{entity.entity}</h4>
                           <Badge variant="outline" className="text-xs">
                             Tier {entity.tier}
                           </Badge>
                         </div>
-                        <div className="flex flex-wrap gap-2 text-xs text-slate-400">
+                        <div className="flex flex-wrap gap-2 text-xs text-platinum-400">
                           <Badge variant="secondary" className="text-xs">
                             {entity.category}
                           </Badge>
@@ -780,11 +780,11 @@ export default function CriticismComplaintPage() {
                       className="glass-card border-cyan-500/30 p-4"
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-semibold text-slate-200">{entity.entity}</h4>
+                        <h4 className="font-semibold text-platinum-200">{entity.entity}</h4>
                         <Wifi className="h-4 w-4 text-cyan-400" />
                       </div>
-                      <p className="text-xs text-slate-400">{entity.type}</p>
-                      <p className="text-xs text-slate-500">Market: {entity.marketPosition}</p>
+                      <p className="text-xs text-platinum-400">{entity.type}</p>
+                      <p className="text-xs text-platinum-500">Market: {entity.marketPosition}</p>
                       <Badge variant="outline" className="mt-2 text-xs">
                         Complaint Volume: {entity.complaintVolume}
                       </Badge>
@@ -807,9 +807,9 @@ export default function CriticismComplaintPage() {
                     >
                       <div className="flex items-center gap-3 mb-2">
                         <Banknote className="h-5 w-5 text-amber-400" />
-                        <h4 className="font-semibold text-slate-200">{entity.entity}</h4>
+                        <h4 className="font-semibold text-platinum-200">{entity.entity}</h4>
                       </div>
-                      <p className="text-xs text-slate-400">{entity.type}</p>
+                      <p className="text-xs text-platinum-400">{entity.type}</p>
                       <p className="text-xs text-red-400 mt-2">{entity.notableIssue}</p>
                     </motion.div>
                   ))}
@@ -830,9 +830,9 @@ export default function CriticismComplaintPage() {
                     >
                       <div className="flex items-center gap-3 mb-2">
                         <GraduationCap className="h-5 w-5 text-indigo-400" />
-                        <h4 className="font-semibold text-slate-200">{entity.entity}</h4>
+                        <h4 className="font-semibold text-platinum-200">{entity.entity}</h4>
                       </div>
-                      <p className="text-xs text-slate-400">{entity.type}</p>
+                      <p className="text-xs text-platinum-400">{entity.type}</p>
                       <p className="text-xs text-indigo-400 mt-2">{entity.feeRange}</p>
                     </motion.div>
                   ))}
@@ -870,7 +870,7 @@ export default function CriticismComplaintPage() {
                           </Badge>
                         )}
                       </div>
-                      <p className="text-sm text-slate-300">{provision.provision}</p>
+                      <p className="text-sm text-platinum-300">{provision.provision}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -894,7 +894,7 @@ export default function CriticismComplaintPage() {
                       <Shield className="h-5 w-5" />
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm text-slate-300 mb-1">{violation.violation}</p>
+                      <p className="text-sm text-platinum-300 mb-1">{violation.violation}</p>
                       <Badge variant="destructive" className="text-xs">
                         {violation.penalty}
                       </Badge>
@@ -923,7 +923,7 @@ export default function CriticismComplaintPage() {
                         {provision.article}
                       </Badge>
                     </div>
-                    <p className="text-sm text-slate-300">{provision.provision}</p>
+                    <p className="text-sm text-platinum-300">{provision.provision}</p>
                   </motion.div>
                 ))}
               </div>
@@ -940,10 +940,10 @@ export default function CriticismComplaintPage() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="glass-card border-slate-500/30 p-4"
+                    className="glass-card border-platinum-500/30 p-4"
                   >
                     <div className="flex items-center justify-between mb-3">
-                      <h4 className="font-semibold text-slate-200 text-sm">{mechanism.mechanism}</h4>
+                      <h4 className="font-semibold text-platinum-200 text-sm">{mechanism.mechanism}</h4>
                       <Badge className={
                         mechanism.effectiveness === 'HIGH' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' :
                         mechanism.effectiveness === 'MEDIUM' ? 'bg-amber-500/20 text-amber-400 border-amber-500/50' :
@@ -954,12 +954,12 @@ export default function CriticismComplaintPage() {
                     </div>
                     <div className="space-y-2 text-xs">
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Accessibility:</span>
-                        <span className="text-slate-300">{mechanism.accessibility}</span>
+                        <span className="text-platinum-500">Accessibility:</span>
+                        <span className="text-platinum-300">{mechanism.accessibility}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Response Time:</span>
-                        <span className="text-slate-300">{mechanism.responseTime}</span>
+                        <span className="text-platinum-500">Response Time:</span>
+                        <span className="text-platinum-300">{mechanism.responseTime}</span>
                       </div>
                     </div>
                   </motion.div>
@@ -992,7 +992,7 @@ export default function CriticismComplaintPage() {
                     </motion.div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-bold text-lg text-slate-200 font-rajdhani">
+                        <h4 className="font-bold text-lg text-platinum-200 font-rajdhani">
                           {finding.category}
                         </h4>
                         <Badge className={getSeverityColor(finding.uaeRelevance)}>
@@ -1001,14 +1001,14 @@ export default function CriticismComplaintPage() {
                       </div>
                       <div className="space-y-2 mb-3">
                         {finding.coverageThemes.map((theme, i) => (
-                          <p key={i} className="text-sm text-slate-400 flex items-start gap-2">
+                          <p key={i} className="text-sm text-platinum-400 flex items-start gap-2">
                             <XCircle className="w-3 h-3 text-red-400 mt-1 flex-shrink-0" />
                             {theme}
                           </p>
                         ))}
                       </div>
                       {finding.keyStatistics.length > 0 && (
-                        <div className="flex flex-wrap gap-2 pt-3 border-t border-slate-700">
+                        <div className="flex flex-wrap gap-2 pt-3 border-t border-platinum-700">
                           {finding.keyStatistics.map((stat, i) => (
                             <Badge key={i} variant="outline" className="text-xs">
                               {stat.metric}: <span className="text-cyan-400 ml-1">{stat.value}</span>
@@ -1032,13 +1032,13 @@ export default function CriticismComplaintPage() {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.03 }}
-                  className="glass-card border-slate-500/30 p-4"
+                  className="glass-card border-platinum-500/30 p-4"
                 >
                   <div className="flex items-start gap-3">
                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400 text-xs font-bold">
                       {idx + 1}
                     </div>
-                    <p className="text-sm text-slate-300">{observation}</p>
+                    <p className="text-sm text-platinum-300">{observation}</p>
                   </div>
                 </motion.div>
               ))}
@@ -1048,7 +1048,7 @@ export default function CriticismComplaintPage() {
           {/* Relevance Issue Classification Chart */}
           <GlassPanel title="UAE Relevance by Issue Category" description="Population impact and severity">
             <div className="space-y-6">
-              <Card className="glass-card border-slate-500/30">
+              <Card className="glass-card border-platinum-500/30">
                 <CardHeader>
                   <CardTitle className="text-lg font-rajdhani">
                     <Users className="w-4 h-4 inline mr-2" />
@@ -1084,7 +1084,7 @@ export default function CriticismComplaintPage() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.01 }}
-                    className="glass-card border-slate-500/30 p-3"
+                    className="glass-card border-platinum-500/30 p-3"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
@@ -1094,13 +1094,13 @@ export default function CriticismComplaintPage() {
                         <Badge variant="secondary" className="text-xs">
                           {stat.category}
                         </Badge>
-                        <span className="text-sm text-slate-300">{stat.metric}</span>
+                        <span className="text-sm text-platinum-300">{stat.metric}</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <span className="text-lg font-bold text-cyan-400 font-rajdhani">
                           {stat.value}
                         </span>
-                        <span className="text-xs text-slate-500">{stat.unit}</span>
+                        <span className="text-xs text-platinum-500">{stat.unit}</span>
                         <Badge variant="outline" className="text-xs">
                           {stat.source} • {stat.year}
                         </Badge>
@@ -1133,7 +1133,7 @@ export default function CriticismComplaintPage() {
                         {query.status}
                       </Badge>
                     </div>
-                    <p className="text-xs text-slate-400 font-mono break-all">{query.query}</p>
+                    <p className="text-xs text-platinum-400 font-mono break-all">{query.query}</p>
                   </motion.div>
                 ))}
               </div>
@@ -1150,28 +1150,28 @@ export default function CriticismComplaintPage() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.03 }}
-                    className="glass-card border-slate-500/30 p-4"
+                    className="glass-card border-platinum-500/30 p-4"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-semibold text-slate-200 text-sm">{source.source}</h4>
+                      <h4 className="font-semibold text-platinum-200 text-sm">{source.source}</h4>
                       <Badge variant="outline" className="text-xs">
                         Tier {source.tier}
                       </Badge>
                     </div>
                     <div className="space-y-1 text-xs">
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Reliability:</span>
-                        <span className={source.reliability === '100%' ? 'text-emerald-400' : 'text-slate-300'}>
+                        <span className="text-platinum-500">Reliability:</span>
+                        <span className={source.reliability === '100%' ? 'text-emerald-400' : 'text-platinum-300'}>
                           {source.reliability}
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Freshness:</span>
-                        <span className="text-slate-300">{source.freshness}</span>
+                        <span className="text-platinum-500">Freshness:</span>
+                        <span className="text-platinum-300">{source.freshness}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Coverage:</span>
-                        <span className="text-slate-300">{source.coverage}</span>
+                        <span className="text-platinum-500">Coverage:</span>
+                        <span className="text-platinum-300">{source.coverage}</span>
                       </div>
                     </div>
                   </motion.div>

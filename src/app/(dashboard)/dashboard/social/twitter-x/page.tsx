@@ -219,7 +219,7 @@ export default function TwitterXAnalysisPage() {
             PLATFORM INTELLIGENCE
           </Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">Twitter/X Analysis</h1>
-          <p className="mt-2 text-slate-400 font-rajdhani">
+          <p className="mt-2 text-platinum-400 font-rajdhani">
             UAE Twitter/X intelligence: 91% bot activity, coordinated inauthentic behavior, extreme censorship
           </p>
         </div>
@@ -271,7 +271,7 @@ export default function TwitterXAnalysisPage() {
           <AlertOctagon className="h-6 w-6 text-rose-400" />
           <div>
             <h3 className="text-rose-400 font-bold font-rajdhani">Critical Findings</h3>
-            <p className="text-sm text-slate-400">
+            <p className="text-sm text-platinum-400">
               {keyFindings?.filter((kf: { alert?: string }) => kf.alert === 'RED').length || 0} RED alerts, {keyFindings?.filter((kf: { alert?: string }) => kf.alert === 'YELLOW').length || 0} YELLOW warnings
             </p>
           </div>
@@ -279,7 +279,7 @@ export default function TwitterXAnalysisPage() {
             <Badge variant="destructive" className="bg-rose-500/20 text-rose-400 border-rose-500/50">
               {alertDistribution['RED'] || 0} Critical
             </Badge>
-            <Badge variant="outline" className="border-yellow-500/50 text-yellow-400">
+            <Badge variant="outline" className="border-amber-500/50 text-amber-400">
               {alertDistribution['YELLOW'] || 0} Warning
             </Badge>
           </div>
@@ -323,21 +323,21 @@ export default function TwitterXAnalysisPage() {
                       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                         {internetStats && (
                           <>
-                            <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                            <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                               <span className="text-2xl font-bold text-gold">{internetStats.internetUsers}</span>
-                              <span className="text-xs text-slate-400">Internet Users</span>
+                              <span className="text-xs text-platinum-400">Internet Users</span>
                             </div>
-                            <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                            <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                               <span className="text-2xl font-bold text-emerald-400">{internetStats.internetPenetration}</span>
-                              <span className="text-xs text-slate-400">Penetration</span>
+                              <span className="text-xs text-platinum-400">Penetration</span>
                             </div>
-                            <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                            <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                               <span className="text-2xl font-bold text-info">{internetStats.fiveGCoverage}</span>
-                              <span className="text-xs text-slate-400">5G Coverage</span>
+                              <span className="text-xs text-platinum-400">5G Coverage</span>
                             </div>
-                            <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                            <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                               <span className="text-2xl font-bold text-platinum">{internetStats.twitterUsersHistorical}</span>
-                              <span className="text-xs text-slate-400">Historical Users</span>
+                              <span className="text-xs text-platinum-400">Historical Users</span>
                             </div>
                           </>
                         )}
@@ -379,9 +379,9 @@ export default function TwitterXAnalysisPage() {
                               <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-2">
                                   <div className="h-3 w-3 rounded-full" style={{ backgroundColor: item.color }} />
-                                  <span className="text-sm font-medium text-slate-200">{item.name}</span>
+                                  <span className="text-sm font-medium text-platinum-200">{item.name}</span>
                                 </div>
-                                <span className="text-lg font-bold text-slate-200">{item.value}%</span>
+                                <span className="text-lg font-bold text-platinum-200">{item.value}%</span>
                               </div>
                               <Progress value={item.value} className="h-2" />
                             </div>
@@ -467,16 +467,16 @@ export default function TwitterXAnalysisPage() {
                     <CardContent>
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-slate-300">Estimated Bot Percentage</span>
+                          <span className="text-sm text-platinum-300">Estimated Bot Percentage</span>
                           <span className="text-2xl font-bold text-rose-400">{botActivity.estimatedBotPercent}%</span>
                         </div>
                         <Progress value={botActivity.estimatedBotPercent} className="h-3" />
                         <div className="flex items-center justify-between mt-4">
-                          <span className="text-sm text-slate-300">Coordinated Inauthentic Behavior</span>
+                          <span className="text-sm text-platinum-300">Coordinated Inauthentic Behavior</span>
                           <Badge variant="destructive">Detected</Badge>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-slate-300">Confidence Level</span>
+                          <span className="text-sm text-platinum-300">Confidence Level</span>
                           <span className="text-lg font-bold text-gold">{Math.round(botActivity.confidence * 100)}%</span>
                         </div>
                       </div>
@@ -521,10 +521,10 @@ export default function TwitterXAnalysisPage() {
                               initial={{ opacity: 0, x: -20 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: idx * 0.1 }}
-                              className="flex items-center gap-3 rounded-lg bg-slate-800/50 p-4"
+                              className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-4"
                             >
                               <Bot className="h-5 w-5 text-platinum" />
-                              <span className="text-sm text-slate-200">{indicator}</span>
+                              <span className="text-sm text-platinum-200">{indicator}</span>
                               <Badge variant="destructive" className="ml-auto">Active</Badge>
                             </motion.div>
                           ))}
@@ -581,30 +581,30 @@ export default function TwitterXAnalysisPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="grid gap-4 lg:grid-cols-3 mb-4">
-                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                             <span className="text-2xl font-bold text-rose-400">{takedownData.totalAccountsSuspended?.toLocaleString()}</span>
-                            <span className="text-xs text-slate-400">Accounts Suspended</span>
+                            <span className="text-xs text-platinum-400">Accounts Suspended</span>
                           </div>
-                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                             <span className="text-2xl font-bold text-rose-400">{takedownData.accountsTargetingQatar?.toLocaleString()}</span>
-                            <span className="text-xs text-slate-400">Targeting Qatar</span>
+                            <span className="text-xs text-platinum-400">Targeting Qatar</span>
                           </div>
-                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                             <span className="text-2xl font-bold text-gold">{takedownData.facebookAccountsRemoved}</span>
-                            <span className="text-xs text-slate-400">Facebook Accounts</span>
+                            <span className="text-xs text-platinum-400">Facebook Accounts</span>
                           </div>
                         </div>
                         {takedownData.operationDetails && (
                           <div className="space-y-3 mt-4">
-                            <div className="p-3 rounded-lg bg-slate-800/50">
+                            <div className="p-3 rounded-lg bg-platinum-800/50">
                               <span className="font-bold text-gold">Managing Company:</span>
-                              <p className="text-sm text-slate-300">{takedownData.operationDetails.managingCompany?.name} - {takedownData.operationDetails.managingCompany?.description}</p>
+                              <p className="text-sm text-platinum-300">{takedownData.operationDetails.managingCompany?.name} - {takedownData.operationDetails.managingCompany?.description}</p>
                             </div>
                             {takedownData.operationDetails.saudAlQahtani && (
-                              <div className="p-3 rounded-lg bg-slate-800/50">
+                              <div className="p-3 rounded-lg bg-platinum-800/50">
                                 <span className="font-bold text-rose-400">Saud al-Qahtani:</span>
-                                <p className="text-sm text-slate-300">{takedownData.operationDetails.saudAlQahtani.role}</p>
-                                <p className="text-xs text-slate-400 mt-1">{takedownData.operationDetails.saudAlQahtani.suspectedRole}</p>
+                                <p className="text-sm text-platinum-300">{takedownData.operationDetails.saudAlQahtani.role}</p>
+                                <p className="text-xs text-platinum-400 mt-1">{takedownData.operationDetails.saudAlQahtani.suspectedRole}</p>
                               </div>
                             )}
                           </div>
@@ -625,33 +625,33 @@ export default function TwitterXAnalysisPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="grid gap-4 lg:grid-cols-4 mb-4">
-                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                             <span className="text-2xl font-bold text-gold">~{cop28Data.botAccounts?.toLocaleString()}</span>
-                            <span className="text-xs text-slate-400">Bot Accounts</span>
+                            <span className="text-xs text-platinum-400">Bot Accounts</span>
                           </div>
-                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                             <span className="text-2xl font-bold text-gold">{cop28Data.generalAccounts}</span>
-                            <span className="text-xs text-slate-400">General Accounts</span>
+                            <span className="text-xs text-platinum-400">General Accounts</span>
                           </div>
-                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                             <span className="text-2xl font-bold text-gold">{cop28Data.minionAccounts}+</span>
-                            <span className="text-xs text-slate-400">Minion Accounts</span>
+                            <span className="text-xs text-platinum-400">Minion Accounts</span>
                           </div>
-                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                             <span className="text-2xl font-bold text-info">{cop28Data.totalNetworkAccounts?.toLocaleString()}</span>
-                            <span className="text-xs text-slate-400">Total Network</span>
+                            <span className="text-xs text-platinum-400">Total Network</span>
                           </div>
                         </div>
 
                         {cop28NetworkStructure.length > 0 && (
                           <div className="mb-4">
-                            <h4 className="text-sm font-bold text-slate-300 mb-2">Network Structure</h4>
+                            <h4 className="text-sm font-bold text-platinum-300 mb-2">Network Structure</h4>
                             <div className="grid gap-2 lg:grid-cols-3">
                               {cop28NetworkStructure.map((item: any, idx: number) => (
-                                <div key={idx} className="p-3 rounded-lg bg-slate-800/50">
+                                <div key={idx} className="p-3 rounded-lg bg-platinum-800/50">
                                   <span className="font-bold text-gold">{item.role}</span>
-                                  <p className="text-xs text-slate-400 mt-1">{item.function}</p>
-                                  <p className="text-xs text-slate-500 mt-1">Ex: {item.examples}</p>
+                                  <p className="text-xs text-platinum-400 mt-1">{item.function}</p>
+                                  <p className="text-xs text-platinum-500 mt-1">Ex: {item.examples}</p>
                                 </div>
                               ))}
                             </div>
@@ -659,13 +659,13 @@ export default function TwitterXAnalysisPage() {
                         )}
 
                         {sultanAlJaber && (
-                          <div className="p-3 rounded-lg bg-slate-800/50">
+                          <div className="p-3 rounded-lg bg-platinum-800/50">
                             <h4 className="font-bold text-gold mb-2">Sultan Al Jaber Profile</h4>
                             <div className="grid gap-2 lg:grid-cols-2 text-sm">
-                              <div><span className="text-slate-400">Full Name:</span> <span className="text-slate-200">{sultanAlJaber.fullName}</span></div>
-                              <div><span className="text-slate-400">COP28 Role:</span> <span className="text-slate-200">{sultanAlJaber.cop28Role}</span></div>
-                              <div><span className="text-slate-400">Primary Role:</span> <span className="text-slate-200">{sultanAlJaber.primaryRole}</span></div>
-                              <div><span className="text-slate-400">Historical:</span> <span className="text-slate-200">{sultanAlJaber.historical}</span></div>
+                              <div><span className="text-platinum-400">Full Name:</span> <span className="text-platinum-200">{sultanAlJaber.fullName}</span></div>
+                              <div><span className="text-platinum-400">COP28 Role:</span> <span className="text-platinum-200">{sultanAlJaber.cop28Role}</span></div>
+                              <div><span className="text-platinum-400">Primary Role:</span> <span className="text-platinum-200">{sultanAlJaber.primaryRole}</span></div>
+                              <div><span className="text-platinum-400">Historical:</span> <span className="text-platinum-200">{sultanAlJaber.historical}</span></div>
                             </div>
                           </div>
                         )}
@@ -685,19 +685,19 @@ export default function TwitterXAnalysisPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="grid gap-4 lg:grid-cols-2 mb-4">
-                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                             <span className="text-2xl font-bold text-info">{africaData.fakeAccountsIdentified}+</span>
-                            <span className="text-xs text-slate-400">Fake Accounts</span>
+                            <span className="text-xs text-platinum-400">Fake Accounts</span>
                           </div>
-                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                             <span className="text-2xl font-bold text-info">{africaData.platforms?.join(', ')}</span>
-                            <span className="text-xs text-slate-400">Platforms</span>
+                            <span className="text-xs text-platinum-400">Platforms</span>
                           </div>
                         </div>
                         {africaData.campaignObjectives?.map((obj: any, idx: number) => (
-                          <div key={idx} className="flex items-center gap-3 p-2 rounded bg-slate-800/30 mb-2">
+                          <div key={idx} className="flex items-center gap-3 p-2 rounded bg-platinum-800/30 mb-2">
                             <Badge variant="outline" className="border-info/50 text-info">{obj.type}</Badge>
-                            <span className="text-sm text-slate-300">{obj.description}</span>
+                            <span className="text-sm text-platinum-300">{obj.description}</span>
                           </div>
                         ))}
                       </CardContent>
@@ -716,13 +716,13 @@ export default function TwitterXAnalysisPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="grid gap-4 lg:grid-cols-2 text-sm">
-                          <div><span className="text-slate-400">Company:</span> <span className="text-slate-200">{alpServicesData.company}</span></div>
-                          <div><span className="text-slate-400">Client:</span> <span className="text-slate-200">{alpServicesData.client}</span></div>
-                          <div><span className="text-slate-400">Year Hired:</span> <span className="text-slate-200">{alpServicesData.yearHired}</span></div>
-                          <div><span className="text-slate-400">Countries Targeted:</span> <span className="text-slate-200">{alpServicesData.targets?.countries}</span></div>
-                          <div className="col-span-2"><span className="text-slate-400">Method:</span> <span className="text-slate-200">{alpServicesData.targets?.method}</span></div>
+                          <div><span className="text-platinum-400">Company:</span> <span className="text-platinum-200">{alpServicesData.company}</span></div>
+                          <div><span className="text-platinum-400">Client:</span> <span className="text-platinum-200">{alpServicesData.client}</span></div>
+                          <div><span className="text-platinum-400">Year Hired:</span> <span className="text-platinum-200">{alpServicesData.yearHired}</span></div>
+                          <div><span className="text-platinum-400">Countries Targeted:</span> <span className="text-platinum-200">{alpServicesData.targets?.countries}</span></div>
+                          <div className="col-span-2"><span className="text-platinum-400">Method:</span> <span className="text-platinum-200">{alpServicesData.targets?.method}</span></div>
                         </div>
-                        <p className="text-sm text-slate-300 mt-3 italic">"{alpServicesData.consequences}"</p>
+                        <p className="text-sm text-platinum-300 mt-3 italic">"{alpServicesData.consequences}"</p>
                       </CardContent>
                     </Card>
                   )}
@@ -741,9 +741,9 @@ export default function TwitterXAnalysisPage() {
                           <ScrollArea className="h-[150px]">
                             <div className="space-y-2">
                               {fakeAccountChars.map((item: any, idx: number) => (
-                                <div key={idx} className="p-2 rounded bg-slate-800/50">
+                                <div key={idx} className="p-2 rounded bg-platinum-800/50">
                                   <span className="font-bold text-gold text-sm">{item.characteristic}:</span>
-                                  <span className="text-slate-300 text-sm ml-2">{item.description}</span>
+                                  <span className="text-platinum-300 text-sm ml-2">{item.description}</span>
                                 </div>
                               ))}
                             </div>
@@ -762,17 +762,17 @@ export default function TwitterXAnalysisPage() {
                         </CardHeader>
                         <CardContent>
                           <div className="space-y-2">
-                            <div className="p-2 rounded bg-slate-800/50">
+                            <div className="p-2 rounded bg-platinum-800/50">
                               <span className="font-bold text-gold text-sm">Platform:</span>
-                              <span className="text-slate-300 text-sm ml-2">{paidInfluencerArmy.platform}</span>
+                              <span className="text-platinum-300 text-sm ml-2">{paidInfluencerArmy.platform}</span>
                             </div>
-                            <div className="p-2 rounded bg-slate-800/50">
+                            <div className="p-2 rounded bg-platinum-800/50">
                               <span className="font-bold text-gold text-sm">Tactics:</span>
-                              <span className="text-slate-300 text-sm ml-2">{paidInfluencerArmy.tactics}</span>
+                              <span className="text-platinum-300 text-sm ml-2">{paidInfluencerArmy.tactics}</span>
                             </div>
-                            <div className="p-2 rounded bg-slate-800/50">
+                            <div className="p-2 rounded bg-platinum-800/50">
                               <span className="font-bold text-gold text-sm">Motivation:</span>
-                              <span className="text-slate-300 text-sm ml-2">{paidInfluencerArmy.motivation?.join(', ')}</span>
+                              <span className="text-platinum-300 text-sm ml-2">{paidInfluencerArmy.motivation?.join(', ')}</span>
                             </div>
                           </div>
                         </CardContent>
@@ -806,21 +806,21 @@ export default function TwitterXAnalysisPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="grid gap-4 lg:grid-cols-4">
-                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                             <span className="text-2xl font-bold text-rose-400">{disInfluencerData.xAccountsCreated}</span>
-                            <span className="text-xs text-slate-400">X Accounts</span>
+                            <span className="text-xs text-platinum-400">X Accounts</span>
                           </div>
-                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                             <span className="text-2xl font-bold text-gold">{disInfluencerData.pseudoNewsWebsites}</span>
-                            <span className="text-xs text-slate-400">Pseudo-News Sites</span>
+                            <span className="text-xs text-platinum-400">Pseudo-News Sites</span>
                           </div>
-                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                             <span className="text-2xl font-bold text-info">{disInfluencerData.earlierSites}</span>
-                            <span className="text-xs text-slate-400">Earlier Sites</span>
+                            <span className="text-xs text-platinum-400">Earlier Sites</span>
                           </div>
-                          <div className="flex flex-col items-center p-3 rounded-lg bg-slate-800/50">
+                          <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                             <span className="text-2xl font-bold text-emerald">{disInfluencerData.booksPublished}</span>
-                            <span className="text-xs text-slate-400">Books Published</span>
+                            <span className="text-xs text-platinum-400">Books Published</span>
                           </div>
                         </div>
                       </CardContent>
@@ -840,14 +840,14 @@ export default function TwitterXAnalysisPage() {
                       <CardContent>
                         <div className="grid gap-3 lg:grid-cols-2">
                           {disInfluencerWebsites.map((site: any, idx: number) => (
-                            <div key={idx} className="p-3 rounded-lg bg-slate-800/50">
+                            <div key={idx} className="p-3 rounded-lg bg-platinum-800/50">
                               <div className="flex items-center justify-between mb-1">
                                 <span className="font-bold text-gold">{site.name}</span>
                                 <Badge variant="outline" className="border-platinum/50 text-platinum text-xs">
                                   {site.registration}
                                 </Badge>
                               </div>
-                              {site.notes && <p className="text-xs text-slate-400">{site.notes}</p>}
+                              {site.notes && <p className="text-xs text-platinum-400">{site.notes}</p>}
                             </div>
                           ))}
                         </div>
@@ -868,9 +868,9 @@ export default function TwitterXAnalysisPage() {
                         <ScrollArea className="h-[200px]">
                           <div className="space-y-2">
                             {disInfluencerTalkingPoints.map((point: any, idx: number) => (
-                              <div key={idx} className="p-3 rounded-lg bg-slate-800/50">
+                              <div key={idx} className="p-3 rounded-lg bg-platinum-800/50">
                                 <span className="font-bold text-rose-400">{point.narrative}:</span>
-                                <span className="text-slate-300 ml-2">{point.description}</span>
+                                <span className="text-platinum-300 ml-2">{point.description}</span>
                               </div>
                             ))}
                           </div>
@@ -891,8 +891,8 @@ export default function TwitterXAnalysisPage() {
                       <CardContent>
                         <div className="space-y-2">
                           {disInfluencerConferences.map((conf: any, idx: number) => (
-                            <div key={idx} className="flex items-center justify-between p-2 rounded bg-slate-800/50">
-                              <span className="text-slate-200">{conf.venue}</span>
+                            <div key={idx} className="flex items-center justify-between p-2 rounded bg-platinum-800/50">
+                              <span className="text-platinum-200">{conf.venue}</span>
                               <Badge variant="outline" className="border-info/50 text-info">{conf.location}</Badge>
                             </div>
                           ))}
@@ -912,9 +912,9 @@ export default function TwitterXAnalysisPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="grid gap-2 lg:grid-cols-3 text-sm">
-                          <div><span className="text-slate-400">Name:</span> <span className="text-slate-200 font-bold">{disInfluencerData.keyFigure.name}</span></div>
-                          <div><span className="text-slate-400">Nationality:</span> <span className="text-slate-200">{disInfluencerData.keyFigure.nationality}</span></div>
-                          <div><span className="text-slate-400">Role:</span> <span className="text-slate-200">{disInfluencerData.keyFigure.role}</span></div>
+                          <div><span className="text-platinum-400">Name:</span> <span className="text-platinum-200 font-bold">{disInfluencerData.keyFigure.name}</span></div>
+                          <div><span className="text-platinum-400">Nationality:</span> <span className="text-platinum-200">{disInfluencerData.keyFigure.nationality}</span></div>
+                          <div><span className="text-platinum-400">Role:</span> <span className="text-platinum-200">{disInfluencerData.keyFigure.role}</span></div>
                         </div>
                       </CardContent>
                     </Card>
@@ -948,7 +948,7 @@ export default function TwitterXAnalysisPage() {
                       <CardContent>
                         <div className="space-y-4">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Compliance Rate</span>
+                            <span className="text-sm text-platinum-300">Compliance Rate</span>
                             <span className="text-xl font-bold text-gold">{censorship.complianceRate}%</span>
                           </div>
                           <Progress value={censorship.complianceRate} className="h-2" />
@@ -967,11 +967,11 @@ export default function TwitterXAnalysisPage() {
                       <CardContent>
                         <div className="space-y-4">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Government Requests</span>
+                            <span className="text-sm text-platinum-300">Government Requests</span>
                             <span className="text-xl font-bold text-rose-400">{censorship.governmentRequests}</span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Content Removed</span>
+                            <span className="text-sm text-platinum-300">Content Removed</span>
                             <span className="text-xl font-bold text-rose-400">{censorship.contentRemoved.toLocaleString()}</span>
                           </div>
                         </div>
@@ -991,7 +991,7 @@ export default function TwitterXAnalysisPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-3">
-                          <p className="text-sm text-slate-300 italic">"{censorship.legalFramework.quote.split('—')[0]}"</p>
+                          <p className="text-sm text-platinum-300 italic">"{censorship.legalFramework.quote.split('—')[0]}"</p>
                           <div className="flex flex-wrap gap-2 mt-2">
                             {(censorship.march2026Blocking.additionalPenalties || []).map((penalty: string, idx: number) => (
                               <Badge key={idx} variant="outline" className="border-rose-500/50 text-rose-400">
@@ -1017,13 +1017,13 @@ export default function TwitterXAnalysisPage() {
                       <CardContent>
                         <div className="space-y-3">
                           {censorship.legalFramework.restrictions.map((restriction: string, idx: number) => (
-                            <div key={idx} className="flex items-center gap-3 rounded-lg bg-slate-800/50 p-3">
-                              <AlertTriangle className="h-4 w-4 text-yellow-400 flex-shrink-0" />
-                              <span className="text-sm text-slate-200">{restriction}</span>
+                            <div key={idx} className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-3">
+                              <AlertTriangle className="h-4 w-4 text-amber-400 flex-shrink-0" />
+                              <span className="text-sm text-platinum-200">{restriction}</span>
                             </div>
                           ))}
-                          <blockquote className="mt-4 p-4 border-l-4 border-rose-500 bg-slate-800/30">
-                            <p className="text-sm text-slate-400 italic">{censorship.legalFramework.quote}</p>
+                          <blockquote className="mt-4 p-4 border-l-4 border-rose-500 bg-platinum-800/30">
+                            <p className="text-sm text-platinum-400 italic">{censorship.legalFramework.quote}</p>
                           </blockquote>
                         </div>
                       </CardContent>
@@ -1043,10 +1043,10 @@ export default function TwitterXAnalysisPage() {
                       <CardContent>
                         <div className="space-y-4">
                           {censorship.twitterCompliance.map((item: { year: string | number; requests: number; complianceRate: number }, idx: number) => (
-                            <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
+                            <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
                               <div>
-                                <span className="text-sm font-medium text-slate-200">{item.year}</span>
-                                <span className="text-xs text-slate-400 ml-2">{item.requests} requests</span>
+                                <span className="text-sm font-medium text-platinum-200">{item.year}</span>
+                                <span className="text-xs text-platinum-400 ml-2">{item.requests} requests</span>
                               </div>
                               <span className="text-lg font-bold text-emerald-400">{item.complianceRate}%</span>
                             </div>
@@ -1070,12 +1070,12 @@ export default function TwitterXAnalysisPage() {
                         <ScrollArea className="h-[200px]">
                           <div className="space-y-3">
                             {censorship.historicalSuspensions.map((suspension: { date: string; accounts: string; reason: string }, idx: number) => (
-                              <div key={idx} className="p-3 rounded-lg bg-slate-800/50">
+                              <div key={idx} className="p-3 rounded-lg bg-platinum-800/50">
                                 <div className="flex items-center justify-between mb-1">
                                   <span className="text-sm font-medium text-rose-400">{suspension.date}</span>
                                 </div>
-                                <p className="text-xs text-slate-400 mb-1">{suspension.accounts}</p>
-                                <p className="text-sm text-slate-300">{suspension.reason}</p>
+                                <p className="text-xs text-platinum-400 mb-1">{suspension.accounts}</p>
+                                <p className="text-sm text-platinum-300">{suspension.reason}</p>
                               </div>
                             ))}
                           </div>
@@ -1108,9 +1108,9 @@ export default function TwitterXAnalysisPage() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <blockquote className="border-l-4 border-info p-4 bg-slate-800/30">
-                        <p className="text-sm text-slate-300 italic">"{surveillance?.dubaiPoliceMonitoring?.monitoringQuote?.split(' — ')[0]}"</p>
-                        <p className="text-xs text-slate-400 mt-2">— {surveillance?.dubaiPoliceMonitoring?.monitoringQuote?.split(' — ')[1]}</p>
+                      <blockquote className="border-l-4 border-info p-4 bg-platinum-800/30">
+                        <p className="text-sm text-platinum-300 italic">"{surveillance?.dubaiPoliceMonitoring?.monitoringQuote?.split(' — ')[0]}"</p>
+                        <p className="text-xs text-platinum-400 mt-2">— {surveillance?.dubaiPoliceMonitoring?.monitoringQuote?.split(' — ')[1]}</p>
                       </blockquote>
                     </CardContent>
                   </Card>
@@ -1132,18 +1132,18 @@ export default function TwitterXAnalysisPage() {
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.1 }}
-                            className="p-4 rounded-lg bg-slate-800/50 border border-rose-500/20"
+                            className="p-4 rounded-lg bg-platinum-800/50 border border-rose-500/20"
                           >
                             <div className="flex items-center justify-between mb-2">
                               <div className="flex items-center gap-2">
                                 <Shield className="h-5 w-5 text-rose-400" />
-                                <span className="font-bold text-slate-200">{program.name}</span>
+                                <span className="font-bold text-platinum-200">{program.name}</span>
                               </div>
                               <Badge variant="outline" className="border-rose-500/50 text-rose-400">
                                 {program.year}
                               </Badge>
                             </div>
-                            <p className="text-sm text-slate-400 mb-1">Target: {program.target}</p>
+                            <p className="text-sm text-platinum-400 mb-1">Target: {program.target}</p>
                           </motion.div>
                         ))}
                       </div>
@@ -1154,16 +1154,16 @@ export default function TwitterXAnalysisPage() {
                   <Card className="glass-card border-glass">
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2 text-lg">
-                        <AlertTriangle className="h-5 w-5 text-yellow-400" />
+                        <AlertTriangle className="h-5 w-5 text-amber-400" />
                         Key Surveillance Concerns
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-3">
                         {['Pegasus targeting journalists from FT, Economist, WSJ', 'QuaDream exploiting Android vulnerabilities', 'ToTok discovered as surveillance tool', 'COP28 targeting HRDs'].map((concern, idx) => (
-                          <div key={idx} className="flex items-center gap-3 rounded-lg bg-slate-800/50 p-3">
-                            <EyeOff className="h-4 w-4 text-yellow-400" />
-                            <span className="text-sm text-slate-200">{concern}</span>
+                          <div key={idx} className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-3">
+                            <EyeOff className="h-4 w-4 text-amber-400" />
+                            <span className="text-sm text-platinum-200">{concern}</span>
                           </div>
                         ))}
                       </div>
@@ -1214,12 +1214,12 @@ export default function TwitterXAnalysisPage() {
                       </CardHeader>
                       <CardContent>
                         {'context' in caseItem && (
-                          <p className="text-sm text-slate-300 mb-2">{(caseItem as { context?: string }).context}</p>
+                          <p className="text-sm text-platinum-300 mb-2">{(caseItem as { context?: string }).context}</p>
                         )}
                         {'charges' in caseItem && Array.isArray((caseItem as { charges?: string[] }).charges) && (
                           <div className="mb-2">
-                            <span className="text-xs text-slate-400">Charges: </span>
-                            <span className="text-xs text-slate-300">{((caseItem as { charges: string[] }).charges).join(', ')}</span>
+                            <span className="text-xs text-platinum-400">Charges: </span>
+                            <span className="text-xs text-platinum-300">{((caseItem as { charges: string[] }).charges).join(', ')}</span>
                           </div>
                         )}
                         {'violations' in caseItem && Array.isArray((caseItem as { violations?: string[] }).violations) && (
@@ -1232,8 +1232,8 @@ export default function TwitterXAnalysisPage() {
                           </div>
                         )}
                         {'quote' in caseItem && (caseItem as { quote?: string }).quote && (
-                          <blockquote className="mt-4 p-3 border-l-4 border-rose-500 bg-slate-800/30">
-                            <p className="text-xs text-slate-400 italic">"{(caseItem as { quote: string }).quote}"</p>
+                          <blockquote className="mt-4 p-3 border-l-4 border-rose-500 bg-platinum-800/30">
+                            <p className="text-xs text-platinum-400 italic">"{(caseItem as { quote: string }).quote}"</p>
                           </blockquote>
                         )}
                       </CardContent>
@@ -1268,15 +1268,15 @@ export default function TwitterXAnalysisPage() {
                           <div className="flex flex-col items-center">
                             <div className={`w-3 h-3 rounded-full ${
                               event.event.includes('suspended') || event.event.includes('arrested') || event.event.includes('blocking') ? 'bg-rose-500' :
-                              event.event.includes('2020') || event.event.includes('2021') ? 'bg-yellow-500' : 'bg-platinum'
+                              event.event.includes('2020') || event.event.includes('2021') ? 'bg-amber-500' : 'bg-platinum'
                             }`} />
                             {idx < (timeline?.length || 0) - 1 && (
-                              <div className="w-0.5 h-8 bg-slate-700" />
+                              <div className="w-0.5 h-8 bg-platinum-700" />
                             )}
                           </div>
                           <div className="flex-1 pb-4">
                             <span className="text-sm font-bold text-gold">{event.year}</span>
-                            <p className="text-sm text-slate-300">{event.event}</p>
+                            <p className="text-sm text-platinum-300">{event.event}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -1335,19 +1335,19 @@ export default function TwitterXAnalysisPage() {
                               initial={{ opacity: 0, y: 10 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ delay: idx * 0.05 }}
-                              className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50"
+                              className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50"
                             >
                               <div className="flex items-center gap-3">
                                 <Badge variant="outline" className={
                                   source.tier === 1 ? 'border-emerald-500/50 text-emerald-400' :
-                                  source.tier === 2 ? 'border-yellow-500/50 text-yellow-400' :
+                                  source.tier === 2 ? 'border-amber-500/50 text-amber-400' :
                                   'border-rose-500/50 text-rose-400'
                                 }>
                                   T{source.tier}
                                 </Badge>
-                                <span className="text-sm text-slate-200">{source.name}</span>
+                                <span className="text-sm text-platinum-200">{source.name}</span>
                               </div>
-                              <span className="text-xs text-slate-400">{source.type}</span>
+                              <span className="text-xs text-platinum-400">{source.type}</span>
                             </motion.div>
                           ))}
                         </div>

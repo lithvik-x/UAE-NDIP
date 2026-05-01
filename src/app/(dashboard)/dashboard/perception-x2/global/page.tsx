@@ -103,21 +103,21 @@ function getSentimentIcon(sentiment: string) {
     return <CheckCircle2 className="h-4 w-4 text-emerald-400" />
   if (sentiment.includes('Negative'))
     return <XCircle className="h-4 w-4 text-rose-400" />
-  return <MinusCircle className="h-4 w-4 text-yellow-400" />
+  return <MinusCircle className="h-4 w-4 text-amber-400" />
 }
 
 function getSentimentColor(sentiment: string) {
   if (sentiment.includes('Strongly Positive') || sentiment.includes('Positive'))
     return 'text-emerald-400'
   if (sentiment.includes('Negative')) return 'text-rose-400'
-  return 'text-yellow-400'
+  return 'text-amber-400'
 }
 
 function getSentimentBg(sentiment: string) {
   if (sentiment.includes('Strongly Positive') || sentiment.includes('Positive'))
     return 'bg-emerald-500/20 border-emerald-500/30'
   if (sentiment.includes('Negative')) return 'bg-rose-500/20 border-rose-500/30'
-  return 'bg-yellow-500/20 border-yellow-500/30'
+  return 'bg-amber-500/20 border-amber-500/30'
 }
 
 function getRankBadgeColor(rank: string) {
@@ -125,7 +125,7 @@ function getRankBadgeColor(rank: string) {
   if (isNaN(num)) return 'bg-gold/20 text-gold border-gold/30'
   if (num <= 5) return 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
   if (num <= 10) return 'bg-gold/20 text-gold border-gold/30'
-  if (num <= 20) return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'
+  if (num <= 20) return 'bg-amber-500/20 text-amber-400 border-amber-500/30'
   return 'bg-rose-500/20 text-rose-400 border-rose-500/30'
 }
 

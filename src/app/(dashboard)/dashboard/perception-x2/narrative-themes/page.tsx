@@ -150,7 +150,7 @@ export default function NarrativeThemesPage() {
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">
             UAE Narrative Themes Intelligence
           </h1>
-          <p className="mt-2 text-slate-400 font-rajdhani">
+          <p className="mt-2 text-platinum-400 font-rajdhani">
             Comprehensive analysis of 12 core narratives, topic clusters, and discourse patterns
           </p>
         </div>
@@ -212,15 +212,15 @@ export default function NarrativeThemesPage() {
               <div className="mt-4 flex justify-center gap-6">
                 <div className="flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-emerald-500" />
-                  <span className="text-sm text-slate-400 font-rajdhani">Positive 38%</span>
+                  <span className="text-sm text-platinum-400 font-rajdhani">Positive 38%</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-platinum-400" />
-                  <span className="text-sm text-slate-400 font-rajdhani">Neutral 24%</span>
+                  <span className="text-sm text-platinum-400 font-rajdhani">Neutral 24%</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-rose-500" />
-                  <span className="text-sm text-slate-400 font-rajdhani">Negative 38%</span>
+                  <span className="text-sm text-platinum-400 font-rajdhani">Negative 38%</span>
                 </div>
               </div>
             </GlassPanel>
@@ -240,15 +240,15 @@ export default function NarrativeThemesPage() {
               <div className="mt-4 flex justify-center gap-6">
                 <div className="flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-emerald-500" />
-                  <span className="text-sm text-slate-400 font-rajdhani">Pro-Narrative: 3</span>
+                  <span className="text-sm text-platinum-400 font-rajdhani">Pro-Narrative: 3</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-gold-500" />
-                  <span className="text-sm text-slate-400 font-rajdhani">Contested: 6</span>
+                  <span className="text-sm text-platinum-400 font-rajdhani">Contested: 6</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-rose-500" />
-                  <span className="text-sm text-slate-400 font-rajdhani">Counter: 3</span>
+                  <span className="text-sm text-platinum-400 font-rajdhani">Counter: 3</span>
                 </div>
               </div>
             </GlassPanel>
@@ -271,19 +271,19 @@ export default function NarrativeThemesPage() {
           <GlassPanel title="UAE Profile - Core Data" description="Basic facts and statistics">
             <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
               <div className="space-y-1">
-                <p className="text-xs text-slate-500 font-rajdhani">Population</p>
+                <p className="text-xs text-platinum-500 font-rajdhani">Population</p>
                 <p className="text-lg font-semibold font-rajdhani text-platinum-900">11M+</p>
               </div>
               <div className="space-y-1">
-                <p className="text-xs text-slate-500 font-rajdhani">GDP (2025)</p>
+                <p className="text-xs text-platinum-500 font-rajdhani">GDP (2025)</p>
                 <p className="text-lg font-semibold font-rajdhani text-platinum-900">$569.1B</p>
               </div>
               <div className="space-y-1">
-                <p className="text-xs text-slate-500 font-rajdhani">Nationalities</p>
+                <p className="text-xs text-platinum-500 font-rajdhani">Nationalities</p>
                 <p className="text-lg font-semibold font-rajdhani text-platinum-900">200+</p>
               </div>
               <div className="space-y-1">
-                <p className="text-xs text-slate-500 font-rajdhani">Literacy Rate</p>
+                <p className="text-xs text-platinum-500 font-rajdhani">Literacy Rate</p>
                 <p className="text-lg font-semibold font-rajdhani text-platinum-900">95%</p>
               </div>
             </div>
@@ -327,11 +327,11 @@ export default function NarrativeThemesPage() {
                   <div className="flex items-center gap-4 text-sm">
                     <div className="flex items-center gap-1">
                       <TrendingUp className="h-4 w-4 text-emerald-500" />
-                      <span className="text-slate-600 font-rajdhani">{finding.proSources} Pro</span>
+                      <span className="text-platinum-600 font-rajdhani">{finding.proSources} Pro</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <AlertTriangle className="h-4 w-4 text-rose-500" />
-                      <span className="text-slate-600 font-rajdhani">{finding.counterSources} Counter</span>
+                      <span className="text-platinum-600 font-rajdhani">{finding.counterSources} Counter</span>
                     </div>
                   </div>
                 </GlassCard>
@@ -376,14 +376,14 @@ export default function NarrativeThemesPage() {
           <GlassPanel title="Discourse Analysis" description="Framing patterns and dominant themes">
             <div className="space-y-4">
               {discourseAnalysis.framingPatterns.map((pattern, idx) => (
-                <div key={idx} className="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
+                <div key={idx} className="flex items-center justify-between p-3 bg-platinum-50 rounded-lg">
                   <div className="flex items-center gap-3">
                     <Crosshair className="h-5 w-5 text-gold" />
                     <span className="font-rajdhani font-medium text-platinum-900">{pattern.pattern}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Badge variant="outline" className="font-rajdhani">{pattern.frequency}</Badge>
-                    <span className="text-sm text-slate-500 font-rajdhani">
+                    <span className="text-sm text-platinum-500 font-rajdhani">
                       {pattern.narratives.length} narrative(s)
                     </span>
                   </div>
@@ -424,18 +424,18 @@ export default function NarrativeThemesPage() {
                   <div className="space-y-2">
                     {cluster.narratives.map((narrative, nIdx) => (
                       <div key={nIdx} className="flex items-center gap-2 text-sm">
-                        <CheckCircle className="h-4 w-4 text-slate-400" />
-                        <span className="text-slate-600 font-rajdhani">{narrative}</span>
+                        <CheckCircle className="h-4 w-4 text-platinum-400" />
+                        <span className="text-platinum-600 font-rajdhani">{narrative}</span>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-4 pt-4 border-t border-slate-200">
+                  <div className="mt-4 pt-4 border-t border-platinum-200">
                     <div className="flex justify-between text-sm">
-                      <span className="text-slate-500 font-rajdhani">Avg Pro Sources:</span>
+                      <span className="text-platinum-500 font-rajdhani">Avg Pro Sources:</span>
                       <span className="font-semibold font-rajdhani text-emerald-600">{cluster.averageProSources}</span>
                     </div>
                     <div className="flex justify-between text-sm mt-1">
-                      <span className="text-slate-500 font-rajdhani">Avg Counter:</span>
+                      <span className="text-platinum-500 font-rajdhani">Avg Counter:</span>
                       <span className="font-semibold font-rajdhani text-rose-600">{cluster.averageCounterSources}</span>
                     </div>
                   </div>
@@ -471,8 +471,8 @@ export default function NarrativeThemesPage() {
                   <div className="space-y-2">
                     {tension.details.map((detail, dIdx) => (
                       <div key={dIdx} className="flex items-start gap-2 text-sm">
-                        <div className="h-1.5 w-1.5 rounded-full bg-slate-400 mt-2" />
-                        <span className="text-slate-600 font-rajdhani">{detail}</span>
+                        <div className="h-1.5 w-1.5 rounded-full bg-platinum-400 mt-2" />
+                        <span className="text-platinum-600 font-rajdhani">{detail}</span>
                       </div>
                     ))}
                   </div>
@@ -492,7 +492,7 @@ export default function NarrativeThemesPage() {
                   <div key={idx} className="flex items-center justify-between p-2 bg-emerald-50 rounded">
                     <div>
                       <span className="font-rajdhani font-medium text-platinum-900">{source.source}</span>
-                      <span className="text-xs text-slate-500 ml-2 font-rajdhani">({source.type})</span>
+                      <span className="text-xs text-platinum-500 ml-2 font-rajdhani">({source.type})</span>
                     </div>
                     <Badge variant="success" className="font-rajdhani">High</Badge>
                   </div>
@@ -507,7 +507,7 @@ export default function NarrativeThemesPage() {
                   <div key={idx} className="flex items-center justify-between p-2 bg-gold-50 rounded">
                     <div>
                       <span className="font-rajdhani font-medium text-platinum-900">{source.source}</span>
-                      <span className="text-xs text-slate-500 ml-2 font-rajdhani">({source.type})</span>
+                      <span className="text-xs text-platinum-500 ml-2 font-rajdhani">({source.type})</span>
                     </div>
                     <Badge variant="warning" className="font-rajdhani">{source.credibility}</Badge>
                   </div>
@@ -519,10 +519,10 @@ export default function NarrativeThemesPage() {
             <GlassPanel title="Tier 3: Academic & Social" description="Variable credibility">
               <div className="space-y-3">
                 {sourceCredibility.tier3Academic.map((source, idx) => (
-                  <div key={idx} className="flex items-center justify-between p-2 bg-slate-50 rounded">
+                  <div key={idx} className="flex items-center justify-between p-2 bg-platinum-50 rounded">
                     <div>
                       <span className="font-rajdhani font-medium text-platinum-900">{source.source}</span>
-                      <span className="text-xs text-slate-500 ml-2 font-rajdhani">({source.type})</span>
+                      <span className="text-xs text-platinum-500 ml-2 font-rajdhani">({source.type})</span>
                     </div>
                     <Badge variant="secondary" className="font-rajdhani">{source.credibility}</Badge>
                   </div>
@@ -534,7 +534,7 @@ export default function NarrativeThemesPage() {
             <GlassPanel title="Tier 4: News Media" description="Media outlets and journalism">
               <div className="space-y-3">
                 {sourceCredibility.tier4Media.map((source, idx) => (
-                  <div key={idx} className="flex items-center justify-between p-2 bg-slate-50 rounded">
+                  <div key={idx} className="flex items-center justify-between p-2 bg-platinum-50 rounded">
                     <span className="font-rajdhani font-medium text-platinum-900">{source.source}</span>
                     <Badge variant="outline" className="font-rajdhani">{source.credibility}</Badge>
                   </div>
@@ -548,19 +548,19 @@ export default function NarrativeThemesPage() {
             <div className="grid gap-4 md:grid-cols-4">
               <div className="text-center p-4 bg-emerald-50 rounded-lg">
                 <p className="text-2xl font-bold font-rajdhani text-emerald-600">12</p>
-                <p className="text-xs text-slate-500 font-rajdhani">Government/Official</p>
+                <p className="text-xs text-platinum-500 font-rajdhani">Government/Official</p>
               </div>
               <div className="text-center p-4 bg-gold-50 rounded-lg">
                 <p className="text-2xl font-bold font-rajdhani text-gold-600">15</p>
-                <p className="text-xs text-slate-500 font-rajdhani">NGO/Human Rights</p>
+                <p className="text-xs text-platinum-500 font-rajdhani">NGO/Human Rights</p>
               </div>
-              <div className="text-center p-4 bg-slate-50 rounded-lg">
-                <p className="text-2xl font-bold font-rajdhani text-slate-600">10</p>
-                <p className="text-xs text-slate-500 font-rajdhani">Media</p>
+              <div className="text-center p-4 bg-platinum-50 rounded-lg">
+                <p className="text-2xl font-bold font-rajdhani text-platinum-600">10</p>
+                <p className="text-xs text-platinum-500 font-rajdhani">Media</p>
               </div>
               <div className="text-center p-4 bg-platinum-50 rounded-lg">
                 <p className="text-2xl font-bold font-rajdhani text-platinum-600">8</p>
-                <p className="text-xs text-slate-500 font-rajdhani">Academic/Think Tank</p>
+                <p className="text-xs text-platinum-500 font-rajdhani">Academic/Think Tank</p>
               </div>
             </div>
           </GlassPanel>
@@ -568,7 +568,7 @@ export default function NarrativeThemesPage() {
       </Tabs>
 
       {/* Footer */}
-      <div className="flex items-center justify-between text-sm text-slate-500">
+      <div className="flex items-center justify-between text-sm text-platinum-500">
         <span className="font-rajdhani">Data Source: 3-4-narrative-tracking-results.md</span>
         <span className="font-rajdhani">Last Updated: {metadata.dateExecuted}</span>
       </div>

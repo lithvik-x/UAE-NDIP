@@ -95,14 +95,14 @@ export function SentimentSection({ className }: SentimentSectionProps) {
                     initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50"
+                    className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
                   >
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-3">
                         <span className={`h-5 w-5 ${getIntensityColor(country.intensity)}`}>
                           {getSentimentIcon(country.intensity)}
                         </span>
-                        <h4 className="font-semibold text-slate-200">{country.country}</h4>
+                        <h4 className="font-semibold text-platinum-200">{country.country}</h4>
                       </div>
                       <div className="flex items-center gap-3">
                         <Badge
@@ -125,7 +125,7 @@ export function SentimentSection({ className }: SentimentSectionProps) {
                     {country.keyDrivers && country.keyDrivers.length > 0 && (
                       <div className="flex flex-wrap gap-2 mt-2">
                         {country.keyDrivers.map((driver, dIdx) => (
-                          <Badge key={dIdx} variant="secondary" className="text-xs bg-slate-700 text-slate-300">
+                          <Badge key={dIdx} variant="secondary" className="text-xs bg-platinum-700 text-platinum-300">
                             {driver}
                           </Badge>
                         ))}
@@ -181,16 +181,16 @@ export function SentimentSection({ className }: SentimentSectionProps) {
                 <div className="space-y-3">
                   {[
                     { tier: 'Government/Intergov', count: 5, color: 'bg-navy-500' },
-                    { tier: 'Think Tanks', count: 10, color: 'bg-blue-500' },
+                    { tier: 'Think Tanks', count: 10, color: 'bg-navy-500' },
                     { tier: 'NGOs', count: 5, color: 'bg-cyan-500' },
                     { tier: 'News/Media', count: 10, color: 'bg-platinum-500' },
                   ].map((item, idx) => (
-                    <div key={idx} className="flex items-center justify-between rounded bg-slate-800/50 p-3">
+                    <div key={idx} className="flex items-center justify-between rounded bg-platinum-800/50 p-3">
                       <div className="flex items-center gap-3">
                         <div className={`h-3 w-3 rounded-full ${item.color}`} />
-                        <span className="text-slate-300">{item.tier}</span>
+                        <span className="text-platinum-300">{item.tier}</span>
                       </div>
-                      <span className="text-slate-200 font-medium">{item.count} sources</span>
+                      <span className="text-platinum-200 font-medium">{item.count} sources</span>
                     </div>
                   ))}
                 </div>

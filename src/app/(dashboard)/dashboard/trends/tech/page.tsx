@@ -175,7 +175,7 @@ function KPIGridItem({ kpi, index }: { kpi: typeof aiTechnologyExtendedData.summ
     switch (relevance) {
       case 'critical': return 'text-red-400'
       case 'high': return 'text-gold'
-      case 'medium': return 'text-blue-400'
+      case 'medium': return 'text-navy-400'
       default: return 'text-platinum'
     }
   }
@@ -247,7 +247,7 @@ function SentimentBar({ topic, sentiment, finding }: { topic: string; sentiment:
 function SourceCredibilityRow({ source, tier, type, reliability }: { source: string; tier: number; type: string; reliability: string }) {
   const getTierColor = (t: number) => {
     if (t === 0) return 'text-emerald-400'
-    if (t === 1) return 'text-blue-400'
+    if (t === 1) return 'text-navy-400'
     if (t === 2) return 'text-gold'
     return 'text-platinum-500'
   }
@@ -458,7 +458,7 @@ export default function TechnologyTrendsPage() {
                         { label: 'Timeline', value: '2 Years', icon: Clock },
                         { label: 'Directive', value: 'April 2026', icon: Zap },
                       ].map((item, i) => (
-                        <div key={item.label} className="rounded-xl bg-slate-800/50 p-4 text-center">
+                        <div key={item.label} className="rounded-xl bg-platinum-800/50 p-4 text-center">
                           <item.icon className="h-6 w-6 mx-auto text-gold mb-2" />
                           <p className="text-2xl font-bold text-gold">{item.value}</p>
                           <p className="text-xs text-platinum-500">{item.label}</p>
@@ -482,7 +482,7 @@ export default function TechnologyTrendsPage() {
                               initial={{ opacity: 0, x: -20 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: i * 0.05 }}
-                              className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                              className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                             >
                               <div>
                                 <p className="text-sm font-medium text-platinum-200">{reg.instrument}</p>
@@ -509,7 +509,7 @@ export default function TechnologyTrendsPage() {
                               initial={{ opacity: 0, x: 20 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: i * 0.05 }}
-                              className="flex items-center gap-3 rounded-lg bg-slate-800/50 p-3"
+                              className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-3"
                             >
                               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/20 text-gold">
                                 <Building className="h-5 w-5" />
@@ -607,7 +607,7 @@ export default function TechnologyTrendsPage() {
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.1 }}
-                            className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                            className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                           >
                             <span className="text-sm text-platinum-400">{item.label}</span>
                             <div className="text-right">
@@ -633,7 +633,7 @@ export default function TechnologyTrendsPage() {
                           initial={{ scale: 0.9, opacity: 0 }}
                           animate={{ scale: 1, opacity: 1 }}
                           transition={{ delay: i * 0.1 }}
-                          className="rounded-xl bg-slate-800/50 p-4 text-center"
+                          className="rounded-xl bg-platinum-800/50 p-4 text-center"
                         >
                           <p className="text-2xl font-bold gradient-text-gold">{metric.value}</p>
                           <p className="text-xs text-platinum-500 mt-1">{metric.metric}</p>
@@ -677,7 +677,7 @@ export default function TechnologyTrendsPage() {
                       />
                       <div className="mt-4 grid grid-cols-2 gap-3">
                         {ext.autonomousVehicles.dubaiDroneTargets.map((target) => (
-                          <div key={target.target} className="rounded-lg bg-slate-800/50 p-3">
+                          <div key={target.target} className="rounded-lg bg-platinum-800/50 p-3">
                             <p className="text-xs text-platinum-500">{target.target}</p>
                             <p className="text-lg font-bold text-gold">{target.value}</p>
                             <p className="text-xs text-platinum-600">{target.timeline}</p>
@@ -705,7 +705,7 @@ export default function TechnologyTrendsPage() {
                               initial={{ opacity: 0, x: 20 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: i * 0.05 }}
-                              className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                              className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                             >
                               <div>
                                 <p className="text-sm font-medium text-platinum-200">{plan.plan}</p>
@@ -737,7 +737,7 @@ export default function TechnologyTrendsPage() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: i * 0.1 }}
-                            className="rounded-xl border border-platinum-700/50 bg-slate-800/50 p-4"
+                            className="rounded-xl border border-platinum-700/50 bg-platinum-800/50 p-4"
                           >
                             <div className="flex items-center justify-between">
                               <div>
@@ -800,7 +800,7 @@ export default function TechnologyTrendsPage() {
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.1 }}
-                            className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4"
+                            className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4"
                           >
                             <div className="flex items-center gap-3">
                               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/20 text-gold">
@@ -838,7 +838,7 @@ export default function TechnologyTrendsPage() {
                           { label: 'Nvidia Chips', value: ext.semiconductors.uaeUSAIAgreement.nvidiaChips },
                           { label: 'Status', value: ext.semiconductors.uaeUSAIAgreement.dealStatus },
                         ].map((item, i) => (
-                          <div key={item.label} className="flex justify-between rounded-lg bg-slate-800/50 p-3">
+                          <div key={item.label} className="flex justify-between rounded-lg bg-platinum-800/50 p-3">
                             <span className="text-sm text-platinum-500">{item.label}</span>
                             <span className="text-sm font-medium text-gold">{item.value}</span>
                           </div>
@@ -859,7 +859,7 @@ export default function TechnologyTrendsPage() {
                           { label: 'Project Type', value: ext.semiconductors.tsmcUAE.projectType },
                           { label: 'Discussions', value: ext.semiconductors.tsmcUAE.discussionsWith },
                         ].map((item, i) => (
-                          <div key={item.label} className="flex justify-between rounded-lg bg-slate-800/50 p-3">
+                          <div key={item.label} className="flex justify-between rounded-lg bg-platinum-800/50 p-3">
                             <span className="text-sm text-platinum-500">{item.label}</span>
                             <span className="text-sm font-medium text-platinum-200">{item.value}</span>
                           </div>
@@ -932,7 +932,7 @@ export default function TechnologyTrendsPage() {
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: i * 0.05 }}
-                                className={`flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border-l-4 ${priorityColor}`}
+                                className={`flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border-l-4 ${priorityColor}`}
                               >
                                 <span className="text-sm font-medium text-platinum-200">{item.topic}</span>
                                 <div className="flex items-center gap-2">

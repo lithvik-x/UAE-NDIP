@@ -107,7 +107,7 @@ export default function EmotionAnalysisPage() {
             <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold">
               Emotion-Specific Results
             </h1>
-            <p className="mt-2 text-slate-400 max-w-2xl">
+            <p className="mt-2 text-platinum-400 max-w-2xl">
               Plutchik emotion model analysis adapted for UAE context. Covers 8 primary emotions
               with {emotionResearchSummary.totalUniqueQueryPatterns} query patterns and {emotionResearchSummary.totalDataPointsExtracted}+ data points.
             </p>
@@ -139,7 +139,7 @@ export default function EmotionAnalysisPage() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-gold">{emotionResearchSummary.totalUniqueQueryPatterns}</p>
-                  <p className="text-xs text-slate-400">Query Patterns</p>
+                  <p className="text-xs text-platinum-400">Query Patterns</p>
                 </div>
               </div>
             </GlassPanel>
@@ -153,7 +153,7 @@ export default function EmotionAnalysisPage() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-emerald">{emotionResearchSummary.totalSearchResultsProcessed}+</p>
-                  <p className="text-xs text-slate-400">Search Results</p>
+                  <p className="text-xs text-platinum-400">Search Results</p>
                 </div>
               </div>
             </GlassPanel>
@@ -167,7 +167,7 @@ export default function EmotionAnalysisPage() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-info">{emotionResearchSummary.pagesFetchedForDeepDive}</p>
-                  <p className="text-xs text-slate-400">Pages Fetched</p>
+                  <p className="text-xs text-platinum-400">Pages Fetched</p>
                 </div>
               </div>
             </GlassPanel>
@@ -181,7 +181,7 @@ export default function EmotionAnalysisPage() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-purple">{emotionResearchSummary.keySourcesCited}+</p>
-                  <p className="text-xs text-slate-400">Sources Cited</p>
+                  <p className="text-xs text-platinum-400">Sources Cited</p>
                 </div>
               </div>
             </GlassPanel>
@@ -195,7 +195,7 @@ export default function EmotionAnalysisPage() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-rose">{emotionResearchSummary.totalDataPointsExtracted}+</p>
-                  <p className="text-xs text-slate-400">Data Points</p>
+                  <p className="text-xs text-platinum-400">Data Points</p>
                 </div>
               </div>
             </GlassPanel>
@@ -336,14 +336,14 @@ export default function EmotionAnalysisPage() {
                   <div className="space-y-6">
                     {/* Methodology */}
                     <div>
-                      <h3 className="text-lg font-semibold text-slate-200 mb-3">Methodology</h3>
+                      <h3 className="text-lg font-semibold text-platinum-200 mb-3">Methodology</h3>
                       <div className="space-y-2">
                         {emotionDataCollectionMetadata.methodology.map((item, idx) => (
-                          <div key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-slate-800/30">
+                          <div key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-platinum-800/30">
                             <div className="flex h-6 w-6 items-center justify-center rounded-full bg-info/20 text-info text-sm font-bold">
                               {idx + 1}
                             </div>
-                            <p className="text-sm text-slate-300">{item}</p>
+                            <p className="text-sm text-platinum-300">{item}</p>
                           </div>
                         ))}
                       </div>
@@ -351,11 +351,11 @@ export default function EmotionAnalysisPage() {
 
                     {/* Limitations */}
                     <div>
-                      <h3 className="text-lg font-semibold text-slate-200 mb-3">Limitations</h3>
+                      <h3 className="text-lg font-semibold text-platinum-200 mb-3">Limitations</h3>
                       <div className="grid gap-3 sm:grid-cols-2">
                         {emotionDataCollectionMetadata.limitations.map((item, idx) => (
                           <div key={idx} className="p-3 rounded-lg bg-rose-500/10 border border-rose-500/20">
-                            <p className="text-sm text-slate-300">{item}</p>
+                            <p className="text-sm text-platinum-300">{item}</p>
                           </div>
                         ))}
                       </div>
@@ -363,29 +363,29 @@ export default function EmotionAnalysisPage() {
 
                     {/* Query Mapping */}
                     <div>
-                      <h3 className="text-lg font-semibold text-slate-200 mb-3">Plutchik Emotion Mapping</h3>
+                      <h3 className="text-lg font-semibold text-platinum-200 mb-3">Plutchik Emotion Mapping</h3>
                       <div className="overflow-x-auto">
                         <table className="w-full text-sm">
                           <thead>
-                            <tr className="border-b border-slate-700">
-                              <th className="text-left p-3 text-slate-400">Emotion</th>
-                              <th className="text-left p-3 text-slate-400">UAE Context</th>
-                              <th className="text-left p-3 text-slate-400">Sample Query Terms</th>
+                            <tr className="border-b border-platinum-700">
+                              <th className="text-left p-3 text-platinum-400">Emotion</th>
+                              <th className="text-left p-3 text-platinum-400">UAE Context</th>
+                              <th className="text-left p-3 text-platinum-400">Sample Query Terms</th>
                             </tr>
                           </thead>
                           <tbody>
                             {emotionDataCollectionMetadata.queryMappingToPlutchik.map((row, idx) => {
                               const Icon = emotionIcons[row.plutchikEmotion] || Brain
                               return (
-                                <tr key={idx} className="border-b border-slate-800">
+                                <tr key={idx} className="border-b border-platinum-800">
                                   <td className="p-3">
                                     <div className="flex items-center gap-2">
                                       <Icon className="h-4 w-4" style={{ color: emotionColors[row.plutchikEmotion] }} />
-                                      <span className="font-medium text-slate-200">{row.plutchikEmotion}</span>
+                                      <span className="font-medium text-platinum-200">{row.plutchikEmotion}</span>
                                     </div>
                                   </td>
-                                  <td className="p-3 text-slate-400">{row.uaeContextualization}</td>
-                                  <td className="p-3 text-slate-500">{row.sampleQueryTerms}</td>
+                                  <td className="p-3 text-platinum-400">{row.uaeContextualization}</td>
+                                  <td className="p-3 text-platinum-500">{row.sampleQueryTerms}</td>
                                 </tr>
                               )
                             })}
@@ -396,13 +396,13 @@ export default function EmotionAnalysisPage() {
 
                     {/* Entity Registry Summary */}
                     <div>
-                      <h3 className="text-lg font-semibold text-slate-200 mb-3">Entity Registry Summary</h3>
+                      <h3 className="text-lg font-semibold text-platinum-200 mb-3">Entity Registry Summary</h3>
                       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                         {entityRegistrySummary.map((entity) => (
-                          <div key={entity.category} className="p-3 rounded-lg bg-slate-800/30 border border-slate-700/50">
-                            <p className="font-semibold text-slate-200">{entity.category}</p>
+                          <div key={entity.category} className="p-3 rounded-lg bg-platinum-800/30 border border-platinum-700/50">
+                            <p className="font-semibold text-platinum-200">{entity.category}</p>
                             <p className="text-2xl font-bold text-gold">{entity.count}</p>
-                            <p className="text-xs text-slate-500 mt-1">{entity.examples.join(', ')}</p>
+                            <p className="text-xs text-platinum-500 mt-1">{entity.examples.join(', ')}</p>
                           </div>
                         ))}
                       </div>
@@ -416,7 +416,7 @@ export default function EmotionAnalysisPage() {
 
         {/* All Emotions Grid - Always Visible */}
         <div>
-          <h2 className="text-2xl font-bold text-slate-200 mb-4">All Emotions Overview</h2>
+          <h2 className="text-2xl font-bold text-platinum-200 mb-4">All Emotions Overview</h2>
           <motion.div
             variants={staggerContainer}
             initial="initial"
@@ -444,7 +444,7 @@ export default function EmotionAnalysisPage() {
                       <Icon className="h-6 w-6" style={{ color }} />
                     </div>
                     <div>
-                      <p className="font-bold text-slate-200">{emotion.emotion}</p>
+                      <p className="font-bold text-platinum-200">{emotion.emotion}</p>
                       <Badge
                         variant={isPositive ? 'success' : 'destructive'}
                         className="text-xs"
@@ -455,12 +455,12 @@ export default function EmotionAnalysisPage() {
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-slate-400">Sentiment</span>
+                      <span className="text-platinum-400">Sentiment</span>
                       <span className={`font-bold ${isPositive ? 'text-emerald-400' : 'text-rose-400'}`}>
                         {sentimentPercent > 0 ? '+' : ''}{sentimentPercent}%
                       </span>
                     </div>
-                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: `${Math.abs(sentimentPercent)}%` }}
@@ -468,7 +468,7 @@ export default function EmotionAnalysisPage() {
                         className={`h-full rounded-full ${isPositive ? 'bg-emerald-500' : 'bg-rose-500'}`}
                       />
                     </div>
-                    <div className="flex justify-between text-xs text-slate-500">
+                    <div className="flex justify-between text-xs text-platinum-500">
                       <span>{emotion.primaryQueries} queries</span>
                       <span>{emotion.dataPointsExtracted} data points</span>
                     </div>
@@ -484,7 +484,7 @@ export default function EmotionAnalysisPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="text-center text-slate-500 text-sm"
+          className="text-center text-platinum-500 text-sm"
         >
           <p>Document generated: {emotionResearchSummary.documentGenerated}</p>
           <p>Research enrichment completed: {emotionResearchSummary.enrichmentCompleted}</p>

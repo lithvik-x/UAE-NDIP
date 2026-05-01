@@ -52,16 +52,16 @@ export function TwitterXInfluenceSection({ data }: TwitterXInfluenceSectionProps
             <CardContent>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-slate-300">Estimated Bot Percentage</span>
+                  <span className="text-sm text-platinum-300">Estimated Bot Percentage</span>
                   <span className="text-2xl font-bold text-rose-400">{botActivity.estimatedBotPercent}%</span>
                 </div>
                 <Progress value={botActivity.estimatedBotPercent} className="h-3" />
                 <div className="flex items-center justify-between mt-4">
-                  <span className="text-sm text-slate-300">Coordinated Inauthentic Behavior</span>
+                  <span className="text-sm text-platinum-300">Coordinated Inauthentic Behavior</span>
                   <Badge variant="destructive">Detected</Badge>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-slate-300">Confidence Level</span>
+                  <span className="text-sm text-platinum-300">Confidence Level</span>
                   <span className="text-lg font-bold text-gold">{Math.round(botActivity.confidence * 100)}%</span>
                 </div>
               </div>
@@ -105,10 +105,10 @@ export function TwitterXInfluenceSection({ data }: TwitterXInfluenceSectionProps
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.1 }}
-                    className="flex items-center gap-3 rounded-lg bg-slate-800/50 p-4"
+                    className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-4"
                   >
                     <Bot className="h-5 w-5 text-platinum" />
-                    <span className="text-sm text-slate-200">{indicator}</span>
+                    <span className="text-sm text-platinum-200">{indicator}</span>
                     <Badge variant="destructive" className="ml-auto">Active</Badge>
                   </motion.div>
                 ))}

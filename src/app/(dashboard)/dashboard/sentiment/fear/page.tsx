@@ -473,9 +473,9 @@ export default function FearUncertaintyPage() {
     switch (severity) {
       case 'CRITICAL': return 'text-red-400 bg-red-500/20'
       case 'HIGH': return 'text-amber-400 bg-amber-500/20'
-      case 'MEDIUM': return 'text-yellow-400 bg-yellow-500/20'
-      case 'LOW': return 'text-green-400 bg-green-500/20'
-      default: return 'text-slate-400 bg-slate-500/20'
+      case 'MEDIUM': return 'text-amber-400 bg-amber-500/20'
+      case 'LOW': return 'text-emerald-400 bg-emerald-500/20'
+      default: return 'text-platinum-400 bg-platinum-500/20'
     }
   }
 
@@ -483,9 +483,9 @@ export default function FearUncertaintyPage() {
     switch (severity) {
       case 'CRITICAL': return 'border-red-500/50'
       case 'HIGH': return 'border-amber-500/50'
-      case 'MEDIUM': return 'border-yellow-500/50'
-      case 'LOW': return 'border-green-500/50'
-      default: return 'border-slate-500/50'
+      case 'MEDIUM': return 'border-amber-500/50'
+      case 'LOW': return 'border-emerald-500/50'
+      default: return 'border-platinum-500/50'
     }
   }
 
@@ -520,7 +520,7 @@ export default function FearUncertaintyPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="mt-2 text-slate-400"
+            className="mt-2 text-platinum-400"
           >
             {fearData.overview.queryCategories} distinct fear topics from {fearData.overview.totalSourcesConsulted} authoritative sources
           </motion.p>
@@ -648,7 +648,7 @@ export default function FearUncertaintyPage() {
               </div>
 
               {/* Sentiment Distribution */}
-              <Card className="glass-card border-slate-500/30">
+              <Card className="glass-card border-platinum-500/30">
                 <CardHeader>
                   <CardTitle className="text-lg font-rajdhani">
                     <Scale className="w-4 h-4 inline mr-2" />
@@ -666,7 +666,7 @@ export default function FearUncertaintyPage() {
               </Card>
 
               {/* Severity Distribution */}
-              <Card className="glass-card border-slate-500/30">
+              <Card className="glass-card border-platinum-500/30">
                 <CardHeader>
                   <CardTitle className="text-lg font-rajdhani">
                     <AlertTriangle className="w-4 h-4 inline mr-2" />
@@ -707,7 +707,7 @@ export default function FearUncertaintyPage() {
                     </motion.div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-bold text-lg text-slate-200 font-rajdhani">
+                        <h4 className="font-bold text-lg text-platinum-200 font-rajdhani">
                           {aggregate.category}
                         </h4>
                         <Badge className={aggregate.severity === 'CRITICAL' ? 'bg-red-500/20 text-red-400' : 'bg-amber-500/20 text-amber-400'}>
@@ -715,16 +715,16 @@ export default function FearUncertaintyPage() {
                         </Badge>
                       </div>
                       <div className="flex items-center gap-2 mb-3">
-                        <span className="text-xs text-slate-500">Sentiment:</span>
-                        <Badge variant="outline" className={aggregate.aggregateSentiment < 0 ? 'text-red-400 border-red-500/50' : 'text-green-400 border-green-500/50'}>
+                        <span className="text-xs text-platinum-500">Sentiment:</span>
+                        <Badge variant="outline" className={aggregate.aggregateSentiment < 0 ? 'text-red-400 border-red-500/50' : 'text-emerald-400 border-emerald-500/50'}>
                           {aggregate.aggregateSentiment > 0 ? '+' : ''}{aggregate.aggregateSentiment}
                         </Badge>
                       </div>
                       <div className="bg-navy-900/50 rounded-lg p-3">
-                        <p className="text-xs text-slate-500 mb-2">Evidence:</p>
+                        <p className="text-xs text-platinum-500 mb-2">Evidence:</p>
                         <ul className="space-y-1">
                           {aggregate.evidence.map((ev, i) => (
-                            <li key={i} className="text-sm text-slate-300 flex items-center gap-2">
+                            <li key={i} className="text-sm text-platinum-300 flex items-center gap-2">
                               <XCircle className="w-3 h-3 text-red-400 flex-shrink-0" />
                               {ev}
                             </li>
@@ -760,12 +760,12 @@ export default function FearUncertaintyPage() {
                         <Badge className={getSeverityColor(topic.severity)}>
                           {topic.severity}
                         </Badge>
-                        <span className="text-xs text-slate-500">#{topic.id}</span>
+                        <span className="text-xs text-platinum-500">#{topic.id}</span>
                       </div>
-                      <h4 className="font-semibold text-slate-200 mb-2 font-rajdhani">
+                      <h4 className="font-semibold text-platinum-200 mb-2 font-rajdhani">
                         {topic.name}
                       </h4>
-                      <div className="flex items-center gap-2 text-xs text-slate-400 mb-3">
+                      <div className="flex items-center gap-2 text-xs text-platinum-400 mb-3">
                         <Badge variant="outline" className="text-xs">
                           Sentiment: {topic.aggregateSentiment > 0 ? '+' : ''}{topic.aggregateSentiment}
                         </Badge>
@@ -780,9 +780,9 @@ export default function FearUncertaintyPage() {
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: 'auto', opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            className="mt-3 pt-3 border-t border-slate-700"
+                            className="mt-3 pt-3 border-t border-platinum-700"
                           >
-                            <p className="text-xs text-slate-500 mb-2">
+                            <p className="text-xs text-platinum-500 mb-2">
                               Primary Fears:
                             </p>
                             <div className="flex flex-wrap gap-1 mb-3">
@@ -792,17 +792,17 @@ export default function FearUncertaintyPage() {
                                 </Badge>
                               ))}
                             </div>
-                            <p className="text-xs text-slate-500 mb-2">Key KPIs:</p>
+                            <p className="text-xs text-platinum-500 mb-2">Key KPIs:</p>
                             <div className="space-y-1">
                               {topic.kpis.slice(0, 4).map((kpi, i) => (
                                 <div key={i} className="flex justify-between text-xs">
-                                  <span className="text-slate-400">{kpi.kpi}:</span>
+                                  <span className="text-platinum-400">{kpi.kpi}:</span>
                                   <span className="text-red-400 font-semibold">{kpi.value}</span>
                                 </div>
                               ))}
                             </div>
                             {topic.quotes.length > 0 && (
-                              <blockquote className="mt-3 text-xs text-slate-500 italic border-l-2 border-slate-600 pl-2">
+                              <blockquote className="mt-3 text-xs text-platinum-500 italic border-l-2 border-platinum-600 pl-2">
                                 {topic.quotes[0].substring(0, 120)}...
                               </blockquote>
                             )}
@@ -825,18 +825,18 @@ export default function FearUncertaintyPage() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="glass-card border-slate-500/30 p-6"
+                className="glass-card border-platinum-500/30 p-6"
               >
                 <div className="flex items-center gap-2 mb-4">
                   <TrendingUp className="h-5 w-5 text-emerald-400" />
-                  <h4 className="font-semibold text-slate-200 font-rajdhani">
+                  <h4 className="font-semibold text-platinum-200 font-rajdhani">
                     Macroeconomic KPIs
                   </h4>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {comprehensiveKPIs.macroeconomic.map((kpi, idx) => (
                     <div key={idx} className="flex justify-between items-center p-3 bg-navy-900/50 rounded-lg">
-                      <span className="text-xs text-slate-400">{kpi.kpi}</span>
+                      <span className="text-xs text-platinum-400">{kpi.kpi}</span>
                       <span className="text-sm font-semibold text-emerald-400">{kpi.value}</span>
                     </div>
                   ))}
@@ -848,18 +848,18 @@ export default function FearUncertaintyPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="glass-card border-slate-500/30 p-6"
+                className="glass-card border-platinum-500/30 p-6"
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Flame className="h-5 w-5 text-orange-400" />
-                  <h4 className="font-semibold text-slate-200 font-rajdhani">
+                  <h4 className="font-semibold text-platinum-200 font-rajdhani">
                     Oil & Energy KPIs
                   </h4>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {comprehensiveKPIs.oilEnergy.map((kpi, idx) => (
                     <div key={idx} className="flex justify-between items-center p-3 bg-navy-900/50 rounded-lg">
-                      <span className="text-xs text-slate-400">{kpi.kpi}</span>
+                      <span className="text-xs text-platinum-400">{kpi.kpi}</span>
                       <span className="text-sm font-semibold text-orange-400">{kpi.value}</span>
                     </div>
                   ))}
@@ -871,18 +871,18 @@ export default function FearUncertaintyPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="glass-card border-slate-500/30 p-6"
+                className="glass-card border-platinum-500/30 p-6"
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Building className="h-5 w-5 text-purple-400" />
-                  <h4 className="font-semibold text-slate-200 font-rajdhani">
+                  <h4 className="font-semibold text-platinum-200 font-rajdhani">
                     Real Estate KPIs
                   </h4>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {comprehensiveKPIs.realEstate.map((kpi, idx) => (
                     <div key={idx} className="flex justify-between items-center p-3 bg-navy-900/50 rounded-lg">
-                      <span className="text-xs text-slate-400">{kpi.kpi}</span>
+                      <span className="text-xs text-platinum-400">{kpi.kpi}</span>
                       <span className="text-sm font-semibold text-purple-400">{kpi.value}</span>
                     </div>
                   ))}
@@ -898,14 +898,14 @@ export default function FearUncertaintyPage() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Plane className="h-5 w-5 text-red-400" />
-                  <h4 className="font-semibold text-slate-200 font-rajdhani">
+                  <h4 className="font-semibold text-platinum-200 font-rajdhani">
                     Conflict/War KPIs
                   </h4>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {comprehensiveKPIs.conflictWar.map((kpi, idx) => (
                     <div key={idx} className="flex justify-between items-center p-3 bg-navy-900/50 rounded-lg">
-                      <span className="text-xs text-slate-400">{kpi.kpi}</span>
+                      <span className="text-xs text-platinum-400">{kpi.kpi}</span>
                       <span className="text-sm font-semibold text-red-400">{kpi.value}</span>
                     </div>
                   ))}
@@ -921,14 +921,14 @@ export default function FearUncertaintyPage() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Thermometer className="h-5 w-5 text-orange-400" />
-                  <h4 className="font-semibold text-slate-200 font-rajdhani">
+                  <h4 className="font-semibold text-platinum-200 font-rajdhani">
                     Climate/Heat KPIs
                   </h4>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {comprehensiveKPIs.climate.map((kpi, idx) => (
                     <div key={idx} className="flex justify-between items-center p-3 bg-navy-900/50 rounded-lg">
-                      <span className="text-xs text-slate-400">{kpi.kpi}</span>
+                      <span className="text-xs text-platinum-400">{kpi.kpi}</span>
                       <span className="text-sm font-semibold text-orange-400">{kpi.value}</span>
                     </div>
                   ))}
@@ -944,14 +944,14 @@ export default function FearUncertaintyPage() {
               >
                 <div className="flex items-center gap-2 mb-4">
                   <Coins className="h-5 w-5 text-amber-400" />
-                  <h4 className="font-semibold text-slate-200 font-rajdhani">
+                  <h4 className="font-semibold text-platinum-200 font-rajdhani">
                     Household Debt KPIs
                   </h4>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {comprehensiveKPIs.debt.map((kpi, idx) => (
                     <div key={idx} className="flex justify-between items-center p-3 bg-navy-900/50 rounded-lg">
-                      <span className="text-xs text-slate-400">{kpi.kpi}</span>
+                      <span className="text-xs text-platinum-400">{kpi.kpi}</span>
                       <span className="text-sm font-semibold text-amber-400">{kpi.value}</span>
                     </div>
                   ))}
@@ -963,19 +963,19 @@ export default function FearUncertaintyPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
-                className="glass-card border-blue-500/30 p-6"
+                className="glass-card border-navy-500/30 p-6"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <Users className="h-5 w-5 text-blue-400" />
-                  <h4 className="font-semibold text-slate-200 font-rajdhani">
+                  <Users className="h-5 w-5 text-navy-400" />
+                  <h4 className="font-semibold text-platinum-200 font-rajdhani">
                     Demographics/Expat KPIs
                   </h4>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {comprehensiveKPIs.demographics.map((kpi, idx) => (
                     <div key={idx} className="flex justify-between items-center p-3 bg-navy-900/50 rounded-lg">
-                      <span className="text-xs text-slate-400">{kpi.kpi}</span>
-                      <span className="text-sm font-semibold text-blue-400">{kpi.value}</span>
+                      <span className="text-xs text-platinum-400">{kpi.kpi}</span>
+                      <span className="text-sm font-semibold text-navy-400">{kpi.value}</span>
                     </div>
                   ))}
                 </div>
@@ -997,17 +997,17 @@ export default function FearUncertaintyPage() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="glass-card border-slate-500/30 p-4"
+                      className="glass-card border-platinum-500/30 p-4"
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-semibold text-slate-200">{org.entity}</h4>
+                        <h4 className="font-semibold text-platinum-200">{org.entity}</h4>
                         <Badge variant="outline" className="text-xs">
                           Tier {org.uaeRelevance === 'Critical' ? '1' : org.uaeRelevance === 'High' ? '2' : '3'}
                         </Badge>
                       </div>
-                      <div className="flex items-center gap-2 text-xs text-slate-400">
+                      <div className="flex items-center gap-2 text-xs text-platinum-400">
                         <Badge variant="secondary" className="text-xs">{org.type}</Badge>
-                        <Badge className={org.sentiment.includes('Positive') ? 'text-emerald-400 border-emerald-500/50' : org.sentiment.includes('Negative') ? 'text-red-400 border-red-500/50' : 'text-slate-400 border-slate-500/50'}>
+                        <Badge className={org.sentiment.includes('Positive') ? 'text-emerald-400 border-emerald-500/50' : org.sentiment.includes('Negative') ? 'text-red-400 border-red-500/50' : 'text-platinum-400 border-platinum-500/50'}>
                           {org.sentiment}
                         </Badge>
                       </div>
@@ -1027,17 +1027,17 @@ export default function FearUncertaintyPage() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="glass-card border-slate-500/30 p-4"
+                      className="glass-card border-platinum-500/30 p-4"
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-semibold text-slate-200">{person.name}</h4>
+                        <h4 className="font-semibold text-platinum-200">{person.name}</h4>
                         <Badge variant="outline" className="text-xs">
                           {person.organization}
                         </Badge>
                       </div>
-                      <div className="flex items-center gap-2 text-xs text-slate-400">
+                      <div className="flex items-center gap-2 text-xs text-platinum-400">
                         <Badge variant="secondary" className="text-xs">{person.role}</Badge>
-                        <Badge className={person.sentiment.includes('Positive') ? 'text-emerald-400 border-emerald-500/50' : person.sentiment.includes('Negative') ? 'text-red-400 border-red-500/50' : 'text-slate-400 border-slate-500/50'}>
+                        <Badge className={person.sentiment.includes('Positive') ? 'text-emerald-400 border-emerald-500/50' : person.sentiment.includes('Negative') ? 'text-red-400 border-red-500/50' : 'text-platinum-400 border-platinum-500/50'}>
                           {person.sentiment}
                         </Badge>
                       </div>
@@ -1059,18 +1059,18 @@ export default function FearUncertaintyPage() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.1 }}
-                  className={`glass-card border ${tier.tier.includes('Tier 1') ? 'border-emerald-500/50' : tier.tier.includes('Tier 2') ? 'border-blue-500/50' : tier.tier.includes('Tier 3') ? 'border-amber-500/50' : 'border-slate-500/50'} p-6`}
+                  className={`glass-card border ${tier.tier.includes('Tier 1') ? 'border-emerald-500/50' : tier.tier.includes('Tier 2') ? 'border-navy-500/50' : tier.tier.includes('Tier 3') ? 'border-amber-500/50' : 'border-platinum-500/50'} p-6`}
                 >
                   <div className="flex items-start gap-4">
-                    <div className={`flex h-10 w-10 items-center justify-center rounded-full ${tier.tier.includes('Tier 1') ? 'bg-emerald-500/20 text-emerald-400' : tier.tier.includes('Tier 2') ? 'bg-blue-500/20 text-blue-400' : tier.tier.includes('Tier 3') ? 'bg-amber-500/20 text-amber-400' : 'bg-slate-500/20 text-slate-400'}`}>
+                    <div className={`flex h-10 w-10 items-center justify-center rounded-full ${tier.tier.includes('Tier 1') ? 'bg-emerald-500/20 text-emerald-400' : tier.tier.includes('Tier 2') ? 'bg-navy-500/20 text-navy-400' : tier.tier.includes('Tier 3') ? 'bg-amber-500/20 text-amber-400' : 'bg-platinum-500/20 text-platinum-400'}`}>
                       <Database className="h-5 w-5" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-lg text-slate-200 font-rajdhani">
+                      <h4 className="font-bold text-lg text-platinum-200 font-rajdhani">
                         {tier.tier}
                       </h4>
-                      <p className="text-sm text-slate-400 mb-2">{tier.description}</p>
-                      <p className="text-xs text-slate-500">{tier.sources}</p>
+                      <p className="text-sm text-platinum-400 mb-2">{tier.description}</p>
+                      <p className="text-xs text-platinum-500">{tier.sources}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -1097,14 +1097,14 @@ export default function FearUncertaintyPage() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-bold text-lg text-slate-200 font-rajdhani">
+                        <h4 className="font-bold text-lg text-platinum-200 font-rajdhani">
                           {item.topic}
                         </h4>
                         <Badge className={item.assessment === 'CRITICAL' ? 'bg-red-500/20 text-red-400' : 'bg-amber-500/20 text-amber-400'}>
                           {item.assessment}
                         </Badge>
                       </div>
-                      <p className="text-sm text-slate-400">{item.rationale}</p>
+                      <p className="text-sm text-platinum-400">{item.rationale}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -1121,10 +1121,10 @@ export default function FearUncertaintyPage() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.05 }}
-                  className="glass-card border-slate-500/30 p-4"
+                  className="glass-card border-platinum-500/30 p-4"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="font-medium text-slate-200">{item.topic}</span>
+                    <span className="font-medium text-platinum-200">{item.topic}</span>
                     <Badge className={item.score < -0.5 ? 'bg-red-500/20 text-red-400' : item.score < 0 ? 'bg-amber-500/20 text-amber-400' : 'bg-emerald-500/20 text-emerald-400'}>
                       {item.sentiment}
                     </Badge>
@@ -1134,7 +1134,7 @@ export default function FearUncertaintyPage() {
                     className="h-2"
                   />
                   <div className="flex justify-between mt-1">
-                    <span className="text-xs text-slate-500">Score:</span>
+                    <span className="text-xs text-platinum-500">Score:</span>
                     <span className={`text-xs font-semibold ${item.score < 0 ? 'text-red-400' : 'text-emerald-400'}`}>
                       {item.score > 0 ? '+' : ''}{item.score}
                     </span>

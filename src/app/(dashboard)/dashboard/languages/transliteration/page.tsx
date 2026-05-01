@@ -129,7 +129,7 @@ export default function TransliterationPage() {
               <div className="space-y-3">
                 {errorData.map((e: any, idx: number) => (
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }}
-                    className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 border border-slate-700/50">
+                    className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                     <div className="flex items-center gap-3">
                       <AlertTriangle className={`h-5 w-5 ${e.impact === 'HIGH' ? 'text-rose' : 'text-amber'}`} />
                       <span className="text-platinum-200">{e.error}</span>

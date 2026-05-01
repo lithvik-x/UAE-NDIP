@@ -54,7 +54,7 @@ function GroupCard({ group, icon: Icon, index }: GroupCardProps) {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: index * 0.03 }}
       whileHover={{ scale: 1.02 }}
-      className="flex items-start gap-3 p-4 rounded-lg bg-slate-800/50 border border-slate-700/50 hover:border-info/50 transition-colors"
+      className="flex items-start gap-3 p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50 hover:border-info/50 transition-colors"
     >
       <Icon className="h-5 w-5 text-info flex-shrink-0 mt-1" />
       <div className="flex-1 min-w-0">
@@ -67,7 +67,7 @@ function GroupCard({ group, icon: Icon, index }: GroupCardProps) {
             {group.credibility}
           </Badge>
         </div>
-        <p className="text-xs text-slate-400 mb-2 line-clamp-2">{group.description || group.focus}</p>
+        <p className="text-xs text-platinum-400 mb-2 line-clamp-2">{group.description || group.focus}</p>
         {group.members && (
           <div className="flex items-center gap-1 text-xs text-info">
             <Users className="h-3 w-3" />
@@ -220,17 +220,17 @@ export function FacebookMetaExpatGroupsSection() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
                     whileHover={{ scale: 1.01 }}
-                    className="flex items-center justify-between p-4 rounded-lg bg-slate-800/50 border border-slate-700/50 hover:border-gold/50 transition-colors"
+                    className="flex items-center justify-between p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50 hover:border-gold/50 transition-colors"
                   >
                     <div className="flex items-center gap-3">
                       <Church className="h-5 w-5 text-gold" />
                       <div>
                         <span className="text-sm font-medium text-platinum-200">{group.name}</span>
-                        <p className="text-xs text-slate-400 mt-0.5">{group.focus}</p>
+                        <p className="text-xs text-platinum-400 mt-0.5">{group.focus}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="text-xs text-slate-400">{group.members}</span>
+                      <span className="text-xs text-platinum-400">{group.members}</span>
                       <ExternalLink className="h-4 w-4 text-info" />
                     </div>
                   </motion.a>

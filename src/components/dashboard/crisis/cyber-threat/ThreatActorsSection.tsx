@@ -84,13 +84,13 @@ export function ThreatActorsSection({ data }: ThreatActorsSectionProps) {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.3, delay: idx * 0.1 }}
                         whileHover={{ x: 4 }}
-                        className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50 hover:border-rose-500/30 transition-colors"
+                        className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50 hover:border-rose-500/30 transition-colors"
                       >
                         <div className="flex items-center gap-3">
                           <div className="h-2 w-2 rounded-full bg-rose-500" />
-                          <span className="font-medium text-slate-200">{group.group}</span>
+                          <span className="font-medium text-platinum-200">{group.group}</span>
                         </div>
-                        <span className="text-xs text-slate-500">{group.knownActivity}</span>
+                        <span className="text-xs text-platinum-500">{group.knownActivity}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -109,30 +109,30 @@ export function ThreatActorsSection({ data }: ThreatActorsSectionProps) {
             </CardHeader>
             <CardContent>
               <div className="grid gap-4 md:grid-cols-5">
-                <div className="rounded-lg bg-slate-800/50 p-4 border border-rose-500/30">
-                  <p className="text-xs text-slate-400">Attribution</p>
+                <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
+                  <p className="text-xs text-platinum-400">Attribution</p>
                   <p className="text-sm font-bold text-rose">Iran-backed</p>
                 </div>
-                <div className="rounded-lg bg-slate-800/50 p-4 border border-rose-500/30">
-                  <p className="text-xs text-slate-400">FBI Bounty</p>
+                <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
+                  <p className="text-xs text-platinum-400">FBI Bounty</p>
                   <p className="text-sm font-bold text-rose">$10 Million</p>
                 </div>
-                <div className="rounded-lg bg-slate-800/50 p-4 border border-rose-500/30">
-                  <p className="text-xs text-slate-400">Active Since</p>
+                <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
+                  <p className="text-xs text-platinum-400">Active Since</p>
                   <p className="text-sm font-bold text-rose">2022</p>
                 </div>
-                <div className="rounded-lg bg-slate-800/50 p-4 border border-rose-500/30">
-                  <p className="text-xs text-slate-400">Motivation</p>
+                <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
+                  <p className="text-xs text-platinum-400">Motivation</p>
                   <p className="text-sm font-bold text-rose">Pro-Palestinian</p>
                 </div>
-                <div className="rounded-lg bg-slate-800/50 p-4 border border-rose-500/30">
-                  <p className="text-xs text-slate-400">April 2026</p>
+                <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
+                  <p className="text-xs text-platinum-400">April 2026</p>
                   <p className="text-sm font-bold text-rose">6PB Destroyed</p>
                 </div>
               </div>
 
               <div className="mt-6">
-                <p className="text-sm font-medium text-slate-300 mb-3">April 2026 Dubai Attack Impact</p>
+                <p className="text-sm font-medium text-platinum-300 mb-3">April 2026 Dubai Attack Impact</p>
                 <BarChart
                   data={handalaAttackData.filter(a => a.entity !== 'Dubai RTA').map((a) => ({
                     name: a.entity.split(' ')[0],

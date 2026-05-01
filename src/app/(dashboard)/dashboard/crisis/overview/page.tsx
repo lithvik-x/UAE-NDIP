@@ -103,7 +103,7 @@ export default function CrisisOverviewPage() {
   const getSeverityColor = (severity: number) => {
     if (severity >= 5) return 'text-red-400'
     if (severity >= 4) return 'text-orange-400'
-    if (severity >= 3) return 'text-yellow-400'
+    if (severity >= 3) return 'text-amber-400'
     return 'text-emerald-400'
   }
 
@@ -114,7 +114,7 @@ export default function CrisisOverviewPage() {
         <div>
           <Badge variant="denim" className="mb-2">PHOENIX PROTOCOL</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Crisis Overview</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             UAE National Digital Intelligence Platform — All Crisis Types Summary
           </p>
         </div>
@@ -254,14 +254,14 @@ export default function CrisisOverviewPage() {
                   <ScrollArea className="h-[300px]">
                     <div className="space-y-2">
                       {criticalCrises.map((crisis, idx) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div className="flex items-center gap-4">
                             <div className={`flex h-10 w-10 items-center justify-center rounded-full bg-rose-500/20 text-rose ${getSeverityColor(crisis.severity)}`}>
                               <AlertCircle className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-200">{crisis.name}</p>
-                              <p className="text-sm text-slate-400">Stage: {crisis.phoenixStage}</p>
+                              <p className="font-semibold text-platinum-200">{crisis.name}</p>
+                              <p className="text-sm text-platinum-400">Stage: {crisis.phoenixStage}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-4">
@@ -299,21 +299,21 @@ export default function CrisisOverviewPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="grid grid-cols-3 gap-4">
-                        <div className="rounded-lg bg-slate-800/50 p-3 text-center">
-                          <p className="text-xs text-slate-400">Affected Entities</p>
-                          <p className="text-lg font-bold text-slate-200">{crisis.affectedEntities?.length || 0}</p>
+                        <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
+                          <p className="text-xs text-platinum-400">Affected Entities</p>
+                          <p className="text-lg font-bold text-platinum-200">{crisis.affectedEntities?.length || 0}</p>
                         </div>
-                        <div className="rounded-lg bg-slate-800/50 p-3 text-center">
-                          <p className="text-xs text-slate-400">Key Findings</p>
-                          <p className="text-lg font-bold text-slate-200">{crisis.keyFindings?.length || 0}</p>
+                        <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
+                          <p className="text-xs text-platinum-400">Key Findings</p>
+                          <p className="text-lg font-bold text-platinum-200">{crisis.keyFindings?.length || 0}</p>
                         </div>
-                        <div className="rounded-lg bg-slate-800/50 p-3 text-center">
-                          <p className="text-xs text-slate-400">Sources</p>
-                          <p className="text-lg font-bold text-slate-200">{crisis.sources?.length || 0}</p>
+                        <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
+                          <p className="text-xs text-platinum-400">Sources</p>
+                          <p className="text-lg font-bold text-platinum-200">{crisis.sources?.length || 0}</p>
                         </div>
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-slate-300 mb-2">Recommendations</p>
+                        <p className="text-sm font-medium text-platinum-300 mb-2">Recommendations</p>
                         <div className="flex flex-wrap gap-2">
                           {crisis.recommendations?.slice(0, 3).map((rec, i) => (
                             <Badge key={i} variant="outline" className="text-xs border-rose-500/50 text-rose-300">
@@ -370,19 +370,19 @@ export default function CrisisOverviewPage() {
                         { date: '2026-02-21', crisis: 'Bybit Hack', event: '$1.5B crypto theft (largest ever)', level: 'RED', severity: 5 },
                         { date: '2026-01', crisis: 'Cyber Attacks Triple', event: '500K-800K daily cyberattacks recorded', level: 'RED', severity: 5 },
                       ].map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-4 rounded-lg border border-slate-700 bg-slate-800/30 p-4">
+                        <div key={idx} className="flex items-start gap-4 rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
                           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy shrink-0">
                             <Activity className="h-5 w-5" />
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center justify-between">
-                              <p className="font-semibold text-slate-200">{item.crisis}</p>
+                              <p className="font-semibold text-platinum-200">{item.crisis}</p>
                               <div className="flex items-center gap-2">
                                 <Badge variant="outline" className="text-xs">{item.date}</Badge>
                                 {getAlertBadge(item.level)}
                               </div>
                             </div>
-                            <p className="mt-1 text-sm text-slate-400">{item.event}</p>
+                            <p className="mt-1 text-sm text-platinum-400">{item.event}</p>
                           </div>
                         </div>
                       ))}

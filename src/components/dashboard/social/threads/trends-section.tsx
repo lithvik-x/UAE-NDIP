@@ -42,7 +42,7 @@ export function TrendsSection({
   const getImpactColor = (impact: string) => {
     if (impact === 'High') return 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
     if (impact === 'Medium-High' || impact === 'Medium') return 'bg-gold/20 text-gold border-gold/30'
-    return 'bg-slate-500/20 text-slate-400 border-slate-500/30'
+    return 'bg-platinum-500/20 text-platinum-400 border-platinum-500/30'
   }
 
   const engagementData = engagementDecline.map(item => ({
@@ -94,15 +94,15 @@ export function TrendsSection({
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: idx * 0.05 }}
                       whileHover={{ scale: 1.02 }}
-                      className="rounded-lg bg-slate-800/50 p-4 cursor-pointer"
+                      className="rounded-lg bg-platinum-800/50 p-4 cursor-pointer"
                     >
                       <div className="flex items-center justify-between mb-2">
                         <Badge className={`text-xs ${getImpactColor(trend.impact)}`}>
                           {trend.impact} Impact
                         </Badge>
                       </div>
-                      <p className="font-medium text-slate-200 mb-1">{trend.trend}</p>
-                      <p className="text-sm text-slate-400">{trend.description}</p>
+                      <p className="font-medium text-platinum-200 mb-1">{trend.trend}</p>
+                      <p className="text-sm text-platinum-400">{trend.description}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -135,7 +135,7 @@ export function TrendsSection({
                         }`}
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <span className="font-medium text-slate-200">{item.format}</span>
+                          <span className="font-medium text-platinum-200">{item.format}</span>
                           {isPositive ? (
                             <ArrowUpRight className="h-5 w-5 text-emerald-400" />
                           ) : (
@@ -145,7 +145,7 @@ export function TrendsSection({
                         <p className={`text-sm mb-2 ${isPositive ? 'text-emerald-400' : 'text-rose-400'}`}>
                           {item.trend}
                         </p>
-                        <p className="text-xs text-slate-400">{item.recommendation}</p>
+                        <p className="text-xs text-platinum-400">{item.recommendation}</p>
                       </motion.div>
                     )
                   })}
@@ -167,29 +167,29 @@ export function TrendsSection({
                   <div className="flex items-start gap-3 p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/30">
                     <Languages className="h-5 w-5 text-emerald-400 mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="font-medium text-slate-200">Bilingual is Essential</p>
-                      <p className="text-sm text-slate-400">Arabic content is regaining power - translate emotion, not just text. +20% engagement boost.</p>
+                      <p className="font-medium text-platinum-200">Bilingual is Essential</p>
+                      <p className="text-sm text-platinum-400">Arabic content is regaining power - translate emotion, not just text. +20% engagement boost.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 p-4 rounded-lg bg-info/10 border border-info/30">
                     <Video className="h-5 w-5 text-info mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="font-medium text-slate-200">Vertical Video Dominates</p>
-                      <p className="text-sm text-slate-400">15-30 second reels with bilingual on-screen text are the winning format.</p>
+                      <p className="font-medium text-platinum-200">Vertical Video Dominates</p>
+                      <p className="text-sm text-platinum-400">15-30 second reels with bilingual on-screen text are the winning format.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 p-4 rounded-lg bg-gold/10 border border-gold/30">
                     <Users className="h-5 w-5 text-gold mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="font-medium text-slate-200">Micro-Influencers Win</p>
-                      <p className="text-sm text-slate-400">Shift from celebrity to micro/nano influencers for higher engagement at lower cost.</p>
+                      <p className="font-medium text-platinum-200">Micro-Influencers Win</p>
+                      <p className="text-sm text-platinum-400">Shift from celebrity to micro/nano influencers for higher engagement at lower cost.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 p-4 rounded-lg bg-rose-500/10 border border-rose-500/30">
                     <MessageSquare className="h-5 w-5 text-rose-400 mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="font-medium text-slate-200">Authenticity Over Virality</p>
-                      <p className="text-sm text-slate-400">Conversation-driven content outperforms viral posts. Reply to comments for +42% engagement.</p>
+                      <p className="font-medium text-platinum-200">Authenticity Over Virality</p>
+                      <p className="text-sm text-platinum-400">Conversation-driven content outperforms viral posts. Reply to comments for +42% engagement.</p>
                     </div>
                   </div>
                 </div>
@@ -212,7 +212,7 @@ export function TrendsSection({
                       <CheckCircle className="h-4 w-4" />
                       DO
                     </div>
-                    <ul className="space-y-2 text-sm text-slate-300 ml-6">
+                    <ul className="space-y-2 text-sm text-platinum-300 ml-6">
                       <li className="flex items-start gap-2">
                         <span className="text-emerald-400">•</span>
                         Post pictures (highest engagement format)
@@ -240,7 +240,7 @@ export function TrendsSection({
                       <XCircle className="h-4 w-4" />
                       AVOID
                     </div>
-                    <ul className="space-y-2 text-sm text-slate-300 ml-6">
+                    <ul className="space-y-2 text-sm text-platinum-300 ml-6">
                       <li className="flex items-start gap-2">
                         <span className="text-rose-400">•</span>
                         Text-only posts (-60% vs pictures)

@@ -50,7 +50,7 @@ const HeaderSection = ({ data }: { data: any }) => (
       <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold">
         Federation & Early Years
       </h1>
-      <p className="mt-2 text-slate-400 font-rajdhani">
+      <p className="mt-2 text-platinum-400 font-rajdhani">
         {data.description}
       </p>
     </div>
@@ -174,7 +174,7 @@ const OverviewTab = ({ data, events }: { data: any; events: any[] }) => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-slate-300 leading-relaxed font-rajdhani">{data.description}</p>
+              <p className="text-platinum-300 leading-relaxed font-rajdhani">{data.description}</p>
             </CardContent>
           </Card>
 
@@ -211,13 +211,13 @@ const OverviewTab = ({ data, events }: { data: any; events: any[] }) => {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.1 }}
-                        className="rounded-lg bg-slate-800/50 p-3 border border-[var(--glass-border)]"
+                        className="rounded-lg bg-platinum-800/50 p-3 border border-[var(--glass-border)]"
                       >
                         <div className="flex items-center justify-between mb-1">
                           <span className="text-sm font-medium text-gold font-rajdhani">{policy.policy}</span>
                           <Badge variant="outline" className="text-xs font-rajdhani">{policy.year}</Badge>
                         </div>
-                        <p className="text-xs text-slate-400">{policy.impact}</p>
+                        <p className="text-xs text-platinum-400">{policy.impact}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -243,10 +243,10 @@ const OverviewTab = ({ data, events }: { data: any; events: any[] }) => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-start gap-2 rounded-lg bg-slate-800/50 p-2 border border-[var(--glass-border)]"
+                    className="flex items-start gap-2 rounded-lg bg-platinum-800/50 p-2 border border-[var(--glass-border)]"
                   >
                     <div className="h-2 w-2 rounded-full bg-gold mt-1.5 shrink-0" />
-                    <span className="text-sm text-slate-300 font-rajdhani">{milestone}</span>
+                    <span className="text-sm text-platinum-300 font-rajdhani">{milestone}</span>
                   </motion.div>
                 ))}
               </div>
@@ -267,7 +267,7 @@ const TimelineTab = ({ events }: { events: any[] }) => {
       case 'critical':
         return <Badge variant="destructive" className="text-xs font-rajdhani">Critical</Badge>
       case 'major':
-        return <Badge variant="warning" className="text-xs bg-yellow-500/20 text-yellow-400 border-yellow-500/50 font-rajdhani">Major</Badge>
+        return <Badge variant="warning" className="text-xs bg-amber-500/20 text-amber-400 border-amber-500/50 font-rajdhani">Major</Badge>
       default:
         return <Badge variant="outline" className="text-xs font-rajdhani">Minor</Badge>
     }
@@ -307,8 +307,8 @@ const TimelineTab = ({ events }: { events: any[] }) => {
                       <span className="text-lg font-mono font-bold text-gold font-rajdhani">{event.date}</span>
                       {getSignificanceBadge(event.significance)}
                     </div>
-                    <h3 className="text-xl font-bold text-slate-100 mb-2 font-rajdhani">{event.title}</h3>
-                    <p className="text-slate-400 leading-relaxed font-rajdhani">{event.description}</p>
+                    <h3 className="text-xl font-bold text-platinum-100 mb-2 font-rajdhani">{event.title}</h3>
+                    <p className="text-platinum-400 leading-relaxed font-rajdhani">{event.description}</p>
                     {event.entities && event.entities.length > 0 && (
                       <div className="mt-3 flex flex-wrap gap-2">
                         {event.entities.map((entity: string, eIdx: number) => (
@@ -325,7 +325,7 @@ const TimelineTab = ({ events }: { events: any[] }) => {
                         className="mt-3 rounded-lg bg-emerald-500/10 p-2 border border-emerald-500/30"
                       >
                         <span className="text-xs text-emerald-400 font-medium font-rajdhani">Outcome: </span>
-                        <span className="text-xs text-slate-300 font-rajdhani">{event.outcome}</span>
+                        <span className="text-xs text-platinum-300 font-rajdhani">{event.outcome}</span>
                       </motion.div>
                     )}
                   </div>
@@ -379,8 +379,8 @@ const MilestonesTab = ({ data }: { data: any }) => {
                       <div className="flex items-center gap-2 mb-1">
                         <span className="text-sm font-mono text-gold font-rajdhani">{milestone.date}</span>
                       </div>
-                      <h3 className="text-lg font-bold text-slate-100 mb-1 font-rajdhani">{milestone.event}</h3>
-                      <p className="text-sm text-slate-400 font-rajdhani">{milestone.detail}</p>
+                      <h3 className="text-lg font-bold text-platinum-100 mb-1 font-rajdhani">{milestone.event}</h3>
+                      <p className="text-sm text-platinum-400 font-rajdhani">{milestone.detail}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -454,13 +454,13 @@ const FiguresTab = ({ data }: { data: any }) => {
                 >
                   {figure.icon}
                 </motion.div>
-                <h3 className="text-lg font-bold text-slate-100 mb-1 font-rajdhani">{figure.name}</h3>
+                <h3 className="text-lg font-bold text-platinum-100 mb-1 font-rajdhani">{figure.name}</h3>
                 <Badge variant="outline" className="mb-2 border-gold/50 text-gold font-rajdhani">{figure.role}</Badge>
-                <div className="flex items-center gap-1 text-sm text-slate-400 mb-2">
+                <div className="flex items-center gap-1 text-sm text-platinum-400 mb-2">
                   <MapPin className="h-4 w-4" />
                   {figure.emirate}
                 </div>
-                <p className="text-xs text-slate-400 font-rajdhani">{figure.detail}</p>
+                <p className="text-xs text-platinum-400 font-rajdhani">{figure.detail}</p>
               </div>
             </motion.div>
           ))}
@@ -489,14 +489,14 @@ const FiguresTab = ({ data }: { data: any }) => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.6 + idx * 0.1 }}
-                  className="flex items-center gap-2 rounded-lg bg-slate-800/50 p-2 border border-[var(--glass-border)]"
+                  className="flex items-center gap-2 rounded-lg bg-platinum-800/50 p-2 border border-[var(--glass-border)]"
                 >
                   <div className="h-8 w-8 rounded-full bg-gold/20 flex items-center justify-center">
                     <Users className="h-4 w-4 text-gold" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-slate-200 font-rajdhani">{figure.name}</p>
-                    <p className="text-xs text-slate-400 font-rajdhani">{figure.role} - {figure.emirate}</p>
+                    <p className="text-sm font-medium text-platinum-200 font-rajdhani">{figure.name}</p>
+                    <p className="text-xs text-platinum-400 font-rajdhani">{figure.role} - {figure.emirate}</p>
                   </div>
                 </motion.div>
               ))}
@@ -514,8 +514,8 @@ const FiguresTab = ({ data }: { data: any }) => {
 const SourcesTab = ({ data }: { data: any }) => {
   const tierColors: Record<number, string> = {
     0: 'bg-emerald-500',
-    1: 'bg-blue-500',
-    2: 'bg-yellow-500',
+    1: 'bg-navy-500',
+    2: 'bg-amber-500',
   }
   const tierLabels: Record<number, string> = {
     0: 'TIER-0 (Official)',
@@ -573,17 +573,17 @@ const SourcesTab = ({ data }: { data: any }) => {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3 border border-[var(--glass-border)]"
+                      className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3 border border-[var(--glass-border)]"
                     >
-                      <div className={`h-3 w-3 rounded-full mt-1.5 shrink-0 ${tierColors[source.tier] || 'bg-slate-500'}`} />
+                      <div className={`h-3 w-3 rounded-full mt-1.5 shrink-0 ${tierColors[source.tier] || 'bg-platinum-500'}`} />
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-1">
                           <span className="text-sm font-medium text-gold font-rajdhani">{source.name}</span>
                           <Badge variant="outline" className="text-xs font-rajdhani">{tierLabels[source.tier] || `TIER-${source.tier}`}</Badge>
                         </div>
-                        <p className="text-xs text-slate-400 font-rajdhani">Date: {source.date}</p>
+                        <p className="text-xs text-platinum-400 font-rajdhani">Date: {source.date}</p>
                         {source.url && (
-                          <p className="text-xs text-blue-400 mt-1 font-rajdhani truncate">{source.url}</p>
+                          <p className="text-xs text-navy-400 mt-1 font-rajdhani truncate">{source.url}</p>
                         )}
                       </div>
                     </motion.div>

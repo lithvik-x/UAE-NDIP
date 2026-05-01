@@ -122,7 +122,7 @@ export default function CompetitiveIntelligencePage() {
                         <span>Strength: {c.strength}%</span>
                         <Badge variant="outline" className={`border-${c.trend === 'Growing' ? 'emerald' : 'platinum'}-500/50 text-${c.trend === 'Growing' ? 'emerald' : 'platinum'}`}>{c.trend}</Badge>
                       </div>
-                      <div className="h-2 bg-slate-800 rounded-full overflow-hidden mt-2">
+                      <div className="h-2 bg-platinum-800 rounded-full overflow-hidden mt-2">
                         <motion.div initial={{ width: 0 }} animate={{ width: `${c.strength}%` }} transition={{ delay: idx * 0.1 + 0.3, duration: 0.5 }}
                           className="h-full rounded-full bg-gradient-to-r from-gold-500 to-amber-500" />
                       </div>

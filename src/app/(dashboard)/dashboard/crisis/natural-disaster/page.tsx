@@ -123,7 +123,7 @@ export default function NaturalDisasterPage() {
       {/* Header */}
       <motion.div variants={fadeInUp} className="flex items-start justify-between">
         <div>
-          <Badge className="mb-2 bg-gradient-to-r from-sky-500/20 to-blue-600/20 text-sky-400 border-sky-500/50">
+          <Badge className="mb-2 bg-gradient-to-r from-sky-500/20 to-blue-600/20 text-cyan-400 border-cyan-500/50">
             <Cloud className="w-3 h-3 mr-1" />
             EMERGENCY MANAGEMENT
           </Badge>
@@ -169,7 +169,7 @@ export default function NaturalDisasterPage() {
                   </CardContent>
                 </motion.div>
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
-                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Activity className="h-5 w-5 text-sky-500" />Disaster Frequency (Annual)</CardTitle></CardHeader>
+                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Activity className="h-5 w-5 text-cyan-500" />Disaster Frequency (Annual)</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0">
                     <RadarChart data={disasterFrequency} metrics={[{ dataKey: 'frequency', name: 'Events/Year', color: CHART_COLORS.info }]} height={280} ariaLabel="Annual disaster frequency comparison across flash floods, sandstorms, heat waves, earthquakes, red tide, and power outages" />
                   </CardContent>
@@ -188,9 +188,9 @@ export default function NaturalDisasterPage() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-start gap-3 rounded-lg bg-gradient-to-r from-sky-500/10 to-blue-600/5 p-4 border border-sky-500/30"
+                    className="flex items-start gap-3 rounded-lg bg-gradient-to-r from-sky-500/10 to-blue-600/5 p-4 border border-cyan-500/30"
                   >
-                    <AlertTriangle className="h-4 w-4 text-sky-400 mt-0.5 shrink-0" />
+                    <AlertTriangle className="h-4 w-4 text-cyan-400 mt-0.5 shrink-0" />
                     <p className="text-sm text-platinum-300">{finding}</p>
                   </motion.div>
                 ))}
@@ -209,9 +209,9 @@ export default function NaturalDisasterPage() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.07 }}
-                      className="flex items-start gap-4 rounded-lg bg-slate-800/50 p-4 border border-slate-700/50"
+                      className="flex items-start gap-4 rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
                     >
-                      <div className="w-24 shrink-0 text-sm font-medium text-sky-400">{event.date}</div>
+                      <div className="w-24 shrink-0 text-sm font-medium text-cyan-400">{event.date}</div>
                       <div className="flex-1">
                         <h4 className="font-medium text-platinum-200">{event.event}</h4>
                         <p className="text-xs text-platinum-400 mt-1">{event.description}</p>
@@ -230,7 +230,7 @@ export default function NaturalDisasterPage() {
             <GlassPanel title="Flood Events & Rainfall" description="Historic flooding and rainfall patterns">
               <div className="grid gap-6 lg:grid-cols-2">
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
-                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><CloudRain className="h-5 w-5 text-sky-500" />Rainfall Records (mm)</CardTitle></CardHeader>
+                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><CloudRain className="h-5 w-5 text-cyan-500" />Rainfall Records (mm)</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0"><BarChart data={floodRainfallData} xAxisKey="location" bars={[{ dataKey: 'mm', name: 'mm', color: CHART_COLORS.info }]} height={280} showGrid={true} ariaLabel="Rainfall records by location showing Al Ain, Jebel Yanas, Al Manama, Al Hayer, and Dubai Airport measurements in millimeters" /></CardContent>
                 </motion.div>
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
@@ -244,19 +244,19 @@ export default function NaturalDisasterPage() {
           <motion.div variants={fadeInUp}>
             <GlassPanel title="April 2024 Flood Details" description="Most significant flood in 75 years">
               <div className="grid gap-4 md:grid-cols-4">
-                <div className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50 text-center">
-                  <p className="text-3xl font-bold text-sky-400">254.8mm</p>
+                <div className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50 text-center">
+                  <p className="text-3xl font-bold text-cyan-400">254.8mm</p>
                   <p className="text-xs text-platinum-400 mt-1">Peak Rainfall (Al Ain)</p>
                 </div>
-                <div className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50 text-center">
+                <div className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50 text-center">
                   <p className="text-3xl font-bold text-rose-400">5</p>
                   <p className="text-xs text-platinum-400 mt-1">UAE Deaths</p>
                 </div>
-                <div className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50 text-center">
+                <div className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50 text-center">
                   <p className="text-3xl font-bold text-orange-400">$3.4B</p>
                   <p className="text-xs text-platinum-400 mt-1">Insured Losses</p>
                 </div>
-                <div className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50 text-center">
+                <div className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50 text-center">
                   <p className="text-3xl font-bold text-emerald-400">99%</p>
                   <p className="text-xs text-platinum-400 mt-1">Cloud Seeding NOT Deployed</p>
                 </div>
@@ -272,31 +272,31 @@ export default function NaturalDisasterPage() {
                   <CardContent className="px-0 pb-0"><BarChart data={cloudSeedingMissions} xAxisKey="year" bars={[{ dataKey: 'missions', name: 'Missions', color: CHART_COLORS.emerald }]} height={280} showGrid={true} ariaLabel="NCM cloud seeding annual missions from 2014 to 2019 showing fluctuation between 184 and 247 missions per year" /></CardContent>
                 </motion.div>
                 <div className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
-                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Activity className="h-5 w-5 text-sky-500" />Program Statistics</CardTitle></CardHeader>
+                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Activity className="h-5 w-5 text-cyan-500" />Program Statistics</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0 space-y-4">
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">Enhancement (Clear)</span>
                       <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">30-35%</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">Enhancement (Humid)</span>
-                      <Badge className="bg-sky-500/20 text-sky-400 border-sky-500/50">10-15%</Badge>
+                      <Badge className="bg-cyan-500/20 text-cyan-400 border-cyan-500/50">10-15%</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">Weather Stations</span>
-                      <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/50">75</Badge>
+                      <Badge className="bg-navy-500/20 text-navy-400 border-navy-500/50">75</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">Doppler Radars</span>
                       <Badge className="bg-purple-500/20 text-purple-400 border-purple-500/50">6</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">Aircraft</span>
                       <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/50">6 Beechcraft</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">2026 Missions (YTD)</span>
-                      <Badge className="bg-sky-500/20 text-sky-400 border-sky-500/50">80</Badge>
+                      <Badge className="bg-cyan-500/20 text-cyan-400 border-cyan-500/50">80</Badge>
                     </div>
                   </CardContent>
                 </div>
@@ -307,8 +307,8 @@ export default function NaturalDisasterPage() {
           <motion.div variants={fadeInUp}>
             <GlassPanel title="Infrastructure Response" description="$8.2B stormwater drainage transformation">
               <div className="grid gap-4 md:grid-cols-3">
-                <div className="rounded-lg bg-gradient-to-br from-sky-500/20 to-blue-600/10 p-6 border border-sky-500/30">
-                  <Droplets className="h-8 w-8 text-sky-400 mb-3" />
+                <div className="rounded-lg bg-gradient-to-br from-sky-500/20 to-blue-600/10 p-6 border border-cyan-500/30">
+                  <Droplets className="h-8 w-8 text-cyan-400 mb-3" />
                   <p className="text-2xl font-bold text-platinum-100">$8.2B</p>
                   <p className="text-sm text-platinum-400 mt-1">Investment Approved</p>
                 </div>
@@ -347,19 +347,19 @@ export default function NaturalDisasterPage() {
           <motion.div variants={fadeInUp}>
             <GlassPanel title="Midday Work Ban" description="Worker protection measures (June 15 - September 15)">
               <div className="grid gap-4 md:grid-cols-4">
-                <div className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50 text-center">
+                <div className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50 text-center">
                   <p className="text-3xl font-bold text-emerald-400">99%</p>
                   <p className="text-xs text-platinum-400 mt-1">2025 Compliance Rate</p>
                 </div>
-                <div className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50 text-center">
-                  <p className="text-3xl font-bold text-sky-400">2.5 hrs</p>
+                <div className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50 text-center">
+                  <p className="text-3xl font-bold text-cyan-400">2.5 hrs</p>
                   <p className="text-xs text-platinum-400 mt-1">Prohibited (12:30-3:00 PM)</p>
                 </div>
-                <div className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50 text-center">
+                <div className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50 text-center">
                   <p className="text-3xl font-bold text-orange-400">83.6%</p>
                   <p className="text-xs text-platinum-400 mt-1">Outdoor Workers in Excessive Heat (ILO)</p>
                 </div>
-                <div className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50 text-center">
+                <div className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50 text-center">
                   <p className="text-3xl font-bold text-rose-400">1,300+</p>
                   <p className="text-xs text-platinum-400 mt-1">Hajj Heat Deaths (June 2024)</p>
                 </div>
@@ -372,30 +372,30 @@ export default function NaturalDisasterPage() {
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-3">
                   <h4 className="font-medium text-platinum-200">Extreme Heat Formation Mechanism</h4>
-                  <div className="flex items-start gap-3 p-3 bg-slate-800/30 rounded-lg">
-                    <WindIcon className="h-4 w-4 text-sky-400 mt-1 shrink-0" />
+                  <div className="flex items-start gap-3 p-3 bg-platinum-800/30 rounded-lg">
+                    <WindIcon className="h-4 w-4 text-cyan-400 mt-1 shrink-0" />
                     <p className="text-sm text-platinum-300">North-westerly Shamal winds weaken (normally help cool the sea)</p>
                   </div>
-                  <div className="flex items-start gap-3 p-3 bg-slate-800/30 rounded-lg">
+                  <div className="flex items-start gap-3 p-3 bg-platinum-800/30 rounded-lg">
                     <WindIcon className="h-4 w-4 text-orange-400 mt-1 shrink-0" />
                     <p className="text-sm text-platinum-300">Summer Indian monsoon winds intensify</p>
                   </div>
-                  <div className="flex items-start gap-3 p-3 bg-slate-800/30 rounded-lg">
+                  <div className="flex items-start gap-3 p-3 bg-platinum-800/30 rounded-lg">
                     <Thermometer className="h-4 w-4 text-rose-400 mt-1 shrink-0" />
                     <p className="text-sm text-platinum-300">Result: Increased atmospheric moisture traps heat at sea surface</p>
                   </div>
                 </div>
                 <div className="space-y-3">
                   <h4 className="font-medium text-platinum-200">Prediction Capabilities</h4>
-                  <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                  <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                     <span className="text-platinum-300">La Nina Connection</span>
-                    <Badge className="bg-sky-500/20 text-sky-400 border-sky-500/50">Favors Heatwaves</Badge>
+                    <Badge className="bg-cyan-500/20 text-cyan-400 border-cyan-500/50">Favors Heatwaves</Badge>
                   </div>
-                  <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                  <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                     <span className="text-platinum-300">Prediction Lead Time</span>
                     <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">2-3 Months</Badge>
                   </div>
-                  <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                  <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                     <span className="text-platinum-300">Lead Researcher</span>
                     <Badge className="bg-purple-500/20 text-purple-400 border-purple-500/50">Zouhair Lachkar</Badge>
                   </div>
@@ -413,19 +413,19 @@ export default function NaturalDisasterPage() {
                 <div className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Wind className="h-5 w-5 text-amber-500" />Formation Characteristics</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0 space-y-3">
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">Primary Season</span>
                       <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/50">June - September</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">Wind Source</span>
-                      <Badge className="bg-sky-500/20 text-sky-400 border-sky-500/50">Shamal (N/NW)</Badge>
+                      <Badge className="bg-cyan-500/20 text-cyan-400 border-cyan-500/50">Shamal (N/NW)</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">Dust Origin</span>
                       <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/50">Mesopotamia, Syrian Desert</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">Particle Size</span>
                       <Badge className="bg-stone-500/20 text-stone-400 border-stone-500/50">0.08mm - 1mm</Badge>
                     </div>
@@ -449,7 +449,7 @@ export default function NaturalDisasterPage() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.07 }}
-                      className="flex items-start gap-4 rounded-lg bg-slate-800/50 p-4 border border-slate-700/50"
+                      className="flex items-start gap-4 rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
                     >
                       <div className="w-20 shrink-0 text-sm font-medium text-amber-400">{event.year}</div>
                       <div className="flex-1">
@@ -477,15 +477,15 @@ export default function NaturalDisasterPage() {
                   <CardContent className="px-0 pb-0"><PieChart data={seismicData.map(s => ({ name: s.range, value: s.count, color: s.range.includes('4') ? CHART_COLORS.rose : s.range.includes('3') ? CHART_COLORS.orange : CHART_COLORS.info }))} height={280} showLegend={true} ariaLabel="Earthquake distribution by magnitude since 2023: 2 quakes magnitude 4.0+, 9 quakes 3.0-4.0, 5 quakes 2.0-3.0" /></CardContent>
                 </motion.div>
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
-                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Globe className="h-5 w-5 text-sky-500" />Network Capabilities</CardTitle></CardHeader>
+                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Globe className="h-5 w-5 text-cyan-500" />Network Capabilities</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0 space-y-3">
                     {ext.seismicMonitoring.networkCapabilities.map((cap: string, idx: number) => (
-                      <div key={idx} className="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg">
+                      <div key={idx} className="flex items-center gap-3 p-3 bg-platinum-800/30 rounded-lg">
                         <Radio className="h-4 w-4 text-emerald-400 shrink-0" />
                         <span className="text-sm text-platinum-300">{cap}</span>
                       </div>
                     ))}
-                    <div className="mt-4 p-3 bg-slate-800/30 rounded-lg">
+                    <div className="mt-4 p-3 bg-platinum-800/30 rounded-lg">
                       <p className="text-xs text-platinum-400">Historical: 521 earthquakes (M4+) within 300km of UAE in past 10 years</p>
                     </div>
                   </CardContent>
@@ -504,7 +504,7 @@ export default function NaturalDisasterPage() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.07 }}
-                      className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 border border-slate-700/50"
+                      className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
                     >
                       <div className="flex items-center gap-3">
                         <MapPin className="h-4 w-4 text-purple-400" />
@@ -514,7 +514,7 @@ export default function NaturalDisasterPage() {
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
-                        <Badge variant="outline" className={`${parseFloat(event.magnitude) >= 5 ? 'border-rose-500/50 text-rose-400' : parseFloat(event.magnitude) >= 4 ? 'border-orange-500/50 text-orange-400' : 'border-sky-500/50 text-sky-400'}`}>
+                        <Badge variant="outline" className={`${parseFloat(event.magnitude) >= 5 ? 'border-rose-500/50 text-rose-400' : parseFloat(event.magnitude) >= 4 ? 'border-orange-500/50 text-orange-400' : 'border-cyan-500/50 text-cyan-400'}`}>
                           M {event.magnitude}
                         </Badge>
                         {event.depth && <span className="text-xs text-platinum-400">{event.depth}</span>}
@@ -551,9 +551,9 @@ export default function NaturalDisasterPage() {
                       <span className="text-platinum-300">UAE Intercepted (Tuesday)</span>
                       <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">10 ballistic missiles, 45 drones</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-sky-500/10 rounded-lg border border-sky-500/30">
+                    <div className="flex justify-between items-center p-3 bg-cyan-500/10 rounded-lg border border-cyan-500/30">
                       <span className="text-platinum-300">Gulf Total Attacks</span>
-                      <Badge className="bg-sky-500/20 text-sky-400 border-sky-500/50">2,000+</Badge>
+                      <Badge className="bg-cyan-500/20 text-cyan-400 border-cyan-500/50">2,000+</Badge>
                     </div>
                   </CardContent>
                 </div>
@@ -569,21 +569,21 @@ export default function NaturalDisasterPage() {
                   <CardContent className="px-0 pb-0"><BarChart data={redTideImpact} xAxisKey="sector" bars={[{ dataKey: 'impact', name: '% Impact', color: CHART_COLORS.rose }]} height={280} showGrid={true} ariaLabel="Red tide economic impact by sector showing desalination 35%, tourism 40%, fisheries 50%, and marine life 45% impact levels" /></CardContent>
                 </motion.div>
                 <div className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
-                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Droplets className="h-5 w-5 text-sky-500" />Key Statistics</CardTitle></CardHeader>
+                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Droplets className="h-5 w-5 text-cyan-500" />Key Statistics</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0 space-y-3">
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">Frequency</span>
-                      <Badge className="bg-sky-500/20 text-sky-400 border-sky-500/50">2x per year</Badge>
+                      <Badge className="bg-cyan-500/20 text-cyan-400 border-cyan-500/50">2x per year</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">Desalination Impact</span>
                       <Badge className="bg-rose-500/20 text-rose-400 border-rose-500/50">30-40% production decrease</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">Daily Losses</span>
                       <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/50">$100,000/day</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">Cause</span>
                       <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">Dinoflagellate proliferation</Badge>
                     </div>
@@ -597,25 +597,25 @@ export default function NaturalDisasterPage() {
             <GlassPanel title="Sea Level Rise Projections" description="UAE coastal vulnerability by 2100">
               <div className="grid gap-6 lg:grid-cols-2">
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
-                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Waves className="h-5 w-5 text-sky-500" />Rise Scenarios (meters)</CardTitle></CardHeader>
+                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Waves className="h-5 w-5 text-cyan-500" />Rise Scenarios (meters)</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0"><AreaChart data={seaLevelData} xAxisKey="scenario" areas={[{ dataKey: 'rise', name: 'Rise (m)', color: CHART_COLORS.info }]} height={280} showGrid={true} ariaLabel="Sea level rise projections by 2100 from mild 42-98cm scenario to catastrophic 9.0m worst-case scenario affecting Abu Dhabi and Dubai" /></CardContent>
                 </motion.div>
                 <div className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Globe className="h-5 w-5 text-emerald-500" />UAE Vulnerability</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0 space-y-3">
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">Infrastructure within meters of sea level</span>
                       <Badge className="bg-rose-500/20 text-rose-400 border-rose-500/50">90%</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">Population within meters</span>
                       <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/50">85%</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">Total Coastline</span>
-                      <Badge className="bg-sky-500/20 text-sky-400 border-sky-500/50">1,300 km</Badge>
+                      <Badge className="bg-cyan-500/20 text-cyan-400 border-cyan-500/50">1,300 km</Badge>
                     </div>
-                    <div className="flex justify-between items-center p-3 bg-slate-800/30 rounded-lg">
+                    <div className="flex justify-between items-center p-3 bg-platinum-800/30 rounded-lg">
                       <span className="text-platinum-300">Coastline at Very High Risk</span>
                       <Badge className="bg-rose-500/20 text-rose-400 border-rose-500/50">13.8%</Badge>
                     </div>
@@ -637,7 +637,7 @@ export default function NaturalDisasterPage() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.08 }}
-                    className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 border border-slate-700/50"
+                    className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
                   >
                     <span className="text-platinum-300 text-sm">{item.name}</span>
                     <Badge variant="outline" className={`${item.status === 'good' ? 'border-emerald-500/50 text-emerald-400' : 'border-orange-500/50 text-orange-400'}`}>
@@ -658,9 +658,9 @@ export default function NaturalDisasterPage() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.08 }}
-                    className="flex items-start gap-3 rounded-lg bg-gradient-to-r from-sky-500/10 to-blue-600/5 p-4 border border-sky-500/30"
+                    className="flex items-start gap-3 rounded-lg bg-gradient-to-r from-sky-500/10 to-blue-600/5 p-4 border border-cyan-500/30"
                   >
-                    <Shield className="h-5 w-5 text-sky-400 mt-0.5 shrink-0" />
+                    <Shield className="h-5 w-5 text-cyan-400 mt-0.5 shrink-0" />
                     <div>
                       <p className="font-medium text-platinum-200 text-sm">{agency.agency}</p>
                       <p className="text-xs text-platinum-400 mt-1">{agency.role}</p>
@@ -680,11 +680,11 @@ export default function NaturalDisasterPage() {
                   <p className="text-sm text-platinum-400 mt-1">Net Zero Target</p>
                   <p className="text-xs text-emerald-400 mt-2">First Middle Eastern carbon-neutral plan</p>
                 </div>
-                <div className="rounded-lg bg-gradient-to-br from-sky-500/20 to-blue-600/10 p-6 border border-sky-500/30 text-center">
-                  <Activity className="h-8 w-8 text-sky-400 mx-auto mb-3" />
+                <div className="rounded-lg bg-gradient-to-br from-sky-500/20 to-blue-600/10 p-6 border border-cyan-500/30 text-center">
+                  <Activity className="h-8 w-8 text-cyan-400 mx-auto mb-3" />
                   <p className="text-2xl font-bold text-platinum-100">40%</p>
                   <p className="text-sm text-platinum-400 mt-1">Emissions Reduction by 2030</p>
-                  <p className="text-xs text-sky-400 mt-2">Third NDC (2023)</p>
+                  <p className="text-xs text-cyan-400 mt-2">Third NDC (2023)</p>
                 </div>
                 <div className="rounded-lg bg-gradient-to-br from-purple-500/20 to-indigo-600/10 p-6 border border-purple-500/30 text-center">
                   <Sun className="h-8 w-8 text-purple-400 mx-auto mb-3" />

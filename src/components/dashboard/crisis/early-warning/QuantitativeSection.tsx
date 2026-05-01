@@ -89,7 +89,7 @@ export function QuantitativeSection({ data }: QuantitativeSectionProps) {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: idx * 0.03 }}
-                  className="flex items-center gap-3 p-3 rounded-lg bg-slate-800/30 border border-slate-700/30"
+                  className="flex items-center gap-3 p-3 rounded-lg bg-platinum-800/30 border border-platinum-700/30"
                 >
                   <Badge
                     variant="outline"
@@ -97,7 +97,7 @@ export function QuantitativeSection({ data }: QuantitativeSectionProps) {
                       s.tier === 'TIER_0'
                         ? 'border-cyan-500/50 text-cyan-400'
                         : s.tier === 'TIER_1'
-                        ? 'border-blue-500/50 text-blue-400'
+                        ? 'border-navy-500/50 text-navy-400'
                         : s.tier === 'TIER_2'
                         ? 'border-indigo-500/50 text-indigo-400'
                         : 'border-purple-500/50 text-purple-400'

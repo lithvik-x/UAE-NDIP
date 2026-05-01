@@ -276,7 +276,7 @@ export default function SocialCrisisPage() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.07 }}
-                      className="flex items-center gap-4 rounded-lg bg-slate-800/50 p-4 border border-slate-700/50"
+                      className="flex items-center gap-4 rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
                     >
                       <div className="flex-shrink-0 w-20 text-sm font-medium text-cyan-400">
                         {event.date}
@@ -517,7 +517,7 @@ export default function SocialCrisisPage() {
                         {socialCrisisData.stakeholderImpacts.map((impact, idx) => (
                           <div
                             key={idx}
-                            className="p-3 rounded-lg bg-slate-800/50 border border-slate-700/50"
+                            className="p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50"
                           >
                             <div className="font-medium text-platinum-200 mb-1">
                               {impact.stakeholder}
@@ -651,7 +651,7 @@ export default function SocialCrisisPage() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="flex items-start gap-3 p-3 rounded-lg bg-slate-800/50 border border-slate-700/50"
+                      className="flex items-start gap-3 p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50"
                     >
                       <AlertTriangle className="h-5 w-5 text-rose-400 flex-shrink-0 mt-0.5" />
                       <span className="text-platinum-300">{finding}</span>
@@ -756,7 +756,7 @@ export default function SocialCrisisPage() {
                         {alcoholPenalties.map((penalty, idx) => (
                           <div
                             key={idx}
-                            className="p-3 rounded-lg bg-slate-800/50 border border-slate-700/50"
+                            className="p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50"
                           >
                             <div className="font-medium text-platinum-200 mb-1">
                               {penalty.offense}
@@ -773,7 +773,7 @@ export default function SocialCrisisPage() {
                                 </Badge>
                               )}
                               {penalty.other && (
-                                <Badge className="bg-slate-500/20 text-slate-400 border-slate-500/50">
+                                <Badge className="bg-platinum-500/20 text-platinum-400 border-platinum-500/50">
                                   {penalty.other}
                                 </Badge>
                               )}
@@ -803,7 +803,7 @@ export default function SocialCrisisPage() {
                         {cybercrimePenalties.map((penalty, idx) => (
                           <div
                             key={idx}
-                            className="p-3 rounded-lg bg-slate-800/50 border border-slate-700/50"
+                            className="p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50"
                           >
                             <div className="font-medium text-platinum-200 mb-1">
                               {penalty.offense}
@@ -896,7 +896,7 @@ export default function SocialCrisisPage() {
                         }, [] as { scope: string; count: number }[]).map((scope, idx) => (
                           <div
                             key={idx}
-                            className="flex items-center justify-between p-2 rounded bg-slate-800/50"
+                            className="flex items-center justify-between p-2 rounded bg-platinum-800/50"
                           >
                             <span className="text-platinum-300">{scope.scope}</span>
                             <Badge variant="outline" className="text-cyan-400 border-cyan-500/50">
@@ -944,7 +944,7 @@ export default function SocialCrisisPage() {
                               ? 'border-violet-500/50 text-violet-400'
                               : source.tier === 'TIER_3'
                               ? 'border-orange-500/50 text-orange-400'
-                              : 'border-slate-500/50 text-slate-400'
+                              : 'border-platinum-500/50 text-platinum-400'
                           }
                         >
                           {source.tier.replace('TIER_', 'T')}

@@ -103,7 +103,7 @@ export function SportsTrendsSection({
                     {leagueStandings.map((team, index) => (
                       <div
                         key={index}
-                        className="flex items-center gap-4 p-2 rounded-lg bg-slate-800/50"
+                        className="flex items-center gap-4 p-2 rounded-lg bg-platinum-800/50"
                       >
                         <div
                           className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${
@@ -111,17 +111,17 @@ export function SportsTrendsSection({
                               ? 'bg-gold text-navy-950'
                               : index < 3
                                 ? 'bg-platinum/30 text-platinum'
-                                : 'bg-slate-600/30 text-slate-400'
+                                : 'bg-platinum-600/30 text-platinum-400'
                           }`}
                         >
                           {team.pos}
                         </div>
                         <div className="flex-1">
-                          <p className="font-semibold text-slate-200">{team.team}</p>
+                          <p className="font-semibold text-platinum-200">{team.team}</p>
                         </div>
                         <div className="text-right">
                           <span className="text-lg font-bold text-gold">{team.pts}</span>
-                          <span className="text-xs text-slate-400 ml-2">pts</span>
+                          <span className="text-xs text-platinum-400 ml-2">pts</span>
                         </div>
                       </div>
                     ))}
@@ -142,18 +142,18 @@ export function SportsTrendsSection({
                     {scorers.map((scorer, index) => (
                       <div
                         key={index}
-                        className="flex items-center gap-4 p-2 rounded-lg bg-slate-800/50"
+                        className="flex items-center gap-4 p-2 rounded-lg bg-platinum-800/50"
                       >
                         <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gold/20 text-gold text-xs font-bold">
                           {index + 1}
                         </div>
                         <div className="flex-1">
-                          <p className="font-semibold text-slate-200">{scorer.player}</p>
-                          <p className="text-xs text-slate-400">{scorer.club}</p>
+                          <p className="font-semibold text-platinum-200">{scorer.player}</p>
+                          <p className="text-xs text-platinum-400">{scorer.club}</p>
                         </div>
                         <div className="text-right">
                           <span className="text-lg font-bold text-gold">{scorer.goals}</span>
-                          <span className="text-xs text-slate-400 ml-1">goals</span>
+                          <span className="text-xs text-platinum-400 ml-1">goals</span>
                         </div>
                       </div>
                     ))}
@@ -176,10 +176,10 @@ export function SportsTrendsSection({
                   {nbaData.map((item, index) => (
                     <div
                       key={index}
-                      className="rounded-lg border border-slate-700 bg-slate-800/50 p-3 text-center"
+                      className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3 text-center"
                     >
                       <div className="text-2xl font-bold text-gold">{item.value}</div>
-                      <p className="text-sm text-slate-400 mt-1">{item.item}</p>
+                      <p className="text-sm text-platinum-400 mt-1">{item.item}</p>
                     </div>
                   ))}
                 </div>

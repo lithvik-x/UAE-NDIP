@@ -454,8 +454,8 @@ export default function TerrorismExtremismPage() {
                             whileHover={{ scale: 1.02, x: 5 }}
                             className="relative"
                           >
-                            <div className="absolute -left-8 top-0 h-4 w-4 rounded-full bg-rose-500 border-2 border-slate-900" />
-                            <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:border-rose-500/50 transition-all duration-300">
+                            <div className="absolute -left-8 top-0 h-4 w-4 rounded-full bg-rose-500 border-2 border-platinum-900" />
+                            <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:border-rose-500/50 transition-all duration-300">
                               <div className="flex items-center justify-between mb-1">
                                 <p className="font-semibold text-platinum-100 font-rajdhani text-sm">{event.event}</p>
                                 <Badge variant="outline" className="text-xs font-rajdhani border-rose-500/50 text-rose-400">
@@ -628,7 +628,7 @@ export default function TerrorismExtremismPage() {
                           { name: 'EOCN', role: 'Executive Office for Control & Non-proliferation — publishes Local Terrorist List (est. 2009)', type: 'LIST' },
                           { name: 'Munasaha Centres', role: '"Enlightenment and reform" centers at Al Razeen prison (criticized)', type: 'REHAB' },
                         ].map((inst, idx) => (
-                          <div key={idx} className="rounded-lg bg-slate-800/50 border border-slate-700 p-3">
+                          <div key={idx} className="rounded-lg bg-platinum-800/50 border border-platinum-700 p-3">
                             <div className="flex items-center justify-between mb-1">
                               <p className="text-sm font-bold text-platinum-100 font-rajdhani">{inst.name}</p>
                               <Badge variant="outline" className="text-xs border-emerald-500/50 text-emerald-400 font-rajdhani">{inst.type}</Badge>
@@ -826,7 +826,7 @@ export default function TerrorismExtremismPage() {
                           { label: 'Houthi 2022 attack', value: '3 killed, 6 injured', sub: 'drones and ballistic missiles' },
                           { label: 'Weapons used in 2022', value: 'Drones, ballistic missiles, cruise missiles', sub: '' },
                         ].map((item, idx) => (
-                          <div key={idx} className="rounded-lg bg-slate-800/50 border border-slate-700 p-3">
+                          <div key={idx} className="rounded-lg bg-platinum-800/50 border border-platinum-700 p-3">
                             <p className="text-xs text-platinum-400 font-rajdhani">{item.label}</p>
                             <p className="text-lg font-extrabold text-orange-400 font-rajdhani">{item.value}</p>
                             {item.sub && <p className="text-xs text-platinum-500 font-rajdhani">{item.sub}</p>}
@@ -1139,7 +1139,7 @@ export default function TerrorismExtremismPage() {
                             { tier: 'TIER_3', name: 'Secondary', count: 5, color: 'platinum', sources: 'Wikipedia, Orinoco Tribune, YouTube, Reddit' },
                             { tier: 'TIER_5', name: 'Academic/Research', count: 2, color: 'navy', sources: 'US Congressional Research Service, UK Parliament Committees' },
                           ].map((item, idx) => (
-                            <div key={idx} className="rounded-lg bg-slate-800/50 border border-slate-700 p-3">
+                            <div key={idx} className="rounded-lg bg-platinum-800/50 border border-platinum-700 p-3">
                               <div className="flex items-center justify-between mb-1">
                                 <Badge variant="outline" className={`border-${item.color}-500/50 text-${item.color}-400 font-rajdhani text-xs`}>
                                   {item.tier} ({item.count})
@@ -1167,7 +1167,7 @@ export default function TerrorismExtremismPage() {
                     <ScrollArea className="h-[300px]">
                       <div className="space-y-2">
                         {(sources || []).map((source, idx) => (
-                          <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-2 hover:bg-slate-800/70 transition-all">
+                          <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-2 hover:bg-platinum-800/70 transition-all">
                             <span className="text-xs text-platinum-300 font-rajdhani">{source.source || source}</span>
                             <div className="flex gap-1">
                               <Badge variant="outline" className="text-xs border-violet-500/50 text-violet-400 font-rajdhani">
@@ -1257,7 +1257,7 @@ export default function TerrorismExtremismPage() {
                     <ScrollArea className="h-[250px]">
                       <div className="space-y-3">
                         {(stakeholderImpacts || []).map((impact, idx) => (
-                          <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center gap-3">
                               <Users className="h-4 w-4 text-rose-500" />
                               <span className="text-sm font-medium text-platinum-200 font-rajdhani">{impact.stakeholder}</span>

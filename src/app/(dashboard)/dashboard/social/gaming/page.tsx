@@ -102,7 +102,7 @@ export default function GamingPage() {
                 <div className="space-y-3">
                   {gameData.map((g: any, idx: number) => (
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
-                      className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 border border-slate-700/50">
+                      className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                       <div className="flex items-center gap-3">
                         <span className="text-xs text-platinum-500 w-5">{idx + 1}</span>
                         <Gamepad2 className="h-4 w-4 text-rose-400" />

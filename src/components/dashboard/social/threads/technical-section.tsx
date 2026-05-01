@@ -46,7 +46,7 @@ export function TechnicalSection({
     if (status.toLowerCase().includes('live') || status.toLowerCase().includes('completed')) return 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
     if (status.toLowerCase().includes('active')) return 'bg-gold/20 text-gold border-gold/30'
     if (status.toLowerCase().includes('expanding') || status.toLowerCase().includes('rolling')) return 'bg-info/20 text-info border-info/30'
-    return 'bg-slate-500/20 text-slate-400 border-slate-500/30'
+    return 'bg-platinum-500/20 text-platinum-400 border-platinum-500/30'
   }
 
   return (
@@ -71,7 +71,7 @@ export function TechnicalSection({
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="rounded-lg bg-slate-800/50 p-4"
+                      className="rounded-lg bg-platinum-800/50 p-4"
                     >
                       <div className="flex items-center gap-2 mb-3">
                         <Badge variant="outline" className="text-xs bg-info/10 text-info border-info/30">
@@ -82,7 +82,7 @@ export function TechnicalSection({
                         {category.features.map((feature: string, fidx: number) => (
                           <div key={fidx} className="flex items-start gap-2 text-sm">
                             <CheckCircle className="h-4 w-4 text-emerald-400 mt-0.5 flex-shrink-0" />
-                            <span className="text-slate-300">{feature}</span>
+                            <span className="text-platinum-300">{feature}</span>
                           </div>
                         ))}
                       </div>
@@ -113,16 +113,16 @@ export function TechnicalSection({
                         transition={{ delay: idx * 0.1 }}
                         className="relative pl-10"
                       >
-                        <div className="absolute left-2.5 top-2 w-3 h-3 rounded-full bg-gold border-2 border-slate-900" />
-                        <div className="rounded-lg bg-slate-800/50 p-4">
+                        <div className="absolute left-2.5 top-2 w-3 h-3 rounded-full bg-gold border-2 border-platinum-900" />
+                        <div className="rounded-lg bg-platinum-800/50 p-4">
                           <div className="flex items-center justify-between mb-2">
                             <span className="text-sm font-bold text-gold">{item.date}</span>
                             <Badge className={`text-xs ${getStatusColor(item.status)}`}>
                               {item.status}
                             </Badge>
                           </div>
-                          <p className="font-medium text-slate-200">{item.feature}</p>
-                          <p className="text-sm text-slate-400 mt-1">{item.details}</p>
+                          <p className="font-medium text-platinum-200">{item.feature}</p>
+                          <p className="text-sm text-platinum-400 mt-1">{item.details}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -152,15 +152,15 @@ export function TechnicalSection({
                         <div key={idx} className="flex items-start gap-2 text-sm">
                           <XCircle className="h-4 w-4 text-rose-400 mt-0.5 flex-shrink-0" />
                           <div>
-                            <span className="text-slate-300">{item.dataType}</span>
-                            {item.details && <p className="text-xs text-slate-500">{item.details}</p>}
+                            <span className="text-platinum-300">{item.dataType}</span>
+                            {item.details && <p className="text-xs text-platinum-500">{item.details}</p>}
                           </div>
                         </div>
                       ))}
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-slate-400 mb-3 flex items-center gap-2">
+                    <h4 className="text-sm font-semibold text-platinum-400 mb-3 flex items-center gap-2">
                       <Lock className="h-4 w-4" />
                       Not Collected / Restricted
                     </h4>
@@ -169,8 +169,8 @@ export function TechnicalSection({
                         <div key={idx} className="flex items-start gap-2 text-sm">
                           <CheckCircle className="h-4 w-4 text-emerald-400 mt-0.5 flex-shrink-0" />
                           <div>
-                            <span className="text-slate-300">{item.dataType}</span>
-                            {item.details && <p className="text-xs text-slate-500">{item.details}</p>}
+                            <span className="text-platinum-300">{item.dataType}</span>
+                            {item.details && <p className="text-xs text-platinum-500">{item.details}</p>}
                           </div>
                         </div>
                       ))}
@@ -202,18 +202,18 @@ export function TechnicalSection({
                       key={category}
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      className="rounded-lg bg-slate-800/50 p-3"
+                      className="rounded-lg bg-platinum-800/50 p-3"
                     >
                       <div className="text-sm font-semibold text-gold mb-2">{category}</div>
                       <div className="space-y-1">
                         {features.slice(0, 3).map((f: any, idx: number) => (
-                          <div key={idx} className="text-xs text-slate-300 flex items-center gap-1">
+                          <div key={idx} className="text-xs text-platinum-300 flex items-center gap-1">
                             <CheckCircle className="h-3 w-3 text-emerald-400 flex-shrink-0" />
                             <span className="truncate">{f.feature}</span>
                           </div>
                         ))}
                         {features.length > 3 && (
-                          <div className="text-xs text-slate-500">+{features.length - 3} more</div>
+                          <div className="text-xs text-platinum-500">+{features.length - 3} more</div>
                         )}
                       </div>
                     </motion.div>
@@ -232,19 +232,19 @@ export function TechnicalSection({
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   <div className="rounded-lg bg-info/10 p-4 border border-info/30">
                     <div className="text-2xl font-bold text-info">500</div>
-                    <div className="text-sm text-slate-400">Characters (standard)</div>
+                    <div className="text-sm text-platinum-400">Characters (standard)</div>
                   </div>
                   <div className="rounded-lg bg-gold/10 p-4 border border-gold/30">
                     <div className="text-2xl font-bold text-gold">10,000</div>
-                    <div className="text-sm text-slate-400">Characters (long-form)</div>
+                    <div className="text-sm text-platinum-400">Characters (long-form)</div>
                   </div>
                   <div className="rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30">
                     <div className="text-2xl font-bold text-emerald-400">10</div>
-                    <div className="text-sm text-slate-400">Media per post</div>
+                    <div className="text-sm text-platinum-400">Media per post</div>
                   </div>
                   <div className="rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
                     <div className="text-2xl font-bold text-rose-400">5</div>
-                    <div className="text-sm text-slate-400">Links max (dec 2025)</div>
+                    <div className="text-sm text-platinum-400">Links max (dec 2025)</div>
                   </div>
                 </div>
               </CardContent>

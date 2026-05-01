@@ -144,7 +144,7 @@ export default function PraiseEndorsementPage() {
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">
             Praise & Endorsement Sentiment
           </h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Comprehensive analysis of positive sentiment, praise categories, and endorsement metrics toward the UAE
           </p>
         </div>
@@ -223,21 +223,21 @@ export default function PraiseEndorsementPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                      <div className="bg-slate-800/30 rounded-lg p-4 text-center">
+                      <div className="bg-platinum-800/30 rounded-lg p-4 text-center">
                         <p className="text-3xl font-bold text-emerald-400">{overview.totalQueryCategories}</p>
-                        <p className="text-sm text-slate-400">Query Categories</p>
+                        <p className="text-sm text-platinum-400">Query Categories</p>
                       </div>
-                      <div className="bg-slate-800/30 rounded-lg p-4 text-center">
+                      <div className="bg-platinum-800/30 rounded-lg p-4 text-center">
                         <p className="text-3xl font-bold text-emerald-400">{overview.totalSourcesConsulted}</p>
-                        <p className="text-sm text-slate-400">Sources Consulted</p>
+                        <p className="text-sm text-platinum-400">Sources Consulted</p>
                       </div>
-                      <div className="bg-slate-800/30 rounded-lg p-4 text-center">
+                      <div className="bg-platinum-800/30 rounded-lg p-4 text-center">
                         <p className="text-3xl font-bold text-emerald-400">11</p>
-                        <p className="text-sm text-slate-400">Praise Categories</p>
+                        <p className="text-sm text-platinum-400">Praise Categories</p>
                       </div>
-                      <div className="bg-slate-800/30 rounded-lg p-4 text-center">
+                      <div className="bg-platinum-800/30 rounded-lg p-4 text-center">
                         <p className="text-3xl font-bold text-emerald-400">100%</p>
-                        <p className="text-sm text-slate-400">Data Verified</p>
+                        <p className="text-sm text-platinum-400">Data Verified</p>
                       </div>
                     </div>
                   </CardContent>
@@ -306,10 +306,10 @@ export default function PraiseEndorsementPage() {
                   <CardContent>
                     <div className="grid gap-4 sm:grid-cols-2">
                       {crossCategoryObservations.map((obs, idx) => (
-                        <div key={idx} className="bg-slate-800/30 rounded-lg p-4">
+                        <div key={idx} className="bg-platinum-800/30 rounded-lg p-4">
                           <h4 className="font-semibold text-emerald-400 mb-2">{obs.title}</h4>
-                          <p className="text-sm text-slate-300 mb-2">{obs.description}</p>
-                          <p className="text-xs text-slate-400 italic">{obs.evidence}</p>
+                          <p className="text-sm text-platinum-300 mb-2">{obs.description}</p>
+                          <p className="text-xs text-platinum-400 italic">{obs.evidence}</p>
                         </div>
                       ))}
                     </div>
@@ -405,7 +405,7 @@ export default function PraiseEndorsementPage() {
       </Tabs>
 
       {/* Footer */}
-      <motion.div variants={itemVariants} className="text-center text-slate-500 text-sm">
+      <motion.div variants={itemVariants} className="text-center text-platinum-500 text-sm">
         <p>Data Source: {overview.researchCompilationDate} | Last Updated: {overview.enrichedDate}</p>
         <p className="mt-1">All URLs verified via WebFetch | Total Data Points: 500+</p>
       </motion.div>

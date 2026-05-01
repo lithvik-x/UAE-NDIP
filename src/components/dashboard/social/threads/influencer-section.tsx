@@ -50,15 +50,15 @@ export function InfluencerSection({
                 <div className="grid gap-4 sm:grid-cols-3">
                   <div className="rounded-lg bg-gold/10 p-4 border border-gold/30">
                     <div className="text-3xl font-bold text-gold">50K</div>
-                    <div className="text-sm text-slate-400">Influencers in Dubai</div>
+                    <div className="text-sm text-platinum-400">Influencers in Dubai</div>
                   </div>
                   <div className="rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30">
                     <div className="text-3xl font-bold text-emerald-400">$97M</div>
-                    <div className="text-sm text-slate-400">Market forecast by 2030</div>
+                    <div className="text-sm text-platinum-400">Market forecast by 2030</div>
                   </div>
                   <div className="rounded-lg bg-info/10 p-4 border border-info/30">
                     <div className="text-3xl font-bold text-info">+20%</div>
-                    <div className="text-sm text-slate-400">Bilingual engagement boost</div>
+                    <div className="text-sm text-platinum-400">Bilingual engagement boost</div>
                   </div>
                 </div>
               </CardContent>
@@ -78,11 +78,11 @@ export function InfluencerSection({
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.1 }}
-                      className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4"
+                      className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4"
                     >
                       <div>
-                        <p className="font-medium text-slate-200">{reg.regulation}</p>
-                        <p className="text-sm text-slate-400">{reg.details}</p>
+                        <p className="font-medium text-platinum-200">{reg.regulation}</p>
+                        <p className="text-sm text-platinum-400">{reg.details}</p>
                       </div>
                       <Badge variant={reg.penalty?.includes('imprisonment') ? 'destructive' : 'default'}>
                         {reg.penalty || 'N/A'}
@@ -101,7 +101,7 @@ export function InfluencerSection({
               </CardHeader>
               <CardContent className="px-0 pb-0">
                 <div className="rounded-lg bg-rose-500/10 p-4 border border-rose-500/30 mb-4">
-                  <p className="text-sm text-slate-300">
+                  <p className="text-sm text-platinum-300">
                     <AlertTriangle className="inline h-4 w-4 mr-2 text-rose-400" />
                     NO official UAE government Threads accounts identified. All government entities
                     use X (Twitter), Facebook, Instagram, and YouTube - but NOT Threads.
@@ -109,14 +109,14 @@ export function InfluencerSection({
                 </div>
                 <div className="space-y-3">
                   {governmentAccountsMock?.map((account: any, idx: number) => (
-                    <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                    <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                       <div className="flex items-center gap-3">
                         {account.verified ? (
                           <CheckCircle className="h-4 w-4 text-emerald-400" />
                         ) : (
-                          <XCircle className="h-4 w-4 text-slate-500" />
+                          <XCircle className="h-4 w-4 text-platinum-500" />
                         )}
-                        <span className="text-sm font-medium text-slate-200">{account.handle}</span>
+                        <span className="text-sm font-medium text-platinum-200">{account.handle}</span>
                         <Badge variant="outline" className="text-xs">{account.type}</Badge>
                       </div>
                       {account.followers > 0 && (
@@ -135,14 +135,14 @@ export function InfluencerSection({
                 <CardDescription>Influencer concerns during regional tensions</CardDescription>
               </CardHeader>
               <CardContent className="px-0 pb-0">
-                <div className="rounded-lg bg-yellow-500/10 p-4 border border-yellow-500/30">
-                  <h4 className="font-semibold text-yellow-400 mb-2">Critical Finding</h4>
-                  <ul className="space-y-2 text-sm text-slate-300">
+                <div className="rounded-lg bg-amber-500/10 p-4 border border-amber-500/30">
+                  <h4 className="font-semibold text-amber-400 mb-2">Critical Finding</h4>
+                  <ul className="space-y-2 text-sm text-platinum-300">
                     {influencerContentIssues.map((issue: any, idx: number) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <AlertTriangle className="h-4 w-4 text-yellow-400 mt-0.5 flex-shrink-0" />
+                        <AlertTriangle className="h-4 w-4 text-amber-400 mt-0.5 flex-shrink-0" />
                         <div>
-                          <span className="font-medium text-yellow-300">{issue.issue}: </span>
+                          <span className="font-medium text-amber-300">{issue.issue}: </span>
                           {issue.details}
                         </div>
                       </li>
@@ -166,11 +166,11 @@ export function InfluencerSection({
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                      className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                     >
                       <div className="flex-1">
-                        <p className="font-medium text-slate-200">{account.handle}</p>
-                        <p className="text-xs text-slate-400 mt-1">{account.description}</p>
+                        <p className="font-medium text-platinum-200">{account.handle}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{account.description}</p>
                       </div>
                       <div className="text-right">
                         <Badge variant={account.sentiment.includes('Positive') ? 'default' : account.sentiment.includes('Negative') ? 'destructive' : 'outline'} className="text-xs">
@@ -196,19 +196,19 @@ export function InfluencerSection({
                 <div className="grid gap-4 sm:grid-cols-4">
                   <div className="rounded-lg bg-gold/10 p-4 border border-gold/30 text-center">
                     <div className="text-2xl font-bold text-gold">556K</div>
-                    <div className="text-sm text-slate-400">Followers</div>
+                    <div className="text-sm text-platinum-400">Followers</div>
                   </div>
                   <div className="rounded-lg bg-info/10 p-4 border border-info/30 text-center">
                     <div className="text-2xl font-bold text-info">471</div>
-                    <div className="text-sm text-slate-400">Threads</div>
+                    <div className="text-sm text-platinum-400">Threads</div>
                   </div>
                   <div className="rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30 text-center">
                     <CheckCircle className="h-6 w-6 text-emerald-400 mx-auto" />
-                    <div className="text-sm text-slate-400 mt-1">Verified</div>
+                    <div className="text-sm text-platinum-400 mt-1">Verified</div>
                   </div>
                   <div className="rounded-lg bg-platinum/10 p-4 border border-platinum/30 text-center">
                     <div className="text-2xl font-bold text-platinum">56M</div>
-                    <div className="text-sm text-slate-400">#visitdubai threads</div>
+                    <div className="text-sm text-platinum-400">#visitdubai threads</div>
                   </div>
                 </div>
               </CardContent>

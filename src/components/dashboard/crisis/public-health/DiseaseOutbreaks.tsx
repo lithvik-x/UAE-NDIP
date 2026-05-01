@@ -179,7 +179,7 @@ export function DiseaseOutbreaks({ data }: DiseaseOutbreaksProps) {
               </div>
               <div className="text-lg font-bold text-platinum-100">{vectorControl.predatoryFishDeployment}</div>
             </div>
-            <div className="rounded-lg bg-sky-500/10 border border-sky-500/30 p-3">
+            <div className="rounded-lg bg-cyan-500/10 border border-cyan-500/30 p-3">
               <div className="flex items-center gap-2 mb-1">
                 <Thermometer className="h-4 w-4 text-sky" />
                 <span className="text-sm font-medium text-sky">Bacterial Tablets</span>

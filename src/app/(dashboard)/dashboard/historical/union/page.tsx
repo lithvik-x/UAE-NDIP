@@ -87,7 +87,7 @@ export default function UnionPage() {
       case 'critical':
         return <Badge variant="destructive" className="text-xs">Critical</Badge>
       case 'major':
-        return <Badge variant="warning" className="text-xs bg-yellow-500/20 text-yellow-400 border-yellow-500/50">Major</Badge>
+        return <Badge variant="warning" className="text-xs bg-amber-500/20 text-amber-400 border-amber-500/50">Major</Badge>
       default:
         return <Badge variant="outline" className="text-xs">Minor</Badge>
     }
@@ -100,7 +100,7 @@ export default function UnionPage() {
         <div>
           <Badge variant="gold" className="mb-2">H-ERA-1</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Union & Nation Building</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             The formation of the UAE federation and establishment of national institutions (1971-1976)
           </p>
         </div>
@@ -162,7 +162,7 @@ export default function UnionPage() {
                   <CardTitle className="text-lg">About the Federation</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-300 leading-relaxed mb-4">
+                  <p className="text-platinum-300 leading-relaxed mb-4">
                     The United Arab Emirates was formed on December 2, 1971, when six emirates declared
                     independence and united. Ras Al Khaimah joined on February 10, 1972, completing
                     the seven-emirate federation. Sheikh Zayed bin Sultan Al Nahyan was elected the
@@ -174,7 +174,7 @@ export default function UnionPage() {
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-gold">December 2, 1971</div>
-                      <div className="text-sm text-slate-400">National Day - Federation Day</div>
+                      <div className="text-sm text-platinum-400">National Day - Federation Day</div>
                     </div>
                   </div>
                 </CardContent>
@@ -189,13 +189,13 @@ export default function UnionPage() {
                   <CardContent>
                     <div className="space-y-3">
                       {achievements.map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3">
+                        <div key={idx} className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold/20 text-gold shrink-0">
                             <Shield className="h-4 w-4" />
                           </div>
                           <div>
-                            <div className="font-medium text-slate-200">{item.title}</div>
-                            <div className="text-xs text-slate-400">{item.desc}</div>
+                            <div className="font-medium text-platinum-200">{item.title}</div>
+                            <div className="text-xs text-platinum-400">{item.desc}</div>
                           </div>
                         </div>
                       ))}
@@ -214,7 +214,7 @@ export default function UnionPage() {
                         {nationBuildingData.slice(0, 10).map((milestone, idx) => (
                           <div key={idx} className="flex items-start gap-2 text-sm">
                             <div className="h-2 w-2 rounded-full bg-gold mt-1.5 shrink-0" />
-                            <span className="text-slate-300">{milestone}</span>
+                            <span className="text-platinum-300">{milestone}</span>
                           </div>
                         ))}
                       </div>
@@ -238,12 +238,12 @@ export default function UnionPage() {
                         {idx + 1}
                       </div>
                       <div>
-                        <h3 className="font-bold text-slate-100">{item.emirate}</h3>
+                        <h3 className="font-bold text-platinum-100">{item.emirate}</h3>
                         <span className="text-xs text-gold font-mono">{item.joinDate}</span>
                       </div>
                     </div>
                     <div className="space-y-1">
-                      <div className="flex items-center gap-2 text-xs text-slate-400">
+                      <div className="flex items-center gap-2 text-xs text-platinum-400">
                         <Crown className="h-3 w-3" />
                         <span>{item.ruler}</span>
                       </div>
@@ -287,9 +287,9 @@ export default function UnionPage() {
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
                         <institution.icon className="h-5 w-5" />
                       </div>
-                      <h3 className="font-bold text-slate-100">{institution.name}</h3>
+                      <h3 className="font-bold text-platinum-100">{institution.name}</h3>
                     </div>
-                    <p className="text-xs text-slate-400">{institution.desc}</p>
+                    <p className="text-xs text-platinum-400">{institution.desc}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -303,12 +303,12 @@ export default function UnionPage() {
                 <ScrollArea className="h-[200px]">
                   <div className="space-y-3">
                     {data.policyOutcomes?.slice(0, 6).map((policy, idx) => (
-                      <div key={idx} className="rounded-lg bg-slate-800/50 p-3">
+                      <div key={idx} className="rounded-lg bg-platinum-800/50 p-3">
                         <div className="flex items-center justify-between mb-1">
                           <span className="text-sm font-medium text-gold">{policy.policy}</span>
                           <Badge variant="outline" className="text-xs">{policy.year}</Badge>
                         </div>
-                        <p className="text-xs text-slate-400">{policy.impact}</p>
+                        <p className="text-xs text-platinum-400">{policy.impact}</p>
                       </div>
                     ))}
                   </div>
@@ -328,7 +328,7 @@ export default function UnionPage() {
                   const yearB = parseInt(b.date.replace(/\D/g, '')) || 0
                   return yearA - yearB
                 }).map((event, idx) => (
-                  <div key={idx} className="flex items-start gap-4 rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70">
+                  <div key={idx} className="flex items-start gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/20 text-gold shrink-0">
                       <Calendar className="h-6 w-6" />
                     </div>
@@ -337,8 +337,8 @@ export default function UnionPage() {
                         <span className="text-lg font-mono font-bold text-gold">{event.date}</span>
                         {getSignificanceBadge(event.significance)}
                       </div>
-                      <h3 className="text-xl font-bold text-slate-100 mb-2">{event.title}</h3>
-                      <p className="text-slate-400 leading-relaxed">{event.description}</p>
+                      <h3 className="text-xl font-bold text-platinum-100 mb-2">{event.title}</h3>
+                      <p className="text-platinum-400 leading-relaxed">{event.description}</p>
                       {event.entities && event.entities.length > 0 && (
                         <div className="mt-3 flex flex-wrap gap-2">
                           {event.entities.map((entity, eIdx) => (
@@ -349,7 +349,7 @@ export default function UnionPage() {
                       {event.outcome && (
                         <div className="mt-3 rounded-lg bg-emerald-500/10 p-2 border border-emerald-500/30">
                           <span className="text-xs text-emerald-400 font-medium">Outcome: </span>
-                          <span className="text-xs text-slate-300">{event.outcome}</span>
+                          <span className="text-xs text-platinum-300">{event.outcome}</span>
                         </div>
                       )}
                     </div>

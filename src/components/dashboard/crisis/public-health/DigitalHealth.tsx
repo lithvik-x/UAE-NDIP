@@ -90,7 +90,7 @@ export function DigitalHealth({ data }: DigitalHealthProps) {
 
               <div className="flex flex-wrap gap-1">
                 {alHosnApp.platforms.map((platform, idx) => (
-                  <Badge key={idx} variant="outline" className="border-sky-500/50 text-sky text-xs">
+                  <Badge key={idx} variant="outline" className="border-cyan-500/50 text-sky text-xs">
                     {platform}
                   </Badge>
                 ))}

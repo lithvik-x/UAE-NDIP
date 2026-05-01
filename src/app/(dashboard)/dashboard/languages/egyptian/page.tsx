@@ -128,7 +128,7 @@ export default function EgyptianArabicPage() {
                         <span className="text-lg font-bold text-platinum-100">{t.coverage}%</span>
                       </div>
                     </div>
-                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                       <motion.div initial={{ width: 0 }} animate={{ width: `${t.coverage}%` }} transition={{ delay: idx * 0.1 + 0.3, duration: 0.5 }}
                         className="h-full rounded-full bg-gradient-to-r from-amber-500 to-yellow-500" />
                     </div>

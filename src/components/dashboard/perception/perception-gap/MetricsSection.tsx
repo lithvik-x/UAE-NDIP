@@ -84,7 +84,7 @@ export function MetricsSection({ data }: MetricsSectionProps) {
                   <span className="text-sm text-platinum-400">{score.index}</span>
                   <div className="flex items-center gap-2">
                     <span className={`text-sm font-bold ${
-                      score.score < 40 ? 'text-rose-400' : score.score < 60 ? 'text-yellow-400' : 'text-emerald-400'
+                      score.score < 40 ? 'text-rose-400' : score.score < 60 ? 'text-amber-400' : 'text-emerald-400'
                     }`}>
                       {score.score}/{score.max}
                     </span>
@@ -93,7 +93,7 @@ export function MetricsSection({ data }: MetricsSectionProps) {
                       className={`text-xs ${
                         score.status === 'Not Free' ? 'border-rose-500/50 text-rose-400' :
                         score.status === '160/180' ? 'border-rose-500/50 text-rose-400' :
-                        'border-yellow-500/50 text-yellow-400'
+                        'border-amber-500/50 text-amber-400'
                       }`}
                     >
                       {score.status}
@@ -125,7 +125,7 @@ export function MetricsSection({ data }: MetricsSectionProps) {
             <ScrollArea className="h-[240px]">
               <div className="space-y-3 pr-4">
                 {data.humanRightsStats?.map((stat, idx) => (
-                  <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
+                  <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-3">
                     <span className="text-sm text-platinum-300">{stat.metric}</span>
                     <div className="text-right">
                       <span className="text-lg font-bold text-rose-400">{stat.value}</span>
@@ -169,14 +169,14 @@ export function MetricsSection({ data }: MetricsSectionProps) {
               ))}
             </div>
 
-            <div className="mt-4 pt-4 border-t border-slate-700">
+            <div className="mt-4 pt-4 border-t border-platinum-700">
               <div className="grid grid-cols-2 gap-4">
-                <div className="text-center rounded-lg bg-slate-800/50 p-3">
+                <div className="text-center rounded-lg bg-platinum-800/50 p-3">
                   <div className="text-2xl font-bold text-rose-400">132,000</div>
                   <div className="text-xs text-platinum-400">In Modern Slavery</div>
                 </div>
-                <div className="text-center rounded-lg bg-slate-800/50 p-3">
-                  <div className="text-2xl font-bold text-yellow-400">0/100</div>
+                <div className="text-center rounded-lg bg-platinum-800/50 p-3">
+                  <div className="text-2xl font-bold text-amber-400">0/100</div>
                   <div className="text-xs text-platinum-400">Supply Chain Rating</div>
                 </div>
               </div>
@@ -207,13 +207,13 @@ export function MetricsSection({ data }: MetricsSectionProps) {
         <ScrollArea className="h-[300px]">
           <div className="space-y-3 pr-4">
             {data.womenRightsIndicators?.map((indicator, idx) => (
-              <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-4">
+              <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-4">
                 <span className="text-sm text-platinum-300">{indicator.metric}</span>
                 <Badge
                   variant={indicator.value === 'Yes' ? 'destructive' : indicator.value === 'No' ? 'outline' : 'default'}
                   className={`text-xs ${
                     indicator.value === 'Yes' ? 'bg-rose-500/20 text-rose-400 border-rose-500/50' :
-                    indicator.value === 'No' ? 'border-yellow-500/50 text-yellow-400' :
+                    indicator.value === 'No' ? 'border-amber-500/50 text-amber-400' :
                     'bg-emerald-500/20 text-emerald-400 border-emerald-500/50'
                   }`}
                 >

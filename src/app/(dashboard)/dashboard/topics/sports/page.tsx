@@ -75,7 +75,7 @@ export default function SportsIntelligencePage() {
         <div>
           <Badge variant="default" className="mb-2">S-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">Sports Intelligence</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Sportswashing analysis, F1 monitoring, and sports diplomacy tracking
           </p>
         </div>

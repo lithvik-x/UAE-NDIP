@@ -52,7 +52,7 @@ export function HealthcareSection({
             <Card key={idx} className="glass-card border-pink-500/30">
               <CardContent className="p-4">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs text-slate-400 truncate">{kpi.metric}</span>
+                  <span className="text-xs text-platinum-400 truncate">{kpi.metric}</span>
                   <Badge variant="rose" className="text-xs">
                     {kpi.change}
                   </Badge>
@@ -73,8 +73,8 @@ export function HealthcareSection({
           <CardContent>
             <div className="grid gap-3 sm:grid-cols-2">
               {healthcareTrustBreakdown.slice(0, 8).map((trust, idx) => (
-                <div key={idx} className="flex items-center justify-between p-3 bg-slate-800/30 rounded-lg">
-                  <span className="text-sm text-slate-300">{trust.category}</span>
+                <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/30 rounded-lg">
+                  <span className="text-sm text-platinum-300">{trust.category}</span>
                   <div className="text-right">
                     <p className="font-bold text-pink-400">{trust.uaeScore}</p>
                     <p className="text-xs text-emerald-400">{trust.globalComparison}</p>
@@ -94,8 +94,8 @@ export function HealthcareSection({
           <CardContent>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {healthcareInvestment.slice(0, 6).map((inv, idx) => (
-                <div key={idx} className="bg-slate-800/30 rounded-lg p-3">
-                  <p className="text-xs text-slate-400 truncate">{inv.metric}</p>
+                <div key={idx} className="bg-platinum-800/30 rounded-lg p-3">
+                  <p className="text-xs text-platinum-400 truncate">{inv.metric}</p>
                   <p className="text-xl font-bold text-pink-400">{inv.value}</p>
                 </div>
               ))}
@@ -109,7 +109,7 @@ export function HealthcareSection({
             <CardContent className="p-6 text-center">
               <Award className="h-10 w-10 text-pink-400 mx-auto mb-3" />
               <p className="text-4xl font-bold text-pink-400">235+</p>
-              <p className="text-slate-400 text-sm">JCI-Accredited Facilities</p>
+              <p className="text-platinum-400 text-sm">JCI-Accredited Facilities</p>
               <p className="text-xs text-emerald-400 mt-1">+25 from last year</p>
             </CardContent>
           </Card>
@@ -118,7 +118,7 @@ export function HealthcareSection({
             <CardContent className="p-6 text-center">
               <Shield className="h-10 w-10 text-pink-400 mx-auto mb-3" />
               <p className="text-4xl font-bold text-pink-400">~90%</p>
-              <p className="text-slate-400 text-sm">Healthcare Trust Rating</p>
+              <p className="text-platinum-400 text-sm">Healthcare Trust Rating</p>
               <p className="text-xs text-emerald-400 mt-1">+5% from last year</p>
             </CardContent>
           </Card>

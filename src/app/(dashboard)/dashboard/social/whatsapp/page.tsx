@@ -447,7 +447,7 @@ export default function WhatsAppPage() {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.08 }}
-                            className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 border border-slate-700/50"
+                            className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
                           >
                             <div className="flex items-center gap-3">
                               <Shield className="h-4 w-4 text-rose" />
@@ -501,7 +501,7 @@ export default function WhatsAppPage() {
                           initial={{ opacity: 0, scale: 0.9 }}
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                          className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                         >
                           <span className="text-sm text-platinum-300">{item.data}</span>
                           {item.accessible ? (
@@ -579,7 +579,7 @@ export default function WhatsAppPage() {
                             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-navy-500/20 to-navy-600/20 text-navy-400 text-sm font-bold border border-navy-500/30">
                               {event.year.slice(2)}
                             </div>
-                            <div className="flex-1 rounded-lg bg-slate-800/50 p-3 border border-slate-700/50">
+                            <div className="flex-1 rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50">
                               <div className="flex items-center gap-2 flex-wrap">
                                 <span className="font-medium text-platinum-200">{event.event}</span>
                                 <Badge
@@ -622,7 +622,7 @@ export default function WhatsAppPage() {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: idx * 0.08 }}
                           whileHover={{ scale: 1.02 }}
-                          className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-4 border border-slate-700/50"
+                          className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
                         >
                           <Phone className="h-4 w-4 text-emerald mt-0.5 shrink-0" />
                           <div>
@@ -690,7 +690,7 @@ export default function WhatsAppPage() {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.1 }}
-                            className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50"
+                            className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
                           >
                             <div className="flex items-start justify-between mb-2">
                               <h4 className="font-medium text-platinum-200">{penalty.offense}</h4>
@@ -737,7 +737,7 @@ export default function WhatsAppPage() {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: idx * 0.08 }}
-                          className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-4 border border-slate-700/50"
+                          className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
                         >
                           <Shield className="h-4 w-4 text-gold mt-0.5 shrink-0" />
                           <div>
@@ -765,7 +765,7 @@ export default function WhatsAppPage() {
                           <strong className="text-navy-400">Dubai Court of Cassation (April 17, 2026):</strong> WhatsApp messages in divorce case must be "thoroughly investigated to establish their authenticity, verify the identity of the sender, and determine whether they meet the legal threshold required for admissible evidence."
                         </p>
                       </div>
-                      <div className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50">
+                      <div className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                         <p className="text-sm text-platinum-300">
                           <strong className="text-platinum-200">Requirements:</strong>
                         </p>
@@ -876,7 +876,7 @@ export default function WhatsAppPage() {
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3"
+                          className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3"
                         >
                           <CheckCircle className="h-4 w-4 text-emerald mt-0.5 shrink-0" />
                           <div>
@@ -988,7 +988,7 @@ export default function WhatsAppPage() {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.1 }}
-                            className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50"
+                            className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
                           >
                             <div className="flex items-center justify-between mb-2">
                               <Badge variant="outline" className="text-rose border-rose-500/50 text-xs">
@@ -1023,7 +1023,7 @@ export default function WhatsAppPage() {
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.08 }}
-                            className="flex items-start justify-between rounded-lg bg-slate-800/50 p-4 border border-slate-700/50"
+                            className="flex items-start justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
                           >
                             <div className="flex-1">
                               <p className="font-medium text-platinum-200">{narrative.topic}</p>
@@ -1066,7 +1066,7 @@ export default function WhatsAppPage() {
                           initial={{ opacity: 0, scale: 0.9 }}
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ delay: idx * 0.06 }}
-                          className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                          className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                         >
                           <span className="text-sm text-platinum-300">{item.theme}</span>
                           <Badge

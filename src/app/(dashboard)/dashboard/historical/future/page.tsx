@@ -98,7 +98,7 @@ export default function FutureProjectionsPage() {
         <div>
           <Badge variant="emerald" className="mb-2">H-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Future Projections</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             {data.description || 'Centennial 2071 vision, strategic goals, and projected milestones'}
           </p>
         </div>
@@ -210,13 +210,13 @@ export default function FutureProjectionsPage() {
                         { year: '2033', milestone: 'Al Maktoum Airport Phase 1', status: 'On Track' },
                         { year: '2035', milestone: '100% Smart Government', status: 'On Track' },
                       ].map((item, idx) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                        <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Calendar className="h-4 w-4 text-emerald" />
-                            <span className="font-medium text-slate-200">{item.year}</span>
+                            <span className="font-medium text-platinum-200">{item.year}</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <span className="text-sm text-slate-400">{item.milestone}</span>
+                            <span className="text-sm text-platinum-400">{item.milestone}</span>
                             <Badge
                               variant={item.status === 'On Track' ? 'success' : 'warning'}
                               className="text-xs"
@@ -248,9 +248,9 @@ export default function FutureProjectionsPage() {
                     {vision2071Goals.map((goal, idx) => (
                       <div key={idx} className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="font-medium text-slate-200">{goal.goal}</span>
+                          <span className="font-medium text-platinum-200">{goal.goal}</span>
                           <div className="flex items-center gap-4">
-                            <span className="text-sm text-slate-400">Current: {goal.current}</span>
+                            <span className="text-sm text-platinum-400">Current: {goal.current}</span>
                             <span className="text-sm text-emerald">Target: {goal.target}</span>
                           </div>
                         </div>
@@ -318,14 +318,14 @@ export default function FutureProjectionsPage() {
                   <ScrollArea className="h-[400px]">
                     <div className="space-y-3">
                       {projectPipelineData.map((project, idx) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div className="flex items-center gap-4">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
                               <Milestone className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-200">{project.project}</p>
-                              <p className="text-sm text-slate-400">{project.sector}</p>
+                              <p className="font-semibold text-platinum-200">{project.project}</p>
+                              <p className="text-sm text-platinum-400">{project.sector}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-4">
@@ -413,7 +413,7 @@ export default function FutureProjectionsPage() {
                       {sectorProjectionData.map((item, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-slate-200">{item.sector}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.sector}</span>
                             <span className="text-lg font-bold text-emerald">+{item.growth}%</span>
                           </div>
                           <Progress

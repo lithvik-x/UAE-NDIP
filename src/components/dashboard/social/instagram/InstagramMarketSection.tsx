@@ -80,7 +80,7 @@ export function InstagramMarketSection({ data }: InstagramMarketSectionProps) {
             <CardContent>
               <div className="space-y-4">
                 {marketSize.filter((m: { market: string; currentValue: string; projectedValue: string; year: string; cagr: string; source: string }) => m.cagr && m.cagr !== '-').map((market: { market: string; currentValue: string; projectedValue: string; year: string; cagr: string }, idx: number) => (
-                  <div key={idx} className="p-4 rounded-lg bg-slate-800/30">
+                  <div key={idx} className="p-4 rounded-lg bg-platinum-800/30">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-sm font-medium text-white">{market.market}</span>
                       <Badge variant="outline" className="border-emerald-500/30 text-emerald-400">
@@ -137,8 +137,8 @@ export function InstagramMarketSection({ data }: InstagramMarketSectionProps) {
               <CardContent>
                 <div className="space-y-4">
                   {contentCreatorEconomy.map((item: { metric: string; value: string; source: string }, idx: number) => (
-                    <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-slate-800/30">
-                      <span className="text-sm text-slate-200">{item.metric}</span>
+                    <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/30">
+                      <span className="text-sm text-platinum-200">{item.metric}</span>
                       <div className="flex items-center gap-2">
                         <span className="text-lg font-bold text-gold">{item.value}</span>
                       </div>
@@ -158,10 +158,10 @@ export function InstagramMarketSection({ data }: InstagramMarketSectionProps) {
             <CardContent>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {marketingAgencies.map((agency: { agency: string; website: string; specialty: string }, idx: number) => (
-                  <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-slate-800/30">
+                  <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/30">
                     <div>
                       <h4 className="text-sm font-medium text-white">{agency.agency}</h4>
-                      <p className="text-xs text-slate-400">{agency.specialty}</p>
+                      <p className="text-xs text-platinum-400">{agency.specialty}</p>
                     </div>
                     <ExternalLink className="h-4 w-4 text-platinum/50" />
                   </div>
@@ -176,28 +176,28 @@ export function InstagramMarketSection({ data }: InstagramMarketSectionProps) {
               <CardContent className="pt-4">
                 <DollarSign className="h-8 w-8 text-gold mb-2" />
                 <p className="text-2xl font-bold text-white">$173M</p>
-                <p className="text-xs text-slate-400">UAE Influencer Market (2025)</p>
+                <p className="text-xs text-platinum-400">UAE Influencer Market (2025)</p>
               </CardContent>
             </Card>
             <Card className="glass-card border-purple-500/30">
               <CardContent className="pt-4">
                 <TrendingUp className="h-8 w-8 text-emerald mb-2" />
                 <p className="text-2xl font-bold text-white">11%</p>
-                <p className="text-xs text-slate-400">CAGR through 2034</p>
+                <p className="text-xs text-platinum-400">CAGR through 2034</p>
               </CardContent>
             </Card>
             <Card className="glass-card border-purple-500/30">
               <CardContent className="pt-4">
                 <Users className="h-8 w-8 text-purple mb-2" />
                 <p className="text-2xl font-bold text-white">263K</p>
-                <p className="text-xs text-slate-400">GCC Total Influencers</p>
+                <p className="text-xs text-platinum-400">GCC Total Influencers</p>
               </CardContent>
             </Card>
             <Card className="glass-card border-purple-500/30">
               <CardContent className="pt-4">
                 <Activity className="h-8 w-8 text-rose mb-2" />
                 <p className="text-2xl font-bold text-white">43.7%</p>
-                <p className="text-xs text-slate-400">Virtual Influencer CAGR</p>
+                <p className="text-xs text-platinum-400">Virtual Influencer CAGR</p>
               </CardContent>
             </Card>
           </div>

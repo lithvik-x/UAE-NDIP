@@ -73,7 +73,7 @@ export function InstagramOverviewSection({ data }: InstagramOverviewSectionProps
               </CardHeader>
               <CardContent>
                 <p className="text-2xl font-bold text-white">{(metrics.users / 1000000).toFixed(2)}M</p>
-                <p className="text-xs text-slate-400 mt-1">August 2025</p>
+                <p className="text-xs text-platinum-400 mt-1">August 2025</p>
               </CardContent>
             </Card>
 
@@ -86,7 +86,7 @@ export function InstagramOverviewSection({ data }: InstagramOverviewSectionProps
               </CardHeader>
               <CardContent>
                 <p className="text-2xl font-bold text-white">{metrics.penetration}%</p>
-                <p className="text-xs text-slate-400 mt-1">Of population</p>
+                <p className="text-xs text-platinum-400 mt-1">Of population</p>
               </CardContent>
             </Card>
 
@@ -99,7 +99,7 @@ export function InstagramOverviewSection({ data }: InstagramOverviewSectionProps
               </CardHeader>
               <CardContent>
                 <p className="text-2xl font-bold text-white">{metrics.engagement.engagementRate}%</p>
-                <p className="text-xs text-slate-400 mt-1">Avg per post</p>
+                <p className="text-xs text-platinum-400 mt-1">Avg per post</p>
               </CardContent>
             </Card>
 
@@ -112,7 +112,7 @@ export function InstagramOverviewSection({ data }: InstagramOverviewSectionProps
               </CardHeader>
               <CardContent>
                 <p className="text-2xl font-bold text-white">{metrics.sentiment.score}</p>
-                <p className="text-xs text-slate-400 mt-1">{metrics.sentiment.overall}</p>
+                <p className="text-xs text-platinum-400 mt-1">{metrics.sentiment.overall}</p>
               </CardContent>
             </Card>
           </div>
@@ -159,7 +159,7 @@ export function InstagramOverviewSection({ data }: InstagramOverviewSectionProps
                 <div className="mt-4 space-y-2">
                   <p className="text-sm font-medium text-platinum/70">Key Concerns:</p>
                   {(metrics.sentiment.keyConcerns || []).slice(0, 3).map((concern: string, idx: number) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-slate-400">
+                    <div key={idx} className="flex items-start gap-2 text-xs text-platinum-400">
                       <span className="text-rose-400">•</span>
                       <span>{concern}</span>
                     </div>
@@ -183,15 +183,15 @@ export function InstagramOverviewSection({ data }: InstagramOverviewSectionProps
                 {(governmentAccounts || []).map((account: { platform?: string; handle: string; url?: string; followers?: number; verified: boolean }, idx: number) => (
                   <div
                     key={idx}
-                    className="flex items-center justify-between p-3 rounded-lg bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20"
+                    className="flex items-center justify-between p-3 rounded-lg bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-navy-500/20"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/20">
-                        <Globe className="h-5 w-5 text-blue-400" />
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-500/20">
+                        <Globe className="h-5 w-5 text-navy-400" />
                       </div>
                       <div>
                         <p className="text-sm font-medium text-white">{account.handle}</p>
-                        <p className="text-xs text-slate-400">{account.platform}</p>
+                        <p className="text-xs text-platinum-400">{account.platform}</p>
                       </div>
                     </div>
                     <div className="text-right">

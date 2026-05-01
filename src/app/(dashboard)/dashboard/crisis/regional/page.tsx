@@ -59,7 +59,7 @@ export default function RegionalInstabilityPage() {
 
   const getAlertColor = (alert?: string) => {
     if (alert === 'RED') return 'border-red-500/50'
-    if (alert === 'YELLOW') return 'border-yellow-500/50'
+    if (alert === 'YELLOW') return 'border-amber-500/50'
     return 'border-emerald-500/50'
   }
 
@@ -110,7 +110,7 @@ export default function RegionalInstabilityPage() {
         <div>
           <Badge variant="gold" className="mb-2">PHOENIX PROTOCOL: REGIONAL</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Regional Instability</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Geopolitical tensions and conflicts in Yemen, Iraq, Syria, and broader MENA region
           </p>
         </div>
@@ -167,16 +167,16 @@ export default function RegionalInstabilityPage() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3 }}
-        className={`rounded-xl border p-4 bg-slate-900/50 ${getAlertColor(data.alertLevel)}`}
+        className={`rounded-xl border p-4 bg-platinum-900/50 ${getAlertColor(data.alertLevel)}`}
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             {data.alertLevel === 'RED' && <AlertCircle className="h-6 w-6 text-red-400" />}
-            {data.alertLevel === 'YELLOW' && <AlertTriangle className="h-6 w-6 text-yellow-400" />}
+            {data.alertLevel === 'YELLOW' && <AlertTriangle className="h-6 w-6 text-amber-400" />}
             {data.alertLevel === 'GREEN' && <TrendingUp className="h-6 w-6 text-emerald-400" />}
             <div>
-              <p className="font-semibold text-slate-200">Regional Alert Level: {data.alertLevel}</p>
-              <p className="text-sm text-slate-400">
+              <p className="font-semibold text-platinum-200">Regional Alert Level: {data.alertLevel}</p>
+              <p className="text-sm text-platinum-400">
                 {data.affectedEntities?.length || 0} affected entities | Crisis Stage: {data.phoenixStage}
               </p>
             </div>
@@ -206,7 +206,7 @@ export default function RegionalInstabilityPage() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className={`flex items-center justify-between rounded-lg border p-4 bg-slate-800/50 hover:bg-slate-800/70 transition-colors ${finding.alert ? getAlertColor(finding.alert) : 'border-slate-700'}`}
+                  className={`flex items-center justify-between rounded-lg border p-4 bg-platinum-800/50 hover:bg-platinum-800/70 transition-colors ${finding.alert ? getAlertColor(finding.alert) : 'border-platinum-700'}`}
                 >
                   <div className="flex items-center gap-4">
                     <div className={`flex h-10 w-10 items-center justify-center rounded-full ${
@@ -219,14 +219,14 @@ export default function RegionalInstabilityPage() {
                        <AlertCircle className="h-5 w-5" />}
                     </div>
                     <div>
-                      <p className="font-medium text-slate-200">{finding.finding}</p>
-                      <p className="text-sm text-slate-400">Source: {finding.source}</p>
+                      <p className="font-medium text-platinum-200">{finding.finding}</p>
+                      <p className="text-sm text-platinum-400">Source: {finding.source}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="text-right">
                       <p className="text-xl font-bold text-gold">{finding.metric}</p>
-                      <p className="text-xs text-slate-400">Tier {finding.tier}</p>
+                      <p className="text-xs text-platinum-400">Tier {finding.tier}</p>
                     </div>
                     {finding.alert && getAlertBadge(finding.alert)}
                   </div>
@@ -299,7 +299,7 @@ export default function RegionalInstabilityPage() {
                           className="space-y-2"
                         >
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-slate-200">{item.name}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.name}</span>
                             <span className="text-lg font-bold text-gold">{item.value}/100</span>
                           </div>
                           <Progress value={item.value} className="h-3" />
@@ -356,8 +356,8 @@ export default function RegionalInstabilityPage() {
                         <div className="flex items-start gap-4">
                           <p className="text-sm font-bold text-gold whitespace-nowrap w-24">{event.date}</p>
                           <div>
-                            <p className="font-semibold text-slate-200">{event.event}</p>
-                            <p className="text-sm text-slate-400 mt-1">{event.description}</p>
+                            <p className="font-semibold text-platinum-200">{event.event}</p>
+                            <p className="text-sm text-platinum-400 mt-1">{event.description}</p>
                             {event.stage && (
                               <Badge variant="outline" className="mt-2 text-xs">{event.stage}</Badge>
                             )}
@@ -385,11 +385,11 @@ export default function RegionalInstabilityPage() {
                     <Users className="h-6 w-6 text-red-400" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400">Foreign Population</p>
+                    <p className="text-sm text-platinum-400">Foreign Population</p>
                     <p className="text-2xl font-bold text-white">{demographics.foreignPopulation}</p>
                   </div>
                 </div>
-                <p className="text-xs text-slate-500">of {demographics.totalPopulation} total population</p>
+                <p className="text-xs text-platinum-500">of {demographics.totalPopulation} total population</p>
               </motion.div>
 
               <motion.div
@@ -401,11 +401,11 @@ export default function RegionalInstabilityPage() {
                     <UserX className="h-6 w-6 text-orange-400" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400">Social Media Arrests</p>
+                    <p className="text-sm text-platinum-400">Social Media Arrests</p>
                     <p className="text-2xl font-bold text-white">375+</p>
                   </div>
                 </div>
-                <p className="text-xs text-slate-500">March 2026 Iran conflict</p>
+                <p className="text-xs text-platinum-500">March 2026 Iran conflict</p>
               </motion.div>
 
               <motion.div
@@ -413,15 +413,15 @@ export default function RegionalInstabilityPage() {
                 className="glass-card rounded-xl border border-glass-border bg-glass-surface p-6"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-yellow-500/20">
-                    <AlertOctagon className="h-6 w-6 text-yellow-400" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-amber-500/20">
+                    <AlertOctagon className="h-6 w-6 text-amber-400" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400">Wage Complaints</p>
+                    <p className="text-sm text-platinum-400">Wage Complaints</p>
                     <p className="text-2xl font-bold text-white">20,000</p>
                   </div>
                 </div>
-                <p className="text-xs text-slate-500">2005 strike wave</p>
+                <p className="text-xs text-platinum-500">2005 strike wave</p>
               </motion.div>
             </div>
 
@@ -438,9 +438,9 @@ export default function RegionalInstabilityPage() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.05 }}
-                      className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-3"
+                      className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3"
                     >
-                      <span className="text-sm font-medium text-slate-200">{risk.crisisType}</span>
+                      <span className="text-sm font-medium text-platinum-200">{risk.crisisType}</span>
                       <div className="flex items-center gap-2">
                         <Badge variant={risk.severity === 'High' ? 'destructive' : risk.severity === 'Medium' ? 'warning' : 'outline'} className="text-xs">
                           {risk.severity}
@@ -468,20 +468,20 @@ export default function RegionalInstabilityPage() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-4 hover:bg-slate-800/60 transition-colors"
+                    className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-4 hover:bg-platinum-800/60 transition-colors"
                   >
                     <div className="flex items-center gap-4">
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
                         <Clock className="h-5 w-5" />
                       </div>
                       <div>
-                        <p className="font-medium text-slate-200">{incident.incident}</p>
-                        <p className="text-sm text-slate-400">{incident.location} | {incident.source}</p>
+                        <p className="font-medium text-platinum-200">{incident.incident}</p>
+                        <p className="text-sm text-platinum-400">{incident.location} | {incident.source}</p>
                       </div>
                     </div>
                     <div className="text-right">
                       <p className="text-lg font-bold text-gold">{incident.workers}</p>
-                      <p className="text-xs text-slate-500">{incident.year}</p>
+                      <p className="text-xs text-platinum-500">{incident.year}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -496,19 +496,19 @@ export default function RegionalInstabilityPage() {
               <CardContent>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="space-y-2">
-                    <p className="text-sm text-slate-400">Largest Single Protest</p>
+                    <p className="text-sm text-platinum-400">Largest Single Protest</p>
                     <p className="text-xl font-bold text-gold">13,000 workers (2025 Azizi)</p>
                   </div>
                   <div className="space-y-2">
-                    <p className="text-sm text-slate-400">Inspections (2019-2024)</p>
+                    <p className="text-sm text-platinum-400">Inspections (2019-2024)</p>
                     <p className="text-xl font-bold text-gold">688,000</p>
                   </div>
                   <div className="space-y-2">
-                    <p className="text-sm text-slate-400">Violations Found</p>
+                    <p className="text-sm text-platinum-400">Violations Found</p>
                     <p className="text-xl font-bold text-orange-400">29,000</p>
                   </div>
                   <div className="space-y-2">
-                    <p className="text-sm text-slate-400">Strikes in 2005</p>
+                    <p className="text-sm text-platinum-400">Strikes in 2005</p>
                     <p className="text-xl font-bold text-red-400">24+</p>
                   </div>
                 </div>
@@ -561,12 +561,12 @@ export default function RegionalInstabilityPage() {
                       'border-emerald-500/30 bg-emerald-500/10'
                     }`}
                   >
-                    <p className="text-sm font-medium text-slate-200 mb-2">{item.group}</p>
+                    <p className="text-sm font-medium text-platinum-200 mb-2">{item.group}</p>
                     <div className="flex items-center justify-between">
                       <Badge variant={item.risk === 'Critical' ? 'destructive' : item.risk === 'High' || item.risk === 'Medium-High' ? 'warning' : 'secondary'} className="text-xs">
                         {item.risk}
                       </Badge>
-                      <span className="text-xs text-slate-400">V: {item.vulnerability} | P: {item.protection}</span>
+                      <span className="text-xs text-platinum-400">V: {item.vulnerability} | P: {item.protection}</span>
                     </div>
                   </motion.div>
                 ))}

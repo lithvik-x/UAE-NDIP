@@ -71,7 +71,7 @@ export default function DarkWebSocialPage() {
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">
             Dark Web Monitoring
           </h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Underground surveillance, threat actor tracking, and illicit marketplace intelligence
           </p>
         </div>
@@ -103,8 +103,8 @@ export default function DarkWebSocialPage() {
                   <AlertTriangle className="h-5 w-5 text-red-400" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-slate-200">{concern}</p>
-                  <p className="text-xs text-slate-400">Active threat vector</p>
+                  <p className="text-sm font-medium text-platinum-200">{concern}</p>
+                  <p className="text-xs text-platinum-400">Active threat vector</p>
                 </div>
               </div>
             ))}
@@ -149,14 +149,14 @@ export default function DarkWebSocialPage() {
         <GlassPanel title="Marketplace Monitoring" description="Tracked underground marketplaces">
           <div className="space-y-3">
             {marketplaceData.map((market, idx) => (
-              <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+              <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                 <div className="flex items-center gap-4">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-rose-500/10">
                     <Shield className="h-5 w-5 text-rose-400" />
                   </div>
                   <div>
-                    <p className="font-medium text-slate-200">{market.name}</p>
-                    <p className="text-sm text-slate-400">{market.listings.toLocaleString()} active listings</p>
+                    <p className="font-medium text-platinum-200">{market.name}</p>
+                    <p className="text-sm text-platinum-400">{market.listings.toLocaleString()} active listings</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -164,10 +164,10 @@ export default function DarkWebSocialPage() {
                     {market.status}
                   </Badge>
                   <div className="text-center">
-                    <span className={`text-lg font-bold ${market.risk > 85 ? 'text-red-400' : market.risk > 70 ? 'text-orange-400' : 'text-yellow-400'}`}>
+                    <span className={`text-lg font-bold ${market.risk > 85 ? 'text-red-400' : market.risk > 70 ? 'text-amber-400' : 'text-amber-400'}`}>
                       {market.risk}
                     </span>
-                    <p className="text-xs text-slate-400">Risk</p>
+                    <p className="text-xs text-platinum-400">Risk</p>
                   </div>
                 </div>
               </div>
@@ -183,9 +183,9 @@ export default function DarkWebSocialPage() {
             {riskFactors.map((factor, idx) => (
               <div key={idx} className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-slate-200">{factor.factor}</span>
+                  <span className="text-sm font-medium text-platinum-200">{factor.factor}</span>
                   <span className={`text-sm font-bold ${
-                    factor.level > 85 ? 'text-red-400' : factor.level > 70 ? 'text-orange-400' : 'text-yellow-400'
+                    factor.level > 85 ? 'text-red-400' : factor.level > 70 ? 'text-amber-400' : 'text-amber-400'
                   }`}>
                     {factor.level}%
                   </span>

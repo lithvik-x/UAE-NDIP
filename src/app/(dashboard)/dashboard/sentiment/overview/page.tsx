@@ -115,7 +115,7 @@ export default function SentimentOverviewPage() {
         <div>
           <Badge variant="gold" className="mb-2">SENTIMENT INTELLIGENCE</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Sentiment Overview</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Cross-sector sentiment analysis, emotion tracking, and public perception metrics
           </p>
         </div>
@@ -296,7 +296,7 @@ export default function SentimentOverviewPage() {
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-2">
                               <Smile className="h-5 w-5 text-emerald-400" />
-                              <span className="text-sm font-medium text-slate-200">{emotion.emotion}</span>
+                              <span className="text-sm font-medium text-platinum-200">{emotion.emotion}</span>
                             </div>
                             <span className="text-lg font-bold text-emerald-400">{emotion.value}%</span>
                           </div>
@@ -319,7 +319,7 @@ export default function SentimentOverviewPage() {
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-2">
                               <Frown className="h-5 w-5 text-rose-400" />
-                              <span className="text-sm font-medium text-slate-200">{emotion.emotion}</span>
+                              <span className="text-sm font-medium text-platinum-200">{emotion.emotion}</span>
                             </div>
                             <span className="text-lg font-bold text-rose-400">{emotion.value}%</span>
                           </div>
@@ -368,7 +368,7 @@ export default function SentimentOverviewPage() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-3xl font-bold text-emerald-400">+14%</p>
-                    <p className="text-sm text-slate-400 mt-1">YoY improvement in positive sentiment</p>
+                    <p className="text-sm text-platinum-400 mt-1">YoY improvement in positive sentiment</p>
                   </CardContent>
                 </Card>
 
@@ -381,7 +381,7 @@ export default function SentimentOverviewPage() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-3xl font-bold text-rose-400">-6%</p>
-                    <p className="text-sm text-slate-400 mt-1">YoY decrease in negative sentiment</p>
+                    <p className="text-sm text-platinum-400 mt-1">YoY decrease in negative sentiment</p>
                   </CardContent>
                 </Card>
 
@@ -394,7 +394,7 @@ export default function SentimentOverviewPage() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-3xl font-bold text-platinum-400">-8%</p>
-                    <p className="text-sm text-slate-400 mt-1">YoY shift away from neutral stance</p>
+                    <p className="text-sm text-platinum-400 mt-1">YoY shift away from neutral stance</p>
                   </CardContent>
                 </Card>
               </div>
@@ -429,7 +429,7 @@ export default function SentimentOverviewPage() {
                   <Card key={idx} className="glass-card">
                     <CardContent className="p-4">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="font-medium text-slate-200 text-sm">{trend.name}</span>
+                        <span className="font-medium text-platinum-200 text-sm">{trend.name}</span>
                         <Badge variant={trend.sentiment?.positive && trend.sentiment.positive > 65 ? 'success' : 'warning'} className="text-xs">
                           {Math.round(trend.sentiment?.positive || 0)}%
                         </Badge>

@@ -198,7 +198,7 @@ export default function EntityIntelligenceOverviewPage() {
         <div>
           <Badge variant="gold" className="mb-2">ENTITY INTELLIGENCE</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Entity Intelligence</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Cross-entity monitoring, credibility scoring, and relationship mapping
           </p>
         </div>
@@ -296,9 +296,9 @@ export default function EntityIntelligenceOverviewPage() {
                                   className="h-3 w-3 rounded-full"
                                   style={{ backgroundColor: type.color }}
                                 />
-                                <span className="text-sm font-medium text-slate-200">{type.name}</span>
+                                <span className="text-sm font-medium text-platinum-200">{type.name}</span>
                               </div>
-                              <span className="text-lg font-bold text-slate-200">{type.value}</span>
+                              <span className="text-lg font-bold text-platinum-200">{type.value}</span>
                             </div>
                             <Progress
                               value={(type.value / totalEntities) * 100}
@@ -325,11 +325,11 @@ export default function EntityIntelligenceOverviewPage() {
                       ].map((category, index) => (
                         <div
                           key={index}
-                          className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                          className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                         >
                           <div className="flex items-center gap-3">
                             <category.icon className="h-5 w-5 text-gold" />
-                            <span className="text-sm font-medium text-slate-200">{category.label}</span>
+                            <span className="text-sm font-medium text-platinum-200">{category.label}</span>
                           </div>
                           <span className="text-lg font-bold text-gold">{category.value}</span>
                         </div>
@@ -392,7 +392,7 @@ export default function EntityIntelligenceOverviewPage() {
                     {tierData.map((tier, index) => (
                       <div
                         key={index}
-                        className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center"
+                        className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center"
                       >
                         <div
                           className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full"
@@ -402,7 +402,7 @@ export default function EntityIntelligenceOverviewPage() {
                             {tier.value}
                           </span>
                         </div>
-                        <p className="text-sm font-medium text-slate-300">{tier.name}</p>
+                        <p className="text-sm font-medium text-platinum-300">{tier.name}</p>
                       </div>
                     ))}
                   </div>
@@ -426,15 +426,15 @@ export default function EntityIntelligenceOverviewPage() {
                     {keyEntities.map((entity) => (
                       <div
                         key={entity.id}
-                        className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70"
+                        className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70"
                       >
                         <div className="flex items-center gap-4">
                           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
                             {getEntityIcon(entity.type)}
                           </div>
                           <div>
-                            <p className="font-semibold text-slate-200">{entity.name}</p>
-                            <p className="text-sm text-slate-400">
+                            <p className="font-semibold text-platinum-200">{entity.name}</p>
+                            <p className="text-sm text-platinum-400">
                               {entity.nameAr || 'No Arabic name'}
                             </p>
                           </div>
@@ -444,7 +444,7 @@ export default function EntityIntelligenceOverviewPage() {
                             <Badge variant="outline" className="mb-1 capitalize">
                               {entity.type}
                             </Badge>
-                            <p className="text-xs text-slate-400">Type</p>
+                            <p className="text-xs text-platinum-400">Type</p>
                           </div>
                           <div className="text-center">
                             <Badge
@@ -458,13 +458,13 @@ export default function EntityIntelligenceOverviewPage() {
                             >
                               {getTierLabel(entity.tier)}
                             </Badge>
-                            <p className="text-xs text-slate-400">Tier</p>
+                            <p className="text-xs text-platinum-400">Tier</p>
                           </div>
                           <div className="text-center">
                             <div className="text-lg font-bold text-gold">
                               {entity.uaeRelevance?.score || 0}
                             </div>
-                            <p className="text-xs text-slate-400">Relevance</p>
+                            <p className="text-xs text-platinum-400">Relevance</p>
                           </div>
                           <div className="text-center">
                             <div className={`text-sm font-medium ${
@@ -472,15 +472,15 @@ export default function EntityIntelligenceOverviewPage() {
                                 ? 'text-emerald-400'
                                 : entity.sentiment?.overall && entity.sentiment.overall < 40
                                 ? 'text-red-400'
-                                : 'text-slate-400'
+                                : 'text-platinum-400'
                             }`}>
                               {getSentimentLabel(entity.sentiment ? `${entity.sentiment.overall > 60 ? 'POSITIVE' : entity.sentiment.overall < 40 ? 'NEGATIVE' : 'NEUTRAL'}` : undefined)}
                             </div>
-                            <p className="text-xs text-slate-400">Sentiment</p>
+                            <p className="text-xs text-platinum-400">Sentiment</p>
                           </div>
                           <div className="text-center">
                             {getAlertBadge(entity.alertLevel)}
-                            <p className="mt-1 text-xs text-slate-400">Alert</p>
+                            <p className="mt-1 text-xs text-platinum-400">Alert</p>
                           </div>
                         </div>
                       </div>
@@ -507,23 +507,23 @@ export default function EntityIntelligenceOverviewPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="text-4xl font-bold text-red-400">{alertSummary.RED}</div>
-                    <p className="mt-2 text-sm text-slate-400">
+                    <p className="mt-2 text-sm text-platinum-400">
                       {alertSummary.RED > 0 ? 'Active incidents detected' : 'No critical alerts'}
                     </p>
                   </CardContent>
                 </Card>
 
-                <Card className="glass-card border-yellow-500/50">
+                <Card className="glass-card border-amber-500/50">
                   <CardHeader className="pb-2">
-                    <CardTitle className="flex items-center gap-2 text-lg text-yellow-400">
+                    <CardTitle className="flex items-center gap-2 text-lg text-amber-400">
                       <AlertTriangle className="h-5 w-5" />
                       Yellow Alerts
                     </CardTitle>
                     <CardDescription>Entities requiring monitoring</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-4xl font-bold text-yellow-400">{alertSummary.YELLOW}</div>
-                    <p className="mt-2 text-sm text-slate-400">
+                    <div className="text-4xl font-bold text-amber-400">{alertSummary.YELLOW}</div>
+                    <p className="mt-2 text-sm text-platinum-400">
                       {alertSummary.YELLOW > 0 ? 'Situations developing' : 'All clear'}
                     </p>
                   </CardContent>
@@ -539,7 +539,7 @@ export default function EntityIntelligenceOverviewPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="text-4xl font-bold text-emerald-400">{alertSummary.GREEN}</div>
-                    <p className="mt-2 text-sm text-slate-400">
+                    <p className="mt-2 text-sm text-platinum-400">
                       {Math.round((alertSummary.GREEN / totalEntities) * 100)}% of all entities
                     </p>
                   </CardContent>
@@ -555,32 +555,32 @@ export default function EntityIntelligenceOverviewPage() {
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Red Alerts</span>
+                        <span className="text-platinum-400">Red Alerts</span>
                         <span className="font-medium text-red-400">{alertSummary.RED}</span>
                       </div>
                       <Progress
                         value={(alertSummary.RED / totalEntities) * 100}
-                        className="h-3 bg-slate-700 [&>div]:bg-red-500"
+                        className="h-3 bg-platinum-700 [&>div]:bg-red-500"
                       />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Yellow Alerts</span>
-                        <span className="font-medium text-yellow-400">{alertSummary.YELLOW}</span>
+                        <span className="text-platinum-400">Yellow Alerts</span>
+                        <span className="font-medium text-amber-400">{alertSummary.YELLOW}</span>
                       </div>
                       <Progress
                         value={(alertSummary.YELLOW / totalEntities) * 100}
-                        className="h-3 bg-slate-700 [&>div]:bg-yellow-500"
+                        className="h-3 bg-platinum-700 [&>div]:bg-amber-500"
                       />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Green Status</span>
+                        <span className="text-platinum-400">Green Status</span>
                         <span className="font-medium text-emerald-400">{alertSummary.GREEN}</span>
                       </div>
                       <Progress
                         value={(alertSummary.GREEN / totalEntities) * 100}
-                        className="h-3 bg-slate-700 [&>div]:bg-emerald-500"
+                        className="h-3 bg-platinum-700 [&>div]:bg-emerald-500"
                       />
                     </div>
                   </div>

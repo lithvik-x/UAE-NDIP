@@ -90,7 +90,7 @@ export default function InstagramVisualPlatformsPage() {
               Instagram & Visual Platforms
             </span>
           </h1>
-          <p className="text-slate-400 max-w-2xl">
+          <p className="text-platinum-400 max-w-2xl">
             Comprehensive Instagram intelligence: {metrics.users ? `${(metrics.users / 1000000).toFixed(2)}M` : '8.36M'} UAE users, influencer ecosystem,
             regulatory framework, coordinated behavior incidents, and market analysis.
           </p>

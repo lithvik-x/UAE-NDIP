@@ -114,7 +114,7 @@ export default function TagalogLanguagePage() {
         <div>
           <Badge variant="gold" className="mb-2">L-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Filipino/Tagalog Media</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Filipino-language content monitoring and analysis in the UAE
           </p>
         </div>
@@ -222,10 +222,10 @@ export default function TagalogLanguagePage() {
                   <ScrollArea className="h-[200px]">
                     <div className="grid gap-3 sm:grid-cols-2">
                       {popularSearches.map((search, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Hash className="h-4 w-4 text-gold" />
-                            <span className="text-sm text-slate-200">{search.term}</span>
+                            <span className="text-sm text-platinum-200">{search.term}</span>
                           </div>
                           <div className="flex items-center gap-2">
                             <Progress value={search.trend} className="h-2 w-16" />
@@ -278,14 +278,14 @@ export default function TagalogLanguagePage() {
                     <CardContent>
                       <div className="flex items-end justify-between">
                         <div>
-                          <div className="text-3xl font-bold text-slate-200">{platform.percentage}%</div>
-                          <p className="text-sm text-slate-400">of Filipino content</p>
+                          <div className="text-3xl font-bold text-platinum-200">{platform.percentage}%</div>
+                          <p className="text-sm text-platinum-400">of Filipino content</p>
                         </div>
                         <div className="text-right">
                           <div className="text-xl font-bold text-emerald-400">
                             {(platform.speakers / 1000).toFixed(0)}K
                           </div>
-                          <p className="text-xs text-slate-400">Estimated users</p>
+                          <p className="text-xs text-platinum-400">Estimated users</p>
                         </div>
                       </div>
                     </CardContent>
@@ -311,12 +311,12 @@ export default function TagalogLanguagePage() {
                       {topicSentiment.map((topic, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-slate-200">{topic.topic}</span>
+                            <span className="text-sm font-medium text-platinum-200">{topic.topic}</span>
                             <div className="flex items-center gap-4">
-                              <span className="text-xs text-slate-400">{(topic.volume / 1000).toFixed(0)}K posts</span>
+                              <span className="text-xs text-platinum-400">{(topic.volume / 1000).toFixed(0)}K posts</span>
                               <span className={`text-sm font-bold ${
                                 topic.sentiment >= 80 ? 'text-emerald-400' :
-                                topic.sentiment >= 60 ? 'text-yellow-400' :
+                                topic.sentiment >= 60 ? 'text-amber-400' :
                                 'text-rose-400'
                               }`}>{topic.sentiment}%</span>
                             </div>
@@ -365,31 +365,31 @@ export default function TagalogLanguagePage() {
                       {keyInfluencers.map((influencer, index) => (
                         <div
                           key={index}
-                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70"
+                          className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70"
                         >
                           <div className="flex items-center gap-4">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
                               <MessageSquare className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-200">{influencer.name}</p>
-                              <p className="text-sm text-slate-400">{influencer.handle}</p>
+                              <p className="font-semibold text-platinum-200">{influencer.name}</p>
+                              <p className="text-sm text-platinum-400">{influencer.handle}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-6">
                             <div className="text-center">
-                              <div className="text-lg font-bold text-slate-200">
+                              <div className="text-lg font-bold text-platinum-200">
                                 {(influencer.followers / 1000).toFixed(0)}K
                               </div>
-                              <p className="text-xs text-slate-400">Followers</p>
+                              <p className="text-xs text-platinum-400">Followers</p>
                             </div>
                             <div className="text-center">
                               <div className={`text-lg font-bold ${
                                 influencer.sentiment >= 80 ? 'text-emerald-400' :
-                                influencer.sentiment >= 60 ? 'text-yellow-400' :
+                                influencer.sentiment >= 60 ? 'text-amber-400' :
                                 'text-rose-400'
                               }`}>{influencer.sentiment}%</div>
-                              <p className="text-xs text-slate-400">Sentiment</p>
+                              <p className="text-xs text-platinum-400">Sentiment</p>
                             </div>
                           </div>
                         </div>

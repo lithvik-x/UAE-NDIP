@@ -50,19 +50,19 @@ import {
 
 const alertColors: Record<string, string> = {
   GREEN: 'text-emerald-400',
-  YELLOW: 'text-yellow-400',
+  YELLOW: 'text-amber-400',
   RED: 'text-red-400',
 }
 
 const alertBg: Record<string, string> = {
   GREEN: 'bg-emerald-500/20 border-emerald-500/50',
-  YELLOW: 'bg-yellow-500/20 border-yellow-500/50',
+  YELLOW: 'bg-amber-500/20 border-amber-500/50',
   RED: 'bg-red-500/20 border-red-500/50',
 }
 
 const alertDot: Record<string, string> = {
   GREEN: 'bg-emerald-400',
-  YELLOW: 'bg-yellow-400',
+  YELLOW: 'bg-amber-400',
   RED: 'bg-red-400',
 }
 
@@ -204,11 +204,11 @@ export default function StatisticalDatapointsPage() {
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: idx * 0.05, duration: 0.3 }}
-      className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 px-4 py-3 hover:bg-slate-800/60 hover:border-slate-600/50 transition-all duration-200"
+      className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/30 px-4 py-3 hover:bg-platinum-800/60 hover:border-platinum-600/50 transition-all duration-200"
     >
       <div className="flex-1 min-w-0">
         <p className="text-sm font-medium text-platinum-200 truncate">{kpi.kpi}</p>
-        <p className="text-xs text-slate-500 mt-0.5">{kpi.source}</p>
+        <p className="text-xs text-platinum-500 mt-0.5">{kpi.source}</p>
       </div>
       <div className="flex items-center gap-3 ml-4 shrink-0">
         {kpi.change && (
@@ -239,7 +239,7 @@ export default function StatisticalDatapointsPage() {
           <h1 className="text-3xl font-extrabold gradient-text-platinum font-rajdhani">
             UAE Statistical Datapoints
           </h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Comprehensive official statistics across all sectors — 11 atomic queries, 40+ sources
           </p>
         </div>
@@ -383,7 +383,7 @@ export default function StatisticalDatapointsPage() {
                       <div className="flex items-center justify-between text-sm">
                         <span className="text-platinum-300">{item.sector}</span>
                         <span className="text-platinum-100 font-medium">
-                          AED {item.amount}B <span className="text-slate-500">({item.pct}%)</span>
+                          AED {item.amount}B <span className="text-platinum-500">({item.pct}%)</span>
                         </span>
                       </div>
                       <Progress
@@ -398,7 +398,7 @@ export default function StatisticalDatapointsPage() {
               {/* Quick Stats Grid */}
               <div className="grid gap-4 sm:grid-cols-4">
                 {[
-                  { label: 'EPI Rank', value: '53rd', icon: <Leaf className="h-5 w-5" />, color: 'bg-yellow-500/20 text-yellow-400' },
+                  { label: 'EPI Rank', value: '53rd', icon: <Leaf className="h-5 w-5" />, color: 'bg-amber-500/20 text-amber-400' },
                   { label: 'Water Rank', value: '3rd', icon: <Droplets className="h-5 w-5" />, color: 'bg-emerald-500/20 text-emerald-400' },
                   { label: 'Credit Rating', value: 'AA/Aa2', icon: <Award className="h-5 w-5" />, color: 'bg-platinum-500/20 text-platinum-400' },
                   { label: 'HDI Score', value: '0.940', icon: <Zap className="h-5 w-5" />, color: 'bg-cyan-500/20 text-cyan-400' },
@@ -414,7 +414,7 @@ export default function StatisticalDatapointsPage() {
                       {stat.icon}
                     </div>
                     <div className="text-xl font-bold text-platinum-100">{stat.value}</div>
-                    <div className="text-xs text-slate-400 mt-1">{stat.label}</div>
+                    <div className="text-xs text-platinum-400 mt-1">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -466,7 +466,7 @@ export default function StatisticalDatapointsPage() {
                           height={180}
                           showLegend
                         />
-                        <p className="text-xs text-slate-400 mt-2 text-center">Ratio 175:100 — reflects male-dominated expat workforce</p>
+                        <p className="text-xs text-platinum-400 mt-2 text-center">Ratio 175:100 — reflects male-dominated expat workforce</p>
                       </CardContent>
                     </Card>
                   </div>
@@ -572,7 +572,7 @@ export default function StatisticalDatapointsPage() {
                     >
                       <div className="text-2xl font-bold text-platinum-100">{market.visitors}M</div>
                       <div className="text-sm text-platinum-400 mt-1">{market.region}</div>
-                      <div className="text-xs text-slate-500 mt-1">{market.share}% share</div>
+                      <div className="text-xs text-platinum-500 mt-1">{market.share}% share</div>
                     </motion.div>
                   ))}
                 </div>
@@ -702,17 +702,17 @@ export default function StatisticalDatapointsPage() {
         <div className="flex items-center gap-4 flex-wrap">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            <span className="text-sm text-slate-400">Tier 0-1 Sources: WHO, UNFPA, MoF, SCAD</span>
+            <span className="text-sm text-platinum-400">Tier 0-1 Sources: WHO, UNFPA, MoF, SCAD</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-yellow-400" />
-            <span className="text-sm text-slate-400">Tier 2: Trading Economics, Numbeo, CPX</span>
+            <span className="w-2 h-2 rounded-full bg-amber-400" />
+            <span className="text-sm text-platinum-400">Tier 2: Trading Economics, Numbeo, CPX</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-slate-400" />
-            <span className="text-sm text-slate-400">Tier 3: Wikipedia (estimates)</span>
+            <span className="w-2 h-2 rounded-full bg-platinum-400" />
+            <span className="text-sm text-platinum-400">Tier 3: Wikipedia (estimates)</span>
           </div>
-          <div className="ml-auto text-xs text-slate-500">
+          <div className="ml-auto text-xs text-platinum-500">
             Data compiled: April 2026 | 35 URLs processed | 22 successfully fetched (63%)
           </div>
         </div>

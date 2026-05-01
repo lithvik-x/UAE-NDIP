@@ -144,7 +144,7 @@ export default function TikTokLandscapePage() {
             PLATFORM ANALYSIS
           </Badge>
           <h1 className="text-4xl font-bold font-rajdhani gradient-text-platinum">TikTok UAE Intelligence</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Comprehensive TikTok landscape analysis: {executionMetadata.queriesExecuted} queries executed, {executionMetadata.pagesFetched} pages fetched
           </p>
         </div>
@@ -228,7 +228,7 @@ export default function TikTokLandscapePage() {
               <Card className="glass-card border-rose-500/20">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <AlertTriangle className="h-5 w-5 text-yellow-400" />
+                    <AlertTriangle className="h-5 w-5 text-amber-400" />
                     Key Concerns
                   </CardTitle>
                   <CardDescription>Critical topics requiring attention</CardDescription>
@@ -242,10 +242,10 @@ export default function TikTokLandscapePage() {
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="flex items-center gap-3 rounded-lg bg-slate-800/50 p-3 hover:bg-slate-800/70 transition-colors"
+                          className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-3 hover:bg-platinum-800/70 transition-colors"
                         >
                           <div className="h-2 w-2 rounded-full bg-rose-500" />
-                          <span className="text-sm text-slate-200">{concern}</span>
+                          <span className="text-sm text-platinum-200">{concern}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -313,13 +313,13 @@ export default function TikTokLandscapePage() {
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-slate-300">Coordinated Activity</span>
+                    <span className="text-sm text-platinum-300">Coordinated Activity</span>
                     <Badge variant={metrics.botActivity?.coordinatedInauthentic ?? botActivity?.coordinatedInauthentic ? 'destructive' : 'success'}>
                       {metrics.botActivity?.coordinatedInauthentic ?? botActivity?.coordinatedInauthentic ? 'Detected' : 'None'}
                     </Badge>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-slate-300">Confidence Level</span>
+                    <span className="text-sm text-platinum-300">Confidence Level</span>
                     <span className="text-lg font-bold text-gold">
                       {Math.round((metrics.botActivity?.confidence ?? botActivity?.confidence ?? 0) * 100)}%
                     </span>
@@ -352,7 +352,7 @@ export default function TikTokLandscapePage() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1 * idx }}
-                      className="rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
+                      className="rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                     >
                       <div className="flex items-center gap-2 mb-1">
                         <Badge
@@ -367,9 +367,9 @@ export default function TikTokLandscapePage() {
                         >
                           {narrative.sentiment}
                         </Badge>
-                        <span className="text-xs text-slate-500">{narrative.prevalence}%</span>
+                        <span className="text-xs text-platinum-500">{narrative.prevalence}%</span>
                       </div>
-                      <p className="text-sm font-medium text-slate-200">{narrative.topic}</p>
+                      <p className="text-sm font-medium text-platinum-200">{narrative.topic}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -408,7 +408,7 @@ export default function TikTokLandscapePage() {
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-slate-300">{risk.description}</p>
+                      <p className="text-sm text-platinum-300">{risk.description}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -438,11 +438,11 @@ export default function TikTokLandscapePage() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: idx * 0.1 }}
-                      className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4"
+                      className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4"
                     >
                       <div>
-                        <p className="font-medium text-slate-200">{threat.example}</p>
-                        <p className="text-xs text-slate-400">{threat.source}</p>
+                        <p className="font-medium text-platinum-200">{threat.example}</p>
+                        <p className="text-xs text-platinum-400">{threat.source}</p>
                       </div>
                       <Badge variant="outline" className="text-gold border-gold-500/30">
                         {threat.views} views
@@ -473,16 +473,16 @@ export default function TikTokLandscapePage() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.1 }}
-                    className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 hover:bg-slate-800/70 transition-colors"
+                    className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 hover:bg-platinum-800/70 transition-colors"
                   >
                     <div className="flex items-center gap-4">
                       <div className="h-10 w-10 rounded-full bg-gradient-to-r from-rose-500/20 to-pink-500/20 flex items-center justify-center">
                         <Users className="h-5 w-5 text-rose-400" />
                       </div>
                       <div>
-                        <p className="font-medium text-slate-200">{person.name}</p>
-                        <p className="text-sm text-slate-400">{person.handle}</p>
-                        <p className="text-xs text-slate-500">Followers: {person.followers}</p>
+                        <p className="font-medium text-platinum-200">{person.name}</p>
+                        <p className="text-sm text-platinum-400">{person.handle}</p>
+                        <p className="text-xs text-platinum-500">Followers: {person.followers}</p>
                       </div>
                     </div>
                     <div className="text-right">
@@ -492,7 +492,7 @@ export default function TikTokLandscapePage() {
                       >
                         {person.status}
                       </Badge>
-                      <p className="text-xs text-slate-400">{person.charge}</p>
+                      <p className="text-xs text-platinum-400">{person.charge}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -517,11 +517,11 @@ export default function TikTokLandscapePage() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                    className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                   >
                     <div className="flex items-center gap-3">
                       <Globe className="h-4 w-4 text-platinum" />
-                      <span className="text-sm text-slate-200">{account.handle}</span>
+                      <span className="text-sm text-platinum-200">{account.handle}</span>
                       {account.verified && <CheckCircle className="h-4 w-4 text-emerald-400" />}
                     </div>
                     <Badge variant="outline" className="text-xs">
@@ -552,9 +552,9 @@ export default function TikTokLandscapePage() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                    className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                   >
-                    <span className="text-sm text-slate-300">{item.violation}</span>
+                    <span className="text-sm text-platinum-300">{item.violation}</span>
                     <Badge variant="outline" className="text-rose-400 border-rose-500/30">
                       {item.fine}
                     </Badge>
@@ -583,8 +583,8 @@ export default function TikTokLandscapePage() {
                     className="rounded-lg bg-gold-500/10 p-4 border border-gold-500/30"
                   >
                     <h4 className="font-semibold text-gold mb-2">{license.category}</h4>
-                    <p className="text-sm text-slate-300">First 3 years: {license.first3Years}</p>
-                    <p className="text-sm text-slate-300">After 3 years: {license.after3Years}</p>
+                    <p className="text-sm text-platinum-300">First 3 years: {license.first3Years}</p>
+                    <p className="text-sm text-platinum-300">After 3 years: {license.after3Years}</p>
                   </motion.div>
                 ))}
               </div>
@@ -608,22 +608,22 @@ export default function TikTokLandscapePage() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.1 }}
-                    className="rounded-lg bg-slate-800/50 p-4"
+                    className="rounded-lg bg-platinum-800/50 p-4"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-medium text-slate-200">{pattern.category}</h4>
+                      <h4 className="font-medium text-platinum-200">{pattern.category}</h4>
                       <Badge variant="outline" className="text-platinum border-platinum-500/30">
                         {pattern.count} queries
                       </Badge>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {pattern.queries.slice(0, 5).map((query, qIdx) => (
-                        <span key={qIdx} className="text-xs text-slate-400 bg-slate-700/50 px-2 py-1 rounded">
+                        <span key={qIdx} className="text-xs text-platinum-400 bg-platinum-700/50 px-2 py-1 rounded">
                           {query}
                         </span>
                       ))}
                       {pattern.queries.length > 5 && (
-                        <span className="text-xs text-slate-500">+{pattern.queries.length - 5} more</span>
+                        <span className="text-xs text-platinum-500">+{pattern.queries.length - 5} more</span>
                       )}
                     </div>
                   </motion.div>
@@ -652,11 +652,11 @@ export default function TikTokLandscapePage() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: idx * 0.05 }}
-                      className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 hover:bg-slate-800/70 transition-colors"
+                      className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 hover:bg-platinum-800/70 transition-colors"
                     >
                       <div className="flex-1">
-                        <p className="font-medium text-slate-200">{source.name}</p>
-                        <p className="text-xs text-slate-400 truncate">{source.url}</p>
+                        <p className="font-medium text-platinum-200">{source.name}</p>
+                        <p className="text-xs text-platinum-400 truncate">{source.url}</p>
                       </div>
                       <div className="flex items-center gap-2">
                         <Badge
@@ -665,15 +665,15 @@ export default function TikTokLandscapePage() {
                             source.tier === 1
                               ? 'border-emerald-500/50 text-emerald-400'
                               : source.tier === 2
-                              ? 'border-blue-500/50 text-blue-400'
+                              ? 'border-navy-500/50 text-navy-400'
                               : source.tier === 3
-                              ? 'border-yellow-500/50 text-yellow-400'
-                              : 'border-slate-500/50 text-slate-400'
+                              ? 'border-amber-500/50 text-amber-400'
+                              : 'border-platinum-500/50 text-platinum-400'
                           }`}
                         >
                           TIER {source.tier}
                         </Badge>
-                        <Badge variant="outline" className="text-xs text-slate-400">
+                        <Badge variant="outline" className="text-xs text-platinum-400">
                           {source.date}
                         </Badge>
                       </div>
@@ -701,7 +701,7 @@ export default function TikTokLandscapePage() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.1 }}
-                    className="rounded-lg bg-slate-800/50 p-4"
+                    className="rounded-lg bg-platinum-800/50 p-4"
                   >
                     <div className="flex items-center justify-between mb-2">
                       <Badge
@@ -710,15 +710,15 @@ export default function TikTokLandscapePage() {
                           tier.tier === 'TIER 1'
                             ? 'border-emerald-500/50 text-emerald-400'
                             : tier.tier === 'TIER 2'
-                            ? 'border-blue-500/50 text-blue-400'
+                            ? 'border-navy-500/50 text-navy-400'
                             : tier.tier === 'TIER 3'
-                            ? 'border-yellow-500/50 text-yellow-400'
-                            : 'border-slate-500/50 text-slate-400'
+                            ? 'border-amber-500/50 text-amber-400'
+                            : 'border-platinum-500/50 text-platinum-400'
                         }`}
                       >
                         {tier.tier}
                       </Badge>
-                      <span className="text-xs text-slate-400">Credibility: {tier.credibility}</span>
+                      <span className="text-xs text-platinum-400">Credibility: {tier.credibility}</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {tier.sources.map((source, sIdx) => (
@@ -728,10 +728,10 @@ export default function TikTokLandscapePage() {
                             tier.tier === 'TIER 1'
                               ? 'bg-emerald-500/10 text-emerald-300'
                               : tier.tier === 'TIER 2'
-                              ? 'bg-blue-500/10 text-blue-300'
+                              ? 'bg-navy-500/10 text-navy-300'
                               : tier.tier === 'TIER 3'
-                              ? 'bg-yellow-500/10 text-yellow-300'
-                              : 'bg-slate-700/50 text-slate-400'
+                              ? 'bg-amber-500/10 text-amber-300'
+                              : 'bg-platinum-700/50 text-platinum-400'
                           }`}
                         >
                           {source}

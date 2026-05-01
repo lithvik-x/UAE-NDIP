@@ -130,7 +130,7 @@ export function FacebookMetaDemographicsSection() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="rounded-lg bg-slate-800/50 p-3"
+                    className="rounded-lg bg-platinum-800/50 p-3"
                   >
                     <div className="flex justify-between items-center">
                       <span className="text-sm font-medium text-platinum-200">{item.nationality}</span>

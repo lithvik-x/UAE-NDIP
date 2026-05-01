@@ -223,7 +223,7 @@ export default function PublicHealthPage() {
 
               {/* Quick Stats Grid */}
               <div className="mt-6 grid gap-4 md:grid-cols-4">
-                <div className="rounded-lg bg-sky-500/10 border border-sky-500/30 p-4 text-center">
+                <div className="rounded-lg bg-cyan-500/10 border border-cyan-500/30 p-4 text-center">
                   <div className="text-2xl font-bold text-sky">1st</div>
                   <div className="text-xs text-platinum-400">Middle Eastern COVID Case</div>
                 </div>
@@ -280,7 +280,7 @@ export default function PublicHealthPage() {
                       <div className="text-xl font-bold text-emerald">#1</div>
                       <div className="text-xs text-platinum-400">Emergency Prep</div>
                     </div>
-                    <div className="rounded-lg bg-sky-500/10 border border-sky-500/30 p-3 text-center">
+                    <div className="rounded-lg bg-cyan-500/10 border border-cyan-500/30 p-3 text-center">
                       <div className="text-xl font-bold text-sky">120+</div>
                       <div className="text-xs text-platinum-400">Vax Locations</div>
                     </div>
@@ -429,7 +429,7 @@ export default function PublicHealthPage() {
           {/* WHO Recognition */}
           <motion.div variants={fadeInUp}>
             <GlassPanel title="International Recognition" description="WHO statements on UAE healthcare">
-              <div className="rounded-lg bg-gradient-to-r from-sky-500/10 to-emerald-500/10 border border-sky-500/30 p-6">
+              <div className="rounded-lg bg-gradient-to-r from-sky-500/10 to-emerald-500/10 border border-cyan-500/30 p-6">
                 <div className="flex items-start gap-4">
                   <Award className="h-8 w-8 text-gold flex-shrink-0" />
                   <div>

@@ -30,7 +30,7 @@ const getStatusBadge = (status: string) => {
     case 'Deported':
       return <Badge variant="secondary" className="text-xs">Deported</Badge>
     case 'Died':
-      return <Badge variant="destructive" className="text-xs bg-gray-600">Died</Badge>
+      return <Badge variant="destructive" className="text-xs bg-platinum-600">Died</Badge>
     default:
       return <Badge variant="outline" className="text-xs">{status}</Badge>
   }

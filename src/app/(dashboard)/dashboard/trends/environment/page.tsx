@@ -81,7 +81,7 @@ function NetZeroSection() {
             </Badge>
           </div>
           <h3 className="text-2xl font-bold text-emerald-400 mb-1">Net Zero 2050 Strategy</h3>
-          <p className="text-sm text-slate-400 max-w-2xl">
+          <p className="text-sm text-platinum-400 max-w-2xl">
             UAE first MENA nation to commit to net-zero emissions. Legally binding via UAE Net Zero 2050 Charter with five-year review process.
           </p>
         </div>
@@ -128,9 +128,9 @@ function NetZeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className="rounded-xl border border-slate-700/50 bg-[var(--glass-surface)] p-5"
+        className="rounded-xl border border-platinum-700/50 bg-[var(--glass-surface)] p-5"
       >
-        <h4 className="text-sm font-semibold text-slate-300 mb-4 flex items-center gap-2">
+        <h4 className="text-sm font-semibold text-platinum-300 mb-4 flex items-center gap-2">
           <Scale className="h-4 w-4 text-amber" />
           Climate Action Tracker Ratings
         </h4>
@@ -149,7 +149,7 @@ function NetZeroSection() {
                   : 'border-rose-500/30 bg-rose-900/20'
               } p-3`}
             >
-              <p className="text-xs text-slate-400 mb-1">{item.label}</p>
+              <p className="text-xs text-platinum-400 mb-1">{item.label}</p>
               <p className={`text-lg font-bold ${item.color === 'emerald' ? 'text-emerald-400' : 'text-rose-400'}`}>
                 {item.rating}
               </p>
@@ -172,19 +172,19 @@ function NetZeroSection() {
         <div className="grid gap-2 sm:grid-cols-2">
           <div className="flex items-start gap-2 text-sm">
             <ChevronRight className="h-4 w-4 text-amber-500 mt-0.5 flex-shrink-0" />
-            <span className="text-slate-300">Excludes F-gases (9% of 2022 emissions)</span>
+            <span className="text-platinum-300">Excludes F-gases (9% of 2022 emissions)</span>
           </div>
           <div className="flex items-start gap-2 text-sm">
             <ChevronRight className="h-4 w-4 text-amber-500 mt-0.5 flex-shrink-0" />
-            <span className="text-slate-300">Excludes international aviation & shipping</span>
+            <span className="text-platinum-300">Excludes international aviation & shipping</span>
           </div>
           <div className="flex items-start gap-2 text-sm">
             <ChevronRight className="h-4 w-4 text-amber-500 mt-0.5 flex-shrink-0" />
-            <span className="text-slate-300">Heavy reliance on fossil gas & carbon capture</span>
+            <span className="text-platinum-300">Heavy reliance on fossil gas & carbon capture</span>
           </div>
           <div className="flex items-start gap-2 text-sm">
             <ChevronRight className="h-4 w-4 text-amber-500 mt-0.5 flex-shrink-0" />
-            <span className="text-slate-300">Plans to expand oil & gas production</span>
+            <span className="text-platinum-300">Plans to expand oil & gas production</span>
           </div>
         </div>
       </motion.div>
@@ -218,7 +218,7 @@ function EnergySection() {
             {climateEnergyData.renewableCapacity2030GW} GW BY 2030
           </Badge>
           <h3 className="text-2xl font-bold text-gold-400 mb-1">UAE Energy Strategy 2050</h3>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-platinum-400">
             Triple renewable share, {climateEnergyData.cleanEnergyMix2030}% clean energy mix, {climateEnergyData.energyEfficiencyGain} efficiency gain
           </p>
         </div>
@@ -265,9 +265,9 @@ function EnergySection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className="rounded-xl border border-slate-700/50 bg-[var(--glass-surface)] p-5"
+        className="rounded-xl border border-platinum-700/50 bg-[var(--glass-surface)] p-5"
       >
-        <h4 className="text-sm font-semibold text-slate-300 mb-4 flex items-center gap-2">
+        <h4 className="text-sm font-semibold text-platinum-300 mb-4 flex items-center gap-2">
           <Sun className="h-4 w-4 text-gold" />
           Major Solar Projects
         </h4>
@@ -286,9 +286,9 @@ function EnergySection() {
                   <Sun className="h-5 w-5 text-gold" />
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-200">{project.name}</p>
+                  <p className="font-semibold text-platinum-200">{project.name}</p>
                   {project.homes && (
-                    <p className="text-xs text-slate-400">Powers {project.homes.toLocaleString()} homes</p>
+                    <p className="text-xs text-platinum-400">Powers {project.homes.toLocaleString()} homes</p>
                   )}
                 </div>
               </div>
@@ -296,13 +296,13 @@ function EnergySection() {
                 {project.current && (
                   <div className="text-right">
                     <p className="text-lg font-bold text-gold">{project.current.toLocaleString()}</p>
-                    <p className="text-xs text-slate-400">MW current</p>
+                    <p className="text-xs text-platinum-400">MW current</p>
                   </div>
                 )}
                 {project.target && (
                   <div className="text-right border-l border-gold-500/30 pl-3">
                     <p className="text-lg font-bold text-gold-400">{project.target.toLocaleString()}</p>
-                    <p className="text-xs text-slate-400">MW target</p>
+                    <p className="text-xs text-platinum-400">MW target</p>
                   </div>
                 )}
                 <Badge variant={project.status === 'Operational' ? 'default' : 'outline'} className="text-xs">
@@ -364,7 +364,7 @@ function HydrogenCCUSSection() {
             {climateHydrogenData.production2050mtpa} MTPA BY 2050
           </Badge>
           <h3 className="text-2xl font-bold text-cyan-400 mb-1">Green Hydrogen Programme</h3>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-platinum-400">
             Infrastructure: {climateHydrogenData.solarPVRequiredGW} GW solar PV, {climateHydrogenData.electrolyserRequiredGW} GW electrolyser
           </p>
         </div>
@@ -383,17 +383,17 @@ function HydrogenCCUSSection() {
             className={`cursor-pointer rounded-xl border p-5 transition-all ${
               selectedYear === item.year
                 ? 'border-cyan-500/50 bg-cyan-900/20'
-                : 'border-slate-700/50 bg-[var(--glass-surface)]'
+                : 'border-platinum-700/50 bg-[var(--glass-surface)]'
             }`}
           >
-            <p className="text-sm text-slate-400 mb-1">{item.year} Target</p>
+            <p className="text-sm text-platinum-400 mb-1">{item.year} Target</p>
             <p className="text-3xl font-bold text-cyan-400">{item.total}</p>
-            <p className="text-xs text-slate-500">mtpa</p>
+            <p className="text-xs text-platinum-500">mtpa</p>
             {item.green && (
               <div className="mt-3 pt-3 border-t border-cyan-500/20">
                 <div className="flex justify-between text-xs">
                   <span className="text-emerald-400">Green: {item.green}</span>
-                  <span className="text-blue-400">Blue: {item.blue}</span>
+                  <span className="text-navy-400">Blue: {item.blue}</span>
                 </div>
               </div>
             )}
@@ -412,8 +412,8 @@ function HydrogenCCUSSection() {
           <Award className="h-4 w-4" />
           First in MENA: Green Steel Pilot
         </h4>
-        <p className="text-sm text-slate-300">{climateHydrogenData.greenSteelPilot}</p>
-        <p className="text-xs text-slate-500 mt-1">Green steel production now fully operational</p>
+        <p className="text-sm text-platinum-300">{climateHydrogenData.greenSteelPilot}</p>
+        <p className="text-xs text-platinum-500 mt-1">Green steel production now fully operational</p>
       </motion.div>
 
       {/* CCUS Section */}
@@ -421,9 +421,9 @@ function HydrogenCCUSSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
-        className="relative overflow-hidden rounded-2xl border border-slate-700/50 bg-[var(--glass-surface)] p-6"
+        className="relative overflow-hidden rounded-2xl border border-platinum-700/50 bg-[var(--glass-surface)] p-6"
       >
-        <h4 className="text-sm font-semibold text-slate-300 mb-4 flex items-center gap-2">
+        <h4 className="text-sm font-semibold text-platinum-300 mb-4 flex items-center gap-2">
           <Factory className="h-4 w-4 text-navy" />
           Carbon Capture, Utilization & Storage (CCUS)
         </h4>
@@ -465,27 +465,27 @@ function HydrogenCCUSSection() {
 
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           <div className="rounded-lg border border-navy-500/30 bg-navy-900/20 p-3">
-            <p className="text-xs text-slate-400">Al Reyadah (Abu Dhabi)</p>
+            <p className="text-xs text-platinum-400">Al Reyadah (Abu Dhabi)</p>
             <p className="text-lg font-bold text-navy-400">{climateCCUSData.alReyadahCapacityMt} Mt/year</p>
-            <p className="text-xs text-slate-500">First MENA commercial CCUS (since 2016)</p>
+            <p className="text-xs text-platinum-500">First MENA commercial CCUS (since 2016)</p>
           </div>
           <div className="rounded-lg border border-cyan-500/30 bg-cyan-900/20 p-3">
-            <p className="text-xs text-slate-400">Habshan Project</p>
+            <p className="text-xs text-platinum-400">Habshan Project</p>
             <p className="text-lg font-bold text-cyan-400">{climateCCUSData.habshanCapacityMtpa} MtPA</p>
-            <p className="text-xs text-slate-500">Combined with Al Reyadah: 2.3 MTPA</p>
+            <p className="text-xs text-platinum-500">Combined with Al Reyadah: 2.3 MTPA</p>
           </div>
         </div>
 
         <div className="mt-4 rounded-lg border border-purple-500/30 bg-purple-900/20 p-3">
           <p className="text-xs text-purple-400 font-semibold">Direct Air Capture (DAC)</p>
           <p className="text-lg font-bold text-purple-400">{climateCCUSData.dacPlannedMtpa} MTPA planned</p>
-          <p className="text-xs text-slate-500">Occidental + ADNOC agreement (largest planned globally)</p>
+          <p className="text-xs text-platinum-500">Occidental + ADNOC agreement (largest planned globally)</p>
         </div>
 
         <div className="mt-4 rounded-lg border border-rose-500/20 bg-rose-900/10 p-3">
           <p className="text-xs text-rose-400 font-semibold">EU CBAM Impact</p>
           <p className="text-lg font-bold text-rose-400">{climateCCUSData.euCBAMimpactPercent}% of UAE exports</p>
-          <p className="text-xs text-slate-500">Steel, aluminum, fertilizers affected - decarbonization required</p>
+          <p className="text-xs text-platinum-500">Steel, aluminum, fertilizers affected - decarbonization required</p>
         </div>
       </motion.div>
     </div>
@@ -511,7 +511,7 @@ function CarbonMangroveSection() {
             {climateCarbonMarketData.cagr}% CAGR
           </Badge>
           <h3 className="text-2xl font-bold text-emerald-400 mb-1">Carbon Credit Market</h3>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-platinum-400">
             ADGM: World's first regulated carbon credit exchange (March 2022)
           </p>
         </div>
@@ -550,28 +550,28 @@ function CarbonMangroveSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className="rounded-xl border border-slate-700/50 bg-[var(--glass-surface)] p-5"
+        className="rounded-xl border border-platinum-700/50 bg-[var(--glass-surface)] p-5"
       >
-        <h4 className="text-sm font-semibold text-slate-300 mb-3 flex items-center gap-2">
+        <h4 className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
           <FileCheck className="h-4 w-4 text-emerald" />
           DFM COP28 Pilot Results
         </h4>
         <div className="grid gap-4 sm:grid-cols-4">
           <div className="text-center">
             <p className="text-2xl font-bold text-emerald-400">{climateCarbonMarketData.dfmPilotTrades}</p>
-            <p className="text-xs text-slate-400">Trades</p>
+            <p className="text-xs text-platinum-400">Trades</p>
           </div>
           <div className="text-center">
             <p className="text-2xl font-bold text-emerald-400">{climateCarbonMarketData.dfmPilotVolume.toLocaleString()}</p>
-            <p className="text-xs text-slate-400">Credits Volume</p>
+            <p className="text-xs text-platinum-400">Credits Volume</p>
           </div>
           <div className="text-center">
             <p className="text-2xl font-bold text-emerald-400">${climateCarbonMarketData.dfmPilotValueUSD.toLocaleString()}</p>
-            <p className="text-xs text-slate-400">Value USD</p>
+            <p className="text-xs text-platinum-400">Value USD</p>
           </div>
           <div className="text-center">
             <p className="text-2xl font-bold text-emerald-400">10,209</p>
-            <p className="text-xs text-slate-400">Credits Retired</p>
+            <p className="text-xs text-platinum-400">Credits Retired</p>
           </div>
         </div>
       </motion.div>
@@ -608,8 +608,8 @@ function CarbonMangroveSection() {
                 <p className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
                   {climateCarbonMarketData.carbonCreditPriceRange}
                 </p>
-                <p className="text-sm text-slate-400 mt-2">per tonne</p>
-                <p className="text-xs text-slate-500 mt-4">Oxford Principles for Net Zero Aligned Offsetting</p>
+                <p className="text-sm text-platinum-400 mt-2">per tonne</p>
+                <p className="text-xs text-platinum-500 mt-4">Oxford Principles for Net Zero Aligned Offsetting</p>
               </div>
             </div>
           </CardContent>
@@ -630,7 +630,7 @@ function CarbonMangroveSection() {
             {climateMangroveData.target2030Million}M BY 2030
           </Badge>
           <h3 className="text-2xl font-bold text-teal-400 mb-1">Mangrove Restoration</h3>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-platinum-400">
             {climateMangroveData.carbonStorageVsForest}% faster carbon storage than terrestrial forests
           </p>
         </div>
@@ -686,14 +686,14 @@ function CarbonMangroveSection() {
         <div className="grid gap-3 sm:grid-cols-2">
           <div>
             <p className="text-lg font-bold text-teal-400">${climateMangroveData.mangroveAllianceBillion}B</p>
-            <p className="text-xs text-slate-400">Mangrove Alliance by 2030</p>
+            <p className="text-xs text-platinum-400">Mangrove Alliance by 2030</p>
           </div>
           <div>
             <p className="text-lg font-bold text-teal-400">{climateMangroveData.cdrMCO2e} MtCO2e</p>
-            <p className="text-xs text-slate-400">CDR via mangroves in Net Zero strategy</p>
+            <p className="text-xs text-platinum-400">CDR via mangroves in Net Zero strategy</p>
           </div>
         </div>
-        <p className="text-xs text-slate-500 mt-3">
+        <p className="text-xs text-platinum-500 mt-3">
           UN Decade flagship initiative - 50% of world's remaining mangroves at risk of collapse by 2050
         </p>
       </motion.div>
@@ -720,7 +720,7 @@ function WaterWasteSection() {
             CRITICAL RESOURCE
           </Badge>
           <h3 className="text-2xl font-bold text-cyan-400 mb-1">Water Security</h3>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-platinum-400">
             {climateWaterData.desalinationPercent}% of drinking water from desalination | {climateWaterData.waterStress}
           </p>
         </div>
@@ -796,7 +796,7 @@ function WaterWasteSection() {
             AED 2B INVESTMENT
           </Badge>
           <h3 className="text-2xl font-bold text-emerald-400 mb-1">Waste Management & Circular Economy</h3>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-platinum-400">
             {climateWasteData.wasteManagementCAGR}% market CAGR | {climateWasteData.eWasteCAGR}% e-waste CAGR
           </p>
         </div>
@@ -835,9 +835,9 @@ function WaterWasteSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
-        className="rounded-xl border border-slate-700/50 bg-[var(--glass-surface)] p-5"
+        className="rounded-xl border border-platinum-700/50 bg-[var(--glass-surface)] p-5"
       >
-        <h4 className="text-sm font-semibold text-slate-300 mb-4">Key Waste-to-Energy Projects</h4>
+        <h4 className="text-sm font-semibold text-platinum-300 mb-4">Key Waste-to-Energy Projects</h4>
         <div className="space-y-3">
           <motion.div
             whileHover={{ scale: 1.01 }}
@@ -845,21 +845,21 @@ function WaterWasteSection() {
           >
             <div className="flex items-center gap-3">
               <Factory className="h-5 w-5 text-emerald" />
-              <span className="font-medium text-slate-200">Warsan (Dubai)</span>
+              <span className="font-medium text-platinum-200">Warsan (Dubai)</span>
             </div>
             <div className="text-right">
               <p className="text-lg font-bold text-emerald">{climateWasteData.warsanCapacityMillionTonnes}M tonnes/year</p>
-              <p className="text-xs text-slate-400">{climateWasteData.warsanHomesPowered.toLocaleString()} homes powered</p>
+              <p className="text-xs text-platinum-400">{climateWasteData.warsanHomesPowered.toLocaleString()} homes powered</p>
             </div>
           </motion.div>
-          <div className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-4">
+          <div className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-4">
             <div className="flex items-center gap-3">
               <Factory className="h-5 w-5 text-cyan" />
-              <span className="font-medium text-slate-200">Abu Dhabi First Plant</span>
+              <span className="font-medium text-platinum-200">Abu Dhabi First Plant</span>
             </div>
             <div className="text-right">
               <p className="text-lg font-bold text-cyan">900K tonnes/year</p>
-              <p className="text-xs text-slate-400">80 MW capacity</p>
+              <p className="text-xs text-platinum-400">80 MW capacity</p>
             </div>
           </div>
         </div>
@@ -914,7 +914,7 @@ function LegislationSection() {
             WORLD'S FIRST
           </Badge>
           <h3 className="text-2xl font-bold text-purple-400 mb-1">Climate Legislation</h3>
-          <p className="text-sm text-slate-400">
+          <p className="text-sm text-platinum-400">
             {climateLegislationData.climateLaw} - First globally with legally enforceable ESG/climate compliance
           </p>
         </div>
@@ -950,9 +950,9 @@ function LegislationSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className="rounded-xl border border-slate-700/50 bg-[var(--glass-surface)] p-5"
+        className="rounded-xl border border-platinum-700/50 bg-[var(--glass-surface)] p-5"
       >
-        <h4 className="text-sm font-semibold text-slate-300 mb-4 flex items-center gap-2">
+        <h4 className="text-sm font-semibold text-platinum-300 mb-4 flex items-center gap-2">
           <FileCheck className="h-4 w-4 text-purple" />
           National Register for Carbon Credits (NRCC)
         </h4>
@@ -960,13 +960,13 @@ function LegislationSection() {
         <div className="space-y-4">
           <div className="rounded-lg border border-purple-500/30 bg-purple-900/20 p-4">
             <p className="text-sm font-semibold text-purple-400 mb-2">Affected Entities</p>
-            <p className="text-xs text-slate-300">
+            <p className="text-xs text-platinum-300">
               Public and private companies (including free zones) emitting {climateLegislationData.emissionThresholdMtCO2e}+ million tonnes CO2 equivalent annually
             </p>
           </div>
 
           <div className="space-y-2">
-            <p className="text-sm font-semibold text-slate-300">Mandatory Actions:</p>
+            <p className="text-sm font-semibold text-platinum-300">Mandatory Actions:</p>
             {[
               'Register with MOCCAE',
               'Implement MRV system',
@@ -975,7 +975,7 @@ function LegislationSection() {
             ].map((action, idx) => (
               <div key={idx} className="flex items-center gap-2 text-sm">
                 <ChevronRight className="h-4 w-4 text-purple-500 flex-shrink-0" />
-                <span className="text-slate-400">{action}</span>
+                <span className="text-platinum-400">{action}</span>
               </div>
             ))}
           </div>
@@ -983,7 +983,7 @@ function LegislationSection() {
           <div className="rounded-lg border border-rose-500/30 bg-rose-900/20 p-4">
             <p className="text-sm font-semibold text-rose-400 mb-1">Penalties</p>
             <p className="text-lg font-bold text-rose-400">Up to AED {climateLegislationData.penaltyMaxAED.toLocaleString()}</p>
-            <p className="text-xs text-slate-400">~$272,000 USD + potential suspension of trading rights</p>
+            <p className="text-xs text-platinum-400">~$272,000 USD + potential suspension of trading rights</p>
           </div>
         </div>
       </motion.div>
@@ -993,9 +993,9 @@ function LegislationSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
-        className="rounded-xl border border-slate-700/50 bg-[var(--glass-surface)] p-5"
+        className="rounded-xl border border-platinum-700/50 bg-[var(--glass-surface)] p-5"
       >
-        <h4 className="text-sm font-semibold text-slate-300 mb-4 flex items-center gap-2">
+        <h4 className="text-sm font-semibold text-platinum-300 mb-4 flex items-center gap-2">
           <Scale className="h-4 w-4 text-amber" />
           ESG Law 2025 - Penalty Structure
         </h4>
@@ -1023,7 +1023,7 @@ function LegislationSection() {
                 tier.color === 'amber' ? 'text-amber-300' :
                 'text-rose-300'
               }`}>{tier.range}</p>
-              <p className="text-xs text-slate-500">AED</p>
+              <p className="text-xs text-platinum-500">AED</p>
             </motion.div>
           ))}
         </div>
@@ -1044,7 +1044,7 @@ function LegislationSection() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.05 }}
-                  className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-3"
+                  className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3"
                 >
                   <div className="flex items-center gap-3">
                     <div className={`h-2 w-2 rounded-full ${
@@ -1053,11 +1053,11 @@ function LegislationSection() {
                       kpi.status === 'Growing' ? 'bg-cyan-500' :
                       'bg-rose-500'
                     }`} />
-                    <span className="text-sm font-medium text-slate-200">{kpi.kpi}</span>
+                    <span className="text-sm font-medium text-platinum-200">{kpi.kpi}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     {kpi.current && (
-                      <span className="text-sm text-slate-400">{kpi.current}</span>
+                      <span className="text-sm text-platinum-400">{kpi.current}</span>
                     )}
                     {kpi.target && (
                       <Badge variant="outline" className="text-xs">
@@ -1098,11 +1098,11 @@ function LegislationSection() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: idx * 0.03 }}
-                  className="flex items-center justify-between rounded-lg border border-slate-700/30 bg-slate-800/20 p-2"
+                  className="flex items-center justify-between rounded-lg border border-platinum-700/30 bg-platinum-800/20 p-2"
                 >
                   <div>
-                    <p className="text-sm font-medium text-slate-200">{entity.entity}</p>
-                    <p className="text-xs text-slate-500">{entity.role}</p>
+                    <p className="text-sm font-medium text-platinum-200">{entity.entity}</p>
+                    <p className="text-xs text-platinum-500">{entity.role}</p>
                   </div>
                   <Badge variant="outline" className="text-xs">
                     {entity.jurisdiction}
@@ -1129,9 +1129,9 @@ function LegislationSection() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: idx * 0.05 }}
-                  className="flex items-center justify-between rounded-lg border border-slate-700/30 bg-slate-800/20 p-2"
+                  className="flex items-center justify-between rounded-lg border border-platinum-700/30 bg-platinum-800/20 p-2"
                 >
-                  <span className="text-sm text-slate-300">{item.topic}</span>
+                  <span className="text-sm text-platinum-300">{item.topic}</span>
                   <div className="flex items-center gap-2">
                     <Badge
                       variant={
@@ -1144,7 +1144,7 @@ function LegislationSection() {
                     >
                       {item.sentiment}
                     </Badge>
-                    <span className="text-xs text-slate-500">{item.confidence}</span>
+                    <span className="text-xs text-platinum-500">{item.confidence}</span>
                   </div>
                 </motion.div>
               ))}
@@ -1173,7 +1173,7 @@ export default function EnvironmentalTrendsPage() {
         <div>
           <Badge variant="emerald" className="mb-2">TRENDS</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Environmental Trends</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Climate action, sustainability initiatives, and environmental intelligence
           </p>
         </div>
@@ -1274,7 +1274,7 @@ export default function EnvironmentalTrendsPage() {
                             { label: 'NDC (Fair Share)', value: 'Insufficient', color: 'rose' },
                           ].map((item) => (
                             <div key={item.label} className="flex items-center justify-between">
-                              <span className="text-sm text-slate-400">{item.label}</span>
+                              <span className="text-sm text-platinum-400">{item.label}</span>
                               <Badge variant={item.color === 'emerald' ? 'default' : 'destructive'}>
                                 {item.value}
                               </Badge>
@@ -1294,7 +1294,7 @@ export default function EnvironmentalTrendsPage() {
                         <div className="space-y-2">
                           {climateSentimentByTopic.slice(0, 5).map((item) => (
                             <div key={item.topic} className="flex items-center justify-between text-sm">
-                              <span className="text-slate-300">{item.topic}</span>
+                              <span className="text-platinum-300">{item.topic}</span>
                               <Badge
                                 variant={
                                   item.sentiment === 'Positive' ? 'default' :
@@ -1322,9 +1322,9 @@ export default function EnvironmentalTrendsPage() {
                       <ScrollArea className="h-[200px]">
                         <div className="grid gap-2 sm:grid-cols-2">
                           {climateEntityRegistry.map((entity) => (
-                            <div key={entity.entity} className="flex items-center gap-2 rounded-lg bg-slate-800/30 p-2">
+                            <div key={entity.entity} className="flex items-center gap-2 rounded-lg bg-platinum-800/30 p-2">
                               <div className="h-2 w-2 rounded-full bg-emerald-500" />
-                              <span className="text-xs text-slate-300 truncate">{entity.entity}</span>
+                              <span className="text-xs text-platinum-300 truncate">{entity.entity}</span>
                             </div>
                           ))}
                         </div>

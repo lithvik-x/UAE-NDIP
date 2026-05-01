@@ -151,7 +151,7 @@ export default function CrisisResponsePage() {
         <div>
           <Badge variant="denim" className="mb-2">DEEP RESEARCH</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Crisis Response Intelligence</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             UAE National Digital Intelligence Platform — Comprehensive crisis response framework
           </p>
         </div>
@@ -253,40 +253,40 @@ export default function CrisisResponsePage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                    <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <Clock className="h-4 w-4 text-primary" />
-                        <span className="text-sm text-slate-400">Speed Metrics</span>
+                        <span className="text-sm text-platinum-400">Speed Metrics</span>
                       </div>
                       {crisisPerformanceMetrics.speed.map((metric, i) => (
-                        <div key={i} className="text-xs text-slate-300 py-1">{metric}</div>
+                        <div key={i} className="text-xs text-platinum-300 py-1">{metric}</div>
                       ))}
                     </div>
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                    <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <BarChart3 className="h-4 w-4 text-primary" />
-                        <span className="text-sm text-slate-400">Volume Metrics</span>
+                        <span className="text-sm text-platinum-400">Volume Metrics</span>
                       </div>
                       {crisisPerformanceMetrics.volume.map((metric, i) => (
-                        <div key={i} className="text-xs text-slate-300 py-1">{metric}</div>
+                        <div key={i} className="text-xs text-platinum-300 py-1">{metric}</div>
                       ))}
                     </div>
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                    <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <TrendingUp className="h-4 w-4 text-primary" />
-                        <span className="text-sm text-slate-400">Sentiment Metrics</span>
+                        <span className="text-sm text-platinum-400">Sentiment Metrics</span>
                       </div>
                       {crisisPerformanceMetrics.sentiment.map((metric, i) => (
-                        <div key={i} className="text-xs text-slate-300 py-1">{metric}</div>
+                        <div key={i} className="text-xs text-platinum-300 py-1">{metric}</div>
                       ))}
                     </div>
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                    <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                       <div className="flex items-center gap-2 mb-2">
                         <CheckCircle className="h-4 w-4 text-primary" />
-                        <span className="text-sm text-slate-400">Quality Metrics</span>
+                        <span className="text-sm text-platinum-400">Quality Metrics</span>
                       </div>
                       {crisisPerformanceMetrics.quality.map((metric, i) => (
-                        <div key={i} className="text-xs text-slate-300 py-1">{metric}</div>
+                        <div key={i} className="text-xs text-platinum-300 py-1">{metric}</div>
                       ))}
                     </div>
                   </div>
@@ -309,19 +309,19 @@ export default function CrisisResponsePage() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex justify-between text-sm">
-                        <span className="text-slate-400">Location:</span>
-                        <span className="text-slate-200">Abu Dhabi (ADNEC)</span>
+                        <span className="text-platinum-400">Location:</span>
+                        <span className="text-platinum-200">Abu Dhabi (ADNEC)</span>
                       </div>
                       <div className="flex justify-between text-sm">
-                        <span className="text-slate-400">Organizer:</span>
-                        <span className="text-slate-200">NCEMA</span>
+                        <span className="text-platinum-400">Organizer:</span>
+                        <span className="text-platinum-200">NCEMA</span>
                       </div>
                       <div className="flex justify-between text-sm">
-                        <span className="text-slate-400">Inaugurated By:</span>
-                        <span className="text-slate-200">Nahyan bin Mubarak</span>
+                        <span className="text-platinum-400">Inaugurated By:</span>
+                        <span className="text-platinum-200">Nahyan bin Mubarak</span>
                       </div>
-                      <div className="pt-2 border-t border-slate-700">
-                        <p className="text-xs text-slate-400 mb-2">Key Focus Areas:</p>
+                      <div className="pt-2 border-t border-platinum-700">
+                        <p className="text-xs text-platinum-400 mb-2">Key Focus Areas:</p>
                         <div className="flex flex-wrap gap-1">
                           {uaeCrisisInfrastructure.wcems2025.keyFocus.map((focus, i) => (
                             <Badge key={i} variant="outline" className="text-xs">{focus}</Badge>
@@ -340,15 +340,15 @@ export default function CrisisResponsePage() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex justify-between text-sm">
-                        <span className="text-slate-400">Date:</span>
-                        <span className="text-slate-200">{uaeCrisisInfrastructure.adcmc.date}</span>
+                        <span className="text-platinum-400">Date:</span>
+                        <span className="text-platinum-200">{uaeCrisisInfrastructure.adcmc.date}</span>
                       </div>
                       <div className="flex justify-between text-sm">
-                        <span className="text-slate-400">Head:</span>
-                        <span className="text-slate-200">Major Gen. Ahmed Saif bin Zaitoon</span>
+                        <span className="text-platinum-400">Head:</span>
+                        <span className="text-platinum-200">Major Gen. Ahmed Saif bin Zaitoon</span>
                       </div>
-                      <div className="pt-2 border-t border-slate-700">
-                        <p className="text-xs text-slate-400 mb-2">Readiness Focus:</p>
+                      <div className="pt-2 border-t border-platinum-700">
+                        <p className="text-xs text-platinum-400 mb-2">Readiness Focus:</p>
                         <div className="flex flex-wrap gap-1">
                           {uaeCrisisInfrastructure.adcmc.readinessFocus.map((focus, i) => (
                             <Badge key={i} variant="outline" className="text-xs border-success/50 text-success">{focus}</Badge>
@@ -366,10 +366,10 @@ export default function CrisisResponsePage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      <p className="text-sm text-slate-300">{uaeCrisisInfrastructure.barakah2025.purpose}</p>
+                      <p className="text-sm text-platinum-300">{uaeCrisisInfrastructure.barakah2025.purpose}</p>
                       <div className="flex justify-between text-sm">
-                        <span className="text-slate-400">Source:</span>
-                        <span className="text-slate-200">{uaeCrisisInfrastructure.barakah2025.source}</span>
+                        <span className="text-platinum-400">Source:</span>
+                        <span className="text-platinum-200">{uaeCrisisInfrastructure.barakah2025.source}</span>
                       </div>
                     </div>
                   </CardContent>
@@ -381,7 +381,7 @@ export default function CrisisResponsePage() {
                   <CardTitle className="text-lg">ADCMC Quote</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <blockquote className="border-l-4 border-primary pl-4 italic text-slate-300">
+                  <blockquote className="border-l-4 border-primary pl-4 italic text-platinum-300">
                     "{uaeCrisisInfrastructure.adcmc.quote}"
                   </blockquote>
                 </CardContent>
@@ -409,12 +409,12 @@ export default function CrisisResponsePage() {
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-slate-400 mb-3">{lesson.description}</p>
+                      <p className="text-sm text-platinum-400 mb-3">{lesson.description}</p>
                       <div className="space-y-1">
                         {lesson.keyPoints.map((point, i) => (
                           <div key={i} className="flex items-start gap-2 text-sm">
                             <div className="h-1.5 w-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
-                            <span className="text-slate-300">{point}</span>
+                            <span className="text-platinum-300">{point}</span>
                           </div>
                         ))}
                       </div>
@@ -472,9 +472,9 @@ export default function CrisisResponsePage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2">
                     {realTimeMonitoringSystems.earlyWarningSigns.map((sign, i) => (
-                      <div key={i} className="flex items-start gap-3 rounded-lg border border-slate-700 bg-slate-800/30 p-3">
+                      <div key={i} className="flex items-start gap-3 rounded-lg border border-platinum-700 bg-platinum-800/30 p-3">
                         <AlertTriangle className="h-4 w-4 text-warning shrink-0 mt-0.5" />
-                        <span className="text-sm text-slate-300">{sign}</span>
+                        <span className="text-sm text-platinum-300">{sign}</span>
                       </div>
                     ))}
                   </div>
@@ -490,15 +490,15 @@ export default function CrisisResponsePage() {
                   <div className="grid gap-4 md:grid-cols-3">
                     <div className="rounded-lg border border-danger/50 bg-danger/10 p-4 text-center">
                       <p className="text-2xl font-bold text-danger">{darkWebStats.usernamePasswordPairsCirculating}</p>
-                      <p className="text-xs text-slate-400">Credentials on Criminal Markets</p>
+                      <p className="text-xs text-platinum-400">Credentials on Criminal Markets</p>
                     </div>
                     <div className="rounded-lg border border-warning/50 bg-warning/10 p-4 text-center">
                       <p className="text-2xl font-bold text-warning">{darkWebStats.webAttacksStolenCredentials}</p>
-                      <p className="text-xs text-slate-400">Web Attacks Use Stolen Credentials</p>
+                      <p className="text-xs text-platinum-400">Web Attacks Use Stolen Credentials</p>
                     </div>
                     <div className="rounded-lg border border-danger/50 bg-danger/10 p-4 text-center">
                       <p className="text-2xl font-bold text-danger">{darkWebStats.phishingEmailsInfostealers2024}</p>
-                      <p className="text-xs text-slate-400">Phishing Emails with Infostealers (2024)</p>
+                      <p className="text-xs text-platinum-400">Phishing Emails with Infostealers (2024)</p>
                     </div>
                   </div>
                 </CardContent>
@@ -520,17 +520,17 @@ export default function CrisisResponsePage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Crises Going Global &lt;1hr</span>
+                        <span className="text-sm text-platinum-400">Crises Going Global &lt;1hr</span>
                         <span className="text-lg font-bold text-danger">{crisisStatistics.socialMediaCrisesGlobalOneHour}%</span>
                       </div>
                       <Progress value={crisisStatistics.socialMediaCrisesGlobalOneHour} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Orgs with Crisis Plan</span>
+                        <span className="text-sm text-platinum-400">Orgs with Crisis Plan</span>
                         <span className="text-lg font-bold text-warning">{crisisStatistics.organizationsWithFormalCrisisPlan}%</span>
                       </div>
                       <Progress value={crisisStatistics.organizationsWithFormalCrisisPlan} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Consumers Avoiding Brand</span>
+                        <span className="text-sm text-platinum-400">Consumers Avoiding Brand</span>
                         <span className="text-lg font-bold text-danger">{crisisStatistics.consumersAvoidingBrand}%</span>
                       </div>
                       <Progress value={crisisStatistics.consumersAvoidingBrand} className="h-2" />
@@ -562,21 +562,21 @@ export default function CrisisResponsePage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-4">
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <p className="text-2xl font-bold text-primary">{factCheckingStatistics.globalFactCheckProjects}</p>
-                      <p className="text-xs text-slate-400">Active Projects</p>
+                      <p className="text-xs text-platinum-400">Active Projects</p>
                     </div>
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <p className="text-2xl font-bold text-success">{factCheckingStatistics.countriesWithFactCheckers}</p>
-                      <p className="text-xs text-slate-400">Countries</p>
+                      <p className="text-xs text-platinum-400">Countries</p>
                     </div>
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <p className="text-2xl font-bold text-info">{factCheckingStatistics.languagesCovered}+</p>
-                      <p className="text-xs text-slate-400">Languages</p>
+                      <p className="text-xs text-platinum-400">Languages</p>
                     </div>
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <p className="text-2xl font-bold text-warning">{factCheckingStatistics.metaPartnershipShare}</p>
-                      <p className="text-xs text-slate-400">Meta Partnership</p>
+                      <p className="text-xs text-platinum-400">Meta Partnership</p>
                     </div>
                   </div>
                 </CardContent>
@@ -608,7 +608,7 @@ export default function CrisisResponsePage() {
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-slate-400 mb-3">{attack.description}</p>
+                      <p className="text-sm text-platinum-400 mb-3">{attack.description}</p>
                       <div className="flex flex-wrap gap-2">
                         {attack.coordinationPatterns.map((pattern, i) => (
                           <Badge key={i} variant="outline" className="text-xs border-warning/50 text-warning">
@@ -617,7 +617,7 @@ export default function CrisisResponsePage() {
                         ))}
                       </div>
                       {attack.metrics.engagementVolume && (
-                        <p className="text-xs text-slate-500 mt-2">Volume: {attack.metrics.engagementVolume}</p>
+                        <p className="text-xs text-platinum-500 mt-2">Volume: {attack.metrics.engagementVolume}</p>
                       )}
                     </CardContent>
                   </Card>
@@ -641,11 +641,11 @@ export default function CrisisResponsePage() {
                     <ScrollArea className="h-[300px]">
                       <div className="space-y-3">
                         {osintTools.map((tool, i) => (
-                          <div key={i} className="rounded-lg border border-slate-700 bg-slate-800/30 p-3">
+                          <div key={i} className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-3">
                             <div className="flex items-center justify-between mb-1">
-                              <span className="font-medium text-slate-200">{tool.name}</span>
+                              <span className="font-medium text-platinum-200">{tool.name}</span>
                             </div>
-                            <p className="text-xs text-slate-400">{tool.capabilities}</p>
+                            <p className="text-xs text-platinum-400">{tool.capabilities}</p>
                           </div>
                         ))}
                       </div>
@@ -662,11 +662,11 @@ export default function CrisisResponsePage() {
                     <ScrollArea className="h-[300px]">
                       <div className="space-y-3">
                         {darkWebTools.map((tool, i) => (
-                          <div key={i} className="rounded-lg border border-slate-700 bg-slate-800/30 p-3">
+                          <div key={i} className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-3">
                             <div className="flex items-center justify-between mb-1">
-                              <span className="font-medium text-slate-200">{tool.tool}</span>
+                              <span className="font-medium text-platinum-200">{tool.tool}</span>
                             </div>
-                            <p className="text-xs text-slate-400">{tool.bestFor}</p>
+                            <p className="text-xs text-platinum-400">{tool.bestFor}</p>
                           </div>
                         ))}
                       </div>
@@ -687,7 +687,7 @@ export default function CrisisResponsePage() {
                         <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
                           <span className="text-xs text-primary font-bold">{i + 1}</span>
                         </div>
-                        <p className="text-sm text-slate-300">{method}</p>
+                        <p className="text-sm text-platinum-300">{method}</p>
                       </div>
                     ))}
                   </div>
@@ -709,12 +709,12 @@ export default function CrisisResponsePage() {
                 <CardContent>
                   <div className="space-y-3">
                     {sourceCitations.slice(0, 12).map((source, i) => (
-                      <div key={i} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/30 p-3">
+                      <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/30 p-3">
                         <div className="flex items-center gap-3">
                           <Badge variant={source.tier <= 1 ? "success" : source.tier <= 2 ? "warning" : "outline"} className="text-xs">
                             T{source.tier}
                           </Badge>
-                          <span className="text-sm text-slate-200">{source.source}</span>
+                          <span className="text-sm text-platinum-200">{source.source}</span>
                         </div>
                         <Badge variant={source.uaeRelevance === 'Critical' ? "destructive" : source.uaeRelevance === 'High' ? "warning" : "outline"} className="text-xs">
                           {source.uaeRelevance}
@@ -733,15 +733,15 @@ export default function CrisisResponsePage() {
                   <div className="grid gap-4 md:grid-cols-3">
                     <div className="rounded-lg border border-success/50 bg-success/10 p-4">
                       <Badge variant="success" className="mb-2">T0-T1</Badge>
-                      <p className="text-sm text-slate-300">Official UAE and primary international sources</p>
+                      <p className="text-sm text-platinum-300">Official UAE and primary international sources</p>
                     </div>
                     <div className="rounded-lg border border-warning/50 bg-warning/10 p-4">
                       <Badge variant="warning" className="mb-2">T2</Badge>
-                      <p className="text-sm text-slate-300">Peer-reviewed and industry authority sources</p>
+                      <p className="text-sm text-platinum-300">Peer-reviewed and industry authority sources</p>
                     </div>
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/30 p-4">
+                    <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
                       <Badge variant="outline" className="mb-2">T3-T4</Badge>
-                      <p className="text-sm text-slate-300">Industry blogs and general web content</p>
+                      <p className="text-sm text-platinum-300">Industry blogs and general web content</p>
                     </div>
                   </div>
                 </CardContent>

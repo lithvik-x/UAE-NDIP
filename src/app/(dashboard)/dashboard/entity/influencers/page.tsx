@@ -205,11 +205,11 @@ export default function InfluencersPage() {
       'bg-gradient-gold text-white',
       'bg-gradient-platinum text-white',
       'bg-gradient-denim text-white',
-      'bg-slate-400 text-white',
-      'bg-slate-300 text-slate-700',
+      'bg-platinum-400 text-white',
+      'bg-platinum-300 text-platinum-700',
     ]
     return (
-      <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold ${colors[tier] || 'bg-slate-300 text-slate-700'}`}>
+      <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold ${colors[tier] || 'bg-platinum-300 text-platinum-700'}`}>
         {tier}
       </div>
     )
@@ -921,8 +921,8 @@ export default function InfluencersPage() {
                             className={`text-xs font-bold ${
                               fine.category === 'Critical' ? 'bg-red-500 text-white' :
                               fine.category === 'Serious' ? 'bg-amber-500 text-white' :
-                              fine.category === 'Moderate' ? 'bg-blue-500 text-white' :
-                              'bg-slate-500 text-white'
+                              fine.category === 'Moderate' ? 'bg-navy-500 text-white' :
+                              'bg-platinum-500 text-white'
                             }`}
                           >
                             {fine.fineAED}

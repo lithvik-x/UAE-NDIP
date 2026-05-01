@@ -40,7 +40,7 @@ export function InstagramRegulatorySection({ data }: InstagramRegulatorySectionP
             <CardContent>
               <div className="space-y-4">
                 {regulatoryFramework.map((reg: { legislation: string; description: string; effectiveDate: string }, idx: number) => (
-                  <div key={idx} className="flex items-start gap-4 p-4 rounded-lg bg-slate-800/30">
+                  <div key={idx} className="flex items-start gap-4 p-4 rounded-lg bg-platinum-800/30">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-500/20 text-purple-400">
                       <Scale className="h-5 w-5" />
                     </div>
@@ -51,7 +51,7 @@ export function InstagramRegulatorySection({ data }: InstagramRegulatorySectionP
                           {reg.effectiveDate}
                         </Badge>
                       </div>
-                      <p className="text-sm text-slate-400 mt-1">{reg.description}</p>
+                      <p className="text-sm text-platinum-400 mt-1">{reg.description}</p>
                     </div>
                   </div>
                 ))}
@@ -72,7 +72,7 @@ export function InstagramRegulatorySection({ data }: InstagramRegulatorySectionP
                     <DollarSign className="h-5 w-5 text-purple-400" />
                     <h4 className="text-sm font-medium text-white">Commercial Trade License</h4>
                   </div>
-                  <p className="text-xs text-slate-300 mb-2">From free zones (Meydan, UAQ FTZ)</p>
+                  <p className="text-xs text-platinum-300 mb-2">From free zones (Meydan, UAQ FTZ)</p>
                   <div className="space-y-1">
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-platinum/50">Cost</span>
@@ -89,7 +89,7 @@ export function InstagramRegulatorySection({ data }: InstagramRegulatorySectionP
                     <Shield className="h-5 w-5 text-gold" />
                     <h4 className="text-sm font-medium text-white">E-Media Influencer Permit</h4>
                   </div>
-                  <p className="text-xs text-slate-300 mb-2">UAE Media Council "Advertiser Permit"</p>
+                  <p className="text-xs text-platinum-300 mb-2">UAE Media Council "Advertiser Permit"</p>
                   <div className="space-y-1">
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-platinum/50">UAE Citizens/Residents</span>

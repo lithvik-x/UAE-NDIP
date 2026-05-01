@@ -92,7 +92,7 @@ export default function DarkWebMonitoringPage() {
     switch (severity) {
       case 'CRITICAL': return <Badge variant="destructive" className="text-xs bg-red-500/20 text-red-400 border-red-500/50">CRITICAL</Badge>
       case 'HIGH': return <Badge variant="warning" className="text-xs bg-orange-500/20 text-orange-400 border-orange-500/50">HIGH</Badge>
-      case 'MEDIUM': return <Badge variant="outline" className="text-xs text-yellow-400 border-yellow-400/50">MEDIUM</Badge>
+      case 'MEDIUM': return <Badge variant="outline" className="text-xs text-amber-400 border-amber-400/50">MEDIUM</Badge>
       default: return <Badge variant="outline" className="text-xs">LOW</Badge>
     }
   }
@@ -104,7 +104,7 @@ export default function DarkWebMonitoringPage() {
         <div>
           <Badge variant="denim" className="mb-2">M-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Dark Web Monitoring</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Surveillance of underground forums, marketplaces, and illicit activity tracking
           </p>
         </div>
@@ -225,28 +225,28 @@ export default function DarkWebMonitoringPage() {
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Forums Monitored</span>
+                        <span className="text-platinum-400">Forums Monitored</span>
                         <span className="font-medium text-emerald-400">156</span>
                       </div>
                       <Progress value={78} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Marketplaces Tracked</span>
+                        <span className="text-platinum-400">Marketplaces Tracked</span>
                         <span className="font-medium text-emerald-400">47</span>
                       </div>
                       <Progress value={65} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">Paste Sites Scanned</span>
+                        <span className="text-platinum-400">Paste Sites Scanned</span>
                         <span className="font-medium text-emerald-400">89</span>
                       </div>
                       <Progress value={72} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-400">IM Channels</span>
+                        <span className="text-platinum-400">IM Channels</span>
                         <span className="font-medium text-emerald-400">34</span>
                       </div>
                       <Progress value={45} className="h-3" />
@@ -277,13 +277,13 @@ export default function DarkWebMonitoringPage() {
                         { group: 'Conti', activity: 23, target: 'Energy' },
                         { group: 'LockBit', activity: 19, target: 'Multi-sector' },
                       ].map((item, idx) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                        <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Bug className="h-4 w-4 text-rose" />
-                            <span className="text-sm font-medium text-slate-200">{item.group}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.group}</span>
                           </div>
                           <div className="flex items-center gap-3">
-                            <span className="text-sm text-slate-400">{item.target}</span>
+                            <span className="text-sm text-platinum-400">{item.target}</span>
                             <span className="text-lg font-bold text-rose">{item.activity}</span>
                           </div>
                         </div>
@@ -306,17 +306,17 @@ export default function DarkWebMonitoringPage() {
                       { vuln: 'CVE-2024-23897', severity: 'HIGH', affects: 'Jenkins', mentions: 654 },
                       { vuln: 'CVE-2024-27111', severity: 'MEDIUM', affects: 'Fortinet FW', mentions: 432 },
                     ].map((item, idx) => (
-                      <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                      <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                         <div className="flex items-center gap-4">
                           <Lock className="h-5 w-5 text-rose" />
                           <div>
-                            <p className="font-medium text-slate-200">{item.vuln}</p>
-                            <p className="text-sm text-slate-400">Affects: {item.affects}</p>
+                            <p className="font-medium text-platinum-200">{item.vuln}</p>
+                            <p className="text-sm text-platinum-400">Affects: {item.affects}</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-4">
                           <Badge variant="destructive" className="text-xs">{item.severity}</Badge>
-                          <span className="text-sm text-slate-400">{item.mentions} mentions</span>
+                          <span className="text-sm text-platinum-400">{item.mentions} mentions</span>
                         </div>
                       </div>
                     ))}
@@ -340,21 +340,21 @@ export default function DarkWebMonitoringPage() {
                   <ScrollArea className="h-[300px]">
                     <div className="space-y-3">
                       {monitoredKeywords.map((item, idx) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div className="flex items-center gap-4">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy">
                               <Eye className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-200">{item.keyword}</p>
-                              <p className="text-sm text-slate-400">{item.mentions.toLocaleString()} mentions</p>
+                              <p className="font-semibold text-platinum-200">{item.keyword}</p>
+                              <p className="text-sm text-platinum-400">{item.mentions.toLocaleString()} mentions</p>
                             </div>
                           </div>
                           <div className="text-center">
                             <div className={`text-lg font-bold ${item.sentiment < 30 ? 'text-rose-400' : 'text-orange-400'}`}>
                               {item.sentiment}%
                             </div>
-                            <p className="text-xs text-slate-400">Threat Score</p>
+                            <p className="text-xs text-platinum-400">Threat Score</p>
                           </div>
                         </div>
                       ))}
@@ -370,17 +370,17 @@ export default function DarkWebMonitoringPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-3">
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">24</div>
-                      <p className="text-sm text-slate-400">Active Keywords</p>
+                      <p className="text-sm text-platinum-400">Active Keywords</p>
                     </div>
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-gold">156</div>
-                      <p className="text-sm text-slate-400">Daily Alerts</p>
+                      <p className="text-sm text-platinum-400">Daily Alerts</p>
                     </div>
-                    <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
+                    <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-rose">18</div>
-                      <p className="text-sm text-slate-400">Critical Triggers</p>
+                      <p className="text-sm text-platinum-400">Critical Triggers</p>
                     </div>
                   </div>
                 </CardContent>
@@ -406,17 +406,17 @@ export default function DarkWebMonitoringPage() {
                       {threatListings.map((listing) => (
                         <div key={listing.id} className="flex items-start justify-between rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
                           <div className="flex-1">
-                            <p className="font-medium text-slate-200">{listing.type}</p>
-                            <p className="text-sm text-slate-400 mt-1">Source: {listing.source}</p>
+                            <p className="font-medium text-platinum-200">{listing.type}</p>
+                            <p className="text-sm text-platinum-400 mt-1">Source: {listing.source}</p>
                           </div>
                           <div className="flex items-center gap-4">
                             <div className="text-center">
                               <div className="text-lg font-bold text-gold">{listing.price}</div>
-                              <p className="text-xs text-slate-400">Price</p>
+                              <p className="text-xs text-platinum-400">Price</p>
                             </div>
                             <div className="flex flex-col items-end gap-2">
                               {getSeverityBadge(listing.severity)}
-                              <span className="text-xs text-slate-400">{listing.time}</span>
+                              <span className="text-xs text-platinum-400">{listing.time}</span>
                             </div>
                           </div>
                         </div>

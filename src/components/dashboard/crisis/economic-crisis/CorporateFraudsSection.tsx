@@ -47,7 +47,7 @@ export function AbraajSection({
             <h4 className="text-lg font-semibold text-rose-400 mb-3">Regulatory Fines</h4>
             <div className="space-y-2">
               {abraajRegulatoryFines?.map((fine: any, idx: number) => (
-                <div key={idx} className="p-3 rounded-lg bg-slate-800/50 border border-rose-500/30">
+                <div key={idx} className="p-3 rounded-lg bg-platinum-800/50 border border-rose-500/30">
                   <div className="flex justify-between">
                     <span className="text-platinum-200">{fine.person}</span>
                     <span className="text-rose-400 font-bold">{fine.fine}</span>
@@ -122,7 +122,7 @@ export function NMCSection({
             <h4 className="text-lg font-semibold text-platinum-300 mt-4 mb-3">Legal Cases</h4>
             <div className="space-y-2">
               {nmcLegalCases?.map((legal: any, idx: number) => (
-                <div key={idx} className="p-2 rounded bg-slate-800/50 border border-glass-border">
+                <div key={idx} className="p-2 rounded bg-platinum-800/50 border border-glass-border">
                   <div className="text-sm text-platinum-200">{legal.party}</div>
                   <div className="text-xs text-platinum-400">{legal.claim}</div>
                   <Badge variant="outline" className="mt-1 border-amber-500/50 text-amber">{legal.status}</Badge>

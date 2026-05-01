@@ -107,7 +107,7 @@ export function RedditLegalSection({
                   <Scale className="h-5 w-5" />
                   Federal Decree-Law No. 33 of 2021 - Key Protections
                 </CardTitle>
-                <p className="text-sm text-slate-400">Legal protections for employees against salary reductions</p>
+                <p className="text-sm text-platinum-400">Legal protections for employees against salary reductions</p>
               </CardHeader>
               <CardContent>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -120,7 +120,7 @@ export function RedditLegalSection({
                       className="p-3 rounded-lg border border-emerald-500/20 bg-emerald-500/5"
                     >
                       <p className="font-semibold text-emerald-400 text-sm">{point.provision}</p>
-                      <p className="text-slate-300 text-xs mt-1">{point.detail}</p>
+                      <p className="text-platinum-300 text-xs mt-1">{point.detail}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -146,7 +146,7 @@ export function RedditLegalSection({
                     {gratuityTiers.map((tier, idx) => (
                       <div key={idx} className="p-4 rounded-lg border border-teal-500/20 bg-teal-500/5 text-center">
                         <p className="text-lg font-bold text-teal-400">{tier.yearsOfService}</p>
-                        <p className="text-sm text-slate-300 mt-1">{tier.calculation}</p>
+                        <p className="text-sm text-platinum-300 mt-1">{tier.calculation}</p>
                       </div>
                     ))}
                   </div>
@@ -175,7 +175,7 @@ export function RedditLegalSection({
                         transition={{ delay: idx * 0.1 }}
                         className="flex items-center justify-between p-3 rounded-lg border border-rose-500/20 bg-rose-500/5"
                       >
-                        <span className="text-slate-200">{sector.name}</span>
+                        <span className="text-platinum-200">{sector.name}</span>
                         <Badge variant="destructive" className="bg-rose-500/20 text-rose-400">
                           {sector.impact}
                         </Badge>
@@ -204,7 +204,7 @@ export function RedditLegalSection({
                         transition={{ delay: idx * 0.1 }}
                         className="flex items-center justify-between p-3 rounded-lg border border-emerald-500/20 bg-emerald-500/5"
                       >
-                        <span className="text-slate-200">{sector.name}</span>
+                        <span className="text-platinum-200">{sector.name}</span>
                         <Badge variant="default" className="bg-emerald-500/20 text-emerald-400">
                           {sector.status}
                         </Badge>
@@ -231,31 +231,31 @@ export function RedditLegalSection({
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-3">
-                    <div className="p-4 rounded-lg bg-slate-800/50 border border-slate-700/50">
+                    <div className="p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
                       <p className="font-semibold text-rose-400 mb-2">Drink Driving</p>
-                      <p className="text-2xl font-bold text-slate-200">AED 20,000-100,000</p>
+                      <p className="text-2xl font-bold text-platinum-200">AED 20,000-100,000</p>
                       <div className="mt-2 space-y-1">
-                        <p className="text-xs text-slate-400">1st: 3-month suspension + 23 black points</p>
-                        <p className="text-xs text-slate-400">2nd: 6-month suspension + vehicle impound</p>
-                        <p className="text-xs text-slate-400">3rd: Permanent cancellation + deportation</p>
+                        <p className="text-xs text-platinum-400">1st: 3-month suspension + 23 black points</p>
+                        <p className="text-xs text-platinum-400">2nd: 6-month suspension + vehicle impound</p>
+                        <p className="text-xs text-platinum-400">3rd: Permanent cancellation + deportation</p>
                       </div>
                     </div>
-                    <div className="p-4 rounded-lg bg-slate-800/50 border border-slate-700/50">
+                    <div className="p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
                       <p className="font-semibold text-amber-400 mb-2">Public Intoxication</p>
-                      <p className="text-2xl font-bold text-slate-200">AED 5,000</p>
+                      <p className="text-2xl font-bold text-platinum-200">AED 5,000</p>
                       <div className="mt-2 space-y-1">
-                        <p className="text-xs text-slate-400">Dubai/Abu Dhabi: Up to AED 5,000</p>
-                        <p className="text-xs text-slate-400">Severe: AED 100,000 + 6 months</p>
-                        <p className="text-xs text-slate-400">Sharjah: Zero tolerance - arrest</p>
+                        <p className="text-xs text-platinum-400">Dubai/Abu Dhabi: Up to AED 5,000</p>
+                        <p className="text-xs text-platinum-400">Severe: AED 100,000 + 6 months</p>
+                        <p className="text-xs text-platinum-400">Sharjah: Zero tolerance - arrest</p>
                       </div>
                     </div>
-                    <div className="p-4 rounded-lg bg-slate-800/50 border border-slate-700/50">
+                    <div className="p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
                       <p className="font-semibold text-purple-400 mb-2">Illegal Possession</p>
-                      <p className="text-2xl font-bold text-slate-200">AED 10,000+</p>
+                      <p className="text-2xl font-bold text-platinum-200">AED 10,000+</p>
                       <div className="mt-2 space-y-1">
-                        <p className="text-xs text-slate-400">Personal: 6 months detention</p>
-                        <p className="text-xs text-slate-400">Commercial: 2 years detention</p>
-                        <p className="text-xs text-slate-400">Operating without licence: AED 500,000</p>
+                        <p className="text-xs text-platinum-400">Personal: 6 months detention</p>
+                        <p className="text-xs text-platinum-400">Commercial: 2 years detention</p>
+                        <p className="text-xs text-platinum-400">Operating without licence: AED 500,000</p>
                       </div>
                     </div>
                   </div>
@@ -288,7 +288,7 @@ export function RedditLegalSection({
                         className="p-3 rounded-lg border border-pink-500/20 bg-pink-500/5"
                       >
                         <p className="font-semibold text-pink-400 text-sm">{fact.fact}</p>
-                        <p className="text-slate-300 text-xs mt-1">{fact.details}</p>
+                        <p className="text-platinum-300 text-xs mt-1">{fact.details}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -302,10 +302,10 @@ export function RedditLegalSection({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
-                className="p-6 rounded-lg glass-card border-blue-500/30"
+                className="p-6 rounded-lg glass-card border-navy-500/30"
               >
                 <CardHeader>
-                  <CardTitle className="text-lg text-blue-400 flex items-center gap-2">
+                  <CardTitle className="text-lg text-navy-400 flex items-center gap-2">
                     <Globe className="h-5 w-5" />
                     Visa & Kafala Issues
                   </CardTitle>
@@ -318,10 +318,10 @@ export function RedditLegalSection({
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: idx * 0.03 }}
-                        className="p-2 rounded-lg border border-blue-500/20 bg-blue-500/5"
+                        className="p-2 rounded-lg border border-navy-500/20 bg-navy-500/5"
                       >
-                        <p className="font-semibold text-blue-400 text-xs">{visa.issue}</p>
-                        <p className="text-slate-300 text-xs mt-0.5">{visa.details}</p>
+                        <p className="font-semibold text-navy-400 text-xs">{visa.issue}</p>
+                        <p className="text-platinum-300 text-xs mt-0.5">{visa.details}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -354,7 +354,7 @@ export function RedditLegalSection({
                         className="p-3 rounded-lg border border-cyan-500/20 bg-cyan-500/5"
                       >
                         <p className="font-semibold text-cyan-400 text-sm">{issue.issue}</p>
-                        <p className="text-slate-300 text-xs mt-1">{issue.details}</p>
+                        <p className="text-platinum-300 text-xs mt-1">{issue.details}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -387,7 +387,7 @@ export function RedditLegalSection({
                         className="p-3 rounded-lg border border-lime-500/20 bg-lime-500/5"
                       >
                         <p className="font-semibold text-lime-400 text-sm">{law.fact}</p>
-                        <p className="text-slate-300 text-xs mt-1">{law.details}</p>
+                        <p className="text-platinum-300 text-xs mt-1">{law.details}</p>
                       </motion.div>
                     ))}
                   </div>

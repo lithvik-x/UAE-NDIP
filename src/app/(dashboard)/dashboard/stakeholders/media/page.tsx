@@ -127,7 +127,7 @@ export default function MediaStakeholdersPage() {
         <div>
           <Badge variant="gold" className="mb-2">MEDIA</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Media Stakeholders</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Media regulatory bodies, news agencies, broadcast networks, and press organizations in the UAE
           </p>
         </div>
@@ -278,48 +278,48 @@ export default function MediaStakeholdersPage() {
                           <Newspaper className="h-6 w-6" />
                         </div>
                         <div>
-                          <CardTitle className="text-lg text-slate-200">National Media Authority (NAMA)</CardTitle>
-                          <p className="text-sm text-slate-400">هيئة الإعلام الوطني</p>
+                          <CardTitle className="text-lg text-platinum-200">National Media Authority (NAMA)</CardTitle>
+                          <p className="text-sm text-platinum-400">هيئة الإعلام الوطني</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Badge variant="outline" className="text-xs border-yellow-500/50 text-yellow-400">Tier 1</Badge>
+                        <Badge variant="outline" className="text-xs border-amber-500/50 text-amber-400">Tier 1</Badge>
                         <Badge variant="warning" className="text-xs">YELLOW</Badge>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-300 mb-4">
+                    <p className="text-platinum-300 mb-4">
                       Regulatory authority overseeing all media operations in the UAE. Establishes content standards, issues penalties for violations, and maintains press freedom monitoring.
                     </p>
                     <div className="grid gap-4 sm:grid-cols-4">
                       <div className="text-center">
                         <div className="text-xl font-bold text-gold-400">15M</div>
-                        <div className="text-xs text-slate-400">Digital Reach</div>
+                        <div className="text-xs text-platinum-400">Digital Reach</div>
                       </div>
                       <div className="text-center">
                         <div className="text-xl font-bold text-gold-400">2.1</div>
-                        <div className="text-xs text-slate-400">Engagement</div>
+                        <div className="text-xs text-platinum-400">Engagement</div>
                       </div>
                       <div className="text-center">
                         <div className="text-xl font-bold text-platinum-400">82</div>
-                        <div className="text-xs text-slate-400">Credibility</div>
+                        <div className="text-xs text-platinum-400">Credibility</div>
                       </div>
                       <div className="text-center">
                         <div className="text-xl font-bold text-navy-400">High</div>
-                        <div className="text-xs text-slate-400">UAE Relevance</div>
+                        <div className="text-xs text-platinum-400">UAE Relevance</div>
                       </div>
                     </div>
-                    <div className="mt-4 pt-4 border-t border-slate-700">
-                      <p className="text-sm font-medium text-slate-300 mb-2">Key Findings:</p>
+                    <div className="mt-4 pt-4 border-t border-platinum-700">
+                      <p className="text-sm font-medium text-platinum-300 mb-2">Key Findings:</p>
                       <div className="space-y-1">
                         <div className="flex items-start gap-2 text-sm">
                           <Lightbulb className="h-4 w-4 text-gold-400 mt-0.5" />
-                          <span className="text-slate-400">Press Freedom Index ranking: 26.91/164th globally</span>
+                          <span className="text-platinum-400">Press Freedom Index ranking: 26.91/164th globally</span>
                         </div>
                         <div className="flex items-start gap-2 text-sm">
                           <Lightbulb className="h-4 w-4 text-gold-400 mt-0.5" />
-                          <span className="text-slate-400">Content penalty range: AED 5,000 - AED 1,000,000</span>
+                          <span className="text-platinum-400">Content penalty range: AED 5,000 - AED 1,000,000</span>
                         </div>
                       </div>
                     </div>
@@ -335,48 +335,48 @@ export default function MediaStakeholdersPage() {
                           <Tv className="h-6 w-6" />
                         </div>
                         <div>
-                          <CardTitle className="text-lg text-slate-200">Dubai Media Council / NMC</CardTitle>
-                          <p className="text-sm text-slate-400">مجلس دبي للإعلام</p>
+                          <CardTitle className="text-lg text-platinum-200">Dubai Media Council / NMC</CardTitle>
+                          <p className="text-sm text-platinum-400">مجلس دبي للإعلام</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Badge variant="outline" className="text-xs border-yellow-500/50 text-yellow-400">Tier 1</Badge>
+                        <Badge variant="outline" className="text-xs border-amber-500/50 text-amber-400">Tier 1</Badge>
                         <Badge variant="success" className="text-xs">GREEN</Badge>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-300 mb-4">
+                    <p className="text-platinum-300 mb-4">
                       Regulatory authority for media operations in Dubai. Oversees Dubai Media City (free zone with 1,300+ companies), content certification, and influencer regulation.
                     </p>
                     <div className="grid gap-4 sm:grid-cols-4">
                       <div className="text-center">
                         <div className="text-xl font-bold text-gold-400">45M</div>
-                        <div className="text-xs text-slate-400">Digital Reach</div>
+                        <div className="text-xs text-platinum-400">Digital Reach</div>
                       </div>
                       <div className="text-center">
                         <div className="text-xl font-bold text-gold-400">2.1</div>
-                        <div className="text-xs text-slate-400">Engagement</div>
+                        <div className="text-xs text-platinum-400">Engagement</div>
                       </div>
                       <div className="text-center">
                         <div className="text-xl font-bold text-platinum-400">85</div>
-                        <div className="text-xs text-slate-400">Credibility</div>
+                        <div className="text-xs text-platinum-400">Credibility</div>
                       </div>
                       <div className="text-center">
                         <div className="text-xl font-bold text-navy-400">Critical</div>
-                        <div className="text-xs text-slate-400">UAE Relevance</div>
+                        <div className="text-xs text-platinum-400">UAE Relevance</div>
                       </div>
                     </div>
-                    <div className="mt-4 pt-4 border-t border-slate-700">
-                      <p className="text-sm font-medium text-slate-300 mb-2">Key Programs:</p>
+                    <div className="mt-4 pt-4 border-t border-platinum-700">
+                      <p className="text-sm font-medium text-platinum-300 mb-2">Key Programs:</p>
                       <div className="space-y-1">
                         <div className="flex items-start gap-2 text-sm">
                           <FileText className="h-4 w-4 text-navy-400 mt-0.5" />
-                          <span className="text-slate-400">Dubai Media City: 1,300+ registered media companies</span>
+                          <span className="text-platinum-400">Dubai Media City: 1,300+ registered media companies</span>
                         </div>
                         <div className="flex items-start gap-2 text-sm">
                           <FileText className="h-4 w-4 text-navy-400 mt-0.5" />
-                          <span className="text-slate-400">Creators HQ: AED 150 million fund for content creators</span>
+                          <span className="text-platinum-400">Creators HQ: AED 150 million fund for content creators</span>
                         </div>
                       </div>
                     </div>
@@ -392,33 +392,33 @@ export default function MediaStakeholdersPage() {
                           <FileText className="h-6 w-6" />
                         </div>
                         <div>
-                          <CardTitle className="text-lg text-slate-200">WAM News Agency</CardTitle>
-                          <p className="text-sm text-slate-400">وكالة أنباء الإمارات</p>
+                          <CardTitle className="text-lg text-platinum-200">WAM News Agency</CardTitle>
+                          <p className="text-sm text-platinum-400">وكالة أنباء الإمارات</p>
                         </div>
                       </div>
                       <Badge variant="outline" className="text-xs border-emerald-500/50 text-emerald-400">Tier 1</Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-300 mb-4">
+                    <p className="text-platinum-300 mb-4">
                       Official UAE state news agency providing high-volume daily coverage. Acts as the primary source for government announcements and official statements.
                     </p>
                     <div className="grid gap-4 sm:grid-cols-4">
                       <div className="text-center">
                         <div className="text-xl font-bold text-gold-400">8.5M</div>
-                        <div className="text-xs text-slate-400">Digital Reach</div>
+                        <div className="text-xs text-platinum-400">Digital Reach</div>
                       </div>
                       <div className="text-center">
                         <div className="text-xl font-bold text-gold-400">1.8</div>
-                        <div className="text-xs text-slate-400">Engagement</div>
+                        <div className="text-xs text-platinum-400">Engagement</div>
                       </div>
                       <div className="text-center">
                         <div className="text-xl font-bold text-platinum-400">88</div>
-                        <div className="text-xs text-slate-400">Credibility</div>
+                        <div className="text-xs text-platinum-400">Credibility</div>
                       </div>
                       <div className="text-center">
                         <div className="text-xl font-bold text-navy-400">High</div>
-                        <div className="text-xs text-slate-400">UAE Relevance</div>
+                        <div className="text-xs text-platinum-400">UAE Relevance</div>
                       </div>
                     </div>
                   </CardContent>
@@ -433,33 +433,33 @@ export default function MediaStakeholdersPage() {
                           <Tv className="h-6 w-6" />
                         </div>
                         <div>
-                          <CardTitle className="text-lg text-slate-200">MBC Group</CardTitle>
-                          <p className="text-sm text-slate-400">مجموعة MBC</p>
+                          <CardTitle className="text-lg text-platinum-200">MBC Group</CardTitle>
+                          <p className="text-sm text-platinum-400">مجموعة MBC</p>
                         </div>
                       </div>
                       <Badge variant="outline" className="text-xs border-platinum-500/50 text-platinum-400">Tier 1</Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-300 mb-4">
+                    <p className="text-platinum-300 mb-4">
                       Middle East largest broadcast group with television, radio, and digital media operations. Operates channels including MBC1, MBC2, MBC4, and Shahid streaming platform.
                     </p>
                     <div className="grid gap-4 sm:grid-cols-4">
                       <div className="text-center">
                         <div className="text-xl font-bold text-gold-400">32M</div>
-                        <div className="text-xs text-slate-400">Digital Reach</div>
+                        <div className="text-xs text-platinum-400">Digital Reach</div>
                       </div>
                       <div className="text-center">
                         <div className="text-xl font-bold text-gold-400">3.5</div>
-                        <div className="text-xs text-slate-400">Engagement</div>
+                        <div className="text-xs text-platinum-400">Engagement</div>
                       </div>
                       <div className="text-center">
                         <div className="text-xl font-bold text-platinum-400">84</div>
-                        <div className="text-xs text-slate-400">Credibility</div>
+                        <div className="text-xs text-platinum-400">Credibility</div>
                       </div>
                       <div className="text-center">
                         <div className="text-xl font-bold text-navy-400">High</div>
-                        <div className="text-xs text-slate-400">UAE Relevance</div>
+                        <div className="text-xs text-platinum-400">UAE Relevance</div>
                       </div>
                     </div>
                   </CardContent>
@@ -501,7 +501,7 @@ export default function MediaStakeholdersPage() {
                             className="h-3 w-3 rounded-full"
                             style={{ backgroundColor: platform.color }}
                           />
-                          <span className="font-medium text-slate-200">{platform.name}</span>
+                          <span className="font-medium text-platinum-200">{platform.name}</span>
                         </div>
                         <span className="text-xl font-bold text-gold-400">{platform.value}%</span>
                       </div>
@@ -530,8 +530,8 @@ export default function MediaStakeholdersPage() {
                         <Building className="h-6 w-6" />
                       </div>
                       <div>
-                        <CardTitle className="text-lg text-slate-200">Dubai Media City</CardTitle>
-                        <p className="text-sm text-slate-400">مدينة دبي الإعلامية</p>
+                        <CardTitle className="text-lg text-platinum-200">Dubai Media City</CardTitle>
+                        <p className="text-sm text-platinum-400">مدينة دبي الإعلامية</p>
                       </div>
                     </div>
                   </CardHeader>
@@ -542,30 +542,30 @@ export default function MediaStakeholdersPage() {
                         <Badge variant="outline" className="border-emerald/50 text-emerald">Arab Media Capital 2020</Badge>
                       </div>
                       <div className="grid grid-cols-2 gap-4">
-                        <div className="text-center p-3 rounded-lg bg-slate-800/50">
+                        <div className="text-center p-3 rounded-lg bg-platinum-800/50">
                           <div className="text-2xl font-bold text-gold-400">1,300+</div>
-                          <div className="text-xs text-slate-400">Companies (EN)</div>
+                          <div className="text-xs text-platinum-400">Companies (EN)</div>
                         </div>
-                        <div className="text-center p-3 rounded-lg bg-slate-800/50">
+                        <div className="text-center p-3 rounded-lg bg-platinum-800/50">
                           <div className="text-2xl font-bold text-gold-400">4,000+</div>
-                          <div className="text-xs text-slate-400">Companies (AR)</div>
+                          <div className="text-xs text-platinum-400">Companies (AR)</div>
                         </div>
-                        <div className="text-center p-3 rounded-lg bg-slate-800/50">
+                        <div className="text-center p-3 rounded-lg bg-platinum-800/50">
                           <div className="text-2xl font-bold text-gold-400">40,000+</div>
-                          <div className="text-xs text-slate-400">Professionals</div>
+                          <div className="text-xs text-platinum-400">Professionals</div>
                         </div>
-                        <div className="text-center p-3 rounded-lg bg-slate-800/50">
+                        <div className="text-center p-3 rounded-lg bg-platinum-800/50">
                           <div className="text-2xl font-bold text-gold-400">25</div>
-                          <div className="text-xs text-slate-400">Years</div>
+                          <div className="text-xs text-platinum-400">Years</div>
                         </div>
                       </div>
-                      <div className="pt-2 border-t border-slate-700">
-                        <p className="text-sm font-medium text-slate-300 mb-2">Notable Tenants:</p>
-                        <p className="text-xs text-slate-400">BBC, CNN, MBC, Reuters, Forbes, Sony, Discovery, WPP, Publicis</p>
+                      <div className="pt-2 border-t border-platinum-700">
+                        <p className="text-sm font-medium text-platinum-300 mb-2">Notable Tenants:</p>
+                        <p className="text-xs text-platinum-400">BBC, CNN, MBC, Reuters, Forbes, Sony, Discovery, WPP, Publicis</p>
                       </div>
-                      <div className="pt-2 border-t border-slate-700">
-                        <p className="text-sm font-medium text-slate-300">Venue:</p>
-                        <p className="text-xs text-slate-400">Amphitheatre (15,000+ seats)</p>
+                      <div className="pt-2 border-t border-platinum-700">
+                        <p className="text-sm font-medium text-platinum-300">Venue:</p>
+                        <p className="text-xs text-platinum-400">Amphitheatre (15,000+ seats)</p>
                       </div>
                     </div>
                   </CardContent>
@@ -581,8 +581,8 @@ export default function MediaStakeholdersPage() {
                         <Camera className="h-6 w-6" />
                       </div>
                       <div>
-                        <CardTitle className="text-lg text-slate-200">Dubai Production City</CardTitle>
-                        <p className="text-sm text-slate-400">مدينة دبي للإنتاج</p>
+                        <CardTitle className="text-lg text-platinum-200">Dubai Production City</CardTitle>
+                        <p className="text-sm text-platinum-400">مدينة دبي للإنتاج</p>
                       </div>
                     </div>
                   </CardHeader>
@@ -590,25 +590,25 @@ export default function MediaStakeholdersPage() {
                     <div className="space-y-4">
                       <div className="flex items-center gap-2 text-sm">
                         <Badge variant="outline" className="border-navy/50 text-navy">Est. 2003</Badge>
-                        <Badge variant="outline" className="border-blue-500/50 text-blue-400">Production Hub</Badge>
+                        <Badge variant="outline" className="border-navy-500/50 text-navy-400">Production Hub</Badge>
                       </div>
                       <div className="grid grid-cols-2 gap-4">
-                        <div className="text-center p-3 rounded-lg bg-slate-800/50">
+                        <div className="text-center p-3 rounded-lg bg-platinum-800/50">
                           <div className="text-2xl font-bold text-navy-400">6,700+</div>
-                          <div className="text-xs text-slate-400">Professionals</div>
+                          <div className="text-xs text-platinum-400">Professionals</div>
                         </div>
-                        <div className="text-center p-3 rounded-lg bg-slate-800/50">
+                        <div className="text-center p-3 rounded-lg bg-platinum-800/50">
                           <div className="text-2xl font-bold text-navy-400">13%</div>
-                          <div className="text-xs text-slate-400">Growth</div>
+                          <div className="text-xs text-platinum-400">Growth</div>
                         </div>
                       </div>
-                      <div className="pt-2 border-t border-slate-700">
-                        <p className="text-sm font-medium text-slate-300 mb-2">Sound Stages:</p>
-                        <p className="text-xs text-slate-400">11,000 - 50,000 sq.ft with water tanks, grids, elephant doors</p>
+                      <div className="pt-2 border-t border-platinum-700">
+                        <p className="text-sm font-medium text-platinum-300 mb-2">Sound Stages:</p>
+                        <p className="text-xs text-platinum-400">11,000 - 50,000 sq.ft with water tanks, grids, elephant doors</p>
                       </div>
-                      <div className="pt-2 border-t border-slate-700">
-                        <p className="text-sm font-medium text-slate-300">Facilities:</p>
-                        <p className="text-xs text-slate-400">Boutique Studios, Light Industrial, Warehouses, Commercial Spaces</p>
+                      <div className="pt-2 border-t border-platinum-700">
+                        <p className="text-sm font-medium text-platinum-300">Facilities:</p>
+                        <p className="text-xs text-platinum-400">Boutique Studios, Light Industrial, Warehouses, Commercial Spaces</p>
                       </div>
                     </div>
                   </CardContent>
@@ -624,8 +624,8 @@ export default function MediaStakeholdersPage() {
                         <Play className="h-6 w-6" />
                       </div>
                       <div>
-                        <CardTitle className="text-lg text-slate-200">Dubai Studio City</CardTitle>
-                        <p className="text-sm text-slate-400">دبي ستوديو سيتي</p>
+                        <CardTitle className="text-lg text-platinum-200">Dubai Studio City</CardTitle>
+                        <p className="text-sm text-platinum-400">دبي ستوديو سيتي</p>
                       </div>
                     </div>
                   </CardHeader>
@@ -636,22 +636,22 @@ export default function MediaStakeholdersPage() {
                         <Badge variant="outline" className="border-amber-500/50 text-amber-400">12% Growth</Badge>
                       </div>
                       <div className="grid grid-cols-2 gap-4">
-                        <div className="text-center p-3 rounded-lg bg-slate-800/50">
+                        <div className="text-center p-3 rounded-lg bg-platinum-800/50">
                           <div className="text-2xl font-bold text-emerald-400">2,800+</div>
-                          <div className="text-xs text-slate-400">Creative Talent</div>
+                          <div className="text-xs text-platinum-400">Creative Talent</div>
                         </div>
-                        <div className="text-center p-3 rounded-lg bg-slate-800/50">
+                        <div className="text-center p-3 rounded-lg bg-platinum-800/50">
                           <div className="text-2xl font-bold text-emerald-400">358K</div>
-                          <div className="text-xs text-slate-400">Min Content/Year</div>
+                          <div className="text-xs text-platinum-400">Min Content/Year</div>
                         </div>
                       </div>
-                      <div className="pt-2 border-t border-slate-700">
-                        <p className="text-sm font-medium text-slate-300 mb-2">Landmark Productions:</p>
-                        <p className="text-xs text-slate-400">Star Trek Beyond, Mission Impossible: Ghost Protocol</p>
+                      <div className="pt-2 border-t border-platinum-700">
+                        <p className="text-sm font-medium text-platinum-300 mb-2">Landmark Productions:</p>
+                        <p className="text-xs text-platinum-400">Star Trek Beyond, Mission Impossible: Ghost Protocol</p>
                       </div>
-                      <div className="pt-2 border-t border-slate-700">
-                        <p className="text-sm font-medium text-slate-300">Location:</p>
-                        <p className="text-xs text-slate-400">Near Sheikh Zayed Bin Hamdan Al Nahyan Street</p>
+                      <div className="pt-2 border-t border-platinum-700">
+                        <p className="text-sm font-medium text-platinum-300">Location:</p>
+                        <p className="text-xs text-platinum-400">Near Sheikh Zayed Bin Hamdan Al Nahyan Street</p>
                       </div>
                     </div>
                   </CardContent>
@@ -706,17 +706,17 @@ export default function MediaStakeholdersPage() {
                     {[
                       { rating: 'G', desc: 'General admission - All ages', color: 'bg-emerald-500' },
                       { rating: 'PG', desc: 'Parental guidance suggested', color: 'bg-emerald-500' },
-                      { rating: 'PG 13', desc: 'Under 13 requires supervision', color: 'bg-yellow-500' },
+                      { rating: 'PG 13', desc: 'Under 13 requires supervision', color: 'bg-amber-500' },
                       { rating: 'PG 15', desc: 'Under 15 requires supervision', color: 'bg-orange-500' },
                       { rating: '15+', desc: 'Ages 15 and above', color: 'bg-orange-600' },
                       { rating: '18+', desc: 'Restricted to 18+', color: 'bg-red-500' },
                       { rating: '21+', desc: 'Uncensored international versions', color: 'bg-red-700' },
                     ].map((film, idx) => (
-                      <div key={idx} className="flex items-center gap-3 p-2 rounded-lg bg-slate-800/50">
+                      <div key={idx} className="flex items-center gap-3 p-2 rounded-lg bg-platinum-800/50">
                         <div className={`h-8 w-8 rounded-full ${film.color} flex items-center justify-center text-white font-bold text-sm`}>
                           {film.rating}
                         </div>
-                        <span className="text-sm text-slate-300">{film.desc}</span>
+                        <span className="text-sm text-platinum-300">{film.desc}</span>
                       </div>
                     ))}
                   </div>
@@ -744,11 +744,11 @@ export default function MediaStakeholdersPage() {
                 <CardContent>
                   <div className="space-y-2">
                     {['3+', '7+', '12+', '16+', '18+', '21+'].map((rating, idx) => (
-                      <div key={idx} className="flex items-center gap-3 p-2 rounded-lg bg-slate-800/50">
+                      <div key={idx} className="flex items-center gap-3 p-2 rounded-lg bg-platinum-800/50">
                         <div className="h-8 w-12 rounded-full bg-violet-500 flex items-center justify-center text-white font-bold text-sm">
                           {rating}
                         </div>
-                        <span className="text-sm text-slate-300">Ages {rating.replace('+', '+')} permitted</span>
+                        <span className="text-sm text-platinum-300">Ages {rating.replace('+', '+')} permitted</span>
                       </div>
                     ))}
                   </div>
@@ -779,11 +779,11 @@ export default function MediaStakeholdersPage() {
                       { rating: '17+', desc: 'Young adult' },
                       { rating: '21+', desc: 'Adult' },
                     ].map((book, idx) => (
-                      <div key={idx} className="flex items-center gap-3 p-2 rounded-lg bg-slate-800/50">
+                      <div key={idx} className="flex items-center gap-3 p-2 rounded-lg bg-platinum-800/50">
                         <div className="h-8 w-12 rounded-full bg-amber-500 flex items-center justify-center text-white font-bold text-sm">
                           {book.rating}
                         </div>
-                        <span className="text-sm text-slate-300">{book.desc}</span>
+                        <span className="text-sm text-platinum-300">{book.desc}</span>
                       </div>
                     ))}
                   </div>
@@ -795,7 +795,7 @@ export default function MediaStakeholdersPage() {
             <Card className="glass-card mt-6">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-500/20 text-sky-400">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400">
                     <Tv className="h-5 w-5" />
                   </div>
                   <div>
@@ -806,21 +806,21 @@ export default function MediaStakeholdersPage() {
               </CardHeader>
               <CardContent>
                 <div className="grid gap-4 md:grid-cols-4">
-                  <div className="text-center p-4 rounded-lg bg-slate-800/50">
-                    <div className="text-2xl font-bold text-sky-400">Tview</div>
-                    <div className="text-xs text-slate-400 mt-1">System Name</div>
+                  <div className="text-center p-4 rounded-lg bg-platinum-800/50">
+                    <div className="text-2xl font-bold text-cyan-400">Tview</div>
+                    <div className="text-xs text-platinum-400 mt-1">System Name</div>
                   </div>
-                  <div className="text-center p-4 rounded-lg bg-slate-800/50">
-                    <div className="text-2xl font-bold text-sky-400">Oct 2012</div>
-                    <div className="text-xs text-slate-400 mt-1">Launched</div>
+                  <div className="text-center p-4 rounded-lg bg-platinum-800/50">
+                    <div className="text-2xl font-bold text-cyan-400">Oct 2012</div>
+                    <div className="text-xs text-platinum-400 mt-1">Launched</div>
                   </div>
-                  <div className="text-center p-4 rounded-lg bg-slate-800/50">
-                    <div className="text-2xl font-bold text-sky-400">EMMC</div>
-                    <div className="text-xs text-slate-400 mt-1">Provider</div>
+                  <div className="text-center p-4 rounded-lg bg-platinum-800/50">
+                    <div className="text-2xl font-bold text-cyan-400">EMMC</div>
+                    <div className="text-xs text-platinum-400 mt-1">Provider</div>
                   </div>
-                  <div className="text-center p-4 rounded-lg bg-slate-800/50">
-                    <div className="text-2xl font-bold text-sky-400">Kantar</div>
-                    <div className="text-xs text-slate-400 mt-1">Quality Auditor</div>
+                  <div className="text-center p-4 rounded-lg bg-platinum-800/50">
+                    <div className="text-2xl font-bold text-cyan-400">Kantar</div>
+                    <div className="text-xs text-platinum-400 mt-1">Quality Auditor</div>
                   </div>
                 </div>
               </CardContent>
@@ -841,29 +841,29 @@ export default function MediaStakeholdersPage() {
                     </div>
                     <div>
                       <CardTitle className="text-lg">Federal Regulation</CardTitle>
-                      <p className="text-sm text-slate-400">UAE Media Council - Federal Decree Law No. 55 of 2023</p>
+                      <p className="text-sm text-platinum-400">UAE Media Council - Federal Decree Law No. 55 of 2023</p>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
-                      <span className="text-sm text-slate-300">Effective Date</span>
+                    <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
+                      <span className="text-sm text-platinum-300">Effective Date</span>
                       <Badge variant="outline" className="border-navy/50 text-navy">February 1, 2026</Badge>
                     </div>
-                    <div className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
-                      <span className="text-sm text-slate-300">Minimum Age</span>
+                    <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
+                      <span className="text-sm text-platinum-300">Minimum Age</span>
                       <span className="text-lg font-bold text-gold-400">18 years</span>
                     </div>
-                    <div className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
-                      <span className="text-sm text-slate-300">Permit Cost</span>
+                    <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
+                      <span className="text-sm text-platinum-300">Permit Cost</span>
                       <div className="text-right">
                         <span className="text-lg font-bold text-emerald-400">FREE</span>
-                        <p className="text-xs text-slate-400">3 years, then AED 1,000/year</p>
+                        <p className="text-xs text-platinum-400">3 years, then AED 1,000/year</p>
                       </div>
                     </div>
-                    <div className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
-                      <span className="text-sm text-slate-300">Permits Issued</span>
+                    <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
+                      <span className="text-sm text-platinum-300">Permits Issued</span>
                       <span className="text-lg font-bold text-gold-400">1,800+</span>
                     </div>
                   </div>
@@ -879,26 +879,26 @@ export default function MediaStakeholdersPage() {
                     </div>
                     <div>
                       <CardTitle className="text-lg">Dubai Requirements</CardTitle>
-                      <p className="text-sm text-slate-400">Dubai Media Council additional criteria</p>
+                      <p className="text-sm text-platinum-400">Dubai Media Council additional criteria</p>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    <div className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
-                      <span className="text-sm text-slate-300">Minimum Age</span>
+                    <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
+                      <span className="text-sm text-platinum-300">Minimum Age</span>
                       <span className="text-lg font-bold text-gold-400">25 years</span>
                     </div>
-                    <div className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
-                      <span className="text-sm text-slate-300">UAE Residence</span>
+                    <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
+                      <span className="text-sm text-platinum-300">UAE Residence</span>
                       <Badge variant="outline" className="border-gold/50 text-gold">Valid visa required</Badge>
                     </div>
-                    <div className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
-                      <span className="text-sm text-slate-300">Min Followers</span>
+                    <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
+                      <span className="text-sm text-platinum-300">Min Followers</span>
                       <span className="text-lg font-bold text-gold-400">1,000</span>
                     </div>
-                    <div className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50">
-                      <span className="text-sm text-slate-300">Min Engagement</span>
+                    <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
+                      <span className="text-sm text-platinum-300">Min Engagement</span>
                       <span className="text-lg font-bold text-gold-400">2%</span>
                     </div>
                   </div>
@@ -914,33 +914,33 @@ export default function MediaStakeholdersPage() {
               </CardHeader>
               <CardContent>
                 <div className="grid gap-4 md:grid-cols-4">
-                  <div className="text-center p-4 rounded-lg bg-slate-800/50 border border-slate-700">
+                  <div className="text-center p-4 rounded-lg bg-platinum-800/50 border border-platinum-700">
                     <div className="flex h-12 w-12 mx-auto items-center justify-center rounded-full bg-gold-500/20 text-gold-400 mb-3">
                       <Users className="h-6 w-6" />
                     </div>
                     <div className="text-lg font-bold text-gold-400">AED 5K-10K</div>
-                    <div className="text-sm text-slate-400">Individual License</div>
+                    <div className="text-sm text-platinum-400">Individual License</div>
                   </div>
-                  <div className="text-center p-4 rounded-lg bg-slate-800/50 border border-slate-700">
+                  <div className="text-center p-4 rounded-lg bg-platinum-800/50 border border-platinum-700">
                     <div className="flex h-12 w-12 mx-auto items-center justify-center rounded-full bg-navy-500/20 text-navy-400 mb-3">
                       <Briefcase className="h-6 w-6" />
                     </div>
                     <div className="text-lg font-bold text-navy-400">AED 15K-30K</div>
-                    <div className="text-sm text-slate-400">Agency License</div>
+                    <div className="text-sm text-platinum-400">Agency License</div>
                   </div>
-                  <div className="text-center p-4 rounded-lg bg-slate-800/50 border border-slate-700">
+                  <div className="text-center p-4 rounded-lg bg-platinum-800/50 border border-platinum-700">
                     <div className="flex h-12 w-12 mx-auto items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 mb-3">
                       <Building className="h-6 w-6" />
                     </div>
                     <div className="text-lg font-bold text-emerald-400">AED 5K-15K</div>
-                    <div className="text-sm text-slate-400">Business License</div>
+                    <div className="text-sm text-platinum-400">Business License</div>
                   </div>
-                  <div className="text-center p-4 rounded-lg bg-slate-800/50 border border-slate-700">
+                  <div className="text-center p-4 rounded-lg bg-platinum-800/50 border border-platinum-700">
                     <div className="flex h-12 w-12 mx-auto items-center justify-center rounded-full bg-violet-500/20 text-violet-400 mb-3">
                       <Newspaper className="h-6 w-6" />
                     </div>
                     <div className="text-lg font-bold text-violet-400">AED 1,000</div>
-                    <div className="text-sm text-slate-400">Media License/year</div>
+                    <div className="text-sm text-platinum-400">Media License/year</div>
                   </div>
                 </div>
               </CardContent>
@@ -954,12 +954,12 @@ export default function MediaStakeholdersPage() {
               </CardHeader>
               <CardContent>
                 <div className="grid gap-4 md:grid-cols-3">
-                  <div className="p-4 rounded-lg bg-yellow-500/10 border border-yellow-500/20">
+                  <div className="p-4 rounded-lg bg-amber-500/10 border border-amber-500/20">
                     <div className="flex items-center gap-2 mb-2">
-                      <AlertTriangle className="h-5 w-5 text-yellow-400" />
-                      <span className="font-semibold text-yellow-400">Basic Violations</span>
+                      <AlertTriangle className="h-5 w-5 text-amber-400" />
+                      <span className="font-semibold text-amber-400">Basic Violations</span>
                     </div>
-                    <div className="text-2xl font-bold text-yellow-400">AED 5K-10K</div>
+                    <div className="text-2xl font-bold text-amber-400">AED 5K-10K</div>
                   </div>
                   <div className="p-4 rounded-lg bg-orange-500/10 border border-orange-500/20">
                     <div className="flex items-center gap-2 mb-2">
@@ -993,23 +993,23 @@ export default function MediaStakeholdersPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-6 md:grid-cols-3 mb-6">
-                    <div className="text-center p-4 rounded-lg bg-slate-800/50">
-                      <div className="text-sm text-slate-400 mb-1">Current (2026)</div>
+                    <div className="text-center p-4 rounded-lg bg-platinum-800/50">
+                      <div className="text-sm text-platinum-400 mb-1">Current (2026)</div>
                       <div className="text-4xl font-bold text-gold-400">1.4%</div>
-                      <div className="text-xs text-slate-500 mt-1">Media GDP</div>
+                      <div className="text-xs text-platinum-500 mt-1">Media GDP</div>
                     </div>
                     <div className="flex items-center justify-center">
                       <TrendingUp className="h-8 w-8 text-emerald-400 mx-2" />
                       <span className="text-lg text-emerald-400 font-semibold">+114%</span>
                     </div>
-                    <div className="text-center p-4 rounded-lg bg-slate-800/50">
-                      <div className="text-sm text-slate-400 mb-1">Target (2033)</div>
+                    <div className="text-center p-4 rounded-lg bg-platinum-800/50">
+                      <div className="text-sm text-platinum-400 mb-1">Target (2033)</div>
                       <div className="text-4xl font-bold text-emerald-400">3%</div>
-                      <div className="text-xs text-slate-500 mt-1">Media GDP</div>
+                      <div className="text-xs text-platinum-500 mt-1">Media GDP</div>
                     </div>
                   </div>
                   <Progress value={46.7} className="h-3" />
-                  <p className="text-xs text-slate-400 mt-2 text-center">46.7% progress toward target</p>
+                  <p className="text-xs text-platinum-400 mt-2 text-center">46.7% progress toward target</p>
                 </CardContent>
               </Card>
 
@@ -1023,7 +1023,7 @@ export default function MediaStakeholdersPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-300">Creative Companies</span>
+                        <span className="text-sm text-platinum-300">Creative Companies</span>
                         <span className="text-sm font-bold text-gold-400">8,300 → 15,000</span>
                       </div>
                       <Progress value={55.3} className="h-2" />
@@ -1033,7 +1033,7 @@ export default function MediaStakeholdersPage() {
                     </div>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-300">Creators</span>
+                        <span className="text-sm text-platinum-300">Creators</span>
                         <span className="text-sm font-bold text-gold-400">70,000 → 140,000</span>
                       </div>
                       <Progress value={50} className="h-2" />
@@ -1047,7 +1047,7 @@ export default function MediaStakeholdersPage() {
                       <DollarSign className="h-8 w-8 text-emerald-400" />
                       <div>
                         <div className="text-lg font-bold text-emerald-400">AED 21.9 billion</div>
-                        <div className="text-sm text-slate-400">Current Creative Economy Value (~4.6% of GDP)</div>
+                        <div className="text-sm text-platinum-400">Current Creative Economy Value (~4.6% of GDP)</div>
                       </div>
                     </div>
                   </div>
@@ -1062,21 +1062,21 @@ export default function MediaStakeholdersPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-4">
-                    <motion.div whileHover={{ scale: 1.05 }} className="text-center p-4 rounded-lg bg-slate-800/50">
+                    <motion.div whileHover={{ scale: 1.05 }} className="text-center p-4 rounded-lg bg-platinum-800/50">
                       <div className="text-2xl font-bold text-gold-400">AED 18.86B</div>
-                      <div className="text-xs text-slate-400">FDI Inflows (Cultural/Creative)</div>
+                      <div className="text-xs text-platinum-400">FDI Inflows (Cultural/Creative)</div>
                     </motion.div>
-                    <motion.div whileHover={{ scale: 1.05 }} className="text-center p-4 rounded-lg bg-slate-800/50">
+                    <motion.div whileHover={{ scale: 1.05 }} className="text-center p-4 rounded-lg bg-platinum-800/50">
                       <div className="text-2xl font-bold text-emerald-400">23,517</div>
-                      <div className="text-xs text-slate-400">New Jobs Created</div>
+                      <div className="text-xs text-platinum-400">New Jobs Created</div>
                     </motion.div>
-                    <motion.div whileHover={{ scale: 1.05 }} className="text-center p-4 rounded-lg bg-slate-800/50">
+                    <motion.div whileHover={{ scale: 1.05 }} className="text-center p-4 rounded-lg bg-platinum-800/50">
                       <div className="text-2xl font-bold text-navy-400">971</div>
-                      <div className="text-xs text-slate-400">Projects Attracted</div>
+                      <div className="text-xs text-platinum-400">Projects Attracted</div>
                     </motion.div>
-                    <motion.div whileHover={{ scale: 1.05 }} className="text-center p-4 rounded-lg bg-slate-800/50">
+                    <motion.div whileHover={{ scale: 1.05 }} className="text-center p-4 rounded-lg bg-platinum-800/50">
                       <div className="text-2xl font-bold text-violet-400">175,000+</div>
-                      <div className="text-xs text-slate-400">Core Sector Jobs</div>
+                      <div className="text-xs text-platinum-400">Core Sector Jobs</div>
                     </motion.div>
                   </div>
                 </CardContent>
@@ -1090,15 +1090,15 @@ export default function MediaStakeholdersPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-6 md:grid-cols-2">
-                    <div className="text-center p-6 rounded-lg bg-slate-800/50">
-                      <div className="text-sm text-slate-400 mb-2">Current Market Size</div>
+                    <div className="text-center p-6 rounded-lg bg-platinum-800/50">
+                      <div className="text-sm text-platinum-400 mb-2">Current Market Size</div>
                       <div className="text-4xl font-bold text-gold-400">$11.6B</div>
-                      <div className="text-sm text-slate-400 mt-1">Digital Media Revenue (2026)</div>
+                      <div className="text-sm text-platinum-400 mt-1">Digital Media Revenue (2026)</div>
                     </div>
                     <div className="text-center p-6 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
                       <div className="text-sm text-emerald-400 mb-2">Projected Market Size</div>
                       <div className="text-4xl font-bold text-emerald-400">$18.5B</div>
-                      <div className="text-sm text-slate-400 mt-1">Expected Market Growth</div>
+                      <div className="text-sm text-platinum-400 mt-1">Expected Market Growth</div>
                     </div>
                   </div>
                 </CardContent>
@@ -1112,13 +1112,13 @@ export default function MediaStakeholdersPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
-                    <div className="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50">
+                    <div className="flex items-center gap-4 p-4 rounded-lg bg-platinum-800/50">
                       <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gold-500/20 text-gold-400">
                         <Star className="h-7 w-7" />
                       </div>
                       <div>
                         <div className="text-2xl font-bold text-gold-400">1,100+</div>
-                        <div className="text-sm text-slate-400">Startups Nurtured Since 2013</div>
+                        <div className="text-sm text-platinum-400">Startups Nurtured Since 2013</div>
                       </div>
                     </div>
                     <div className="flex items-center gap-4 p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
@@ -1127,7 +1127,7 @@ export default function MediaStakeholdersPage() {
                       </div>
                       <div>
                         <div className="text-2xl font-bold text-emerald-400">AED 9B+</div>
-                        <div className="text-sm text-slate-400">Funding Raised Since 2013</div>
+                        <div className="text-sm text-platinum-400">Funding Raised Since 2013</div>
                       </div>
                     </div>
                   </div>
@@ -1150,32 +1150,32 @@ export default function MediaStakeholdersPage() {
                     </div>
                     <div>
                       <CardTitle className="text-lg">Creators HQ</CardTitle>
-                      <p className="text-sm text-slate-400">Jumeirah Emirates Towers, Dubai</p>
+                      <p className="text-sm text-platinum-400">Jumeirah Emirates Towers, Dubai</p>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
-                      <div className="text-center p-3 rounded-lg bg-slate-800/50">
+                      <div className="text-center p-3 rounded-lg bg-platinum-800/50">
                         <div className="text-2xl font-bold text-gold-400">10,000</div>
-                        <div className="text-xs text-slate-400">Target Influencers</div>
+                        <div className="text-xs text-platinum-400">Target Influencers</div>
                       </div>
-                      <div className="text-center p-3 rounded-lg bg-slate-800/50">
+                      <div className="text-center p-3 rounded-lg bg-platinum-800/50">
                         <div className="text-2xl font-bold text-emerald-400">AED 150M</div>
-                        <div className="text-xs text-slate-400">Support Fund</div>
+                        <div className="text-xs text-platinum-400">Support Fund</div>
                       </div>
-                      <div className="text-center p-3 rounded-lg bg-slate-800/50">
+                      <div className="text-center p-3 rounded-lg bg-platinum-800/50">
                         <div className="text-2xl font-bold text-gold-400">100+</div>
-                        <div className="text-xs text-slate-400">Daily New Creators</div>
+                        <div className="text-xs text-platinum-400">Daily New Creators</div>
                       </div>
-                      <div className="text-center p-3 rounded-lg bg-slate-800/50">
+                      <div className="text-center p-3 rounded-lg bg-platinum-800/50">
                         <div className="text-2xl font-bold text-navy-400">200+</div>
-                        <div className="text-xs text-slate-400">Annual Programs</div>
+                        <div className="text-xs text-platinum-400">Annual Programs</div>
                       </div>
                     </div>
-                    <div className="pt-4 border-t border-slate-700">
-                      <p className="text-sm font-medium text-slate-300 mb-3">Key Partners:</p>
+                    <div className="pt-4 border-t border-platinum-700">
+                      <p className="text-sm font-medium text-platinum-300 mb-3">Key Partners:</p>
                       <div className="flex flex-wrap gap-2">
                         {['Meta', 'Space Train', 'X (Twitter)', 'New Media Academy', 'TubeFilter'].map((partner) => (
                           <Badge key={partner} variant="outline" className="border-gold/30 text-gold">{partner}</Badge>
@@ -1202,9 +1202,9 @@ export default function MediaStakeholdersPage() {
                       { icon: <BookOpen className="h-4 w-4 text-amber" />, text: 'Priority booking for limited-seats workshops' },
                       { icon: <UsersRound className="h-4 w-4 text-rose" />, text: 'Complimentary studios after 5PM access' },
                     ].map((benefit, idx) => (
-                      <div key={idx} className="flex items-center gap-3 p-2 rounded-lg bg-slate-800/30">
+                      <div key={idx} className="flex items-center gap-3 p-2 rounded-lg bg-platinum-800/30">
                         {benefit.icon}
-                        <span className="text-sm text-slate-300">{benefit.text}</span>
+                        <span className="text-sm text-platinum-300">{benefit.text}</span>
                       </div>
                     ))}
                   </div>
@@ -1221,27 +1221,27 @@ export default function MediaStakeholdersPage() {
                 <div className="grid gap-4 md:grid-cols-3">
                   <div className="flex items-center gap-3 p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
                     <DollarSign className="h-6 w-6 text-emerald-400" />
-                    <span className="text-sm text-slate-200">Tax-free Income</span>
+                    <span className="text-sm text-platinum-200">Tax-free Income</span>
                   </div>
                   <div className="flex items-center gap-3 p-3 rounded-lg bg-gold-500/10 border border-gold-500/20">
                     <Globe className="h-6 w-6 text-gold-400" />
-                    <span className="text-sm text-slate-200">Strategic Global Location</span>
+                    <span className="text-sm text-platinum-200">Strategic Global Location</span>
                   </div>
                   <div className="flex items-center gap-3 p-3 rounded-lg bg-navy-500/10 border border-navy-500/20">
                     <Award className="h-6 w-6 text-navy-400" />
-                    <span className="text-sm text-slate-200">Golden Visa Eligibility</span>
+                    <span className="text-sm text-platinum-200">Golden Visa Eligibility</span>
                   </div>
                   <div className="flex items-center gap-3 p-3 rounded-lg bg-violet-500/10 border border-violet-500/20">
                     <TrendingUp className="h-6 w-6 text-violet-400" />
-                    <span className="text-sm text-slate-200">Booming Creative Industry</span>
+                    <span className="text-sm text-platinum-200">Booming Creative Industry</span>
                   </div>
                   <div className="flex items-center gap-3 p-3 rounded-lg bg-amber-500/10 border border-amber-500/20">
                     <Shield className="h-6 w-6 text-amber-400" />
-                    <span className="text-sm text-slate-200">Supportive Government</span>
+                    <span className="text-sm text-platinum-200">Supportive Government</span>
                   </div>
                   <div className="flex items-center gap-3 p-3 rounded-lg bg-rose-500/10 border border-rose-500/20">
                     <Building className="h-6 w-6 text-rose-400" />
-                    <span className="text-sm text-slate-200">World-class Infrastructure</span>
+                    <span className="text-sm text-platinum-200">World-class Infrastructure</span>
                   </div>
                 </div>
               </CardContent>
@@ -1256,27 +1256,27 @@ export default function MediaStakeholdersPage() {
                   </div>
                   <div>
                     <CardTitle className="text-lg">1 Billion Followers Summit 2026</CardTitle>
-                    <p className="text-sm text-slate-400">Premier creator conference in Dubai</p>
+                    <p className="text-sm text-platinum-400">Premier creator conference in Dubai</p>
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
                 <div className="grid gap-4 md:grid-cols-4">
-                  <div className="text-center p-4 rounded-lg bg-slate-800/50">
-                    <div className="text-sm text-slate-400 mb-1">Dates</div>
+                  <div className="text-center p-4 rounded-lg bg-platinum-800/50">
+                    <div className="text-sm text-platinum-400 mb-1">Dates</div>
                     <div className="text-lg font-bold text-gold-400">Jan 9-11, 2026</div>
-                    <div className="text-xs text-slate-500">Dubai, UAE</div>
+                    <div className="text-xs text-platinum-500">Dubai, UAE</div>
                   </div>
-                  <div className="text-center p-4 rounded-lg bg-slate-800/50">
-                    <div className="text-sm text-slate-400 mb-1">Expected Attendees</div>
+                  <div className="text-center p-4 rounded-lg bg-platinum-800/50">
+                    <div className="text-sm text-platinum-400 mb-1">Expected Attendees</div>
                     <div className="text-lg font-bold text-emerald-400">30,000</div>
                   </div>
-                  <div className="text-center p-4 rounded-lg bg-slate-800/50">
-                    <div className="text-sm text-slate-400 mb-1">Creators</div>
+                  <div className="text-center p-4 rounded-lg bg-platinum-800/50">
+                    <div className="text-sm text-platinum-400 mb-1">Creators</div>
                     <div className="text-lg font-bold text-navy-400">15,000</div>
                   </div>
-                  <div className="text-center p-4 rounded-lg bg-slate-800/50">
-                    <div className="text-sm text-slate-400 mb-1">Speakers</div>
+                  <div className="text-center p-4 rounded-lg bg-platinum-800/50">
+                    <div className="text-sm text-platinum-400 mb-1">Speakers</div>
                     <div className="text-lg font-bold text-violet-400">350+</div>
                   </div>
                 </div>
@@ -1299,11 +1299,11 @@ export default function MediaStakeholdersPage() {
                     { name: 'Auditorium', desc: 'Member access' },
                     { name: 'Premium Workspaces', desc: 'Member access' },
                   ].map((facility, idx) => (
-                    <div key={idx} className="flex items-center gap-3 p-3 rounded-lg bg-slate-800/30">
+                    <div key={idx} className="flex items-center gap-3 p-3 rounded-lg bg-platinum-800/30">
                       <div className="h-2 w-2 rounded-full bg-gold-400" />
                       <div>
-                        <div className="text-sm font-medium text-slate-200">{facility.name}</div>
-                        <div className="text-xs text-slate-400">{facility.desc}</div>
+                        <div className="text-sm font-medium text-platinum-200">{facility.name}</div>
+                        <div className="text-xs text-platinum-400">{facility.desc}</div>
                       </div>
                     </div>
                   ))}
@@ -1327,10 +1327,10 @@ export default function MediaStakeholdersPage() {
                 >
                   <div className="flex items-center gap-3 mb-2">
                     <Globe className="h-5 w-5 text-gold-400" />
-                    <span className="text-sm text-slate-400">Global PR Market</span>
+                    <span className="text-sm text-platinum-400">Global PR Market</span>
                   </div>
                   <div className="text-2xl font-bold text-gold-400">$113B</div>
-                  <div className="text-xs text-slate-500">2025 market size</div>
+                  <div className="text-xs text-platinum-500">2025 market size</div>
                 </motion.div>
                 <motion.div
                   className="p-4 rounded-lg border border-navy-500/30 bg-navy-500/5"
@@ -1340,10 +1340,10 @@ export default function MediaStakeholdersPage() {
                 >
                   <div className="flex items-center gap-3 mb-2">
                     <Building className="h-5 w-5 text-navy-400" />
-                    <span className="text-sm text-slate-400">Middle East</span>
+                    <span className="text-sm text-platinum-400">Middle East</span>
                   </div>
                   <div className="text-2xl font-bold text-navy-400">$8.56B</div>
-                  <div className="text-xs text-slate-500">2026 market size</div>
+                  <div className="text-xs text-platinum-500">2026 market size</div>
                 </motion.div>
                 <motion.div
                   className="p-4 rounded-lg border border-emerald-500/30 bg-emerald-500/5"
@@ -1353,10 +1353,10 @@ export default function MediaStakeholdersPage() {
                 >
                   <div className="flex items-center gap-3 mb-2">
                     <TrendingUp className="h-5 w-5 text-emerald-400" />
-                    <span className="text-sm text-slate-400">Market CAGR</span>
+                    <span className="text-sm text-platinum-400">Market CAGR</span>
                   </div>
                   <div className="text-2xl font-bold text-emerald-400">4.68%</div>
-                  <div className="text-xs text-slate-500">Through 2031</div>
+                  <div className="text-xs text-platinum-500">Through 2031</div>
                 </motion.div>
                 <motion.div
                   className="p-4 rounded-lg border border-platinum-500/30 bg-platinum-500/5"
@@ -1366,10 +1366,10 @@ export default function MediaStakeholdersPage() {
                 >
                   <div className="flex items-center gap-3 mb-2">
                     <Target className="h-5 w-5 text-platinum-400" />
-                    <span className="text-sm text-slate-400">2031 Forecast</span>
+                    <span className="text-sm text-platinum-400">2031 Forecast</span>
                   </div>
                   <div className="text-2xl font-bold text-platinum-400">$10.76B</div>
-                  <div className="text-xs text-slate-500">Projected market</div>
+                  <div className="text-xs text-platinum-500">Projected market</div>
                 </motion.div>
               </div>
 
@@ -1421,11 +1421,11 @@ export default function MediaStakeholdersPage() {
                     <div className="mt-4 grid grid-cols-2 gap-4">
                       <div className="text-center p-3 rounded-lg bg-gold-500/10">
                         <div className="text-2xl font-bold text-gold-400">3-5x</div>
-                        <div className="text-xs text-slate-400">Placement Improvement</div>
+                        <div className="text-xs text-platinum-400">Placement Improvement</div>
                       </div>
                       <div className="text-center p-3 rounded-lg bg-emerald-500/10">
                         <div className="text-2xl font-bold text-emerald-400">70%</div>
-                        <div className="text-xs text-slate-400">Faster Execution</div>
+                        <div className="text-xs text-platinum-400">Faster Execution</div>
                       </div>
                     </div>
                   </CardContent>
@@ -1459,11 +1459,11 @@ export default function MediaStakeholdersPage() {
                   <div className="mt-4 grid grid-cols-2 gap-4">
                     <div className="text-center p-3 rounded-lg bg-platinum-500/10">
                       <div className="text-2xl font-bold text-platinum-400">$32.55B</div>
-                      <div className="text-xs text-slate-400">Global Market 2026</div>
+                      <div className="text-xs text-platinum-400">Global Market 2026</div>
                     </div>
                     <div className="text-center p-3 rounded-lg bg-navy-500/10">
                       <div className="text-2xl font-bold text-navy-400">92%</div>
-                      <div className="text-xs text-slate-400">Consumer Trust</div>
+                      <div className="text-xs text-platinum-400">Consumer Trust</div>
                     </div>
                   </div>
                 </CardContent>
@@ -1488,14 +1488,14 @@ export default function MediaStakeholdersPage() {
                     ].map((tool, idx) => (
                       <motion.div
                         key={idx}
-                        className="p-4 rounded-lg border border-slate-700 hover:border-gold/50 transition-colors"
+                        className="p-4 rounded-lg border border-platinum-700 hover:border-gold/50 transition-colors"
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
                         whileHover={{ scale: 1.02 }}
                       >
-                        <div className="font-medium text-slate-200">{tool.name}</div>
-                        <div className="text-sm text-slate-400">{tool.desc}</div>
+                        <div className="font-medium text-platinum-200">{tool.name}</div>
+                        <div className="text-sm text-platinum-400">{tool.desc}</div>
                         <Badge variant="outline" className={`mt-2 text-xs border-${tool.color}-500/50 text-${tool.color}-400`}>{tool.tier}</Badge>
                       </motion.div>
                     ))}
@@ -1520,17 +1520,17 @@ export default function MediaStakeholdersPage() {
                     ].map((item, idx) => (
                       <motion.div
                         key={idx}
-                        className="p-3 rounded-lg bg-slate-800/50"
+                        className="p-3 rounded-lg bg-platinum-800/50"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: idx * 0.03 }}
                       >
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-slate-400">{item.metric}</span>
-                          {item.alert && <AlertTriangle className="h-4 w-4 text-yellow-400" />}
+                          <span className="text-sm text-platinum-400">{item.metric}</span>
+                          {item.alert && <AlertTriangle className="h-4 w-4 text-amber-400" />}
                         </div>
                         <div className="text-xl font-bold text-gold-400">{item.value}</div>
-                        <div className="text-xs text-slate-500">{item.sub}</div>
+                        <div className="text-xs text-platinum-500">{item.sub}</div>
                       </motion.div>
                     ))}
                   </div>
@@ -1553,7 +1553,7 @@ export default function MediaStakeholdersPage() {
                     ].map((agency, idx) => (
                       <motion.div
                         key={idx}
-                        className="flex items-center gap-3 p-3 rounded-lg border border-slate-700 hover:border-gold/30 transition-colors"
+                        className="flex items-center gap-3 p-3 rounded-lg border border-platinum-700 hover:border-gold/30 transition-colors"
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.05 }}
@@ -1563,8 +1563,8 @@ export default function MediaStakeholdersPage() {
                           {agency.rank}
                         </div>
                         <div>
-                          <div className="font-medium text-slate-200">{agency.name}</div>
-                          <div className="text-xs text-slate-400">{agency.type}</div>
+                          <div className="font-medium text-platinum-200">{agency.name}</div>
+                          <div className="text-xs text-platinum-400">{agency.type}</div>
                           <div className="text-xs text-emerald-400">{agency.special}</div>
                         </div>
                       </motion.div>
@@ -1589,13 +1589,13 @@ export default function MediaStakeholdersPage() {
                     ].map((item, idx) => (
                       <motion.div
                         key={idx}
-                        className="text-center p-4 rounded-lg bg-slate-800/50"
+                        className="text-center p-4 rounded-lg bg-platinum-800/50"
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: idx * 0.05 }}
                       >
                         <div className={`text-2xl font-bold ${item.color}`}>{item.value}</div>
-                        <div className="text-sm text-slate-400 mt-1">{item.label}</div>
+                        <div className="text-sm text-platinum-400 mt-1">{item.label}</div>
                       </motion.div>
                     ))}
                   </div>
@@ -1611,7 +1611,7 @@ export default function MediaStakeholdersPage() {
                 <CardContent>
                   <div className="grid gap-6 lg:grid-cols-2">
                     <div>
-                      <h4 className="text-sm font-medium text-slate-300 mb-3">Platform ROI ($ per $1)</h4>
+                      <h4 className="text-sm font-medium text-platinum-300 mb-3">Platform ROI ($ per $1)</h4>
                       <div className="space-y-2">
                         {[
                           { platform: 'Instagram', value: 4.12, percent: 68 },
@@ -1620,7 +1620,7 @@ export default function MediaStakeholdersPage() {
                         ].map((p) => (
                           <div key={p.platform} className="space-y-1">
                             <div className="flex justify-between text-sm">
-                              <span className="text-slate-400">{p.platform}</span>
+                              <span className="text-platinum-400">{p.platform}</span>
                               <span className="text-emerald-400 font-medium">${p.value}</span>
                             </div>
                             <Progress value={p.percent} className="h-2" />
@@ -1629,7 +1629,7 @@ export default function MediaStakeholdersPage() {
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-sm font-medium text-slate-300 mb-3">Engagement Rates (%)</h4>
+                      <h4 className="text-sm font-medium text-platinum-300 mb-3">Engagement Rates (%)</h4>
                       <div className="space-y-2">
                         {[
                           { platform: 'TikTok Nano', value: 10.3, percent: 100 },
@@ -1638,7 +1638,7 @@ export default function MediaStakeholdersPage() {
                         ].map((p) => (
                           <div key={p.platform} className="space-y-1">
                             <div className="flex justify-between text-sm">
-                              <span className="text-slate-400">{p.platform}</span>
+                              <span className="text-platinum-400">{p.platform}</span>
                               <span className="text-gold-400 font-medium">{p.value}%</span>
                             </div>
                             <Progress value={p.percent} className="h-2" />
@@ -1651,29 +1651,29 @@ export default function MediaStakeholdersPage() {
               </Card>
 
               {/* Crisis & Measurement */}
-              <Card className="glass-card border-yellow-500/30">
+              <Card className="glass-card border-amber-500/30">
                 <CardHeader>
                   <CardTitle className="text-lg">Crisis & Measurement Challenges</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-3">
                     {[
-                      { icon: <AlertTriangle className="h-5 w-5 text-yellow-400" />, title: 'Crisis Timeline', desc: '24 hours compressed to 24 minutes in digital sphere' },
+                      { icon: <AlertTriangle className="h-5 w-5 text-amber-400" />, title: 'Crisis Timeline', desc: '24 hours compressed to 24 minutes in digital sphere' },
                       { icon: <AlertCircle className="h-5 w-5 text-rose-400" />, title: 'Pitch Response', desc: 'Only 3% of pitches receive journalist replies' },
                       { icon: <TrendingDown className="h-5 w-5 text-platinum-400" />, title: 'Measurement Gap', desc: '2.9% budget vs marketing 8% for measurement' },
                     ].map((item, idx) => (
                       <motion.div
                         key={idx}
-                        className="p-4 rounded-lg bg-slate-800/50 border border-slate-700"
+                        className="p-4 rounded-lg bg-platinum-800/50 border border-platinum-700"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: idx * 0.1 }}
                       >
                         <div className="flex items-center gap-2 mb-2">
                           {item.icon}
-                          <span className="font-medium text-slate-200">{item.title}</span>
+                          <span className="font-medium text-platinum-200">{item.title}</span>
                         </div>
-                        <p className="text-sm text-slate-400">{item.desc}</p>
+                        <p className="text-sm text-platinum-400">{item.desc}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1719,14 +1719,14 @@ export default function MediaStakeholdersPage() {
                       ].map((entity, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-slate-200">{entity.name}</span>
+                            <span className="text-sm font-medium text-platinum-200">{entity.name}</span>
                             <div className="flex items-center gap-4 text-xs">
                               <span className="text-emerald-400">+{entity.positive}%</span>
                               <span className="text-platinum-400">{entity.neutral}%</span>
                               <span className="text-rose-400">-{entity.negative}%</span>
                             </div>
                           </div>
-                          <div className="flex h-2 overflow-hidden rounded-full bg-slate-700">
+                          <div className="flex h-2 overflow-hidden rounded-full bg-platinum-700">
                             <div
                               className="bg-emerald-500"
                               style={{ width: `${entity.positive}%` }}

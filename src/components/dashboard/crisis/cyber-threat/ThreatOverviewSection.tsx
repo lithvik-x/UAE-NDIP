@@ -158,7 +158,7 @@ export function ThreatOverviewSection({ data }: ThreatOverviewSectionProps) {
             <Card className="glass-card border-purple-500/30">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Globe className="h-5 w-5 text-gold" />
+                  <Globe className="h-5 w-5 text-amber" />
                   Sentiment Analysis
                 </CardTitle>
                 <CardDescription>Threat response sentiment</CardDescription>
@@ -213,16 +213,16 @@ export function ThreatOverviewSection({ data }: ThreatOverviewSectionProps) {
             <Card className="glass-card border-purple-500/30">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Clock className="h-5 w-5 text-gold" />
+                  <Clock className="h-5 w-5 text-amber" />
                   Official Quote
                 </CardTitle>
                 <CardDescription>UAE Cyber Security Council</CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col justify-center h-[220px]">
-                <blockquote className="border-l-4 border-gold pl-4">
-                  <p className="text-2xl font-serif italic text-gold">"{officialQuote.text}"</p>
-                  <p className="mt-2 text-sm text-slate-400">- {officialQuote.author}</p>
-                  <p className="text-xs text-slate-500">{officialQuote.role}</p>
+                <blockquote className="border-l-4 border-amber pl-4">
+                  <p className="text-2xl font-serif italic text-amber">"{officialQuote.text}"</p>
+                  <p className="mt-2 text-sm text-platinum-400">- {officialQuote.author}</p>
+                  <p className="text-xs text-platinum-500">{officialQuote.role}</p>
                 </blockquote>
               </CardContent>
             </Card>

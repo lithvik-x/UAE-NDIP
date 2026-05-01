@@ -114,7 +114,7 @@ export default function StatisticalDatapointsPage() {
                         <span className="text-lg font-bold text-platinum-100">{s.accuracy}%</span>
                       </div>
                     </div>
-                    <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                       <motion.div initial={{ width: 0 }} animate={{ width: `${s.accuracy}%` }} transition={{ delay: idx * 0.1 + 0.3, duration: 0.5 }}
                         className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-500" />
                     </div>

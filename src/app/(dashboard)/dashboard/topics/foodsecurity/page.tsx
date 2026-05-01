@@ -161,7 +161,7 @@ export default function FoodSecurityPage() {
 
   const getAlertColor = (alert?: string) => {
     if (alert === 'RED') return 'border-red-500/50'
-    if (alert === 'YELLOW') return 'border-yellow-500/50'
+    if (alert === 'YELLOW') return 'border-amber-500/50'
     return 'border-emerald-500/50'
   }
 
@@ -177,10 +177,10 @@ export default function FoodSecurityPage() {
         <div>
           <Badge variant="denim" className="mb-2">C-SECTOR: FOOD SECURITY</Badge>
           <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-navy">Food Security</h1>
-          <p className="mt-2 text-slate-400 max-w-2xl">
+          <p className="mt-2 text-platinum-400 max-w-2xl">
             {data?.description}
           </p>
-          <div className="mt-2 flex items-center gap-4 text-sm text-slate-500">
+          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500">
             <span className="flex items-center gap-1">
               <Clock className="h-4 w-4" />
               {data?.reportMetadata?.reportCompiled}
@@ -244,15 +244,15 @@ export default function FoodSecurityPage() {
       </motion.div>
 
       {/* Alert Banner */}
-      <motion.div variants={itemVariants} className={`rounded-xl border p-4 bg-slate-900/50 ${getAlertColor(alertLevel)}`}>
+      <motion.div variants={itemVariants} className={`rounded-xl border p-4 bg-platinum-900/50 ${getAlertColor(alertLevel)}`}>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             {alertLevel === 'RED' && <AlertCircle className="h-6 w-6 text-red-400" />}
-            {alertLevel === 'YELLOW' && <AlertTriangle className="h-6 w-6 text-yellow-400" />}
+            {alertLevel === 'YELLOW' && <AlertTriangle className="h-6 w-6 text-amber-400" />}
             {alertLevel === 'GREEN' && <TrendingUp className="h-6 w-6 text-emerald-400" />}
             <div>
-              <p className="font-semibold text-slate-200">Intelligence Alert Level: {alertLevel}</p>
-              <p className="text-sm text-slate-400">UAE Relevance: {uaeRelevance.score}/100 — {uaeRelevance.justification}</p>
+              <p className="font-semibold text-platinum-200">Intelligence Alert Level: {alertLevel}</p>
+              <p className="text-sm text-platinum-400">UAE Relevance: {uaeRelevance.score}/100 — {uaeRelevance.justification}</p>
             </div>
           </div>
           {getAlertBadge(alertLevel)}
@@ -306,7 +306,7 @@ export default function FoodSecurityPage() {
               ] : []).map((finding, index) => (
                 <div
                   key={index}
-                  className={`flex items-center justify-between rounded-lg border p-4 bg-slate-800/50 hover:bg-slate-800/70 transition-colors ${finding.alert ? getAlertColor(finding.alert) : 'border-slate-700'}`}
+                  className={`flex items-center justify-between rounded-lg border p-4 bg-platinum-800/50 hover:bg-platinum-800/70 transition-colors ${finding.alert ? getAlertColor(finding.alert) : 'border-platinum-700'}`}
                 >
                   <div className="flex items-center gap-4">
                     <div className={`flex h-10 w-10 items-center justify-center rounded-full ${
@@ -319,14 +319,14 @@ export default function FoodSecurityPage() {
                        <AlertCircle className="h-5 w-5" />}
                     </div>
                     <div>
-                      <p className="font-medium text-slate-200">{finding.finding}</p>
-                      <p className="text-sm text-slate-400">Source: {finding.source}</p>
+                      <p className="font-medium text-platinum-200">{finding.finding}</p>
+                      <p className="text-sm text-platinum-400">Source: {finding.source}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="text-right">
                       <p className="text-xl font-bold text-navy">{finding.metric}</p>
-                      <p className="text-xs text-slate-400">Tier {finding.tier}</p>
+                      <p className="text-xs text-platinum-400">Tier {finding.tier}</p>
                     </div>
                     {finding.alert && getAlertBadge(finding.alert)}
                   </div>
@@ -367,7 +367,7 @@ export default function FoodSecurityPage() {
                   <CardContent>
                     <div className="space-y-3">
                       {(data?.foodImportDependency?.importVolume ?? []).map((item: { metric: string; year: string; value: string }, idx: number) => (
-                        <div key={idx} className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                        <div key={idx} className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                           <span className="text-platinum-400 text-sm">{item.metric} ({item.year})</span>
                           <Badge variant="gold" className="text-xs">{item.value}</Badge>
                         </div>
@@ -455,7 +455,7 @@ export default function FoodSecurityPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {(data?.foodImportDependency?.foreignAgriculturalInvestments ?? []).map((inv: { countryRegion: string; landHoldings: string; notes: string }, idx: number) => (
-                      <div key={idx} className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <div>
                           <p className="font-medium text-platinum-200">{inv.countryRegion}</p>
                           <p className="text-xs text-platinum-500">{inv.notes}</p>
@@ -509,7 +509,7 @@ export default function FoodSecurityPage() {
                 <CardContent>
                   <div className="grid grid-cols-3 gap-3">
                     {(data?.strategicReserves?.ninePriceRegulatedCommodities ?? []).map((item: { commodity: string }, idx: number) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg text-center">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <span className="text-platinum-300 text-sm">{item.commodity}</span>
                       </div>
                     ))}
@@ -579,7 +579,7 @@ export default function FoodSecurityPage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2">
                     {(data?.agriculturalTechnology?.majorVerticalFarms ?? []).slice(0, 6).map((farm: { attribute: string; value: string }, idx: number) => (
-                      <div key={idx} className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400 text-sm">{farm.attribute}</span>
                         <span className="font-bold text-gold text-sm">{farm.value}</span>
                       </div>
@@ -619,7 +619,7 @@ export default function FoodSecurityPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {(data?.agriTechStartups?.topCompanies ?? []).slice(0, 5).map((company: { company: string; focus: string; location: string; totalFunding: string; stage: string }, idx: number) => (
-                      <div key={idx} className="flex items-center justify-between p-4 bg-slate-800/50 rounded-xl">
+                      <div key={idx} className="flex items-center justify-between p-4 bg-platinum-800/50 rounded-xl">
                         <div>
                           <p className="font-bold text-gold">{company.company}</p>
                           <p className="text-xs text-platinum-500">{company.focus} | {company.location}</p>
@@ -675,7 +675,7 @@ export default function FoodSecurityPage() {
                 <CardContent>
                   <div className="grid grid-cols-3 gap-3">
                     {(data?.dateIndustry?.majorDateVarieties ?? []).map((variety: { variety: string; characteristics: string }, idx: number) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="font-bold text-gold">{variety.variety}</p>
                         <p className="text-xs text-platinum-400 mt-1">{variety.characteristics}</p>
                       </div>
@@ -695,7 +695,7 @@ export default function FoodSecurityPage() {
                 <CardContent>
                   <div className="space-y-2">
                     {(data?.dateIndustry?.keyPlayers ?? []).map((company: { company: string; notes: string }, idx: number) => (
-                      <div key={idx} className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <span className="font-medium text-platinum-200">{company.company}</span>
                         <span className="text-xs text-platinum-500 text-right max-w-xs">{company.notes}</span>
                       </div>
@@ -772,11 +772,11 @@ export default function FoodSecurityPage() {
                     </div>
                   </div>
                   <div className="mt-4 space-y-2">
-                    <div className="flex justify-between p-2 bg-slate-800/50 rounded">
+                    <div className="flex justify-between p-2 bg-platinum-800/50 rounded">
                       <span className="text-platinum-400 text-sm">Local Salmon Price</span>
                       <span className="font-bold text-emerald">~$23/pound</span>
                     </div>
-                    <div className="flex justify-between p-2 bg-slate-800/50 rounded">
+                    <div className="flex justify-between p-2 bg-platinum-800/50 rounded">
                       <span className="text-platinum-400 text-sm">Imported Premium</span>
                       <span className="font-bold text-rose">~30% higher</span>
                     </div>
@@ -795,7 +795,7 @@ export default function FoodSecurityPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {(data?.aquaculture?.investments ?? []).map((inv: { investor: string; year: string; amount: string; target: string }, idx: number) => (
-                      <div key={idx} className="flex items-center justify-between p-4 bg-slate-800/50 rounded-xl">
+                      <div key={idx} className="flex items-center justify-between p-4 bg-platinum-800/50 rounded-xl">
                         <div>
                           <p className="font-bold text-gold">{inv.investor}</p>
                           <p className="text-xs text-platinum-500">{inv.year}</p>
@@ -821,7 +821,7 @@ export default function FoodSecurityPage() {
                 <CardContent>
                   <div className="grid grid-cols-3 gap-3">
                     {(data?.aquaculture?.keySpeciesInUAEAquaculture ?? []).map((species: { localName: string; commonName: string }, idx: number) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg text-center">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="font-bold text-navy">{species.localName}</p>
                         <p className="text-xs text-platinum-500">{species.commonName}</p>
                       </div>
@@ -852,7 +852,7 @@ export default function FoodSecurityPage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2">
                     {(data?.foodSafety?.regulatoryBodies ?? []).map((body: { body: string; jurisdiction: string }, idx: number) => (
-                      <div key={idx} className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <span className="font-bold text-navy">{body.body}</span>
                         <span className="text-xs text-platinum-400 text-right">{body.jurisdiction}</span>
                       </div>
@@ -1034,7 +1034,7 @@ export default function FoodSecurityPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {(data?.foodPriceInflation?.foodInflationData ?? []).map((item: { date: string; foodInflation: string }, idx: number) => (
-                      <div key={idx} className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400 text-sm">{item.date}</span>
                         <Badge variant={item.foodInflation?.includes('-') ? 'success' : 'warning'} className="text-xs">
                           {item.foodInflation}%
@@ -1056,7 +1056,7 @@ export default function FoodSecurityPage() {
                 <CardContent>
                   <div className="grid gap-3 md:grid-cols-2">
                     {(data?.foodPriceInflation?.cpiDataDecember2025 ?? []).map((item: { indicator: string; value: string }, idx: number) => (
-                      <div key={idx} className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400 text-sm">{item.indicator}</span>
                         <span className="font-bold text-navy">{item.value}</span>
                       </div>
@@ -1155,7 +1155,7 @@ export default function FoodSecurityPage() {
                 <CardContent>
                   <div className="grid grid-cols-3 gap-2">
                     {(data?.foodLabeling?.mandatoryLabelElements ?? []).map((el: { element: string }, idx: number) => (
-                      <div key={idx} className="p-2 bg-slate-800/50 rounded text-center">
+                      <div key={idx} className="p-2 bg-platinum-800/50 rounded text-center">
                         <span className="text-xs text-platinum-300">{idx + 1}. {el.element}</span>
                       </div>
                     ))}
@@ -1174,7 +1174,7 @@ export default function FoodSecurityPage() {
                 <CardContent>
                   <div className="flex gap-4">
                     {(data?.foodLabeling?.trafficLightLabeling?.colors ?? []).map((color: { color: string; meaning: string }, idx: number) => (
-                      <div key={idx} className="flex-1 p-4 bg-slate-800/50 rounded-xl text-center">
+                      <div key={idx} className="flex-1 p-4 bg-platinum-800/50 rounded-xl text-center">
                         <Badge
                           variant={
                             color.color === 'Red' ? 'destructive' :
@@ -1233,8 +1233,8 @@ export default function FoodSecurityPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {(data?.gmoRegulation?.testingData ?? []).map((finding: { study: string; finding: string }, idx: number) => (
-                      <div key={idx} className="p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
-                        <p className="font-bold text-yellow-400">{finding.study}</p>
+                      <div key={idx} className="p-4 bg-amber-500/10 border border-amber-500/30 rounded-lg">
+                        <p className="font-bold text-amber-400">{finding.study}</p>
                         <p className="text-sm text-platinum-400 mt-1">{finding.finding}</p>
                       </div>
                     ))}
@@ -1253,7 +1253,7 @@ export default function FoodSecurityPage() {
                 <CardContent>
                   <div className="space-y-2">
                     {(data?.gmoRegulation?.gsoStandards ?? []).map((standard: { standard: string; productType: string; threshold: string }, idx: number) => (
-                      <div key={idx} className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-400 text-sm">{standard.standard}</span>
                         <div className="text-right">
                           <span className="text-xs text-platinum-500">{standard.productType}</span>
@@ -1319,7 +1319,7 @@ export default function FoodSecurityPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {(data?.sentimentAnalysis?.sentimentByTheme ?? []).map((item: { theme: string; sentiment: string }, idx: number) => (
-                      <div key={idx} className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-platinum-300 text-sm">{item.theme}</span>
                         <Badge
                           variant={

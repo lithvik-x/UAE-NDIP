@@ -59,7 +59,7 @@ export function TimelineSection({ data }: TimelineSectionProps) {
     { label: 'Total Killed', value: '13', icon: AlertTriangle, color: 'text-rose-400' },
     { label: 'Injured', value: '224', icon: Activity, color: 'text-orange-400' },
     { label: 'Nationalities', value: '8+', icon: Users, color: 'text-cyan-400' },
-    { label: 'Oil Drop', value: '500-800K bpd', icon: Flame, color: 'text-yellow-400' },
+    { label: 'Oil Drop', value: '500-800K bpd', icon: Flame, color: 'text-amber-400' },
     { label: 'Economic Damage', value: '$120B+', icon: Building2, color: 'text-rose-400' },
     { label: 'EGA Recovery', value: '~1 year', icon: Shield, color: 'text-orange-400' },
   ]
@@ -146,7 +146,7 @@ export function TimelineSection({ data }: TimelineSectionProps) {
             <ScrollArea className="h-[240px]">
               <div className="space-y-3 pr-4">
                 {nationalityData.map((item, idx) => (
-                  <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/30 p-3">
+                  <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-3">
                     <div className="flex items-center gap-3">
                       <div
                         className="w-3 h-3 rounded-full"
@@ -217,7 +217,7 @@ export function TimelineSection({ data }: TimelineSectionProps) {
                 transition={{ delay: idx * 0.1 }}
                 className="relative"
               >
-                <div className="absolute -left-12 top-1 w-6 h-6 rounded-full bg-slate-800 border-2 border-rose-500 flex items-center justify-center">
+                <div className="absolute -left-12 top-1 w-6 h-6 rounded-full bg-platinum-800 border-2 border-rose-500 flex items-center justify-center">
                   <div className="w-2 h-2 rounded-full bg-rose-500" />
                 </div>
                 <div className="glass-card rounded-xl p-4 bg-glass-surface/50 border-glass-border">
@@ -244,13 +244,13 @@ export function TimelineSection({ data }: TimelineSectionProps) {
           <div className="space-y-4">
             <h4 className="text-sm font-semibold text-platinum-300">Before vs After</h4>
             <div className="space-y-3">
-              <div className="rounded-lg bg-slate-800/50 p-4 border-l-4 border-rose-500">
+              <div className="rounded-lg bg-platinum-800/50 p-4 border-l-4 border-rose-500">
                 <h5 className="text-xs font-semibold text-rose-400 uppercase mb-1">Before (Self-Presentation)</h5>
                 <p className="text-sm text-platinum-300">
                   &quot;Secure, stable, untouchable regional hub&quot;
                 </p>
               </div>
-              <div className="rounded-lg bg-slate-800/50 p-4 border-l-4 border-emerald-500">
+              <div className="rounded-lg bg-platinum-800/50 p-4 border-l-4 border-emerald-500">
                 <h5 className="text-xs font-semibold text-emerald-400 uppercase mb-1">After (Reality)</h5>
                 <p className="text-sm text-platinum-300">
                   &quot;Vulnerability exposed, infrastructure damaged, perception shattered&quot;
@@ -268,7 +268,7 @@ export function TimelineSection({ data }: TimelineSectionProps) {
                 'Burj Al Arab, 23 Marina Tower, ports damaged',
                 'Emirates Global Aluminium recovery ~1 year',
               ].map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3 rounded-lg bg-slate-800/30 p-3">
+                <div key={idx} className="flex items-start gap-3 rounded-lg bg-platinum-800/30 p-3">
                   <AlertTriangle className="h-4 w-4 text-rose-400 shrink-0 mt-0.5" />
                   <span className="text-sm text-platinum-300">{item}</span>
                 </div>

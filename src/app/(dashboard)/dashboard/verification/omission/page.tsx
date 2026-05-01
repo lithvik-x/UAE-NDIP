@@ -69,9 +69,9 @@ const scaleIn = {
 const getTierBadge = (tier: number) => {
   switch (tier) {
     case 1: return <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">Tier {tier}</Badge>
-    case 2: return <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/50">Tier {tier}</Badge>
-    case 3: return <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/50">Tier {tier}</Badge>
-    default: return <Badge className="bg-slate-500/20 text-slate-400 border-slate-500/50">Tier {tier}</Badge>
+    case 2: return <Badge className="bg-navy-500/20 text-navy-400 border-navy-500/50">Tier {tier}</Badge>
+    case 3: return <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/50">Tier {tier}</Badge>
+    default: return <Badge className="bg-platinum-500/20 text-platinum-400 border-platinum-500/50">Tier {tier}</Badge>
   }
 }
 
@@ -79,7 +79,7 @@ const getRelevanceBadge = (relevance: string) => {
   switch (relevance) {
     case 'CRITICAL': return <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">CRITICAL</Badge>
     case 'HIGH': return <Badge variant="warning" className="bg-orange-500/20 text-orange-400 border-orange-500/50">HIGH</Badge>
-    case 'MEDIUM': return <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/50">MEDIUM</Badge>
+    case 'MEDIUM': return <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/50">MEDIUM</Badge>
     default: return <Badge variant="outline">LOW</Badge>
   }
 }
@@ -101,7 +101,7 @@ const getTrendIcon = (trend: string) => {
   if (trend?.includes('Improving') || trend?.includes('+')) {
     return <TrendingUp className="h-4 w-4 text-emerald-400" />
   }
-  return <Minus className="h-4 w-4 text-slate-400" />
+  return <Minus className="h-4 w-4 text-platinum-400" />
 }
 
 export default function OmissionSilencePage() {
@@ -109,7 +109,7 @@ export default function OmissionSilencePage() {
   const { data: overviewData } = useOmissionSilenceOverviewData()
 
   if (!data || !overviewData) {
-    return <div className="p-8 text-slate-400">Loading...</div>
+    return <div className="p-8 text-platinum-400">Loading...</div>
   }
 
   // Extract key metrics for dashboard
@@ -153,7 +153,7 @@ export default function OmissionSilencePage() {
         <div>
           <Badge variant="emerald" className="mb-2">V-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Omission & Silence Detection</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Systematic media censorship, suppression patterns, and information control analysis
           </p>
         </div>
@@ -222,34 +222,34 @@ export default function OmissionSilencePage() {
           description="Research execution statistics and data sources"
         >
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
+            <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
               <div className="text-2xl font-bold text-emerald-400">
                 {data.executiveSummary.reportMetadata.totalSourcesCited}
               </div>
-              <p className="text-sm text-slate-400">Sources Cited</p>
+              <p className="text-sm text-platinum-400">Sources Cited</p>
             </div>
-            <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
+            <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
               <div className="text-2xl font-bold text-emerald-400">
                 {data.executiveSummary.reportMetadata.atomicQueriesExecuted}
               </div>
-              <p className="text-sm text-slate-400">Queries Executed</p>
+              <p className="text-sm text-platinum-400">Queries Executed</p>
             </div>
-            <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
+            <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
               <div className="text-2xl font-bold text-emerald-400">
                 {data.executiveSummary.reportMetadata.pagesSuccessful}/{data.executiveSummary.reportMetadata.pagesFetched}
               </div>
-              <p className="text-sm text-slate-400">Pages Fetched</p>
+              <p className="text-sm text-platinum-400">Pages Fetched</p>
             </div>
-            <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
+            <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
               <div className="text-2xl font-bold text-emerald-400">
                 {successfulSources}
               </div>
-              <p className="text-sm text-slate-400">Successful</p>
+              <p className="text-sm text-platinum-400">Successful</p>
             </div>
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
             {data.executiveSummary.reportMetadata.organizationsMonitored.map((org: string, idx: number) => (
-              <Badge key={idx} variant="outline" className="bg-slate-700/50">
+              <Badge key={idx} variant="outline" className="bg-platinum-700/50">
                 {org}
               </Badge>
             ))}
@@ -338,12 +338,12 @@ export default function OmissionSilencePage() {
                     <div className="space-y-4">
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-slate-400">Political Environment</span>
+                          <span className="text-platinum-400">Political Environment</span>
                           <span className="font-medium text-rose-400">{rsfData.componentScores2025.politicalEnvironment}</span>
                         </div>
                         <Progress value={rsfData.componentScores2025.politicalEnvironment} className="h-3" />
                       </div>
-                      <p className="text-xs text-slate-500">
+                      <p className="text-xs text-platinum-500">
                         Note: Other component scores (Legal Framework, Economic Context, Sociocultural Context, Security) were not available
                       </p>
                     </div>
@@ -355,7 +355,7 @@ export default function OmissionSilencePage() {
                     <CardTitle className="text-lg text-red-400">Key Finding</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-300">
+                    <p className="text-platinum-300">
                       {rsfData.keyFinding}
                     </p>
                   </CardContent>
@@ -384,13 +384,13 @@ export default function OmissionSilencePage() {
                     <CardContent>
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                          <span className="text-slate-400">Score</span>
+                          <span className="text-platinum-400">Score</span>
                           <span className="text-2xl font-bold text-red-400">{fotScore}/100</span>
                         </div>
                         <Progress value={fotPercentage} className="h-4" />
                         <div className="flex items-center gap-2">
                           {getTrendIcon(fotData.years[0]?.change?.toString() || '')}
-                          <span className="text-sm text-slate-400">
+                          <span className="text-sm text-platinum-400">
                             {fotData.years[0]?.change} from previous year
                           </span>
                         </div>
@@ -406,10 +406,10 @@ export default function OmissionSilencePage() {
                     <CardContent>
                       <div className="space-y-3">
                         {Object.entries(fotData.categoryBreakdown2025).map(([key, val]: [string, any]) => (
-                          <div key={key} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <div key={key} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                             <div>
-                              <p className="font-medium text-slate-200">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
-                              <p className="text-xs text-slate-400">{val.assessment}</p>
+                              <p className="font-medium text-platinum-200">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
+                              <p className="text-xs text-platinum-400">{val.assessment}</p>
                             </div>
                             <div className="text-right">
                               <span className="text-lg font-bold text-red-400">{val.score}/{val.max}</span>
@@ -429,8 +429,8 @@ export default function OmissionSilencePage() {
                     <ScrollArea className="h-[200px]">
                       <div className="space-y-2">
                         {fotData.additionalDataPoints.map((point: string, idx: number) => (
-                          <div key={idx} className="rounded-lg border border-slate-700 bg-slate-800/50 p-2">
-                            <p className="text-sm text-slate-300">{point}</p>
+                          <div key={idx} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-2">
+                            <p className="text-sm text-platinum-300">{point}</p>
                           </div>
                         ))}
                       </div>
@@ -455,17 +455,17 @@ export default function OmissionSilencePage() {
                 <div className="grid gap-4 sm:grid-cols-3">
                   <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-center">
                     <div className="text-3xl font-bold text-red-400">{fitwData.politicalRights.score}/{fitwData.politicalRights.max}</div>
-                    <p className="text-sm text-slate-400 mt-1">Political Rights</p>
+                    <p className="text-sm text-platinum-400 mt-1">Political Rights</p>
                     <Badge variant="destructive" className="mt-2 bg-red-500/20 text-red-400">Not Free</Badge>
                   </div>
                   <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-center">
                     <div className="text-3xl font-bold text-red-400">{fitwData.civilLiberties.score}/{fitwData.civilLiberties.max}</div>
-                    <p className="text-sm text-slate-400 mt-1">Civil Liberties</p>
+                    <p className="text-sm text-platinum-400 mt-1">Civil Liberties</p>
                     <Badge variant="destructive" className="mt-2 bg-red-500/20 text-red-400">Not Free</Badge>
                   </div>
                   <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-center">
                     <div className="text-3xl font-bold text-red-400">{fitwData.globalFreedomScore.score}/{fitwData.globalFreedomScore.max}</div>
-                    <p className="text-sm text-slate-400 mt-1">Global Freedom Score</p>
+                    <p className="text-sm text-platinum-400 mt-1">Global Freedom Score</p>
                     <Badge variant="destructive" className="mt-2 bg-red-500/20 text-red-400">Not Free</Badge>
                   </div>
                 </div>
@@ -482,10 +482,10 @@ export default function OmissionSilencePage() {
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="flex items-start gap-2 rounded-lg border border-slate-700 bg-slate-800/50 p-2"
+                          className="flex items-start gap-2 rounded-lg border border-platinum-700 bg-platinum-800/50 p-2"
                         >
                           <AlertTriangle className="h-4 w-4 text-red-400 mt-0.5" />
-                          <p className="text-sm text-slate-300">{item}</p>
+                          <p className="text-sm text-platinum-300">{item}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -521,14 +521,14 @@ export default function OmissionSilencePage() {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.05 }}
-                            className="flex items-start gap-4 rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                            className="flex items-start gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                           >
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-500/20 text-red-400">
                               <Clock className="h-5 w-5" />
                             </div>
                             <div className="flex-1">
-                              <p className="font-medium text-slate-200">{event.date}</p>
-                              <p className="text-sm text-slate-400 mt-1">{event.event}</p>
+                              <p className="font-medium text-platinum-200">{event.date}</p>
+                              <p className="text-sm text-platinum-400 mt-1">{event.event}</p>
                               <Badge variant="outline" className="mt-2 text-xs">{event.significance}</Badge>
                             </div>
                           </motion.div>
@@ -550,20 +550,20 @@ export default function OmissionSilencePage() {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+                          className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                         >
                           <div className="mb-2 flex items-center justify-between">
-                            <h4 className="font-semibold text-slate-200">{item.location}</h4>
+                            <h4 className="font-semibold text-platinum-200">{item.location}</h4>
                             <Badge variant="outline" className="text-xs">{item.source}</Badge>
                           </div>
                           <div className="grid gap-2 sm:grid-cols-2">
                             <div className="rounded bg-red-500/10 p-2">
                               <p className="text-xs text-red-400">Official Claim</p>
-                              <p className="text-sm text-slate-300">{item.officialClaim}</p>
+                              <p className="text-sm text-platinum-300">{item.officialClaim}</p>
                             </div>
                             <div className="rounded bg-emerald-500/10 p-2">
                               <p className="text-xs text-emerald-400">Contrasting Evidence</p>
-                              <p className="text-sm text-slate-300">{item.contrastingEvidence}</p>
+                              <p className="text-sm text-platinum-300">{item.contrastingEvidence}</p>
                             </div>
                           </div>
                         </motion.div>
@@ -582,37 +582,37 @@ export default function OmissionSilencePage() {
                         <div className="text-2xl font-bold text-red-400">
                           {censorshipData.iranianStrikesCoverage.enforcementActions.peopleArrestedForMisinformation}
                         </div>
-                        <p className="text-sm text-slate-400">Arrested for Misinformation</p>
+                        <p className="text-sm text-platinum-400">Arrested for Misinformation</p>
                       </div>
                       <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-center">
                         <div className="text-2xl font-bold text-red-400">
                           {censorshipData.iranianStrikesCoverage.enforcementActions.peopleDetainedForMisleadingVideos}
                         </div>
-                        <p className="text-sm text-slate-400">Detained for Misleading Videos</p>
+                        <p className="text-sm text-platinum-400">Detained for Misleading Videos</p>
                       </div>
                       <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-center">
                         <div className="text-2xl font-bold text-red-400">
                           {censorshipData.iranianStrikesCoverage.enforcementActions.peopleArrestedForFilmingSharingAttackVideos}
                         </div>
-                        <p className="text-sm text-slate-400">Arrested for Filming/Sharing</p>
+                        <p className="text-sm text-platinum-400">Arrested for Filming/Sharing</p>
                       </div>
                       <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4 text-center">
                         <div className="text-2xl font-bold text-orange-400">
                           {censorshipData.iranianStrikesCoverage.enforcementActions.minimumImprisonmentForContradictingStatements}
                         </div>
-                        <p className="text-sm text-slate-400">Min. Imprisonment</p>
+                        <p className="text-sm text-platinum-400">Min. Imprisonment</p>
                       </div>
                       <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4 text-center">
                         <div className="text-2xl font-bold text-orange-400">
                           {censorshipData.iranianStrikesCoverage.enforcementActions.fineForSharingContradictingContent}
                         </div>
-                        <p className="text-sm text-slate-400">Fine for Contradicting Content</p>
+                        <p className="text-sm text-platinum-400">Fine for Contradicting Content</p>
                       </div>
                       <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4 text-center">
                         <div className="text-2xl font-bold text-orange-400">
                           {censorshipData.iranianStrikesCoverage.enforcementActions.britishNationalsDetained}
                         </div>
-                        <p className="text-sm text-slate-400">British Nationals Detained</p>
+                        <p className="text-sm text-platinum-400">British Nationals Detained</p>
                       </div>
                     </div>
                   </CardContent>
@@ -644,15 +644,15 @@ export default function OmissionSilencePage() {
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                          className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
                           <div className="flex items-center gap-3">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-500/20 text-red-400">
                               <Ban className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-200">{account.account}</p>
-                              <p className="text-sm text-slate-400">{account.type} - {account.reason}</p>
+                              <p className="font-semibold text-platinum-200">{account.account}</p>
+                              <p className="text-sm text-platinum-400">{account.type} - {account.reason}</p>
                             </div>
                           </div>
                           {account.followerCount && (
@@ -671,14 +671,14 @@ export default function OmissionSilencePage() {
                   <CardContent>
                     <div className="space-y-3">
                       {censorshipData.coordinatedInfluenceOperations.map((op: any, idx: number) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/20 text-orange-400">
                               <Network className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-200">{op.platform} - {op.year}</p>
-                              <p className="text-sm text-slate-400">{op.accountsRemoved} accounts for {op.purpose}</p>
+                              <p className="font-semibold text-platinum-200">{op.platform} - {op.year}</p>
+                              <p className="text-sm text-platinum-400">{op.accountsRemoved} accounts for {op.purpose}</p>
                             </div>
                           </div>
                         </div>
@@ -687,19 +687,19 @@ export default function OmissionSilencePage() {
                   </CardContent>
                 </Card>
 
-                <Card className="glass-card border-blue-500/30">
+                <Card className="glass-card border-navy-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg">Strategic Silence Policy</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <blockquote className="border-l-4 border-blue-500 pl-4 italic text-slate-300">
+                    <blockquote className="border-l-4 border-navy-500 pl-4 italic text-platinum-300">
                       "{censorshipData.strategicSilencePolicy.officialArticulation}"
                     </blockquote>
                     <div className="mt-4 space-y-2">
                       {censorshipData.strategicSilencePolicy.policyInterpretation.map((item: string, idx: number) => (
                         <div key={idx} className="flex items-start gap-2">
-                          <CheckCircle className="h-4 w-4 text-blue-400 mt-0.5" />
-                          <p className="text-sm text-slate-300">{item}</p>
+                          <CheckCircle className="h-4 w-4 text-navy-400 mt-0.5" />
+                          <p className="text-sm text-platinum-300">{item}</p>
                         </div>
                       ))}
                     </div>
@@ -733,11 +733,11 @@ export default function OmissionSilencePage() {
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+                          className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                         >
                           <div className="flex-1">
-                            <h4 className="font-semibold text-slate-200">{law.law} ({law.year})</h4>
-                            <p className="text-sm text-slate-400 mt-1">{law.purpose}</p>
+                            <h4 className="font-semibold text-platinum-200">{law.law} ({law.year})</h4>
+                            <p className="text-sm text-platinum-400 mt-1">{law.purpose}</p>
                           </div>
                           <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
                             {law.maximumPenalty}
@@ -761,10 +761,10 @@ export default function OmissionSilencePage() {
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.03 }}
-                            className="flex items-start gap-2 rounded-lg border border-slate-700 bg-slate-800/50 p-2"
+                            className="flex items-start gap-2 rounded-lg border border-platinum-700 bg-platinum-800/50 p-2"
                           >
                             <AlertOctagon className="h-4 w-4 text-red-400 mt-0.5" />
-                            <p className="text-sm text-slate-300">{finding}</p>
+                            <p className="text-sm text-platinum-300">{finding}</p>
                           </motion.div>
                         ))}
                       </div>
@@ -787,8 +787,8 @@ export default function OmissionSilencePage() {
                           className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-center"
                         >
                           <div className="text-2xl font-bold text-red-400">{stat.count}</div>
-                          <p className="text-sm text-slate-400 mt-1">{stat.action}</p>
-                          <p className="text-xs text-slate-500 mt-1">{stat.date}</p>
+                          <p className="text-sm text-platinum-400 mt-1">{stat.action}</p>
+                          <p className="text-xs text-platinum-500 mt-1">{stat.date}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -802,14 +802,14 @@ export default function OmissionSilencePage() {
                   <CardContent>
                     <div className="space-y-3">
                       {legalData.wartimeSpeechRestrictions.map((restriction: any, idx: number) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
-                            <div className={`flex h-10 w-10 items-center justify-center rounded-full ${restriction.country === 'UAE' ? 'bg-red-500/20 text-red-400' : 'bg-slate-700 text-slate-400'}`}>
+                            <div className={`flex h-10 w-10 items-center justify-center rounded-full ${restriction.country === 'UAE' ? 'bg-red-500/20 text-red-400' : 'bg-platinum-700 text-platinum-400'}`}>
                               <Scale className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-200">{restriction.country}</p>
-                              <p className="text-sm text-slate-400">{restriction.restrictionType}</p>
+                              <p className="font-semibold text-platinum-200">{restriction.country}</p>
+                              <p className="text-sm text-platinum-400">{restriction.restrictionType}</p>
                             </div>
                           </div>
                           <Badge variant={restriction.country === 'UAE' ? 'destructive' : 'outline'}>
@@ -848,22 +848,22 @@ export default function OmissionSilencePage() {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="rounded-lg border border-slate-700 bg-slate-800/50 p-4"
+                          className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                         >
                           <div className="mb-2 flex items-center justify-between">
-                            <h4 className="font-semibold text-slate-200">{item.pattern}</h4>
+                            <h4 className="font-semibold text-platinum-200">{item.pattern}</h4>
                             <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
                               {item.gapMagnitude}
                             </Badge>
                           </div>
                           <div className="grid gap-2 sm:grid-cols-2">
-                            <div className="rounded bg-blue-500/10 p-2">
-                              <p className="text-xs text-blue-400">International Media</p>
-                              <p className="text-sm text-slate-300">{item.internationalMedia}</p>
+                            <div className="rounded bg-navy-500/10 p-2">
+                              <p className="text-xs text-navy-400">International Media</p>
+                              <p className="text-sm text-platinum-300">{item.internationalMedia}</p>
                             </div>
                             <div className="rounded bg-red-500/10 p-2">
                               <p className="text-xs text-red-400">UAE Media</p>
-                              <p className="text-sm text-slate-300">{item.uaeMedia}</p>
+                              <p className="text-sm text-platinum-300">{item.uaeMedia}</p>
                             </div>
                           </div>
                         </motion.div>
@@ -884,17 +884,17 @@ export default function OmissionSilencePage() {
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                          className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
-                          <h4 className="font-semibold text-slate-200">{topic.topic}</h4>
+                          <h4 className="font-semibold text-platinum-200">{topic.topic}</h4>
                           <div className="mt-2 grid gap-2 sm:grid-cols-2">
                             <div className="flex items-start gap-2">
                               <Globe className="h-4 w-4 text-emerald-400 mt-0.5" />
-                              <p className="text-xs text-slate-400">{topic.internationalCoverage}</p>
+                              <p className="text-xs text-platinum-400">{topic.internationalCoverage}</p>
                             </div>
                             <div className="flex items-start gap-2">
                               <Ban className="h-4 w-4 text-red-400 mt-0.5" />
-                              <p className="text-xs text-slate-400">{topic.uaeCoverage}</p>
+                              <p className="text-xs text-platinum-400">{topic.uaeCoverage}</p>
                             </div>
                           </div>
                           <p className="mt-2 text-sm text-red-400">{topic.gapDescription}</p>
@@ -916,15 +916,15 @@ export default function OmissionSilencePage() {
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                          className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
                           <div className="flex items-center gap-3">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-500/20 text-red-400">
                               <UserCog className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-200">{person.name}</p>
-                              <p className="text-sm text-slate-400">{person.role} - {person.status}</p>
+                              <p className="font-semibold text-platinum-200">{person.name}</p>
+                              <p className="text-sm text-platinum-400">{person.role} - {person.status}</p>
                             </div>
                           </div>
                           <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
@@ -948,13 +948,13 @@ export default function OmissionSilencePage() {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="flex items-start gap-3 rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                          className="flex items-start gap-3 rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
                           <AlertOctagon className="h-5 w-5 text-orange-400 mt-0.5" />
                           <div>
-                            <h4 className="font-semibold text-slate-200">{gap.pattern}</h4>
-                            <p className="text-sm text-slate-400 mt-1">{gap.description}</p>
-                            <p className="text-xs text-slate-500 mt-1">Evidence: {gap.evidence}</p>
+                            <h4 className="font-semibold text-platinum-200">{gap.pattern}</h4>
+                            <p className="text-sm text-platinum-400 mt-1">{gap.description}</p>
+                            <p className="text-xs text-platinum-500 mt-1">Evidence: {gap.evidence}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -986,7 +986,7 @@ export default function OmissionSilencePage() {
                       {hrData.freedomOfExpressionMetrics.map((metric: any, idx: number) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between text-sm">
-                            <span className="text-slate-400">{metric.indicator}</span>
+                            <span className="text-platinum-400">{metric.indicator}</span>
                             <div className="flex items-center gap-2">
                               <span className="font-medium text-red-400">{metric.score}/{metric.max || 'N/A'}</span>
                               <Badge variant="destructive" className="text-xs bg-red-500/20 text-red-400 border-red-500/50">
@@ -1009,31 +1009,31 @@ export default function OmissionSilencePage() {
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                       <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-center">
                         <div className="text-3xl font-bold text-red-400">{hrData.massTrialDocumentation.totalDefendants}</div>
-                        <p className="text-sm text-slate-400">Total Defendants</p>
+                        <p className="text-sm text-platinum-400">Total Defendants</p>
                       </div>
                       <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-center">
                         <div className="text-3xl font-bold text-red-400">{hrData.massTrialDocumentation.convicted}</div>
-                        <p className="text-sm text-slate-400">Convicted</p>
+                        <p className="text-sm text-platinum-400">Convicted</p>
                       </div>
                       <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-center">
                         <div className="text-3xl font-bold text-red-400">{hrData.massTrialDocumentation.lifeSentences}</div>
-                        <p className="text-sm text-slate-400">Life Sentences</p>
+                        <p className="text-sm text-platinum-400">Life Sentences</p>
                       </div>
                       <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-center">
                         <div className="text-3xl font-bold text-red-400">{hrData.massTrialDocumentation.fifteenYearSentences}</div>
-                        <p className="text-sm text-slate-400">15-Year Sentences</p>
+                        <p className="text-sm text-platinum-400">15-Year Sentences</p>
                       </div>
                       <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4 text-center">
                         <div className="text-3xl font-bold text-orange-400">{hrData.massTrialDocumentation.terrorismRelatedCharges}</div>
-                        <p className="text-sm text-slate-400">Terrorism Charges</p>
+                        <p className="text-sm text-platinum-400">Terrorism Charges</p>
                       </div>
                       <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4 text-center">
                         <div className="text-3xl font-bold text-orange-400">{hrData.massTrialDocumentation.bangladeshiProtestersSeparate}</div>
-                        <p className="text-sm text-slate-400">Bangladeshi Protesters</p>
+                        <p className="text-sm text-platinum-400">Bangladeshi Protesters</p>
                       </div>
                     </div>
                     <div className="mt-4">
-                      <h4 className="text-sm font-semibold text-slate-300 mb-2">Documented Violations</h4>
+                      <h4 className="text-sm font-semibold text-platinum-300 mb-2">Documented Violations</h4>
                       <div className="flex flex-wrap gap-2">
                         {hrData.massTrialDocumentation.documentedViolations.map((v: string, idx: number) => (
                           <Badge key={idx} variant="outline" className="bg-red-500/10 text-red-400 border-red-500/50">
@@ -1058,10 +1058,10 @@ export default function OmissionSilencePage() {
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.03 }}
-                            className="flex items-start gap-2 rounded-lg border border-slate-700 bg-slate-800/50 p-2"
+                            className="flex items-start gap-2 rounded-lg border border-platinum-700 bg-platinum-800/50 p-2"
                           >
                             <AlertTriangle className="h-4 w-4 text-red-400 mt-0.5" />
-                            <p className="text-sm text-slate-300">{finding}</p>
+                            <p className="text-sm text-platinum-300">{finding}</p>
                           </motion.div>
                         ))}
                       </div>
@@ -1076,14 +1076,14 @@ export default function OmissionSilencePage() {
                   <CardContent>
                     <div className="space-y-3">
                       {hrData.surveillanceInfrastructure.map((item: any, idx: number) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Eye className="h-5 w-5 text-red-400" />
-                            <span className="text-slate-200">{item.indicator}</span>
+                            <span className="text-platinum-200">{item.indicator}</span>
                           </div>
                           <div className="text-right">
                             <span className="font-medium text-red-400">{item.score}/{item.max || 'N/A'}</span>
-                            <p className="text-xs text-slate-400">{item.assessment}</p>
+                            <p className="text-xs text-platinum-400">{item.assessment}</p>
                           </div>
                         </div>
                       ))}
@@ -1126,16 +1126,16 @@ export default function OmissionSilencePage() {
                     />
                     <div className="mt-4 space-y-2">
                       {regionalData.gulfMediaCrackdown.map((country: any, idx: number) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-2">
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-2">
                           <div className="flex items-center gap-2">
-                            <span className="font-medium text-slate-200">{country.country}</span>
+                            <span className="font-medium text-platinum-200">{country.country}</span>
                             {country.country === 'UAE' && (
                               <Badge variant="destructive" className="text-xs bg-red-500/20 text-red-400 border-red-500/50">WORST</Badge>
                             )}
                           </div>
                           <div className="flex items-center gap-4">
-                            <span className="text-sm text-slate-400">Rank: {country.rsfRank}/180</span>
-                            <span className="text-sm text-slate-400">Score: {country.score}</span>
+                            <span className="text-sm text-platinum-400">Rank: {country.rsfRank}/180</span>
+                            <span className="text-sm text-platinum-400">Score: {country.score}</span>
                           </div>
                         </div>
                       ))}
@@ -1157,7 +1157,7 @@ export default function OmissionSilencePage() {
                           transition={{ delay: idx * 0.05 }}
                           className="flex items-center justify-between rounded-lg border border-red-500/30 bg-red-500/10 p-3"
                         >
-                          <span className="text-slate-300">{item.metric}</span>
+                          <span className="text-platinum-300">{item.metric}</span>
                           <span className="font-semibold text-red-400">{item.value}</span>
                         </motion.div>
                       ))}
@@ -1183,19 +1183,19 @@ export default function OmissionSilencePage() {
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-center">
                     <div className="text-3xl font-bold text-red-400">{cpjData.journalistCasualtiesGlobal.journalistsKilled}</div>
-                    <p className="text-sm text-slate-400">Journalists Killed</p>
+                    <p className="text-sm text-platinum-400">Journalists Killed</p>
                   </div>
                   <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4 text-center">
                     <div className="text-3xl font-bold text-orange-400">{cpjData.journalistCasualtiesGlobal.journalistsKidnapped}</div>
-                    <p className="text-sm text-slate-400">Kidnapped</p>
+                    <p className="text-sm text-platinum-400">Kidnapped</p>
                   </div>
                   <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4 text-center">
                     <div className="text-3xl font-bold text-orange-400">{cpjData.journalistCasualtiesGlobal.journalistsInjured}</div>
-                    <p className="text-sm text-slate-400">Injured</p>
+                    <p className="text-sm text-platinum-400">Injured</p>
                   </div>
-                  <div className="rounded-lg border border-yellow-500/30 bg-yellow-500/10 p-4 text-center">
-                    <div className="text-3xl font-bold text-yellow-400">{cpjData.journalistCasualtiesGlobal.journalistsTargetedThreatenedHarassed}</div>
-                    <p className="text-sm text-slate-400">Targeted/Threatened</p>
+                  <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4 text-center">
+                    <div className="text-3xl font-bold text-amber-400">{cpjData.journalistCasualtiesGlobal.journalistsTargetedThreatenedHarassed}</div>
+                    <p className="text-sm text-platinum-400">Targeted/Threatened</p>
                   </div>
                 </div>
 
@@ -1205,17 +1205,17 @@ export default function OmissionSilencePage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-4 sm:grid-cols-3">
-                      <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
-                        <div className="text-2xl font-bold text-slate-200">{cpjData.infrastructureAccessViolations.mediaOutletsDamaged}</div>
-                        <p className="text-sm text-slate-400">Media Outlets Damaged</p>
+                      <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
+                        <div className="text-2xl font-bold text-platinum-200">{cpjData.infrastructureAccessViolations.mediaOutletsDamaged}</div>
+                        <p className="text-sm text-platinum-400">Media Outlets Damaged</p>
                       </div>
-                      <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
-                        <div className="text-2xl font-bold text-slate-200">{cpjData.infrastructureAccessViolations.journalistsDetainedOrQuestioned}</div>
-                        <p className="text-sm text-slate-400">Detained/Questioned</p>
+                      <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
+                        <div className="text-2xl font-bold text-platinum-200">{cpjData.infrastructureAccessViolations.journalistsDetainedOrQuestioned}</div>
+                        <p className="text-sm text-platinum-400">Detained/Questioned</p>
                       </div>
-                      <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
-                        <div className="text-2xl font-bold text-slate-200">{cpjData.infrastructureAccessViolations.journalistsObstructedWhileReporting}</div>
-                        <p className="text-sm text-slate-400">Obstructed</p>
+                      <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
+                        <div className="text-2xl font-bold text-platinum-200">{cpjData.infrastructureAccessViolations.journalistsObstructedWhileReporting}</div>
+                        <p className="text-sm text-platinum-400">Obstructed</p>
                       </div>
                     </div>
                   </CardContent>
@@ -1233,15 +1233,15 @@ export default function OmissionSilencePage() {
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                          className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
                           <div className="flex items-center gap-3">
-                            <div className={`flex h-10 w-10 items-center justify-center rounded-full ${measure.country === 'UAE' ? 'bg-red-500/20 text-red-400' : 'bg-slate-700 text-slate-400'}`}>
+                            <div className={`flex h-10 w-10 items-center justify-center rounded-full ${measure.country === 'UAE' ? 'bg-red-500/20 text-red-400' : 'bg-platinum-700 text-platinum-400'}`}>
                               {measure.country === 'UAE' ? <Ban className="h-5 w-5" /> : <Lock className="h-5 w-5" />}
                             </div>
-                            <span className="font-semibold text-slate-200">{measure.country}</span>
+                            <span className="font-semibold text-platinum-200">{measure.country}</span>
                           </div>
-                          <span className="text-sm text-slate-400 text-right max-w-[300px]">{measure.measure}</span>
+                          <span className="text-sm text-platinum-400 text-right max-w-[300px]">{measure.measure}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -1261,10 +1261,10 @@ export default function OmissionSilencePage() {
                             initial={{ opacity: 0, y: 5 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.03 }}
-                            className="flex items-start gap-2 rounded-lg border border-slate-700 bg-slate-800/50 p-2"
+                            className="flex items-start gap-2 rounded-lg border border-platinum-700 bg-platinum-800/50 p-2"
                           >
                             <AlertTriangle className="h-4 w-4 text-orange-400 mt-0.5" />
-                            <p className="text-sm text-slate-300">{incident}</p>
+                            <p className="text-sm text-platinum-300">{incident}</p>
                           </motion.div>
                         ))}
                       </div>
@@ -1299,17 +1299,17 @@ export default function OmissionSilencePage() {
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                          className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
-                          <h4 className="font-semibold text-slate-200">{event.event}</h4>
+                          <h4 className="font-semibold text-platinum-200">{event.event}</h4>
                           <div className="mt-2 grid gap-2 sm:grid-cols-2">
                             <div className="flex items-start gap-2">
                               <Globe className="h-4 w-4 text-emerald-400 mt-0.5" />
-                              <p className="text-xs text-slate-400">International: {event.internationalCoverage}</p>
+                              <p className="text-xs text-platinum-400">International: {event.internationalCoverage}</p>
                             </div>
                             <div className="flex items-start gap-2">
                               <Ban className="h-4 w-4 text-red-400 mt-0.5" />
-                              <p className="text-xs text-slate-400">UAE: {event.uaeCoverage}</p>
+                              <p className="text-xs text-platinum-400">UAE: {event.uaeCoverage}</p>
                             </div>
                           </div>
                         </motion.div>
@@ -1325,8 +1325,8 @@ export default function OmissionSilencePage() {
                   <CardContent>
                     <div className="space-y-3">
                       {queryData.query2.results.map((result: any, idx: number) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
-                          <span className="text-slate-300">{result.action}</span>
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
+                          <span className="text-platinum-300">{result.action}</span>
                           <div className="flex items-center gap-2">
                             <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
                               {result.count}
@@ -1351,13 +1351,13 @@ export default function OmissionSilencePage() {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                          className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
                           <div className="flex items-center justify-between">
                             <Badge variant="outline">{result.date}</Badge>
                             <Badge variant="outline" className="text-xs">{result.type}</Badge>
                           </div>
-                          <p className="mt-2 text-slate-300">{result.event}</p>
+                          <p className="mt-2 text-platinum-300">{result.event}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -1371,11 +1371,11 @@ export default function OmissionSilencePage() {
                   <CardContent>
                     <div className="space-y-3">
                       {queryData.query4.results.map((result: any, idx: number) => (
-                        <div key={idx} className="flex items-start gap-3 rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                        <div key={idx} className="flex items-start gap-3 rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                           <AlertOctagon className="h-5 w-5 text-orange-400 mt-0.5" />
                           <div>
-                            <h4 className="font-semibold text-slate-200">{result.pattern}</h4>
-                            <p className="text-sm text-slate-400 mt-1">{result.evidence}</p>
+                            <h4 className="font-semibold text-platinum-200">{result.pattern}</h4>
+                            <p className="text-sm text-platinum-400 mt-1">{result.evidence}</p>
                           </div>
                         </div>
                       ))}
@@ -1410,22 +1410,22 @@ export default function OmissionSilencePage() {
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.05 }}
-                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3"
+                          className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
                           <div className="flex items-center gap-3">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-500/20 text-red-400">
                               <UserCog className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-200">{person.name}</p>
-                              <p className="text-sm text-slate-400">{person.nationality} - {person.status}</p>
+                              <p className="font-semibold text-platinum-200">{person.name}</p>
+                              <p className="text-sm text-platinum-400">{person.nationality} - {person.status}</p>
                             </div>
                           </div>
                           <div className="text-right">
                             <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
                               {person.sentence}
                             </Badge>
-                            <p className="text-xs text-slate-500 mt-1">{person.year} - {person.charges}</p>
+                            <p className="text-xs text-platinum-500 mt-1">{person.year} - {person.charges}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -1452,9 +1452,9 @@ export default function OmissionSilencePage() {
                               <UserCog className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-200">{person.name}</p>
-                              <p className="text-sm text-slate-400">Last seen: {person.lastSeen}</p>
-                              <p className="text-sm text-slate-400">Circumstance: {person.circumstance}</p>
+                              <p className="font-semibold text-platinum-200">{person.name}</p>
+                              <p className="text-sm text-platinum-400">Last seen: {person.lastSeen}</p>
+                              <p className="text-sm text-platinum-400">Circumstance: {person.circumstance}</p>
                             </div>
                           </div>
                         </motion.div>
@@ -1470,9 +1470,9 @@ export default function OmissionSilencePage() {
                   <CardContent>
                     <div className="grid gap-4 sm:grid-cols-3">
                       {Object.entries(entities.massTrialDefendants).map(([key, value]: [string, any]) => (
-                        <div key={key} className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center">
+                        <div key={key} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                           <div className="text-2xl font-bold text-red-400">{value}</div>
-                          <p className="text-sm text-slate-400 mt-1">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
+                          <p className="text-sm text-platinum-400 mt-1">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
                         </div>
                       ))}
                     </div>
@@ -1491,11 +1491,11 @@ export default function OmissionSilencePage() {
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.03 }}
-                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-2"
+                          className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-2"
                         >
                           <div className="flex items-center gap-2">
                             <Ban className="h-4 w-4 text-red-400" />
-                            <span className="text-slate-200">{account.account}</span>
+                            <span className="text-platinum-200">{account.account}</span>
                           </div>
                           <div className="flex items-center gap-2">
                             <Badge variant="outline" className="text-xs">{account.type}</Badge>
@@ -1516,12 +1516,12 @@ export default function OmissionSilencePage() {
                   <CardContent>
                     <div className="space-y-3">
                       {entities.influenceOperations2019.map((op: any, idx: number) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Network className="h-5 w-5 text-orange-400" />
                             <div>
-                              <p className="font-semibold text-slate-200">{op.platform}</p>
-                              <p className="text-sm text-slate-400">{op.purpose}</p>
+                              <p className="font-semibold text-platinum-200">{op.platform}</p>
+                              <p className="text-sm text-platinum-400">{op.purpose}</p>
                             </div>
                           </div>
                           <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
@@ -1551,14 +1551,14 @@ export default function OmissionSilencePage() {
                 <div className="flex items-center justify-between rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3">
                   <div className="flex items-center gap-4">
                     <CheckCircle className="h-5 w-5 text-emerald-400" />
-                    <span className="text-slate-200">Successful Sources</span>
+                    <span className="text-platinum-200">Successful Sources</span>
                   </div>
                   <div className="text-2xl font-bold text-emerald-400">{successfulSources}</div>
                 </div>
                 <div className="flex items-center justify-between rounded-lg border border-red-500/30 bg-red-500/10 p-3">
                   <div className="flex items-center gap-4">
                     <XCircle className="h-5 w-5 text-red-400" />
-                    <span className="text-slate-200">Blocked Sources</span>
+                    <span className="text-platinum-200">Blocked Sources</span>
                   </div>
                   <div className="text-2xl font-bold text-red-400">{blockedSources}</div>
                 </div>
@@ -1576,14 +1576,14 @@ export default function OmissionSilencePage() {
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.02 }}
-                            className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-2"
+                            className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-2"
                           >
                             <div className="flex-1">
                               <div className="flex items-center gap-2">
-                                <span className="font-medium text-slate-200">{source.source}</span>
+                                <span className="font-medium text-platinum-200">{source.source}</span>
                                 {getTierBadge(source.tier)}
                               </div>
-                              <p className="text-xs text-slate-500 mt-1 truncate">{source.url}</p>
+                              <p className="text-xs text-platinum-500 mt-1 truncate">{source.url}</p>
                             </div>
                             <Badge
                               variant={source.fetchStatus === 'Success' ? 'success' : 'destructive'}
@@ -1620,8 +1620,8 @@ export default function OmissionSilencePage() {
                   <CardContent>
                     <div className="grid gap-3">
                       {stats.pressFreedomKPIs.map((kpi: any, idx: number) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
-                          <span className="text-slate-300">{kpi.kpi}</span>
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
+                          <span className="text-platinum-300">{kpi.kpi}</span>
                           <div className="flex items-center gap-4">
                             <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
                               {kpi.value}
@@ -1641,8 +1641,8 @@ export default function OmissionSilencePage() {
                   <CardContent>
                     <div className="grid gap-3">
                       {stats.enforcementKPIs.map((kpi: any, idx: number) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
-                          <span className="text-slate-300">{kpi.kpi}</span>
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
+                          <span className="text-platinum-300">{kpi.kpi}</span>
                           <div className="flex items-center gap-4">
                             <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
                               {kpi.value}
@@ -1662,8 +1662,8 @@ export default function OmissionSilencePage() {
                   <CardContent>
                     <div className="grid gap-3">
                       {stats.judicialKPIs.map((kpi: any, idx: number) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
-                          <span className="text-slate-300">{kpi.kpi}</span>
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
+                          <span className="text-platinum-300">{kpi.kpi}</span>
                           <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
                             {kpi.value}
                           </Badge>
@@ -1680,8 +1680,8 @@ export default function OmissionSilencePage() {
                   <CardContent>
                     <div className="grid gap-3">
                       {stats.conflictKPIs.map((kpi: any, idx: number) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
-                          <span className="text-slate-300">{kpi.kpi}</span>
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
+                          <span className="text-platinum-300">{kpi.kpi}</span>
                           <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
                             {kpi.value}
                           </Badge>
@@ -1698,8 +1698,8 @@ export default function OmissionSilencePage() {
                   <CardContent>
                     <div className="grid gap-3">
                       {stats.digitalManipulationKPIs.map((kpi: any, idx: number) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
-                          <span className="text-slate-300">{kpi.kpi}</span>
+                        <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
+                          <span className="text-platinum-300">{kpi.kpi}</span>
                           <div className="flex items-center gap-2">
                             <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
                               {kpi.value}

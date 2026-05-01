@@ -102,7 +102,7 @@ export default function PodcastAudioPage() {
                 <div className="space-y-3">
                   {podcastData.map((p: any, idx: number) => (
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
-                      className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 border border-slate-700/50">
+                      className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                       <div className="flex items-center gap-3">
                         <Mic className="h-4 w-4 text-fuchsia-400" />
                         <div>
@@ -151,7 +151,7 @@ export default function PodcastAudioPage() {
                   { segment: 'Weekly Active Listeners', value: '68%' },
                 ].map((d: any, idx: number) => (
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }}
-                    className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 border border-slate-700/50">
+                    className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                     <span className="text-platinum-300">{d.segment}</span>
                     <Badge variant="outline" className="border-fuchsia-500/50 text-fuchsia-400">{d.value}</Badge>
                   </motion.div>

@@ -110,11 +110,11 @@ export default function SarcasmIronyPage() {
     switch (status) {
       case 'CRITICAL': return 'text-red-400 bg-red-500/20'
       case 'HIGH': return 'text-amber-400 bg-amber-500/20'
-      case 'MEDIUM': return 'text-yellow-400 bg-yellow-500/20'
-      case 'LOW': return 'text-green-400 bg-green-500/20'
+      case 'MEDIUM': return 'text-amber-400 bg-amber-500/20'
+      case 'LOW': return 'text-emerald-400 bg-emerald-500/20'
       case 'AT RISK': return 'text-orange-400 bg-orange-500/20'
-      case 'TRACKING': return 'text-blue-400 bg-blue-500/20'
-      default: return 'text-slate-400 bg-slate-500/20'
+      case 'TRACKING': return 'text-navy-400 bg-navy-500/20'
+      default: return 'text-platinum-400 bg-platinum-500/20'
     }
   }
 
@@ -123,16 +123,16 @@ export default function SarcasmIronyPage() {
       case 'CRITICAL': return 'border-red-500/50'
       case 'HIGH': return 'border-amber-500/50'
       case 'AT RISK': return 'border-orange-500/50'
-      case 'TRACKING': return 'border-blue-500/50'
-      default: return 'border-slate-500/50'
+      case 'TRACKING': return 'border-navy-500/50'
+      default: return 'border-platinum-500/50'
     }
   }
 
   const getIronyColor = (score: string) => {
     if (score.includes('9.5') || score.includes('9.0')) return 'text-red-400'
     if (score.includes('7.5')) return 'text-orange-400'
-    if (score.includes('5.5')) return 'text-yellow-400'
-    return 'text-slate-400'
+    if (score.includes('5.5')) return 'text-amber-400'
+    return 'text-platinum-400'
   }
 
   return (
@@ -166,7 +166,7 @@ export default function SarcasmIronyPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="mt-2 text-slate-400"
+            className="mt-2 text-platinum-400"
           >
             {overview.totalSources} sources across 5 tiers • {overview.dataPointsExtracted}+ data points • {overview.structuredTables} structured tables
           </motion.p>
@@ -290,14 +290,14 @@ export default function SarcasmIronyPage() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className={`flex items-center justify-between p-4 rounded-lg border ${getSeverityBorder(kpi.status)} bg-slate-900/50`}
+                        className={`flex items-center justify-between p-4 rounded-lg border ${getSeverityBorder(kpi.status)} bg-platinum-900/50`}
                       >
                         <div className="flex items-center gap-3">
                           <Badge className={getSeverityColor(kpi.status)}>{kpi.status}</Badge>
-                          <span className="text-slate-200 font-medium">{kpi.kpi}</span>
+                          <span className="text-platinum-200 font-medium">{kpi.kpi}</span>
                         </div>
                         <div className="flex items-center gap-4">
-                          <span className="text-slate-400 text-sm">{kpi.threshold}</span>
+                          <span className="text-platinum-400 text-sm">{kpi.threshold}</span>
                           <span className="text-white font-bold">{kpi.currentValue}</span>
                         </div>
                       </motion.div>
@@ -319,17 +319,17 @@ export default function SarcasmIronyPage() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className="flex items-center justify-between p-3 rounded-lg bg-slate-900/50 border border-slate-700/50 hover:border-slate-600/50 transition-colors"
+                        className="flex items-center justify-between p-3 rounded-lg bg-platinum-900/50 border border-platinum-700/50 hover:border-platinum-600/50 transition-colors"
                       >
                         <div className="flex items-center gap-3">
                           <Badge variant={source.tier === 0 ? 'default' : source.tier === 1 ? 'success' : source.tier === 2 ? 'warning' : 'secondary'}>
                             Tier {source.tier}
                           </Badge>
-                          <span className="text-slate-200 font-medium">{source.source}</span>
+                          <span className="text-platinum-200 font-medium">{source.source}</span>
                         </div>
                         <div className="flex items-center gap-3">
                           <Badge className={getSeverityColor(source.uaeRelevance)}>{source.uaeRelevance}</Badge>
-                          <span className="text-slate-400 text-sm">{source.credibilityScore}/100</span>
+                          <span className="text-platinum-400 text-sm">{source.credibilityScore}/100</span>
                         </div>
                       </motion.div>
                     ))}
@@ -357,7 +357,7 @@ export default function SarcasmIronyPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.1 }}
-                        className="p-4 rounded-lg border border-slate-700/50 bg-gradient-to-r from-slate-900/50 to-slate-800/30"
+                        className="p-4 rounded-lg border border-platinum-700/50 bg-gradient-to-r from-slate-900/50 to-slate-800/30"
                       >
                         <div className="flex items-start justify-between mb-2">
                           <Badge variant="outline" className="text-emerald-400 border-emerald-500/50 bg-emerald-500/10">
@@ -367,8 +367,8 @@ export default function SarcasmIronyPage() {
                             {item.ironyMarker}
                           </Badge>
                         </div>
-                        <p className="text-slate-400 text-sm mb-2">Reality: {item.reality}</p>
-                        <p className="text-slate-500 text-xs">Source: {item.source}</p>
+                        <p className="text-platinum-400 text-sm mb-2">Reality: {item.reality}</p>
+                        <p className="text-platinum-500 text-xs">Source: {item.source}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -384,10 +384,10 @@ export default function SarcasmIronyPage() {
                   <CardContent>
                     <div className="space-y-3">
                       {internationalRankings.map((rank, idx) => (
-                        <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-slate-900/50 border border-slate-700/50">
-                          <span className="text-slate-200 font-medium">{rank.index}</span>
+                        <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-platinum-900/50 border border-platinum-700/50">
+                          <span className="text-platinum-200 font-medium">{rank.index}</span>
                           <div className="flex items-center gap-3">
-                            <span className="text-slate-400 text-sm">{rank.uaeScore} {rank.globalRank !== '-' ? `@ ${rank.globalRank}` : ''}</span>
+                            <span className="text-platinum-400 text-sm">{rank.uaeScore} {rank.globalRank !== '-' ? `@ ${rank.globalRank}` : ''}</span>
                             <Badge className={rank.assessment === 'Not Free' || rank.assessment === 'Very Poor' ? 'bg-red-500/20 text-red-400' : 'bg-emerald-500/20 text-emerald-400'}>
                               {rank.assessment}
                             </Badge>
@@ -406,8 +406,8 @@ export default function SarcasmIronyPage() {
                   <CardContent>
                     <div className="space-y-3">
                       {keyStatistics.slice(0, 8).map((stat, idx) => (
-                        <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-slate-900/50 border border-slate-700/50">
-                          <span className="text-slate-200 font-medium">{stat.metric}</span>
+                        <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-platinum-900/50 border border-platinum-700/50">
+                          <span className="text-platinum-200 font-medium">{stat.metric}</span>
                           <span className="text-orange-400 font-bold">{stat.value}</span>
                         </div>
                       ))}
@@ -429,15 +429,15 @@ export default function SarcasmIronyPage() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: idx * 0.05 }}
-                        className="p-3 rounded-lg border border-slate-700/50 bg-slate-900/50 hover:border-red-500/30 transition-colors"
+                        className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-900/50 hover:border-red-500/30 transition-colors"
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <Lock className="h-4 w-4 text-red-400" />
-                          <span className="text-slate-200 font-bold text-sm">{prisoner.name}</span>
+                          <span className="text-platinum-200 font-bold text-sm">{prisoner.name}</span>
                         </div>
                         <div className="space-y-1">
-                          <p className="text-slate-400 text-xs">{prisoner.charges}</p>
-                          <p className="text-slate-500 text-xs">{prisoner.status} • {prisoner.sentence}</p>
+                          <p className="text-platinum-400 text-xs">{prisoner.charges}</p>
+                          <p className="text-platinum-500 text-xs">{prisoner.status} • {prisoner.sentence}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -478,9 +478,9 @@ export default function SarcasmIronyPage() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className="flex items-center justify-between p-3 rounded-lg bg-slate-900/50 border border-slate-700/50"
+                        className="flex items-center justify-between p-3 rounded-lg bg-platinum-900/50 border border-platinum-700/50"
                       >
-                        <span className="text-slate-200 font-mono">{pattern.pattern}</span>
+                        <span className="text-platinum-200 font-mono">{pattern.pattern}</span>
                         <div className="flex items-center gap-2">
                           <Badge className={getSeverityColor(pattern.ironyIntensity.includes('Very') ? 'CRITICAL' : pattern.ironyIntensity.includes('High') ? 'HIGH' : 'MEDIUM')}>
                             {pattern.ironyIntensity}
@@ -505,18 +505,18 @@ export default function SarcasmIronyPage() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.1 }}
-                        className="p-4 rounded-lg border border-slate-700/50 bg-slate-900/50"
+                        className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-900/50"
                       >
                         <div className="flex items-start justify-between mb-2">
                           <div>
                             <p className="text-xl font-bold text-orange-400 mb-1" dir="rtl">{pattern.arabicPattern}</p>
-                            <p className="text-slate-400 text-sm">{pattern.translation}</p>
+                            <p className="text-platinum-400 text-sm">{pattern.translation}</p>
                           </div>
                           <Badge className={getSeverityColor(pattern.ironyIntensity.includes('Very') ? 'CRITICAL' : pattern.ironyIntensity.includes('High') ? 'HIGH' : pattern.ironyIntensity.includes('Medium') ? 'MEDIUM' : 'LOW')}>
                             {pattern.ironyIntensity}
                           </Badge>
                         </div>
-                        <p className="text-slate-500 text-sm mb-2">Context: {pattern.context}</p>
+                        <p className="text-platinum-500 text-sm mb-2">Context: {pattern.context}</p>
                         <div className="flex items-center gap-2">
                           <Badge variant="outline" className="text-emerald-400 border-emerald-500/50">{pattern.sentiment}</Badge>
                         </div>
@@ -542,18 +542,18 @@ export default function SarcasmIronyPage() {
                         className="space-y-2"
                       >
                         <div className="flex items-center justify-between">
-                          <span className="text-slate-200 font-medium">{topic.topic}</span>
+                          <span className="text-platinum-200 font-medium">{topic.topic}</span>
                           <Badge className={getSeverityColor(topic.ironicPercent > 50 ? 'CRITICAL' : topic.ironicPercent > 30 ? 'HIGH' : 'MEDIUM')}>
                             {topic.ironicPercent}% Ironic
                           </Badge>
                         </div>
                         <div className="flex gap-1 h-2">
                           <div className="bg-emerald-500 rounded-l-full" style={{ width: `${topic.positivePercent}%` }} />
-                          <div className="bg-slate-500" style={{ width: `${topic.neutralPercent}%` }} />
+                          <div className="bg-platinum-500" style={{ width: `${topic.neutralPercent}%` }} />
                           <div className="bg-red-500" style={{ width: `${topic.negativePercent}%` }} />
                           <div className="bg-orange-500 rounded-r-full" style={{ width: `${topic.ironicPercent}%` }} />
                         </div>
-                        <div className="flex justify-between text-xs text-slate-500">
+                        <div className="flex justify-between text-xs text-platinum-500">
                           <span>+{topic.positivePercent}%</span>
                           <span>{topic.neutralPercent}%</span>
                           <span>-{topic.negativePercent}%</span>
@@ -586,17 +586,17 @@ export default function SarcasmIronyPage() {
                             <AlertOctagon className="w-3 h-3 mr-1" />
                             {theme.ironyScore}
                           </Badge>
-                          <CardTitle className="text-xl text-slate-100">{theme.theme}</CardTitle>
+                          <CardTitle className="text-xl text-platinum-100">{theme.theme}</CardTitle>
                           <CardDescription className="mt-2">{theme.pattern}</CardDescription>
                         </div>
                       </div>
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-3">
-                        <h4 className="text-slate-300 font-medium text-sm">Evidence:</h4>
+                        <h4 className="text-platinum-300 font-medium text-sm">Evidence:</h4>
                         <div className="space-y-2">
                           {theme.evidence.map((e, eidx) => (
-                            <div key={eidx} className="flex items-start gap-2 text-slate-400 text-sm">
+                            <div key={eidx} className="flex items-start gap-2 text-platinum-400 text-sm">
                               <div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
                               <span>{e}</span>
                             </div>
@@ -604,7 +604,7 @@ export default function SarcasmIronyPage() {
                         </div>
                         <div className="flex flex-wrap gap-2 mt-4">
                           {theme.keySources.map((source, sidx) => (
-                            <Badge key={sidx} variant="outline" className="border-slate-600 text-slate-400">
+                            <Badge key={sidx} variant="outline" className="border-platinum-600 text-platinum-400">
                               {source}
                             </Badge>
                           ))}
@@ -630,11 +630,11 @@ export default function SarcasmIronyPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {adnocEnergyData.map((item, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-slate-900/50 border border-slate-700/50">
-                        <span className="text-slate-300 font-medium">{item.parameter}</span>
+                      <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-platinum-900/50 border border-platinum-700/50">
+                        <span className="text-platinum-300 font-medium">{item.parameter}</span>
                         <div className="flex items-center gap-3">
                           <span className="text-emerald-400 font-bold">{item.value}</span>
-                          <span className="text-slate-500 text-sm">{item.timeframe}</span>
+                          <span className="text-platinum-500 text-sm">{item.timeframe}</span>
                         </div>
                       </div>
                     ))}
@@ -650,8 +650,8 @@ export default function SarcasmIronyPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {climateEnergyTargets.map((target, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-slate-900/50 border border-slate-700/50">
-                        <span className="text-slate-300 font-medium">{target.targetMetric}</span>
+                      <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-platinum-900/50 border border-platinum-700/50">
+                        <span className="text-platinum-300 font-medium">{target.targetMetric}</span>
                         <div className="flex items-center gap-3">
                           <span className="text-teal-400 font-bold">{target.value}</span>
                           <Badge variant="outline" className="border-teal-500/50 text-teal-400">
@@ -673,10 +673,10 @@ export default function SarcasmIronyPage() {
                   <div className="space-y-3">
                     {yemenCrisisData.map((item, idx) => (
                       <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-red-950/20 border border-red-500/30">
-                        <span className="text-slate-300 font-medium">{item.metric}</span>
+                        <span className="text-platinum-300 font-medium">{item.metric}</span>
                         <div className="flex items-center gap-3">
                           <span className="text-red-400 font-bold">{item.value}</span>
-                          <span className="text-slate-500 text-sm">{item.source}</span>
+                          <span className="text-platinum-500 text-sm">{item.source}</span>
                         </div>
                       </div>
                     ))}
@@ -713,12 +713,12 @@ export default function SarcasmIronyPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {governmentInitiatives.map((init, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-slate-900/50 border border-slate-700/50">
+                      <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-platinum-900/50 border border-platinum-700/50">
                         <div>
-                          <span className="text-slate-200 font-medium">{init.initiative}</span>
-                          <p className="text-slate-500 text-xs">{init.year} • {init.ministryBody}</p>
+                          <span className="text-platinum-200 font-medium">{init.initiative}</span>
+                          <p className="text-platinum-500 text-xs">{init.year} • {init.ministryBody}</p>
                         </div>
-                        <Badge className={init.ironyScore.includes('Very') ? 'bg-red-500/20 text-red-400' : init.ironyScore.includes('High') ? 'bg-orange-500/20 text-orange-400' : 'bg-slate-500/20 text-slate-400'}>
+                        <Badge className={init.ironyScore.includes('Very') ? 'bg-red-500/20 text-red-400' : init.ironyScore.includes('High') ? 'bg-orange-500/20 text-orange-400' : 'bg-platinum-500/20 text-platinum-400'}>
                           {init.ironyScore}
                         </Badge>
                       </div>
@@ -740,12 +740,12 @@ export default function SarcasmIronyPage() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className="p-4 rounded-lg border border-slate-700/50 bg-slate-900/50"
+                        className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-900/50"
                       >
                         <div className="flex items-start gap-3">
                           <Quote className="h-5 w-5 text-orange-400 flex-shrink-0 mt-1" />
                           <div>
-                            <p className="text-slate-300 italic mb-2">"{quotation.quote}"</p>
+                            <p className="text-platinum-300 italic mb-2">"{quotation.quote}"</p>
                             <Badge variant="outline" className="border-orange-500/50 text-orange-400">
                               {quotation.source}
                             </Badge>

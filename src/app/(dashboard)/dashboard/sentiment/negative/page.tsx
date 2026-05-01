@@ -105,9 +105,9 @@ export default function NegativeSentimentPage() {
     switch (severity) {
       case 'CRITICAL': return 'text-red-400 bg-red-500/20'
       case 'HIGH': return 'text-amber-400 bg-amber-500/20'
-      case 'MEDIUM': return 'text-yellow-400 bg-yellow-500/20'
-      case 'LOW': return 'text-green-400 bg-green-500/20'
-      default: return 'text-slate-400 bg-slate-500/20'
+      case 'MEDIUM': return 'text-amber-400 bg-amber-500/20'
+      case 'LOW': return 'text-emerald-400 bg-emerald-500/20'
+      default: return 'text-platinum-400 bg-platinum-500/20'
     }
   }
 
@@ -115,9 +115,9 @@ export default function NegativeSentimentPage() {
     switch (severity) {
       case 'CRITICAL': return 'border-red-500/50'
       case 'HIGH': return 'border-amber-500/50'
-      case 'MEDIUM': return 'border-yellow-500/50'
-      case 'LOW': return 'border-green-500/50'
-      default: return 'border-slate-500/50'
+      case 'MEDIUM': return 'border-amber-500/50'
+      case 'LOW': return 'border-emerald-500/50'
+      default: return 'border-platinum-500/50'
     }
   }
 
@@ -162,7 +162,7 @@ export default function NegativeSentimentPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="mt-2 text-slate-400"
+            className="mt-2 text-platinum-400"
           >
             {data.overview.totalCategories} distinct negative sentiment categories • {data.overview.totalSourcesConsulted}+ authoritative sources • {data.overview.temporalCoverage}
           </motion.p>
@@ -303,7 +303,7 @@ export default function NegativeSentimentPage() {
                 initial="initial"
                 animate="animate"
                 whileHover="hover"
-                className="glass-card border-slate-500/30"
+                className="glass-card border-platinum-500/30"
               >
                 <CardHeader>
                   <CardTitle className="text-lg font-rajdhani">
@@ -349,12 +349,12 @@ export default function NegativeSentimentPage() {
                         <Badge className={getSeverityColor(category.severity)}>
                           {category.severity}
                         </Badge>
-                        <span className="text-xs text-slate-500">#{category.id}</span>
+                        <span className="text-xs text-platinum-500">#{category.id}</span>
                       </div>
-                      <h4 className="font-semibold text-slate-200 mb-2 font-rajdhani">
+                      <h4 className="font-semibold text-platinum-200 mb-2 font-rajdhani">
                         {category.name}
                       </h4>
-                      <div className="flex items-center gap-2 text-xs text-slate-400 mb-3">
+                      <div className="flex items-center gap-2 text-xs text-platinum-400 mb-3">
                         <Badge variant="outline" className="text-xs">
                           Tier {category.tier}
                         </Badge>
@@ -372,9 +372,9 @@ export default function NegativeSentimentPage() {
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: 'auto', opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            className="mt-3 pt-3 border-t border-slate-700"
+                            className="mt-3 pt-3 border-t border-platinum-700"
                           >
-                            <p className="text-xs text-slate-400 mb-2">
+                            <p className="text-xs text-platinum-400 mb-2">
                               Primary Concerns:
                             </p>
                             <div className="flex flex-wrap gap-1">
@@ -385,7 +385,7 @@ export default function NegativeSentimentPage() {
                               ))}
                             </div>
                             {category.keyQuotes.length > 0 && (
-                              <blockquote className="mt-3 text-xs text-slate-500 italic border-l-2 border-slate-600 pl-2">
+                              <blockquote className="mt-3 text-xs text-platinum-500 italic border-l-2 border-platinum-600 pl-2">
                                 {category.keyQuotes[0].substring(0, 100)}...
                               </blockquote>
                             )}
@@ -422,7 +422,7 @@ export default function NegativeSentimentPage() {
                       <ThumbsDown className="h-6 w-6" />
                     </motion.div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-lg text-slate-200 mb-2 font-rajdhani">
+                      <h4 className="font-bold text-lg text-platinum-200 mb-2 font-rajdhani">
                         {theme.name}
                       </h4>
                       <div className="flex flex-wrap gap-2 mb-3">
@@ -434,10 +434,10 @@ export default function NegativeSentimentPage() {
                       </div>
                       {theme.dataPoints.length > 0 && (
                         <div className="bg-navy-900/50 rounded-lg p-3 mt-3">
-                          <p className="text-xs text-slate-500 mb-2">Key Data Points:</p>
+                          <p className="text-xs text-platinum-500 mb-2">Key Data Points:</p>
                           <ul className="space-y-1">
                             {theme.dataPoints.map((dp, i) => (
-                              <li key={i} className="text-sm text-slate-300 flex items-center gap-2">
+                              <li key={i} className="text-sm text-platinum-300 flex items-center gap-2">
                                 <XCircle className="w-3 h-3 text-red-400" />
                                 {dp}
                               </li>
@@ -446,7 +446,7 @@ export default function NegativeSentimentPage() {
                         </div>
                       )}
                       <div className="flex items-center gap-2 mt-3">
-                        <span className="text-xs text-slate-500">Sources:</span>
+                        <span className="text-xs text-platinum-500">Sources:</span>
                         {theme.sources.map((source, i) => (
                           <Badge key={i} variant="secondary" className="text-xs">
                             {source}
@@ -476,15 +476,15 @@ export default function NegativeSentimentPage() {
                       className="glass-card border-rose-500/30 p-4"
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-semibold text-slate-200">{defender.name}</h4>
+                        <h4 className="font-semibold text-platinum-200">{defender.name}</h4>
                         <Badge variant="destructive" className="text-xs">
                           {defender.status}
                         </Badge>
                       </div>
-                      <p className="text-sm text-slate-400 mb-1">
-                        <span className="text-slate-500">Charges:</span> {defender.charges}
+                      <p className="text-sm text-platinum-400 mb-1">
+                        <span className="text-platinum-500">Charges:</span> {defender.charges}
                       </p>
-                      <p className="text-xs text-slate-500">
+                      <p className="text-xs text-platinum-500">
                         Source: {defender.source}
                       </p>
                     </motion.div>
@@ -505,12 +505,12 @@ export default function NegativeSentimentPage() {
                       className="glass-card border-amber-500/30 p-4"
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-semibold text-slate-200">{entity.entity}</h4>
+                        <h4 className="font-semibold text-platinum-200">{entity.entity}</h4>
                         <Badge variant="outline" className="text-xs">
                           {entity.role}
                         </Badge>
                       </div>
-                      <p className="text-sm text-slate-400">
+                      <p className="text-sm text-platinum-400">
                         {entity.allegation}
                       </p>
                     </motion.div>
@@ -538,16 +538,16 @@ export default function NegativeSentimentPage() {
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-1">
-                          <h4 className="font-semibold text-slate-200">{arrest.person}</h4>
+                          <h4 className="font-semibold text-platinum-200">{arrest.person}</h4>
                           <Badge variant="secondary" className="text-xs">
                             {arrest.nationality}
                           </Badge>
                         </div>
-                        <p className="text-sm text-slate-400 mb-1">
-                          <span className="text-slate-500">Reason:</span> {arrest.reason}
+                        <p className="text-sm text-platinum-400 mb-1">
+                          <span className="text-platinum-500">Reason:</span> {arrest.reason}
                         </p>
                         <p className="text-sm text-red-400">
-                          <span className="text-slate-500">Consequence:</span> {arrest.consequence}
+                          <span className="text-platinum-500">Consequence:</span> {arrest.consequence}
                         </p>
                       </div>
                     </div>
@@ -569,11 +569,11 @@ export default function NegativeSentimentPage() {
                   className="glass-card border-amber-500/30 p-4 text-center"
                 >
                   <Globe className="h-8 w-8 mx-auto mb-2 text-amber-400" />
-                  <h4 className="font-bold text-slate-200 mb-1 font-rajdhani">
+                  <h4 className="font-bold text-platinum-200 mb-1 font-rajdhani">
                     {intervention.operation}
                   </h4>
-                  <p className="text-sm text-slate-400 mb-2">{intervention.location}</p>
-                  <p className="text-xs text-slate-500">{intervention.details}</p>
+                  <p className="text-sm text-platinum-400 mb-2">{intervention.location}</p>
+                  <p className="text-xs text-platinum-500">{intervention.details}</p>
                 </motion.div>
               ))}
             </div>
@@ -594,7 +594,7 @@ export default function NegativeSentimentPage() {
                     transition={{ delay: idx * 0.05 }}
                     className="flex items-center justify-between p-3 glass-card border-red-500/20"
                   >
-                    <span className="text-sm text-slate-300">{key}</span>
+                    <span className="text-sm text-platinum-300">{key}</span>
                     <Badge variant="destructive" className="font-mono">
                       {value}
                     </Badge>
@@ -614,7 +614,7 @@ export default function NegativeSentimentPage() {
                     transition={{ delay: idx * 0.05 }}
                     className="flex items-center justify-between p-3 glass-card border-amber-500/20"
                   >
-                    <span className="text-sm text-slate-300">{key}</span>
+                    <span className="text-sm text-platinum-300">{key}</span>
                     <Badge variant="outline" className="font-mono text-amber-400">
                       {value}
                     </Badge>
@@ -632,9 +632,9 @@ export default function NegativeSentimentPage() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-center justify-between p-3 glass-card border-green-500/20"
+                    className="flex items-center justify-between p-3 glass-card border-emerald-500/20"
                   >
-                    <span className="text-sm text-slate-300">{key}</span>
+                    <span className="text-sm text-platinum-300">{key}</span>
                     <Badge variant="secondary" className="font-mono">
                       {value}
                     </Badge>
@@ -652,10 +652,10 @@ export default function NegativeSentimentPage() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-center justify-between p-3 glass-card border-yellow-500/20"
+                    className="flex items-center justify-between p-3 glass-card border-amber-500/20"
                   >
-                    <span className="text-sm text-slate-300">{key}</span>
-                    <Badge variant="outline" className="font-mono text-yellow-400">
+                    <span className="text-sm text-platinum-300">{key}</span>
+                    <Badge variant="outline" className="font-mono text-amber-400">
                       {value}
                     </Badge>
                   </motion.div>
@@ -673,11 +673,11 @@ export default function NegativeSentimentPage() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: idx * 0.05 }}
-                  className="glass-card border-slate-500/30 p-4 text-center"
+                  className="glass-card border-platinum-500/30 p-4 text-center"
                 >
-                  <UsersRound className="h-6 w-6 mx-auto mb-2 text-slate-400" />
-                  <p className="text-sm text-slate-400 mb-1">{key}</p>
-                  <p className="text-lg font-bold text-slate-200 font-rajdhani">
+                  <UsersRound className="h-6 w-6 mx-auto mb-2 text-platinum-400" />
+                  <p className="text-sm text-platinum-400 mb-1">{key}</p>
+                  <p className="text-lg font-bold text-platinum-200 font-rajdhani">
                     {value}
                   </p>
                 </motion.div>
@@ -819,7 +819,7 @@ export default function NegativeSentimentPage() {
                 initial="initial"
                 animate="animate"
                 whileHover="hover"
-                className="glass-card border-slate-500/30"
+                className="glass-card border-platinum-500/30"
               >
                 <CardHeader>
                   <CardTitle className="text-lg font-rajdhani">
@@ -853,18 +853,18 @@ export default function NegativeSentimentPage() {
                       transition={{ delay: idx * 0.05 }}
                       whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
                       onClick={() => setSelectedFearTopic(selectedFearTopic === topic.id ? null : topic.id)}
-                      className={`glass-card border ${topic.severity === 'CRITICAL' ? 'border-red-500/50' : topic.severity === 'HIGH' ? 'border-amber-500/50' : 'border-yellow-500/50'} p-4 cursor-pointer`}
+                      className={`glass-card border ${topic.severity === 'CRITICAL' ? 'border-red-500/50' : topic.severity === 'HIGH' ? 'border-amber-500/50' : 'border-amber-500/50'} p-4 cursor-pointer`}
                     >
                       <div className="flex items-center justify-between mb-3">
-                        <Badge className={topic.severity === 'CRITICAL' ? 'bg-red-500/20 text-red-400' : topic.severity === 'HIGH' ? 'bg-amber-500/20 text-amber-400' : 'bg-yellow-500/20 text-yellow-400'}>
+                        <Badge className={topic.severity === 'CRITICAL' ? 'bg-red-500/20 text-red-400' : topic.severity === 'HIGH' ? 'bg-amber-500/20 text-amber-400' : 'bg-amber-500/20 text-amber-400'}>
                           {topic.severity}
                         </Badge>
-                        <span className="text-xs text-slate-500">#{topic.id}</span>
+                        <span className="text-xs text-platinum-500">#{topic.id}</span>
                       </div>
-                      <h4 className="font-semibold text-slate-200 mb-2 font-rajdhani">
+                      <h4 className="font-semibold text-platinum-200 mb-2 font-rajdhani">
                         {topic.name}
                       </h4>
-                      <div className="flex items-center gap-2 text-xs text-slate-400 mb-3">
+                      <div className="flex items-center gap-2 text-xs text-platinum-400 mb-3">
                         <Badge variant="outline" className="text-xs">
                           Sentiment: {topic.aggregateSentiment > 0 ? '+' : ''}{topic.aggregateSentiment}
                         </Badge>
@@ -879,9 +879,9 @@ export default function NegativeSentimentPage() {
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: 'auto', opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            className="mt-3 pt-3 border-t border-slate-700"
+                            className="mt-3 pt-3 border-t border-platinum-700"
                           >
-                            <p className="text-xs text-slate-500 mb-2">
+                            <p className="text-xs text-platinum-500 mb-2">
                               Primary Fears:
                             </p>
                             <div className="flex flex-wrap gap-1 mb-3">
@@ -891,11 +891,11 @@ export default function NegativeSentimentPage() {
                                 </Badge>
                               ))}
                             </div>
-                            <p className="text-xs text-slate-500 mb-2">Key KPIs:</p>
+                            <p className="text-xs text-platinum-500 mb-2">Key KPIs:</p>
                             <div className="space-y-1">
                               {topic.kpis.slice(0, 3).map((kpi, i) => (
                                 <div key={i} className="flex justify-between text-xs">
-                                  <span className="text-slate-400">{kpi.kpi}:</span>
+                                  <span className="text-platinum-400">{kpi.kpi}:</span>
                                   <span className="text-rose-400 font-semibold">{kpi.value}</span>
                                 </div>
                               ))}
@@ -932,7 +932,7 @@ export default function NegativeSentimentPage() {
                     </motion.div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-bold text-lg text-slate-200 font-rajdhani">
+                        <h4 className="font-bold text-lg text-platinum-200 font-rajdhani">
                           {aggregate.category}
                         </h4>
                         <Badge className={aggregate.severity === 'CRITICAL' ? 'bg-red-500/20 text-red-400' : 'bg-amber-500/20 text-amber-400'}>
@@ -940,16 +940,16 @@ export default function NegativeSentimentPage() {
                         </Badge>
                       </div>
                       <div className="flex items-center gap-2 mb-3">
-                        <span className="text-xs text-slate-500">Sentiment:</span>
-                        <Badge variant="outline" className={aggregate.aggregateSentiment < 0 ? 'text-red-400 border-red-500/50' : 'text-green-400 border-green-500/50'}>
+                        <span className="text-xs text-platinum-500">Sentiment:</span>
+                        <Badge variant="outline" className={aggregate.aggregateSentiment < 0 ? 'text-red-400 border-red-500/50' : 'text-emerald-400 border-emerald-500/50'}>
                           {aggregate.aggregateSentiment > 0 ? '+' : ''}{aggregate.aggregateSentiment}
                         </Badge>
                       </div>
                       <div className="bg-navy-900/50 rounded-lg p-3">
-                        <p className="text-xs text-slate-500 mb-2">Evidence:</p>
+                        <p className="text-xs text-platinum-500 mb-2">Evidence:</p>
                         <ul className="space-y-1">
                           {aggregate.evidence.map((ev, i) => (
-                            <li key={i} className="text-sm text-slate-300 flex items-center gap-2">
+                            <li key={i} className="text-sm text-platinum-300 flex items-center gap-2">
                               <XCircle className="w-3 h-3 text-red-400 flex-shrink-0" />
                               {ev}
                             </li>

@@ -109,10 +109,10 @@ function MSAMetricCard({
       <div className="relative glass-panel p-6 rounded-xl border-[var(--glass-border)] hover:border-gold/50 transition-all duration-300">
         <div className="flex items-start justify-between">
           <div className="space-y-2">
-            <p className="text-sm text-slate-400 font-medium">{title}</p>
+            <p className="text-sm text-platinum-400 font-medium">{title}</p>
             <div className="flex items-baseline gap-2">
-              <span className="text-3xl font-bold text-slate-100">{value}</span>
-              {unit && <span className="text-lg text-slate-400">{unit}</span>}
+              <span className="text-3xl font-bold text-platinum-100">{value}</span>
+              {unit && <span className="text-lg text-platinum-400">{unit}</span>}
             </div>
           </div>
           <div className={`p-3 rounded-lg bg-gradient-to-br ${gradient} bg-clip-padding`}>
@@ -124,7 +124,7 @@ function MSAMetricCard({
             {trend === 'rising' && <TrendingUp className="h-4 w-4 text-emerald-400" />}
             {trend === 'stable' && <Activity className="h-4 w-4 text-gold" />}
             {trend === 'declining' && <TrendingUp className="h-4 w-4 text-red-400 rotate-180" />}
-            <span className="text-sm text-slate-400 capitalize">{trend}</span>
+            <span className="text-sm text-platinum-400 capitalize">{trend}</span>
           </div>
         )}
       </div>
@@ -154,10 +154,10 @@ function TopicSentimentCard({ topic, sentiment, index }: {
       initial="initial"
       animate={mounted ? "animate" : "initial"}
       whileHover={{ scale: 1.02 }}
-      className="glass-card p-5 rounded-xl border border-slate-700/50 hover:border-gold/30 transition-all duration-300"
+      className="glass-card p-5 rounded-xl border border-platinum-700/50 hover:border-gold/30 transition-all duration-300"
     >
       <div className="flex items-center justify-between mb-4">
-        <h4 className="font-semibold text-slate-200">{topic.name}</h4>
+        <h4 className="font-semibold text-platinum-200">{topic.name}</h4>
         <Badge
           variant={sentiment.positive >= 70 ? "success" : sentiment.positive >= 50 ? "warning" : "danger"}
           className="text-xs"
@@ -168,19 +168,19 @@ function TopicSentimentCard({ topic, sentiment, index }: {
       <div className="space-y-3">
         <div className="flex items-center justify-between text-sm">
           <span className="text-emerald-400">Positive</span>
-          <span className="text-slate-300">{sentiment.positive}%</span>
+          <span className="text-platinum-300">{sentiment.positive}%</span>
         </div>
-        <Progress value={sentiment.positive} className="h-2 bg-slate-700" />
+        <Progress value={sentiment.positive} className="h-2 bg-platinum-700" />
         <div className="flex items-center justify-between text-sm">
-          <span className="text-slate-400">Neutral</span>
-          <span className="text-slate-300">{sentiment.neutral}%</span>
+          <span className="text-platinum-400">Neutral</span>
+          <span className="text-platinum-300">{sentiment.neutral}%</span>
         </div>
-        <Progress value={sentiment.neutral} className="h-2 bg-slate-700" />
+        <Progress value={sentiment.neutral} className="h-2 bg-platinum-700" />
         <div className="flex items-center justify-between text-sm">
           <span className="text-red-400">Negative</span>
-          <span className="text-slate-300">{sentiment.negative}%</span>
+          <span className="text-platinum-300">{sentiment.negative}%</span>
         </div>
-        <Progress value={sentiment.negative} className="h-2 bg-slate-700" />
+        <Progress value={sentiment.negative} className="h-2 bg-platinum-700" />
       </div>
     </motion.div>
   )
@@ -207,14 +207,14 @@ function KeyEntityCard({ entity, index }: {
       initial="initial"
       animate={mounted ? "animate" : "initial"}
       whileHover={{ x: 5, transition: { duration: 0.2 } }}
-      className="flex items-center gap-4 p-4 rounded-lg border border-slate-700/50 bg-slate-800/30 hover:bg-slate-800/60 hover:border-gold/30 transition-all duration-300"
+      className="flex items-center gap-4 p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30 hover:bg-platinum-800/60 hover:border-gold/30 transition-all duration-300"
     >
       <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/30">
         <Landmark className="h-6 w-6 text-gold" />
       </div>
       <div className="flex-1 min-w-0">
-        <p className="font-semibold text-slate-200 truncate">{entity.name}</p>
-        <p className="text-sm text-slate-400 truncate">{entity.role}</p>
+        <p className="font-semibold text-platinum-200 truncate">{entity.name}</p>
+        <p className="text-sm text-platinum-400 truncate">{entity.role}</p>
       </div>
       <Badge variant="outline" className="text-xs border-gold/30 text-gold">
         Since {entity.since}
@@ -245,13 +245,13 @@ function QueryPatternCard({ pattern, example, index }: {
       initial="initial"
       animate={mounted ? "animate" : "initial"}
       whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-      className="p-4 rounded-lg border border-slate-700/50 bg-slate-800/30 hover:bg-slate-800/60 hover:border-emerald-500/30 transition-all duration-300"
+      className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30 hover:bg-platinum-800/60 hover:border-emerald-500/30 transition-all duration-300"
     >
       <div className="flex items-center gap-3 mb-2">
         <div className="h-2 w-2 rounded-full bg-emerald-400" />
         <span className="text-sm font-medium text-emerald-300">{pattern}</span>
       </div>
-      <p className="text-sm text-slate-400 font-mono ml-5">{example}</p>
+      <p className="text-sm text-platinum-400 font-mono ml-5">{example}</p>
     </motion.div>
   )
 }
@@ -288,10 +288,10 @@ function SourceTierChart({ tiers, index }: {
           transition={{ duration: 0.8, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-slate-300">{tier.tier}</span>
+            <span className="text-sm text-platinum-300">{tier.tier}</span>
             <span className="text-sm font-semibold" style={{ color: tier.color }}>{tier.count}</span>
           </div>
-          <div className="h-3 bg-slate-700 rounded-full overflow-hidden">
+          <div className="h-3 bg-platinum-700 rounded-full overflow-hidden">
             <motion.div
               initial={{ width: 0 }}
               animate={mounted ? { width: `${(tier.count / maxCount) * 100}%` } : { width: 0 }}
@@ -380,7 +380,7 @@ export default function MSALanguagePage() {
 
   const getSentimentColor = (score: number) => {
     if (score >= 70) return 'text-emerald-400'
-    if (score >= 50) return 'text-yellow-400'
+    if (score >= 50) return 'text-amber-400'
     return 'text-red-400'
   }
 
@@ -418,7 +418,7 @@ export default function MSALanguagePage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mt-2 text-slate-400 text-lg"
+            className="mt-2 text-platinum-400 text-lg"
           >
             Pan-Arab media queries, formal communications, and official content analysis
           </motion.p>
@@ -506,8 +506,8 @@ export default function MSALanguagePage() {
                 <TrendingUp className="h-5 w-5 text-emerald-400" />
               </div>
               <div>
-                <p className="text-sm text-slate-400">GDP 2025</p>
-                <p className="text-xl font-bold text-slate-100">${keyMetrics.gdp2025}B</p>
+                <p className="text-sm text-platinum-400">GDP 2025</p>
+                <p className="text-xl font-bold text-platinum-100">${keyMetrics.gdp2025}B</p>
               </div>
             </div>
           </motion.div>
@@ -520,8 +520,8 @@ export default function MSALanguagePage() {
                 <Activity className="h-5 w-5 text-gold" />
               </div>
               <div>
-                <p className="text-sm text-slate-400">GDP Growth</p>
-                <p className="text-xl font-bold text-slate-100">{keyMetrics.gdpGrowth2025}%</p>
+                <p className="text-sm text-platinum-400">GDP Growth</p>
+                <p className="text-xl font-bold text-platinum-100">{keyMetrics.gdpGrowth2025}%</p>
               </div>
             </div>
           </motion.div>
@@ -530,12 +530,12 @@ export default function MSALanguagePage() {
             className="glass-panel p-4 rounded-xl border-[var(--glass-border)]"
           >
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-lg bg-blue-500/20">
-                <Users className="h-5 w-5 text-blue-400" />
+              <div className="p-2 rounded-lg bg-navy-500/20">
+                <Users className="h-5 w-5 text-navy-400" />
               </div>
               <div>
-                <p className="text-sm text-slate-400">Population</p>
-                <p className="text-xl font-bold text-slate-100">{keyMetrics.population2025}M</p>
+                <p className="text-sm text-platinum-400">Population</p>
+                <p className="text-xl font-bold text-platinum-100">{keyMetrics.population2025}M</p>
               </div>
             </div>
           </motion.div>
@@ -548,8 +548,8 @@ export default function MSALanguagePage() {
                 <Shield className="h-5 w-5 text-red-400" />
               </div>
               <div>
-                <p className="text-sm text-slate-400">Defense Budget</p>
-                <p className="text-xl font-bold text-slate-100">${keyMetrics.defenseBudget2024}B</p>
+                <p className="text-sm text-platinum-400">Defense Budget</p>
+                <p className="text-xl font-bold text-platinum-100">${keyMetrics.defenseBudget2024}B</p>
               </div>
             </div>
           </motion.div>
@@ -653,7 +653,7 @@ export default function MSALanguagePage() {
                             className="space-y-2"
                           >
                             <div className="flex items-center justify-between text-sm">
-                              <span className="font-medium text-slate-200">{region.region}</span>
+                              <span className="font-medium text-platinum-200">{region.region}</span>
                               <span style={{ color: region.color }}>{region.reach}%</span>
                             </div>
                             <Progress value={region.reach} className="h-3" />
@@ -689,23 +689,23 @@ export default function MSALanguagePage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 }}
                             whileHover={{ x: 5, backgroundColor: 'rgba(30, 41, 59, 0.7)' }}
-                            className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/30 p-4 transition-all duration-200"
+                            className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-4 transition-all duration-200"
                           >
                             <div className="flex items-center gap-4">
                               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
                                 <Search className="h-5 w-5" />
                               </div>
                               <div>
-                                <p className="font-semibold text-slate-200">{item.term}</p>
-                                <p className="text-sm text-slate-400">MSA Arabic</p>
+                                <p className="font-semibold text-platinum-200">{item.term}</p>
+                                <p className="text-sm text-platinum-400">MSA Arabic</p>
                               </div>
                             </div>
                             <div className="flex items-center gap-6">
                               <div className="text-center">
-                                <div className="text-lg font-bold text-slate-200">
+                                <div className="text-lg font-bold text-platinum-200">
                                   {(item.volume / 1000000).toFixed(1)}M
                                 </div>
-                                <p className="text-xs text-slate-400">Volume</p>
+                                <p className="text-xs text-platinum-400">Volume</p>
                               </div>
                               <div className="text-center">
                                 <Badge
@@ -828,15 +828,15 @@ export default function MSALanguagePage() {
                     <div className="grid gap-4 sm:grid-cols-3">
                       <div className="rounded-lg border border-gold-700/50 bg-gold-900/20 p-4 text-center">
                         <div className="text-3xl font-bold text-gold">{data?.extendedData?.urlRegistry?.totalUrls || 47}</div>
-                        <p className="text-sm text-slate-400 mt-1">Total URLs</p>
+                        <p className="text-sm text-platinum-400 mt-1">Total URLs</p>
                       </div>
                       <div className="rounded-lg border border-emerald-700/50 bg-emerald-900/20 p-4 text-center">
                         <div className="text-3xl font-bold text-emerald-400">{data?.extendedData?.urlRegistry?.successfulFetches || 42}</div>
-                        <p className="text-sm text-slate-400 mt-1">Successful Fetches</p>
+                        <p className="text-sm text-platinum-400 mt-1">Successful Fetches</p>
                       </div>
-                      <div className="rounded-lg border border-blue-700/50 bg-blue-900/20 p-4 text-center">
-                        <div className="text-3xl font-bold text-blue-400">{data?.extendedData?.urlRegistry?.fetchRate || 89}%</div>
-                        <p className="text-sm text-slate-400 mt-1">Fetch Rate</p>
+                      <div className="rounded-lg border border-navy-700/50 bg-navy-900/20 p-4 text-center">
+                        <div className="text-3xl font-bold text-navy-400">{data?.extendedData?.urlRegistry?.fetchRate || 89}%</div>
+                        <p className="text-sm text-platinum-400 mt-1">Fetch Rate</p>
                       </div>
                     </div>
                   </CardContent>
@@ -857,15 +857,15 @@ export default function MSALanguagePage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.05 }}
                             whileHover={{ x: 5 }}
-                            className="flex items-center justify-between rounded-lg border border-gold-700/50 bg-slate-800/50 p-4 hover:bg-slate-800/70"
+                            className="flex items-center justify-between rounded-lg border border-gold-700/50 bg-platinum-800/50 p-4 hover:bg-platinum-800/70"
                           >
                             <div className="flex items-center gap-4">
                               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
                                 <Star className="h-5 w-5" />
                               </div>
                               <div>
-                                <p className="font-semibold text-slate-200">{source.name}</p>
-                                <p className="text-sm text-slate-400">Tier {source.tier} Source</p>
+                                <p className="font-semibold text-platinum-200">{source.name}</p>
+                                <p className="text-sm text-platinum-400">Tier {source.tier} Source</p>
                               </div>
                             </div>
                             <Badge variant="gold" className="text-xs">Official</Badge>
@@ -896,29 +896,29 @@ export default function MSALanguagePage() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-4 sm:grid-cols-4">
-                      <div className="text-center p-4 rounded-lg border border-slate-700/50 bg-slate-800/30">
+                      <div className="text-center p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
                         <div className="text-2xl font-bold text-emerald-400">
                           {data?.extendedData?.verificationStatus?.queriesExecuted || 18}
                         </div>
-                        <p className="text-sm text-slate-400">Queries Executed</p>
+                        <p className="text-sm text-platinum-400">Queries Executed</p>
                       </div>
-                      <div className="text-center p-4 rounded-lg border border-slate-700/50 bg-slate-800/30">
+                      <div className="text-center p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
                         <div className="text-2xl font-bold text-gold">
                           {data?.extendedData?.verificationStatus?.pagesFetched || 12}
                         </div>
-                        <p className="text-sm text-slate-400">Pages Fetched</p>
+                        <p className="text-sm text-platinum-400">Pages Fetched</p>
                       </div>
-                      <div className="text-center p-4 rounded-lg border border-slate-700/50 bg-slate-800/30">
-                        <div className="text-2xl font-bold text-blue-400">
+                      <div className="text-center p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
+                        <div className="text-2xl font-bold text-navy-400">
                           {data?.extendedData?.verificationStatus?.dataExtractionRate || 89}%
                         </div>
-                        <p className="text-sm text-slate-400">Extraction Rate</p>
+                        <p className="text-sm text-platinum-400">Extraction Rate</p>
                       </div>
-                      <div className="text-center p-4 rounded-lg border border-slate-700/50 bg-slate-800/30">
+                      <div className="text-center p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
                         <div className="text-2xl font-bold text-platinum">
                           {data?.extendedData?.verificationStatus?.confidence || '100%'}
                         </div>
-                        <p className="text-sm text-slate-400">Confidence</p>
+                        <p className="text-sm text-platinum-400">Confidence</p>
                       </div>
                     </div>
                   </CardContent>

@@ -102,7 +102,7 @@ export default function HistoricalOverviewPage() {
       case 'critical':
         return <Badge variant="destructive" className="text-xs">Critical</Badge>
       case 'major':
-        return <Badge variant="warning" className="text-xs bg-yellow-500/20 text-yellow-400 border-yellow-500/50">Major</Badge>
+        return <Badge variant="warning" className="text-xs bg-amber-500/20 text-amber-400 border-amber-500/50">Major</Badge>
       default:
         return <Badge variant="outline" className="text-xs">Minor</Badge>
     }
@@ -115,7 +115,7 @@ export default function HistoricalOverviewPage() {
         <div>
           <Badge variant="gold" className="mb-2">H-CONTEXT</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">UAE Historical Overview</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             Comprehensive historical context spanning Pre-Federation through the Recent Era
           </p>
         </div>
@@ -231,9 +231,9 @@ export default function HistoricalOverviewPage() {
                                 className="h-3 w-3 rounded-full"
                                 style={{ backgroundColor: item.color }}
                               />
-                              <span className="text-sm font-medium text-slate-200">{item.name}</span>
+                              <span className="text-sm font-medium text-platinum-200">{item.name}</span>
                             </div>
-                            <span className="text-lg font-bold text-slate-200">{item.value}</span>
+                            <span className="text-lg font-bold text-platinum-200">{item.value}</span>
                           </div>
                           <Progress
                             value={(item.value / allKeyEvents.length) * 100}
@@ -262,14 +262,14 @@ export default function HistoricalOverviewPage() {
                           <h3 className="text-lg font-bold text-gold">{era.era}</h3>
                           {getEraBadge(era)}
                         </div>
-                        <p className="text-sm text-slate-400 line-clamp-2">{era.description}</p>
+                        <p className="text-sm text-platinum-400 line-clamp-2">{era.description}</p>
                       </div>
                       <div className="text-right ml-4">
                         <div className="text-2xl font-bold text-platinum-100">{era.keyEvents?.length || 0}</div>
-                        <div className="text-xs text-slate-400">Events</div>
+                        <div className="text-xs text-platinum-400">Events</div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-4 text-xs text-slate-500">
+                    <div className="flex items-center gap-4 text-xs text-platinum-500">
                       <span>Credibility: {era.credibility?.score || 0}%</span>
                       <span>Sources: {era.credibility?.sources || 0}</span>
                       <span>Updated: {era.lastUpdated}</span>
@@ -287,7 +287,7 @@ export default function HistoricalOverviewPage() {
             <ScrollArea className="h-[600px]">
               <div className="space-y-3">
                 {allKeyEvents.map((event, idx) => (
-                  <div key={idx} className="flex items-start justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70">
+                  <div key={idx} className="flex items-start justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70">
                     <div className="flex items-start gap-4">
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold shrink-0">
                         <Calendar className="h-5 w-5" />
@@ -295,11 +295,11 @@ export default function HistoricalOverviewPage() {
                       <div>
                         <div className="flex items-center gap-2 mb-1">
                           <span className="text-sm font-mono text-gold">{event.date}</span>
-                          <span className="text-xs text-slate-500">|</span>
-                          <span className="text-xs text-slate-400">{event.era}</span>
+                          <span className="text-xs text-platinum-500">|</span>
+                          <span className="text-xs text-platinum-400">{event.era}</span>
                         </div>
-                        <p className="font-semibold text-slate-200">{event.title}</p>
-                        <p className="mt-1 text-sm text-slate-400 line-clamp-2">{event.description}</p>
+                        <p className="font-semibold text-platinum-200">{event.title}</p>
+                        <p className="mt-1 text-sm text-platinum-400 line-clamp-2">{event.description}</p>
                         {event.entities && event.entities.length > 0 && (
                           <div className="mt-2 flex flex-wrap gap-1">
                             {event.entities.slice(0, 3).map((entity, eIdx) => (
@@ -339,14 +339,14 @@ export default function HistoricalOverviewPage() {
                     <ScrollArea className="h-[300px]">
                       <div className="space-y-2">
                         {data.slice(0, 5).map((era, idx) => (
-                          <div key={idx} className="rounded-lg bg-slate-800/50 p-3">
+                          <div key={idx} className="rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center justify-between mb-2">
                               <span className="text-sm font-medium text-gold">{era.era}</span>
-                              <span className="text-xs text-slate-500">{era.period.start} - {era.period.end}</span>
+                              <span className="text-xs text-platinum-500">{era.period.start} - {era.period.end}</span>
                             </div>
                             <div className="space-y-1">
                               {era.nationBuildingMilestones?.slice(0, 3).map((milestone, mIdx) => (
-                                <div key={mIdx} className="flex items-start gap-2 text-xs text-slate-300">
+                                <div key={mIdx} className="flex items-start gap-2 text-xs text-platinum-300">
                                   <div className="h-1.5 w-1.5 rounded-full bg-gold mt-1.5 shrink-0" />
                                   <span className="line-clamp-1">{milestone}</span>
                                 </div>
@@ -371,10 +371,10 @@ export default function HistoricalOverviewPage() {
                     <ScrollArea className="h-[300px]">
                       <div className="space-y-3">
                         {data.flatMap(era => era.keyFindings || []).slice(0, 10).map((finding, idx) => (
-                          <div key={idx} className="flex items-start justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700">
+                          <div key={idx} className="flex items-start justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700">
                             <div className="flex-1">
-                              <p className="text-sm font-medium text-slate-200">{finding.finding}</p>
-                              <p className="mt-1 text-xs text-slate-400">Source: {finding.source}</p>
+                              <p className="text-sm font-medium text-platinum-200">{finding.finding}</p>
+                              <p className="mt-1 text-xs text-platinum-400">Source: {finding.source}</p>
                             </div>
                             <Badge variant="outline" className="ml-2 text-xs shrink-0">{finding.metric}</Badge>
                           </div>
@@ -395,13 +395,13 @@ export default function HistoricalOverviewPage() {
                     <div className="space-y-3">
                       {data.flatMap(era =>
                         (era.policyOutcomes || []).map((policy, pIdx) => (
-                          <div key={pIdx} className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                          <div key={pIdx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                             <div className="flex-1">
                               <div className="flex items-center gap-2">
                                 <span className="text-sm font-medium text-gold">{policy.policy}</span>
                                 <Badge variant="outline" className="text-xs">{policy.year}</Badge>
                               </div>
-                              <p className="mt-1 text-sm text-slate-300">{policy.impact}</p>
+                              <p className="mt-1 text-sm text-platinum-300">{policy.impact}</p>
                             </div>
                           </div>
                         ))
@@ -487,10 +487,10 @@ export default function HistoricalOverviewPage() {
                         { policy: 'Cybercrime Laws', relevance: 'CRITICAL', kpis: 'Fines up to AED 10M, life imprisonment' },
                         { policy: 'Climate Change Law', relevance: 'CRITICAL', kpis: 'AED 50K-2M fines, Scope 1-3' },
                       ].map((item, idx) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700">
+                        <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700">
                           <div className="flex-1">
                             <span className="text-sm font-medium text-gold">{item.policy}</span>
-                            <p className="text-xs text-slate-400 mt-1">{item.kpis}</p>
+                            <p className="text-xs text-platinum-400 mt-1">{item.kpis}</p>
                           </div>
                           <Badge variant={item.relevance === 'CRITICAL' ? 'destructive' : 'outline'} className="ml-2">
                             {item.relevance}
@@ -524,17 +524,17 @@ export default function HistoricalOverviewPage() {
                       ].map((item, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-slate-200">{item.policy}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.policy}</span>
                             <div className="flex gap-2 text-xs">
                               <span className="text-emerald-400">{item.positive}%</span>
                               <span className="text-rose-400">{item.negative}%</span>
-                              <span className="text-slate-400">{item.neutral}%</span>
+                              <span className="text-platinum-400">{item.neutral}%</span>
                             </div>
                           </div>
-                          <div className="flex h-2 overflow-hidden rounded-full bg-slate-700">
+                          <div className="flex h-2 overflow-hidden rounded-full bg-platinum-700">
                             <div className="bg-emerald-500" style={{ width: `${item.positive}%` }} />
                             <div className="bg-rose-500" style={{ width: `${item.negative}%` }} />
-                            <div className="bg-slate-500" style={{ width: `${item.neutral}%` }} />
+                            <div className="bg-platinum-500" style={{ width: `${item.neutral}%` }} />
                           </div>
                         </div>
                       ))}
@@ -558,7 +558,7 @@ export default function HistoricalOverviewPage() {
                         { kpi: 'Tourism GDP (Dubai)', value: '20%', status: 'Stable' },
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-center justify-between">
-                          <span className="text-sm text-slate-300">{item.kpi}</span>
+                          <span className="text-sm text-platinum-300">{item.kpi}</span>
                           <Badge variant="outline" className="text-xs">{item.status}</Badge>
                         </div>
                       ))}
@@ -571,7 +571,7 @@ export default function HistoricalOverviewPage() {
                         { kpi: 'Carbon avoided (nuclear)', value: '22 MT/year', status: 'Achieved' },
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-center justify-between">
-                          <span className="text-sm text-slate-300">{item.kpi}</span>
+                          <span className="text-sm text-platinum-300">{item.kpi}</span>
                           <Badge variant="outline" className="text-xs">{item.status}</Badge>
                         </div>
                       ))}
@@ -584,7 +584,7 @@ export default function HistoricalOverviewPage() {
                         { kpi: 'Green Visa validity', value: '5 years', status: 'Active' },
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-center justify-between">
-                          <span className="text-sm text-slate-300">{item.kpi}</span>
+                          <span className="text-sm text-platinum-300">{item.kpi}</span>
                           <Badge variant="outline" className="text-xs">{item.status}</Badge>
                         </div>
                       ))}
@@ -597,7 +597,7 @@ export default function HistoricalOverviewPage() {
                         { kpi: 'Electricity share', value: '25%', status: 'Achieved' },
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-center justify-between">
-                          <span className="text-sm text-slate-300">{item.kpi}</span>
+                          <span className="text-sm text-platinum-300">{item.kpi}</span>
                           <Badge variant="outline" className="text-xs">{item.status}</Badge>
                         </div>
                       ))}

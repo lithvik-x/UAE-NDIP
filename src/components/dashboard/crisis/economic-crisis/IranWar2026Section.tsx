@@ -105,7 +105,7 @@ export function SectorImpactSection({ economicSectorImpact, expertAssessments }:
           <div>
             <h4 className="text-lg font-semibold text-rose-400 mb-3">Economic Sectors</h4>
             {economicSectorImpact?.map((sector: any, idx: number) => (
-              <div key={idx} className="mb-3 p-3 rounded-lg bg-slate-800/50 border border-glass-border">
+              <div key={idx} className="mb-3 p-3 rounded-lg bg-platinum-800/50 border border-glass-border">
                 <div className="flex justify-between">
                   <span className="text-platinum-200 font-semibold">{sector.sector}</span>
                   <span className="text-rose-400">{sector.impact}</span>

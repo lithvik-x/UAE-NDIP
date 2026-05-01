@@ -102,7 +102,7 @@ export default function LanguagesOverviewPage() {
 
   const getSentimentColor = (score: number) => {
     if (score >= 70) return 'text-emerald-400'
-    if (score >= 50) return 'text-yellow-400'
+    if (score >= 50) return 'text-amber-400'
     return 'text-red-400'
   }
 
@@ -110,7 +110,7 @@ export default function LanguagesOverviewPage() {
     switch (trend) {
       case 'rising': return <TrendingUp className="h-4 w-4 text-emerald-400" />
       case 'declining': return <TrendingUp className="h-4 w-4 text-red-400 rotate-180" />
-      default: return <AlertCircle className="h-4 w-4 text-slate-400" />
+      default: return <AlertCircle className="h-4 w-4 text-platinum-400" />
     }
   }
 
@@ -121,7 +121,7 @@ export default function LanguagesOverviewPage() {
         <div>
           <Badge variant="default" className="mb-2">MULTI-LINGUAL INTELLIGENCE</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">Languages Overview</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             UAE language demographics, sentiment by community, and cross-linguistic intelligence
           </p>
         </div>
@@ -233,7 +233,7 @@ export default function LanguagesOverviewPage() {
                     {languageDemographics.map((lang, index) => (
                       <div key={index} className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="font-medium text-slate-200">{lang.name}</span>
+                          <span className="font-medium text-platinum-200">{lang.name}</span>
                           <span className="text-platinum">{lang.percentage}% · {(lang.speakers / 1000000).toFixed(1)}M speakers</span>
                         </div>
                         <Progress value={lang.percentage} className="h-3" />
@@ -300,7 +300,7 @@ export default function LanguagesOverviewPage() {
                       {asianLanguages.map((lang, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between text-sm">
-                            <span className="font-medium text-slate-200">{lang.name}</span>
+                            <span className="font-medium text-platinum-200">{lang.name}</span>
                             <span className="text-platinum">{lang.percentage}% · {(lang.speakers / 1000).toFixed(0)}K</span>
                           </div>
                           <Progress value={lang.percentage} className="h-2" />
@@ -328,15 +328,15 @@ export default function LanguagesOverviewPage() {
                     {sentimentByLanguage.map((lang, index) => (
                       <div
                         key={index}
-                        className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 text-center"
+                        className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center"
                       >
                         <div className={`text-2xl font-bold ${getSentimentColor(lang.sentiment)}`}>
                           {lang.sentiment}
                         </div>
-                        <p className="text-sm text-slate-400 mt-1">{lang.name}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{lang.name}</p>
                         <div className="flex items-center justify-center gap-1 mt-2">
                           {getTrendIcon(lang.trend)}
-                          <span className="text-xs text-slate-500 capitalize">{lang.trend}</span>
+                          <span className="text-xs text-platinum-500 capitalize">{lang.trend}</span>
                         </div>
                       </div>
                     ))}
@@ -448,23 +448,23 @@ export default function LanguagesOverviewPage() {
                       {topSearchTerms.map((item, index) => (
                         <div
                           key={index}
-                          className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70"
+                          className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70"
                         >
                           <div className="flex items-center gap-4">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy">
                               <Globe className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-slate-200">{item.term}</p>
-                              <p className="text-sm text-slate-400">{item.language}</p>
+                              <p className="font-semibold text-platinum-200">{item.term}</p>
+                              <p className="text-sm text-platinum-400">{item.language}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-6">
                             <div className="text-center">
-                              <div className="text-lg font-bold text-slate-200">
+                              <div className="text-lg font-bold text-platinum-200">
                                 {(item.volume / 1000000).toFixed(1)}M
                               </div>
-                              <p className="text-xs text-slate-400">Volume</p>
+                              <p className="text-xs text-platinum-400">Volume</p>
                             </div>
                             <div className="text-center">
                               <Badge
@@ -473,7 +473,7 @@ export default function LanguagesOverviewPage() {
                               >
                                 {item.sentiment}
                               </Badge>
-                              <p className="text-xs text-slate-400 mt-1">Sentiment</p>
+                              <p className="text-xs text-platinum-400 mt-1">Sentiment</p>
                             </div>
                           </div>
                         </div>
@@ -532,28 +532,28 @@ export default function LanguagesOverviewPage() {
                     <div className="space-y-4">
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-slate-400">Non-Arabs English Preference</span>
+                          <span className="text-platinum-400">Non-Arabs English Preference</span>
                           <span className="font-medium text-navy">99.7%</span>
                         </div>
                         <Progress value={99.7} className="h-3" />
                       </div>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-slate-400">UAE Nationals Arabic Preference</span>
+                          <span className="text-platinum-400">UAE Nationals Arabic Preference</span>
                           <span className="font-medium text-gold">80.3%</span>
                         </div>
                         <Progress value={80.3} className="h-3" />
                       </div>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-slate-400">Arab Expats Arabic Preference</span>
+                          <span className="text-platinum-400">Arab Expats Arabic Preference</span>
                           <span className="font-medium text-emerald">50.8%</span>
                         </div>
                         <Progress value={50.8} className="h-3" />
                       </div>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-slate-400">Arabs Outside Dubai Arabic</span>
+                          <span className="text-platinum-400">Arabs Outside Dubai Arabic</span>
                           <span className="font-medium text-platinum">72.2%</span>
                         </div>
                         <Progress value={72.2} className="h-3" />
@@ -571,28 +571,28 @@ export default function LanguagesOverviewPage() {
                     <div className="space-y-4">
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-slate-400">Overall Code-Switching Rate</span>
+                          <span className="text-platinum-400">Overall Code-Switching Rate</span>
                           <span className="font-medium text-platinum">68%</span>
                         </div>
                         <Progress value={68} className="h-3" />
                       </div>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-slate-400">Arabizi Usage (Gulf)</span>
+                          <span className="text-platinum-400">Arabizi Usage (Gulf)</span>
                           <span className="font-medium text-gold">42%</span>
                         </div>
                         <Progress value={42} className="h-3" />
                       </div>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-slate-400">Business English-Arabic</span>
+                          <span className="text-platinum-400">Business English-Arabic</span>
                           <span className="font-medium text-navy">35%</span>
                         </div>
                         <Progress value={35} className="h-3" />
                       </div>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-slate-400">South Asian Hinglish</span>
+                          <span className="text-platinum-400">South Asian Hinglish</span>
                           <span className="font-medium text-orange-400">18%</span>
                         </div>
                         <Progress value={18} className="h-3" />
@@ -616,26 +616,26 @@ export default function LanguagesOverviewPage() {
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                       <div className="rounded-lg border border-gold/30 bg-gold/10 p-3">
                         <p className="text-xs text-gold font-medium mb-1">9aba7 el 5air!</p>
-                        <p className="text-xs text-slate-400">صباح الخير = Good morning</p>
+                        <p className="text-xs text-platinum-400">صباح الخير = Good morning</p>
                       </div>
                       <div className="rounded-lg border border-gold/30 bg-gold/10 p-3">
                         <p className="text-xs text-gold font-medium mb-1">ta7ki 3arabi?</p>
-                        <p className="text-xs text-slate-400">تحكي عربي = Do you speak Arabic?</p>
+                        <p className="text-xs text-platinum-400">تحكي عربي = Do you speak Arabic?</p>
                       </div>
                       <div className="rounded-lg border border-gold/30 bg-gold/10 p-3">
                         <p className="text-xs text-gold font-medium mb-1">shokran</p>
-                        <p className="text-xs text-slate-400">شكراً = Thank you</p>
+                        <p className="text-xs text-platinum-400">شكراً = Thank you</p>
                       </div>
                       <div className="rounded-lg border border-gold/30 bg-gold/10 p-3">
                         <p className="text-xs text-gold font-medium mb-1">yalla</p>
-                        <p className="text-xs text-slate-400">يلا = Let's go!</p>
+                        <p className="text-xs text-platinum-400">يلا = Let's go!</p>
                       </div>
                     </div>
-                    <div className="mt-4 p-3 rounded-lg border border-slate-700 bg-slate-800/50">
-                      <p className="text-xs text-slate-400 mb-2">Controversy Assessment:</p>
+                    <div className="mt-4 p-3 rounded-lg border border-platinum-700 bg-platinum-800/50">
+                      <p className="text-xs text-platinum-400 mb-2">Controversy Assessment:</p>
                       <div className="flex gap-4">
                         <Badge variant="emerald" className="text-xs">Modernity +0.8</Badge>
-                        <span className="text-xs text-slate-500">Practical, globalized, necessary blend</span>
+                        <span className="text-xs text-platinum-500">Practical, globalized, necessary blend</span>
                         <Badge variant="destructive" className="text-xs ml-auto">Colonialism -0.9</Badge>
                       </div>
                     </div>
@@ -657,33 +657,33 @@ export default function LanguagesOverviewPage() {
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                       <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-3">
                         <p className="text-xs text-orange-400 font-medium mb-1">"UAE mein job mila?"</p>
-                        <p className="text-xs text-slate-400">Did you get a job in UAE?</p>
+                        <p className="text-xs text-platinum-400">Did you get a job in UAE?</p>
                       </div>
                       <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-3">
                         <p className="text-xs text-orange-400 font-medium mb-1">"Bhai, yaar"</p>
-                        <p className="text-xs text-slate-400">Brother, friend (Hindi-Urdu)</p>
+                        <p className="text-xs text-platinum-400">Brother, friend (Hindi-Urdu)</p>
                       </div>
                       <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-3">
                         <p className="text-xs text-orange-400 font-medium mb-1">"timepass"</p>
-                        <p className="text-xs text-slate-400">Passing time (Hindi-English)</p>
+                        <p className="text-xs text-platinum-400">Passing time (Hindi-English)</p>
                       </div>
                       <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-3">
                         <p className="text-xs text-orange-400 font-medium mb-1">"I'll prepone"</p>
-                        <p className="text-xs text-slate-400">Opposite of postpone (Hinglish)</p>
+                        <p className="text-xs text-platinum-400">Opposite of postpone (Hinglish)</p>
                       </div>
                     </div>
                     <div className="grid gap-4 mt-4 lg:grid-cols-3">
-                      <div className="text-center p-2 rounded-lg bg-slate-800/50">
+                      <div className="text-center p-2 rounded-lg bg-platinum-800/50">
                         <div className="text-lg font-bold text-orange-400">4M</div>
-                        <p className="text-xs text-slate-400">Indian population (35.25%)</p>
+                        <p className="text-xs text-platinum-400">Indian population (35.25%)</p>
                       </div>
-                      <div className="text-center p-2 rounded-lg bg-slate-800/50">
+                      <div className="text-center p-2 rounded-lg bg-platinum-800/50">
                         <div className="text-lg font-bold text-orange-400">$25.5B</div>
-                        <p className="text-xs text-slate-400">Remittances 2025</p>
+                        <p className="text-xs text-platinum-400">Remittances 2025</p>
                       </div>
-                      <div className="text-center p-2 rounded-lg bg-slate-800/50">
+                      <div className="text-center p-2 rounded-lg bg-platinum-800/50">
                         <div className="text-lg font-bold text-orange-400">52%</div>
-                        <p className="text-xs text-slate-400">YouTube Romanized Hindi</p>
+                        <p className="text-xs text-platinum-400">YouTube Romanized Hindi</p>
                       </div>
                     </div>
                   </div>
@@ -704,19 +704,19 @@ export default function LanguagesOverviewPage() {
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                       <div className="rounded-lg border border-info/30 bg-info/10 p-3">
                         <p className="text-xs text-info font-medium mb-1">"Dubai gusto"</p>
-                        <p className="text-xs text-slate-400">Filipino expression adapted</p>
+                        <p className="text-xs text-platinum-400">Filipino expression adapted</p>
                       </div>
                       <div className="rounded-lg border border-info/30 bg-info/10 p-3">
                         <p className="text-xs text-info font-medium mb-1">"Nagse-sweat ako"</p>
-                        <p className="text-xs text-slate-400">English roots in Tagalog</p>
+                        <p className="text-xs text-platinum-400">English roots in Tagalog</p>
                       </div>
                       <div className="rounded-lg border border-info/30 bg-info/10 p-3">
                         <p className="text-xs text-info font-medium mb-1">OFW Communications</p>
-                        <p className="text-xs text-slate-400">Overseas Filipino Workers</p>
+                        <p className="text-xs text-platinum-400">Overseas Filipino Workers</p>
                       </div>
                       <div className="rounded-lg border border-info/30 bg-info/10 p-3">
                         <p className="text-xs text-info font-medium mb-1">450K in Dubai</p>
-                        <p className="text-xs text-slate-400">21.3% of Dubai population</p>
+                        <p className="text-xs text-platinum-400">21.3% of Dubai population</p>
                       </div>
                     </div>
                   </div>
@@ -732,22 +732,22 @@ export default function LanguagesOverviewPage() {
                 <CardContent>
                   <div className="space-y-4">
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                      <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                      <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                         <Badge variant="gold" className="mb-2">Hybrid Phrases</Badge>
-                        <p className="text-sm text-slate-300 font-mono">"yalla let's go"</p>
-                        <p className="text-sm text-slate-300 font-mono">"I'm so ta3ban today"</p>
-                        <p className="text-xs text-slate-500 mt-2">Arabic with English structure</p>
+                        <p className="text-sm text-platinum-300 font-mono">"yalla let's go"</p>
+                        <p className="text-sm text-platinum-300 font-mono">"I'm so ta3ban today"</p>
+                        <p className="text-xs text-platinum-500 mt-2">Arabic with English structure</p>
                       </div>
-                      <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                      <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                         <Badge variant="denim" className="mb-2">Number Phonemes</Badge>
-                        <p className="text-sm text-slate-300 font-mono">"3mar" for Omar</p>
-                        <p className="text-sm text-slate-300 font-mono">7=ح, 3=ع, 8=ق</p>
-                        <p className="text-xs text-slate-500 mt-2">Romanized Arabic numerals</p>
+                        <p className="text-sm text-platinum-300 font-mono">"3mar" for Omar</p>
+                        <p className="text-sm text-platinum-300 font-mono">7=ح, 3=ع, 8=ق</p>
+                        <p className="text-xs text-platinum-500 mt-2">Romanized Arabic numerals</p>
                       </div>
-                      <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                      <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                         <Badge variant="emerald" className="mb-2">"Arabeezy"</Badge>
-                        <p className="text-sm text-slate-300 font-mono">"taken the Arab youth by storm"</p>
-                        <p className="text-xs text-slate-500 mt-2">Gulf Arabizi variant</p>
+                        <p className="text-sm text-platinum-300 font-mono">"taken the Arab youth by storm"</p>
+                        <p className="text-xs text-platinum-500 mt-2">Gulf Arabizi variant</p>
                       </div>
                     </div>
                     <div className="mt-4 p-3 rounded-lg border border-emerald-500/30 bg-emerald-500/10">
@@ -774,59 +774,59 @@ export default function LanguagesOverviewPage() {
                     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
                       <div className="text-center p-2 rounded-lg bg-gold/10 border border-gold/30">
                         <div className="text-lg font-bold text-gold">1</div>
-                        <p className="text-xs text-slate-400">Identity</p>
+                        <p className="text-xs text-platinum-400">Identity</p>
                       </div>
                       <div className="text-center p-2 rounded-lg bg-gold/10 border border-gold/30">
                         <div className="text-lg font-bold text-gold">2</div>
-                        <p className="text-xs text-slate-400">Teaching & Learning</p>
+                        <p className="text-xs text-platinum-400">Teaching & Learning</p>
                       </div>
                       <div className="text-center p-2 rounded-lg bg-gold/10 border border-gold/30">
                         <div className="text-lg font-bold text-gold">3</div>
-                        <p className="text-xs text-slate-400">Arabic Content</p>
+                        <p className="text-xs text-platinum-400">Arabic Content</p>
                       </div>
                       <div className="text-center p-2 rounded-lg bg-gold/10 border border-gold/30">
                         <div className="text-lg font-bold text-gold">4</div>
-                        <p className="text-xs text-slate-400">Language Technology</p>
+                        <p className="text-xs text-platinum-400">Language Technology</p>
                       </div>
                       <div className="text-center p-2 rounded-lg bg-gold/10 border border-gold/30">
                         <div className="text-lg font-bold text-gold">5</div>
-                        <p className="text-xs text-slate-400">Related Industries</p>
+                        <p className="text-xs text-platinum-400">Related Industries</p>
                       </div>
                     </div>
                     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
                       <div className="text-center p-2 rounded-lg bg-gold/10 border border-gold/30">
                         <div className="text-lg font-bold text-gold">6</div>
-                        <p className="text-xs text-slate-400">Translation</p>
+                        <p className="text-xs text-platinum-400">Translation</p>
                       </div>
                       <div className="text-center p-2 rounded-lg bg-gold/10 border border-gold/30">
                         <div className="text-lg font-bold text-gold">7</div>
-                        <p className="text-xs text-slate-400">Arabic & Science</p>
+                        <p className="text-xs text-platinum-400">Arabic & Science</p>
                       </div>
                       <div className="text-center p-2 rounded-lg bg-gold/10 border border-gold/30">
                         <div className="text-lg font-bold text-gold">8</div>
-                        <p className="text-xs text-slate-400">Global Language</p>
+                        <p className="text-xs text-platinum-400">Global Language</p>
                       </div>
                       <div className="text-center p-2 rounded-lg bg-gold/10 border border-gold/30">
                         <div className="text-lg font-bold text-gold">9</div>
-                        <p className="text-xs text-slate-400">National Policies</p>
+                        <p className="text-xs text-platinum-400">National Policies</p>
                       </div>
                       <div className="text-center p-2 rounded-lg bg-gold/10 border border-gold/30">
                         <div className="text-lg font-bold text-gold">10</div>
-                        <p className="text-xs text-slate-400">Future of Arabic</p>
+                        <p className="text-xs text-platinum-400">Future of Arabic</p>
                       </div>
                     </div>
                     <div className="mt-4 grid gap-4 lg:grid-cols-3">
                       <div className="p-3 rounded-lg bg-navy/20 border border-navy/30">
                         <p className="text-xs text-navy font-medium">2025 Ministry Policy</p>
-                        <p className="text-xs text-slate-400 mt-1">Arabic tests mandatory from grade 1 in government schools</p>
+                        <p className="text-xs text-platinum-400 mt-1">Arabic tests mandatory from grade 1 in government schools</p>
                       </div>
                       <div className="p-3 rounded-lg bg-navy/20 border border-navy/30">
                         <p className="text-xs text-navy font-medium">Private Schools</p>
-                        <p className="text-xs text-slate-400 mt-1">Min 40 min/day → 300 min/week by 2027-2028</p>
+                        <p className="text-xs text-platinum-400 mt-1">Min 40 min/day → 300 min/week by 2027-2028</p>
                       </div>
                       <div className="p-3 rounded-lg bg-navy/20 border border-navy/30">
                         <p className="text-xs text-navy font-medium">Scale</p>
-                        <p className="text-xs text-slate-400 mt-1">9 new schools, 25,000+ pupils, 800 teachers</p>
+                        <p className="text-xs text-platinum-400 mt-1">9 new schools, 25,000+ pupils, 800 teachers</p>
                       </div>
                     </div>
                   </div>
@@ -923,17 +923,17 @@ export default function LanguagesOverviewPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Total Trade</span>
+                        <span className="text-sm text-platinum-400">Total Trade</span>
                         <span className="font-bold text-emerald-400">$4.8B (+77.7%)</span>
                       </div>
                       <Progress value={100} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Egyptian Exports to UAE</span>
+                        <span className="text-sm text-platinum-400">Egyptian Exports to UAE</span>
                         <span className="font-bold text-emerald-400">$3.8B (+153.3%)</span>
                       </div>
                       <Progress value={79} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Egyptian Imports from UAE</span>
+                        <span className="text-sm text-platinum-400">Egyptian Imports from UAE</span>
                         <span className="font-bold text-amber-400">$1.0B (-16.6%)</span>
                       </div>
                       <Progress value={21} className="h-2" />
@@ -949,17 +949,17 @@ export default function LanguagesOverviewPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Egyptian Residents</span>
+                        <span className="text-sm text-platinum-400">Egyptian Residents</span>
                         <span className="font-bold text-indigo-400">400,000+</span>
                       </div>
                       <Progress value={80} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Monthly Visitors</span>
+                        <span className="text-sm text-platinum-400">Monthly Visitors</span>
                         <span className="font-bold text-indigo-400">~5,000</span>
                       </div>
                       <Progress value={10} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Facebook Community</span>
+                        <span className="text-sm text-platinum-400">Facebook Community</span>
                         <span className="font-bold text-indigo-400">150,000+ members</span>
                       </div>
                       <Progress value={30} className="h-2" />
@@ -977,18 +977,18 @@ export default function LanguagesOverviewPage() {
                 <CardContent>
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-400">Pearls, precious stones, jewellery</span>
+                      <span className="text-sm text-platinum-400">Pearls, precious stones, jewellery</span>
                       <span className="font-bold text-emerald-400">$3.2B (84.2%)</span>
                     </div>
                     <Progress value={84} className="h-3" />
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-400">Electrical machinery/equipment</span>
-                      <span className="font-bold text-slate-300">$151M (88.2%)</span>
+                      <span className="text-sm text-platinum-400">Electrical machinery/equipment</span>
+                      <span className="font-bold text-platinum-300">$151M (88.2%)</span>
                     </div>
                     <Progress value={4} className="h-3" />
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-400">Vegetables and fruit</span>
-                      <span className="font-bold text-slate-300">$111M (91.1%)</span>
+                      <span className="text-sm text-platinum-400">Vegetables and fruit</span>
+                      <span className="font-bold text-platinum-300">$111M (91.1%)</span>
                     </div>
                     <Progress value={3} className="h-3" />
                   </div>
@@ -1006,33 +1006,33 @@ export default function LanguagesOverviewPage() {
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                       <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4">
                         <div className="text-xs text-red-400 font-medium mb-2">GERD</div>
-                        <div className="text-xs text-slate-400">Egyptian: Hostile</div>
-                        <div className="text-xs text-slate-400">Tension: High</div>
+                        <div className="text-xs text-platinum-400">Egyptian: Hostile</div>
+                        <div className="text-xs text-platinum-400">Tension: High</div>
                       </div>
                       <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4">
                         <div className="text-xs text-red-400 font-medium mb-2">Media Influence</div>
-                        <div className="text-xs text-slate-400">Egyptian: Accusatory</div>
-                        <div className="text-xs text-slate-400">Tension: High</div>
+                        <div className="text-xs text-platinum-400">Egyptian: Accusatory</div>
+                        <div className="text-xs text-platinum-400">Tension: High</div>
                       </div>
                       <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
                         <div className="text-xs text-amber-400 font-medium mb-2">Worker Conditions</div>
-                        <div className="text-xs text-slate-400">Egyptian: Negative</div>
-                        <div className="text-xs text-slate-400">Tension: Medium</div>
+                        <div className="text-xs text-platinum-400">Egyptian: Negative</div>
+                        <div className="text-xs text-platinum-400">Tension: Medium</div>
                       </div>
                       <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
                         <div className="text-xs text-emerald-400 font-medium mb-2">Trade Relations</div>
-                        <div className="text-xs text-slate-400">Both: Positive</div>
-                        <div className="text-xs text-slate-400">Tension: Low</div>
+                        <div className="text-xs text-platinum-400">Both: Positive</div>
+                        <div className="text-xs text-platinum-400">Tension: Low</div>
                       </div>
                       <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
                         <div className="text-xs text-emerald-400 font-medium mb-2">Cultural Exchange</div>
-                        <div className="text-xs text-slate-400">Both: Positive</div>
-                        <div className="text-xs text-slate-400">Tension: Low</div>
+                        <div className="text-xs text-platinum-400">Both: Positive</div>
+                        <div className="text-xs text-platinum-400">Tension: Low</div>
                       </div>
                       <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4">
                         <div className="text-xs text-red-400 font-medium mb-2">Regional Politics</div>
-                        <div className="text-xs text-slate-400">Both: Divergent</div>
-                        <div className="text-xs text-slate-400">Tension: High</div>
+                        <div className="text-xs text-platinum-400">Both: Divergent</div>
+                        <div className="text-xs text-platinum-400">Tension: High</div>
                       </div>
                     </div>
                   </div>
@@ -1050,43 +1050,43 @@ export default function LanguagesOverviewPage() {
                     <div className="space-y-4">
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-indigo-400 w-20">1971</div>
-                        <div className="text-xs text-slate-300">UAE independence; relations established</div>
+                        <div className="text-xs text-platinum-300">UAE independence; relations established</div>
                       </div>
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-indigo-400 w-20">2011</div>
-                        <div className="text-xs text-slate-300">Egyptian revolution; many Egyptians relocated to UAE</div>
+                        <div className="text-xs text-platinum-300">Egyptian revolution; many Egyptians relocated to UAE</div>
                       </div>
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-amber-400 w-20">2013</div>
-                        <div className="text-xs text-slate-300">UAE supported Morsi overthrow; $4B aid; Tamarud movement funding</div>
+                        <div className="text-xs text-platinum-300">UAE supported Morsi overthrow; $4B aid; Tamarud movement funding</div>
                       </div>
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-amber-400 w-20">2015</div>
-                        <div className="text-xs text-slate-300">Al Ghad Al Arabi launched with $45M UAE funding</div>
+                        <div className="text-xs text-platinum-300">Al Ghad Al Arabi launched with $45M UAE funding</div>
                       </div>
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-amber-400 w-20">2016</div>
-                        <div className="text-xs text-slate-300">Al-Hayat acquisition - 55% by Mansour bin Zayed</div>
+                        <div className="text-xs text-platinum-300">Al-Hayat acquisition - 55% by Mansour bin Zayed</div>
                       </div>
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-amber-400 w-20">2017</div>
-                        <div className="text-xs text-slate-300">DMC-Fujairah cooperation - military intelligence media link</div>
+                        <div className="text-xs text-platinum-300">DMC-Fujairah cooperation - military intelligence media link</div>
                       </div>
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-red-400 w-20">2018</div>
-                        <div className="text-xs text-slate-300">UAE denies Egyptian media reports; TeN Channel acquisition ($73M)</div>
+                        <div className="text-xs text-platinum-300">UAE denies Egyptian media reports; TeN Channel acquisition ($73M)</div>
                       </div>
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-indigo-400 w-20">2019</div>
-                        <div className="text-xs text-slate-300">Egyptian Journalists Syndicate training center - UAE institutional presence</div>
+                        <div className="text-xs text-platinum-300">Egyptian Journalists Syndicate training center - UAE institutional presence</div>
                       </div>
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-red-400 w-20">Mar 2026</div>
-                        <div className="text-xs text-slate-300">Morocco-Egypt incident; UAE media response</div>
+                        <div className="text-xs text-platinum-300">Morocco-Egypt incident; UAE media response</div>
                       </div>
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-red-400 w-20">Apr 2026</div>
-                        <div className="text-xs text-slate-300">Egyptian media blames UAE for GERD</div>
+                        <div className="text-xs text-platinum-300">Egyptian media blames UAE for GERD</div>
                       </div>
                     </div>
                   </ScrollArea>
@@ -1104,27 +1104,27 @@ export default function LanguagesOverviewPage() {
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                       <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
                         <div className="text-xs text-amber-400 font-medium mb-1">UAE Aid (2013)</div>
-                        <div className="text-lg font-bold text-slate-200">$4B</div>
+                        <div className="text-lg font-bold text-platinum-200">$4B</div>
                       </div>
                       <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
                         <div className="text-xs text-amber-400 font-medium mb-1">Dubai Aid (Post-MB)</div>
-                        <div className="text-lg font-bold text-slate-200">$8B</div>
+                        <div className="text-lg font-bold text-platinum-200">$8B</div>
                       </div>
                       <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
                         <div className="text-xs text-amber-400 font-medium mb-1">Al Ghad Al Arabi</div>
-                        <div className="text-lg font-bold text-slate-200">$45M</div>
+                        <div className="text-lg font-bold text-platinum-200">$45M</div>
                       </div>
                       <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
                         <div className="text-xs text-amber-400 font-medium mb-1">TeN Channel</div>
-                        <div className="text-lg font-bold text-slate-200">$73M</div>
+                        <div className="text-lg font-bold text-platinum-200">$73M</div>
                       </div>
                       <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
                         <div className="text-xs text-amber-400 font-medium mb-1">Al-Hayat</div>
-                        <div className="text-lg font-bold text-slate-200">55%</div>
+                        <div className="text-lg font-bold text-platinum-200">55%</div>
                       </div>
                       <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
                         <div className="text-xs text-amber-400 font-medium mb-1">Tamarud Funding</div>
-                        <div className="text-lg font-bold text-slate-200">Verified</div>
+                        <div className="text-lg font-bold text-platinum-200">Verified</div>
                       </div>
                     </div>
                   </div>
@@ -1141,19 +1141,19 @@ export default function LanguagesOverviewPage() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-300">Sheikh Tahnoun bin Zayed</span>
+                        <span className="text-sm text-platinum-300">Sheikh Tahnoun bin Zayed</span>
                         <Badge variant="denim" className="text-xs">Al Ghad Al Arabi Owner</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-300">Mohammed Dahlan</span>
+                        <span className="text-sm text-platinum-300">Mohammed Dahlan</span>
                         <Badge variant="denim" className="text-xs">UAE Advisor, TeN Channel</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-300">Mansour bin Zayed</span>
+                        <span className="text-sm text-platinum-300">Mansour bin Zayed</span>
                         <Badge variant="denim" className="text-xs">Al-Hayat (55%)</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-300">Shaikh Abdullah Bin Zayed</span>
+                        <span className="text-sm text-platinum-300">Shaikh Abdullah Bin Zayed</span>
                         <Badge variant="denim" className="text-xs">Foreign Minister</Badge>
                       </div>
                     </div>
@@ -1168,19 +1168,19 @@ export default function LanguagesOverviewPage() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-300">Tamer Mansour</span>
+                        <span className="text-sm text-platinum-300">Tamer Mansour</span>
                         <Badge variant="gold" className="text-xs">Ambassador to UAE</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-300">Karam Gebril</span>
+                        <span className="text-sm text-platinum-300">Karam Gebril</span>
                         <Badge variant="gold" className="text-xs">Media Regulation Head</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-300">Abdel Latif El Mnawe</span>
+                        <span className="text-sm text-platinum-300">Abdel Latif El Mnawe</span>
                         <Badge variant="gold" className="text-xs">Al Ghad Channel Head</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-300">Wael Abdel Fattah</span>
+                        <span className="text-sm text-platinum-300">Wael Abdel Fattah</span>
                         <Badge variant="gold" className="text-xs">Independent Writer</Badge>
                       </div>
                     </div>
@@ -1275,22 +1275,22 @@ export default function LanguagesOverviewPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Trade 2024</span>
+                        <span className="text-sm text-platinum-400">Trade 2024</span>
                         <span className="font-bold text-emerald-400">$9-11.5B</span>
                       </div>
                       <Progress value={85} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Trade Growth 2022</span>
+                        <span className="text-sm text-platinum-400">Trade Growth 2022</span>
                         <span className="font-bold text-emerald-400">+68%</span>
                       </div>
                       <Progress value={68} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Russian Capital in UAE</span>
+                        <span className="text-sm text-platinum-400">Russian Capital in UAE</span>
                         <span className="font-bold text-emerald-400">$30B+</span>
                       </div>
                       <Progress value={100} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Russian Companies</span>
+                        <span className="text-sm text-platinum-400">Russian Companies</span>
                         <span className="font-bold text-amber-400">4,000</span>
                       </div>
                       <Progress value={40} className="h-2" />
@@ -1306,23 +1306,23 @@ export default function LanguagesOverviewPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Gold from Russia 2022</span>
+                        <span className="text-sm text-platinum-400">Gold from Russia 2022</span>
                         <span className="font-bold text-red-400">96.4 tonnes</span>
                       </div>
                       <Progress value={100} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Gold from Russia 2021</span>
-                        <span className="font-bold text-slate-300">1.3 tonnes</span>
+                        <span className="text-sm text-platinum-400">Gold from Russia 2021</span>
+                        <span className="font-bold text-platinum-300">1.3 tonnes</span>
                       </div>
                       <Progress value={1.3} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Russian Oil to Fujairah (Dec 2022)</span>
+                        <span className="text-sm text-platinum-400">Russian Oil to Fujairah (Dec 2022)</span>
                         <span className="font-bold text-red-400">141K bbl/day</span>
                       </div>
                       <Progress value={60} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Oil to Fujairah (Apr 2022)</span>
-                        <span className="font-bold text-slate-300">0 bbl/day</span>
+                        <span className="text-sm text-platinum-400">Oil to Fujairah (Apr 2022)</span>
+                        <span className="font-bold text-platinum-300">0 bbl/day</span>
                       </div>
                       <Progress value={0} className="h-2" />
                     </div>
@@ -1340,29 +1340,29 @@ export default function LanguagesOverviewPage() {
                   <div className="grid gap-6 lg:grid-cols-4">
                     <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-amber-400">$6.3B</div>
-                      <div className="text-xs text-slate-400 mt-1">Total Post-2022</div>
+                      <div className="text-xs text-platinum-400 mt-1">Total Post-2022</div>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">6,600</div>
-                      <div className="text-xs text-slate-400 mt-1">Properties Owned</div>
+                      <div className="text-xs text-platinum-400 mt-1">Properties Owned</div>
                     </div>
                     <div className="rounded-lg border border-info-500/30 bg-info-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-info-400">$1.1M</div>
-                      <div className="text-xs text-slate-400 mt-1">Average Purchase</div>
+                      <div className="text-xs text-platinum-400 mt-1">Average Purchase</div>
                     </div>
                     <div className="rounded-lg border border-platinum-500/30 bg-platinum-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-platinum-400">#3</div>
-                      <div className="text-xs text-slate-400 mt-1">Current Buyer Rank</div>
+                      <div className="text-xs text-platinum-400 mt-1">Current Buyer Rank</div>
                     </div>
                   </div>
                   <div className="mt-4 space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-400">Price Increase Since 2020</span>
+                      <span className="text-sm text-platinum-400">Price Increase Since 2020</span>
                       <span className="font-bold text-amber-400">124%</span>
                     </div>
                     <Progress value={100} className="h-3" />
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-400">Existing Property Increase</span>
+                      <span className="text-sm text-platinum-400">Existing Property Increase</span>
                       <span className="font-bold text-emerald-400">940%</span>
                     </div>
                     <Progress value={94} className="h-3" />
@@ -1388,36 +1388,36 @@ export default function LanguagesOverviewPage() {
                     <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4">
                       <div className="flex items-center justify-between">
                         <div>
-                          <div className="font-semibold text-slate-200">Roman Abramovich</div>
-                          <div className="text-xs text-slate-400">UK, EU, US (partial) sanctions</div>
+                          <div className="font-semibold text-platinum-200">Roman Abramovich</div>
+                          <div className="text-xs text-platinum-400">UK, EU, US (partial) sanctions</div>
                         </div>
                         <div className="text-right">
                           <div className="font-bold text-amber-400">$156M</div>
-                          <div className="text-xs text-slate-400">Superyacht</div>
+                          <div className="text-xs text-platinum-400">Superyacht</div>
                         </div>
                       </div>
                     </div>
                     <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4">
                       <div className="flex items-center justify-between">
                         <div>
-                          <div className="font-semibold text-slate-200">Andrei Skoch</div>
-                          <div className="text-xs text-slate-400">US, UK, EU sanctions</div>
+                          <div className="font-semibold text-platinum-200">Andrei Skoch</div>
+                          <div className="text-xs text-platinum-400">US, UK, EU sanctions</div>
                         </div>
                         <div className="text-right">
                           <div className="font-bold text-amber-400">Madame Gu</div>
-                          <div className="text-xs text-slate-400">Yacht at Port Rashid</div>
+                          <div className="text-xs text-platinum-400">Yacht at Port Rashid</div>
                         </div>
                       </div>
                     </div>
-                    <div className="rounded-lg border border-slate-700/50 bg-slate-800/50 p-4">
+                    <div className="rounded-lg border border-platinum-700/50 bg-platinum-800/50 p-4">
                       <div className="flex items-center justify-between">
                         <div>
-                          <div className="font-semibold text-slate-200">38 Putin-connected Russians</div>
-                          <div className="text-xs text-slate-400">Property records</div>
+                          <div className="font-semibold text-platinum-200">38 Putin-connected Russians</div>
+                          <div className="text-xs text-platinum-400">Property records</div>
                         </div>
                         <div className="text-right">
                           <div className="font-bold text-platinum-400">$314M</div>
-                          <div className="text-xs text-slate-400">Total properties</div>
+                          <div className="text-xs text-platinum-400">Total properties</div>
                         </div>
                       </div>
                     </div>
@@ -1435,19 +1435,19 @@ export default function LanguagesOverviewPage() {
                   <div className="grid gap-6 lg:grid-cols-4">
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-3xl font-bold text-emerald-400">6,305</div>
-                      <div className="text-xs text-slate-400 mt-1">Total Captives Exchanged</div>
+                      <div className="text-xs text-platinum-400 mt-1">Total Captives Exchanged</div>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-3xl font-bold text-emerald-400">350</div>
-                      <div className="text-xs text-slate-400 mt-1">Latest Exchange (Apr 2026)</div>
+                      <div className="text-xs text-platinum-400 mt-1">Latest Exchange (Apr 2026)</div>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-3xl font-bold text-emerald-400">21</div>
-                      <div className="text-xs text-slate-400 mt-1">Mediation Efforts</div>
+                      <div className="text-xs text-platinum-400 mt-1">Mediation Efforts</div>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-3xl font-bold text-emerald-400">2</div>
-                      <div className="text-xs text-slate-400 mt-1">Trilateral Talks in Abu Dhabi</div>
+                      <div className="text-xs text-platinum-400 mt-1">Trilateral Talks in Abu Dhabi</div>
                     </div>
                   </div>
                 </CardContent>
@@ -1464,27 +1464,27 @@ export default function LanguagesOverviewPage() {
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
                       <div className="text-xs text-emerald-400 font-medium mb-2">Trade Relations</div>
                       <div className="text-2xl font-bold text-emerald-400">85</div>
-                      <div className="text-xs text-slate-400">Strongly Positive</div>
+                      <div className="text-xs text-platinum-400">Strongly Positive</div>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
                       <div className="text-xs text-emerald-400 font-medium mb-2">UAE Mediation</div>
                       <div className="text-2xl font-bold text-emerald-400">88</div>
-                      <div className="text-xs text-slate-400">Very Positive</div>
+                      <div className="text-xs text-platinum-400">Very Positive</div>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
                       <div className="text-xs text-emerald-400 font-medium mb-2">Russian Community</div>
                       <div className="text-2xl font-bold text-emerald-400">63</div>
-                      <div className="text-xs text-slate-400">Positive</div>
+                      <div className="text-xs text-platinum-400">Positive</div>
                     </div>
                     <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4">
                       <div className="text-xs text-red-400 font-medium mb-2">Sanctions Evasion</div>
                       <div className="text-2xl font-bold text-red-400">28</div>
-                      <div className="text-xs text-slate-400">Negative</div>
+                      <div className="text-xs text-platinum-400">Negative</div>
                     </div>
                     <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4">
                       <div className="text-xs text-red-400 font-medium mb-2">Real Estate</div>
                       <div className="text-2xl font-bold text-red-400">35</div>
-                      <div className="text-xs text-slate-400">Shifting Negative</div>
+                      <div className="text-xs text-platinum-400">Shifting Negative</div>
                     </div>
                   </div>
                 </CardContent>
@@ -1501,23 +1501,23 @@ export default function LanguagesOverviewPage() {
                     <div className="space-y-4">
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-red-400 w-24">Jan 2023</div>
-                        <div className="text-xs text-slate-300">Brian Nelson (Treasury) led US delegation to UAE</div>
+                        <div className="text-xs text-platinum-300">Brian Nelson (Treasury) led US delegation to UAE</div>
                       </div>
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-red-400 w-24">Mar 2023</div>
-                        <div className="text-xs text-slate-300">UAE cancelled license for Russia's MTS Bank</div>
+                        <div className="text-xs text-platinum-300">UAE cancelled license for Russia's MTS Bank</div>
                       </div>
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-red-400 w-24">Sep 2023</div>
-                        <div className="text-xs text-slate-300">US, UK, EU officials visited UAE over dual-use exports</div>
+                        <div className="text-xs text-platinum-300">US, UK, EU officials visited UAE over dual-use exports</div>
                       </div>
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-red-400 w-24">Jun 2024</div>
-                        <div className="text-xs text-slate-300">Red Coast Metals Trading sanctioned</div>
+                        <div className="text-xs text-platinum-300">Red Coast Metals Trading sanctioned</div>
                       </div>
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-red-400 w-24">Dec 2024</div>
-                        <div className="text-xs text-slate-300">US sanctions on UAE entities jumped significantly</div>
+                        <div className="text-xs text-platinum-300">US sanctions on UAE entities jumped significantly</div>
                       </div>
                     </div>
                   </ScrollArea>
@@ -1534,19 +1534,19 @@ export default function LanguagesOverviewPage() {
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3">
                       <div className="text-sm font-medium text-emerald-400">No Visa Required</div>
-                      <div className="text-xs text-slate-400 mt-1">For Russian citizens</div>
+                      <div className="text-xs text-platinum-400 mt-1">For Russian citizens</div>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3">
                       <div className="text-sm font-medium text-emerald-400">0% Income Tax</div>
-                      <div className="text-xs text-slate-400 mt-1">Personal income</div>
+                      <div className="text-xs text-platinum-400 mt-1">Personal income</div>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3">
                       <div className="text-sm font-medium text-emerald-400">Direct Flights</div>
-                      <div className="text-xs text-slate-400 mt-1">~$120 round-trip (Feb 2023)</div>
+                      <div className="text-xs text-platinum-400 mt-1">~$120 round-trip (Feb 2023)</div>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3">
                       <div className="text-sm font-medium text-emerald-400">Russian-Speaking</div>
-                      <div className="text-xs text-slate-400 mt-1">Widely usable language</div>
+                      <div className="text-xs text-platinum-400 mt-1">Widely usable language</div>
                     </div>
                   </div>
                 </CardContent>
@@ -1561,17 +1561,17 @@ export default function LanguagesOverviewPage() {
                 <CardContent>
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-400">2022 Visitors</span>
+                      <span className="text-sm text-platinum-400">2022 Visitors</span>
                       <span className="font-bold text-emerald-400">1M+ (+60% YoY)</span>
                     </div>
                     <Progress value={60} className="h-3" />
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-400">2023 Visitors</span>
+                      <span className="text-sm text-platinum-400">2023 Visitors</span>
                       <span className="font-bold text-emerald-400">2.024M (13% of tourists)</span>
                     </div>
                     <Progress value={80} className="h-3" />
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-400">Share of Dubai Tourists</span>
+                      <span className="text-sm text-platinum-400">Share of Dubai Tourists</span>
                       <span className="font-bold text-amber-400">Largest nationality</span>
                     </div>
                     <Progress value={85} className="h-3" />
@@ -1590,19 +1590,19 @@ export default function LanguagesOverviewPage() {
                     <div className="space-y-4">
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-indigo-400 w-24">Dec 2023</div>
-                        <div className="text-xs text-slate-300">Putin visited Abu Dhabi</div>
+                        <div className="text-xs text-platinum-300">Putin visited Abu Dhabi</div>
                       </div>
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-indigo-400 w-24">Jan 2024</div>
-                        <div className="text-xs text-slate-300">UAE joined BRICS</div>
+                        <div className="text-xs text-platinum-300">UAE joined BRICS</div>
                       </div>
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-indigo-400 w-24">Oct 2024</div>
-                        <div className="text-xs text-slate-300">Putin met MBZ in Moscow</div>
+                        <div className="text-xs text-platinum-300">Putin met MBZ in Moscow</div>
                       </div>
                       <div className="flex gap-4">
                         <div className="text-xs font-bold text-indigo-400 w-24">Jan 2026</div>
-                        <div className="text-xs text-slate-300">Putin hosted UAE President at Kremlin</div>
+                        <div className="text-xs text-platinum-300">Putin hosted UAE President at Kremlin</div>
                       </div>
                     </div>
                   </ScrollArea>
@@ -1701,23 +1701,23 @@ export default function LanguagesOverviewPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">2025 Bilateral Trade</span>
+                        <span className="text-sm text-platinum-400">2025 Bilateral Trade</span>
                         <span className="font-bold text-emerald-400">$111.5B (+24.5%)</span>
                       </div>
                       <Progress value={100} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">2024 Bilateral Trade</span>
+                        <span className="text-sm text-platinum-400">2024 Bilateral Trade</span>
                         <span className="font-bold text-emerald-400">$100B (+7.2%)</span>
                       </div>
                       <Progress value={90} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Chinese Exports to UAE</span>
-                        <span className="font-bold text-slate-300">$65.6B</span>
+                        <span className="text-sm text-platinum-400">Chinese Exports to UAE</span>
+                        <span className="font-bold text-platinum-300">$65.6B</span>
                       </div>
                       <Progress value={59} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">UAE Exports to China</span>
-                        <span className="font-bold text-slate-300">$36.2B</span>
+                        <span className="text-sm text-platinum-400">UAE Exports to China</span>
+                        <span className="font-bold text-platinum-300">$36.2B</span>
                       </div>
                       <Progress value={32} className="h-2" />
                     </div>
@@ -1732,22 +1732,22 @@ export default function LanguagesOverviewPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">LNG Contract Value</span>
+                        <span className="text-sm text-platinum-400">LNG Contract Value</span>
                         <span className="font-bold text-gold">$4.5-5.5B</span>
                       </div>
                       <Progress value={85} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">CNOOC Abu Dhabi Stake</span>
-                        <span className="font-bold text-slate-300">4% ($1.8B, 40 yrs)</span>
+                        <span className="text-sm text-platinum-400">CNOOC Abu Dhabi Stake</span>
+                        <span className="font-bold text-platinum-300">4% ($1.8B, 40 yrs)</span>
                       </div>
                       <Progress value={75} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">ENN LNG Agreement</span>
-                        <span className="font-bold text-slate-300">1M tons/year, 15 yrs</span>
+                        <span className="text-sm text-platinum-400">ENN LNG Agreement</span>
+                        <span className="font-bold text-platinum-300">1M tons/year, 15 yrs</span>
                       </div>
                       <Progress value={70} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Energy Cooperation</span>
+                        <span className="text-sm text-platinum-400">Energy Cooperation</span>
                         <span className="font-bold text-emerald-400">40 years</span>
                       </div>
                       <Progress value={100} className="h-2" />
@@ -1767,33 +1767,33 @@ export default function LanguagesOverviewPage() {
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                       <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-center">
                         <div className="text-2xl font-bold text-red-400">270+</div>
-                        <div className="text-xs text-slate-400">Missiles Launched</div>
+                        <div className="text-xs text-platinum-400">Missiles Launched</div>
                       </div>
                       <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-center">
                         <div className="text-2xl font-bold text-red-400">1,500+</div>
-                        <div className="text-xs text-slate-400">Drones Launched</div>
+                        <div className="text-xs text-platinum-400">Drones Launched</div>
                       </div>
                       <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4 text-center">
                         <div className="text-2xl font-bold text-amber-400">537</div>
-                        <div className="text-xs text-slate-400">Ballistic Intercepted</div>
+                        <div className="text-xs text-platinum-400">Ballistic Intercepted</div>
                       </div>
                       <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4 text-center">
                         <div className="text-2xl font-bold text-amber-400">13</div>
-                        <div className="text-xs text-slate-400">Fatalities</div>
+                        <div className="text-xs text-platinum-400">Fatalities</div>
                       </div>
                     </div>
                     <div className="grid gap-4 sm:grid-cols-3 mt-4">
-                      <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                      <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                         <div className="text-xs text-red-400 font-medium mb-1">Casualties</div>
-                        <div className="text-sm text-slate-300">13 dead, 224 injured</div>
+                        <div className="text-sm text-platinum-300">13 dead, 224 injured</div>
                       </div>
-                      <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                      <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                         <div className="text-xs text-amber-400 font-medium mb-1">Flights Cancelled</div>
-                        <div className="text-sm text-slate-300">2,300+ in 24 hours</div>
+                        <div className="text-sm text-platinum-300">2,300+ in 24 hours</div>
                       </div>
-                      <div className="rounded-lg border border-slate-700 bg-slate-800/50 p-3">
+                      <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                         <div className="text-xs text-emerald-400 font-medium mb-1">Defense Hits</div>
-                        <div className="text-sm text-slate-300">8 Patriot 3, 2 THAAD</div>
+                        <div className="text-sm text-platinum-300">8 Patriot 3, 2 THAAD</div>
                       </div>
                     </div>
                   </div>
@@ -1810,22 +1810,22 @@ export default function LanguagesOverviewPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">2025 Chinese Visitors</span>
+                        <span className="text-sm text-platinum-400">2025 Chinese Visitors</span>
                         <span className="font-bold text-emerald-400">860,000</span>
                       </div>
                       <Progress value={86} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">2024 Chinese Visitors</span>
+                        <span className="text-sm text-platinum-400">2024 Chinese Visitors</span>
                         <span className="font-bold text-emerald-400">824,000 (+31%)</span>
                       </div>
                       <Progress value={82} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Visa-Free Duration</span>
+                        <span className="text-sm text-platinum-400">Visa-Free Duration</span>
                         <span className="font-bold text-gold">90 days / 180 days</span>
                       </div>
                       <Progress value={75} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-400">Chinese Real Estate Buyers</span>
+                        <span className="text-sm text-platinum-400">Chinese Real Estate Buyers</span>
                         <span className="font-bold text-danger">14% of foreigners</span>
                       </div>
                       <Progress value={14} className="h-2" />
@@ -1841,27 +1841,27 @@ export default function LanguagesOverviewPage() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-300">Huawei</span>
+                        <span className="text-sm text-platinum-300">Huawei</span>
                         <Badge variant="denim" className="text-xs">1,000+ employees</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-300">ByteDance/TikTok</span>
+                        <span className="text-sm text-platinum-300">ByteDance/TikTok</span>
                         <Badge variant="denim" className="text-xs">MENA HQ since 2018</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-300">Alibaba</span>
+                        <span className="text-sm text-platinum-300">Alibaba</span>
                         <Badge variant="denim" className="text-xs">2 data centers</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-300">WeRide</span>
+                        <span className="text-sm text-platinum-300">WeRide</span>
                         <Badge variant="emerald" className="text-xs">Robotaxi Abu Dhabi</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-300">Baidu Apollo Go</span>
+                        <span className="text-sm text-platinum-300">Baidu Apollo Go</span>
                         <Badge variant="emerald" className="text-xs">Dubai Internet City</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-300">Keeta (Meituan)</span>
+                        <span className="text-sm text-platinum-300">Keeta (Meituan)</span>
                         <Badge variant="gold" className="text-xs">5 drone routes</Badge>
                       </div>
                     </div>
@@ -1879,32 +1879,32 @@ export default function LanguagesOverviewPage() {
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     <div className="rounded-lg border border-gold-500/30 bg-gold-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-gold">77.8%</div>
-                      <div className="text-xs text-slate-400">UAE-China Share of Middle East RMB</div>
+                      <div className="text-xs text-platinum-400">UAE-China Share of Middle East RMB</div>
                     </div>
                     <div className="rounded-lg border border-gold-500/30 bg-gold-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-gold">53%</div>
-                      <div className="text-xs text-slate-400">Annual RMB Growth (2020-2024)</div>
+                      <div className="text-xs text-platinum-400">Annual RMB Growth (2020-2024)</div>
                     </div>
                     <div className="rounded-lg border border-gold-500/30 bg-gold-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-gold">#2</div>
-                      <div className="text-xs text-slate-400">Global Rank in Trade Finance</div>
+                      <div className="text-xs text-platinum-400">Global Rank in Trade Finance</div>
                     </div>
                     <div className="rounded-lg border border-gold-500/30 bg-gold-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-gold">#3</div>
-                      <div className="text-xs text-slate-400">Global Rank in Payments</div>
+                      <div className="text-xs text-platinum-400">Global Rank in Payments</div>
                     </div>
                   </div>
                   <div className="mt-4 space-y-2">
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-slate-400">FAB RMB Clearing Bank</span>
+                      <span className="text-platinum-400">FAB RMB Clearing Bank</span>
                       <Badge variant="gold">First Gulf regional</Badge>
                     </div>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-slate-400">ABC Dubai RMB Clearing</span>
+                      <span className="text-platinum-400">ABC Dubai RMB Clearing</span>
                       <Badge variant="gold">First in UAE</Badge>
                     </div>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-slate-400">Chinese Banks DIFC Assets</span>
+                      <span className="text-platinum-400">Chinese Banks DIFC Assets</span>
                       <Badge variant="gold">30%+ of total</Badge>
                     </div>
                   </div>
@@ -1922,33 +1922,33 @@ export default function LanguagesOverviewPage() {
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                       <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
                         <div className="text-xs text-emerald-400 font-medium mb-2">China-UAE Trade</div>
-                        <div className="text-xs text-slate-400">Sentiment: Positive</div>
-                        <div className="text-xs text-slate-400">Narrative: Record $100B+</div>
+                        <div className="text-xs text-platinum-400">Sentiment: Positive</div>
+                        <div className="text-xs text-platinum-400">Narrative: Record $100B+</div>
                       </div>
                       <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
                         <div className="text-xs text-emerald-400 font-medium mb-2">Belt and Road</div>
-                        <div className="text-xs text-slate-400">Sentiment: Positive</div>
-                        <div className="text-xs text-slate-400">Narrative: Key node, founding member</div>
+                        <div className="text-xs text-platinum-400">Sentiment: Positive</div>
+                        <div className="text-xs text-platinum-400">Narrative: Key node, founding member</div>
                       </div>
                       <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
                         <div className="text-xs text-emerald-400 font-medium mb-2">Chinese Tourism</div>
-                        <div className="text-xs text-slate-400">Sentiment: Positive</div>
-                        <div className="text-xs text-slate-400">Narrative: 860K visitors, visa-free</div>
+                        <div className="text-xs text-platinum-400">Sentiment: Positive</div>
+                        <div className="text-xs text-platinum-400">Narrative: 860K visitors, visa-free</div>
                       </div>
                       <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4">
                         <div className="text-xs text-red-400 font-medium mb-2">Iran-UAE Conflict</div>
-                        <div className="text-xs text-slate-400">Sentiment: Negative/Crisis</div>
-                        <div className="text-xs text-slate-400">Narrative: Under attack, air defense</div>
+                        <div className="text-xs text-platinum-400">Sentiment: Negative/Crisis</div>
+                        <div className="text-xs text-platinum-400">Narrative: Under attack, air defense</div>
                       </div>
                       <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4">
                         <div className="text-xs text-red-400 font-medium mb-2">Security Advisories</div>
-                        <div className="text-xs text-slate-400">Sentiment: Negative/Warning</div>
-                        <div className="text-xs text-slate-400">Narrative: Reduce outdoor activities</div>
+                        <div className="text-xs text-platinum-400">Sentiment: Negative/Warning</div>
+                        <div className="text-xs text-platinum-400">Narrative: Reduce outdoor activities</div>
                       </div>
                       <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
                         <div className="text-xs text-amber-400 font-medium mb-2">Real Estate</div>
-                        <div className="text-xs text-slate-400">Sentiment: Cautious/Opportunistic</div>
-                        <div className="text-xs text-slate-400">Narrative: Buy the dip, 14% share</div>
+                        <div className="text-xs text-platinum-400">Sentiment: Cautious/Opportunistic</div>
+                        <div className="text-xs text-platinum-400">Narrative: Buy the dip, 14% share</div>
                       </div>
                     </div>
                   </div>
@@ -1964,27 +1964,27 @@ export default function LanguagesOverviewPage() {
                 <CardContent>
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-300">New Ambassador</span>
+                      <span className="text-sm text-platinum-300">New Ambassador</span>
                       <Badge variant="denim">Zeng Jixin (since March 2026)</Badge>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-300">Former Ambassador</span>
+                      <span className="text-sm text-platinum-300">Former Ambassador</span>
                       <Badge variant="platinum">Zhang Yiming</Badge>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-300">Crown Prince Visit</span>
+                      <span className="text-sm text-platinum-300">Crown Prince Visit</span>
                       <Badge variant="gold">April 12-14, 2026 to China</Badge>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-300">CEPA Agreements</span>
+                      <span className="text-sm text-platinum-300">CEPA Agreements</span>
                       <Badge variant="emerald">28 agreements</Badge>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-300">BRI Founding Member</span>
+                      <span className="text-sm text-platinum-300">BRI Founding Member</span>
                       <Badge variant="emerald">Yes (2013)</Badge>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-slate-300">Comprehensive Partnership</span>
+                      <span className="text-sm text-platinum-300">Comprehensive Partnership</span>
                       <Badge variant="emerald">Established 2018</Badge>
                     </div>
                   </div>
@@ -2080,22 +2080,22 @@ export default function LanguagesOverviewPage() {
                     <div className="rounded-lg border border-gold/30 bg-gold/10 p-4">
                       <div className="flex items-center justify-between mb-2">
                         <Badge variant="gold" className="font-mono">محمد</Badge>
-                        <span className="text-xs text-slate-400">Arabic</span>
+                        <span className="text-xs text-platinum-400">Arabic</span>
                       </div>
                       <div className="grid gap-2 sm:grid-cols-3 lg:grid-cols-6">
                         {['Mohammed', 'Muhammad', 'Mohamed', 'Mohamad', 'Muhamed', 'Muhamad'].map((variant) => (
-                          <div key={variant} className="rounded bg-slate-800/50 px-2 py-1 text-center text-sm text-platinum">{variant}</div>
+                          <div key={variant} className="rounded bg-platinum-800/50 px-2 py-1 text-center text-sm text-platinum">{variant}</div>
                         ))}
                       </div>
                     </div>
                     <div className="rounded-lg border border-platinum/30 bg-platinum/10 p-4">
                       <div className="flex items-center justify-between mb-2">
                         <Badge variant="platinum" className="font-mono">الشيخ</Badge>
-                        <span className="text-xs text-slate-400">Honorific</span>
+                        <span className="text-xs text-platinum-400">Honorific</span>
                       </div>
                       <div className="grid gap-2 sm:grid-cols-4">
                         {['Sheikh', 'Shaikh', 'Sheik', 'Shaykh'].map((variant) => (
-                          <div key={variant} className="rounded bg-slate-800/50 px-2 py-1 text-center text-sm text-platinum">{variant}</div>
+                          <div key={variant} className="rounded bg-platinum-800/50 px-2 py-1 text-center text-sm text-platinum">{variant}</div>
                         ))}
                       </div>
                     </div>
@@ -2111,11 +2111,11 @@ export default function LanguagesOverviewPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    <div className="rounded-lg border border-slate-700/50 bg-slate-800/50 p-4">
+                    <div className="rounded-lg border border-platinum-700/50 bg-platinum-800/50 p-4">
                       <div className="flex items-center justify-between mb-3">
                         <div>
                           <Badge variant="gold" className="mr-2">Dubai</Badge>
-                          <span className="text-xs text-slate-400">دبى</span>
+                          <span className="text-xs text-platinum-400">دبى</span>
                         </div>
                         <Badge variant="denim">BGN: Dubayy</Badge>
                       </div>
@@ -2125,11 +2125,11 @@ export default function LanguagesOverviewPage() {
                         ))}
                       </div>
                     </div>
-                    <div className="rounded-lg border border-slate-700/50 bg-slate-800/50 p-4">
+                    <div className="rounded-lg border border-platinum-700/50 bg-platinum-800/50 p-4">
                       <div className="flex items-center justify-between mb-3">
                         <div>
                           <Badge variant="gold" className="mr-2">Abu Dhabi</Badge>
-                          <span className="text-xs text-slate-400">أبو ظبي</span>
+                          <span className="text-xs text-platinum-400">أبو ظبي</span>
                         </div>
                         <Badge variant="denim">BGN: Abū Z̧aby</Badge>
                       </div>
@@ -2138,13 +2138,13 @@ export default function LanguagesOverviewPage() {
                           <span key={v} className="rounded bg-navy/20 px-2 py-1 text-xs text-navy">{v}</span>
                         ))}
                       </div>
-                      <div className="mt-2 text-xs text-slate-500">Letter ظ (Ẓā') variations: Dh, Z, Ẓ</div>
+                      <div className="mt-2 text-xs text-platinum-500">Letter ظ (Ẓā') variations: Dh, Z, Ẓ</div>
                     </div>
-                    <div className="rounded-lg border border-slate-700/50 bg-slate-800/50 p-4">
+                    <div className="rounded-lg border border-platinum-700/50 bg-platinum-800/50 p-4">
                       <div className="flex items-center justify-between mb-3">
                         <div>
                           <Badge variant="gold" className="mr-2">Sharjah</Badge>
-                          <span className="text-xs text-slate-400">الشارقة</span>
+                          <span className="text-xs text-platinum-400">الشارقة</span>
                         </div>
                         <Badge variant="denim">BGN: Ash Shāriqah</Badge>
                       </div>
@@ -2208,14 +2208,14 @@ export default function LanguagesOverviewPage() {
                       { standard: 'ISO 233-2', year: 1997, authority: 'ISO', usage: 'Library cataloging' },
                       { standard: 'ALA-LC', year: 0, authority: 'American Library Association', usage: 'Academic/library use' },
                     ].map((sys) => (
-                      <div key={sys.standard} className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/50 p-3">
+                      <div key={sys.standard} className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/50 p-3">
                         <div className="flex items-center gap-3">
                           <div className="font-medium text-platinum">{sys.standard}</div>
-                          <div className="text-xs text-slate-400">{sys.year || 'Variable'}</div>
+                          <div className="text-xs text-platinum-400">{sys.year || 'Variable'}</div>
                         </div>
                         <div className="text-right">
-                          <div className="text-xs text-slate-300">{sys.authority}</div>
-                          <div className="text-xs text-slate-500">{sys.usage}</div>
+                          <div className="text-xs text-platinum-300">{sys.authority}</div>
+                          <div className="text-xs text-platinum-500">{sys.usage}</div>
                         </div>
                       </div>
                     ))}
@@ -2234,24 +2234,24 @@ export default function LanguagesOverviewPage() {
                     <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4">
                       <div className="text-xs text-red-400 font-medium mb-2">Russian (Cyrillic)</div>
                       <div className="space-y-1 text-sm">
-                        <div><span className="text-slate-400">UAE:</span> <span className="font-mono text-platinum">Объединённые Арабские Эмираты (Ob"yedinënnyye Arabskiye Emitaty)</span></div>
-                        <div><span className="text-slate-400">Abu Dhabi:</span> <span className="font-mono text-platinum">Абу-Даби</span></div>
-                        <div><span className="text-slate-400">Dubai:</span> <span className="font-mono text-platinum">Дубай</span></div>
-                        <div><span className="text-slate-400">Abbreviation:</span> <span className="font-mono text-platinum">ОАЭ</span></div>
+                        <div><span className="text-platinum-400">UAE:</span> <span className="font-mono text-platinum">Объединённые Арабские Эмираты (Ob"yedinënnyye Arabskiye Emitaty)</span></div>
+                        <div><span className="text-platinum-400">Abu Dhabi:</span> <span className="font-mono text-platinum">Абу-Даби</span></div>
+                        <div><span className="text-platinum-400">Dubai:</span> <span className="font-mono text-platinum">Дубай</span></div>
+                        <div><span className="text-platinum-400">Abbreviation:</span> <span className="font-mono text-platinum">ОАЭ</span></div>
                       </div>
                     </div>
                     <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
                       <div className="text-xs text-amber-400 font-medium mb-2">Chinese (Simplified/Traditional + Pinyin)</div>
                       <div className="space-y-1 text-sm">
-                        <div><span className="text-slate-400">UAE:</span> <span className="font-mono text-platinum">阿拉伯联合酋长国 / Ālābó Liánhé Qiúzhǎngguó</span></div>
-                        <div><span className="text-slate-400">Short form:</span> <span className="font-mono text-platinum">阿联酋 (Ā lián qiú)</span></div>
+                        <div><span className="text-platinum-400">UAE:</span> <span className="font-mono text-platinum">阿拉伯联合酋长国 / Ālābó Liánhé Qiúzhǎngguó</span></div>
+                        <div><span className="text-platinum-400">Short form:</span> <span className="font-mono text-platinum">阿联酋 (Ā lián qiú)</span></div>
                       </div>
                     </div>
                     <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-4">
                       <div className="text-xs text-orange-400 font-medium mb-2">Hindi (Devanagari)</div>
                       <div className="space-y-1 text-sm">
-                        <div><span className="text-slate-400">UAE:</span> <span className="font-mono text-platinum">संयुक्त अरब अमीरात (Saṃyukt Arab Amīrāt)</span></div>
-                        <div><span className="text-slate-400">Abbreviation:</span> <span className="font-mono text-platinum">यूएई</span></div>
+                        <div><span className="text-platinum-400">UAE:</span> <span className="font-mono text-platinum">संयुक्त अरब अमीरात (Saṃyukt Arab Amīrāt)</span></div>
+                        <div><span className="text-platinum-400">Abbreviation:</span> <span className="font-mono text-platinum">यूएई</span></div>
                       </div>
                     </div>
                   </div>
@@ -2278,7 +2278,7 @@ export default function LanguagesOverviewPage() {
                       { entity: 'Dynasty (Al Nahyan)', count: 2, confidence: 'High' },
                     ].map((item) => (
                       <div key={item.entity} className="flex items-center justify-between">
-                        <span className="text-sm text-slate-300">{item.entity}</span>
+                        <span className="text-sm text-platinum-300">{item.entity}</span>
                         <div className="flex items-center gap-2">
                           <span className="font-bold text-gold">{item.count}</span>
                           <Badge variant={item.confidence === 'High' ? 'success' : 'warning'} className="text-xs">{item.confidence}</Badge>
@@ -2304,14 +2304,14 @@ export default function LanguagesOverviewPage() {
                       { tier: 3, type: 'Academic', examples: 'PCGN PDFs, research papers', reliability: 'High' },
                       { tier: 4, type: 'User-Generated', examples: 'Quora, travel sites', reliability: 'Low-Medium' },
                     ].map((source) => (
-                      <div key={source.tier} className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/50 p-3">
+                      <div key={source.tier} className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/50 p-3">
                         <div className="flex items-center gap-3">
                           <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${source.tier === 0 ? 'bg-gradient-gold text-navy-950' : source.tier === 1 ? 'bg-gradient-denim text-white' : 'bg-gradient-platinum text-navy-950'}`}>
                             T{source.tier}
                           </div>
                           <div>
                             <div className="font-medium text-platinum">{source.type}</div>
-                            <div className="text-xs text-slate-500">{source.examples}</div>
+                            <div className="text-xs text-platinum-500">{source.examples}</div>
                           </div>
                         </div>
                         <Badge variant={source.reliability === 'Highest' ? 'success' : source.reliability === 'High' ? 'default' : 'warning'}>{source.reliability}</Badge>
@@ -2337,12 +2337,12 @@ export default function LanguagesOverviewPage() {
                       { topic: 'Al Qasimi dynasty history', score: 0.6, label: 'Positive' },
                       { topic: 'UAE romanization standards', score: 0.5, label: 'Neutral Positive' },
                     ].map((item) => (
-                      <div key={item.topic} className={`rounded-lg border p-4 ${item.score >= 0.8 ? 'border-emerald-500/30 bg-emerald-500/10' : item.score >= 0.6 ? 'border-amber-500/30 bg-amber-500/10' : 'border-slate-700/50 bg-slate-800/50'}`}>
-                        <div className="text-xs text-slate-400 mb-1">{item.topic}</div>
+                      <div key={item.topic} className={`rounded-lg border p-4 ${item.score >= 0.8 ? 'border-emerald-500/30 bg-emerald-500/10' : item.score >= 0.6 ? 'border-amber-500/30 bg-amber-500/10' : 'border-platinum-700/50 bg-platinum-800/50'}`}>
+                        <div className="text-xs text-platinum-400 mb-1">{item.topic}</div>
                         <div className={`text-2xl font-bold ${item.score >= 0.8 ? 'text-emerald-400' : item.score >= 0.6 ? 'text-amber-400' : 'text-platinum'}`}>
                           {(item.score * 100).toFixed(0)}
                         </div>
-                        <div className="text-xs text-slate-500">{item.label}</div>
+                        <div className="text-xs text-platinum-500">{item.label}</div>
                       </div>
                     ))}
                   </div>

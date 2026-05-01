@@ -271,7 +271,7 @@ export default function EducationYouthPage() {
 
   const getAlertColor = (alert?: string) => {
     if (alert === 'RED') return 'border-red-500/50'
-    if (alert === 'YELLOW') return 'border-yellow-500/50'
+    if (alert === 'YELLOW') return 'border-amber-500/50'
     return 'border-emerald-500/50'
   }
 
@@ -282,7 +282,7 @@ export default function EducationYouthPage() {
         <div>
           <Badge variant="default" className="mb-2">S-SECTOR: EDUCATION & YOUTH</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">Education & Youth</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             {educationYouthData.description}
           </p>
         </div>
@@ -334,15 +334,15 @@ export default function EducationYouthPage() {
       </div>
 
       {/* Alert Banner */}
-      <div className={`rounded-xl border p-4 bg-slate-900/50 ${getAlertColor(alertLevel)}`}>
+      <div className={`rounded-xl border p-4 bg-platinum-900/50 ${getAlertColor(alertLevel)}`}>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             {alertLevel === 'RED' && <AlertCircle className="h-6 w-6 text-red-400" />}
-            {alertLevel === 'YELLOW' && <AlertTriangle className="h-6 w-6 text-yellow-400" />}
+            {alertLevel === 'YELLOW' && <AlertTriangle className="h-6 w-6 text-amber-400" />}
             {alertLevel === 'GREEN' && <TrendingUp className="h-6 w-6 text-emerald-400" />}
             <div>
-              <p className="font-semibold text-slate-200">Intelligence Alert Level: {alertLevel}</p>
-              <p className="text-sm text-slate-400">UAE Relevance: {uaeRelevance.score}/100 — {uaeRelevance.justification}</p>
+              <p className="font-semibold text-platinum-200">Intelligence Alert Level: {alertLevel}</p>
+              <p className="text-sm text-platinum-400">UAE Relevance: {uaeRelevance.score}/100 — {uaeRelevance.justification}</p>
             </div>
           </div>
           {getAlertBadge(alertLevel)}
@@ -364,27 +364,27 @@ export default function EducationYouthPage() {
               {keyFindings.map((finding, index) => (
                 <div
                   key={index}
-                  className={`flex items-center justify-between rounded-lg border p-4 bg-slate-800/50 hover:bg-slate-800/70 transition-colors ${finding.alert ? getAlertColor(finding.alert) : 'border-slate-700'}`}
+                  className={`flex items-center justify-between rounded-lg border p-4 bg-platinum-800/50 hover:bg-platinum-800/70 transition-colors ${finding.alert ? getAlertColor(finding.alert) : 'border-platinum-700'}`}
                 >
                   <div className="flex items-center gap-4">
                     <div className={`flex h-10 w-10 items-center justify-center rounded-full ${
                       finding.tier === 0 ? 'bg-gold/20 text-gold' :
                       finding.tier === 1 ? 'bg-platinum/20 text-platinum' :
-                      'bg-slate-700/50 text-slate-400'
+                      'bg-platinum-700/50 text-platinum-400'
                     }`}>
                       {finding.tier === 0 ? <Award className="h-5 w-5" /> :
                        finding.tier === 1 ? <BookOpen className="h-5 w-5" /> :
                        <AlertCircle className="h-5 w-5" />}
                     </div>
                     <div>
-                      <p className="font-medium text-slate-200">{finding.finding}</p>
-                      <p className="text-sm text-slate-400">Source: {finding.source}</p>
+                      <p className="font-medium text-platinum-200">{finding.finding}</p>
+                      <p className="text-sm text-platinum-400">Source: {finding.source}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="text-right">
                       <p className="text-xl font-bold text-platinum">{finding.metric}</p>
-                      <p className="text-xs text-slate-400">Tier {finding.tier}</p>
+                      <p className="text-xs text-platinum-400">Tier {finding.tier}</p>
                     </div>
                     {finding.alert && getAlertBadge(finding.alert)}
                   </div>
@@ -451,8 +451,8 @@ export default function EducationYouthPage() {
                       ].map((item, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-slate-200">{item.label}</span>
-                            <span className="text-sm font-bold text-slate-200">AED {item.value}B</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.label}</span>
+                            <span className="text-sm font-bold text-platinum-200">AED {item.value}B</span>
                           </div>
                           <Progress
                             value={(item.value / item.max) * 100}
@@ -481,10 +481,10 @@ export default function EducationYouthPage() {
                         { index: 'PISA Ranking', value: '38th', rank: 'OECD average', trend: 'down' },
                         { index: 'Global Innovation Index', value: '32nd', rank: 'Top 35', trend: 'up' },
                       ].map((item, index) => (
-                        <div key={index} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4">
+                        <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4">
                           <div>
-                            <p className="font-medium text-slate-200">{item.index}</p>
-                            <p className="text-sm text-slate-400">{item.rank}</p>
+                            <p className="font-medium text-platinum-200">{item.index}</p>
+                            <p className="text-sm text-platinum-400">{item.rank}</p>
                           </div>
                           <div className="text-right">
                             <p className="text-xl font-bold text-platinum">{item.value}</p>
@@ -581,11 +581,11 @@ export default function EducationYouthPage() {
                 <ScrollArea className="h-[500px]">
                   <div className="space-y-4">
                     {stakeholders.map((stakeholder, index) => (
-                      <div key={index} className="flex items-center gap-4 rounded-lg bg-slate-800/50 p-4 hover:bg-slate-800/70 transition-colors">
+                      <div key={index} className="flex items-center gap-4 rounded-lg bg-platinum-800/50 p-4 hover:bg-platinum-800/70 transition-colors">
                         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-platinum/20 text-platinum">
                           <GraduationCap className="h-5 w-5" />
                         </div>
-                        <p className="flex-1 font-medium text-slate-200">{stakeholder}</p>
+                        <p className="flex-1 font-medium text-platinum-200">{stakeholder}</p>
                         <Badge variant="outline" className="text-xs">Tier 1</Badge>
                       </div>
                     ))}

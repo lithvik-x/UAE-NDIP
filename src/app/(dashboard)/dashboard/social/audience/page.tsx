@@ -122,7 +122,7 @@ export default function AudiencePage() {
         <div>
           <Badge variant="gold" className="mb-2">AUDIENCE INTELLIGENCE</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Audience Demographics & Behavior</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             UAE social media audience breakdown — demographics, behavior patterns, and platform preferences
           </p>
         </div>
@@ -233,9 +233,9 @@ export default function AudiencePage() {
                                 className="h-3 w-3 rounded-full"
                                 style={{ backgroundColor: lang.color }}
                               />
-                              <span className="text-sm font-medium text-slate-200">{lang.language}</span>
+                              <span className="text-sm font-medium text-platinum-200">{lang.language}</span>
                             </div>
-                            <span className="text-lg font-bold text-slate-200">{lang.percentage}%</span>
+                            <span className="text-lg font-bold text-platinum-200">{lang.percentage}%</span>
                           </div>
                           <Progress value={lang.percentage} className="h-2" />
                         </div>
@@ -272,10 +272,10 @@ export default function AudiencePage() {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
                             <MapPin className="h-4 w-4 text-gold" />
-                            <span className="text-sm font-medium text-slate-200">{item.emirate}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.emirate}</span>
                           </div>
                           <div className="flex items-center gap-4">
-                            <span className="text-sm text-slate-400">{item.users.toLocaleString()} users</span>
+                            <span className="text-sm text-platinum-400">{item.users.toLocaleString()} users</span>
                             <span className="text-sm font-bold text-gold">{item.percentage}%</span>
                             <span className="text-sm text-emerald">+{item.growth}%</span>
                           </div>
@@ -301,8 +301,8 @@ export default function AudiencePage() {
                             <MapPin className="h-8 w-8 text-navy" />
                           </div>
                           <div>
-                            <p className="font-semibold text-slate-200">Urban Areas</p>
-                            <p className="text-sm text-slate-400">Dubai, Abu Dhabi, major cities</p>
+                            <p className="font-semibold text-platinum-200">Urban Areas</p>
+                            <p className="text-sm text-platinum-400">Dubai, Abu Dhabi, major cities</p>
                           </div>
                         </div>
                         <p className="text-3xl font-bold text-navy">89%</p>
@@ -314,8 +314,8 @@ export default function AudiencePage() {
                             <MapPin className="h-8 w-8 text-gold" />
                           </div>
                           <div>
-                            <p className="font-semibold text-slate-200">Rural Areas</p>
-                            <p className="text-sm text-slate-400">Northern emirates, remote areas</p>
+                            <p className="font-semibold text-platinum-200">Rural Areas</p>
+                            <p className="text-sm text-platinum-400">Northern emirates, remote areas</p>
                           </div>
                         </div>
                         <p className="text-3xl font-bold text-gold">11%</p>
@@ -339,13 +339,13 @@ export default function AudiencePage() {
                           { emirate: 'Sharjah', peak: '5PM - 9PM', activity: 72 },
                           { emirate: 'Northern Emirates', peak: '6PM - 10PM', activity: 65 },
                         ].map((item, idx) => (
-                          <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center gap-3">
                               <Clock className="h-4 w-4 text-navy" />
-                              <span className="text-sm font-medium text-slate-200">{item.emirate}</span>
+                              <span className="text-sm font-medium text-platinum-200">{item.emirate}</span>
                             </div>
                             <div className="text-right">
-                              <p className="text-sm text-slate-400">{item.peak}</p>
+                              <p className="text-sm text-platinum-400">{item.peak}</p>
                               <p className="text-sm font-bold text-gold">Activity: {item.activity}%</p>
                             </div>
                           </div>
@@ -431,11 +431,11 @@ export default function AudiencePage() {
                       { type: 'Text Posts', percentage: 15, trend: 'down' },
                       { type: 'Stories/Reels', percentage: 12, trend: 'up' },
                     ].map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-3 rounded-lg bg-slate-800/50 p-4">
+                      <div key={idx} className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-4">
                         <Monitor className="h-5 w-5 text-gold" />
                         <div className="flex-1">
-                          <p className="text-sm font-medium text-slate-200">{item.type}</p>
-                          <p className="text-lg font-bold text-slate-200">{item.percentage}%</p>
+                          <p className="text-sm font-medium text-platinum-200">{item.type}</p>
+                          <p className="text-lg font-bold text-platinum-200">{item.percentage}%</p>
                         </div>
                       </div>
                     ))}
@@ -486,8 +486,8 @@ export default function AudiencePage() {
                       ].map((item, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-slate-200">{item.type}</span>
-                            <span className="text-sm font-bold text-slate-200">{item.engagement}%</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.type}</span>
+                            <span className="text-sm font-bold text-platinum-200">{item.engagement}%</span>
                           </div>
                           <Progress value={item.engagement * 15} className="h-2" />
                         </div>
@@ -512,10 +512,10 @@ export default function AudiencePage() {
                           { driver: 'Business/Economy news', impact: 'Medium' },
                           { driver: 'International events', impact: 'Low' },
                         ].map((item, idx) => (
-                          <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                          <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center gap-3">
                               <MessageSquare className="h-4 w-4 text-gold" />
-                              <span className="text-sm text-slate-300">{item.driver}</span>
+                              <span className="text-sm text-platinum-300">{item.driver}</span>
                             </div>
                             <Badge
                               variant="outline"
@@ -524,7 +524,7 @@ export default function AudiencePage() {
                                   ? 'text-emerald border-emerald'
                                   : item.impact === 'Medium'
                                   ? 'text-gold border-gold'
-                                  : 'text-slate-400 border-slate-600'
+                                  : 'text-platinum-400 border-platinum-600'
                               }
                             >
                               {item.impact}
@@ -548,16 +548,16 @@ export default function AudiencePage() {
                       <h4 className="font-semibold text-gold">Emirati Users</h4>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-slate-400">Avg Time on Platform</span>
-                          <span className="font-bold text-slate-200">3.8h/day</span>
+                          <span className="text-sm text-platinum-400">Avg Time on Platform</span>
+                          <span className="font-bold text-platinum-200">3.8h/day</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-slate-400">Engagement Rate</span>
-                          <span className="font-bold text-slate-200">4.2%</span>
+                          <span className="text-sm text-platinum-400">Engagement Rate</span>
+                          <span className="font-bold text-platinum-200">4.2%</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-slate-400">Preferred Content</span>
-                          <span className="font-bold text-slate-200">Cultural/Heritage</span>
+                          <span className="text-sm text-platinum-400">Preferred Content</span>
+                          <span className="font-bold text-platinum-200">Cultural/Heritage</span>
                         </div>
                       </div>
                     </div>
@@ -565,16 +565,16 @@ export default function AudiencePage() {
                       <h4 className="font-semibold text-navy">Expat Users</h4>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-slate-400">Avg Time on Platform</span>
-                          <span className="font-bold text-slate-200">2.9h/day</span>
+                          <span className="text-sm text-platinum-400">Avg Time on Platform</span>
+                          <span className="font-bold text-platinum-200">2.9h/day</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-slate-400">Engagement Rate</span>
-                          <span className="font-bold text-slate-200">3.5%</span>
+                          <span className="text-sm text-platinum-400">Engagement Rate</span>
+                          <span className="font-bold text-platinum-200">3.5%</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-slate-400">Preferred Content</span>
-                          <span className="font-bold text-slate-200">Lifestyle/Business</span>
+                          <span className="text-sm text-platinum-400">Preferred Content</span>
+                          <span className="font-bold text-platinum-200">Lifestyle/Business</span>
                         </div>
                       </div>
                     </div>

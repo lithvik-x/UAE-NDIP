@@ -86,17 +86,17 @@ export function FacebookMetaScamCenterSection() {
             </CardHeader>
             <CardContent>
               <div className="grid gap-4 sm:grid-cols-3">
-                <div className="flex flex-col items-center p-4 rounded-lg bg-slate-800/50">
+                <div className="flex flex-col items-center p-4 rounded-lg bg-platinum-800/50">
                   <span className="text-3xl font-bold text-amber">{aiPoweredScamsStats.peopleArrested}</span>
-                  <span className="text-xs text-slate-400 mt-1">People Arrested</span>
+                  <span className="text-xs text-platinum-400 mt-1">People Arrested</span>
                 </div>
-                <div className="flex flex-col items-center p-4 rounded-lg bg-slate-800/50">
+                <div className="flex flex-col items-center p-4 rounded-lg bg-platinum-800/50">
                   <span className="text-3xl font-bold text-rose">{aiPoweredScamsStats.fraudCases}</span>
-                  <span className="text-xs text-slate-400 mt-1">Fraud Cases</span>
+                  <span className="text-xs text-platinum-400 mt-1">Fraud Cases</span>
                 </div>
-                <div className="flex flex-col items-center p-4 rounded-lg bg-slate-800/50">
+                <div className="flex flex-col items-center p-4 rounded-lg bg-platinum-800/50">
                   <span className="text-3xl font-bold text-gold">{aiPoweredScamsStats.timeframe}</span>
-                  <span className="text-xs text-slate-400 mt-1">Timeframe</span>
+                  <span className="text-xs text-platinum-400 mt-1">Timeframe</span>
                 </div>
               </div>
             </CardContent>
@@ -119,7 +119,7 @@ export function FacebookMetaScamCenterSection() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-start gap-3 p-3 rounded-lg bg-slate-800/30 border border-slate-700/30"
+                    className="flex items-start gap-3 p-3 rounded-lg bg-platinum-800/30 border border-platinum-700/30"
                   >
                     <AlertCircle className="h-5 w-5 text-rose-400 mt-0.5 flex-shrink-0" />
                     <div className="flex-1 min-w-0">
@@ -136,7 +136,7 @@ export function FacebookMetaScamCenterSection() {
                           {alert.credibility}
                         </Badge>
                       </div>
-                      <div className="flex items-center gap-3 text-xs text-slate-500">
+                      <div className="flex items-center gap-3 text-xs text-platinum-500">
                         <span>{alert.date}</span>
                         <span>Source: {alert.source}</span>
                       </div>
@@ -161,7 +161,7 @@ export function FacebookMetaScamCenterSection() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="p-4 rounded-lg bg-slate-800/50"
+                    className="p-4 rounded-lg bg-platinum-800/50"
                   >
                     <div className="flex items-start justify-between mb-2">
                       <h4 className="text-sm font-semibold text-platinum-200">{scam.scamType}</h4>
@@ -176,7 +176,7 @@ export function FacebookMetaScamCenterSection() {
                         {scam.severity}
                       </Badge>
                     </div>
-                    <p className="text-xs text-slate-400 mb-2">{scam.description}</p>
+                    <p className="text-xs text-platinum-400 mb-2">{scam.description}</p>
                     <p className="text-xs text-emerald-400">{scam.prevention}</p>
                   </motion.div>
                 ))}
@@ -201,7 +201,7 @@ export function FacebookMetaScamCenterSection() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-start gap-2 p-3 rounded-lg bg-slate-800/30"
+                    className="flex items-start gap-2 p-3 rounded-lg bg-platinum-800/30"
                   >
                     <div className="h-6 w-6 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
                       <span className="text-xs text-emerald-400 font-bold">{idx + 1}</span>

@@ -89,7 +89,7 @@ export default function HistoricalCrisisPage() {
         <div>
           <Badge variant="gold" className="mb-2">H-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Historical Crises</h1>
-          <p className="mt-2 text-slate-400">
+          <p className="mt-2 text-platinum-400">
             {data.description || 'Major crises, their management, and lessons learned'}
           </p>
         </div>
@@ -193,7 +193,7 @@ export default function HistoricalCrisisPage() {
                       {responseData.map((item, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-slate-200">{item.method}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.method}</span>
                             <span className="text-lg font-bold text-gold">{item.effectiveness}%</span>
                           </div>
                           <Progress
@@ -223,13 +223,13 @@ export default function HistoricalCrisisPage() {
                   <ScrollArea className="h-[500px]">
                     <div className="space-y-4">
                       {crisisTimelineData.map((crisis, idx) => (
-                        <div key={idx} className="flex items-start gap-4 rounded-lg border border-slate-700 bg-slate-800/50 p-4">
+                        <div key={idx} className="flex items-start gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/20 text-gold">
                             <Siren className="h-6 w-6" />
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center justify-between">
-                              <h4 className="font-semibold text-slate-200">{crisis.crisis}</h4>
+                              <h4 className="font-semibold text-platinum-200">{crisis.crisis}</h4>
                               <Badge
                                 variant={crisis.outcome === 'Resolved' || crisis.outcome === 'Recovered' ? 'success' : crisis.outcome === 'Prevented' ? 'warning' : 'destructive'}
                                 className="text-xs"
@@ -237,15 +237,15 @@ export default function HistoricalCrisisPage() {
                                 {crisis.outcome}
                               </Badge>
                             </div>
-                            <p className="mt-1 text-sm text-slate-400">{crisis.year}</p>
+                            <p className="mt-1 text-sm text-platinum-400">{crisis.year}</p>
                             <div className="mt-2 flex items-center gap-2">
                               <div className="flex-1">
                                 <Progress value={crisis.severity} className="h-2" />
                               </div>
-                              <span className="text-xs text-slate-500">Severity: {crisis.severity}</span>
+                              <span className="text-xs text-platinum-500">Severity: {crisis.severity}</span>
                             </div>
                           </div>
-                          <ChevronRight className="h-5 w-5 text-slate-500" />
+                          <ChevronRight className="h-5 w-5 text-platinum-500" />
                         </div>
                       ))}
                     </div>
@@ -293,10 +293,10 @@ export default function HistoricalCrisisPage() {
                         { label: 'Response Time', value: '72 hours', icon: Clock },
                         { label: 'Market Stabilization', value: '2 weeks', icon: TrendingUp },
                       ].map((item, idx) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                        <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <item.icon className="h-5 w-5 text-navy" />
-                            <span className="text-sm font-medium text-slate-200">{item.label}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.label}</span>
                           </div>
                           <span className="text-lg font-bold text-gold">{item.value}</span>
                         </div>
@@ -318,10 +318,10 @@ export default function HistoricalCrisisPage() {
                         { label: 'Response Time', value: '48 hours', icon: Clock },
                         { label: 'Objective Achieved', value: 'Yes', icon: Shield },
                       ].map((item, idx) => (
-                        <div key={idx} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                        <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <item.icon className="h-5 w-5 text-emerald" />
-                            <span className="text-sm font-medium text-slate-200">{item.label}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.label}</span>
                           </div>
                           <span className="text-lg font-bold text-emerald">{item.value}</span>
                         </div>
@@ -375,14 +375,14 @@ export default function HistoricalCrisisPage() {
                         tier: 2,
                       },
                     ].map((lesson, idx) => (
-                      <div key={idx} className="rounded-lg border border-gold/30 bg-slate-800/50 p-4">
+                      <div key={idx} className="rounded-lg border border-gold/30 bg-platinum-800/50 p-4">
                         <div className="flex items-center justify-between mb-2">
                           <h4 className="font-semibold text-gold">{lesson.title}</h4>
                           <Badge variant="outline" className="text-xs border-gold/50 text-gold">Tier {lesson.tier}</Badge>
                         </div>
-                        <p className="text-sm text-slate-300">{lesson.finding}</p>
+                        <p className="text-sm text-platinum-300">{lesson.finding}</p>
                         <div className="mt-3 flex items-center justify-between">
-                          <span className="text-xs text-slate-500">{lesson.source}</span>
+                          <span className="text-xs text-platinum-500">{lesson.source}</span>
                           <Badge variant="gold" className="text-xs">{lesson.metric}</Badge>
                         </div>
                       </div>

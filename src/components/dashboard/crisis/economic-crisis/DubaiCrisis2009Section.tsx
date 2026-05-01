@@ -83,7 +83,7 @@ export function PropertyMarketSection({ propertyMarketCollapse, globalMarketImpa
                   <span className="text-platinum-300">{item.metric}</span>
                   <span className="text-rose-400 font-bold">{item.value}</span>
                 </div>
-                <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                   <motion.div initial={{ width: 0 }} animate={{ width: item.value === '-40%' ? '40%' : item.value === '-60%' ? '60%' : '50%' }} transition={{ delay: idx * 0.2 + 0.5, duration: 0.8 }}
                     className="h-full rounded-full bg-gradient-to-r from-rose-500 to-orange-500" />
                 </div>

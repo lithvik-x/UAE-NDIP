@@ -128,7 +128,7 @@ export default function MaghrebiArabicPage() {
     switch (trend) {
       case 'rising': return <ArrowUp className="h-4 w-4 text-emerald-400" />
       case 'declining': return <ArrowDown className="h-4 w-4 text-rose-400" />
-      default: return <Minus className="h-4 w-4 text-slate-400" />
+      default: return <Minus className="h-4 w-4 text-platinum-400" />
     }
   }
 
@@ -137,7 +137,7 @@ export default function MaghrebiArabicPage() {
     switch (trend) {
       case 'rising': return <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">Rising</Badge>
       case 'declining': return <Badge className="bg-rose-500/20 text-rose-400 border-rose-500/50">Declining</Badge>
-      default: return <Badge className="bg-slate-500/20 text-slate-400 border-slate-500/50">Stable</Badge>
+      default: return <Badge className="bg-platinum-500/20 text-platinum-400 border-platinum-500/50">Stable</Badge>
     }
   }
 
@@ -145,7 +145,7 @@ export default function MaghrebiArabicPage() {
   const getTensionColor = (score: number) => {
     if (score >= 9) return 'text-rose-500'
     if (score >= 8) return 'text-orange-500'
-    if (score >= 7) return 'text-yellow-500'
+    if (score >= 7) return 'text-amber-500'
     return 'text-emerald-500'
   }
 
@@ -154,9 +154,9 @@ export default function MaghrebiArabicPage() {
     switch (status.toLowerCase()) {
       case 'critical': return 'bg-rose-500/20 text-rose-400 border-rose-500/50'
       case 'hostile': return 'bg-orange-500/20 text-orange-400 border-orange-500/50'
-      case 'strained': return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/50'
+      case 'strained': return 'bg-amber-500/20 text-amber-400 border-amber-500/50'
       case 'competing': return 'bg-platinum/20 text-platinum border-platinum/50'
-      default: return 'bg-slate-500/20 text-slate-400 border-slate-500/50'
+      default: return 'bg-platinum-500/20 text-platinum-400 border-platinum-500/50'
     }
   }
 
@@ -195,7 +195,7 @@ export default function MaghrebiArabicPage() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mt-2 text-slate-400 text-lg"
+            className="mt-2 text-platinum-400 text-lg"
           >
             Intelligence on Maghrebi Arabic dialect: Morocco, Algeria, Tunisia, Libya
           </motion.p>
@@ -204,7 +204,7 @@ export default function MaghrebiArabicPage() {
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="mt-3 flex items-center gap-4 text-sm text-slate-500"
+              className="mt-3 flex items-center gap-4 text-sm text-platinum-500"
             >
               <span className="flex items-center gap-1">
                 <FileText className="h-3 w-3" />
@@ -308,12 +308,12 @@ export default function MaghrebiArabicPage() {
                       key={country.country}
                       variants={scaleIn}
                       whileHover={{ scale: 1.05, y: -4 }}
-                      className="relative overflow-hidden rounded-lg border border-slate-700/50 bg-gradient-to-br from-slate-800/80 to-slate-900/80 p-4 backdrop-blur-sm transition-all hover:shadow-xl hover:shadow-platinum/5"
+                      className="relative overflow-hidden rounded-lg border border-platinum-700/50 bg-gradient-to-br from-slate-800/80 to-slate-900/80 p-4 backdrop-blur-sm transition-all hover:shadow-xl hover:shadow-platinum/5"
                     >
                       <div className="absolute inset-0 bg-gradient-to-br from-platinum/5 to-transparent pointer-events-none" />
                       <div className="relative">
                         <div className="flex items-center justify-between mb-2">
-                          <h3 className="font-bold text-slate-200">{country.country}</h3>
+                          <h3 className="font-bold text-platinum-200">{country.country}</h3>
                           <Badge className={getRelationColor(country.relationStatus)}>
                             {country.relationStatus}
                           </Badge>
@@ -321,7 +321,7 @@ export default function MaghrebiArabicPage() {
                         <div className={`text-3xl font-extrabold ${getTensionColor(country.tensionScore)}`}>
                           {country.tensionScore}/10
                         </div>
-                        <p className="text-xs text-slate-500 mt-1">Tension Score</p>
+                        <p className="text-xs text-platinum-500 mt-1">Tension Score</p>
                       </div>
                     </motion.div>
                   )) : [
@@ -334,12 +334,12 @@ export default function MaghrebiArabicPage() {
                       key={country.country}
                       variants={scaleIn}
                       whileHover={{ scale: 1.05, y: -4 }}
-                      className="relative overflow-hidden rounded-lg border border-slate-700/50 bg-gradient-to-br from-slate-800/80 to-slate-900/80 p-4 backdrop-blur-sm transition-all hover:shadow-xl hover:shadow-platinum/5"
+                      className="relative overflow-hidden rounded-lg border border-platinum-700/50 bg-gradient-to-br from-slate-800/80 to-slate-900/80 p-4 backdrop-blur-sm transition-all hover:shadow-xl hover:shadow-platinum/5"
                     >
                       <div className="absolute inset-0 bg-gradient-to-br from-platinum/5 to-transparent pointer-events-none" />
                       <div className="relative">
                         <div className="flex items-center justify-between mb-2">
-                          <h3 className="font-bold text-slate-200">{country.country}</h3>
+                          <h3 className="font-bold text-platinum-200">{country.country}</h3>
                           <Badge className={getRelationColor(country.relationStatus)}>
                             {country.relationStatus}
                           </Badge>
@@ -347,7 +347,7 @@ export default function MaghrebiArabicPage() {
                         <div className={`text-3xl font-extrabold ${getTensionColor(country.tensionScore)}`}>
                           {country.tensionScore}/10
                         </div>
-                        <p className="text-xs text-slate-500 mt-1">Tension Score</p>
+                        <p className="text-xs text-platinum-500 mt-1">Tension Score</p>
                       </div>
                     </motion.div>
                   ))}
@@ -391,14 +391,14 @@ export default function MaghrebiArabicPage() {
                               initial={{ x: -20, opacity: 0 }}
                               animate={{ x: 0, opacity: 1 }}
                               transition={{ delay: idx * 0.1 }}
-                              className="flex items-center justify-between p-3 rounded-lg bg-slate-800/50 border border-slate-700/50 hover:bg-slate-800/70 transition-all"
+                              className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50 hover:bg-platinum-800/70 transition-all"
                             >
                               <div className="flex items-center gap-3">
                                 <item.icon className={`h-5 w-5 ${item.color}`} />
-                                <span className="text-slate-200">{item.country}</span>
+                                <span className="text-platinum-200">{item.country}</span>
                               </div>
                               <div className="flex items-center gap-3">
-                                <span className="text-sm text-slate-500">{item.population}</span>
+                                <span className="text-sm text-platinum-500">{item.population}</span>
                                 <Badge className="bg-emerald-500/20 text-emerald-400">{item.status}</Badge>
                               </div>
                             </motion.div>
@@ -422,22 +422,22 @@ export default function MaghrebiArabicPage() {
                     <CardContent>
                       <div className="grid gap-4 lg:grid-cols-4">
                         <div className="space-y-2">
-                          <p className="text-sm text-slate-400">Credibility Tier</p>
+                          <p className="text-sm text-platinum-400">Credibility Tier</p>
                           <Badge variant="outline" className="border-platinum/50 text-platinum font-bold">
                             Tier {credibility?.tier || 3}
                           </Badge>
                         </div>
                         <div className="space-y-2">
-                          <p className="text-sm text-slate-400">Credibility Score</p>
+                          <p className="text-sm text-platinum-400">Credibility Score</p>
                           <div className="text-2xl font-bold text-platinum-400">{credibility?.score || 76}%</div>
                         </div>
                         <div className="space-y-2">
-                          <p className="text-sm text-slate-400">Sources Verified</p>
+                          <p className="text-sm text-platinum-400">Sources Verified</p>
                           <div className="text-2xl font-bold text-emerald-400">{credibility?.sources || 32}</div>
                         </div>
                         {sourceCredibility && (
                           <div className="space-y-2">
-                            <p className="text-sm text-slate-400">Avg Credibility</p>
+                            <p className="text-sm text-platinum-400">Avg Credibility</p>
                             <div className="text-2xl font-bold text-gold-400">{sourceCredibility.dataQualitySummary.weightedAverageCredibility}%</div>
                           </div>
                         )}
@@ -465,7 +465,7 @@ export default function MaghrebiArabicPage() {
                           key={idx}
                           variants={fadeInUp}
                           whileHover={{ scale: 1.01, x: 4 }}
-                          className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/50 p-4 hover:bg-slate-800/70 transition-all cursor-pointer"
+                          className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/50 p-4 hover:bg-platinum-800/70 transition-all cursor-pointer"
                         >
                           <div className="flex items-center gap-4">
                             <motion.div
@@ -475,17 +475,17 @@ export default function MaghrebiArabicPage() {
                               {idx + 1}
                             </motion.div>
                             <div>
-                              <p className="font-semibold text-slate-200">{term.term}</p>
-                              <p className="text-sm text-slate-500">{term.volume?.toLocaleString()} queries</p>
+                              <p className="font-semibold text-platinum-200">{term.term}</p>
+                              <p className="text-sm text-platinum-500">{term.volume?.toLocaleString()} queries</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-3">
                             <Badge
                               variant="outline"
-                              className={`border-slate-600 ${
+                              className={`border-platinum-600 ${
                                 term.sentiment === 'positive' ? 'text-emerald-400 border-emerald-500/50' :
                                 term.sentiment === 'negative' ? 'text-rose-400 border-rose-500/50' :
-                                'text-slate-400'
+                                'text-platinum-400'
                               }`}
                             >
                               {term.sentiment}
@@ -519,7 +519,7 @@ export default function MaghrebiArabicPage() {
                       <div className="space-y-4">
                         {[
                           { label: 'Positive', value: sentiment?.positive || 52, color: 'bg-emerald-500' },
-                          { label: 'Neutral', value: sentiment?.neutral || 20, color: 'bg-slate-500' },
+                          { label: 'Neutral', value: sentiment?.neutral || 20, color: 'bg-platinum-500' },
                           { label: 'Negative', value: sentiment?.negative || 28, color: 'bg-rose-500' },
                         ].map((item, idx) => (
                           <motion.div
@@ -532,9 +532,9 @@ export default function MaghrebiArabicPage() {
                             <div className="flex items-center justify-between">
                               <div className="flex items-center gap-2">
                                 <div className={`h-3 w-3 rounded-full ${item.color}`} />
-                                <span className="text-sm font-medium text-slate-200">{item.label}</span>
+                                <span className="text-sm font-medium text-platinum-200">{item.label}</span>
                               </div>
-                              <span className="text-lg font-bold text-slate-200">{item.value}%</span>
+                              <span className="text-lg font-bold text-platinum-200">{item.value}%</span>
                             </div>
                             <Progress value={item.value} className="h-3" />
                           </motion.div>
@@ -592,11 +592,11 @@ export default function MaghrebiArabicPage() {
                                 <div className="flex items-center gap-3">
                                   <AlertCircle className="h-4 w-4 text-rose-400" />
                                   <div>
-                                    <p className="font-semibold text-slate-200">{item.source}</p>
-                                    <p className="text-xs text-slate-400">{item.framing}</p>
+                                    <p className="font-semibold text-platinum-200">{item.source}</p>
+                                    <p className="text-xs text-platinum-400">{item.framing}</p>
                                   </div>
                                 </div>
-                                <Badge className={item.sentimentScore <= -7 ? 'bg-rose-500/20 text-rose-400' : 'bg-yellow-500/20 text-yellow-400'}>
+                                <Badge className={item.sentimentScore <= -7 ? 'bg-rose-500/20 text-rose-400' : 'bg-amber-500/20 text-amber-400'}>
                                   {item.sentimentScore}/10
                                 </Badge>
                               </motion.div>
@@ -639,20 +639,20 @@ export default function MaghrebiArabicPage() {
                             </div>
                           </div>
                           <div>
-                            <p className="text-sm font-bold text-yellow-400 mb-2">MEDIUM RISK</p>
+                            <p className="text-sm font-bold text-amber-400 mb-2">MEDIUM RISK</p>
                             <div className="flex flex-wrap gap-2">
                               {uaeRelevance.riskHeatMap.mediumRisk.map((risk, idx) => (
-                                <Badge key={idx} className="bg-yellow-500/20 text-yellow-400 border-yellow-500/50">
+                                <Badge key={idx} className="bg-amber-500/20 text-amber-400 border-amber-500/50">
                                   {risk}
                                 </Badge>
                               ))}
                             </div>
                           </div>
                           <div>
-                            <p className="text-sm font-bold text-slate-400 mb-2">LOW RISK</p>
+                            <p className="text-sm font-bold text-platinum-400 mb-2">LOW RISK</p>
                             <div className="flex flex-wrap gap-2">
                               {uaeRelevance.riskHeatMap.lowRisk.map((risk, idx) => (
-                                <Badge key={idx} className="bg-slate-500/20 text-slate-400 border-slate-500/50">
+                                <Badge key={idx} className="bg-platinum-500/20 text-platinum-400 border-platinum-500/50">
                                   {risk}
                                 </Badge>
                               ))}
@@ -686,7 +686,7 @@ export default function MaghrebiArabicPage() {
                           >
                             <div className="flex items-center gap-3">
                               <AlertCircle className="h-4 w-4 text-rose-400" />
-                              <span className="text-slate-200">{term.term}</span>
+                              <span className="text-platinum-200">{term.term}</span>
                             </div>
                             <Badge variant="destructive" className="text-xs">{term.volume?.toLocaleString()} queries</Badge>
                           </motion.div>
@@ -715,25 +715,25 @@ export default function MaghrebiArabicPage() {
                               initial={{ x: -20, opacity: 0 }}
                               animate={{ x: 0, opacity: 1 }}
                               transition={{ delay: idx * 0.03 }}
-                              className="flex items-center justify-between rounded-lg border border-slate-700/50 bg-slate-800/50 p-4 hover:bg-slate-800/70 transition-all"
+                              className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/50 p-4 hover:bg-platinum-800/70 transition-all"
                             >
                               <div className="flex items-center gap-4">
                                 <div className={`flex h-10 w-10 items-center justify-center rounded-full ${
                                   source.tier === 1 ? 'bg-emerald-500/20 text-emerald-400' :
                                   source.tier === 2 ? 'bg-platinum-500/20 text-platinum' :
-                                  'bg-slate-500/20 text-slate-400'
+                                  'bg-platinum-500/20 text-platinum-400'
                                 }`}>
                                   <Globe className="h-5 w-5" />
                                 </div>
                                 <div>
-                                  <p className="font-semibold text-slate-200">{source.name}</p>
-                                  <p className="text-sm text-slate-500">{source.date}</p>
+                                  <p className="font-semibold text-platinum-200">{source.name}</p>
+                                  <p className="text-sm text-platinum-500">{source.date}</p>
                                 </div>
                               </div>
-                              <Badge variant="outline" className={`border-slate-600 ${
+                              <Badge variant="outline" className={`border-platinum-600 ${
                                 source.tier === 1 ? 'text-emerald-400 border-emerald-500/50' :
                                 source.tier === 2 ? 'text-platinum-400 border-platinum-500/50' :
-                                'text-slate-400'
+                                'text-platinum-400'
                               }`}>
                                 Tier {source.tier || 3}
                               </Badge>
@@ -766,12 +766,12 @@ export default function MaghrebiArabicPage() {
                       <div className="overflow-x-auto">
                         <table className="w-full">
                           <thead>
-                            <tr className="border-b border-slate-700">
-                              <th className="text-left py-3 px-4 text-sm font-bold text-slate-400">Country</th>
-                              <th className="text-left py-3 px-4 text-sm font-bold text-slate-400">Status</th>
-                              <th className="text-left py-3 px-4 text-sm font-bold text-slate-400">Tension</th>
-                              <th className="text-left py-3 px-4 text-sm font-bold text-slate-400">Key Disputes</th>
-                              <th className="text-left py-3 px-4 text-sm font-bold text-slate-400">Investment</th>
+                            <tr className="border-b border-platinum-700">
+                              <th className="text-left py-3 px-4 text-sm font-bold text-platinum-400">Country</th>
+                              <th className="text-left py-3 px-4 text-sm font-bold text-platinum-400">Status</th>
+                              <th className="text-left py-3 px-4 text-sm font-bold text-platinum-400">Tension</th>
+                              <th className="text-left py-3 px-4 text-sm font-bold text-platinum-400">Key Disputes</th>
+                              <th className="text-left py-3 px-4 text-sm font-bold text-platinum-400">Investment</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -781,9 +781,9 @@ export default function MaghrebiArabicPage() {
                                 initial={{ x: -10, opacity: 0 }}
                                 animate={{ x: 0, opacity: 1 }}
                                 transition={{ delay: idx * 0.05 }}
-                                className="border-b border-slate-700/50 hover:bg-slate-800/30 transition-all"
+                                className="border-b border-platinum-700/50 hover:bg-platinum-800/30 transition-all"
                               >
-                                <td className="py-3 px-4 font-bold text-slate-200">{row.country}</td>
+                                <td className="py-3 px-4 font-bold text-platinum-200">{row.country}</td>
                                 <td className="py-3 px-4">
                                   <Badge className={getRelationColor(row.relationStatus)}>
                                     {row.relationStatus}
@@ -797,17 +797,17 @@ export default function MaghrebiArabicPage() {
                                 <td className="py-3 px-4">
                                   <div className="flex flex-wrap gap-1">
                                     {row.keyDisputes.slice(0, 2).map((d, i) => (
-                                      <span key={i} className="text-xs px-2 py-0.5 rounded bg-slate-700/50 text-slate-400">
+                                      <span key={i} className="text-xs px-2 py-0.5 rounded bg-platinum-700/50 text-platinum-400">
                                         {d}
                                       </span>
                                     ))}
                                   </div>
                                 </td>
-                                <td className="py-3 px-4 text-sm text-slate-400">{row.uaeInvestmentLevel}</td>
+                                <td className="py-3 px-4 text-sm text-platinum-400">{row.uaeInvestmentLevel}</td>
                               </motion.tr>
                             )) : (
-                              <tr className="border-b border-slate-700/50">
-                                <td colSpan={5} className="py-4 text-center text-slate-500">
+                              <tr className="border-b border-platinum-700/50">
+                                <td colSpan={5} className="py-4 text-center text-platinum-500">
                                   No diplomatic data available
                                 </td>
                               </tr>
@@ -832,21 +832,21 @@ export default function MaghrebiArabicPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                          <div className="p-4 rounded-lg bg-slate-800/50 border border-slate-700/50">
-                            <p className="text-sm text-slate-400">UAE FDI to Morocco</p>
+                          <div className="p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
+                            <p className="text-sm text-platinum-400">UAE FDI to Morocco</p>
                             <p className="text-2xl font-bold text-emerald-400">{moroccoEconomics.uaeFdiToMorocco}</p>
                           </div>
-                          <div className="p-4 rounded-lg bg-slate-800/50 border border-slate-700/50">
-                            <p className="text-sm text-slate-400">Share of Total FDI</p>
+                          <div className="p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
+                            <p className="text-sm text-platinum-400">Share of Total FDI</p>
                             <p className="text-2xl font-bold text-platinum">{moroccoEconomics.uaeShareOfTotalFdi}%</p>
                           </div>
-                          <div className="p-4 rounded-lg bg-slate-800/50 border border-slate-700/50">
-                            <p className="text-sm text-slate-400">Megadeal Value</p>
+                          <div className="p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
+                            <p className="text-sm text-platinum-400">Megadeal Value</p>
                             <p className="text-2xl font-bold text-gold-400">{moroccoEconomics.megadealValue}</p>
                           </div>
-                          <div className="p-4 rounded-lg bg-slate-800/50 border border-slate-700/50">
-                            <p className="text-sm text-slate-400">Moroccan Community</p>
-                            <p className="text-2xl font-bold text-slate-200">{moroccoEconomics.moroccanCommunityInUae.toLocaleString()}</p>
+                          <div className="p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
+                            <p className="text-sm text-platinum-400">Moroccan Community</p>
+                            <p className="text-2xl font-bold text-platinum-200">{moroccoEconomics.moroccanCommunityInUae.toLocaleString()}</p>
                           </div>
                         </div>
                       </CardContent>
@@ -881,8 +881,8 @@ export default function MaghrebiArabicPage() {
                                 <div className="flex items-center gap-4">
                                   <span className="text-sm font-bold text-platinum min-w-[80px]">{event.date}</span>
                                   <div>
-                                    <p className="text-slate-200 font-medium">{event.event}</p>
-                                    <p className="text-xs text-slate-500">{event.countriesInvolved}</p>
+                                    <p className="text-platinum-200 font-medium">{event.event}</p>
+                                    <p className="text-xs text-platinum-500">{event.countriesInvolved}</p>
                                   </div>
                                 </div>
                               </motion.div>
@@ -914,21 +914,21 @@ export default function MaghrebiArabicPage() {
                       </CardHeader>
                       <CardContent>
                         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                          <div className="p-4 rounded-lg bg-slate-800/50 border border-slate-700/50">
-                            <p className="text-sm text-slate-400">Total Migrant Workers</p>
+                          <div className="p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
+                            <p className="text-sm text-platinum-400">Total Migrant Workers</p>
                             <p className="text-2xl font-bold text-rose-400">{workerStats.totalMigrantWorkers.toLocaleString()}</p>
                           </div>
-                          <div className="p-4 rounded-lg bg-slate-800/50 border border-slate-700/50">
-                            <p className="text-sm text-slate-400">Migrant % of Population</p>
+                          <div className="p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
+                            <p className="text-sm text-platinum-400">Migrant % of Population</p>
                             <p className="text-2xl font-bold text-platinum">{workerStats.migrantPercentageOfPopulation}%</p>
                           </div>
-                          <div className="p-4 rounded-lg bg-slate-800/50 border border-slate-700/50">
-                            <p className="text-sm text-slate-400">Modern Slavery Victims</p>
+                          <div className="p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
+                            <p className="text-sm text-platinum-400">Modern Slavery Victims</p>
                             <p className="text-2xl font-bold text-rose-400">{workerStats.modernSlaveryVictims.toLocaleString()}</p>
                           </div>
-                          <div className="p-4 rounded-lg bg-slate-800/50 border border-slate-700/50">
-                            <p className="text-sm text-slate-400">Labour Rights Index</p>
-                            <p className="text-2xl font-bold text-yellow-400">{workerStats.labourRightsIndexScore}/100</p>
+                          <div className="p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
+                            <p className="text-sm text-platinum-400">Labour Rights Index</p>
+                            <p className="text-2xl font-bold text-amber-400">{workerStats.labourRightsIndexScore}/100</p>
                           </div>
                         </div>
                       </CardContent>
@@ -955,15 +955,15 @@ export default function MaghrebiArabicPage() {
                               initial={{ x: -20, opacity: 0 }}
                               animate={{ x: 0, opacity: 1 }}
                               transition={{ delay: idx * 0.05 }}
-                              className="flex items-center justify-between p-4 rounded-lg bg-slate-800/50 border border-slate-700/50"
+                              className="flex items-center justify-between p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50"
                             >
                               <div className="flex items-center gap-3">
                                 <div className="h-10 w-10 rounded-full bg-gradient-to-br from-platinum/20 to-platinum/5 flex items-center justify-center">
                                   <Users className="h-5 w-5 text-platinum" />
                                 </div>
                                 <div>
-                                  <p className="font-bold text-slate-200">{worker.country}</p>
-                                  <p className="text-sm text-slate-500">{worker.primarySectors}</p>
+                                  <p className="font-bold text-platinum-200">{worker.country}</p>
+                                  <p className="text-sm text-platinum-500">{worker.primarySectors}</p>
                                 </div>
                               </div>
                               <Badge className="bg-platinum/20 text-platinum border-platinum/50">
@@ -1000,27 +1000,27 @@ export default function MaghrebiArabicPage() {
                               className={`p-4 rounded-lg border ${
                                 country.country === 'UAE'
                                   ? 'bg-gradient-to-br from-platinum/10 to-platinum/5 border-platinum/30'
-                                  : 'bg-slate-800/50 border-slate-700/50'
+                                  : 'bg-platinum-800/50 border-platinum-700/50'
                               }`}
                             >
                               <div className="flex items-center justify-between mb-2">
-                                <span className="font-bold text-slate-200">{country.country}</span>
+                                <span className="font-bold text-platinum-200">{country.country}</span>
                                 {country.country === 'UAE' && (
                                   <Badge className="bg-platinum/20 text-platinum text-xs">FOCUS</Badge>
                                 )}
                               </div>
                               <div className="space-y-1 text-sm">
                                 <div className="flex justify-between">
-                                  <span className="text-slate-500">Population</span>
-                                  <span className="text-slate-300">{country.totalPopulation.toLocaleString()}</span>
+                                  <span className="text-platinum-500">Population</span>
+                                  <span className="text-platinum-300">{country.totalPopulation.toLocaleString()}</span>
                                 </div>
                                 <div className="flex justify-between">
-                                  <span className="text-slate-500">% Foreign</span>
-                                  <span className="text-slate-300">{country.percentForeign}%</span>
+                                  <span className="text-platinum-500">% Foreign</span>
+                                  <span className="text-platinum-300">{country.percentForeign}%</span>
                                 </div>
                                 <div className="flex justify-between">
-                                  <span className="text-slate-500">Migrant Stock</span>
-                                  <span className="text-slate-300">{country.migrantStock.toLocaleString()}</span>
+                                  <span className="text-platinum-500">Migrant Stock</span>
+                                  <span className="text-platinum-300">{country.migrantStock.toLocaleString()}</span>
                                 </div>
                               </div>
                             </motion.div>

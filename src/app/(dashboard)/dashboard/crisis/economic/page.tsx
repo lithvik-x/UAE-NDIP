@@ -229,7 +229,7 @@ export default function EconomicCrisisPage() {
             Economic Crises
           </motion.h1>
           <motion.p
-            className="mt-2 text-slate-400"
+            className="mt-2 text-platinum-400"
             initial={{ x: -20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
@@ -247,7 +247,7 @@ export default function EconomicCrisisPage() {
             <Landmark className="h-4 w-4" />
             Central Bank
           </Button>
-          <Button className="bg-gradient-to-r from-gold-600 to-yellow-600 hover:opacity-90 text-slate-900 gap-2">
+          <Button className="bg-gradient-to-r from-gold-600 to-amber-600 hover:opacity-90 text-platinum-900 gap-2">
             <DollarSign className="h-4 w-4" />
             Stabilize
           </Button>
@@ -438,7 +438,7 @@ export default function EconomicCrisisPage() {
                             transition={{ delay: idx * 0.1 }}
                           >
                             <p className="text-xs text-navy-400 font-medium mb-1">{assessment.source}</p>
-                            <p className="text-sm text-slate-300 italic">{assessment.quote}</p>
+                            <p className="text-sm text-platinum-300 italic">{assessment.quote}</p>
                           </motion.div>
                         ))}
                       </div>
@@ -460,12 +460,12 @@ export default function EconomicCrisisPage() {
                       {Object.entries(verificationStatus).map(([key, value]) => (
                         <motion.div
                           key={key}
-                          className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                          className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ delay: 0.05 }}
                         >
-                          <span className="text-xs text-slate-400 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
+                          <span className="text-xs text-platinum-400 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
                           <Badge
                             variant={value === 'PASS' ? 'success' : value === 'PARTIAL' ? 'warning' : 'outline'}
                             className="text-xs"
@@ -525,16 +525,16 @@ export default function EconomicCrisisPage() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.05 }}
                           >
-                            <div className="absolute -left-8 top-0 h-4 w-4 rounded-full bg-gold-500 border-2 border-slate-900" />
+                            <div className="absolute -left-8 top-0 h-4 w-4 rounded-full bg-gold-500 border-2 border-platinum-900" />
                             <motion.div
-                              className="rounded-lg border border-slate-700 bg-slate-800/50 p-4 hover:bg-slate-800/70 transition-colors"
+                              className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70 transition-colors"
                               whileHover={{ scale: 1.01 }}
                             >
                               <div className="flex items-center justify-between mb-1">
-                                <p className="font-semibold text-slate-200">{event.event}</p>
+                                <p className="font-semibold text-platinum-200">{event.event}</p>
                                 <Badge variant="outline" className="text-xs">{event.date}</Badge>
                               </div>
-                              <p className="text-sm text-slate-400">{event.description}</p>
+                              <p className="text-sm text-platinum-400">{event.description}</p>
                             </motion.div>
                           </motion.div>
                         ))}
@@ -574,7 +574,7 @@ export default function EconomicCrisisPage() {
                           transition={{ delay: idx * 0.05 }}
                           whileHover={{ scale: 1.01 }}
                         >
-                          <p className="font-medium text-slate-200">{typeof finding === 'string' ? finding : finding.finding || finding}</p>
+                          <p className="font-medium text-platinum-200">{typeof finding === 'string' ? finding : finding.finding || finding}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -592,7 +592,7 @@ export default function EconomicCrisisPage() {
                         {stakeholderImpacts.map((impact, idx) => (
                           <motion.div
                             key={idx}
-                            className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4"
+                            className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4"
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.05 }}
@@ -600,7 +600,7 @@ export default function EconomicCrisisPage() {
                           >
                             <div className="flex items-center gap-3">
                               <Wallet className="h-4 w-4 text-gold" />
-                              <span className="text-sm font-medium text-slate-200">{impact.stakeholder}</span>
+                              <span className="text-sm font-medium text-platinum-200">{impact.stakeholder}</span>
                             </div>
                             <Badge variant="outline" className="text-gold-300 border-gold-500/50">{impact.sentiment}</Badge>
                           </motion.div>
@@ -618,42 +618,42 @@ export default function EconomicCrisisPage() {
                   <CardContent>
                     <div className="grid grid-cols-2 gap-4">
                       <motion.div
-                        className="rounded-lg bg-slate-800/50 p-4 hover:bg-slate-800/70 transition-colors"
+                        className="rounded-lg bg-platinum-800/50 p-4 hover:bg-platinum-800/70 transition-colors"
                         whileHover={{ scale: 1.05 }}
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <Activity className="h-4 w-4 text-emerald-400" />
-                          <p className="text-xs text-slate-400">Containment Time</p>
+                          <p className="text-xs text-platinum-400">Containment Time</p>
                         </div>
-                        <p className="text-lg font-bold text-slate-200">{responseMetrics?.containmentTime || '6 months'}</p>
+                        <p className="text-lg font-bold text-platinum-200">{responseMetrics?.containmentTime || '6 months'}</p>
                       </motion.div>
                       <motion.div
-                        className="rounded-lg bg-slate-800/50 p-4 hover:bg-slate-800/70 transition-colors"
+                        className="rounded-lg bg-platinum-800/50 p-4 hover:bg-platinum-800/70 transition-colors"
                         whileHover={{ scale: 1.05 }}
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <ShieldCheck className="h-4 w-4 text-gold-400" />
-                          <p className="text-xs text-slate-400">Recovery Time</p>
+                          <p className="text-xs text-platinum-400">Recovery Time</p>
                         </div>
-                        <p className="text-lg font-bold text-slate-200">{responseMetrics?.recoveryTime || '7 years'}</p>
+                        <p className="text-lg font-bold text-platinum-200">{responseMetrics?.recoveryTime || '7 years'}</p>
                       </motion.div>
                       <motion.div
-                        className="rounded-lg bg-slate-800/50 p-4 hover:bg-slate-800/70 transition-colors"
+                        className="rounded-lg bg-platinum-800/50 p-4 hover:bg-platinum-800/70 transition-colors"
                         whileHover={{ scale: 1.05 }}
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <TrendingDown className="h-4 w-4 text-rose-400" />
-                          <p className="text-xs text-slate-400">Economic Loss</p>
+                          <p className="text-xs text-platinum-400">Economic Loss</p>
                         </div>
                         <p className="text-lg font-bold text-rose-400">${((responseMetrics?.economicLoss || 0) / 1e9).toFixed(0)}B</p>
                       </motion.div>
                       <motion.div
-                        className="rounded-lg bg-slate-800/50 p-4 hover:bg-slate-800/70 transition-colors"
+                        className="rounded-lg bg-platinum-800/50 p-4 hover:bg-platinum-800/70 transition-colors"
                         whileHover={{ scale: 1.05 }}
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <Banknote className="h-4 w-4 text-emerald-400" />
-                          <p className="text-xs text-slate-400">Bailout/Funding</p>
+                          <p className="text-xs text-platinum-400">Bailout/Funding</p>
                         </div>
                         <p className="text-lg font-bold text-emerald-400">${((responseMetrics?.fundingAllocated || 0) / 1e9).toFixed(1)}B</p>
                       </motion.div>
@@ -692,7 +692,7 @@ export default function EconomicCrisisPage() {
                       ].map((item, idx) => (
                         <motion.div
                           key={idx}
-                          className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4"
+                          className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4"
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.05 }}
@@ -701,8 +701,8 @@ export default function EconomicCrisisPage() {
                           <div className="flex items-center gap-4">
                             <div className={`h-3 w-3 rounded-full bg-${item.color}-500`} />
                             <div>
-                              <p className="text-sm font-medium text-slate-200">{item.event}</p>
-                              <p className="text-xs text-slate-400">{item.year}</p>
+                              <p className="text-sm font-medium text-platinum-200">{item.event}</p>
+                              <p className="text-xs text-platinum-400">{item.year}</p>
                             </div>
                           </div>
                           <Badge variant="outline" className={`text-${item.color}-300 border-${item.color}-500/50`}>{item.status}</Badge>
@@ -741,7 +741,7 @@ export default function EconomicCrisisPage() {
                         {data.sources?.map((source, idx) => (
                           <motion.div
                             key={idx}
-                            className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                            className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: idx * 0.05 }}
@@ -749,7 +749,7 @@ export default function EconomicCrisisPage() {
                           >
                             <div className="flex items-center gap-3">
                               <Landmark className="h-4 w-4 text-navy" />
-                              <span className="text-sm font-medium text-slate-200">{source.source}</span>
+                              <span className="text-sm font-medium text-platinum-200">{source.source}</span>
                             </div>
                             <Badge variant="outline" className="text-xs">{source.tier}</Badge>
                           </motion.div>
@@ -783,18 +783,18 @@ export default function EconomicCrisisPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="grid grid-cols-2 gap-4">
-                        <div className="rounded-lg bg-slate-800/50 p-3">
-                          <p className="text-xs text-slate-400">Founder</p>
-                          <p className="text-sm font-medium text-slate-200">B.R. Shetty</p>
+                        <div className="rounded-lg bg-platinum-800/50 p-3">
+                          <p className="text-xs text-platinum-400">Founder</p>
+                          <p className="text-sm font-medium text-platinum-200">B.R. Shetty</p>
                         </div>
-                        <div className="rounded-lg bg-slate-800/50 p-3">
-                          <p className="text-xs text-slate-400">Peak Valuation</p>
+                        <div className="rounded-lg bg-platinum-800/50 p-3">
+                          <p className="text-xs text-platinum-400">Peak Valuation</p>
                           <p className="text-sm font-medium text-emerald-400">$11B</p>
                         </div>
                       </div>
                       <div className="rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
                         <p className="text-xs text-rose-400 mb-1">Fraud Description</p>
-                        <p className="text-sm text-slate-300">Company used as &quot;personal piggy-bank&quot; by founder. $800M+ allegedly received by B.R. Shetty.</p>
+                        <p className="text-sm text-platinum-300">Company used as &quot;personal piggy-bank&quot; by founder. $800M+ allegedly received by B.R. Shetty.</p>
                       </div>
                     </div>
                   </CardContent>
@@ -811,18 +811,18 @@ export default function EconomicCrisisPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="grid grid-cols-2 gap-4">
-                        <div className="rounded-lg bg-slate-800/50 p-3">
-                          <p className="text-xs text-slate-400">Founder</p>
-                          <p className="text-sm font-medium text-slate-200">Arif Naqvi</p>
+                        <div className="rounded-lg bg-platinum-800/50 p-3">
+                          <p className="text-xs text-platinum-400">Founder</p>
+                          <p className="text-sm font-medium text-platinum-200">Arif Naqvi</p>
                         </div>
-                        <div className="rounded-lg bg-slate-800/50 p-3">
-                          <p className="text-xs text-slate-400">Peak AUM</p>
+                        <div className="rounded-lg bg-platinum-800/50 p-3">
+                          <p className="text-xs text-platinum-400">Peak AUM</p>
                           <p className="text-sm font-medium text-emerald-400">$13.6B</p>
                         </div>
                       </div>
                       <div className="rounded-lg bg-gold-500/10 p-4 border border-gold-500/30">
                         <p className="text-xs text-gold-400 mb-1">Legal Status</p>
-                        <p className="text-sm text-slate-300">Arrested in London 2019. $314.6M DFSA fine. In liquidation since 2018.</p>
+                        <p className="text-sm text-platinum-300">Arrested in London 2019. $314.6M DFSA fine. In liquidation since 2018.</p>
                       </div>
                     </div>
                   </CardContent>
@@ -862,7 +862,7 @@ export default function EconomicCrisisPage() {
                         ].map((fraud, idx) => (
                           <motion.div
                             key={idx}
-                            className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                            className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.05 }}
@@ -871,8 +871,8 @@ export default function EconomicCrisisPage() {
                             <div className="flex items-center gap-3">
                               <AlertTriangle className="h-4 w-4 text-orange-400" />
                               <div>
-                                <p className="text-sm font-medium text-slate-200">{fraud.name}</p>
-                                <p className="text-xs text-slate-400">{fraud.method}</p>
+                                <p className="text-sm font-medium text-platinum-200">{fraud.name}</p>
+                                <p className="text-xs text-platinum-400">{fraud.method}</p>
                               </div>
                             </div>
                             <Badge variant="outline" className="text-orange-300 border-orange-500/50">{fraud.amount}</Badge>
@@ -931,15 +931,15 @@ export default function EconomicCrisisPage() {
                       ].map((item, idx) => (
                         <motion.div
                           key={idx}
-                          className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4"
+                          className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4"
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: idx * 0.1 }}
                           whileHover={{ scale: 1.02 }}
                         >
                           <div>
-                            <p className="text-sm font-medium text-slate-200">{item.date}</p>
-                            <p className="text-xs text-slate-400">{item.description}</p>
+                            <p className="text-sm font-medium text-platinum-200">{item.date}</p>
+                            <p className="text-xs text-platinum-400">{item.description}</p>
                           </div>
                           <Badge variant="outline" className="text-emerald-300 border-emerald-500/50">{item.amount}</Badge>
                         </motion.div>
@@ -958,12 +958,12 @@ export default function EconomicCrisisPage() {
                       <div className="rounded-lg border border-gold-500/30 bg-gold-500/5 p-4">
                         <p className="text-xs text-gold-400 mb-2">2009 Dubai Crisis</p>
                         <p className="text-2xl font-bold text-gold-400">$10B</p>
-                        <p className="text-xs text-slate-400 mt-1">Direct Abu Dhabi bailout</p>
+                        <p className="text-xs text-platinum-400 mt-1">Direct Abu Dhabi bailout</p>
                       </div>
                       <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/5 p-4">
                         <p className="text-xs text-emerald-400 mb-2">2026 Iran War</p>
                         <p className="text-2xl font-bold text-emerald-400">$8.2B</p>
-                        <p className="text-xs text-slate-400 mt-1">CLIF auctions (Jefferies est.)</p>
+                        <p className="text-xs text-platinum-400 mt-1">CLIF auctions (Jefferies est.)</p>
                       </div>
                     </div>
                   </CardContent>
@@ -984,13 +984,13 @@ export default function EconomicCrisisPage() {
                       ].map((item, idx) => (
                         <motion.div
                           key={idx}
-                          className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                          className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                           initial={{ opacity: 0, x: -10 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.05 }}
                           whileHover={{ scale: 1.02 }}
                         >
-                          <span className="text-sm text-slate-300">{item.metric}</span>
+                          <span className="text-sm text-platinum-300">{item.metric}</span>
                           <Badge variant="outline" className="text-emerald-300 border-emerald-500/50">{item.value}</Badge>
                         </motion.div>
                       ))}
@@ -1005,7 +1005,7 @@ export default function EconomicCrisisPage() {
 
       {/* ENHANCEMENT E: Footer with key metrics */}
       <motion.div
-        className="flex items-center justify-between rounded-lg border border-slate-700 bg-slate-800/30 p-4"
+        className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/30 p-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
@@ -1013,8 +1013,8 @@ export default function EconomicCrisisPage() {
         <div className="flex items-center gap-4">
           <Shield className="h-8 w-8 text-gold" />
           <div>
-            <p className="text-sm font-medium text-slate-200">Crisis Data Coverage</p>
-            <p className="text-xs text-slate-400">5 major crises | 2009-2026 | 100% MD content</p>
+            <p className="text-sm font-medium text-platinum-200">Crisis Data Coverage</p>
+            <p className="text-xs text-platinum-400">5 major crises | 2009-2026 | 100% MD content</p>
           </div>
         </div>
         <div className="flex gap-2">

@@ -118,7 +118,7 @@ export default function HopeSentimentPage() {
                         <span className="text-xs text-platinum-400">Trend:</span>
                         <Badge variant="outline" className={`border-${t.trend === 'Up' ? 'emerald' : 'platinum'}-500/50 text-${t.trend === 'Up' ? 'emerald' : 'platinum'}`}>{t.trend}</Badge>
                       </div>
-                      <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                      <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                         <motion.div initial={{ width: 0 }} animate={{ width: `${t.coverage}%` }} transition={{ delay: idx * 0.1 + 0.3, duration: 0.5 }}
                           className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-500" />
                       </div>
@@ -137,7 +137,7 @@ export default function HopeSentimentPage() {
                 <div className="space-y-3">
                   {expressionData.map((e: any, idx: number) => (
                     <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }}
-                      className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50">
+                      className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-xl text-platinum-100 font-rajdhani">{e.expression}</span>
                         <Badge variant="outline" className="border-emerald-500/50 text-emerald">{e.frequency}</Badge>

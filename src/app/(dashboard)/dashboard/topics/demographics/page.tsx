@@ -323,7 +323,7 @@ export default function DemographicsMigrationPage() {
                 <CardContent>
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                     {keyPopMetrics.map((metric, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg text-center">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-2xl font-bold text-gold">{metric.currentValue}</p>
                         <p className="text-sm text-platinum-400 mt-1">{metric.kpi}</p>
                       </div>
@@ -415,7 +415,7 @@ export default function DemographicsMigrationPage() {
                 <CardContent>
                   <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
                     {emiratePopulations.map((emirate, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg text-center">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-lg font-bold text-platinum">{emirate.population}</p>
                         <p className="text-sm text-gold">{emirate.emirate}</p>
                         <p className="text-xs text-platinum-500">{emirate.percentOfTotal}</p>
@@ -442,12 +442,12 @@ export default function DemographicsMigrationPage() {
                 <CardContent>
                   <div className="grid gap-4 lg:grid-cols-2">
                     <div className="space-y-3">
-                      <div className="p-3 bg-slate-800/50 rounded-lg">
+                      <div className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="text-sm text-platinum-400">Total Indian Population</p>
                         <p className="text-2xl font-bold text-gold">~4 million</p>
                         <p className="text-xs text-platinum-500">37.96% of total UAE population</p>
                       </div>
-                      <div className="p-3 bg-slate-800/50 rounded-lg">
+                      <div className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="text-sm text-platinum-400">Top Source State</p>
                         <p className="text-xl font-bold text-platinum">Kerala - 35%</p>
                         <p className="text-xs text-platinum-500">1.4 million people</p>
@@ -456,7 +456,7 @@ export default function DemographicsMigrationPage() {
                     <div className="space-y-2">
                       <p className="text-sm font-semibold text-platinum-300">Socioeconomic Profile</p>
                       {nationalExpatriateComposition.indianSocioeconomicProfile.map((profile, idx) => (
-                        <div key={idx} className="flex justify-between p-2 bg-slate-800/50 rounded-lg">
+                        <div key={idx} className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
                           <span className="text-platinum-300">{profile.category}</span>
                           <span className="font-bold text-gold">{profile.percentage}</span>
                         </div>
@@ -477,7 +477,7 @@ export default function DemographicsMigrationPage() {
                 <CardContent>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {populationSizeGrowth.genderDistribution.map((item, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg text-center">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-2xl font-bold text-platinum">{item.value}</p>
                         <p className="text-sm text-platinum-400 mt-1">{item.metric}</p>
                         <p className="text-xs text-platinum-500">{item.year}</p>
@@ -545,7 +545,7 @@ export default function DemographicsMigrationPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {goldenVisaProgram.recipientsByNationality.map((nat, idx) => (
-                      <div key={idx} className="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <div className="flex items-center gap-3">
                           <div className="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold font-bold">
                             {idx + 1}
@@ -600,7 +600,7 @@ export default function DemographicsMigrationPage() {
                 <CardContent>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                     {goldenVisaProgram.eligibilityCategories_10Year.map((cat, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="font-medium text-platinum-200 text-sm">{cat.category}</p>
                         {cat.details && <p className="text-xs text-platinum-500 mt-1">{cat.details}</p>}
                       </div>
@@ -620,8 +620,8 @@ export default function DemographicsMigrationPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {goldenVisaProgram.policyUpdates2024.map((update, idx) => (
-                      <div key={idx} className="p-3 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
-                        <p className="text-yellow-300 font-medium">{update.update}</p>
+                      <div key={idx} className="p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg">
+                        <p className="text-amber-300 font-medium">{update.update}</p>
                       </div>
                     ))}
                   </div>
@@ -650,7 +650,7 @@ export default function DemographicsMigrationPage() {
                 <CardContent>
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                     {citizenshipNaturalization.citizenshipPathways_11Total.map((path, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <div className="flex items-center gap-2 mb-1">
                           <span className="w-6 h-6 rounded-full bg-gold/20 text-gold text-xs flex items-center justify-center font-bold">
                             {path.number}
@@ -678,11 +678,11 @@ export default function DemographicsMigrationPage() {
                       <div key={idx} className="p-3 bg-rose/10 border border-rose/30 rounded-lg">
                         <p className="font-medium text-rose-300 text-sm mb-2">{item.category}</p>
                         <div className="grid grid-cols-2 gap-2">
-                          <div className="p-2 bg-slate-800/50 rounded text-center">
+                          <div className="p-2 bg-platinum-800/50 rounded text-center">
                             <p className="text-xs text-platinum-500">Men</p>
                             <p className="text-sm font-medium text-platinum-200">{item.men}</p>
                           </div>
-                          <div className="p-2 bg-slate-800/50 rounded text-center">
+                          <div className="p-2 bg-platinum-800/50 rounded text-center">
                             <p className="text-xs text-platinum-500">Women</p>
                             <p className="text-sm font-medium text-rose-300">{item.women}</p>
                           </div>
@@ -697,9 +697,9 @@ export default function DemographicsMigrationPage() {
               </Card>
 
               {/* Bidoon */}
-              <Card className="glass-card border-yellow-500/50">
+              <Card className="glass-card border-amber-500/50">
                 <CardHeader>
-                  <CardTitle className="text-lg flex items-center gap-2 text-yellow-400">
+                  <CardTitle className="text-lg flex items-center gap-2 text-amber-400">
                     <User className="h-5 w-5" />
                     Statelessness (Bidoon)
                   </CardTitle>
@@ -707,8 +707,8 @@ export default function DemographicsMigrationPage() {
                 <CardContent>
                   <div className="grid grid-cols-3 gap-4 mb-4">
                     {statelessnessBidoon.populationEstimates.map((est, idx) => (
-                      <div key={idx} className="p-3 bg-yellow-500/10 border border-yellow-500/30 rounded-lg text-center">
-                        <p className="text-xl font-bold text-yellow-400">{est.estimate}</p>
+                      <div key={idx} className="p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg text-center">
+                        <p className="text-xl font-bold text-amber-400">{est.estimate}</p>
                         <p className="text-xs text-platinum-500">{est.source}</p>
                       </div>
                     ))}
@@ -733,7 +733,7 @@ export default function DemographicsMigrationPage() {
                 <CardContent>
                   <div className="space-y-2">
                     {citizenshipNaturalization.naturalizationRequirements.map((req, idx) => (
-                      <div key={idx} className="flex justify-between p-3 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <div>
                           <span className="text-platinum-200 font-medium">{req.requirement}</span>
                           {req.exceptions && (
@@ -769,7 +769,7 @@ export default function DemographicsMigrationPage() {
                 <CardContent>
                   <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
                     {vitalStatistics.birthDeathRates.map((stat, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg text-center">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-2xl font-bold text-emerald">{stat.value.split(' ')[0]}</p>
                         <p className="text-xs text-platinum-400">{stat.metric}</p>
                       </div>
@@ -834,7 +834,7 @@ export default function DemographicsMigrationPage() {
                 <CardContent>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
                     {marriageDivorcePatterns.divorceStatistics.slice(0, 4).map((stat, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg text-center">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-2xl font-bold text-rose">{stat.value}</p>
                         <p className="text-xs text-platinum-400">{stat.metric}</p>
                       </div>
@@ -869,15 +869,15 @@ export default function DemographicsMigrationPage() {
                     showGrid={true}
                   />
                   <div className="mt-4 grid grid-cols-3 gap-3">
-                    <div className="p-3 bg-slate-800/50 rounded-lg text-center">
+                    <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald">85.82%</p>
                       <p className="text-xs text-platinum-400">2024 Urban</p>
                     </div>
-                    <div className="p-3 bg-slate-800/50 rounded-lg text-center">
+                    <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-gold">165.84</p>
                       <p className="text-xs text-platinum-400">Density /sq km (2026)</p>
                     </div>
-                    <div className="p-3 bg-slate-800/50 rounded-lg text-center">
+                    <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-platinum">83,600</p>
                       <p className="text-xs text-platinum-400">Total Area (sq km)</p>
                     </div>
@@ -916,11 +916,11 @@ export default function DemographicsMigrationPage() {
                     ))}
                   </div>
                   <div className="mt-4 grid grid-cols-2 gap-4">
-                    <div className="p-3 bg-slate-800/50 rounded-lg">
+                    <div className="p-3 bg-platinum-800/50 rounded-lg">
                       <p className="text-sm text-platinum-400">Places gained since 2006</p>
                       <p className="text-2xl font-bold text-emerald">+57</p>
                     </div>
-                    <div className="p-3 bg-slate-800/50 rounded-lg">
+                    <div className="p-3 bg-platinum-800/50 rounded-lg">
                       <p className="text-sm text-platinum-400">Destinations gained</p>
                       <p className="text-2xl font-bold text-emerald">+149</p>
                     </div>
@@ -939,7 +939,7 @@ export default function DemographicsMigrationPage() {
                 <CardContent>
                   <div className="space-y-2">
                     {passportPowerMobility.historicalProgression.map((milestone, idx) => (
-                      <div key={idx} className="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
+                      <div key={idx} className="flex items-center gap-3 p-2 bg-platinum-800/50 rounded-lg">
                         <span className="w-20 text-gold font-medium text-sm">{milestone.year}</span>
                         <span className="text-platinum-200 text-sm">{milestone.milestone}</span>
                       </div>
@@ -959,7 +959,7 @@ export default function DemographicsMigrationPage() {
                 <CardContent>
                   <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
                     {passportPowerMobility.globalComparison2026.map((country, idx) => (
-                      <div key={idx} className="p-3 bg-slate-800/50 rounded-lg text-center">
+                      <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-lg font-bold text-platinum">#{country.rank}</p>
                         <p className="text-xs text-gold">{country.country}</p>
                       </div>
@@ -986,19 +986,19 @@ export default function DemographicsMigrationPage() {
                       <p className="text-2xl font-bold text-gold">$39.7B</p>
                       <p className="text-xs text-platinum-400">Annual Outflows (2022)</p>
                     </div>
-                    <div className="p-3 bg-slate-800/50 rounded-lg text-center">
+                    <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-platinum">$25.5B</p>
                       <p className="text-xs text-platinum-400">UAE-India (2025 est.)</p>
                     </div>
-                    <div className="p-3 bg-slate-800/50 rounded-lg text-center">
+                    <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-platinum">15%</p>
                       <p className="text-xs text-platinum-400">Digital Platforms (vs 52% global)</p>
                     </div>
                   </div>
-                  <div className="p-3 bg-slate-800/50 rounded-lg">
+                  <div className="p-3 bg-platinum-800/50 rounded-lg">
                     <p className="text-sm font-semibold text-platinum-300 mb-2">Top Remittance Corridors</p>
                     {remittanceFlows.averageTicketSizeByDestination.slice(0, 5).map((corridor, idx) => (
-                      <div key={idx} className="flex justify-between p-2 border-b border-slate-700 last:border-0">
+                      <div key={idx} className="flex justify-between p-2 border-b border-platinum-700 last:border-0">
                         <span className="text-platinum-300 text-sm">{corridor.country}</span>
                         <span className="text-gold font-medium">{corridor.averageTransferUSD}</span>
                       </div>

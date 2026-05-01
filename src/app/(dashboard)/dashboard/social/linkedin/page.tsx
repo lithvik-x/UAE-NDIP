@@ -161,7 +161,7 @@ export default function LinkedInProfessionalPage() {
               LinkedIn & Professional Networks
             </span>
           </h1>
-          <p className="mt-2 text-slate-400 text-sm">
+          <p className="mt-2 text-platinum-400 text-sm">
             Comprehensive UAE LinkedIn analysis: 9M+ users, 200+ nationalities, 23 research queries, 400+ data points
           </p>
         </div>
@@ -221,7 +221,7 @@ export default function LinkedInProfessionalPage() {
             <PersonStandingIcon className="h-4 w-4 mr-2" />
             Emiratisation
           </TabsTrigger>
-          <TabsTrigger value="ai" className="data-[state=active]:bg-blue-500/20">
+          <TabsTrigger value="ai" className="data-[state=active]:bg-navy-500/20">
             <Cpu className="h-4 w-4 mr-2" />
             AI & Skills
           </TabsTrigger>
@@ -262,16 +262,16 @@ export default function LinkedInProfessionalPage() {
                     <CardContent>
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-slate-300">Total Users</span>
+                          <span className="text-sm text-platinum-300">Total Users</span>
                           <span className="text-xl font-bold text-cyan-400">9,000,000+</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-slate-300">Market Penetration</span>
+                          <span className="text-sm text-platinum-300">Market Penetration</span>
                           <span className="text-xl font-bold text-cyan-400">78%</span>
                         </div>
-                        <Progress value={78} className="h-2 bg-slate-800" />
+                        <Progress value={78} className="h-2 bg-platinum-800" />
                         <div className="mt-4 p-3 rounded-lg bg-cyan-500/10 border border-cyan-500/20">
-                          <p className="text-sm text-slate-300">
+                          <p className="text-sm text-platinum-300">
                             Peak hiring months: <span className="text-cyan-400">January–March</span> and <span className="text-cyan-400">September–November</span>
                           </p>
                         </div>
@@ -329,11 +329,11 @@ export default function LinkedInProfessionalPage() {
                       ].map((concern, idx) => (
                         <motion.div
                           key={idx}
-                          className="flex items-center gap-2 rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
+                          className="flex items-center gap-2 rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                           whileHover={{ scale: 1.05, backgroundColor: 'rgba(239, 68, 68, 0.1)' }}
                         >
                           <AlertCircle className="h-4 w-4 text-rose-400 flex-shrink-0" />
-                          <span className="text-xs text-slate-200">{concern}</span>
+                          <span className="text-xs text-platinum-200">{concern}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -395,12 +395,12 @@ export default function LinkedInProfessionalPage() {
                           {data.statistics.layoffs.map((stat, idx) => (
                             <motion.div
                               key={idx}
-                              className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
+                              className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                               whileHover={{ x: 4, backgroundColor: 'rgba(239, 68, 68, 0.1)' }}
                             >
                               <div>
-                                <span className="text-sm text-slate-200">{stat.label}</span>
-                                <span className="text-xs text-slate-500 ml-2">({stat.source})</span>
+                                <span className="text-sm text-platinum-200">{stat.label}</span>
+                                <span className="text-xs text-platinum-500 ml-2">({stat.source})</span>
                               </div>
                               <span className="text-lg font-bold text-rose-400">{stat.value}</span>
                             </motion.div>
@@ -426,7 +426,7 @@ export default function LinkedInProfessionalPage() {
                           ].map((item, idx) => (
                             <motion.div
                               key={idx}
-                              className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
+                              className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                               initial={{ opacity: 0, x: -10 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: idx * 0.1 }}
@@ -434,7 +434,7 @@ export default function LinkedInProfessionalPage() {
                               <div className="w-20 flex-shrink-0">
                                 <span className="text-xs text-amber-400 font-mono">{item.date}</span>
                               </div>
-                              <span className="text-sm text-slate-200">{item.event}</span>
+                              <span className="text-sm text-platinum-200">{item.event}</span>
                             </motion.div>
                           ))}
                         </div>
@@ -469,12 +469,12 @@ export default function LinkedInProfessionalPage() {
                           {data.statistics.hiring.map((stat, idx) => (
                             <motion.div
                               key={idx}
-                              className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
+                              className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                               whileHover={{ x: 4, backgroundColor: 'rgba(16, 185, 129, 0.1)' }}
                             >
                               <div>
-                                <span className="text-sm text-slate-200">{stat.label}</span>
-                                <span className="text-xs text-slate-500 ml-2">({stat.source})</span>
+                                <span className="text-sm text-platinum-200">{stat.label}</span>
+                                <span className="text-xs text-platinum-500 ml-2">({stat.source})</span>
                               </div>
                               <span className="text-lg font-bold text-emerald-400">{stat.value}</span>
                             </motion.div>
@@ -502,10 +502,10 @@ export default function LinkedInProfessionalPage() {
                           ].map((stat, idx) => (
                             <motion.div
                               key={idx}
-                              className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
+                              className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                               whileHover={{ x: 4, backgroundColor: 'rgba(6, 182, 212, 0.1)' }}
                             >
-                              <span className="text-sm text-slate-200">{stat.label}</span>
+                              <span className="text-sm text-platinum-200">{stat.label}</span>
                               <span className="text-lg font-bold text-cyan-400">{stat.value}</span>
                             </motion.div>
                           ))}
@@ -558,12 +558,12 @@ export default function LinkedInProfessionalPage() {
                           {data.statistics.salaries.map((stat, idx) => (
                             <motion.div
                               key={idx}
-                              className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
+                              className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                               whileHover={{ x: 4, backgroundColor: 'rgba(245, 158, 11, 0.1)' }}
                             >
                               <div>
-                                <span className="text-sm text-slate-200">{stat.label}</span>
-                                <span className="text-xs text-slate-500 ml-2">({stat.context})</span>
+                                <span className="text-sm text-platinum-200">{stat.label}</span>
+                                <span className="text-xs text-platinum-500 ml-2">({stat.context})</span>
                               </div>
                               <span className="text-lg font-bold text-gold-400">{stat.value}</span>
                             </motion.div>
@@ -591,12 +591,12 @@ export default function LinkedInProfessionalPage() {
                           ].map((item, idx) => (
                             <motion.div
                               key={idx}
-                              className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
+                              className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                               whileHover={{ x: 4, backgroundColor: 'rgba(99, 102, 241, 0.1)' }}
                             >
                               <div>
-                                <span className="text-sm text-slate-200">{item.label}</span>
-                                <span className="text-xs text-slate-500 ml-2">({item.note})</span>
+                                <span className="text-sm text-platinum-200">{item.label}</span>
+                                <span className="text-xs text-platinum-500 ml-2">({item.note})</span>
                               </div>
                               <span className="text-lg font-bold text-indigo-400">{item.value}</span>
                             </motion.div>
@@ -633,12 +633,12 @@ export default function LinkedInProfessionalPage() {
                           {data.statistics.workplace.map((stat, idx) => (
                             <motion.div
                               key={idx}
-                              className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
+                              className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                               whileHover={{ x: 4, backgroundColor: 'rgba(168, 85, 247, 0.1)' }}
                             >
                               <div>
-                                <span className="text-sm text-slate-200">{stat.label}</span>
-                                <span className="text-xs text-slate-500 ml-2">({stat.context})</span>
+                                <span className="text-sm text-platinum-200">{stat.label}</span>
+                                <span className="text-xs text-platinum-500 ml-2">({stat.context})</span>
                               </div>
                               <span className="text-lg font-bold text-purple-400">{stat.value}</span>
                             </motion.div>
@@ -666,13 +666,13 @@ export default function LinkedInProfessionalPage() {
                           ].map((item, idx) => (
                             <motion.div
                               key={idx}
-                              className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
+                              className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                               whileHover={{ x: 4, backgroundColor: 'rgba(244, 63, 94, 0.1)' }}
                             >
                               <Badge variant="outline" className="text-rose-400 border-rose-400/50 flex-shrink-0">
                                 {item.article}
                               </Badge>
-                              <span className="text-sm text-slate-300">{item.desc}</span>
+                              <span className="text-sm text-platinum-300">{item.desc}</span>
                             </motion.div>
                           ))}
                         </div>
@@ -693,12 +693,12 @@ export default function LinkedInProfessionalPage() {
                         {data.statistics.careers.map((stat, idx) => (
                           <motion.div
                             key={idx}
-                            className="rounded-lg bg-slate-800/50 p-4 border border-slate-700/50 text-center"
+                            className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50 text-center"
                             whileHover={{ scale: 1.05, backgroundColor: 'rgba(6, 182, 212, 0.1)' }}
                           >
                             <span className="text-2xl font-bold text-cyan-400">{stat.value}</span>
-                            <p className="text-xs text-slate-400 mt-1">{stat.label}</p>
-                            <p className="text-xs text-slate-500">({stat.context})</p>
+                            <p className="text-xs text-platinum-400 mt-1">{stat.label}</p>
+                            <p className="text-xs text-platinum-500">({stat.context})</p>
                           </motion.div>
                         ))}
                       </div>
@@ -732,11 +732,11 @@ export default function LinkedInProfessionalPage() {
                           {data.statistics.emiratisaton.map((stat, idx) => (
                             <motion.div
                               key={idx}
-                              className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
+                              className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                               whileHover={{ x: 4, backgroundColor: 'rgba(6, 182, 212, 0.1)' }}
                             >
                               <div>
-                                <span className="text-sm text-slate-200">{stat.label}</span>
+                                <span className="text-sm text-platinum-200">{stat.label}</span>
                                 {stat.deadline && <span className="text-xs text-cyan-500 ml-2">(Deadline: {stat.deadline})</span>}
                               </div>
                               <span className="text-lg font-bold text-cyan-400">{stat.value}</span>
@@ -764,12 +764,12 @@ export default function LinkedInProfessionalPage() {
                           ].map((item, idx) => (
                             <motion.div
                               key={idx}
-                              className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
+                              className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                               whileHover={{ x: 4, backgroundColor: 'rgba(244, 63, 94, 0.1)' }}
                             >
                               <div>
-                                <span className="text-sm text-slate-200">{item.label}</span>
-                                <span className="text-xs text-slate-500 ml-2">({item.date})</span>
+                                <span className="text-sm text-platinum-200">{item.label}</span>
+                                <span className="text-xs text-platinum-500 ml-2">({item.date})</span>
                               </div>
                               <span className="text-lg font-bold text-rose-400">{item.value}</span>
                             </motion.div>
@@ -807,8 +807,8 @@ export default function LinkedInProfessionalPage() {
                               <span className="text-xs text-indigo-400 font-bold">{idx + 1}</span>
                             </div>
                             <span className="text-xs text-indigo-400 font-mono">{item.date}</span>
-                            <span className="text-lg font-bold text-slate-200">{item.target}</span>
-                            <span className="text-xs text-slate-400 text-center">{item.desc}</span>
+                            <span className="text-lg font-bold text-platinum-200">{item.target}</span>
+                            <span className="text-xs text-platinum-400 text-center">{item.desc}</span>
                           </motion.div>
                         ))}
                       </div>
@@ -830,9 +830,9 @@ export default function LinkedInProfessionalPage() {
               <TabsContent value="ai" className="space-y-6">
                 <GlassPanel title="AI Skills & Job Demand" description="1 million new workers needed by 2030, AI positions doubled 2021-2024">
                   <div className="grid gap-6 lg:grid-cols-2">
-                    <motion.Card className="glass-card border-blue-500/20" variants={cardHoverVariants} whileHover="hover">
+                    <motion.Card className="glass-card border-navy-500/20" variants={cardHoverVariants} whileHover="hover">
                       <CardHeader>
-                        <CardTitle className="text-lg flex items-center gap-2 text-blue-400">
+                        <CardTitle className="text-lg flex items-center gap-2 text-navy-400">
                           <Cpu className="h-5 w-5" />
                           AI & Tech Demand
                         </CardTitle>
@@ -842,14 +842,14 @@ export default function LinkedInProfessionalPage() {
                           {data.statistics.aiSkills.map((stat, idx) => (
                             <motion.div
                               key={idx}
-                              className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
+                              className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                               whileHover={{ x: 4, backgroundColor: 'rgba(59, 130, 246, 0.1)' }}
                             >
                               <div>
-                                <span className="text-sm text-slate-200">{stat.label}</span>
-                                <span className="text-xs text-slate-500 ml-2">({stat.context})</span>
+                                <span className="text-sm text-platinum-200">{stat.label}</span>
+                                <span className="text-xs text-platinum-500 ml-2">({stat.context})</span>
                               </div>
-                              <span className="text-lg font-bold text-blue-400">{stat.value}</span>
+                              <span className="text-lg font-bold text-navy-400">{stat.value}</span>
                             </motion.div>
                           ))}
                         </div>
@@ -877,7 +877,7 @@ export default function LinkedInProfessionalPage() {
                           ].map((role, idx) => (
                             <motion.div
                               key={idx}
-                              className="rounded-lg bg-slate-800/50 p-3 border border-slate-700/50 text-center"
+                              className="rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50 text-center"
                               whileHover={{ scale: 1.05, backgroundColor: 'rgba(16, 185, 129, 0.1)' }}
                             >
                               <span className="text-sm text-emerald-400">{role}</span>
@@ -932,10 +932,10 @@ export default function LinkedInProfessionalPage() {
                           {data.statistics.remoteWork.map((stat, idx) => (
                             <motion.div
                               key={idx}
-                              className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
+                              className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                               whileHover={{ x: 4, backgroundColor: 'rgba(99, 102, 241, 0.1)' }}
                             >
-                              <span className="text-sm text-slate-200">{stat.label}</span>
+                              <span className="text-sm text-platinum-200">{stat.label}</span>
                               <span className="text-lg font-bold text-indigo-400">{stat.value}</span>
                             </motion.div>
                           ))}
@@ -969,12 +969,12 @@ export default function LinkedInProfessionalPage() {
                           ].map((item, idx) => (
                             <motion.div
                               key={idx}
-                              className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3 border border-slate-700/50"
+                              className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                               whileHover={{ x: 4, backgroundColor: 'rgba(168, 85, 247, 0.1)' }}
                             >
                               <div className="flex-1">
-                                <span className="text-sm text-slate-200">{item.type}</span>
-                                <p className="text-xs text-slate-500">{item.cost} - {item.duration}</p>
+                                <span className="text-sm text-platinum-200">{item.type}</span>
+                                <p className="text-xs text-platinum-500">{item.cost} - {item.duration}</p>
                               </div>
                             </motion.div>
                           ))}
@@ -1009,20 +1009,20 @@ export default function LinkedInProfessionalPage() {
                       <CardContent>
                         <div className="space-y-4">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Censorship Level</span>
+                            <span className="text-sm text-platinum-300">Censorship Level</span>
                             <Badge variant="success" className="bg-emerald-500/20 text-emerald-400">Minimal</Badge>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Compliance Rate</span>
+                            <span className="text-sm text-platinum-300">Compliance Rate</span>
                             <span className="text-xl font-bold text-emerald-400">{data.censorship.complianceRate}%</span>
                           </div>
                           <Progress value={data.censorship.complianceRate} className="h-2" />
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Government Requests</span>
+                            <span className="text-sm text-platinum-300">Government Requests</span>
                             <span className="text-xl font-bold text-rose-400">{data.censorship.governmentRequests}</span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-slate-300">Content Removed</span>
+                            <span className="text-sm text-platinum-300">Content Removed</span>
                             <span className="text-xl font-bold text-rose-400">{data.censorship.contentRemoved}</span>
                           </div>
                         </div>
@@ -1035,7 +1035,7 @@ export default function LinkedInProfessionalPage() {
                         <CardDescription>Analysis of LinkedIn content control</CardDescription>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-sm text-slate-300">{data.censorship.notes}</p>
+                        <p className="text-sm text-platinum-300">{data.censorship.notes}</p>
                       </CardContent>
                     </motion.Card>
                   </div>
@@ -1052,24 +1052,24 @@ export default function LinkedInProfessionalPage() {
                     <CardContent>
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-slate-300">Bot Percentage</span>
+                          <span className="text-sm text-platinum-300">Bot Percentage</span>
                           <Badge variant="success" className="bg-emerald-500/20 text-emerald-400">Low Risk</Badge>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-slate-300">Coordinated Inauthentic</span>
-                          <Badge variant="outline" className="text-slate-400">Not Detected</Badge>
+                          <span className="text-sm text-platinum-300">Coordinated Inauthentic</span>
+                          <Badge variant="outline" className="text-platinum-400">Not Detected</Badge>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-slate-300">Confidence</span>
+                          <span className="text-sm text-platinum-300">Confidence</span>
                           <span className="text-lg font-bold text-amber-400">{Math.round(metrics.botActivity.confidence * 100)}%</span>
                         </div>
                         <Progress value={metrics.botActivity.estimatedBotPercent} className="h-2" />
                         <ScrollArea className="h-[100px]">
                           <div className="space-y-2">
                             {metrics.botActivity.indicators.map((indicator, idx) => (
-                              <div key={idx} className="flex items-center gap-2 rounded-lg bg-slate-800/50 p-2">
+                              <div key={idx} className="flex items-center gap-2 rounded-lg bg-platinum-800/50 p-2">
                                 <Flag className="h-3 w-3 text-platinum" />
-                                <span className="text-xs text-slate-300">{indicator}</span>
+                                <span className="text-xs text-platinum-300">{indicator}</span>
                               </div>
                             ))}
                           </div>
@@ -1115,9 +1115,9 @@ export default function LinkedInProfessionalPage() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-slate-300 mb-4">{narrative.narrative}</p>
+                  <p className="text-sm text-platinum-300 mb-4">{narrative.narrative}</p>
                   <div className="space-y-2">
-                    <p className="text-xs text-slate-400 font-medium">Sources ({narrative.sources.length}):</p>
+                    <p className="text-xs text-platinum-400 font-medium">Sources ({narrative.sources.length}):</p>
                     <div className="flex flex-wrap gap-2">
                       {narrative.sources.slice(0, 5).map((source, sIdx) => (
                         <Badge key={sIdx} variant="outline" className="text-xs">
@@ -1149,7 +1149,7 @@ export default function LinkedInProfessionalPage() {
               {governmentAccounts.map((account, idx) => (
                 <motion.div
                   key={idx}
-                  className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4 border border-slate-700/50"
+                  className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
                   whileHover={{ scale: 1.05, backgroundColor: 'rgba(6, 182, 212, 0.1)' }}
                 >
                   <div className="flex items-center gap-3">
@@ -1158,9 +1158,9 @@ export default function LinkedInProfessionalPage() {
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="text-sm font-medium text-slate-200">{account.handle}</span>
+                        <span className="text-sm font-medium text-platinum-200">{account.handle}</span>
                         {account.verified && (
-                          <CheckCircle className="h-4 w-4 text-blue-400" />
+                          <CheckCircle className="h-4 w-4 text-navy-400" />
                         )}
                       </div>
                       <Badge variant="outline" className="text-xs mt-1">{account.type}</Badge>

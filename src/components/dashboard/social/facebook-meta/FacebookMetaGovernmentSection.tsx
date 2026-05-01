@@ -49,7 +49,7 @@ export function FacebookMetaGovernmentSection() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.05 }}
                     whileHover={{ scale: 1.02 }}
-                    className="flex items-start gap-3 p-4 rounded-lg bg-slate-800/50 border border-slate-700/50 hover:border-info/50 transition-colors"
+                    className="flex items-start gap-3 p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50 hover:border-info/50 transition-colors"
                   >
                     <Building className="h-5 w-5 text-info flex-shrink-0 mt-1" />
                     <div className="flex-1 min-w-0">
@@ -61,7 +61,7 @@ export function FacebookMetaGovernmentSection() {
                           </Badge>
                         )}
                       </div>
-                      <p className="text-xs text-slate-400">
+                      <p className="text-xs text-platinum-400">
                         {((account.followers ?? 0) / 1000000).toFixed(1)}M followers
                       </p>
                       <div className="flex items-center gap-1 mt-2 text-xs text-info">
@@ -92,7 +92,7 @@ export function FacebookMetaGovernmentSection() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-center justify-between p-3 rounded-lg bg-slate-800/30"
+                    className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/30"
                   >
                     <div className="flex items-center gap-3">
                       <Building className="h-4 w-4 text-gold" />
@@ -136,7 +136,7 @@ export function FacebookMetaGovernmentSection() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-center justify-between p-3 rounded-lg bg-slate-800/30"
+                    className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/30"
                   >
                     <div className="flex items-center gap-3">
                       <Shield className="h-4 w-4 text-rose" />

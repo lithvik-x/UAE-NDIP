@@ -91,7 +91,7 @@ const getRelevanceColor = (relevance: string) => {
   switch (relevance) {
     case 'critical': return 'text-red-400 border-red-400/50'
     case 'high': return 'text-gold border-gold/50'
-    case 'medium': return 'text-blue-400 border-blue-400/50'
+    case 'medium': return 'text-navy-400 border-navy-400/50'
     default: return 'text-platinum-400 border-platinum-400/50'
   }
 }
@@ -107,15 +107,15 @@ const getRiskColor = (risk: string) => {
   switch (risk) {
     case 'critical': return 'bg-red-500'
     case 'high': return 'bg-orange-500'
-    case 'medium': return 'bg-yellow-500'
-    default: return 'bg-green-500'
+    case 'medium': return 'bg-amber-500'
+    default: return 'bg-emerald-500'
   }
 }
 
 const getTierColor = (tier: number) => {
   switch (tier) {
     case 0: return 'text-emerald-400'
-    case 1: return 'text-blue-400'
+    case 1: return 'text-navy-400'
     case 2: return 'text-gold'
     default: return 'text-platinum-500'
   }
@@ -205,7 +205,7 @@ function HeatMapRow({ topic, relevance, priority }: { topic: string; relevance: 
     <motion.div
       initial={{ opacity: 0, x: -10 }}
       animate={{ opacity: 1, x: 0 }}
-      className={`flex items-center justify-between rounded-lg bg-slate-800/50 p-3 border-l-4 ${priorityColor}`}
+      className={`flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border-l-4 ${priorityColor}`}
     >
       <span className="text-sm font-medium text-platinum-200 truncate">{topic}</span>
       <div className="flex items-center gap-2 ml-2">
@@ -250,7 +250,7 @@ function AIRegulationSection() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.05 }}
-                      className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                      className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                     >
                       <div className="min-w-0 flex-1">
                         <p className="text-sm font-medium text-platinum-200 truncate">{law.name}</p>
@@ -283,7 +283,7 @@ function AIRegulationSection() {
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.05 }}
-                      className="flex items-center gap-3 rounded-lg bg-slate-800/50 p-3"
+                      className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-3"
                     >
                       <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/20 text-gold">
                         <Building className="h-5 w-5" />
@@ -319,7 +319,7 @@ function AIRegulationSection() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="rounded-xl bg-slate-800/50 p-4"
+                  className="rounded-xl bg-platinum-800/50 p-4"
                 >
                   <p className="text-xs text-gold font-medium">{event.date}</p>
                   <p className="text-sm font-medium text-platinum-200 mt-2">{event.development}</p>
@@ -450,7 +450,7 @@ function G42Section() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4"
+                    className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4"
                   >
                     <div className="flex items-center gap-3">
                       <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/20 text-gold">
@@ -491,7 +491,7 @@ function G42Section() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.1 }}
-                  className="rounded-xl bg-slate-800/50 p-4 text-center"
+                  className="rounded-xl bg-platinum-800/50 p-4 text-center"
                 >
                   <Brain className="h-8 w-8 mx-auto text-gold mb-2" />
                   <p className="font-bold text-platinum-100">{product.name}</p>
@@ -605,7 +605,7 @@ function AIJobsSection() {
             <ScrollArea className="h-[200px]">
               <div className="space-y-2">
                 {data.laborMarketKPIs.map((kpi, i) => (
-                  <div key={kpi.metric} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3">
+                  <div key={kpi.metric} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                     <span className="text-sm text-platinum-300">{kpi.metric}</span>
                     <div className="flex items-center gap-2">
                       <span className="text-lg font-bold text-gold">{kpi.value}</span>
@@ -633,7 +633,7 @@ function AIJobsSection() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.1 }}
-                  className="rounded-xl bg-slate-800/50 p-4 text-center"
+                  className="rounded-xl bg-platinum-800/50 p-4 text-center"
                 >
                   <Award className="h-6 w-6 mx-auto text-gold mb-2" />
                   <p className="text-lg font-bold text-gold">{init.scale}</p>
@@ -690,7 +690,7 @@ function AutonomousVehiclesSection() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.1 }}
-                  className="rounded-xl bg-slate-800/50 p-4 text-center"
+                  className="rounded-xl bg-platinum-800/50 p-4 text-center"
                 >
                   <p className="text-3xl font-bold text-gold">{target.value}</p>
                   <p className="text-sm text-platinum-400 mt-1">{target.target}</p>
@@ -725,17 +725,17 @@ function AutonomousVehiclesSection() {
           </CardHeader>
           <CardContent>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="rounded-xl bg-slate-800/50 p-4">
+              <div className="rounded-xl bg-platinum-800/50 p-4">
                 <Clock className="h-5 w-5 text-gold mb-2" />
                 <p className="text-sm text-platinum-500">Delivery Speed</p>
                 <p className="text-lg font-bold text-platinum-200">{data.keetaDrone.deliverySpeed}</p>
               </div>
-              <div className="rounded-xl bg-slate-800/50 p-4">
+              <div className="rounded-xl bg-platinum-800/50 p-4">
                 <MapPin className="h-5 w-5 text-gold mb-2" />
                 <p className="text-sm text-platinum-500">Coverage Areas</p>
                 <p className="text-lg font-bold text-platinum-200">{data.keetaDrone.coverageAreas}</p>
               </div>
-              <div className="rounded-xl bg-slate-800/50 p-4">
+              <div className="rounded-xl bg-platinum-800/50 p-4">
                 <CheckCircle className="h-5 w-5 text-emerald-400 mb-2" />
                 <p className="text-sm text-platinum-500">DCAA License</p>
                 <p className="text-lg font-bold text-platinum-200">{data.keetaDrone.dcaaLicense}</p>
@@ -820,7 +820,7 @@ function QuantumSection() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.05 }}
-                  className="rounded-xl bg-slate-800/50 p-4"
+                  className="rounded-xl bg-platinum-800/50 p-4"
                 >
                   <Zap className="h-5 w-5 text-gold mb-2" />
                   <p className="font-medium text-platinum-200">{adv.advantage}</p>
@@ -861,7 +861,7 @@ function QuantumSection() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex items-center gap-4 rounded-lg bg-slate-800/50 p-3"
+                  className="flex items-center gap-4 rounded-lg bg-platinum-800/50 p-3"
                 >
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold text-navy-950 font-bold">
                     {adopter.priority}
@@ -934,7 +934,7 @@ function StarlinkSection() {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05 }}
-                    className="flex items-center justify-between rounded-lg bg-slate-800/50 p-4"
+                    className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4"
                   >
                     <div>
                       <p className="font-medium text-platinum-200">{plan.plan}</p>
@@ -961,7 +961,7 @@ function StarlinkSection() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.1 }}
-                  className="rounded-xl bg-slate-800/50 p-4"
+                  className="rounded-xl bg-platinum-800/50 p-4"
                 >
                   <Satellite className="h-6 w-6 text-gold mb-2" />
                   <p className="font-bold text-gold">{hw.price}</p>
@@ -981,7 +981,7 @@ function StarlinkSection() {
           <CardContent>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {data.regionalCoverage.map((region, i) => (
-                <div key={region.country} className="flex items-center justify-between rounded-lg bg-slate-800/50 p-2">
+                <div key={region.country} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-2">
                   <span className="text-sm text-platinum-300">{region.country}</span>
                   <Badge variant={region.status.includes('Live') || region.status.includes('Active') ? 'success' : 'outline'} className="text-xs">
                     {region.status}
@@ -1020,11 +1020,11 @@ function DeepfakeSection() {
           </CardHeader>
           <CardContent>
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl bg-slate-800/50 p-4">
+              <div className="rounded-xl bg-platinum-800/50 p-4">
                 <p className="text-sm text-platinum-500">Specific Deepfake Law</p>
                 <p className="text-lg font-medium text-platinum-300">None</p>
               </div>
-              <div className="rounded-xl bg-slate-800/50 p-4">
+              <div className="rounded-xl bg-platinum-800/50 p-4">
                 <p className="text-sm text-platinum-500">Applicable Law</p>
                 <p className="text-lg font-medium text-gold">Federal Law No. 34/2021</p>
               </div>
@@ -1061,7 +1061,7 @@ function DeepfakeSection() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.05 }}
-                  className="rounded-xl bg-slate-800/50 p-4 text-center"
+                  className="rounded-xl bg-platinum-800/50 p-4 text-center"
                 >
                   <p className="text-2xl font-bold text-red-400">{stat.value}</p>
                   <p className="text-xs text-platinum-500 mt-1">{stat.metric}</p>
@@ -1084,7 +1084,7 @@ function DeepfakeSection() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="rounded-xl bg-slate-800/50 p-4 text-center"
+                  className="rounded-xl bg-platinum-800/50 p-4 text-center"
                 >
                   <Eye className="h-6 w-6 mx-auto text-gold mb-2" />
                   <p className="font-medium text-platinum-200">{tech.technology}</p>
@@ -1129,12 +1129,12 @@ function AIGovernmentSection() {
                 <p className="text-5xl font-bold text-gold">50%</p>
                 <p className="text-sm text-platinum-400 mt-2">of federal operations</p>
               </div>
-              <div className="rounded-xl bg-slate-800/50 p-6 text-center">
+              <div className="rounded-xl bg-platinum-800/50 p-6 text-center">
                 <Clock className="h-8 w-8 mx-auto text-gold mb-2" />
                 <p className="text-lg font-bold text-platinum-200">Within 2 Years</p>
                 <p className="text-xs text-platinum-500 mt-1">Timeline</p>
               </div>
-              <div className="rounded-xl bg-slate-800/50 p-6 text-center">
+              <div className="rounded-xl bg-platinum-800/50 p-6 text-center">
                 <CheckCircle className="h-8 w-8 mx-auto text-emerald-400 mb-2" />
                 <p className="text-lg font-bold text-platinum-200">April 24, 2026</p>
                 <p className="text-xs text-platinum-500 mt-1">Announced</p>
@@ -1158,11 +1158,11 @@ function AIGovernmentSection() {
                 </div>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-lg bg-slate-800/50 p-3">
+                <div className="rounded-lg bg-platinum-800/50 p-3">
                   <p className="text-xs text-platinum-500">Function</p>
                   <p className="text-sm text-platinum-200">{data.aiRegulatoryEcosystem?.function}</p>
                 </div>
-                <div className="rounded-lg bg-slate-800/50 p-3">
+                <div className="rounded-lg bg-platinum-800/50 p-3">
                   <p className="text-xs text-platinum-500">Efficiency Gain</p>
                   <p className="text-2xl font-bold text-emerald-400">{data.aiRegulatoryEcosystem.efficiencyGain}</p>
                 </div>
@@ -1184,7 +1184,7 @@ function AIGovernmentSection() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  className="rounded-lg bg-slate-800/50 p-3"
+                  className="rounded-lg bg-platinum-800/50 p-3"
                 >
                   <div className="flex items-center justify-between">
                     <p className="text-sm font-medium text-platinum-200">{arch.component}</p>
@@ -1207,7 +1207,7 @@ function AIGovernmentSection() {
           <CardContent>
             <div className="grid gap-3 sm:grid-cols-2">
               {data.challenges.map((challenge, i) => (
-                <div key={challenge.challenge} className="flex items-start gap-3 rounded-lg bg-slate-800/50 p-3">
+                <div key={challenge.challenge} className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3">
                   <AlertTriangle className="h-4 w-4 text-orange-400 mt-0.5" />
                   <div>
                     <p className="text-sm font-medium text-platinum-200">{challenge.challenge}</p>
@@ -1303,7 +1303,7 @@ function TalentSection() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.05 }}
-                  className="rounded-xl bg-slate-800/50 p-4 text-center"
+                  className="rounded-xl bg-platinum-800/50 p-4 text-center"
                 >
                   <p className="text-3xl font-bold text-gold">{item.value}</p>
                   <p className="text-sm text-platinum-400 mt-1">{item.metric}</p>
@@ -1322,7 +1322,7 @@ function TalentSection() {
           <CardContent>
             <div className="space-y-3">
               {data.brainDrainReversal.map((phase, i) => (
-                <div key={phase.phase} className="rounded-lg bg-slate-800/50 p-4">
+                <div key={phase.phase} className="rounded-lg bg-platinum-800/50 p-4">
                   <p className="text-sm font-medium text-gold mb-2">{phase.phase}</p>
                   <div className="grid gap-2 sm:grid-cols-2">
                     <div className="flex items-center gap-2">
@@ -1353,7 +1353,7 @@ function TalentSection() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.1 }}
-                  className="rounded-xl bg-slate-800/50 p-4 text-center"
+                  className="rounded-xl bg-platinum-800/50 p-4 text-center"
                 >
                   <p className="text-3xl font-bold text-emerald-400">{factor.value}</p>
                   <p className="text-sm text-platinum-400 mt-1">{factor.component}</p>
@@ -1392,7 +1392,7 @@ function SemiconductorsSection() {
           <CardContent>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {data.tsmcUAE.map((item, i) => (
-                <div key={item.attribute} className="rounded-lg bg-slate-800/50 p-3">
+                <div key={item.attribute} className="rounded-lg bg-platinum-800/50 p-3">
                   <p className="text-xs text-platinum-500">{item.attribute}</p>
                   <p className="text-sm font-medium text-platinum-200 mt-1">{item.value}</p>
                 </div>
@@ -1417,7 +1417,7 @@ function SemiconductorsSection() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="rounded-lg bg-slate-800/50 p-4"
+                  className="rounded-lg bg-platinum-800/50 p-4"
                 >
                   <div className="flex items-center justify-between">
                     <div>
@@ -1440,7 +1440,7 @@ function SemiconductorsSection() {
           <CardContent>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {data.uaeUSAIAgreement.slice(0, 4).map((item, i) => (
-                <div key={item.attribute} className="rounded-lg bg-slate-800/50 p-4 text-center">
+                <div key={item.attribute} className="rounded-lg bg-platinum-800/50 p-4 text-center">
                   <p className="text-xs text-platinum-500">{item.attribute}</p>
                   <p className="text-lg font-bold text-gold mt-1">{item.value}</p>
                 </div>
@@ -1463,7 +1463,7 @@ function SemiconductorsSection() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="rounded-lg bg-slate-800/50 p-4"
+                    className="rounded-lg bg-platinum-800/50 p-4"
                   >
                     <div className="flex items-center justify-between">
                       <div>
@@ -1567,7 +1567,7 @@ function RoboticsSection() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.1 }}
-                  className="rounded-xl bg-slate-800/50 p-4 text-center"
+                  className="rounded-xl bg-platinum-800/50 p-4 text-center"
                 >
                   <p className="text-2xl font-bold text-gold">{sector.projection}</p>
                   <p className="text-sm text-platinum-400 mt-1">{sector.sector}</p>
@@ -1592,7 +1592,7 @@ function RoboticsSection() {
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {data.militaryRobotics.milremEquipment.map((equip, i) => (
-                <div key={equip.equipment} className="rounded-lg bg-slate-800/50 p-3">
+                <div key={equip.equipment} className="rounded-lg bg-platinum-800/50 p-3">
                   <p className="text-sm font-medium text-platinum-200">{equip.equipment}</p>
                   <p className="text-xs text-platinum-500">Qty: {equip.quantity}</p>
                   <p className="text-xs text-platinum-400 mt-1">{equip.capability}</p>
@@ -1608,7 +1608,7 @@ function RoboticsSection() {
             <CardTitle className="text-lg">Robot Prediction</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="rounded-xl bg-slate-800/50 p-6 text-center">
+            <div className="rounded-xl bg-platinum-800/50 p-6 text-center">
               <p className="text-4xl font-bold text-gold">20+ Billion</p>
               <p className="text-lg text-platinum-400 mt-2">Robots serving humanity by 2050</p>
               <p className="text-xs text-platinum-500 mt-2">— {data.robotPredictions.source}</p>
@@ -1661,7 +1661,7 @@ function DigitalTwinSection() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.1 }}
-                  className="rounded-xl border border-platinum-700/50 bg-slate-800/50 p-6"
+                  className="rounded-xl border border-platinum-700/50 bg-platinum-800/50 p-6"
                 >
                   <div className="flex items-center justify-between">
                     <div>
@@ -1710,7 +1710,7 @@ function DigitalTwinSection() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05 }}
-                    className="flex items-center justify-between rounded-lg bg-slate-800/50 p-3"
+                    className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                   >
                     <div>
                       <p className="text-sm font-medium text-platinum-200">{project.project}</p>
@@ -1739,7 +1739,7 @@ function DigitalTwinSection() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.05 }}
-                  className="rounded-lg bg-slate-800/50 p-3 text-center"
+                  className="rounded-lg bg-platinum-800/50 p-3 text-center"
                 >
                   <p className="text-sm font-medium text-platinum-200">{tech.technology}</p>
                   <p className="text-xs text-platinum-500 mt-1">{tech.application}</p>
@@ -1773,7 +1773,7 @@ function DataCompletenessSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: i * 0.05 }}
-            className="rounded-xl bg-slate-800/50 p-4"
+            className="rounded-xl bg-platinum-800/50 p-4"
           >
             <div className="flex items-center justify-between mb-2">
               <p className="text-sm font-medium text-platinum-200">{item.query}</p>
