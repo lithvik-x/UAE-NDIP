@@ -46,27 +46,27 @@ export function AlertsSection({ data }: AlertsSectionProps) {
                 <Bell
                   className={`h-5 w-5 mt-0.5 shrink-0 ${
                     a.level === 'CRITICAL' || a.level === 'HIGH'
-                      ? 'text-rose'
-                      : 'text-amber'
+                      ? 'text-rose-500'
+                      : 'text-amber-500'
                   }`}
                 />
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-1">
-                    <h4 className="font-medium text-platinum-200">{a.alert}</h4>
+                    <h4 className="font-medium text-platinum-500-200">{a.alert}</h4>
                     <Badge
                       variant="outline"
                       className={`${
                         a.level === 'CRITICAL'
-                          ? 'text-rose border-rose-500/50'
+                          ? 'text-rose-500 border-rose-500/50'
                           : a.level === 'HIGH'
-                          ? 'text-orange border-orange-500/50'
-                          : 'text-amber border-amber-500/50'
+                          ? 'text-orange-500 border-orange-500/50'
+                          : 'text-amber-500 border-amber-500/50'
                       }`}
                     >
                       {a.level}
                     </Badge>
                   </div>
-                  <div className="flex items-center gap-4 text-xs text-platinum-400">
+                  <div className="flex items-center gap-4 text-xs text-platinum-500-400">
                     <span>Timeframe: {a.timeframe}</span>
                     <span>Source: {a.source}</span>
                   </div>
@@ -95,7 +95,7 @@ export function AlertsSection({ data }: AlertsSectionProps) {
                 >
                   {s.value}
                 </div>
-                <div className="text-sm text-platinum-400">{s.name}</div>
+                <div className="text-sm text-platinum-500-400">{s.name}</div>
               </motion.div>
             ))}
           </div>

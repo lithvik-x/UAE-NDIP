@@ -89,8 +89,8 @@ export function HumanitarianSection({ data }: HumanitarianSectionProps) {
                         )}
                       </div>
                       <div>
-                        <p className="font-medium text-navy-900 dark:text-platinum-100">{item.capability}</p>
-                        <p className="text-xs text-platinum-500 mt-1">{item.details}</p>
+                        <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{item.capability}</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">{item.details}</p>
                       </div>
                     </div>
                   </div>
@@ -105,25 +105,25 @@ export function HumanitarianSection({ data }: HumanitarianSectionProps) {
           <Card className="glass-card bg-gradient-to-br from-rose-50/50 to-transparent dark:from-rose-900/10">
             <CardContent className="p-4 text-center">
               <p className="text-2xl font-extrabold text-rose-600 dark:text-rose-400">$4.24B</p>
-              <p className="text-xs text-platinum-500 mt-1">Sudan Aid (2015-2025)</p>
+              <p className="text-xs text-platinum-500-500 mt-1">Sudan Aid (2015-2025)</p>
             </CardContent>
           </Card>
           <Card className="glass-card bg-gradient-to-br from-rose-50/50 to-transparent dark:from-rose-900/10">
             <CardContent className="p-4 text-center">
               <p className="text-2xl font-extrabold text-rose-600 dark:text-rose-400">$784M</p>
-              <p className="text-xs text-platinum-500 mt-1">Since 2023 Conflict</p>
+              <p className="text-xs text-platinum-500-500 mt-1">Since 2023 Conflict</p>
             </CardContent>
           </Card>
           <Card className="glass-card bg-gradient-to-br from-emerald-50/50 to-transparent dark:from-emerald-900/10">
             <CardContent className="p-4 text-center">
               <p className="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400">159</p>
-              <p className="text-xs text-platinum-500 mt-1">Relief Flights</p>
+              <p className="text-xs text-platinum-500-500 mt-1">Relief Flights</p>
             </CardContent>
           </Card>
           <Card className="glass-card bg-gradient-to-br from-emerald-50/50 to-transparent dark:from-emerald-900/10">
             <CardContent className="p-4 text-center">
               <p className="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400">10,000+</p>
-              <p className="text-xs text-platinum-500 mt-1">Tonnes Supplies</p>
+              <p className="text-xs text-platinum-500-500 mt-1">Tonnes Supplies</p>
             </CardContent>
           </Card>
         </div>

@@ -90,8 +90,8 @@ export function TimelineSection({ data }: TimelineSectionProps) {
               className="glass-card rounded-xl p-4 bg-glass-surface/50 border-glass-border text-center"
             >
               <metric.icon className={`h-6 w-6 ${metric.color} mx-auto mb-2`} />
-              <div className="text-xl font-bold text-platinum-100">{metric.value}</div>
-              <div className="text-xs text-platinum-400">{metric.label}</div>
+              <div className="text-xl font-bold text-platinum-500-100">{metric.value}</div>
+              <div className="text-xs text-platinum-500-400">{metric.label}</div>
             </motion.div>
           ))}
         </div>
@@ -142,7 +142,7 @@ export function TimelineSection({ data }: TimelineSectionProps) {
           <PieChart data={nationalityData} height={280} showLegend={true} />
 
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-platinum-300">Detailed Breakdown</h4>
+            <h4 className="text-sm font-semibold text-platinum-500-300">Detailed Breakdown</h4>
             <ScrollArea className="h-[240px]">
               <div className="space-y-3 pr-4">
                 {nationalityData.map((item, idx) => (
@@ -152,7 +152,7 @@ export function TimelineSection({ data }: TimelineSectionProps) {
                         className="w-3 h-3 rounded-full"
                         style={{ backgroundColor: item.color }}
                       />
-                      <span className="text-sm text-platinum-300">{item.name}</span>
+                      <span className="text-sm text-platinum-500-300">{item.name}</span>
                     </div>
                     <span className="text-lg font-bold text-rose-400">{item.value}</span>
                   </div>
@@ -188,7 +188,7 @@ export function TimelineSection({ data }: TimelineSectionProps) {
             >
               <div className="flex items-center gap-3 mb-2">
                 <item.icon className={`h-5 w-5 text-${item.color}-400`} />
-                <span className="font-medium text-platinum-100 text-sm">{item.name}</span>
+                <span className="font-medium text-platinum-500-100 text-sm">{item.name}</span>
               </div>
               <Badge
                 variant="outline"
@@ -222,12 +222,12 @@ export function TimelineSection({ data }: TimelineSectionProps) {
                 </div>
                 <div className="glass-card rounded-xl p-4 bg-glass-surface/50 border-glass-border">
                   <div className="flex items-center justify-between mb-1">
-                    <h4 className="font-semibold text-platinum-100">{event.event}</h4>
+                    <h4 className="font-semibold text-platinum-500-100">{event.event}</h4>
                     <Badge variant="outline" className="text-xs border-cyan-500/50 text-cyan-400">
                       {event.date}
                     </Badge>
                   </div>
-                  <p className="text-sm text-platinum-400">{event.description}</p>
+                  <p className="text-sm text-platinum-500-400">{event.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -242,17 +242,17 @@ export function TimelineSection({ data }: TimelineSectionProps) {
       >
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-platinum-300">Before vs After</h4>
+            <h4 className="text-sm font-semibold text-platinum-500-300">Before vs After</h4>
             <div className="space-y-3">
               <div className="rounded-lg bg-platinum-800/50 p-4 border-l-4 border-rose-500">
                 <h5 className="text-xs font-semibold text-rose-400 uppercase mb-1">Before (Self-Presentation)</h5>
-                <p className="text-sm text-platinum-300">
+                <p className="text-sm text-platinum-500-300">
                   &quot;Secure, stable, untouchable regional hub&quot;
                 </p>
               </div>
               <div className="rounded-lg bg-platinum-800/50 p-4 border-l-4 border-emerald-500">
                 <h5 className="text-xs font-semibold text-emerald-400 uppercase mb-1">After (Reality)</h5>
-                <p className="text-sm text-platinum-300">
+                <p className="text-sm text-platinum-500-300">
                   &quot;Vulnerability exposed, infrastructure damaged, perception shattered&quot;
                 </p>
               </div>
@@ -260,7 +260,7 @@ export function TimelineSection({ data }: TimelineSectionProps) {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-platinum-300">Key Perception Shifts</h4>
+            <h4 className="text-sm font-semibold text-platinum-500-300">Key Perception Shifts</h4>
             <div className="space-y-3">
               {[
                 'UAE\'s image as secure/untouchable vs. vulnerability exposed',
@@ -270,7 +270,7 @@ export function TimelineSection({ data }: TimelineSectionProps) {
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-3 rounded-lg bg-platinum-800/30 p-3">
                   <AlertTriangle className="h-4 w-4 text-rose-400 shrink-0 mt-0.5" />
-                  <span className="text-sm text-platinum-300">{item}</span>
+                  <span className="text-sm text-platinum-500-300">{item}</span>
                 </div>
               ))}
             </div>

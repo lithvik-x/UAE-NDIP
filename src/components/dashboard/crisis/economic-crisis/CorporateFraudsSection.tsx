@@ -28,8 +28,8 @@ export function AbraajSection({
             <div className="space-y-2">
               {abraajProfile?.map((item: any, idx: number) => (
                 <div key={idx} className="flex justify-between text-sm border-b border-glass-border pb-1">
-                  <span className="text-platinum-400">{item.attribute}</span>
-                  <span className="text-platinum-200 text-right max-w-[150px]">{item.value}</span>
+                  <span className="text-platinum-500-400">{item.attribute}</span>
+                  <span className="text-platinum-500-200 text-right max-w-[150px]">{item.value}</span>
                 </div>
               ))}
             </div>
@@ -37,7 +37,7 @@ export function AbraajSection({
             <div className="space-y-2">
               {abraajFinancialCollapse?.map((item: any, idx: number) => (
                 <div key={idx} className="flex justify-between text-sm border-b border-glass-border pb-1">
-                  <span className="text-platinum-400">{item.metric}</span>
+                  <span className="text-platinum-500-400">{item.metric}</span>
                   <span className="text-rose-400 font-semibold">{item.value}</span>
                 </div>
               ))}
@@ -49,19 +49,19 @@ export function AbraajSection({
               {abraajRegulatoryFines?.map((fine: any, idx: number) => (
                 <div key={idx} className="p-3 rounded-lg bg-platinum-800/50 border border-rose-500/30">
                   <div className="flex justify-between">
-                    <span className="text-platinum-200">{fine.person}</span>
+                    <span className="text-platinum-500-200">{fine.person}</span>
                     <span className="text-rose-400 font-bold">{fine.fine}</span>
                   </div>
-                  <div className="text-xs text-platinum-500 mt-1">{fine.date}</div>
+                  <div className="text-xs text-platinum-500-500 mt-1">{fine.date}</div>
                 </div>
               ))}
             </div>
-            <h4 className="text-lg font-semibold text-platinum-300 mt-4 mb-3">Legal Proceedings</h4>
+            <h4 className="text-lg font-semibold text-platinum-500-300 mt-4 mb-3">Legal Proceedings</h4>
             <div className="space-y-2">
               {abraajLegalProceedings?.slice(0, 4).map((proc: any, idx: number) => (
                 <div key={idx} className="text-sm border-l-2 border-amber-500 pl-3">
                   <span className="text-amber-400">{proc.date}:</span>
-                  <span className="text-platinum-300 ml-2">{proc.event}</span>
+                  <span className="text-platinum-500-300 ml-2">{proc.event}</span>
                 </div>
               ))}
             </div>
@@ -94,8 +94,8 @@ export function NMCSection({
             <div className="space-y-2">
               {nmcProfile?.map((item: any, idx: number) => (
                 <div key={idx} className="flex justify-between text-sm border-b border-glass-border pb-1">
-                  <span className="text-platinum-400">{item.attribute}</span>
-                  <span className="text-platinum-200">{item.value}</span>
+                  <span className="text-platinum-500-400">{item.attribute}</span>
+                  <span className="text-platinum-500-200">{item.value}</span>
                 </div>
               ))}
             </div>
@@ -103,29 +103,29 @@ export function NMCSection({
             <div className="space-y-2">
               {nmcFraud?.map((item: any, idx: number) => (
                 <div key={idx} className="flex justify-between text-sm border-b border-glass-border pb-1">
-                  <span className="text-platinum-400">{item.metric}</span>
+                  <span className="text-platinum-500-400">{item.metric}</span>
                   <span className="text-rose-400 font-semibold">{item.value}</span>
                 </div>
               ))}
             </div>
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-platinum-300 mb-3">Timeline</h4>
+            <h4 className="text-lg font-semibold text-platinum-500-300 mb-3">Timeline</h4>
             <div className="space-y-2">
               {nmcTimeline?.map((item: any, idx: number) => (
                 <div key={idx} className="text-sm border-l-2 border-rose-500 pl-3">
                   <span className="text-rose-400">{item.date}:</span>
-                  <span className="text-platinum-300 ml-2">{item.event}</span>
+                  <span className="text-platinum-500-300 ml-2">{item.event}</span>
                 </div>
               ))}
             </div>
-            <h4 className="text-lg font-semibold text-platinum-300 mt-4 mb-3">Legal Cases</h4>
+            <h4 className="text-lg font-semibold text-platinum-500-300 mt-4 mb-3">Legal Cases</h4>
             <div className="space-y-2">
               {nmcLegalCases?.map((legal: any, idx: number) => (
                 <div key={idx} className="p-2 rounded bg-platinum-800/50 border border-glass-border">
-                  <div className="text-sm text-platinum-200">{legal.party}</div>
-                  <div className="text-xs text-platinum-400">{legal.claim}</div>
-                  <Badge variant="outline" className="mt-1 border-amber-500/50 text-amber">{legal.status}</Badge>
+                  <div className="text-sm text-platinum-500-200">{legal.party}</div>
+                  <div className="text-xs text-platinum-500-400">{legal.claim}</div>
+                  <Badge variant="outline" className="mt-1 border-amber-500/50 text-amber-500">{legal.status}</Badge>
                 </div>
               ))}
             </div>
@@ -158,8 +158,8 @@ export function OtherFraudsSection({
             <div className="space-y-2">
               {gulfFirstDetails?.map((item: any, idx: number) => (
                 <div key={idx} className="flex justify-between text-sm border-b border-glass-border pb-1">
-                  <span className="text-platinum-400">{item.attribute}</span>
-                  <span className="text-platinum-200">{item.value}</span>
+                  <span className="text-platinum-500-400">{item.attribute}</span>
+                  <span className="text-platinum-500-200">{item.value}</span>
                 </div>
               ))}
             </div>
@@ -167,7 +167,7 @@ export function OtherFraudsSection({
             {gulfFirstFraudPhases?.map((phase: any, idx: number) => (
               <div key={idx} className="text-sm mb-1">
                 <span className="text-amber-500">{phase.phase}:</span>
-                <span className="text-platinum-300 ml-2">{phase.method}</span>
+                <span className="text-platinum-500-300 ml-2">{phase.method}</span>
               </div>
             ))}
           </div>
@@ -176,7 +176,7 @@ export function OtherFraudsSection({
             <div className="space-y-2">
               {moneyLaunderingCase?.map((item: any, idx: number) => (
                 <div key={idx} className="flex justify-between text-sm border-b border-glass-border pb-1">
-                  <span className="text-platinum-400">{item.attribute}</span>
+                  <span className="text-platinum-500-400">{item.attribute}</span>
                   <span className="text-rose-400">{item.value}</span>
                 </div>
               ))}
@@ -185,7 +185,7 @@ export function OtherFraudsSection({
             <div className="space-y-2">
               {goldRefinerySuspension?.map((item: any, idx: number) => (
                 <div key={idx} className="flex justify-between text-sm border-b border-glass-border pb-1">
-                  <span className="text-platinum-400">{item.attribute}</span>
+                  <span className="text-platinum-500-400">{item.attribute}</span>
                   <span className="text-amber-400">{item.value}</span>
                 </div>
               ))}

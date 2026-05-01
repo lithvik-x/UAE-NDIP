@@ -36,10 +36,10 @@ export function BansControversiesSection({
               <Ban className="h-5 w-5 text-red-500 mt-0.5" />
               <div className="flex-1">
                 <div className="flex items-center justify-between">
-                  <p className="font-semibold text-navy-900 dark:text-platinum-100">{ban.media}</p>
+                  <p className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{ban.media}</p>
                   <Badge variant="destructive" className="text-xs">{ban.banStart}</Badge>
                 </div>
-                <p className="text-xs text-platinum-600 dark:text-platinum-400 mt-1">
+                <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400 mt-1">
                   {ban.country} — {ban.reason || 'No specified reason'}
                 </p>
               </div>
@@ -59,8 +59,8 @@ export function BansControversiesSection({
             <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-platinum-50/50 dark:bg-platinum-800/25">
               <AlertCircle className="h-4 w-4 text-gold-700 mt-0.5" />
               <div>
-                <p className="font-medium text-navy-900 dark:text-platinum-100">{c.organization}</p>
-                <p className="text-xs text-platinum-600 dark:text-platinum-400 mt-1">{c.year}: {c.incident}</p>
+                <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{c.organization}</p>
+                <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400 mt-1">{c.year}: {c.incident}</p>
               </div>
             </div>
           ))}

@@ -38,7 +38,7 @@ const alertVariants = cva(
         success: 'border-emerald-200/50 bg-emerald-50/80 text-emerald-800 dark:border-emerald-900/50 dark:bg-emerald-950/50 dark:text-emerald-200 [&>svg]:text-emerald-600 dark:[&>svg]:text-emerald-400',
         warning: 'border-amber-200/50 bg-amber-50/80 text-amber-800 dark:border-amber-900/50 dark:bg-amber-950/50 dark:text-amber-200 [&>svg]:text-amber-600 dark:[&>svg]:text-amber-400',
         error: 'border-red-200/50 bg-red-50/80 text-red-800 dark:border-red-900/50 dark:bg-red-950/50 dark:text-red-200 [&>svg]:text-red-600 dark:[&>svg]:text-red-400',
-        premium: 'glass-premium border-gold-200/50 text-navy-700 dark:text-gold-200 [&>svg]:text-gold-600 dark:[&>svg]:text-gold-400',
+        premium: 'glass-premium border-gold-200/50 text-navy-500-700 dark:text-gold-200 [&>svg]:text-gold-600 dark:[&>svg]:text-gold-400',
       },
       size: {
         sm: 'p-3 [&>svg]:w-3.5 [&>svg]:h-3.5 [&>svg~*]:pl-6 [&>svg]:left-3 [&>svg]:top-3',

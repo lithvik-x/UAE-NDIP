@@ -224,7 +224,7 @@ export default function EmiratiArabicPage() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-4xl font-extrabold gradient-text-gold tracking-tight"
+            className="text-4xl font-extrabold gradient-text-gold-700 tracking-tight"
           >
             Emirati Arabic
           </motion.h1>
@@ -232,7 +232,7 @@ export default function EmiratiArabicPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mt-2 text-platinum-400 text-lg"
+            className="mt-2 text-platinum-500-400 text-lg"
           >
             UAE local dialect intelligence, heritage content, and regional language patterns
           </motion.p>
@@ -245,12 +245,12 @@ export default function EmiratiArabicPage() {
         >
           <Button
             variant="outline"
-            className="gap-2 border-gold/50 text-gold hover:bg-gold/10 backdrop-blur-sm transition-all duration-300"
+            className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10 backdrop-blur-sm transition-all duration-300"
           >
             <Eye className="h-4 w-4" />
             Monitor Dialect
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2 shadow-lg shadow-gold/20">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2 shadow-lg shadow-gold/20">
             <Heart className="h-4 w-4" />
             Track Heritage
           </Button>
@@ -300,12 +300,12 @@ export default function EmiratiArabicPage() {
       {/* ENHANCEMENT C: Tabs with AnimatePresence */}
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
         <TabsList className="glass-panel backdrop-blur-xl border border-glass-border p-1" scrollable>
-          <TabsTrigger value="overview" className="data-[state=active]:bg-gold/20">Overview</TabsTrigger>
-          <TabsTrigger value="heritage" className="data-[state=active]:bg-gold/20">Heritage Terms</TabsTrigger>
-          <TabsTrigger value="local" className="data-[state=active]:bg-gold/20">Local Events</TabsTrigger>
-          <TabsTrigger value="geography" className="data-[state=active]:bg-gold/20">By Emirates</TabsTrigger>
-          <TabsTrigger value="features" className="data-[state=active]:bg-gold/20">Dialect Features</TabsTrigger>
-          <TabsTrigger value="government" className="data-[state=active]:bg-gold/20">Government</TabsTrigger>
+          <TabsTrigger value="overview" className="data-[state=active]:bg-gold-700/20">Overview</TabsTrigger>
+          <TabsTrigger value="heritage" className="data-[state=active]:bg-gold-700/20">Heritage Terms</TabsTrigger>
+          <TabsTrigger value="local" className="data-[state=active]:bg-gold-700/20">Local Events</TabsTrigger>
+          <TabsTrigger value="geography" className="data-[state=active]:bg-gold-700/20">By Emirates</TabsTrigger>
+          <TabsTrigger value="features" className="data-[state=active]:bg-gold-700/20">Dialect Features</TabsTrigger>
+          <TabsTrigger value="government" className="data-[state=active]:bg-gold-700/20">Government</TabsTrigger>
         </TabsList>
 
         <AnimatePresence mode="wait">
@@ -323,7 +323,7 @@ export default function EmiratiArabicPage() {
                     <Card className="glass-card border-glass-border backdrop-blur-lg bg-glass-surface/50">
                       <CardHeader>
                         <CardTitle className="text-lg flex items-center gap-2">
-                          <Activity className="h-5 w-5 text-gold" />
+                          <Activity className="h-5 w-5 text-gold-700" />
                           Query Volume Trend
                         </CardTitle>
                         <CardDescription>Monthly Emirati dialect searches (millions)</CardDescription>
@@ -344,7 +344,7 @@ export default function EmiratiArabicPage() {
                     <Card className="glass-card border-glass-border backdrop-blur-lg bg-glass-surface/50">
                       <CardHeader>
                         <CardTitle className="text-lg flex items-center gap-2">
-                          <MessageSquare className="h-5 w-5 text-emerald" />
+                          <MessageSquare className="h-5 w-5 text-emerald-500" />
                           Sentiment Breakdown
                         </CardTitle>
                         <CardDescription>Emirati content sentiment</CardDescription>
@@ -362,7 +362,7 @@ export default function EmiratiArabicPage() {
                   <Card className="glass-card border-glass-border backdrop-blur-lg bg-glass-surface/50">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Award className="h-5 w-5 text-gold" />
+                        <Award className="h-5 w-5 text-gold-700" />
                         Top Search Categories
                       </CardTitle>
                       <CardDescription>Most searched Emirati dialect topics</CardDescription>
@@ -373,29 +373,29 @@ export default function EmiratiArabicPage() {
                           whileHover={{ scale: 1.05 }}
                           className="rounded-lg border border-gold-700/50 bg-gold-900/20 p-4 text-center backdrop-blur-sm transition-all duration-300"
                         >
-                          <div className="text-3xl font-bold text-gold">2.1M</div>
-                          <p className="text-sm text-platinum-400 mt-1">National Day</p>
+                          <div className="text-3xl font-bold text-gold-700">2.1M</div>
+                          <p className="text-sm text-platinum-500-400 mt-1">National Day</p>
                         </motion.div>
                         <motion.div
                           whileHover={{ scale: 1.05 }}
                           className="rounded-lg border border-navy-700/50 bg-navy-900/20 p-4 text-center backdrop-blur-sm transition-all duration-300"
                         >
-                          <div className="text-3xl font-bold text-navy">1.8M</div>
-                          <p className="text-sm text-platinum-400 mt-1">Dubai Events</p>
+                          <div className="text-3xl font-bold text-navy-500">1.8M</div>
+                          <p className="text-sm text-platinum-500-400 mt-1">Dubai Events</p>
                         </motion.div>
                         <motion.div
                           whileHover={{ scale: 1.05 }}
                           className="rounded-lg border border-emerald-700/50 bg-emerald-900/20 p-4 text-center backdrop-blur-sm transition-all duration-300"
                         >
                           <div className="text-3xl font-bold text-emerald-400">1.6M</div>
-                          <p className="text-sm text-platinum-400 mt-1">Ramadan</p>
+                          <p className="text-sm text-platinum-500-400 mt-1">Ramadan</p>
                         </motion.div>
                         <motion.div
                           whileHover={{ scale: 1.05 }}
                           className="rounded-lg border border-platinum-700/50 bg-platinum-900/20 p-4 text-center backdrop-blur-sm transition-all duration-300"
                         >
-                          <div className="text-3xl font-bold text-platinum">1.4M</div>
-                          <p className="text-sm text-platinum-400 mt-1">Heritage</p>
+                          <div className="text-3xl font-bold text-platinum-500">1.4M</div>
+                          <p className="text-sm text-platinum-500-400 mt-1">Heritage</p>
                         </motion.div>
                       </div>
                     </CardContent>
@@ -418,7 +418,7 @@ export default function EmiratiArabicPage() {
                   <Card className="glass-card border-glass-border backdrop-blur-lg bg-glass-surface/50">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Flag className="h-5 w-5 text-gold" />
+                        <Flag className="h-5 w-5 text-gold-700" />
                         Heritage & Culture Searches
                       </CardTitle>
                       <CardDescription>Traditional Emirati content</CardDescription>
@@ -436,26 +436,26 @@ export default function EmiratiArabicPage() {
                               className="flex items-center justify-between rounded-lg border border-gold-700/50 bg-platinum-800/50 p-4 hover:bg-platinum-800/70 cursor-pointer transition-all duration-300"
                             >
                               <div className="flex items-center gap-4">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-700/20 text-gold-700">
                                   <Flag className="h-5 w-5" />
                                 </div>
                                 <div>
-                                  <p className="font-semibold text-platinum-200">{item.term}</p>
+                                  <p className="font-semibold text-platinum-500-200">{item.term}</p>
                                   {getCategoryBadge(item.category)}
                                 </div>
                               </div>
                               <div className="flex items-center gap-6">
                                 <div className="text-center">
-                                  <div className="text-lg font-bold text-platinum-200">
+                                  <div className="text-lg font-bold text-platinum-500-200">
                                     {(item.volume / 1000000).toFixed(2)}M
                                   </div>
-                                  <p className="text-xs text-platinum-400">Volume</p>
+                                  <p className="text-xs text-platinum-500-400">Volume</p>
                                 </div>
                                 <div className="text-center">
                                   <div className={`text-lg font-bold ${getSentimentColor(item.sentiment)}`}>
                                     {item.sentiment}%
                                   </div>
-                                  <p className="text-xs text-platinum-400">Sentiment</p>
+                                  <p className="text-xs text-platinum-500-400">Sentiment</p>
                                 </div>
                               </div>
                             </motion.div>
@@ -468,7 +468,7 @@ export default function EmiratiArabicPage() {
                   <Card className="glass-card border-glass-border backdrop-blur-lg bg-glass-surface/50">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Heart className="h-5 w-5 text-emerald" />
+                        <Heart className="h-5 w-5 text-emerald-500" />
                         Heritage Sentiment by Topic
                       </CardTitle>
                       <CardDescription>How Emiratis feel about heritage topics</CardDescription>
@@ -484,7 +484,7 @@ export default function EmiratiArabicPage() {
                             className="space-y-2"
                           >
                             <div className="flex items-center justify-between text-sm">
-                              <span className="font-medium text-platinum-200">{item.term}</span>
+                              <span className="font-medium text-platinum-500-200">{item.term}</span>
                               <span className={`font-bold ${getSentimentColor(item.sentiment)}`}>{item.sentiment}%</span>
                             </div>
                             <Progress value={item.sentiment} className="h-2" />
@@ -511,7 +511,7 @@ export default function EmiratiArabicPage() {
                   <Card className="glass-card border-glass-border backdrop-blur-lg bg-glass-surface/50">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Calendar className="h-5 w-5 text-emerald" />
+                        <Calendar className="h-5 w-5 text-emerald-500" />
                         Events & Activities
                       </CardTitle>
                       <CardDescription>Local event-related searches</CardDescription>
@@ -528,26 +528,26 @@ export default function EmiratiArabicPage() {
                             className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70 cursor-pointer transition-all duration-300"
                           >
                             <div className="flex items-center gap-4">
-                              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald/20 text-emerald">
+                              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-500">
                                 <Calendar className="h-5 w-5" />
                               </div>
                               <div>
-                                <p className="font-semibold text-platinum-200">{item.term}</p>
+                                <p className="font-semibold text-platinum-500-200">{item.term}</p>
                                 {getCategoryBadge(item.category)}
                               </div>
                             </div>
                             <div className="flex items-center gap-6">
                               <div className="text-center">
-                                <div className="text-lg font-bold text-platinum-200">
+                                <div className="text-lg font-bold text-platinum-500-200">
                                   {(item.volume / 1000000).toFixed(2)}M
                                 </div>
-                                <p className="text-xs text-platinum-400">Volume</p>
+                                <p className="text-xs text-platinum-500-400">Volume</p>
                               </div>
                               <div className="text-center">
                                 <div className={`text-lg font-bold ${getSentimentColor(item.sentiment)}`}>
                                   {item.sentiment}%
                                 </div>
-                                <p className="text-xs text-platinum-400">Sentiment</p>
+                                <p className="text-xs text-platinum-500-400">Sentiment</p>
                               </div>
                             </div>
                           </motion.div>
@@ -559,7 +559,7 @@ export default function EmiratiArabicPage() {
                   <Card className="glass-card border-glass-border backdrop-blur-lg bg-glass-surface/50">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Home className="h-5 w-5 text-navy" />
+                        <Home className="h-5 w-5 text-navy-500" />
                         Practical Services
                       </CardTitle>
                       <CardDescription>Government and utility services</CardDescription>
@@ -576,26 +576,26 @@ export default function EmiratiArabicPage() {
                             className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70 cursor-pointer transition-all duration-300"
                           >
                             <div className="flex items-center gap-4">
-                              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy">
+                              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy-500">
                                 <Home className="h-5 w-5" />
                               </div>
                               <div>
-                                <p className="font-semibold text-platinum-200">{item.term}</p>
+                                <p className="font-semibold text-platinum-500-200">{item.term}</p>
                                 {getCategoryBadge(item.category)}
                               </div>
                             </div>
                             <div className="flex items-center gap-6">
                               <div className="text-center">
-                                <div className="text-lg font-bold text-platinum-200">
+                                <div className="text-lg font-bold text-platinum-500-200">
                                   {(item.volume / 1000000).toFixed(2)}M
                                 </div>
-                                <p className="text-xs text-platinum-400">Volume</p>
+                                <p className="text-xs text-platinum-500-400">Volume</p>
                               </div>
                               <div className="text-center">
                                 <div className={`text-lg font-bold ${getSentimentColor(item.sentiment)}`}>
                                   {item.sentiment}%
                                 </div>
-                                <p className="text-xs text-platinum-400">Sentiment</p>
+                                <p className="text-xs text-platinum-500-400">Sentiment</p>
                               </div>
                             </div>
                           </motion.div>
@@ -621,7 +621,7 @@ export default function EmiratiArabicPage() {
                   <Card className="glass-card border-glass-border backdrop-blur-lg bg-glass-surface/50">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Globe className="h-5 w-5 text-gold" />
+                        <Globe className="h-5 w-5 text-gold-700" />
                         Share of Dialect Queries by Emirates
                       </CardTitle>
                       <CardDescription>Regional breakdown of Emirati Arabic searches</CardDescription>
@@ -638,7 +638,7 @@ export default function EmiratiArabicPage() {
                   <Card className="glass-card border-glass-border backdrop-blur-lg bg-glass-surface/50">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <MapPin className="h-5 w-5 text-navy" />
+                        <MapPin className="h-5 w-5 text-navy-500" />
                         Regional Sentiment
                       </CardTitle>
                       <CardDescription>Dialect sentiment by emirate</CardDescription>
@@ -659,7 +659,7 @@ export default function EmiratiArabicPage() {
                   <Card className="glass-card border-glass-border backdrop-blur-lg bg-glass-surface/50">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <MapPin className="h-5 w-5 text-emerald" />
+                        <MapPin className="h-5 w-5 text-emerald-500" />
                         Seven Emirates Overview
                       </CardTitle>
                       <CardDescription>Geographic distribution and leadership</CardDescription>
@@ -677,10 +677,10 @@ export default function EmiratiArabicPage() {
                           >
                             <div className="flex items-center justify-between mb-2">
                               <Badge variant="gold" className="text-xs">{emirate.name}</Badge>
-                              <span className="text-xs text-gold font-arabic">{emirate.arabic}</span>
+                              <span className="text-xs text-gold-700 font-arabic">{emirate.arabic}</span>
                             </div>
-                            <p className="text-sm text-platinum-300 mb-1">{emirate.significance}</p>
-                            <p className="text-xs text-platinum-400">{emirate.ruler}</p>
+                            <p className="text-sm text-platinum-500-300 mb-1">{emirate.significance}</p>
+                            <p className="text-xs text-platinum-500-400">{emirate.ruler}</p>
                           </motion.div>
                         ))}
                       </div>
@@ -704,7 +704,7 @@ export default function EmiratiArabicPage() {
                   <Card className="glass-card border-glass-border backdrop-blur-lg bg-glass-surface/50">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <BookOpen className="h-5 w-5 text-gold" />
+                        <BookOpen className="h-5 w-5 text-gold-700" />
                         Dialect Feature Usage
                       </CardTitle>
                       <CardDescription>Prevalence of dialect characteristics</CardDescription>
@@ -720,9 +720,9 @@ export default function EmiratiArabicPage() {
                             className="space-y-2"
                           >
                             <div className="flex items-center justify-between text-sm">
-                              <span className="font-medium text-platinum-200">{feature.feature}</span>
+                              <span className="font-medium text-platinum-500-200">{feature.feature}</span>
                               <div className="flex items-center gap-2">
-                                <span className="text-gold">{feature.usage}%</span>
+                                <span className="text-gold-700">{feature.usage}%</span>
                                 {feature.trend === 'rising' && (
                                   <TrendingUp className="h-4 w-4 text-emerald-400" />
                                 )}
@@ -743,7 +743,7 @@ export default function EmiratiArabicPage() {
                     <Card className="glass-card border-glass-border backdrop-blur-lg bg-glass-surface/50">
                       <CardHeader>
                         <CardTitle className="text-lg flex items-center gap-2">
-                          <Heart className="h-5 w-5 text-emerald" />
+                          <Heart className="h-5 w-5 text-emerald-500" />
                           Positive Expressions
                         </CardTitle>
                         <CardDescription>Emirati dialect praise and admiration</CardDescription>
@@ -758,9 +758,9 @@ export default function EmiratiArabicPage() {
                               transition={{ delay: index * 0.1 }}
                               className="rounded-lg border border-emerald-700/50 bg-emerald-900/20 p-3 backdrop-blur-sm"
                             >
-                              <p className="font-mono text-gold text-lg">{marker.expression}</p>
+                              <p className="font-mono text-gold-700 text-lg">{marker.expression}</p>
                               <p className="text-sm text-emerald-400 font-arabic">{marker.arabic}</p>
-                              <p className="text-xs text-platinum-400 mt-1">{marker.meaning}</p>
+                              <p className="text-xs text-platinum-500-400 mt-1">{marker.meaning}</p>
                             </motion.div>
                           ))}
                         </div>
@@ -788,7 +788,7 @@ export default function EmiratiArabicPage() {
                             >
                               <p className="font-mono text-red-500 text-lg">{marker.expression}</p>
                               <p className="text-sm text-red-600 font-arabic">{marker.arabic}</p>
-                              <p className="text-xs text-platinum-400 mt-1">{marker.meaning}</p>
+                              <p className="text-xs text-platinum-500-400 mt-1">{marker.meaning}</p>
                             </motion.div>
                           ))}
                         </div>
@@ -799,7 +799,7 @@ export default function EmiratiArabicPage() {
                   <Card className="glass-card border-glass-border backdrop-blur-lg bg-glass-surface/50">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <MessageSquare className="h-5 w-5 text-gold" />
+                        <MessageSquare className="h-5 w-5 text-gold-700" />
                         Unique Emirati Expressions
                       </CardTitle>
                       <CardDescription>Distinctive dialect vocabulary</CardDescription>
@@ -808,30 +808,30 @@ export default function EmiratiArabicPage() {
                       <div className="grid gap-4 sm:grid-cols-2">
                         <div className="space-y-3">
                           <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                            <p className="font-mono text-gold">"Ya raiti"</p>
-                            <p className="text-sm text-platinum-400 mt-1">My dear / dear friend</p>
+                            <p className="font-mono text-gold-700">"Ya raiti"</p>
+                            <p className="text-sm text-platinum-500-400 mt-1">My dear / dear friend</p>
                           </div>
                           <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                            <p className="font-mono text-gold">"Khalas"</p>
-                            <p className="text-sm text-platinum-400 mt-1">Done / finished / enough</p>
+                            <p className="font-mono text-gold-700">"Khalas"</p>
+                            <p className="text-sm text-platinum-500-400 mt-1">Done / finished / enough</p>
                           </div>
                           <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                            <p className="font-mono text-gold">"Yimkin"</p>
-                            <p className="text-sm text-platinum-400 mt-1">Maybe / perhaps</p>
+                            <p className="font-mono text-gold-700">"Yimkin"</p>
+                            <p className="text-sm text-platinum-500-400 mt-1">Maybe / perhaps</p>
                           </div>
                         </div>
                         <div className="space-y-3">
                           <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                            <p className="font-mono text-gold">"Ahal"</p>
-                            <p className="text-sm text-platinum-400 mt-1">Family / relatives</p>
+                            <p className="font-mono text-gold-700">"Ahal"</p>
+                            <p className="text-sm text-platinum-500-400 mt-1">Family / relatives</p>
                           </div>
                           <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                            <p className="font-mono text-gold">"Wahan"</p>
-                            <p className="text-sm text-platinum-400 mt-1">Go / leave (dialect)</p>
+                            <p className="font-mono text-gold-700">"Wahan"</p>
+                            <p className="text-sm text-platinum-500-400 mt-1">Go / leave (dialect)</p>
                           </div>
                           <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                            <p className="font-mono text-gold">"Shu haalak"</p>
-                            <p className="text-sm text-platinum-400 mt-1">How are you? (Emirati)</p>
+                            <p className="font-mono text-gold-700">"Shu haalak"</p>
+                            <p className="text-sm text-platinum-500-400 mt-1">How are you? (Emirati)</p>
                           </div>
                         </div>
                       </div>
@@ -857,36 +857,36 @@ export default function EmiratiArabicPage() {
                       whileHover={{ scale: 1.05 }}
                       className="rounded-lg border border-gold-700/50 bg-gold-900/20 p-4 text-center backdrop-blur-sm"
                     >
-                      <div className="text-3xl font-bold text-gold">{governmentKPI.governmentNumber}</div>
-                      <p className="text-sm text-platinum-400 mt-1">Government</p>
+                      <div className="text-3xl font-bold text-gold-700">{governmentKPI.governmentNumber}</div>
+                      <p className="text-sm text-platinum-500-400 mt-1">Government</p>
                     </motion.div>
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       className="rounded-lg border border-navy-700/50 bg-navy-900/20 p-4 text-center backdrop-blur-sm"
                     >
-                      <div className="text-3xl font-bold text-navy">{governmentKPI.cabinetSize}</div>
-                      <p className="text-sm text-platinum-400 mt-1">Cabinet Members</p>
+                      <div className="text-3xl font-bold text-navy-500">{governmentKPI.cabinetSize}</div>
+                      <p className="text-sm text-platinum-500-400 mt-1">Cabinet Members</p>
                     </motion.div>
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       className="rounded-lg border border-emerald-700/50 bg-emerald-900/20 p-4 text-center backdrop-blur-sm"
                     >
                       <div className="text-3xl font-bold text-emerald-400">{governmentKPI.ministriesNew}</div>
-                      <p className="text-sm text-platinum-400 mt-1">New Ministries</p>
+                      <p className="text-sm text-platinum-500-400 mt-1">New Ministries</p>
                     </motion.div>
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       className="rounded-lg border border-platinum-700/50 bg-platinum-900/20 p-4 text-center backdrop-blur-sm"
                     >
-                      <div className="text-lg font-bold text-platinum">July 14, 2024</div>
-                      <p className="text-sm text-platinum-400 mt-1">Formation Date</p>
+                      <div className="text-lg font-bold text-platinum-500">July 14, 2024</div>
+                      <p className="text-sm text-platinum-500-400 mt-1">Formation Date</p>
                     </motion.div>
                   </div>
 
                   <Card className="glass-card border-glass-border backdrop-blur-lg bg-glass-surface/50">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Users className="h-5 w-5 text-gold" />
+                        <Users className="h-5 w-5 text-gold-700" />
                         Employment Metrics by Sector (AED/month)
                       </CardTitle>
                       <CardDescription>Average salaries from job aggregation data</CardDescription>

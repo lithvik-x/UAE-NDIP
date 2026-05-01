@@ -48,7 +48,7 @@ export default function NeutralSentimentPage() {
     <motion.div initial="initial" animate="animate" variants={staggerContainer} className="space-y-8 p-8 font-rajdhani">
       <motion.div variants={fadeInUp} className="flex items-start justify-between">
         <div>
-          <Badge className="mb-2 bg-gradient-to-r from-slate-500/20 to-gray-600/20 text-platinum-400 border-platinum-500/50">
+          <Badge className="mb-2 bg-gradient-to-r from-slate-500/20 to-gray-600/20 text-platinum-500-400 border-platinum-500/50">
             <Minus className="w-3 h-3 mr-1" />
             SENTIMENT
           </Badge>
@@ -57,7 +57,7 @@ export default function NeutralSentimentPage() {
               Neutral Sentiment
             </span>
           </h1>
-          <p className="mt-2 text-platinum-400">Neutral sentiment analysis — factual, objective, and balanced communications in UAE media</p>
+          <p className="mt-2 text-platinum-500-400">Neutral sentiment analysis — factual, objective, and balanced communications in UAE media</p>
         </div>
       </motion.div>
 
@@ -82,17 +82,17 @@ export default function NeutralSentimentPage() {
             <GlassPanel title="Neutral Sentiment Overview" description="Factual and objective content distribution">
               <div className="grid gap-6 lg:grid-cols-2">
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
-                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><ThumbsUp className="h-5 w-5 text-platinum-500" />Tone Distribution</CardTitle></CardHeader>
+                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><ThumbsUp className="h-5 w-5 text-platinum-500-500" />Tone Distribution</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0"><PieChart data={sentimentBreakdown} height={280} showLegend={true} /></CardContent>
                 </motion.div>
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
-                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Globe className="h-5 w-5 text-platinum-500" />Context</CardTitle></CardHeader>
+                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Globe className="h-5 w-5 text-platinum-500-500" />Context</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0">
-                    <div className="space-y-3 text-sm text-platinum-300">
-                      <div className="flex items-center gap-2"><ThumbsUp className="h-4 w-4 text-platinum" />Government communications: predominantly neutral</div>
-                      <div className="flex items-center gap-2"><ThumbsUp className="h-4 w-4 text-platinum" />Economic reporting: factual and balanced</div>
-                      <div className="flex items-center gap-2"><ThumbsUp className="h-4 w-4 text-platinum" />Public service announcements: objective</div>
-                      <div className="flex items-center gap-2"><ThumbsUp className="h-4 w-4 text-platinum" />Sports coverage: neutral reporting</div>
+                    <div className="space-y-3 text-sm text-platinum-500-300">
+                      <div className="flex items-center gap-2"><ThumbsUp className="h-4 w-4 text-platinum-500" />Government communications: predominantly neutral</div>
+                      <div className="flex items-center gap-2"><ThumbsUp className="h-4 w-4 text-platinum-500" />Economic reporting: factual and balanced</div>
+                      <div className="flex items-center gap-2"><ThumbsUp className="h-4 w-4 text-platinum-500" />Public service announcements: objective</div>
+                      <div className="flex items-center gap-2"><ThumbsUp className="h-4 w-4 text-platinum-500" />Sports coverage: neutral reporting</div>
                     </div>
                   </CardContent>
                 </motion.div>
@@ -110,10 +110,10 @@ export default function NeutralSentimentPage() {
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
                       className="rounded-lg bg-gradient-to-r from-slate-500/10 to-gray-600/5 p-4 border border-platinum-500/30">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xl text-platinum-100 font-rajdhani">{t.topic}</span>
-                        <Badge variant="outline" className="border-platinum-500/50 text-platinum-400">{t.tone}</Badge>
+                        <span className="text-xl text-platinum-500-100 font-rajdhani">{t.topic}</span>
+                        <Badge variant="outline" className="border-platinum-500/50 text-platinum-500-400">{t.tone}</Badge>
                       </div>
-                      <p className="text-sm text-platinum-400 mb-1">Sentiment: {t.sentiment}</p>
+                      <p className="text-sm text-platinum-500-400 mb-1">Sentiment: {t.sentiment}</p>
                       <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                         <motion.div initial={{ width: 0 }} animate={{ width: `${t.coverage}%` }} transition={{ delay: idx * 0.1 + 0.3, duration: 0.5 }}
                           className="h-full rounded-full bg-gradient-to-r from-slate-500 to-gray-500" />
@@ -134,10 +134,10 @@ export default function NeutralSentimentPage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }}
                     className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-platinum-200">{s.source}</span>
+                      <span className="text-sm font-medium text-platinum-500-200">{s.source}</span>
                       <div className="flex items-center gap-3">
                         <Badge variant="outline" className={`border-${s.credibility === 'High' ? 'emerald' : 'platinum'}-500/50 text-${s.credibility === 'High' ? 'emerald' : 'platinum'}`}>{s.credibility}</Badge>
-                        <span className="text-lg font-bold text-platinum-100">{s.percentage}%</span>
+                        <span className="text-lg font-bold text-platinum-500-100">{s.percentage}%</span>
                       </div>
                     </div>
                     <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">

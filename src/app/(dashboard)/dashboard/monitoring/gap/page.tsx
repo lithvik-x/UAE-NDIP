@@ -148,7 +148,7 @@ export default function GapAnalysisPage() {
   if (!data) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-400">Loading Gap Analysis data...</div>
+        <div className="text-platinum-500-400">Loading Gap Analysis data...</div>
       </div>
     )
   }
@@ -165,7 +165,7 @@ export default function GapAnalysisPage() {
       case 'Critical': return 'text-rose-400'
       case 'High': return 'text-gold-400'
       case 'Medium': return 'text-emerald-400'
-      default: return 'text-platinum-400'
+      default: return 'text-platinum-500-400'
     }
   }
 
@@ -202,11 +202,11 @@ export default function GapAnalysisPage() {
       >
         <div>
           <Badge variant="gold" className="mb-2">M-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Gap Analysis Dashboard</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Gap Analysis Dashboard</h1>
+          <p className="mt-2 text-platinum-500-400">
             Comprehensive coverage gap analysis across UAE media, regulatory, and digital landscape (12-8)
           </p>
-          <div className="flex items-center gap-4 mt-3 text-sm text-platinum-500">
+          <div className="flex items-center gap-4 mt-3 text-sm text-platinum-500-500">
             <span>Generated: {gapAnalysisMetadata.generatedDate}</span>
             <span>|</span>
             <span>Enriched: {gapAnalysisMetadata.enrichedDate}</span>
@@ -215,11 +215,11 @@ export default function GapAnalysisPage() {
           </div>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <Download className="h-4 w-4" />
             Export
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Filter className="h-4 w-4" />
             Filter Analysis
           </Button>
@@ -311,8 +311,8 @@ export default function GapAnalysisPage() {
                         {theme.sentiment}
                       </span>
                     </div>
-                    <h4 className="font-semibold text-platinum-200 mb-1">{theme.theme}</h4>
-                    <p className="text-xs text-platinum-400 line-clamp-2">{theme.finding}</p>
+                    <h4 className="font-semibold text-platinum-500-200 mb-1">{theme.theme}</h4>
+                    <p className="text-xs text-platinum-500-400 line-clamp-2">{theme.finding}</p>
                   </motion.div>
                 ))}
               </div>
@@ -323,7 +323,7 @@ export default function GapAnalysisPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <ThumbsDown className="h-5 w-5 text-rose" />
+                    <ThumbsDown className="h-5 w-5 text-rose-500" />
                     Sentiment Distribution
                   </CardTitle>
                   <CardDescription>Overall sentiment by topic category</CardDescription>
@@ -340,7 +340,7 @@ export default function GapAnalysisPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <AlertTriangle className="h-5 w-5 text-gold" />
+                    <AlertTriangle className="h-5 w-5 text-gold-700" />
                     UAE Relevance Assessment
                   </CardTitle>
                   <CardDescription>Coverage gap priority levels</CardDescription>
@@ -356,10 +356,10 @@ export default function GapAnalysisPage() {
             </div>
 
             {/* Key Economic Indicators */}
-            <Card className="glass-card border-gold/30">
+            <Card className="glass-card border-gold-700/30">
               <CardHeader className="pb-2">
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <BarChart3 className="h-5 w-5 text-gold" />
+                  <BarChart3 className="h-5 w-5 text-gold-700" />
                   Dashboard-Ready KPIs
                 </CardTitle>
                 <CardDescription>Key performance indicators from MD source data</CardDescription>
@@ -375,15 +375,15 @@ export default function GapAnalysisPage() {
                       whileHover={{ scale: 1.05 }}
                       className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3 text-center hover:bg-platinum-800/50 transition-colors cursor-pointer"
                     >
-                      <div className="text-lg font-bold text-gold">{kpi.currentValue}</div>
-                      <div className="text-xs text-platinum-400 mt-1">{kpi.kpi}</div>
+                      <div className="text-lg font-bold text-gold-700">{kpi.currentValue}</div>
+                      <div className="text-xs text-platinum-500-400 mt-1">{kpi.kpi}</div>
                       <div className="flex items-center justify-center gap-1 mt-1">
                         {kpi.trend === 'Declining' ? (
-                          <TrendingDown className="h-3 w-3 text-rose" />
+                          <TrendingDown className="h-3 w-3 text-rose-500" />
                         ) : kpi.trend === 'Growing' ? (
-                          <TrendingUp className="h-3 w-3 text-emerald" />
+                          <TrendingUp className="h-3 w-3 text-emerald-500" />
                         ) : null}
-                        <span className="text-xs text-platinum-500">{kpi.trend}</span>
+                        <span className="text-xs text-platinum-500-500">{kpi.trend}</span>
                       </div>
                     </motion.div>
                   ))}
@@ -395,7 +395,7 @@ export default function GapAnalysisPage() {
             <Card className="glass-card">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <ShieldCheck className="h-5 w-5 text-emerald" />
+                  <ShieldCheck className="h-5 w-5 text-emerald-500" />
                   Source Credibility Matrix
                 </CardTitle>
                 <CardDescription>Top sources by UAE relevance</CardDescription>
@@ -412,8 +412,8 @@ export default function GapAnalysisPage() {
                         className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                       >
                         <div className="flex-1">
-                          <p className="text-sm font-medium text-platinum-200 truncate">{source.sourceUrl}</p>
-                          <p className="text-xs text-platinum-500">{source.type}</p>
+                          <p className="text-sm font-medium text-platinum-500-200 truncate">{source.sourceUrl}</p>
+                          <p className="text-xs text-platinum-500-500">{source.type}</p>
                         </div>
                         <div className="flex items-center gap-2">
                           {getRelevanceBadge(source.uaeRelevance)}
@@ -444,18 +444,18 @@ export default function GapAnalysisPage() {
                   className="flex items-center justify-between p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30 hover:bg-platinum-800/50 transition-colors cursor-pointer"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold font-bold">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-700/20 text-gold-700 font-bold">
                       {query.number}
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm font-medium text-platinum-200">{query.query}</p>
+                      <p className="text-sm font-medium text-platinum-500-200">{query.query}</p>
                       <div className="flex items-center gap-2 mt-1">
                         {query.status === 'Success' ? (
-                          <CheckCircle className="h-4 w-4 text-emerald" />
+                          <CheckCircle className="h-4 w-4 text-emerald-500" />
                         ) : (
-                          <XCircle className="h-4 w-4 text-rose" />
+                          <XCircle className="h-4 w-4 text-rose-500" />
                         )}
-                        <span className="text-xs text-platinum-500">{query.status}</span>
+                        <span className="text-xs text-platinum-500-500">{query.status}</span>
                       </div>
                     </div>
                   </div>
@@ -474,7 +474,7 @@ export default function GapAnalysisPage() {
             <Card className="glass-card">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <ThumbsDown className="h-5 w-5 text-rose" />
+                  <ThumbsDown className="h-5 w-5 text-rose-500" />
                   Sentiment Analysis Matrix
                 </CardTitle>
                 <CardDescription>Topic-level sentiment indicators</CardDescription>
@@ -491,25 +491,25 @@ export default function GapAnalysisPage() {
                         className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-semibold text-platinum-200">{item.topic}</h4>
+                          <h4 className="font-semibold text-platinum-500-200">{item.topic}</h4>
                           <Badge
                             variant="outline"
                             className={`${
-                              item.intensity === 'Critical' ? 'border-rose/50 text-rose' :
-                              item.intensity === 'High' ? 'border-gold/50 text-gold' :
-                              'border-platinum-500/50 text-platinum-400'
+                              item.intensity === 'Critical' ? 'border-rose-500/50 text-rose-500' :
+                              item.intensity === 'High' ? 'border-gold-700/50 text-gold-700' :
+                              'border-platinum-500/50 text-platinum-500-400'
                             }`}
                           >
                             {item.intensity}
                           </Badge>
                         </div>
-                        <p className="text-sm text-platinum-400 mb-2">{item.keyIndicators}</p>
+                        <p className="text-sm text-platinum-500-400 mb-2">{item.keyIndicators}</p>
                         <div className="flex items-center gap-2">
-                          <span className="text-xs text-platinum-500">Sentiment:</span>
+                          <span className="text-xs text-platinum-500-500">Sentiment:</span>
                           <span className={`text-xs font-medium ${
-                            item.overallSentiment.includes('Negative') ? 'text-rose' :
-                            item.overallSentiment.includes('Positive') ? 'text-emerald' :
-                            'text-platinum-400'
+                            item.overallSentiment.includes('Negative') ? 'text-rose-500' :
+                            item.overallSentiment.includes('Positive') ? 'text-emerald-500' :
+                            'text-platinum-500-400'
                           }`}>
                             {item.overallSentiment}
                           </span>
@@ -524,7 +524,7 @@ export default function GapAnalysisPage() {
             <Card className="glass-card">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <AlertTriangle className="h-5 w-5 text-gold" />
+                  <AlertTriangle className="h-5 w-5 text-gold-700" />
                   UAE Relevance Assessment
                 </CardTitle>
                 <CardDescription>Priority ranking by relevance level</CardDescription>
@@ -541,10 +541,10 @@ export default function GapAnalysisPage() {
                         className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-semibold text-platinum-200">{item.category}</h4>
+                          <h4 className="font-semibold text-platinum-500-200">{item.category}</h4>
                           {getRelevanceBadge(item.relevanceLevel)}
                         </div>
-                        <p className="text-sm text-platinum-400">{item.rationale}</p>
+                        <p className="text-sm text-platinum-500-400">{item.rationale}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -561,7 +561,7 @@ export default function GapAnalysisPage() {
             <Card className="glass-card">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Shield className="h-5 w-5 text-rose" />
+                  <Shield className="h-5 w-5 text-rose-500" />
                   UAE Regulatory Changes 2026
                 </CardTitle>
                 <CardDescription>Key regulatory updates and penalties</CardDescription>
@@ -577,10 +577,10 @@ export default function GapAnalysisPage() {
                       className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
                       <div className="flex items-center justify-between mb-1">
-                        <h4 className="font-medium text-platinum-200 text-sm">{reg.regulation}</h4>
-                        <span className="text-xs text-gold">{reg.effectiveDate}</span>
+                        <h4 className="font-medium text-platinum-500-200 text-sm">{reg.regulation}</h4>
+                        <span className="text-xs text-gold-700">{reg.effectiveDate}</span>
                       </div>
-                      <p className="text-xs text-platinum-400 mb-1">{reg.keyChange}</p>
+                      <p className="text-xs text-platinum-500-400 mb-1">{reg.keyChange}</p>
                       <p className="text-xs text-rose-400">{reg.penaltyImpact}</p>
                     </motion.div>
                   ))}
@@ -592,7 +592,7 @@ export default function GapAnalysisPage() {
             <Card className="glass-card">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Lock className="h-5 w-5 text-navy" />
+                  <Lock className="h-5 w-5 text-navy-500" />
                   Cybersecurity Compliance Requirements
                 </CardTitle>
                 <CardDescription>Frameworks and deadlines</CardDescription>
@@ -608,13 +608,13 @@ export default function GapAnalysisPage() {
                       className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
                       <div className="flex items-center justify-between mb-1">
-                        <h4 className="font-medium text-platinum-200 text-sm">{req.framework}</h4>
-                        <span className="text-xs text-navy">{req.authority}</span>
+                        <h4 className="font-medium text-platinum-500-200 text-sm">{req.framework}</h4>
+                        <span className="text-xs text-navy-500">{req.authority}</span>
                       </div>
-                      <p className="text-xs text-platinum-400 mb-1">{req.keyRequirement}</p>
+                      <p className="text-xs text-platinum-500-400 mb-1">{req.keyRequirement}</p>
                       <div className="flex items-center gap-2">
-                        <Clock className="h-3 w-3 text-platinum-500" />
-                        <span className="text-xs text-platinum-500">{req.deadline}</span>
+                        <Clock className="h-3 w-3 text-platinum-500-500" />
+                        <span className="text-xs text-platinum-500-500">{req.deadline}</span>
                         <span className="text-xs text-rose-400 ml-2">{req.penalty}</span>
                       </div>
                     </motion.div>
@@ -625,10 +625,10 @@ export default function GapAnalysisPage() {
           </div>
 
           {/* Influencer Permit Data */}
-          <Card className="glass-card border-gold/30">
+          <Card className="glass-card border-gold-700/30">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <User className="h-5 w-5 text-gold" />
+                <User className="h-5 w-5 text-gold-700" />
                 Influencer Permit Requirements
               </CardTitle>
               <CardDescription>Advertiser permit compliance matrix</CardDescription>
@@ -643,22 +643,22 @@ export default function GapAnalysisPage() {
                     transition={{ delay: idx * 0.05 }}
                     className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30 text-center"
                   >
-                    <div className="text-lg font-bold text-gold">{item.value}</div>
-                    <div className="text-xs text-platinum-400 mt-1">{item.attribute}</div>
+                    <div className="text-lg font-bold text-gold-700">{item.value}</div>
+                    <div className="text-xs text-platinum-500-400 mt-1">{item.attribute}</div>
                   </motion.div>
                 ))}
               </div>
               <div className="mt-4">
-                <h4 className="text-sm font-semibold text-platinum-300 mb-2">Compliance Matrix</h4>
+                <h4 className="text-sm font-semibold text-platinum-500-300 mb-2">Compliance Matrix</h4>
                 <div className="space-y-2">
                   {influencerPermitComplianceMatrix.slice(0, 3).map((item, idx) => (
                     <div key={idx} className="flex items-center justify-between p-2 rounded bg-platinum-800/30">
-                      <span className="text-sm text-platinum-300">{item.activity}</span>
+                      <span className="text-sm text-platinum-500-300">{item.activity}</span>
                       <div className="flex items-center gap-2">
                         {item.permitRequired === 'Yes' ? (
-                          <CheckCircle className="h-4 w-4 text-emerald" />
+                          <CheckCircle className="h-4 w-4 text-emerald-500" />
                         ) : (
-                          <XCircle className="h-4 w-4 text-rose" />
+                          <XCircle className="h-4 w-4 text-rose-500" />
                         )}
                         <Badge variant="outline" className="text-xs">{item.penalty}</Badge>
                       </div>
@@ -673,7 +673,7 @@ export default function GapAnalysisPage() {
           <Card className="glass-card">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Umbrella className="h-5 w-5 text-emerald" />
+                <Umbrella className="h-5 w-5 text-emerald-500" />
                 Child Digital Safety Law
               </CardTitle>
               <CardDescription>Federal Decree-Law No. 26/2025 effective January 1, 2026</CardDescription>
@@ -686,22 +686,22 @@ export default function GapAnalysisPage() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="p-3 rounded-lg border border-emerald/30 bg-emerald/10 text-center"
+                    className="p-3 rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-center"
                   >
-                    <div className="text-lg font-bold text-emerald">{item.value}</div>
-                    <div className="text-xs text-platinum-400 mt-1">{item.attribute}</div>
+                    <div className="text-lg font-bold text-emerald-500">{item.value}</div>
+                    <div className="text-xs text-platinum-500-400 mt-1">{item.attribute}</div>
                   </motion.div>
                 ))}
               </div>
               <div className="mt-4">
-                <h4 className="text-sm font-semibold text-platinum-300 mb-2">Compliance Requirements</h4>
+                <h4 className="text-sm font-semibold text-platinum-500-300 mb-2">Compliance Requirements</h4>
                 <div className="space-y-2">
                   {childDigitalSafetyCompliance.map((req, idx) => (
                     <div key={idx} className="flex items-center justify-between p-2 rounded bg-platinum-800/30">
-                      <span className="text-sm text-platinum-300">{req.requirement}</span>
+                      <span className="text-sm text-platinum-500-300">{req.requirement}</span>
                       <div className="flex items-center gap-2">
-                        <Clock className="h-3 w-3 text-platinum-500" />
-                        <span className="text-xs text-platinum-500">{req.deadline}</span>
+                        <Clock className="h-3 w-3 text-platinum-500-500" />
+                        <span className="text-xs text-platinum-500-500">{req.deadline}</span>
                       </div>
                     </div>
                   ))}
@@ -718,7 +718,7 @@ export default function GapAnalysisPage() {
             <Card className="glass-card">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <MapPin className="h-5 w-5 text-gold" />
+                  <MapPin className="h-5 w-5 text-gold-700" />
                   Population by Emirates 2026
                 </CardTitle>
                 <CardDescription>UAE population distribution</CardDescription>
@@ -734,10 +734,10 @@ export default function GapAnalysisPage() {
                       className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
                       <div className="flex items-center gap-3">
-                        <MapPin className="h-4 w-4 text-gold" />
-                        <span className="text-sm font-medium text-platinum-200">{item.emirate}</span>
+                        <MapPin className="h-4 w-4 text-gold-700" />
+                        <span className="text-sm font-medium text-platinum-500-200">{item.emirate}</span>
                       </div>
-                      <span className="text-sm font-bold text-gold">{item.population}</span>
+                      <span className="text-sm font-bold text-gold-700">{item.population}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -748,7 +748,7 @@ export default function GapAnalysisPage() {
             <Card className="glass-card">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Users className="h-5 w-5 text-emerald" />
+                  <Users className="h-5 w-5 text-emerald-500" />
                   Age Distribution 2026
                 </CardTitle>
                 <CardDescription>Population breakdown by age group</CardDescription>
@@ -758,8 +758,8 @@ export default function GapAnalysisPage() {
                   {ageDistribution2026.map((item, idx) => (
                     <div key={idx} className="space-y-1">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-platinum-300">{item.ageGroup}</span>
-                        <span className="text-sm font-bold text-emerald">{item.percentage}</span>
+                        <span className="text-sm text-platinum-500-300">{item.ageGroup}</span>
+                        <span className="text-sm font-bold text-emerald-500">{item.percentage}</span>
                       </div>
                       <Progress
                         value={parseFloat(item.percentage)}
@@ -773,10 +773,10 @@ export default function GapAnalysisPage() {
           </div>
 
           {/* UAE Population Overview */}
-          <Card className="glass-card border-gold/30">
+          <Card className="glass-card border-gold-700/30">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Globe className="h-5 w-5 text-gold" />
+                <Globe className="h-5 w-5 text-gold-700" />
                 UAE Population Overview
               </CardTitle>
               <CardDescription>Total population: 11.57 million</CardDescription>
@@ -792,10 +792,10 @@ export default function GapAnalysisPage() {
                     whileHover={{ scale: 1.05 }}
                     className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30 text-center hover:bg-platinum-800/50 cursor-pointer"
                   >
-                    <div className="text-lg font-bold text-gold">{item.value}</div>
-                    <div className="text-xs text-platinum-400 mt-1">{item.metric}</div>
+                    <div className="text-lg font-bold text-gold-700">{item.value}</div>
+                    <div className="text-xs text-platinum-500-400 mt-1">{item.metric}</div>
                     {item.share && (
-                      <div className="text-xs text-emerald mt-1">{item.share}</div>
+                      <div className="text-xs text-emerald-500 mt-1">{item.share}</div>
                     )}
                   </motion.div>
                 ))}
@@ -807,7 +807,7 @@ export default function GapAnalysisPage() {
           <Card className="glass-card">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <AlertOctagon className="h-5 w-5 text-rose" />
+                <AlertOctagon className="h-5 w-5 text-rose-500" />
                 Regional Strain Points
               </CardTitle>
               <CardDescription>UAE regional relationships and tensions</CardDescription>
@@ -820,11 +820,11 @@ export default function GapAnalysisPage() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.1 }}
-                    className="p-4 rounded-lg border border-rose/30 bg-rose/10"
+                    className="p-4 rounded-lg border border-rose-500/30 bg-rose-500/10"
                   >
-                    <h4 className="font-semibold text-rose mb-1">{item.strainPoint}</h4>
-                    <p className="text-sm text-platinum-400 mb-2">{item.issue}</p>
-                    <p className="text-xs text-platinum-500">{item.impact}</p>
+                    <h4 className="font-semibold text-rose-500 mb-1">{item.strainPoint}</h4>
+                    <p className="text-sm text-platinum-500-400 mb-2">{item.issue}</p>
+                    <p className="text-xs text-platinum-500-500">{item.impact}</p>
                   </motion.div>
                 ))}
               </div>
@@ -839,7 +839,7 @@ export default function GapAnalysisPage() {
             <Card className="glass-card">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Zap className="h-5 w-5 text-gold" />
+                  <Zap className="h-5 w-5 text-gold-700" />
                   UAE Digital Economy KPIs 2026
                 </CardTitle>
                 <CardDescription>Digital transformation metrics</CardDescription>
@@ -854,9 +854,9 @@ export default function GapAnalysisPage() {
                       transition={{ delay: idx * 0.08 }}
                       className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
-                      <span className="text-sm font-medium text-platinum-200">{kpi.metric}</span>
+                      <span className="text-sm font-medium text-platinum-500-200">{kpi.metric}</span>
                       <div className="flex items-center gap-3">
-                        <span className="text-lg font-bold text-gold">{kpi.value}</span>
+                        <span className="text-lg font-bold text-gold-700">{kpi.value}</span>
                         {kpi.yearOverYear && (
                           <Badge variant="outline" className="text-xs">
                             {kpi.yearOverYear}
@@ -873,7 +873,7 @@ export default function GapAnalysisPage() {
             <Card className="glass-card">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <MessageSquare className="h-5 w-5 text-emerald" />
+                  <MessageSquare className="h-5 w-5 text-emerald-500" />
                   Digital Marketing Channels
                 </CardTitle>
                 <CardDescription>Platform performance and priority</CardDescription>
@@ -890,19 +890,19 @@ export default function GapAnalysisPage() {
                     >
                       <div className="flex items-center gap-3">
                         <div className={`h-8 w-8 rounded-full flex items-center justify-center ${
-                          channel.priority === 'Critical' ? 'bg-rose/20 text-rose' :
-                          channel.priority === 'High' ? 'bg-gold/20 text-gold' :
-                          'bg-emerald/20 text-emerald'
+                          channel.priority === 'Critical' ? 'bg-rose-500/20 text-rose-500' :
+                          channel.priority === 'High' ? 'bg-gold-700/20 text-gold-700' :
+                          'bg-emerald-500/20 text-emerald-500'
                         }`}>
                           <Signal className="h-4 w-4" />
                         </div>
                         <div>
-                          <p className="text-sm font-medium text-platinum-200">{channel.channel}</p>
-                          <p className="text-xs text-platinum-500">{channel.trend}</p>
+                          <p className="text-sm font-medium text-platinum-500-200">{channel.channel}</p>
+                          <p className="text-xs text-platinum-500-500">{channel.trend}</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="text-xs text-platinum-400">{channel.engagementRate}</span>
+                        <span className="text-xs text-platinum-500-400">{channel.engagementRate}</span>
                         {getRelevanceBadge(channel.priority)}
                       </div>
                     </motion.div>
@@ -916,7 +916,7 @@ export default function GapAnalysisPage() {
           <Card className="glass-card">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Banknote className="h-5 w-5 text-gold" />
+                <Banknote className="h-5 w-5 text-gold-700" />
                 Payment Transformation 2026
               </CardTitle>
               <CardDescription>Six key changes coming to UAE payments</CardDescription>
@@ -933,23 +933,23 @@ export default function GapAnalysisPage() {
                     className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30 hover:bg-platinum-800/50 cursor-pointer"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-semibold text-platinum-200">{item.change}</h4>
+                      <h4 className="font-semibold text-platinum-500-200">{item.change}</h4>
                       <Badge
                         variant="outline"
                         className={`text-xs ${
-                          item.status === 'Active' ? 'border-emerald/50 text-emerald' :
-                          item.status === 'Pilot' ? 'border-gold/50 text-gold' :
-                          'border-platinum-500/50 text-platinum-400'
+                          item.status === 'Active' ? 'border-emerald-500/50 text-emerald-500' :
+                          item.status === 'Pilot' ? 'border-gold-700/50 text-gold-700' :
+                          'border-platinum-500/50 text-platinum-500-400'
                         }`}
                       >
                         {item.status}
                       </Badge>
                     </div>
-                    <p className="text-xs text-platinum-400 mb-2">{item.description}</p>
+                    <p className="text-xs text-platinum-500-400 mb-2">{item.description}</p>
                     <span className={`text-xs font-medium ${
-                      item.impact === 'Critical' ? 'text-rose' :
-                      item.impact === 'High' ? 'text-gold' :
-                      'text-platinum-400'
+                      item.impact === 'Critical' ? 'text-rose-500' :
+                      item.impact === 'High' ? 'text-gold-700' :
+                      'text-platinum-500-400'
                     }`}>
                       Impact: {item.impact}
                     </span>
@@ -960,10 +960,10 @@ export default function GapAnalysisPage() {
           </Card>
 
           {/* Arabic AI Gap */}
-          <Card className="glass-card border-emerald/30">
+          <Card className="glass-card border-emerald-500/30">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Type className="h-5 w-5 text-emerald" />
+                <Type className="h-5 w-5 text-emerald-500" />
                 Arabic AI Development Metrics
               </CardTitle>
               <CardDescription>MBZUAI research and Google $1M funding</CardDescription>
@@ -976,10 +976,10 @@ export default function GapAnalysisPage() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="p-3 rounded-lg border border-emerald/30 bg-emerald/10 text-center"
+                    className="p-3 rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-center"
                   >
-                    <div className="text-lg font-bold text-emerald">{item.value}</div>
-                    <div className="text-xs text-platinum-400 mt-1">{item.attribute}</div>
+                    <div className="text-lg font-bold text-emerald-500">{item.value}</div>
+                    <div className="text-xs text-platinum-500-400 mt-1">{item.attribute}</div>
                   </motion.div>
                 ))}
               </div>
@@ -993,7 +993,7 @@ export default function GapAnalysisPage() {
           <Card className="glass-card">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Newspaper className="h-5 w-5 text-gold" />
+                <Newspaper className="h-5 w-5 text-gold-700" />
                 Media Relations Strategy
               </CardTitle>
               <CardDescription>Journalist engagement metrics</CardDescription>
@@ -1009,9 +1009,9 @@ export default function GapAnalysisPage() {
                     whileHover={{ scale: 1.05 }}
                     className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30 text-center hover:bg-platinum-800/50 cursor-pointer"
                   >
-                    <div className="text-xl font-bold text-gold">{item.value}</div>
-                    <div className="text-xs text-platinum-400 mt-1">{item.metric}</div>
-                    <div className="text-xs text-platinum-500 mt-1">{item.implication}</div>
+                    <div className="text-xl font-bold text-gold-700">{item.value}</div>
+                    <div className="text-xs text-platinum-500-400 mt-1">{item.metric}</div>
+                    <div className="text-xs text-platinum-500-500 mt-1">{item.implication}</div>
                   </motion.div>
                 ))}
               </div>
@@ -1022,7 +1022,7 @@ export default function GapAnalysisPage() {
           <Card className="glass-card">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Layers className="h-5 w-5 text-navy" />
+                <Layers className="h-5 w-5 text-navy-500" />
                 Media Tier Classification
               </CardTitle>
               <CardDescription>UAE media outlets by tier</CardDescription>
@@ -1038,22 +1038,22 @@ export default function GapAnalysisPage() {
                     className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
                     <div className="flex items-center gap-3 mb-2">
-                      <Badge variant="outline" className="text-navy border-navy">{tier.tier}</Badge>
+                      <Badge variant="outline" className="text-navy-500 border-navy">{tier.tier}</Badge>
                     </div>
                     <div className="space-y-1">
                       {tier.international && tier.international !== '—' && (
-                        <p className="text-xs text-platinum-400">
-                          <span className="text-platinum-500">Intl:</span> {tier.international}
+                        <p className="text-xs text-platinum-500-400">
+                          <span className="text-platinum-500-500">Intl:</span> {tier.international}
                         </p>
                       )}
                       {tier.regional && tier.regional !== '—' && (
-                        <p className="text-xs text-platinum-400">
-                          <span className="text-platinum-500">Regional:</span> {tier.regional}
+                        <p className="text-xs text-platinum-500-400">
+                          <span className="text-platinum-500-500">Regional:</span> {tier.regional}
                         </p>
                       )}
                       {tier.local && tier.local !== '—' && (
-                        <p className="text-xs text-platinum-400">
-                          <span className="text-platinum-500">Local:</span> {tier.local}
+                        <p className="text-xs text-platinum-500-400">
+                          <span className="text-platinum-500-500">Local:</span> {tier.local}
                         </p>
                       )}
                     </div>
@@ -1064,10 +1064,10 @@ export default function GapAnalysisPage() {
           </Card>
 
           {/* Arab Media Summit 2026 */}
-          <Card className="glass-card border-gold/30">
+          <Card className="glass-card border-gold-700/30">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Trophy className="h-5 w-5 text-gold" />
+                <Trophy className="h-5 w-5 text-gold-700" />
                 Arab Media Summit 2026
               </CardTitle>
               <CardDescription>March 31 - April 2, 2026 | Dubai World Trade Centre</CardDescription>
@@ -1080,10 +1080,10 @@ export default function GapAnalysisPage() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="p-3 rounded-lg border border-gold/30 bg-gold/10 text-center"
+                    className="p-3 rounded-lg border border-gold-700/30 bg-gold-700/10 text-center"
                   >
-                    <div className="text-sm font-bold text-gold">{item.value}</div>
-                    <div className="text-xs text-platinum-400 mt-1">{item.attribute}</div>
+                    <div className="text-sm font-bold text-gold-700">{item.value}</div>
+                    <div className="text-xs text-platinum-500-400 mt-1">{item.attribute}</div>
                   </motion.div>
                 ))}
               </div>
@@ -1091,10 +1091,10 @@ export default function GapAnalysisPage() {
           </Card>
 
           {/* Dubai Property Market */}
-          <Card className="glass-card border-rose/30">
+          <Card className="glass-card border-rose-500/30">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Building2 className="h-5 w-5 text-rose" />
+                <Building2 className="h-5 w-5 text-rose-500" />
                 Dubai Property Market Q1 2026
               </CardTitle>
               <CardDescription>Early signs of weakness</CardDescription>
@@ -1102,11 +1102,11 @@ export default function GapAnalysisPage() {
             <CardContent>
               <div className="space-y-3">
                 {dubaiPropertyMarketQ1_2026.map((item, idx) => (
-                  <div key={idx} className="flex items-center justify-between p-3 rounded-lg border border-rose/30 bg-rose/10">
-                    <span className="text-sm text-platinum-300">{item.metric}</span>
+                  <div key={idx} className="flex items-center justify-between p-3 rounded-lg border border-rose-500/30 bg-rose-500/10">
+                    <span className="text-sm text-platinum-500-300">{item.metric}</span>
                     <div className="flex items-center gap-3">
-                      <span className="text-lg font-bold text-rose">{item.change}</span>
-                      <span className="text-xs text-platinum-500">{item.source}</span>
+                      <span className="text-lg font-bold text-rose-500">{item.change}</span>
+                      <span className="text-xs text-platinum-500-500">{item.source}</span>
                     </div>
                   </div>
                 ))}
@@ -1121,7 +1121,7 @@ export default function GapAnalysisPage() {
           <Card className="glass-card">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Building2 className="h-5 w-5 text-gold" />
+                <Building2 className="h-5 w-5 text-gold-700" />
                 Entity Registry - Organizations
               </CardTitle>
               <CardDescription>Key organizations by UAE relevance</CardDescription>
@@ -1138,8 +1138,8 @@ export default function GapAnalysisPage() {
                       className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
                       <div className="flex-1">
-                        <p className="text-sm font-medium text-platinum-200">{org.entity}</p>
-                        <p className="text-xs text-platinum-500">{org.type} - {org.role}</p>
+                        <p className="text-sm font-medium text-platinum-500-200">{org.entity}</p>
+                        <p className="text-xs text-platinum-500-500">{org.type} - {org.role}</p>
                       </div>
                       {getRelevanceBadge(org.uaeRelevance)}
                     </motion.div>
@@ -1153,7 +1153,7 @@ export default function GapAnalysisPage() {
           <Card className="glass-card">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <User className="h-5 w-5 text-emerald" />
+                <User className="h-5 w-5 text-emerald-500" />
                 Key Individuals
               </CardTitle>
               <CardDescription>Notable figures mentioned</CardDescription>
@@ -1166,11 +1166,11 @@ export default function GapAnalysisPage() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.1 }}
-                    className="p-4 rounded-lg border border-emerald/30 bg-emerald/10"
+                    className="p-4 rounded-lg border border-emerald-500/30 bg-emerald-500/10"
                   >
-                    <h4 className="font-semibold text-platinum-200">{person.name}</h4>
-                    <p className="text-xs text-emerald">{person.role}, {person.organization}</p>
-                    <p className="text-xs text-platinum-400 mt-1">{person.context}</p>
+                    <h4 className="font-semibold text-platinum-500-200">{person.name}</h4>
+                    <p className="text-xs text-emerald-500">{person.role}, {person.organization}</p>
+                    <p className="text-xs text-platinum-500-400 mt-1">{person.context}</p>
                   </motion.div>
                 ))}
               </div>
@@ -1181,7 +1181,7 @@ export default function GapAnalysisPage() {
           <Card className="glass-card">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Scale className="h-5 w-5 text-navy" />
+                <Scale className="h-5 w-5 text-navy-500" />
                 Laws and Regulations
               </CardTitle>
               <CardDescription>Key legal instruments</CardDescription>
@@ -1197,10 +1197,10 @@ export default function GapAnalysisPage() {
                     className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
                     <div className="flex items-center justify-between mb-1">
-                      <h4 className="font-medium text-platinum-200 text-sm">{law.law}</h4>
-                      <span className="text-xs text-platinum-500">{law.date}</span>
+                      <h4 className="font-medium text-platinum-500-200 text-sm">{law.law}</h4>
+                      <span className="text-xs text-platinum-500-500">{law.date}</span>
                     </div>
-                    <p className="text-xs text-platinum-400">{law.keyProvision}</p>
+                    <p className="text-xs text-platinum-500-400">{law.keyProvision}</p>
                   </motion.div>
                 ))}
               </div>

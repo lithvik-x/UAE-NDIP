@@ -47,7 +47,7 @@ export default function InfluencersPage() {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-400">Loading influencer intelligence data...</div>
+        <div className="text-platinum-500-400">Loading influencer intelligence data...</div>
       </div>
     )
   }
@@ -193,11 +193,11 @@ export default function InfluencersPage() {
   const getTierBadge = (tier: number) => {
     switch (tier) {
       case 1:
-        return <Badge className="bg-gold/20 text-gold border-gold">Tier 1</Badge>
+        return <Badge className="bg-gold-700/20 text-gold-700 border-gold">Tier 1</Badge>
       case 2:
-        return <Badge className="bg-navy/20 text-navy border-navy">Tier 2</Badge>
+        return <Badge className="bg-navy/20 text-navy-500 border-navy">Tier 2</Badge>
       case 3:
-        return <Badge className="bg-platinum/20 text-platinum border-platinum">Tier 3</Badge>
+        return <Badge className="bg-platinum/20 text-platinum-500 border-platinum">Tier 3</Badge>
       default:
         return <Badge variant="outline">Unverified</Badge>
     }
@@ -209,17 +209,17 @@ export default function InfluencersPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">INFLUENCER INTELLIGENCE</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Influencer Registry & Metrics</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Influencer Registry & Metrics</h1>
+          <p className="mt-2 text-platinum-500-400">
             UAE influencer landscape — registry, engagement metrics, and tier classification
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <Users className="h-4 w-4" />
             View Registry
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Star className="h-4 w-4" />
             Analyze Impact
           </Button>
@@ -286,34 +286,34 @@ export default function InfluencersPage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70"
                         >
                           <div className="flex items-center gap-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold text-sm font-bold">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-700/20 text-gold-700 text-sm font-bold">
                               #{idx + 1}
                             </div>
                             <div className="flex items-center gap-3">
-                              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-platinum-700 text-platinum-300">
+                              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-platinum-700 text-platinum-500-300">
                                 {getPlatformIcon(influencer.platform)}
                               </div>
                               <div>
                                 <div className="flex items-center gap-2">
-                                  <p className="font-semibold text-platinum-200">{influencer.name}</p>
+                                  <p className="font-semibold text-platinum-500-200">{influencer.name}</p>
                                   {influencer.verified && (
-                                    <UserCheck className="h-4 w-4 text-gold" />
+                                    <UserCheck className="h-4 w-4 text-gold-700" />
                                   )}
                                 </div>
-                                <p className="text-sm text-platinum-400">{influencer.handle}</p>
+                                <p className="text-sm text-platinum-500-400">{influencer.handle}</p>
                               </div>
                             </div>
                           </div>
                           <div className="flex items-center gap-4">
                             <div className="text-center">
-                              <p className="text-sm text-platinum-400">Followers</p>
-                              <p className="font-bold text-platinum-200">
+                              <p className="text-sm text-platinum-500-400">Followers</p>
+                              <p className="font-bold text-platinum-500-200">
                                 {(influencer.followers / 1000000).toFixed(1)}M
                               </p>
                             </div>
                             <div className="text-center">
-                              <p className="text-sm text-platinum-400">UAE Score</p>
-                              <p className="font-bold text-gold">{influencer.uaeResonance}</p>
+                              <p className="text-sm text-platinum-500-400">UAE Score</p>
+                              <p className="font-bold text-gold-700">{influencer.uaeResonance}</p>
                             </div>
                             <div className="text-center">
                               {getTierBadge(influencer.tier)}
@@ -382,18 +382,18 @@ export default function InfluencersPage() {
                                   className="h-3 w-3 rounded-full"
                                   style={{ backgroundColor: platform.color }}
                                 />
-                                <span className="text-sm font-medium text-platinum-200">{platform.platform}</span>
+                                <span className="text-sm font-medium text-platinum-500-200">{platform.platform}</span>
                               </div>
-                              <span className="text-sm text-platinum-400">{platform.influencers.toLocaleString()} influencers</span>
+                              <span className="text-sm text-platinum-500-400">{platform.influencers.toLocaleString()} influencers</span>
                             </div>
                             <div className="flex gap-4">
                               <div className="flex-1">
-                                <p className="text-xs text-platinum-500">Avg Followers</p>
-                                <p className="font-semibold text-platinum-200">{(platform.avgFollowers / 1000).toFixed(0)}K</p>
+                                <p className="text-xs text-platinum-500-500">Avg Followers</p>
+                                <p className="font-semibold text-platinum-500-200">{(platform.avgFollowers / 1000).toFixed(0)}K</p>
                               </div>
                               <div className="flex-1">
-                                <p className="text-xs text-platinum-500">Engagement</p>
-                                <p className="font-semibold text-platinum-200">{platform.engagement}%</p>
+                                <p className="text-xs text-platinum-500-500">Engagement</p>
+                                <p className="font-semibold text-platinum-500-200">{platform.engagement}%</p>
                               </div>
                             </div>
                           </div>
@@ -438,7 +438,7 @@ export default function InfluencersPage() {
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
                       {['#UAE', '#Dubai', '#AbuDhabi', '#UAEInfluencer', '#DubaiLife', '#UAEBeauty', '#DubaiInfluencer', '#UAEFashion'].map((tag, idx) => (
-                        <Badge key={idx} variant="outline" className="text-gold border-gold/50">
+                        <Badge key={idx} variant="outline" className="text-gold-700 border-gold-700/50">
                           {tag}
                         </Badge>
                       ))}
@@ -463,8 +463,8 @@ export default function InfluencersPage() {
                       ].map((item, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-200">{item.category}</span>
-                            <span className="text-sm font-bold text-platinum-200">{item.rate}%</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.category}</span>
+                            <span className="text-sm font-bold text-platinum-500-200">{item.rate}%</span>
                           </div>
                           <Progress value={item.rate * 20} className="h-2" />
                         </div>
@@ -511,8 +511,8 @@ export default function InfluencersPage() {
                           {tier.tier}
                         </Badge>
                       </div>
-                      <p className="text-3xl font-bold text-platinum-200">{tier.count.toLocaleString()}</p>
-                      <p className="text-sm text-platinum-400">
+                      <p className="text-3xl font-bold text-platinum-500-200">{tier.count.toLocaleString()}</p>
+                      <p className="text-sm text-platinum-500-400">
                         {((tier.count / 122014) * 100).toFixed(1)}% of total
                       </p>
                     </CardContent>
@@ -556,9 +556,9 @@ export default function InfluencersPage() {
                       <div key={idx} className="flex items-start gap-4 rounded-lg bg-platinum-800/50 p-4">
                         <Award className={`h-5 w-5 text-${item.color} mt-0.5`} />
                         <div className="flex-1">
-                          <p className="font-semibold text-platinum-200">{item.tier}</p>
-                          <p className="text-sm text-platinum-400">{item.criteria}</p>
-                          <p className="text-xs text-platinum-500 mt-1">Examples: {item.examples}</p>
+                          <p className="font-semibold text-platinum-500-200">{item.tier}</p>
+                          <p className="text-sm text-platinum-500-400">{item.criteria}</p>
+                          <p className="text-xs text-platinum-500-500 mt-1">Examples: {item.examples}</p>
                         </div>
                       </div>
                     ))}

@@ -51,7 +51,7 @@ export default function SentimentOverviewPage() {
   if (!trendsData || trendsData.length === 0) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-400">Loading Sentiment data...</div>
+        <div className="text-platinum-500-400">Loading Sentiment data...</div>
       </div>
     )
   }
@@ -114,17 +114,17 @@ export default function SentimentOverviewPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">SENTIMENT INTELLIGENCE</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Sentiment Overview</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Sentiment Overview</h1>
+          <p className="mt-2 text-platinum-500-400">
             Cross-sector sentiment analysis, emotion tracking, and public perception metrics
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <Brain className="h-4 w-4" />
             Deep Analysis
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Zap className="h-4 w-4" />
             Analyze Sentiment
           </Button>
@@ -296,7 +296,7 @@ export default function SentimentOverviewPage() {
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-2">
                               <Smile className="h-5 w-5 text-emerald-400" />
-                              <span className="text-sm font-medium text-platinum-200">{emotion.emotion}</span>
+                              <span className="text-sm font-medium text-platinum-500-200">{emotion.emotion}</span>
                             </div>
                             <span className="text-lg font-bold text-emerald-400">{emotion.value}%</span>
                           </div>
@@ -319,7 +319,7 @@ export default function SentimentOverviewPage() {
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-2">
                               <Frown className="h-5 w-5 text-rose-400" />
-                              <span className="text-sm font-medium text-platinum-200">{emotion.emotion}</span>
+                              <span className="text-sm font-medium text-platinum-500-200">{emotion.emotion}</span>
                             </div>
                             <span className="text-lg font-bold text-rose-400">{emotion.value}%</span>
                           </div>
@@ -368,7 +368,7 @@ export default function SentimentOverviewPage() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-3xl font-bold text-emerald-400">+14%</p>
-                    <p className="text-sm text-platinum-400 mt-1">YoY improvement in positive sentiment</p>
+                    <p className="text-sm text-platinum-500-400 mt-1">YoY improvement in positive sentiment</p>
                   </CardContent>
                 </Card>
 
@@ -381,20 +381,20 @@ export default function SentimentOverviewPage() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-3xl font-bold text-rose-400">-6%</p>
-                    <p className="text-sm text-platinum-400 mt-1">YoY decrease in negative sentiment</p>
+                    <p className="text-sm text-platinum-500-400 mt-1">YoY decrease in negative sentiment</p>
                   </CardContent>
                 </Card>
 
                 <Card className="glass-card border-platinum-500/30">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-platinum-400 flex items-center gap-2">
+                    <CardTitle className="text-platinum-500-400 flex items-center gap-2">
                       <Meh className="h-5 w-5" />
                       Neutral Trend
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-3xl font-bold text-platinum-400">-8%</p>
-                    <p className="text-sm text-platinum-400 mt-1">YoY shift away from neutral stance</p>
+                    <p className="text-3xl font-bold text-platinum-500-400">-8%</p>
+                    <p className="text-sm text-platinum-500-400 mt-1">YoY shift away from neutral stance</p>
                   </CardContent>
                 </Card>
               </div>
@@ -429,7 +429,7 @@ export default function SentimentOverviewPage() {
                   <Card key={idx} className="glass-card">
                     <CardContent className="p-4">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="font-medium text-platinum-200 text-sm">{trend.name}</span>
+                        <span className="font-medium text-platinum-500-200 text-sm">{trend.name}</span>
                         <Badge variant={trend.sentiment?.positive && trend.sentiment.positive > 65 ? 'success' : 'warning'} className="text-xs">
                           {Math.round(trend.sentiment?.positive || 0)}%
                         </Badge>
@@ -514,9 +514,9 @@ export default function SentimentOverviewPage() {
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {neutralData.populationKPIs.slice(0, 12).map((kpi, idx) => (
                       <div key={idx} className="p-3 rounded-lg bg-glass-surface/50 border border-glass-border">
-                        <p className="text-xs text-platinum-400 truncate">{kpi.indicator}</p>
-                        <p className="text-lg font-bold text-platinum-100">{kpi.value}</p>
-                        <p className="text-xs text-platinum-500">{kpi.year}</p>
+                        <p className="text-xs text-platinum-500-400 truncate">{kpi.indicator}</p>
+                        <p className="text-lg font-bold text-platinum-500-100">{kpi.value}</p>
+                        <p className="text-xs text-platinum-500-500">{kpi.year}</p>
                       </div>
                     ))}
                   </div>
@@ -533,9 +533,9 @@ export default function SentimentOverviewPage() {
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {neutralData.economicKPIs.slice(0, 12).map((kpi, idx) => (
                       <div key={idx} className="p-3 rounded-lg bg-glass-surface/50 border border-glass-border">
-                        <p className="text-xs text-platinum-400 truncate">{kpi.indicator}</p>
-                        <p className="text-lg font-bold text-platinum-100">{kpi.value}</p>
-                        <p className="text-xs text-platinum-500">{kpi.year}</p>
+                        <p className="text-xs text-platinum-500-400 truncate">{kpi.indicator}</p>
+                        <p className="text-lg font-bold text-platinum-500-100">{kpi.value}</p>
+                        <p className="text-xs text-platinum-500-500">{kpi.year}</p>
                       </div>
                     ))}
                   </div>
@@ -552,9 +552,9 @@ export default function SentimentOverviewPage() {
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {neutralData.climatePolicyKPIs.slice(0, 12).map((kpi, idx) => (
                       <div key={idx} className="p-3 rounded-lg bg-glass-surface/50 border border-glass-border">
-                        <p className="text-xs text-platinum-400 truncate">{kpi.indicator}</p>
+                        <p className="text-xs text-platinum-500-400 truncate">{kpi.indicator}</p>
                         <p className="text-lg font-bold text-emerald-400">{kpi.value}</p>
-                        <p className="text-xs text-platinum-500">{kpi.year}</p>
+                        <p className="text-xs text-platinum-500-500">{kpi.year}</p>
                       </div>
                     ))}
                   </div>
@@ -594,14 +594,14 @@ export default function SentimentOverviewPage() {
                     {neutralData.futureRoadmapKPIs.slice(0, 8).map((kpi, idx) => (
                       <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-glass-surface/50 border border-glass-border">
                         <div className="flex-1">
-                          <p className="text-sm font-medium text-platinum-200">{kpi.indicator}</p>
+                          <p className="text-sm font-medium text-platinum-500-200">{kpi.indicator}</p>
                           {kpi.currentValue && (
-                            <p className="text-xs text-platinum-400">Current: {kpi.currentValue}</p>
+                            <p className="text-xs text-platinum-500-400">Current: {kpi.currentValue}</p>
                           )}
                         </div>
                         <div className="text-right">
-                          <p className="text-lg font-bold text-gold">{kpi.target}</p>
-                          <p className="text-xs text-platinum-500">by {kpi.targetYear}</p>
+                          <p className="text-lg font-bold text-gold-700">{kpi.target}</p>
+                          <p className="text-xs text-platinum-500-500">by {kpi.targetYear}</p>
                         </div>
                       </div>
                     ))}
@@ -623,8 +623,8 @@ export default function SentimentOverviewPage() {
                           T{source.tier}
                         </Badge>
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm font-medium text-platinum-200 truncate">{source.source}</p>
-                          <p className="text-xs text-platinum-500">{source.type}</p>
+                          <p className="text-sm font-medium text-platinum-500-200 truncate">{source.source}</p>
+                          <p className="text-xs text-platinum-500-500">{source.type}</p>
                         </div>
                       </div>
                     ))}
@@ -711,8 +711,8 @@ export default function SentimentOverviewPage() {
                     {sarcasmData.englishPatterns.map((pattern, idx) => (
                       <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-glass-surface/50 border border-glass-border">
                         <div className="flex-1">
-                          <p className="font-mono text-sm text-platinum-200">{pattern.pattern}</p>
-                          <p className="text-xs text-platinum-400 mt-1">{pattern.context}</p>
+                          <p className="font-mono text-sm text-platinum-500-200">{pattern.pattern}</p>
+                          <p className="text-xs text-platinum-500-400 mt-1">{pattern.context}</p>
                         </div>
                         <Badge
                           variant={pattern.ironyIntensity.includes('Very High') ? 'destructive' : pattern.ironyIntensity.includes('High') ? 'warning' : 'secondary'}
@@ -737,9 +737,9 @@ export default function SentimentOverviewPage() {
                     {sarcasmData.arabicPatterns.map((pattern, idx) => (
                       <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-glass-surface/50 border border-glass-border">
                         <div className="flex-1">
-                          <p className="font-mono text-lg text-platinum-200 text-right" dir="rtl">{pattern.arabicPattern}</p>
-                          <p className="text-sm text-platinum-300 mt-1">{pattern.translation}</p>
-                          <p className="text-xs text-platinum-400">{pattern.context}</p>
+                          <p className="font-mono text-lg text-platinum-500-200 text-right" dir="rtl">{pattern.arabicPattern}</p>
+                          <p className="text-sm text-platinum-500-300 mt-1">{pattern.translation}</p>
+                          <p className="text-xs text-platinum-500-400">{pattern.context}</p>
                         </div>
                         <Badge
                           variant={pattern.ironyIntensity.includes('Very High') ? 'destructive' : pattern.ironyIntensity.includes('Medium-High') ? 'warning' : 'secondary'}
@@ -769,8 +769,8 @@ export default function SentimentOverviewPage() {
                         <div className="flex items-start gap-3">
                           <div className="flex-1">
                             <p className="text-sm font-medium text-rose-300">"{c.officialClaim}"</p>
-                            <p className="text-sm text-platinum-400 mt-1">{c.reality}</p>
-                            <p className="text-xs text-platinum-500 mt-1">Source: {c.source}</p>
+                            <p className="text-sm text-platinum-500-400 mt-1">{c.reality}</p>
+                            <p className="text-xs text-platinum-500-500 mt-1">Source: {c.source}</p>
                           </div>
                           <Badge variant="destructive" className="shrink-0">
                             {c.ironyMarker}
@@ -796,15 +796,15 @@ export default function SentimentOverviewPage() {
                     {sarcasmData.criticalKPIs.map((kpi, idx) => (
                       <div key={idx} className="p-4 rounded-lg bg-glass-surface/50 border border-glass-border">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-medium text-platinum-200">{kpi.kpi}</span>
+                          <span className="text-sm font-medium text-platinum-500-200">{kpi.kpi}</span>
                           <Badge
                             variant={kpi.status === 'CRITICAL' ? 'destructive' : kpi.status === 'AT RISK' ? 'warning' : 'secondary'}
                           >
                             {kpi.status}
                           </Badge>
                         </div>
-                        <p className="text-xl font-bold text-platinum-100">{kpi.currentValue}</p>
-                        <p className="text-xs text-platinum-400 mt-1">Threshold: {kpi.threshold}</p>
+                        <p className="text-xl font-bold text-platinum-500-100">{kpi.currentValue}</p>
+                        <p className="text-xs text-platinum-500-400 mt-1">Threshold: {kpi.threshold}</p>
                       </div>
                     ))}
                   </div>
@@ -821,8 +821,8 @@ export default function SentimentOverviewPage() {
                   <div className="space-y-4">
                     {sarcasmData.keyQuotations.slice(0, 6).map((q, idx) => (
                       <div key={idx} className="p-4 rounded-lg bg-glass-surface/50 border border-glass-border">
-                        <p className="text-sm text-platinum-200 italic">"{q.quote}"</p>
-                        <p className="text-xs text-platinum-400 mt-2">— {q.source}</p>
+                        <p className="text-sm text-platinum-500-200 italic">"{q.quote}"</p>
+                        <p className="text-xs text-platinum-500-400 mt-2">— {q.source}</p>
                       </div>
                     ))}
                   </div>

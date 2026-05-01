@@ -41,7 +41,7 @@ export function SectionResearchSynthesis() {
                 className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-4"
               >
                 <div className="flex items-start justify-between mb-2">
-                  <p className="font-medium text-platinum-200">{item.finding}</p>
+                  <p className="font-medium text-platinum-500-200">{item.finding}</p>
                   <Badge className={
                     item.consensusLevel === 'HIGH' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' :
                     item.consensusLevel.includes('MODERATE') ? 'bg-amber-500/20 text-amber-400 border-amber-500/50' :
@@ -51,9 +51,9 @@ export function SectionResearchSynthesis() {
                   </Badge>
                 </div>
                 <div className="flex flex-wrap gap-2 text-xs">
-                  <span className="text-platinum-500">Supporting: {item.supportingSources}</span>
+                  <span className="text-platinum-500-500">Supporting: {item.supportingSources}</span>
                   {item.challengingSources && (
-                    <span className="text-platinum-500">Challenging: {item.challengingSources}</span>
+                    <span className="text-platinum-500-500">Challenging: {item.challengingSources}</span>
                   )}
                 </div>
               </motion.div>
@@ -80,16 +80,16 @@ export function SectionResearchSynthesis() {
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2">
                   <Target className="h-4 w-4 text-indigo-400" />
-                  <h4 className="font-semibold text-platinum-200">{method.method}</h4>
+                  <h4 className="font-semibold text-platinum-500-200">{method.method}</h4>
                 </div>
                 <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">
                   {method.qualityScore}
                 </Badge>
               </div>
-              <div className="flex items-center gap-2 text-xs text-platinum-400 mb-1">
+              <div className="flex items-center gap-2 text-xs text-platinum-500-400 mb-1">
                 <span>Studies: {method.studies}</span>
               </div>
-              <p className="text-xs text-platinum-500">Limitation: {method.keyLimitation}</p>
+              <p className="text-xs text-platinum-500-500">Limitation: {method.keyLimitation}</p>
             </motion.div>
           ))}
         </div>
@@ -111,7 +111,7 @@ export function SectionResearchSynthesis() {
               className="flex items-start gap-3 rounded-lg border border-amber-500/30 bg-amber-500/10 p-4"
             >
               <Lightbulb className="h-5 w-5 text-amber-400 shrink-0 mt-0.5" />
-              <p className="text-sm text-platinum-300">{gap}</p>
+              <p className="text-sm text-platinum-500-300">{gap}</p>
             </motion.div>
           ))}
         </div>
@@ -134,13 +134,13 @@ export function SectionResearchSynthesis() {
                 className="rounded border border-platinum-700/50 bg-platinum-800/30 p-2"
               >
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-xs font-mono text-platinum-500">{metric.id}</span>
-                  <span className="text-xs text-platinum-500">{metric.year}</span>
+                  <span className="text-xs font-mono text-platinum-500-500">{metric.id}</span>
+                  <span className="text-xs text-platinum-500-500">{metric.year}</span>
                 </div>
-                <p className="text-xs text-platinum-300 mb-1 truncate">{metric.metric}</p>
+                <p className="text-xs text-platinum-500-300 mb-1 truncate">{metric.metric}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-bold text-emerald-400">{metric.value}</span>
-                  <span className="text-xs text-platinum-500">{metric.unit}</span>
+                  <span className="text-xs text-platinum-500-500">{metric.unit}</span>
                 </div>
               </motion.div>
             ))}
@@ -168,7 +168,7 @@ export function SectionResearchSynthesis() {
                   {idx + 1}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm text-platinum-200 mb-1">{finding.finding}</p>
+                  <p className="text-sm text-platinum-500-200 mb-1">{finding.finding}</p>
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="outline" className="text-xs">{finding.category}</Badge>
                     <Badge variant="outline" className="text-xs">{finding.source}</Badge>

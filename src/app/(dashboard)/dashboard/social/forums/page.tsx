@@ -64,7 +64,7 @@ export default function ForumsPage() {
               Forum Intelligence
             </span>
           </h1>
-          <p className="mt-2 text-platinum-400">Discussion forums and community platforms — trending topics, sentiment patterns, and engagement metrics</p>
+          <p className="mt-2 text-platinum-500-400">Discussion forums and community platforms — trending topics, sentiment patterns, and engagement metrics</p>
         </div>
       </motion.div>
 
@@ -126,9 +126,9 @@ export default function ForumsPage() {
                       className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                       <div className="flex items-center gap-3">
                         <MessageCircle className="h-4 w-4 text-amber-400" />
-                        <span className="font-medium text-platinum-200">{f.name}</span>
+                        <span className="font-medium text-platinum-500-200">{f.name}</span>
                       </div>
-                      <div className="flex items-center gap-4 text-sm text-platinum-400">
+                      <div className="flex items-center gap-4 text-sm text-platinum-500-400">
                         <span>{f.members?.toLocaleString?.()} members</span>
                         <span>{f.posts?.toLocaleString?.()} posts/mo</span>
                       </div>
@@ -148,12 +148,12 @@ export default function ForumsPage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }}
                     className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                     <div className="flex items-center gap-3 flex-1">
-                      <span className="text-xs text-platinum-500 w-5">#{idx + 1}</span>
+                      <span className="text-xs text-platinum-500-500 w-5">#{idx + 1}</span>
                       <MessageCircle className="h-4 w-4 text-amber-400 shrink-0" />
-                      <span className="text-sm text-platinum-200">{t.title}</span>
+                      <span className="text-sm text-platinum-500-200">{t.title}</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Badge variant="outline" className={`text-xs ${t.sentiment === 'positive' ? 'border-emerald-500/50 text-emerald' : t.sentiment === 'negative' ? 'border-rose-500/50 text-rose' : 'border-platinum-500/50 text-platinum'}`}>{t.sentiment}</Badge>
+                      <Badge variant="outline" className={`text-xs ${t.sentiment === 'positive' ? 'border-emerald-500/50 text-emerald-500' : t.sentiment === 'negative' ? 'border-rose-500/50 text-rose-500' : 'border-platinum-500/50 text-platinum-500'}`}>{t.sentiment}</Badge>
                       <Badge variant="outline" className="border-amber-500/50 text-amber-400">{t.posts} replies</Badge>
                     </div>
                   </motion.div>

@@ -217,17 +217,17 @@ export default function NarrativeReconstructionPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">NARRATIVE INTELLIGENCE</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Narrative Reconstruction</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Narrative Reconstruction</h1>
+          <p className="mt-2 text-platinum-500-400">
             Comprehensive playbook for tracking narrative lifecycle from origin through evolution to battle analysis
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <Beaker className="h-4 w-4" />
             Research Mode
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Shield className="h-4 w-4" />
             Threat Center
           </Button>
@@ -275,7 +275,7 @@ export default function NarrativeReconstructionPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <TrendingUp className="h-5 w-5 text-gold" />
+                      <TrendingUp className="h-5 w-5 text-gold-700" />
                       Market Growth Projection
                     </CardTitle>
                     <CardDescription>Narrative intelligence market 2025-2033 (CAGR 11.2%)</CardDescription>
@@ -297,7 +297,7 @@ export default function NarrativeReconstructionPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <AlertTriangle className="h-5 w-5 text-rose" />
+                      <AlertTriangle className="h-5 w-5 text-rose-500" />
                       Case Study Impact
                     </CardTitle>
                     <CardDescription>Real-world financial impact of narrative attacks</CardDescription>
@@ -320,7 +320,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card border-rose-500/30">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Shield className="h-5 w-5 text-rose" />
+                    <Shield className="h-5 w-5 text-rose-500" />
                     Blackbird.AI - Critical Statistics
                   </CardTitle>
                   <CardDescription>Primary source data on narrative threats</CardDescription>
@@ -336,8 +336,8 @@ export default function NarrativeReconstructionPage() {
                         whileHover={{ scale: 1.05 }}
                         className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-4 hover:bg-platinum-800/50 transition-colors cursor-pointer"
                       >
-                        <div className="text-lg font-bold text-rose">{metric.value}</div>
-                        <div className="text-xs text-platinum-400 mt-1">{metric.metric}</div>
+                        <div className="text-lg font-bold text-rose-500">{metric.value}</div>
+                        <div className="text-xs text-platinum-500-400 mt-1">{metric.metric}</div>
                       </motion.div>
                     ))}
                   </div>
@@ -348,7 +348,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Crosshair className="h-5 w-5 text-gold" />
+                    <Crosshair className="h-5 w-5 text-gold-700" />
                     Real-World Attack Case Studies
                   </CardTitle>
                   <CardDescription>Documented narrative attack incidents and vectors</CardDescription>
@@ -364,18 +364,18 @@ export default function NarrativeReconstructionPage() {
                           transition={{ delay: idx * 0.1 }}
                           className="flex items-center gap-4 p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30 hover:bg-platinum-800/50 transition-colors"
                         >
-                          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-rose/20">
-                            <Target className="h-6 w-6 text-rose" />
+                          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-rose-500/20">
+                            <Target className="h-6 w-6 text-rose-500" />
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center gap-2">
-                              <h4 className="font-semibold text-platinum-200">{caseStudy.incident}</h4>
+                              <h4 className="font-semibold text-platinum-500-200">{caseStudy.incident}</h4>
                               <Badge variant="outline" className="text-xs">{caseStudy.date}</Badge>
                             </div>
-                            <p className="text-sm text-platinum-400 mt-1">{caseStudy.attackVector}</p>
+                            <p className="text-sm text-platinum-500-400 mt-1">{caseStudy.attackVector}</p>
                           </div>
                           <div className="text-right">
-                            <div className="text-lg font-bold text-rose">{caseStudy.impact}</div>
+                            <div className="text-lg font-bold text-rose-500">{caseStudy.impact}</div>
                           </div>
                         </motion.div>
                       ))}
@@ -385,10 +385,10 @@ export default function NarrativeReconstructionPage() {
               </Card>
 
               {/* Critical Findings */}
-              <Card className="glass-card border-gold/30">
+              <Card className="glass-card border-gold-700/30">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <AlertCircle className="h-5 w-5 text-gold" />
+                    <AlertCircle className="h-5 w-5 text-gold-700" />
                     Critical Findings for UAE Stakeholders
                   </CardTitle>
                   <CardDescription>Priority-ranked narrative intelligence implications</CardDescription>
@@ -408,15 +408,15 @@ export default function NarrativeReconstructionPage() {
                         }}
                       >
                         <div className={`px-3 py-1 rounded-full text-sm font-bold ${
-                          finding.priority === 'Critical' ? 'bg-rose/20 text-rose' :
-                          finding.priority === 'High' ? 'bg-gold/20 text-gold' :
-                          'bg-platinum/20 text-platinum'
+                          finding.priority === 'Critical' ? 'bg-rose-500/20 text-rose-500' :
+                          finding.priority === 'High' ? 'bg-gold-700/20 text-gold-700' :
+                          'bg-platinum/20 text-platinum-500'
                         }`}>
                           {finding.priority}
                         </div>
                         <div className="flex-1">
-                          <p className="text-sm font-medium text-platinum-200">{finding.finding}</p>
-                          <p className="text-xs text-platinum-400 mt-1">Implication: {finding.implication}</p>
+                          <p className="text-sm font-medium text-platinum-500-200">{finding.finding}</p>
+                          <p className="text-xs text-platinum-500-400 mt-1">Implication: {finding.implication}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -435,7 +435,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <BarChart3 className="h-5 w-5 text-gold" />
+                    <BarChart3 className="h-5 w-5 text-gold-700" />
                     Platform Capability Comparison
                   </CardTitle>
                   <CardDescription>Coverage, capability, and UAE relevance scores</CardDescription>
@@ -476,14 +476,14 @@ export default function NarrativeReconstructionPage() {
                       <CardContent>
                         <div className="space-y-2 mb-4">
                           <div className="flex items-center justify-between text-sm">
-                            <span className="text-platinum-400">Credibility Score</span>
-                            <span className="font-bold text-gold">{platform.sourceCredibility}/10</span>
+                            <span className="text-platinum-500-400">Credibility Score</span>
+                            <span className="font-bold text-gold-700">{platform.sourceCredibility}/10</span>
                           </div>
                         </div>
                         <div className="space-y-2">
                           {platform.keyFeatures.slice(0, 5).map((feature, i) => (
-                            <div key={i} className="flex items-center gap-2 text-xs text-platinum-400">
-                              <CheckCircle className="h-3 w-3 text-emerald flex-shrink-0" />
+                            <div key={i} className="flex items-center gap-2 text-xs text-platinum-500-400">
+                              <CheckCircle className="h-3 w-3 text-emerald-500 flex-shrink-0" />
                               {feature}
                             </div>
                           ))}
@@ -498,7 +498,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Compass className="h-5 w-5 text-navy" />
+                    <Compass className="h-5 w-5 text-navy-500" />
                     PeakMetrics Detect-Decipher-Defend Framework
                   </CardTitle>
                   <CardDescription>Three-phase narrative intelligence approach</CardDescription>
@@ -515,13 +515,13 @@ export default function NarrativeReconstructionPage() {
                         className="rounded-lg border border-navy/30 bg-navy/10 p-4 hover:bg-navy/20 transition-colors cursor-pointer"
                       >
                         <div className="flex items-center gap-2 mb-3">
-                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-navy/20 text-navy font-bold">
+                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-navy/20 text-navy-500 font-bold">
                             {idx + 1}
                           </div>
-                          <h4 className="font-bold text-platinum-200">{phase.phase}</h4>
+                          <h4 className="font-bold text-platinum-500-200">{phase.phase}</h4>
                         </div>
-                        <p className="text-sm text-platinum-400 mb-2">{phase.description}</p>
-                        <div className="text-xs text-navy">{phase.metrics}</div>
+                        <p className="text-sm text-platinum-500-400 mb-2">{phase.description}</p>
+                        <div className="text-xs text-navy-500">{phase.metrics}</div>
                       </motion.div>
                     ))}
                   </div>
@@ -532,7 +532,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <GitMerge className="h-5 w-5 text-emerald" />
+                    <GitMerge className="h-5 w-5 text-emerald-500" />
                     EdgeTheory 5-Step Process
                   </CardTitle>
                   <CardDescription>Consume-Disassemble-Analyze-Synthesize-Deliver</CardDescription>
@@ -547,13 +547,13 @@ export default function NarrativeReconstructionPage() {
                         transition={{ delay: idx * 0.1 }}
                         className="flex items-center gap-2"
                       >
-                        <div className="rounded-lg border border-emerald/30 bg-emerald/10 p-3 text-center min-w-[120px]">
-                          <div className="text-xs text-emerald mb-1">Step {idx + 1}</div>
-                          <div className="font-bold text-platinum-200">{step.step}</div>
-                          <div className="text-xs text-platinum-400 mt-1">{step.description}</div>
+                        <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3 text-center min-w-[120px]">
+                          <div className="text-xs text-emerald-500 mb-1">Step {idx + 1}</div>
+                          <div className="font-bold text-platinum-500-200">{step.step}</div>
+                          <div className="text-xs text-platinum-500-400 mt-1">{step.description}</div>
                         </div>
                         {idx < edgeTheoryProcess.length - 1 && (
-                          <ArrowRight className="h-4 w-4 text-emerald flex-shrink-0" />
+                          <ArrowRight className="h-4 w-4 text-emerald-500 flex-shrink-0" />
                         )}
                       </motion.div>
                     ))}
@@ -572,7 +572,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Map className="h-5 w-5 text-gold" />
+                    <Map className="h-5 w-5 text-gold-700" />
                     Origin Tracing Methods
                   </CardTitle>
                   <CardDescription>First Story Detection, Patient Zero, Rumor Source Detection</CardDescription>
@@ -581,7 +581,7 @@ export default function NarrativeReconstructionPage() {
                   <div className="grid gap-6 lg:grid-cols-2">
                     {/* Network Structures */}
                     <div className="space-y-3">
-                      <h4 className="text-sm font-semibold text-platinum-300">Network Structures</h4>
+                      <h4 className="text-sm font-semibold text-platinum-500-300">Network Structures</h4>
                       {originTracingMethods.networkStructures.map((structure, idx) => (
                         <motion.div
                           key={idx}
@@ -591,18 +591,18 @@ export default function NarrativeReconstructionPage() {
                           className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                         >
                           <div className="flex items-center gap-2">
-                            <Network className="h-4 w-4 text-navy" />
-                            <span className="font-medium text-platinum-200">{structure.structure}</span>
+                            <Network className="h-4 w-4 text-navy-500" />
+                            <span className="font-medium text-platinum-500-200">{structure.structure}</span>
                           </div>
-                          <p className="text-xs text-platinum-400 mt-1">{structure.description}</p>
-                          <p className="text-xs text-emerald mt-1">Use: {structure.useCase}</p>
+                          <p className="text-xs text-platinum-500-400 mt-1">{structure.description}</p>
+                          <p className="text-xs text-emerald-500 mt-1">Use: {structure.useCase}</p>
                         </motion.div>
                       ))}
                     </div>
 
                     {/* Propagation Models */}
                     <div className="space-y-3">
-                      <h4 className="text-sm font-semibold text-platinum-300">Propagation Models</h4>
+                      <h4 className="text-sm font-semibold text-platinum-500-300">Propagation Models</h4>
                       {originTracingMethods.propagationModels.map((model, idx) => (
                         <motion.div
                           key={idx}
@@ -612,11 +612,11 @@ export default function NarrativeReconstructionPage() {
                           className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                         >
                           <div className="flex items-center gap-2">
-                            <GitBranch className="h-4 w-4 text-purple" />
-                            <span className="font-medium text-platinum-200">{model.model}</span>
+                            <GitBranch className="h-4 w-4 text-purple-500" />
+                            <span className="font-medium text-platinum-500-200">{model.model}</span>
                           </div>
-                          <p className="text-xs text-platinum-400 mt-1">{model.description}</p>
-                          <p className="text-xs text-purple mt-1">Characteristics: {model.characteristics}</p>
+                          <p className="text-xs text-platinum-500-400 mt-1">{model.description}</p>
+                          <p className="text-xs text-purple-500 mt-1">Characteristics: {model.characteristics}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -628,7 +628,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Brain className="h-5 w-5 text-purple" />
+                    <Brain className="h-5 w-5 text-purple-500" />
                     LLM Narrative Shift Detection
                   </CardTitle>
                   <CardDescription>Hybrid approach using RollingLDA and Llama 3.1 8B</CardDescription>
@@ -644,11 +644,11 @@ export default function NarrativeReconstructionPage() {
                           transition={{ delay: idx * 0.1 }}
                           className="flex items-center gap-2"
                         >
-                          <div className="px-3 py-2 rounded-lg bg-purple/20 text-purple text-sm font-medium border border-purple/30">
+                          <div className="px-3 py-2 rounded-lg bg-purple-500/20 text-purple-500 text-sm font-medium border border-purple-500/30">
                             {stage}
                           </div>
                           {idx < llmShiftDetectionMetrics.pipeline.length - 1 && (
-                            <ArrowRight className="h-4 w-4 text-purple" />
+                            <ArrowRight className="h-4 w-4 text-purple-500" />
                           )}
                         </motion.div>
                       ))}
@@ -663,8 +663,8 @@ export default function NarrativeReconstructionPage() {
                           whileHover={{ scale: 1.05 }}
                           className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3 text-center"
                         >
-                          <div className="text-xl font-bold text-purple">{finding.value}</div>
-                          <div className="text-xs text-platinum-400 mt-1">{finding.metric}</div>
+                          <div className="text-xl font-bold text-purple-500">{finding.value}</div>
+                          <div className="text-xs text-platinum-500-400 mt-1">{finding.metric}</div>
                         </motion.div>
                       ))}
                     </div>
@@ -676,7 +676,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Gauge className="h-5 w-5 text-emerald" />
+                    <Gauge className="h-5 w-5 text-emerald-500" />
                     Research Accuracy Metrics
                   </CardTitle>
                   <CardDescription>LLM and methodology performance benchmarks</CardDescription>
@@ -698,7 +698,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Scale className="h-5 w-5 text-gold" />
+                    <Scale className="h-5 w-5 text-gold-700" />
                     Methodology Effectiveness
                   </CardTitle>
                   <CardDescription>Effectiveness ratings and limitations</CardDescription>
@@ -714,11 +714,11 @@ export default function NarrativeReconstructionPage() {
                         className="space-y-2"
                       >
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-platinum-200">{method.method}</span>
-                          <span className="text-sm font-bold text-emerald">{method.effectiveness}%</span>
+                          <span className="text-sm font-medium text-platinum-500-200">{method.method}</span>
+                          <span className="text-sm font-bold text-emerald-500">{method.effectiveness}%</span>
                         </div>
                         <Progress value={method.effectiveness} className="h-2" />
-                        <p className="text-xs text-platinum-500">Limitations: {method.limitations}</p>
+                        <p className="text-xs text-platinum-500-500">Limitations: {method.limitations}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -736,7 +736,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Timeline className="h-5 w-5 text-gold" />
+                    <Timeline className="h-5 w-5 text-gold-700" />
                     Narrative Evolution Stages
                   </CardTitle>
                   <CardDescription>Six-stage narrative lifecycle with key metrics</CardDescription>
@@ -754,15 +754,15 @@ export default function NarrativeReconstructionPage() {
                           className="flex items-start gap-4 relative"
                         >
                           <div className={`flex h-12 w-12 items-center justify-center rounded-full z-10 ${
-                            idx === 0 ? 'bg-gold/20 text-gold' :
-                            idx === narrativeLifecycleStages.length - 1 ? 'bg-navy/20 text-navy' :
-                            'bg-emerald/20 text-emerald'
+                            idx === 0 ? 'bg-gold-700/20 text-gold-700' :
+                            idx === narrativeLifecycleStages.length - 1 ? 'bg-navy/20 text-navy-500' :
+                            'bg-emerald-500/20 text-emerald-500'
                           }`}>
                             <span className="font-bold">{idx + 1}</span>
                           </div>
                           <div className="flex-1 pb-6">
-                            <h4 className="font-semibold text-platinum-200">{stage.stage}</h4>
-                            <p className="text-sm text-platinum-400 mt-1">{stage.description}</p>
+                            <h4 className="font-semibold text-platinum-500-200">{stage.stage}</h4>
+                            <p className="text-sm text-platinum-500-400 mt-1">{stage.description}</p>
                             <div className="flex flex-wrap gap-2 mt-2">
                               {stage.keyMetrics.map((metric, i) => (
                                 <Badge key={i} variant="outline" className="text-xs">
@@ -782,7 +782,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Radio className="h-5 w-5 text-rose" />
+                    <Radio className="h-5 w-5 text-rose-500" />
                     Platform-Specific Tracking Methods
                   </CardTitle>
                   <CardDescription>Twitter/X, Reddit, TikTok tracking metrics</CardDescription>
@@ -791,13 +791,13 @@ export default function NarrativeReconstructionPage() {
                   <div className="grid gap-6 lg:grid-cols-3">
                     {/* Twitter/X */}
                     <div className="space-y-3">
-                      <h4 className="text-sm font-semibold text-platinum-300 flex items-center gap-2">
+                      <h4 className="text-sm font-semibold text-platinum-500-300 flex items-center gap-2">
                         <Hash className="h-4 w-4 text-info" />
                         Twitter/X
                       </h4>
                       {platformTracking.twitterX.map((item, idx) => (
                         <div key={idx} className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                          <div className="font-medium text-platinum-200 text-sm">{item.trackingMethod}</div>
+                          <div className="font-medium text-platinum-500-200 text-sm">{item.trackingMethod}</div>
                           <div className="flex flex-wrap gap-1 mt-1">
                             {item.metrics.map((m, i) => (
                               <Badge key={i} variant="outline" className="text-xs text-info">{m}</Badge>
@@ -809,16 +809,16 @@ export default function NarrativeReconstructionPage() {
 
                     {/* Reddit */}
                     <div className="space-y-3">
-                      <h4 className="text-sm font-semibold text-platinum-300 flex items-center gap-2">
-                        <MessageSquare className="h-4 w-4 text-orange" />
+                      <h4 className="text-sm font-semibold text-platinum-500-300 flex items-center gap-2">
+                        <MessageSquare className="h-4 w-4 text-orange-500" />
                         Reddit
                       </h4>
                       {platformTracking.reddit.map((item, idx) => (
                         <div key={idx} className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                          <div className="font-medium text-platinum-200 text-sm">{item.trackingMethod}</div>
+                          <div className="font-medium text-platinum-500-200 text-sm">{item.trackingMethod}</div>
                           <div className="flex flex-wrap gap-1 mt-1">
                             {item.metrics.map((m, i) => (
-                              <Badge key={i} variant="outline" className="text-xs text-orange">{m}</Badge>
+                              <Badge key={i} variant="outline" className="text-xs text-orange-500">{m}</Badge>
                             ))}
                           </div>
                         </div>
@@ -827,16 +827,16 @@ export default function NarrativeReconstructionPage() {
 
                     {/* TikTok */}
                     <div className="space-y-3">
-                      <h4 className="text-sm font-semibold text-platinum-300 flex items-center gap-2">
-                        <Video className="h-4 w-4 text-pink" />
+                      <h4 className="text-sm font-semibold text-platinum-500-300 flex items-center gap-2">
+                        <Video className="h-4 w-4 text-pink-500" />
                         TikTok
                       </h4>
                       {platformTracking.tiktok.map((item, idx) => (
                         <div key={idx} className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                          <div className="font-medium text-platinum-200 text-sm">{item.trackingMethod}</div>
+                          <div className="font-medium text-platinum-500-200 text-sm">{item.trackingMethod}</div>
                           <div className="flex flex-wrap gap-1 mt-1">
                             {item.metrics.map((m, i) => (
-                              <Badge key={i} variant="outline" className="text-xs text-pink">{m}</Badge>
+                              <Badge key={i} variant="outline" className="text-xs text-pink-500">{m}</Badge>
                             ))}
                           </div>
                         </div>
@@ -857,7 +857,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <ShieldCheck className="h-5 w-5 text-emerald" />
+                    <ShieldCheck className="h-5 w-5 text-emerald-500" />
                     ORS Impact Four-Part Framework
                   </CardTitle>
                   <CardDescription>Narrative change measurement methodology</CardDescription>
@@ -871,13 +871,13 @@ export default function NarrativeReconstructionPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.1 }}
                         whileHover={{ scale: 1.02 }}
-                        className="rounded-lg border border-emerald/30 bg-emerald/10 p-4 hover:bg-emerald/20 transition-colors cursor-pointer"
+                        className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 hover:bg-emerald-500/20 transition-colors cursor-pointer"
                       >
-                        <div className="text-xs text-emerald mb-1">Component {idx + 1}</div>
-                        <h4 className="font-semibold text-platinum-200">{component.component}</h4>
-                        <p className="text-xs text-platinum-400 mt-2">{component.description}</p>
-                        <div className="mt-3 p-2 rounded bg-emerald/20">
-                          <p className="text-xs text-emerald">UAE: {component.uaeApplication}</p>
+                        <div className="text-xs text-emerald-500 mb-1">Component {idx + 1}</div>
+                        <h4 className="font-semibold text-platinum-500-200">{component.component}</h4>
+                        <p className="text-xs text-platinum-500-400 mt-2">{component.description}</p>
+                        <div className="mt-3 p-2 rounded bg-emerald-500/20">
+                          <p className="text-xs text-emerald-500">UAE: {component.uaeApplication}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -889,7 +889,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <AlertTriangle className="h-5 w-5 text-rose" />
+                    <AlertTriangle className="h-5 w-5 text-rose-500" />
                     Blackbird.AI Risk Index Factors
                   </CardTitle>
                   <CardDescription>Threat scoring components</CardDescription>
@@ -915,8 +915,8 @@ export default function NarrativeReconstructionPage() {
                             />
                           </svg>
                         </div>
-                        <div className="text-sm font-medium text-platinum-200 mt-2">{factor.factor}</div>
-                        <div className="text-xs text-platinum-400">{factor.description}</div>
+                        <div className="text-sm font-medium text-platinum-500-200 mt-2">{factor.factor}</div>
+                        <div className="text-xs text-platinum-500-400">{factor.description}</div>
                       </motion.div>
                     ))}
                   </div>
@@ -928,7 +928,7 @@ export default function NarrativeReconstructionPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Network className="h-5 w-5 text-navy" />
+                      <Network className="h-5 w-5 text-navy-500" />
                       Network Analysis Metrics
                     </CardTitle>
                     <CardDescription>Centrality measurements for influence mapping</CardDescription>
@@ -947,7 +947,7 @@ export default function NarrativeReconstructionPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Timer className="h-5 w-5 text-purple" />
+                      <Timer className="h-5 w-5 text-purple-500" />
                       Temporal Analysis Methods
                     </CardTitle>
                     <CardDescription>Time-bounded narrative analysis</CardDescription>
@@ -963,10 +963,10 @@ export default function NarrativeReconstructionPage() {
                           className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                         >
                           <div className="flex items-center gap-2">
-                            <Clock className="h-4 w-4 text-purple" />
-                            <span className="font-medium text-platinum-200">{method.method}</span>
+                            <Clock className="h-4 w-4 text-purple-500" />
+                            <span className="font-medium text-platinum-500-200">{method.method}</span>
                           </div>
-                          <p className="text-xs text-platinum-400 mt-1">{method.description}</p>
+                          <p className="text-xs text-platinum-500-400 mt-1">{method.description}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -978,7 +978,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Building2 className="h-5 w-5 text-gold" />
+                    <Building2 className="h-5 w-5 text-gold-700" />
                     Entity Registries
                   </CardTitle>
                   <CardDescription>Platforms, frameworks, and academic entities</CardDescription>
@@ -988,7 +988,7 @@ export default function NarrativeReconstructionPage() {
                     <div className="space-y-6">
                       {/* Platforms */}
                       <div>
-                        <h4 className="text-sm font-semibold text-platinum-300 mb-2">Commercial Platforms</h4>
+                        <h4 className="text-sm font-semibold text-platinum-500-300 mb-2">Commercial Platforms</h4>
                         <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
                           {entityRegistriesNR.platforms.map((entity, idx) => (
                             <motion.div
@@ -998,8 +998,8 @@ export default function NarrativeReconstructionPage() {
                               transition={{ delay: idx * 0.05 }}
                               className="p-2 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                             >
-                              <div className="font-medium text-platinum-200 text-sm">{entity.entityName}</div>
-                              <div className="text-xs text-platinum-400">{entity.coreFunction}</div>
+                              <div className="font-medium text-platinum-500-200 text-sm">{entity.entityName}</div>
+                              <div className="text-xs text-platinum-500-400">{entity.coreFunction}</div>
                               <Badge variant={entity.uaeRelevance === 'Critical' ? 'destructive' : entity.uaeRelevance === 'High' ? 'warning' : 'outline'} className="text-xs mt-1">
                                 {entity.uaeRelevance}
                               </Badge>
@@ -1010,18 +1010,18 @@ export default function NarrativeReconstructionPage() {
 
                       {/* Frameworks */}
                       <div>
-                        <h4 className="text-sm font-semibold text-platinum-300 mb-2">Frameworks</h4>
+                        <h4 className="text-sm font-semibold text-platinum-500-300 mb-2">Frameworks</h4>
                         <div className="space-y-2">
                           {entityRegistriesNR.frameworks.map((fw, idx) => (
                             <div key={idx} className="p-2 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
                               <div className="flex items-center justify-between">
                                 <div>
-                                  <span className="font-medium text-platinum-200 text-sm">{fw.frameworkName}</span>
-                                  <span className="text-xs text-platinum-400 ml-2">({fw.organization})</span>
+                                  <span className="font-medium text-platinum-500-200 text-sm">{fw.frameworkName}</span>
+                                  <span className="text-xs text-platinum-500-400 ml-2">({fw.organization})</span>
                                 </div>
                                 <Badge variant="outline" className="text-xs">{fw.uaeRelevance}</Badge>
                               </div>
-                              <p className="text-xs text-platinum-400 mt-1">{fw.purpose}</p>
+                              <p className="text-xs text-platinum-500-400 mt-1">{fw.purpose}</p>
                             </div>
                           ))}
                         </div>
@@ -1042,7 +1042,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Building2 className="h-5 w-5 text-gold" />
+                    <Building2 className="h-5 w-5 text-gold-700" />
                     Enterprise Platforms
                   </CardTitle>
                   <CardDescription>Recommended for comprehensive narrative intelligence</CardDescription>
@@ -1056,10 +1056,10 @@ export default function NarrativeReconstructionPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.1 }}
                         whileHover={{ scale: 1.02 }}
-                        className="rounded-lg border border-gold/30 bg-gold/10 p-4 hover:bg-gold/20 transition-colors cursor-pointer"
+                        className="rounded-lg border border-gold-700/30 bg-gold-700/10 p-4 hover:bg-gold-700/20 transition-colors cursor-pointer"
                       >
-                        <div className="font-semibold text-platinum-200">{tool.platform}</div>
-                        <p className="text-sm text-platinum-400 mt-1">{tool.useCase}</p>
+                        <div className="font-semibold text-platinum-500-200">{tool.platform}</div>
+                        <p className="text-sm text-platinum-500-400 mt-1">{tool.useCase}</p>
                         <Badge variant={tool.uaePriority === 'Critical' ? 'destructive' : 'warning'} className="mt-2">
                           {tool.uaePriority} Priority
                         </Badge>
@@ -1074,7 +1074,7 @@ export default function NarrativeReconstructionPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Beaker className="h-5 w-5 text-purple" />
+                      <Beaker className="h-5 w-5 text-purple-500" />
                       Academic/Research Tools
                     </CardTitle>
                     <CardDescription>Open source and academic tools</CardDescription>
@@ -1084,10 +1084,10 @@ export default function NarrativeReconstructionPage() {
                       {recommendedTools.academic.map((tool, idx) => (
                         <div key={idx} className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
                           <div className="flex items-center justify-between">
-                            <span className="font-medium text-platinum-200">{tool.tool}</span>
+                            <span className="font-medium text-platinum-500-200">{tool.tool}</span>
                             <Badge variant="outline" className="text-xs">{tool.accessibility}</Badge>
                           </div>
-                          <p className="text-xs text-platinum-400 mt-1">{tool.useCase}</p>
+                          <p className="text-xs text-platinum-500-400 mt-1">{tool.useCase}</p>
                         </div>
                       ))}
                     </div>
@@ -1097,7 +1097,7 @@ export default function NarrativeReconstructionPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <ShieldCheck className="h-5 w-5 text-emerald" />
+                      <ShieldCheck className="h-5 w-5 text-emerald-500" />
                       Verification Tools
                     </CardTitle>
                     <CardDescription>Video and manipulation detection</CardDescription>
@@ -1106,8 +1106,8 @@ export default function NarrativeReconstructionPage() {
                     <div className="space-y-3">
                       {recommendedTools.verification.map((tool, idx) => (
                         <div key={idx} className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                          <div className="font-medium text-platinum-200">{tool.tool}</div>
-                          <p className="text-xs text-platinum-400 mt-1">{tool.useCase}</p>
+                          <div className="font-medium text-platinum-500-200">{tool.tool}</div>
+                          <p className="text-xs text-platinum-500-400 mt-1">{tool.useCase}</p>
                         </div>
                       ))}
                     </div>
@@ -1116,10 +1116,10 @@ export default function NarrativeReconstructionPage() {
               </div>
 
               {/* Statistics Summary */}
-              <Card className="glass-card border-gold/30">
+              <Card className="glass-card border-gold-700/30">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <BarChart3 className="h-5 w-5 text-gold" />
+                    <BarChart3 className="h-5 w-5 text-gold-700" />
                     Research Statistics Summary
                   </CardTitle>
                   <CardDescription>Key metrics from narrative intelligence research</CardDescription>
@@ -1128,36 +1128,36 @@ export default function NarrativeReconstructionPage() {
                   <div className="grid gap-6 lg:grid-cols-3">
                     {/* Market Stats */}
                     <div className="space-y-3">
-                      <h4 className="text-sm font-semibold text-platinum-300">Market & Industry</h4>
+                      <h4 className="text-sm font-semibold text-platinum-500-300">Market & Industry</h4>
                       {narrativeReconstructionStatistics.marketIndustry.map((stat, idx) => (
                         <div key={idx} className="flex items-center justify-between p-2 rounded bg-platinum-800/30">
-                          <span className="text-xs text-platinum-400">{stat.statistic}</span>
-                          <span className="text-sm font-bold text-gold">{stat.value}</span>
+                          <span className="text-xs text-platinum-500-400">{stat.statistic}</span>
+                          <span className="text-sm font-bold text-gold-700">{stat.value}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Deepfake Stats */}
                     <div className="space-y-3">
-                      <h4 className="text-sm font-semibold text-platinum-300">Deepfake & Manipulation</h4>
+                      <h4 className="text-sm font-semibold text-platinum-500-300">Deepfake & Manipulation</h4>
                       {narrativeReconstructionStatistics.deepfakeManipulation.map((stat, idx) => (
                         <div key={idx} className="flex items-center justify-between p-2 rounded bg-platinum-800/30">
-                          <span className="text-xs text-platinum-400">{stat.statistic}</span>
-                          <span className="text-sm font-bold text-rose">{stat.value}</span>
+                          <span className="text-xs text-platinum-500-400">{stat.statistic}</span>
+                          <span className="text-sm font-bold text-rose-500">{stat.value}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Research Accuracy */}
                     <div className="space-y-3">
-                      <h4 className="text-sm font-semibold text-platinum-300">Research Accuracy</h4>
+                      <h4 className="text-sm font-semibold text-platinum-500-300">Research Accuracy</h4>
                       {narrativeReconstructionStatistics.researchAccuracy.map((stat, idx) => (
                         <div key={idx} className="p-2 rounded bg-platinum-800/30">
                           <div className="flex items-center justify-between">
-                            <span className="text-xs text-platinum-400">{stat.study}</span>
-                            <span className="text-sm font-bold text-emerald">{stat.value}</span>
+                            <span className="text-xs text-platinum-500-400">{stat.study}</span>
+                            <span className="text-sm font-bold text-emerald-500">{stat.value}</span>
                           </div>
-                          <div className="text-xs text-platinum-500 mt-1">{stat.metric}</div>
+                          <div className="text-xs text-platinum-500-500 mt-1">{stat.metric}</div>
                         </div>
                       ))}
                     </div>
@@ -1176,7 +1176,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Search className="h-5 w-5 text-gold" />
+                    <Search className="h-5 w-5 text-gold-700" />
                     Origin Tracing Queries
                   </CardTitle>
                   <CardDescription>First mention and Patient Zero queries</CardDescription>
@@ -1184,23 +1184,23 @@ export default function NarrativeReconstructionPage() {
                 <CardContent>
                   <div className="grid gap-6 lg:grid-cols-2">
                     <div>
-                      <h4 className="text-sm font-semibold text-platinum-300 mb-2">First Mention Queries</h4>
+                      <h4 className="text-sm font-semibold text-platinum-500-300 mb-2">First Mention Queries</h4>
                       <div className="space-y-2">
                         {searchQueryStrategies.originTracing.map((query, idx) => (
                           <div key={idx} className="p-2 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                            <code className="text-xs text-emerald">{query.queryTemplate}</code>
-                            <p className="text-xs text-platinum-400 mt-1">Purpose: {query.purpose}</p>
+                            <code className="text-xs text-emerald-500">{query.queryTemplate}</code>
+                            <p className="text-xs text-platinum-500-400 mt-1">Purpose: {query.purpose}</p>
                           </div>
                         ))}
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-sm font-semibold text-platinum-300 mb-2">Patient Zero Queries</h4>
+                      <h4 className="text-sm font-semibold text-platinum-500-300 mb-2">Patient Zero Queries</h4>
                       <div className="space-y-2">
                         {searchQueryStrategies.patientZero.map((query, idx) => (
                           <div key={idx} className="p-2 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                            <code className="text-xs text-emerald">{query.queryTemplate}</code>
-                            <p className="text-xs text-platinum-400 mt-1">Purpose: {query.purpose}</p>
+                            <code className="text-xs text-emerald-500">{query.queryTemplate}</code>
+                            <p className="text-xs text-platinum-500-400 mt-1">Purpose: {query.purpose}</p>
                           </div>
                         ))}
                       </div>
@@ -1213,7 +1213,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <GitMerge className="h-5 w-5 text-purple" />
+                    <GitMerge className="h-5 w-5 text-purple-500" />
                     Evolution Mapping Queries
                   </CardTitle>
                   <CardDescription>Timeline, framing shift, and amplification queries</CardDescription>
@@ -1221,34 +1221,34 @@ export default function NarrativeReconstructionPage() {
                 <CardContent>
                   <div className="grid gap-6 lg:grid-cols-3">
                     <div>
-                      <h4 className="text-sm font-semibold text-platinum-300 mb-2">Timeline Queries</h4>
+                      <h4 className="text-sm font-semibold text-platinum-500-300 mb-2">Timeline Queries</h4>
                       <div className="space-y-2">
                         {searchQueryStrategies.timelineQueries.map((query, idx) => (
                           <div key={idx} className="p-2 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                            <code className="text-xs text-purple">{query.queryTemplate}</code>
-                            <p className="text-xs text-platinum-400 mt-1">{query.purpose}</p>
+                            <code className="text-xs text-purple-500">{query.queryTemplate}</code>
+                            <p className="text-xs text-platinum-500-400 mt-1">{query.purpose}</p>
                           </div>
                         ))}
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-sm font-semibold text-platinum-300 mb-2">Framing Shift</h4>
+                      <h4 className="text-sm font-semibold text-platinum-500-300 mb-2">Framing Shift</h4>
                       <div className="space-y-2">
                         {searchQueryStrategies.framingShift.map((query, idx) => (
                           <div key={idx} className="p-2 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                            <code className="text-xs text-purple">{query.queryTemplate}</code>
-                            <p className="text-xs text-platinum-400 mt-1">{query.purpose}</p>
+                            <code className="text-xs text-purple-500">{query.queryTemplate}</code>
+                            <p className="text-xs text-platinum-500-400 mt-1">{query.purpose}</p>
                           </div>
                         ))}
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-sm font-semibold text-platinum-300 mb-2">Amplification</h4>
+                      <h4 className="text-sm font-semibold text-platinum-500-300 mb-2">Amplification</h4>
                       <div className="space-y-2">
                         {searchQueryStrategies.amplificationPath.map((query, idx) => (
                           <div key={idx} className="p-2 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                            <code className="text-xs text-purple">{query.queryTemplate}</code>
-                            <p className="text-xs text-platinum-400 mt-1">{query.purpose}</p>
+                            <code className="text-xs text-purple-500">{query.queryTemplate}</code>
+                            <p className="text-xs text-platinum-500-400 mt-1">{query.purpose}</p>
                           </div>
                         ))}
                       </div>
@@ -1261,7 +1261,7 @@ export default function NarrativeReconstructionPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Crosshair className="h-5 w-5 text-rose" />
+                    <Crosshair className="h-5 w-5 text-rose-500" />
                     Battle Analysis Queries
                   </CardTitle>
                   <CardDescription>Counter-narrative and media treatment queries</CardDescription>
@@ -1269,23 +1269,23 @@ export default function NarrativeReconstructionPage() {
                 <CardContent>
                   <div className="grid gap-6 lg:grid-cols-2">
                     <div>
-                      <h4 className="text-sm font-semibold text-platinum-300 mb-2">Counter-Narrative</h4>
+                      <h4 className="text-sm font-semibold text-platinum-500-300 mb-2">Counter-Narrative</h4>
                       <div className="space-y-2">
                         {searchQueryStrategies.counterNarrative.map((query, idx) => (
                           <div key={idx} className="p-2 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                            <code className="text-xs text-rose">{query.queryTemplate}</code>
-                            <p className="text-xs text-platinum-400 mt-1">{query.purpose}</p>
+                            <code className="text-xs text-rose-500">{query.queryTemplate}</code>
+                            <p className="text-xs text-platinum-500-400 mt-1">{query.purpose}</p>
                           </div>
                         ))}
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-sm font-semibold text-platinum-300 mb-2">Mutation Queries</h4>
+                      <h4 className="text-sm font-semibold text-platinum-500-300 mb-2">Mutation Queries</h4>
                       <div className="space-y-2">
                         {searchQueryStrategies.mutationQueries.map((query, idx) => (
                           <div key={idx} className="p-2 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                            <code className="text-xs text-rose">{query.queryTemplate}</code>
-                            <p className="text-xs text-platinum-400 mt-1">{query.purpose}</p>
+                            <code className="text-xs text-rose-500">{query.queryTemplate}</code>
+                            <p className="text-xs text-platinum-500-400 mt-1">{query.purpose}</p>
                           </div>
                         ))}
                       </div>

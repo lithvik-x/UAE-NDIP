@@ -93,7 +93,7 @@ export function ThreatOverviewSection({ data }: ThreatOverviewSectionProps) {
             <Card className="glass-card border-purple-500/30">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <TrendingUp className="h-5 w-5 text-purple" />
+                  <TrendingUp className="h-5 w-5 text-purple-500" />
                   Attack Volume Trend
                 </CardTitle>
                 <CardDescription>Daily cyberattacks (2025-2026)</CardDescription>
@@ -115,7 +115,7 @@ export function ThreatOverviewSection({ data }: ThreatOverviewSectionProps) {
             <Card className="glass-card border-purple-500/30">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Target className="h-5 w-5 text-rose" />
+                  <Target className="h-5 w-5 text-rose-500" />
                   Attack Vectors
                 </CardTitle>
                 <CardDescription>Distribution by attack type</CardDescription>
@@ -139,7 +139,7 @@ export function ThreatOverviewSection({ data }: ThreatOverviewSectionProps) {
             <Card className="glass-card border-purple-500/30">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Activity className="h-5 w-5 text-orange" />
+                  <Activity className="h-5 w-5 text-orange-500" />
                   Threat Radar
                 </CardTitle>
                 <CardDescription>Multi-dimensional threat assessment</CardDescription>
@@ -158,7 +158,7 @@ export function ThreatOverviewSection({ data }: ThreatOverviewSectionProps) {
             <Card className="glass-card border-purple-500/30">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Globe className="h-5 w-5 text-amber" />
+                  <Globe className="h-5 w-5 text-amber-500" />
                   Sentiment Analysis
                 </CardTitle>
                 <CardDescription>Threat response sentiment</CardDescription>
@@ -177,7 +177,7 @@ export function ThreatOverviewSection({ data }: ThreatOverviewSectionProps) {
             <Card className="glass-card border-purple-500/30">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Shield className="h-5 w-5 text-purple" />
+                  <Shield className="h-5 w-5 text-purple-500" />
                   Threat Composition
                 </CardTitle>
                 <CardDescription>Actor categorization</CardDescription>
@@ -194,7 +194,7 @@ export function ThreatOverviewSection({ data }: ThreatOverviewSectionProps) {
             <Card className="glass-card border-purple-500/30">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Binary className="h-5 w-5 text-cyan" />
+                  <Binary className="h-5 w-5 text-cyan-500" />
                   Organized Threats
                 </CardTitle>
                 <CardDescription>Distribution by type</CardDescription>
@@ -213,16 +213,16 @@ export function ThreatOverviewSection({ data }: ThreatOverviewSectionProps) {
             <Card className="glass-card border-purple-500/30">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Clock className="h-5 w-5 text-amber" />
+                  <Clock className="h-5 w-5 text-amber-500" />
                   Official Quote
                 </CardTitle>
                 <CardDescription>UAE Cyber Security Council</CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col justify-center h-[220px]">
                 <blockquote className="border-l-4 border-amber pl-4">
-                  <p className="text-2xl font-serif italic text-amber">"{officialQuote.text}"</p>
-                  <p className="mt-2 text-sm text-platinum-400">- {officialQuote.author}</p>
-                  <p className="text-xs text-platinum-500">{officialQuote.role}</p>
+                  <p className="text-2xl font-serif italic text-amber-500">"{officialQuote.text}"</p>
+                  <p className="mt-2 text-sm text-platinum-500-400">- {officialQuote.author}</p>
+                  <p className="text-xs text-platinum-500-500">{officialQuote.role}</p>
                 </blockquote>
               </CardContent>
             </Card>

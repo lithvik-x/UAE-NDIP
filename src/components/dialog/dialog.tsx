@@ -201,7 +201,7 @@ const DialogContent = React.forwardRef<
       >
         {children}
         <DialogPrimitive.Close
-          className="absolute right-4 top-4 rounded-xl opacity-70 ring-offset-background transition-all hover:opacity-100 hover:bg-white/20 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-navy-500 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-platinum-100 dark:data-[state=open]:bg-platinum-800 data-[state=open]:text-platinum-500 dark:data-[state=open]:text-platinum-400 h-10 w-10 flex items-center justify-center"
+          className="absolute right-4 top-4 rounded-xl opacity-70 ring-offset-background transition-all hover:opacity-100 hover:bg-white/20 dark:hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-navy-500 focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-platinum-100 dark:data-[state=open]:bg-platinum-800 data-[state=open]:text-platinum-500-500 dark:data-[state=open]:text-platinum-500-400 h-10 w-10 flex items-center justify-center"
           aria-label="Close dialog"
         >
           <X className="h-4 w-4" />
@@ -257,7 +257,7 @@ const DialogHeader = React.forwardRef<
     )}
     {...props}
   >
-    {icon && <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-500/10 dark:bg-navy-400/10 text-navy-600 dark:text-navy-400">{icon}</div>}
+    {icon && <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-500/10 dark:bg-navy-400/10 text-navy-500-600 dark:text-navy-500-400">{icon}</div>}
     {children}
   </div>
 ))
@@ -347,16 +347,16 @@ const DialogTitle = React.forwardRef<
     clairvoyance: 'gradient-text-clairvoyance',
     perception: 'gradient-text-perception',
     ricochet: 'gradient-text-ricochet',
-    gold: 'gradient-text-gold',
+    gold: 'gradient-text-gold-700',
     navy: 'gradient-text',
-    platinum: 'gradient-text-platinum',
+    platinum: 'gradient-text-platinum-500',
   }
 
   return (
     <DialogPrimitive.Title
       ref={ref}
       className={cn(
-        'text-2xl font-bold leading-none tracking-tight text-platinum-900 dark:text-platinum-50',
+        'text-2xl font-bold leading-none tracking-tight text-platinum-500-900 dark:text-platinum-500-50',
         gradient && gradientClasses[gradient],
         className
       )}
@@ -390,7 +390,7 @@ const DialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
-    className={cn('text-sm text-platinum-600 dark:text-platinum-400 leading-relaxed', className)}
+    className={cn('text-sm text-platinum-500-600 dark:text-platinum-500-400 leading-relaxed', className)}
     {...props}
   />
 ))
@@ -512,7 +512,7 @@ const AlertDialogTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Title
     ref={ref}
-    className={cn('text-2xl font-bold text-platinum-900 dark:text-platinum-50', className)}
+    className={cn('text-2xl font-bold text-platinum-500-900 dark:text-platinum-500-50', className)}
     {...props}
   />
 ))
@@ -530,7 +530,7 @@ const AlertDialogDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
-    className={cn('text-sm text-platinum-600 dark:text-platinum-400', className)}
+    className={cn('text-sm text-platinum-500-600 dark:text-platinum-500-400', className)}
     {...props}
   />
 ))
@@ -601,7 +601,7 @@ const AlertDialogCancel = React.forwardRef<
   <DialogPrimitive.Close
     ref={ref}
     className={cn(
-      'inline-flex h-10 px-4 py-2 items-center justify-center whitespace-nowrap rounded-xl text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-white/80 dark:bg-white/10 border border-platinum-200 dark:border-platinum-700 text-platinum-700 dark:text-platinum-300 hover:bg-platinum-50 dark:hover:bg-platinum-800 hover:text-platinum-900 dark:hover:text-platinum-100',
+      'inline-flex h-10 px-4 py-2 items-center justify-center whitespace-nowrap rounded-xl text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-white/80 dark:bg-white/10 border border-platinum-200 dark:border-platinum-700 text-platinum-500-700 dark:text-platinum-500-300 hover:bg-platinum-50 dark:hover:bg-platinum-800 hover:text-platinum-500-900 dark:hover:text-platinum-500-100',
       className
     )}
     {...props}

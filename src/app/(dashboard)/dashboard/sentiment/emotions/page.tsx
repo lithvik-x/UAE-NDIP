@@ -43,7 +43,7 @@ export default function EmotionAnalysisPage() {
   if (!trendsData || trendsData.length === 0) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-400">Loading Emotion Analysis data...</div>
+        <div className="text-platinum-500-400">Loading Emotion Analysis data...</div>
       </div>
     )
   }
@@ -106,17 +106,17 @@ export default function EmotionAnalysisPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">EMOTION ANALYSIS</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Emotion Analysis</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Emotion Analysis</h1>
+          <p className="mt-2 text-platinum-500-400">
             Plutchik emotion model analysis, intensity metrics, and emotional patterns
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <Brain className="h-4 w-4" />
             Deep Dive
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Zap className="h-4 w-4" />
             Analyze Patterns
           </Button>
@@ -241,7 +241,7 @@ export default function EmotionAnalysisPage() {
                           <emotion.icon className="h-6 w-6" />
                         </div>
                         <div>
-                          <p className="font-bold text-platinum-200">{emotion.emotion}</p>
+                          <p className="font-bold text-platinum-500-200">{emotion.emotion}</p>
                           <Badge
                             variant={emotion.intensity === 'High' ? 'success' : emotion.intensity === 'Moderate' ? 'warning' : 'default'}
                             className="text-xs mt-1"
@@ -252,7 +252,7 @@ export default function EmotionAnalysisPage() {
                       </div>
                       <div className="space-y-2">
                         <div className="flex justify-between text-sm">
-                          <span className="text-platinum-400">Intensity</span>
+                          <span className="text-platinum-500-400">Intensity</span>
                           <span className="font-bold" style={{ color: emotion.color }}>{emotion.value}%</span>
                         </div>
                         <Progress
@@ -363,7 +363,7 @@ export default function EmotionAnalysisPage() {
                     {emotionPairs.map((pair, idx) => (
                       <div key={idx} className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-platinum-400">{pair.primary} vs {pair.secondary}</span>
+                          <span className="text-platinum-500-400">{pair.primary} vs {pair.secondary}</span>
                           <span className="text-emerald-400 font-medium">Dominant: {pair.dominant}</span>
                         </div>
                         <div className="flex gap-1">
@@ -376,7 +376,7 @@ export default function EmotionAnalysisPage() {
                             style={{ width: `${(pair.dominant === pair.secondary ? 50 + pair.difference / 2 : 50 - pair.difference / 2)}%` }}
                           />
                         </div>
-                        <div className="flex justify-between text-xs text-platinum-500">
+                        <div className="flex justify-between text-xs text-platinum-500-500">
                           <span>{pair.primary}</span>
                           <span>{pair.secondary}</span>
                         </div>
@@ -404,7 +404,7 @@ export default function EmotionAnalysisPage() {
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-emerald-500/10 p-3">
                           <div className="flex items-center gap-2">
                             <item.icon className="h-4 w-4 text-emerald-400" />
-                            <span className="text-sm text-platinum-200">{item.emotion}</span>
+                            <span className="text-sm text-platinum-500-200">{item.emotion}</span>
                           </div>
                           <Badge variant="success">{item.change}</Badge>
                         </div>
@@ -430,7 +430,7 @@ export default function EmotionAnalysisPage() {
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-rose-500/10 p-3">
                           <div className="flex items-center gap-2">
                             <item.icon className="h-4 w-4 text-rose-400" />
-                            <span className="text-sm text-platinum-200">{item.emotion}</span>
+                            <span className="text-sm text-platinum-500-200">{item.emotion}</span>
                           </div>
                           <Badge variant="destructive">{item.change}</Badge>
                         </div>

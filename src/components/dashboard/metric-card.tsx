@@ -149,11 +149,11 @@ export function MetricCard({
       <CardContent className="p-6">
         <div className="flex items-start justify-between">
           <div className="flex-1">
-            <p className="text-sm font-medium text-platinum-600 dark:text-platinum-400">{title}</p>
+            <p className="text-sm font-medium text-platinum-500-600 dark:text-platinum-500-400">{title}</p>
             <div className="mt-2 flex items-baseline gap-2">
-              <h3 className="text-3xl font-extrabold text-navy-900 dark:text-platinum-100">
+              <h3 className="text-3xl font-extrabold text-navy-500-900 dark:text-platinum-500-100">
                 {value}
-                {unit && <span className="text-lg font-normal text-platinum-400 dark:text-platinum-500 ml-1">{unit}</span>}
+                {unit && <span className="text-lg font-normal text-platinum-500-400 dark:text-platinum-500-500 ml-1">{unit}</span>}
               </h3>
             </div>
 
@@ -165,14 +165,14 @@ export function MetricCard({
                 ) : calculatedTrend === 'down' ? (
                   <TrendingDown className="h-4 w-4 text-red-500 dark:text-red-400" aria-hidden="true" />
                 ) : (
-                  <Activity className="h-4 w-4 text-platinum-400 dark:text-platinum-500" aria-hidden="true" />
+                  <Activity className="h-4 w-4 text-platinum-500-400 dark:text-platinum-500-500" aria-hidden="true" />
                 )}
                 <span
                   className={cn(
                     'text-sm font-medium',
                     calculatedTrend === 'up' && 'text-emerald-600 dark:text-emerald-400',
                     calculatedTrend === 'down' && 'text-red-600 dark:text-red-400',
-                    calculatedTrend === 'neutral' && 'text-platinum-500 dark:text-platinum-500'
+                    calculatedTrend === 'neutral' && 'text-platinum-500-500 dark:text-platinum-500-500'
                   )}
                 >
                   {trendValue !== null && `${trendValue.toFixed(1)}%`}
@@ -190,7 +190,7 @@ export function MetricCard({
               className={cn(
                 'flex h-12 w-12 items-center justify-center rounded-xl shadow-lg transition-transform group-hover:scale-110',
                 gradient && gradientClasses[gradient],
-                !gradient && 'bg-platinum-100 dark:bg-platinum-800 text-navy-600 dark:text-platinum-300'
+                !gradient && 'bg-platinum-100 dark:bg-platinum-800 text-navy-500-600 dark:text-platinum-500-300'
               )}
               aria-hidden="true"
             >
@@ -216,7 +216,7 @@ export function MetricCard({
         {/* Click indicator */}
         {onClick && (
           <div className="absolute bottom-4 right-4 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 translate-x-1 translate-y-1" aria-hidden="true">
-            <ChevronRight className="h-5 w-5 text-platinum-400" />
+            <ChevronRight className="h-5 w-5 text-platinum-500-400" />
           </div>
         )}
       </CardContent>
@@ -298,10 +298,10 @@ export function StatCard({
       <CardContent className="p-6">
         <div className="flex items-start justify-between">
           <div className="flex-1">
-            <p className="text-sm font-medium text-platinum-600 dark:text-platinum-400">{title}</p>
-            <p className="mt-2 text-2xl font-bold text-navy-900 dark:text-platinum-100">{value}</p>
+            <p className="text-sm font-medium text-platinum-500-600 dark:text-platinum-500-400">{title}</p>
+            <p className="mt-2 text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">{value}</p>
             {description && (
-              <p className="mt-1 text-xs text-platinum-500 dark:text-platinum-500">{description}
+              <p className="mt-1 text-xs text-platinum-500-500 dark:text-platinum-500-500">{description}
               </p>
             )}
             {change !== undefined && (
@@ -313,7 +313,7 @@ export function StatCard({
                     'text-xs font-medium',
                     changeType === 'increase' && 'text-emerald-600 dark:text-emerald-400',
                     changeType === 'decrease' && 'text-red-600 dark:text-red-400',
-                    changeType === 'neutral' && 'text-platinum-500 dark:text-platinum-500'
+                    changeType === 'neutral' && 'text-platinum-500-500 dark:text-platinum-500-500'
                   )}
                 >
                   {change > 0 ? '+' : ''}{change}%

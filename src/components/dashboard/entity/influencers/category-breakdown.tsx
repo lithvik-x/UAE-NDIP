@@ -68,18 +68,18 @@ export function CategoryBreakdown({
             <Table>
               <TableHeader>
                 <TableRow className="border-b border-platinum-200/50">
-                  <TableHead className="text-platinum-700 font-semibold">Name</TableHead>
-                  <TableHead className="text-platinum-700 font-semibold">Platform</TableHead>
-                  <TableHead className="text-platinum-700 font-semibold">Followers</TableHead>
-                  <TableHead className="text-platinum-700 font-semibold">UAE Relevance</TableHead>
+                  <TableHead className="text-platinum-500-700 font-semibold">Name</TableHead>
+                  <TableHead className="text-platinum-500-700 font-semibold">Platform</TableHead>
+                  <TableHead className="text-platinum-500-700 font-semibold">Followers</TableHead>
+                  <TableHead className="text-platinum-500-700 font-semibold">UAE Relevance</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {beautyCosmeticsInfluencers.slice(0, 8).map((inf) => (
                   <TableRow key={inf.id} className="border-b border-platinum-100/50">
-                    <TableCell className="font-semibold text-navy-900 dark:text-platinum-100">{inf.name}</TableCell>
-                    <TableCell className="text-sm text-platinum-600">{(inf.platform || []).join(', ')}</TableCell>
-                    <TableCell className="font-bold text-navy-900 dark:text-platinum-100">{getFollowerDisplay(inf)}</TableCell>
+                    <TableCell className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{inf.name}</TableCell>
+                    <TableCell className="text-sm text-platinum-500-600">{(inf.platform || []).join(', ')}</TableCell>
+                    <TableCell className="font-bold text-navy-500-900 dark:text-platinum-500-100">{getFollowerDisplay(inf)}</TableCell>
                     <TableCell>{getRelevanceBadge(inf.uaeRelevance)}</TableCell>
                   </TableRow>
                 ))}
@@ -101,8 +101,8 @@ export function CategoryBreakdown({
               {foodMegaInfluencers.map((inf) => (
                 <div key={inf.id} className="flex items-center justify-between p-3 glass-subtle rounded-lg">
                   <div>
-                    <p className="font-semibold text-navy-900 dark:text-platinum-100">{inf.name}</p>
-                    <p className="text-xs text-platinum-500">{inf.platform.join(', ')} | {inf.contentFocus?.join(', ')}</p>
+                    <p className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{inf.name}</p>
+                    <p className="text-xs text-platinum-500-500">{inf.platform.join(', ')} | {inf.contentFocus?.join(', ')}</p>
                   </div>
                   <div className="text-right">
                     <p className="text-sm font-bold text-gold-700">{getFollowerDisplay(inf)}</p>
@@ -113,8 +113,8 @@ export function CategoryBreakdown({
               {foodMicroInfluencers.map((inf) => (
                 <div key={inf.id} className="flex items-center justify-between p-3 glass-subtle rounded-lg">
                   <div>
-                    <p className="font-semibold text-navy-900 dark:text-platinum-100">{inf.name}</p>
-                    <p className="text-xs text-platinum-500">{inf.notes?.join(' | ')}</p>
+                    <p className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{inf.name}</p>
+                    <p className="text-xs text-platinum-500-500">{inf.notes?.join(' | ')}</p>
                   </div>
                   <Badge variant="outline" className="text-xs">Micro</Badge>
                 </div>
@@ -136,12 +136,12 @@ export function CategoryBreakdown({
               {travelTourismInfluencers.slice(0, 6).map((inf) => (
                 <div key={inf.id} className="flex items-center justify-between p-3 glass-subtle rounded-lg">
                   <div>
-                    <p className="font-semibold text-navy-900 dark:text-platinum-100">{inf.name}</p>
-                    <p className="text-xs text-platinum-500">{inf.notes?.join(' | ')}</p>
+                    <p className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{inf.name}</p>
+                    <p className="text-xs text-platinum-500-500">{inf.notes?.join(' | ')}</p>
                   </div>
                   <div className="text-right">
                     <Badge variant="outline" className="text-xs">{(inf.platform || []).join(', ')}</Badge>
-                    {inf.followersExact && <p className="text-xs font-bold text-gold mt-1">{getFollowerDisplay(inf)}</p>}
+                    {inf.followersExact && <p className="text-xs font-bold text-gold-700 mt-1">{getFollowerDisplay(inf)}</p>}
                   </div>
                 </div>
               ))}
@@ -162,8 +162,8 @@ export function CategoryBreakdown({
               {financialInfluencers.map((inf) => (
                 <div key={inf.id} className="flex items-center justify-between p-3 glass-subtle rounded-lg">
                   <div>
-                    <p className="font-semibold text-navy-900 dark:text-platinum-100">{inf.name}</p>
-                    <p className="text-xs text-platinum-500">{inf.handle} | {inf.notes?.join(' | ')}</p>
+                    <p className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{inf.name}</p>
+                    <p className="text-xs text-platinum-500-500">{inf.handle} | {inf.notes?.join(' | ')}</p>
                   </div>
                   <div className="text-right">
                     <p className="text-sm font-bold text-gold-700">{getFollowerDisplay(inf)}</p>
@@ -187,20 +187,20 @@ export function CategoryBreakdown({
             <Table>
               <TableHeader>
                 <TableRow className="border-b border-platinum-200/50">
-                  <TableHead className="text-platinum-700 font-semibold">Name</TableHead>
-                  <TableHead className="text-platinum-700 font-semibold">Platform</TableHead>
-                  <TableHead className="text-platinum-700 font-semibold">Category</TableHead>
-                  <TableHead className="text-platinum-700 font-semibold">Notes</TableHead>
-                  <TableHead className="text-platinum-700 font-semibold">UAE Relevance</TableHead>
+                  <TableHead className="text-platinum-500-700 font-semibold">Name</TableHead>
+                  <TableHead className="text-platinum-500-700 font-semibold">Platform</TableHead>
+                  <TableHead className="text-platinum-500-700 font-semibold">Category</TableHead>
+                  <TableHead className="text-platinum-500-700 font-semibold">Notes</TableHead>
+                  <TableHead className="text-platinum-500-700 font-semibold">UAE Relevance</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {youtubeTopUaeCreators.map((inf) => (
                   <TableRow key={inf.id} className="border-b border-platinum-100/50">
-                    <TableCell className="font-semibold text-navy-900 dark:text-platinum-100">{inf.name}</TableCell>
-                    <TableCell className="text-sm text-platinum-600">{(inf.platform || []).join(', ')}</TableCell>
+                    <TableCell className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{inf.name}</TableCell>
+                    <TableCell className="text-sm text-platinum-500-600">{(inf.platform || []).join(', ')}</TableCell>
                     <TableCell><Badge variant="outline" className="text-xs">{(inf.category || []).join(', ')}</Badge></TableCell>
-                    <TableCell className="text-sm text-platinum-500">{inf.notes?.join(', ')}</TableCell>
+                    <TableCell className="text-sm text-platinum-500-500">{inf.notes?.join(', ')}</TableCell>
                     <TableCell>{getRelevanceBadge(inf.uaeRelevance)}</TableCell>
                   </TableRow>
                 ))}
@@ -227,7 +227,7 @@ export function CategoryBreakdown({
                 showGrid={true}
               />
             ) : (
-              <div className="flex items-center justify-center h-48 text-platinum-500">No category data</div>
+              <div className="flex items-center justify-center h-48 text-platinum-500-500">No category data</div>
             )}
           </CardContent>
         </Card>

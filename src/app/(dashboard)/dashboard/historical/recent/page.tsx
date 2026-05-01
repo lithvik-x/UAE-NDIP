@@ -104,17 +104,17 @@ export default function RecentHistoryPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">H-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Recent History (2010-2026)</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Recent History (2010-2026)</h1>
+          <p className="mt-2 text-platinum-500-400">
             {data.description || 'The modern era of transformation, achievement, and global leadership'}
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <Calendar className="h-4 w-4" />
             Event Archive
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Zap className="h-4 w-4" />
             Analyze Era
           </Button>
@@ -258,8 +258,8 @@ export default function RecentHistoryPage() {
                       {achievementData.map((item, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-200">{item.sector}</span>
-                            <span className="text-lg font-bold text-gold">{item.achievement}%</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.sector}</span>
+                            <span className="text-lg font-bold text-gold-700">{item.achievement}%</span>
                           </div>
                           <Progress
                             value={item.achievement}
@@ -308,12 +308,12 @@ export default function RecentHistoryPage() {
                       {recentMilestonesData.slice().reverse().map((milestone, idx) => (
                         <div key={idx} className="flex items-start justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div className="flex items-center gap-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-700/20 text-gold-700">
                               <Calendar className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-200">{milestone.event}</p>
-                              <p className="text-sm text-platinum-400">{milestone.year}</p>
+                              <p className="font-semibold text-platinum-500-200">{milestone.event}</p>
+                              <p className="text-sm text-platinum-500-400">{milestone.year}</p>
                             </div>
                           </div>
                           <Badge variant="gold" className="text-xs">Impact: {milestone.impact}%</Badge>
@@ -363,10 +363,10 @@ export default function RecentHistoryPage() {
                         { title: 'Smart Government', value: '100+ e-services', icon: Globe },
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-3">
-                          <item.icon className="h-5 w-5 text-emerald" />
+                          <item.icon className="h-5 w-5 text-emerald-500" />
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-200">{item.title}</p>
-                            <p className="text-sm text-platinum-400">{item.value}</p>
+                            <p className="font-medium text-platinum-500-200">{item.title}</p>
+                            <p className="text-sm text-platinum-500-400">{item.value}</p>
                           </div>
                         </div>
                       ))}
@@ -387,10 +387,10 @@ export default function RecentHistoryPage() {
                         { title: 'Plastics Ban', value: 'Comprehensive ban 2026', icon: TreePine },
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-3">
-                          <item.icon className="h-5 w-5 text-cyan" />
+                          <item.icon className="h-5 w-5 text-cyan-500" />
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-200">{item.title}</p>
-                            <p className="text-sm text-platinum-400">{item.value}</p>
+                            <p className="font-medium text-platinum-500-200">{item.title}</p>
+                            <p className="text-sm text-platinum-500-400">{item.value}</p>
                           </div>
                         </div>
                       ))}
@@ -441,11 +441,11 @@ export default function RecentHistoryPage() {
                     ].map((leader, idx) => (
                       <div key={idx} className="rounded-lg border border-navy/30 bg-platinum-800/50 p-4">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-bold text-navy">{leader.period}</span>
+                          <span className="text-sm font-bold text-navy-500">{leader.period}</span>
                           <Badge variant="denim" className="text-xs">{leader.role}</Badge>
                         </div>
-                        <h4 className="font-semibold text-platinum-200">{leader.leader}</h4>
-                        <p className="mt-1 text-sm text-platinum-400">{leader.event}</p>
+                        <h4 className="font-semibold text-platinum-500-200">{leader.leader}</h4>
+                        <p className="mt-1 text-sm text-platinum-500-400">{leader.event}</p>
                       </div>
                     ))}
                   </div>
@@ -466,9 +466,9 @@ export default function RecentHistoryPage() {
                       { index: 'Innovation Index', rank: '#34', change: '+15' },
                     ].map((item, idx) => (
                       <div key={idx} className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                        <p className="text-sm text-platinum-400">{item.index}</p>
-                        <p className="mt-1 text-2xl font-bold text-gold">{item.rank}</p>
-                        <p className="text-xs text-emerald">+{item.change} from 2010</p>
+                        <p className="text-sm text-platinum-500-400">{item.index}</p>
+                        <p className="mt-1 text-2xl font-bold text-gold-700">{item.rank}</p>
+                        <p className="text-xs text-emerald-500">+{item.change} from 2010</p>
                       </div>
                     ))}
                   </div>
@@ -506,7 +506,7 @@ export default function RecentHistoryPage() {
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-bold text-platinum-200">{item.country}</span>
+                          <span className="text-sm font-bold text-platinum-500-200">{item.country}</span>
                           <Badge
                             variant={item.color === 'emerald' ? 'emerald' : item.color === 'rose' ? 'rose' : 'amber'}
                             className="text-xs"
@@ -514,8 +514,8 @@ export default function RecentHistoryPage() {
                             {item.outcome}
                           </Badge>
                         </div>
-                        <p className="text-2xl font-bold text-gold">{item.deaths}</p>
-                        <p className="text-xs text-platinum-400">deaths</p>
+                        <p className="text-2xl font-bold text-gold-700">{item.deaths}</p>
+                        <p className="text-xs text-platinum-500-400">deaths</p>
                       </motion.div>
                     ))}
                   </div>
@@ -588,12 +588,12 @@ export default function RecentHistoryPage() {
                         whileHover={{ x: 4 }}
                         className="flex items-start gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy-500">
                           <item.icon className="h-5 w-5" />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center justify-between">
-                            <h4 className="font-semibold text-platinum-200">{item.title}</h4>
+                            <h4 className="font-semibold text-platinum-500-200">{item.title}</h4>
                             <Badge
                               variant={item.impact === 'CRITICAL' ? 'rose' : item.impact === 'HIGH' ? 'denim' : 'amber'}
                               className="text-xs"
@@ -601,7 +601,7 @@ export default function RecentHistoryPage() {
                               {item.impact}
                             </Badge>
                           </div>
-                          <p className="mt-1 text-sm text-platinum-400">{item.description}</p>
+                          <p className="mt-1 text-sm text-platinum-500-400">{item.description}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -618,7 +618,7 @@ export default function RecentHistoryPage() {
                 <CardContent>
                   <div className="grid gap-6 lg:grid-cols-2">
                     <div className="space-y-4">
-                      <h4 className="text-sm font-semibold text-gold">Egypt Twitter Growth</h4>
+                      <h4 className="text-sm font-semibold text-gold-700">Egypt Twitter Growth</h4>
                       <AreaChart
                         data={[
                           { period: 'Pre-Mubarak', tweets: 2300 },
@@ -631,10 +631,10 @@ export default function RecentHistoryPage() {
                         height={200}
                         showGrid={true}
                       />
-                      <p className="text-center text-sm text-platinum-400">100x increase in 30 days</p>
+                      <p className="text-center text-sm text-platinum-500-400">100x increase in 30 days</p>
                     </div>
                     <div className="space-y-4">
-                      <h4 className="text-sm font-semibold text-gold">Platform Usage</h4>
+                      <h4 className="text-sm font-semibold text-gold-700">Platform Usage</h4>
                       <div className="space-y-2">
                         {[
                           { platform: 'Facebook', usage: 90, country: 'Egypt & Tunisia' },
@@ -643,10 +643,10 @@ export default function RecentHistoryPage() {
                         ].map((item, idx) => (
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div>
-                              <p className="font-medium text-platinum-200">{item.platform}</p>
-                              <p className="text-xs text-platinum-400">{item.country}</p>
+                              <p className="font-medium text-platinum-500-200">{item.platform}</p>
+                              <p className="text-xs text-platinum-500-400">{item.country}</p>
                             </div>
-                            <span className="text-lg font-bold text-emerald">{item.usage}</span>
+                            <span className="text-lg font-bold text-emerald-500">{item.usage}</span>
                           </div>
                         ))}
                       </div>
@@ -716,7 +716,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Building2 className="h-5 w-5 text-gold" />
+                    <Building2 className="h-5 w-5 text-gold-700" />
                     Expo 2020 Dubai KPIs
                   </CardTitle>
                   <CardDescription>Event performance metrics (Oct 2021 - Mar 2022)</CardDescription>
@@ -739,11 +739,11 @@ export default function RecentHistoryPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className="rounded-lg border border-gold/20 bg-platinum-800/50 p-4"
+                        className="rounded-lg border border-gold-700/20 bg-platinum-800/50 p-4"
                       >
-                        <p className="text-sm text-platinum-400">{item.metric}</p>
-                        <p className="text-xl font-bold text-gold">{item.value}</p>
-                        <p className="text-xs text-platinum-500 mt-1">Source: {item.source}</p>
+                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-xl font-bold text-gold-700">{item.value}</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">Source: {item.source}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -754,7 +754,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Shield className="h-5 w-5 text-emerald" />
+                    <Shield className="h-5 w-5 text-emerald-500" />
                     COVID-19 Recovery Initiatives
                   </CardTitle>
                   <CardDescription>Federal economic support packages</CardDescription>
@@ -774,15 +774,15 @@ export default function RecentHistoryPage() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className="flex items-center justify-between rounded-lg border border-emerald/20 bg-platinum-800/50 p-3"
+                        className="flex items-center justify-between rounded-lg border border-emerald-500/20 bg-platinum-800/50 p-3"
                       >
                         <div>
-                          <p className="font-medium text-platinum-200">{item.metric}</p>
-                          <p className="text-sm text-platinum-400">Target: {item.target}</p>
+                          <p className="font-medium text-platinum-500-200">{item.metric}</p>
+                          <p className="text-sm text-platinum-500-400">Target: {item.target}</p>
                         </div>
                         <div className="text-right">
-                          <p className="text-lg font-bold text-emerald">{item.value}</p>
-                          <p className="text-xs text-platinum-500">{item.timeline}</p>
+                          <p className="text-lg font-bold text-emerald-500">{item.value}</p>
+                          <p className="text-xs text-platinum-500-500">{item.timeline}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -794,7 +794,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Landmark className="h-5 w-5 text-navy" />
+                    <Landmark className="h-5 w-5 text-navy-500" />
                     Leadership Succession Timeline
                   </CardTitle>
                   <CardDescription>Key transitions 2022-2023</CardDescription>
@@ -813,18 +813,18 @@ export default function RecentHistoryPage() {
                         transition={{ delay: idx * 0.1 }}
                         className="flex items-start gap-4 rounded-lg border border-navy/30 bg-platinum-800/50 p-4"
                       >
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy-500">
                           <Calendar className="h-5 w-5" />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center justify-between">
-                            <h4 className="font-semibold text-platinum-200">{item.event}</h4>
+                            <h4 className="font-semibold text-platinum-500-200">{item.event}</h4>
                             <Badge variant={item.significance === 'critical' ? 'gold' : 'denim'} className="text-xs">
                               {item.significance}
                             </Badge>
                           </div>
-                          <p className="text-sm text-platinum-400 mt-1">{item.date}</p>
-                          <p className="text-sm text-platinum-300 mt-1">{item.detail}</p>
+                          <p className="text-sm text-platinum-500-400 mt-1">{item.date}</p>
+                          <p className="text-sm text-platinum-500-300 mt-1">{item.detail}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -836,7 +836,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Globe2 className="h-5 w-5 text-cyan" />
+                    <Globe2 className="h-5 w-5 text-cyan-500" />
                     COP28 Outcomes & Commitments
                   </CardTitle>
                   <CardDescription>UAE climate leadership (Nov-Dec 2023)</CardDescription>
@@ -856,20 +856,20 @@ export default function RecentHistoryPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className="rounded-lg border border-cyan/20 bg-platinum-800/50 p-4"
+                        className="rounded-lg border border-cyan-500/20 bg-platinum-800/50 p-4"
                       >
-                        <p className="text-sm text-platinum-400">{item.metric}</p>
-                        <p className="text-lg font-bold text-cyan">{item.value}</p>
-                        <p className="text-xs text-platinum-500 mt-1">Target: {item.target}</p>
+                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-lg font-bold text-cyan-500">{item.value}</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">Target: {item.target}</p>
                       </motion.div>
                     ))}
                   </div>
-                  <div className="mt-4 rounded-lg border border-rose/30 bg-rose/10 p-4">
+                  <div className="mt-4 rounded-lg border border-rose-500/30 bg-rose-500/10 p-4">
                     <div className="flex items-center gap-2 mb-2">
-                      <AlertOctagon className="h-4 w-4 text-rose" />
-                      <span className="text-sm font-medium text-rose">Controversy Note</span>
+                      <AlertOctagon className="h-4 w-4 text-rose-500" />
+                      <span className="text-sm font-medium text-rose-500">Controversy Note</span>
                     </div>
-                    <p className="text-sm text-platinum-300">
+                    <p className="text-sm text-platinum-500-300">
                       Dr. Sultan Al Jaber "No Science" comment (Dec 3, 2023): &quot;There is no science out there... that says phase-out of fossil fuels is going to achieve 1.5°C.&quot; Over 130 US/EU lawmakers demanded removal.
                     </p>
                   </div>
@@ -880,7 +880,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <AlertTriangle className="h-5 w-5 text-amber" />
+                    <AlertTriangle className="h-5 w-5 text-amber-500" />
                     UAE-Russia Sanctions Evasion Dynamics
                   </CardTitle>
                   <CardDescription>Trade and sanctions data 2022-2023</CardDescription>
@@ -900,17 +900,17 @@ export default function RecentHistoryPage() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className="rounded-lg border border-amber/20 bg-platinum-800/50 p-4"
+                        className="rounded-lg border border-amber-500/20 bg-platinum-800/50 p-4"
                       >
-                        <p className="text-sm text-platinum-400">{item.metric}</p>
-                        <p className="text-lg font-bold text-amber">{item.value}</p>
-                        <p className="text-xs text-platinum-500 mt-1">Source: {item.source}</p>
+                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-lg font-bold text-amber-500">{item.value}</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">Source: {item.source}</p>
                       </motion.div>
                     ))}
                   </div>
-                  <div className="mt-4 rounded-lg border border-amber/30 bg-amber/10 p-4">
-                    <p className="text-sm text-platinum-300">
-                      <span className="font-medium text-amber">FATF Grey List:</span> UAE added March 2022 for money laundering concerns. UAE designated &quot;country of focus&quot; for sanctions evasion by US.
+                  <div className="mt-4 rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
+                    <p className="text-sm text-platinum-500-300">
+                      <span className="font-medium text-amber-500">FATF Grey List:</span> UAE added March 2022 for money laundering concerns. UAE designated &quot;country of focus&quot; for sanctions evasion by US.
                     </p>
                   </div>
                 </CardContent>
@@ -920,7 +920,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <TrendingUp className="h-5 w-5 text-gold" />
+                    <TrendingUp className="h-5 w-5 text-gold-700" />
                     UAE 2023 Economic Performance
                   </CardTitle>
                   <CardDescription>GDP and sector growth metrics</CardDescription>
@@ -940,12 +940,12 @@ export default function RecentHistoryPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className="rounded-lg border border-gold/20 bg-platinum-800/50 p-4"
+                        className="rounded-lg border border-gold-700/20 bg-platinum-800/50 p-4"
                       >
-                        <p className="text-sm text-platinum-400">{item.metric}</p>
-                        <p className="text-lg font-bold text-gold">{item.value}</p>
+                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-lg font-bold text-gold-700">{item.value}</p>
                         <div className="flex items-center justify-between mt-1">
-                          <p className="text-xs text-platinum-500">Prev: {item.previous}</p>
+                          <p className="text-xs text-platinum-500-500">Prev: {item.previous}</p>
                           <Badge variant={item.change === 'Declining' || item.change === '-3.2pp' ? 'destructive' : 'success'} className="text-xs">
                             {item.change}
                           </Badge>
@@ -953,9 +953,9 @@ export default function RecentHistoryPage() {
                       </motion.div>
                     ))}
                   </div>
-                  <div className="mt-4 rounded-lg border border-gold/30 bg-gold/10 p-4">
-                    <p className="text-sm text-platinum-300">
-                      <span className="font-medium text-gold">Abu Dhabi GDP:</span> AED 1.14 trillion (10-year high) with 3.1% real GDP growth. Non-oil sector contributed &gt;53% of GDP.
+                  <div className="mt-4 rounded-lg border border-gold-700/30 bg-gold-700/10 p-4">
+                    <p className="text-sm text-platinum-500-300">
+                      <span className="font-medium text-gold-700">Abu Dhabi GDP:</span> AED 1.14 trillion (10-year high) with 3.1% real GDP growth. Non-oil sector contributed &gt;53% of GDP.
                     </p>
                   </div>
                 </CardContent>
@@ -1006,7 +1006,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Calendar className="h-5 w-5 text-gold" />
+                    <Calendar className="h-5 w-5 text-gold-700" />
                     UAE 2024 Overview
                   </CardTitle>
                   <CardDescription>Major events and achievements from 2024</CardDescription>
@@ -1027,12 +1027,12 @@ export default function RecentHistoryPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
                         whileHover={{ scale: 1.02 }}
-                        className="rounded-lg border border-gold/20 bg-platinum-800/50 p-4"
+                        className="rounded-lg border border-gold-700/20 bg-platinum-800/50 p-4"
                       >
-                        <p className="text-sm text-platinum-400">{item.metric}</p>
-                        <p className="text-lg font-bold text-gold">{item.value}</p>
+                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-lg font-bold text-gold-700">{item.value}</p>
                         <div className="flex items-center justify-between mt-1">
-                          <p className="text-xs text-platinum-500">Target: {item.target}</p>
+                          <p className="text-xs text-platinum-500-500">Target: {item.target}</p>
                           <Badge variant={item.status === 'achieved' ? 'emerald' : 'amber'} className="text-xs">
                             {item.status}
                           </Badge>
@@ -1047,7 +1047,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Zap className="h-5 w-5 text-emerald" />
+                    <Zap className="h-5 w-5 text-emerald-500" />
                     UAE 2025 Major Policy Changes
                   </CardTitle>
                   <CardDescription>March 2025 policy reform package</CardDescription>
@@ -1070,14 +1070,14 @@ export default function RecentHistoryPage() {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: idx * 0.05 }}
                         whileHover={{ y: -4 }}
-                        className="rounded-lg border border-emerald/20 bg-platinum-800/50 p-4"
+                        className="rounded-lg border border-emerald-500/20 bg-platinum-800/50 p-4"
                       >
                         <div className="flex items-center gap-2 mb-2">
-                          <item.icon className="h-4 w-4 text-emerald" />
-                          <p className="text-sm text-platinum-400">{item.metric}</p>
+                          <item.icon className="h-4 w-4 text-emerald-500" />
+                          <p className="text-sm text-platinum-500-400">{item.metric}</p>
                         </div>
-                        <p className="text-xl font-bold text-emerald">{item.value}</p>
-                        <p className="text-xs text-platinum-500 mt-1">{item.context}</p>
+                        <p className="text-xl font-bold text-emerald-500">{item.value}</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">{item.context}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1088,7 +1088,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Rocket className="h-5 w-5 text-cyan" />
+                    <Rocket className="h-5 w-5 text-cyan-500" />
                     UAE 2026 Major Changes
                   </CardTitle>
                   <CardDescription>Key policy and infrastructure updates for 2026</CardDescription>
@@ -1109,14 +1109,14 @@ export default function RecentHistoryPage() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.05 }}
                         whileHover={{ x: 4 }}
-                        className="rounded-lg border border-cyan/20 bg-platinum-800/50 p-4"
+                        className="rounded-lg border border-cyan-500/20 bg-platinum-800/50 p-4"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <p className="font-semibold text-platinum-200">{item.metric}</p>
+                          <p className="font-semibold text-platinum-500-200">{item.metric}</p>
                           <Badge variant="cyan" className="text-xs">{item.value}</Badge>
                         </div>
-                        <p className="text-sm text-platinum-400">{item.detail}</p>
-                        <p className="text-xs text-cyan mt-1">Target: {item.target}</p>
+                        <p className="text-sm text-platinum-500-400">{item.detail}</p>
+                        <p className="text-xs text-cyan-500 mt-1">Target: {item.target}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1127,7 +1127,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <AlertTriangle className="h-5 w-5 text-rose" />
+                    <AlertTriangle className="h-5 w-5 text-rose-500" />
                     UAE Flood April 2024
                   </CardTitle>
                   <CardDescription>Heaviest rainfall in 75 years - crisis response</CardDescription>
@@ -1147,17 +1147,17 @@ export default function RecentHistoryPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
                         whileHover={{ scale: 1.05 }}
-                        className="rounded-lg border border-rose/20 bg-platinum-800/50 p-3 text-center"
+                        className="rounded-lg border border-rose-500/20 bg-platinum-800/50 p-3 text-center"
                       >
-                        <p className="text-sm text-platinum-400">{item.metric}</p>
-                        <p className="text-xl font-bold text-rose">{item.value}</p>
-                        <p className="text-xs text-platinum-500 mt-1">{item.context}</p>
+                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-xl font-bold text-rose-500">{item.value}</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">{item.context}</p>
                       </motion.div>
                     ))}
                   </div>
-                  <div className="mt-4 rounded-lg border border-rose/30 bg-rose/10 p-4">
-                    <p className="text-sm text-platinum-300">
-                      <span className="font-medium text-rose">Scientific Analysis:</span> Lead author Basit Khan (NYU Abu Dhabi) identified cause as "Unusually warm Arabian Sea waters + Sudan low pressure + ITCZ". Warmer seas increased atmospheric moisture, intensified convective storms.
+                  <div className="mt-4 rounded-lg border border-rose-500/30 bg-rose-500/10 p-4">
+                    <p className="text-sm text-platinum-500-300">
+                      <span className="font-medium text-rose-500">Scientific Analysis:</span> Lead author Basit Khan (NYU Abu Dhabi) identified cause as "Unusually warm Arabian Sea waters + Sudan low pressure + ITCZ". Warmer seas increased atmospheric moisture, intensified convective storms.
                     </p>
                   </div>
                 </CardContent>
@@ -1167,7 +1167,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Globe2 className="h-5 w-5 text-cyan" />
+                    <Globe2 className="h-5 w-5 text-cyan-500" />
                     COP28 Outcomes (Nov-Dec 2023)
                   </CardTitle>
                   <CardDescription>Historic climate agreements and UAE leadership</CardDescription>
@@ -1190,11 +1190,11 @@ export default function RecentHistoryPage() {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: idx * 0.05 }}
                         whileHover={{ y: -4 }}
-                        className="rounded-lg border border-cyan/20 bg-platinum-800/50 p-4"
+                        className="rounded-lg border border-cyan-500/20 bg-platinum-800/50 p-4"
                       >
-                        <p className="text-sm text-platinum-400">{item.metric}</p>
-                        <p className="text-lg font-bold text-cyan">{item.value}</p>
-                        <p className="text-xs text-platinum-500 mt-1">Target: {item.target}</p>
+                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-lg font-bold text-cyan-500">{item.value}</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">Target: {item.target}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1205,7 +1205,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Handshake className="h-5 w-5 text-gold" />
+                    <Handshake className="h-5 w-5 text-gold-700" />
                     UAE BRICS Membership
                   </CardTitle>
                   <CardDescription>Strategic diversification and emerging markets alignment</CardDescription>
@@ -1227,11 +1227,11 @@ export default function RecentHistoryPage() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.05 }}
                         whileHover={{ x: 4 }}
-                        className="rounded-lg border border-gold/20 bg-platinum-800/50 p-3"
+                        className="rounded-lg border border-gold-700/20 bg-platinum-800/50 p-3"
                       >
-                        <p className="text-sm text-platinum-400">{item.metric}</p>
-                        <p className="text-lg font-bold text-gold">{item.value}</p>
-                        <p className="text-xs text-platinum-500 mt-1">{item.context}</p>
+                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-lg font-bold text-gold-700">{item.value}</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">{item.context}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1242,7 +1242,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <DollarSign className="h-5 w-5 text-emerald" />
+                    <DollarSign className="h-5 w-5 text-emerald-500" />
                     UAE Corporate Tax
                   </CardTitle>
                   <CardDescription>Tax rates and compliance requirements</CardDescription>
@@ -1265,11 +1265,11 @@ export default function RecentHistoryPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
                         whileHover={{ scale: 1.05 }}
-                        className="rounded-lg border border-emerald/20 bg-platinum-800/50 p-3"
+                        className="rounded-lg border border-emerald-500/20 bg-platinum-800/50 p-3"
                       >
-                        <p className="text-sm text-platinum-400">{item.metric}</p>
-                        <p className="text-lg font-bold text-emerald">{item.value}</p>
-                        <p className="text-xs text-platinum-500 mt-1">{item.context}</p>
+                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-lg font-bold text-emerald-500">{item.value}</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">{item.context}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1280,7 +1280,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Shield className="h-5 w-5 text-rose" />
+                    <Shield className="h-5 w-5 text-rose-500" />
                     Operation Epic Fury - March 2026
                   </CardTitle>
                   <CardDescription>Regional tensions and UAE defense response</CardDescription>
@@ -1300,28 +1300,28 @@ export default function RecentHistoryPage() {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: idx * 0.05 }}
                         whileHover={{ scale: 1.1 }}
-                        className="rounded-lg border border-rose/20 bg-platinum-800/50 p-3 text-center"
+                        className="rounded-lg border border-rose-500/20 bg-platinum-800/50 p-3 text-center"
                       >
-                        <p className="text-sm text-platinum-400">{item.metric}</p>
-                        <p className="text-xl font-bold text-rose">{item.value}</p>
-                        <p className="text-xs text-platinum-500 mt-1">{item.context}</p>
+                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-xl font-bold text-rose-500">{item.value}</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">{item.context}</p>
                       </motion.div>
                     ))}
                   </div>
                   <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                    <div className="rounded-lg border border-rose/30 bg-rose/10 p-3">
-                      <p className="text-sm font-medium text-rose mb-2">Defense Systems</p>
+                    <div className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-3">
+                      <p className="text-sm font-medium text-rose-500 mb-2">Defense Systems</p>
                       <div className="flex flex-wrap gap-2">
                         {['THAAD (US)', 'Patriot (US)', 'Cheongung II (Korea)', 'Barak-8 (Israel)'].map((sys, i) => (
                           <Badge key={i} variant="outline" className="text-xs">{sys}</Badge>
                         ))}
                       </div>
                     </div>
-                    <div className="rounded-lg border border-emerald/30 bg-emerald/10 p-3">
-                      <p className="text-sm font-medium text-emerald mb-2">Resilience Indicators</p>
+                    <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3">
+                      <p className="text-sm font-medium text-emerald-500 mb-2">Resilience Indicators</p>
                       <div className="flex flex-wrap gap-2">
                         {['Multi-layered air defense', '200+ nationalities united', 'Services maintained', 'Economy projected stable'].map((ind, i) => (
-                          <Badge key={i} variant="outline" className="text-xs text-emerald border-emerald">{ind}</Badge>
+                          <Badge key={i} variant="outline" className="text-xs text-emerald-500 border-emerald">{ind}</Badge>
                         ))}
                       </div>
                     </div>
@@ -1333,7 +1333,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Target className="h-5 w-5 text-gold" />
+                    <Target className="h-5 w-5 text-gold-700" />
                     We the UAE 2031 Vision
                   </CardTitle>
                   <CardDescription>National strategic targets</CardDescription>
@@ -1352,20 +1352,20 @@ export default function RecentHistoryPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
                         whileHover={{ y: -4 }}
-                        className="rounded-lg border border-gold/20 bg-platinum-800/50 p-4"
+                        className="rounded-lg border border-gold-700/20 bg-platinum-800/50 p-4"
                       >
-                        <p className="text-sm text-platinum-400">{item.kpi}</p>
+                        <p className="text-sm text-platinum-500-400">{item.kpi}</p>
                         <div className="flex items-end gap-2 mt-1">
-                          <p className="text-lg font-bold text-gold">{item.target}</p>
+                          <p className="text-lg font-bold text-gold-700">{item.target}</p>
                           <Badge variant="emerald" className="text-xs">{item.growth}</Badge>
                         </div>
-                        <p className="text-xs text-platinum-500 mt-1">Baseline: {item.baseline}</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">Baseline: {item.baseline}</p>
                       </motion.div>
                     ))}
                   </div>
-                  <div className="mt-4 rounded-lg border border-gold/30 bg-gold/10 p-4">
-                    <p className="text-sm text-platinum-300">
-                      <span className="font-medium text-gold">Four Pillars:</span> Forward Society | Forward Economy | Forward Diplomacy | Forward Ecosystem
+                  <div className="mt-4 rounded-lg border border-gold-700/30 bg-gold-700/10 p-4">
+                    <p className="text-sm text-platinum-500-300">
+                      <span className="font-medium text-gold-700">Four Pillars:</span> Forward Society | Forward Economy | Forward Diplomacy | Forward Ecosystem
                     </p>
                   </div>
                 </CardContent>
@@ -1375,7 +1375,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <TrendingUp className="h-5 w-5 text-navy" />
+                    <TrendingUp className="h-5 w-5 text-navy-500" />
                     Sentiment Analysis Summary
                   </CardTitle>
                   <CardDescription>Topic-level sentiment from Recent Era</CardDescription>
@@ -1401,7 +1401,7 @@ export default function RecentHistoryPage() {
                         className="flex items-center gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                       >
                         <div className="w-40">
-                          <p className="font-medium text-platinum-200 text-sm">{item.topic}</p>
+                          <p className="font-medium text-platinum-500-200 text-sm">{item.topic}</p>
                         </div>
                         <div className="flex-1">
                           <Badge
@@ -1415,12 +1415,12 @@ export default function RecentHistoryPage() {
                           </Badge>
                         </div>
                         <div className="w-20 text-center">
-                          <p className="text-xs text-platinum-400">Volatility</p>
-                          <p className="text-sm font-medium text-platinum-300">{item.volatility}</p>
+                          <p className="text-xs text-platinum-500-400">Volatility</p>
+                          <p className="text-sm font-medium text-platinum-500-300">{item.volatility}</p>
                         </div>
                         <div className="flex-1">
-                          <p className="text-xs text-platinum-400">Tone</p>
-                          <p className="text-sm text-platinum-300">{item.tone}</p>
+                          <p className="text-xs text-platinum-500-400">Tone</p>
+                          <p className="text-sm text-platinum-500-300">{item.tone}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -1439,7 +1439,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <TrendingUp className="h-5 w-5 text-gold" />
+                    <TrendingUp className="h-5 w-5 text-gold-700" />
                     Sentiment Analysis Matrix
                   </CardTitle>
                   <CardDescription>Topic-level sentiment scores (-5 to +5)</CardDescription>
@@ -1462,7 +1462,7 @@ export default function RecentHistoryPage() {
                         className="flex items-center gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
                         <div className="w-32">
-                          <p className="font-medium text-platinum-200">{item.topic}</p>
+                          <p className="font-medium text-platinum-500-200">{item.topic}</p>
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2">
@@ -1483,7 +1483,7 @@ export default function RecentHistoryPage() {
                           </div>
                         </div>
                         <div className="w-64">
-                          <p className="text-sm text-platinum-400">{item.narrative}</p>
+                          <p className="text-sm text-platinum-500-400">{item.narrative}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -1495,7 +1495,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <AlertOctagon className="h-5 w-5 text-rose" />
+                    <AlertOctagon className="h-5 w-5 text-rose-500" />
                     Topic Controversy Scores
                   </CardTitle>
                   <CardDescription>Controversy intensity ratings (0-10)</CardDescription>
@@ -1513,10 +1513,10 @@ export default function RecentHistoryPage() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: idx * 0.1 }}
-                        className="rounded-lg border border-rose/20 bg-platinum-800/50 p-4"
+                        className="rounded-lg border border-rose-500/20 bg-platinum-800/50 p-4"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-semibold text-platinum-200">{item.topic}</h4>
+                          <h4 className="font-semibold text-platinum-500-200">{item.topic}</h4>
                           <Badge
                             variant="destructive"
                             className="text-xs"
@@ -1524,7 +1524,7 @@ export default function RecentHistoryPage() {
                             {item.score}/10
                           </Badge>
                         </div>
-                        <p className="text-sm text-platinum-400">{item.issues}</p>
+                        <p className="text-sm text-platinum-500-400">{item.issues}</p>
                         <div className="mt-2 h-2 w-full rounded-full bg-platinum-700">
                           <div
                             className="h-2 rounded-full bg-rose"
@@ -1541,7 +1541,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Scale className="h-5 w-5 text-navy" />
+                    <Scale className="h-5 w-5 text-navy-500" />
                     Source Credibility Matrix
                   </CardTitle>
                   <CardDescription>Research data quality assessment</CardDescription>
@@ -1569,15 +1569,15 @@ export default function RecentHistoryPage() {
                           {item.count}
                         </Badge>
                         <div className="flex-1">
-                          <p className="font-medium text-platinum-200">{item.tier}</p>
-                          <p className="text-sm text-platinum-400">{item.sources}</p>
+                          <p className="font-medium text-platinum-500-200">{item.tier}</p>
+                          <p className="text-sm text-platinum-500-400">{item.sources}</p>
                         </div>
                       </motion.div>
                     ))}
                   </div>
                   <div className="mt-4 rounded-lg border border-navy/30 bg-navy/10 p-4">
-                    <p className="text-sm text-platinum-300">
-                      <span className="font-medium text-navy">Total Sources:</span> 45+ documented | <span className="font-medium text-navy">Total Data Points:</span> 250+
+                    <p className="text-sm text-platinum-500-300">
+                      <span className="font-medium text-navy-500">Total Sources:</span> 45+ documented | <span className="font-medium text-navy-500">Total Data Points:</span> 250+
                     </p>
                   </div>
                 </CardContent>
@@ -1587,7 +1587,7 @@ export default function RecentHistoryPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Users2 className="h-5 w-5 text-gold" />
+                    <Users2 className="h-5 w-5 text-gold-700" />
                     Entity Registry Summary
                   </CardTitle>
                   <CardDescription>Key entities from MD file 8-7</CardDescription>
@@ -1609,11 +1609,11 @@ export default function RecentHistoryPage() {
                           transition={{ delay: idx * 0.1 }}
                           className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-3"
                         >
-                          <h4 className="font-semibold text-gold mb-2">{section.category}</h4>
+                          <h4 className="font-semibold text-gold-700 mb-2">{section.category}</h4>
                           <ul className="space-y-1">
                             {section.entities.map((entity, i) => (
-                              <li key={i} className="text-sm text-platinum-300 flex items-start gap-2">
-                                <span className="text-gold">-</span>
+                              <li key={i} className="text-sm text-platinum-500-300 flex items-start gap-2">
+                                <span className="text-gold-700">-</span>
                                 {entity}
                               </li>
                             ))}

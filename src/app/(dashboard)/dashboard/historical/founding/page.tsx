@@ -47,19 +47,19 @@ const HeaderSection = ({ data }: { data: any }) => (
   >
     <div>
       <Badge variant="gold" className="mb-2 font-rajdhani">H-ERA-2</Badge>
-      <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold">
+      <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold-700">
         Federation & Early Years
       </h1>
-      <p className="mt-2 text-platinum-400 font-rajdhani">
+      <p className="mt-2 text-platinum-500-400 font-rajdhani">
         {data.description}
       </p>
     </div>
     <div className="flex gap-3">
-      <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10 font-rajdhani">
+      <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10 font-rajdhani">
         <Flag className="h-4 w-4" />
         View Archive
       </Button>
-      <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2 font-rajdhani">
+      <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2 font-rajdhani">
         <Handshake className="h-4 w-4" />
         Founding Story
       </Button>
@@ -169,12 +169,12 @@ const OverviewTab = ({ data, events }: { data: any; events: any[] }) => {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-                <BookOpen className="h-5 w-5 text-gold" />
+                <BookOpen className="h-5 w-5 text-gold-700" />
                 Historical Context
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-platinum-300 leading-relaxed font-rajdhani">{data.description}</p>
+              <p className="text-platinum-500-300 leading-relaxed font-rajdhani">{data.description}</p>
             </CardContent>
           </Card>
 
@@ -183,7 +183,7 @@ const OverviewTab = ({ data, events }: { data: any; events: any[] }) => {
             <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
               <CardHeader>
                 <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-                  <Target className="h-5 w-5 text-gold" />
+                  <Target className="h-5 w-5 text-gold-700" />
                   Event Significance Distribution
                 </CardTitle>
                 <CardDescription>Classification of federation era events</CardDescription>
@@ -197,7 +197,7 @@ const OverviewTab = ({ data, events }: { data: any; events: any[] }) => {
             <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
               <CardHeader>
                 <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-                  <Award className="h-5 w-5 text-gold" />
+                  <Award className="h-5 w-5 text-gold-700" />
                   Policy Outcomes
                 </CardTitle>
                 <CardDescription>Major policies from the founding era</CardDescription>
@@ -214,10 +214,10 @@ const OverviewTab = ({ data, events }: { data: any; events: any[] }) => {
                         className="rounded-lg bg-platinum-800/50 p-3 border border-[var(--glass-border)]"
                       >
                         <div className="flex items-center justify-between mb-1">
-                          <span className="text-sm font-medium text-gold font-rajdhani">{policy.policy}</span>
+                          <span className="text-sm font-medium text-gold-700 font-rajdhani">{policy.policy}</span>
                           <Badge variant="outline" className="text-xs font-rajdhani">{policy.year}</Badge>
                         </div>
-                        <p className="text-xs text-platinum-400">{policy.impact}</p>
+                        <p className="text-xs text-platinum-500-400">{policy.impact}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -230,7 +230,7 @@ const OverviewTab = ({ data, events }: { data: any; events: any[] }) => {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-                <Landmark className="h-5 w-5 text-gold" />
+                <Landmark className="h-5 w-5 text-gold-700" />
                 Nation Building Milestones
               </CardTitle>
               <CardDescription>Key achievements during the founding era</CardDescription>
@@ -246,7 +246,7 @@ const OverviewTab = ({ data, events }: { data: any; events: any[] }) => {
                     className="flex items-start gap-2 rounded-lg bg-platinum-800/50 p-2 border border-[var(--glass-border)]"
                   >
                     <div className="h-2 w-2 rounded-full bg-gold mt-1.5 shrink-0" />
-                    <span className="text-sm text-platinum-300 font-rajdhani">{milestone}</span>
+                    <span className="text-sm text-platinum-500-300 font-rajdhani">{milestone}</span>
                   </motion.div>
                 ))}
               </div>
@@ -299,20 +299,20 @@ const TimelineTab = ({ events }: { events: any[] }) => {
                   whileHover={{ scale: 1.02, borderColor: 'var(--gold)' }}
                   className="flex items-start gap-4 rounded-lg border border-[var(--glass-border)] bg-[var(--glass-surface)] p-4 cursor-pointer"
                 >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gold/20 text-gold shrink-0 border border-gold/30">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gold-700/20 text-gold-700 shrink-0 border border-gold-700/30">
                     <Calendar className="h-7 w-7" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-lg font-mono font-bold text-gold font-rajdhani">{event.date}</span>
+                      <span className="text-lg font-mono font-bold text-gold-700 font-rajdhani">{event.date}</span>
                       {getSignificanceBadge(event.significance)}
                     </div>
-                    <h3 className="text-xl font-bold text-platinum-100 mb-2 font-rajdhani">{event.title}</h3>
-                    <p className="text-platinum-400 leading-relaxed font-rajdhani">{event.description}</p>
+                    <h3 className="text-xl font-bold text-platinum-500-100 mb-2 font-rajdhani">{event.title}</h3>
+                    <p className="text-platinum-500-400 leading-relaxed font-rajdhani">{event.description}</p>
                     {event.entities && event.entities.length > 0 && (
                       <div className="mt-3 flex flex-wrap gap-2">
                         {event.entities.map((entity: string, eIdx: number) => (
-                          <Badge key={eIdx} variant="outline" className="text-xs border-gold/30 text-gold font-rajdhani">
+                          <Badge key={eIdx} variant="outline" className="text-xs border-gold-700/30 text-gold-700 font-rajdhani">
                             {entity}
                           </Badge>
                         ))}
@@ -325,7 +325,7 @@ const TimelineTab = ({ events }: { events: any[] }) => {
                         className="mt-3 rounded-lg bg-emerald-500/10 p-2 border border-emerald-500/30"
                       >
                         <span className="text-xs text-emerald-400 font-medium font-rajdhani">Outcome: </span>
-                        <span className="text-xs text-platinum-300 font-rajdhani">{event.outcome}</span>
+                        <span className="text-xs text-platinum-500-300 font-rajdhani">{event.outcome}</span>
                       </motion.div>
                     )}
                   </div>
@@ -369,18 +369,18 @@ const MilestonesTab = ({ data }: { data: any }) => {
               transition={{ delay: idx * 0.1 }}
               whileHover={{ scale: 1.02 }}
             >
-              <Card className="glass-card border-gold/30">
+              <Card className="glass-card border-gold-700/30">
                 <CardContent className="p-4">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-gold text-navy-950 font-bold text-xl shrink-0 border-2 border-gold/50">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-gold text-navy-500-950 font-bold text-xl shrink-0 border-2 border-gold-700/50">
                       {milestone.icon}
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-sm font-mono text-gold font-rajdhani">{milestone.date}</span>
+                        <span className="text-sm font-mono text-gold-700 font-rajdhani">{milestone.date}</span>
                       </div>
-                      <h3 className="text-lg font-bold text-platinum-100 mb-1 font-rajdhani">{milestone.event}</h3>
-                      <p className="text-sm text-platinum-400 font-rajdhani">{milestone.detail}</p>
+                      <h3 className="text-lg font-bold text-platinum-500-100 mb-1 font-rajdhani">{milestone.event}</h3>
+                      <p className="text-sm text-platinum-500-400 font-rajdhani">{milestone.detail}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -393,7 +393,7 @@ const MilestonesTab = ({ data }: { data: any }) => {
         <Card className="glass-card mt-6">
           <CardHeader>
             <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-              <Users className="h-5 w-5 text-gold" />
+              <Users className="h-5 w-5 text-gold-700" />
               Entity Involvement ({data.entityInvolvement?.length || 0} entities)
             </CardTitle>
             <CardDescription>Key persons, locations, and organizations from the era</CardDescription>
@@ -409,7 +409,7 @@ const MilestonesTab = ({ data }: { data: any }) => {
                     transition={{ delay: idx * 0.02 }}
                     whileHover={{ scale: 1.1 }}
                   >
-                    <Badge variant="outline" className="border-gold/50 text-gold font-rajdhani">{entity}</Badge>
+                    <Badge variant="outline" className="border-gold-700/50 text-gold-700 font-rajdhani">{entity}</Badge>
                   </motion.div>
                 ))}
               </div>
@@ -450,17 +450,17 @@ const FiguresTab = ({ data }: { data: any }) => {
                 <motion.div
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.8 }}
-                  className="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-gold text-navy-950 mb-4 border-2 border-gold/50"
+                  className="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-gold text-navy-500-950 mb-4 border-2 border-gold-700/50"
                 >
                   {figure.icon}
                 </motion.div>
-                <h3 className="text-lg font-bold text-platinum-100 mb-1 font-rajdhani">{figure.name}</h3>
-                <Badge variant="outline" className="mb-2 border-gold/50 text-gold font-rajdhani">{figure.role}</Badge>
-                <div className="flex items-center gap-1 text-sm text-platinum-400 mb-2">
+                <h3 className="text-lg font-bold text-platinum-500-100 mb-1 font-rajdhani">{figure.name}</h3>
+                <Badge variant="outline" className="mb-2 border-gold-700/50 text-gold-700 font-rajdhani">{figure.role}</Badge>
+                <div className="flex items-center gap-1 text-sm text-platinum-500-400 mb-2">
                   <MapPin className="h-4 w-4" />
                   {figure.emirate}
                 </div>
-                <p className="text-xs text-platinum-400 font-rajdhani">{figure.detail}</p>
+                <p className="text-xs text-platinum-500-400 font-rajdhani">{figure.detail}</p>
               </div>
             </motion.div>
           ))}
@@ -470,7 +470,7 @@ const FiguresTab = ({ data }: { data: any }) => {
         <Card className="glass-card mt-6">
           <CardHeader>
             <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-              <Users className="h-5 w-5 text-gold" />
+              <Users className="h-5 w-5 text-gold-700" />
               Additional Key Figures
             </CardTitle>
           </CardHeader>
@@ -491,12 +491,12 @@ const FiguresTab = ({ data }: { data: any }) => {
                   transition={{ delay: 0.6 + idx * 0.1 }}
                   className="flex items-center gap-2 rounded-lg bg-platinum-800/50 p-2 border border-[var(--glass-border)]"
                 >
-                  <div className="h-8 w-8 rounded-full bg-gold/20 flex items-center justify-center">
-                    <Users className="h-4 w-4 text-gold" />
+                  <div className="h-8 w-8 rounded-full bg-gold-700/20 flex items-center justify-center">
+                    <Users className="h-4 w-4 text-gold-700" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-platinum-200 font-rajdhani">{figure.name}</p>
-                    <p className="text-xs text-platinum-400 font-rajdhani">{figure.role} - {figure.emirate}</p>
+                    <p className="text-sm font-medium text-platinum-500-200 font-rajdhani">{figure.name}</p>
+                    <p className="text-xs text-platinum-500-400 font-rajdhani">{figure.role} - {figure.emirate}</p>
                   </div>
                 </motion.div>
               ))}
@@ -559,7 +559,7 @@ const SourcesTab = ({ data }: { data: any }) => {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-                <BookOpen className="h-5 w-5 text-gold" />
+                <BookOpen className="h-5 w-5 text-gold-700" />
                 Research Sources ({data.sources?.length || 0})
               </CardTitle>
               <CardDescription>WebFetch content from authoritative sources</CardDescription>
@@ -578,12 +578,12 @@ const SourcesTab = ({ data }: { data: any }) => {
                       <div className={`h-3 w-3 rounded-full mt-1.5 shrink-0 ${tierColors[source.tier] || 'bg-platinum-500'}`} />
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-1">
-                          <span className="text-sm font-medium text-gold font-rajdhani">{source.name}</span>
+                          <span className="text-sm font-medium text-gold-700 font-rajdhani">{source.name}</span>
                           <Badge variant="outline" className="text-xs font-rajdhani">{tierLabels[source.tier] || `TIER-${source.tier}`}</Badge>
                         </div>
-                        <p className="text-xs text-platinum-400 font-rajdhani">Date: {source.date}</p>
+                        <p className="text-xs text-platinum-500-400 font-rajdhani">Date: {source.date}</p>
                         {source.url && (
-                          <p className="text-xs text-navy-400 mt-1 font-rajdhani truncate">{source.url}</p>
+                          <p className="text-xs text-navy-500-400 mt-1 font-rajdhani truncate">{source.url}</p>
                         )}
                       </div>
                     </motion.div>
@@ -611,7 +611,7 @@ export default function FoundingPage() {
         animate={{ opacity: 1 }}
         className="flex items-center justify-center min-h-[400px]"
       >
-        <div className="text-platinum-400 font-rajdhani text-lg">Loading Federation Era data...</div>
+        <div className="text-platinum-500-400 font-rajdhani text-lg">Loading Federation Era data...</div>
       </motion.div>
     )
   }

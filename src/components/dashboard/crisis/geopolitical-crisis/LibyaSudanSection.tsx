@@ -69,8 +69,8 @@ export function LibyaSudanSection({ className }: LibyaSudanSectionProps) {
                     { label: 'Oil Deal (Jan 2026)', value: oilDeals.value },
                   ].map((item, idx) => (
                     <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
-                      <span className="text-platinum-400 text-sm">{item.label}</span>
-                      <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
+                      <span className="text-platinum-500-400 text-sm">{item.label}</span>
+                      <span className="text-platinum-500-200 text-sm font-medium">{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -93,8 +93,8 @@ export function LibyaSudanSection({ className }: LibyaSudanSectionProps) {
                     { label: 'GB50A Bombs', value: 'Documented March 2025' },
                   ].map((item, idx) => (
                     <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
-                      <span className="text-platinum-400 text-sm">{item.label}</span>
-                      <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
+                      <span className="text-platinum-500-400 text-sm">{item.label}</span>
+                      <span className="text-platinum-500-200 text-sm font-medium">{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -116,7 +116,7 @@ export function LibyaSudanSection({ className }: LibyaSudanSectionProps) {
                 {embargoViolations.map((item, idx) => (
                   <div key={idx} className="flex items-start gap-3 rounded bg-rose-500/10 p-3 border border-rose-500/20">
                     <Badge variant="outline" className="text-xs shrink-0">{item.date}</Badge>
-                    <p className="text-sm text-platinum-200">{item.violation}</p>
+                    <p className="text-sm text-platinum-500-200">{item.violation}</p>
                   </div>
                 ))}
               </div>
@@ -136,7 +136,7 @@ export function LibyaSudanSection({ className }: LibyaSudanSectionProps) {
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {hemedtiDubaiProperties.map((item, idx) => (
                   <div key={idx} className="rounded bg-amber-500/10 p-3 border border-amber-500/30">
-                    <p className="text-xs text-platinum-400">{item.date}</p>
+                    <p className="text-xs text-platinum-500-400">{item.date}</p>
                     <p className="text-sm font-bold text-orange-300">{item.value || item.property}</p>
                   </div>
                 ))}
@@ -162,8 +162,8 @@ export function LibyaSudanSection({ className }: LibyaSudanSectionProps) {
                   { label: 'AH-4 Origin', value: 'UAE imported from China (2019 per SIPRI)' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-3">
-                    <span className="text-platinum-400 text-sm">{item.label}</span>
-                    <span className="text-platinum-200 text-sm font-medium text-right max-w-[60%]">{item.value}</span>
+                    <span className="text-platinum-500-400 text-sm">{item.label}</span>
+                    <span className="text-platinum-500-200 text-sm font-medium text-right max-w-[60%]">{item.value}</span>
                   </div>
                 ))}
               </div>

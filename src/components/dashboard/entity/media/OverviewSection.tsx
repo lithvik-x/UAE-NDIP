@@ -69,7 +69,7 @@ export function OverviewSection({
                 donut={true}
               />
             ) : (
-              <div className="flex items-center justify-center h-48 text-platinum-500">No data available</div>
+              <div className="flex items-center justify-center h-48 text-platinum-500-500">No data available</div>
             )}
           </CardContent>
         </Card>
@@ -89,7 +89,7 @@ export function OverviewSection({
                 donut={true}
               />
             ) : (
-              <div className="flex items-center justify-center h-48 text-platinum-500">No data available</div>
+              <div className="flex items-center justify-center h-48 text-platinum-500-500">No data available</div>
             )}
           </CardContent>
         </Card>
@@ -111,7 +111,7 @@ export function OverviewSection({
                 donut={true}
               />
             ) : (
-              <div className="flex items-center justify-center h-48 text-platinum-500">No data available</div>
+              <div className="flex items-center justify-center h-48 text-platinum-500-500">No data available</div>
             )}
           </CardContent>
         </Card>
@@ -132,7 +132,7 @@ export function OverviewSection({
                 showGrid={true}
               />
             ) : (
-              <div className="flex items-center justify-center h-48 text-platinum-500">No data available</div>
+              <div className="flex items-center justify-center h-48 text-platinum-500-500">No data available</div>
             )}
           </CardContent>
         </Card>
@@ -151,8 +151,8 @@ export function OverviewSection({
                 <Crown className="h-4 w-4" />
               </div>
               <div>
-                <p className="font-semibold text-navy-900 dark:text-platinum-100">{item.organization}</p>
-                <p className="text-xs text-platinum-600 dark:text-platinum-400 mt-1">{item.reason}</p>
+                <p className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{item.organization}</p>
+                <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400 mt-1">{item.reason}</p>
               </div>
             </motion.div>
           ))}

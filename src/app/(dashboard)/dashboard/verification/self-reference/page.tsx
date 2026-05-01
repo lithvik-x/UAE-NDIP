@@ -56,7 +56,7 @@ export default function SelfReferencePage() {
               Self-Reference Analysis
             </span>
           </h1>
-          <p className="mt-2 text-platinum-400">Self-reference verification — tracking how UAE sources cite and reference themselves</p>
+          <p className="mt-2 text-platinum-500-400">Self-reference verification — tracking how UAE sources cite and reference themselves</p>
         </div>
       </motion.div>
 
@@ -87,11 +87,11 @@ export default function SelfReferencePage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Link2 className="h-5 w-5 text-cyan-500" />Key Findings</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0">
-                    <div className="space-y-3 text-sm text-platinum-300">
-                      <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-emerald" />Government sources: highest accuracy</div>
-                      <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-emerald" />Press releases: very reliable</div>
-                      <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-cyan" />Cross-referencing common</div>
-                      <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-rose" />Social media: verification needed</div>
+                    <div className="space-y-3 text-sm text-platinum-500-300">
+                      <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-emerald-500" />Government sources: highest accuracy</div>
+                      <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-emerald-500" />Press releases: very reliable</div>
+                      <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-cyan-500" />Cross-referencing common</div>
+                      <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-rose-500" />Social media: verification needed</div>
                     </div>
                   </CardContent>
                 </motion.div>
@@ -109,17 +109,17 @@ export default function SelfReferencePage() {
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
                       className="rounded-lg bg-gradient-to-r from-cyan-500/10 to-sky-600/5 p-4 border border-cyan-500/30">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xl text-platinum-100 font-rajdhani">{p.pattern}</span>
+                        <span className="text-xl text-platinum-500-100 font-rajdhani">{p.pattern}</span>
                         <Badge variant="outline" className="border-cyan-500/50 text-cyan-400">{p.frequency}</Badge>
                       </div>
-                      <p className="text-sm text-platinum-400 mb-1">Context: {p.context}</p>
+                      <p className="text-sm text-platinum-500-400 mb-1">Context: {p.context}</p>
                       <div className="flex items-center gap-2">
-                        <span className="text-xs text-platinum-400">Accuracy:</span>
+                        <span className="text-xs text-platinum-500-400">Accuracy:</span>
                         <div className="h-2 bg-platinum-800 rounded-full overflow-hidden flex-1">
                           <motion.div initial={{ width: 0 }} animate={{ width: `${p.accuracy}%` }} transition={{ delay: idx * 0.1 + 0.3, duration: 0.5 }}
                             className={`h-full rounded-full ${p.accuracy >= 90 ? 'bg-emerald-500' : p.accuracy >= 75 ? 'bg-gold' : 'bg-rose-500'}`} />
                         </div>
-                        <span className="text-xs text-platinum-100">{p.accuracy}%</span>
+                        <span className="text-xs text-platinum-500-100">{p.accuracy}%</span>
                       </div>
                     </motion.div>
                   ))}
@@ -137,10 +137,10 @@ export default function SelfReferencePage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }}
                     className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-platinum-200">{s.source}</span>
+                      <span className="text-sm font-medium text-platinum-500-200">{s.source}</span>
                       <div className="flex items-center gap-3">
-                        <Badge variant="outline" className="border-cyan-500/50 text-cyan">{s.selfRefs}</Badge>
-                        <span className="text-lg font-bold text-platinum-100">{s.accuracy}%</span>
+                        <Badge variant="outline" className="border-cyan-500/50 text-cyan-500">{s.selfRefs}</Badge>
+                        <span className="text-lg font-bold text-platinum-500-100">{s.accuracy}%</span>
                       </div>
                     </div>
                     <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">

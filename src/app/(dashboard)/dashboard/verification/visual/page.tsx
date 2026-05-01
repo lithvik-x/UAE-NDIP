@@ -59,9 +59,9 @@ export default function VisualMultimediaPage() {
   const getTierBadge = (tier: number) => {
     switch (tier) {
       case 1: return <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">Tier {tier}</Badge>
-      case 2: return <Badge className="bg-navy-500/20 text-navy-400 border-navy-500/50">Tier {tier}</Badge>
+      case 2: return <Badge className="bg-navy-500/20 text-navy-500-400 border-navy-500/50">Tier {tier}</Badge>
       case 3: return <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/50">Tier {tier}</Badge>
-      default: return <Badge className="bg-platinum-500/20 text-platinum-400 border-platinum-500/50">Tier {tier}</Badge>
+      default: return <Badge className="bg-platinum-500/20 text-platinum-500-400 border-platinum-500/50">Tier {tier}</Badge>
     }
   }
 
@@ -135,17 +135,17 @@ export default function VisualMultimediaPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="emerald" className="mb-2">V-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Visual & Multimedia</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald-500">Visual & Multimedia</h1>
+          <p className="mt-2 text-platinum-500-400">
             AI-generated content, deepfakes, viral media, and visual misinformation intelligence
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-emerald/50 text-emerald hover:bg-emerald/10">
+          <Button variant="outline" className="gap-2 border-emerald-500/50 text-emerald-500 hover:bg-emerald-500/10">
             <Search className="h-4 w-4" />
             Visual Search
           </Button>
-          <Button className="bg-gradient-emerald hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-emerald hover:opacity-90 text-navy-500-950 gap-2">
             <Image className="h-4 w-4" />
             Report Fake
           </Button>
@@ -197,13 +197,13 @@ export default function VisualMultimediaPage() {
           </div>
           <div className="flex-1">
             <h3 className="text-lg font-bold text-red-500">Deepfake Threat Level: CRITICAL</h3>
-            <p className="text-sm text-platinum-400 mt-1">
+            <p className="text-sm text-platinum-500-400 mt-1">
               +900% increase in deepfakes (Q1 2024) — Fake news spreads 70% faster than genuine content
             </p>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-red-500">+900%</div>
-            <p className="text-xs text-platinum-500">Deepfake Increase</p>
+            <p className="text-xs text-platinum-500-500">Deepfake Increase</p>
           </div>
         </div>
       </motion.div>
@@ -284,8 +284,8 @@ export default function VisualMultimediaPage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
                           <div className="flex-1">
-                            <p className="text-sm font-medium text-platinum-200">{kpi.category}</p>
-                            <p className="text-xs text-platinum-500">{kpi.source} | {kpi.date}</p>
+                            <p className="text-sm font-medium text-platinum-500-200">{kpi.category}</p>
+                            <p className="text-xs text-platinum-500-500">{kpi.source} | {kpi.date}</p>
                           </div>
                           <div className="flex items-center gap-3">
                             <div className="text-right">
@@ -318,10 +318,10 @@ export default function VisualMultimediaPage() {
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <Camera className="h-5 w-5 text-rose-400" />
-                          <h4 className="font-semibold text-platinum-200">{target.landmark}</h4>
+                          <h4 className="font-semibold text-platinum-500-200">{target.landmark}</h4>
                         </div>
                         {getRelevanceBadge(target.riskLevel)}
-                        <p className="text-xs text-platinum-500 mt-2">{target.manipulationHistory}</p>
+                        <p className="text-xs text-platinum-500-500 mt-2">{target.manipulationHistory}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -346,8 +346,8 @@ export default function VisualMultimediaPage() {
                     className="rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-center"
                   >
                     <div className="text-2xl font-bold text-red-400">{kpi.value}</div>
-                    <p className="text-sm text-platinum-400 mt-1">{kpi.kpi}</p>
-                    <p className="text-xs text-platinum-500 mt-1">Source: {kpi.source}</p>
+                    <p className="text-sm text-platinum-500-400 mt-1">{kpi.kpi}</p>
+                    <p className="text-xs text-platinum-500-500 mt-1">Source: {kpi.source}</p>
                   </motion.div>
                 ))}
               </div>
@@ -370,9 +370,9 @@ export default function VisualMultimediaPage() {
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <Video className="h-5 w-5 text-rose-400" />
-                          <h4 className="font-semibold text-platinum-200">{type.type}</h4>
+                          <h4 className="font-semibold text-platinum-500-200">{type.type}</h4>
                         </div>
-                        <p className="text-sm text-platinum-400">{type.description}</p>
+                        <p className="text-sm text-platinum-500-400">{type.description}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -395,10 +395,10 @@ export default function VisualMultimediaPage() {
                         transition={{ delay: idx * 0.05 }}
                         className="flex items-center gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                       >
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald/20 text-emerald font-bold text-sm">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-500 font-bold text-sm">
                           {method.priority}
                         </div>
-                        <p className="text-sm text-platinum-300">{method.method}</p>
+                        <p className="text-sm text-platinum-500-300">{method.method}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -423,9 +423,9 @@ export default function VisualMultimediaPage() {
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <Shield className="h-5 w-5 text-emerald-400" />
-                          <h4 className="font-semibold text-platinum-200">{channel.agency}</h4>
+                          <h4 className="font-semibold text-platinum-500-200">{channel.agency}</h4>
                         </div>
-                        <p className="text-sm text-platinum-400">{channel.platform}</p>
+                        <p className="text-sm text-platinum-500-400">{channel.platform}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -477,12 +477,12 @@ export default function VisualMultimediaPage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                         >
                           <div className="flex items-center gap-3">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald/20 text-emerald">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-500">
                               <TrendingUp className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-200">{viral.contentType}</p>
-                              <p className="text-sm text-platinum-400">{viral.platform} | {viral.date}</p>
+                              <p className="font-semibold text-platinum-500-200">{viral.contentType}</p>
+                              <p className="text-sm text-platinum-500-400">{viral.platform} | {viral.date}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-4">
@@ -520,7 +520,7 @@ export default function VisualMultimediaPage() {
                               ? 'border-emerald-500/50 text-emerald-400'
                               : tag.usageCount === 'Medium'
                               ? 'border-amber-500/50 text-amber-400'
-                              : 'border-platinum-500/50 text-platinum-400'
+                              : 'border-platinum-500/50 text-platinum-500-400'
                           }`}
                         >
                           {tag.hashtag}
@@ -556,9 +556,9 @@ export default function VisualMultimediaPage() {
                       {getRelevanceBadge(threat.uaeRelevance)}
                       {getStatusBadge(threat.fetchStatus)}
                     </div>
-                    <h4 className="font-semibold text-platinum-200 mt-2">{threat.threatType}</h4>
-                    <p className="text-sm text-platinum-400 mt-1">{threat.keyFinding}</p>
-                    <p className="text-xs text-platinum-500 mt-2">Source: {threat.primarySource}</p>
+                    <h4 className="font-semibold text-platinum-500-200 mt-2">{threat.threatType}</h4>
+                    <p className="text-sm text-platinum-500-400 mt-1">{threat.keyFinding}</p>
+                    <p className="text-xs text-platinum-500-500 mt-2">Source: {threat.primarySource}</p>
                   </motion.div>
                 ))}
               </div>
@@ -580,7 +580,7 @@ export default function VisualMultimediaPage() {
                           transition={{ delay: idx * 0.1 }}
                           className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
-                          <p className="text-sm font-medium text-platinum-300">{qt.name}</p>
+                          <p className="text-sm font-medium text-platinum-500-300">{qt.name}</p>
                           <code className="text-xs text-emerald-400 mt-1 block">{qt.query}</code>
                         </motion.div>
                       ))}
@@ -606,19 +606,19 @@ export default function VisualMultimediaPage() {
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">10.6M</div>
-                      <p className="text-sm text-platinum-400">Votes Cast</p>
+                      <p className="text-sm text-platinum-500-400">Votes Cast</p>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">49</div>
-                      <p className="text-sm text-platinum-400">Emirati Designers</p>
+                      <p className="text-sm text-platinum-500-400">Emirati Designers</p>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">7</div>
-                      <p className="text-sm text-platinum-400">Emirates United</p>
+                      <p className="text-sm text-platinum-500-400">Emirates United</p>
                     </div>
                   </div>
                   <div className="mt-4">
-                    <h4 className="text-sm font-medium text-platinum-300 mb-2">Symbolism:</h4>
+                    <h4 className="text-sm font-medium text-platinum-500-300 mb-2">Symbolism:</h4>
                     <div className="flex flex-wrap gap-2">
                       {extended.logoBrandingData.uae50Year.symbolism.map((s, idx) => (
                         <Badge key={idx} variant="outline" className="text-xs bg-platinum-700/50">
@@ -642,15 +642,15 @@ export default function VisualMultimediaPage() {
                       <h4 className="font-semibold text-rose-400 mb-2">Penalties</h4>
                       {extended.logoBrandingData.dubaiEmblem.penalties.map((p, idx) => (
                         <div key={idx} className="flex justify-between mt-2">
-                          <span className="text-sm text-platinum-400">{p.type}</span>
-                          <span className="text-sm font-medium text-platinum-200">{p.range}</span>
+                          <span className="text-sm text-platinum-500-400">{p.type}</span>
+                          <span className="text-sm font-medium text-platinum-500-200">{p.range}</span>
                         </div>
                       ))}
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
-                      <h4 className="font-semibold text-platinum-200 mb-2">Key Restrictions</h4>
+                      <h4 className="font-semibold text-platinum-500-200 mb-2">Key Restrictions</h4>
                       {extended.logoBrandingData.dubaiEmblem.restrictions.map((r, idx) => (
-                        <p key={idx} className="text-sm text-platinum-400 mt-1">• {r}</p>
+                        <p key={idx} className="text-sm text-platinum-500-400 mt-1">• {r}</p>
                       ))}
                     </div>
                   </div>
@@ -666,7 +666,7 @@ export default function VisualMultimediaPage() {
                 <CardContent>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="text-sm font-medium text-platinum-300 mb-2">Symbolism:</h4>
+                      <h4 className="text-sm font-medium text-platinum-500-300 mb-2">Symbolism:</h4>
                       <div className="flex flex-wrap gap-2">
                         {extended.logoBrandingData.eidAlEtihad.symbolism.map((s, idx) => (
                           <Badge key={idx} variant="outline" className="text-xs bg-emerald-500/10 border-emerald-500/50 text-emerald-400">
@@ -676,10 +676,10 @@ export default function VisualMultimediaPage() {
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-sm font-medium text-platinum-300 mb-2">Prohibited Actions (DON&apos;Ts):</h4>
+                      <h4 className="text-sm font-medium text-platinum-500-300 mb-2">Prohibited Actions (DON&apos;Ts):</h4>
                       <div className="grid gap-2 sm:grid-cols-2">
                         {extended.logoBrandingData.eidAlEtihad.restrictions.map((r, idx) => (
-                          <div key={idx} className="flex items-center gap-2 text-sm text-platinum-400">
+                          <div key={idx} className="flex items-center gap-2 text-sm text-platinum-500-400">
                             <XCircle className="h-4 w-4 text-rose-400 flex-shrink-0" />
                             {r}
                           </div>
@@ -757,11 +757,11 @@ export default function VisualMultimediaPage() {
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-3xl font-bold text-emerald-400">{extended.cloudSeedingData.effectivenessClear}</div>
-                      <p className="text-sm text-platinum-400 mt-1">Clear Atmosphere Enhancement</p>
+                      <p className="text-sm text-platinum-500-400 mt-1">Clear Atmosphere Enhancement</p>
                     </div>
                     <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-4 text-center">
                       <div className="text-3xl font-bold text-amber-500">{extended.cloudSeedingData.effectivenessHumid}</div>
-                      <p className="text-sm text-platinum-400 mt-1">Humid Atmosphere Enhancement</p>
+                      <p className="text-sm text-platinum-500-400 mt-1">Humid Atmosphere Enhancement</p>
                     </div>
                   </div>
                 </CardContent>
@@ -777,23 +777,23 @@ export default function VisualMultimediaPage() {
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="space-y-2">
                       <div className="flex justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-400">Technology</span>
-                        <span className="text-sm font-medium text-platinum-200">Hygroscopic</span>
+                        <span className="text-sm text-platinum-500-400">Technology</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Hygroscopic</span>
                       </div>
                       <div className="flex justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-400">Doppler Radars</span>
-                        <span className="text-sm font-medium text-platinum-200">{extended.cloudSeedingData.dopplerRadars}</span>
+                        <span className="text-sm text-platinum-500-400">Doppler Radars</span>
+                        <span className="text-sm font-medium text-platinum-500-200">{extended.cloudSeedingData.dopplerRadars}</span>
                       </div>
                       <div className="flex justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-400">Drone Technology</span>
-                        <span className="text-sm font-medium text-platinum-200">Since 2021</span>
+                        <span className="text-sm text-platinum-500-400">Drone Technology</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Since 2021</span>
                       </div>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
-                      <h4 className="text-sm font-medium text-platinum-300 mb-2">Materials Used</h4>
-                      <p className="text-sm text-platinum-400">Potassium chloride, Sodium chloride</p>
-                      <h4 className="text-sm font-medium text-platinum-300 mt-4 mb-2">Target Area</h4>
-                      <p className="text-sm text-platinum-400">Eastern mountains near Oman</p>
+                      <h4 className="text-sm font-medium text-platinum-500-300 mb-2">Materials Used</h4>
+                      <p className="text-sm text-platinum-500-400">Potassium chloride, Sodium chloride</p>
+                      <h4 className="text-sm font-medium text-platinum-500-300 mt-4 mb-2">Target Area</h4>
+                      <p className="text-sm text-platinum-500-400">Eastern mountains near Oman</p>
                     </div>
                   </div>
                 </CardContent>
@@ -847,13 +847,13 @@ export default function VisualMultimediaPage() {
                             className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                           >
                             <div className="flex items-center justify-between mb-2">
-                              <h4 className="font-semibold text-platinum-200">{sent.topic}</h4>
+                              <h4 className="font-semibold text-platinum-500-200">{sent.topic}</h4>
                               <Badge variant="outline" className="text-xs">{sent.dominantNarrative}</Badge>
                             </div>
                             <div className="flex items-center gap-4 text-sm">
                               <span className="text-emerald-400">+{sent.positive}%</span>
                               <span className="text-rose-400">-{sent.negative}%</span>
-                              <span className="text-platinum-400">{sent.neutral}%</span>
+                              <span className="text-platinum-500-400">{sent.neutral}%</span>
                             </div>
                             <Progress
                               value={100}
@@ -873,7 +873,7 @@ export default function VisualMultimediaPage() {
                                 style={{ width: `${(sent.neutral / total) * 100}%` }}
                               />
                             </div>
-                            <p className="text-xs text-platinum-500 mt-2">Source: {sent.source}</p>
+                            <p className="text-xs text-platinum-500-500 mt-2">Source: {sent.source}</p>
                           </motion.div>
                         )
                       })}
@@ -908,13 +908,13 @@ export default function VisualMultimediaPage() {
                           <div className="flex items-center gap-3">
                             <div className={`flex h-10 w-10 items-center justify-center rounded-full ${
                               entity.type === 'Government'
-                                ? 'bg-emerald/20 text-emerald'
+                                ? 'bg-emerald-500/20 text-emerald-500'
                                 : entity.type === 'Media'
                                 ? 'bg-blue/20 text-blue'
                                 : entity.type === 'Fact-checker'
-                                ? 'bg-gold/20 text-gold'
+                                ? 'bg-gold-700/20 text-gold-700'
                                 : entity.type === 'Military'
-                                ? 'bg-rose/20 text-rose'
+                                ? 'bg-rose-500/20 text-rose-500'
                                 : 'bg-slate/20 text-slate'
                             }`}>
                               {entity.type === 'Government' && <Shield className="h-5 w-5" />}
@@ -926,8 +926,8 @@ export default function VisualMultimediaPage() {
                               {entity.type === 'Business' && <TrendingUp className="h-5 w-5" />}
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-200">{entity.entity}</p>
-                              <p className="text-sm text-platinum-400">{entity.role}</p>
+                              <p className="font-semibold text-platinum-500-200">{entity.entity}</p>
+                              <p className="text-sm text-platinum-500-400">{entity.role}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-2">
@@ -965,15 +965,15 @@ export default function VisualMultimediaPage() {
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-semibold text-platinum-200">{law.law}</h4>
-                          <Scale className="h-5 w-5 text-gold" />
+                          <h4 className="font-semibold text-platinum-500-200">{law.law}</h4>
+                          <Scale className="h-5 w-5 text-gold-700" />
                         </div>
-                        <p className="text-sm text-platinum-400 mb-2">{law.keyProvision}</p>
+                        <p className="text-sm text-platinum-500-400 mb-2">{law.keyProvision}</p>
                         <div className="flex items-center gap-2">
                           <AlertTriangle className="h-4 w-4 text-rose-400" />
                           <span className="text-sm text-rose-400">{law.penalty}</span>
                         </div>
-                        <p className="text-xs text-platinum-500 mt-2">Source: {law.source}</p>
+                        <p className="text-xs text-platinum-500-500 mt-2">Source: {law.source}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -997,10 +997,10 @@ export default function VisualMultimediaPage() {
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center"
                       >
                         <div className="text-xl font-bold text-emerald-400">{fc.amount}</div>
-                        <p className="text-sm text-platinum-400">{fc.currency}</p>
+                        <p className="text-sm text-platinum-500-400">{fc.currency}</p>
                         <div className="mt-2 pt-2 border-t border-platinum-700">
-                          <p className="text-xs text-platinum-500">USD: {fc.usdEquivalent}</p>
-                          <p className="text-xs text-platinum-500">INR: {fc.inrEquivalent}</p>
+                          <p className="text-xs text-platinum-500-500">USD: {fc.usdEquivalent}</p>
+                          <p className="text-xs text-platinum-500-500">INR: {fc.inrEquivalent}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -1027,8 +1027,8 @@ export default function VisualMultimediaPage() {
                         >
                           {getTierBadge(tier.tier)}
                           <div className="flex-1">
-                            <p className="text-sm text-platinum-300">{tier.description}</p>
-                            <p className="text-xs text-platinum-500 mt-1">Examples: {tier.examples}</p>
+                            <p className="text-sm text-platinum-500-300">{tier.description}</p>
+                            <p className="text-xs text-platinum-500-500 mt-1">Examples: {tier.examples}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -1061,8 +1061,8 @@ export default function VisualMultimediaPage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
                           <div className="flex-1">
-                            <p className="text-sm font-medium text-platinum-200">{source.name}</p>
-                            <p className="text-xs text-platinum-500">{source.type} | Score: {source.score}/10</p>
+                            <p className="text-sm font-medium text-platinum-500-200">{source.name}</p>
+                            <p className="text-xs text-platinum-500-500">{source.type} | Score: {source.score}/10</p>
                           </div>
                           <div className="flex items-center gap-2">
                             {getTierBadge(source.tier)}
@@ -1093,15 +1093,15 @@ export default function VisualMultimediaPage() {
                           transition={{ delay: idx * 0.03 }}
                           className="flex items-start gap-3 rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
-                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald/20 text-emerald flex-shrink-0">
+                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-500 flex-shrink-0">
                             <ExternalLink className="h-4 w-4" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <p className="text-sm font-medium text-platinum-200 truncate">{url.url}</p>
-                            <p className="text-xs text-platinum-400 mt-1">{url.keyDataExtracted}</p>
+                            <p className="text-sm font-medium text-platinum-500-200 truncate">{url.url}</p>
+                            <p className="text-xs text-platinum-500-400 mt-1">{url.keyDataExtracted}</p>
                             <div className="flex items-center gap-2 mt-2">
                               {getStatusBadge(url.status)}
-                              <span className="text-xs text-platinum-500">{url.dataPoints} data points</span>
+                              <span className="text-xs text-platinum-500-500">{url.dataPoints} data points</span>
                             </div>
                           </div>
                         </motion.div>
@@ -1125,9 +1125,9 @@ export default function VisualMultimediaPage() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <CheckCircle className="h-5 w-5 text-emerald-400" />
-            <span className="text-sm text-platinum-300">Enrichment Status: {meta.enrichmentStatus}</span>
+            <span className="text-sm text-platinum-500-300">Enrichment Status: {meta.enrichmentStatus}</span>
           </div>
-          <div className="flex items-center gap-4 text-sm text-platinum-500">
+          <div className="flex items-center gap-4 text-sm text-platinum-500-500">
             <span>Enriched: {meta.enrichmentDate}</span>
             <span>Executed: {meta.dateExecuted}</span>
           </div>

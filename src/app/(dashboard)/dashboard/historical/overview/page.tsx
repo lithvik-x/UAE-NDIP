@@ -41,7 +41,7 @@ export default function HistoricalOverviewPage() {
   if (!data) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-400">Loading Historical data...</div>
+        <div className="text-platinum-500-400">Loading Historical data...</div>
       </div>
     )
   }
@@ -91,7 +91,7 @@ export default function HistoricalOverviewPage() {
   const getEraBadge = (era: HistoricalEra) => {
     const years = `${era.period.start} - ${era.period.end}`
     return (
-      <Badge variant="outline" className="text-xs border-gold/50 text-gold">
+      <Badge variant="outline" className="text-xs border-gold-700/50 text-gold-700">
         {years}
       </Badge>
     )
@@ -114,17 +114,17 @@ export default function HistoricalOverviewPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">H-CONTEXT</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">UAE Historical Overview</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">UAE Historical Overview</h1>
+          <p className="mt-2 text-platinum-500-400">
             Comprehensive historical context spanning Pre-Federation through the Recent Era
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <BookOpen className="h-4 w-4" />
             View Reports
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Calendar className="h-4 w-4" />
             Timeline View
           </Button>
@@ -231,9 +231,9 @@ export default function HistoricalOverviewPage() {
                                 className="h-3 w-3 rounded-full"
                                 style={{ backgroundColor: item.color }}
                               />
-                              <span className="text-sm font-medium text-platinum-200">{item.name}</span>
+                              <span className="text-sm font-medium text-platinum-500-200">{item.name}</span>
                             </div>
-                            <span className="text-lg font-bold text-platinum-200">{item.value}</span>
+                            <span className="text-lg font-bold text-platinum-500-200">{item.value}</span>
                           </div>
                           <Progress
                             value={(item.value / allKeyEvents.length) * 100}
@@ -259,17 +259,17 @@ export default function HistoricalOverviewPage() {
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
-                          <h3 className="text-lg font-bold text-gold">{era.era}</h3>
+                          <h3 className="text-lg font-bold text-gold-700">{era.era}</h3>
                           {getEraBadge(era)}
                         </div>
-                        <p className="text-sm text-platinum-400 line-clamp-2">{era.description}</p>
+                        <p className="text-sm text-platinum-500-400 line-clamp-2">{era.description}</p>
                       </div>
                       <div className="text-right ml-4">
-                        <div className="text-2xl font-bold text-platinum-100">{era.keyEvents?.length || 0}</div>
-                        <div className="text-xs text-platinum-400">Events</div>
+                        <div className="text-2xl font-bold text-platinum-500-100">{era.keyEvents?.length || 0}</div>
+                        <div className="text-xs text-platinum-500-400">Events</div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-4 text-xs text-platinum-500">
+                    <div className="flex items-center gap-4 text-xs text-platinum-500-500">
                       <span>Credibility: {era.credibility?.score || 0}%</span>
                       <span>Sources: {era.credibility?.sources || 0}</span>
                       <span>Updated: {era.lastUpdated}</span>
@@ -289,17 +289,17 @@ export default function HistoricalOverviewPage() {
                 {allKeyEvents.map((event, idx) => (
                   <div key={idx} className="flex items-start justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70">
                     <div className="flex items-start gap-4">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold shrink-0">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-700/20 text-gold-700 shrink-0">
                         <Calendar className="h-5 w-5" />
                       </div>
                       <div>
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="text-sm font-mono text-gold">{event.date}</span>
-                          <span className="text-xs text-platinum-500">|</span>
-                          <span className="text-xs text-platinum-400">{event.era}</span>
+                          <span className="text-sm font-mono text-gold-700">{event.date}</span>
+                          <span className="text-xs text-platinum-500-500">|</span>
+                          <span className="text-xs text-platinum-500-400">{event.era}</span>
                         </div>
-                        <p className="font-semibold text-platinum-200">{event.title}</p>
-                        <p className="mt-1 text-sm text-platinum-400 line-clamp-2">{event.description}</p>
+                        <p className="font-semibold text-platinum-500-200">{event.title}</p>
+                        <p className="mt-1 text-sm text-platinum-500-400 line-clamp-2">{event.description}</p>
                         {event.entities && event.entities.length > 0 && (
                           <div className="mt-2 flex flex-wrap gap-1">
                             {event.entities.slice(0, 3).map((entity, eIdx) => (
@@ -330,7 +330,7 @@ export default function HistoricalOverviewPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Crown className="h-5 w-5 text-gold" />
+                      <Crown className="h-5 w-5 text-gold-700" />
                       Nation Building Progress
                     </CardTitle>
                     <CardDescription>Key milestones across eras</CardDescription>
@@ -341,12 +341,12 @@ export default function HistoricalOverviewPage() {
                         {data.slice(0, 5).map((era, idx) => (
                           <div key={idx} className="rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center justify-between mb-2">
-                              <span className="text-sm font-medium text-gold">{era.era}</span>
-                              <span className="text-xs text-platinum-500">{era.period.start} - {era.period.end}</span>
+                              <span className="text-sm font-medium text-gold-700">{era.era}</span>
+                              <span className="text-xs text-platinum-500-500">{era.period.start} - {era.period.end}</span>
                             </div>
                             <div className="space-y-1">
                               {era.nationBuildingMilestones?.slice(0, 3).map((milestone, mIdx) => (
-                                <div key={mIdx} className="flex items-start gap-2 text-xs text-platinum-300">
+                                <div key={mIdx} className="flex items-start gap-2 text-xs text-platinum-500-300">
                                   <div className="h-1.5 w-1.5 rounded-full bg-gold mt-1.5 shrink-0" />
                                   <span className="line-clamp-1">{milestone}</span>
                                 </div>
@@ -362,7 +362,7 @@ export default function HistoricalOverviewPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Lightbulb className="h-5 w-5 text-gold" />
+                      <Lightbulb className="h-5 w-5 text-gold-700" />
                       Key Findings
                     </CardTitle>
                     <CardDescription>Critical historical insights</CardDescription>
@@ -373,8 +373,8 @@ export default function HistoricalOverviewPage() {
                         {data.flatMap(era => era.keyFindings || []).slice(0, 10).map((finding, idx) => (
                           <div key={idx} className="flex items-start justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700">
                             <div className="flex-1">
-                              <p className="text-sm font-medium text-platinum-200">{finding.finding}</p>
-                              <p className="mt-1 text-xs text-platinum-400">Source: {finding.source}</p>
+                              <p className="text-sm font-medium text-platinum-500-200">{finding.finding}</p>
+                              <p className="mt-1 text-xs text-platinum-500-400">Source: {finding.source}</p>
                             </div>
                             <Badge variant="outline" className="ml-2 text-xs shrink-0">{finding.metric}</Badge>
                           </div>
@@ -398,10 +398,10 @@ export default function HistoricalOverviewPage() {
                           <div key={pIdx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                             <div className="flex-1">
                               <div className="flex items-center gap-2">
-                                <span className="text-sm font-medium text-gold">{policy.policy}</span>
+                                <span className="text-sm font-medium text-gold-700">{policy.policy}</span>
                                 <Badge variant="outline" className="text-xs">{policy.year}</Badge>
                               </div>
-                              <p className="mt-1 text-sm text-platinum-300">{policy.impact}</p>
+                              <p className="mt-1 text-sm text-platinum-500-300">{policy.impact}</p>
                             </div>
                           </div>
                         ))
@@ -489,8 +489,8 @@ export default function HistoricalOverviewPage() {
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700">
                           <div className="flex-1">
-                            <span className="text-sm font-medium text-gold">{item.policy}</span>
-                            <p className="text-xs text-platinum-400 mt-1">{item.kpis}</p>
+                            <span className="text-sm font-medium text-gold-700">{item.policy}</span>
+                            <p className="text-xs text-platinum-500-400 mt-1">{item.kpis}</p>
                           </div>
                           <Badge variant={item.relevance === 'CRITICAL' ? 'destructive' : 'outline'} className="ml-2">
                             {item.relevance}
@@ -524,11 +524,11 @@ export default function HistoricalOverviewPage() {
                       ].map((item, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-200">{item.policy}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.policy}</span>
                             <div className="flex gap-2 text-xs">
                               <span className="text-emerald-400">{item.positive}%</span>
                               <span className="text-rose-400">{item.negative}%</span>
-                              <span className="text-platinum-400">{item.neutral}%</span>
+                              <span className="text-platinum-500-400">{item.neutral}%</span>
                             </div>
                           </div>
                           <div className="flex h-2 overflow-hidden rounded-full bg-platinum-700">
@@ -551,53 +551,53 @@ export default function HistoricalOverviewPage() {
                 <CardContent>
                   <div className="grid gap-6 lg:grid-cols-2">
                     <div className="space-y-4">
-                      <h4 className="text-sm font-semibold text-gold">Economic Diversification</h4>
+                      <h4 className="text-sm font-semibold text-gold-700">Economic Diversification</h4>
                       {[
                         { kpi: 'FDI as % of GDP', value: '3.3%', status: 'Stagnant' },
                         { kpi: 'Non-oil GDP contribution', value: '-', status: 'Progressing' },
                         { kpi: 'Tourism GDP (Dubai)', value: '20%', status: 'Stable' },
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-300">{item.kpi}</span>
+                          <span className="text-sm text-platinum-500-300">{item.kpi}</span>
                           <Badge variant="outline" className="text-xs">{item.status}</Badge>
                         </div>
                       ))}
                     </div>
                     <div className="space-y-4">
-                      <h4 className="text-sm font-semibold text-gold">Energy & Climate</h4>
+                      <h4 className="text-sm font-semibold text-gold-700">Energy & Climate</h4>
                       {[
                         { kpi: 'Nuclear electricity share', value: '25%', status: 'Achieved' },
                         { kpi: 'Clean energy capacity', value: '14.2 GW', status: 'In Progress' },
                         { kpi: 'Carbon avoided (nuclear)', value: '22 MT/year', status: 'Achieved' },
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-300">{item.kpi}</span>
+                          <span className="text-sm text-platinum-500-300">{item.kpi}</span>
                           <Badge variant="outline" className="text-xs">{item.status}</Badge>
                         </div>
                       ))}
                     </div>
                     <div className="space-y-4">
-                      <h4 className="text-sm font-semibold text-gold">Visa & Immigration</h4>
+                      <h4 className="text-sm font-semibold text-gold-700">Visa & Immigration</h4>
                       {[
                         { kpi: 'Golden Visa validity', value: '10 years', status: 'Active' },
                         { kpi: 'Unemployment insurance', value: '1M+', status: 'Exceeded' },
                         { kpi: 'Green Visa validity', value: '5 years', status: 'Active' },
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-300">{item.kpi}</span>
+                          <span className="text-sm text-platinum-500-300">{item.kpi}</span>
                           <Badge variant="outline" className="text-xs">{item.status}</Badge>
                         </div>
                       ))}
                     </div>
                     <div className="space-y-4">
-                      <h4 className="text-sm font-semibold text-gold">Nuclear Program</h4>
+                      <h4 className="text-sm font-semibold text-gold-700">Nuclear Program</h4>
                       {[
                         { kpi: 'Reactors operational', value: '4/4', status: 'Complete' },
                         { kpi: 'Total capacity', value: '5.6 GWe', status: 'Achieved' },
                         { kpi: 'Electricity share', value: '25%', status: 'Achieved' },
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-300">{item.kpi}</span>
+                          <span className="text-sm text-platinum-500-300">{item.kpi}</span>
                           <Badge variant="outline" className="text-xs">{item.status}</Badge>
                         </div>
                       ))}

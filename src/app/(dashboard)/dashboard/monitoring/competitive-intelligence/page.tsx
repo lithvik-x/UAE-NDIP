@@ -60,7 +60,7 @@ export default function CompetitiveIntelligencePage() {
               Competitive Intelligence
             </span>
           </h1>
-          <p className="mt-2 text-platinum-400">Competitive landscape analysis — UAE positioning vs. regional and global competitors</p>
+          <p className="mt-2 text-platinum-500-400">Competitive landscape analysis — UAE positioning vs. regional and global competitors</p>
         </div>
       </motion.div>
 
@@ -93,11 +93,11 @@ export default function CompetitiveIntelligencePage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Radar className="h-5 w-5 text-emerald-500" />Key Advantages</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0">
-                    <div className="space-y-3 text-sm text-platinum-300">
-                      <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-emerald" />Strategic location: unmatched</div>
-                      <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-emerald" />Business-friendly policies</div>
-                      <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-emerald" />World-class infrastructure</div>
-                      <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-gold" />Tax-free environment</div>
+                    <div className="space-y-3 text-sm text-platinum-500-300">
+                      <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-emerald-500" />Strategic location: unmatched</div>
+                      <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-emerald-500" />Business-friendly policies</div>
+                      <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-emerald-500" />World-class infrastructure</div>
+                      <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-gold-700" />Tax-free environment</div>
                     </div>
                   </CardContent>
                 </motion.div>
@@ -115,10 +115,10 @@ export default function CompetitiveIntelligencePage() {
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
                       className="rounded-lg bg-gradient-to-r from-gold-500/10 to-amber-600/5 p-4 border border-gold-500/30">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xl text-platinum-100 font-rajdhani">{c.name}</span>
+                        <span className="text-xl text-platinum-500-100 font-rajdhani">{c.name}</span>
                         <Badge variant="outline" className={`border-${c.threat === 'HIGH' ? 'rose' : 'platinum'}-500/50 text-${c.threat === 'HIGH' ? 'rose' : 'platinum'}`}>{c.threat}</Badge>
                       </div>
-                      <div className="flex items-center gap-4 text-sm text-platinum-400">
+                      <div className="flex items-center gap-4 text-sm text-platinum-500-400">
                         <span>Strength: {c.strength}%</span>
                         <Badge variant="outline" className={`border-${c.trend === 'Growing' ? 'emerald' : 'platinum'}-500/50 text-${c.trend === 'Growing' ? 'emerald' : 'platinum'}`}>{c.trend}</Badge>
                       </div>
@@ -142,10 +142,10 @@ export default function CompetitiveIntelligencePage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }}
                     className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-platinum-200">{c.metric}</span>
+                      <span className="text-sm font-medium text-platinum-500-200">{c.metric}</span>
                       <div className="flex items-center gap-3">
-                        <span className="text-xs text-gold">{c.uae}</span>
-                        <span className="text-xs text-platinum-400">vs {c.rivals}</span>
+                        <span className="text-xs text-gold-700">{c.uae}</span>
+                        <span className="text-xs text-platinum-500-400">vs {c.rivals}</span>
                       </div>
                     </div>
                     <div className="flex gap-2 h-3">

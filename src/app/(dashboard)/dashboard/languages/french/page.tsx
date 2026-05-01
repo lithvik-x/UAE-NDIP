@@ -76,13 +76,13 @@ function EnhancedHeader() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          <Badge variant="indigo" className="mb-2 bg-gradient-to-r from-indigo/20 to-indigo/10 border-indigo/30">
+          <Badge variant="indigo" className="mb-2 bg-gradient-to-r from-indigo/20 to-indigo/10 border-indigo-500/30">
             <Globe className="w-3 h-3 mr-1" />
             FRENCH
           </Badge>
         </motion.div>
         <motion.h1
-          className="text-3xl font-extrabold gradient-text-indigo"
+          className="text-3xl font-extrabold gradient-text-indigo-500"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -90,7 +90,7 @@ function EnhancedHeader() {
           French Language Presence
         </motion.h1>
         <motion.p
-          className="text-platinum-400 font-medium"
+          className="text-platinum-500-400 font-medium"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
@@ -106,7 +106,7 @@ function EnhancedHeader() {
       >
         <Button
           variant="outline"
-          className="gap-2 border-indigo/50 text-indigo hover:bg-indigo/10 backdrop-blur-sm"
+          className="gap-2 border-indigo-500/50 text-indigo-500 hover:bg-indigo-500/10 backdrop-blur-sm"
         >
           <Eye className="h-4 w-4" />
           Monitor French
@@ -201,10 +201,10 @@ function EnhancedOverviewCharts({ volumeTrend, sentimentData }: { volumeTrend: a
         >
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <TrendingUp className="w-5 h-5 text-indigo" />
+              <TrendingUp className="w-5 h-5 text-indigo-500" />
               Query Volume Trend
             </CardTitle>
-            <CardDescription className="text-platinum-400">
+            <CardDescription className="text-platinum-500-400">
               Monthly French searches (millions)
             </CardDescription>
           </CardHeader>
@@ -230,10 +230,10 @@ function EnhancedOverviewCharts({ volumeTrend, sentimentData }: { volumeTrend: a
         >
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <Heart className="w-5 h-5 text-emerald" />
+              <Heart className="w-5 h-5 text-emerald-500" />
               Sentiment Distribution
             </CardTitle>
-            <CardDescription className="text-platinum-400">
+            <CardDescription className="text-platinum-500-400">
               French content sentiment
             </CardDescription>
           </CardHeader>
@@ -268,10 +268,10 @@ function EnhancedDefenseTab({ defenseTerms, defenseTrend }: { defenseTerms: any[
       >
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <Shield className="w-5 h-5 text-navy" />
+            <Shield className="w-5 h-5 text-navy-500" />
             Defense-Related Searches
           </CardTitle>
-          <CardDescription className="text-platinum-400">
+          <CardDescription className="text-platinum-500-400">
             Military and strategic content queries
           </CardDescription>
         </CardHeader>
@@ -287,26 +287,26 @@ function EnhancedDefenseTab({ defenseTerms, defenseTrend }: { defenseTerms: any[
                 whileHover={{ scale: 1.01 }}
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy-500">
                     <Plane className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-platinum-200">{item.term}</p>
+                    <p className="font-semibold text-platinum-500-200">{item.term}</p>
                     {getCategoryBadge(item.category)}
                   </div>
                 </div>
                 <div className="flex items-center gap-6">
                   <div className="text-center">
-                    <div className="text-lg font-bold text-platinum-200">
+                    <div className="text-lg font-bold text-platinum-500-200">
                       {(item.volume / 1000000).toFixed(1)}M
                     </div>
-                    <p className="text-xs text-platinum-400">Volume</p>
+                    <p className="text-xs text-platinum-500-400">Volume</p>
                   </div>
                   <div className="text-center">
                     <div className={`text-lg font-bold ${getSentimentColor(item.sentiment)}`}>
                       {item.sentiment}%
                     </div>
-                    <p className="text-xs text-platinum-400">Sentiment</p>
+                    <p className="text-xs text-platinum-500-400">Sentiment</p>
                   </div>
                 </div>
               </motion.div>
@@ -322,10 +322,10 @@ function EnhancedDefenseTab({ defenseTerms, defenseTrend }: { defenseTerms: any[
       >
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <Atom className="w-5 h-5 text-indigo" />
+            <Atom className="w-5 h-5 text-indigo-500" />
             Defense Sentiment Trend
           </CardTitle>
-          <CardDescription className="text-platinum-400">
+          <CardDescription className="text-platinum-500-400">
             12-month defense content sentiment
           </CardDescription>
         </CardHeader>
@@ -349,10 +349,10 @@ function EnhancedDefenseTab({ defenseTerms, defenseTrend }: { defenseTerms: any[
       >
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <Shield className="w-5 h-5 text-gold" />
+            <Shield className="w-5 h-5 text-gold-700" />
             Key Defense Indicators
           </CardTitle>
-          <CardDescription className="text-platinum-400">
+          <CardDescription className="text-platinum-500-400">
             Strategic cooperation metrics
           </CardDescription>
         </CardHeader>
@@ -362,24 +362,24 @@ function EnhancedDefenseTab({ defenseTerms, defenseTrend }: { defenseTerms: any[
               className="rounded-lg border border-navy-700/50 bg-navy-900/20 p-4 text-center"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="text-3xl font-bold text-navy">Rafale</div>
-              <p className="text-sm text-platinum-400 mt-1">Fighter Aircraft Deal</p>
+              <div className="text-3xl font-bold text-navy-500">Rafale</div>
+              <p className="text-sm text-platinum-500-400 mt-1">Fighter Aircraft Deal</p>
               <Badge variant="denim" className="mt-2">Active</Badge>
             </motion.div>
             <motion.div
               className="rounded-lg border border-navy-700/50 bg-navy-900/20 p-4 text-center"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="text-3xl font-bold text-navy">Al Dhafra</div>
-              <p className="text-sm text-platinum-400 mt-1">French Military Base</p>
+              <div className="text-3xl font-bold text-navy-500">Al Dhafra</div>
+              <p className="text-sm text-platinum-500-400 mt-1">French Military Base</p>
               <Badge variant="denim" className="mt-2">Operational</Badge>
             </motion.div>
             <motion.div
               className="rounded-lg border border-navy-700/50 bg-navy-900/20 p-4 text-center"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="text-3xl font-bold text-navy">€16B</div>
-              <p className="text-sm text-platinum-400 mt-1">Defense Contracts</p>
+              <div className="text-3xl font-bold text-navy-500">€16B</div>
+              <p className="text-sm text-platinum-500-400 mt-1">Defense Contracts</p>
               <Badge variant="gold" className="mt-2">Rising</Badge>
             </motion.div>
           </div>
@@ -407,10 +407,10 @@ function EnhancedBusinessTab({ businessTerms, sourceData }: { businessTerms: any
       >
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <Briefcase className="w-5 h-5 text-gold" />
+            <Briefcase className="w-5 h-5 text-gold-700" />
             Business & Trade Searches
           </CardTitle>
-          <CardDescription className="text-platinum-400">
+          <CardDescription className="text-platinum-500-400">
             Commercial relationship queries
           </CardDescription>
         </CardHeader>
@@ -426,26 +426,26 @@ function EnhancedBusinessTab({ businessTerms, sourceData }: { businessTerms: any
                 whileHover={{ scale: 1.01 }}
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-700/20 text-gold-700">
                     <Building2 className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-platinum-200">{item.term}</p>
+                    <p className="font-semibold text-platinum-500-200">{item.term}</p>
                     {getCategoryBadge(item.category)}
                   </div>
                 </div>
                 <div className="flex items-center gap-6">
                   <div className="text-center">
-                    <div className="text-lg font-bold text-platinum-200">
+                    <div className="text-lg font-bold text-platinum-500-200">
                       {(item.volume / 1000000).toFixed(1)}M
                     </div>
-                    <p className="text-xs text-platinum-400">Volume</p>
+                    <p className="text-xs text-platinum-500-400">Volume</p>
                   </div>
                   <div className="text-center">
                     <div className={`text-lg font-bold ${getSentimentColor(item.sentiment)}`}>
                       {item.sentiment}%
                     </div>
-                    <p className="text-xs text-platinum-400">Sentiment</p>
+                    <p className="text-xs text-platinum-500-400">Sentiment</p>
                   </div>
                 </div>
               </motion.div>
@@ -461,10 +461,10 @@ function EnhancedBusinessTab({ businessTerms, sourceData }: { businessTerms: any
       >
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <Cpu className="w-5 h-5 text-indigo" />
+            <Cpu className="w-5 h-5 text-indigo-500" />
             AI Partnership KPIs
           </CardTitle>
-          <CardDescription className="text-platinum-400">
+          <CardDescription className="text-platinum-500-400">
             France-UAE artificial intelligence cooperation
           </CardDescription>
         </CardHeader>
@@ -474,32 +474,32 @@ function EnhancedBusinessTab({ businessTerms, sourceData }: { businessTerms: any
               className="rounded-lg border border-indigo-700/50 bg-indigo-900/20 p-4 text-center"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="text-3xl font-bold text-indigo">€30B</div>
-              <p className="text-sm text-platinum-400 mt-1">UAE Investment</p>
+              <div className="text-3xl font-bold text-indigo-500">€30B</div>
+              <p className="text-sm text-platinum-500-400 mt-1">UAE Investment</p>
               <Badge variant="indigo" className="mt-2">AI Infrastructure</Badge>
             </motion.div>
             <motion.div
               className="rounded-lg border border-indigo-700/50 bg-indigo-900/20 p-4 text-center"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="text-3xl font-bold text-indigo">1.4 GW</div>
-              <p className="text-sm text-platinum-400 mt-1">AI Campus Capacity</p>
+              <div className="text-3xl font-bold text-indigo-500">1.4 GW</div>
+              <p className="text-sm text-platinum-500-400 mt-1">AI Campus Capacity</p>
               <Badge variant="indigo" className="mt-2">Île-de-France</Badge>
             </motion.div>
             <motion.div
               className="rounded-lg border border-indigo-700/50 bg-indigo-900/20 p-4 text-center"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="text-3xl font-bold text-indigo">2028</div>
-              <p className="text-sm text-platinum-400 mt-1">Operations Launch</p>
+              <div className="text-3xl font-bold text-indigo-500">2028</div>
+              <p className="text-sm text-platinum-500-400 mt-1">Operations Launch</p>
               <Badge variant="indigo" className="mt-2">Planned</Badge>
             </motion.div>
             <motion.div
               className="rounded-lg border border-indigo-700/50 bg-indigo-900/20 p-4 text-center"
               whileHover={{ scale: 1.05 }}
             >
-              <div className="text-3xl font-bold text-indigo">G42 + Mistral</div>
-              <p className="text-sm text-platinum-400 mt-1">Partnership</p>
+              <div className="text-3xl font-bold text-indigo-500">G42 + Mistral</div>
+              <p className="text-sm text-platinum-500-400 mt-1">Partnership</p>
               <Badge variant="gold" className="mt-2">May 2025</Badge>
             </motion.div>
           </div>
@@ -513,10 +513,10 @@ function EnhancedBusinessTab({ businessTerms, sourceData }: { businessTerms: any
       >
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <BookOpen className="w-5 h-5 text-indigo" />
+            <BookOpen className="w-5 h-5 text-indigo-500" />
             Top French Media Sources
           </CardTitle>
-          <CardDescription className="text-platinum-400">
+          <CardDescription className="text-platinum-500-400">
             Most accessed French-language sources
           </CardDescription>
         </CardHeader>
@@ -533,11 +533,11 @@ function EnhancedBusinessTab({ businessTerms, sourceData }: { businessTerms: any
                   whileHover={{ scale: 1.02 }}
                 >
                   <div className="flex items-center gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-indigo/20 text-indigo">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-indigo-500/20 text-indigo-500">
                       <BookOpen className="h-4 w-4" />
                     </div>
                     <div>
-                      <p className="font-semibold text-platinum-200">{source.source}</p>
+                      <p className="font-semibold text-platinum-500-200">{source.source}</p>
                       <Badge variant="outline" className="text-xs">{source.tier}</Badge>
                     </div>
                   </div>
@@ -574,10 +574,10 @@ function EnhancedCultureTab({ cultureTerms, culturalInstitutions }: { cultureTer
       >
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <GraduationCap className="w-5 h-5 text-fuchsia" />
+            <GraduationCap className="w-5 h-5 text-fuchsia-500" />
             Culture & Education Searches
           </CardTitle>
-          <CardDescription className="text-platinum-400">
+          <CardDescription className="text-platinum-500-400">
             French cultural and educational content
           </CardDescription>
         </CardHeader>
@@ -593,26 +593,26 @@ function EnhancedCultureTab({ cultureTerms, culturalInstitutions }: { cultureTer
                 whileHover={{ scale: 1.01 }}
               >
                 <div className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-fuchsia/20 text-fuchsia">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-fuchsia-500/20 text-fuchsia-500">
                     <Globe className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-platinum-200">{item.term}</p>
+                    <p className="font-semibold text-platinum-500-200">{item.term}</p>
                     {getCategoryBadge(item.category)}
                   </div>
                 </div>
                 <div className="flex items-center gap-6">
                   <div className="text-center">
-                    <div className="text-lg font-bold text-platinum-200">
+                    <div className="text-lg font-bold text-platinum-500-200">
                       {(item.volume / 1000000).toFixed(1)}M
                     </div>
-                    <p className="text-xs text-platinum-400">Volume</p>
+                    <p className="text-xs text-platinum-500-400">Volume</p>
                   </div>
                   <div className="text-center">
                     <div className={`text-lg font-bold ${getSentimentColor(item.sentiment)}`}>
                       {item.sentiment}%
                     </div>
-                    <p className="text-xs text-platinum-400">Sentiment</p>
+                    <p className="text-xs text-platinum-500-400">Sentiment</p>
                   </div>
                 </div>
               </motion.div>
@@ -628,10 +628,10 @@ function EnhancedCultureTab({ cultureTerms, culturalInstitutions }: { cultureTer
       >
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <Landmark className="w-5 h-5 text-fuchsia" />
+            <Landmark className="w-5 h-5 text-fuchsia-500" />
             French Cultural Institutions
           </CardTitle>
-          <CardDescription className="text-platinum-400">
+          <CardDescription className="text-platinum-500-400">
             Active French cultural presence in UAE
           </CardDescription>
         </CardHeader>
@@ -644,8 +644,8 @@ function EnhancedCultureTab({ cultureTerms, culturalInstitutions }: { cultureTer
                 whileHover={{ scale: 1.03 }}
               >
                 <Badge variant="fuchsia" className="mb-2">{inst.name}</Badge>
-                <p className="text-sm text-platinum-300">{inst.description}</p>
-                <p className="text-xs text-platinum-400 mt-2">{inst.since}</p>
+                <p className="text-sm text-platinum-500-300">{inst.description}</p>
+                <p className="text-xs text-platinum-500-400 mt-2">{inst.since}</p>
               </motion.div>
             ))}
           </div>
@@ -670,10 +670,10 @@ function EnhancedCommunityTab({ communitySegments, populationTrend }: { communit
       >
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <Users className="w-5 h-5 text-indigo" />
+            <Users className="w-5 h-5 text-indigo-500" />
             Community Segments
           </CardTitle>
-          <CardDescription className="text-platinum-400">
+          <CardDescription className="text-platinum-500-400">
             French-speaking population breakdown
           </CardDescription>
         </CardHeader>
@@ -697,10 +697,10 @@ function EnhancedCommunityTab({ communitySegments, populationTrend }: { communit
       >
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <MessageSquare className="w-5 h-5 text-indigo" />
+            <MessageSquare className="w-5 h-5 text-indigo-500" />
             Community Statistics
           </CardTitle>
-          <CardDescription className="text-platinum-400">
+          <CardDescription className="text-platinum-500-400">
             French-speaking population details
           </CardDescription>
         </CardHeader>
@@ -715,8 +715,8 @@ function EnhancedCommunityTab({ communitySegments, populationTrend }: { communit
                 transition={{ delay: index * 0.1 }}
               >
                 <div className="flex items-center justify-between text-sm">
-                  <span className="font-medium text-platinum-200">{segment.segment}</span>
-                  <span className="text-platinum">{segment.population.toLocaleString()} people</span>
+                  <span className="font-medium text-platinum-500-200">{segment.segment}</span>
+                  <span className="text-platinum-500">{segment.population.toLocaleString()} people</span>
                 </div>
                 <Progress value={segment.percentage} className="h-3" />
               </motion.div>
@@ -732,10 +732,10 @@ function EnhancedCommunityTab({ communitySegments, populationTrend }: { communit
       >
         <CardHeader>
           <CardTitle className="text-lg flex items-center gap-2">
-            <TrendingUp className="w-5 h-5 text-emerald" />
+            <TrendingUp className="w-5 h-5 text-emerald-500" />
             Growth Trends
           </CardTitle>
-          <CardDescription className="text-platinum-400">
+          <CardDescription className="text-platinum-500-400">
             Community growth indicators
           </CardDescription>
         </CardHeader>
@@ -921,10 +921,10 @@ export default function FrenchLanguagePage() {
                   >
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Landmark className="w-5 h-5 text-gold" />
+                        <Landmark className="w-5 h-5 text-gold-700" />
                         Topic Distribution
                       </CardTitle>
-                      <CardDescription className="text-platinum-400">
+                      <CardDescription className="text-platinum-500-400">
                         French content by category
                       </CardDescription>
                     </CardHeader>
@@ -934,29 +934,29 @@ export default function FrenchLanguagePage() {
                           className="rounded-lg border border-navy-700/50 bg-navy-900/20 p-4 text-center"
                           whileHover={{ scale: 1.05 }}
                         >
-                          <div className="text-3xl font-bold text-navy">25%</div>
-                          <p className="text-sm text-platinum-400 mt-1">Defense</p>
+                          <div className="text-3xl font-bold text-navy-500">25%</div>
+                          <p className="text-sm text-platinum-500-400 mt-1">Defense</p>
                         </motion.div>
                         <motion.div
                           className="rounded-lg border border-gold-700/50 bg-gold-900/20 p-4 text-center"
                           whileHover={{ scale: 1.05 }}
                         >
-                          <div className="text-3xl font-bold text-gold">30%</div>
-                          <p className="text-sm text-platinum-400 mt-1">Trade</p>
+                          <div className="text-3xl font-bold text-gold-700">30%</div>
+                          <p className="text-sm text-platinum-500-400 mt-1">Trade</p>
                         </motion.div>
                         <motion.div
                           className="rounded-lg border border-emerald-700/50 bg-emerald-900/20 p-4 text-center"
                           whileHover={{ scale: 1.05 }}
                         >
                           <div className="text-3xl font-bold text-emerald-400">25%</div>
-                          <p className="text-sm text-platinum-400 mt-1">Business</p>
+                          <p className="text-sm text-platinum-500-400 mt-1">Business</p>
                         </motion.div>
                         <motion.div
                           className="rounded-lg border border-fuchsia-700/50 bg-fuchsia-900/20 p-4 text-center"
                           whileHover={{ scale: 1.05 }}
                         >
                           <div className="text-3xl font-bold text-fuchsia-400">20%</div>
-                          <p className="text-sm text-platinum-400 mt-1">Culture</p>
+                          <p className="text-sm text-platinum-500-400 mt-1">Culture</p>
                         </motion.div>
                       </div>
                     </CardContent>

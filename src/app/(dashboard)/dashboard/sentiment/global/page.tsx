@@ -121,17 +121,17 @@ export default function GlobalPerceptionPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">SENTIMENT</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Global Perception</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Global Perception</h1>
+          <p className="mt-2 text-platinum-500-400">
             International sentiment analysis, country perception, and global narrative tracking
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <Globe className="h-4 w-4" />
             World Map View
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Flag className="h-4 w-4" />
             International Reports
           </Button>
@@ -258,15 +258,15 @@ export default function GlobalPerceptionPage() {
                                 <Globe className={`h-4 w-4 ${getSentimentColor(narrative.sentiment)}`} />
                               </div>
                               <div>
-                                <p className="font-semibold text-platinum-200">{narrative.narrative}</p>
-                                <p className="text-sm text-platinum-400">{narrative.reach}M reach in {narrative.regions} regions</p>
+                                <p className="font-semibold text-platinum-500-200">{narrative.narrative}</p>
+                                <p className="text-sm text-platinum-500-400">{narrative.reach}M reach in {narrative.regions} regions</p>
                               </div>
                             </div>
                             <div className="text-center">
                               <div className={`text-lg font-bold ${getSentimentColor(narrative.sentiment)}`}>
                                 {narrative.sentiment}%
                               </div>
-                              <p className="text-xs text-platinum-400">Sentiment</p>
+                              <p className="text-xs text-platinum-500-400">Sentiment</p>
                             </div>
                           </div>
                           <Progress value={narrative.sentiment} className="h-2" />
@@ -314,12 +314,12 @@ export default function GlobalPerceptionPage() {
                         {countryPerceptionData.slice(0, 4).map((country, index) => (
                           <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center gap-3">
-                              <Flag className="h-5 w-5 text-gold" />
-                              <span className="text-sm font-medium text-platinum-200">{country.country}</span>
+                              <Flag className="h-5 w-5 text-gold-700" />
+                              <span className="text-sm font-medium text-platinum-500-200">{country.country}</span>
                             </div>
                             <div className="flex items-center gap-3">
-                              <span className="text-sm text-platinum-400">{(country.volume / 1000).toFixed(1)}K</span>
-                              <Badge variant="outline" className="text-xs text-emerald">
+                              <span className="text-sm text-platinum-500-400">{(country.volume / 1000).toFixed(1)}K</span>
+                              <Badge variant="outline" className="text-xs text-emerald-500">
                                 {country.trend === 'up' ? <TrendingUp className="h-3 w-3" /> : country.trend === 'down' ? <TrendingDown className="h-3 w-3" /> : null}
                                 {country.trend}
                               </Badge>
@@ -348,11 +348,11 @@ export default function GlobalPerceptionPage() {
                         ].map((market, index) => (
                           <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center gap-3">
-                              <Building className="h-5 w-5 text-emerald" />
-                              <span className="text-sm font-medium text-platinum-200">{market.country}</span>
+                              <Building className="h-5 w-5 text-emerald-500" />
+                              <span className="text-sm font-medium text-platinum-500-200">{market.country}</span>
                             </div>
                             <div className="flex items-center gap-3">
-                              <Badge variant="outline" className="text-xs text-emerald">{market.growth}</Badge>
+                              <Badge variant="outline" className="text-xs text-emerald-500">{market.growth}</Badge>
                               <span className={`text-sm font-bold ${getSentimentColor(market.sentiment)}`}>{market.sentiment}%</span>
                             </div>
                           </div>
@@ -371,28 +371,28 @@ export default function GlobalPerceptionPage() {
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-4">
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <MessageSquare className="mx-auto h-6 w-6 text-gold mb-2" />
-                      <p className="text-xs text-platinum-400">Avg Mentions/Day</p>
-                      <p className="text-xl font-bold text-gold">45K</p>
-                      <span className="text-xs text-emerald">+12% YoY</span>
+                      <MessageSquare className="mx-auto h-6 w-6 text-gold-700 mb-2" />
+                      <p className="text-xs text-platinum-500-400">Avg Mentions/Day</p>
+                      <p className="text-xl font-bold text-gold-700">45K</p>
+                      <span className="text-xs text-emerald-500">+12% YoY</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <Star className="mx-auto h-6 w-6 text-navy mb-2" />
-                      <p className="text-xs text-platinum-400">Avg Sentiment</p>
-                      <p className="text-xl font-bold text-navy">74%</p>
-                      <span className="text-xs text-emerald">+4% YoY</span>
+                      <Star className="mx-auto h-6 w-6 text-navy-500 mb-2" />
+                      <p className="text-xs text-platinum-500-400">Avg Sentiment</p>
+                      <p className="text-xl font-bold text-navy-500">74%</p>
+                      <span className="text-xs text-emerald-500">+4% YoY</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <Shield className="mx-auto h-6 w-6 text-emerald mb-2" />
-                      <p className="text-xs text-platinum-400">Positive Narrative</p>
-                      <p className="text-xl font-bold text-emerald">68%</p>
-                      <span className="text-xs text-emerald">+5% YoY</span>
+                      <Shield className="mx-auto h-6 w-6 text-emerald-500 mb-2" />
+                      <p className="text-xs text-platinum-500-400">Positive Narrative</p>
+                      <p className="text-xl font-bold text-emerald-500">68%</p>
+                      <span className="text-xs text-emerald-500">+5% YoY</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <Plane className="mx-auto h-6 w-6 text-platinum mb-2" />
-                      <p className="text-xs text-platinum-400">Travel Interest</p>
-                      <p className="text-xl font-bold text-platinum">+35%</p>
-                      <span className="text-xs text-emerald">YoY</span>
+                      <Plane className="mx-auto h-6 w-6 text-platinum-500 mb-2" />
+                      <p className="text-xs text-platinum-500-400">Travel Interest</p>
+                      <p className="text-xl font-bold text-platinum-500">+35%</p>
+                      <span className="text-xs text-emerald-500">YoY</span>
                     </div>
                   </div>
                 </CardContent>
@@ -459,11 +459,11 @@ export default function GlobalPerceptionPage() {
                         ].map((outlet, index) => (
                           <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center gap-3">
-                              <MessageSquare className="h-5 w-5 text-gold" />
-                              <span className="text-sm font-medium text-platinum-200">{outlet.outlet}</span>
+                              <MessageSquare className="h-5 w-5 text-gold-700" />
+                              <span className="text-sm font-medium text-platinum-500-200">{outlet.outlet}</span>
                             </div>
                             <div className="flex items-center gap-3">
-                              <span className="text-sm text-platinum-400">{outlet.mentions.toLocaleString()}</span>
+                              <span className="text-sm text-platinum-500-400">{outlet.mentions.toLocaleString()}</span>
                               <span className={`text-sm font-bold ${getSentimentColor(outlet.sentiment)}`}>{outlet.sentiment}%</span>
                             </div>
                           </div>
@@ -520,18 +520,18 @@ export default function GlobalPerceptionPage() {
                         <div key={index} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div className="flex items-start justify-between mb-3">
                             <div className="flex items-center gap-3">
-                              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
+                              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-700/20 text-gold-700">
                                 <Star className="h-5 w-5" />
                               </div>
                               <div>
-                                <p className="font-semibold text-platinum-200">{event.event}</p>
-                                <p className="text-sm text-platinum-400">Duration: {event.duration}</p>
+                                <p className="font-semibold text-platinum-500-200">{event.event}</p>
+                                <p className="text-sm text-platinum-500-400">Duration: {event.duration}</p>
                               </div>
                             </div>
-                            <Badge variant="outline" className="text-xs text-emerald">+{event.impact}</Badge>
+                            <Badge variant="outline" className="text-xs text-emerald-500">+{event.impact}</Badge>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-400">Sentiment Score</span>
+                            <span className="text-sm text-platinum-500-400">Sentiment Score</span>
                             <div className="flex items-center gap-2">
                               <Progress value={event.sentiment} className="h-2 w-24" />
                               <span className={`text-sm font-bold ${getSentimentColor(event.sentiment)}`}>{event.sentiment}%</span>
@@ -560,12 +560,12 @@ export default function GlobalPerceptionPage() {
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
-                            <Shield className="h-5 w-5 text-gold" />
-                            <span className="text-sm font-medium text-platinum-200">{item.event}</span>
+                            <Shield className="h-5 w-5 text-gold-700" />
+                            <span className="text-sm font-medium text-platinum-500-200">{item.event}</span>
                           </div>
                           <div className="flex items-center gap-3">
                             <Badge variant="outline" className="text-xs">{item.regions} regions</Badge>
-                            <Badge variant="outline" className="text-xs text-emerald">{item.impact}</Badge>
+                            <Badge variant="outline" className="text-xs text-emerald-500">{item.impact}</Badge>
                           </div>
                         </div>
                       ))}
@@ -588,12 +588,12 @@ export default function GlobalPerceptionPage() {
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
-                            <Globe className="h-5 w-5 text-navy" />
-                            <span className="text-sm font-medium text-platinum-200">{item.event}</span>
+                            <Globe className="h-5 w-5 text-navy-500" />
+                            <span className="text-sm font-medium text-platinum-500-200">{item.event}</span>
                           </div>
                           <div className="flex items-center gap-3">
                             <Badge variant="outline" className="text-xs">{item.reach}</Badge>
-                            <Badge variant="outline" className="text-xs text-emerald">{item.impact}</Badge>
+                            <Badge variant="outline" className="text-xs text-emerald-500">{item.impact}</Badge>
                           </div>
                         </div>
                       ))}
@@ -610,28 +610,28 @@ export default function GlobalPerceptionPage() {
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-4">
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <TrendingUp className="mx-auto h-6 w-6 text-gold mb-2" />
-                      <p className="text-xs text-platinum-400">Avg Sentiment Lift</p>
-                      <p className="text-xl font-bold text-gold">+14%</p>
-                      <span className="text-xs text-emerald">Per Campaign</span>
+                      <TrendingUp className="mx-auto h-6 w-6 text-gold-700 mb-2" />
+                      <p className="text-xs text-platinum-500-400">Avg Sentiment Lift</p>
+                      <p className="text-xl font-bold text-gold-700">+14%</p>
+                      <span className="text-xs text-emerald-500">Per Campaign</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <Users className="mx-auto h-6 w-6 text-navy mb-2" />
-                      <p className="text-xs text-platinum-400">Reach Expansion</p>
-                      <p className="text-xl font-bold text-navy">+28%</p>
-                      <span className="text-xs text-emerald">YoY</span>
+                      <Users className="mx-auto h-6 w-6 text-navy-500 mb-2" />
+                      <p className="text-xs text-platinum-500-400">Reach Expansion</p>
+                      <p className="text-xl font-bold text-navy-500">+28%</p>
+                      <span className="text-xs text-emerald-500">YoY</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <Star className="mx-auto h-6 w-6 text-emerald mb-2" />
-                      <p className="text-xs text-platinum-400">Brand Score</p>
-                      <p className="text-xl font-bold text-emerald">78</p>
-                      <span className="text-xs text-emerald">Global</span>
+                      <Star className="mx-auto h-6 w-6 text-emerald-500 mb-2" />
+                      <p className="text-xs text-platinum-500-400">Brand Score</p>
+                      <p className="text-xl font-bold text-emerald-500">78</p>
+                      <span className="text-xs text-emerald-500">Global</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <MessageSquare className="mx-auto h-6 w-6 text-platinum mb-2" />
-                      <p className="text-xs text-platinum-400">Narrative Reach</p>
-                      <p className="text-xl font-bold text-platinum">185M</p>
-                      <span className="text-xs text-emerald">Impressions</span>
+                      <MessageSquare className="mx-auto h-6 w-6 text-platinum-500 mb-2" />
+                      <p className="text-xs text-platinum-500-400">Narrative Reach</p>
+                      <p className="text-xl font-bold text-platinum-500">185M</p>
+                      <span className="text-xs text-emerald-500">Impressions</span>
                     </div>
                   </div>
                 </CardContent>

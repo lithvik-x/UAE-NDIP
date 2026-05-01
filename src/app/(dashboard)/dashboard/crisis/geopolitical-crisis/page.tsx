@@ -36,7 +36,7 @@ export default function GeopoliticalCrisisPage() {
   if (!data) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-400">Loading Geopolitical Crisis data...</div>
+        <div className="text-platinum-500-400">Loading Geopolitical Crisis data...</div>
       </div>
     )
   }
@@ -51,7 +51,7 @@ export default function GeopoliticalCrisisPage() {
         className="flex items-start justify-between"
       >
         <div>
-          <Badge variant="denim" className="mb-2 bg-gradient-to-r from-indigo-500/20 to-navy-600/20 text-navy-400 border-navy-500/50">
+          <Badge variant="denim" className="mb-2 bg-gradient-to-r from-indigo-500/20 to-navy-600/20 text-navy-500-400 border-navy-500/50">
             <Globe className="w-3 h-3 mr-1" />
             GEOPOLITICAL
           </Badge>
@@ -60,12 +60,12 @@ export default function GeopoliticalCrisisPage() {
               Geopolitical Crisis
             </span>
           </h1>
-          <p className="mt-2 text-navy-300/70">
+          <p className="mt-2 text-navy-500-300/70">
             UAE involvement in regional conflicts, great power competition, and diplomatic dynamics (1971-2026)
           </p>
         </div>
         <div className="flex gap-3">
-          <Badge variant="outline" className="gap-2 border-rose-500/50 text-rose hover:bg-rose-500/10">
+          <Badge variant="outline" className="gap-2 border-rose-500/50 text-rose-500 hover:bg-rose-500/10">
             <Search className="h-4 w-4" />
             {statisticsDashboard.totalQueriesExecuted} Queries Executed
           </Badge>

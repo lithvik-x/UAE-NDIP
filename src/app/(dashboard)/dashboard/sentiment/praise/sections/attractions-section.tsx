@@ -57,8 +57,8 @@ export function AttractionsSection({ attractions, sources, visitorThemes }: Attr
                     <span className="text-amber-400 font-bold text-sm">{attraction.sentiment}</span>
                   </div>
                 </div>
-                <h4 className="font-semibold text-platinum-200 mb-1">{attraction.entityName}</h4>
-                <p className="text-xs text-platinum-400">{attraction.category}</p>
+                <h4 className="font-semibold text-platinum-500-200 mb-1">{attraction.entityName}</h4>
+                <p className="text-xs text-platinum-500-400">{attraction.category}</p>
                 <p className="text-xs text-emerald-400 mt-2">{attraction.mentionFrequency}</p>
               </CardContent>
             </Card>
@@ -81,15 +81,15 @@ export function AttractionsSection({ attractions, sources, visitorThemes }: Attr
                   <div className="flex items-center gap-3">
                     <ThumbsUp className="h-5 w-5 text-emerald-400" />
                     <div>
-                      <p className="font-medium text-platinum-200 text-sm italic">"{theme.theme}"</p>
-                      <p className="text-xs text-platinum-400">{theme.sourceType}</p>
+                      <p className="font-medium text-platinum-500-200 text-sm italic">"{theme.theme}"</p>
+                      <p className="text-xs text-platinum-500-400">{theme.sourceType}</p>
                     </div>
                   </div>
                   <div className="text-right">
                     <Badge variant="emerald" className="text-xs">
                       {theme.sentimentScore}
                     </Badge>
-                    <p className="text-xs text-platinum-400 mt-1">{theme.frequency}</p>
+                    <p className="text-xs text-platinum-500-400 mt-1">{theme.frequency}</p>
                   </div>
                 </div>
               ))}
@@ -111,8 +111,8 @@ export function AttractionsSection({ attractions, sources, visitorThemes }: Attr
                   className="flex items-center justify-between p-2 bg-platinum-800/30 rounded-lg"
                 >
                   <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-platinum-400" />
-                    <span className="text-sm text-platinum-200 truncate">{attraction.entityName}</span>
+                    <MapPin className="h-4 w-4 text-platinum-500-400" />
+                    <span className="text-sm text-platinum-500-200 truncate">{attraction.entityName}</span>
                   </div>
                   <span className="text-amber-400 font-bold text-sm">{attraction.sentiment}</span>
                 </div>
@@ -135,8 +135,8 @@ export function AttractionsSection({ attractions, sources, visitorThemes }: Attr
                   className="flex items-center justify-between p-3 bg-platinum-800/30 rounded-lg"
                 >
                   <div>
-                    <p className="font-medium text-platinum-200 text-sm">{source.source}</p>
-                    <p className="text-xs text-platinum-400">{source.evidenceQuality}</p>
+                    <p className="font-medium text-platinum-500-200 text-sm">{source.source}</p>
+                    <p className="text-xs text-platinum-500-400">{source.evidenceQuality}</p>
                   </div>
                   <Badge
                     variant={source.tier === 1 ? 'emerald' : source.tier === 2 ? 'denim' : 'secondary'}

@@ -174,9 +174,9 @@ function KPIGridItem({ kpi, index }: { kpi: typeof aiTechnologyExtendedData.summ
   const getRelevanceColor = (relevance: string) => {
     switch (relevance) {
       case 'critical': return 'text-red-400'
-      case 'high': return 'text-gold'
-      case 'medium': return 'text-navy-400'
-      default: return 'text-platinum'
+      case 'high': return 'text-gold-700'
+      case 'medium': return 'text-navy-500-400'
+      default: return 'text-platinum-500'
     }
   }
 
@@ -187,9 +187,9 @@ function KPIGridItem({ kpi, index }: { kpi: typeof aiTechnologyExtendedData.summ
     >
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-xs text-platinum-500 font-medium">{kpi.kpi}</p>
-          <p className="text-2xl font-bold gradient-text-gold mt-1">{kpi.value}</p>
-          <p className="text-xs text-platinum-600 mt-1">{kpi.trend !== '-' ? `Trend: ${kpi.trend}` : 'Stable'}</p>
+          <p className="text-xs text-platinum-500-500 font-medium">{kpi.kpi}</p>
+          <p className="text-2xl font-bold gradient-text-gold-700 mt-1">{kpi.value}</p>
+          <p className="text-xs text-platinum-500-600 mt-1">{kpi.trend !== '-' ? `Trend: ${kpi.trend}` : 'Stable'}</p>
         </div>
         <Badge variant="outline" className={`text-xs ${getRelevanceColor(kpi.uaeRelevance)}`}>
           {kpi.uaeRelevance.toUpperCase()}
@@ -212,10 +212,10 @@ function EntityCard({ entity, type }: { entity: string; type: 'body' | 'company'
       whileHover={{ scale: 1.02, y: -2 }}
       className="glass-panel p-4 rounded-xl flex items-center gap-3 hover:shadow-glass-lg transition-all duration-300"
     >
-      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-gold text-navy-950">
+      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-gold text-navy-500-950">
         <Icon className="h-5 w-5" />
       </div>
-      <span className="text-sm font-medium text-platinum-200">{entity}</span>
+      <span className="text-sm font-medium text-platinum-500-200">{entity}</span>
     </motion.div>
   )
 }
@@ -235,9 +235,9 @@ function SentimentBar({ topic, sentiment, finding }: { topic: string; sentiment:
       <div className="flex items-start gap-3">
         <div className={`w-1.5 h-12 rounded-full ${getSentimentColor(sentiment)}`} />
         <div className="flex-1">
-          <p className="text-sm font-semibold text-gold">{topic}</p>
-          <p className="text-xs text-platinum-400 mt-1">{sentiment}</p>
-          <p className="text-xs text-platinum-500 mt-1 italic">{finding}</p>
+          <p className="text-sm font-semibold text-gold-700">{topic}</p>
+          <p className="text-xs text-platinum-500-400 mt-1">{sentiment}</p>
+          <p className="text-xs text-platinum-500-500 mt-1 italic">{finding}</p>
         </div>
       </div>
     </motion.div>
@@ -247,20 +247,20 @@ function SentimentBar({ topic, sentiment, finding }: { topic: string; sentiment:
 function SourceCredibilityRow({ source, tier, type, reliability }: { source: string; tier: number; type: string; reliability: string }) {
   const getTierColor = (t: number) => {
     if (t === 0) return 'text-emerald-400'
-    if (t === 1) return 'text-navy-400'
-    if (t === 2) return 'text-gold'
-    return 'text-platinum-500'
+    if (t === 1) return 'text-navy-500-400'
+    if (t === 2) return 'text-gold-700'
+    return 'text-platinum-500-500'
   }
 
   return (
     <div className="flex items-center justify-between py-2 border-b border-platinum-800/50 last:border-0">
       <div>
-        <p className="text-sm text-platinum-200">{source}</p>
-        <p className="text-xs text-platinum-500">{type}</p>
+        <p className="text-sm text-platinum-500-200">{source}</p>
+        <p className="text-xs text-platinum-500-500">{type}</p>
       </div>
       <div className="text-right">
         <Badge variant="outline" className={`text-xs ${getTierColor(tier)}`}>Tier {tier}</Badge>
-        <p className="text-xs text-platinum-500 mt-1">{reliability}</p>
+        <p className="text-xs text-platinum-500-500 mt-1">{reliability}</p>
       </div>
     </div>
   )
@@ -283,20 +283,20 @@ export default function TechnologyTrendsPage() {
       >
         <div>
           <Badge variant="gold" className="mb-2 font-bold tracking-wider">TRENDS</Badge>
-          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold tracking-tight">Technology Trends</h1>
-          <p className="mt-2 text-platinum-400 max-w-xl">
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold-700 tracking-tight">Technology Trends</h1>
+          <p className="mt-2 text-platinum-500-400 max-w-xl">
             AI ecosystem, digital transformation, and tech innovation intelligence — ENRICHED SSOT
           </p>
-          <p className="text-xs text-platinum-600 mt-1">
+          <p className="text-xs text-platinum-500-600 mt-1">
             {ext.executionMetadata.atomicQueries} atomic queries • {ext.executionMetadata.ssotStatus}
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10 font-medium">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10 font-medium">
             <Brain className="h-4 w-4" />
             AI Dashboard
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2 font-bold">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2 font-bold">
             <Cpu className="h-4 w-4" />
             Track Trends
           </Button>
@@ -378,7 +378,7 @@ export default function TechnologyTrendsPage() {
                   <Card className="glass-card">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Building className="h-5 w-5 text-gold" />
+                        <Building className="h-5 w-5 text-gold-700" />
                         Sector Adoption Rates
                       </CardTitle>
                     </CardHeader>
@@ -396,7 +396,7 @@ export default function TechnologyTrendsPage() {
                   <Card className="glass-card">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <TrendingUp className="h-5 w-5 text-navy" />
+                        <TrendingUp className="h-5 w-5 text-navy-500" />
                         Investment Distribution
                       </CardTitle>
                     </CardHeader>
@@ -428,8 +428,8 @@ export default function TechnologyTrendsPage() {
                           <div className="flex h-12 w-12 mx-auto items-center justify-center rounded-xl mb-3" style={{ backgroundColor: `${sub.color}20` }}>
                             <Cpu className="h-6 w-6" style={{ color: sub.color }} />
                           </div>
-                          <p className="font-bold text-platinum-100">{sub.name}</p>
-                          <p className="text-xs text-platinum-500">{sub.sector}</p>
+                          <p className="font-bold text-platinum-500-100">{sub.name}</p>
+                          <p className="text-xs text-platinum-500-500">{sub.sector}</p>
                           <Badge variant="outline" className="mt-2 text-xs">{sub.valuation}</Badge>
                         </motion.div>
                       ))}
@@ -459,9 +459,9 @@ export default function TechnologyTrendsPage() {
                         { label: 'Directive', value: 'April 2026', icon: Zap },
                       ].map((item, i) => (
                         <div key={item.label} className="rounded-xl bg-platinum-800/50 p-4 text-center">
-                          <item.icon className="h-6 w-6 mx-auto text-gold mb-2" />
-                          <p className="text-2xl font-bold text-gold">{item.value}</p>
-                          <p className="text-xs text-platinum-500">{item.label}</p>
+                          <item.icon className="h-6 w-6 mx-auto text-gold-700 mb-2" />
+                          <p className="text-2xl font-bold text-gold-700">{item.value}</p>
+                          <p className="text-xs text-platinum-500-500">{item.label}</p>
                         </div>
                       ))}
                     </div>
@@ -485,10 +485,10 @@ export default function TechnologyTrendsPage() {
                               className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                             >
                               <div>
-                                <p className="text-sm font-medium text-platinum-200">{reg.instrument}</p>
-                                <p className="text-xs text-platinum-500">{reg.authority} • {reg.year}</p>
+                                <p className="text-sm font-medium text-platinum-500-200">{reg.instrument}</p>
+                                <p className="text-xs text-platinum-500-500">{reg.authority} • {reg.year}</p>
                               </div>
-                              <ChevronRight className="h-4 w-4 text-platinum-600" />
+                              <ChevronRight className="h-4 w-4 text-platinum-500-600" />
                             </motion.div>
                           ))}
                         </div>
@@ -511,12 +511,12 @@ export default function TechnologyTrendsPage() {
                               transition={{ delay: i * 0.05 }}
                               className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-3"
                             >
-                              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/20 text-gold">
+                              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold-700/20 text-gold-700">
                                 <Building className="h-5 w-5" />
                               </div>
                               <div>
-                                <p className="text-sm font-medium text-platinum-200">{body.entity}</p>
-                                <p className="text-xs text-platinum-500">{body.scope} • Est. {body.established}</p>
+                                <p className="text-sm font-medium text-platinum-500-200">{body.entity}</p>
+                                <p className="text-xs text-platinum-500-500">{body.scope} • Est. {body.established}</p>
                               </div>
                             </motion.div>
                           ))}
@@ -609,10 +609,10 @@ export default function TechnologyTrendsPage() {
                             transition={{ delay: i * 0.1 }}
                             className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                           >
-                            <span className="text-sm text-platinum-400">{item.label}</span>
+                            <span className="text-sm text-platinum-500-400">{item.label}</span>
                             <div className="text-right">
-                              <span className="text-lg font-bold text-gold">{item.value}</span>
-                              <p className="text-xs text-platinum-500">{item.sub}</p>
+                              <span className="text-lg font-bold text-gold-700">{item.value}</span>
+                              <p className="text-xs text-platinum-500-500">{item.sub}</p>
                             </div>
                           </motion.div>
                         ))}
@@ -635,8 +635,8 @@ export default function TechnologyTrendsPage() {
                           transition={{ delay: i * 0.1 }}
                           className="rounded-xl bg-platinum-800/50 p-4 text-center"
                         >
-                          <p className="text-2xl font-bold gradient-text-gold">{metric.value}</p>
-                          <p className="text-xs text-platinum-500 mt-1">{metric.metric}</p>
+                          <p className="text-2xl font-bold gradient-text-gold-700">{metric.value}</p>
+                          <p className="text-xs text-platinum-500-500 mt-1">{metric.metric}</p>
                           {metric.change !== '-' && (
                             <Badge variant="outline" className="mt-2 text-xs text-emerald-400">
                               {metric.change}
@@ -662,7 +662,7 @@ export default function TechnologyTrendsPage() {
                   <Card className="glass-card">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Plane className="h-5 w-5 text-gold" />
+                        <Plane className="h-5 w-5 text-gold-700" />
                         Drone Delivery Market
                       </CardTitle>
                       <CardDescription>UAE autonomous last mile delivery CAGR 29.2%</CardDescription>
@@ -678,9 +678,9 @@ export default function TechnologyTrendsPage() {
                       <div className="mt-4 grid grid-cols-2 gap-3">
                         {ext.autonomousVehicles.dubaiDroneTargets.map((target) => (
                           <div key={target.target} className="rounded-lg bg-platinum-800/50 p-3">
-                            <p className="text-xs text-platinum-500">{target.target}</p>
-                            <p className="text-lg font-bold text-gold">{target.value}</p>
-                            <p className="text-xs text-platinum-600">{target.timeline}</p>
+                            <p className="text-xs text-platinum-500-500">{target.target}</p>
+                            <p className="text-lg font-bold text-gold-700">{target.value}</p>
+                            <p className="text-xs text-platinum-500-600">{target.timeline}</p>
                           </div>
                         ))}
                       </div>
@@ -691,7 +691,7 @@ export default function TechnologyTrendsPage() {
                   <Card className="glass-card">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Satellite className="h-5 w-5 text-navy" />
+                        <Satellite className="h-5 w-5 text-navy-500" />
                         Starlink UAE
                       </CardTitle>
                       <CardDescription>Launched March 18, 2026 • License through 2034</CardDescription>
@@ -708,10 +708,10 @@ export default function TechnologyTrendsPage() {
                               className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                             >
                               <div>
-                                <p className="text-sm font-medium text-platinum-200">{plan.plan}</p>
-                                <p className="text-xs text-platinum-500">{plan.speed}</p>
+                                <p className="text-sm font-medium text-platinum-500-200">{plan.plan}</p>
+                                <p className="text-xs text-platinum-500-500">{plan.speed}</p>
                               </div>
-                              <span className="text-lg font-bold text-navy">{plan.price}</span>
+                              <span className="text-lg font-bold text-navy-500">{plan.price}</span>
                             </motion.div>
                           ))}
                         </div>
@@ -725,7 +725,7 @@ export default function TechnologyTrendsPage() {
                   <Card className="glass-card">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Network className="h-5 w-5 text-emerald" />
+                        <Network className="h-5 w-5 text-emerald-500" />
                         Smart City Rankings
                       </CardTitle>
                     </CardHeader>
@@ -741,8 +741,8 @@ export default function TechnologyTrendsPage() {
                           >
                             <div className="flex items-center justify-between">
                               <div>
-                                <p className="text-lg font-bold text-platinum-100">{city.city}</p>
-                                <p className="text-sm text-platinum-500">Previous: #{city.previousRank}</p>
+                                <p className="text-lg font-bold text-platinum-500-100">{city.city}</p>
+                                <p className="text-sm text-platinum-500-500">Previous: #{city.previousRank}</p>
                               </div>
                               <div className="text-right">
                                 <p className="text-3xl font-bold text-emerald-400">#{city.rank}</p>
@@ -759,7 +759,7 @@ export default function TechnologyTrendsPage() {
                   <Card className="glass-card">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Bot className="h-5 w-5 text-purple" />
+                        <Bot className="h-5 w-5 text-purple-500" />
                         Robotics Market
                       </CardTitle>
                       <CardDescription>$445M platform market • 7.2% system integration CAGR</CardDescription>
@@ -803,19 +803,19 @@ export default function TechnologyTrendsPage() {
                             className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4"
                           >
                             <div className="flex items-center gap-3">
-                              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/20 text-gold">
+                              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold-700/20 text-gold-700">
                                 <Globe className="h-5 w-5" />
                               </div>
                               <div>
-                                <p className="font-medium text-platinum-200">{exp.location}</p>
-                                <p className="text-sm text-platinum-500">{exp.investment}</p>
+                                <p className="font-medium text-platinum-500-200">{exp.location}</p>
+                                <p className="text-sm text-platinum-500-500">{exp.investment}</p>
                               </div>
                             </div>
                             <div className="text-right">
                               <Badge variant={exp.status === 'Committed' ? 'default' : exp.status === 'Completed' ? 'success' : 'outline'}>
                                 {exp.status}
                               </Badge>
-                              <p className="text-xs text-platinum-600 mt-1">{exp.timeline}</p>
+                              <p className="text-xs text-platinum-500-600 mt-1">{exp.timeline}</p>
                             </div>
                           </motion.div>
                         ))}
@@ -839,8 +839,8 @@ export default function TechnologyTrendsPage() {
                           { label: 'Status', value: ext.semiconductors.uaeUSAIAgreement.dealStatus },
                         ].map((item, i) => (
                           <div key={item.label} className="flex justify-between rounded-lg bg-platinum-800/50 p-3">
-                            <span className="text-sm text-platinum-500">{item.label}</span>
-                            <span className="text-sm font-medium text-gold">{item.value}</span>
+                            <span className="text-sm text-platinum-500-500">{item.label}</span>
+                            <span className="text-sm font-medium text-gold-700">{item.value}</span>
                           </div>
                         ))}
                       </div>
@@ -860,8 +860,8 @@ export default function TechnologyTrendsPage() {
                           { label: 'Discussions', value: ext.semiconductors.tsmcUAE.discussionsWith },
                         ].map((item, i) => (
                           <div key={item.label} className="flex justify-between rounded-lg bg-platinum-800/50 p-3">
-                            <span className="text-sm text-platinum-500">{item.label}</span>
-                            <span className="text-sm font-medium text-platinum-200">{item.value}</span>
+                            <span className="text-sm text-platinum-500-500">{item.label}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.value}</span>
                           </div>
                         ))}
                       </div>
@@ -882,7 +882,7 @@ export default function TechnologyTrendsPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Activity className="h-5 w-5 text-gold" />
+                      <Activity className="h-5 w-5 text-gold-700" />
                       Summary KPIs
                     </CardTitle>
                   </CardHeader>
@@ -900,7 +900,7 @@ export default function TechnologyTrendsPage() {
                   <Card className="glass-card">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <TrendingUp className="h-5 w-5 text-emerald" />
+                        <TrendingUp className="h-5 w-5 text-emerald-500" />
                         Sentiment Analysis
                       </CardTitle>
                     </CardHeader>
@@ -917,7 +917,7 @@ export default function TechnologyTrendsPage() {
                   <Card className="glass-card">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <AlertTriangle className="h-5 w-5 text-gold" />
+                        <AlertTriangle className="h-5 w-5 text-gold-700" />
                         UAE Relevance Heat Map
                       </CardTitle>
                     </CardHeader>
@@ -934,7 +934,7 @@ export default function TechnologyTrendsPage() {
                                 transition={{ delay: i * 0.05 }}
                                 className={`flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border-l-4 ${priorityColor}`}
                               >
-                                <span className="text-sm font-medium text-platinum-200">{item.topic}</span>
+                                <span className="text-sm font-medium text-platinum-500-200">{item.topic}</span>
                                 <div className="flex items-center gap-2">
                                   <Badge variant="outline" className="text-xs">{item.priority}</Badge>
                                   <Badge variant={item.relevance === 'critical' ? 'destructive' : item.relevance === 'high' ? 'default' : 'secondary'}>
@@ -954,7 +954,7 @@ export default function TechnologyTrendsPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Award className="h-5 w-5 text-gold" />
+                      <Award className="h-5 w-5 text-gold-700" />
                       Source Credibility Matrix
                     </CardTitle>
                   </CardHeader>

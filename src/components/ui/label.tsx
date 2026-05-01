@@ -17,10 +17,10 @@ const labelVariants = cva(
       variant: {
         default: [
           'text-slate-700 dark:text-slate-300',
-          'peer-focus-visible:text-navy-600 dark:peer-focus-visible:text-navy-400'
+          'peer-focus-visible:text-navy-500-600 dark:peer-focus-visible:text-navy-500-400'
         ],
         premium: [
-          'text-navy-700 dark:text-navy-300',
+          'text-navy-500-700 dark:text-navy-500-300',
           'peer-focus-visible:text-gold-600 dark:peer-focus-visible:text-gold-400',
           'font-semibold'
         ],

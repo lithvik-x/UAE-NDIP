@@ -46,7 +46,7 @@ export function InstagramOverviewSection({ data }: InstagramOverviewSectionProps
           <Card className="glass-card border-purple-500/30">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-purple" />
+                <TrendingUp className="h-5 w-5 text-purple-500" />
                 User Growth Trajectory
               </CardTitle>
               <CardDescription>Instagram users in UAE (millions)</CardDescription>
@@ -67,52 +67,52 @@ export function InstagramOverviewSection({ data }: InstagramOverviewSectionProps
             <Card className="glass-card border-purple-500/30">
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm flex items-center gap-2">
-                  <Users className="h-4 w-4 text-purple" />
+                  <Users className="h-4 w-4 text-purple-500" />
                   Active Users
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-2xl font-bold text-white">{(metrics.users / 1000000).toFixed(2)}M</p>
-                <p className="text-xs text-platinum-400 mt-1">August 2025</p>
+                <p className="text-xs text-platinum-500-400 mt-1">August 2025</p>
               </CardContent>
             </Card>
 
             <Card className="glass-card border-purple-500/30">
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm flex items-center gap-2">
-                  <Globe className="h-4 w-4 text-navy" />
+                  <Globe className="h-4 w-4 text-navy-500" />
                   Penetration
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-2xl font-bold text-white">{metrics.penetration}%</p>
-                <p className="text-xs text-platinum-400 mt-1">Of population</p>
+                <p className="text-xs text-platinum-500-400 mt-1">Of population</p>
               </CardContent>
             </Card>
 
             <Card className="glass-card border-purple-500/30">
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm flex items-center gap-2">
-                  <Heart className="h-4 w-4 text-rose" />
+                  <Heart className="h-4 w-4 text-rose-500" />
                   Engagement Rate
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-2xl font-bold text-white">{metrics.engagement.engagementRate}%</p>
-                <p className="text-xs text-platinum-400 mt-1">Avg per post</p>
+                <p className="text-xs text-platinum-500-400 mt-1">Avg per post</p>
               </CardContent>
             </Card>
 
             <Card className="glass-card border-purple-500/30">
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm flex items-center gap-2">
-                  <Instagram className="h-4 w-4 text-gold" />
+                  <Instagram className="h-4 w-4 text-gold-700" />
                   Sentiment Score
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-2xl font-bold text-white">{metrics.sentiment.score}</p>
-                <p className="text-xs text-platinum-400 mt-1">{metrics.sentiment.overall}</p>
+                <p className="text-xs text-platinum-500-400 mt-1">{metrics.sentiment.overall}</p>
               </CardContent>
             </Card>
           </div>
@@ -122,7 +122,7 @@ export function InstagramOverviewSection({ data }: InstagramOverviewSectionProps
             <Card className="glass-card border-purple-500/30">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <TrendingUp className="h-5 w-5 text-purple" />
+                  <TrendingUp className="h-5 w-5 text-purple-500" />
                   Sentiment Analysis
                 </CardTitle>
                 <CardDescription>Overall platform sentiment breakdown</CardDescription>
@@ -139,7 +139,7 @@ export function InstagramOverviewSection({ data }: InstagramOverviewSectionProps
             <Card className="glass-card border-purple-500/30">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Hash className="h-5 w-5 text-gold" />
+                  <Hash className="h-5 w-5 text-gold-700" />
                   Trending Topics
                 </CardTitle>
                 <CardDescription>Most discussed content categories</CardDescription>
@@ -157,9 +157,9 @@ export function InstagramOverviewSection({ data }: InstagramOverviewSectionProps
                   ))}
                 </div>
                 <div className="mt-4 space-y-2">
-                  <p className="text-sm font-medium text-platinum/70">Key Concerns:</p>
+                  <p className="text-sm font-medium text-platinum-500/70">Key Concerns:</p>
                   {(metrics.sentiment.keyConcerns || []).slice(0, 3).map((concern: string, idx: number) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-platinum-400">
+                    <div key={idx} className="flex items-start gap-2 text-xs text-platinum-500-400">
                       <span className="text-rose-400">•</span>
                       <span>{concern}</span>
                     </div>
@@ -173,7 +173,7 @@ export function InstagramOverviewSection({ data }: InstagramOverviewSectionProps
           <Card className="glass-card border-purple-500/30">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Globe className="h-5 w-5 text-navy" />
+                <Globe className="h-5 w-5 text-navy-500" />
                 Government Accounts
               </CardTitle>
               <CardDescription>Official UAE presence on Instagram</CardDescription>
@@ -187,15 +187,15 @@ export function InstagramOverviewSection({ data }: InstagramOverviewSectionProps
                   >
                     <div className="flex items-center gap-3">
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-500/20">
-                        <Globe className="h-5 w-5 text-navy-400" />
+                        <Globe className="h-5 w-5 text-navy-500-400" />
                       </div>
                       <div>
                         <p className="text-sm font-medium text-white">{account.handle}</p>
-                        <p className="text-xs text-platinum-400">{account.platform}</p>
+                        <p className="text-xs text-platinum-500-400">{account.platform}</p>
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm font-bold text-gold">{(account.followers || 0).toLocaleString()}</p>
+                      <p className="text-sm font-bold text-gold-700">{(account.followers || 0).toLocaleString()}</p>
                       {account.verified && (
                         <Badge variant="outline" className="text-xs border-emerald-500/30 text-emerald-400">
                           Verified

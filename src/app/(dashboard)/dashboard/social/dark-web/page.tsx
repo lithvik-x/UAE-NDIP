@@ -68,10 +68,10 @@ export default function DarkWebSocialPage() {
           <Badge className="mb-2 bg-gradient-to-r from-red-500/20 to-rose-600/20 text-red-400 border-red-500/50">
             DARK WEB INTEL
           </Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">
             Dark Web Monitoring
           </h1>
-          <p className="mt-2 text-platinum-400">
+          <p className="mt-2 text-platinum-500-400">
             Underground surveillance, threat actor tracking, and illicit marketplace intelligence
           </p>
         </div>
@@ -103,8 +103,8 @@ export default function DarkWebSocialPage() {
                   <AlertTriangle className="h-5 w-5 text-red-400" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-platinum-200">{concern}</p>
-                  <p className="text-xs text-platinum-400">Active threat vector</p>
+                  <p className="text-sm font-medium text-platinum-500-200">{concern}</p>
+                  <p className="text-xs text-platinum-500-400">Active threat vector</p>
                 </div>
               </div>
             ))}
@@ -155,8 +155,8 @@ export default function DarkWebSocialPage() {
                     <Shield className="h-5 w-5 text-rose-400" />
                   </div>
                   <div>
-                    <p className="font-medium text-platinum-200">{market.name}</p>
-                    <p className="text-sm text-platinum-400">{market.listings.toLocaleString()} active listings</p>
+                    <p className="font-medium text-platinum-500-200">{market.name}</p>
+                    <p className="text-sm text-platinum-500-400">{market.listings.toLocaleString()} active listings</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -167,7 +167,7 @@ export default function DarkWebSocialPage() {
                     <span className={`text-lg font-bold ${market.risk > 85 ? 'text-red-400' : market.risk > 70 ? 'text-amber-400' : 'text-amber-400'}`}>
                       {market.risk}
                     </span>
-                    <p className="text-xs text-platinum-400">Risk</p>
+                    <p className="text-xs text-platinum-500-400">Risk</p>
                   </div>
                 </div>
               </div>
@@ -183,7 +183,7 @@ export default function DarkWebSocialPage() {
             {riskFactors.map((factor, idx) => (
               <div key={idx} className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-platinum-200">{factor.factor}</span>
+                  <span className="text-sm font-medium text-platinum-500-200">{factor.factor}</span>
                   <span className={`text-sm font-bold ${
                     factor.level > 85 ? 'text-red-400' : factor.level > 70 ? 'text-amber-400' : 'text-amber-400'
                   }`}>

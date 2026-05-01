@@ -58,7 +58,7 @@ export default function HopeSentimentPage() {
               Hope Sentiment
             </span>
           </h1>
-          <p className="mt-2 text-platinum-400">Optimistic and aspirational sentiment — UAE's vision for the future and positive outlook communications</p>
+          <p className="mt-2 text-platinum-500-400">Optimistic and aspirational sentiment — UAE's vision for the future and positive outlook communications</p>
         </div>
       </motion.div>
 
@@ -89,11 +89,11 @@ export default function HopeSentimentPage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Sparkles className="h-5 w-5 text-teal-500" />Key Drivers</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0">
-                    <div className="space-y-3 text-sm text-platinum-300">
-                      <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-emerald" />Vision 2030 milestones achieved</div>
-                      <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-emerald" />Economic diversification success</div>
-                      <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-emerald" />Global leadership positioning</div>
-                      <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-emerald" />Youth empowerment programs</div>
+                    <div className="space-y-3 text-sm text-platinum-500-300">
+                      <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-emerald-500" />Vision 2030 milestones achieved</div>
+                      <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-emerald-500" />Economic diversification success</div>
+                      <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-emerald-500" />Global leadership positioning</div>
+                      <div className="flex items-center gap-2"><Sparkles className="h-4 w-4 text-emerald-500" />Youth empowerment programs</div>
                     </div>
                   </CardContent>
                 </motion.div>
@@ -111,11 +111,11 @@ export default function HopeSentimentPage() {
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
                       className="rounded-lg bg-gradient-to-r from-emerald-500/10 to-teal-600/5 p-4 border border-emerald-500/30">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xl text-platinum-100 font-rajdhani">{t.topic}</span>
-                        <Badge variant="outline" className="border-emerald-500/50 text-emerald">{t.sentiment}</Badge>
+                        <span className="text-xl text-platinum-500-100 font-rajdhani">{t.topic}</span>
+                        <Badge variant="outline" className="border-emerald-500/50 text-emerald-500">{t.sentiment}</Badge>
                       </div>
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs text-platinum-400">Trend:</span>
+                        <span className="text-xs text-platinum-500-400">Trend:</span>
                         <Badge variant="outline" className={`border-${t.trend === 'Up' ? 'emerald' : 'platinum'}-500/50 text-${t.trend === 'Up' ? 'emerald' : 'platinum'}`}>{t.trend}</Badge>
                       </div>
                       <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
@@ -139,11 +139,11 @@ export default function HopeSentimentPage() {
                     <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }}
                       className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xl text-platinum-100 font-rajdhani">{e.expression}</span>
-                        <Badge variant="outline" className="border-emerald-500/50 text-emerald">{e.frequency}</Badge>
+                        <span className="text-xl text-platinum-500-100 font-rajdhani">{e.expression}</span>
+                        <Badge variant="outline" className="border-emerald-500/50 text-emerald-500">{e.frequency}</Badge>
                       </div>
                       <p className="text-sm text-cyan-400 mb-1">{e.transliteration}</p>
-                      <p className="text-xs text-platinum-400">Context: {e.context}</p>
+                      <p className="text-xs text-platinum-500-400">Context: {e.context}</p>
                     </motion.div>
                   ))}
                 </div>

@@ -111,7 +111,7 @@ const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
         className="bg-navy-900/95 dark:bg-navy-950/95 backdrop-blur-sm border border-platinum-700 dark:border-platinum-600 rounded-lg p-3 shadow-xl animate-in fade-in zoom-in-95"
         role="tooltip"
       >
-        {label && <p className="text-platinum-300 dark:text-platinum-400 text-sm mb-2 font-medium">{label}</p>}
+        {label && <p className="text-platinum-500-300 dark:text-platinum-500-400 text-sm mb-2 font-medium">{label}</p>}
         {payload.map((entry, index: number) => (
           <div key={index} className="flex items-center gap-2 text-sm">
             <div
@@ -119,8 +119,8 @@ const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
               style={{ backgroundColor: entry.color }}
               aria-hidden="true"
             />
-            <span className="text-platinum-300 dark:text-platinum-400">{entry.name}:</span>
-            <span className="text-white dark:text-platinum-100 font-semibold tabular-nums">{entry.value}</span>
+            <span className="text-platinum-500-300 dark:text-platinum-500-400">{entry.name}:</span>
+            <span className="text-white dark:text-platinum-500-100 font-semibold tabular-nums">{entry.value}</span>
           </div>
         ))}
       </div>
@@ -937,11 +937,11 @@ export function Gauge({
       </ResponsiveContainer>
       <div className="absolute bottom-0 text-center">
         {showValue && (
-          <div className="text-3xl font-bold text-navy-900 dark:text-platinum-100 tabular-nums">
+          <div className="text-3xl font-bold text-navy-500-900 dark:text-platinum-500-100 tabular-nums">
             {value}
           </div>
         )}
-        {label && <div className="text-sm text-platinum-500 dark:text-platinum-500">{label}</div>}
+        {label && <div className="text-sm text-platinum-500-500 dark:text-platinum-500-500">{label}</div>}
       </div>
     </div>
   )
@@ -1045,7 +1045,7 @@ export function Heatmap({
           {xValues.map((x) => (
             <div
               key={x}
-              className="text-center text-xs text-platinum-500 dark:text-platinum-500 py-2 font-medium"
+              className="text-center text-xs text-platinum-500-500 dark:text-platinum-500-500 py-2 font-medium"
             >
               {x}
             </div>
@@ -1054,7 +1054,7 @@ export function Heatmap({
       </div>
       {yValues.map((y) => (
         <div key={y} className="flex">
-          <div className="w-24 flex-shrink-0 text-xs text-platinum-500 dark:text-platinum-500 flex items-center justify-end pr-2 font-medium">
+          <div className="w-24 flex-shrink-0 text-xs text-platinum-500-500 dark:text-platinum-500-500 flex items-center justify-end pr-2 font-medium">
             {y}
           </div>
           <div

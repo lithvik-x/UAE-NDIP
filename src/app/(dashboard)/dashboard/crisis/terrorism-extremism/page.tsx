@@ -52,7 +52,7 @@ export default function TerrorismExtremismPage() {
   if (!data) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-400 font-rajdhani">Loading Terrorism & Extremism intelligence...</div>
+        <div className="text-platinum-500-400 font-rajdhani">Loading Terrorism & Extremism intelligence...</div>
       </div>
     )
   }
@@ -151,10 +151,10 @@ export default function TerrorismExtremismPage() {
               Terrorism & Extremism
             </span>
           </h1>
-          <p className="mt-2 text-platinum-400 font-rajdhani">
+          <p className="mt-2 text-platinum-500-400 font-rajdhani">
             Comprehensive counter-terrorism intelligence — Iran-linked cells, Houthi threats, FATF concerns, lone wolf actors, and regional terrorism landscape
           </p>
-          <div className="mt-2 flex gap-4 text-xs text-platinum-500">
+          <div className="mt-2 flex gap-4 text-xs text-platinum-500-500">
             <span>Framework v{metadata.frameworkVersion || '1.0'}</span>
             <span>•</span>
             <span>Executed: {metadata.dateExecuted || '2026-04-27'}</span>
@@ -248,7 +248,7 @@ export default function TerrorismExtremismPage() {
                 <p className="text-sm font-bold text-rose-400 font-rajdhani">
                   ACTIVE THREAT — Iran-UAE Conflict (2026)
                 </p>
-                <p className="text-xs text-platinum-400 font-rajdhani">
+                <p className="text-xs text-platinum-500-400 font-rajdhani">
                   Iran fired 3,000+ missiles and drones at UAE over 5 weeks. UAE dismantled 2 Iran-linked terror cells. UAE conducted first direct strikes against Iran (April 2026).
                 </p>
               </div>
@@ -307,7 +307,7 @@ export default function TerrorismExtremismPage() {
                       <div className="space-y-3">
                         {(statistics || []).slice(0, 8).map((stat, idx) => (
                           <div key={idx} className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-300">{stat.label}</span>
+                            <span className="text-sm text-platinum-500-300">{stat.label}</span>
                             <Badge variant="outline" className="border-rose-500/50 text-rose-400 font-rajdhani">
                               {stat.value}
                             </Badge>
@@ -355,15 +355,15 @@ export default function TerrorismExtremismPage() {
                       <div className="space-y-4">
                         <div className="text-center p-6 rounded-lg bg-rose-500/10 border border-rose-500/30">
                           <p className="text-5xl font-extrabold text-rose-400 font-rajdhani">17/19</p>
-                          <p className="text-sm text-platinum-400 mt-1 font-rajdhani">9/11 Hijackers Transited UAE</p>
+                          <p className="text-sm text-platinum-500-400 mt-1 font-rajdhani">9/11 Hijackers Transited UAE</p>
                         </div>
                         <div className="space-y-2">
                           <div className="flex items-center justify-between text-sm">
-                            <span className="text-platinum-300">Funding source</span>
+                            <span className="text-platinum-500-300">Funding source</span>
                             <Badge variant="outline" className="border-rose-500/50 text-rose-400">UAE-based investors</Badge>
                           </div>
                           <div className="flex items-center justify-between text-sm">
-                            <span className="text-platinum-300">Hijackers via UAE</span>
+                            <span className="text-platinum-500-300">Hijackers via UAE</span>
                             <Badge variant="outline" className="border-rose-500/50 text-rose-400">17 of 19</Badge>
                           </div>
                         </div>
@@ -390,9 +390,9 @@ export default function TerrorismExtremismPage() {
                         { label: 'Iran Cell Arrests', date: 'Apr 2026', detail: '27 suspects arrested; Velayat-e Faqih ideology', color: 'gold' },
                       ].map((item, idx) => (
                         <div key={idx} className={`rounded-lg bg-${item.color}-500/10 border border-${item.color}-500/30 p-4`}>
-                          <p className="text-xs text-platinum-400 font-rajdhani">{item.date}</p>
-                          <p className="text-sm font-bold text-platinum-100 font-rajdhani mt-1">{item.label}</p>
-                          <p className="text-xs text-platinum-400 mt-1 font-rajdhani">{item.detail}</p>
+                          <p className="text-xs text-platinum-500-400 font-rajdhani">{item.date}</p>
+                          <p className="text-sm font-bold text-platinum-500-100 font-rajdhani mt-1">{item.label}</p>
+                          <p className="text-xs text-platinum-500-400 mt-1 font-rajdhani">{item.detail}</p>
                         </div>
                       ))}
                     </div>
@@ -457,12 +457,12 @@ export default function TerrorismExtremismPage() {
                             <div className="absolute -left-8 top-0 h-4 w-4 rounded-full bg-rose-500 border-2 border-platinum-900" />
                             <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:border-rose-500/50 transition-all duration-300">
                               <div className="flex items-center justify-between mb-1">
-                                <p className="font-semibold text-platinum-100 font-rajdhani text-sm">{event.event}</p>
+                                <p className="font-semibold text-platinum-500-100 font-rajdhani text-sm">{event.event}</p>
                                 <Badge variant="outline" className="text-xs font-rajdhani border-rose-500/50 text-rose-400">
                                   {String(event.date || '').slice(0, 10)}
                                 </Badge>
                               </div>
-                              <p className="text-xs text-platinum-400 font-rajdhani">{event.description}</p>
+                              <p className="text-xs text-platinum-500-400 font-rajdhani">{event.description}</p>
                             </div>
                           </motion.div>
                         ))}
@@ -502,7 +502,7 @@ export default function TerrorismExtremismPage() {
                           showLegend={true}
                         />
                       ) : (
-                        <div className="h-[350px] flex items-center justify-center text-platinum-500">
+                        <div className="h-[350px] flex items-center justify-center text-platinum-500-500">
                           No threat actor data available
                         </div>
                       )}
@@ -526,7 +526,7 @@ export default function TerrorismExtremismPage() {
                         className="glass-card rounded-lg p-4 bg-glass-surface/50 border-glass-border"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-bold text-platinum-100 font-rajdhani">{actor.name}</span>
+                          <span className="text-sm font-bold text-platinum-500-100 font-rajdhani">{actor.name}</span>
                           <Badge
                             variant="outline"
                             className={`border-${
@@ -542,12 +542,12 @@ export default function TerrorismExtremismPage() {
                             THREAT {actor.threatLevel || 0}
                           </Badge>
                         </div>
-                        <div className="grid grid-cols-3 gap-2 text-xs text-platinum-400 mb-2">
+                        <div className="grid grid-cols-3 gap-2 text-xs text-platinum-500-400 mb-2">
                           <div>Threat: <span className="text-rose-400 font-bold">{actor.threatLevel || 0}</span></div>
                           <div>Capability: <span className="text-orange-400 font-bold">{actor.capability || 0}</span></div>
                           <div>Intent: <span className="text-gold-400 font-bold">{actor.intent || 0}</span></div>
                         </div>
-                        <p className="text-xs text-platinum-500 font-rajdhani">{actor.status}</p>
+                        <p className="text-xs text-platinum-500-500 font-rajdhani">{actor.status}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -603,8 +603,8 @@ export default function TerrorismExtremismPage() {
                           { law: 'AML/CFT/CPF Strategy (Sep 2024)', desc: 'National Strategy for Anti-Money Laundering and CFT', color: 'emerald' },
                         ].map((item, idx) => (
                           <div key={idx} className={`rounded-lg bg-${item.color}-500/10 border border-${item.color}-500/30 p-3`}>
-                            <p className="text-sm font-bold text-platinum-100 font-rajdhani">{item.law}</p>
-                            <p className="text-xs text-platinum-400 mt-1 font-rajdhani">{item.desc}</p>
+                            <p className="text-sm font-bold text-platinum-500-100 font-rajdhani">{item.law}</p>
+                            <p className="text-xs text-platinum-500-400 mt-1 font-rajdhani">{item.desc}</p>
                           </div>
                         ))}
                       </div>
@@ -630,10 +630,10 @@ export default function TerrorismExtremismPage() {
                         ].map((inst, idx) => (
                           <div key={idx} className="rounded-lg bg-platinum-800/50 border border-platinum-700 p-3">
                             <div className="flex items-center justify-between mb-1">
-                              <p className="text-sm font-bold text-platinum-100 font-rajdhani">{inst.name}</p>
+                              <p className="text-sm font-bold text-platinum-500-100 font-rajdhani">{inst.name}</p>
                               <Badge variant="outline" className="text-xs border-emerald-500/50 text-emerald-400 font-rajdhani">{inst.type}</Badge>
                             </div>
-                            <p className="text-xs text-platinum-400 font-rajdhani">{inst.role}</p>
+                            <p className="text-xs text-platinum-500-400 font-rajdhani">{inst.role}</p>
                           </div>
                         ))}
                       </div>
@@ -660,8 +660,8 @@ export default function TerrorismExtremismPage() {
                         { name: 'OIC Support', desc: 'Condemned Iran-linked terror plots' },
                       ].map((item, idx) => (
                         <div key={idx} className="rounded-lg bg-violet-500/10 border border-violet-500/30 p-3">
-                          <p className="text-sm font-bold text-platinum-100 font-rajdhani">{item.name}</p>
-                          <p className="text-xs text-platinum-400 mt-1 font-rajdhani">{item.desc}</p>
+                          <p className="text-sm font-bold text-platinum-500-100 font-rajdhani">{item.name}</p>
+                          <p className="text-xs text-platinum-500-400 mt-1 font-rajdhani">{item.desc}</p>
                         </div>
                       ))}
                     </div>
@@ -684,7 +684,7 @@ export default function TerrorismExtremismPage() {
                         { point: 'Al Islah (local MB affiliate) designated terrorist in November 2014' },
                         { point: 'UAE cut UK scholarship funding over extremism concerns in British universities (January 2026)' },
                       ].map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-sm text-platinum-300">
+                        <div key={idx} className="flex items-start gap-2 text-sm text-platinum-500-300">
                           <AlertTriangle className="h-4 w-4 text-orange-500 mt-0.5 flex-shrink-0" />
                           <span className="font-rajdhani">{item.point}</span>
                         </div>
@@ -722,7 +722,7 @@ export default function TerrorismExtremismPage() {
                         { label: 'Killed', value: '4+ (March 1 incident)', color: 'rose' },
                       ].map((item, idx) => (
                         <div key={idx} className={`rounded-lg bg-${item.color}-500/10 border border-${item.color}-500/30 p-3 text-center`}>
-                          <p className="text-xs text-platinum-400 font-rajdhani">{item.label}</p>
+                          <p className="text-xs text-platinum-500-400 font-rajdhani">{item.label}</p>
                           <p className={`text-lg font-extrabold text-${item.color}-400 font-rajdhani`}>{item.value}</p>
                         </div>
                       ))}
@@ -752,14 +752,14 @@ export default function TerrorismExtremismPage() {
                           <div className="flex-shrink-0 mt-1 h-2 w-2 rounded-full bg-rose-500" />
                           <div className="flex-1">
                             <div className="flex items-center justify-between">
-                              <p className="text-sm font-bold text-platinum-100 font-rajdhani">{item.date}</p>
+                              <p className="text-sm font-bold text-platinum-500-100 font-rajdhani">{item.date}</p>
                               <Badge variant="outline" className={`border-${
                                 item.severity === 'CRITICAL' ? 'rose' : 'orange'
                               }-500/50 text-${item.severity === 'CRITICAL' ? 'rose' : 'orange'} text-xs font-rajdhani`}>
                                 {item.severity}
                               </Badge>
                             </div>
-                            <p className="text-xs text-platinum-400 font-rajdhani mt-0.5">{item.event}</p>
+                            <p className="text-xs text-platinum-500-400 font-rajdhani mt-0.5">{item.event}</p>
                           </div>
                         </div>
                       ))}
@@ -799,10 +799,10 @@ export default function TerrorismExtremismPage() {
                               <Badge variant="outline" className="border-rose-500/50 text-rose-400 font-rajdhani">{cell.date}</Badge>
                               <Badge variant="outline" className="border-rose-500/50 text-rose-400 font-rajdhani">{cell.arrests} arrests</Badge>
                             </div>
-                            <div className="space-y-1 text-xs text-platinum-400 font-rajdhani">
-                              <p><span className="text-platinum-200">Activity:</span> {cell.activity}</p>
-                              <p><span className="text-platinum-200">Funding:</span> {cell.funding}</p>
-                              <p><span className="text-platinum-200">Cover:</span> {cell.cover}</p>
+                            <div className="space-y-1 text-xs text-platinum-500-400 font-rajdhani">
+                              <p><span className="text-platinum-500-200">Activity:</span> {cell.activity}</p>
+                              <p><span className="text-platinum-500-200">Funding:</span> {cell.funding}</p>
+                              <p><span className="text-platinum-500-200">Cover:</span> {cell.cover}</p>
                             </div>
                           </div>
                         ))}
@@ -827,9 +827,9 @@ export default function TerrorismExtremismPage() {
                           { label: 'Weapons used in 2022', value: 'Drones, ballistic missiles, cruise missiles', sub: '' },
                         ].map((item, idx) => (
                           <div key={idx} className="rounded-lg bg-platinum-800/50 border border-platinum-700 p-3">
-                            <p className="text-xs text-platinum-400 font-rajdhani">{item.label}</p>
+                            <p className="text-xs text-platinum-500-400 font-rajdhani">{item.label}</p>
                             <p className="text-lg font-extrabold text-orange-400 font-rajdhani">{item.value}</p>
-                            {item.sub && <p className="text-xs text-platinum-500 font-rajdhani">{item.sub}</p>}
+                            {item.sub && <p className="text-xs text-platinum-500-500 font-rajdhani">{item.sub}</p>}
                           </div>
                         ))}
                       </div>
@@ -870,13 +870,13 @@ export default function TerrorismExtremismPage() {
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center gap-2">
-                              <p className="text-sm font-bold text-platinum-100 font-rajdhani">{item.period}</p>
+                              <p className="text-sm font-bold text-platinum-500-100 font-rajdhani">{item.period}</p>
                               <Badge variant="outline" className={`border-${item.color}-500/50 text-${item.color}-400 font-rajdhani text-xs`}>
                                 {item.color === 'rose' ? 'LISTED' : 'RESOLVED'}
                               </Badge>
                             </div>
-                            <p className="text-sm text-platinum-200 font-rajdhani">{item.event}</p>
-                            <p className="text-xs text-platinum-500 font-rajdhani">{item.detail}</p>
+                            <p className="text-sm text-platinum-500-200 font-rajdhani">{item.event}</p>
+                            <p className="text-xs text-platinum-500-500 font-rajdhani">{item.detail}</p>
                           </div>
                         </div>
                       ))}
@@ -901,7 +901,7 @@ export default function TerrorismExtremismPage() {
                           'Taliban funding through UAE-based channels',
                           'Lashkar-e-Taiba funding including for 26/11 Mumbai attacks via UAE banks',
                         ].map((item, idx) => (
-                          <div key={idx} className="flex items-start gap-2 text-sm text-platinum-300">
+                          <div key={idx} className="flex items-start gap-2 text-sm text-platinum-500-300">
                             <XCircle className="h-4 w-4 text-rose-500 mt-0.5 flex-shrink-0" />
                             <span className="font-rajdhani">{item}</span>
                           </div>
@@ -926,7 +926,7 @@ export default function TerrorismExtremismPage() {
                         ].map((item, idx) => (
                           <div key={idx} className="rounded-lg bg-emerald-500/10 border border-emerald-500/30 p-3">
                             <p className="text-xs text-emerald-400 font-bold font-rajdhani">{item.action}</p>
-                            <p className="text-xs text-platinum-300 mt-1 font-rajdhani">{item.detail}</p>
+                            <p className="text-xs text-platinum-500-300 mt-1 font-rajdhani">{item.detail}</p>
                           </div>
                         ))}
                       </div>
@@ -956,17 +956,17 @@ export default function TerrorismExtremismPage() {
                   >
                     <div className="flex items-start justify-between mb-3">
                       <div>
-                        <h3 className="text-lg font-bold text-platinum-100 font-rajdhani">{trial.name || trial.id}</h3>
-                        <p className="text-xs text-platinum-500 font-rajdhani">{trial.date}</p>
+                        <h3 className="text-lg font-bold text-platinum-500-100 font-rajdhani">{trial.name || trial.id}</h3>
+                        <p className="text-xs text-platinum-500-500 font-rajdhani">{trial.date}</p>
                       </div>
                       <Badge variant="outline" className="border-rose-500/50 text-rose-400 font-rajdhani">
                         <Gavel className="w-3 h-3 mr-1" />
                         TRIAL
                       </Badge>
                     </div>
-                    <p className="text-sm text-platinum-300 font-rajdhani mb-3">{trial.description || JSON.stringify(trial).slice(0, 200)}</p>
+                    <p className="text-sm text-platinum-500-300 font-rajdhani mb-3">{trial.description || JSON.stringify(trial).slice(0, 200)}</p>
                     {trial.defendants && (
-                      <div className="flex gap-4 text-xs text-platinum-400">
+                      <div className="flex gap-4 text-xs text-platinum-500-400">
                         <span>Defendants: <span className="text-rose-400 font-bold">{trial.defendants}</span></span>
                         {trial.convicted && <span>Convicted: <span className="text-orange-400 font-bold">{trial.convicted}</span></span>}
                         {trial.acquitted && <span>Acquitted: <span className="text-emerald-400 font-bold">{trial.acquitted}</span></span>}
@@ -983,8 +983,8 @@ export default function TerrorismExtremismPage() {
                     { label: 'Zvi Kogan Trial (Mar 2025)', value: '3 death sentences, 1 life' },
                   ].map((item, idx) => (
                     <div key={idx} className="glass-card rounded-lg p-4 bg-glass-surface/50 border-glass-border text-center">
-                      <p className="text-xs text-platinum-500 font-rajdhani">{item.label}</p>
-                      <p className="text-sm font-bold text-platinum-200 mt-1 font-rajdhani">{item.value}</p>
+                      <p className="text-xs text-platinum-500-500 font-rajdhani">{item.label}</p>
+                      <p className="text-sm font-bold text-platinum-500-200 mt-1 font-rajdhani">{item.value}</p>
                     </div>
                   ))}
                 </div>
@@ -1020,8 +1020,8 @@ export default function TerrorismExtremismPage() {
                           { label: 'Mandate (2019)', value: 'Expanded to include anyone with "extremist/deviant thought"' },
                         ].map((item, idx) => (
                           <div key={idx} className="flex items-center justify-between text-sm">
-                            <span className="text-platinum-400 font-rajdhani">{item.label}</span>
-                            <span className="text-platinum-200 font-bold font-rajdhani">{item.value}</span>
+                            <span className="text-platinum-500-400 font-rajdhani">{item.label}</span>
+                            <span className="text-platinum-500-200 font-bold font-rajdhani">{item.value}</span>
                           </div>
                         ))}
                       </div>
@@ -1035,7 +1035,7 @@ export default function TerrorismExtremismPage() {
                           'UAE 94: 51 completed sentences by Mar 2023 but remained imprisoned',
                           'Individuals documented spending over 3 years beyond original sentences',
                         ].map((item, idx) => (
-                          <div key={idx} className="flex items-start gap-2 text-xs text-platinum-400">
+                          <div key={idx} className="flex items-start gap-2 text-xs text-platinum-500-400">
                             <AlertTriangle className="h-3 w-3 text-orange-500 mt-0.5 flex-shrink-0" />
                             <span className="font-rajdhani">{item}</span>
                           </div>
@@ -1062,8 +1062,8 @@ export default function TerrorismExtremismPage() {
                         { name: 'World Council of Muslim Communities', role: 'UAE-supported international Muslim organization' },
                       ].map((item, idx) => (
                         <div key={idx} className="rounded-lg bg-emerald-500/10 border border-emerald-500/30 p-3">
-                          <p className="text-sm font-bold text-platinum-100 font-rajdhani">{item.name}</p>
-                          <p className="text-xs text-platinum-400 mt-1 font-rajdhani">{item.role}</p>
+                          <p className="text-sm font-bold text-platinum-500-100 font-rajdhani">{item.name}</p>
+                          <p className="text-xs text-platinum-500-400 mt-1 font-rajdhani">{item.role}</p>
                         </div>
                       ))}
                     </div>
@@ -1086,7 +1086,7 @@ export default function TerrorismExtremismPage() {
                         'UAE 94 case: individuals completing sentences remaining imprisoned',
                         '2019 expansion: anyone deemed to hold "extremist thought" can be detained indefinitely',
                       ].map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-2 text-sm text-platinum-300">
+                        <div key={idx} className="flex items-start gap-2 text-sm text-platinum-500-300">
                           <AlertTriangle className="h-4 w-4 text-orange-500 mt-0.5 flex-shrink-0" />
                           <span className="font-rajdhani">{item}</span>
                         </div>
@@ -1145,8 +1145,8 @@ export default function TerrorismExtremismPage() {
                                   {item.tier} ({item.count})
                                 </Badge>
                               </div>
-                              <p className="text-xs text-platinum-200 font-bold font-rajdhani">{item.name}</p>
-                              <p className="text-xs text-platinum-500 mt-1 font-rajdhani">{item.sources}</p>
+                              <p className="text-xs text-platinum-500-200 font-bold font-rajdhani">{item.name}</p>
+                              <p className="text-xs text-platinum-500-500 mt-1 font-rajdhani">{item.sources}</p>
                             </div>
                           ))}
                         </div>
@@ -1168,7 +1168,7 @@ export default function TerrorismExtremismPage() {
                       <div className="space-y-2">
                         {(sources || []).map((source, idx) => (
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-2 hover:bg-platinum-800/70 transition-all">
-                            <span className="text-xs text-platinum-300 font-rajdhani">{source.source || source}</span>
+                            <span className="text-xs text-platinum-500-300 font-rajdhani">{source.source || source}</span>
                             <div className="flex gap-1">
                               <Badge variant="outline" className="text-xs border-violet-500/50 text-violet-400 font-rajdhani">
                                 {source.tier || 'TIER_1'}
@@ -1204,12 +1204,12 @@ export default function TerrorismExtremismPage() {
                         <AlertCircle className="h-5 w-5" />
                         {finding.title || key}
                       </CardTitle>
-                      {finding.summary && <p className="text-sm text-platinum-400 font-rajdhani mt-1">{finding.summary}</p>}
+                      {finding.summary && <p className="text-sm text-platinum-500-400 font-rajdhani mt-1">{finding.summary}</p>}
                     </CardHeader>
                     <CardContent className="px-0 pb-0">
                       <div className="space-y-2">
                         {(finding.keyPoints || finding.details || finding.concerns || []).map((point, idx) => (
-                          <div key={idx} className="flex items-start gap-2 text-sm text-platinum-300">
+                          <div key={idx} className="flex items-start gap-2 text-sm text-platinum-500-300">
                             <div className="h-1.5 w-1.5 rounded-full bg-rose-500 mt-2 flex-shrink-0" />
                             <span className="font-rajdhani">{point}</span>
                           </div>
@@ -1238,7 +1238,7 @@ export default function TerrorismExtremismPage() {
                           className="flex items-start gap-2 rounded-lg bg-rose-500/10 border border-rose-500/20 p-3"
                         >
                           <div className="h-1.5 w-1.5 rounded-full bg-rose-500 mt-2 flex-shrink-0" />
-                          <span className="text-xs text-platinum-300 font-rajdhani">{typeof finding === 'string' ? finding : finding.finding || finding}</span>
+                          <span className="text-xs text-platinum-500-300 font-rajdhani">{typeof finding === 'string' ? finding : finding.finding || finding}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -1260,13 +1260,13 @@ export default function TerrorismExtremismPage() {
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center gap-3">
                               <Users className="h-4 w-4 text-rose-500" />
-                              <span className="text-sm font-medium text-platinum-200 font-rajdhani">{impact.stakeholder}</span>
+                              <span className="text-sm font-medium text-platinum-500-200 font-rajdhani">{impact.stakeholder}</span>
                             </div>
                             <div className="text-right">
                               <Badge variant="outline" className="border-orange-500/50 text-orange-400 font-rajdhani text-xs">
                                 {impact.sentiment}
                               </Badge>
-                              <p className="text-xs text-platinum-500 mt-0.5 font-rajdhani">{impact.impact}</p>
+                              <p className="text-xs text-platinum-500-500 mt-0.5 font-rajdhani">{impact.impact}</p>
                             </div>
                           </div>
                         ))}

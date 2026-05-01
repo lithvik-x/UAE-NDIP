@@ -188,11 +188,11 @@ export function CulturalDemographicsSection() {
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.02 }}
-                className="rounded-lg border border-gold/30 bg-gold/10 p-4 hover:bg-gold/20 transition-all"
+                className="rounded-lg border border-gold-700/30 bg-gold-700/10 p-4 hover:bg-gold-700/20 transition-all"
               >
-                <p className="text-sm text-gold/70">{item.label}</p>
-                <p className="text-2xl font-bold text-gold mt-1">{item.value}</p>
-                <p className="text-xs text-platinum-500 mt-1">{item.source}</p>
+                <p className="text-sm text-gold-700/70">{item.label}</p>
+                <p className="text-2xl font-bold text-gold-700 mt-1">{item.value}</p>
+                <p className="text-xs text-platinum-500-500 mt-1">{item.source}</p>
               </motion.div>
             ))}
           </div>
@@ -252,11 +252,11 @@ export function CulturalEconomicSection() {
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.02 }}
-                className="rounded-lg border border-emerald/30 bg-emerald/10 p-4 hover:bg-emerald/20 transition-all"
+                className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 hover:bg-emerald-500/20 transition-all"
               >
-                <p className="text-sm text-emerald/70">{item.kpi}</p>
-                <p className="text-2xl font-bold text-emerald mt-1">{item.value}</p>
-                <p className="text-xs text-platinum-500 mt-1">{item.source}</p>
+                <p className="text-sm text-emerald-500/70">{item.kpi}</p>
+                <p className="text-2xl font-bold text-emerald-500 mt-1">{item.value}</p>
+                <p className="text-xs text-platinum-500-500 mt-1">{item.source}</p>
               </motion.div>
             ))}
           </div>
@@ -323,7 +323,7 @@ export function CulturalLanguageSection() {
               >
                 <p className="text-sm text-info/70">{item.kpi}</p>
                 <p className="text-2xl font-bold text-info mt-1">{item.value}</p>
-                <p className="text-xs text-platinum-500 mt-1">{item.source}</p>
+                <p className="text-xs text-platinum-500-500 mt-1">{item.source}</p>
               </motion.div>
             ))}
           </div>
@@ -333,32 +333,32 @@ export function CulturalLanguageSection() {
           <Card className="glass-card">
             <CardHeader className="pb-2">
               <CardTitle className="text-lg">Gen Z Arabic Impact Research</CardTitle>
-              <p className="text-sm text-platinum-500">PMC Study 2024 - 200 Emirati youth surveyed in Ajman</p>
+              <p className="text-sm text-platinum-500-500">PMC Study 2024 - 200 Emirati youth surveyed in Ajman</p>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 rounded-lg bg-gold/10 border border-gold/30">
+                <div className="flex items-center justify-between p-4 rounded-lg bg-gold-700/10 border border-gold-700/30">
                   <div>
-                    <p className="text-sm text-gold/70">Arabic → Socio-cultural Identity</p>
-                    <p className="text-2xl font-bold text-gold">β = 0.748</p>
-                    <p className="text-xs text-emerald">p &lt; 0.001 (Highly Significant)</p>
+                    <p className="text-sm text-gold-700/70">Arabic → Socio-cultural Identity</p>
+                    <p className="text-2xl font-bold text-gold-700">β = 0.748</p>
+                    <p className="text-xs text-emerald-500">p &lt; 0.001 (Highly Significant)</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm text-gold/70">Model explains</p>
-                    <p className="text-2xl font-bold text-gold">55.9%</p>
-                    <p className="text-xs text-platinum-500">variance</p>
+                    <p className="text-sm text-gold-700/70">Model explains</p>
+                    <p className="text-2xl font-bold text-gold-700">55.9%</p>
+                    <p className="text-xs text-platinum-500-500">variance</p>
                   </div>
                 </div>
-                <div className="flex items-center justify-between p-4 rounded-lg bg-emerald/10 border border-emerald/30">
+                <div className="flex items-center justify-between p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/30">
                   <div>
-                    <p className="text-sm text-emerald/70">Arabic → Family Values</p>
-                    <p className="text-2xl font-bold text-emerald">β = 0.539</p>
-                    <p className="text-xs text-emerald">p &lt; 0.001 (Highly Significant)</p>
+                    <p className="text-sm text-emerald-500/70">Arabic → Family Values</p>
+                    <p className="text-2xl font-bold text-emerald-500">β = 0.539</p>
+                    <p className="text-xs text-emerald-500">p &lt; 0.001 (Highly Significant)</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm text-emerald/70">Model explains</p>
-                    <p className="text-2xl font-bold text-emerald">59.0%</p>
-                    <p className="text-xs text-platinum-500">variance</p>
+                    <p className="text-sm text-emerald-500/70">Model explains</p>
+                    <p className="text-2xl font-bold text-emerald-500">59.0%</p>
+                    <p className="text-xs text-platinum-500-500">variance</p>
                   </div>
                 </div>
               </div>
@@ -386,8 +386,8 @@ export function CulturalLanguageSection() {
                       <div className="flex items-start gap-4">
                         <span className="text-sm font-bold text-info w-20 flex-shrink-0">{item.year}</span>
                         <div>
-                          <p className="text-sm font-medium text-platinum-200">{item.policy}</p>
-                          <p className="text-xs text-platinum-500">{item.implementation}</p>
+                          <p className="text-sm font-medium text-platinum-500-200">{item.policy}</p>
+                          <p className="text-xs text-platinum-500-500">{item.implementation}</p>
                         </div>
                       </div>
                     </motion.div>
@@ -433,11 +433,11 @@ export function CulturalEmploymentSection() {
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.02 }}
-                className="rounded-lg border border-purple/30 bg-purple/10 p-4 hover:bg-purple/20 transition-all"
+                className="rounded-lg border border-purple-500/30 bg-purple-500/10 p-4 hover:bg-purple-500/20 transition-all"
               >
-                <p className="text-sm text-purple/70">{item.kpi}</p>
-                <p className="text-xl font-bold text-purple mt-1">{item.value}</p>
-                <p className="text-xs text-platinum-500 mt-1">{item.source}</p>
+                <p className="text-sm text-purple-500/70">{item.kpi}</p>
+                <p className="text-xl font-bold text-purple-500 mt-1">{item.value}</p>
+                <p className="text-xs text-platinum-500-500 mt-1">{item.source}</p>
               </motion.div>
             ))}
           </div>
@@ -499,11 +499,11 @@ export function CulturalVisitorsSection() {
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.02 }}
-                className="rounded-lg border border-rose/30 bg-rose/10 p-4 hover:bg-rose/20 transition-all"
+                className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-4 hover:bg-rose-500/20 transition-all"
               >
-                <p className="text-sm text-rose/70">{item.kpi}</p>
-                <p className="text-2xl font-bold text-rose mt-1">{item.value}</p>
-                <p className="text-xs text-platinum-500 mt-1">{item.source}</p>
+                <p className="text-sm text-rose-500/70">{item.kpi}</p>
+                <p className="text-2xl font-bold text-rose-500 mt-1">{item.value}</p>
+                <p className="text-xs text-platinum-500-500 mt-1">{item.source}</p>
               </motion.div>
             ))}
           </div>
@@ -560,15 +560,15 @@ export function CulturalInstitutionsSection() {
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.02 }}
-                className="rounded-lg border border-gold/30 bg-gold/10 p-4 hover:bg-gold/20 transition-all"
+                className="rounded-lg border border-gold-700/30 bg-gold-700/10 p-4 hover:bg-gold-700/20 transition-all"
               >
                 <div className="flex items-start gap-3">
-                  <Landmark className="h-5 w-5 text-gold flex-shrink-0 mt-1" />
+                  <Landmark className="h-5 w-5 text-gold-700 flex-shrink-0 mt-1" />
                   <div>
-                    <p className="font-semibold text-gold">{venue.name}</p>
-                    <p className="text-sm text-platinum-400">{venue.location}</p>
-                    <p className="text-xs text-platinum-500 mt-1">Opened: {venue.openingDate}</p>
-                    <p className="text-xs text-platinum-500">{venue.collectionSize}</p>
+                    <p className="font-semibold text-gold-700">{venue.name}</p>
+                    <p className="text-sm text-platinum-500-400">{venue.location}</p>
+                    <p className="text-xs text-platinum-500-500 mt-1">Opened: {venue.openingDate}</p>
+                    <p className="text-xs text-platinum-500-500">{venue.collectionSize}</p>
                   </div>
                 </div>
               </motion.div>
@@ -592,10 +592,10 @@ export function CulturalInstitutionsSection() {
                       transition={{ delay: index * 0.1 }}
                       className="flex items-center gap-4 p-3 rounded-lg bg-platinum-800/50"
                     >
-                      <div className="flex-shrink-0 w-20 text-sm font-bold text-gold">{museum.openingDate}</div>
+                      <div className="flex-shrink-0 w-20 text-sm font-bold text-gold-700">{museum.openingDate}</div>
                       <div className="flex-1">
-                        <p className="font-medium text-platinum-200">{museum.museum}</p>
-                        <p className="text-xs text-platinum-500">{museum.architect !== '-' ? `Architect: ${museum.architect}` : museum.focus}</p>
+                        <p className="font-medium text-platinum-500-200">{museum.museum}</p>
+                        <p className="text-xs text-platinum-500-500">{museum.architect !== '-' ? `Architect: ${museum.architect}` : museum.focus}</p>
                       </div>
                       <Badge variant="outline" className="text-xs">{museum.focus}</Badge>
                     </motion.div>
@@ -636,22 +636,22 @@ export function CulturalSentimentSection() {
             className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/80 transition-colors"
           >
             <div className="flex-1">
-              <p className="font-medium text-platinum-200">{topic.topic}</p>
-              <p className="text-xs text-platinum-500 mt-1">{topic.keyPositives}</p>
+              <p className="font-medium text-platinum-500-200">{topic.topic}</p>
+              <p className="text-xs text-platinum-500-500 mt-1">{topic.keyPositives}</p>
             </div>
             <div className="text-right flex-shrink-0 ml-4">
               <Badge
                 variant="outline"
                 className={cn(
                   'text-xs',
-                  topic.score > 0.7 ? 'border-emerald text-emerald' :
-                  topic.score > 0.4 ? 'border-gold text-gold' :
-                  'border-rose text-rose'
+                  topic.score > 0.7 ? 'border-emerald text-emerald-500' :
+                  topic.score > 0.4 ? 'border-gold text-gold-700' :
+                  'border-rose text-rose-500'
                 )}
               >
                 {topic.sentiment}
               </Badge>
-              <p className="text-xs text-platinum-500 mt-1">Score: {(topic.score * 100).toFixed(0)}%</p>
+              <p className="text-xs text-platinum-500-500 mt-1">Score: {(topic.score * 100).toFixed(0)}%</p>
             </div>
           </motion.div>
         ))}
@@ -712,16 +712,16 @@ export function CulturalSourceCredibilitySection() {
                   className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                 >
                   <div className="flex-1">
-                    <p className="text-sm font-medium text-platinum-200 truncate">{source.sourceName}</p>
-                    <p className="text-xs text-platinum-500 truncate">{source.dataTypes}</p>
+                    <p className="text-sm font-medium text-platinum-500-200 truncate">{source.sourceName}</p>
+                    <p className="text-xs text-platinum-500-500 truncate">{source.dataTypes}</p>
                   </div>
                   <Badge
                     variant="outline"
                     className={cn(
                       'text-xs ml-2',
-                      source.tier === 1 ? 'border-gold text-gold' :
-                      source.tier === 2 ? 'border-emerald text-emerald' :
-                      'border-navy text-navy'
+                      source.tier === 1 ? 'border-gold text-gold-700' :
+                      source.tier === 2 ? 'border-emerald text-emerald-500' :
+                      'border-navy text-navy-500'
                     )}
                   >
                     Tier {source.tier}
@@ -765,17 +765,17 @@ export function CulturalUAERelevanceSection() {
               variant="outline"
               className={cn(
                 'w-20 justify-center text-xs',
-                item.relevance === 'Critical' ? 'border-rose text-rose' :
-                item.relevance === 'High' ? 'border-gold text-gold' :
+                item.relevance === 'Critical' ? 'border-rose text-rose-500' :
+                item.relevance === 'High' ? 'border-gold text-gold-700' :
                 item.relevance === 'Medium' ? 'border-info text-info' :
-                'border-platinum text-platinum'
+                'border-platinum text-platinum-500'
               )}
             >
               {item.relevance}
             </Badge>
             <div className="flex-1">
-              <p className="text-sm font-medium text-platinum-200">{item.dataPoint}</p>
-              <p className="text-xs text-platinum-500">{item.rationale}</p>
+              <p className="text-sm font-medium text-platinum-500-200">{item.dataPoint}</p>
+              <p className="text-xs text-platinum-500-500">{item.rationale}</p>
             </div>
           </motion.div>
         ))}
@@ -809,11 +809,11 @@ export function CulturalGovernmentEntitiesSection() {
             transition={{ delay: index * 0.1 }}
             className="flex items-start gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
           >
-            <Building className="h-5 w-5 text-gold flex-shrink-0 mt-1" />
+            <Building className="h-5 w-5 text-gold-700 flex-shrink-0 mt-1" />
             <div className="flex-1">
-              <p className="font-medium text-platinum-200">{entity.entity}</p>
-              <p className="text-sm text-gold">{entity.function}</p>
-              <p className="text-xs text-platinum-500 mt-1">{entity.keyInitiatives}</p>
+              <p className="font-medium text-platinum-500-200">{entity.entity}</p>
+              <p className="text-sm text-gold-700">{entity.function}</p>
+              <p className="text-xs text-platinum-500-500 mt-1">{entity.keyInitiatives}</p>
             </div>
             <Badge variant="outline" className="text-xs">{entity.credibility}</Badge>
           </motion.div>
@@ -847,15 +847,15 @@ export function CulturalFashionDesignersSection() {
             className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/80 transition-all"
           >
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/20">
-                <Star className="h-6 w-6 text-gold" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-700/20">
+                <Star className="h-6 w-6 text-gold-700" />
               </div>
               <div className="flex-1">
-                <p className="font-semibold text-platinum-200">{designer.name}</p>
-                <p className="text-sm text-gold">{designer.specialty}</p>
+                <p className="font-semibold text-platinum-500-200">{designer.name}</p>
+                <p className="text-sm text-gold-700">{designer.specialty}</p>
               </div>
               <div className="text-right">
-                <p className="text-sm text-platinum-400">{designer.followers}</p>
+                <p className="text-sm text-platinum-500-400">{designer.followers}</p>
               </div>
             </div>
           </motion.div>
@@ -891,10 +891,10 @@ export function CulturalYouthInnovatorsSection() {
             className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
           >
             <div className="flex items-center gap-3">
-              <Users className="h-5 w-5 text-navy" />
+              <Users className="h-5 w-5 text-navy-500" />
               <div>
-                <p className="text-sm font-medium text-platinum-200">{innovator.name}</p>
-                <p className="text-xs text-platinum-400">{innovator.field}</p>
+                <p className="text-sm font-medium text-platinum-500-200">{innovator.name}</p>
+                <p className="text-xs text-platinum-500-400">{innovator.field}</p>
               </div>
             </div>
             <Badge variant="outline" className="text-xs max-w-[200px] text-center">{innovator.achievement}</Badge>
@@ -931,16 +931,16 @@ export function CulturalWeddingEvolutionSection() {
             className="flex items-center gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
           >
             <div className="flex-1">
-              <p className="text-sm font-medium text-gold">{item.tradition}</p>
+              <p className="text-sm font-medium text-gold-700">{item.tradition}</p>
             </div>
             <div className="flex-1 text-center">
-              <p className="text-xs text-platinum-500">Traditional</p>
-              <p className="text-sm text-platinum-300">{item.traditionalPractice}</p>
+              <p className="text-xs text-platinum-500-500">Traditional</p>
+              <p className="text-sm text-platinum-500-300">{item.traditionalPractice}</p>
             </div>
-            <ChevronRight className="h-4 w-4 text-emerald flex-shrink-0" />
+            <ChevronRight className="h-4 w-4 text-emerald-500 flex-shrink-0" />
             <div className="flex-1 text-right">
-              <p className="text-xs text-emerald/70">Modern</p>
-              <p className="text-sm text-emerald">{item.modernEvolution}</p>
+              <p className="text-xs text-emerald-500/70">Modern</p>
+              <p className="text-sm text-emerald-500">{item.modernEvolution}</p>
             </div>
           </motion.div>
         ))}
@@ -963,7 +963,7 @@ export function CulturalPolicyTimelineSection() {
       <Card className="glass-card">
         <CardContent className="pt-6">
           <ScrollArea className="h-[400px]">
-            <div className="relative space-y-4 pl-4 border-l border-gold/30">
+            <div className="relative space-y-4 pl-4 border-l border-gold-700/30">
               {culturalPolicyTimeline.map((event, index) => (
                 <motion.div
                   key={index}
@@ -974,10 +974,10 @@ export function CulturalPolicyTimelineSection() {
                 >
                   <div className="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-gold" />
                   <div className="flex items-start gap-4">
-                    <span className="text-sm font-bold text-gold w-16 flex-shrink-0">{event.year}</span>
+                    <span className="text-sm font-bold text-gold-700 w-16 flex-shrink-0">{event.year}</span>
                     <div>
-                      <p className="text-sm font-medium text-platinum-200">{event.initiative}</p>
-                      <p className="text-xs text-platinum-500">{event.description}</p>
+                      <p className="text-sm font-medium text-platinum-500-200">{event.initiative}</p>
+                      <p className="text-xs text-platinum-500-500">{event.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -1018,10 +1018,10 @@ export function CulturalNationalIdentitySection() {
                   <motion.div
                     key={index}
                     whileHover={{ scale: 1.05, borderColor: 'rgba(234, 179, 8, 0.5)' }}
-                    className="rounded-lg border border-gold/30 bg-gold/10 p-3 text-center hover:bg-gold/20 transition-all cursor-pointer"
+                    className="rounded-lg border border-gold-700/30 bg-gold-700/10 p-3 text-center hover:bg-gold-700/20 transition-all cursor-pointer"
                   >
-                    <Award className="mx-auto h-6 w-6 text-gold mb-2" />
-                    <p className="text-sm font-medium text-gold">{value}</p>
+                    <Award className="mx-auto h-6 w-6 text-gold-700 mb-2" />
+                    <p className="text-sm font-medium text-gold-700">{value}</p>
                   </motion.div>
                 ))}
               </div>
@@ -1045,8 +1045,8 @@ export function CulturalNationalIdentitySection() {
                       transition={{ delay: index * 0.1 }}
                       className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-3"
                     >
-                      <Gem className="h-5 w-5 text-gold" />
-                      <span className="text-sm text-platinum-200">{element}</span>
+                      <Gem className="h-5 w-5 text-gold-700" />
+                      <span className="text-sm text-platinum-500-200">{element}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -1071,8 +1071,8 @@ export function CulturalNationalIdentitySection() {
                       transition={{ delay: index * 0.05 }}
                       className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-3 hover:bg-platinum-800/80 transition-colors"
                     >
-                      <ChevronRight className="h-4 w-4 text-gold" />
-                      <span className="text-sm text-platinum-200">{initiative}</span>
+                      <ChevronRight className="h-4 w-4 text-gold-700" />
+                      <span className="text-sm text-platinum-500-200">{initiative}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -1114,19 +1114,19 @@ export function CulturalAcademicResearchSection() {
               <Book className="h-5 w-5 text-info flex-shrink-0 mt-1" />
               <div>
                 <p className="font-semibold text-info">{research.title}</p>
-                <p className="text-xs text-platinum-500">{research.source}</p>
+                <p className="text-xs text-platinum-500-500">{research.source}</p>
               </div>
             </div>
-            <p className="text-sm text-platinum-400 mb-3">{research.methodology}</p>
+            <p className="text-sm text-platinum-500-400 mb-3">{research.methodology}</p>
             <div className="space-y-1">
               {research.keyFindings.slice(0, 3).map((finding, idx) => (
-                <p key={idx} className="text-xs text-platinum-400 flex items-start gap-2">
-                  <span className="text-gold">•</span>
+                <p key={idx} className="text-xs text-platinum-500-400 flex items-start gap-2">
+                  <span className="text-gold-700">•</span>
                   {finding}
                 </p>
               ))}
             </div>
-            <p className="text-xs text-gold mt-3 italic">{research.assessment}</p>
+            <p className="text-xs text-gold-700 mt-3 italic">{research.assessment}</p>
           </motion.div>
         ))}
       </motion.div>
@@ -1160,16 +1160,16 @@ export function CulturalMajorEventsSection() {
             className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
           >
             <div className="flex items-center gap-3">
-              <Calendar className="h-5 w-5 text-rose" />
+              <Calendar className="h-5 w-5 text-rose-500" />
               <div>
-                <p className="font-medium text-platinum-200">{event.event}</p>
-                <p className="text-sm text-platinum-500">{event.location}</p>
+                <p className="font-medium text-platinum-500-200">{event.event}</p>
+                <p className="text-sm text-platinum-500-500">{event.location}</p>
               </div>
             </div>
             <div className="text-right">
-              <p className="text-sm font-medium text-rose">{event.dates}</p>
+              <p className="text-sm font-medium text-rose-500">{event.dates}</p>
               {event.attendanceNotes && (
-                <p className="text-xs text-platinum-500">{event.attendanceNotes}</p>
+                <p className="text-xs text-platinum-500-500">{event.attendanceNotes}</p>
               )}
             </div>
           </motion.div>
@@ -1202,20 +1202,20 @@ export function CulturalSourceCitationSection() {
                   transition={{ delay: index * 0.05 }}
                   className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-2"
                 >
-                  <span className="w-6 h-6 rounded-full bg-gold/20 text-gold text-xs flex items-center justify-center flex-shrink-0">
+                  <span className="w-6 h-6 rounded-full bg-gold-700/20 text-gold-700 text-xs flex items-center justify-center flex-shrink-0">
                     {citation.number}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs text-platinum-300 truncate">{citation.url.replace('https://', '')}</p>
-                    <p className="text-xs text-platinum-500 truncate">{citation.topicCoverage}</p>
+                    <p className="text-xs text-platinum-500-300 truncate">{citation.url.replace('https://', '')}</p>
+                    <p className="text-xs text-platinum-500-500 truncate">{citation.topicCoverage}</p>
                   </div>
                   <Badge
                     variant="outline"
                     className={cn(
                       'text-xs flex-shrink-0',
-                      citation.tier === 1 ? 'border-gold text-gold' :
-                      citation.tier === 2 ? 'border-emerald text-emerald' :
-                      'border-navy text-navy'
+                      citation.tier === 1 ? 'border-gold text-gold-700' :
+                      citation.tier === 2 ? 'border-emerald text-emerald-500' :
+                      'border-navy text-navy-500'
                     )}
                   >
                     T{citation.tier}
@@ -1262,11 +1262,11 @@ export function CulturalYouthIndicatorsSection() {
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.02 }}
-                className="rounded-lg border border-purple/30 bg-purple/10 p-4 hover:bg-purple/20 transition-all"
+                className="rounded-lg border border-purple-500/30 bg-purple-500/10 p-4 hover:bg-purple-500/20 transition-all"
               >
-                <p className="text-sm text-purple/70">{item.kpi}</p>
-                <p className="text-2xl font-bold text-purple mt-1">{item.value}</p>
-                <p className="text-xs text-platinum-500 mt-1">{item.source}</p>
+                <p className="text-sm text-purple-500/70">{item.kpi}</p>
+                <p className="text-2xl font-bold text-purple-500 mt-1">{item.value}</p>
+                <p className="text-xs text-platinum-500-500 mt-1">{item.source}</p>
               </motion.div>
             ))}
           </div>

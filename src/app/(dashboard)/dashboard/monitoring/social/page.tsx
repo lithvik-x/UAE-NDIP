@@ -115,17 +115,17 @@ export default function SocialMediaMonitoringPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">M-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Social Media Monitoring</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Social Media Monitoring</h1>
+          <p className="mt-2 text-platinum-500-400">
             Real-time tracking of social platforms, influencers, and public sentiment
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <Globe className="h-4 w-4" />
             Social Feed
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Shield className="h-4 w-4" />
             Sentiment Guard
           </Button>
@@ -246,11 +246,11 @@ export default function SocialMediaMonitoringPage() {
                       {trendingHashtags.map((item, idx) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
-                            <span className="text-lg font-bold text-gold">#{idx + 1}</span>
-                            <span className="text-sm font-medium text-platinum-200">{item.hashtag}</span>
+                            <span className="text-lg font-bold text-gold-700">#{idx + 1}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.hashtag}</span>
                           </div>
                           <div className="flex items-center gap-4">
-                            <span className="text-sm text-platinum-400">{item.posts.toLocaleString()} posts</span>
+                            <span className="text-sm text-platinum-500-400">{item.posts.toLocaleString()} posts</span>
                             <Badge variant={item.sentiment > 75 ? "success" : "warning"} className="text-xs">
                               {item.sentiment}%
                             </Badge>
@@ -298,20 +298,20 @@ export default function SocialMediaMonitoringPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-400">Total Tweets</span>
-                        <span className="text-lg font-bold text-platinum-200">1.2M</span>
+                        <span className="text-sm text-platinum-500-400">Total Tweets</span>
+                        <span className="text-lg font-bold text-platinum-500-200">1.2M</span>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-400">Avg Sentiment</span>
+                        <span className="text-sm text-platinum-500-400">Avg Sentiment</span>
                         <span className="text-lg font-bold text-emerald-400">72%</span>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-400">Verified Accounts</span>
-                        <span className="text-lg font-bold text-gold">8,432</span>
+                        <span className="text-sm text-platinum-500-400">Verified Accounts</span>
+                        <span className="text-lg font-bold text-gold-700">8,432</span>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-400">Bot Probability {'>'}70%</span>
-                        <span className="text-lg font-bold text-rose">1,247</span>
+                        <span className="text-sm text-platinum-500-400">Bot Probability {'>'}70%</span>
+                        <span className="text-lg font-bold text-rose-500">1,247</span>
                       </div>
                     </div>
                   </CardContent>
@@ -325,19 +325,19 @@ export default function SocialMediaMonitoringPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-400">Videos Tagged UAE</span>
-                        <span className="text-lg font-bold text-platinum-200">2.8M</span>
+                        <span className="text-sm text-platinum-500-400">Videos Tagged UAE</span>
+                        <span className="text-lg font-bold text-platinum-500-200">2.8M</span>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-400">Total Views</span>
-                        <span className="text-lg font-bold text-platinum-200">45B</span>
+                        <span className="text-sm text-platinum-500-400">Total Views</span>
+                        <span className="text-lg font-bold text-platinum-500-200">45B</span>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-400">Avg Sentiment</span>
+                        <span className="text-sm text-platinum-500-400">Avg Sentiment</span>
                         <span className="text-lg font-bold text-emerald-400">78%</span>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-400">Potential Misinfo</span>
+                        <span className="text-sm text-platinum-500-400">Potential Misinfo</span>
                         <span className="text-lg font-bold text-orange-400">342</span>
                       </div>
                     </div>
@@ -366,24 +366,24 @@ export default function SocialMediaMonitoringPage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70"
                         >
                           <div className="flex items-center gap-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-700/20 text-gold-700">
                               <Users className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-200">{inf.name}</p>
-                              <p className="text-sm text-platinum-400">{inf.handle} · {inf.platform}</p>
+                              <p className="font-semibold text-platinum-500-200">{inf.name}</p>
+                              <p className="text-sm text-platinum-500-400">{inf.handle} · {inf.platform}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-6">
                             <div className="text-center">
-                              <div className="text-lg font-bold text-platinum-200">{inf.followers}K</div>
-                              <p className="text-xs text-platinum-400">Followers</p>
+                              <div className="text-lg font-bold text-platinum-500-200">{inf.followers}K</div>
+                              <p className="text-xs text-platinum-500-400">Followers</p>
                             </div>
                             <div className="text-center">
                               <div className={`text-lg font-bold ${inf.sentiment > 75 ? 'text-emerald-400' : 'text-orange-400'}`}>
                                 {inf.sentiment}%
                               </div>
-                              <p className="text-xs text-platinum-400">Sentiment</p>
+                              <p className="text-xs text-platinum-500-400">Sentiment</p>
                             </div>
                           </div>
                         </div>
@@ -401,20 +401,20 @@ export default function SocialMediaMonitoringPage() {
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-4">
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
-                      <div className="text-2xl font-bold text-gold">23</div>
-                      <p className="text-sm text-platinum-400">Mega (1M+)</p>
+                      <div className="text-2xl font-bold text-gold-700">23</div>
+                      <p className="text-sm text-platinum-500-400">Mega (1M+)</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
-                      <div className="text-2xl font-bold text-navy">87</div>
-                      <p className="text-sm text-platinum-400">Macro (100K-1M)</p>
+                      <div className="text-2xl font-bold text-navy-500">87</div>
+                      <p className="text-sm text-platinum-500-400">Macro (100K-1M)</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
-                      <div className="text-2xl font-bold text-platinum">312</div>
-                      <p className="text-sm text-platinum-400">Mid (10K-100K)</p>
+                      <div className="text-2xl font-bold text-platinum-500">312</div>
+                      <p className="text-sm text-platinum-500-400">Mid (10K-100K)</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
-                      <div className="text-2xl font-bold text-emerald">425</div>
-                      <p className="text-sm text-platinum-400">Micro ({'<10K'})</p>
+                      <div className="text-2xl font-bold text-emerald-500">425</div>
+                      <p className="text-sm text-platinum-500-400">Micro ({'<10K'})</p>
                     </div>
                   </div>
                 </CardContent>
@@ -440,14 +440,14 @@ export default function SocialMediaMonitoringPage() {
                       {criticalPostsData.map((post) => (
                         <div key={post.id} className="flex items-start justify-between rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-200">{post.content}</p>
-                            <p className="text-sm text-platinum-400 mt-1">Platform: {post.platform} · {post.engagement.toLocaleString()} engagements</p>
+                            <p className="font-medium text-platinum-500-200">{post.content}</p>
+                            <p className="text-sm text-platinum-500-400 mt-1">Platform: {post.platform} · {post.engagement.toLocaleString()} engagements</p>
                           </div>
                           <div className="flex flex-col items-end gap-2">
                             <Badge variant={post.sentiment > 50 ? "success" : "destructive"} className="text-xs">
                               {post.sentiment}% Sentiment
                             </Badge>
-                            <span className="text-xs text-platinum-400">{post.time}</span>
+                            <span className="text-xs text-platinum-500-400">{post.time}</span>
                           </div>
                         </div>
                       ))}

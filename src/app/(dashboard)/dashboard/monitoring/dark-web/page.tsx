@@ -103,13 +103,13 @@ export default function DarkWebMonitoringPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="denim" className="mb-2">M-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Dark Web Monitoring</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">Dark Web Monitoring</h1>
+          <p className="mt-2 text-platinum-500-400">
             Surveillance of underground forums, marketplaces, and illicit activity tracking
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-navy/50 text-navy hover:bg-navy/10">
+          <Button variant="outline" className="gap-2 border-navy/50 text-navy-500 hover:bg-navy/10">
             <Eye className="h-4 w-4" />
             Intel Feed
           </Button>
@@ -225,28 +225,28 @@ export default function DarkWebMonitoringPage() {
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-400">Forums Monitored</span>
+                        <span className="text-platinum-500-400">Forums Monitored</span>
                         <span className="font-medium text-emerald-400">156</span>
                       </div>
                       <Progress value={78} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-400">Marketplaces Tracked</span>
+                        <span className="text-platinum-500-400">Marketplaces Tracked</span>
                         <span className="font-medium text-emerald-400">47</span>
                       </div>
                       <Progress value={65} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-400">Paste Sites Scanned</span>
+                        <span className="text-platinum-500-400">Paste Sites Scanned</span>
                         <span className="font-medium text-emerald-400">89</span>
                       </div>
                       <Progress value={72} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-400">IM Channels</span>
+                        <span className="text-platinum-500-400">IM Channels</span>
                         <span className="font-medium text-emerald-400">34</span>
                       </div>
                       <Progress value={45} className="h-3" />
@@ -279,12 +279,12 @@ export default function DarkWebMonitoringPage() {
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
-                            <Bug className="h-4 w-4 text-rose" />
-                            <span className="text-sm font-medium text-platinum-200">{item.group}</span>
+                            <Bug className="h-4 w-4 text-rose-500" />
+                            <span className="text-sm font-medium text-platinum-500-200">{item.group}</span>
                           </div>
                           <div className="flex items-center gap-3">
-                            <span className="text-sm text-platinum-400">{item.target}</span>
-                            <span className="text-lg font-bold text-rose">{item.activity}</span>
+                            <span className="text-sm text-platinum-500-400">{item.target}</span>
+                            <span className="text-lg font-bold text-rose-500">{item.activity}</span>
                           </div>
                         </div>
                       ))}
@@ -308,15 +308,15 @@ export default function DarkWebMonitoringPage() {
                     ].map((item, idx) => (
                       <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                         <div className="flex items-center gap-4">
-                          <Lock className="h-5 w-5 text-rose" />
+                          <Lock className="h-5 w-5 text-rose-500" />
                           <div>
-                            <p className="font-medium text-platinum-200">{item.vuln}</p>
-                            <p className="text-sm text-platinum-400">Affects: {item.affects}</p>
+                            <p className="font-medium text-platinum-500-200">{item.vuln}</p>
+                            <p className="text-sm text-platinum-500-400">Affects: {item.affects}</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-4">
                           <Badge variant="destructive" className="text-xs">{item.severity}</Badge>
-                          <span className="text-sm text-platinum-400">{item.mentions} mentions</span>
+                          <span className="text-sm text-platinum-500-400">{item.mentions} mentions</span>
                         </div>
                       </div>
                     ))}
@@ -342,19 +342,19 @@ export default function DarkWebMonitoringPage() {
                       {monitoredKeywords.map((item, idx) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div className="flex items-center gap-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy-500">
                               <Eye className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-200">{item.keyword}</p>
-                              <p className="text-sm text-platinum-400">{item.mentions.toLocaleString()} mentions</p>
+                              <p className="font-semibold text-platinum-500-200">{item.keyword}</p>
+                              <p className="text-sm text-platinum-500-400">{item.mentions.toLocaleString()} mentions</p>
                             </div>
                           </div>
                           <div className="text-center">
                             <div className={`text-lg font-bold ${item.sentiment < 30 ? 'text-rose-400' : 'text-orange-400'}`}>
                               {item.sentiment}%
                             </div>
-                            <p className="text-xs text-platinum-400">Threat Score</p>
+                            <p className="text-xs text-platinum-500-400">Threat Score</p>
                           </div>
                         </div>
                       ))}
@@ -372,15 +372,15 @@ export default function DarkWebMonitoringPage() {
                   <div className="grid gap-4 sm:grid-cols-3">
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">24</div>
-                      <p className="text-sm text-platinum-400">Active Keywords</p>
+                      <p className="text-sm text-platinum-500-400">Active Keywords</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
-                      <div className="text-2xl font-bold text-gold">156</div>
-                      <p className="text-sm text-platinum-400">Daily Alerts</p>
+                      <div className="text-2xl font-bold text-gold-700">156</div>
+                      <p className="text-sm text-platinum-500-400">Daily Alerts</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
-                      <div className="text-2xl font-bold text-rose">18</div>
-                      <p className="text-sm text-platinum-400">Critical Triggers</p>
+                      <div className="text-2xl font-bold text-rose-500">18</div>
+                      <p className="text-sm text-platinum-500-400">Critical Triggers</p>
                     </div>
                   </div>
                 </CardContent>
@@ -406,17 +406,17 @@ export default function DarkWebMonitoringPage() {
                       {threatListings.map((listing) => (
                         <div key={listing.id} className="flex items-start justify-between rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-200">{listing.type}</p>
-                            <p className="text-sm text-platinum-400 mt-1">Source: {listing.source}</p>
+                            <p className="font-medium text-platinum-500-200">{listing.type}</p>
+                            <p className="text-sm text-platinum-500-400 mt-1">Source: {listing.source}</p>
                           </div>
                           <div className="flex items-center gap-4">
                             <div className="text-center">
-                              <div className="text-lg font-bold text-gold">{listing.price}</div>
-                              <p className="text-xs text-platinum-400">Price</p>
+                              <div className="text-lg font-bold text-gold-700">{listing.price}</div>
+                              <p className="text-xs text-platinum-500-400">Price</p>
                             </div>
                             <div className="flex flex-col items-end gap-2">
                               {getSeverityBadge(listing.severity)}
-                              <span className="text-xs text-platinum-400">{listing.time}</span>
+                              <span className="text-xs text-platinum-500-400">{listing.time}</span>
                             </div>
                           </div>
                         </div>

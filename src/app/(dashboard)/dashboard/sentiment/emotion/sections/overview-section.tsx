@@ -31,12 +31,12 @@ const emotionIcons: Record<string, React.ElementType> = {
 }
 
 const emotionColors: Record<string, string> = {
-  gold: 'text-gold',
-  navy: 'text-navy',
-  rose: 'text-rose',
-  platinum: 'text-platinum',
+  gold: 'text-gold-700',
+  navy: 'text-navy-500',
+  rose: 'text-rose-500',
+  platinum: 'text-platinum-500',
   info: 'text-info',
-  emerald: 'text-emerald',
+  emerald: 'text-emerald-500',
 }
 
 interface OverviewSectionProps {
@@ -76,7 +76,7 @@ export function OverviewSection({
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {emotionCategories.map((emotion) => {
             const Icon = emotionIcons[emotion.emotion] || Brain
-            const color = emotionColors[emotion.emotion.toLowerCase()] || 'text-platinum'
+            const color = emotionColors[emotion.emotion.toLowerCase()] || 'text-platinum-500'
             const sentimentPercent = Math.round(emotion.avgSentimentScore * 100)
             const isPositive = emotion.avgSentimentScore > 0
 
@@ -92,7 +92,7 @@ export function OverviewSection({
                       <Icon className={`h-5 w-5 ${isPositive ? 'text-emerald-400' : 'text-rose-400'}`} />
                     </div>
                     <div>
-                      <p className="font-bold text-platinum-200">{emotion.emotion}</p>
+                      <p className="font-bold text-platinum-500-200">{emotion.emotion}</p>
                       <Badge
                         variant={isPositive ? 'success' : 'destructive'}
                         className="text-xs"
@@ -103,7 +103,7 @@ export function OverviewSection({
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-platinum-400">Sentiment</span>
+                      <span className="text-platinum-500-400">Sentiment</span>
                       <span className={`font-bold ${isPositive ? 'text-emerald-400' : 'text-rose-400'}`}>
                         {sentimentPercent > 0 ? '+' : ''}{sentimentPercent}%
                       </span>
@@ -112,7 +112,7 @@ export function OverviewSection({
                       value={Math.abs(sentimentPercent)}
                       className="h-2"
                     />
-                    <div className="flex justify-between text-xs text-platinum-500">
+                    <div className="flex justify-between text-xs text-platinum-500-500">
                       <span>{emotion.primaryQueries} queries</span>
                       <span>{emotion.dataPointsExtracted} data points</span>
                     </div>
@@ -124,10 +124,10 @@ export function OverviewSection({
         </div>
 
         {/* Net Emotional Balance */}
-        <Card className="glass-card border-gold/30">
+        <Card className="glass-card border-gold-700/30">
           <CardHeader className="pb-2">
             <CardTitle className="text-lg flex items-center gap-2">
-              <Brain className="h-5 w-5 text-gold" />
+              <Brain className="h-5 w-5 text-gold-700" />
               Net Emotional Balance
             </CardTitle>
             <CardDescription>Aggregate sentiment across all 8 Plutchik emotions</CardDescription>
@@ -142,7 +142,7 @@ export function OverviewSection({
                   <Badge variant={netEmotionalBalance.value >= 0 ? 'success' : 'destructive'}>
                     {netEmotionalBalance.trend}
                   </Badge>
-                  <p className="text-xs text-platinum-400 mt-1">Last updated: {netEmotionalBalance.lastUpdated}</p>
+                  <p className="text-xs text-platinum-500-400 mt-1">Last updated: {netEmotionalBalance.lastUpdated}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
@@ -172,11 +172,11 @@ export function OverviewSection({
                 return (
                   <div key={kpi.emotion} className="flex items-center gap-4">
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-platinum-800/50">
-                      <Icon className="h-4 w-4 text-platinum-400" />
+                      <Icon className="h-4 w-4 text-platinum-500-400" />
                     </div>
                     <div className="flex-1">
                       <div className="flex justify-between text-sm mb-1">
-                        <span className="text-platinum-300">{kpi.emotion}</span>
+                        <span className="text-platinum-500-300">{kpi.emotion}</span>
                         <span className={`font-bold ${isPositive ? 'text-emerald-400' : 'text-rose-400'}`}>
                           {sentimentPercent > 0 ? '+' : ''}{sentimentPercent}%
                         </span>

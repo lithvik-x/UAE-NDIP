@@ -177,7 +177,7 @@ export default function UrduLanguagePage() {
     ) : trend === 'down' ? (
       <TrendingDown className="h-4 w-4 text-rose-400" />
     ) : (
-      <TrendingUp className="h-4 w-4 text-platinum-400" />
+      <TrendingUp className="h-4 w-4 text-platinum-500-400" />
     )
   }
 
@@ -198,13 +198,13 @@ export default function UrduLanguagePage() {
       >
         <div>
           <Badge variant="denim" className="mb-2">L-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Urdu/Hindi Language Media</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">Urdu/Hindi Language Media</h1>
+          <p className="mt-2 text-platinum-500-400">
             South Asian diaspora media monitoring - India, Pakistan, Bangladesh in UAE
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-navy/50 text-navy hover:bg-navy/10">
+          <Button variant="outline" className="gap-2 border-navy/50 text-navy-500 hover:bg-navy/10">
             <Search className="h-4 w-4" />
             Search
           </Button>
@@ -324,9 +324,9 @@ export default function UrduLanguagePage() {
                               className="space-y-2"
                             >
                               <div className="flex items-center justify-between">
-                                <span className="text-sm font-medium text-platinum-200">{topic.topic}</span>
+                                <span className="text-sm font-medium text-platinum-500-200">{topic.topic}</span>
                                 <div className="flex items-center gap-4">
-                                  <span className="text-xs text-platinum-400">{(topic.volume / 1000).toFixed(0)}K posts</span>
+                                  <span className="text-xs text-platinum-500-400">{(topic.volume / 1000).toFixed(0)}K posts</span>
                                   <span className={`text-sm font-bold ${getSentimentColor(topic.sentiment)}`}>{topic.sentiment}%</span>
                                   {getTrendIcon(topic.trend)}
                                 </div>
@@ -378,8 +378,8 @@ export default function UrduLanguagePage() {
                             </CardTitle>
                           </CardHeader>
                           <CardContent>
-                            <div className="text-3xl font-bold text-platinum-200">{d.population.toFixed(2)}M</div>
-                            <p className="text-sm text-platinum-400">Population in UAE</p>
+                            <div className="text-3xl font-bold text-platinum-500-200">{d.population.toFixed(2)}M</div>
+                            <p className="text-sm text-platinum-500-400">Population in UAE</p>
                             <div className="mt-2">
                               <Badge variant={d.sentiment === 'Strongly Positive' ? 'success' : d.sentiment === 'Neutral' ? 'secondary' : 'destructive'}>
                                 {d.sentiment}
@@ -432,8 +432,8 @@ export default function UrduLanguagePage() {
                               <div className="flex items-center gap-3">
                                 <Shield className="h-5 w-5 text-gold-500" />
                                 <div>
-                                  <p className="font-medium text-platinum-200">Strategic Defense Partnership</p>
-                                  <p className="text-xs text-platinum-400">LoI signed January 2026</p>
+                                  <p className="font-medium text-platinum-500-200">Strategic Defense Partnership</p>
+                                  <p className="text-xs text-platinum-500-400">LoI signed January 2026</p>
                                 </div>
                               </div>
                               <Badge variant="success">Active</Badge>
@@ -445,8 +445,8 @@ export default function UrduLanguagePage() {
                               <div className="flex items-center gap-3">
                                 <DollarSign className="h-5 w-5 text-emerald-500" />
                                 <div>
-                                  <p className="font-medium text-platinum-200">LNG Deal</p>
-                                  <p className="text-xs text-platinum-400">$3B, 10-year, 0.5M MTPA from 2028</p>
+                                  <p className="font-medium text-platinum-500-200">LNG Deal</p>
+                                  <p className="text-xs text-platinum-500-400">$3B, 10-year, 0.5M MTPA from 2028</p>
                                 </div>
                               </div>
                               <Badge variant="success">$3B</Badge>
@@ -458,8 +458,8 @@ export default function UrduLanguagePage() {
                               <div className="flex items-center gap-3">
                                 <Heart className="h-5 w-5 text-rose-500" />
                                 <div>
-                                  <p className="font-medium text-platinum-200">CEPA Agreement</p>
-                                  <p className="text-xs text-platinum-400">Signed Feb 2022, 80%+ tariff elimination</p>
+                                  <p className="font-medium text-platinum-500-200">CEPA Agreement</p>
+                                  <p className="text-xs text-platinum-500-400">Signed Feb 2022, 80%+ tariff elimination</p>
                                 </div>
                               </div>
                               <Badge variant="success">Active</Badge>
@@ -471,8 +471,8 @@ export default function UrduLanguagePage() {
                               <div className="flex items-center gap-3">
                                 <Star className="h-5 w-5 text-denim-500" />
                                 <div>
-                                  <p className="font-medium text-platinum-200">Golden Visa</p>
-                                  <p className="text-xs text-platinum-400">AED 100,000 lifetime residency</p>
+                                  <p className="font-medium text-platinum-500-200">Golden Visa</p>
+                                  <p className="text-xs text-platinum-500-400">AED 100,000 lifetime residency</p>
                                 </div>
                               </div>
                               <Badge variant="info">Open</Badge>
@@ -492,19 +492,19 @@ export default function UrduLanguagePage() {
                       <div className="grid gap-6 lg:grid-cols-4">
                         <div className="text-center">
                           <div className="text-3xl font-bold text-emerald-400">$100B</div>
-                          <p className="text-sm text-platinum-400">Bilateral Trade FY 2024-25</p>
+                          <p className="text-sm text-platinum-500-400">Bilateral Trade FY 2024-25</p>
                         </div>
                         <div className="text-center">
                           <div className="text-3xl font-bold text-gold-400">$200B</div>
-                          <p className="text-sm text-platinum-400">Trade Target by 2032</p>
+                          <p className="text-sm text-platinum-500-400">Trade Target by 2032</p>
                         </div>
                         <div className="text-center">
                           <div className="text-3xl font-bold text-rose-400">$21.6B</div>
-                          <p className="text-sm text-platinum-400">UAE Remittances to India 2024</p>
+                          <p className="text-sm text-platinum-500-400">UAE Remittances to India 2024</p>
                         </div>
                         <div className="text-center">
                           <div className="text-3xl font-bold text-info-400">$3B</div>
-                          <p className="text-sm text-platinum-400">LNG Agreement</p>
+                          <p className="text-sm text-platinum-500-400">LNG Agreement</p>
                         </div>
                       </div>
                     </CardContent>
@@ -525,16 +525,16 @@ export default function UrduLanguagePage() {
                     <CardContent>
                       <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-400">Deposits Repaid (April 2026)</span>
+                          <span className="text-sm text-platinum-500-400">Deposits Repaid (April 2026)</span>
                           <span className="text-lg font-bold text-emerald-400">$2.45B</span>
                         </div>
                         <Progress value={71} className="h-3" />
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-400">Final Installment</span>
+                          <span className="text-sm text-platinum-500-400">Final Installment</span>
                           <span className="text-lg font-bold text-gold-400">$1.0B</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-400">Final Repayment Date</span>
+                          <span className="text-sm text-platinum-500-400">Final Repayment Date</span>
                           <Badge variant="warning">April 23, 2026</Badge>
                         </div>
                       </div>
@@ -550,15 +550,15 @@ export default function UrduLanguagePage() {
                       <CardContent>
                         <div className="space-y-3">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-300">2024 Work Visas</span>
+                            <span className="text-sm text-platinum-500-300">2024 Work Visas</span>
                             <Badge variant="secondary">~64,000</Badge>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-300">Early 2025 Visas</span>
+                            <span className="text-sm text-platinum-500-300">Early 2025 Visas</span>
                             <Badge variant="destructive">~13,000</Badge>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-300">Nov 2025 Status</span>
+                            <span className="text-sm text-platinum-500-300">Nov 2025 Status</span>
                             <Badge variant="destructive">Halted</Badge>
                           </div>
                         </div>
@@ -577,21 +577,21 @@ export default function UrduLanguagePage() {
                             className="flex items-center gap-2 text-sm"
                           >
                             <AlertTriangle className="h-4 w-4 text-rose-400" />
-                            <span className="text-platinum-300">Airport Deal Scrapped (Jan 2026)</span>
+                            <span className="text-platinum-500-300">Airport Deal Scrapped (Jan 2026)</span>
                           </motion.div>
                           <motion.div
                             whileHover={{ x: 3 }}
                             className="flex items-center gap-2 text-sm"
                           >
                             <AlertTriangle className="h-4 w-4 text-rose-400" />
-                            <span className="text-platinum-300">Iran Stance Criticized (Apr 2026)</span>
+                            <span className="text-platinum-500-300">Iran Stance Criticized (Apr 2026)</span>
                           </motion.div>
                           <motion.div
                             whileHover={{ x: 3 }}
                             className="flex items-center gap-2 text-sm"
                           >
                             <TrendingDown className="h-4 w-4 text-rose-400" />
-                            <span className="text-platinum-300">Overall Sentiment: Negative</span>
+                            <span className="text-platinum-500-300">Overall Sentiment: Negative</span>
                           </motion.div>
                         </div>
                       </CardContent>
@@ -619,8 +619,8 @@ export default function UrduLanguagePage() {
                             className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center"
                           >
                             <Film className="mx-auto h-8 w-8 text-rose-400 mb-2" />
-                            <p className="font-semibold text-platinum-200">{film.film}</p>
-                            <p className="text-xs text-platinum-400">{film.year}</p>
+                            <p className="font-semibold text-platinum-500-200">{film.film}</p>
+                            <p className="text-xs text-platinum-500-400">{film.year}</p>
                           </motion.div>
                         ))}
                       </div>
@@ -636,19 +636,19 @@ export default function UrduLanguagePage() {
                       <div className="grid gap-6 lg:grid-cols-4">
                         <div className="text-center">
                           <div className="text-2xl font-bold text-gold-400">$110M</div>
-                          <p className="text-xs text-platinum-400">Construction Cost</p>
+                          <p className="text-xs text-platinum-500-400">Construction Cost</p>
                         </div>
                         <div className="text-center">
                           <div className="text-2xl font-bold text-emerald-400">Feb 2024</div>
-                          <p className="text-xs text-platinum-400">Public Opening</p>
+                          <p className="text-xs text-platinum-500-400">Public Opening</p>
                         </div>
                         <div className="text-center">
                           <div className="text-2xl font-bold text-denim-400">Lotus</div>
-                          <p className="text-xs text-platinum-400">Design Style</p>
+                          <p className="text-xs text-platinum-500-400">Design Style</p>
                         </div>
                         <div className="text-center">
                           <div className="text-2xl font-bold text-rose-400">Sandstone</div>
-                          <p className="text-xs text-platinum-400">Construction Material</p>
+                          <p className="text-xs text-platinum-500-400">Construction Material</p>
                         </div>
                       </div>
                     </CardContent>
@@ -675,7 +675,7 @@ export default function UrduLanguagePage() {
                             className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center"
                           >
                             <div className="text-2xl font-bold text-emerald-400">{item.value}</div>
-                            <p className="text-xs text-platinum-400">{item.item}</p>
+                            <p className="text-xs text-platinum-500-400">{item.item}</p>
                             {item.status && (
                               <Badge variant="success" className="mt-2">Verified</Badge>
                             )}
@@ -695,21 +695,21 @@ export default function UrduLanguagePage() {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
                             <div className="h-3 w-3 rounded-full bg-emerald-400" />
-                            <span className="text-sm text-platinum-300">High (Tier 0-1 sources)</span>
+                            <span className="text-sm text-platinum-500-300">High (Tier 0-1 sources)</span>
                           </div>
                           <span className="text-sm font-bold text-emerald-400">~60% (150+ points)</span>
                         </div>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
                             <div className="h-3 w-3 rounded-full bg-gold-400" />
-                            <span className="text-sm text-platinum-300">Medium (Tier 2 sources)</span>
+                            <span className="text-sm text-platinum-500-300">Medium (Tier 2 sources)</span>
                           </div>
                           <span className="text-sm font-bold text-gold-400">~28% (70+ points)</span>
                         </div>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
                             <div className="h-3 w-3 rounded-full bg-rose-400" />
-                            <span className="text-sm text-platinum-300">Low (Tier 3-4 sources)</span>
+                            <span className="text-sm text-platinum-500-300">Low (Tier 3-4 sources)</span>
                           </div>
                           <span className="text-sm font-bold text-rose-400">~12% (30+ points)</span>
                         </div>

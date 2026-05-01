@@ -89,8 +89,8 @@ export default function SupportPage() {
   return (
     <div className="container mx-auto px-4 py-12 max-w-6xl">
       <div className="mb-12 text-center">
-        <h1 className="text-5xl font-rajdhani font-bold text-platinum-900 mb-4">Support Center</h1>
-        <p className="text-xl text-platinum-600 max-w-2xl mx-auto">
+        <h1 className="text-5xl font-rajdhani font-bold text-platinum-500-900 mb-4">Support Center</h1>
+        <p className="text-xl text-platinum-500-600 max-w-2xl mx-auto">
           Find answers, get help, and connect with our support team for the UAE National Digital Intelligence Platform
         </p>
       </div>
@@ -98,7 +98,7 @@ export default function SupportPage() {
       {/* Quick Help */}
       <div className="mb-12">
         <GlassPanel className="p-8">
-          <h2 className="text-2xl font-rajdhani font-bold text-navy-900 mb-6">Quick Help</h2>
+          <h2 className="text-2xl font-rajdhani font-bold text-navy-500-900 mb-6">Quick Help</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <Link href="/docs">
               <Button
@@ -108,7 +108,7 @@ export default function SupportPage() {
                 <BookOpen className="h-5 w-5" />
                 <div className="text-center">
                   <div className="font-semibold">Documentation</div>
-                  <div className="text-xs text-platinum-600">Browse guides</div>
+                  <div className="text-xs text-platinum-500-600">Browse guides</div>
                 </div>
               </Button>
             </Link>
@@ -120,7 +120,7 @@ export default function SupportPage() {
                 <LayoutDashboard className="h-5 w-5" />
                 <div className="text-center">
                   <div className="font-semibold">Dashboard</div>
-                  <div className="text-xs text-platinum-600">Go to platform</div>
+                  <div className="text-xs text-platinum-500-600">Go to platform</div>
                 </div>
               </Button>
             </Link>
@@ -132,7 +132,7 @@ export default function SupportPage() {
                 <Mail className="h-5 w-5" />
                 <div className="text-center">
                   <div className="font-semibold">Email Support</div>
-                  <div className="text-xs text-platinum-600">Response within 24h</div>
+                  <div className="text-xs text-platinum-500-600">Response within 24h</div>
                 </div>
               </Button>
             </a>
@@ -142,17 +142,17 @@ export default function SupportPage() {
 
       {/* Support Categories */}
       <div className="mb-12">
-        <h2 className="text-3xl font-rajdhani font-bold text-navy-900 mb-6">Support Categories</h2>
+        <h2 className="text-3xl font-rajdhani font-bold text-navy-500-900 mb-6">Support Categories</h2>
         <div className="grid md:grid-cols-2 gap-6">
           {supportCategories.map((category) => (
             <GlassPanel key={category.title} className="p-6">
               <div className="flex items-start gap-4 mb-4">
                 <div className="text-3xl">{category.icon}</div>
-                <h3 className="text-xl font-semibold font-rajdhani text-navy-900">{category.title}</h3>
+                <h3 className="text-xl font-semibold font-rajdhani text-navy-500-900">{category.title}</h3>
               </div>
               <ul className="space-y-2">
                 {category.items.map((item, idx) => (
-                  <li key={idx} className="text-platinum-700 text-sm flex items-center gap-2">
+                  <li key={idx} className="text-platinum-500-700 text-sm flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-navy-400 shrink-0" />
                     {item}
                   </li>
@@ -165,12 +165,12 @@ export default function SupportPage() {
 
       {/* FAQ */}
       <div className="mb-12">
-        <h2 className="text-3xl font-rajdhani font-bold text-navy-900 mb-6">Frequently Asked Questions</h2>
+        <h2 className="text-3xl font-rajdhani font-bold text-navy-500-900 mb-6">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {faqs.map((faq, idx) => (
             <GlassPanel key={idx} className="p-6">
-              <h3 className="text-lg font-semibold font-rajdhani text-navy-900 mb-2">{faq.q}</h3>
-              <p className="text-platinum-700">{faq.a}</p>
+              <h3 className="text-lg font-semibold font-rajdhani text-navy-500-900 mb-2">{faq.q}</h3>
+              <p className="text-platinum-500-700">{faq.a}</p>
             </GlassPanel>
           ))}
         </div>
@@ -179,22 +179,22 @@ export default function SupportPage() {
       {/* Contact */}
       <div>
         <GlassPanel className="p-8 bg-gradient-to-br from-navy-50 to-indigo-50">
-          <h2 className="text-2xl font-rajdhani font-bold text-navy-900 mb-4">Still need help?</h2>
-          <p className="text-platinum-700 mb-6">
+          <h2 className="text-2xl font-rajdhani font-bold text-navy-500-900 mb-4">Still need help?</h2>
+          <p className="text-platinum-500-700 mb-6">
             Our support team is available to assist you with any questions or issues.
           </p>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-white p-4 rounded-lg">
-              <div className="text-sm text-platinum-600 mb-1">Email</div>
-              <div className="font-semibold text-navy-900">support@ndip.dossier.li</div>
+              <div className="text-sm text-platinum-500-600 mb-1">Email</div>
+              <div className="font-semibold text-navy-500-900">support@ndip.dossier.li</div>
             </div>
             <div className="bg-white p-4 rounded-lg">
-              <div className="text-sm text-platinum-600 mb-1">Phone</div>
-              <div className="font-semibold text-navy-900">(+91) 9999 455 667</div>
+              <div className="text-sm text-platinum-500-600 mb-1">Phone</div>
+              <div className="font-semibold text-navy-500-900">(+91) 9999 455 667</div>
             </div>
             <div className="bg-white p-4 rounded-lg">
-              <div className="text-sm text-platinum-600 mb-1">Location</div>
-              <div className="font-semibold text-navy-900">New Delhi, India</div>
+              <div className="text-sm text-platinum-500-600 mb-1">Location</div>
+              <div className="font-semibold text-navy-500-900">New Delhi, India</div>
             </div>
           </div>
         </GlassPanel>

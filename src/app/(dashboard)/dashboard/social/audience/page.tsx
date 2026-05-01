@@ -46,7 +46,7 @@ export default function AudiencePage() {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-400">Loading audience intelligence data...</div>
+        <div className="text-platinum-500-400">Loading audience intelligence data...</div>
       </div>
     )
   }
@@ -121,17 +121,17 @@ export default function AudiencePage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">AUDIENCE INTELLIGENCE</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Audience Demographics & Behavior</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Audience Demographics & Behavior</h1>
+          <p className="mt-2 text-platinum-500-400">
             UAE social media audience breakdown — demographics, behavior patterns, and platform preferences
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <Users className="h-4 w-4" />
             Export Report
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Globe className="h-4 w-4" />
             Analyze Segments
           </Button>
@@ -233,9 +233,9 @@ export default function AudiencePage() {
                                 className="h-3 w-3 rounded-full"
                                 style={{ backgroundColor: lang.color }}
                               />
-                              <span className="text-sm font-medium text-platinum-200">{lang.language}</span>
+                              <span className="text-sm font-medium text-platinum-500-200">{lang.language}</span>
                             </div>
-                            <span className="text-lg font-bold text-platinum-200">{lang.percentage}%</span>
+                            <span className="text-lg font-bold text-platinum-500-200">{lang.percentage}%</span>
                           </div>
                           <Progress value={lang.percentage} className="h-2" />
                         </div>
@@ -271,13 +271,13 @@ export default function AudiencePage() {
                       <div key={idx} className="space-y-2">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
-                            <MapPin className="h-4 w-4 text-gold" />
-                            <span className="text-sm font-medium text-platinum-200">{item.emirate}</span>
+                            <MapPin className="h-4 w-4 text-gold-700" />
+                            <span className="text-sm font-medium text-platinum-500-200">{item.emirate}</span>
                           </div>
                           <div className="flex items-center gap-4">
-                            <span className="text-sm text-platinum-400">{item.users.toLocaleString()} users</span>
-                            <span className="text-sm font-bold text-gold">{item.percentage}%</span>
-                            <span className="text-sm text-emerald">+{item.growth}%</span>
+                            <span className="text-sm text-platinum-500-400">{item.users.toLocaleString()} users</span>
+                            <span className="text-sm font-bold text-gold-700">{item.percentage}%</span>
+                            <span className="text-sm text-emerald-500">+{item.growth}%</span>
                           </div>
                         </div>
                         <Progress value={item.percentage * 2.5} className="h-2" />
@@ -298,27 +298,27 @@ export default function AudiencePage() {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
                           <div className="flex h-16 w-16 items-center justify-center rounded-full bg-navy/20">
-                            <MapPin className="h-8 w-8 text-navy" />
+                            <MapPin className="h-8 w-8 text-navy-500" />
                           </div>
                           <div>
-                            <p className="font-semibold text-platinum-200">Urban Areas</p>
-                            <p className="text-sm text-platinum-400">Dubai, Abu Dhabi, major cities</p>
+                            <p className="font-semibold text-platinum-500-200">Urban Areas</p>
+                            <p className="text-sm text-platinum-500-400">Dubai, Abu Dhabi, major cities</p>
                           </div>
                         </div>
-                        <p className="text-3xl font-bold text-navy">89%</p>
+                        <p className="text-3xl font-bold text-navy-500">89%</p>
                       </div>
                       <Progress value={89} className="h-3" />
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gold/20">
-                            <MapPin className="h-8 w-8 text-gold" />
+                          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gold-700/20">
+                            <MapPin className="h-8 w-8 text-gold-700" />
                           </div>
                           <div>
-                            <p className="font-semibold text-platinum-200">Rural Areas</p>
-                            <p className="text-sm text-platinum-400">Northern emirates, remote areas</p>
+                            <p className="font-semibold text-platinum-500-200">Rural Areas</p>
+                            <p className="text-sm text-platinum-500-400">Northern emirates, remote areas</p>
                           </div>
                         </div>
-                        <p className="text-3xl font-bold text-gold">11%</p>
+                        <p className="text-3xl font-bold text-gold-700">11%</p>
                       </div>
                       <Progress value={11} className="h-3" />
                     </div>
@@ -341,12 +341,12 @@ export default function AudiencePage() {
                         ].map((item, idx) => (
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center gap-3">
-                              <Clock className="h-4 w-4 text-navy" />
-                              <span className="text-sm font-medium text-platinum-200">{item.emirate}</span>
+                              <Clock className="h-4 w-4 text-navy-500" />
+                              <span className="text-sm font-medium text-platinum-500-200">{item.emirate}</span>
                             </div>
                             <div className="text-right">
-                              <p className="text-sm text-platinum-400">{item.peak}</p>
-                              <p className="text-sm font-bold text-gold">Activity: {item.activity}%</p>
+                              <p className="text-sm text-platinum-500-400">{item.peak}</p>
+                              <p className="text-sm font-bold text-gold-700">Activity: {item.activity}%</p>
                             </div>
                           </div>
                         ))}
@@ -432,10 +432,10 @@ export default function AudiencePage() {
                       { type: 'Stories/Reels', percentage: 12, trend: 'up' },
                     ].map((item, idx) => (
                       <div key={idx} className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-4">
-                        <Monitor className="h-5 w-5 text-gold" />
+                        <Monitor className="h-5 w-5 text-gold-700" />
                         <div className="flex-1">
-                          <p className="text-sm font-medium text-platinum-200">{item.type}</p>
-                          <p className="text-lg font-bold text-platinum-200">{item.percentage}%</p>
+                          <p className="text-sm font-medium text-platinum-500-200">{item.type}</p>
+                          <p className="text-lg font-bold text-platinum-500-200">{item.percentage}%</p>
                         </div>
                       </div>
                     ))}
@@ -486,8 +486,8 @@ export default function AudiencePage() {
                       ].map((item, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-200">{item.type}</span>
-                            <span className="text-sm font-bold text-platinum-200">{item.engagement}%</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.type}</span>
+                            <span className="text-sm font-bold text-platinum-500-200">{item.engagement}%</span>
                           </div>
                           <Progress value={item.engagement * 15} className="h-2" />
                         </div>
@@ -514,17 +514,17 @@ export default function AudiencePage() {
                         ].map((item, idx) => (
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center gap-3">
-                              <MessageSquare className="h-4 w-4 text-gold" />
-                              <span className="text-sm text-platinum-300">{item.driver}</span>
+                              <MessageSquare className="h-4 w-4 text-gold-700" />
+                              <span className="text-sm text-platinum-500-300">{item.driver}</span>
                             </div>
                             <Badge
                               variant="outline"
                               className={
                                 item.impact === 'High'
-                                  ? 'text-emerald border-emerald'
+                                  ? 'text-emerald-500 border-emerald'
                                   : item.impact === 'Medium'
-                                  ? 'text-gold border-gold'
-                                  : 'text-platinum-400 border-platinum-600'
+                                  ? 'text-gold-700 border-gold'
+                                  : 'text-platinum-500-400 border-platinum-600'
                               }
                             >
                               {item.impact}
@@ -545,36 +545,36 @@ export default function AudiencePage() {
                 <CardContent>
                   <div className="grid gap-6 lg:grid-cols-2">
                     <div className="space-y-4">
-                      <h4 className="font-semibold text-gold">Emirati Users</h4>
+                      <h4 className="font-semibold text-gold-700">Emirati Users</h4>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-400">Avg Time on Platform</span>
-                          <span className="font-bold text-platinum-200">3.8h/day</span>
+                          <span className="text-sm text-platinum-500-400">Avg Time on Platform</span>
+                          <span className="font-bold text-platinum-500-200">3.8h/day</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-400">Engagement Rate</span>
-                          <span className="font-bold text-platinum-200">4.2%</span>
+                          <span className="text-sm text-platinum-500-400">Engagement Rate</span>
+                          <span className="font-bold text-platinum-500-200">4.2%</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-400">Preferred Content</span>
-                          <span className="font-bold text-platinum-200">Cultural/Heritage</span>
+                          <span className="text-sm text-platinum-500-400">Preferred Content</span>
+                          <span className="font-bold text-platinum-500-200">Cultural/Heritage</span>
                         </div>
                       </div>
                     </div>
                     <div className="space-y-4">
-                      <h4 className="font-semibold text-navy">Expat Users</h4>
+                      <h4 className="font-semibold text-navy-500">Expat Users</h4>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-400">Avg Time on Platform</span>
-                          <span className="font-bold text-platinum-200">2.9h/day</span>
+                          <span className="text-sm text-platinum-500-400">Avg Time on Platform</span>
+                          <span className="font-bold text-platinum-500-200">2.9h/day</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-400">Engagement Rate</span>
-                          <span className="font-bold text-platinum-200">3.5%</span>
+                          <span className="text-sm text-platinum-500-400">Engagement Rate</span>
+                          <span className="font-bold text-platinum-500-200">3.5%</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-400">Preferred Content</span>
-                          <span className="font-bold text-platinum-200">Lifestyle/Business</span>
+                          <span className="text-sm text-platinum-500-400">Preferred Content</span>
+                          <span className="font-bold text-platinum-500-200">Lifestyle/Business</span>
                         </div>
                       </div>
                     </div>

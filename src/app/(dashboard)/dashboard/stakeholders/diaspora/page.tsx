@@ -44,7 +44,7 @@ export default function DiasporaPage() {
   if (!data) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-navy-400">Loading Emirati Diaspora data...</div>
+        <div className="text-navy-500-400">Loading Emirati Diaspora data...</div>
       </div>
     )
   }
@@ -76,9 +76,9 @@ export default function DiasporaPage() {
     const colors: Record<number, string> = {
       0: 'bg-red-500/20 text-red-400 border-red-500/50',
       1: 'bg-amber-500/20 text-amber-400 border-amber-500/50',
-      2: 'bg-navy-500/20 text-navy-400 border-navy-500/50',
-      3: 'bg-platinum-500/20 text-platinum-400 border-platinum-500/50',
-      4: 'bg-platinum-500/20 text-platinum-400 border-platinum-500/50',
+      2: 'bg-navy-500/20 text-navy-500-400 border-navy-500/50',
+      3: 'bg-platinum-500/20 text-platinum-500-400 border-platinum-500/50',
+      4: 'bg-platinum-500/20 text-platinum-500-400 border-platinum-500/50',
     }
     return (
       <Badge variant="outline" className={`text-xs border ${colors[tier || 0]}`}>
@@ -99,13 +99,13 @@ export default function DiasporaPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="denim" className="mb-2">INTERNATIONAL</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Emirati Diaspora</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">Emirati Diaspora</h1>
+          <p className="mt-2 text-platinum-500-400">
             {entity.mandate}
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-navy/50 text-navy hover:bg-navy/10">
+          <Button variant="outline" className="gap-2 border-navy/50 text-navy-500 hover:bg-navy/10">
             <MapPin className="h-4 w-4" />
             Consular Services
           </Button>
@@ -154,8 +154,8 @@ export default function DiasporaPage() {
             {alertLevel === 'YELLOW' && <AlertTriangle className="h-6 w-6 text-amber-400" />}
             {alertLevel === 'GREEN' && <CheckCircle className="h-6 w-6 text-emerald-400" />}
             <div>
-              <p className="font-semibold text-platinum-200">Intelligence Alert Level: {alertLevel}</p>
-              <p className="text-sm text-platinum-400">UAE Relevance: {uaeRelevance.score}/100 — {uaeRelevance.justification}</p>
+              <p className="font-semibold text-platinum-500-200">Intelligence Alert Level: {alertLevel}</p>
+              <p className="text-sm text-platinum-500-400">UAE Relevance: {uaeRelevance.score}/100 — {uaeRelevance.justification}</p>
             </div>
           </div>
           {getAlertBadge(alertLevel)}
@@ -185,19 +185,19 @@ export default function DiasporaPage() {
                       <div className="text-3xl font-bold text-amber-400">
                         {metrics.credibility?.tier || 2}
                       </div>
-                      <div className="text-sm text-platinum-400">Credibility Tier</div>
+                      <div className="text-sm text-platinum-500-400">Credibility Tier</div>
                     </div>
                     <div className="rounded-lg bg-navy-500/10 p-4 border border-navy-500/30 text-center">
-                      <div className="text-3xl font-bold text-navy-400">
+                      <div className="text-3xl font-bold text-navy-500-400">
                         {metrics.credibility?.sources || 0}
                       </div>
-                      <div className="text-sm text-platinum-400">Verified Sources</div>
+                      <div className="text-sm text-platinum-500-400">Verified Sources</div>
                     </div>
                     <div className="rounded-lg bg-platinum-500/10 p-4 border border-platinum-500/30 text-center">
-                      <div className="text-3xl font-bold text-platinum-400">
+                      <div className="text-3xl font-bold text-platinum-500-400">
                         {metrics.credibility?.lastVerified || 'N/A'}
                       </div>
-                      <div className="text-sm text-platinum-400">Last Verified</div>
+                      <div className="text-sm text-platinum-500-400">Last Verified</div>
                     </div>
                   </div>
                 </CardContent>
@@ -229,11 +229,11 @@ export default function DiasporaPage() {
                         {entity.digitalPresence?.map((account, idx) => (
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center gap-3">
-                              <Globe className="h-4 w-4 text-navy-400" />
-                              <span className="text-sm text-platinum-200">{account.platform}</span>
+                              <Globe className="h-4 w-4 text-navy-500-400" />
+                              <span className="text-sm text-platinum-500-200">{account.platform}</span>
                             </div>
                             <div className="flex items-center gap-2">
-                              <span className="text-xs text-platinum-400">{account.handle}</span>
+                              <span className="text-xs text-platinum-500-400">{account.handle}</span>
                               {account.verified && (
                                 <Badge variant="success" className="text-xs">Verified</Badge>
                               )}
@@ -268,8 +268,8 @@ export default function DiasporaPage() {
                       {redFindings.map((finding, idx) => (
                         <div key={idx} className="flex items-start justify-between rounded-lg bg-red-500/10 p-4 border border-red-500/30">
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-200">{finding.finding}</p>
-                            <p className="mt-1 text-sm text-platinum-400">Source: {finding.source}</p>
+                            <p className="font-medium text-platinum-500-200">{finding.finding}</p>
+                            <p className="mt-1 text-sm text-platinum-500-400">Source: {finding.source}</p>
                           </div>
                           <div className="text-right">
                             <Badge variant="destructive" className="text-xs">{finding.metric}</Badge>
@@ -297,8 +297,8 @@ export default function DiasporaPage() {
                       {yellowFindings.map((finding, idx) => (
                         <div key={idx} className="flex items-start justify-between rounded-lg bg-amber-500/10 p-4 border border-amber-500/30">
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-200">{finding.finding}</p>
-                            <p className="mt-1 text-sm text-platinum-400">Source: {finding.source}</p>
+                            <p className="font-medium text-platinum-500-200">{finding.finding}</p>
+                            <p className="mt-1 text-sm text-platinum-500-400">Source: {finding.source}</p>
                           </div>
                           <div className="text-right">
                             <Badge variant="warning" className="text-xs">{finding.metric}</Badge>
@@ -323,26 +323,26 @@ export default function DiasporaPage() {
                       {keyFindings?.map((finding, idx) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70">
                           <div className="flex items-center gap-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy-400">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy-500-400">
                               <Lightbulb className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-200">{finding.finding}</p>
-                              <p className="text-sm text-platinum-400">Source: {finding.source}</p>
+                              <p className="font-semibold text-platinum-500-200">{finding.finding}</p>
+                              <p className="text-sm text-platinum-500-400">Source: {finding.source}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-4">
                             <div className="text-center">
                               <Badge variant="outline" className="mb-1">{finding.metric}</Badge>
-                              <p className="text-xs text-platinum-400">Metric</p>
+                              <p className="text-xs text-platinum-500-400">Metric</p>
                             </div>
                             <div className="text-center">
                               {getTierBadge(finding.tier)}
-                              <p className="mt-1 text-xs text-platinum-400">Tier</p>
+                              <p className="mt-1 text-xs text-platinum-500-400">Tier</p>
                             </div>
                             <div className="text-center">
                               {getAlertBadge(finding.alert)}
-                              <p className="mt-1 text-xs text-platinum-400">Alert</p>
+                              <p className="mt-1 text-xs text-platinum-500-400">Alert</p>
                             </div>
                           </div>
                         </div>
@@ -365,10 +365,10 @@ export default function DiasporaPage() {
                     <div className="flex items-start justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700">
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
-                          <FileText className="h-4 w-4 text-navy-400" />
-                          <span className="font-medium text-platinum-200">{program.name}</span>
+                          <FileText className="h-4 w-4 text-navy-500-400" />
+                          <span className="font-medium text-platinum-500-200">{program.name}</span>
                         </div>
-                        <p className="mt-2 text-sm text-platinum-400">{program.description}</p>
+                        <p className="mt-2 text-sm text-platinum-500-400">{program.description}</p>
                         {program.budget && (
                           <p className="mt-2 text-sm text-gold-400 font-medium">
                             Budget: AED {program.budget.toLocaleString()}
@@ -408,9 +408,9 @@ export default function DiasporaPage() {
                               className="h-3 w-3 rounded-full"
                               style={{ backgroundColor: item.color }}
                             />
-                            <span className="text-sm font-medium text-platinum-200">{item.name}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.name}</span>
                           </div>
-                          <span className="text-lg font-bold text-platinum-200">{item.value}%</span>
+                          <span className="text-lg font-bold text-platinum-500-200">{item.value}%</span>
                         </div>
                         <Progress
                           value={item.value}
@@ -429,10 +429,10 @@ export default function DiasporaPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-navy-400">
+                    <div className="text-4xl font-bold text-navy-500-400">
                       {metrics.sentiment?.overall || 50}
                     </div>
-                    <div className="text-sm text-platinum-400 mt-1">Overall Sentiment Score</div>
+                    <div className="text-sm text-platinum-500-400 mt-1">Overall Sentiment Score</div>
                   </div>
                 </CardContent>
               </Card>

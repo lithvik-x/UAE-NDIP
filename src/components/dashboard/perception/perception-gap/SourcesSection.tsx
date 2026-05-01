@@ -25,8 +25,8 @@ const credibilityColors: Record<string, string> = {
 const typeColors: Record<string, string> = {
   'NGO': 'bg-rose-500/20 text-rose-400',
   'Think Tank': 'bg-cyan-500/20 text-cyan-400',
-  'Government': 'bg-gold/20 text-gold',
-  'Media': 'bg-navy/20 text-navy',
+  'Government': 'bg-gold-700/20 text-gold-700',
+  'Media': 'bg-navy/20 text-navy-500',
   'Crowdsourced': 'bg-purple-500/20 text-purple-400',
 }
 
@@ -89,7 +89,7 @@ export function SourcesSection({ data }: SourcesSectionProps) {
                       </div>
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="font-semibold text-platinum-100">{source.source}</span>
+                          <span className="font-semibold text-platinum-500-100">{source.source}</span>
                           <Badge className={`text-xs ${typeColors[source.type]}`}>
                             {source.type}
                           </Badge>
@@ -98,12 +98,12 @@ export function SourcesSection({ data }: SourcesSectionProps) {
                           <span className={`text-xs ${credibilityColors[source.credibility]}`}>
                             {source.credibility}
                           </span>
-                          <span className="text-xs text-platinum-500">|</span>
+                          <span className="text-xs text-platinum-500-500">|</span>
                           <Badge className={`text-xs ${focusColors[source.uaeFocus]}`}>
                             {source.uaeFocus} Focus
                           </Badge>
-                          <span className="text-xs text-platinum-500">|</span>
-                          <span className="text-xs text-platinum-400">{source.refreshRate}</span>
+                          <span className="text-xs text-platinum-500-500">|</span>
+                          <span className="text-xs text-platinum-500-400">{source.refreshRate}</span>
                         </div>
                       </div>
                     </div>
@@ -113,7 +113,7 @@ export function SourcesSection({ data }: SourcesSectionProps) {
                       rel="noopener noreferrer"
                       className="p-2 rounded-lg hover:bg-platinum-700/50 transition-colors"
                     >
-                      <ExternalLink className="h-4 w-4 text-platinum-400" />
+                      <ExternalLink className="h-4 w-4 text-platinum-500-400" />
                     </a>
                   </motion.div>
                 ))}
@@ -123,12 +123,12 @@ export function SourcesSection({ data }: SourcesSectionProps) {
 
           <div className="space-y-6">
             <div className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
-              <h4 className="text-sm font-semibold text-platinum-300 mb-4">Source Types</h4>
+              <h4 className="text-sm font-semibold text-platinum-500-300 mb-4">Source Types</h4>
               <PieChart data={sourceTypeData} height={180} showLegend={true} />
             </div>
 
             <div className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
-              <h4 className="text-sm font-semibold text-platinum-300 mb-4">UAE Focus</h4>
+              <h4 className="text-sm font-semibold text-platinum-500-300 mb-4">UAE Focus</h4>
               <PieChart data={uaeFocusData} height={180} showLegend={true} />
             </div>
           </div>
@@ -144,11 +144,11 @@ export function SourcesSection({ data }: SourcesSectionProps) {
           <table className="w-full">
             <thead>
               <tr className="border-b border-platinum-700">
-                <th className="text-left py-3 px-4 text-xs font-semibold text-platinum-400 uppercase tracking-wide">Gap Category</th>
-                <th className="text-left py-3 px-4 text-xs font-semibold text-platinum-400 uppercase tracking-wide">UAE Narrative</th>
-                <th className="text-center py-3 px-4 text-xs font-semibold text-platinum-400 uppercase tracking-wide">Severity</th>
-                <th className="text-center py-3 px-4 text-xs font-semibold text-platinum-400 uppercase tracking-wide">Credibility</th>
-                <th className="text-center py-3 px-4 text-xs font-semibold text-platinum-400 uppercase tracking-wide">Trend</th>
+                <th className="text-left py-3 px-4 text-xs font-semibold text-platinum-500-400 uppercase tracking-wide">Gap Category</th>
+                <th className="text-left py-3 px-4 text-xs font-semibold text-platinum-500-400 uppercase tracking-wide">UAE Narrative</th>
+                <th className="text-center py-3 px-4 text-xs font-semibold text-platinum-500-400 uppercase tracking-wide">Severity</th>
+                <th className="text-center py-3 px-4 text-xs font-semibold text-platinum-500-400 uppercase tracking-wide">Credibility</th>
+                <th className="text-center py-3 px-4 text-xs font-semibold text-platinum-500-400 uppercase tracking-wide">Trend</th>
               </tr>
             </thead>
             <tbody>
@@ -161,10 +161,10 @@ export function SourcesSection({ data }: SourcesSectionProps) {
                   className="border-b border-platinum-800 hover:bg-platinum-800/30"
                 >
                   <td className="py-3 px-4">
-                    <span className="font-medium text-platinum-200">{row.gapCategory}</span>
+                    <span className="font-medium text-platinum-500-200">{row.gapCategory}</span>
                   </td>
                   <td className="py-3 px-4">
-                    <span className="text-sm text-platinum-400">{row.uaeNarrative}</span>
+                    <span className="text-sm text-platinum-500-400">{row.uaeNarrative}</span>
                   </td>
                   <td className="py-3 px-4 text-center">
                     <Badge
@@ -206,39 +206,39 @@ export function SourcesSection({ data }: SourcesSectionProps) {
         <div className="grid gap-6 lg:grid-cols-3">
           <div className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border text-center">
             <RefreshCw className="h-8 w-8 text-cyan-400 mx-auto mb-3" />
-            <div className="text-3xl font-bold text-platinum-100">{data.enrichmentMetadata?.totalSourcesFetched || '15+'}</div>
-            <div className="text-sm text-platinum-400 mt-1">Sources Fetched</div>
+            <div className="text-3xl font-bold text-platinum-500-100">{data.enrichmentMetadata?.totalSourcesFetched || '15+'}</div>
+            <div className="text-sm text-platinum-500-400 mt-1">Sources Fetched</div>
           </div>
 
           <div className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border text-center">
             <CheckCircle className="h-8 w-8 text-emerald-400 mx-auto mb-3" />
-            <div className="text-3xl font-bold text-platinum-100">{data.enrichmentMetadata?.dataPointsExtracted || '200+'}</div>
-            <div className="text-sm text-platinum-400 mt-1">Data Points Extracted</div>
+            <div className="text-3xl font-bold text-platinum-500-100">{data.enrichmentMetadata?.dataPointsExtracted || '200+'}</div>
+            <div className="text-sm text-platinum-500-400 mt-1">Data Points Extracted</div>
           </div>
 
           <div className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border text-center">
             <AlertCircle className="h-8 w-8 text-rose-400 mx-auto mb-3" />
-            <div className="text-3xl font-bold text-platinum-100">{data.enrichmentMetadata?.gapsIdentified || '10'}</div>
-            <div className="text-sm text-platinum-400 mt-1">Major Gap Categories</div>
+            <div className="text-3xl font-bold text-platinum-500-100">{data.enrichmentMetadata?.gapsIdentified || '10'}</div>
+            <div className="text-sm text-platinum-500-400 mt-1">Major Gap Categories</div>
           </div>
         </div>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
             <div className="text-lg font-bold text-emerald-400">100%</div>
-            <div className="text-xs text-platinum-400">Queries Executed</div>
+            <div className="text-xs text-platinum-500-400">Queries Executed</div>
           </div>
           <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
             <div className="text-lg font-bold text-emerald-400">100%</div>
-            <div className="text-xs text-platinum-400">Pages Fetched</div>
+            <div className="text-xs text-platinum-500-400">Pages Fetched</div>
           </div>
           <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
             <div className="text-lg font-bold text-emerald-400">100%</div>
-            <div className="text-xs text-platinum-400">Statistics Verified</div>
+            <div className="text-xs text-platinum-500-400">Statistics Verified</div>
           </div>
           <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
             <div className="text-lg font-bold text-emerald-400">100%</div>
-            <div className="text-xs text-platinum-400">Cross-Referenced</div>
+            <div className="text-xs text-platinum-500-400">Cross-Referenced</div>
           </div>
         </div>
       </GlassPanel>

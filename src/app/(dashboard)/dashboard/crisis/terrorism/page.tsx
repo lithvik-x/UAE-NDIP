@@ -84,7 +84,7 @@ export default function TerrorismExtremismPage() {
   if (!data) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-400">Loading Terrorism & Extremism data...</div>
+        <div className="text-platinum-500-400">Loading Terrorism & Extremism data...</div>
       </div>
     )
   }
@@ -186,7 +186,7 @@ export default function TerrorismExtremismPage() {
               <Badge variant="denim" className="mb-2">CRISIS TYPE</Badge>
             </motion.div>
             <motion.h1
-              className="text-3xl font-extrabold gradient-text-navy"
+              className="text-3xl font-extrabold gradient-text-navy-500"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
@@ -194,7 +194,7 @@ export default function TerrorismExtremismPage() {
               Terrorism & Extremism
             </motion.h1>
             <motion.p
-              className="mt-2 text-platinum-400"
+              className="mt-2 text-platinum-500-400"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -210,7 +210,7 @@ export default function TerrorismExtremismPage() {
           >
             <Button
               variant="outline"
-              className="gap-2 border-rose-500/50 text-rose hover:bg-rose-500/10 transition-all duration-300 hover:scale-105"
+              className="gap-2 border-rose-500/50 text-rose-500 hover:bg-rose-500/10 transition-all duration-300 hover:scale-105"
             >
               <Eye className="h-4 w-4" />
               Watchlist
@@ -286,48 +286,48 @@ export default function TerrorismExtremismPage() {
           <motion.div variants={scaleIn} transition={{ delay: 0.1 }}>
             <Card className="glass-card hover:border-rose-500/30 transition-all duration-300">
               <CardContent className="p-4 text-center">
-                <p className="text-xs text-platinum-400">9/11 Hijackers thru UAE</p>
-                <p className="text-2xl font-bold text-rose">17/19</p>
+                <p className="text-xs text-platinum-500-400">9/11 Hijackers thru UAE</p>
+                <p className="text-2xl font-bold text-rose-500">17/19</p>
               </CardContent>
             </Card>
           </motion.div>
           <motion.div variants={scaleIn} transition={{ delay: 0.15 }}>
             <Card className="glass-card hover:border-orange-500/30 transition-all duration-300">
               <CardContent className="p-4 text-center">
-                <p className="text-xs text-platinum-400">FATF Grey List</p>
-                <p className="text-2xl font-bold text-orange">2019-24</p>
+                <p className="text-xs text-platinum-500-400">FATF Grey List</p>
+                <p className="text-2xl font-bold text-orange-500">2019-24</p>
               </CardContent>
             </Card>
           </motion.div>
           <motion.div variants={scaleIn} transition={{ delay: 0.2 }}>
             <Card className="glass-card hover:border-gold-500/30 transition-all duration-300">
               <CardContent className="p-4 text-center">
-                <p className="text-xs text-platinum-400">Iran Strikes 2026</p>
-                <p className="text-2xl font-bold text-gold">3,000+</p>
+                <p className="text-xs text-platinum-500-400">Iran Strikes 2026</p>
+                <p className="text-2xl font-bold text-gold-700">3,000+</p>
               </CardContent>
             </Card>
           </motion.div>
           <motion.div variants={scaleIn} transition={{ delay: 0.25 }}>
             <Card className="glass-card hover:border-emerald-500/30 transition-all duration-300">
               <CardContent className="p-4 text-center">
-                <p className="text-xs text-platinum-400">Iran-linked Arrests</p>
-                <p className="text-2xl font-bold text-emerald">27+</p>
+                <p className="text-xs text-platinum-500-400">Iran-linked Arrests</p>
+                <p className="text-2xl font-bold text-emerald-500">27+</p>
               </CardContent>
             </Card>
           </motion.div>
           <motion.div variants={scaleIn} transition={{ delay: 0.3 }}>
             <Card className="glass-card hover:border-navy-500/30 transition-all duration-300">
               <CardContent className="p-4 text-center">
-                <p className="text-xs text-platinum-400">Houthi Attack 2022</p>
-                <p className="text-2xl font-bold text-navy">3 Killed</p>
+                <p className="text-xs text-platinum-500-400">Houthi Attack 2022</p>
+                <p className="text-2xl font-bold text-navy-500">3 Killed</p>
               </CardContent>
             </Card>
           </motion.div>
           <motion.div variants={scaleIn} transition={{ delay: 0.35 }}>
             <Card className="glass-card hover:border-rose-500/30 transition-all duration-300">
               <CardContent className="p-4 text-center">
-                <p className="text-xs text-platinum-400">Death Sentences</p>
-                <p className="text-2xl font-bold text-rose">3+1 Life</p>
+                <p className="text-xs text-platinum-500-400">Death Sentences</p>
+                <p className="text-2xl font-bold text-rose-500">3+1 Life</p>
               </CardContent>
             </Card>
           </motion.div>
@@ -370,7 +370,7 @@ export default function TerrorismExtremismPage() {
                       <Card className="glass-card transition-all duration-300 hover:border-rose-500/50">
                         <CardHeader>
                           <CardTitle className="text-lg flex items-center gap-2">
-                            <Target className="h-5 w-5 text-rose" />
+                            <Target className="h-5 w-5 text-rose-500" />
                             Attack Type Distribution
                           </CardTitle>
                           <CardDescription>Weapons/attack methods used against UAE</CardDescription>
@@ -399,7 +399,7 @@ export default function TerrorismExtremismPage() {
                       <Card className="glass-card transition-all duration-300 hover:border-orange-500/50">
                         <CardHeader>
                           <CardTitle className="text-lg flex items-center gap-2">
-                            <Database className="h-5 w-5 text-orange" />
+                            <Database className="h-5 w-5 text-orange-500" />
                             Terrorist Entity Lists
                           </CardTitle>
                           <CardDescription>Designated organizations by list type</CardDescription>
@@ -426,7 +426,7 @@ export default function TerrorismExtremismPage() {
                       <Card className="glass-card transition-all duration-300 hover:border-gold-500/50">
                         <CardHeader>
                           <CardTitle className="text-lg flex items-center gap-2">
-                            <Heart className="h-5 w-5 text-gold" />
+                            <Heart className="h-5 w-5 text-gold-700" />
                             Public Sentiment
                           </CardTitle>
                           <CardDescription>Sentiment distribution during threats</CardDescription>
@@ -451,7 +451,7 @@ export default function TerrorismExtremismPage() {
                       <Card className="glass-card transition-all duration-300 hover:border-navy-500/50">
                         <CardHeader>
                           <CardTitle className="text-lg flex items-center gap-2">
-                            <Activity className="h-5 w-5 text-navy" />
+                            <Activity className="h-5 w-5 text-navy-500" />
                             Activity Over Time
                           </CardTitle>
                           <CardDescription>Significant terrorism events 1973-2026</CardDescription>
@@ -522,7 +522,7 @@ export default function TerrorismExtremismPage() {
                     <Card className="glass-card">
                       <CardHeader>
                         <CardTitle className="text-lg flex items-center gap-2">
-                          <FileText className="h-5 w-5 text-rose" />
+                          <FileText className="h-5 w-5 text-rose-500" />
                           Event Timeline
                         </CardTitle>
                         <CardDescription>Chronological list of incidents</CardDescription>
@@ -542,10 +542,10 @@ export default function TerrorismExtremismPage() {
                                 <div className="absolute -left-8 top-0 h-4 w-4 rounded-full bg-rose-500 border-2 border-platinum-900 animate-pulse" />
                                 <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:border-rose-500/50 transition-all duration-300">
                                   <div className="flex items-center justify-between mb-1">
-                                    <p className="font-semibold text-platinum-200">{event.event}</p>
+                                    <p className="font-semibold text-platinum-500-200">{event.event}</p>
                                     <Badge variant="outline" className="text-xs">{event.date}</Badge>
                                   </div>
-                                  <p className="text-sm text-platinum-400">{event.description}</p>
+                                  <p className="text-sm text-platinum-500-400">{event.description}</p>
                                 </div>
                               </motion.div>
                             ))}
@@ -594,7 +594,7 @@ export default function TerrorismExtremismPage() {
                               transition={{ delay: idx * 0.05 }}
                               whileHover={{ scale: 1.01 }}
                             >
-                              <p className="font-medium text-platinum-200">{typeof finding === 'string' ? finding : finding.finding || finding}</p>
+                              <p className="font-medium text-platinum-500-200">{typeof finding === 'string' ? finding : finding.finding || finding}</p>
                             </motion.div>
                           ))}
                         </div>
@@ -611,7 +611,7 @@ export default function TerrorismExtremismPage() {
                     <Card className="glass-card">
                       <CardHeader>
                         <CardTitle className="text-lg flex items-center gap-2">
-                          <Users className="h-5 w-5 text-orange" />
+                          <Users className="h-5 w-5 text-orange-500" />
                           Stakeholder Impacts
                         </CardTitle>
                         <CardDescription>Affected groups and their status</CardDescription>
@@ -629,8 +629,8 @@ export default function TerrorismExtremismPage() {
                                 whileHover={{ scale: 1.02 }}
                               >
                                 <div className="flex items-center gap-3">
-                                  <Users className="h-4 w-4 text-rose" />
-                                  <span className="text-sm font-medium text-platinum-200">{impact.stakeholder}</span>
+                                  <Users className="h-4 w-4 text-rose-500" />
+                                  <span className="text-sm font-medium text-platinum-500-200">{impact.stakeholder}</span>
                                 </div>
                                 <Badge variant="outline" className="text-rose-300 border-rose-500/50">{impact.sentiment}</Badge>
                               </motion.div>
@@ -650,7 +650,7 @@ export default function TerrorismExtremismPage() {
                     <Card className="glass-card">
                       <CardHeader>
                         <CardTitle className="text-lg flex items-center gap-2">
-                          <Shield className="h-5 w-5 text-emerald" />
+                          <Shield className="h-5 w-5 text-emerald-500" />
                           Response Metrics
                         </CardTitle>
                         <CardDescription>Counter-terrorism response indicators</CardDescription>
@@ -661,28 +661,28 @@ export default function TerrorismExtremismPage() {
                             className="rounded-lg bg-platinum-800/50 p-4 hover:bg-platinum-800/70 transition-all duration-300"
                             whileHover={{ scale: 1.05 }}
                           >
-                            <p className="text-xs text-platinum-400">Casualties (Total)</p>
+                            <p className="text-xs text-platinum-500-400">Casualties (Total)</p>
                             <p className="text-lg font-bold text-rose-400">{responseMetrics?.casualties || 0}</p>
                           </motion.div>
                           <motion.div
                             className="rounded-lg bg-platinum-800/50 p-4 hover:bg-platinum-800/70 transition-all duration-300"
                             whileHover={{ scale: 1.05 }}
                           >
-                            <p className="text-xs text-platinum-400">Affected Population</p>
-                            <p className="text-lg font-bold text-platinum-200">{((responseMetrics?.affectedPopulation || 0) / 1e6).toFixed(1)}M</p>
+                            <p className="text-xs text-platinum-500-400">Affected Population</p>
+                            <p className="text-lg font-bold text-platinum-500-200">{((responseMetrics?.affectedPopulation || 0) / 1e6).toFixed(1)}M</p>
                           </motion.div>
                           <motion.div
                             className="rounded-lg bg-platinum-800/50 p-4 hover:bg-platinum-800/70 transition-all duration-300"
                             whileHover={{ scale: 1.05 }}
                           >
-                            <p className="text-xs text-platinum-400">Stage</p>
-                            <p className="text-lg font-bold text-gold">{data.phoenixStage}</p>
+                            <p className="text-xs text-platinum-500-400">Stage</p>
+                            <p className="text-lg font-bold text-gold-700">{data.phoenixStage}</p>
                           </motion.div>
                           <motion.div
                             className="rounded-lg bg-platinum-800/50 p-4 hover:bg-platinum-800/70 transition-all duration-300"
                             whileHover={{ scale: 1.05 }}
                           >
-                            <p className="text-xs text-platinum-400">Severity</p>
+                            <p className="text-xs text-platinum-500-400">Severity</p>
                             <p className="text-lg font-bold text-rose-400">{data.severity}/5</p>
                           </motion.div>
                         </div>
@@ -714,7 +714,7 @@ export default function TerrorismExtremismPage() {
                     <Card className="glass-card">
                       <CardHeader>
                         <CardTitle className="text-lg flex items-center gap-2">
-                          <Target className="h-5 w-5 text-rose" />
+                          <Target className="h-5 w-5 text-rose-500" />
                           Threat Actors Assessment
                         </CardTitle>
                         <CardDescription>Comparative threat, capability, and intent analysis</CardDescription>
@@ -739,7 +739,7 @@ export default function TerrorismExtremismPage() {
                     <Card className="glass-card">
                       <CardHeader>
                         <CardTitle className="text-lg flex items-center gap-2">
-                          <Database className="h-5 w-5 text-orange" />
+                          <Database className="h-5 w-5 text-orange-500" />
                           Intelligence Sources
                         </CardTitle>
                         <CardDescription>Source reliability and tier distribution</CardDescription>
@@ -747,7 +747,7 @@ export default function TerrorismExtremismPage() {
                       <CardContent>
                         <div className="grid gap-6 lg:grid-cols-2">
                           <div>
-                            <h4 className="text-sm font-medium text-platinum-300 mb-4">Source Tier Distribution</h4>
+                            <h4 className="text-sm font-medium text-platinum-500-300 mb-4">Source Tier Distribution</h4>
                             <PieChart
                               data={tierDistribution}
                               height={250}
@@ -755,7 +755,7 @@ export default function TerrorismExtremismPage() {
                             />
                           </div>
                           <div>
-                            <h4 className="text-sm font-medium text-platinum-300 mb-4">Intelligence Quality</h4>
+                            <h4 className="text-sm font-medium text-platinum-500-300 mb-4">Intelligence Quality</h4>
                             <ScrollArea className="h-[250px]">
                               <div className="space-y-2">
                                 {data.sources?.slice(0, 10).map((source, idx) => (
@@ -767,8 +767,8 @@ export default function TerrorismExtremismPage() {
                                     transition={{ delay: idx * 0.05 }}
                                   >
                                     <div className="flex items-center gap-3">
-                                      <Crosshair className="h-4 w-4 text-navy" />
-                                      <span className="text-sm font-medium text-platinum-200">{source.source}</span>
+                                      <Crosshair className="h-4 w-4 text-navy-500" />
+                                      <span className="text-sm font-medium text-platinum-500-200">{source.source}</span>
                                     </div>
                                     <div className="flex items-center gap-2">
                                       <Badge variant="outline" className="text-xs">{source.tier}</Badge>
@@ -793,7 +793,7 @@ export default function TerrorismExtremismPage() {
                     <Card className="glass-card">
                       <CardHeader>
                         <CardTitle className="text-lg flex items-center gap-2">
-                          <Scale className="h-5 w-5 text-gold" />
+                          <Scale className="h-5 w-5 text-gold-700" />
                           Counter-Terrorism Legal Framework
                         </CardTitle>
                         <CardDescription>Designation hierarchy and enforcement structure</CardDescription>
@@ -838,7 +838,7 @@ export default function TerrorismExtremismPage() {
                     <Card className="glass-card">
                       <CardHeader>
                         <CardTitle className="text-lg flex items-center gap-2">
-                          <Building className="h-5 w-5 text-rose" />
+                          <Building className="h-5 w-5 text-rose-500" />
                           Organization Categories
                         </CardTitle>
                         <CardDescription>By designated list</CardDescription>
@@ -859,8 +859,8 @@ export default function TerrorismExtremismPage() {
                               whileHover={{ scale: 1.02 }}
                             >
                               <div className="flex items-center justify-between">
-                                <span className="text-sm font-medium text-platinum-200">{item.list}</span>
-                                <span className="text-lg font-bold text-rose">{item.count}</span>
+                                <span className="text-sm font-medium text-platinum-500-200">{item.list}</span>
+                                <span className="text-lg font-bold text-rose-500">{item.count}</span>
                               </div>
                               <Progress value={(item.count / 714) * 100} className="h-2" />
                             </motion.div>
@@ -879,7 +879,7 @@ export default function TerrorismExtremismPage() {
                     <Card className="glass-card">
                       <CardHeader>
                         <CardTitle className="text-lg flex items-center gap-2">
-                          <Globe className="h-5 w-5 text-orange" />
+                          <Globe className="h-5 w-5 text-orange-500" />
                           Intelligence Sources
                         </CardTitle>
                         <CardDescription>Source reliability ratings</CardDescription>
@@ -896,8 +896,8 @@ export default function TerrorismExtremismPage() {
                                 transition={{ delay: idx * 0.05 }}
                               >
                                 <div className="flex items-center gap-3">
-                                  <Crosshair className="h-4 w-4 text-navy" />
-                                  <span className="text-sm font-medium text-platinum-200">{source.source}</span>
+                                  <Crosshair className="h-4 w-4 text-navy-500" />
+                                  <span className="text-sm font-medium text-platinum-500-200">{source.source}</span>
                                 </div>
                                 <div className="flex items-center gap-2">
                                   <Badge variant="outline" className="text-xs">{source.tier}</Badge>
@@ -927,20 +927,20 @@ export default function TerrorismExtremismPage() {
                       <CardContent>
                         <div className="grid grid-cols-2 gap-4">
                           <div className="rounded-lg bg-platinum-800/50 p-3">
-                            <p className="text-xs text-platinum-400">17 of 19</p>
-                            <p className="text-sm font-bold text-platinum-200">9/11 hijackers transited UAE</p>
+                            <p className="text-xs text-platinum-500-400">17 of 19</p>
+                            <p className="text-sm font-bold text-platinum-500-200">9/11 hijackers transited UAE</p>
                           </div>
                           <div className="rounded-lg bg-platinum-800/50 p-3">
-                            <p className="text-xs text-platinum-400">2019-2024</p>
-                            <p className="text-sm font-bold text-platinum-200">FATF Grey List Period</p>
+                            <p className="text-xs text-platinum-500-400">2019-2024</p>
+                            <p className="text-sm font-bold text-platinum-500-200">FATF Grey List Period</p>
                           </div>
                           <div className="rounded-lg bg-platinum-800/50 p-3">
-                            <p className="text-xs text-platinum-400">3,000+</p>
-                            <p className="text-sm font-bold text-platinum-200">Iranian missiles/drones (2026)</p>
+                            <p className="text-xs text-platinum-500-400">3,000+</p>
+                            <p className="text-sm font-bold text-platinum-500-200">Iranian missiles/drones (2026)</p>
                           </div>
                           <div className="rounded-lg bg-platinum-800/50 p-3">
-                            <p className="text-xs text-platinum-400">"Little Sparta"</p>
-                            <p className="text-sm font-bold text-platinum-200">US nickname for UAE forces</p>
+                            <p className="text-xs text-platinum-500-400">"Little Sparta"</p>
+                            <p className="text-sm font-bold text-platinum-500-200">US nickname for UAE forces</p>
                           </div>
                         </div>
                       </CardContent>

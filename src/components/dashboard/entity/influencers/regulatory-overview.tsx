@@ -53,7 +53,7 @@ export function RegulatoryOverview({
         <Card className="glass-card">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <Scale className="h-5 w-5 text-gold" />
+              <Scale className="h-5 w-5 text-gold-700" />
               UAE Media Law
             </CardTitle>
             <CardDescription>Federal Law No. 55 of 2023</CardDescription>
@@ -62,20 +62,20 @@ export function RegulatoryOverview({
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-3 glass-subtle rounded-lg">
-                  <p className="text-xs text-platinum-500 dark:text-platinum-400">Enforcing Body</p>
-                  <p className="text-sm font-semibold text-navy-900 dark:text-platinum-100">{uaeMediaLaw.enforcingBody}</p>
+                  <p className="text-xs text-platinum-500-500 dark:text-platinum-500-400">Enforcing Body</p>
+                  <p className="text-sm font-semibold text-navy-500-900 dark:text-platinum-500-100">{uaeMediaLaw.enforcingBody}</p>
                 </div>
                 <div className="p-3 glass-subtle rounded-lg">
-                  <p className="text-xs text-platinum-500 dark:text-platinum-400">Effective Date</p>
-                  <p className="text-sm font-semibold text-navy-900 dark:text-platinum-100">{uaeMediaLaw.effectiveDate}</p>
+                  <p className="text-xs text-platinum-500-500 dark:text-platinum-500-400">Effective Date</p>
+                  <p className="text-sm font-semibold text-navy-500-900 dark:text-platinum-500-100">{uaeMediaLaw.effectiveDate}</p>
                 </div>
                 <div className="p-3 glass-subtle rounded-lg">
-                  <p className="text-xs text-platinum-500 dark:text-platinum-400">Permit Deadline</p>
+                  <p className="text-xs text-platinum-500-500 dark:text-platinum-500-400">Permit Deadline</p>
                   <p className="text-sm font-semibold text-emerald-600 dark:text-emerald-400">{uaeMediaLaw.advertiserPermitDeadline}</p>
                 </div>
                 <div className="p-3 glass-subtle rounded-lg">
-                  <p className="text-xs text-platinum-500 dark:text-platinum-400">Permit Cost</p>
-                  <p className="text-sm font-semibold text-navy-900 dark:text-platinum-100">{uaeMediaLaw.permitCost}</p>
+                  <p className="text-xs text-platinum-500-500 dark:text-platinum-500-400">Permit Cost</p>
+                  <p className="text-sm font-semibold text-navy-500-900 dark:text-platinum-500-100">{uaeMediaLaw.permitCost}</p>
                 </div>
               </div>
             </div>
@@ -98,8 +98,8 @@ export function RegulatoryOverview({
               {eligibilityRequirements.map((req, idx) => (
                 <div key={idx} className="flex items-center justify-between p-3 glass-subtle rounded-lg">
                   <div>
-                    <p className="font-semibold text-navy-900 dark:text-platinum-100">{req.requirement}</p>
-                    <p className="text-xs text-platinum-500">{req.details}</p>
+                    <p className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{req.requirement}</p>
+                    <p className="text-xs text-platinum-500-500">{req.details}</p>
                   </div>
                   <Badge variant="success" className="text-xs">Required</Badge>
                 </div>
@@ -130,8 +130,8 @@ export function RegulatoryOverview({
                     )}
                   </div>
                   <div className="flex-1 pb-4">
-                    <p className="text-xs text-platinum-500">{item.date}</p>
-                    <p className="text-sm font-medium text-navy-900 dark:text-platinum-100">{item.event}</p>
+                    <p className="text-xs text-platinum-500-500">{item.date}</p>
+                    <p className="text-sm font-medium text-navy-500-900 dark:text-platinum-500-100">{item.event}</p>
                   </div>
                 </div>
               ))}
@@ -151,7 +151,7 @@ export function RegulatoryOverview({
             <div className="space-y-3">
               {complianceRequirements.map((req, idx) => (
                 <div key={idx} className="flex items-center justify-between p-3 glass-subtle rounded-lg">
-                  <span className="text-sm text-platinum-700 dark:text-platinum-300">{req.requirement}</span>
+                  <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{req.requirement}</span>
                   <Badge
                     variant={req.status === 'Mandatory' || req.status === 'Enforced' ? 'success' : 'secondary'}
                     className="text-xs"
@@ -179,16 +179,16 @@ export function RegulatoryOverview({
             <Table>
               <TableHeader>
                 <TableRow className="border-b border-platinum-200/50">
-                  <TableHead className="text-platinum-700 font-semibold">Violation</TableHead>
-                  <TableHead className="text-platinum-700 font-semibold">Fine (AED)</TableHead>
-                  <TableHead className="text-platinum-700 font-semibold">Category</TableHead>
+                  <TableHead className="text-platinum-500-700 font-semibold">Violation</TableHead>
+                  <TableHead className="text-platinum-500-700 font-semibold">Fine (AED)</TableHead>
+                  <TableHead className="text-platinum-500-700 font-semibold">Category</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {regulatoryFines.map((fine, idx) => (
                   <TableRow key={idx} className="border-b border-platinum-100/50">
-                    <TableCell className="text-sm text-platinum-700">{fine.violation}</TableCell>
-                    <TableCell className="text-sm font-bold text-navy-900 dark:text-platinum-100">{fine.fineAED}</TableCell>
+                    <TableCell className="text-sm text-platinum-500-700">{fine.violation}</TableCell>
+                    <TableCell className="text-sm font-bold text-navy-500-900 dark:text-platinum-500-100">{fine.fineAED}</TableCell>
                     <TableCell>{getFineCategoryBadge(fine.category)}</TableCell>
                   </TableRow>
                 ))}

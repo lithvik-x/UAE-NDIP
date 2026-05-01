@@ -42,7 +42,7 @@ export default function OilDiscoveryPage() {
   if (!data) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-400">Loading Oil Discovery data...</div>
+        <div className="text-platinum-500-400">Loading Oil Discovery data...</div>
       </div>
     )
   }
@@ -95,17 +95,17 @@ export default function OilDiscoveryPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">H-PRE</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Oil Discovery & Development</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Oil Discovery & Development</h1>
+          <p className="mt-2 text-platinum-500-400">
             The discovery and development of petroleum resources - Transforming a region (1935-1971)
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <Factory className="h-4 w-4" />
             Industry Reports
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Droplet className="h-4 w-4" />
             Oil History
           </Button>
@@ -158,7 +158,7 @@ export default function OilDiscoveryPage() {
                   <CardTitle className="text-lg">About This Era</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-platinum-300 leading-relaxed">
+                  <p className="text-platinum-500-300 leading-relaxed">
                     The discovery of oil in the Arabian Gulf region between 1935 and 1971 transformed what were
                     once humble fishing villages and pearl diving centers into some of the world's wealthiest
                     nations. This era chronicles the arrival of Western oil companies, the negotiation of
@@ -198,10 +198,10 @@ export default function OilDiscoveryPage() {
                         {data.policyOutcomes?.filter(p => p.policy.toLowerCase().includes('oil') || p.policy.includes('Petroleum')).map((policy, idx) => (
                           <div key={idx} className="rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center justify-between mb-1">
-                              <span className="text-sm font-medium text-gold">{policy.policy}</span>
+                              <span className="text-sm font-medium text-gold-700">{policy.policy}</span>
                               <Badge variant="outline" className="text-xs">{policy.year}</Badge>
                             </div>
-                            <p className="text-xs text-platinum-400">{policy.impact}</p>
+                            <p className="text-xs text-platinum-500-400">{policy.impact}</p>
                           </div>
                         ))}
                       </div>
@@ -220,7 +220,7 @@ export default function OilDiscoveryPage() {
                     {data.entityInvolvement?.filter(e =>
                       e.includes('ADMA') || e.includes('IPC') || e.includes('PDTC') || e.includes('Peter Cox')
                     ).map((entity, idx) => (
-                      <Badge key={idx} variant="outline" className="border-gold/50 text-gold">{entity}</Badge>
+                      <Badge key={idx} variant="outline" className="border-gold-700/50 text-gold-700">{entity}</Badge>
                     ))}
                   </div>
                 </CardContent>
@@ -233,31 +233,31 @@ export default function OilDiscoveryPage() {
         <TabsContent value="discovery" className="space-y-6">
           <GlassPanel title="Discovery Process" description="The journey to finding oil">
             <div className="space-y-4">
-              <Card className="glass-card border-gold/30">
+              <Card className="glass-card border-gold-700/30">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Droplet className="h-5 w-5 text-gold" />
+                    <Droplet className="h-5 w-5 text-gold-700" />
                     Umm Shaif Discovery - 1958
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-platinum-300 leading-relaxed mb-4">
+                  <p className="text-platinum-500-300 leading-relaxed mb-4">
                     ADMA struck oil at the Umm Shaif offshore field at approximately 8,755 feet depth.
                     This discovery marked a turning point in the country's history, transforming Abu Dhabi
                     from a small fishing village to a wealthy emirate with global significance.
                   </p>
                   <div className="grid gap-4 sm:grid-cols-3">
                     <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
-                      <div className="text-2xl font-bold text-gold">8,755 ft</div>
-                      <div className="text-xs text-platinum-400">Depth</div>
+                      <div className="text-2xl font-bold text-gold-700">8,755 ft</div>
+                      <div className="text-xs text-platinum-500-400">Depth</div>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
-                      <div className="text-2xl font-bold text-gold">ADMA</div>
-                      <div className="text-xs text-platinum-400">Company</div>
+                      <div className="text-2xl font-bold text-gold-700">ADMA</div>
+                      <div className="text-xs text-platinum-500-400">Company</div>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
-                      <div className="text-2xl font-bold text-gold">Offshore</div>
-                      <div className="text-xs text-platinum-400">Location</div>
+                      <div className="text-2xl font-bold text-gold-700">Offshore</div>
+                      <div className="text-xs text-platinum-500-400">Location</div>
                     </div>
                   </div>
                 </CardContent>
@@ -276,10 +276,10 @@ export default function OilDiscoveryPage() {
                       { challenge: 'Marine Conditions', detail: 'Shallow Gulf waters and storms' },
                     ].map((item, idx) => (
                       <div key={idx} className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3">
-                        <Cog className="h-5 w-5 text-gold shrink-0 mt-0.5" />
+                        <Cog className="h-5 w-5 text-gold-700 shrink-0 mt-0.5" />
                         <div>
-                          <div className="font-medium text-platinum-200">{item.challenge}</div>
-                          <div className="text-xs text-platinum-400">{item.detail}</div>
+                          <div className="font-medium text-platinum-500-200">{item.challenge}</div>
+                          <div className="text-xs text-platinum-500-400">{item.detail}</div>
                         </div>
                       </div>
                     ))}
@@ -295,18 +295,18 @@ export default function OilDiscoveryPage() {
           <GlassPanel title="Key Oil Milestones" description="Critical events in petroleum development">
             <div className="space-y-4">
               {oilMilestones.map((milestone, idx) => (
-                <Card key={idx} className="glass-card border-gold/30">
+                <Card key={idx} className="glass-card border-gold-700/30">
                   <CardContent className="p-4">
                     <div className="flex items-start gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-gold text-navy-950 font-bold text-lg shrink-0">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-gold text-navy-500-950 font-bold text-lg shrink-0">
                         {idx + 1}
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="text-sm font-mono text-gold">{milestone.year}</span>
+                          <span className="text-sm font-mono text-gold-700">{milestone.year}</span>
                         </div>
-                        <h3 className="text-lg font-bold text-platinum-100 mb-1">{milestone.event}</h3>
-                        <p className="text-sm text-platinum-400">{milestone.detail}</p>
+                        <h3 className="text-lg font-bold text-platinum-500-100 mb-1">{milestone.event}</h3>
+                        <p className="text-sm text-platinum-500-400">{milestone.detail}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -327,27 +327,27 @@ export default function OilDiscoveryPage() {
                   return yearA - yearB
                 }).map((event, idx) => (
                   <div key={idx} className="flex items-start gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/20 text-gold shrink-0">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-700/20 text-gold-700 shrink-0">
                       <Droplet className="h-6 w-6" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-lg font-mono font-bold text-gold">{event.date}</span>
+                        <span className="text-lg font-mono font-bold text-gold-700">{event.date}</span>
                         {getSignificanceBadge(event.significance)}
                       </div>
-                      <h3 className="text-xl font-bold text-platinum-100 mb-2">{event.title}</h3>
-                      <p className="text-platinum-400 leading-relaxed">{event.description}</p>
+                      <h3 className="text-xl font-bold text-platinum-500-100 mb-2">{event.title}</h3>
+                      <p className="text-platinum-500-400 leading-relaxed">{event.description}</p>
                       {event.entities && event.entities.length > 0 && (
                         <div className="mt-3 flex flex-wrap gap-2">
                           {event.entities.map((entity, eIdx) => (
-                            <Badge key={eIdx} variant="outline" className="text-xs border-gold/30 text-gold">{entity}</Badge>
+                            <Badge key={eIdx} variant="outline" className="text-xs border-gold-700/30 text-gold-700">{entity}</Badge>
                           ))}
                         </div>
                       )}
                       {event.outcome && (
                         <div className="mt-3 rounded-lg bg-emerald-500/10 p-2 border border-emerald-500/30">
                           <span className="text-xs text-emerald-400 font-medium">Outcome: </span>
-                          <span className="text-xs text-platinum-300">{event.outcome}</span>
+                          <span className="text-xs text-platinum-500-300">{event.outcome}</span>
                         </div>
                       )}
                     </div>

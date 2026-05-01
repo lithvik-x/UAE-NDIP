@@ -15,6 +15,27 @@ const config = {
         mono: ['var(--font-mono)', 'monospace'],
       },
       colors: {
+        // Semantic Design System Colors + CSS Variables + Full Palette
+        success: {
+          DEFAULT: '#10B981',
+          light: '#D1FAE5',
+          dark: '#059669',
+        },
+        warning: {
+          DEFAULT: '#F59E0B',
+          light: '#FEF3C7',
+          dark: '#D97706',
+        },
+        error: {
+          DEFAULT: '#EF4444',
+          light: '#FEE2E2',
+          dark: '#DC2626',
+        },
+        info: {
+          DEFAULT: '#6366F1',
+          light: '#E0E7FF',
+          dark: '#4F46E5',
+        },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -249,10 +270,10 @@ const config = {
           200: '#FDE68A',
           300: '#FCD34D',
           400: '#FBBF24',
-          500: 'hsl(var(--text-gold-bright))',  /* was hardcoded - accessible now */
-          600: 'hsl(var(--text-gold-bright))',  /* was #D97706 - remapped */
-          700: 'hsl(var(--text-gold))',          /* was hardcoded - accessible 4.7:1 */
-          800: 'hsl(var(--text-gold-muted))',    /* was hardcoded - accessible 5.9:1 */
+          500: '#F59E0B',   /* standard amber-500 — use for bg/border with opacity only */
+          600: '#D97706',   /* darker gold — use for bg/border with opacity */
+          700: '#B45309',   /* accessible gold-700 — WCAG 4.7:1 on white — PRIMARY for text */
+          800: '#92400E',   /* accessible gold-800 — WCAG 5.9:1 on white — darker accent */
           900: '#78350F',
         },
         platinum: {

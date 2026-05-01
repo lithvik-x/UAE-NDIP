@@ -97,17 +97,17 @@ export default function FutureProjectionsPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="emerald" className="mb-2">H-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Future Projections</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald-500">Future Projections</h1>
+          <p className="mt-2 text-platinum-500-400">
             {data.description || 'Centennial 2071 vision, strategic goals, and projected milestones'}
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-emerald/50 text-emerald hover:bg-emerald/10">
+          <Button variant="outline" className="gap-2 border-emerald-500/50 text-emerald-500 hover:bg-emerald-500/10">
             <Eye className="h-4 w-4" />
             Project Scanner
           </Button>
-          <Button className="bg-gradient-emerald hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-emerald hover:opacity-90 text-navy-500-950 gap-2">
             <Sparkles className="h-4 w-4" />
             Analyze Vision
           </Button>
@@ -212,11 +212,11 @@ export default function FutureProjectionsPage() {
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
-                            <Calendar className="h-4 w-4 text-emerald" />
-                            <span className="font-medium text-platinum-200">{item.year}</span>
+                            <Calendar className="h-4 w-4 text-emerald-500" />
+                            <span className="font-medium text-platinum-500-200">{item.year}</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <span className="text-sm text-platinum-400">{item.milestone}</span>
+                            <span className="text-sm text-platinum-500-400">{item.milestone}</span>
                             <Badge
                               variant={item.status === 'On Track' ? 'success' : 'warning'}
                               className="text-xs"
@@ -248,15 +248,15 @@ export default function FutureProjectionsPage() {
                     {vision2071Goals.map((goal, idx) => (
                       <div key={idx} className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="font-medium text-platinum-200">{goal.goal}</span>
+                          <span className="font-medium text-platinum-500-200">{goal.goal}</span>
                           <div className="flex items-center gap-4">
-                            <span className="text-sm text-platinum-400">Current: {goal.current}</span>
-                            <span className="text-sm text-emerald">Target: {goal.target}</span>
+                            <span className="text-sm text-platinum-500-400">Current: {goal.current}</span>
+                            <span className="text-sm text-emerald-500">Target: {goal.target}</span>
                           </div>
                         </div>
                         <div className="relative">
                           <Progress value={goal.progress} className="h-3" />
-                          <span className="absolute right-0 top-[-20px] text-xs font-bold text-emerald">{goal.progress}%</span>
+                          <span className="absolute right-0 top-[-20px] text-xs font-bold text-emerald-500">{goal.progress}%</span>
                         </div>
                       </div>
                     ))}
@@ -320,12 +320,12 @@ export default function FutureProjectionsPage() {
                       {projectPipelineData.map((project, idx) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div className="flex items-center gap-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-700/20 text-gold-700">
                               <Milestone className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-200">{project.project}</p>
-                              <p className="text-sm text-platinum-400">{project.sector}</p>
+                              <p className="font-semibold text-platinum-500-200">{project.project}</p>
+                              <p className="text-sm text-platinum-500-400">{project.sector}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-4">
@@ -338,7 +338,7 @@ export default function FutureProjectionsPage() {
                             >
                               {project.status}
                             </Badge>
-                            <span className="text-sm font-bold text-gold">{project.completion}%</span>
+                            <span className="text-sm font-bold text-gold-700">{project.completion}%</span>
                           </div>
                         </div>
                       ))}
@@ -413,8 +413,8 @@ export default function FutureProjectionsPage() {
                       {sectorProjectionData.map((item, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-200">{item.sector}</span>
-                            <span className="text-lg font-bold text-emerald">+{item.growth}%</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.sector}</span>
+                            <span className="text-lg font-bold text-emerald-500">+{item.growth}%</span>
                           </div>
                           <Progress
                             value={(item.growth / 125) * 100}

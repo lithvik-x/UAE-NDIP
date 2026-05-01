@@ -52,17 +52,17 @@ export function TwitterXInfluenceSection({ data }: TwitterXInfluenceSectionProps
             <CardContent>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-platinum-300">Estimated Bot Percentage</span>
+                  <span className="text-sm text-platinum-500-300">Estimated Bot Percentage</span>
                   <span className="text-2xl font-bold text-rose-400">{botActivity.estimatedBotPercent}%</span>
                 </div>
                 <Progress value={botActivity.estimatedBotPercent} className="h-3" />
                 <div className="flex items-center justify-between mt-4">
-                  <span className="text-sm text-platinum-300">Coordinated Inauthentic Behavior</span>
+                  <span className="text-sm text-platinum-500-300">Coordinated Inauthentic Behavior</span>
                   <Badge variant="destructive">Detected</Badge>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-platinum-300">Confidence Level</span>
-                  <span className="text-lg font-bold text-gold">{Math.round(botActivity.confidence * 100)}%</span>
+                  <span className="text-sm text-platinum-500-300">Confidence Level</span>
+                  <span className="text-lg font-bold text-gold-700">{Math.round(botActivity.confidence * 100)}%</span>
                 </div>
               </div>
             </CardContent>
@@ -72,7 +72,7 @@ export function TwitterXInfluenceSection({ data }: TwitterXInfluenceSectionProps
           <Card className="glass-card border-glass">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Bot className="h-5 w-5 text-platinum" />
+                <Bot className="h-5 w-5 text-platinum-500" />
                 Bot Network Operations
               </CardTitle>
               <CardDescription>Major coordinated influence operations</CardDescription>
@@ -92,7 +92,7 @@ export function TwitterXInfluenceSection({ data }: TwitterXInfluenceSectionProps
           <Card className="glass-card border-glass">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Target className="h-5 w-5 text-gold" />
+                <Target className="h-5 w-5 text-gold-700" />
                 Coordinated Inauthentic Behavior Indicators
               </CardTitle>
               <CardDescription>Detected patterns of automated/coordinated activity</CardDescription>
@@ -107,8 +107,8 @@ export function TwitterXInfluenceSection({ data }: TwitterXInfluenceSectionProps
                     transition={{ delay: idx * 0.1 }}
                     className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-4"
                   >
-                    <Bot className="h-5 w-5 text-platinum" />
-                    <span className="text-sm text-platinum-200">{indicator}</span>
+                    <Bot className="h-5 w-5 text-platinum-500" />
+                    <span className="text-sm text-platinum-500-200">{indicator}</span>
                     <Badge variant="destructive" className="ml-auto">Active</Badge>
                   </motion.div>
                 ))}

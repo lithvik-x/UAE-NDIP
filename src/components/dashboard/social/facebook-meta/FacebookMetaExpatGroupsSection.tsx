@@ -59,7 +59,7 @@ function GroupCard({ group, icon: Icon, index }: GroupCardProps) {
       <Icon className="h-5 w-5 text-info flex-shrink-0 mt-1" />
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-1">
-          <span className="text-sm font-medium text-platinum-200 truncate">{group.name}</span>
+          <span className="text-sm font-medium text-platinum-500-200 truncate">{group.name}</span>
           <Badge
             variant="outline"
             className={`text-xs shrink-0 ${credibilityColors[group.credibility] || credibilityColors['Medium']}`}
@@ -67,7 +67,7 @@ function GroupCard({ group, icon: Icon, index }: GroupCardProps) {
             {group.credibility}
           </Badge>
         </div>
-        <p className="text-xs text-platinum-400 mb-2 line-clamp-2">{group.description || group.focus}</p>
+        <p className="text-xs text-platinum-500-400 mb-2 line-clamp-2">{group.description || group.focus}</p>
         {group.members && (
           <div className="flex items-center gap-1 text-xs text-info">
             <Users className="h-3 w-3" />
@@ -113,7 +113,7 @@ export function FacebookMetaExpatGroupsSection() {
           <Card className="glass-card border-glass">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Users className="h-5 w-5 text-gold" />
+                <Users className="h-5 w-5 text-gold-700" />
                 Dubai Expat Groups
               </CardTitle>
               <CardDescription>Dubai-specific expat communities</CardDescription>
@@ -131,7 +131,7 @@ export function FacebookMetaExpatGroupsSection() {
           <Card className="glass-card border-glass">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Briefcase className="h-5 w-5 text-emerald" />
+                <Briefcase className="h-5 w-5 text-emerald-500" />
                 Job & Employment Groups
               </CardTitle>
               <CardDescription>Professional networking and job opportunities</CardDescription>
@@ -149,7 +149,7 @@ export function FacebookMetaExpatGroupsSection() {
           <Card className="glass-card border-glass">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Home className="h-5 w-5 text-rose" />
+                <Home className="h-5 w-5 text-rose-500" />
                 Housing & Real Estate Groups
               </CardTitle>
               <CardDescription>Apartments, villas, and property discussions</CardDescription>
@@ -167,7 +167,7 @@ export function FacebookMetaExpatGroupsSection() {
           <Card className="glass-card border-glass">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <ShoppingBag className="h-5 w-5 text-platinum" />
+                <ShoppingBag className="h-5 w-5 text-platinum-500" />
                 Business & Entrepreneurship Groups
               </CardTitle>
               <CardDescription>Business networking and startup communities</CardDescription>
@@ -185,7 +185,7 @@ export function FacebookMetaExpatGroupsSection() {
           <Card className="glass-card border-glass">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Heart className="h-5 w-5 text-rose" />
+                <Heart className="h-5 w-5 text-rose-500" />
                 Women & Family Groups
               </CardTitle>
               <CardDescription>Women-specific communities and family support</CardDescription>
@@ -203,7 +203,7 @@ export function FacebookMetaExpatGroupsSection() {
           <Card className="glass-card border-glass">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Church className="h-5 w-5 text-gold" />
+                <Church className="h-5 w-5 text-gold-700" />
                 Religious & Cultural Groups
               </CardTitle>
               <CardDescription>Interfaith and cultural community groups</CardDescription>
@@ -220,17 +220,17 @@ export function FacebookMetaExpatGroupsSection() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
                     whileHover={{ scale: 1.01 }}
-                    className="flex items-center justify-between p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50 hover:border-gold/50 transition-colors"
+                    className="flex items-center justify-between p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50 hover:border-gold-700/50 transition-colors"
                   >
                     <div className="flex items-center gap-3">
-                      <Church className="h-5 w-5 text-gold" />
+                      <Church className="h-5 w-5 text-gold-700" />
                       <div>
-                        <span className="text-sm font-medium text-platinum-200">{group.name}</span>
-                        <p className="text-xs text-platinum-400 mt-0.5">{group.focus}</p>
+                        <span className="text-sm font-medium text-platinum-500-200">{group.name}</span>
+                        <p className="text-xs text-platinum-500-400 mt-0.5">{group.focus}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="text-xs text-platinum-400">{group.members}</span>
+                      <span className="text-xs text-platinum-500-400">{group.members}</span>
                       <ExternalLink className="h-4 w-4 text-info" />
                     </div>
                   </motion.a>
@@ -243,7 +243,7 @@ export function FacebookMetaExpatGroupsSection() {
           <Card className="glass-card border-glass">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Dumbbell className="h-5 w-5 text-emerald" />
+                <Dumbbell className="h-5 w-5 text-emerald-500" />
                 Health & Fitness Groups
               </CardTitle>
               <CardDescription>Fitness communities and wellness groups</CardDescription>

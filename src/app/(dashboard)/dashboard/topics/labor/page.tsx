@@ -200,11 +200,11 @@ export default function LaborEmploymentPage() {
       <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
           <Badge variant="default" className="mb-2">S-SECTOR</Badge>
-          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-platinum">Labor & Employment</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-platinum-500">Labor & Employment</h1>
+          <p className="mt-2 text-platinum-500-400">
             {laborEmploymentData.description}
           </p>
-          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500">
+          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500-500">
             <span className="flex items-center gap-1">
               <Calendar className="h-4 w-4" />
               {laborReportMetadata.enrichedDate}
@@ -220,11 +220,11 @@ export default function LaborEmploymentPage() {
           </div>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-platinum/50 text-platinum hover:bg-platinum/10">
+          <Button variant="outline" className="gap-2 border-platinum/50 text-platinum-500 hover:bg-platinum/10">
             <Briefcase className="h-4 w-4" />
             Workforce
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-500-950 gap-2">
             <Zap className="h-4 w-4" />
             Analyze
           </Button>
@@ -278,7 +278,7 @@ export default function LaborEmploymentPage() {
             { id: 'LAB-5', name: 'ILO Compliance' },
             { id: 'LAB-6', name: 'Worker Rights' },
           ].map((area) => (
-            <Badge key={area.id} variant="outline" className="border-platinum/30 text-platinum">
+            <Badge key={area.id} variant="outline" className="border-platinum/30 text-platinum-500">
               {area.id} - {area.name}
             </Badge>
           ))}
@@ -308,7 +308,7 @@ export default function LaborEmploymentPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <TrendingUp className="h-5 w-5 text-platinum" />
+                      <TrendingUp className="h-5 w-5 text-platinum-500" />
                       Sentiment Distribution
                     </CardTitle>
                   </CardHeader>
@@ -320,17 +320,17 @@ export default function LaborEmploymentPage() {
                       donut={true}
                     />
                     <div className="mt-4 grid grid-cols-3 gap-2">
-                      <div className="text-center p-2 bg-emerald/20 rounded-lg">
-                        <p className="text-lg font-bold text-emerald">52%</p>
-                        <p className="text-xs text-platinum-500">Positive</p>
+                      <div className="text-center p-2 bg-emerald-500/20 rounded-lg">
+                        <p className="text-lg font-bold text-emerald-500">52%</p>
+                        <p className="text-xs text-platinum-500-500">Positive</p>
                       </div>
-                      <div className="text-center p-2 bg-rose/20 rounded-lg">
-                        <p className="text-lg font-bold text-rose">32%</p>
-                        <p className="text-xs text-platinum-500">Negative</p>
+                      <div className="text-center p-2 bg-rose-500/20 rounded-lg">
+                        <p className="text-lg font-bold text-rose-500">32%</p>
+                        <p className="text-xs text-platinum-500-500">Negative</p>
                       </div>
                       <div className="text-center p-2 bg-platinum/20 rounded-lg">
-                        <p className="text-lg font-bold text-platinum">16%</p>
-                        <p className="text-xs text-platinum-500">Neutral</p>
+                        <p className="text-lg font-bold text-platinum-500">16%</p>
+                        <p className="text-xs text-platinum-500-500">Neutral</p>
                       </div>
                     </div>
                   </CardContent>
@@ -340,7 +340,7 @@ export default function LaborEmploymentPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Users className="h-5 w-5 text-gold" />
+                      <Users className="h-5 w-5 text-gold-700" />
                       Workforce Composition
                     </CardTitle>
                   </CardHeader>
@@ -353,11 +353,11 @@ export default function LaborEmploymentPage() {
                     ].map((item, index) => (
                       <div key={index} className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-platinum-200">{item.label}</span>
-                          <span className="text-lg font-bold text-platinum">{item.value}</span>
+                          <span className="text-sm font-medium text-platinum-500-200">{item.label}</span>
+                          <span className="text-lg font-bold text-platinum-500">{item.value}</span>
                         </div>
                         <Progress value={Math.random() * 60 + 20} className="h-2" />
-                        <p className="text-xs text-platinum-400">{item.sublabel}</p>
+                        <p className="text-xs text-platinum-500-400">{item.sublabel}</p>
                       </div>
                     ))}
                   </CardContent>
@@ -368,7 +368,7 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <TrendingUp className="h-5 w-5 text-platinum" />
+                    <TrendingUp className="h-5 w-5 text-platinum-500" />
                     Sentiment by Topic
                   </CardTitle>
                 </CardHeader>
@@ -388,7 +388,7 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Globe className="h-5 w-5 text-emerald" />
+                    <Globe className="h-5 w-5 text-emerald-500" />
                     Why This Matters for UAE
                   </CardTitle>
                 </CardHeader>
@@ -396,8 +396,8 @@ export default function LaborEmploymentPage() {
                   <div className="grid gap-3 md:grid-cols-2">
                     {uaeRelevanceWhy.map((point, idx) => (
                       <div key={idx} className="flex items-start gap-2 p-3 bg-platinum-800/50 rounded-lg">
-                        <CheckCircle className="h-5 w-5 text-emerald shrink-0 mt-0.5" />
-                        <span className="text-sm text-platinum-300">{point}</span>
+                        <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+                        <span className="text-sm text-platinum-500-300">{point}</span>
                       </div>
                     ))}
                   </div>
@@ -405,22 +405,22 @@ export default function LaborEmploymentPage() {
               </Card>
 
               {/* Key Tension */}
-              <Card className="glass-card border-gold/50">
+              <Card className="glass-card border-gold-700/50">
                 <CardHeader>
-                  <CardTitle className="text-lg flex items-center gap-2 text-gold">
+                  <CardTitle className="text-lg flex items-center gap-2 text-gold-700">
                     <AlertTriangle className="h-5 w-5" />
                     Key Tension: Reform vs Enforcement
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
-                    <div className="p-4 bg-emerald/10 border border-emerald/30 rounded-lg">
-                      <h4 className="font-bold text-emerald mb-2">Reform Momentum</h4>
-                      <p className="text-sm text-platinum-300">{keyTension.reform}</p>
+                    <div className="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
+                      <h4 className="font-bold text-emerald-500 mb-2">Reform Momentum</h4>
+                      <p className="text-sm text-platinum-500-300">{keyTension.reform}</p>
                     </div>
-                    <div className="p-4 bg-rose/10 border border-rose/30 rounded-lg">
-                      <h4 className="font-bold text-rose mb-2">Enforcement Gap</h4>
-                      <p className="text-sm text-platinum-300">{keyTension.enforcement}</p>
+                    <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-lg">
+                      <h4 className="font-bold text-rose-500 mb-2">Enforcement Gap</h4>
+                      <p className="text-sm text-platinum-500-300">{keyTension.enforcement}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -441,7 +441,7 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Users className="h-5 w-5 text-gold" />
+                    <Users className="h-5 w-5 text-gold-700" />
                     Key Workforce Metrics
                   </CardTitle>
                 </CardHeader>
@@ -449,9 +449,9 @@ export default function LaborEmploymentPage() {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {workforceMetrics.slice(0, 8).map((metric, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
-                        <p className="text-2xl font-bold text-gold">{metric.figure}</p>
-                        <p className="text-sm text-platinum-400 mt-1">{metric.metric}</p>
-                        <p className="text-xs text-platinum-500">{metric.source}</p>
+                        <p className="text-2xl font-bold text-gold-700">{metric.figure}</p>
+                        <p className="text-sm text-platinum-500-400 mt-1">{metric.metric}</p>
+                        <p className="text-xs text-platinum-500-500">{metric.source}</p>
                       </div>
                     ))}
                   </div>
@@ -462,7 +462,7 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Globe className="h-5 w-5 text-platinum" />
+                    <Globe className="h-5 w-5 text-platinum-500" />
                     Migrant Worker Origins
                   </CardTitle>
                 </CardHeader>
@@ -482,26 +482,26 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Building className="h-5 w-5 text-emerald" />
+                    <Building className="h-5 w-5 text-emerald-500" />
                     ILO Context
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="p-4 bg-platinum-800/50 rounded-lg">
-                      <p className="text-sm text-platinum-400">Member Since</p>
-                      <p className="text-2xl font-bold text-platinum">{iloContext.memberSince}</p>
+                      <p className="text-sm text-platinum-500-400">Member Since</p>
+                      <p className="text-2xl font-bold text-platinum-500">{iloContext.memberSince}</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg">
-                      <p className="text-sm text-platinum-400">Migrant Workers</p>
-                      <p className="text-2xl font-bold text-platinum">{iloContext.migrantWorkers}</p>
+                      <p className="text-sm text-platinum-500-400">Migrant Workers</p>
+                      <p className="text-2xl font-bold text-platinum-500">{iloContext.migrantWorkers}</p>
                     </div>
                   </div>
                   <div className="mt-4 space-y-2">
-                    <p className="text-sm text-platinum-400">Collaboration Areas:</p>
+                    <p className="text-sm text-platinum-500-400">Collaboration Areas:</p>
                     <div className="flex flex-wrap gap-2">
                       {iloContext.collaborationAreas.split(', ').map((area, idx) => (
-                        <Badge key={idx} variant="outline" className="text-platinum border-platinum/30">{area}</Badge>
+                        <Badge key={idx} variant="outline" className="text-platinum-500 border-platinum/30">{area}</Badge>
                       ))}
                     </div>
                   </div>
@@ -523,7 +523,7 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <FileText className="h-5 w-5 text-emerald" />
+                    <FileText className="h-5 w-5 text-emerald-500" />
                     Legislative Reforms
                   </CardTitle>
                 </CardHeader>
@@ -532,10 +532,10 @@ export default function LaborEmploymentPage() {
                     {kafalaLegislativeReforms.map((reform, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg border border-platinum-700">
                         <div className="flex items-center justify-between mb-1">
-                          <span className="font-bold text-platinum">{reform.reform}</span>
-                          <Badge variant="outline" className="text-emerald border-emerald/50">{reform.year}</Badge>
+                          <span className="font-bold text-platinum-500">{reform.reform}</span>
+                          <Badge variant="outline" className="text-emerald-500 border-emerald-500/50">{reform.year}</Badge>
                         </div>
-                        <p className="text-sm text-platinum-400">{reform.keyProvision}</p>
+                        <p className="text-sm text-platinum-500-400">{reform.keyProvision}</p>
                       </div>
                     ))}
                   </div>
@@ -553,12 +553,12 @@ export default function LaborEmploymentPage() {
                 <CardContent>
                   <div className="space-y-3">
                     {kafalaPersistentAbuses.map((abuse, idx) => (
-                      <div key={idx} className="p-3 bg-rose/5 border border-rose/20 rounded-lg">
+                      <div key={idx} className="p-3 bg-rose-500/5 border border-rose-500/20 rounded-lg">
                         <div className="flex items-center justify-between mb-1">
                           <span className="font-medium text-rose-300">{abuse.issue}</span>
                           <Badge variant="destructive" className="text-xs">{abuse.source}</Badge>
                         </div>
-                        <p className="text-sm text-platinum-300">{abuse.evidence}</p>
+                        <p className="text-sm text-platinum-500-300">{abuse.evidence}</p>
                       </div>
                     ))}
                   </div>
@@ -569,7 +569,7 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Shield className="h-5 w-5 text-platinum" />
+                    <Shield className="h-5 w-5 text-platinum-500" />
                     Government Response Rating (Walk Free)
                   </CardTitle>
                 </CardHeader>
@@ -577,8 +577,8 @@ export default function LaborEmploymentPage() {
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                     {governmentResponseRating.map((rating, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
-                        <p className="text-2xl font-bold text-platinum">{rating.score}</p>
-                        <p className="text-xs text-platinum-400 mt-1">{rating.category}</p>
+                        <p className="text-2xl font-bold text-platinum-500">{rating.score}</p>
+                        <p className="text-xs text-platinum-500-400 mt-1">{rating.category}</p>
                       </div>
                     ))}
                   </div>
@@ -589,7 +589,7 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <UsersRound className="h-5 w-5 text-gold" />
+                    <UsersRound className="h-5 w-5 text-gold-700" />
                     Vulnerable Groups
                   </CardTitle>
                 </CardHeader>
@@ -601,7 +601,7 @@ export default function LaborEmploymentPage() {
                       'Shepherds, camel herders',
                       'Construction and manual laborers',
                     ].map((group, idx) => (
-                      <Badge key={idx} variant="outline" className="text-platinum border-gold/30">{group}</Badge>
+                      <Badge key={idx} variant="outline" className="text-platinum-500 border-gold-700/30">{group}</Badge>
                     ))}
                   </div>
                 </CardContent>
@@ -622,32 +622,32 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Shield className="h-5 w-5 text-emerald" />
+                    <Shield className="h-5 w-5 text-emerald-500" />
                     Wage Protection System (WPS)
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-3">
-                    <div className="p-4 bg-emerald/20 rounded-lg text-center">
-                      <p className="text-3xl font-bold text-emerald">99%+</p>
-                      <p className="text-sm text-platinum-400">Coverage</p>
+                    <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-emerald-500">99%+</p>
+                      <p className="text-sm text-platinum-500-400">Coverage</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
-                      <p className="text-3xl font-bold text-platinum">{wpsOverview.monthlyTransfers}</p>
-                      <p className="text-sm text-platinum-400">Monthly Transfers</p>
+                      <p className="text-3xl font-bold text-platinum-500">{wpsOverview.monthlyTransfers}</p>
+                      <p className="text-sm text-platinum-500-400">Monthly Transfers</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
-                      <p className="text-2xl font-bold text-platinum">2009</p>
-                      <p className="text-sm text-platinum-400">Launched</p>
+                      <p className="text-2xl font-bold text-platinum-500">2009</p>
+                      <p className="text-sm text-platinum-500-400">Launched</p>
                     </div>
                   </div>
                   <div className="mt-4">
-                    <p className="text-sm text-platinum-400 mb-2">2025 WPS Updates:</p>
+                    <p className="text-sm text-platinum-500-400 mb-2">2025 WPS Updates:</p>
                     <div className="grid gap-2 md:grid-cols-2">
                       {wps2025Updates.map((update, idx) => (
                         <div key={idx} className="flex items-center gap-2 p-2 bg-platinum-800/50 rounded-lg">
-                          <CheckCircle className="h-4 w-4 text-emerald shrink-0" />
-                          <span className="text-sm text-platinum-300">{update.item}</span>
+                          <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" />
+                          <span className="text-sm text-platinum-500-300">{update.item}</span>
                         </div>
                       ))}
                     </div>
@@ -659,33 +659,33 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <DollarSign className="h-5 w-5 text-gold" />
+                    <DollarSign className="h-5 w-5 text-gold-700" />
                     Minimum Wages
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
-                    <div className="p-4 bg-emerald/10 border border-emerald/30 rounded-lg">
-                      <h4 className="font-bold text-emerald mb-2">Emiratis (Private Sector)</h4>
+                    <div className="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
+                      <h4 className="font-bold text-emerald-500 mb-2">Emiratis (Private Sector)</h4>
                       <div className="space-y-2">
                         {emiratiMinimumWages.map((wage, idx) => (
                           <div key={idx} className="flex justify-between p-2 bg-platinum-800/50 rounded">
-                            <span className="text-sm text-platinum-400">{wage.effectiveDate}</span>
-                            <span className="font-bold text-platinum">{wage.minimumMonthlySalary}</span>
+                            <span className="text-sm text-platinum-500-400">{wage.effectiveDate}</span>
+                            <span className="font-bold text-platinum-500">{wage.minimumMonthlySalary}</span>
                           </div>
                         ))}
                       </div>
                     </div>
-                    <div className="p-4 bg-rose/10 border border-rose/30 rounded-lg">
-                      <h4 className="font-bold text-rose mb-2">Expatriates</h4>
+                    <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-lg">
+                      <h4 className="font-bold text-rose-500 mb-2">Expatriates</h4>
                       <div className="space-y-2">
                         <div className="p-2 bg-platinum-800/50 rounded">
                           <p className="text-sm text-rose-400">Status</p>
-                          <p className="font-bold text-platinum">{expatriateMinimumWage.status}</p>
+                          <p className="font-bold text-platinum-500">{expatriateMinimumWage.status}</p>
                         </div>
                         <div className="p-2 bg-platinum-800/50 rounded">
                           <p className="text-sm text-rose-400">Lowest Observed</p>
-                          <p className="font-bold text-platinum">{expatriateMinimumWage.lowestObserved}</p>
+                          <p className="font-bold text-platinum-500">{expatriateMinimumWage.lowestObserved}</p>
                         </div>
                       </div>
                     </div>
@@ -697,35 +697,35 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Award className="h-5 w-5 text-platinum" />
+                    <Award className="h-5 w-5 text-platinum-500" />
                     End-of-Service Gratuity
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
                     <div>
-                      <h4 className="text-sm font-semibold text-gold mb-2">Traditional (Fixed-Term Contracts)</h4>
+                      <h4 className="text-sm font-semibold text-gold-700 mb-2">Traditional (Fixed-Term Contracts)</h4>
                       <div className="space-y-2">
                         {traditionalGratuity.calculations.map((calc, idx) => (
                           <div key={idx} className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
-                            <span className="text-sm text-platinum-300">{calc.servicePeriod}</span>
-                            <span className="text-sm font-medium text-platinum">{calc.calculation}</span>
+                            <span className="text-sm text-platinum-500-300">{calc.servicePeriod}</span>
+                            <span className="text-sm font-medium text-platinum-500">{calc.calculation}</span>
                           </div>
                         ))}
                       </div>
-                      <p className="text-xs text-platinum-500 mt-2">Payment deadline: {traditionalGratuity.paymentDeadline}</p>
+                      <p className="text-xs text-platinum-500-500 mt-2">Payment deadline: {traditionalGratuity.paymentDeadline}</p>
                     </div>
                     <div>
-                      <h4 className="text-sm font-semibold text-emerald mb-2">Alternative EOSB Scheme (Since Oct 2023)</h4>
+                      <h4 className="text-sm font-semibold text-emerald-500 mb-2">Alternative EOSB Scheme (Since Oct 2023)</h4>
                       <div className="space-y-2">
                         {voluntaryAlternativeEOSB.employerContributionRates.map((rate, idx) => (
                           <div key={idx} className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
-                            <span className="text-sm text-platinum-300">{rate.category}</span>
-                            <span className="text-sm font-medium text-emerald">{rate.rate}</span>
+                            <span className="text-sm text-platinum-500-300">{rate.category}</span>
+                            <span className="text-sm font-medium text-emerald-500">{rate.rate}</span>
                           </div>
                         ))}
                       </div>
-                      <p className="text-xs text-platinum-500 mt-2">Approved providers: {voluntaryAlternativeEOSB.approvedProviders.length}</p>
+                      <p className="text-xs text-platinum-500-500 mt-2">Approved providers: {voluntaryAlternativeEOSB.approvedProviders.length}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -735,31 +735,31 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Heart className="h-5 w-5 text-emerald" />
+                    <Heart className="h-5 w-5 text-emerald-500" />
                     Unemployment Insurance (ILOE)
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-3">
-                    <div className="p-4 bg-emerald/20 rounded-lg text-center">
-                      <p className="text-3xl font-bold text-emerald">90%</p>
-                      <p className="text-sm text-platinum-400">Registration Rate</p>
+                    <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-emerald-500">90%</p>
+                      <p className="text-sm text-platinum-500-400">Registration Rate</p>
                     </div>
-                    <div className="p-4 bg-gold/20 rounded-lg text-center">
-                      <p className="text-3xl font-bold text-gold">AED 350M</p>
-                      <p className="text-sm text-platinum-400">Compensation Paid</p>
+                    <div className="p-4 bg-gold-700/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-gold-700">AED 350M</p>
+                      <p className="text-sm text-platinum-500-400">Compensation Paid</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
-                      <p className="text-3xl font-bold text-platinum">60%</p>
-                      <p className="text-sm text-platinum-400">Payout Rate</p>
+                      <p className="text-3xl font-bold text-platinum-500">60%</p>
+                      <p className="text-sm text-platinum-500-400">Payout Rate</p>
                     </div>
                   </div>
                   <div className="mt-4 grid gap-3 md:grid-cols-2">
                     {iloePremiumStructure.map((premium, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-400">Category {premium.category}</p>
-                        <p className="text-lg font-bold text-platinum">{premium.basicMonthlySalary}</p>
-                        <p className="text-sm text-emerald">Max premium: {premium.monthlyPremium}</p>
+                        <p className="text-sm text-platinum-500-400">Category {premium.category}</p>
+                        <p className="text-lg font-bold text-platinum-500">{premium.basicMonthlySalary}</p>
+                        <p className="text-sm text-emerald-500">Max premium: {premium.monthlyPremium}</p>
                       </div>
                     ))}
                   </div>
@@ -770,7 +770,7 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Clock className="h-5 w-5 text-gold" />
+                    <Clock className="h-5 w-5 text-gold-700" />
                     Midday Break Enforcement
                   </CardTitle>
                 </CardHeader>
@@ -778,27 +778,27 @@ export default function LaborEmploymentPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="p-4 bg-platinum-800/50 rounded-lg">
                       <div className="flex justify-between mb-2">
-                        <span className="text-platinum-400">Period</span>
-                        <span className="font-bold text-platinum">{middayBreakDetails.period}</span>
+                        <span className="text-platinum-500-400">Period</span>
+                        <span className="font-bold text-platinum-500">{middayBreakDetails.period}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-platinum-400">Hours</span>
-                        <span className="font-bold text-platinum">{middayBreakDetails.hours}</span>
+                        <span className="text-platinum-500-400">Hours</span>
+                        <span className="font-bold text-platinum-500">{middayBreakDetails.hours}</span>
                       </div>
                     </div>
-                    <div className="p-4 bg-emerald/20 rounded-lg text-center">
-                      <p className="text-3xl font-bold text-emerald">99%+</p>
-                      <p className="text-sm text-platinum-400">Compliance Rate</p>
+                    <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-emerald-500">99%+</p>
+                      <p className="text-sm text-platinum-500-400">Compliance Rate</p>
                     </div>
                   </div>
                   <div className="mt-4 grid gap-2 md:grid-cols-2">
                     <div className="p-2 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-sm text-rose-400">Penalty per worker</p>
-                      <p className="font-bold text-platinum">{middayBreakPenalties.perWorkerViolation}</p>
+                      <p className="font-bold text-platinum-500">{middayBreakPenalties.perWorkerViolation}</p>
                     </div>
                     <div className="p-2 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-sm text-rose-400">Maximum penalty</p>
-                      <p className="font-bold text-platinum">{middayBreakPenalties.maximumMultipleViolations}</p>
+                      <p className="font-bold text-platinum-500">{middayBreakPenalties.maximumMultipleViolations}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -816,30 +816,30 @@ export default function LaborEmploymentPage() {
           >
             <div className="space-y-6">
               {/* Nafis Programme */}
-              <Card className="glass-card border-gold/50">
+              <Card className="glass-card border-gold-700/50">
                 <CardHeader>
-                  <CardTitle className="text-lg flex items-center gap-2 text-gold">
+                  <CardTitle className="text-lg flex items-center gap-2 text-gold-700">
                     <Award className="h-5 w-5" />
                     Nafis Programme
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-4">
-                    <div className="p-4 bg-gold/20 rounded-lg text-center">
-                      <p className="text-3xl font-bold text-gold">2021</p>
-                      <p className="text-sm text-platinum-400">Launched</p>
+                    <div className="p-4 bg-gold-700/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-gold-700">2021</p>
+                      <p className="text-sm text-platinum-500-400">Launched</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
-                      <p className="text-3xl font-bold text-platinum">AED 24B</p>
-                      <p className="text-sm text-platinum-400">Budget</p>
+                      <p className="text-3xl font-bold text-platinum-500">AED 24B</p>
+                      <p className="text-sm text-platinum-500-400">Budget</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
-                      <p className="text-3xl font-bold text-platinum">75K</p>
-                      <p className="text-sm text-platinum-400">Original Target</p>
+                      <p className="text-3xl font-bold text-platinum-500">75K</p>
+                      <p className="text-sm text-platinum-500-400">Original Target</p>
                     </div>
-                    <div className="p-4 bg-emerald/20 rounded-lg text-center">
-                      <p className="text-3xl font-bold text-emerald">92%</p>
-                      <p className="text-sm text-platinum-400">Target Achieved</p>
+                    <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
+                      <p className="text-3xl font-bold text-emerald-500">92%</p>
+                      <p className="text-sm text-platinum-500-400">Target Achieved</p>
                     </div>
                   </div>
                 </CardContent>
@@ -849,7 +849,7 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <TrendingUp className="h-5 w-5 text-emerald" />
+                    <TrendingUp className="h-5 w-5 text-emerald-500" />
                     Nafis Achievements
                   </CardTitle>
                 </CardHeader>
@@ -857,10 +857,10 @@ export default function LaborEmploymentPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     {nafisAchievements.map((achievement, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-400">{achievement.metric}</p>
-                        <p className="text-2xl font-bold text-gold">{achievement.figure}</p>
+                        <p className="text-sm text-platinum-500-400">{achievement.metric}</p>
+                        <p className="text-2xl font-bold text-gold-700">{achievement.figure}</p>
                         {achievement.growth && (
-                          <p className="text-sm text-emerald mt-1">{achievement.growth}</p>
+                          <p className="text-sm text-emerald-500 mt-1">{achievement.growth}</p>
                         )}
                       </div>
                     ))}
@@ -872,7 +872,7 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Scale className="h-5 w-5 text-platinum" />
+                    <Scale className="h-5 w-5 text-platinum-500" />
                     2025 Emiratization Quotas
                   </CardTitle>
                 </CardHeader>
@@ -881,10 +881,10 @@ export default function LaborEmploymentPage() {
                     {emiratizationQuotas2025.map((quota, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg flex items-center justify-between">
                         <div>
-                          <p className="font-medium text-platinum">{quota.companySize}</p>
-                          <p className="text-sm text-emerald">{quota.requirement}</p>
+                          <p className="font-medium text-platinum-500">{quota.companySize}</p>
+                          <p className="text-sm text-emerald-500">{quota.requirement}</p>
                         </div>
-                        <Badge variant="outline" className="text-rose border-rose/50">{quota.fine}</Badge>
+                        <Badge variant="outline" className="text-rose-500 border-rose-500/50">{quota.fine}</Badge>
                       </div>
                     ))}
                   </div>
@@ -895,22 +895,22 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <DollarSign className="h-5 w-5 text-gold" />
+                    <DollarSign className="h-5 w-5 text-gold-700" />
                     Minimum Salary for Emiratis
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="p-4 bg-gold/20 rounded-lg text-center mb-4">
-                    <p className="text-4xl font-bold text-gold">{minimumSalaryEmiratis.amount}</p>
+                  <div className="p-4 bg-gold-700/20 rounded-lg text-center mb-4">
+                    <p className="text-4xl font-bold text-gold-700">{minimumSalaryEmiratis.amount}</p>
                   </div>
                   <div className="grid gap-2 md:grid-cols-2">
                     <div className="p-3 bg-platinum-800/50 rounded-lg">
-                      <p className="text-sm text-platinum-400">Existing employees</p>
-                      <p className="text-sm text-platinum-300">Must be adjusted by {minimumSalaryEmiratis.existingEmployees}</p>
+                      <p className="text-sm text-platinum-500-400">Existing employees</p>
+                      <p className="text-sm text-platinum-500-300">Must be adjusted by {minimumSalaryEmiratis.existingEmployees}</p>
                     </div>
-                    <div className="p-3 bg-rose/10 border border-rose/30 rounded-lg">
+                    <div className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg">
                       <p className="text-sm text-rose-400">Non-compliance</p>
-                      <p className="text-sm text-platinum-300">{minimumSalaryEmiratis.nonCompliance}</p>
+                      <p className="text-sm text-platinum-500-300">{minimumSalaryEmiratis.nonCompliance}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -920,7 +920,7 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-emerald" />
+                    <CheckCircle className="h-5 w-5 text-emerald-500" />
                     Emirati Incentives
                   </CardTitle>
                 </CardHeader>
@@ -928,8 +928,8 @@ export default function LaborEmploymentPage() {
                   <div className="space-y-2">
                     {emiratiIncentives.map((incentive, idx) => (
                       <div key={idx} className="flex items-center gap-2 p-2 bg-platinum-800/50 rounded-lg">
-                        <CheckCircle className="h-4 w-4 text-emerald shrink-0" />
-                        <span className="text-sm text-platinum-300">{incentive}</span>
+                        <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" />
+                        <span className="text-sm text-platinum-500-300">{incentive}</span>
                       </div>
                     ))}
                   </div>
@@ -949,7 +949,7 @@ export default function LaborEmploymentPage() {
                     {emiratiChallenges.map((challenge, idx) => (
                       <div key={idx} className="flex items-start gap-2 p-2 bg-amber-500/5 border border-amber-500/20 rounded-lg">
                         <AlertTriangle className="h-4 w-4 text-amber-400 shrink-0 mt-0.5" />
-                        <span className="text-sm text-platinum-300">{challenge}</span>
+                        <span className="text-sm text-platinum-500-300">{challenge}</span>
                       </div>
                     ))}
                   </div>
@@ -971,35 +971,35 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Beaker className="h-5 w-5 text-emerald" />
+                    <Beaker className="h-5 w-5 text-emerald-500" />
                     ILO Conventions Ratified
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mb-4">
-                    <div className="p-3 bg-emerald/20 rounded-lg text-center">
-                      <p className="text-2xl font-bold text-emerald">{iloConventionsRatified.length}</p>
-                      <p className="text-xs text-platinum-400">Total Ratified</p>
+                    <div className="p-3 bg-emerald-500/20 rounded-lg text-center">
+                      <p className="text-2xl font-bold text-emerald-500">{iloConventionsRatified.length}</p>
+                      <p className="text-xs text-platinum-500-400">Total Ratified</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
-                      <p className="text-2xl font-bold text-platinum">6</p>
-                      <p className="text-xs text-platinum-400">Core Conventions</p>
+                      <p className="text-2xl font-bold text-platinum-500">6</p>
+                      <p className="text-xs text-platinum-500-400">Core Conventions</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
-                      <p className="text-2xl font-bold text-rose">3</p>
-                      <p className="text-xs text-platinum-400">Not Ratified</p>
+                      <p className="text-2xl font-bold text-rose-500">3</p>
+                      <p className="text-xs text-platinum-500-400">Not Ratified</p>
                     </div>
-                    <div className="p-3 bg-gold/20 rounded-lg text-center col-span-2">
-                      <p className="text-2xl font-bold text-gold">Jan 2026</p>
-                      <p className="text-xs text-platinum-400">Protocol C29 Ratified</p>
+                    <div className="p-3 bg-gold-700/20 rounded-lg text-center col-span-2">
+                      <p className="text-2xl font-bold text-gold-700">Jan 2026</p>
+                      <p className="text-xs text-platinum-500-400">Protocol C29 Ratified</p>
                     </div>
                   </div>
                   <div className="space-y-2">
                     {iloConventionsRatified.slice(0, 6).map((conv, idx) => (
                       <div key={idx} className="flex items-center justify-between p-2 bg-platinum-800/50 rounded-lg">
-                        <span className="text-sm font-medium text-platinum">{conv.convention}</span>
-                        <span className="text-xs text-platinum-500">{conv.name}</span>
-                        <Badge variant="outline" className="text-emerald border-emerald/50 text-xs">{conv.ratificationYear}</Badge>
+                        <span className="text-sm font-medium text-platinum-500">{conv.convention}</span>
+                        <span className="text-xs text-platinum-500-500">{conv.name}</span>
+                        <Badge variant="outline" className="text-emerald-500 border-emerald-500/50 text-xs">{conv.ratificationYear}</Badge>
                       </div>
                     ))}
                   </div>
@@ -1017,11 +1017,11 @@ export default function LaborEmploymentPage() {
                 <CardContent>
                   <div className="space-y-2">
                     {iloConventionsNotRatified.map((conv, idx) => (
-                      <div key={idx} className="p-3 bg-rose/5 border border-rose/20 rounded-lg">
+                      <div key={idx} className="p-3 bg-rose-500/5 border border-rose-500/20 rounded-lg">
                         <div className="flex items-center justify-between">
                           <span className="font-medium text-rose-300">{conv.convention}: {conv.name}</span>
                         </div>
-                        <p className="text-sm text-platinum-400 mt-1">Reason: {conv.reason}</p>
+                        <p className="text-sm text-platinum-500-400 mt-1">Reason: {conv.reason}</p>
                       </div>
                     ))}
                   </div>
@@ -1032,36 +1032,36 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Users className="h-5 w-5 text-gold" />
+                    <Users className="h-5 w-5 text-gold-700" />
                     Domestic Workers (Federal Decree-Law No. 9/2022)
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
                     <div>
-                      <h4 className="text-sm font-semibold text-emerald mb-2">Rights</h4>
+                      <h4 className="text-sm font-semibold text-emerald-500 mb-2">Rights</h4>
                       <div className="space-y-1">
                         {domesticWorkerRights.map((right, idx) => (
                           <div key={idx} className="flex items-center gap-2 p-1.5 bg-platinum-800/50 rounded">
-                            <CheckCircle className="h-3 w-3 text-emerald shrink-0" />
-                            <span className="text-xs text-platinum-300">{right.right}: {right.provision}</span>
+                            <CheckCircle className="h-3 w-3 text-emerald-500 shrink-0" />
+                            <span className="text-xs text-platinum-500-300">{right.right}: {right.provision}</span>
                           </div>
                         ))}
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-sm font-semibold text-rose mb-2">Prohibited</h4>
+                      <h4 className="text-sm font-semibold text-rose-500 mb-2">Prohibited</h4>
                       <div className="space-y-1">
                         {domesticWorkerProhibitedActions.map((proh, idx) => (
-                          <div key={idx} className="flex items-center gap-2 p-1.5 bg-rose/5 border border-rose/20 rounded">
-                            <XCircle className="h-3 w-3 text-rose shrink-0" />
-                            <span className="text-xs text-platinum-300">{proh.prohibition}</span>
+                          <div key={idx} className="flex items-center gap-2 p-1.5 bg-rose-500/5 border border-rose-500/20 rounded">
+                            <XCircle className="h-3 w-3 text-rose-500 shrink-0" />
+                            <span className="text-xs text-platinum-500-300">{proh.prohibition}</span>
                           </div>
                         ))}
                       </div>
                     </div>
                   </div>
-                  <p className="text-sm text-platinum-400 mt-4">
+                  <p className="text-sm text-platinum-500-400 mt-4">
                     {domesticWorkerLaw.coveredOccupations}
                   </p>
                 </CardContent>
@@ -1071,7 +1071,7 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Wrench className="h-5 w-5 text-platinum" />
+                    <Wrench className="h-5 w-5 text-platinum-500" />
                     Occupational Health & Safety (12 Employer Obligations)
                   </CardTitle>
                 </CardHeader>
@@ -1079,8 +1079,8 @@ export default function LaborEmploymentPage() {
                   <div className="grid gap-2 md:grid-cols-2">
                     {ohsEmployerObligations.map((obligation, idx) => (
                       <div key={idx} className="flex items-center gap-2 p-2 bg-platinum-800/50 rounded-lg">
-                        <span className="text-xs font-bold text-gold w-6">{obligation.number}</span>
-                        <span className="text-xs text-platinum-300">{obligation.obligation}</span>
+                        <span className="text-xs font-bold text-gold-700 w-6">{obligation.number}</span>
+                        <span className="text-xs text-platinum-500-300">{obligation.obligation}</span>
                       </div>
                     ))}
                   </div>
@@ -1091,7 +1091,7 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Eye className="h-5 w-5 text-emerald" />
+                    <Eye className="h-5 w-5 text-emerald-500" />
                     Labor Inspections 2025
                   </CardTitle>
                 </CardHeader>
@@ -1099,10 +1099,10 @@ export default function LaborEmploymentPage() {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
                     {laborInspectionScale.slice(0, 4).map((metric, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
-                        <p className="text-2xl font-bold text-platinum">{metric.figure}</p>
-                        <p className="text-xs text-platinum-400">{metric.metric}</p>
+                        <p className="text-2xl font-bold text-platinum-500">{metric.figure}</p>
+                        <p className="text-xs text-platinum-500-400">{metric.metric}</p>
                         {metric.changeVs2024 && metric.changeVs2024 !== '—' && (
-                          <Badge variant="outline" className="text-emerald border-emerald/50 text-xs mt-1">{metric.changeVs2024}</Badge>
+                          <Badge variant="outline" className="text-emerald-500 border-emerald-500/50 text-xs mt-1">{metric.changeVs2024}</Badge>
                         )}
                       </div>
                     ))}
@@ -1110,8 +1110,8 @@ export default function LaborEmploymentPage() {
                   <div className="grid gap-2 md:grid-cols-2">
                     {laborInspectionFramework.map((item, idx) => (
                       <div key={idx} className="p-2 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm font-medium text-platinum">{item.item}</p>
-                        <p className="text-xs text-platinum-500">{item.details}</p>
+                        <p className="text-sm font-medium text-platinum-500">{item.item}</p>
+                        <p className="text-xs text-platinum-500-500">{item.details}</p>
                       </div>
                     ))}
                   </div>
@@ -1128,22 +1128,22 @@ export default function LaborEmploymentPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
-                    <div className="p-4 bg-rose/10 border border-rose/30 rounded-lg">
-                      <h4 className="font-bold text-rose mb-2">Trade Unions</h4>
-                      <p className="text-sm text-platinum-300">{tradeUnionStatus.status}</p>
-                      <p className="text-sm text-platinum-500 mt-1">{tradeUnionStatus.professionalAssociations}</p>
+                    <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-lg">
+                      <h4 className="font-bold text-rose-500 mb-2">Trade Unions</h4>
+                      <p className="text-sm text-platinum-500-300">{tradeUnionStatus.status}</p>
+                      <p className="text-sm text-platinum-500-500 mt-1">{tradeUnionStatus.professionalAssociations}</p>
                     </div>
-                    <div className="p-4 bg-rose/10 border border-rose/30 rounded-lg">
-                      <h4 className="font-bold text-rose mb-2">Right to Strike</h4>
-                      <p className="text-sm text-platinum-300">{rightToStrike.status}</p>
-                      <p className="text-xs text-platinum-500 mt-1">{rightToStrike.legalBasis}</p>
+                    <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-lg">
+                      <h4 className="font-bold text-rose-500 mb-2">Right to Strike</h4>
+                      <p className="text-sm text-platinum-500-300">{rightToStrike.status}</p>
+                      <p className="text-xs text-platinum-500-500 mt-1">{rightToStrike.legalBasis}</p>
                     </div>
                   </div>
                   <div className="mt-4">
                     <p className="text-sm font-semibold text-rose-300 mb-2">Penalties:</p>
                     <div className="flex flex-wrap gap-2">
                       {strikePenalties.map((penalty, idx) => (
-                        <Badge key={idx} variant="outline" className="text-rose border-rose/50">{penalty}</Badge>
+                        <Badge key={idx} variant="outline" className="text-rose-500 border-rose-500/50">{penalty}</Badge>
                       ))}
                     </div>
                   </div>
@@ -1154,7 +1154,7 @@ export default function LaborEmploymentPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Users className="h-5 w-5 text-platinum" />
+                    <Users className="h-5 w-5 text-platinum-500" />
                     Labor Market Segmentation by Nationality
                   </CardTitle>
                 </CardHeader>
@@ -1162,8 +1162,8 @@ export default function LaborEmploymentPage() {
                   <div className="space-y-3">
                     {nationalityBasedSegmentation.map((seg, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="font-medium text-gold">{seg.nationalityGroup}</p>
-                        <p className="text-sm text-platinum-400">{seg.typicalSectors}</p>
+                        <p className="font-medium text-gold-700">{seg.nationalityGroup}</p>
+                        <p className="text-sm text-platinum-500-400">{seg.typicalSectors}</p>
                       </div>
                     ))}
                   </div>

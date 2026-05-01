@@ -74,17 +74,17 @@ export default function SportsIntelligencePage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="default" className="mb-2">S-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">Sports Intelligence</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum-500">Sports Intelligence</h1>
+          <p className="mt-2 text-platinum-500-400">
             Sportswashing analysis, F1 monitoring, and sports diplomacy tracking
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-platinum/50 text-platinum hover:bg-platinum/10">
+          <Button variant="outline" className="gap-2 border-platinum/50 text-platinum-500 hover:bg-platinum/10">
             <Target className="h-4 w-4" />
             Sports Monitor
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-500-950 gap-2">
             <Trophy className="h-4 w-4" />
             Track Event
           </Button>

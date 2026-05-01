@@ -113,7 +113,7 @@ export default function HindiLanguagePage() {
     ) : trend === 'down' ? (
       <TrendingUp className="h-4 w-4 text-rose-400 rotate-180" />
     ) : (
-      <TrendingUp className="h-4 w-4 text-platinum-400" />
+      <TrendingUp className="h-4 w-4 text-platinum-500-400" />
     )
   }
 
@@ -123,13 +123,13 @@ export default function HindiLanguagePage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="denim" className="mb-2">L-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Hindi Language Media</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">Hindi Language Media</h1>
+          <p className="mt-2 text-platinum-500-400">
             Hindi-language content monitoring and analysis in the UAE
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-navy/50 text-navy hover:bg-navy/10">
+          <Button variant="outline" className="gap-2 border-navy/50 text-navy-500 hover:bg-navy/10">
             <Search className="h-4 w-4" />
             Search
           </Button>
@@ -234,8 +234,8 @@ export default function HindiLanguagePage() {
                       {popularSearches.map((search, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
-                            <Hash className="h-4 w-4 text-navy" />
-                            <span className="text-sm text-platinum-200">{search.term}</span>
+                            <Hash className="h-4 w-4 text-navy-500" />
+                            <span className="text-sm text-platinum-500-200">{search.term}</span>
                           </div>
                           <div className="flex items-center gap-2">
                             <Progress value={search.trend} className="h-2 w-16" />
@@ -288,14 +288,14 @@ export default function HindiLanguagePage() {
                     <CardContent>
                       <div className="flex items-end justify-between">
                         <div>
-                          <div className="text-3xl font-bold text-platinum-200">{platform.percentage}%</div>
-                          <p className="text-sm text-platinum-400">of Hindi content</p>
+                          <div className="text-3xl font-bold text-platinum-500-200">{platform.percentage}%</div>
+                          <p className="text-sm text-platinum-500-400">of Hindi content</p>
                         </div>
                         <div className="text-right">
                           <div className="text-xl font-bold text-emerald-400">
                             {(platform.speakers / 1000).toFixed(0)}K
                           </div>
-                          <p className="text-xs text-platinum-400">Estimated users</p>
+                          <p className="text-xs text-platinum-500-400">Estimated users</p>
                         </div>
                       </div>
                     </CardContent>
@@ -321,9 +321,9 @@ export default function HindiLanguagePage() {
                       {topicSentiment.map((topic, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-200">{topic.topic}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{topic.topic}</span>
                             <div className="flex items-center gap-4">
-                              <span className="text-xs text-platinum-400">{(topic.volume / 1000).toFixed(0)}K posts</span>
+                              <span className="text-xs text-platinum-500-400">{(topic.volume / 1000).toFixed(0)}K posts</span>
                               <span className={`text-sm font-bold ${
                                 topic.sentiment >= 70 ? 'text-emerald-400' :
                                 topic.sentiment >= 50 ? 'text-amber-400' :
@@ -378,20 +378,20 @@ export default function HindiLanguagePage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70"
                         >
                           <div className="flex items-center gap-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy-500">
                               <MessageSquare className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-200">{influencer.name}</p>
-                              <p className="text-sm text-platinum-400">{influencer.handle}</p>
+                              <p className="font-semibold text-platinum-500-200">{influencer.name}</p>
+                              <p className="text-sm text-platinum-500-400">{influencer.handle}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-6">
                             <div className="text-center">
-                              <div className="text-lg font-bold text-platinum-200">
+                              <div className="text-lg font-bold text-platinum-500-200">
                                 {(influencer.followers / 1000).toFixed(0)}K
                               </div>
-                              <p className="text-xs text-platinum-400">Followers</p>
+                              <p className="text-xs text-platinum-500-400">Followers</p>
                             </div>
                             <div className="text-center">
                               <div className={`text-lg font-bold ${
@@ -399,7 +399,7 @@ export default function HindiLanguagePage() {
                                 influencer.sentiment >= 60 ? 'text-amber-400' :
                                 'text-rose-400'
                               }`}>{influencer.sentiment}%</div>
-                              <p className="text-xs text-platinum-400">Sentiment</p>
+                              <p className="text-xs text-platinum-500-400">Sentiment</p>
                             </div>
                           </div>
                         </div>

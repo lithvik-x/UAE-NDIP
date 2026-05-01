@@ -62,7 +62,7 @@ export function InfrastructureSection({
           <Card className="glass-card border-violet-500/30 bg-gradient-to-br from-violet-500/10 to-transparent">
             <CardContent className="p-6 text-center">
               <Trophy className="h-10 w-10 text-violet-400 mx-auto mb-3" />
-              <p className="text-sm text-platinum-400">Road Quality Global Rank</p>
+              <p className="text-sm text-platinum-500-400">Road Quality Global Rank</p>
               <p className="text-4xl font-bold text-violet-400">#4</p>
               <p className="text-xs text-emerald-400 mt-1">+3 from last year</p>
               <Badge variant="purple" className="mt-2">Top 5 Globally</Badge>
@@ -72,16 +72,16 @@ export function InfrastructureSection({
           <Card className="glass-card border-violet-500/30">
             <CardContent className="p-6 text-center">
               <Route className="h-10 w-10 text-violet-400 mx-auto mb-3" />
-              <p className="text-sm text-platinum-400">Arab World Rank</p>
+              <p className="text-sm text-platinum-500-400">Arab World Rank</p>
               <p className="text-4xl font-bold text-violet-400">#1</p>
-              <p className="text-xs text-platinum-500 mt-1">Land Transport Score: 5.26/7</p>
+              <p className="text-xs text-platinum-500-500 mt-1">Land Transport Score: 5.26/7</p>
             </CardContent>
           </Card>
 
           <Card className="glass-card border-violet-500/30">
             <CardContent className="p-6 text-center">
               <Train className="h-10 w-10 text-violet-400 mx-auto mb-3" />
-              <p className="text-sm text-platinum-400">Dubai Metro Length</p>
+              <p className="text-sm text-platinum-500-400">Dubai Metro Length</p>
               <p className="text-4xl font-bold text-violet-400">101 km</p>
               <p className="text-xs text-emerald-400 mt-1">+26.4 km expansion</p>
             </CardContent>
@@ -110,14 +110,14 @@ export function InfrastructureSection({
                       className={`flex h-8 w-8 items-center justify-center rounded-full font-bold text-sm ${
                         country.rank <= 3
                           ? 'bg-violet-500/20 text-violet-400'
-                          : 'bg-platinum-700/50 text-platinum-300'
+                          : 'bg-platinum-700/50 text-platinum-500-300'
                       }`}
                     >
                       #{country.rank}
                     </div>
                     <div>
-                      <p className="font-semibold text-platinum-200">{country.country}</p>
-                      <p className="text-xs text-platinum-400">{country.region}</p>
+                      <p className="font-semibold text-platinum-500-200">{country.country}</p>
+                      <p className="text-xs text-platinum-500-400">{country.region}</p>
                     </div>
                   </div>
                   {country.country === 'UAE' && (
@@ -141,7 +141,7 @@ export function InfrastructureSection({
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {dubaiMetroMetrics.slice(0, 5).map((metric, idx) => (
                 <div key={idx} className="bg-platinum-800/30 rounded-lg p-3">
-                  <p className="text-xs text-platinum-400">{metric.metric}</p>
+                  <p className="text-xs text-platinum-500-400">{metric.metric}</p>
                   <p className="text-xl font-bold text-violet-400">{metric.value}</p>
                   {metric.change !== 'N/A' && metric.change !== 'Stable' && (
                     <p className="text-xs text-emerald-400">{metric.change}</p>
@@ -174,14 +174,14 @@ export function InfrastructureSection({
                       className={`flex h-8 w-8 items-center justify-center rounded-full font-bold text-sm ${
                         metro.rank <= 2
                           ? 'bg-violet-500/20 text-violet-400'
-                          : 'bg-platinum-700/50 text-platinum-300'
+                          : 'bg-platinum-700/50 text-platinum-500-300'
                       }`}
                     >
                       #{metro.rank}
                     </div>
                     <div>
-                      <p className="font-semibold text-platinum-200">{metro.metro}</p>
-                      <p className="text-xs text-platinum-400">{metro.country}</p>
+                      <p className="font-semibold text-platinum-500-200">{metro.metro}</p>
+                      <p className="text-xs text-platinum-500-400">{metro.country}</p>
                     </div>
                   </div>
                   <div className="text-right">

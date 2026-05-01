@@ -40,7 +40,7 @@ export function EntitiesSection({ className }: EntitiesSectionProps) {
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
                       <UserX className="h-4 w-4 text-rose-400" />
-                      <h4 className="font-semibold text-platinum-200">{defender.name}</h4>
+                      <h4 className="font-semibold text-platinum-500-200">{defender.name}</h4>
                     </div>
                     <Badge variant="destructive" className="text-xs">
                       {defender.status}
@@ -48,12 +48,12 @@ export function EntitiesSection({ className }: EntitiesSectionProps) {
                   </div>
                   <div className="grid grid-cols-2 gap-2 text-sm">
                     <div>
-                      <span className="text-platinum-500">Charges: </span>
-                      <span className="text-platinum-300">{defender.charges}</span>
+                      <span className="text-platinum-500-500">Charges: </span>
+                      <span className="text-platinum-500-300">{defender.charges}</span>
                     </div>
                     <div>
-                      <span className="text-platinum-500">Source: </span>
-                      <span className="text-platinum-400">{defender.source}</span>
+                      <span className="text-platinum-500-500">Source: </span>
+                      <span className="text-platinum-500-400">{defender.source}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -81,13 +81,13 @@ export function EntitiesSection({ className }: EntitiesSectionProps) {
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
                         <Building className="h-4 w-4 text-amber-400" />
-                        <h4 className="font-semibold text-platinum-200">{entity.entity}</h4>
+                        <h4 className="font-semibold text-platinum-500-200">{entity.entity}</h4>
                       </div>
                       <Badge variant="outline" className="text-xs">
                         {entity.role}
                       </Badge>
                     </div>
-                    <p className="text-sm text-platinum-400">{entity.allegation}</p>
+                    <p className="text-sm text-platinum-500-400">{entity.allegation}</p>
                   </motion.div>
                 ))}
               </div>
@@ -110,14 +110,14 @@ export function EntitiesSection({ className }: EntitiesSectionProps) {
                   >
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
-                        <DollarSign className="h-4 w-4 text-platinum-400" />
-                        <h4 className="font-semibold text-platinum-200">{company.company}</h4>
+                        <DollarSign className="h-4 w-4 text-platinum-500-400" />
+                        <h4 className="font-semibold text-platinum-500-200">{company.company}</h4>
                       </div>
                       <Badge variant="outline" className="text-xs">
                         {company.connection}
                       </Badge>
                     </div>
-                    <p className="text-sm text-platinum-400">{company.issue}</p>
+                    <p className="text-sm text-platinum-500-400">{company.issue}</p>
                   </motion.div>
                 ))}
               </div>
@@ -155,16 +155,16 @@ export function EntitiesSection({ className }: EntitiesSectionProps) {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-1">
-                      <h4 className="font-semibold text-platinum-200">{arrest.person}</h4>
+                      <h4 className="font-semibold text-platinum-500-200">{arrest.person}</h4>
                       <Badge variant="secondary" className="text-xs">
                         {arrest.nationality}
                       </Badge>
                     </div>
-                    <p className="text-sm text-platinum-400 mb-1">
-                      <span className="text-platinum-500">Reason: </span>{arrest.reason}
+                    <p className="text-sm text-platinum-500-400 mb-1">
+                      <span className="text-platinum-500-500">Reason: </span>{arrest.reason}
                     </p>
                     <p className="text-sm text-red-400">
-                      <span className="text-platinum-500">Consequence: </span>{arrest.consequence}
+                      <span className="text-platinum-500-500">Consequence: </span>{arrest.consequence}
                     </p>
                   </div>
                 </div>
@@ -197,11 +197,11 @@ export function EntitiesSection({ className }: EntitiesSectionProps) {
                 className="glass-card border border-amber-500/30 p-4 text-center"
               >
                 <Icon className="h-8 w-8 mx-auto mb-2 text-amber-400" />
-                <h4 className="font-bold text-platinum-200 mb-1 font-rajdhani">
+                <h4 className="font-bold text-platinum-500-200 mb-1 font-rajdhani">
                   {intervention.operation}
                 </h4>
-                <p className="text-sm text-platinum-400 mb-2">{intervention.location}</p>
-                <p className="text-xs text-platinum-500">{intervention.details}</p>
+                <p className="text-sm text-platinum-500-400 mb-2">{intervention.location}</p>
+                <p className="text-xs text-platinum-500-500">{intervention.details}</p>
               </motion.div>
             )
           })}

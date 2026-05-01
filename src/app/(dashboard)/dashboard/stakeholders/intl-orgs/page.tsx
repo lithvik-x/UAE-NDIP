@@ -120,17 +120,17 @@ export default function IntlOrgsStakeholdersPage() {
       >
         <div>
           <Badge variant="cyan" className="mb-2">INTERNATIONAL</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-cyan">International Relations Body</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-cyan-500">International Relations Body</h1>
+          <p className="mt-2 text-platinum-500-400">
             GCC, Arab League, OIC, UN coordination, bilateral partnerships, and multilateral positioning
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-cyan/50 text-cyan hover:bg-cyan/10">
+          <Button variant="outline" className="gap-2 border-cyan-500/50 text-cyan-500 hover:bg-cyan-500/10">
             <Globe2 className="h-4 w-4" />
             View Directory
           </Button>
-          <Button className="bg-gradient-cyan hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-cyan hover:opacity-90 text-navy-500-950 gap-2">
             <Zap className="h-4 w-4" />
             Analyze
           </Button>
@@ -190,7 +190,7 @@ export default function IntlOrgsStakeholdersPage() {
               <AlertOctagon className="h-6 w-6 text-red-400" />
               <div>
                 <h3 className="font-bold text-red-400">CRISIS COORDINATION ACTIVE</h3>
-                <p className="text-sm text-platinum-300">
+                <p className="text-sm text-platinum-500-300">
                   {crisisMetrics.attacksSinceFeb2026.toLocaleString()}+ missile/drone attacks tracked | {crisisMetrics.coordinationMeetings}+ coordination meetings
                 </p>
               </div>
@@ -233,17 +233,17 @@ export default function IntlOrgsStakeholdersPage() {
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <span className="text-5xl font-extrabold text-cyan-400">{softPowerMetrics.softPowerScore}</span>
-                      <span className="text-platinum-400">/100</span>
+                      <span className="text-platinum-500-400">/100</span>
                     </div>
                     <Progress value={softPowerMetrics.softPowerScore} className="h-2" />
                     <div className="grid grid-cols-2 gap-2 mt-4">
                       <div className="text-center p-2 rounded bg-cyan-500/10">
                         <div className="text-xl font-bold text-cyan-400">#{softPowerMetrics.gspiRank}</div>
-                        <div className="text-xs text-platinum-400">Global Rank</div>
+                        <div className="text-xs text-platinum-500-400">Global Rank</div>
                       </div>
                       <div className="text-center p-2 rounded bg-cyan-500/10">
                         <div className="text-xl font-bold text-cyan-400">#1</div>
-                        <div className="text-xs text-platinum-400">GCC Rank</div>
+                        <div className="text-xs text-platinum-500-400">GCC Rank</div>
                       </div>
                     </div>
                   </div>
@@ -311,8 +311,8 @@ export default function IntlOrgsStakeholdersPage() {
                       <div className="flex items-center gap-3">
                         <div className="w-2 h-2 rounded-full bg-gold-400" />
                         <div>
-                          <div className="font-medium text-platinum-200">{summit.name}</div>
-                          <div className="text-xs text-platinum-400">{summit.location}</div>
+                          <div className="font-medium text-platinum-500-200">{summit.name}</div>
+                          <div className="text-xs text-platinum-500-400">{summit.location}</div>
                         </div>
                       </div>
                       <Badge variant="outline" className="text-xs">{summit.date}</Badge>
@@ -334,15 +334,15 @@ export default function IntlOrgsStakeholdersPage() {
               <CardContent className="space-y-4">
                 <div className="text-center">
                   <div className="text-4xl font-extrabold text-cyan-400">10th</div>
-                  <div className="text-sm text-platinum-400">Global Soft Power Index</div>
+                  <div className="text-sm text-platinum-500-400">Global Soft Power Index</div>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-extrabold text-emerald-400">#1</div>
-                  <div className="text-sm text-platinum-400">GCC Ranking</div>
+                  <div className="text-sm text-platinum-500-400">GCC Ranking</div>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-extrabold text-gold-400">59.4</div>
-                  <div className="text-sm text-platinum-400">Soft Power Score</div>
+                  <div className="text-sm text-platinum-500-400">Soft Power Score</div>
                 </div>
               </CardContent>
             </Card>
@@ -411,15 +411,15 @@ export default function IntlOrgsStakeholdersPage() {
               <CardContent className="space-y-4">
                 <div className="text-center">
                   <div className="text-4xl font-extrabold text-emerald-400">{arabLeagueIntlData.memberCount}</div>
-                  <div className="text-sm text-platinum-400">Member States</div>
+                  <div className="text-sm text-platinum-500-400">Member States</div>
                 </div>
                 <div className="text-center">
                   <div className="text-lg font-bold text-gold-400">{arabLeagueIntlData.mediaCooperationDate}</div>
-                  <div className="text-sm text-platinum-400">Media Forum</div>
+                  <div className="text-sm text-platinum-500-400">Media Forum</div>
                 </div>
                 <div className="text-center">
                   <div className="text-lg font-bold text-red-400">{arabLeagueIntlData.mediaActionPlanDate}</div>
-                  <div className="text-sm text-platinum-400">Media Action Plan</div>
+                  <div className="text-sm text-platinum-500-400">Media Action Plan</div>
                 </div>
               </CardContent>
             </Card>
@@ -464,24 +464,24 @@ export default function IntlOrgsStakeholdersPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-3 rounded bg-cyan-500/10">
                     <div className="text-3xl font-extrabold text-cyan-400">{oicIntlData.memberCount}</div>
-                    <div className="text-xs text-platinum-400">Member States</div>
+                    <div className="text-xs text-platinum-500-400">Member States</div>
                   </div>
                   <div className="text-center p-3 rounded bg-cyan-500/10">
                     <div className="text-lg font-bold text-cyan-400">1969</div>
-                    <div className="text-xs text-platinum-400">Established</div>
+                    <div className="text-xs text-platinum-500-400">Established</div>
                   </div>
                 </div>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between p-2 rounded bg-platinum-800/50">
-                    <span className="text-platinum-400">Headquarters</span>
+                    <span className="text-platinum-500-400">Headquarters</span>
                     <span>{oicIntlData.headquarters}</span>
                   </div>
                   <div className="flex justify-between p-2 rounded bg-platinum-800/50">
-                    <span className="text-platinum-400">UN Observer</span>
+                    <span className="text-platinum-500-400">UN Observer</span>
                     <span>{oicIntlData.unObserverStatus}</span>
                   </div>
                   <div className="flex justify-between p-2 rounded bg-platinum-800/50">
-                    <span className="text-platinum-400">Framework</span>
+                    <span className="text-platinum-500-400">Framework</span>
                     <span className="text-right text-xs">{oicIntlData.conferenceFramework}</span>
                   </div>
                 </div>
@@ -499,7 +499,7 @@ export default function IntlOrgsStakeholdersPage() {
                 <div className="space-y-3">
                   <div className="p-3 rounded bg-emerald-500/10">
                     <div className="text-lg font-bold text-emerald-400">November 4, 2025</div>
-                    <div className="text-sm text-platinum-300">UAE at UN Fourth Committee</div>
+                    <div className="text-sm text-platinum-500-300">UAE at UN Fourth Committee</div>
                   </div>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2">
@@ -545,19 +545,19 @@ export default function IntlOrgsStakeholdersPage() {
                   <CardContent className="space-y-3">
                     {partner.tradeVolume && (
                       <div className="text-sm">
-                        <span className="text-platinum-400">Trade: </span>
+                        <span className="text-platinum-500-400">Trade: </span>
                         <span className="text-emerald-400 font-medium">{partner.tradeVolume}</span>
                       </div>
                     )}
                     {partner.investment && (
                       <div className="text-sm">
-                        <span className="text-platinum-400">Investment: </span>
+                        <span className="text-platinum-500-400">Investment: </span>
                         <span className="text-gold-400 font-medium">{partner.investment}</span>
                       </div>
                     )}
                     {partner.agreements && partner.agreements.length > 0 && (
                       <div className="space-y-1">
-                        <div className="text-xs text-platinum-400">Key Agreements:</div>
+                        <div className="text-xs text-platinum-500-400">Key Agreements:</div>
                         {partner.agreements.slice(0, 2).map((agreement, i) => (
                           <div key={i} className="text-xs p-1 rounded bg-cyan-500/5">
                             {agreement}
@@ -567,7 +567,7 @@ export default function IntlOrgsStakeholdersPage() {
                     )}
                     {partner.keyMeetings && partner.keyMeetings.length > 0 && (
                       <div className="pt-2 border-t border-platinum-700">
-                        <div className="text-xs text-platinum-400 mb-1">Recent Meetings:</div>
+                        <div className="text-xs text-platinum-500-400 mb-1">Recent Meetings:</div>
                         {partner.keyMeetings.slice(0, 2).map((meeting, i) => (
                           <div key={i} className="text-xs">
                             <span className="text-cyan-400">{meeting.date}: </span>
@@ -591,7 +591,7 @@ export default function IntlOrgsStakeholdersPage() {
                 <div className="text-4xl font-extrabold text-red-400">
                   {crisisMetrics.attacksSinceFeb2026.toLocaleString()}+
                 </div>
-                <div className="text-sm text-platinum-400 mt-2">Attacks Since Feb 2026</div>
+                <div className="text-sm text-platinum-500-400 mt-2">Attacks Since Feb 2026</div>
               </CardContent>
             </Card>
             <Card className="glass-card">
@@ -599,7 +599,7 @@ export default function IntlOrgsStakeholdersPage() {
                 <div className="text-4xl font-extrabold text-gold-400">
                   {crisisMetrics.coordinationMeetings}+
                 </div>
-                <div className="text-sm text-platinum-400 mt-2">Coordination Meetings</div>
+                <div className="text-sm text-platinum-500-400 mt-2">Coordination Meetings</div>
               </CardContent>
             </Card>
             <Card className="glass-card">
@@ -607,7 +607,7 @@ export default function IntlOrgsStakeholdersPage() {
                 <div className="text-4xl font-extrabold text-cyan-400">
                   {(crisisMetrics.lebanonDisplaced / 1000000).toFixed(1)}M
                 </div>
-                <div className="text-sm text-platinum-400 mt-2">Lebanon Displaced</div>
+                <div className="text-sm text-platinum-500-400 mt-2">Lebanon Displaced</div>
               </CardContent>
             </Card>
             <Card className="glass-card">
@@ -615,7 +615,7 @@ export default function IntlOrgsStakeholdersPage() {
                 <div className="text-4xl font-extrabold text-red-400">
                   {crisisMetrics.lebanonCasualties.toLocaleString()}+
                 </div>
-                <div className="text-sm text-platinum-400 mt-2">Lebanon Casualties</div>
+                <div className="text-sm text-platinum-500-400 mt-2">Lebanon Casualties</div>
               </CardContent>
             </Card>
           </div>
@@ -654,11 +654,11 @@ export default function IntlOrgsStakeholdersPage() {
                 <CardTitle className="text-lg">BRICS Membership</CardTitle>
               </CardHeader>
               <CardContent className="text-center p-6">
-                <div className={`text-6xl font-extrabold ${multilateralMetrics.bricsMember ? 'text-emerald-400' : 'text-platinum-400'}`}>
+                <div className={`text-6xl font-extrabold ${multilateralMetrics.bricsMember ? 'text-emerald-400' : 'text-platinum-500-400'}`}>
                   {multilateralMetrics.bricsMember ? 'YES' : 'NO'}
                 </div>
-                <div className="text-sm text-platinum-400 mt-2">Member since early 2024</div>
-                <div className="text-xs text-platinum-500 mt-1">Kazan Summit October 2024</div>
+                <div className="text-sm text-platinum-500-400 mt-2">Member since early 2024</div>
+                <div className="text-xs text-platinum-500-500 mt-1">Kazan Summit October 2024</div>
               </CardContent>
             </Card>
 
@@ -670,7 +670,7 @@ export default function IntlOrgsStakeholdersPage() {
                 <div className="text-6xl font-extrabold text-gold-400">
                   {multilateralMetrics.cepaAgreements}
                 </div>
-                <div className="text-sm text-platinum-400 mt-2">Since September 2021</div>
+                <div className="text-sm text-platinum-500-400 mt-2">Since September 2021</div>
               </CardContent>
             </Card>
 
@@ -681,11 +681,11 @@ export default function IntlOrgsStakeholdersPage() {
               <CardContent className="space-y-3">
                 <div className="p-3 rounded bg-emerald-500/10">
                   <div className="text-lg font-bold text-emerald-400">COP28 Host 2023</div>
-                  <div className="text-xs text-platinum-400">UAE Consensus adopted</div>
+                  <div className="text-xs text-platinum-500-400">UAE Consensus adopted</div>
                 </div>
                 <div className="p-3 rounded bg-cyan-500/10">
                   <div className="text-lg font-bold text-cyan-400">G20 Guest</div>
-                  <div className="text-xs text-platinum-400">Brazil November 2024</div>
+                  <div className="text-xs text-platinum-500-400">Brazil November 2024</div>
                 </div>
               </CardContent>
             </Card>
@@ -742,7 +742,7 @@ export default function IntlOrgsStakeholdersPage() {
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-700">
-                  <div className="text-xs text-platinum-400 mb-2">Survey: 15 Arab countries, 40,130 respondents</div>
+                  <div className="text-xs text-platinum-500-400 mb-2">Survey: 15 Arab countries, 40,130 respondents</div>
                 </div>
               </CardContent>
             </Card>
@@ -772,7 +772,7 @@ export default function IntlOrgsStakeholdersPage() {
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-700">
-                  <div className="text-xs text-platinum-400">Source: Arab Center DC</div>
+                  <div className="text-xs text-platinum-500-400">Source: Arab Center DC</div>
                 </div>
               </CardContent>
             </Card>
@@ -789,11 +789,11 @@ export default function IntlOrgsStakeholdersPage() {
               <div className="grid gap-6 sm:grid-cols-2">
                 <div className="text-center p-6 rounded bg-red-500/10">
                   <div className="text-5xl font-extrabold text-red-400">{threatData.redSeaFoodImports}%</div>
-                  <div className="text-sm text-platinum-400 mt-2">Food Imports Disrupted</div>
+                  <div className="text-sm text-platinum-500-400 mt-2">Food Imports Disrupted</div>
                 </div>
                 <div className="text-center p-6 rounded bg-red-500/10">
                   <div className="text-5xl font-extrabold text-red-400">{threatIndicatorIntlData.redSeaThreat?.desalinationThreat || 90}%</div>
-                  <div className="text-sm text-platinum-400 mt-2">Desalination Under Threat</div>
+                  <div className="text-sm text-platinum-500-400 mt-2">Desalination Under Threat</div>
                 </div>
               </div>
             </CardContent>
@@ -811,7 +811,7 @@ export default function IntlOrgsStakeholdersPage() {
         <Card className="glass-card">
           <CardHeader>
             <CardTitle className="text-sm flex items-center gap-2">
-              <FileText className="h-4 w-4 text-platinum-400" />
+              <FileText className="h-4 w-4 text-platinum-500-400" />
               Source Credibility Matrix ({intlRelationsSourceCredibility.length} sources)
             </CardTitle>
           </CardHeader>
@@ -830,7 +830,7 @@ export default function IntlOrgsStakeholdersPage() {
                     }`} />
                     <div className="flex-1 min-w-0">
                       <div className="text-xs font-medium truncate">{source.source}</div>
-                      <div className="text-xs text-platinum-500">{source.uaeRelevance}</div>
+                      <div className="text-xs text-platinum-500-500">{source.uaeRelevance}</div>
                     </div>
                   </div>
                 ))}

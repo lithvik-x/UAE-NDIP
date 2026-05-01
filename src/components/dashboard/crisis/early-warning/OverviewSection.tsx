@@ -106,7 +106,7 @@ export function OverviewSection({ data }: OverviewSectionProps) {
           >
             <CardHeader className="px-0 pt-0">
               <CardTitle className="text-lg flex items-center gap-2">
-                <Globe className="h-5 w-5 text-navy-500" />
+                <Globe className="h-5 w-5 text-navy-500-500" />
                 Source Tiers
               </CardTitle>
               <CardDescription>Information source quality</CardDescription>

@@ -176,22 +176,22 @@ export default function MediaTrendsPage() {
       >
         <div>
           <Badge variant="gold" className="mb-2">TRENDS INTELLIGENCE</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Media Industry Trends</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Media Industry Trends</h1>
+          <p className="mt-2 text-platinum-500-400">
             Comprehensive analysis of global media and entertainment trends, streaming maturation, AI disruption, creator economy evolution, and shifting consumption patterns
           </p>
-          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500">
+          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500-500">
             <span>Research: {data.executionMetadata.researchDate}</span>
             <span>Enriched: {data.executionMetadata.enrichmentDate}</span>
             <span>Sources: {data.references.length}+</span>
           </div>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <ExternalLink className="h-4 w-4" />
             Sources
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Sparkles className="h-4 w-4" />
             Analyze
           </Button>
@@ -246,7 +246,7 @@ export default function MediaTrendsPage() {
                   <Card className="glass-card">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Brain className="h-5 w-5 text-gold" />
+                        <Brain className="h-5 w-5 text-gold-700" />
                         Industry Sentiment
                       </CardTitle>
                       <CardDescription>Overall media & entertainment sentiment</CardDescription>
@@ -278,7 +278,7 @@ export default function MediaTrendsPage() {
                   <Card className="glass-card">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <TrendingUp className="h-5 w-5 text-emerald" />
+                        <TrendingUp className="h-5 w-5 text-emerald-500" />
                         Global E&M Market Growth
                       </CardTitle>
                       <CardDescription>$3.08 trillion in 2026, 7.7% CAGR through 2035</CardDescription>
@@ -311,11 +311,11 @@ export default function MediaTrendsPage() {
                           className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                           whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                         >
-                          <CheckCircle className="h-5 w-5 text-emerald mt-0.5" />
+                          <CheckCircle className="h-5 w-5 text-emerald-500 mt-0.5" />
                           <div>
                             <p className="text-sm font-medium">{kpi.kpi}</p>
-                            <p className="text-lg font-bold text-gold">{kpi.currentValue}</p>
-                            <p className="text-xs text-platinum-500">{kpi.trend} | Confidence: {kpi.confidence}</p>
+                            <p className="text-lg font-bold text-gold-700">{kpi.currentValue}</p>
+                            <p className="text-xs text-platinum-500-500">{kpi.trend} | Confidence: {kpi.confidence}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -410,8 +410,8 @@ export default function MediaTrendsPage() {
                             <span className="font-medium">{region.region}</span>
                           </div>
                           <div className="text-right">
-                            <span className="text-sm text-gold">{region.growthRate}</span>
-                            <p className="text-xs text-platinum-500">{region.marketShare}</p>
+                            <span className="text-sm text-gold-700">{region.growthRate}</span>
+                            <p className="text-xs text-platinum-500-500">{region.marketShare}</p>
                           </div>
                         </div>
                       ))}
@@ -452,7 +452,7 @@ export default function MediaTrendsPage() {
                         {data.section2_Streaming.marketValuation.slice(0, 4).map((metric, idx) => (
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <span className="text-sm">{metric.metric}</span>
-                            <span className="text-lg font-bold text-gold">{metric.value}</span>
+                            <span className="text-lg font-bold text-gold-700">{metric.value}</span>
                           </div>
                         ))}
                       </div>
@@ -469,9 +469,9 @@ export default function MediaTrendsPage() {
                     <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
                       {data.section2_Streaming.consumptionBehavior.map((metric, idx) => (
                         <div key={idx} className="rounded-lg border border-platinum-700 p-4">
-                          <p className="text-xs text-platinum-400">{metric.metric}</p>
-                          <p className="mt-1 text-xl font-bold text-gold">{metric.value}</p>
-                          <p className="text-xs text-platinum-500 mt-1">Source: {metric.source}</p>
+                          <p className="text-xs text-platinum-500-400">{metric.metric}</p>
+                          <p className="mt-1 text-xl font-bold text-gold-700">{metric.value}</p>
+                          <p className="text-xs text-platinum-500-500 mt-1">Source: {metric.source}</p>
                         </div>
                       ))}
                     </div>
@@ -482,7 +482,7 @@ export default function MediaTrendsPage() {
                 <Card className="glass-card border-gold-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Tv className="h-5 w-5 text-gold" />
+                      <Tv className="h-5 w-5 text-gold-700" />
                       YouTube Market Position
                     </CardTitle>
                   </CardHeader>
@@ -490,8 +490,8 @@ export default function MediaTrendsPage() {
                     <div className="grid gap-4 md:grid-cols-2">
                       {data.section2_Streaming.youtubePosition.map((item, idx) => (
                         <div key={idx} className="rounded-lg bg-gold-500/10 p-4 border border-gold-500/30">
-                          <p className="text-sm text-platinum-400">{item.metric}</p>
-                          <p className="mt-1 text-lg font-bold text-gold">{item.value || 'Leading'}</p>
+                          <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                          <p className="mt-1 text-lg font-bold text-gold-700">{item.value || 'Leading'}</p>
                           <Badge variant="success" className="mt-2">{item.sentiment}</Badge>
                         </div>
                       ))}
@@ -537,9 +537,9 @@ export default function MediaTrendsPage() {
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div>
                               <p className="text-sm">{metric.metric}</p>
-                              <p className="text-xs text-platinum-500">UAE: {metric.uaeRelevance}</p>
+                              <p className="text-xs text-platinum-500-500">UAE: {metric.uaeRelevance}</p>
                             </div>
-                            <span className="text-lg font-bold text-gold">{metric.value}</span>
+                            <span className="text-lg font-bold text-gold-700">{metric.value}</span>
                           </div>
                         ))}
                       </div>
@@ -557,9 +557,9 @@ export default function MediaTrendsPage() {
                     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                       {data.section3_CTV.marketSize.map((metric, idx) => (
                         <div key={idx} className="rounded-lg border border-gold-500/30 bg-gold-500/5 p-4 text-center">
-                          <p className="text-xs text-platinum-400">{metric.metric}</p>
-                          <p className="mt-1 text-2xl font-bold text-gold">{metric.value}</p>
-                          <p className="text-xs text-platinum-500 mt-1">Tier {metric.tier}</p>
+                          <p className="text-xs text-platinum-500-400">{metric.metric}</p>
+                          <p className="mt-1 text-2xl font-bold text-gold-700">{metric.value}</p>
+                          <p className="text-xs text-platinum-500-500 mt-1">Tier {metric.tier}</p>
                         </div>
                       ))}
                     </div>
@@ -577,10 +577,10 @@ export default function MediaTrendsPage() {
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div>
                             <p className="text-sm">{stat.metric}</p>
-                            <p className="text-xs text-platinum-500">{stat.source} | UAE: {stat.uaeRelevance}</p>
+                            <p className="text-xs text-platinum-500-500">{stat.source} | UAE: {stat.uaeRelevance}</p>
                           </div>
                           <div className="text-right">
-                            <span className="text-lg font-bold text-gold">{stat.value}</span>
+                            <span className="text-lg font-bold text-gold-700">{stat.value}</span>
                             <Badge
                               variant={stat.sentiment === 'Positive' ? 'success' : stat.sentiment === 'Negative' ? 'destructive' : 'outline'}
                               className="ml-2 text-xs"
@@ -628,7 +628,7 @@ export default function MediaTrendsPage() {
                         {data.section5_Music.marketRevenue.slice(0, 4).map((metric, idx) => (
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <span className="text-sm">{metric.metric}</span>
-                            <span className="text-lg font-bold text-gold">{metric.value}</span>
+                            <span className="text-lg font-bold text-gold-700">{metric.value}</span>
                           </div>
                         ))}
                       </div>
@@ -653,8 +653,8 @@ export default function MediaTrendsPage() {
                           }}
                         >
                           <p className="text-sm font-medium">{region.region}</p>
-                          <p className="mt-1 text-xl font-bold text-emerald">+{region.growth}%</p>
-                          <p className="text-xs text-platinum-500 mt-1">Source: {region.source}</p>
+                          <p className="mt-1 text-xl font-bold text-emerald-500">+{region.growth}%</p>
+                          <p className="text-xs text-platinum-500-500 mt-1">Source: {region.source}</p>
                         </div>
                       ))}
                     </div>
@@ -664,15 +664,15 @@ export default function MediaTrendsPage() {
                 {/* Physical Revival */}
                 <Card className="glass-card border-emerald-500/30">
                   <CardHeader>
-                    <CardTitle className="text-lg text-emerald">Physical Format Revival</CardTitle>
+                    <CardTitle className="text-lg text-emerald-500">Physical Format Revival</CardTitle>
                     <CardDescription>Vinyl grows for 19th consecutive year</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-4 md:grid-cols-3">
                       {data.section5_Music.physicalRevival.map((item, idx) => (
                         <div key={idx} className="rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30">
-                          <p className="text-sm text-platinum-400">{item.metric}</p>
-                          <p className="mt-1 text-lg font-bold text-emerald">{item.growth}</p>
+                          <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                          <p className="mt-1 text-lg font-bold text-emerald-500">{item.growth}</p>
                         </div>
                       ))}
                     </div>
@@ -713,7 +713,7 @@ export default function MediaTrendsPage() {
                         {data.section6_Podcast.marketSize.slice(0, 4).map((metric, idx) => (
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <span className="text-sm">{metric.metric}</span>
-                            <span className="text-lg font-bold text-gold">{metric.value}</span>
+                            <span className="text-lg font-bold text-gold-700">{metric.value}</span>
                           </div>
                         ))}
                       </div>
@@ -724,15 +724,15 @@ export default function MediaTrendsPage() {
                 {/* Video Podcast Trends */}
                 <Card className="glass-card border-purple-500/30">
                   <CardHeader>
-                    <CardTitle className="text-lg text-purple">Video Podcast Growth</CardTitle>
+                    <CardTitle className="text-lg text-purple-500">Video Podcast Growth</CardTitle>
                     <CardDescription>53% of new US weekly listeners prefer video</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-3 md:grid-cols-4">
                       {data.section6_Podcast.videoTrends.map((item, idx) => (
                         <div key={idx} className="rounded-lg bg-purple-500/10 p-4 border border-purple-500/30 text-center">
-                          <p className="text-xs text-platinum-400">{item.metric}</p>
-                          <p className="mt-1 text-xl font-bold text-purple">{item.value}</p>
+                          <p className="text-xs text-platinum-500-400">{item.metric}</p>
+                          <p className="mt-1 text-xl font-bold text-purple-500">{item.value}</p>
                         </div>
                       ))}
                     </div>
@@ -776,9 +776,9 @@ export default function MediaTrendsPage() {
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div>
                               <p className="text-sm">{metric.metric}</p>
-                              <p className="text-xs text-platinum-500">UAE: {metric.uaeRelevance}</p>
+                              <p className="text-xs text-platinum-500-500">UAE: {metric.uaeRelevance}</p>
                             </div>
-                            <span className="text-lg font-bold text-gold">{metric.value}</span>
+                            <span className="text-lg font-bold text-gold-700">{metric.value}</span>
                           </div>
                         ))}
                       </div>
@@ -861,7 +861,7 @@ export default function MediaTrendsPage() {
                         {data.section8_AI.marketSize.map((metric, idx) => (
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <span className="text-sm">{metric.metric}</span>
-                            <span className="text-lg font-bold text-gold">{metric.value}</span>
+                            <span className="text-lg font-bold text-gold-700">{metric.value}</span>
                           </div>
                         ))}
                       </div>
@@ -902,14 +902,14 @@ export default function MediaTrendsPage() {
                 {/* Content Generation Concerns */}
                 <Card className="glass-card border-rose-500/30">
                   <CardHeader>
-                    <CardTitle className="text-lg text-rose">AI Content Generation Concerns</CardTitle>
+                    <CardTitle className="text-lg text-rose-500">AI Content Generation Concerns</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-3 md:grid-cols-2">
                       {data.section8_AI.contentGeneration.map((item, idx) => (
                         <div key={idx} className="rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
-                          <p className="text-sm text-platinum-400">{item.metric}</p>
-                          <p className="mt-1 text-xl font-bold text-rose">{item.value}</p>
+                          <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                          <p className="mt-1 text-xl font-bold text-rose-500">{item.value}</p>
                           <Badge variant="destructive" className="mt-2">{item.sentiment}</Badge>
                         </div>
                       ))}
@@ -936,7 +936,7 @@ export default function MediaTrendsPage() {
                         {data.section9_Consumption.dailyConsumption.map((metric, idx) => (
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <span className="text-sm">{metric.metric}</span>
-                            <span className="text-lg font-bold text-gold">{metric.value}</span>
+                            <span className="text-lg font-bold text-gold-700">{metric.value}</span>
                           </div>
                         ))}
                       </div>
@@ -966,16 +966,16 @@ export default function MediaTrendsPage() {
                 {/* Gen Z Differences */}
                 <Card className="glass-card border-gold-500/30">
                   <CardHeader>
-                    <CardTitle className="text-lg text-gold">Gen Z Media Behavior</CardTitle>
+                    <CardTitle className="text-lg text-gold-700">Gen Z Media Behavior</CardTitle>
                     <CardDescription>Significant differences from other generations</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-3 md:grid-cols-2">
                       {data.section9_Consumption.generationalDifferences.map((item, idx) => (
                         <div key={idx} className="rounded-lg bg-gold-500/10 p-4 border border-gold-500/30">
-                          <p className="text-sm text-platinum-400">{item.metric}</p>
-                          <p className="mt-1 text-xl font-bold text-gold">{item.genZ}</p>
-                          <p className="text-xs text-platinum-500">vs Average: {item.vsAverage}</p>
+                          <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                          <p className="mt-1 text-xl font-bold text-gold-700">{item.genZ}</p>
+                          <p className="text-xs text-platinum-500-500">vs Average: {item.vsAverage}</p>
                           <Badge variant="warning" className="mt-2">UAE: {item.uaeRelevance}</Badge>
                         </div>
                       ))}
@@ -994,10 +994,10 @@ export default function MediaTrendsPage() {
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div>
                             <p className="text-sm">{item.metric}</p>
-                            <p className="text-xs text-platinum-500">UAE: {item.uaeRelevance}</p>
+                            <p className="text-xs text-platinum-500-500">UAE: {item.uaeRelevance}</p>
                           </div>
                           <div className="text-right">
-                            <span className="text-lg font-bold text-emerald">{item.value}</span>
+                            <span className="text-lg font-bold text-emerald-500">{item.value}</span>
                             <Badge variant={item.sentiment === 'Positive' ? 'success' : item.sentiment === 'Negative' ? 'destructive' : 'outline'} className="ml-2 text-xs">
                               {item.sentiment}
                             </Badge>
@@ -1028,9 +1028,9 @@ export default function MediaTrendsPage() {
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div>
                               <p className="text-sm">{metric.metric}</p>
-                              <p className="text-xs text-platinum-500">UAE: {metric.uaeRelevance}</p>
+                              <p className="text-xs text-platinum-500-500">UAE: {metric.uaeRelevance}</p>
                             </div>
-                            <span className="text-lg font-bold text-gold">{metric.value}</span>
+                            <span className="text-lg font-bold text-gold-700">{metric.value}</span>
                           </div>
                         ))}
                       </div>
@@ -1045,9 +1045,9 @@ export default function MediaTrendsPage() {
                       <div className="space-y-3">
                         {data.section10_Creator.topCreators.map((creator, idx) => (
                           <div key={idx} className="rounded-lg bg-gold-500/10 p-4 border border-gold-500/30">
-                            <p className="font-medium text-gold">{creator.creator}</p>
+                            <p className="font-medium text-gold-700">{creator.creator}</p>
                             <p className="mt-1 text-lg font-bold">${creator.revenue}</p>
-                            <p className="text-xs text-platinum-500 mt-1">{creator.notes}</p>
+                            <p className="text-xs text-platinum-500-500 mt-1">{creator.notes}</p>
                           </div>
                         ))}
                       </div>
@@ -1083,7 +1083,7 @@ export default function MediaTrendsPage() {
                       {data.section10_Creator.economyTrends.map((trend, idx) => (
                         <div key={idx} className="rounded-lg border border-platinum-700 p-4">
                           <p className="font-medium">{trend.trend}</p>
-                          <p className="mt-1 text-sm text-platinum-400">{trend.impact}</p>
+                          <p className="mt-1 text-sm text-platinum-500-400">{trend.impact}</p>
                           <Badge variant={trend.sentiment === 'Positive' || trend.sentiment === 'Very Positive' ? 'success' : trend.sentiment === 'Negative' ? 'destructive' : 'outline'} className="mt-2 text-xs">
                             {trend.sentiment}
                           </Badge>
@@ -1105,15 +1105,15 @@ export default function MediaTrendsPage() {
                 {/* News Industry */}
                 <Card className="glass-card border-rose-500/30">
                   <CardHeader>
-                    <CardTitle className="text-lg text-rose">News Industry Challenges</CardTitle>
+                    <CardTitle className="text-lg text-rose-500">News Industry Challenges</CardTitle>
                     <CardDescription>Historic lows in trust and confidence</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-3 md:grid-cols-2">
                       {data.section12_Traditional.newsIndustry.map((metric, idx) => (
                         <div key={idx} className="rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
-                          <p className="text-sm text-platinum-400">{metric.metric}</p>
-                          <p className="mt-1 text-xl font-bold text-rose">{metric.value}</p>
+                          <p className="text-sm text-platinum-500-400">{metric.metric}</p>
+                          <p className="mt-1 text-xl font-bold text-rose-500">{metric.value}</p>
                           <Badge variant="destructive" className="mt-2">{metric.sentiment}</Badge>
                         </div>
                       ))}
@@ -1124,13 +1124,13 @@ export default function MediaTrendsPage() {
                 {/* Growth Areas */}
                 <Card className="glass-card border-emerald-500/30">
                   <CardHeader>
-                    <CardTitle className="text-lg text-emerald">Growth Areas Despite Challenges</CardTitle>
+                    <CardTitle className="text-lg text-emerald-500">Growth Areas Despite Challenges</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-3 md:grid-cols-3">
                       {data.section12_Traditional.growthAreas.map((area, idx) => (
                         <div key={idx} className="rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30 text-center">
-                          <p className="font-medium text-emerald">{area.area}</p>
+                          <p className="font-medium text-emerald-500">{area.area}</p>
                           <Badge variant="success" className="mt-2">{area.sentiment}</Badge>
                         </div>
                       ))}
@@ -1158,9 +1158,9 @@ export default function MediaTrendsPage() {
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div>
                               <p className="text-sm">{metric.metric}</p>
-                              <p className="text-xs text-platinum-500">UAE: {metric.uaeRelevance}</p>
+                              <p className="text-xs text-platinum-500-500">UAE: {metric.uaeRelevance}</p>
                             </div>
-                            <span className="text-lg font-bold text-gold">{metric.value}</span>
+                            <span className="text-lg font-bold text-gold-700">{metric.value}</span>
                           </div>
                         ))}
                       </div>
@@ -1176,7 +1176,7 @@ export default function MediaTrendsPage() {
                         {data.section13_Mobile.emailDigitalMarketing.map((metric, idx) => (
                           <div key={idx} className="rounded-lg bg-emerald-500/10 p-3 border border-emerald-500/30">
                             <p className="text-sm">{metric.metric}</p>
-                            <p className="mt-1 text-lg font-bold text-emerald">{metric.value}</p>
+                            <p className="mt-1 text-lg font-bold text-emerald-500">{metric.value}</p>
                           </div>
                         ))}
                       </div>
@@ -1194,8 +1194,8 @@ export default function MediaTrendsPage() {
                     <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
                       {data.section13_Mobile.streamingInfrastructure.map((metric, idx) => (
                         <div key={idx} className="rounded-lg border border-platinum-700 p-4 text-center">
-                          <p className="text-xs text-platinum-400">{metric.metric}</p>
-                          <p className="mt-1 text-lg font-bold text-gold">{metric.value}</p>
+                          <p className="text-xs text-platinum-500-400">{metric.metric}</p>
+                          <p className="mt-1 text-lg font-bold text-gold-700">{metric.value}</p>
                         </div>
                       ))}
                     </div>
@@ -1223,7 +1223,7 @@ export default function MediaTrendsPage() {
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div>
                               <p className="font-medium">{entity.entity}</p>
-                              <p className="text-xs text-platinum-500">{entity.category}</p>
+                              <p className="text-xs text-platinum-500-500">{entity.category}</p>
                             </div>
                             <Badge variant="outline">{entity.type}</Badge>
                           </div>
@@ -1245,7 +1245,7 @@ export default function MediaTrendsPage() {
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div>
                               <p className="font-medium">{entity.entity}</p>
-                              <p className="text-xs text-platinum-500">{entity.category}</p>
+                              <p className="text-xs text-platinum-500-500">{entity.category}</p>
                             </div>
                             <Badge variant="gold">{entity.type}</Badge>
                           </div>
@@ -1265,7 +1265,7 @@ export default function MediaTrendsPage() {
                       {data.entityRegistry.geographic.map((entity, idx) => (
                         <div key={idx} className="rounded-lg border border-platinum-700 p-4">
                           <p className="font-medium">{entity.entity}</p>
-                          <p className="text-xs text-platinum-500 mt-1">{entity.notes}</p>
+                          <p className="text-xs text-platinum-500-500 mt-1">{entity.notes}</p>
                           <Badge variant="outline" className="mt-2 text-xs">{entity.region}</Badge>
                         </div>
                       ))}

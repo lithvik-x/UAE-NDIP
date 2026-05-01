@@ -261,17 +261,17 @@ export default function MediaOrganizationsPage() {
       >
         <div>
           <Badge variant="denim" className="mb-2">MEDIA ORGANIZATIONS</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Entity Intelligence</h1>
-          <p className="mt-2 text-platinum-600 dark:text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">Entity Intelligence</h1>
+          <p className="mt-2 text-platinum-500-600 dark:text-platinum-500-400">
             UAE-based, international, and regional media organizations — {totalOrgs} entities tracked
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-navy/30 text-navy hover:bg-navy/10">
+          <Button variant="outline" className="gap-2 border-navy/30 text-navy-500 hover:bg-navy/10">
             <Globe className="h-4 w-4" />
             Export List
           </Button>
-          <Button className="bg-gradient-navy hover:opacity-90 text-platinum-100 gap-2">
+          <Button className="bg-gradient-navy hover:opacity-90 text-platinum-500-100 gap-2">
             <Star className="h-4 w-4" />
             Refresh Data
           </Button>
@@ -374,7 +374,7 @@ export default function MediaOrganizationsPage() {
                     donut={true}
                   />
                 ) : (
-                  <div className="flex items-center justify-center h-48 text-platinum-500">No data available</div>
+                  <div className="flex items-center justify-center h-48 text-platinum-500-500">No data available</div>
                 )}
               </CardContent>
             </Card>
@@ -394,7 +394,7 @@ export default function MediaOrganizationsPage() {
                     donut={true}
                   />
                 ) : (
-                  <div className="flex items-center justify-center h-48 text-platinum-500">No data available</div>
+                  <div className="flex items-center justify-center h-48 text-platinum-500-500">No data available</div>
                 )}
               </CardContent>
             </Card>
@@ -416,7 +416,7 @@ export default function MediaOrganizationsPage() {
                     donut={true}
                   />
                 ) : (
-                  <div className="flex items-center justify-center h-48 text-platinum-500">No data available</div>
+                  <div className="flex items-center justify-center h-48 text-platinum-500-500">No data available</div>
                 )}
               </CardContent>
             </Card>
@@ -437,7 +437,7 @@ export default function MediaOrganizationsPage() {
                     showGrid={true}
                   />
                 ) : (
-                  <div className="flex items-center justify-center h-48 text-platinum-500">No data available</div>
+                  <div className="flex items-center justify-center h-48 text-platinum-500-500">No data available</div>
                 )}
               </CardContent>
             </Card>
@@ -452,8 +452,8 @@ export default function MediaOrganizationsPage() {
                     <Crown className="h-4 w-4" />
                   </div>
                   <div>
-                    <p className="font-semibold text-navy-900 dark:text-platinum-100">{item.organization}</p>
-                    <p className="text-xs text-platinum-600 dark:text-platinum-400 mt-1">{item.reason}</p>
+                    <p className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{item.organization}</p>
+                    <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400 mt-1">{item.reason}</p>
                   </div>
                 </div>
               ))}
@@ -467,12 +467,12 @@ export default function MediaOrganizationsPage() {
             <Table>
               <TableHeader>
                 <TableRow className="border-b border-platinum-200/50 dark:border-platinum-700/50">
-                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Name</TableHead>
-                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Type</TableHead>
-                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Language</TableHead>
-                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">HQ</TableHead>
-                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Sentiment</TableHead>
-                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Relevance</TableHead>
+                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Name</TableHead>
+                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Type</TableHead>
+                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Language</TableHead>
+                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">HQ</TableHead>
+                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Sentiment</TableHead>
+                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Relevance</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -480,25 +480,25 @@ export default function MediaOrganizationsPage() {
                   <TableRow key={org.id} className="border-b border-platinum-100/50 dark:border-platinum-800/50 hover:bg-platinum-50/50 dark:hover:bg-platinum-800/25 transition-colors">
                     <TableCell>
                       <div className="flex flex-col">
-                        <span className="font-semibold text-navy-900 dark:text-platinum-100">{org.name}</span>
+                        <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{org.name}</span>
                         {org.nameAr && (
-                          <span className="text-xs text-platinum-500 dark:text-platinum-400 font-arabic">{org.nameAr}</span>
+                          <span className="text-xs text-platinum-500-500 dark:text-platinum-500-400 font-arabic">{org.nameAr}</span>
                         )}
                       </div>
                     </TableCell>
                     <TableCell>
                       <div className="flex items-center gap-2">
                         {getTypeIcon(org.type)}
-                        <span className="text-sm text-platinum-700 dark:text-platinum-300">{org.type.replace('_', ' ')}</span>
+                        <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{org.type.replace('_', ' ')}</span>
                       </div>
                     </TableCell>
                     <TableCell>
-                      <span className="text-sm text-platinum-700 dark:text-platinum-300">{org.language}</span>
+                      <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{org.language}</span>
                     </TableCell>
                     <TableCell>
                       <div className="flex flex-col">
-                        <span className="text-sm text-platinum-700 dark:text-platinum-300">{org.headquarters}</span>
-                        <span className="text-xs text-platinum-500">{org.country}</span>
+                        <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{org.headquarters}</span>
+                        <span className="text-xs text-platinum-500-500">{org.country}</span>
                       </div>
                     </TableCell>
                     <TableCell>
@@ -532,7 +532,7 @@ export default function MediaOrganizationsPage() {
                     donut={true}
                   />
                 ) : (
-                  <div className="flex items-center justify-center h-48 text-platinum-500">No data available</div>
+                  <div className="flex items-center justify-center h-48 text-platinum-500-500">No data available</div>
                 )}
               </CardContent>
             </Card>
@@ -551,14 +551,14 @@ export default function MediaOrganizationsPage() {
                         <Badge variant={os.category === 'STATE_OWNED' ? 'default' : os.category === 'FAMILY_OWNED' ? 'secondary' : 'outline'} className="text-xs">
                           {os.category.replace('_', ' ')}
                         </Badge>
-                        <span className="text-sm text-platinum-500">{os.organizations.length} organizations</span>
+                        <span className="text-sm text-platinum-500-500">{os.organizations.length} organizations</span>
                       </div>
                       <div className="pl-4 space-y-1">
                         {os.organizations.slice(0, 5).map((org, j) => (
-                          <p key={j} className="text-xs text-platinum-700 dark:text-platinum-300">{org}</p>
+                          <p key={j} className="text-xs text-platinum-500-700 dark:text-platinum-500-300">{org}</p>
                         ))}
                         {os.organizations.length > 5 && (
-                          <p className="text-xs text-platinum-500">+{os.organizations.length - 5} more</p>
+                          <p className="text-xs text-platinum-500-500">+{os.organizations.length - 5} more</p>
                         )}
                       </div>
                     </div>
@@ -573,51 +573,51 @@ export default function MediaOrganizationsPage() {
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               <div className="p-4 rounded-lg bg-gradient-gold/10 border border-gold-200/50">
                 <div className="flex items-center gap-2 mb-2">
-                  <Crown className="h-5 w-5 text-gold" />
-                  <span className="font-semibold text-navy-900 dark:text-platinum-100">Sheikh Mansour</span>
+                  <Crown className="h-5 w-5 text-gold-700" />
+                  <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">Sheikh Mansour</span>
                 </div>
-                <p className="text-xs text-platinum-600 dark:text-platinum-400">UAE Vice President</p>
-                <p className="text-xs text-platinum-500 mt-1">The National, Sky News Arabia (via IMI)</p>
+                <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">UAE Vice President</p>
+                <p className="text-xs text-platinum-500-500 mt-1">The National, Sky News Arabia (via IMI)</p>
               </div>
               <div className="p-4 rounded-lg bg-gradient-navy/10 border border-navy-200/50">
                 <div className="flex items-center gap-2 mb-2">
-                  <Building2 className="h-5 w-5 text-navy-600" />
-                  <span className="font-semibold text-navy-900 dark:text-platinum-100">Abu Dhabi Government</span>
+                  <Building2 className="h-5 w-5 text-navy-500-600" />
+                  <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">Abu Dhabi Government</span>
                 </div>
-                <p className="text-xs text-platinum-600 dark:text-platinum-400">State Media</p>
-                <p className="text-xs text-platinum-500 mt-1">Al Ittihad, WAM</p>
+                <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">State Media</p>
+                <p className="text-xs text-platinum-500-500 mt-1">Al Ittihad, WAM</p>
               </div>
               <div className="p-4 rounded-lg bg-gradient-emerald/10 border border-emerald-200/50">
                 <div className="flex items-center gap-2 mb-2">
                   <Building2 className="h-5 w-5 text-emerald-600" />
-                  <span className="font-semibold text-navy-900 dark:text-platinum-100">Dubai Government</span>
+                  <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">Dubai Government</span>
                 </div>
-                <p className="text-xs text-platinum-600 dark:text-platinum-400">State Media</p>
-                <p className="text-xs text-platinum-500 mt-1">Al Bayan, Emarat Al Youm</p>
+                <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">State Media</p>
+                <p className="text-xs text-platinum-500-500 mt-1">Al Bayan, Emarat Al Youm</p>
               </div>
               <div className="p-4 rounded-lg bg-gradient-gold/10 border border-gold-200/50">
                 <div className="flex items-center gap-2 mb-2">
-                  <Crown className="h-5 w-5 text-gold" />
-                  <span className="font-semibold text-navy-900 dark:text-platinum-100">Saudi PIF</span>
+                  <Crown className="h-5 w-5 text-gold-700" />
+                  <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">Saudi PIF</span>
                 </div>
-                <p className="text-xs text-platinum-600 dark:text-platinum-400">Public Investment Fund</p>
-                <p className="text-xs text-platinum-500 mt-1">Al Arabiya (54%), Al Hadath</p>
+                <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">Public Investment Fund</p>
+                <p className="text-xs text-platinum-500-500 mt-1">Al Arabiya (54%), Al Hadath</p>
               </div>
               <div className="p-4 rounded-lg bg-gradient-platinum/10 border border-platinum-200/50">
                 <div className="flex items-center gap-2 mb-2">
-                  <Users className="h-5 w-5 text-platinum-600" />
-                  <span className="font-semibold text-navy-900 dark:text-platinum-100">Galadari Family</span>
+                  <Users className="h-5 w-5 text-platinum-500-600" />
+                  <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">Galadari Family</span>
                 </div>
-                <p className="text-xs text-platinum-600 dark:text-platinum-400">Family Ownership</p>
-                <p className="text-xs text-platinum-500 mt-1">Khaleej Times</p>
+                <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">Family Ownership</p>
+                <p className="text-xs text-platinum-500-500 mt-1">Khaleej Times</p>
               </div>
               <div className="p-4 rounded-lg bg-gradient-platinum/10 border border-platinum-200/50">
                 <div className="flex items-center gap-2 mb-2">
-                  <Users className="h-5 w-5 text-platinum-600" />
-                  <span className="font-semibold text-navy-900 dark:text-platinum-100">Taryam Family</span>
+                  <Users className="h-5 w-5 text-platinum-500-600" />
+                  <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">Taryam Family</span>
                 </div>
-                <p className="text-xs text-platinum-600 dark:text-platinum-400">Family Ownership</p>
-                <p className="text-xs text-platinum-500 mt-1">Al Khaleej, Gulf Today</p>
+                <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">Family Ownership</p>
+                <p className="text-xs text-platinum-500-500 mt-1">Al Khaleej, Gulf Today</p>
               </div>
             </div>
           </GlassPanel>
@@ -642,7 +642,7 @@ export default function MediaOrganizationsPage() {
                     showGrid={true}
                   />
                 ) : (
-                  <div className="flex items-center justify-center h-48 text-platinum-500">No data available</div>
+                  <div className="flex items-center justify-center h-48 text-platinum-500-500">No data available</div>
                 )}
               </CardContent>
             </Card>
@@ -661,31 +661,31 @@ export default function MediaOrganizationsPage() {
                         <Globe className="h-5 w-5" />
                       </div>
                       <div>
-                        <p className="font-semibold text-navy-900 dark:text-platinum-100">Khaleej Times</p>
-                        <p className="text-xs text-platinum-500">Highest digital reach</p>
+                        <p className="font-semibold text-navy-500-900 dark:text-platinum-500-100">Khaleej Times</p>
+                        <p className="text-xs text-platinum-500-500">Highest digital reach</p>
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">37.2M</p>
-                      <p className="text-xs text-platinum-500">monthly consumers</p>
+                      <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">37.2M</p>
+                      <p className="text-xs text-platinum-500-500">monthly consumers</p>
                     </div>
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-platinum-700 dark:text-platinum-300">Website Users (monthly)</span>
-                      <span className="font-semibold text-navy-900 dark:text-platinum-100">6.5M</span>
+                      <span className="text-platinum-500-700 dark:text-platinum-500-300">Website Users (monthly)</span>
+                      <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">6.5M</span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-platinum-700 dark:text-platinum-300">Instagram Followers</span>
-                      <span className="font-semibold text-navy-900 dark:text-platinum-100">3.2M</span>
+                      <span className="text-platinum-500-700 dark:text-platinum-500-300">Instagram Followers</span>
+                      <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">3.2M</span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-platinum-700 dark:text-platinum-300">Facebook Users</span>
-                      <span className="font-semibold text-navy-900 dark:text-platinum-100">21.7M</span>
+                      <span className="text-platinum-500-700 dark:text-platinum-500-300">Facebook Users</span>
+                      <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">21.7M</span>
                     </div>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-platinum-700 dark:text-platinum-300">X (Twitter) Followers</span>
-                      <span className="font-semibold text-navy-900 dark:text-platinum-100">1M+</span>
+                      <span className="text-platinum-500-700 dark:text-platinum-500-300">X (Twitter) Followers</span>
+                      <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">1M+</span>
                     </div>
                   </div>
                 </div>
@@ -698,10 +698,10 @@ export default function MediaOrganizationsPage() {
             <Table>
               <TableHeader>
                 <TableRow className="border-b border-platinum-200/50 dark:border-platinum-700/50">
-                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Channel</TableHead>
-                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">HQ Location</TableHead>
-                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Owner</TableHead>
-                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Launch Date</TableHead>
+                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Channel</TableHead>
+                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">HQ Location</TableHead>
+                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Owner</TableHead>
+                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Launch Date</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -709,18 +709,18 @@ export default function MediaOrganizationsPage() {
                   <TableRow key={i} className="border-b border-platinum-100/50 dark:border-platinum-800/50">
                     <TableCell>
                       <div className="flex items-center gap-2">
-                        <Tv className="h-4 w-4 text-navy-600" />
-                        <span className="font-semibold text-navy-900 dark:text-platinum-100">{channel.channel}</span>
+                        <Tv className="h-4 w-4 text-navy-500-600" />
+                        <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{channel.channel}</span>
                       </div>
                     </TableCell>
                     <TableCell>
-                      <span className="text-sm text-platinum-700 dark:text-platinum-300">{channel.hqLocation}</span>
+                      <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{channel.hqLocation}</span>
                     </TableCell>
                     <TableCell>
-                      <span className="text-sm text-platinum-700 dark:text-platinum-300">{channel.owner}</span>
+                      <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{channel.owner}</span>
                     </TableCell>
                     <TableCell>
-                      <span className="text-sm text-platinum-500">{channel.launchDate || '—'}</span>
+                      <span className="text-sm text-platinum-500-500">{channel.launchDate || '—'}</span>
                     </TableCell>
                   </TableRow>
                 ))}
@@ -736,20 +736,20 @@ export default function MediaOrganizationsPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-sm text-platinum-600">Employees</span>
-                  <span className="font-semibold text-navy-900 dark:text-platinum-100">3,000+</span>
+                  <span className="text-sm text-platinum-500-600">Employees</span>
+                  <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">3,000+</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-sm text-platinum-600">Global Audience</span>
-                  <span className="font-semibold text-navy-900 dark:text-platinum-100">430M</span>
+                  <span className="text-sm text-platinum-500-600">Global Audience</span>
+                  <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">430M</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-sm text-platinum-600">Bureaus</span>
-                  <span className="font-semibold text-navy-900 dark:text-platinum-100">70</span>
+                  <span className="text-sm text-platinum-500-600">Bureaus</span>
+                  <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">70</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-sm text-platinum-600">Countries</span>
-                  <span className="font-semibold text-navy-900 dark:text-platinum-100">150+</span>
+                  <span className="text-sm text-platinum-500-600">Countries</span>
+                  <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">150+</span>
                 </div>
               </CardContent>
             </Card>
@@ -760,12 +760,12 @@ export default function MediaOrganizationsPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-sm text-platinum-600">Households</span>
-                  <span className="font-semibold text-navy-900 dark:text-platinum-100">50M+</span>
+                  <span className="text-sm text-platinum-500-600">Households</span>
+                  <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">50M+</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-sm text-platinum-600">Radio Frequency</span>
-                  <span className="font-semibold text-navy-900 dark:text-platinum-100">90.3 FM</span>
+                  <span className="text-sm text-platinum-500-600">Radio Frequency</span>
+                  <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">90.3 FM</span>
                 </div>
               </CardContent>
             </Card>
@@ -776,16 +776,16 @@ export default function MediaOrganizationsPage() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex justify-between">
-                  <span className="text-sm text-platinum-600">Al Jazeera Funding</span>
-                  <span className="font-semibold text-navy-900 dark:text-platinum-100">$137M</span>
+                  <span className="text-sm text-platinum-500-600">Al Jazeera Funding</span>
+                  <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">$137M</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-sm text-platinum-600">Al Jazeera English</span>
-                  <span className="font-semibold text-navy-900 dark:text-platinum-100">$1B</span>
+                  <span className="text-sm text-platinum-500-600">Al Jazeera English</span>
+                  <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">$1B</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-sm text-platinum-600">Emarat Al Youm Fine</span>
-                  <span className="font-semibold text-navy-900 dark:text-platinum-100">$5,445</span>
+                  <span className="text-sm text-platinum-500-600">Emarat Al Youm Fine</span>
+                  <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">$5,445</span>
                 </div>
               </CardContent>
             </Card>
@@ -805,15 +805,15 @@ export default function MediaOrganizationsPage() {
                 <Table>
                   <TableHeader>
                     <TableRow className="border-b border-platinum-200/50">
-                      <TableHead className="text-platinum-700 font-semibold">Organization</TableHead>
-                      <TableHead className="text-platinum-700 font-semibold">Sentiment</TableHead>
-                      <TableHead className="text-platinum-700 font-semibold">UAE Position</TableHead>
+                      <TableHead className="text-platinum-500-700 font-semibold">Organization</TableHead>
+                      <TableHead className="text-platinum-500-700 font-semibold">Sentiment</TableHead>
+                      <TableHead className="text-platinum-500-700 font-semibold">UAE Position</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {sentimentMatrix.slice(0, 10).map((entry, i) => (
                       <TableRow key={i} className="border-b border-platinum-100/50">
-                        <TableCell className="font-medium text-navy-900 dark:text-platinum-100">{entry.organization}</TableCell>
+                        <TableCell className="font-medium text-navy-500-900 dark:text-platinum-500-100">{entry.organization}</TableCell>
                         <TableCell>
                           <Badge
                             variant={
@@ -826,7 +826,7 @@ export default function MediaOrganizationsPage() {
                             {entry.sentiment}
                           </Badge>
                         </TableCell>
-                        <TableCell className="text-sm text-platinum-600">{entry.uaePosition}</TableCell>
+                        <TableCell className="text-sm text-platinum-500-600">{entry.uaePosition}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -849,7 +849,7 @@ export default function MediaOrganizationsPage() {
                     donut={true}
                   />
                 ) : (
-                  <div className="flex items-center justify-center h-48 text-platinum-500">No data available</div>
+                  <div className="flex items-center justify-center h-48 text-platinum-500-500">No data available</div>
                 )}
               </CardContent>
             </Card>
@@ -888,10 +888,10 @@ export default function MediaOrganizationsPage() {
                     <Ban className="h-5 w-5 text-red-500 mt-0.5" />
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
-                        <p className="font-semibold text-navy-900 dark:text-platinum-100">{ban.media}</p>
+                        <p className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{ban.media}</p>
                         <Badge variant="destructive" className="text-xs">{ban.banStart}</Badge>
                       </div>
-                      <p className="text-xs text-platinum-600 dark:text-platinum-400 mt-1">
+                      <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400 mt-1">
                         {ban.country} — {ban.reason || 'No specified reason'}
                       </p>
                     </div>
@@ -911,8 +911,8 @@ export default function MediaOrganizationsPage() {
                   <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-platinum-50/50 dark:bg-platinum-800/25">
                     <AlertCircle className="h-4 w-4 text-gold-700 mt-0.5" />
                     <div>
-                      <p className="font-medium text-navy-900 dark:text-platinum-100">{c.organization}</p>
-                      <p className="text-xs text-platinum-600 dark:text-platinum-400 mt-1">{c.year}: {c.incident}</p>
+                      <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{c.organization}</p>
+                      <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400 mt-1">{c.year}: {c.incident}</p>
                     </div>
                   </div>
                 ))}
@@ -929,17 +929,17 @@ export default function MediaOrganizationsPage() {
               <Table>
                 <TableHeader>
                   <TableRow className="border-b border-platinum-200/50">
-                    <TableHead className="text-platinum-700 font-semibold">Newspaper</TableHead>
-                    <TableHead className="text-platinum-700 font-semibold">Position</TableHead>
-                    <TableHead className="text-platinum-700 font-semibold">Name</TableHead>
+                    <TableHead className="text-platinum-500-700 font-semibold">Newspaper</TableHead>
+                    <TableHead className="text-platinum-500-700 font-semibold">Position</TableHead>
+                    <TableHead className="text-platinum-500-700 font-semibold">Name</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {newspaperLeadership.map((leader, i) => (
                     <TableRow key={i} className="border-b border-platinum-100/50">
-                      <TableCell className="font-medium text-navy-900 dark:text-platinum-100">{leader.newspaper}</TableCell>
-                      <TableCell className="text-sm text-platinum-600">{leader.position}</TableCell>
-                      <TableCell className="text-sm text-platinum-700 dark:text-platinum-300">{leader.name}</TableCell>
+                      <TableCell className="font-medium text-navy-500-900 dark:text-platinum-500-100">{leader.newspaper}</TableCell>
+                      <TableCell className="text-sm text-platinum-500-600">{leader.position}</TableCell>
+                      <TableCell className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{leader.name}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -951,17 +951,17 @@ export default function MediaOrganizationsPage() {
               <Table>
                 <TableHeader>
                   <TableRow className="border-b border-platinum-200/50">
-                    <TableHead className="text-platinum-700 font-semibold">Channel</TableHead>
-                    <TableHead className="text-platinum-700 font-semibold">Position</TableHead>
-                    <TableHead className="text-platinum-700 font-semibold">Name</TableHead>
+                    <TableHead className="text-platinum-500-700 font-semibold">Channel</TableHead>
+                    <TableHead className="text-platinum-500-700 font-semibold">Position</TableHead>
+                    <TableHead className="text-platinum-500-700 font-semibold">Name</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {broadcastLeadership.map((leader, i) => (
                     <TableRow key={i} className="border-b border-platinum-100/50">
-                      <TableCell className="font-medium text-navy-900 dark:text-platinum-100">{leader.channel}</TableCell>
-                      <TableCell className="text-sm text-platinum-600">{leader.position}</TableCell>
-                      <TableCell className="text-sm text-platinum-700 dark:text-platinum-300">{leader.name}</TableCell>
+                      <TableCell className="font-medium text-navy-500-900 dark:text-platinum-500-100">{leader.channel}</TableCell>
+                      <TableCell className="text-sm text-platinum-500-600">{leader.position}</TableCell>
+                      <TableCell className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{leader.name}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -977,7 +977,7 @@ export default function MediaOrganizationsPage() {
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-emerald text-white">
                     <MapPin className="h-4 w-4" />
                   </div>
-                  <span className="font-medium text-navy-900 dark:text-platinum-100">{office}</span>
+                  <span className="font-medium text-navy-500-900 dark:text-platinum-500-100">{office}</span>
                 </div>
               ))}
             </div>
@@ -990,10 +990,10 @@ export default function MediaOrganizationsPage() {
             <div className="grid gap-3 sm:grid-cols-2">
               {sourceUrls.map((source, i) => (
                 <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-platinum-50/50 dark:bg-platinum-800/25">
-                  <Globe className="h-4 w-4 text-navy-600 mt-0.5" />
+                  <Globe className="h-4 w-4 text-navy-500-600 mt-0.5" />
                   <div>
-                    <p className="font-medium text-navy-900 dark:text-platinum-100 text-sm">{source.source}</p>
-                    <p className="text-xs text-platinum-500 mt-1 break-all">{source.url}</p>
+                    <p className="font-medium text-navy-500-900 dark:text-platinum-500-100 text-sm">{source.source}</p>
+                    <p className="text-xs text-platinum-500-500 mt-1 break-all">{source.url}</p>
                   </div>
                 </div>
               ))}
@@ -1005,7 +1005,7 @@ export default function MediaOrganizationsPage() {
             <GlassPanel title="Critical Importance" description="9 organizations">
               <div className="space-y-2">
                 {criticalImportance.map((item, i) => (
-                  <p key={i} className="text-sm text-platinum-700 dark:text-platinum-300">• {item.organization}</p>
+                  <p key={i} className="text-sm text-platinum-500-700 dark:text-platinum-500-300">• {item.organization}</p>
                 ))}
               </div>
             </GlassPanel>
@@ -1013,7 +1013,7 @@ export default function MediaOrganizationsPage() {
             <GlassPanel title="High Importance" description="5 organizations">
               <div className="space-y-2">
                 {highImportance.map((item, i) => (
-                  <p key={i} className="text-sm text-platinum-700 dark:text-platinum-300">• {item.organization}</p>
+                  <p key={i} className="text-sm text-platinum-500-700 dark:text-platinum-500-300">• {item.organization}</p>
                 ))}
               </div>
             </GlassPanel>
@@ -1021,7 +1021,7 @@ export default function MediaOrganizationsPage() {
             <GlassPanel title="Medium Importance" description="3 organizations">
               <div className="space-y-2">
                 {mediumImportance.map((item, i) => (
-                  <p key={i} className="text-sm text-platinum-700 dark:text-platinum-300">• {item.organization}</p>
+                  <p key={i} className="text-sm text-platinum-500-700 dark:text-platinum-500-300">• {item.organization}</p>
                 ))}
               </div>
             </GlassPanel>

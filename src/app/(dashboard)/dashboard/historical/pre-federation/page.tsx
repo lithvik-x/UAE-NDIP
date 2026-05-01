@@ -66,19 +66,19 @@ const HeaderSection = ({ data }: { data: any }) => (
   >
     <div>
       <Badge variant="gold" className="mb-2 font-rajdhani">H-ERA-1</Badge>
-      <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold">
+      <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold-700">
         Pre-Federation Era
       </h1>
-      <p className="mt-2 text-platinum-400 font-rajdhani max-w-2xl">
+      <p className="mt-2 text-platinum-500-400 font-rajdhani max-w-2xl">
         {data.description}
       </p>
     </div>
     <div className="flex gap-3">
-      <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10 font-rajdhani">
+      <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10 font-rajdhani">
         <Archive className="h-4 w-4" />
         View Archive
       </Button>
-      <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2 font-rajdhani">
+      <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2 font-rajdhani">
         <ScrollText className="h-4 w-4" />
         Historical Records
       </Button>
@@ -215,7 +215,7 @@ const OverviewTab = ({ data }: { data: any }) => {
         <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
           <CardHeader>
             <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-              <Target className="h-5 w-5 text-gold" />
+              <Target className="h-5 w-5 text-gold-700" />
               Event Significance Distribution
             </CardTitle>
             <CardDescription>Classification of pre-federation events</CardDescription>
@@ -229,7 +229,7 @@ const OverviewTab = ({ data }: { data: any }) => {
         <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
           <CardHeader>
             <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-              <Eye className="h-5 w-5 text-gold" />
+              <Eye className="h-5 w-5 text-gold-700" />
               UAE Relevance Assessment
             </CardTitle>
             <CardDescription>Topic priority scores for Pre-Federation research</CardDescription>
@@ -245,7 +245,7 @@ const OverviewTab = ({ data }: { data: any }) => {
                     transition={{ delay: idx * 0.1 }}
                     className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-[var(--glass-border)]"
                   >
-                    <span className="text-sm font-medium text-platinum-200 font-rajdhani">{item.topic}</span>
+                    <span className="text-sm font-medium text-platinum-500-200 font-rajdhani">{item.topic}</span>
                     <Badge
                       variant={item.priority === 'CRITICAL' ? 'destructive' : item.priority === 'HIGH' ? 'warning' : 'outline'}
                       className="font-rajdhani"
@@ -264,12 +264,12 @@ const OverviewTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-gold" />
+            <BookOpen className="h-5 w-5 text-gold-700" />
             Era Overview
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-platinum-300 leading-relaxed font-rajdhani">{data.description}</p>
+          <p className="text-platinum-500-300 leading-relaxed font-rajdhani">{data.description}</p>
         </CardContent>
       </Card>
 
@@ -277,7 +277,7 @@ const OverviewTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Coins className="h-5 w-5 text-gold" />
+            <Coins className="h-5 w-5 text-gold-700" />
             Currency Evolution
           </CardTitle>
           <CardDescription>Currency changes in the Trucial States period</CardDescription>
@@ -292,12 +292,12 @@ const OverviewTab = ({ data }: { data: any }) => {
                 transition={{ delay: idx * 0.1 }}
                 className="flex items-center gap-4 rounded-lg bg-platinum-800/50 p-3 border border-[var(--glass-border)]"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold shrink-0">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-700/20 text-gold-700 shrink-0">
                   <Banknote className="h-5 w-5" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-gold font-rajdhani">{item.period}</span>
+                    <span className="text-sm font-medium text-gold-700 font-rajdhani">{item.period}</span>
                     <Badge variant="outline" className="text-xs font-rajdhani">{item.currency}</Badge>
                   </div>
                 </div>
@@ -311,7 +311,7 @@ const OverviewTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Landmark className="h-5 w-5 text-gold" />
+            <Landmark className="h-5 w-5 text-gold-700" />
             Nation Building Milestones
           </CardTitle>
           <CardDescription>Key milestones from Pre-Federation to Federation</CardDescription>
@@ -327,7 +327,7 @@ const OverviewTab = ({ data }: { data: any }) => {
                 className="flex items-start gap-2 rounded-lg bg-platinum-800/50 p-2 border border-[var(--glass-border)]"
               >
                 <div className="h-2 w-2 rounded-full bg-gold mt-1.5 shrink-0" />
-                <span className="text-sm text-platinum-300 font-rajdhani">{milestone}</span>
+                <span className="text-sm text-platinum-500-300 font-rajdhani">{milestone}</span>
               </motion.div>
             ))}
           </div>
@@ -352,7 +352,7 @@ const TrucialStatesTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Building className="h-5 w-5 text-gold" />
+            <Building className="h-5 w-5 text-gold-700" />
             The Seven Sheikhdoms
           </CardTitle>
           <CardDescription>Emirates of the Trucial States (1820-1971)</CardDescription>
@@ -369,11 +369,11 @@ const TrucialStatesTab = ({ data }: { data: any }) => {
                 className="rounded-lg border border-[var(--glass-border)] bg-[var(--glass-surface)] p-4"
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <Globe className="h-4 w-4 text-gold" />
-                  <h4 className="font-bold text-platinum-100 font-rajdhani">{sheikhdom.emirate}</h4>
+                  <Globe className="h-4 w-4 text-gold-700" />
+                  <h4 className="font-bold text-platinum-500-100 font-rajdhani">{sheikhdom.emirate}</h4>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-xs text-platinum-400 font-rajdhani">Duration: {sheikhdom.duration}</p>
+                  <p className="text-xs text-platinum-500-400 font-rajdhani">Duration: {sheikhdom.duration}</p>
                   <Badge variant="outline" className="text-xs font-rajdhani">{sheikhdom.entryMethod}</Badge>
                 </div>
               </motion.div>
@@ -386,7 +386,7 @@ const TrucialStatesTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <ScrollText className="h-5 w-5 text-gold" />
+            <ScrollText className="h-5 w-5 text-gold-700" />
             Key Treaties
           </CardTitle>
           <CardDescription>Major treaties that shaped the region</CardDescription>
@@ -403,14 +403,14 @@ const TrucialStatesTab = ({ data }: { data: any }) => {
                   className="rounded-lg border border-[var(--glass-border)] bg-platinum-800/50 p-4"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <h4 className="text-lg font-bold text-gold font-rajdhani">{treaty.name}</h4>
+                    <h4 className="text-lg font-bold text-gold-700 font-rajdhani">{treaty.name}</h4>
                     <Badge variant="outline" className="font-rajdhani">{treaty.date}</Badge>
                   </div>
-                  <p className="text-sm text-platinum-300 mb-2 font-rajdhani">{treaty.description}</p>
+                  <p className="text-sm text-platinum-500-300 mb-2 font-rajdhani">{treaty.description}</p>
                   {treaty.articles && (
                     <div className="mt-2">
-                      <span className="text-xs text-platinum-500 font-rajdhani">Articles: </span>
-                      <span className="text-xs text-platinum-400 font-rajdhani">{treaty.articles}</span>
+                      <span className="text-xs text-platinum-500-500 font-rajdhani">Articles: </span>
+                      <span className="text-xs text-platinum-500-400 font-rajdhani">{treaty.articles}</span>
                     </div>
                   )}
                 </motion.div>
@@ -424,25 +424,25 @@ const TrucialStatesTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Anchor className="h-5 w-5 text-gold" />
+            <Anchor className="h-5 w-5 text-gold-700" />
             From "Pirate Coast" to "Trucial Coast"
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            <p className="text-platinum-300 font-rajdhani">
+            <p className="text-platinum-500-300 font-rajdhani">
               Before 1820, the region was known as the <span className="text-rose-400 font-bold">"Pirate Coast"</span> because privateers, smugglers, and soldiers of fortune would dart from hidden coves to attack merchant vessels passing through the Straits of Hormuz.
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
                 <h5 className="text-sm font-bold text-rose-400 font-rajdhani mb-2">Before 1820</h5>
-                <p className="text-lg font-bold text-platinum-100 font-rajdhani">"Pirate Coast"</p>
-                <p className="text-xs text-platinum-400 font-rajdhani">Sahl al-Qirafa</p>
+                <p className="text-lg font-bold text-platinum-500-100 font-rajdhani">"Pirate Coast"</p>
+                <p className="text-xs text-platinum-500-400 font-rajdhani">Sahl al-Qirafa</p>
               </div>
               <div className="rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30">
                 <h5 className="text-sm font-bold text-emerald-400 font-rajdhani mb-2">After 1820</h5>
-                <p className="text-lg font-bold text-platinum-100 font-rajdhani">"Trucial Coast"</p>
-                <p className="text-xs text-platinum-400 font-rajdhani">Al-Imarat al-Mutasaliha</p>
+                <p className="text-lg font-bold text-platinum-500-100 font-rajdhani">"Trucial Coast"</p>
+                <p className="text-xs text-platinum-500-400 font-rajdhani">Al-Imarat al-Mutasaliha</p>
               </div>
             </div>
           </div>
@@ -453,7 +453,7 @@ const TrucialStatesTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Shield className="h-5 w-5 text-gold" />
+            <Shield className="h-5 w-5 text-gold-700" />
             British Representatives
           </CardTitle>
           <CardDescription>Key British officials in the Trucial States</CardDescription>
@@ -472,8 +472,8 @@ const TrucialStatesTab = ({ data }: { data: any }) => {
                   <Users className="h-5 w-5" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-platinum-100 font-rajdhani">{rep.name}</p>
-                  <p className="text-xs text-platinum-400 font-rajdhani">{rep.period}</p>
+                  <p className="text-sm font-medium text-platinum-500-100 font-rajdhani">{rep.name}</p>
+                  <p className="text-xs text-platinum-500-400 font-rajdhani">{rep.period}</p>
                 </div>
               </motion.div>
             ))}
@@ -499,7 +499,7 @@ const PearlDivingTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Gem className="h-5 w-5 text-gold" />
+            <Gem className="h-5 w-5 text-gold-700" />
             Pearl Diving Economy
           </CardTitle>
           <CardDescription>Economic significance of pearl diving</CardDescription>
@@ -507,20 +507,20 @@ const PearlDivingTab = ({ data }: { data: any }) => {
         <CardContent>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-lg bg-platinum-800/50 p-4 border border-[var(--glass-border)] text-center">
-              <p className="text-3xl font-bold text-gold font-rajdhani">{data.pearlingData?.peakBoats || '4,500'}</p>
-              <p className="text-xs text-platinum-400 font-rajdhani">Pearling boats at peak</p>
+              <p className="text-3xl font-bold text-gold-700 font-rajdhani">{data.pearlingData?.peakBoats || '4,500'}</p>
+              <p className="text-xs text-platinum-500-400 font-rajdhani">Pearling boats at peak</p>
             </div>
             <div className="rounded-lg bg-platinum-800/50 p-4 border border-[var(--glass-border)] text-center">
-              <p className="text-3xl font-bold text-gold font-rajdhani">{data.pearlingData?.peopleEmployed || '74,000+'}</p>
-              <p className="text-xs text-platinum-400 font-rajdhani">People employed (1907)</p>
+              <p className="text-3xl font-bold text-gold-700 font-rajdhani">{data.pearlingData?.peopleEmployed || '74,000+'}</p>
+              <p className="text-xs text-platinum-500-400 font-rajdhani">People employed (1907)</p>
             </div>
             <div className="rounded-lg bg-platinum-800/50 p-4 border border-[var(--glass-border)] text-center">
-              <p className="text-3xl font-bold text-gold font-rajdhani">{data.pearlingData?.dubaiBoats1907 || '335'}</p>
-              <p className="text-xs text-platinum-400 font-rajdhani">Boats out of Dubai (1907)</p>
+              <p className="text-3xl font-bold text-gold-700 font-rajdhani">{data.pearlingData?.dubaiBoats1907 || '335'}</p>
+              <p className="text-xs text-platinum-500-400 font-rajdhani">Boats out of Dubai (1907)</p>
             </div>
             <div className="rounded-lg bg-platinum-800/50 p-4 border border-[var(--glass-border)] text-center">
               <p className="text-3xl font-bold text-rose-400 font-rajdhani">{data.pearlingData?.boats1929 || '60'}</p>
-              <p className="text-xs text-platinum-400 font-rajdhani">Boats remaining (1929)</p>
+              <p className="text-xs text-platinum-500-400 font-rajdhani">Boats remaining (1929)</p>
             </div>
           </div>
         </CardContent>
@@ -530,7 +530,7 @@ const PearlDivingTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Anchor className="h-5 w-5 text-gold" />
+            <Anchor className="h-5 w-5 text-gold-700" />
             The Diving Process - Equipment
           </CardTitle>
         </CardHeader>
@@ -545,8 +545,8 @@ const PearlDivingTab = ({ data }: { data: any }) => {
                 whileHover={{ scale: 1.02 }}
                 className="rounded-lg border border-[var(--glass-border)] bg-[var(--glass-surface)] p-4"
               >
-                <h4 className="text-lg font-bold text-gold font-rajdhani mb-2">{equipment.name}</h4>
-                <p className="text-sm text-platinum-300 font-rajdhani">{equipment.description}</p>
+                <h4 className="text-lg font-bold text-gold-700 font-rajdhani mb-2">{equipment.name}</h4>
+                <p className="text-sm text-platinum-500-300 font-rajdhani">{equipment.description}</p>
               </motion.div>
             ))}
           </div>
@@ -575,8 +575,8 @@ const PearlDivingTab = ({ data }: { data: any }) => {
                   <Flame className="h-4 w-4 text-rose-400" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-platinum-100 font-rajdhani">{factor.factor}</p>
-                  <p className="text-xs text-platinum-400 font-rajdhani">{factor.impact}</p>
+                  <p className="text-sm font-medium text-platinum-500-100 font-rajdhani">{factor.factor}</p>
+                  <p className="text-xs text-platinum-500-400 font-rajdhani">{factor.impact}</p>
                 </div>
               </motion.div>
             ))}
@@ -608,7 +608,7 @@ const OilDiscoveryTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Flame className="h-5 w-5 text-gold" />
+            <Flame className="h-5 w-5 text-gold-700" />
             Oil Discovery Timeline
           </CardTitle>
           <CardDescription>Key milestones in Gulf oil discovery</CardDescription>
@@ -624,13 +624,13 @@ const OilDiscoveryTab = ({ data }: { data: any }) => {
                   transition={{ delay: idx * 0.05 }}
                   className="flex items-start gap-4"
                 >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gold/20 text-gold shrink-0 border border-gold/30">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gold-700/20 text-gold-700 shrink-0 border border-gold-700/30">
                     <Calendar className="h-6 w-6" />
                   </div>
                   <div className="flex-1 rounded-lg border border-[var(--glass-border)] bg-[var(--glass-surface)] p-4">
-                    <span className="text-lg font-mono font-bold text-gold font-rajdhani">{event.year}</span>
-                    <h4 className="text-lg font-bold text-platinum-100 mt-1 font-rajdhani">{event.event}</h4>
-                    <p className="text-sm text-platinum-400 mt-1 font-rajdhani">{event.details}</p>
+                    <span className="text-lg font-mono font-bold text-gold-700 font-rajdhani">{event.year}</span>
+                    <h4 className="text-lg font-bold text-platinum-500-100 mt-1 font-rajdhani">{event.event}</h4>
+                    <p className="text-sm text-platinum-500-400 mt-1 font-rajdhani">{event.details}</p>
                   </div>
                 </motion.div>
               ))}
@@ -643,23 +643,23 @@ const OilDiscoveryTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <ScrollText className="h-5 w-5 text-gold" />
+            <ScrollText className="h-5 w-5 text-gold-700" />
             Concession Details
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <div className="rounded-lg bg-platinum-800/50 p-4 border border-[var(--glass-border)]">
-              <p className="text-xs text-platinum-500 font-rajdhani">IPC Down Payment (1936)</p>
-              <p className="text-xl font-bold text-gold font-rajdhani">{data.concessionDetails?.ipcDownPayment || '7,000 rupees'}</p>
+              <p className="text-xs text-platinum-500-500 font-rajdhani">IPC Down Payment (1936)</p>
+              <p className="text-xl font-bold text-gold-700 font-rajdhani">{data.concessionDetails?.ipcDownPayment || '7,000 rupees'}</p>
             </div>
             <div className="rounded-lg bg-platinum-800/50 p-4 border border-[var(--glass-border)]">
-              <p className="text-xs text-platinum-500 font-rajdhani">Monthly Payment</p>
-              <p className="text-xl font-bold text-gold font-rajdhani">{data.concessionDetails?.monthlyPayment || '3,000 rupees'}</p>
+              <p className="text-xs text-platinum-500-500 font-rajdhani">Monthly Payment</p>
+              <p className="text-xl font-bold text-gold-700 font-rajdhani">{data.concessionDetails?.monthlyPayment || '3,000 rupees'}</p>
             </div>
             <div className="rounded-lg bg-platinum-800/50 p-4 border border-[var(--glass-border)]">
-              <p className="text-xs text-platinum-500 font-rajdhani">Concession Duration</p>
-              <p className="text-xl font-bold text-gold font-rajdhani">{data.concessionDetails?.concessionDuration || '75 years'}</p>
+              <p className="text-xs text-platinum-500-500 font-rajdhani">Concession Duration</p>
+              <p className="text-xl font-bold text-gold-700 font-rajdhani">{data.concessionDetails?.concessionDuration || '75 years'}</p>
             </div>
           </div>
         </CardContent>
@@ -669,7 +669,7 @@ const OilDiscoveryTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Building className="h-5 w-5 text-gold" />
+            <Building className="h-5 w-5 text-gold-700" />
             Organizations Involved
           </CardTitle>
         </CardHeader>
@@ -685,10 +685,10 @@ const OilDiscoveryTab = ({ data }: { data: any }) => {
                   className="rounded-lg bg-platinum-800/50 p-3 border border-[var(--glass-border)]"
                 >
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-sm font-medium text-gold font-rajdhani">{company.name}</span>
+                    <span className="text-sm font-medium text-gold-700 font-rajdhani">{company.name}</span>
                     <Badge variant="outline" className="text-xs font-rajdhani">{company.acronym}</Badge>
                   </div>
-                  <p className="text-xs text-platinum-400 font-rajdhani">{company.role}</p>
+                  <p className="text-xs text-platinum-500-400 font-rajdhani">{company.role}</p>
                 </motion.div>
               ))}
             </div>
@@ -714,7 +714,7 @@ const KeyFiguresTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Crown className="h-5 w-5 text-gold" />
+            <Crown className="h-5 w-5 text-gold-700" />
             Zayed bin Sultan Al Nahyan
           </CardTitle>
           <CardDescription>Founder and First President of the UAE</CardDescription>
@@ -724,23 +724,23 @@ const KeyFiguresTab = ({ data }: { data: any }) => {
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <Badge variant="outline" className="font-rajdhani">Born</Badge>
-                <span className="text-sm text-platinum-300 font-rajdhani">May 6, 1918 - Qasr Al Hosn, Abu Dhabi</span>
+                <span className="text-sm text-platinum-500-300 font-rajdhani">May 6, 1918 - Qasr Al Hosn, Abu Dhabi</span>
               </div>
               <div className="flex items-center gap-2">
                 <Badge variant="outline" className="font-rajdhani">Died</Badge>
-                <span className="text-sm text-platinum-300 font-rajdhani">November 2, 2004 (aged 86)</span>
+                <span className="text-sm text-platinum-500-300 font-rajdhani">November 2, 2004 (aged 86)</span>
               </div>
               <div className="flex items-center gap-2">
                 <Badge variant="outline" className="font-rajdhani">Father</Badge>
-                <span className="text-sm text-platinum-300 font-rajdhani">Sultan bin Zayed Al Nahyan (Ruler 1922-1926)</span>
+                <span className="text-sm text-platinum-500-300 font-rajdhani">Sultan bin Zayed Al Nahyan (Ruler 1922-1926)</span>
               </div>
             </div>
             <div className="space-y-2">
-              <h4 className="text-sm font-bold text-gold font-rajdhani">Key Achievements</h4>
+              <h4 className="text-sm font-bold text-gold-700 font-rajdhani">Key Achievements</h4>
               {data.zayedAchievements?.slice(0, 5).map((achievement: string, idx: number) => (
                 <div key={idx} className="flex items-start gap-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-gold mt-1.5 shrink-0" />
-                  <span className="text-xs text-platinum-300 font-rajdhani">{achievement}</span>
+                  <span className="text-xs text-platinum-500-300 font-rajdhani">{achievement}</span>
                 </div>
               ))}
             </div>
@@ -752,7 +752,7 @@ const KeyFiguresTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Crown className="h-5 w-5 text-gold" />
+            <Crown className="h-5 w-5 text-gold-700" />
             Rashid bin Saeed Al Maktoum
           </CardTitle>
           <CardDescription>Vice President and Prime Minister of UAE</CardDescription>
@@ -762,23 +762,23 @@ const KeyFiguresTab = ({ data }: { data: any }) => {
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <Badge variant="outline" className="font-rajdhani">Born</Badge>
-                <span className="text-sm text-platinum-300 font-rajdhani">June 11, 1912 - Dubai</span>
+                <span className="text-sm text-platinum-500-300 font-rajdhani">June 11, 1912 - Dubai</span>
               </div>
               <div className="flex items-center gap-2">
                 <Badge variant="outline" className="font-rajdhani">Died</Badge>
-                <span className="text-sm text-platinum-300 font-rajdhani">October 7, 1990 (aged 78)</span>
+                <span className="text-sm text-platinum-500-300 font-rajdhani">October 7, 1990 (aged 78)</span>
               </div>
               <div className="flex items-center gap-2">
                 <Badge variant="outline" className="font-rajdhani">Became Ruler</Badge>
-                <span className="text-sm text-platinum-300 font-rajdhani">September 10, 1958</span>
+                <span className="text-sm text-platinum-500-300 font-rajdhani">September 10, 1958</span>
               </div>
             </div>
             <div className="space-y-2">
-              <h4 className="text-sm font-bold text-gold font-rajdhani">Infrastructure Projects</h4>
+              <h4 className="text-sm font-bold text-gold-700 font-rajdhani">Infrastructure Projects</h4>
               {data.rashidProjects?.slice(0, 5).map((project: any, idx: number) => (
                 <div key={idx} className="flex items-start gap-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0" />
-                  <span className="text-xs text-platinum-300 font-rajdhani">{project.project} ({project.date})</span>
+                  <span className="text-xs text-platinum-500-300 font-rajdhani">{project.project} ({project.date})</span>
                 </div>
               ))}
             </div>
@@ -790,7 +790,7 @@ const KeyFiguresTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <MapPin className="h-5 w-5 text-gold" />
+            <MapPin className="h-5 w-5 text-gold-700" />
             Western Travelers and Accounts
           </CardTitle>
         </CardHeader>
@@ -806,11 +806,11 @@ const KeyFiguresTab = ({ data }: { data: any }) => {
                 className="rounded-lg border border-[var(--glass-border)] bg-[var(--glass-surface)] p-4"
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <Mountain className="h-4 w-4 text-gold" />
-                  <h4 className="font-bold text-platinum-100 font-rajdhani">{explorer.name}</h4>
+                  <Mountain className="h-4 w-4 text-gold-700" />
+                  <h4 className="font-bold text-platinum-500-100 font-rajdhani">{explorer.name}</h4>
                 </div>
-                <p className="text-xs text-platinum-400 mb-2 font-rajdhani">{explorer.lifespan}</p>
-                <p className="text-xs text-platinum-300 font-rajdhani">{explorer.background}</p>
+                <p className="text-xs text-platinum-500-400 mb-2 font-rajdhani">{explorer.lifespan}</p>
+                <p className="text-xs text-platinum-500-300 font-rajdhani">{explorer.background}</p>
                 <div className="mt-2 flex flex-wrap gap-1">
                   {explorer.books?.slice(0, 2).map((book: string, bIdx: number) => (
                     <Badge key={bIdx} variant="outline" className="text-xs font-rajdhani">{book}</Badge>
@@ -840,28 +840,28 @@ const BuraimiTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Crosshair className="h-5 w-5 text-gold" />
+            <Crosshair className="h-5 w-5 text-gold-700" />
             Buraimi Dispute - Geographic Data
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg bg-platinum-800/50 p-4 border border-[var(--glass-border)]">
-              <p className="text-sm text-platinum-400 font-rajdhani">Total oasis villages</p>
-              <p className="text-2xl font-bold text-gold font-rajdhani">9</p>
+              <p className="text-sm text-platinum-500-400 font-rajdhani">Total oasis villages</p>
+              <p className="text-2xl font-bold text-gold-700 font-rajdhani">9</p>
             </div>
             <div className="rounded-lg bg-platinum-800/50 p-4 border border-[var(--glass-border)]">
-              <p className="text-sm text-platinum-400 font-rajdhani">Villages owing to Sultan of Oman</p>
+              <p className="text-sm text-platinum-500-400 font-rajdhani">Villages owing to Sultan of Oman</p>
               <p className="text-2xl font-bold text-emerald-400 font-rajdhani">3</p>
-              <p className="text-xs text-platinum-500 font-rajdhani">Buraimi, Hamasa, Saara</p>
+              <p className="text-xs text-platinum-500-500 font-rajdhani">Buraimi, Hamasa, Saara</p>
             </div>
             <div className="rounded-lg bg-platinum-800/50 p-4 border border-[var(--glass-border)]">
-              <p className="text-sm text-platinum-400 font-rajdhani">Villages owing to Abu Dhabi</p>
-              <p className="text-2xl font-bold text-gold font-rajdhani">6</p>
-              <p className="text-xs text-platinum-500 font-rajdhani">Al Ain, Hili, Jimi, Murtiridh, Muwaiqi, Qattarah</p>
+              <p className="text-sm text-platinum-500-400 font-rajdhani">Villages owing to Abu Dhabi</p>
+              <p className="text-2xl font-bold text-gold-700 font-rajdhani">6</p>
+              <p className="text-xs text-platinum-500-500 font-rajdhani">Al Ain, Hili, Jimi, Murtiridh, Muwaiqi, Qattarah</p>
             </div>
             <div className="rounded-lg bg-platinum-800/50 p-4 border border-[var(--glass-border)]">
-              <p className="text-sm text-platinum-400 font-rajdhani">Saudi bribe rejected by Zayed</p>
+              <p className="text-sm text-platinum-500-400 font-rajdhani">Saudi bribe rejected by Zayed</p>
               <p className="text-2xl font-bold text-rose-400 font-rajdhani">~£30 million</p>
             </div>
           </div>
@@ -872,7 +872,7 @@ const BuraimiTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Calendar className="h-5 w-5 text-gold" />
+            <Calendar className="h-5 w-5 text-gold-700" />
             Dispute Timeline
           </CardTitle>
         </CardHeader>
@@ -887,12 +887,12 @@ const BuraimiTab = ({ data }: { data: any }) => {
                   transition={{ delay: idx * 0.05 }}
                   className="flex items-start gap-4"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20 text-gold shrink-0">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-700/20 text-gold-700 shrink-0">
                     <Calendar className="h-5 w-5" />
                   </div>
                   <div className="flex-1 rounded-lg border border-[var(--glass-border)] bg-platinum-800/50 p-3">
-                    <span className="text-sm font-mono font-bold text-gold font-rajdhani">{event.year}</span>
-                    <p className="text-sm text-platinum-300 mt-1 font-rajdhani">{event.event}</p>
+                    <span className="text-sm font-mono font-bold text-gold-700 font-rajdhani">{event.year}</span>
+                    <p className="text-sm text-platinum-500-300 mt-1 font-rajdhani">{event.event}</p>
                   </div>
                 </motion.div>
               ))}
@@ -905,7 +905,7 @@ const BuraimiTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Scale className="h-5 w-5 text-gold" />
+            <Scale className="h-5 w-5 text-gold-700" />
             Resolution - Treaty of 1974
           </CardTitle>
         </CardHeader>
@@ -913,9 +913,9 @@ const BuraimiTab = ({ data }: { data: any }) => {
           <div className="space-y-3">
             <div className="rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30">
               <p className="text-sm text-emerald-400 font-rajdhani">Agreement Signed</p>
-              <p className="text-lg font-bold text-platinum-100 font-rajdhani">August 21, 1974</p>
+              <p className="text-lg font-bold text-platinum-500-100 font-rajdhani">August 21, 1974</p>
             </div>
-            <p className="text-sm text-platinum-300 font-rajdhani">
+            <p className="text-sm text-platinum-500-300 font-rajdhani">
               {data.buraimiResolution || 'Boundary agreement between Kingdom of Saudi Arabia and United Arab Emirates on the Delimitation of Boundaries, including ownership of the giant Shaybah field.'}
             </p>
           </div>
@@ -940,27 +940,27 @@ const BritishWithdrawalTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Globe className="h-5 w-5 text-gold" />
+            <Globe className="h-5 w-5 text-gold-700" />
             British Empire Statistics
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-lg bg-platinum-800/50 p-4 border border-[var(--glass-border)] text-center">
-              <p className="text-xs text-platinum-500 font-rajdhani">British Empire Control (1918)</p>
-              <p className="text-2xl font-bold text-gold font-rajdhani">25%</p>
-              <p className="text-xs text-platinum-400 font-rajdhani">of Earth's surface</p>
+              <p className="text-xs text-platinum-500-500 font-rajdhani">British Empire Control (1918)</p>
+              <p className="text-2xl font-bold text-gold-700 font-rajdhani">25%</p>
+              <p className="text-xs text-platinum-500-400 font-rajdhani">of Earth's surface</p>
             </div>
             <div className="rounded-lg bg-platinum-800/50 p-4 border border-[var(--glass-border)] text-center">
-              <p className="text-xs text-platinum-500 font-rajdhani">Foreigners Under British Rule (1945)</p>
-              <p className="text-2xl font-bold text-gold font-rajdhani">700M</p>
+              <p className="text-xs text-platinum-500-500 font-rajdhani">Foreigners Under British Rule (1945)</p>
+              <p className="text-2xl font-bold text-gold-700 font-rajdhani">700M</p>
             </div>
             <div className="rounded-lg bg-platinum-800/50 p-4 border border-[var(--glass-border)] text-center">
-              <p className="text-xs text-platinum-500 font-rajdhani">Foreigners Under British Rule (1965)</p>
+              <p className="text-xs text-platinum-500-500 font-rajdhani">Foreigners Under British Rule (1965)</p>
               <p className="text-2xl font-bold text-rose-400 font-rajdhani">5M</p>
             </div>
             <div className="rounded-lg bg-platinum-800/50 p-4 border border-[var(--glass-border)] text-center">
-              <p className="text-xs text-platinum-500 font-rajdhani">Troops to Withdraw from East of Suez</p>
+              <p className="text-xs text-platinum-500-500 font-rajdhani">Troops to Withdraw from East of Suez</p>
               <p className="text-2xl font-bold text-rose-400 font-rajdhani">25,000</p>
             </div>
           </div>
@@ -971,7 +971,7 @@ const BritishWithdrawalTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Calendar className="h-5 w-5 text-gold" />
+            <Calendar className="h-5 w-5 text-gold-700" />
             Withdrawal Timeline
           </CardTitle>
         </CardHeader>
@@ -986,12 +986,12 @@ const BritishWithdrawalTab = ({ data }: { data: any }) => {
                   transition={{ delay: idx * 0.05 }}
                   className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3 border border-[var(--glass-border)]"
                 >
-                  <div className="h-8 w-8 rounded-full bg-gold/20 flex items-center justify-center shrink-0">
-                    <span className="text-xs font-bold text-gold font-rajdhani">{idx + 1}</span>
+                  <div className="h-8 w-8 rounded-full bg-gold-700/20 flex items-center justify-center shrink-0">
+                    <span className="text-xs font-bold text-gold-700 font-rajdhani">{idx + 1}</span>
                   </div>
                   <div className="flex-1">
-                    <p className="text-sm font-mono text-gold font-rajdhani">{event.date}</p>
-                    <p className="text-sm text-platinum-300 font-rajdhani">{event.event}</p>
+                    <p className="text-sm font-mono text-gold-700 font-rajdhani">{event.date}</p>
+                    <p className="text-sm text-platinum-500-300 font-rajdhani">{event.event}</p>
                   </div>
                 </motion.div>
               ))}
@@ -1004,30 +1004,30 @@ const BritishWithdrawalTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Tent className="h-5 w-5 text-gold" />
+            <Tent className="h-5 w-5 text-gold-700" />
             The Desert Meeting - February 18, 1968
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            <p className="text-platinum-300 font-rajdhani">
-              One month after Britain's announcement, Sheikh Zayed and Dubai's Sheikh Rashid met at a desert highland between Dubai and Abu Dhabi called <span className="text-gold font-bold">Argoub Al Sedirah</span>. The two leaders "met in a tent erected in the desert and talked for hours." This handshake agreement established what became the UAE.
+            <p className="text-platinum-500-300 font-rajdhani">
+              One month after Britain's announcement, Sheikh Zayed and Dubai's Sheikh Rashid met at a desert highland between Dubai and Abu Dhabi called <span className="text-gold-700 font-bold">Argoub Al Sedirah</span>. The two leaders "met in a tent erected in the desert and talked for hours." This handshake agreement established what became the UAE.
             </p>
             <div className="grid gap-3 sm:grid-cols-3">
-              <div className="rounded-lg bg-gold/10 p-3 border border-gold/30 text-center">
-                <MapPin className="h-5 w-5 text-gold mx-auto mb-2" />
-                <p className="text-xs text-platinum-400 font-rajdhani">Location</p>
-                <p className="text-sm font-bold text-platinum-100 font-rajdhani">Argoub Al Sedirah</p>
+              <div className="rounded-lg bg-gold-700/10 p-3 border border-gold-700/30 text-center">
+                <MapPin className="h-5 w-5 text-gold-700 mx-auto mb-2" />
+                <p className="text-xs text-platinum-500-400 font-rajdhani">Location</p>
+                <p className="text-sm font-bold text-platinum-500-100 font-rajdhani">Argoub Al Sedirah</p>
               </div>
-              <div className="rounded-lg bg-gold/10 p-3 border border-gold/30 text-center">
-                <Calendar className="h-5 w-5 text-gold mx-auto mb-2" />
-                <p className="text-xs text-platinum-400 font-rajdhani">Date</p>
-                <p className="text-sm font-bold text-platinum-100 font-rajdhani">February 18, 1968</p>
+              <div className="rounded-lg bg-gold-700/10 p-3 border border-gold-700/30 text-center">
+                <Calendar className="h-5 w-5 text-gold-700 mx-auto mb-2" />
+                <p className="text-xs text-platinum-500-400 font-rajdhani">Date</p>
+                <p className="text-sm font-bold text-platinum-500-100 font-rajdhani">February 18, 1968</p>
               </div>
-              <div className="rounded-lg bg-gold/10 p-3 border border-gold/30 text-center">
-                <Handshake className="h-5 w-5 text-gold mx-auto mb-2" />
-                <p className="text-xs text-platinum-400 font-rajdhani">Result</p>
-                <p className="text-sm font-bold text-platinum-100 font-rajdhani">Handshake Agreement</p>
+              <div className="rounded-lg bg-gold-700/10 p-3 border border-gold-700/30 text-center">
+                <Handshake className="h-5 w-5 text-gold-700 mx-auto mb-2" />
+                <p className="text-xs text-platinum-500-400 font-rajdhani">Result</p>
+                <p className="text-sm font-bold text-platinum-500-100 font-rajdhani">Handshake Agreement</p>
               </div>
             </div>
           </div>
@@ -1038,12 +1038,12 @@ const BritishWithdrawalTab = ({ data }: { data: any }) => {
       <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
         <CardHeader>
           <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-            <Building className="h-5 w-5 text-gold" />
+            <Building className="h-5 w-5 text-gold-700" />
             Proposed Nine-Emirate Federation
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-platinum-300 mb-4 font-rajdhani">
+          <p className="text-sm text-platinum-500-300 mb-4 font-rajdhani">
             The proposed Federation of Arab Emirates would have included nine members:
           </p>
           <div className="grid gap-2 sm:grid-cols-3 lg:grid-cols-5">
@@ -1055,7 +1055,7 @@ const BritishWithdrawalTab = ({ data }: { data: any }) => {
                 transition={{ delay: idx * 0.05 }}
                 className="rounded-lg bg-platinum-800/50 p-2 border border-[var(--glass-border)] text-center"
               >
-                <span className="text-sm font-rajdhani text-platinum-200">{emirate}</span>
+                <span className="text-sm font-rajdhani text-platinum-500-200">{emirate}</span>
                 {(emirate === 'Bahrain' || emirate === 'Qatar') && (
                   <Badge variant="destructive" className="block mt-1 text-xs font-rajdhani">Withdrew</Badge>
                 )}
@@ -1109,20 +1109,20 @@ const TimelineTab = ({ data }: { data: any }) => {
                   whileHover={{ scale: 1.02, borderColor: 'var(--gold)' }}
                   className="flex items-start gap-4 rounded-lg border border-[var(--glass-border)] bg-[var(--glass-surface)] p-4 cursor-pointer"
                 >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gold/20 text-gold shrink-0 border border-gold/30">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gold-700/20 text-gold-700 shrink-0 border border-gold-700/30">
                     <Calendar className="h-7 w-7" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-lg font-mono font-bold text-gold font-rajdhani">{event.date}</span>
+                      <span className="text-lg font-mono font-bold text-gold-700 font-rajdhani">{event.date}</span>
                       {getSignificanceBadge(event.significance)}
                     </div>
-                    <h3 className="text-xl font-bold text-platinum-100 mb-2 font-rajdhani">{event.title}</h3>
-                    <p className="text-platinum-400 leading-relaxed font-rajdhani">{event.description}</p>
+                    <h3 className="text-xl font-bold text-platinum-500-100 mb-2 font-rajdhani">{event.title}</h3>
+                    <p className="text-platinum-500-400 leading-relaxed font-rajdhani">{event.description}</p>
                     {event.entities && event.entities.length > 0 && (
                       <div className="mt-3 flex flex-wrap gap-2">
                         {event.entities.map((entity: string, eIdx: number) => (
-                          <Badge key={eIdx} variant="outline" className="text-xs border-gold/30 text-gold font-rajdhani">
+                          <Badge key={eIdx} variant="outline" className="text-xs border-gold-700/30 text-gold-700 font-rajdhani">
                             {entity}
                           </Badge>
                         ))}
@@ -1135,7 +1135,7 @@ const TimelineTab = ({ data }: { data: any }) => {
                         className="mt-3 rounded-lg bg-emerald-500/10 p-2 border border-emerald-500/30"
                       >
                         <span className="text-xs text-emerald-400 font-medium font-rajdhani">Outcome: </span>
-                        <span className="text-xs text-platinum-300 font-rajdhani">{event.outcome}</span>
+                        <span className="text-xs text-platinum-500-300 font-rajdhani">{event.outcome}</span>
                       </motion.div>
                     )}
                   </div>
@@ -1210,8 +1210,8 @@ const SourcesTab = ({ data }: { data: any }) => {
                   return (
                     <div key={tier} className="rounded-lg bg-platinum-800/50 p-3 border border-[var(--glass-border)] text-center">
                       <div className={`h-3 w-3 rounded-full mx-auto mb-2 ${tierColors[tier]}`} />
-                      <p className="text-lg font-bold text-platinum-100 font-rajdhani">{count}</p>
-                      <p className="text-xs text-platinum-400 font-rajdhani">{tierLabels[tier]}</p>
+                      <p className="text-lg font-bold text-platinum-500-100 font-rajdhani">{count}</p>
+                      <p className="text-xs text-platinum-500-400 font-rajdhani">{tierLabels[tier]}</p>
                     </div>
                   )
                 })}
@@ -1223,7 +1223,7 @@ const SourcesTab = ({ data }: { data: any }) => {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-                <BookOpen className="h-5 w-5 text-gold" />
+                <BookOpen className="h-5 w-5 text-gold-700" />
                 Research Sources ({data.sources?.length || 0})
               </CardTitle>
               <CardDescription>WebFetch content from authoritative sources</CardDescription>
@@ -1242,12 +1242,12 @@ const SourcesTab = ({ data }: { data: any }) => {
                       <div className={`h-3 w-3 rounded-full mt-1.5 shrink-0 ${tierColors[source.tier] || 'bg-platinum-500'}`} />
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-1">
-                          <span className="text-sm font-medium text-gold font-rajdhani">{source.name}</span>
+                          <span className="text-sm font-medium text-gold-700 font-rajdhani">{source.name}</span>
                           <Badge variant="outline" className="text-xs font-rajdhani">{tierLabels[source.tier] || `TIER-${source.tier}`}</Badge>
                         </div>
-                        <p className="text-xs text-platinum-400 font-rajdhani">Date: {source.date}</p>
+                        <p className="text-xs text-platinum-500-400 font-rajdhani">Date: {source.date}</p>
                         {source.url && (
-                          <p className="text-xs text-navy-400 mt-1 font-rajdhani truncate">{source.url}</p>
+                          <p className="text-xs text-navy-500-400 mt-1 font-rajdhani truncate">{source.url}</p>
                         )}
                       </div>
                     </motion.div>
@@ -1275,7 +1275,7 @@ export default function PreFederationPage() {
         animate={{ opacity: 1 }}
         className="flex items-center justify-center min-h-[400px]"
       >
-        <div className="text-platinum-400 font-rajdhani text-lg">Loading Pre-Federation Era data...</div>
+        <div className="text-platinum-500-400 font-rajdhani text-lg">Loading Pre-Federation Era data...</div>
       </motion.div>
     )
   }

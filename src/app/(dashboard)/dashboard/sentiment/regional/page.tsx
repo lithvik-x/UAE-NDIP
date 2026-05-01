@@ -117,17 +117,17 @@ export default function RegionalSentimentPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">SENTIMENT</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Regional Sentiment</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Regional Sentiment</h1>
+          <p className="mt-2 text-platinum-500-400">
             Sentiment analysis by emirate, GCC comparison, and regional dynamics
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <MapPin className="h-4 w-4" />
             Regional Map
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Globe className="h-4 w-4" />
             GCC Comparison
           </Button>
@@ -253,8 +253,8 @@ export default function RegionalSentimentPage() {
                                 <MapPin className={`h-4 w-4 ${getSentimentColor(region.sentiment)}`} />
                               </div>
                               <div>
-                                <p className="font-semibold text-platinum-200">{region.region}</p>
-                                <p className="text-sm text-platinum-400">Sentiment: {region.sentiment}%</p>
+                                <p className="font-semibold text-platinum-500-200">{region.region}</p>
+                                <p className="text-sm text-platinum-500-400">Sentiment: {region.sentiment}%</p>
                               </div>
                             </div>
                             <Badge variant="outline" className="text-xs">
@@ -310,16 +310,16 @@ export default function RegionalSentimentPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-300">Sentiment Score</span>
-                        <span className="text-lg font-bold text-gold">86%</span>
+                        <span className="text-sm text-platinum-500-300">Sentiment Score</span>
+                        <span className="text-lg font-bold text-gold-700">86%</span>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-300">Key Topics</span>
-                        <span className="text-sm text-gold">Nuclear, Culture, AI</span>
+                        <span className="text-sm text-platinum-500-300">Key Topics</span>
+                        <span className="text-sm text-gold-700">Nuclear, Culture, AI</span>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-300">Trend</span>
-                        <Badge variant="outline" className="text-xs text-emerald">+4%</Badge>
+                        <span className="text-sm text-platinum-500-300">Trend</span>
+                        <Badge variant="outline" className="text-xs text-emerald-500">+4%</Badge>
                       </div>
                     </div>
                   </CardContent>
@@ -333,16 +333,16 @@ export default function RegionalSentimentPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-300">Sentiment Score</span>
-                        <span className="text-lg font-bold text-navy">89%</span>
+                        <span className="text-sm text-platinum-500-300">Sentiment Score</span>
+                        <span className="text-lg font-bold text-navy-500">89%</span>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-300">Key Topics</span>
-                        <span className="text-sm text-navy">Tourism, Business, Real Estate</span>
+                        <span className="text-sm text-platinum-500-300">Key Topics</span>
+                        <span className="text-sm text-navy-500">Tourism, Business, Real Estate</span>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-300">Trend</span>
-                        <Badge variant="outline" className="text-xs text-emerald">+5%</Badge>
+                        <span className="text-sm text-platinum-500-300">Trend</span>
+                        <Badge variant="outline" className="text-xs text-emerald-500">+5%</Badge>
                       </div>
                     </div>
                   </CardContent>
@@ -360,14 +360,14 @@ export default function RegionalSentimentPage() {
                       {initiativesByRegionData.map((region, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
-                            <Building className="h-5 w-5 text-gold" />
-                            <span className="text-sm font-medium text-platinum-200">{region.region}</span>
+                            <Building className="h-5 w-5 text-gold-700" />
+                            <span className="text-sm font-medium text-platinum-500-200">{region.region}</span>
                           </div>
                           <div className="flex items-center gap-4">
-                            <span className="text-sm text-platinum-400">{region.initiatives} initiatives</span>
+                            <span className="text-sm text-platinum-500-400">{region.initiatives} initiatives</span>
                             <div className="flex items-center gap-2">
                               <Progress value={region.participation} className="h-2 w-16" />
-                              <span className="text-sm font-bold text-gold">{region.participation}%</span>
+                              <span className="text-sm font-bold text-gold-700">{region.participation}%</span>
                             </div>
                           </div>
                         </div>
@@ -432,20 +432,20 @@ export default function RegionalSentimentPage() {
                       ].map((item, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-300">{item.factor}</span>
+                            <span className="text-sm text-platinum-500-300">{item.factor}</span>
                           </div>
                           <div className="flex items-center gap-4">
                             <div className="flex-1 flex items-center gap-2">
-                              <span className="text-xs text-platinum-400 w-12">Urban</span>
+                              <span className="text-xs text-platinum-500-400 w-12">Urban</span>
                               <Progress value={item.urban} className="h-2 flex-1" />
-                              <span className="text-xs font-bold text-gold">{item.urban}</span>
+                              <span className="text-xs font-bold text-gold-700">{item.urban}</span>
                             </div>
                           </div>
                           <div className="flex items-center gap-4">
                             <div className="flex-1 flex items-center gap-2">
-                              <span className="text-xs text-platinum-400 w-12">Rural</span>
+                              <span className="text-xs text-platinum-500-400 w-12">Rural</span>
                               <Progress value={item.rural} className="h-2 flex-1" />
-                              <span className="text-xs font-bold text-emerald">{item.rural}</span>
+                              <span className="text-xs font-bold text-emerald-500">{item.rural}</span>
                             </div>
                           </div>
                         </div>
@@ -463,22 +463,22 @@ export default function RegionalSentimentPage() {
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-3">
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <MapPin className="mx-auto h-6 w-6 text-gold mb-2" />
-                      <p className="text-xs text-platinum-400">Infrastructure Projects</p>
-                      <p className="text-xl font-bold text-gold">24</p>
-                      <span className="text-xs text-emerald">Northern Emirates</span>
+                      <MapPin className="mx-auto h-6 w-6 text-gold-700 mb-2" />
+                      <p className="text-xs text-platinum-500-400">Infrastructure Projects</p>
+                      <p className="text-xl font-bold text-gold-700">24</p>
+                      <span className="text-xs text-emerald-500">Northern Emirates</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <Building className="mx-auto h-6 w-6 text-navy mb-2" />
-                      <p className="text-xs text-platinum-400">Service Expansion</p>
-                      <p className="text-xl font-bold text-navy">18</p>
-                      <span className="text-xs text-emerald">Rural Areas</span>
+                      <Building className="mx-auto h-6 w-6 text-navy-500 mb-2" />
+                      <p className="text-xs text-platinum-500-400">Service Expansion</p>
+                      <p className="text-xl font-bold text-navy-500">18</p>
+                      <span className="text-xs text-emerald-500">Rural Areas</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <Users className="mx-auto h-6 w-6 text-emerald mb-2" />
-                      <p className="text-xs text-platinum-400">Job Creation</p>
-                      <p className="text-xl font-bold text-emerald">15K</p>
-                      <span className="text-xs text-emerald">Targeted Regions</span>
+                      <Users className="mx-auto h-6 w-6 text-emerald-500 mb-2" />
+                      <p className="text-xs text-platinum-500-400">Job Creation</p>
+                      <p className="text-xl font-bold text-emerald-500">15K</p>
+                      <span className="text-xs text-emerald-500">Targeted Regions</span>
                     </div>
                   </div>
                 </CardContent>
@@ -526,23 +526,23 @@ export default function RegionalSentimentPage() {
                       ].map((item, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-300">{item.metric}</span>
-                            <span className="text-xs text-emerald">+{item.uae - item.gcc}</span>
+                            <span className="text-sm text-platinum-500-300">{item.metric}</span>
+                            <span className="text-xs text-emerald-500">+{item.uae - item.gcc}</span>
                           </div>
                           <div className="relative">
                             <div className="flex items-center gap-2">
-                              <span className="text-xs text-platinum-400 w-10">UAE</span>
+                              <span className="text-xs text-platinum-500-400 w-10">UAE</span>
                               <div className="flex-1 h-2 bg-platinum-700 rounded-full overflow-hidden">
                                 <div className="h-full bg-gold rounded-full" style={{ width: `${item.uae}%` }} />
                               </div>
-                              <span className="text-xs font-bold text-gold w-8">{item.uae}</span>
+                              <span className="text-xs font-bold text-gold-700 w-8">{item.uae}</span>
                             </div>
                             <div className="flex items-center gap-2 mt-1">
-                              <span className="text-xs text-platinum-400 w-10">GCC</span>
+                              <span className="text-xs text-platinum-500-400 w-10">GCC</span>
                               <div className="flex-1 h-2 bg-platinum-700 rounded-full overflow-hidden">
                                 <div className="h-full bg-platinum rounded-full" style={{ width: `${item.gcc}%` }} />
                               </div>
-                              <span className="text-xs font-bold text-platinum w-8">{item.gcc}</span>
+                              <span className="text-xs font-bold text-platinum-500 w-8">{item.gcc}</span>
                             </div>
                           </div>
                         </div>
@@ -587,28 +587,28 @@ export default function RegionalSentimentPage() {
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-4">
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <Flag className="mx-auto h-6 w-6 text-gold mb-2" />
-                      <p className="text-xs text-platinum-400">UAE Rank</p>
-                      <p className="text-xl font-bold text-gold">#1</p>
-                      <span className="text-xs text-emerald">GCC</span>
+                      <Flag className="mx-auto h-6 w-6 text-gold-700 mb-2" />
+                      <p className="text-xs text-platinum-500-400">UAE Rank</p>
+                      <p className="text-xl font-bold text-gold-700">#1</p>
+                      <span className="text-xs text-emerald-500">GCC</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <TrendingUp className="mx-auto h-6 w-6 text-emerald mb-2" />
-                      <p className="text-xs text-platinum-400">Momentum</p>
-                      <p className="text-xl font-bold text-emerald">+3</p>
-                      <span className="text-xs text-emerald">Points</span>
+                      <TrendingUp className="mx-auto h-6 w-6 text-emerald-500 mb-2" />
+                      <p className="text-xs text-platinum-500-400">Momentum</p>
+                      <p className="text-xl font-bold text-emerald-500">+3</p>
+                      <span className="text-xs text-emerald-500">Points</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <Shield className="mx-auto h-6 w-6 text-navy mb-2" />
-                      <p className="text-xs text-platinum-400">Stability</p>
-                      <p className="text-xl font-bold text-navy">92%</p>
-                      <span className="text-xs text-emerald">Index</span>
+                      <Shield className="mx-auto h-6 w-6 text-navy-500 mb-2" />
+                      <p className="text-xs text-platinum-500-400">Stability</p>
+                      <p className="text-xl font-bold text-navy-500">92%</p>
+                      <span className="text-xs text-emerald-500">Index</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <Star className="mx-auto h-6 w-6 text-platinum mb-2" />
-                      <p className="text-xs text-platinum-400">Global Rank</p>
-                      <p className="text-xl font-bold text-platinum">Top 5</p>
-                      <span className="text-xs text-emerald">Worldwide</span>
+                      <Star className="mx-auto h-6 w-6 text-platinum-500 mb-2" />
+                      <p className="text-xs text-platinum-500-400">Global Rank</p>
+                      <p className="text-xl font-bold text-platinum-500">Top 5</p>
+                      <span className="text-xs text-emerald-500">Worldwide</span>
                     </div>
                   </div>
                 </CardContent>

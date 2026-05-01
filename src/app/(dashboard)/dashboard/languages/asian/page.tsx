@@ -124,17 +124,17 @@ export default function AsianLanguagesPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="orange" className="mb-2">ASIAN LANGUAGES</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-orange">Asian Languages</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-orange-500">Asian Languages</h1>
+          <p className="mt-2 text-platinum-500-400">
             South Asian and Southeast Asian language communities: Hindi, Urdu, Malay, Tagalog
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-orange/50 text-orange hover:bg-orange/10">
+          <Button variant="outline" className="gap-2 border-orange-500/50 text-orange-500 hover:bg-orange-500/10">
             <Eye className="h-4 w-4" />
             Monitor Communities
           </Button>
-          <Button className="bg-gradient-orange hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-orange hover:opacity-90 text-navy-500-950 gap-2">
             <Globe className="h-4 w-4" />
             Track Languages
           </Button>
@@ -235,8 +235,8 @@ export default function AsianLanguagesPage() {
                         <div className="text-2xl font-bold text-orange-400">
                           {(community.population / 1000).toFixed(0)}K
                         </div>
-                        <p className="text-sm text-platinum-400 mt-1">{community.community}</p>
-                        <p className="text-xs text-platinum-500">{community.percentage}% of UAE</p>
+                        <p className="text-sm text-platinum-500-400 mt-1">{community.community}</p>
+                        <p className="text-xs text-platinum-500-500">{community.percentage}% of UAE</p>
                       </div>
                     ))}
                   </div>
@@ -264,11 +264,11 @@ export default function AsianLanguagesPage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70"
                         >
                           <div className="flex items-center gap-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange/20 text-orange">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/20 text-orange-500">
                               <IndianRupee className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-200">{item.term}</p>
+                              <p className="font-semibold text-platinum-500-200">{item.term}</p>
                               <div className="flex items-center gap-2 mt-1">
                                 <Badge variant="outline" className="text-xs">{item.language}</Badge>
                                 {getCategoryBadge(item.category)}
@@ -277,16 +277,16 @@ export default function AsianLanguagesPage() {
                           </div>
                           <div className="flex items-center gap-6">
                             <div className="text-center">
-                              <div className="text-lg font-bold text-platinum-200">
+                              <div className="text-lg font-bold text-platinum-500-200">
                                 {(item.volume / 1000000).toFixed(1)}M
                               </div>
-                              <p className="text-xs text-platinum-400">Volume</p>
+                              <p className="text-xs text-platinum-500-400">Volume</p>
                             </div>
                             <div className="text-center">
                               <div className={`text-lg font-bold ${getSentimentColor(item.sentiment)}`}>
                                 {item.sentiment}%
                               </div>
-                              <p className="text-xs text-platinum-400">Sentiment</p>
+                              <p className="text-xs text-platinum-500-400">Sentiment</p>
                             </div>
                           </div>
                         </div>
@@ -307,15 +307,15 @@ export default function AsianLanguagesPage() {
                       <Badge variant="orange" className="mb-2">Hindi</Badge>
                       <div className="space-y-2 mt-3">
                         <div className="flex justify-between">
-                          <span className="text-platinum-400">Query Volume</span>
-                          <span className="text-platinum-200">35M+</span>
+                          <span className="text-platinum-500-400">Query Volume</span>
+                          <span className="text-platinum-500-200">35M+</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-platinum-400">Speakers in UAE</span>
-                          <span className="text-platinum-200">2.8M</span>
+                          <span className="text-platinum-500-400">Speakers in UAE</span>
+                          <span className="text-platinum-500-200">2.8M</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-platinum-400">Avg Sentiment</span>
+                          <span className="text-platinum-500-400">Avg Sentiment</span>
                           <span className="text-emerald-400">68%</span>
                         </div>
                       </div>
@@ -324,15 +324,15 @@ export default function AsianLanguagesPage() {
                       <Badge variant="emerald" className="mb-2">Urdu</Badge>
                       <div className="space-y-2 mt-3">
                         <div className="flex justify-between">
-                          <span className="text-platinum-400">Query Volume</span>
-                          <span className="text-platinum-200">32M+</span>
+                          <span className="text-platinum-500-400">Query Volume</span>
+                          <span className="text-platinum-500-200">32M+</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-platinum-400">Speakers in UAE</span>
-                          <span className="text-platinum-200">1.2M</span>
+                          <span className="text-platinum-500-400">Speakers in UAE</span>
+                          <span className="text-platinum-500-200">1.2M</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-platinum-400">Avg Sentiment</span>
+                          <span className="text-platinum-500-400">Avg Sentiment</span>
                           <span className="text-amber-400">58%</span>
                         </div>
                       </div>
@@ -367,7 +367,7 @@ export default function AsianLanguagesPage() {
                         <TrendingUp className="h-5 w-5 text-emerald-400" />
                       </div>
                       <div>
-                        <p className="text-xs text-platinum-400">Malaysia-UAE Trade 2024</p>
+                        <p className="text-xs text-platinum-500-400">Malaysia-UAE Trade 2024</p>
                         <p className="text-lg font-bold text-emerald-400">US$5.5B</p>
                       </div>
                     </div>
@@ -385,7 +385,7 @@ export default function AsianLanguagesPage() {
                         <Globe className="h-5 w-5 text-orange-400" />
                       </div>
                       <div>
-                        <p className="text-xs text-platinum-400">Indonesia-UAE Trade 2025</p>
+                        <p className="text-xs text-platinum-500-400">Indonesia-UAE Trade 2025</p>
                         <p className="text-lg font-bold text-orange-400">US$6.4B</p>
                       </div>
                     </div>
@@ -403,7 +403,7 @@ export default function AsianLanguagesPage() {
                         <Users className="h-5 w-5 text-cyan-400" />
                       </div>
                       <div>
-                        <p className="text-xs text-platinum-400">Indonesian Workers UAE</p>
+                        <p className="text-xs text-platinum-500-400">Indonesian Workers UAE</p>
                         <p className="text-lg font-bold text-cyan-400">77,000+</p>
                       </div>
                     </div>
@@ -421,7 +421,7 @@ export default function AsianLanguagesPage() {
                         <Shield className="h-5 w-5 text-amber-400" />
                       </div>
                       <div>
-                        <p className="text-xs text-platinum-400">Defense MoU</p>
+                        <p className="text-xs text-platinum-500-400">Defense MoU</p>
                         <p className="text-lg font-bold text-amber-400">Dec 2025</p>
                       </div>
                     </div>
@@ -448,7 +448,7 @@ export default function AsianLanguagesPage() {
                             transition={{ delay: index * 0.05 }}
                             className="flex items-center justify-between rounded-lg border border-emerald-700/50 bg-emerald-900/20 p-3"
                           >
-                            <span className="text-sm text-platinum-300">{item.metric}</span>
+                            <span className="text-sm text-platinum-500-300">{item.metric}</span>
                             <div className="text-right">
                               <span className="text-lg font-bold text-emerald-400">{item.value}</span>
                               {item.yoyChange && item.yoyChange !== '—' && (
@@ -468,7 +468,7 @@ export default function AsianLanguagesPage() {
                           ))}
                         </div>
                         <div className="mt-4 flex items-center justify-between">
-                          <span className="text-xs text-platinum-400">6,331 tariff lines</span>
+                          <span className="text-xs text-platinum-500-400">6,331 tariff lines</span>
                           <span className="text-sm font-bold text-emerald-400">Duty-Free</span>
                         </div>
                       </div>
@@ -496,7 +496,7 @@ export default function AsianLanguagesPage() {
                             transition={{ delay: index * 0.05 }}
                             className="flex items-center justify-between rounded-lg border border-orange-700/50 bg-orange-900/20 p-3"
                           >
-                            <span className="text-sm text-platinum-300">{item.metric}</span>
+                            <span className="text-sm text-platinum-500-300">{item.metric}</span>
                             <div className="text-right">
                               <span className="text-lg font-bold text-orange-400">{item.value}</span>
                               {item.yoyChange && item.yoyChange !== '—' && (
@@ -510,15 +510,15 @@ export default function AsianLanguagesPage() {
                         <h4 className="text-sm font-semibold text-orange-400 mb-3">CEPA Coverage</h4>
                         <div className="space-y-3">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-400">Products covered</span>
+                            <span className="text-sm text-platinum-500-400">Products covered</span>
                             <span className="text-lg font-bold text-orange-400">90%</span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-400">Trade value covered</span>
+                            <span className="text-sm text-platinum-500-400">Trade value covered</span>
                             <span className="text-lg font-bold text-orange-400">94%</span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-400">Trade target</span>
+                            <span className="text-sm text-platinum-500-400">Trade target</span>
                             <span className="text-lg font-bold text-orange-400">US$10B</span>
                           </div>
                         </div>
@@ -547,9 +547,9 @@ export default function AsianLanguagesPage() {
                           whileHover={{ scale: 1.02 }}
                           className="rounded-lg border border-amber-700/50 bg-amber-900/20 p-4"
                         >
-                          <h4 className="text-xs text-platinum-400 mb-1">{item.metric}</h4>
+                          <h4 className="text-xs text-platinum-500-400 mb-1">{item.metric}</h4>
                           <p className="text-lg font-bold text-amber-400">{item.value}</p>
-                          <p className="text-xs text-platinum-500 mt-1">{item.date}</p>
+                          <p className="text-xs text-platinum-500-500 mt-1">{item.date}</p>
                           <Badge variant={item.status === 'Active' ? 'emerald' : item.status === 'Completed' ? 'default' : 'orange'} className="mt-2 text-xs">
                             {item.status}
                           </Badge>
@@ -575,21 +575,21 @@ export default function AsianLanguagesPage() {
                         <h4 className="text-sm font-semibold text-red-400 mb-3">Malaysian Workers Crisis</h4>
                         <div className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-400">Total in UAE</span>
+                            <span className="text-sm text-platinum-500-400">Total in UAE</span>
                             <span className="text-lg font-bold text-red-400">8,500</span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-400">Registered</span>
-                            <span className="text-sm text-platinum-200">5,900</span>
+                            <span className="text-sm text-platinum-500-400">Registered</span>
+                            <span className="text-sm text-platinum-500-200">5,900</span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-400">Unregistered</span>
+                            <span className="text-sm text-platinum-500-400">Unregistered</span>
                             <span className="text-sm text-red-300">2,600 (gap)</span>
                           </div>
                           <div className="mt-3 pt-3 border-t border-red-700/50">
-                            <p className="text-xs text-platinum-400 mb-1">Evacuation Flight EK342</p>
+                            <p className="text-xs text-platinum-500-400 mb-1">Evacuation Flight EK342</p>
                             <div className="flex items-center justify-between">
-                              <span className="text-sm text-platinum-400">March 6 passengers</span>
+                              <span className="text-sm text-platinum-500-400">March 6 passengers</span>
                               <span className="text-lg font-bold text-red-400">222</span>
                             </div>
                           </div>
@@ -601,21 +601,21 @@ export default function AsianLanguagesPage() {
                         <h4 className="text-sm font-semibold text-orange-400 mb-3">Indonesian Worker Issues</h4>
                         <div className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-400">Total workers in UAE</span>
+                            <span className="text-sm text-platinum-500-400">Total workers in UAE</span>
                             <span className="text-lg font-bold text-orange-400">77,000+</span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-400">Female domestic workers</span>
-                            <span className="text-sm text-platinum-200">90%</span>
+                            <span className="text-sm text-platinum-500-400">Female domestic workers</span>
+                            <span className="text-sm text-platinum-500-200">90%</span>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-400">Documented abuse cases</span>
+                            <span className="text-sm text-platinum-500-400">Documented abuse cases</span>
                             <span className="text-sm text-red-300">25+ (HRW)</span>
                           </div>
                           <div className="mt-3 pt-3 border-t border-orange-700/50">
-                            <p className="text-xs text-platinum-400 mb-1">Documented Case</p>
+                            <p className="text-xs text-platinum-500-400 mb-1">Documented Case</p>
                             <p className="text-sm text-orange-300">Worker "I" - March 4, 2025</p>
-                            <p className="text-xs text-platinum-500">Wage theft, torture, repatriated</p>
+                            <p className="text-xs text-platinum-500-500">Wage theft, torture, repatriated</p>
                           </div>
                         </div>
                       </div>
@@ -640,9 +640,9 @@ export default function AsianLanguagesPage() {
                         transition={{ delay: 0.1 }}
                         className="rounded-lg border border-cyan-700/50 bg-cyan-900/20 p-4"
                       >
-                        <h4 className="text-xs text-platinum-400 mb-1">Total Investment Q3 2025</h4>
+                        <h4 className="text-xs text-platinum-500-400 mb-1">Total Investment Q3 2025</h4>
                         <p className="text-2xl font-bold text-cyan-400">US$88.14M</p>
-                        <p className="text-xs text-platinum-500 mt-1">Cumulative</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">Cumulative</p>
                       </motion.div>
 
                       <motion.div
@@ -651,9 +651,9 @@ export default function AsianLanguagesPage() {
                         transition={{ delay: 0.2 }}
                         className="rounded-lg border border-cyan-700/50 bg-cyan-900/20 p-4"
                       >
-                        <h4 className="text-xs text-platinum-400 mb-1">Nusantara Commitment</h4>
+                        <h4 className="text-xs text-platinum-500-400 mb-1">Nusantara Commitment</h4>
                         <p className="text-2xl font-bold text-cyan-400">US$238.4M</p>
-                        <p className="text-xs text-platinum-500 mt-1">Mid-2027 construction</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">Mid-2027 construction</p>
                       </motion.div>
 
                       <motion.div
@@ -662,15 +662,15 @@ export default function AsianLanguagesPage() {
                         transition={{ delay: 0.3 }}
                         className="rounded-lg border border-emerald-700/50 bg-emerald-900/20 p-4"
                       >
-                        <h4 className="text-xs text-platinum-400 mb-1">Cirata Floating Solar</h4>
+                        <h4 className="text-xs text-platinum-500-400 mb-1">Cirata Floating Solar</h4>
                         <p className="text-2xl font-bold text-emerald-400">192 MWp</p>
-                        <p className="text-xs text-platinum-500 mt-1">World's largest - Masdar</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">World's largest - Masdar</p>
                       </motion.div>
                     </div>
 
                     {/* Investment Sectors */}
                     <div className="mt-4">
-                      <h4 className="text-sm font-semibold text-platinum-300 mb-3">Investment by Sector</h4>
+                      <h4 className="text-sm font-semibold text-platinum-500-300 mb-3">Investment by Sector</h4>
                       <div className="flex flex-wrap gap-2">
                         {malayData?.extendedData?.kpiTables?.uaeInvestmentBySector?.map((sector) => (
                           <Badge
@@ -708,7 +708,7 @@ export default function AsianLanguagesPage() {
                         >
                           <h4 className="text-sm font-semibold text-fuchsia-400 mb-2">{item.initiative}</h4>
                           <p className="text-2xl font-bold text-fuchsia-300">{item.amount}</p>
-                          <p className="text-xs text-platinum-400 mt-1">Beneficiary: {item.beneficiary}</p>
+                          <p className="text-xs text-platinum-500-400 mt-1">Beneficiary: {item.beneficiary}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -732,11 +732,11 @@ export default function AsianLanguagesPage() {
                             transition={{ delay: index * 0.03 }}
                             className="flex items-start gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                           >
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald/20 text-emerald font-bold text-sm">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-500 font-bold text-sm">
                               {event.year}
                             </div>
                             <div className="flex-1">
-                              <p className="font-semibold text-platinum-200">{event.event}</p>
+                              <p className="font-semibold text-platinum-500-200">{event.event}</p>
                               {event.malaysianComponent && event.malaysianComponent !== '—' && (
                                 <p className="text-xs text-emerald-400 mt-1">MY: {event.malaysianComponent}</p>
                               )}
@@ -769,11 +769,11 @@ export default function AsianLanguagesPage() {
                             className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70"
                           >
                             <div className="flex items-center gap-4">
-                              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald/20 text-emerald">
+                              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-500">
                                 <Plane className="h-5 w-5" />
                               </div>
                               <div>
-                                <p className="font-semibold text-platinum-200">{item.term}</p>
+                                <p className="font-semibold text-platinum-500-200">{item.term}</p>
                                 <Badge
                                   variant={item.sentiment === 'positive' ? 'emerald' : item.sentiment === 'negative' ? 'destructive' : 'outline'}
                                   className="text-xs mt-1"
@@ -784,10 +784,10 @@ export default function AsianLanguagesPage() {
                             </div>
                             <div className="flex items-center gap-6">
                               <div className="text-center">
-                                <div className="text-lg font-bold text-platinum-200">
+                                <div className="text-lg font-bold text-platinum-500-200">
                                   {(item.volume / 1000000).toFixed(1)}M
                                 </div>
-                                <p className="text-xs text-platinum-400">Volume</p>
+                                <p className="text-xs text-platinum-500-400">Volume</p>
                               </div>
                               <Badge
                                 variant={item.trend === 'rising' ? 'emerald' : item.trend === 'declining' ? 'destructive' : 'outline'}
@@ -817,26 +817,26 @@ export default function AsianLanguagesPage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70"
                         >
                           <div className="flex items-center gap-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan/20 text-cyan">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-500">
                               <Users className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-200">{item.term}</p>
+                              <p className="font-semibold text-platinum-500-200">{item.term}</p>
                               {getCategoryBadge(item.category)}
                             </div>
                           </div>
                           <div className="flex items-center gap-6">
                             <div className="text-center">
-                              <div className="text-lg font-bold text-platinum-200">
+                              <div className="text-lg font-bold text-platinum-500-200">
                                 {(item.volume / 1000000).toFixed(1)}M
                               </div>
-                              <p className="text-xs text-platinum-400">Volume</p>
+                              <p className="text-xs text-platinum-500-400">Volume</p>
                             </div>
                             <div className="text-center">
                               <div className={`text-lg font-bold ${getSentimentColor(item.sentiment)}`}>
                                 {item.sentiment}%
                               </div>
-                              <p className="text-xs text-platinum-400">Sentiment</p>
+                              <p className="text-xs text-platinum-500-400">Sentiment</p>
                             </div>
                           </div>
                         </div>
@@ -871,7 +871,7 @@ export default function AsianLanguagesPage() {
                             >
                               {risk.level}
                             </Badge>
-                            <span className="text-sm text-platinum-300">{risk.risk}</span>
+                            <span className="text-sm text-platinum-500-300">{risk.risk}</span>
                           </div>
                           <div className="flex items-center gap-4">
                             <Badge
@@ -913,7 +913,7 @@ export default function AsianLanguagesPage() {
                         <Globe className="h-5 w-5 text-red-400" />
                       </div>
                       <div>
-                        <p className="text-xs text-platinum-400">Diplomatic Status</p>
+                        <p className="text-xs text-platinum-500-400">Diplomatic Status</p>
                         <p className="text-lg font-bold text-red-400">SEVERED</p>
                       </div>
                     </div>
@@ -930,7 +930,7 @@ export default function AsianLanguagesPage() {
                         <TrendingUp className="h-5 w-5 text-amber-400" />
                       </div>
                       <div>
-                        <p className="text-xs text-platinum-400">Trade Volume</p>
+                        <p className="text-xs text-platinum-500-400">Trade Volume</p>
                         <p className="text-lg font-bold text-amber-400">$27B</p>
                       </div>
                     </div>
@@ -947,7 +947,7 @@ export default function AsianLanguagesPage() {
                         <Users className="h-5 w-5 text-rose-400" />
                       </div>
                       <div>
-                        <p className="text-xs text-platinum-400">Iranians in UAE</p>
+                        <p className="text-xs text-platinum-500-400">Iranians in UAE</p>
                         <p className="text-lg font-bold text-rose-400">500K-900K</p>
                       </div>
                     </div>
@@ -964,7 +964,7 @@ export default function AsianLanguagesPage() {
                         <Star className="h-5 w-5 text-orange-400" />
                       </div>
                       <div>
-                        <p className="text-xs text-platinum-400">Sentiment</p>
+                        <p className="text-xs text-platinum-500-400">Sentiment</p>
                         <p className="text-lg font-bold text-orange-400">12%</p>
                       </div>
                     </div>
@@ -988,9 +988,9 @@ export default function AsianLanguagesPage() {
                         transition={{ delay: 0.2 }}
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
-                        <h4 className="text-sm font-semibold text-platinum-300 mb-3">Attack Duration</h4>
+                        <h4 className="text-sm font-semibold text-platinum-500-300 mb-3">Attack Duration</h4>
                         <p className="text-2xl font-bold text-red-400">Feb 28 - Apr 8, 2026</p>
-                        <p className="text-xs text-platinum-400 mt-1">40 days of conflict</p>
+                        <p className="text-xs text-platinum-500-400 mt-1">40 days of conflict</p>
                       </motion.div>
 
                       <motion.div
@@ -999,15 +999,15 @@ export default function AsianLanguagesPage() {
                         transition={{ delay: 0.3 }}
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
-                        <h4 className="text-sm font-semibold text-platinum-300 mb-3">Casualties</h4>
+                        <h4 className="text-sm font-semibold text-platinum-500-300 mb-3">Casualties</h4>
                         <div className="flex gap-4">
                           <div>
                             <p className="text-2xl font-bold text-red-400">13</p>
-                            <p className="text-xs text-platinum-400">Killed</p>
+                            <p className="text-xs text-platinum-500-400">Killed</p>
                           </div>
                           <div>
                             <p className="text-2xl font-bold text-amber-400">224</p>
-                            <p className="text-xs text-platinum-400">Injured</p>
+                            <p className="text-xs text-platinum-500-400">Injured</p>
                           </div>
                         </div>
                       </motion.div>
@@ -1018,22 +1018,22 @@ export default function AsianLanguagesPage() {
                         transition={{ delay: 0.4 }}
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
-                        <h4 className="text-sm font-semibold text-platinum-300 mb-3">Defense Cost</h4>
+                        <h4 className="text-sm font-semibold text-platinum-500-300 mb-3">Defense Cost</h4>
                         <p className="text-2xl font-bold text-orange-400">~$1B</p>
-                        <p className="text-xs text-platinum-400">Per day shooting down missiles</p>
+                        <p className="text-xs text-platinum-500-400">Per day shooting down missiles</p>
                       </motion.div>
                     </div>
 
                     {/* Interception Stats */}
                     <div className="mt-6">
-                      <h4 className="text-sm font-semibold text-platinum-300 mb-3">Missiles & Drones Intercepted</h4>
+                      <h4 className="text-sm font-semibold text-platinum-500-300 mb-3">Missiles & Drones Intercepted</h4>
                       <div className="grid gap-3 sm:grid-cols-3">
                         <motion.div
                           whileHover={{ scale: 1.02 }}
                           className="rounded-lg border border-red-700/50 bg-red-900/20 p-3"
                         >
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-400">Ballistic Missiles</span>
+                            <span className="text-sm text-platinum-500-400">Ballistic Missiles</span>
                             <span className="text-xl font-bold text-red-400">537</span>
                           </div>
                           <Progress value={100} className="mt-2 h-1" />
@@ -1043,7 +1043,7 @@ export default function AsianLanguagesPage() {
                           className="rounded-lg border border-amber-700/50 bg-amber-900/20 p-3"
                         >
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-400">Drones</span>
+                            <span className="text-sm text-platinum-500-400">Drones</span>
                             <span className="text-xl font-bold text-amber-400">2,256</span>
                           </div>
                           <Progress value={100} className="mt-2 h-1" />
@@ -1053,7 +1053,7 @@ export default function AsianLanguagesPage() {
                           className="rounded-lg border border-orange-700/50 bg-orange-900/20 p-3"
                         >
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-400">Cruise Missiles</span>
+                            <span className="text-sm text-platinum-500-400">Cruise Missiles</span>
                             <span className="text-xl font-bold text-orange-400">26</span>
                           </div>
                           <Progress value={100} className="mt-2 h-1" />
@@ -1077,7 +1077,7 @@ export default function AsianLanguagesPage() {
                       <div className="grid gap-4 lg:grid-cols-3">
                         <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <h4 className="text-sm font-semibold text-emerald-400 mb-2">Abu Musa</h4>
-                          <div className="space-y-1 text-xs text-platinum-400">
+                          <div className="space-y-1 text-xs text-platinum-500-400">
                             <p>Area: 12.8 km²</p>
                             <p>Population: 2,131 (2012)</p>
                             <p>Distance to Iran: 70 km</p>
@@ -1086,7 +1086,7 @@ export default function AsianLanguagesPage() {
                         </div>
                         <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <h4 className="text-sm font-semibold text-emerald-400 mb-2">Greater Tunb</h4>
-                          <div className="space-y-1 text-xs text-platinum-400">
+                          <div className="space-y-1 text-xs text-platinum-500-400">
                             <p>Population (1971): ~150</p>
                             <p>Distance to Iran: 17 miles from Qeshm</p>
                             <p>Distance to UAE: 46 miles</p>
@@ -1094,7 +1094,7 @@ export default function AsianLanguagesPage() {
                         </div>
                         <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <h4 className="text-sm font-semibold text-emerald-400 mb-2">Lesser Tunb</h4>
-                          <div className="space-y-1 text-xs text-platinum-400">
+                          <div className="space-y-1 text-xs text-platinum-500-400">
                             <p>Population (1971): Uninhabited</p>
                             <p>Status: Under Iranian control</p>
                           </div>
@@ -1102,10 +1102,10 @@ export default function AsianLanguagesPage() {
                       </div>
                       <div className="mt-4 rounded-lg border border-amber-700/50 bg-amber-900/20 p-4">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-300">Financial Arrangement (Abu Musa)</span>
+                          <span className="text-sm text-platinum-500-300">Financial Arrangement (Abu Musa)</span>
                           <span className="text-sm font-bold text-amber-400">£1.5M/year + £125K/month</span>
                         </div>
-                        <p className="text-xs text-platinum-400 mt-1">Paid to Sharjah by Iran since April 21, 1972</p>
+                        <p className="text-xs text-platinum-500-400 mt-1">Paid to Sharjah by Iran since April 21, 1972</p>
                       </div>
                     </div>
                   </CardContent>
@@ -1121,29 +1121,29 @@ export default function AsianLanguagesPage() {
                     <div className="grid gap-4 lg:grid-cols-2">
                       <div className="space-y-3">
                         <div className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-400">Trade Volume (Current)</span>
+                          <span className="text-sm text-platinum-500-400">Trade Volume (Current)</span>
                           <span className="text-lg font-bold text-emerald-400">$27B</span>
                         </div>
                         <div className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-400">Iran Imports from UAE</span>
+                          <span className="text-sm text-platinum-500-400">Iran Imports from UAE</span>
                           <span className="text-lg font-bold text-amber-400">$20.8B</span>
                         </div>
                         <div className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-400">Iran Exports to UAE</span>
+                          <span className="text-sm text-platinum-500-400">Iran Exports to UAE</span>
                           <span className="text-lg font-bold text-orange-400">$6.6B</span>
                         </div>
                       </div>
                       <div className="space-y-3">
                         <div className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-400">UAE Ranking for Iran</span>
+                          <span className="text-sm text-platinum-500-400">UAE Ranking for Iran</span>
                           <Badge variant="emerald">#2 after China</Badge>
                         </div>
                         <div className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-400">Share of Iran's Purchases</span>
+                          <span className="text-sm text-platinum-500-400">Share of Iran's Purchases</span>
                           <span className="text-lg font-bold text-amber-400">~30%</span>
                         </div>
                         <div className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-400">Gray Market Imports</span>
+                          <span className="text-sm text-platinum-500-400">Gray Market Imports</span>
                           <span className="text-lg font-bold text-orange-400">$20-25B</span>
                         </div>
                       </div>
@@ -1161,36 +1161,36 @@ export default function AsianLanguagesPage() {
                     <div className="grid gap-4 lg:grid-cols-2">
                       <div className="space-y-3">
                         <div className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-400">Total Population</span>
+                          <span className="text-sm text-platinum-500-400">Total Population</span>
                           <span className="text-lg font-bold text-rose-400">500K-900K</span>
                         </div>
                         <div className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-400">In Dubai</span>
+                          <span className="text-sm text-platinum-500-400">In Dubai</span>
                           <span className="text-lg font-bold text-amber-400">~800,000</span>
                         </div>
                         <div className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-400">Companies Managed</span>
+                          <span className="text-sm text-platinum-500-400">Companies Managed</span>
                           <span className="text-lg font-bold text-emerald-400">~10,000</span>
                         </div>
                       </div>
                       <div className="space-y-3">
                         <div className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-400">Assets (2019)</span>
+                          <span className="text-sm text-platinum-500-400">Assets (2019)</span>
                           <span className="text-lg font-bold text-amber-400">~$300B</span>
                         </div>
                         <div className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-400">Students in UAE</span>
+                          <span className="text-sm text-platinum-500-400">Students in UAE</span>
                           <span className="text-lg font-bold text-orange-400">~10,000</span>
                         </div>
                         <div className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-400">Iranian Schools</span>
+                          <span className="text-sm text-platinum-500-400">Iranian Schools</span>
                           <span className="text-lg font-bold text-emerald-400">7 complexes</span>
                         </div>
                       </div>
                     </div>
                     <div className="mt-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                      <p className="text-xs text-platinum-400">
-                        <span className="font-semibold text-platinum-300">Origin:</span> Most Iranians came from southern provinces (Hormozgan, Fars, Bushehr), particularly the Larestan and Lamerd regions, beginning about a century ago.
+                      <p className="text-xs text-platinum-500-400">
+                        <span className="font-semibold text-platinum-500-300">Origin:</span> Most Iranians came from southern provinces (Hormozgan, Fars, Bushehr), particularly the Larestan and Lamerd regions, beginning about a century ago.
                       </p>
                     </div>
                   </CardContent>
@@ -1209,7 +1209,7 @@ export default function AsianLanguagesPage() {
                         { topic: 'Three Islands Dispute', sentiment: -0.8, label: 'Negative', color: 'text-red-400' },
                         { topic: 'Iran-UAE Relations', sentiment: -0.7, label: 'Negative', color: 'text-orange-400' },
                         { topic: 'UAE Foreign Policy (post-war)', sentiment: -0.3, label: 'Cautious', color: 'text-amber-400' },
-                        { topic: 'Iranian Community', sentiment: 0.2, label: 'Neutral', color: 'text-platinum-400' },
+                        { topic: 'Iranian Community', sentiment: 0.2, label: 'Neutral', color: 'text-platinum-500-400' },
                         { topic: 'Economic/Trade Ties', sentiment: 0.1, label: 'Mixed', color: 'text-amber-400' },
                         { topic: 'Persian Gulf Naming', sentiment: 0.6, label: 'Positive', color: 'text-emerald-400' },
                       ].map((item, index) => (
@@ -1220,7 +1220,7 @@ export default function AsianLanguagesPage() {
                           transition={{ delay: index * 0.05 }}
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
-                          <span className="text-sm text-platinum-300">{item.topic}</span>
+                          <span className="text-sm text-platinum-500-300">{item.topic}</span>
                           <div className="flex items-center gap-2">
                             <Progress
                               value={Math.abs(item.sentiment) * 100}
@@ -1272,9 +1272,9 @@ export default function AsianLanguagesPage() {
                     {communitySizes.map((community, index) => (
                       <div key={index} className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="font-medium text-platinum-200">{community.community}</span>
+                          <span className="font-medium text-platinum-500-200">{community.community}</span>
                           <div className="flex items-center gap-4">
-                            <span className="text-sm text-platinum-400">
+                            <span className="text-sm text-platinum-500-400">
                               {community.population.toLocaleString()} ({community.percentage}%)
                             </span>
                             <span className={`font-bold ${getSentimentColor(community.sentiment)}`}>
@@ -1354,7 +1354,7 @@ export default function AsianLanguagesPage() {
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="rounded-lg border border-emerald-700/50 bg-emerald-900/20 p-4">
                       <Badge variant="emerald" className="mb-2">Positive Drivers</Badge>
-                      <ul className="text-sm text-platinum-300 space-y-1 mt-2">
+                      <ul className="text-sm text-platinum-500-300 space-y-1 mt-2">
                         <li>- UAE-India CEPA implementation</li>
                         <li>- Golden visa expansion</li>
                         <li>- Tourism recovery</li>
@@ -1363,7 +1363,7 @@ export default function AsianLanguagesPage() {
                     </div>
                     <div className="rounded-lg border border-red-700/50 bg-red-900/20 p-4">
                       <Badge variant="destructive" className="mb-2">Negative Drivers</Badge>
-                      <ul className="text-sm text-platinum-300 space-y-1 mt-2">
+                      <ul className="text-sm text-platinum-500-300 space-y-1 mt-2">
                         <li>- Labor disputes</li>
                         <li>- Pakistan-UAE tensions</li>
                         <li>- Remittance challenges</li>

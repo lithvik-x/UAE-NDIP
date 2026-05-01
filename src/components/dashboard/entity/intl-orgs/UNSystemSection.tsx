@@ -88,17 +88,17 @@ export function UNSystemSection({ data }: UNSystemSectionProps) {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">
+              <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">
                 {data.overview.residentCoordinator}
               </p>
-              <p className="text-sm text-platinum-500">{data.overview.nationality}</p>
+              <p className="text-sm text-platinum-500-500">{data.overview.nationality}</p>
               <div className="mt-4 space-y-2">
                 <div className="flex justify-between text-sm">
-                  <span className="text-platinum-500">First UN Operations</span>
+                  <span className="text-platinum-500-500">First UN Operations</span>
                   <span className="font-medium">{data.overview.firstUNOperations}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-platinum-500">Agencies in UAE</span>
+                  <span className="text-platinum-500-500">Agencies in UAE</span>
                   <span className="font-medium">{data.overview.agenciesCount}</span>
                 </div>
               </div>
@@ -154,11 +154,11 @@ export function UNSystemSection({ data }: UNSystemSectionProps) {
           <Table variant="medium">
             <TableHeader>
               <TableRow className="border-b border-platinum-200/50 dark:border-platinum-700/50">
-                <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Agency</TableHead>
-                <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Full Name</TableHead>
-                <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">UAE Office</TableHead>
-                <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Relevance</TableHead>
-                <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Sentiment</TableHead>
+                <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Agency</TableHead>
+                <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Full Name</TableHead>
+                <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">UAE Office</TableHead>
+                <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Relevance</TableHead>
+                <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Sentiment</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -168,13 +168,13 @@ export function UNSystemSection({ data }: UNSystemSectionProps) {
                   className="border-b border-platinum-100/50 dark:border-platinum-800/50 hover:bg-platinum-50/50 dark:hover:bg-platinum-800/25 transition-colors"
                 >
                   <TableCell>
-                    <span className="font-semibold text-navy-900 dark:text-platinum-100">{agency.name}</span>
+                    <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{agency.name}</span>
                   </TableCell>
                   <TableCell>
-                    <span className="text-sm text-platinum-600 dark:text-platinum-400">{agency.fullName}</span>
+                    <span className="text-sm text-platinum-500-600 dark:text-platinum-500-400">{agency.fullName}</span>
                   </TableCell>
                   <TableCell>
-                    <span className="text-sm text-platinum-600 dark:text-platinum-400">{agency.uaeOffice || 'N/A'}</span>
+                    <span className="text-sm text-platinum-500-600 dark:text-platinum-500-400">{agency.uaeOffice || 'N/A'}</span>
                   </TableCell>
                   <TableCell>
                     <div className="flex items-center gap-2 w-20">

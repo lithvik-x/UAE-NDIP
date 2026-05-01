@@ -57,7 +57,7 @@ export function SportsEntitiesSection({
         <Card className="glass-card">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <Flag className="h-5 w-5 text-gold" />
+              <Flag className="h-5 w-5 text-gold-700" />
               City Football Group Ownership
             </CardTitle>
             <CardDescription>Manchester City parent company stakeholding</CardDescription>
@@ -69,8 +69,8 @@ export function SportsEntitiesSection({
                   key={index}
                   className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50"
                 >
-                  <span className="text-sm text-platinum-300">{owner.owner}</span>
-                  <span className="text-xl font-bold text-gold">{owner.share}</span>
+                  <span className="text-sm text-platinum-500-300">{owner.owner}</span>
+                  <span className="text-xl font-bold text-gold-700">{owner.share}</span>
                 </div>
               ))}
             </div>
@@ -83,7 +83,7 @@ export function SportsEntitiesSection({
         <Card className="glass-card">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <Trophy className="h-5 w-5 text-gold" />
+              <Trophy className="h-5 w-5 text-gold-700" />
               Manchester City Financials
             </CardTitle>
             <CardDescription>Revenue growth post Abu Dhabi takeover</CardDescription>
@@ -95,8 +95,8 @@ export function SportsEntitiesSection({
                   key={index}
                   className="flex justify-between items-center p-3 rounded-lg bg-platinum-800/50"
                 >
-                  <span className="text-sm text-platinum-300">{item.year}</span>
-                  <span className="text-xl font-bold text-gold">{item.revenue}</span>
+                  <span className="text-sm text-platinum-500-300">{item.year}</span>
+                  <span className="text-xl font-bold text-gold-700">{item.revenue}</span>
                 </div>
               ))}
             </div>
@@ -109,7 +109,7 @@ export function SportsEntitiesSection({
         <Card className="glass-card">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <Award className="h-5 w-5 text-gold" />
+              <Award className="h-5 w-5 text-gold-700" />
               F1 Abu Dhabi GP Metrics
             </CardTitle>
             <CardDescription>Event performance and economic impact</CardDescription>
@@ -121,8 +121,8 @@ export function SportsEntitiesSection({
                   key={index}
                   className="flex justify-between items-center p-3 rounded-lg bg-platinum-800/50"
                 >
-                  <span className="text-sm text-platinum-300">{item.metric}</span>
-                  <span className="text-xl font-bold text-gold">{item.value}</span>
+                  <span className="text-sm text-platinum-500-300">{item.metric}</span>
+                  <span className="text-xl font-bold text-gold-700">{item.value}</span>
                 </div>
               ))}
             </div>
@@ -145,15 +145,15 @@ export function SportsEntitiesSection({
                     key={index}
                     className="flex items-center gap-4 p-3 rounded-lg bg-platinum-800/50"
                   >
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold/20 text-gold font-bold">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold-700/20 text-gold-700 font-bold">
                       {index + 1}
                     </div>
                     <div className="flex-1">
-                      <p className="font-semibold text-platinum-200">{result.driver}</p>
-                      <p className="text-sm text-platinum-400">{result.team}</p>
+                      <p className="font-semibold text-platinum-500-200">{result.driver}</p>
+                      <p className="text-sm text-platinum-500-400">{result.team}</p>
                     </div>
                     <div className="text-right">
-                      <p className="font-bold text-gold">{result.gap !== '—' ? result.gap : 'Winner'}</p>
+                      <p className="font-bold text-gold-700">{result.gap !== '—' ? result.gap : 'Winner'}</p>
                     </div>
                   </div>
                 ))}
@@ -173,15 +173,15 @@ export function SportsEntitiesSection({
                     key={index}
                     className="flex items-center gap-4 p-3 rounded-lg bg-platinum-800/50"
                   >
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold/20 text-gold font-bold">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold-700/20 text-gold-700 font-bold">
                       {index + 1}
                     </div>
                     <div className="flex-1">
-                      <p className="font-semibold text-platinum-200">{result.driver}</p>
-                      <p className="text-sm text-platinum-400">{result.team}</p>
+                      <p className="font-semibold text-platinum-500-200">{result.driver}</p>
+                      <p className="text-sm text-platinum-500-400">{result.team}</p>
                     </div>
                     <div className="text-right">
-                      <p className="font-bold text-gold">{result.gap !== '—' ? result.gap : 'Winner'}</p>
+                      <p className="font-bold text-gold-700">{result.gap !== '—' ? result.gap : 'Winner'}</p>
                     </div>
                   </div>
                 ))}
@@ -196,7 +196,7 @@ export function SportsEntitiesSection({
         <Card className="glass-card">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <Users className="h-5 w-5 text-gold" />
+              <Users className="h-5 w-5 text-gold-700" />
               Key Individuals
             </CardTitle>
             <CardDescription>Sports intelligence stakeholders</CardDescription>
@@ -210,10 +210,10 @@ export function SportsEntitiesSection({
                     className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                   >
                     <div>
-                      <p className="font-semibold text-platinum-200">{person.name}</p>
-                      <p className="text-sm text-platinum-400">{person.role}</p>
+                      <p className="font-semibold text-platinum-500-200">{person.name}</p>
+                      <p className="text-sm text-platinum-500-400">{person.role}</p>
                     </div>
-                    <Badge variant="outline" className="text-platinum border-platinum/50 ml-2">
+                    <Badge variant="outline" className="text-platinum-500 border-platinum/50 ml-2">
                       {person.affiliation.split(',')[0]}
                     </Badge>
                   </div>

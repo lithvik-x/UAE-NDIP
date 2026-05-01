@@ -72,7 +72,7 @@ export default function CyberThreatsPage() {
   if (!data) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-400">Loading Cybersecurity Threats data...</div>
+        <div className="text-platinum-500-400">Loading Cybersecurity Threats data...</div>
       </div>
     )
   }
@@ -217,13 +217,13 @@ export default function CyberThreatsPage() {
       >
         <div>
           <Badge variant="denim" className="mb-2">CRISIS TYPE</Badge>
-          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-navy">Cybersecurity Threats</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-navy-500">Cybersecurity Threats</h1>
+          <p className="mt-2 text-platinum-500-400">
             State-sponsored attacks, ransomware, Bybit hack, Handala, AI-powered threats
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-purple-500/50 text-purple hover:bg-purple-500/10">
+          <Button variant="outline" className="gap-2 border-purple-500/50 text-purple-500 hover:bg-purple-500/10">
             <Lock className="h-4 w-4" />
             SOC Dashboard
           </Button>
@@ -285,8 +285,8 @@ export default function CyberThreatsPage() {
             transition={{ duration: 0.3, delay: 0.1 * idx }}
             className="rounded-lg glass-card border border-platinum-700/50 p-3 text-center hover:border-purple-500/30 transition-all"
           >
-            <p className="text-xs text-platinum-400 truncate" title={stat.metric}>{stat.metric}</p>
-            <p className="text-lg font-bold text-purple">{stat.value}</p>
+            <p className="text-xs text-platinum-500-400 truncate" title={stat.metric}>{stat.metric}</p>
+            <p className="text-lg font-bold text-purple-500">{stat.value}</p>
           </motion.div>
         ))}
       </motion.div>
@@ -319,7 +319,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-purple-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <TrendingUp className="h-5 w-5 text-purple" />
+                        <TrendingUp className="h-5 w-5 text-purple-500" />
                         Attack Volume Trend
                       </CardTitle>
                       <CardDescription>Daily cyberattacks (2025-2026)</CardDescription>
@@ -340,7 +340,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-purple-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Target className="h-5 w-5 text-rose" />
+                        <Target className="h-5 w-5 text-rose-500" />
                         Attack Vectors
                       </CardTitle>
                       <CardDescription>Distribution by attack type</CardDescription>
@@ -359,7 +359,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-purple-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Activity className="h-5 w-5 text-orange" />
+                        <Activity className="h-5 w-5 text-orange-500" />
                         Threat Radar
                       </CardTitle>
                       <CardDescription>Multi-dimensional threat assessment</CardDescription>
@@ -376,7 +376,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-purple-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Globe className="h-5 w-5 text-gold" />
+                        <Globe className="h-5 w-5 text-gold-700" />
                         Sentiment Analysis
                       </CardTitle>
                       <CardDescription>Threat response sentiment</CardDescription>
@@ -395,7 +395,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-purple-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Shield className="h-5 w-5 text-purple" />
+                        <Shield className="h-5 w-5 text-purple-500" />
                         Threat Composition
                       </CardTitle>
                       <CardDescription>Actor categorization</CardDescription>
@@ -412,7 +412,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-purple-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Binary className="h-5 w-5 text-cyan" />
+                        <Binary className="h-5 w-5 text-cyan-500" />
                         Organized Threats
                       </CardTitle>
                       <CardDescription>Distribution by type</CardDescription>
@@ -431,16 +431,16 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-purple-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Clock className="h-5 w-5 text-gold" />
+                        <Clock className="h-5 w-5 text-gold-700" />
                         Official Quote
                       </CardTitle>
                       <CardDescription>UAE Cyber Security Council</CardDescription>
                     </CardHeader>
                     <CardContent className="flex flex-col justify-center h-[220px]">
                       <blockquote className="border-l-4 border-gold pl-4">
-                        <p className="text-2xl font-serif italic text-gold">&ldquo;{extended.attackVolume.officialQuote.text}&rdquo;</p>
-                        <p className="mt-2 text-sm text-platinum-400">- {extended.attackVolume.officialQuote.author}</p>
-                        <p className="text-xs text-platinum-500">{extended.attackVolume.officialQuote.role}</p>
+                        <p className="text-2xl font-serif italic text-gold-700">&ldquo;{extended.attackVolume.officialQuote.text}&rdquo;</p>
+                        <p className="mt-2 text-sm text-platinum-500-400">- {extended.attackVolume.officialQuote.author}</p>
+                        <p className="text-xs text-platinum-500-500">{extended.attackVolume.officialQuote.role}</p>
                       </blockquote>
                     </CardContent>
                   </Card>
@@ -479,11 +479,11 @@ export default function CyberThreatsPage() {
                             <div className="absolute -left-8 top-0 h-4 w-4 rounded-full bg-purple-500 border-2 border-platinum-900" />
                             <div className={`rounded-lg border p-4 transition-all duration-300 ${selectedIncident === idx ? 'bg-purple-500/20 border-purple-500/50' : 'bg-platinum-800/50 border-platinum-700/50 hover:border-purple-500/30'}`}>
                               <div className="flex items-center justify-between mb-1">
-                                <p className="font-semibold text-platinum-200">{incident.incident}</p>
+                                <p className="font-semibold text-platinum-500-200">{incident.incident}</p>
                                 <Badge variant="outline" className="text-xs">{incident.date}</Badge>
                               </div>
-                              <p className="text-sm text-platinum-400 mb-2">{incident.impact}</p>
-                              <div className="flex items-center gap-4 text-xs text-platinum-500">
+                              <p className="text-sm text-platinum-500-400 mb-2">{incident.impact}</p>
+                              <div className="flex items-center gap-4 text-xs text-platinum-500-500">
                                 <span className="flex items-center gap-1">
                                   <Shield className="h-3 w-3" />
                                   {incident.sector}
@@ -518,7 +518,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-rose-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Bug className="h-5 w-5 text-rose" />
+                        <Bug className="h-5 w-5 text-rose-500" />
                         Ransomware Groups
                       </CardTitle>
                       <CardDescription>Active in UAE region</CardDescription>
@@ -541,7 +541,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-purple-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Users className="h-5 w-5 text-purple" />
+                        <Users className="h-5 w-5 text-purple-500" />
                         Hacktivist Groups
                       </CardTitle>
                       <CardDescription>Iran-affiliated threat actors</CardDescription>
@@ -560,9 +560,9 @@ export default function CyberThreatsPage() {
                             >
                               <div className="flex items-center gap-3">
                                 <div className="h-2 w-2 rounded-full bg-rose-500" />
-                                <span className="font-medium text-platinum-200">{group.group}</span>
+                                <span className="font-medium text-platinum-500-200">{group.group}</span>
                               </div>
-                              <span className="text-xs text-platinum-500">{group.knownActivity}</span>
+                              <span className="text-xs text-platinum-500-500">{group.knownActivity}</span>
                             </motion.div>
                           ))}
                         </div>
@@ -574,7 +574,7 @@ export default function CyberThreatsPage() {
                 <Card className="glass-card border-purple-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <AlertTriangle className="h-5 w-5 text-orange" />
+                      <AlertTriangle className="h-5 w-5 text-orange-500" />
                       Handala - Iran-Linked Threat Actor
                     </CardTitle>
                     <CardDescription>$10M FBI bounty | Active since 2022</CardDescription>
@@ -582,30 +582,30 @@ export default function CyberThreatsPage() {
                   <CardContent>
                     <div className="grid gap-4 md:grid-cols-5">
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
-                        <p className="text-xs text-platinum-400">Attribution</p>
-                        <p className="text-sm font-bold text-rose">Iran-backed</p>
+                        <p className="text-xs text-platinum-500-400">Attribution</p>
+                        <p className="text-sm font-bold text-rose-500">Iran-backed</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
-                        <p className="text-xs text-platinum-400">FBI Bounty</p>
-                        <p className="text-sm font-bold text-rose">$10 Million</p>
+                        <p className="text-xs text-platinum-500-400">FBI Bounty</p>
+                        <p className="text-sm font-bold text-rose-500">$10 Million</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
-                        <p className="text-xs text-platinum-400">Active Since</p>
-                        <p className="text-sm font-bold text-rose">2022</p>
+                        <p className="text-xs text-platinum-500-400">Active Since</p>
+                        <p className="text-sm font-bold text-rose-500">2022</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
-                        <p className="text-xs text-platinum-400">Motivation</p>
-                        <p className="text-sm font-bold text-rose">Pro-Palestinian</p>
+                        <p className="text-xs text-platinum-500-400">Motivation</p>
+                        <p className="text-sm font-bold text-rose-500">Pro-Palestinian</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
-                        <p className="text-xs text-platinum-400">April 2026</p>
-                        <p className="text-sm font-bold text-rose">6PB Destroyed</p>
+                        <p className="text-xs text-platinum-500-400">April 2026</p>
+                        <p className="text-sm font-bold text-rose-500">6PB Destroyed</p>
                       </div>
                     </div>
 
                     {/* Handala Attack Visualization */}
                     <div className="mt-6">
-                      <p className="text-sm font-medium text-platinum-300 mb-3">April 2026 Dubai Attack Impact</p>
+                      <p className="text-sm font-medium text-platinum-500-300 mb-3">April 2026 Dubai Attack Impact</p>
                       <BarChart
                         data={handalaAttackData.filter(a => a.entity !== 'Dubai RTA').map((a) => ({
                           name: a.entity.split(' ')[0],
@@ -657,7 +657,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-rose-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <HeartPulse className="h-5 w-5 text-rose" />
+                        <HeartPulse className="h-5 w-5 text-rose-500" />
                         Healthcare Incidents
                       </CardTitle>
                       <CardDescription>Major healthcare breaches</CardDescription>
@@ -676,7 +676,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-orange-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Banknote className="h-5 w-5 text-orange" />
+                        <Banknote className="h-5 w-5 text-orange-500" />
                         Financial Incidents
                       </CardTitle>
                       <CardDescription>Major financial sector breaches</CardDescription>
@@ -697,7 +697,7 @@ export default function CyberThreatsPage() {
                 <Card className="glass-card border-amber-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Building2 className="h-5 w-5 text-amber" />
+                      <Building2 className="h-5 w-5 text-amber-500" />
                       Bybit Hack - February 2025
                     </CardTitle>
                     <CardDescription>Largest cryptocurrency theft ever</CardDescription>
@@ -705,16 +705,16 @@ export default function CyberThreatsPage() {
                   <CardContent>
                     <div className="grid gap-4 md:grid-cols-3">
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-amber-500/30 text-center">
-                        <p className="text-3xl font-bold text-amber">$1.5B</p>
-                        <p className="text-xs text-platinum-400">Amount Stolen</p>
+                        <p className="text-3xl font-bold text-amber-500">$1.5B</p>
+                        <p className="text-xs text-platinum-500-400">Amount Stolen</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-amber-500/30 text-center">
-                        <p className="text-lg font-bold text-amber">400,000+ ETH</p>
-                        <p className="text-xs text-platinum-400">Currency</p>
+                        <p className="text-lg font-bold text-amber-500">400,000+ ETH</p>
+                        <p className="text-xs text-platinum-500-400">Currency</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-amber-500/30 text-center">
-                        <p className="text-lg font-bold text-amber">North Korea</p>
-                        <p className="text-xs text-platinum-400">FBI Attribution</p>
+                        <p className="text-lg font-bold text-amber-500">North Korea</p>
+                        <p className="text-xs text-platinum-500-400">FBI Attribution</p>
                       </div>
                     </div>
                   </CardContent>
@@ -737,7 +737,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-rose-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <TrendingUp className="h-5 w-5 text-rose" />
+                        <TrendingUp className="h-5 w-5 text-rose-500" />
                         Ransomware Statistics
                       </CardTitle>
                       <CardDescription>24-month trends</CardDescription>
@@ -756,7 +756,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-purple-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Bug className="h-5 w-5 text-purple" />
+                        <Bug className="h-5 w-5 text-purple-500" />
                         Financial Impact
                       </CardTitle>
                       <CardDescription>Global and UAE statistics</CardDescription>
@@ -765,7 +765,7 @@ export default function CyberThreatsPage() {
                       <div className="space-y-4">
                         {extended.ransomwareLandscape.financialImpact.map((item, idx) => (
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50">
-                            <span className="text-platinum-300">{item.metric}</span>
+                            <span className="text-platinum-500-300">{item.metric}</span>
                             <Badge variant="destructive">{item.value}</Badge>
                           </div>
                         ))}
@@ -777,7 +777,7 @@ export default function CyberThreatsPage() {
                 <Card className="glass-card border-purple-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Shield className="h-5 w-5 text-purple" />
+                      <Shield className="h-5 w-5 text-purple-500" />
                       Active Ransomware Groups
                     </CardTitle>
                     <CardDescription>18 groups active in UAE region</CardDescription>
@@ -795,7 +795,7 @@ export default function CyberThreatsPage() {
                           >
                             <div className="flex items-center gap-2">
                               <div className={`h-2 w-2 rounded-full ${group.active ? 'bg-rose-500' : 'bg-platinum-500'}`} />
-                              <span className="text-sm font-medium text-platinum-200">{group.group}</span>
+                              <span className="text-sm font-medium text-platinum-500-200">{group.group}</span>
                             </div>
                             <Badge variant="outline" className="text-xs">{group.notableAttacks}</Badge>
                           </motion.div>
@@ -822,7 +822,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-rose-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Mail className="h-5 w-5 text-rose" />
+                        <Mail className="h-5 w-5 text-rose-500" />
                         Phishing Statistics
                       </CardTitle>
                       <CardDescription>Breach share and global messages</CardDescription>
@@ -839,7 +839,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-orange-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <AlertTriangle className="h-5 w-5 text-orange" />
+                        <AlertTriangle className="h-5 w-5 text-orange-500" />
                         Major Phishing Incidents
                       </CardTitle>
                       <CardDescription>Notable UAE cases</CardDescription>
@@ -849,18 +849,18 @@ export default function CyberThreatsPage() {
                         {extended.phishingIncidents.map((incident, idx) => (
                           <div key={idx} className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                             <div className="flex items-center justify-between mb-2">
-                              <span className="font-medium text-platinum-200">{incident.incident}</span>
+                              <span className="font-medium text-platinum-500-200">{incident.incident}</span>
                               <Badge variant="destructive">{incident.impact}</Badge>
                             </div>
-                            <p className="text-xs text-platinum-400">{incident.method} | {incident.date}</p>
+                            <p className="text-xs text-platinum-500-400">{incident.method} | {incident.date}</p>
                           </div>
                         ))}
 
                         {/* Deep Voice Scam Highlight */}
                         <div className="rounded-lg bg-gradient-to-r from-amber-500/20 to-orange-500/20 p-4 border border-amber-500/50">
-                          <p className="text-sm font-bold text-amber mb-2">Deep Voice Scam - $35M Loss</p>
-                          <p className="text-xs text-platinum-400">{extended.deepVoiceScamDetails.method}</p>
-                          <p className="text-xs text-platinum-500 mt-1">Status: {extended.deepVoiceScamDetails.status}</p>
+                          <p className="text-sm font-bold text-amber-500 mb-2">Deep Voice Scam - $35M Loss</p>
+                          <p className="text-xs text-platinum-500-400">{extended.deepVoiceScamDetails.method}</p>
+                          <p className="text-xs text-platinum-500-500 mt-1">Status: {extended.deepVoiceScamDetails.status}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -870,7 +870,7 @@ export default function CyberThreatsPage() {
                 <Card className="glass-card border-purple-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Search className="h-5 w-5 text-purple" />
+                      <Search className="h-5 w-5 text-purple-500" />
                       Major Scam Types in UAE (2026)
                     </CardTitle>
                     <CardDescription>Common fraud categories</CardDescription>
@@ -885,8 +885,8 @@ export default function CyberThreatsPage() {
                           transition={{ duration: 0.2, delay: idx * 0.05 }}
                           className="rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50 text-center hover:border-purple-500/30 transition-colors"
                         >
-                          <p className="text-sm font-medium text-platinum-200">{scam.type}</p>
-                          <p className="text-xs text-platinum-500 mt-1">{scam.description}</p>
+                          <p className="text-sm font-medium text-platinum-500-200">{scam.type}</p>
+                          <p className="text-xs text-platinum-500-500 mt-1">{scam.description}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -910,7 +910,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-purple-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <UsersRound className="h-5 w-5 text-purple" />
+                        <UsersRound className="h-5 w-5 text-purple-500" />
                         Talent Shortage
                       </CardTitle>
                       <CardDescription>Organizations facing skills gap</CardDescription>
@@ -929,7 +929,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-orange-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Briefcase className="h-5 w-5 text-orange" />
+                        <Briefcase className="h-5 w-5 text-orange-500" />
                         Hiring Challenges
                       </CardTitle>
                       <CardDescription>UAE tech sector difficulties</CardDescription>
@@ -939,7 +939,7 @@ export default function CyberThreatsPage() {
                         {extended.workforceGap.hiringChallenges.map((challenge, idx) => (
                           <div key={idx} className="space-y-2">
                             <div className="flex items-center justify-between">
-                              <span className="text-sm text-platinum-300">{challenge.challenge}</span>
+                              <span className="text-sm text-platinum-500-300">{challenge.challenge}</span>
                               <Badge variant="warning">{challenge.percentage}</Badge>
                             </div>
                             <Progress value={parseInt(challenge.percentage) || 0} className="h-2" />
@@ -953,7 +953,7 @@ export default function CyberThreatsPage() {
                 <Card className="glass-card border-cyan-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Globe className="h-5 w-5 text-cyan" />
+                      <Globe className="h-5 w-5 text-cyan-500" />
                       Remote Work Impact
                     </CardTitle>
                     <CardDescription>Home network vulnerability</CardDescription>
@@ -961,9 +961,9 @@ export default function CyberThreatsPage() {
                   <CardContent>
                     <div className="flex items-center justify-center p-6">
                       <div className="text-center">
-                        <p className="text-5xl font-bold text-cyan">+40%</p>
-                        <p className="text-platinum-400 mt-2">Increase in home network attacks</p>
-                        <p className="text-xs text-platinum-500 mt-1">Source: UAE Cybersecurity Council</p>
+                        <p className="text-5xl font-bold text-cyan-500">+40%</p>
+                        <p className="text-platinum-500-400 mt-2">Increase in home network attacks</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">Source: UAE Cybersecurity Council</p>
                       </div>
                     </div>
                   </CardContent>
@@ -986,7 +986,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-purple-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <EyeOff className="h-5 w-5 text-purple" />
+                        <EyeOff className="h-5 w-5 text-purple-500" />
                         Data Pricing
                       </CardTitle>
                       <CardDescription>Dark web value of UAE data</CardDescription>
@@ -1005,7 +1005,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-rose-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Fingerprint className="h-5 w-5 text-rose" />
+                        <Fingerprint className="h-5 w-5 text-rose-500" />
                         Notable Sales
                       </CardTitle>
                       <CardDescription>Confirmed dark web data sales</CardDescription>
@@ -1015,10 +1015,10 @@ export default function CyberThreatsPage() {
                         {extended.darkWebEconomy.darkWebSales.map((sale, idx) => (
                           <div key={idx} className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                             <div className="flex items-center justify-between mb-1">
-                              <span className="font-medium text-platinum-200">{sale.incident}</span>
+                              <span className="font-medium text-platinum-500-200">{sale.incident}</span>
                               <Badge variant="destructive">{sale.price}</Badge>
                             </div>
-                            <p className="text-xs text-platinum-400">{sale.data} | {sale.date}</p>
+                            <p className="text-xs text-platinum-500-400">{sale.data} | {sale.date}</p>
                           </div>
                         ))}
                       </div>
@@ -1030,7 +1030,7 @@ export default function CyberThreatsPage() {
                 <Card className="glass-card border-amber-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <AlertCircle className="h-5 w-5 text-amber" />
+                      <AlertCircle className="h-5 w-5 text-amber-500" />
                       UAE InvestBank Case Study
                     </CardTitle>
                     <CardDescription>$3M ransom demanded, data sold for $22.80</CardDescription>
@@ -1038,20 +1038,20 @@ export default function CyberThreatsPage() {
                   <CardContent>
                     <div className="grid gap-4 md:grid-cols-4">
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-amber-500/30 text-center">
-                        <p className="text-2xl font-bold text-amber">$3M</p>
-                        <p className="text-xs text-platinum-400">Ransom Demanded</p>
+                        <p className="text-2xl font-bold text-amber-500">$3M</p>
+                        <p className="text-xs text-platinum-500-400">Ransom Demanded</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-amber-500/30 text-center">
-                        <p className="text-2xl font-bold text-amber">40K</p>
-                        <p className="text-xs text-platinum-400">Customers Affected</p>
+                        <p className="text-2xl font-bold text-amber-500">40K</p>
+                        <p className="text-xs text-platinum-500-400">Customers Affected</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-amber-500/30 text-center">
-                        <p className="text-2xl font-bold text-amber">$110M+</p>
-                        <p className="text-xs text-platinum-400">Total Account Balances</p>
+                        <p className="text-2xl font-bold text-amber-500">$110M+</p>
+                        <p className="text-xs text-platinum-500-400">Total Account Balances</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-amber-500/30 text-center">
-                        <p className="text-2xl font-bold text-amber">$22.80</p>
-                        <p className="text-xs text-platinum-400">Dark Web Sale Price</p>
+                        <p className="text-2xl font-bold text-amber-500">$22.80</p>
+                        <p className="text-xs text-platinum-500-400">Dark Web Sale Price</p>
                       </div>
                     </div>
                   </CardContent>
@@ -1074,7 +1074,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-purple-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Brain className="h-5 w-5 text-purple" />
+                        <Brain className="h-5 w-5 text-purple-500" />
                         AI-Powered Attacks
                       </CardTitle>
                       <CardDescription>New attack methodologies</CardDescription>
@@ -1091,7 +1091,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-rose-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Bot className="h-5 w-5 text-rose" />
+                        <Bot className="h-5 w-5 text-rose-500" />
                         AI Attack Methods
                       </CardTitle>
                       <CardDescription>Documented techniques</CardDescription>
@@ -1100,8 +1100,8 @@ export default function CyberThreatsPage() {
                       <div className="space-y-3">
                         {extended.attackVectors.aiAttackMethods.map((method, idx) => (
                           <div key={idx} className="rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50">
-                            <p className="text-sm font-medium text-platinum-200">{method.method}</p>
-                            <p className="text-xs text-platinum-500 mt-1">{method.description}</p>
+                            <p className="text-sm font-medium text-platinum-500-200">{method.method}</p>
+                            <p className="text-xs text-platinum-500-500 mt-1">{method.description}</p>
                           </div>
                         ))}
                       </div>
@@ -1113,7 +1113,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-orange-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Tv className="h-5 w-5 text-orange" />
+                        <Tv className="h-5 w-5 text-orange-500" />
                         Critical Infrastructure Threats
                       </CardTitle>
                       <CardDescription>SCADA and sector targeting</CardDescription>
@@ -1122,7 +1122,7 @@ export default function CyberThreatsPage() {
                       <div className="space-y-3">
                         {extended.emergingThreats.criticalInfrastructureThreats.map((threat, idx) => (
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50">
-                            <span className="text-platinum-300">{threat.threat}</span>
+                            <span className="text-platinum-500-300">{threat.threat}</span>
                             <Badge variant="warning">{threat.status}</Badge>
                           </div>
                         ))}
@@ -1133,7 +1133,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-cyan-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Siren className="h-5 w-5 text-cyan" />
+                        <Siren className="h-5 w-5 text-cyan-500" />
                         SIM Swap Fraud
                       </CardTitle>
                       <CardDescription>Active in UAE</CardDescription>
@@ -1141,16 +1141,16 @@ export default function CyberThreatsPage() {
                     <CardContent>
                       <div className="space-y-3">
                         <div className="rounded-lg bg-platinum-800/50 p-3 border border-cyan-500/30">
-                          <p className="text-sm font-medium text-cyan">Status</p>
-                          <p className="text-lg text-platinum-200">{extended.emergingThreats.simSwapFraud.status}</p>
+                          <p className="text-sm font-medium text-cyan-500">Status</p>
+                          <p className="text-lg text-platinum-500-200">{extended.emergingThreats.simSwapFraud.status}</p>
                         </div>
                         <div className="rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50">
-                          <p className="text-xs text-platinum-400">Methods</p>
-                          <p className="text-sm text-platinum-300">{extended.emergingThreats.simSwapFraud.details}</p>
+                          <p className="text-xs text-platinum-500-400">Methods</p>
+                          <p className="text-sm text-platinum-500-300">{extended.emergingThreats.simSwapFraud.details}</p>
                         </div>
                         <div className="rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50">
-                          <p className="text-xs text-platinum-400">Police Warning</p>
-                          <p className="text-sm text-platinum-300">{extended.emergingThreats.simSwapFraud.policeWarning}</p>
+                          <p className="text-xs text-platinum-500-400">Police Warning</p>
+                          <p className="text-sm text-platinum-500-300">{extended.emergingThreats.simSwapFraud.policeWarning}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -1161,7 +1161,7 @@ export default function CyberThreatsPage() {
                 <Card className="glass-card border-amber-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <ShieldAlert className="h-5 w-5 text-amber" />
+                      <ShieldAlert className="h-5 w-5 text-amber-500" />
                       Zero-Day Vulnerability Warnings
                     </CardTitle>
                     <CardDescription>Active and ongoing threats</CardDescription>
@@ -1171,10 +1171,10 @@ export default function CyberThreatsPage() {
                       {extended.attackVectors.zeroDayWarnings.map((warning, idx) => (
                         <div key={idx} className="rounded-lg bg-platinum-800/50 p-4 border border-amber-500/30">
                           <div className="flex items-center justify-between mb-2">
-                            <span className="font-medium text-platinum-200">{warning.vulnerability}</span>
+                            <span className="font-medium text-platinum-500-200">{warning.vulnerability}</span>
                             <Badge variant="destructive">{warning.status}</Badge>
                           </div>
-                          <p className="text-xs text-platinum-400">{warning.source} | {warning.date}</p>
+                          <p className="text-xs text-platinum-500-400">{warning.source} | {warning.date}</p>
                         </div>
                       ))}
                     </div>
@@ -1198,7 +1198,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-purple-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <TrendingUp className="h-5 w-5 text-purple" />
+                        <TrendingUp className="h-5 w-5 text-purple-500" />
                         Market Growth
                       </CardTitle>
                       <CardDescription>UAE cyber insurance market size (2025-2034)</CardDescription>
@@ -1217,7 +1217,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-gold-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <AlertCircle className="h-5 w-5 text-gold" />
+                        <AlertCircle className="h-5 w-5 text-gold-700" />
                         Market Drivers
                       </CardTitle>
                       <CardDescription>Factors driving insurance demand</CardDescription>
@@ -1226,7 +1226,7 @@ export default function CyberThreatsPage() {
                       <div className="space-y-4">
                         {extended.insuranceMarket.marketDrivers.map((driver, idx) => (
                           <div key={idx} className="flex items-center justify-between">
-                            <span className="text-platinum-300">{driver.driver}</span>
+                            <span className="text-platinum-500-300">{driver.driver}</span>
                             <Badge variant={driver.impact === 'Critical' ? 'destructive' : driver.impact === 'High' ? 'warning' : 'outline'}>
                               {driver.impact}
                             </Badge>
@@ -1244,20 +1244,20 @@ export default function CyberThreatsPage() {
                   <CardContent>
                     <div className="grid gap-4 md:grid-cols-4">
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-purple-500/30 text-center">
-                        <p className="text-2xl font-bold text-purple">$83M</p>
-                        <p className="text-xs text-platinum-400">2026 Market</p>
+                        <p className="text-2xl font-bold text-purple-500">$83M</p>
+                        <p className="text-xs text-platinum-500-400">2026 Market</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-purple-500/30 text-center">
-                        <p className="text-2xl font-bold text-purple">$350M</p>
-                        <p className="text-xs text-platinum-400">2034 Projection</p>
+                        <p className="text-2xl font-bold text-purple-500">$350M</p>
+                        <p className="text-xs text-platinum-500-400">2034 Projection</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-purple-500/30 text-center">
-                        <p className="text-2xl font-bold text-purple">17.29%</p>
-                        <p className="text-xs text-platinum-400">CAGR</p>
+                        <p className="text-2xl font-bold text-purple-500">17.29%</p>
+                        <p className="text-xs text-platinum-500-400">CAGR</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-purple-500/30 text-center">
-                        <p className="text-2xl font-bold text-purple">40%</p>
-                        <p className="text-xs text-platinum-400">MENA Share</p>
+                        <p className="text-2xl font-bold text-purple-500">40%</p>
+                        <p className="text-xs text-platinum-500-400">MENA Share</p>
                       </div>
                     </div>
                   </CardContent>
@@ -1267,23 +1267,23 @@ export default function CyberThreatsPage() {
                 <Card className="glass-card border-cyan-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Globe className="h-5 w-5 text-cyan" />
+                      <Globe className="h-5 w-5 text-cyan-500" />
                       MENA Regional Context
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-4 md:grid-cols-3">
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-cyan-500/30 text-center">
-                        <p className="text-2xl font-bold text-cyan">$5B</p>
-                        <p className="text-xs text-platinum-400">MENA Total Losses</p>
+                        <p className="text-2xl font-bold text-cyan-500">$5B</p>
+                        <p className="text-xs text-platinum-500-400">MENA Total Losses</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-cyan-500/30 text-center">
-                        <p className="text-2xl font-bold text-cyan">$400M-$1.5B</p>
-                        <p className="text-xs text-platinum-400">Insured Portion</p>
+                        <p className="text-2xl font-bold text-cyan-500">$400M-$1.5B</p>
+                        <p className="text-xs text-platinum-500-400">Insured Portion</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-cyan-500/30 text-center">
-                        <p className="text-2xl font-bold text-cyan">18%</p>
-                        <p className="text-xs text-platinum-400">No Insurance Coverage</p>
+                        <p className="text-2xl font-bold text-cyan-500">18%</p>
+                        <p className="text-xs text-platinum-500-400">No Insurance Coverage</p>
                       </div>
                     </div>
                   </CardContent>
@@ -1306,7 +1306,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-purple-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Shield className="h-5 w-5 text-purple" />
+                        <Shield className="h-5 w-5 text-purple-500" />
                         Defense Capabilities
                       </CardTitle>
                       <CardDescription>Active cybersecurity measures</CardDescription>
@@ -1315,7 +1315,7 @@ export default function CyberThreatsPage() {
                       <div className="space-y-3">
                         {extended.defenseEcosystem.defenseCapabilities.map((cap, idx) => (
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50">
-                            <span className="text-platinum-200">{cap.capability}</span>
+                            <span className="text-platinum-500-200">{cap.capability}</span>
                             <Badge variant="success" className="text-xs flex items-center gap-1">
                               <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                               {cap.status}
@@ -1329,7 +1329,7 @@ export default function CyberThreatsPage() {
                   <Card className="glass-card border-cyan-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Phone className="h-5 w-5 text-cyan" />
+                        <Phone className="h-5 w-5 text-cyan-500" />
                         Reporting Channels
                       </CardTitle>
                       <CardDescription>Official UAE cyber incident reporting</CardDescription>
@@ -1344,16 +1344,16 @@ export default function CyberThreatsPage() {
                           >
                             <div className="flex items-center gap-3">
                               {channel.agency.includes('Abu Dhabi') ? (
-                                <Phone className="h-4 w-4 text-cyan" />
+                                <Phone className="h-4 w-4 text-cyan-500" />
                               ) : (
-                                <Mail className="h-4 w-4 text-cyan" />
+                                <Mail className="h-4 w-4 text-cyan-500" />
                               )}
                               <div>
-                                <p className="font-medium text-platinum-200">{channel.agency}</p>
-                                <p className="text-xs text-platinum-400">{channel.service}</p>
+                                <p className="font-medium text-platinum-500-200">{channel.agency}</p>
+                                <p className="text-xs text-platinum-500-400">{channel.service}</p>
                               </div>
                             </div>
-                            <Badge variant="outline" className="text-cyan">{channel.contact}</Badge>
+                            <Badge variant="outline" className="text-cyan-500">{channel.contact}</Badge>
                           </motion.div>
                         ))}
                       </div>
@@ -1365,7 +1365,7 @@ export default function CyberThreatsPage() {
                 <Card className="glass-card border-purple-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Building2 className="h-5 w-5 text-purple" />
+                      <Building2 className="h-5 w-5 text-purple-500" />
                       UAE Cyber Security Council
                     </CardTitle>
                     <CardDescription>National coordination body</CardDescription>
@@ -1373,16 +1373,16 @@ export default function CyberThreatsPage() {
                   <CardContent>
                     <div className="grid gap-4 md:grid-cols-3">
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-purple-500/30">
-                        <p className="text-xs text-platinum-400">Established</p>
-                        <p className="text-lg font-bold text-purple">{extended.defenseEcosystem.councilDetails.established}</p>
+                        <p className="text-xs text-platinum-500-400">Established</p>
+                        <p className="text-lg font-bold text-purple-500">{extended.defenseEcosystem.councilDetails.established}</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-purple-500/30">
-                        <p className="text-xs text-platinum-400">Head</p>
-                        <p className="text-lg font-bold text-purple">{extended.defenseEcosystem.councilDetails.head}</p>
+                        <p className="text-xs text-platinum-500-400">Head</p>
+                        <p className="text-lg font-bold text-purple-500">{extended.defenseEcosystem.councilDetails.head}</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-purple-500/30">
-                        <p className="text-xs text-platinum-400">Daily Bulletins</p>
-                        <p className="text-lg font-bold text-purple">{extended.defenseEcosystem.councilDetails.dailyBulletins}</p>
+                        <p className="text-xs text-platinum-500-400">Daily Bulletins</p>
+                        <p className="text-lg font-bold text-purple-500">{extended.defenseEcosystem.councilDetails.dailyBulletins}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -1395,20 +1395,20 @@ export default function CyberThreatsPage() {
                   <CardContent>
                     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-purple-500/30">
-                        <p className="font-medium text-purple mb-2">General Hacking</p>
-                        <p className="text-sm text-platinum-400">Fine: 100,000-300,000 AED</p>
+                        <p className="font-medium text-purple-500 mb-2">General Hacking</p>
+                        <p className="text-sm text-platinum-500-400">Fine: 100,000-300,000 AED</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
-                        <p className="font-medium text-rose mb-2">Causing Damage</p>
-                        <p className="text-sm text-platinum-400">6mo+ imprisonment + fine</p>
+                        <p className="font-medium text-rose-500 mb-2">Causing Damage</p>
+                        <p className="text-sm text-platinum-500-400">6mo+ imprisonment + fine</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
-                        <p className="font-medium text-rose mb-2">Government Systems</p>
-                        <p className="text-sm text-platinum-400">5-7 years imprisonment</p>
+                        <p className="font-medium text-rose-500 mb-2">Government Systems</p>
+                        <p className="text-sm text-platinum-500-400">5-7 years imprisonment</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-orange-500/30">
-                        <p className="font-medium text-orange mb-2">Cyber Extortion</p>
-                        <p className="text-sm text-platinum-400">Up to 10 years imprisonment</p>
+                        <p className="font-medium text-orange-500 mb-2">Cyber Extortion</p>
+                        <p className="text-sm text-platinum-500-400">Up to 10 years imprisonment</p>
                       </div>
                     </div>
                   </CardContent>

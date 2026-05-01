@@ -100,8 +100,8 @@ function getUAEIcon(relevance: string) {
   switch (relevance) {
     case 'Critical': return <AlertTriangle className="h-4 w-4 text-red-500" />
     case 'High': return <Shield className="h-4 w-4 text-gold-700" />
-    case 'Medium': return <Scale className="h-4 w-4 text-platinum-500" />
-    default: return <CheckCircle className="h-4 w-4 text-platinum-400" />
+    case 'Medium': return <Scale className="h-4 w-4 text-platinum-500-500" />
+    default: return <CheckCircle className="h-4 w-4 text-platinum-500-400" />
   }
 }
 
@@ -109,8 +109,8 @@ function getTrendIcon(trend: string) {
   switch (trend) {
     case 'Rising': return <TrendingUp className="h-4 w-4 text-emerald-500" />
     case 'Declining': return <TrendingDown className="h-4 w-4 text-red-500" />
-    case 'Stable': return <Minus className="h-4 w-4 text-platinum-500" />
-    default: return <Activity className="h-4 w-4 text-platinum-400" />
+    case 'Stable': return <Minus className="h-4 w-4 text-platinum-500-500" />
+    default: return <Activity className="h-4 w-4 text-platinum-500-400" />
   }
 }
 
@@ -202,7 +202,7 @@ export default function GeopoliticalTrendsPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-3xl font-extrabold gradient-text-gold"
+            className="text-3xl font-extrabold gradient-text-gold-700"
           >
             Geopolitical Shift
           </motion.h1>
@@ -210,7 +210,7 @@ export default function GeopoliticalTrendsPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="mt-2 text-platinum-400"
+            className="mt-2 text-platinum-500-400"
           >
             BRICS membership, multipolar transitions, regional realignment, US disengagement, India relations, and climate geopolitics
           </motion.p>
@@ -221,11 +221,11 @@ export default function GeopoliticalTrendsPage() {
           transition={{ delay: 0.4 }}
           className="flex gap-3"
         >
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <Globe className="h-4 w-4" />
             View Reports
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Shield className="h-4 w-4" />
             Analyze Position
           </Button>
@@ -247,9 +247,9 @@ export default function GeopoliticalTrendsPage() {
               whileHover={{ scale: 1.02 }}
               className="glass-panel p-4 rounded-xl"
             >
-              <p className="text-xs text-platinum-500">Sources Processed</p>
-              <p className="mt-1 text-2xl font-bold text-gold">{geoData.executionMetadata.totalSourcesProcessed}</p>
-              <p className="text-xs text-platinum-600">Total</p>
+              <p className="text-xs text-platinum-500-500">Sources Processed</p>
+              <p className="mt-1 text-2xl font-bold text-gold-700">{geoData.executionMetadata.totalSourcesProcessed}</p>
+              <p className="text-xs text-platinum-500-600">Total</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -258,9 +258,9 @@ export default function GeopoliticalTrendsPage() {
               whileHover={{ scale: 1.02 }}
               className="glass-panel p-4 rounded-xl"
             >
-              <p className="text-xs text-platinum-500">Successfully Fetched</p>
+              <p className="text-xs text-platinum-500-500">Successfully Fetched</p>
               <p className="mt-1 text-2xl font-bold text-emerald-500">{geoData.executionMetadata.sourcesSuccessfullyFetched}</p>
-              <p className="text-xs text-platinum-600">70% success rate</p>
+              <p className="text-xs text-platinum-500-600">70% success rate</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -269,9 +269,9 @@ export default function GeopoliticalTrendsPage() {
               whileHover={{ scale: 1.02 }}
               className="glass-panel p-4 rounded-xl"
             >
-              <p className="text-xs text-platinum-500">Critical UAE Relevance</p>
+              <p className="text-xs text-platinum-500-500">Critical UAE Relevance</p>
               <p className="mt-1 text-2xl font-bold text-red-600">{geoData.executionMetadata.uaeRelevanceCritical}</p>
-              <p className="text-xs text-platinum-600">Sources</p>
+              <p className="text-xs text-platinum-500-600">Sources</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -280,9 +280,9 @@ export default function GeopoliticalTrendsPage() {
               whileHover={{ scale: 1.02 }}
               className="glass-panel p-4 rounded-xl"
             >
-              <p className="text-xs text-platinum-500">Failed (403/Access)</p>
+              <p className="text-xs text-platinum-500-500">Failed (403/Access)</p>
               <p className="mt-1 text-2xl font-bold text-orange-600">{geoData.executionMetadata.sourcesFailed}</p>
-              <p className="text-xs text-platinum-600">Blocked</p>
+              <p className="text-xs text-platinum-500-600">Blocked</p>
             </motion.div>
           </div>
         </GlassPanel>
@@ -371,7 +371,7 @@ export default function GeopoliticalTrendsPage() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         {getTrendIcon(topic.trend)}
-                        <span className="text-sm font-medium text-platinum-200">{topic.topic}</span>
+                        <span className="text-sm font-medium text-platinum-500-200">{topic.topic}</span>
                       </div>
                       <div className="flex items-center gap-4">
                         <span className={`text-lg font-bold ${getSentimentColor(topic.meanSentiment)}`}>
@@ -380,7 +380,7 @@ export default function GeopoliticalTrendsPage() {
                         <Badge variant="outline" className="text-xs">{topic.trend}</Badge>
                       </div>
                     </div>
-                    <p className="mt-2 text-xs text-platinum-500">Key drivers: {topic.keyDrivers}</p>
+                    <p className="mt-2 text-xs text-platinum-500-500">Key drivers: {topic.keyDrivers}</p>
                   </motion.div>
                 ))}
               </div>
@@ -448,10 +448,10 @@ export default function GeopoliticalTrendsPage() {
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <Globe className="h-5 w-5 text-emerald-500" />
-                        <span className="text-sm font-medium text-platinum-200">Multipolar Transition</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Multipolar Transition</span>
                       </div>
-                      <p className="text-2xl font-bold text-gold">40%</p>
-                      <p className="text-xs text-platinum-500">BRICS global trade share</p>
+                      <p className="text-2xl font-bold text-gold-700">40%</p>
+                      <p className="text-xs text-platinum-500-500">BRICS global trade share</p>
                     </motion.div>
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9 }}
@@ -462,10 +462,10 @@ export default function GeopoliticalTrendsPage() {
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <Shield className="h-5 w-5 text-gold-700" />
-                        <span className="text-sm font-medium text-platinum-200">BRICS Membership</span>
+                        <span className="text-sm font-medium text-platinum-500-200">BRICS Membership</span>
                       </div>
-                      <p className="text-2xl font-bold text-gold">Jan 2024</p>
-                      <p className="text-xs text-platinum-500">Full member status</p>
+                      <p className="text-2xl font-bold text-gold-700">Jan 2024</p>
+                      <p className="text-xs text-platinum-500-500">Full member status</p>
                     </motion.div>
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9 }}
@@ -476,10 +476,10 @@ export default function GeopoliticalTrendsPage() {
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <AlertTriangle className="h-5 w-5 text-red-500" />
-                        <span className="text-sm font-medium text-platinum-200">Saudi-UAE Tensions</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Saudi-UAE Tensions</span>
                       </div>
                       <p className="text-2xl font-bold text-red-600">Critical</p>
-                      <p className="text-xs text-platinum-500">December 2025 confrontation</p>
+                      <p className="text-xs text-platinum-500-500">December 2025 confrontation</p>
                     </motion.div>
                   </div>
                 </CardContent>
@@ -507,10 +507,10 @@ export default function GeopoliticalTrendsPage() {
                     className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 hover:bg-platinum-800/70 transition-colors"
                   >
                     <div>
-                      <span className="text-sm font-medium text-platinum-200">{stat.metric}</span>
-                      <p className="text-xs text-platinum-500">Year: {stat.year}</p>
+                      <span className="text-sm font-medium text-platinum-500-200">{stat.metric}</span>
+                      <p className="text-xs text-platinum-500-500">Year: {stat.year}</p>
                     </div>
-                    <span className="text-xl font-bold text-gold">{stat.value}</span>
+                    <span className="text-xl font-bold text-gold-700">{stat.value}</span>
                   </motion.div>
                 ))}
               </div>
@@ -544,7 +544,7 @@ export default function GeopoliticalTrendsPage() {
                     <div className="space-y-4">
                       {geoData.greatPowerPerceptions.map((perception, idx) => (
                         <div key={idx} className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-200 flex-1">{perception.finding}</span>
+                          <span className="text-sm text-platinum-500-200 flex-1">{perception.finding}</span>
                           <Badge variant="outline" className="ml-2">{perception.percentage}</Badge>
                         </div>
                       ))}
@@ -583,11 +583,11 @@ export default function GeopoliticalTrendsPage() {
                     whileHover={{ scale: 1.02 }}
                     className={`p-4 rounded-xl border ${getSentimentBg(sentiment.score)}`}
                   >
-                    <p className="text-xs text-platinum-500 mb-1">{sentiment.dimension}</p>
-                    <p className="text-xl font-bold text-gold">
+                    <p className="text-xs text-platinum-500-500 mb-1">{sentiment.dimension}</p>
+                    <p className="text-xl font-bold text-gold-700">
                       {sentiment.score > 0 ? '+' : ''}{sentiment.score.toFixed(1)}
                     </p>
-                    <p className="text-xs text-platinum-600 mt-1">{sentiment.interpretation}</p>
+                    <p className="text-xs text-platinum-500-600 mt-1">{sentiment.interpretation}</p>
                   </motion.div>
                 ))}
               </div>
@@ -613,15 +613,15 @@ export default function GeopoliticalTrendsPage() {
                     transition={{ delay: idx * 0.05 }}
                     className="flex items-start gap-4 rounded-lg bg-platinum-800/50 p-4"
                   >
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold/20">
-                      <span className="text-xs font-bold text-gold">{idx + 1}</span>
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold-700/20">
+                      <span className="text-xs font-bold text-gold-700">{idx + 1}</span>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium text-platinum-200">{event.event}</span>
+                        <span className="text-sm font-medium text-platinum-500-200">{event.event}</span>
                         <Badge variant="outline" className="text-xs">{event.date}</Badge>
                       </div>
-                      <p className="mt-1 text-xs text-platinum-500">{event.details}</p>
+                      <p className="mt-1 text-xs text-platinum-500-500">{event.details}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -641,9 +641,9 @@ export default function GeopoliticalTrendsPage() {
                         <div key={idx} className="rounded-lg bg-platinum-800/50 p-4">
                           <div className="flex items-center gap-2 mb-2">
                             <Database className="h-4 w-4 text-gold-500" />
-                            <span className="text-sm font-medium text-platinum-200">{mech.mechanism}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{mech.mechanism}</span>
                           </div>
-                          <p className="text-xs text-platinum-500">{mech.details}</p>
+                          <p className="text-xs text-platinum-500-500">{mech.details}</p>
                         </div>
                       ))}
                     </div>
@@ -662,10 +662,10 @@ export default function GeopoliticalTrendsPage() {
                       {geoData.localCurrencySettlements.map((settlement, idx) => (
                         <div key={idx} className="rounded-lg bg-platinum-800/50 p-4">
                           <div className="flex items-center justify-between mb-1">
-                            <span className="text-sm font-medium text-platinum-200">{settlement.countryPair}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{settlement.countryPair}</span>
                             {settlement.date && <Badge variant="outline" className="text-xs">{settlement.date}</Badge>}
                           </div>
-                          <p className="text-xs text-platinum-500">{settlement.details}</p>
+                          <p className="text-xs text-platinum-500-500">{settlement.details}</p>
                         </div>
                       ))}
                     </div>
@@ -686,12 +686,12 @@ export default function GeopoliticalTrendsPage() {
                   >
                     <div className="flex items-start justify-between">
                       <div>
-                        <span className="text-sm font-medium text-platinum-200">{country.country}</span>
+                        <span className="text-sm font-medium text-platinum-500-200">{country.country}</span>
                         <p className="mt-1 text-xs text-gold-500">{country.position}</p>
                       </div>
                     </div>
                     {country.quote && (
-                      <p className="mt-2 text-xs italic text-platinum-500 border-l-2 border-gold/30 pl-3">
+                      <p className="mt-2 text-xs italic text-platinum-500-500 border-l-2 border-gold-700/30 pl-3">
                         {country.quote}
                       </p>
                     )}
@@ -709,8 +709,8 @@ export default function GeopoliticalTrendsPage() {
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {geoData.bricsDedollarizationKPIs.map((kpi, idx) => (
                     <div key={kpi.kpi} className="glass-panel p-4 rounded-xl">
-                      <p className="text-xs text-platinum-500">{kpi.kpi}</p>
-                      <p className="mt-1 text-xl font-bold text-gold">{kpi.value}</p>
+                      <p className="text-xs text-platinum-500-500">{kpi.kpi}</p>
+                      <p className="mt-1 text-xl font-bold text-gold-700">{kpi.value}</p>
                       <div className="flex items-center gap-2 mt-2">
                         <Badge
                           variant={kpi.viability === 'Limited' ? 'warning' : kpi.viability === 'Not viable' ? 'destructive' : 'success'}
@@ -747,8 +747,8 @@ export default function GeopoliticalTrendsPage() {
                   >
                     <XCircle className="h-5 w-5 text-red-500 mt-0.5" />
                     <div>
-                      <span className="text-sm font-medium text-platinum-200">{event.event}</span>
-                      <p className="mt-1 text-xs text-platinum-500">{event.details}</p>
+                      <span className="text-sm font-medium text-platinum-500-200">{event.event}</span>
+                      <p className="mt-1 text-xs text-platinum-500-500">{event.details}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -768,9 +768,9 @@ export default function GeopoliticalTrendsPage() {
                   >
                     <div className="flex items-center gap-3">
                       <div className="h-2 w-2 rounded-full bg-gold" />
-                      <span className="text-sm font-medium text-platinum-200">{portfolio.actor}</span>
+                      <span className="text-sm font-medium text-platinum-500-200">{portfolio.actor}</span>
                     </div>
-                    <span className="text-xs text-platinum-500 text-right">{portfolio.dominantPowerMode}</span>
+                    <span className="text-xs text-platinum-500-500 text-right">{portfolio.dominantPowerMode}</span>
                   </motion.div>
                 ))}
               </div>
@@ -788,7 +788,7 @@ export default function GeopoliticalTrendsPage() {
                       {geoData.regionalStabilityKPIs.map((kpi, idx) => (
                         <div key={kpi.kpi} className="rounded-lg bg-platinum-800/50 p-4">
                           <div className="flex items-center justify-between mb-2">
-                            <span className="text-sm font-medium text-platinum-200">{kpi.kpi}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{kpi.kpi}</span>
                             <Badge
                               variant={
                                 kpi.trend === 'Deteriorating' ? 'destructive' :
@@ -800,7 +800,7 @@ export default function GeopoliticalTrendsPage() {
                               {kpi.value}
                             </Badge>
                           </div>
-                          <p className="text-xs text-platinum-500">{kpi.implication}</p>
+                          <p className="text-xs text-platinum-500-500">{kpi.implication}</p>
                         </div>
                       ))}
                     </div>
@@ -848,7 +848,7 @@ export default function GeopoliticalTrendsPage() {
                     className="flex items-center justify-between rounded-lg bg-emerald-500/10 border border-emerald-500/30 p-4"
                   >
                     <div>
-                      <span className="text-sm font-medium text-platinum-200">{agreement.agreement}</span>
+                      <span className="text-sm font-medium text-platinum-500-200">{agreement.agreement}</span>
                       <div className="flex gap-4 mt-2">
                         <Badge variant="outline" className="text-xs">UAE: {agreement.uaeParty}</Badge>
                         <Badge variant="outline" className="text-xs">India: {agreement.indiaParty}</Badge>
@@ -872,9 +872,9 @@ export default function GeopoliticalTrendsPage() {
                       {geoData.regionalFrameworks.map((framework, idx) => (
                         <div key={framework.framework} className="rounded-lg bg-platinum-800/50 p-4">
                           <div className="flex items-start justify-between mb-2">
-                            <span className="text-sm font-medium text-platinum-200">{framework.framework}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{framework.framework}</span>
                           </div>
-                          <p className="text-xs text-platinum-500 mb-2">Members: {framework.members}</p>
+                          <p className="text-xs text-platinum-500-500 mb-2">Members: {framework.members}</p>
                           <Badge variant="success" className="text-xs">{framework.uaeIndiaRole}</Badge>
                         </div>
                       ))}
@@ -894,10 +894,10 @@ export default function GeopoliticalTrendsPage() {
                       {geoData.strategicInvestments.slice(0, 6).map((investment, idx) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div>
-                            <span className="text-sm text-platinum-200">{investment.partner}</span>
-                            <p className="text-xs text-platinum-500">{investment.sector}</p>
+                            <span className="text-sm text-platinum-500-200">{investment.partner}</span>
+                            <p className="text-xs text-platinum-500-500">{investment.sector}</p>
                           </div>
-                          <span className="text-sm font-bold text-gold">{investment.amount}</span>
+                          <span className="text-sm font-bold text-gold-700">{investment.amount}</span>
                         </div>
                       ))}
                     </div>
@@ -929,10 +929,10 @@ export default function GeopoliticalTrendsPage() {
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <Leaf className="h-5 w-5 text-emerald-500" />
-                      <span className="text-sm font-medium text-platinum-200">{target.target}</span>
+                      <span className="text-sm font-medium text-platinum-500-200">{target.target}</span>
                     </div>
-                    <p className="text-xl font-bold text-gold">{target.value}</p>
-                    {target.timeline && <p className="text-xs text-platinum-500 mt-1">Timeline: {target.timeline}</p>}
+                    <p className="text-xl font-bold text-gold-700">{target.value}</p>
+                    {target.timeline && <p className="text-xs text-platinum-500-500 mt-1">Timeline: {target.timeline}</p>}
                   </motion.div>
                 ))}
               </div>
@@ -950,12 +950,12 @@ export default function GeopoliticalTrendsPage() {
                       {geoData.diversificationProgress.map((progress, idx) => (
                         <div key={progress.metric} className="rounded-lg bg-platinum-800/50 p-4">
                           <div className="flex items-center justify-between mb-2">
-                            <span className="text-sm font-medium text-platinum-200">{progress.metric}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{progress.metric}</span>
                             {progress.change && (
                               <Badge variant="success" className="text-xs">{progress.change}</Badge>
                             )}
                           </div>
-                          <div className="flex gap-4 text-xs text-platinum-500">
+                          <div className="flex gap-4 text-xs text-platinum-500-500">
                             {progress.value2000 && <span>2000: {progress.value2000}</span>}
                             {progress.value2023 && <span>2023: {progress.value2023}</span>}
                           </div>
@@ -977,8 +977,8 @@ export default function GeopoliticalTrendsPage() {
                       {geoData.renewableEnergy.map((facility, idx) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-emerald-500/10 border border-emerald-500/20 p-4">
                           <div>
-                            <span className="text-sm font-medium text-platinum-200">{facility.facility}</span>
-                            <p className="text-xs text-platinum-500">{facility.status}</p>
+                            <span className="text-sm font-medium text-platinum-500-200">{facility.facility}</span>
+                            <p className="text-xs text-platinum-500-500">{facility.status}</p>
                           </div>
                           <span className="text-lg font-bold text-emerald-500">{facility.capacity}</span>
                         </div>
@@ -1002,10 +1002,10 @@ export default function GeopoliticalTrendsPage() {
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <Sun className="h-4 w-4 text-gold-700" />
-                      <span className="text-xs text-platinum-500">{commitment.commitment}</span>
+                      <span className="text-xs text-platinum-500-500">{commitment.commitment}</span>
                     </div>
                     {commitment.targetYear && (
-                      <p className="text-lg font-bold text-gold">{commitment.targetYear}</p>
+                      <p className="text-lg font-bold text-gold-700">{commitment.targetYear}</p>
                     )}
                     {commitment.revised && (
                       <p className="text-xs text-emerald-500 mt-1">Revised: {commitment.revised}</p>
@@ -1037,10 +1037,10 @@ export default function GeopoliticalTrendsPage() {
                     className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 hover:bg-platinum-800/70 transition-colors"
                   >
                     <div className="flex items-center gap-3">
-                      <Flag className="h-4 w-4 text-platinum-500" />
+                      <Flag className="h-4 w-4 text-platinum-500-500" />
                       <div>
-                        <span className="text-sm font-medium text-platinum-200">{country.entity}</span>
-                        <p className="text-xs text-platinum-500">{country.role}</p>
+                        <span className="text-sm font-medium text-platinum-500-200">{country.entity}</span>
+                        <p className="text-xs text-platinum-500-500">{country.role}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -1073,9 +1073,9 @@ export default function GeopoliticalTrendsPage() {
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <Building className="h-4 w-4 text-gold-700" />
-                      <span className="text-sm font-medium text-platinum-200">{org.organization}</span>
+                      <span className="text-sm font-medium text-platinum-500-200">{org.organization}</span>
                     </div>
-                    <p className="text-xs text-platinum-500 mb-2">{org.uaeStatus}</p>
+                    <p className="text-xs text-platinum-500-500 mb-2">{org.uaeStatus}</p>
                     <Badge
                       variant={org.relevance === 'Critical' ? 'destructive' : org.relevance === 'High' ? 'warning' : 'secondary'}
                       className="text-xs"
@@ -1098,11 +1098,11 @@ export default function GeopoliticalTrendsPage() {
                     whileHover={{ scale: 1.03 }}
                     className="glass-panel p-4 rounded-xl text-center"
                   >
-                    <div className="h-10 w-10 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-3">
-                      <Users className="h-5 w-5 text-gold" />
+                    <div className="h-10 w-10 rounded-full bg-gold-700/20 flex items-center justify-center mx-auto mb-3">
+                      <Users className="h-5 w-5 text-gold-700" />
                     </div>
-                    <p className="text-sm font-medium text-platinum-200">{person.individual}</p>
-                    <p className="text-xs text-platinum-500 mt-1">{person.role}</p>
+                    <p className="text-sm font-medium text-platinum-500-200">{person.individual}</p>
+                    <p className="text-xs text-platinum-500-500 mt-1">{person.role}</p>
                   </motion.div>
                 ))}
               </div>
@@ -1129,11 +1129,11 @@ export default function GeopoliticalTrendsPage() {
                     className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4"
                   >
                     <div>
-                      <span className="text-sm font-medium text-platinum-200">{kpi.kpi}</span>
-                      {kpi.target && <p className="text-xs text-platinum-500">Target: {kpi.target}</p>}
+                      <span className="text-sm font-medium text-platinum-500-200">{kpi.kpi}</span>
+                      {kpi.target && <p className="text-xs text-platinum-500-500">Target: {kpi.target}</p>}
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="text-lg font-bold text-gold">{kpi.value}</span>
+                      <span className="text-lg font-bold text-gold-700">{kpi.value}</span>
                       <Badge
                         variant={kpi.status === 'On Track' ? 'success' : kpi.status === 'Off Track' ? 'destructive' : 'warning'}
                         className="text-xs"
@@ -1157,30 +1157,30 @@ export default function GeopoliticalTrendsPage() {
                     <div className="space-y-4">
                       {geoData.economicGrowth.map((growth, idx) => (
                         <div key={growth.metric} className="rounded-lg bg-platinum-800/50 p-4">
-                          <span className="text-sm font-medium text-platinum-200">{growth.metric}</span>
+                          <span className="text-sm font-medium text-platinum-500-200">{growth.metric}</span>
                           <div className="flex gap-4 mt-2">
                             {growth.value1975 && (
                               <div>
-                                <p className="text-xs text-platinum-500">1975</p>
-                                <p className="text-lg font-bold text-platinum-400">{growth.value1975}</p>
+                                <p className="text-xs text-platinum-500-500">1975</p>
+                                <p className="text-lg font-bold text-platinum-500-400">{growth.value1975}</p>
                               </div>
                             )}
                             {growth.value2023 && (
                               <div>
-                                <p className="text-xs text-platinum-500">2023</p>
-                                <p className="text-lg font-bold text-gold">{growth.value2023}</p>
+                                <p className="text-xs text-platinum-500-500">2023</p>
+                                <p className="text-lg font-bold text-gold-700">{growth.value2023}</p>
                               </div>
                             )}
                             {growth.value2025 && (
                               <div>
-                                <p className="text-xs text-platinum-500">2025</p>
+                                <p className="text-xs text-platinum-500-500">2025</p>
                                 <p className="text-lg font-bold text-emerald-500">{growth.value2025}</p>
                               </div>
                             )}
                             {growth.target2031 && (
                               <div>
-                                <p className="text-xs text-platinum-500">Target 2031</p>
-                                <p className="text-lg font-bold text-gold">{growth.target2031}</p>
+                                <p className="text-xs text-platinum-500-500">Target 2031</p>
+                                <p className="text-lg font-bold text-gold-700">{growth.target2031}</p>
                               </div>
                             )}
                           </div>
@@ -1226,9 +1226,9 @@ export default function GeopoliticalTrendsPage() {
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <Shield className="h-4 w-4 text-gold-700" />
-                      <span className="text-xs text-platinum-500">{def.metric}</span>
+                      <span className="text-xs text-platinum-500-500">{def.metric}</span>
                     </div>
-                    <p className="text-xl font-bold text-gold">{def.value}</p>
+                    <p className="text-xl font-bold text-gold-700">{def.value}</p>
                   </motion.div>
                 ))}
                 {geoData.technologyAI.slice(0, 4).map((tech, idx) => (
@@ -1242,9 +1242,9 @@ export default function GeopoliticalTrendsPage() {
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <Cpu className="h-4 w-4 text-indigo-500" />
-                      <span className="text-xs text-platinum-500">{tech.metric}</span>
+                      <span className="text-xs text-platinum-500-500">{tech.metric}</span>
                     </div>
-                    <p className="text-xl font-bold text-gold">{tech.value}</p>
+                    <p className="text-xl font-bold text-gold-700">{tech.value}</p>
                   </motion.div>
                 ))}
               </div>

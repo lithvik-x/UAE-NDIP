@@ -119,10 +119,10 @@ const SelectTrigger = React.forwardRef<
       // Disabled state
       'disabled:cursor-not-allowed disabled:opacity-50',
       // Text styling
-      'ring-offset-background placeholder:text-platinum-400',
+      'ring-offset-background placeholder:text-platinum-500-400',
       'dark:border-navy-700 dark:bg-navy-950/50',
       'dark:hover:border-gold-600 dark:hover:bg-navy-900/70',
-      'dark:text-platinum-100 dark:placeholder:text-platinum-500',
+      'dark:text-platinum-500-100 dark:placeholder:text-platinum-500-500',
       // Line clamping for long text
       '[&>span]:line-clamp-1',
       className
@@ -134,8 +134,8 @@ const SelectTrigger = React.forwardRef<
       <ChevronDown
         className={cn(
           'h-4 w-4 transition-transform duration-200',
-          'text-platinum-400',
-          'dark:text-platinum-500',
+          'text-platinum-500-400',
+          'dark:text-platinum-500-500',
           'data-[state=open]:rotate-180'
         )}
       />
@@ -172,8 +172,8 @@ const SelectScrollUpButton = React.forwardRef<
     <ChevronDown
       className={cn(
         'h-4 w-4',
-        'text-platinum-500',
-        'dark:text-platinum-400'
+        'text-platinum-500-500',
+        'dark:text-platinum-500-400'
       )}
     />
   </SelectPrimitive.ScrollUpButton>
@@ -208,8 +208,8 @@ const SelectScrollDownButton = React.forwardRef<
     <ChevronDown
       className={cn(
         'h-4 w-4',
-        'text-platinum-500',
-        'dark:text-platinum-400'
+        'text-platinum-500-500',
+        'dark:text-platinum-500-400'
       )}
     />
   </SelectPrimitive.ScrollDownButton>
@@ -304,7 +304,7 @@ const SelectLabel = React.forwardRef<
     className={cn(
       'py-1.5 pl-8 pr-2 text-sm font-semibold',
       // Premium text color
-      'text-navy-700 dark:text-navy-300',
+      'text-navy-500-700 dark:text-navy-500-300',
       'uppercase tracking-wide text-xs',
       className
     )}
@@ -345,11 +345,11 @@ const SelectItem = React.forwardRef<
       'py-2 pl-8 pr-2 text-sm outline-none',
       // Premium hover and focus states
       'transition-all duration-150',
-      'hover:bg-platinum-100 hover:text-navy-900',
-      'focus:bg-navy-100 focus:text-navy-900',
+      'hover:bg-platinum-100 hover:text-navy-500-900',
+      'focus:bg-navy-100 focus:text-navy-500-900',
       'data-[state=checked]:bg-gold-100 data-[state=checked]:text-gold-900',
-      'dark:hover:bg-navy-800 dark:hover:text-platinum-100',
-      'dark:focus:bg-navy-700 dark:focus:text-platinum-100',
+      'dark:hover:bg-navy-800 dark:hover:text-platinum-500-100',
+      'dark:focus:bg-navy-700 dark:focus:text-platinum-500-100',
       'dark:data-[state=checked]:bg-gold-900/30 dark:data-[state=checked]:text-gold-300',
       // Disabled state
       'data-[disabled]:pointer-events-none data-[disabled]:opacity-50',

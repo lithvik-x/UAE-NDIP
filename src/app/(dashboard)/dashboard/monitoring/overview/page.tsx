@@ -18,7 +18,7 @@ export default function MonitoringOverviewPage() {
         <div>
           <Badge variant="outline" className="mb-2 border-orange-300/50 text-orange-700">Monitoring Overview</Badge>
           <h1 className="font-rajdhani text-4xl font-bold tracking-tight">Monitoring & Alerts</h1>
-          <p className="text-platinum-500">Real-time threat detection and media surveillance</p>
+          <p className="text-platinum-500-500">Real-time threat detection and media surveillance</p>
         </div>
       </div>
 
@@ -33,8 +33,8 @@ export default function MonitoringOverviewPage() {
             <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} text-white mb-3`}>
               <Icon className="h-5 w-5" />
             </div>
-            <div className="font-rajdhani text-3xl font-bold text-platinum-900">{value}</div>
-            <div className="text-sm text-platinum-500 mt-1">{label}</div>
+            <div className="font-rajdhani text-3xl font-bold text-platinum-500-900">{value}</div>
+            <div className="text-sm text-platinum-500-500 mt-1">{label}</div>
           </div>
         ))}
       </div>
@@ -43,7 +43,7 @@ export default function MonitoringOverviewPage() {
         <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {['media', 'social', 'dark-web', 'emerging-threats', 'narrative', 'weekly', 'crisis', 'daily', 'gap', 'historical'].map((section) => (
             <a key={section} href={`/dashboard/monitoring/${section}`} className="rounded-xl border border-platinum-200/50 bg-platinum-50/50 p-4 text-center transition-all hover:border-orange-300/50 hover:bg-orange-50/50 hover:shadow-md">
-              <span className="font-rajdhani text-sm font-semibold text-platinum-700 capitalize">{section.replace('-', ' ')}</span>
+              <span className="font-rajdhani text-sm font-semibold text-platinum-500-700 capitalize">{section.replace('-', ' ')}</span>
             </a>
           ))}
         </div>

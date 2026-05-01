@@ -232,15 +232,15 @@ export default function SentimentAnalysisDashboardPage() {
             <TrendingUp className="mr-1 h-3 w-3" />
             SENTIMENT INTELLIGENCE
           </Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum-500">
             Social Media Sentiment Analysis
           </h1>
-          <p className="mt-2 text-platinum-400 font-rajdhani">
+          <p className="mt-2 text-platinum-500-400 font-rajdhani">
             Cross-platform sentiment analysis: overall {overallScore > 50 ? 'positive' : 'mixed'} outlook
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-platinum/50 text-platinum hover:bg-platinum/10 font-rajdhani">
+          <Button variant="outline" className="gap-2 border-platinum/50 text-platinum-500 hover:bg-platinum/10 font-rajdhani">
             <Brain className="h-4 w-4" />
             Deep Analysis
           </Button>
@@ -303,7 +303,7 @@ export default function SentimentAnalysisDashboardPage() {
                   <motion.div variants={fadeInUp} whileHover={{ scale: 1.02 }} className="glass-card rounded-lg border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
                     <CardHeader>
                       <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-                        <PieChartIcon className="h-5 w-5 text-navy-400" />
+                        <PieChartIcon className="h-5 w-5 text-navy-500-400" />
                         Overall Sentiment Distribution
                       </CardTitle>
                       <CardDescription className="font-rajdhani">Aggregated across all platforms</CardDescription>
@@ -336,7 +336,7 @@ export default function SentimentAnalysisDashboardPage() {
                             className="space-y-2"
                           >
                             <div className="flex items-center justify-between">
-                              <span className="text-sm font-medium text-platinum-200 font-rajdhani">{platform.name}</span>
+                              <span className="text-sm font-medium text-platinum-500-200 font-rajdhani">{platform.name}</span>
                               <span className="text-sm font-bold font-rajdhani" style={{ color: platform.color }}>
                                 {platform.score}
                               </span>
@@ -403,7 +403,7 @@ export default function SentimentAnalysisDashboardPage() {
                 <motion.div variants={fadeInUp} whileHover={{ scale: 1.02 }} className="glass-card rounded-lg border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
                   <CardHeader>
                     <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-                      <BarChart3 className="h-5 w-5 text-gold" />
+                      <BarChart3 className="h-5 w-5 text-gold-700" />
                       Sentiment Score Comparison
                     </CardTitle>
                     <CardDescription className="font-rajdhani">Overall sentiment score (0-100) by platform</CardDescription>
@@ -474,7 +474,7 @@ export default function SentimentAnalysisDashboardPage() {
                 <motion.div variants={fadeInUp} whileHover={{ scale: 1.02 }} className="glass-card rounded-lg border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
                   <CardHeader>
                     <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-                      <Activity className="h-5 w-5 text-navy-400" />
+                      <Activity className="h-5 w-5 text-navy-500-400" />
                       Platform Sentiment Breakdown
                     </CardTitle>
                     <CardDescription className="font-rajdhani">Detailed sentiment percentages</CardDescription>
@@ -496,22 +496,22 @@ export default function SentimentAnalysisDashboardPage() {
                                   className="h-3 w-3 rounded-full"
                                   style={{ backgroundColor: platform.color }}
                                 />
-                                <span className="font-semibold text-platinum-200 font-rajdhani">{platform.name}</span>
+                                <span className="font-semibold text-platinum-500-200 font-rajdhani">{platform.name}</span>
                               </div>
-                              <Badge variant="outline" className="text-gold font-rajdhani">Score: {platform.score}</Badge>
+                              <Badge variant="outline" className="text-gold-700 font-rajdhani">Score: {platform.score}</Badge>
                             </div>
                             <div className="grid grid-cols-3 gap-4">
                               <div className="text-center">
                                 <p className="text-2xl font-bold text-emerald-400 font-rajdhani">{platform.positive}%</p>
-                                <p className="text-xs text-platinum-400 font-rajdhani">Positive</p>
+                                <p className="text-xs text-platinum-500-400 font-rajdhani">Positive</p>
                               </div>
                               <div className="text-center">
-                                <p className="text-2xl font-bold text-platinum font-rajdhani">{platform.neutral}%</p>
-                                <p className="text-xs text-platinum-400 font-rajdhani">Neutral</p>
+                                <p className="text-2xl font-bold text-platinum-500 font-rajdhani">{platform.neutral}%</p>
+                                <p className="text-xs text-platinum-500-400 font-rajdhani">Neutral</p>
                               </div>
                               <div className="text-center">
                                 <p className="text-2xl font-bold text-rose-400 font-rajdhani">{platform.negative}%</p>
-                                <p className="text-xs text-platinum-400 font-rajdhani">Negative</p>
+                                <p className="text-xs text-platinum-500-400 font-rajdhani">Negative</p>
                               </div>
                             </div>
                           </motion.div>
@@ -550,7 +550,7 @@ export default function SentimentAnalysisDashboardPage() {
                           className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm"
                         >
                           <div className="flex items-center justify-between mb-2">
-                            <span className="font-mono text-sm font-medium text-gold font-rajdhani">{item.hashtag}</span>
+                            <span className="font-mono text-sm font-medium text-gold-700 font-rajdhani">{item.hashtag}</span>
                             <Badge
                               variant={
                                 item.sentiment === 'positive' ? 'default' :
@@ -564,15 +564,15 @@ export default function SentimentAnalysisDashboardPage() {
                               {item.sentiment}
                             </Badge>
                           </div>
-                          <div className="flex items-center justify-between text-xs text-platinum-400">
+                          <div className="flex items-center justify-between text-xs text-platinum-500-400">
                             <span className="font-rajdhani">{item.platform}</span>
                             <span className="font-rajdhani">{(item.volume / 1000000).toFixed(1)}M</span>
                           </div>
                           <div className="mt-2 flex items-center gap-1">
                             {item.trend === 'rising' && <TrendingUp className="h-3 w-3 text-emerald-400" />}
                             {item.trend === 'declining' && <TrendingDown className="h-3 w-3 text-rose-400" />}
-                            {item.trend === 'stable' && <Minus className="h-3 w-3 text-platinum-400" />}
-                            <span className="text-xs text-platinum-400 font-rajdhani capitalize">{item.trend}</span>
+                            {item.trend === 'stable' && <Minus className="h-3 w-3 text-platinum-500-400" />}
+                            <span className="text-xs text-platinum-500-400 font-rajdhani capitalize">{item.trend}</span>
                           </div>
                         </motion.div>
                       ))}
@@ -674,10 +674,10 @@ export default function SentimentAnalysisDashboardPage() {
                           className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 backdrop-blur-sm"
                         >
                           <div className="flex items-center justify-between mb-2">
-                            <span className="text-sm font-medium text-platinum-200 font-rajdhani">{emotion.emotion}</span>
-                            <Activity className="h-4 w-4 text-platinum" />
+                            <span className="text-sm font-medium text-platinum-500-200 font-rajdhani">{emotion.emotion}</span>
+                            <Activity className="h-4 w-4 text-platinum-500" />
                           </div>
-                          <p className="text-2xl font-bold text-gold font-rajdhani">{emotion.value}</p>
+                          <p className="text-2xl font-bold text-gold-700 font-rajdhani">{emotion.value}</p>
                           <Progress value={emotion.value} className="mt-2 h-1" />
                         </motion.div>
                       ))}
@@ -769,16 +769,16 @@ export default function SentimentAnalysisDashboardPage() {
                       <ThumbsUp className="h-8 w-8 text-emerald-400" />
                       <div>
                         <p className="text-2xl font-bold text-emerald-400 font-rajdhani">{aggregateSentiment.positive}%</p>
-                        <p className="text-sm text-platinum-400 font-rajdhani">Average Positive</p>
+                        <p className="text-sm text-platinum-500-400 font-rajdhani">Average Positive</p>
                       </div>
                     </CardContent>
                   </motion.div>
                   <motion.div variants={fadeInUp} whileHover={{ scale: 1.02 }} className="glass-card rounded-lg border border-platinum/50 bg-platinum/10 p-4">
                     <CardContent className="flex items-center gap-3 p-0">
-                      <Minus className="h-8 w-8 text-platinum" />
+                      <Minus className="h-8 w-8 text-platinum-500" />
                       <div>
-                        <p className="text-2xl font-bold text-platinum font-rajdhani">{aggregateSentiment.neutral}%</p>
-                        <p className="text-sm text-platinum-400 font-rajdhani">Average Neutral</p>
+                        <p className="text-2xl font-bold text-platinum-500 font-rajdhani">{aggregateSentiment.neutral}%</p>
+                        <p className="text-sm text-platinum-500-400 font-rajdhani">Average Neutral</p>
                       </div>
                     </CardContent>
                   </motion.div>
@@ -787,7 +787,7 @@ export default function SentimentAnalysisDashboardPage() {
                       <ThumbsDown className="h-8 w-8 text-rose-400" />
                       <div>
                         <p className="text-2xl font-bold text-rose-400 font-rajdhani">{aggregateSentiment.negative}%</p>
-                        <p className="text-sm text-platinum-400 font-rajdhani">Average Negative</p>
+                        <p className="text-sm text-platinum-500-400 font-rajdhani">Average Negative</p>
                       </div>
                     </CardContent>
                   </motion.div>
@@ -797,7 +797,7 @@ export default function SentimentAnalysisDashboardPage() {
                 <motion.div variants={fadeInUp} whileHover={{ scale: 1.02 }} className="glass-card rounded-lg border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
                   <CardHeader>
                     <CardTitle className="text-lg font-rajdhani flex items-center gap-2">
-                      <Lightbulb className="h-5 w-5 text-gold" />
+                      <Lightbulb className="h-5 w-5 text-gold-700" />
                       Sentiment Intelligence Findings
                     </CardTitle>
                     <CardDescription className="font-rajdhani">Critical sentiment insights</CardDescription>
@@ -824,8 +824,8 @@ export default function SentimentAnalysisDashboardPage() {
                               {finding.type === 'negative' && <ThumbsDown className="h-5 w-5 text-rose-400" />}
                               {finding.type === 'warning' && <AlertTriangle className="h-5 w-5 text-amber-400" />}
                               <div>
-                                <p className="font-medium text-platinum-200 font-rajdhani">{finding.finding}</p>
-                                <p className="text-sm text-platinum-400 font-rajdhani">Source: {finding.source}</p>
+                                <p className="font-medium text-platinum-500-200 font-rajdhani">{finding.finding}</p>
+                                <p className="text-sm text-platinum-500-400 font-rajdhani">Source: {finding.source}</p>
                               </div>
                             </div>
                             <Badge
@@ -870,7 +870,7 @@ export default function SentimentAnalysisDashboardPage() {
                               transition={{ delay: idx * 0.1 }}
                               className="flex items-center justify-between rounded-lg bg-emerald-500/10 p-3"
                             >
-                              <span className="text-sm font-medium text-platinum-200 font-rajdhani">{platform.name}</span>
+                              <span className="text-sm font-medium text-platinum-500-200 font-rajdhani">{platform.name}</span>
                               <Badge variant="default" className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50 font-rajdhani">
                                 {platform.positive}% positive
                               </Badge>
@@ -900,7 +900,7 @@ export default function SentimentAnalysisDashboardPage() {
                               transition={{ delay: idx * 0.1 }}
                               className="flex items-center justify-between rounded-lg bg-rose-500/10 p-3"
                             >
-                              <span className="text-sm font-medium text-platinum-200 font-rajdhani">{platform.name}</span>
+                              <span className="text-sm font-medium text-platinum-500-200 font-rajdhani">{platform.name}</span>
                               <Badge variant="destructive" className="bg-rose-500/20 text-rose-400 border-rose-500/50 font-rajdhani">
                                 {platform.negative}% negative
                               </Badge>

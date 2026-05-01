@@ -294,7 +294,7 @@ const getRelevanceBadge = (relevance: string) => {
   switch (relevance) {
     case 'Critical': return <Badge variant="destructive" className="text-xs bg-red-500/20 text-red-400 border-red-500/50">{relevance}</Badge>
     case 'High': return <Badge variant="warning" className="text-xs bg-orange-500/20 text-orange-400 border-orange-500/50">{relevance}</Badge>
-    case 'Medium': return <Badge variant="info" className="text-xs bg-navy-500/20 text-navy-400 border-navy-500/50">{relevance}</Badge>
+    case 'Medium': return <Badge variant="info" className="text-xs bg-navy-500/20 text-navy-500-400 border-navy-500/50">{relevance}</Badge>
     default: return <Badge variant="outline" className="text-xs">{relevance}</Badge>
   }
 }
@@ -317,15 +317,15 @@ export default function FactCheckVerificationPage() {
       >
         <div>
           <Badge variant="emerald" className="mb-2">V-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-emerald font-rajdhani">
+          <h1 className="text-3xl font-extrabold gradient-text-emerald-500 font-rajdhani">
             Fact-Check & Verification
           </h1>
-          <p className="mt-2 text-platinum-400">
+          <p className="mt-2 text-platinum-500-400">
             Comprehensive fact-checking ecosystem and misinformation tracking for UAE
           </p>
         </div>
         <div className="flex gap-3">
-          <Badge variant="outline" className="border-emerald/50 text-emerald">
+          <Badge variant="outline" className="border-emerald-500/50 text-emerald-500">
             <Database className="h-3 w-3 mr-1" />
             11-6 Module
           </Badge>
@@ -366,22 +366,22 @@ export default function FactCheckVerificationPage() {
             {/* Executive Summary */}
             <GlassPanel title="Executive Summary" description="Key findings from MD 11-6">
               <div className="space-y-4">
-                <p className="text-sm text-platinum-300">
+                <p className="text-sm text-platinum-500-300">
                   The UAE operates a comprehensive fact-checking and verification ecosystem involving government agencies, international fact-checkers, and legal frameworks.
                 </p>
                 <div className="space-y-2">
                   <p className="text-sm font-medium text-emerald-400">Key Insight:</p>
-                  <p className="text-sm text-platinum-400">
+                  <p className="text-sm text-platinum-500-400">
                     During March-April 2026 regional tensions, <span className="text-rose-400 font-semibold">15+ miscaptioned videos</span> and <span className="text-rose-400 font-semibold">8+ AI-generated images</span> were documented by Full Fact alone.
                   </p>
                 </div>
                 <div className="grid grid-cols-2 gap-4 mt-4">
                   <div className="rounded-lg border border-white/10 bg-white/5 p-3">
-                    <p className="text-xs text-platinum-400">Data Completeness</p>
+                    <p className="text-xs text-platinum-500-400">Data Completeness</p>
                     <p className="text-lg font-bold text-emerald-400">~85%</p>
                   </div>
                   <div className="rounded-lg border border-white/10 bg-white/5 p-3">
-                    <p className="text-xs text-platinum-400">Research Date</p>
+                    <p className="text-xs text-platinum-500-400">Research Date</p>
                     <p className="text-lg font-bold text-emerald-400">2026-04-27</p>
                   </div>
                 </div>
@@ -403,8 +403,8 @@ export default function FactCheckVerificationPage() {
                       {idx + 1}
                     </div>
                     <div>
-                      <p className="font-semibold text-platinum-200">{pillar.pillar}</p>
-                      <p className="text-sm text-platinum-400">{pillar.elements}</p>
+                      <p className="font-semibold text-platinum-500-200">{pillar.pillar}</p>
+                      <p className="text-sm text-platinum-500-400">{pillar.elements}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -427,11 +427,11 @@ export default function FactCheckVerificationPage() {
                       : 'border-red-500/30 bg-red-500/10'
                   }`}
                 >
-                  <p className="text-xs text-platinum-400 truncate">{item.topic}</p>
+                  <p className="text-xs text-platinum-500-400 truncate">{item.topic}</p>
                   <p className={`text-lg font-bold ${item.sentiment === 'Positive' ? 'text-emerald-400' : 'text-red-400'}`}>
                     {item.polarity}
                   </p>
-                  <p className="text-xs text-platinum-500 mt-1">{item.narrative}</p>
+                  <p className="text-xs text-platinum-500-500 mt-1">{item.narrative}</p>
                 </motion.div>
               ))}
             </div>
@@ -442,13 +442,13 @@ export default function FactCheckVerificationPage() {
             <div className="space-y-3">
               {dataCompleteness.map((item, idx) => (
                 <div key={item.category} className="flex items-center justify-between">
-                  <span className="text-sm text-platinum-300">{item.category}</span>
+                  <span className="text-sm text-platinum-500-300">{item.category}</span>
                   <div className="flex items-center gap-2">
                     <span className={`text-sm font-bold ${
                       item.completeness === '100%' ? 'text-emerald-400' :
                       item.completeness === '90%' ? 'text-emerald-400' :
                       item.completeness === '80%' ? 'text-amber-400' :
-                      'text-platinum-400'
+                      'text-platinum-500-400'
                     }`}>{item.completeness}</span>
                     <Badge variant="outline" className="text-xs">{item.notes}</Badge>
                   </div>
@@ -477,9 +477,9 @@ export default function FactCheckVerificationPage() {
                         <Building2 className="h-5 w-5" />
                       </div>
                       <div>
-                        <p className="font-semibold text-platinum-200">{org.org}</p>
-                        <p className="text-xs text-platinum-400">{org.fullName}</p>
-                        <p className="text-xs text-platinum-500 mt-1">{org.role}</p>
+                        <p className="font-semibold text-platinum-500-200">{org.org}</p>
+                        <p className="text-xs text-platinum-500-400">{org.fullName}</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">{org.role}</p>
                       </div>
                     </div>
                     {getRelevanceBadge(org.relevance)}
@@ -503,8 +503,8 @@ export default function FactCheckVerificationPage() {
                       <Search className="h-4 w-4" />
                     </div>
                     <div className="flex-1">
-                      <p className="font-medium text-platinum-200">{method.method}</p>
-                      <p className="text-sm text-platinum-400">{method.application}</p>
+                      <p className="font-medium text-platinum-500-200">{method.method}</p>
+                      <p className="text-sm text-platinum-500-400">{method.application}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -524,7 +524,7 @@ export default function FactCheckVerificationPage() {
                   className="rounded-lg border border-white/10 bg-white/5 p-4 text-center"
                 >
                   <Shield className="h-8 w-8 mx-auto mb-2 text-emerald-400" />
-                  <p className="font-semibold text-platinum-200">{channel.channel}</p>
+                  <p className="font-semibold text-platinum-500-200">{channel.channel}</p>
                   <Badge variant="outline" className="mt-2">{channel.type}</Badge>
                 </motion.div>
               ))}
@@ -543,7 +543,7 @@ export default function FactCheckVerificationPage() {
                   className="flex items-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3"
                 >
                   <CheckCircle className="h-4 w-4 text-emerald-400" />
-                  <span className="text-sm text-platinum-300">{rec.recommendation}</span>
+                  <span className="text-sm text-platinum-500-300">{rec.recommendation}</span>
                 </motion.div>
               ))}
             </div>
@@ -565,8 +565,8 @@ export default function FactCheckVerificationPage() {
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div>
-                      <p className="font-semibold text-platinum-200">{penalty.violation}</p>
-                      <p className="text-sm text-platinum-500">Legal basis: {penalty.basis}</p>
+                      <p className="font-semibold text-platinum-500-200">{penalty.violation}</p>
+                      <p className="text-sm text-platinum-500-500">Legal basis: {penalty.basis}</p>
                     </div>
                     <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
                       {penalty.prison} / {penalty.fine}
@@ -590,8 +590,8 @@ export default function FactCheckVerificationPage() {
                 >
                   <Scale className="h-5 w-5 text-gold-400" />
                   <div className="flex-1">
-                    <p className="font-medium text-platinum-200">{law.law}</p>
-                    <p className="text-sm text-platinum-400">{law.article} {law.year && `(${law.year})`}</p>
+                    <p className="font-medium text-platinum-500-200">{law.law}</p>
+                    <p className="text-sm text-platinum-500-400">{law.article} {law.year && `(${law.year})`}</p>
                   </div>
                   <Badge variant="outline">{law.provision}</Badge>
                 </motion.div>
@@ -612,9 +612,9 @@ export default function FactCheckVerificationPage() {
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <Eye className="h-4 w-4 text-teal-400" />
-                    <p className="font-medium text-platinum-200">{method.method}</p>
+                    <p className="font-medium text-platinum-500-200">{method.method}</p>
                   </div>
-                  <p className="text-sm text-platinum-400">{method.application}</p>
+                  <p className="text-sm text-platinum-500-400">{method.application}</p>
                 </motion.div>
               ))}
             </div>
@@ -638,8 +638,8 @@ export default function FactCheckVerificationPage() {
                     <div className="flex items-center gap-3">
                       <Bot className="h-5 w-5 text-purple-400" />
                       <div>
-                        <p className="font-medium text-platinum-200">{item.content}</p>
-                        <p className="text-xs text-platinum-400">{item.identification}</p>
+                        <p className="font-medium text-platinum-500-200">{item.content}</p>
+                        <p className="text-xs text-platinum-500-400">{item.identification}</p>
                       </div>
                     </div>
                     {getVerdictBadge(item.status)}
@@ -665,7 +665,7 @@ export default function FactCheckVerificationPage() {
                         <p className="text-sm font-medium text-rose-400">{video.claim}</p>
                       </div>
                       <div className="ml-6 space-y-1">
-                        <p className="text-xs text-platinum-500">Actual: <span className="text-platinum-300">{video.actual}</span></p>
+                        <p className="text-xs text-platinum-500-500">Actual: <span className="text-platinum-500-300">{video.actual}</span></p>
                         <Badge variant="outline" className="text-xs">{video.misdirection}</Badge>
                       </div>
                     </motion.div>
@@ -689,8 +689,8 @@ export default function FactCheckVerificationPage() {
                   >
                     <div className="flex items-start justify-between mb-2">
                       <div>
-                        <p className="font-semibold text-platinum-200">{fcCase.case}</p>
-                        <p className="text-xs text-platinum-500">{fcCase.source} - {fcCase.date}</p>
+                        <p className="font-semibold text-platinum-500-200">{fcCase.case}</p>
+                        <p className="text-xs text-platinum-500-500">{fcCase.source} - {fcCase.date}</p>
                       </div>
                       {getVerdictBadge(fcCase.verdict)}
                     </div>
@@ -716,8 +716,8 @@ export default function FactCheckVerificationPage() {
                   className="flex items-center justify-between rounded-lg border border-white/10 bg-white/5 p-3"
                 >
                   <div className="flex-1">
-                    <p className="font-medium text-platinum-200">{snopes.claim}</p>
-                    <p className="text-xs text-platinum-500">{snopes.date}</p>
+                    <p className="font-medium text-platinum-500-200">{snopes.claim}</p>
+                    <p className="text-xs text-platinum-500-500">{snopes.date}</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <Badge variant="outline" className="text-xs">{snopes.type}</Badge>
@@ -743,8 +743,8 @@ export default function FactCheckVerificationPage() {
                   className="rounded-lg border border-purple-500/30 bg-purple-500/10 p-4 text-center"
                 >
                   <AlertTriangle className="h-6 w-6 mx-auto mb-2 text-purple-400" />
-                  <p className="font-semibold text-platinum-200">{risk.risk}</p>
-                  <p className="text-xs text-platinum-400 mt-1">{risk.description}</p>
+                  <p className="font-semibold text-platinum-500-200">{risk.risk}</p>
+                  <p className="text-xs text-platinum-500-400 mt-1">{risk.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -767,11 +767,11 @@ export default function FactCheckVerificationPage() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <p className="font-semibold text-platinum-200">{quote.expert}</p>
+                        <p className="font-semibold text-platinum-500-200">{quote.expert}</p>
                         <Badge variant="outline" className="text-xs">{quote.org}</Badge>
                       </div>
-                      <p className="text-sm text-platinum-300 italic">"{quote.quote}"</p>
-                      <p className="text-xs text-platinum-500 mt-1">Context: {quote.context}</p>
+                      <p className="text-sm text-platinum-500-300 italic">"{quote.quote}"</p>
+                      <p className="text-xs text-platinum-500-500 mt-1">Context: {quote.context}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -793,8 +793,8 @@ export default function FactCheckVerificationPage() {
                   >
                     <Users className="h-5 w-5 text-emerald-400" />
                     <div>
-                      <p className="font-medium text-platinum-200">{official.official}</p>
-                      <p className="text-xs text-platinum-400">{official.position}</p>
+                      <p className="font-medium text-platinum-500-200">{official.official}</p>
+                      <p className="text-xs text-platinum-500-400">{official.position}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -813,7 +813,7 @@ export default function FactCheckVerificationPage() {
                   >
                     <Award className="h-5 w-5 text-emerald-400" />
                     <div>
-                      <p className="font-medium text-platinum-200">{action.action}</p>
+                      <p className="font-medium text-platinum-500-200">{action.action}</p>
                       <p className="text-sm text-emerald-400">{action.details}</p>
                     </div>
                   </motion.div>
@@ -842,12 +842,12 @@ export default function FactCheckVerificationPage() {
                     </div>
                     <div>
                       <p className="text-2xl font-bold text-red-400">{action.count}</p>
-                      <p className="text-sm text-platinum-400">{action.action}</p>
+                      <p className="text-sm text-platinum-500-400">{action.action}</p>
                     </div>
                   </div>
                   <div className="space-y-1 text-sm">
-                    <p><span className="text-platinum-500">Date:</span> <span className="text-platinum-300">{action.date}</span></p>
-                    <p><span className="text-platinum-500">Charge:</span> <span className="text-platinum-300">{action.charge}</span></p>
+                    <p><span className="text-platinum-500-500">Date:</span> <span className="text-platinum-500-300">{action.date}</span></p>
+                    <p><span className="text-platinum-500-500">Charge:</span> <span className="text-platinum-500-300">{action.charge}</span></p>
                   </div>
                 </motion.div>
               ))}
@@ -866,8 +866,8 @@ export default function FactCheckVerificationPage() {
                   className="rounded-lg border border-white/10 bg-white/5 p-4 text-center"
                 >
                   <EyeOff className="h-6 w-6 mx-auto mb-2 text-rose-400" />
-                  <p className="font-semibold text-platinum-200">{restriction.risk}</p>
-                  <p className="text-xs text-platinum-400 mt-1">{restriction.description}</p>
+                  <p className="font-semibold text-platinum-500-200">{restriction.risk}</p>
+                  <p className="text-xs text-platinum-500-400 mt-1">{restriction.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -887,8 +887,8 @@ export default function FactCheckVerificationPage() {
                   <div className="flex items-center gap-3">
                     <XCircle className="h-5 w-5 text-red-400" />
                     <div>
-                      <p className="font-medium text-platinum-200">{dubaiCase.claim}</p>
-                      <p className="text-xs text-platinum-500">{dubaiCase.source} - {dubaiCase.date}</p>
+                      <p className="font-medium text-platinum-500-200">{dubaiCase.claim}</p>
+                      <p className="text-xs text-platinum-500-500">{dubaiCase.source} - {dubaiCase.date}</p>
                     </div>
                   </div>
                   {getVerdictBadge(dubaiCase.verdict)}
@@ -917,8 +917,8 @@ export default function FactCheckVerificationPage() {
                         <Users className="h-5 w-5" />
                       </div>
                       <div className="flex-1">
-                        <p className="font-medium text-platinum-200">{person.name}</p>
-                        <p className="text-xs text-platinum-400">{person.role} - {person.org}</p>
+                        <p className="font-medium text-platinum-500-200">{person.name}</p>
+                        <p className="text-xs text-platinum-500-400">{person.role} - {person.org}</p>
                       </div>
                       <Badge variant={person.type === 'Government' ? 'info' : 'secondary'} className="text-xs">
                         {person.type}
@@ -943,9 +943,9 @@ export default function FactCheckVerificationPage() {
                     >
                       <Building2 className="h-5 w-5 text-emerald-400" />
                       <div className="flex-1">
-                        <p className="font-medium text-platinum-200">{org.acronym || org.org}</p>
-                        <p className="text-xs text-platinum-400 truncate">{org.org}</p>
-                        <p className="text-xs text-platinum-500">{org.role}</p>
+                        <p className="font-medium text-platinum-500-200">{org.acronym || org.org}</p>
+                        <p className="text-xs text-platinum-500-400 truncate">{org.org}</p>
+                        <p className="text-xs text-platinum-500-500">{org.role}</p>
                       </div>
                       <Badge variant={org.type === 'Government' ? 'info' : 'secondary'} className="text-xs">
                         {org.type}
@@ -975,8 +975,8 @@ export default function FactCheckVerificationPage() {
                     <Newspaper className="h-5 w-5" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-medium text-platinum-200">{org.org}</p>
-                    <p className="text-sm text-platinum-400">{org.coverage}</p>
+                    <p className="font-medium text-platinum-500-200">{org.org}</p>
+                    <p className="text-sm text-platinum-500-400">{org.coverage}</p>
                   </div>
                   <Badge variant="outline" className="text-xs">Tier {org.tier}</Badge>
                 </motion.div>
@@ -990,11 +990,11 @@ export default function FactCheckVerificationPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-white/10">
-                    <th className="text-left py-2 px-3 text-platinum-400">Source</th>
-                    <th className="text-left py-2 px-3 text-platinum-400">Type</th>
-                    <th className="text-left py-2 px-3 text-platinum-400">Tier</th>
-                    <th className="text-left py-2 px-3 text-platinum-400">Status</th>
-                    <th className="text-left py-2 px-3 text-platinum-400">Reliability</th>
+                    <th className="text-left py-2 px-3 text-platinum-500-400">Source</th>
+                    <th className="text-left py-2 px-3 text-platinum-500-400">Type</th>
+                    <th className="text-left py-2 px-3 text-platinum-500-400">Tier</th>
+                    <th className="text-left py-2 px-3 text-platinum-500-400">Status</th>
+                    <th className="text-left py-2 px-3 text-platinum-500-400">Reliability</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -1006,8 +1006,8 @@ export default function FactCheckVerificationPage() {
                       transition={{ delay: idx * 0.03 }}
                       className="border-b border-white/5"
                     >
-                      <td className="py-2 px-3 text-platinum-200">{source.source}</td>
-                      <td className="py-2 px-3 text-platinum-400">{source.type}</td>
+                      <td className="py-2 px-3 text-platinum-500-200">{source.source}</td>
+                      <td className="py-2 px-3 text-platinum-500-400">{source.type}</td>
                       <td className="py-2 px-3">
                         <Badge variant={source.tier === 0 ? 'success' : source.tier === 1 ? 'info' : 'secondary'} className="text-xs">
                           Tier {source.tier}

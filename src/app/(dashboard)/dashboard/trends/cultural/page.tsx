@@ -71,17 +71,17 @@ export default function CulturalTrendsPage() {
       >
         <div>
           <Badge variant="gold" className="mb-2">TRENDS</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-gold font-rajdhani">Cultural Evolution</h1>
-          <p className="mt-2 text-platinum-400 font-rajdhani">
+          <h1 className="text-3xl font-extrabold gradient-text-gold-700 font-rajdhani">Cultural Evolution</h1>
+          <p className="mt-2 text-platinum-500-400 font-rajdhani">
             Heritage preservation, arts, and cultural engagement intelligence
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10 font-rajdhani">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10 font-rajdhani">
             <Globe className="h-4 w-4" />
             Heritage Sites
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2 font-rajdhani">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2 font-rajdhani">
             <Palette className="h-4 w-4" />
             Cultural Dashboard
           </Button>

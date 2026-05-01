@@ -38,26 +38,26 @@ export function DigitalHealth({ data }: DigitalHealthProps) {
           <Card className="glass-card bg-glass-surface/50 border-glass-border">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm flex items-center gap-2">
-                <Heart className="h-4 w-4 text-emerald" />
+                <Heart className="h-4 w-4 text-emerald-500" />
                 Al Hosn App
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="text-lg font-bold text-platinum-100">{alHosnApp.officialName}</div>
-              <div className="text-sm text-platinum-400">{alHosnApp.purpose}</div>
+              <div className="text-lg font-bold text-platinum-500-100">{alHosnApp.officialName}</div>
+              <div className="text-sm text-platinum-500-400">{alHosnApp.purpose}</div>
 
               <div className="space-y-2">
-                <div className="text-sm font-medium text-platinum-300">Features</div>
+                <div className="text-sm font-medium text-platinum-500-300">Features</div>
                 {alHosnApp.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-sm text-platinum-300">
-                    <Heart className="h-3 w-3 text-emerald" />
+                  <div key={idx} className="flex items-center gap-2 text-sm text-platinum-500-300">
+                    <Heart className="h-3 w-3 text-emerald-500" />
                     {feature}
                   </div>
                 ))}
               </div>
 
               <div className="space-y-2">
-                <div className="text-sm font-medium text-platinum-300">Color Codes</div>
+                <div className="text-sm font-medium text-platinum-500-300">Color Codes</div>
                 <div className="flex gap-2">
                   {alHosnApp.colorCodes.map((code, idx) => (
                     <Badge
@@ -65,10 +65,10 @@ export function DigitalHealth({ data }: DigitalHealthProps) {
                       variant="outline"
                       className={
                         code.color === 'Green'
-                          ? 'border-emerald-500/50 text-emerald'
+                          ? 'border-emerald-500/50 text-emerald-500'
                           : code.color === 'Grey'
-                            ? 'border-platinum-500/50 text-platinum'
-                            : 'border-rose-500/50 text-rose'
+                            ? 'border-platinum-500/50 text-platinum-500'
+                            : 'border-rose-500/50 text-rose-500'
                       }
                     >
                       {code.color}: {code.meaning}
@@ -78,11 +78,11 @@ export function DigitalHealth({ data }: DigitalHealthProps) {
               </div>
 
               <div className="grid grid-cols-2 gap-2 text-sm">
-                <div className="flex items-center gap-2 text-platinum-400">
+                <div className="flex items-center gap-2 text-platinum-500-400">
                   <Globe className="h-3 w-3" />
                   {alHosnApp.languages.join(', ')}
                 </div>
-                <div className="flex items-center gap-2 text-platinum-400">
+                <div className="flex items-center gap-2 text-platinum-500-400">
                   <Phone className="h-3 w-3" />
                   {alHosnApp.supportLine}
                 </div>
@@ -120,21 +120,21 @@ export function DigitalHealth({ data }: DigitalHealthProps) {
                       {tool.function.includes('Bluetooth') ? (
                         <Bluetooth className="h-4 w-4 text-sky" />
                       ) : tool.function.includes('Thermal') ? (
-                        <Thermometer className="h-4 w-4 text-rose" />
+                        <Thermometer className="h-4 w-4 text-rose-500" />
                       ) : tool.function.includes('Tele') ? (
-                        <Laptop className="h-4 w-4 text-emerald" />
+                        <Laptop className="h-4 w-4 text-emerald-500" />
                       ) : tool.function.includes('Quarantine') ? (
-                        <Watch className="h-4 w-4 text-gold" />
+                        <Watch className="h-4 w-4 text-gold-700" />
                       ) : (
                         <Smartphone className="h-4 w-4 text-sky" />
                       )}
-                      <span className="text-sm font-medium text-platinum-200">{tool.tool}</span>
+                      <span className="text-sm font-medium text-platinum-500-200">{tool.tool}</span>
                     </div>
-                    <Badge variant="outline" className="border-platinum-500/50 text-platinum text-xs">
+                    <Badge variant="outline" className="border-platinum-500/50 text-platinum-500 text-xs">
                       {tool.authority}
                     </Badge>
                   </div>
-                  <div className="text-xs text-platinum-500">{tool.function}</div>
+                  <div className="text-xs text-platinum-500-500">{tool.function}</div>
                 </motion.div>
               ))}
             </CardContent>

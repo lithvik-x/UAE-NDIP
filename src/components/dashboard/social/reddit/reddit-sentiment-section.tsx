@@ -80,7 +80,7 @@ export function RedditSentimentSection({
               <AlertOctagon className="h-6 w-6 text-rose-400" />
               <div>
                 <p className="font-semibold text-rose-400">Negative Sentiment Alert</p>
-                <p className="text-sm text-platinum-400">Reddit UAE shows highest negative sentiment (53%) among all platforms</p>
+                <p className="text-sm text-platinum-500-400">Reddit UAE shows highest negative sentiment (53%) among all platforms</p>
               </div>
             </motion.div>
 
@@ -92,7 +92,7 @@ export function RedditSentimentSection({
                 transition={{ delay: 0.2 }}
                 className="p-6 rounded-lg glass-card"
               >
-                <h3 className="text-lg font-semibold text-platinum-200 mb-4">Sentiment Distribution</h3>
+                <h3 className="text-lg font-semibold text-platinum-500-200 mb-4">Sentiment Distribution</h3>
                 <PieChart data={sentimentData} height={280} showLegend={true} />
               </motion.div>
 
@@ -103,7 +103,7 @@ export function RedditSentimentSection({
                 transition={{ delay: 0.3 }}
                 className="p-6 rounded-lg glass-card"
               >
-                <h3 className="text-lg font-semibold text-platinum-200 mb-4">Bot Activity Analysis</h3>
+                <h3 className="text-lg font-semibold text-platinum-500-200 mb-4">Bot Activity Analysis</h3>
                 <div className="space-y-4">
                   <div className="h-64 flex items-center justify-center">
                     <PieChart
@@ -117,7 +117,7 @@ export function RedditSentimentSection({
                   </div>
                   <div className="text-center">
                     <span className="text-2xl font-bold text-rose-400">15%</span>
-                    <p className="text-sm text-platinum-400">Government shill accounts suspected</p>
+                    <p className="text-sm text-platinum-500-400">Government shill accounts suspected</p>
                   </div>
                 </div>
               </motion.div>
@@ -130,7 +130,7 @@ export function RedditSentimentSection({
               transition={{ delay: 0.4 }}
               className="p-6 rounded-lg glass-card"
             >
-              <h3 className="text-lg font-semibold text-platinum-200 mb-4">Key Concerns</h3>
+              <h3 className="text-lg font-semibold text-platinum-500-200 mb-4">Key Concerns</h3>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {keyConcerns.map((concern, idx) => (
                   <motion.div
@@ -141,7 +141,7 @@ export function RedditSentimentSection({
                     className="flex items-center gap-3 rounded-lg border border-rose-500/30 bg-rose-500/5 p-3"
                   >
                     <ThumbsDown className="h-4 w-4 text-rose-400" />
-                    <span className="text-platinum-200 text-sm">{concern}</span>
+                    <span className="text-platinum-500-200 text-sm">{concern}</span>
                   </motion.div>
                 ))}
               </div>
@@ -158,19 +158,19 @@ export function RedditSentimentSection({
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <div className="text-center p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/20">
                   <p className="text-2xl font-bold text-emerald-400">{executionMetadata?.queriesExecuted || '35+'}</p>
-                  <p className="text-sm text-platinum-400">Queries Executed</p>
+                  <p className="text-sm text-platinum-500-400">Queries Executed</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/20">
                   <p className="text-2xl font-bold text-emerald-400">{executionMetadata?.pagesFetched || '25+'}</p>
-                  <p className="text-sm text-platinum-400">Pages Fetched</p>
+                  <p className="text-sm text-platinum-500-400">Pages Fetched</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/20">
                   <p className="text-2xl font-bold text-emerald-400">High</p>
-                  <p className="text-sm text-platinum-400">Confidence Level</p>
+                  <p className="text-sm text-platinum-500-400">Confidence Level</p>
                 </div>
                 <div className="text-center p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/20">
                   <p className="text-2xl font-bold text-emerald-400">{executionMetadata?.dateExecuted || '2026-04-27'}</p>
-                  <p className="text-sm text-platinum-400">Date Executed</p>
+                  <p className="text-sm text-platinum-500-400">Date Executed</p>
                 </div>
               </div>
             </motion.div>

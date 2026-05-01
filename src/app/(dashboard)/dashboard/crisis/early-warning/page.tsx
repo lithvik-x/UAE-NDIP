@@ -54,7 +54,7 @@ export default function EarlyWarningPage() {
               Early Warning
             </span>
           </h1>
-          <p className="mt-2 text-platinum-400">
+          <p className="mt-2 text-platinum-500-400">
             Early warning intelligence — 29 query patterns, 32 sources, 100% verified
           </p>
         </div>

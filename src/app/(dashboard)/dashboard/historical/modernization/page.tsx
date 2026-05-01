@@ -56,7 +56,7 @@ export default function ModernizationPage() {
   if (!data) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-400">Loading {isRapidDevelopment ? 'Rapid Development' : 'Modernization'} Era data...</div>
+        <div className="text-platinum-500-400">Loading {isRapidDevelopment ? 'Rapid Development' : 'Modernization'} Era data...</div>
       </div>
     )
   }
@@ -104,7 +104,7 @@ export default function ModernizationPage() {
           <div className="flex gap-2 mb-3">
             <Button
               variant={isRapidDevelopment ? 'default' : 'outline'}
-              className={isRapidDevelopment ? 'bg-gradient-to-r from-amber-600 to-orange-600' : 'border-gold/50 text-gold'}
+              className={isRapidDevelopment ? 'bg-gradient-to-r from-amber-600 to-orange-600' : 'border-gold-700/50 text-gold-700'}
               onClick={() => setSelectedEra('rapid')}
             >
               <Construction className="h-4 w-4 mr-2" />
@@ -112,7 +112,7 @@ export default function ModernizationPage() {
             </Button>
             <Button
               variant={!isRapidDevelopment ? 'default' : 'outline'}
-              className={!isRapidDevelopment ? 'bg-gradient-to-r from-amber-600 to-orange-600' : 'border-gold/50 text-gold'}
+              className={!isRapidDevelopment ? 'bg-gradient-to-r from-amber-600 to-orange-600' : 'border-gold-700/50 text-gold-700'}
               onClick={() => setSelectedEra('modernization')}
             >
               <Rocket className="h-4 w-4 mr-2" />
@@ -120,21 +120,21 @@ export default function ModernizationPage() {
             </Button>
           </div>
           <Badge variant="gold" className="mb-2">H-ERA-{isRapidDevelopment ? '8-4' : '6'}</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">
             {isRapidDevelopment ? 'Rapid Development Era' : 'Modernization Era'}
           </h1>
-          <p className="mt-2 text-platinum-400">
+          <p className="mt-2 text-platinum-500-400">
             {isRapidDevelopment
               ? 'Dubai construction boom, iconic landmarks, and financial crisis (2000-2010)'
               : "Strategic vision, innovation, and global leadership (2015-2020)"}
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <Rocket className="h-4 w-4" />
             {isRapidDevelopment ? 'Development Reports' : 'Innovation Reports'}
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Brain className="h-4 w-4" />
             {isRapidDevelopment ? 'Vision 2021' : 'Future Vision'}
           </Button>
@@ -227,33 +227,33 @@ export default function ModernizationPage() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">Sand Used</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Sand Used</span>
                         <Badge variant="outline" className="border-emerald-500/50 text-emerald-400">94 million m³</Badge>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">Rock Used</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Rock Used</span>
                         <Badge variant="outline" className="border-emerald-500/50 text-emerald-400">7 million tons</Badge>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">Breakwater</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Breakwater</span>
                         <Badge variant="outline" className="border-emerald-500/50 text-emerald-400">11 km crescent</Badge>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">Subsea Tunnel</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Subsea Tunnel</span>
                         <Badge variant="outline" className="border-emerald-500/50 text-emerald-400">1.4 km at 25m depth</Badge>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">Contractors</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Contractors</span>
                         <Badge variant="outline" className="border-emerald-500/50 text-emerald-400">Van Oord & Jan De Nul</Badge>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                <Card className="glass-card border-gold/20">
+                <Card className="glass-card border-gold-700/20">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Building className="h-5 w-5 text-gold" />
+                      <Building className="h-5 w-5 text-gold-700" />
                       Burj Khalifa
                     </CardTitle>
                     <CardDescription>World's tallest building (opened 2010)</CardDescription>
@@ -261,24 +261,24 @@ export default function ModernizationPage() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">Height</span>
-                        <Badge variant="outline" className="border-gold/50 text-gold">829.8m tip / 828m arch</Badge>
+                        <span className="text-sm font-medium text-platinum-500-200">Height</span>
+                        <Badge variant="outline" className="border-gold-700/50 text-gold-700">829.8m tip / 828m arch</Badge>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">Floors</span>
-                        <Badge variant="outline" className="border-gold/50 text-gold">154 + 9 maintenance</Badge>
+                        <span className="text-sm font-medium text-platinum-500-200">Floors</span>
+                        <Badge variant="outline" className="border-gold-700/50 text-gold-700">154 + 9 maintenance</Badge>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">Cost</span>
-                        <Badge variant="outline" className="border-gold/50 text-gold">$1.5 billion</Badge>
+                        <span className="text-sm font-medium text-platinum-500-200">Cost</span>
+                        <Badge variant="outline" className="border-gold-700/50 text-gold-700">$1.5 billion</Badge>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">Man-hours</span>
-                        <Badge variant="outline" className="border-gold/50 text-gold">22 million</Badge>
+                        <span className="text-sm font-medium text-platinum-500-200">Man-hours</span>
+                        <Badge variant="outline" className="border-gold-700/50 text-gold-700">22 million</Badge>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">Concrete Used</span>
-                        <Badge variant="outline" className="border-gold/50 text-gold">330,000 m³</Badge>
+                        <span className="text-sm font-medium text-platinum-500-200">Concrete Used</span>
+                        <Badge variant="outline" className="border-gold-700/50 text-gold-700">330,000 m³</Badge>
                       </div>
                     </div>
                   </CardContent>
@@ -302,19 +302,19 @@ export default function ModernizationPage() {
                     <div className="space-y-3">
                       <div className="flex items-start gap-3 rounded-lg bg-red-500/10 border border-red-500/30 p-3">
                         <Badge variant="destructive" className="shrink-0">Nov 25, 2009</Badge>
-                        <span className="text-sm text-platinum-300">Dubai World requested restructuring of $26B debts</span>
+                        <span className="text-sm text-platinum-500-300">Dubai World requested restructuring of $26B debts</span>
                       </div>
                       <div className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3">
                         <Badge variant="outline" className="shrink-0">Dec 2009</Badge>
-                        <span className="text-sm text-platinum-300">Abu Dhabi provided $10B initial bailout ($20B total)</span>
+                        <span className="text-sm text-platinum-500-300">Abu Dhabi provided $10B initial bailout ($20B total)</span>
                       </div>
                       <div className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3">
                         <Badge variant="outline" className="shrink-0">Mar 2010</Badge>
-                        <span className="text-sm text-platinum-300">Dubai World laid out restructuring plans</span>
+                        <span className="text-sm text-platinum-500-300">Dubai World laid out restructuring plans</span>
                       </div>
                       <div className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3">
                         <Badge variant="outline" className="shrink-0">Oct 2010</Badge>
-                        <span className="text-sm text-platinum-300">Dubai World signed last investor to $23B restructuring</span>
+                        <span className="text-sm text-platinum-500-300">Dubai World signed last investor to $23B restructuring</span>
                       </div>
                     </div>
                   </CardContent>
@@ -332,19 +332,19 @@ export default function ModernizationPage() {
                     <CardContent>
                       <div className="space-y-3">
                         <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                          <span className="text-sm font-medium text-platinum-200">Initial Bailout</span>
+                          <span className="text-sm font-medium text-platinum-500-200">Initial Bailout</span>
                           <Badge variant="outline" className="border-amber-500/50 text-amber-400">$10B</Badge>
                         </div>
                         <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                          <span className="text-sm font-medium text-platinum-200">Total Support</span>
+                          <span className="text-sm font-medium text-platinum-500-200">Total Support</span>
                           <Badge variant="outline" className="border-amber-500/50 text-amber-400">$20B</Badge>
                         </div>
                         <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                          <span className="text-sm font-medium text-platinum-200">To Nakheel</span>
+                          <span className="text-sm font-medium text-platinum-500-200">To Nakheel</span>
                           <Badge variant="outline" className="border-amber-500/50 text-amber-400">$4.1B</Badge>
                         </div>
                         <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                          <span className="text-sm font-medium text-platinum-200">To Dubai World</span>
+                          <span className="text-sm font-medium text-platinum-500-200">To Dubai World</span>
                           <Badge variant="outline" className="border-amber-500/50 text-amber-400">$5.9B</Badge>
                         </div>
                       </div>
@@ -354,7 +354,7 @@ export default function ModernizationPage() {
                   <Card className="glass-card border-platinum-500/20">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <TrendingDown className="h-5 w-5 text-platinum-400" />
+                        <TrendingDown className="h-5 w-5 text-platinum-500-400" />
                         Property Market Collapse
                       </CardTitle>
                       <CardDescription>2008-2009 correction</CardDescription>
@@ -362,12 +362,12 @@ export default function ModernizationPage() {
                     <CardContent>
                       <div className="space-y-4">
                         <div className="text-center p-4 rounded-lg bg-platinum-800/50">
-                          <div className="text-3xl font-bold text-platinum-400">-40% to -60%</div>
-                          <div className="text-sm text-platinum-400">Property price decline from 2008 peak</div>
+                          <div className="text-3xl font-bold text-platinum-500-400">-40% to -60%</div>
+                          <div className="text-sm text-platinum-500-400">Property price decline from 2008 peak</div>
                         </div>
                         <div className="text-center p-4 rounded-lg bg-platinum-800/50">
-                          <div className="text-3xl font-bold text-platinum-400">-40%</div>
-                          <div className="text-sm text-platinum-400">Q1 2009 alone</div>
+                          <div className="text-3xl font-bold text-platinum-500-400">-40%</div>
+                          <div className="text-sm text-platinum-500-400">Q1 2009 alone</div>
                         </div>
                       </div>
                     </CardContent>
@@ -392,15 +392,15 @@ export default function ModernizationPage() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">du Launch</span>
+                        <span className="text-sm font-medium text-platinum-500-200">du Launch</span>
                         <Badge variant="outline" className="border-cyan-500/50 text-cyan-400">February 2007</Badge>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">Market Share Target</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Market Share Target</span>
                         <Badge variant="outline" className="border-cyan-500/50 text-cyan-400">30% in 3 years</Badge>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">Etisalat Monopoly</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Etisalat Monopoly</span>
                         <Badge variant="outline" className="border-cyan-500/50 text-cyan-400">30 years broken</Badge>
                       </div>
                     </div>
@@ -418,11 +418,11 @@ export default function ModernizationPage() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">Economic Assistance</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Economic Assistance</span>
                         <Badge variant="outline" className="border-rose-500/50 text-rose-400">$215 million</Badge>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">Iraq Debt Cancelled</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Iraq Debt Cancelled</span>
                         <Badge variant="outline" className="border-rose-500/50 text-rose-400">~$7 billion</Badge>
                       </div>
                     </div>
@@ -440,15 +440,15 @@ export default function ModernizationPage() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">Red Line Opening</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Red Line Opening</span>
                         <Badge variant="outline" className="border-violet-500/50 text-violet-400">September 2009</Badge>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">Project Cost</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Project Cost</span>
                         <Badge variant="outline" className="border-violet-500/50 text-violet-400">$4.2 billion</Badge>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">Network Length</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Network Length</span>
                         <Badge variant="outline" className="border-violet-500/50 text-violet-400">75 km / 47 stations</Badge>
                       </div>
                     </div>
@@ -465,27 +465,27 @@ export default function ModernizationPage() {
                 <div className="space-y-4">
                   {timelineData.map((event, idx) => (
                     <div key={idx} className="flex items-start gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/20 text-gold shrink-0">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-700/20 text-gold-700 shrink-0">
                         <Calendar className="h-6 w-6" />
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-lg font-mono font-bold text-gold">{event.date}</span>
+                          <span className="text-lg font-mono font-bold text-gold-700">{event.date}</span>
                           {getSignificanceBadge(event.significance)}
                         </div>
-                        <h3 className="text-xl font-bold text-platinum-100 mb-2">{event.title}</h3>
-                        <p className="text-platinum-400 leading-relaxed">{event.description}</p>
+                        <h3 className="text-xl font-bold text-platinum-500-100 mb-2">{event.title}</h3>
+                        <p className="text-platinum-500-400 leading-relaxed">{event.description}</p>
                         {event.entities && event.entities.length > 0 && (
                           <div className="mt-3 flex flex-wrap gap-2">
                             {event.entities.map((entity, eIdx) => (
-                              <Badge key={eIdx} variant="outline" className="text-xs border-gold/30 text-gold">{entity}</Badge>
+                              <Badge key={eIdx} variant="outline" className="text-xs border-gold-700/30 text-gold-700">{entity}</Badge>
                             ))}
                           </div>
                         )}
                         {event.outcome && (
                           <div className="mt-3 rounded-lg bg-emerald-500/10 p-2 border border-emerald-500/30">
                             <span className="text-xs text-emerald-400 font-medium">Outcome: </span>
-                            <span className="text-xs text-platinum-300">{event.outcome}</span>
+                            <span className="text-xs text-platinum-500-300">{event.outcome}</span>
                           </div>
                         )}
                       </div>
@@ -514,7 +514,7 @@ export default function ModernizationPage() {
                   <CardTitle className="text-lg">About This Era</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-platinum-300 leading-relaxed">
+                  <p className="text-platinum-500-300 leading-relaxed">
                     {data.description}
                   </p>
                 </CardContent>
@@ -530,12 +530,12 @@ export default function ModernizationPage() {
                     <div className="space-y-3">
                       {achievements.slice(0, 4).map((item, idx) => (
                         <div key={idx} className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3">
-                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold/20 text-gold shrink-0">
+                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold-700/20 text-gold-700 shrink-0">
                             <item.icon className="h-4 w-4" />
                           </div>
                           <div>
-                            <div className="font-medium text-platinum-200">{item.title}</div>
-                            <div className="text-xs text-platinum-400">{item.desc}</div>
+                            <div className="font-medium text-platinum-500-200">{item.title}</div>
+                            <div className="text-xs text-platinum-500-400">{item.desc}</div>
                           </div>
                         </div>
                       ))}
@@ -554,10 +554,10 @@ export default function ModernizationPage() {
                         {data.policyOutcomes?.map((policy, idx) => (
                           <div key={idx} className="rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center justify-between mb-1">
-                              <span className="text-sm font-medium text-gold">{policy.policy}</span>
+                              <span className="text-sm font-medium text-gold-700">{policy.policy}</span>
                               <Badge variant="outline" className="text-xs">{policy.year}</Badge>
                             </div>
-                            <p className="text-xs text-platinum-400">{policy.impact}</p>
+                            <p className="text-xs text-platinum-500-400">{policy.impact}</p>
                           </div>
                         ))}
                       </div>
@@ -574,7 +574,7 @@ export default function ModernizationPage() {
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
                     {data.entityInvolvement?.map((entity, idx) => (
-                      <Badge key={idx} variant="outline" className="border-gold/50 text-gold">{entity}</Badge>
+                      <Badge key={idx} variant="outline" className="border-gold-700/50 text-gold-700">{entity}</Badge>
                     ))}
                   </div>
                 </CardContent>
@@ -588,14 +588,14 @@ export default function ModernizationPage() {
           <GlassPanel title="Major Achievements" description="Transformative accomplishments of the era">
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {achievements.map((item, idx) => (
-                <Card key={idx} className="glass-card border-gold/30">
+                <Card key={idx} className="glass-card border-gold-700/30">
                   <CardContent className="p-4">
                     <div className="flex flex-col items-center text-center">
-                      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-gold text-navy-950 mb-3">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-gold text-navy-500-950 mb-3">
                         <item.icon className="h-8 w-8" />
                       </div>
-                      <h3 className="text-lg font-bold text-platinum-100 mb-1">{item.title}</h3>
-                      <p className="text-sm text-platinum-400">{item.desc}</p>
+                      <h3 className="text-lg font-bold text-platinum-500-100 mb-1">{item.title}</h3>
+                      <p className="text-sm text-platinum-500-400">{item.desc}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -605,32 +605,32 @@ export default function ModernizationPage() {
             <Card className="glass-card mt-6">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Rocket className="h-5 w-5 text-gold" />
+                  <Rocket className="h-5 w-5 text-gold-700" />
                   Hope Mars Mission - February 9, 2021
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-platinum-300 leading-relaxed mb-4">
+                <p className="text-platinum-500-300 leading-relaxed mb-4">
                   The Emirates Mars Mission successfully entered Mars orbit on first attempt.
                   Also known as the Hope Probe, this mission marked the Arab world&apos;s first
                   Mars mission and was extended to continue scientific observations until 2028.
                 </p>
                 <div className="grid gap-4 sm:grid-cols-4">
                   <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
-                    <div className="text-2xl font-bold text-gold">600M km</div>
-                    <div className="text-xs text-platinum-400">Journey Distance</div>
+                    <div className="text-2xl font-bold text-gold-700">600M km</div>
+                    <div className="text-xs text-platinum-500-400">Journey Distance</div>
                   </div>
                   <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
-                    <div className="text-2xl font-bold text-gold">6 years</div>
-                    <div className="text-xs text-platinum-400">Development Time</div>
+                    <div className="text-2xl font-bold text-gold-700">6 years</div>
+                    <div className="text-xs text-platinum-500-400">Development Time</div>
                   </div>
                   <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
-                    <div className="text-2xl font-bold text-gold">1st Attempt</div>
-                    <div className="text-xs text-platinum-400">Mars Orbit Success</div>
+                    <div className="text-2xl font-bold text-gold-700">1st Attempt</div>
+                    <div className="text-xs text-platinum-500-400">Mars Orbit Success</div>
                   </div>
                   <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
-                    <div className="text-2xl font-bold text-gold">2028</div>
-                    <div className="text-xs text-platinum-400">Mission Extension</div>
+                    <div className="text-2xl font-bold text-gold-700">2028</div>
+                    <div className="text-xs text-platinum-500-400">Mission Extension</div>
                   </div>
                 </div>
               </CardContent>
@@ -642,7 +642,7 @@ export default function ModernizationPage() {
         <TabsContent value="vision" className="space-y-6">
           <GlassPanel title="UAE Vision 2021" description="National strategic framework">
             <div className="space-y-6">
-              <Card className="glass-card border-gold/30">
+              <Card className="glass-card border-gold-700/30">
                 <CardHeader>
                   <CardTitle className="text-lg">Vision 2021 Pillars</CardTitle>
                   <CardDescription>Four pillars of national development</CardDescription>
@@ -656,10 +656,10 @@ export default function ModernizationPage() {
                       { pillar: 'United in Prosperity', icon: TrendingUp },
                     ].map((item, idx) => (
                       <div key={idx} className="flex flex-col items-center rounded-lg bg-platinum-800/50 p-4 text-center">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/20 text-gold mb-2">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-700/20 text-gold-700 mb-2">
                           <item.icon className="h-6 w-6" />
                         </div>
-                        <span className="font-medium text-platinum-200">{item.pillar}</span>
+                        <span className="font-medium text-platinum-500-200">{item.pillar}</span>
                       </div>
                     ))}
                   </div>
@@ -676,7 +676,7 @@ export default function ModernizationPage() {
                       {data.nationBuildingMilestones?.map((milestone, idx) => (
                         <div key={idx} className="flex items-start gap-2 text-sm">
                           <div className="h-2 w-2 rounded-full bg-gold mt-1.5 shrink-0" />
-                          <span className="text-platinum-300">{milestone}</span>
+                          <span className="text-platinum-500-300">{milestone}</span>
                         </div>
                       ))}
                     </div>
@@ -692,16 +692,16 @@ export default function ModernizationPage() {
                 <CardContent>
                   <div className="space-y-3">
                     <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                      <span className="text-sm font-medium text-platinum-200">AI Minister Appointment</span>
-                      <Badge variant="outline" className="border-gold/50 text-gold">World First</Badge>
+                      <span className="text-sm font-medium text-platinum-500-200">AI Minister Appointment</span>
+                      <Badge variant="outline" className="border-gold-700/50 text-gold-700">World First</Badge>
                     </div>
                     <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                      <span className="text-sm font-medium text-platinum-200">Nine Priority Sectors</span>
-                      <Badge variant="outline" className="border-gold/50 text-gold">Identified</Badge>
+                      <span className="text-sm font-medium text-platinum-500-200">Nine Priority Sectors</span>
+                      <Badge variant="outline" className="border-gold-700/50 text-gold-700">Identified</Badge>
                     </div>
                     <div className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                      <span className="text-sm font-medium text-platinum-200">Economic Target</span>
-                      <Badge variant="outline" className="border-gold/50 text-gold">AED 335-352B</Badge>
+                      <span className="text-sm font-medium text-platinum-500-200">Economic Target</span>
+                      <Badge variant="outline" className="border-gold-700/50 text-gold-700">AED 335-352B</Badge>
                     </div>
                   </div>
                 </CardContent>
@@ -717,27 +717,27 @@ export default function ModernizationPage() {
               <div className="space-y-4">
                 {timelineData.map((event, idx) => (
                   <div key={idx} className="flex items-start gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold/20 text-gold shrink-0">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-700/20 text-gold-700 shrink-0">
                       <Calendar className="h-6 w-6" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-lg font-mono font-bold text-gold">{event.date}</span>
+                        <span className="text-lg font-mono font-bold text-gold-700">{event.date}</span>
                         {getSignificanceBadge(event.significance)}
                       </div>
-                      <h3 className="text-xl font-bold text-platinum-100 mb-2">{event.title}</h3>
-                      <p className="text-platinum-400 leading-relaxed">{event.description}</p>
+                      <h3 className="text-xl font-bold text-platinum-500-100 mb-2">{event.title}</h3>
+                      <p className="text-platinum-500-400 leading-relaxed">{event.description}</p>
                       {event.entities && event.entities.length > 0 && (
                         <div className="mt-3 flex flex-wrap gap-2">
                           {event.entities.map((entity, eIdx) => (
-                            <Badge key={eIdx} variant="outline" className="text-xs border-gold/30 text-gold">{entity}</Badge>
+                            <Badge key={eIdx} variant="outline" className="text-xs border-gold-700/30 text-gold-700">{entity}</Badge>
                           ))}
                         </div>
                       )}
                       {event.outcome && (
                         <div className="mt-3 rounded-lg bg-emerald-500/10 p-2 border border-emerald-500/30">
                           <span className="text-xs text-emerald-400 font-medium">Outcome: </span>
-                          <span className="text-xs text-platinum-300">{event.outcome}</span>
+                          <span className="text-xs text-platinum-500-300">{event.outcome}</span>
                         </div>
                       )}
                     </div>

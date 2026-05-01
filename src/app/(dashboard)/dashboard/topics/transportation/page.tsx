@@ -173,17 +173,17 @@ export default function TransportationLogisticsPage() {
       <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
           <SectorBadge />
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Transportation & Logistics</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Transportation & Logistics</h1>
+          <p className="mt-2 text-platinum-500-400">
             UAE logistics market intelligence: ports, aviation, rail, public transport, cold chain, sanctions, and infrastructure
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <Ship className="h-4 w-4" />
             Port Monitor
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Zap className="h-4 w-4" />
             Export Report
           </Button>
@@ -258,7 +258,7 @@ export default function TransportationLogisticsPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Ship className="h-5 w-5 text-gold" /> Port & Maritime
+                      <Ship className="h-5 w-5 text-gold-700" /> Port & Maritime
                     </CardTitle>
                     <CardDescription>DP World, Khalifa Port, Jebel Ali performance</CardDescription>
                   </CardHeader>
@@ -272,11 +272,11 @@ export default function TransportationLogisticsPage() {
                       ].map((item, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-200">{item.label}</span>
-                            <span className="text-lg font-bold text-gold">{item.value}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.label}</span>
+                            <span className="text-lg font-bold text-gold-700">{item.value}</span>
                           </div>
                           <Progress value={Math.random() * 60 + 20} className="h-2" />
-                          <p className="text-xs text-platinum-400">{item.sublabel}</p>
+                          <p className="text-xs text-platinum-500-400">{item.sublabel}</p>
                         </div>
                       ))}
                     </div>
@@ -287,7 +287,7 @@ export default function TransportationLogisticsPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Plane className="h-5 w-5 text-navy" /> Aviation & Rail
+                      <Plane className="h-5 w-5 text-navy-500" /> Aviation & Rail
                     </CardTitle>
                     <CardDescription>Emirates, Etihad Cargo, Etihad Rail performance</CardDescription>
                   </CardHeader>
@@ -301,11 +301,11 @@ export default function TransportationLogisticsPage() {
                       ].map((item, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-200">{item.label}</span>
-                            <span className="text-lg font-bold text-navy">{item.value}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.label}</span>
+                            <span className="text-lg font-bold text-navy-500">{item.value}</span>
                           </div>
                           <Progress value={Math.random() * 60 + 20} className="h-2" />
-                          <p className="text-xs text-platinum-400">{item.sublabel}</p>
+                          <p className="text-xs text-platinum-500-400">{item.sublabel}</p>
                         </div>
                       ))}
                     </div>
@@ -318,7 +318,7 @@ export default function TransportationLogisticsPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Train className="h-5 w-5 text-emerald" /> Public Transport
+                      <Train className="h-5 w-5 text-emerald-500" /> Public Transport
                     </CardTitle>
                     <CardDescription>Dubai Metro, buses, taxis, marine transport</CardDescription>
                   </CardHeader>
@@ -332,11 +332,11 @@ export default function TransportationLogisticsPage() {
                       ].map((item, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-200">{item.label}</span>
-                            <span className="text-lg font-bold text-emerald">{item.value}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.label}</span>
+                            <span className="text-lg font-bold text-emerald-500">{item.value}</span>
                           </div>
                           <Progress value={Math.random() * 60 + 20} className="h-2" />
-                          <p className="text-xs text-platinum-400">{item.sublabel}</p>
+                          <p className="text-xs text-platinum-500-400">{item.sublabel}</p>
                         </div>
                       ))}
                     </div>
@@ -347,7 +347,7 @@ export default function TransportationLogisticsPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Container className="h-5 w-5 text-orange" /> E-Commerce & Cold Chain
+                      <Container className="h-5 w-5 text-orange-500" /> E-Commerce & Cold Chain
                     </CardTitle>
                     <CardDescription>Last-mile delivery, cold storage, micro-mobility</CardDescription>
                   </CardHeader>
@@ -361,11 +361,11 @@ export default function TransportationLogisticsPage() {
                       ].map((item, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-200">{item.label}</span>
-                            <span className="text-lg font-bold text-orange">{item.value}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.label}</span>
+                            <span className="text-lg font-bold text-orange-500">{item.value}</span>
                           </div>
                           <Progress value={Math.random() * 60 + 20} className="h-2" />
-                          <p className="text-xs text-platinum-400">{item.sublabel}</p>
+                          <p className="text-xs text-platinum-500-400">{item.sublabel}</p>
                         </div>
                       ))}
                     </div>
@@ -383,15 +383,15 @@ export default function TransportationLogisticsPage() {
                   <div className="grid gap-4 sm:grid-cols-3">
                     <div className="rounded-lg border border-emerald-500/50 bg-emerald-500/10 p-4 text-center">
                       <div className="text-3xl font-bold text-emerald-400">58%</div>
-                      <p className="text-sm font-medium text-platinum-300">Positive</p>
+                      <p className="text-sm font-medium text-platinum-500-300">Positive</p>
                     </div>
                     <div className="rounded-lg border border-red-500/50 bg-red-500/10 p-4 text-center">
                       <div className="text-3xl font-bold text-red-400">25%</div>
-                      <p className="text-sm font-medium text-platinum-300">Negative</p>
+                      <p className="text-sm font-medium text-platinum-500-300">Negative</p>
                     </div>
                     <div className="rounded-lg border border-platinum-500/50 bg-platinum-500/10 p-4 text-center">
-                      <div className="text-3xl font-bold text-platinum-400">17%</div>
-                      <p className="text-sm font-medium text-platinum-300">Neutral</p>
+                      <div className="text-3xl font-bold text-platinum-500-400">17%</div>
+                      <p className="text-sm font-medium text-platinum-500-300">Neutral</p>
                     </div>
                   </div>
                 </CardContent>
@@ -419,8 +419,8 @@ export default function TransportationLogisticsPage() {
                         { label: 'Forecast Period', value: logisticsMarket?.marketSizeGrowth?.forecastPeriod || 'N/A' },
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{item.label}</span>
-                          <span className="font-bold text-gold">{item.value}</span>
+                          <span className="text-sm text-platinum-500-300">{item.label}</span>
+                          <span className="font-bold text-gold-700">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -436,14 +436,14 @@ export default function TransportationLogisticsPage() {
                     <div className="space-y-3">
                       {logisticsMarket?.segmentationByMode?.map((m, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{m.segment}</span>
-                          <span className="font-bold text-gold">{m.marketShare}</span>
+                          <span className="text-sm text-platinum-500-300">{m.segment}</span>
+                          <span className="font-bold text-gold-700">{m.marketShare}</span>
                         </div>
                       ))}
                       {logisticsMarket?.segmentationByModel?.map((m, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{m.segment}</span>
-                          <span className="font-bold text-navy">{m.marketShare}</span>
+                          <span className="text-sm text-platinum-500-300">{m.segment}</span>
+                          <span className="font-bold text-navy-500">{m.marketShare}</span>
                         </div>
                       ))}
                     </div>
@@ -462,12 +462,12 @@ export default function TransportationLogisticsPage() {
                       {logisticsMarket?.recentInvestments?.map((inv, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div>
-                            <p className="font-semibold text-platinum-200">{inv.company}</p>
-                            <p className="text-sm text-platinum-400">{inv.facility}</p>
+                            <p className="font-semibold text-platinum-500-200">{inv.company}</p>
+                            <p className="text-sm text-platinum-500-400">{inv.facility}</p>
                           </div>
                           <div className="text-right">
-                            <p className="font-bold text-gold">{inv.investment}</p>
-                            <p className="text-xs text-platinum-400">{inv.year}</p>
+                            <p className="font-bold text-gold-700">{inv.investment}</p>
+                            <p className="text-xs text-platinum-500-400">{inv.year}</p>
                           </div>
                         </div>
                       ))}
@@ -501,8 +501,8 @@ export default function TransportationLogisticsPage() {
                         { label: 'Countries', value: portsMaritime?.dpWorldCorporateData?.countriesCovered || 'N/A' },
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{item.label}</span>
-                          <span className="font-bold text-gold">{item.value}</span>
+                          <span className="text-sm text-platinum-500-300">{item.label}</span>
+                          <span className="font-bold text-gold-700">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -519,10 +519,10 @@ export default function TransportationLogisticsPage() {
                       {portsMaritime?.portEfficiencyRankings?.map((p, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                           <div>
-                            <p className="font-semibold text-platinum-200">{p.port}</p>
-                            <p className="text-xs text-platinum-400">{p.index} - {p.year}</p>
+                            <p className="font-semibold text-platinum-500-200">{p.port}</p>
+                            <p className="text-xs text-platinum-500-400">{p.index} - {p.year}</p>
                           </div>
-                          <span className="font-bold text-gold">{p.ranking}</span>
+                          <span className="font-bold text-gold-700">{p.ranking}</span>
                         </div>
                       ))}
                     </div>
@@ -543,8 +543,8 @@ export default function TransportationLogisticsPage() {
                       { label: 'UAE TEUs Handled', value: portsMaritime?.portThroughput?.uaePortsTEUsHandled || 'N/A' },
                     ].map((item, index) => (
                       <div key={index} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-300">{item.label}</span>
-                        <span className="font-bold text-gold">{item.value}</span>
+                        <span className="text-sm text-platinum-500-300">{item.label}</span>
+                        <span className="font-bold text-gold-700">{item.value}</span>
                       </div>
                     ))}
                   </div>
@@ -574,8 +574,8 @@ export default function TransportationLogisticsPage() {
                         { label: 'DXB Traffic Share', value: aviationAirCargo?.dubaiAviationDominanceStrategy?.dxbPassengerTraffic || 'N/A' },
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{item.label}</span>
-                          <span className="font-bold text-navy">{item.value}</span>
+                          <span className="text-sm text-platinum-500-300">{item.label}</span>
+                          <span className="font-bold text-navy-500">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -595,8 +595,8 @@ export default function TransportationLogisticsPage() {
                         { label: 'Hub', value: aviationAirCargo?.etihadCargo?.hub || 'N/A' },
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{item.label}</span>
-                          <span className="font-bold text-emerald">{item.value}</span>
+                          <span className="text-sm text-platinum-500-300">{item.label}</span>
+                          <span className="font-bold text-emerald-500">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -613,18 +613,18 @@ export default function TransportationLogisticsPage() {
                   <div className="grid gap-4 sm:grid-cols-3">
                     <div className="rounded-lg border border-red-500/50 bg-red-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-red-400">1.4M+</div>
-                      <p className="text-xs text-platinum-300">Passengers Affected</p>
-                      <p className="text-xs text-platinum-400">March 1-12, 2026</p>
+                      <p className="text-xs text-platinum-500-300">Passengers Affected</p>
+                      <p className="text-xs text-platinum-500-400">March 1-12, 2026</p>
                     </div>
                     <div className="rounded-lg border border-amber-500/50 bg-amber-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-amber-400">7,839</div>
-                      <p className="text-xs text-platinum-300">Aircraft Movements</p>
-                      <p className="text-xs text-platinum-400">In UAE airspace</p>
+                      <p className="text-xs text-platinum-500-300">Aircraft Movements</p>
+                      <p className="text-xs text-platinum-500-400">In UAE airspace</p>
                     </div>
                     <div className="rounded-lg border border-emerald-500/50 bg-emerald-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">44.6%</div>
-                      <p className="text-xs text-platinum-300">Recovery Level</p>
-                      <p className="text-xs text-platinum-400">By March 13, 2026</p>
+                      <p className="text-xs text-platinum-500-300">Recovery Level</p>
+                      <p className="text-xs text-platinum-500-400">By March 13, 2026</p>
                     </div>
                   </div>
                 </CardContent>
@@ -653,8 +653,8 @@ export default function TransportationLogisticsPage() {
                         { label: 'Cargo Capacity Target', value: etihadRail?.networkOverview?.cargoCapacityTarget || 'N/A' },
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{item.label}</span>
-                          <span className="font-bold text-gold">{item.value}</span>
+                          <span className="text-sm text-platinum-500-300">{item.label}</span>
+                          <span className="font-bold text-gold-700">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -670,8 +670,8 @@ export default function TransportationLogisticsPage() {
                     <div className="space-y-3">
                       {etihadRail?.freightOperations2025?.map((f, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{f.commodity}</span>
-                          <span className="font-bold text-emerald">{f.volume}</span>
+                          <span className="text-sm text-platinum-500-300">{f.commodity}</span>
+                          <span className="font-bold text-emerald-500">{f.volume}</span>
                         </div>
                       ))}
                     </div>
@@ -688,17 +688,17 @@ export default function TransportationLogisticsPage() {
                   <div className="space-y-3">
                     {etihadRail?.leadership?.map((l, i) => (
                       <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                        <span className="text-sm text-platinum-300">{l.position}</span>
-                        <span className="font-bold text-platinum-200">{l.name}</span>
+                        <span className="text-sm text-platinum-500-300">{l.position}</span>
+                        <span className="font-bold text-platinum-500-200">{l.name}</span>
                       </div>
                     ))}
                     {etihadRail?.extensionsJointVentures?.map((e, i) => (
                       <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                         <div>
-                          <p className="font-semibold text-platinum-200">{e.name}</p>
-                          <p className="text-xs text-platinum-400">{e.purpose}</p>
+                          <p className="font-semibold text-platinum-500-200">{e.name}</p>
+                          <p className="text-xs text-platinum-500-400">{e.purpose}</p>
                         </div>
-                        {e.progress && <span className="font-bold text-gold">{e.progress}</span>}
+                        {e.progress && <span className="font-bold text-gold-700">{e.progress}</span>}
                       </div>
                     ))}
                   </div>
@@ -746,8 +746,8 @@ export default function TransportationLogisticsPage() {
                         { label: 'Operator', value: publicTransportDubai?.metroSystemDetails?.ownerOperator || 'N/A' },
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{item.label}</span>
-                          <span className="font-bold text-emerald">{item.value}</span>
+                          <span className="text-sm text-platinum-500-300">{item.label}</span>
+                          <span className="font-bold text-emerald-500">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -783,8 +783,8 @@ export default function TransportationLogisticsPage() {
                     <div className="space-y-3">
                       {publicTransportDubai?.busiestStations2025?.map((s, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{s.station}</span>
-                          <span className="font-bold text-gold">{s.ridership}</span>
+                          <span className="text-sm text-platinum-500-300">{s.station}</span>
+                          <span className="font-bold text-gold-700">{s.ridership}</span>
                         </div>
                       ))}
                     </div>
@@ -801,10 +801,10 @@ export default function TransportationLogisticsPage() {
                       {publicTransportDubai?.metroFloodProtection?.barriers?.map((b, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                           <div>
-                            <p className="font-semibold text-platinum-200">{b.station}</p>
-                            <p className="text-xs text-platinum-400">{b.characteristic}</p>
+                            <p className="font-semibold text-platinum-500-200">{b.station}</p>
+                            <p className="text-xs text-platinum-500-400">{b.characteristic}</p>
                           </div>
-                          <span className="font-bold text-navy">{b.barrierHeight}</span>
+                          <span className="font-bold text-navy-500">{b.barrierHeight}</span>
                         </div>
                       ))}
                     </div>
@@ -829,8 +829,8 @@ export default function TransportationLogisticsPage() {
                     <div className="space-y-3">
                       {roadTransport?.vehicleStatistics?.map((v, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{v.metric}</span>
-                          <span className="font-bold text-gold">{v.value}</span>
+                          <span className="text-sm text-platinum-500-300">{v.metric}</span>
+                          <span className="font-bold text-gold-700">{v.value}</span>
                         </div>
                       ))}
                     </div>
@@ -846,7 +846,7 @@ export default function TransportationLogisticsPage() {
                     <div className="space-y-3">
                       {roadTransport?.trafficCongestionStatistics?.slice(0, 6)?.map((t, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{t.metric}</span>
+                          <span className="text-sm text-platinum-500-300">{t.metric}</span>
                           <span className="font-bold text-red-400">{t.value}</span>
                         </div>
                       ))}
@@ -863,28 +863,28 @@ export default function TransportationLogisticsPage() {
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="space-y-3">
-                      <p className="text-sm font-semibold text-platinum-200">Fourth Federal Corridor</p>
+                      <p className="text-sm font-semibold text-platinum-500-200">Fourth Federal Corridor</p>
                       {[
                         { label: 'Length', value: roadTransport?.fourthFederalCorridor?.length || 'N/A' },
                         { label: 'Lanes', value: roadTransport?.fourthFederalCorridor?.lanes || 'N/A' },
                         { label: 'Cost', value: roadTransport?.fourthFederalCorridor?.cost || 'N/A' },
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{item.label}</span>
-                          <span className="font-bold text-navy">{item.value}</span>
+                          <span className="text-sm text-platinum-500-300">{item.label}</span>
+                          <span className="font-bold text-navy-500">{item.value}</span>
                         </div>
                       ))}
                     </div>
                     <div className="space-y-3">
-                      <p className="text-sm font-semibold text-platinum-200">BRT System</p>
+                      <p className="text-sm font-semibold text-platinum-500-200">BRT System</p>
                       {[
                         { label: 'Routes', value: roadTransport?.brtSystem?.routes || 'N/A' },
                         { label: 'Dedicated Lanes Target', value: roadTransport?.brtSystem?.dedicatedLanesTarget || 'N/A' },
                         { label: 'Journey Time Reduction', value: roadTransport?.brtSystem?.journeyTimeReduction || 'N/A' },
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{item.label}</span>
-                          <span className="font-bold text-emerald">{item.value}</span>
+                          <span className="text-sm text-platinum-500-300">{item.label}</span>
+                          <span className="font-bold text-emerald-500">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -901,8 +901,8 @@ export default function TransportationLogisticsPage() {
                   <div className="grid gap-4 sm:grid-cols-5">
                     {roadTransport?.emotionalImpact?.map((e, i) => (
                       <div key={i} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
-                        <div className="text-2xl font-bold text-gold">{e.percentage}</div>
-                        <p className="text-xs text-platinum-300 mt-1">{e.sentiment}</p>
+                        <div className="text-2xl font-bold text-gold-700">{e.percentage}</div>
+                        <p className="text-xs text-platinum-500-300 mt-1">{e.sentiment}</p>
                       </div>
                     ))}
                   </div>
@@ -932,8 +932,8 @@ export default function TransportationLogisticsPage() {
                         { label: 'UAE Global Share', value: coldChainLogistics?.marketSizeGrowth?.uaeGlobalMarketShare || 'N/A' },
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{item.label}</span>
-                          <span className="font-bold text-orange">{item.value}</span>
+                          <span className="text-sm text-platinum-500-300">{item.label}</span>
+                          <span className="font-bold text-orange-500">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -949,8 +949,8 @@ export default function TransportationLogisticsPage() {
                     <div className="space-y-3">
                       {coldChainLogistics?.marketDrivers?.map((d, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{d.driver}</span>
-                          <span className="text-xs text-gold text-right max-w-[200px]">{d.details}</span>
+                          <span className="text-sm text-platinum-500-300">{d.driver}</span>
+                          <span className="text-xs text-gold-700 text-right max-w-[200px]">{d.details}</span>
                         </div>
                       ))}
                     </div>
@@ -966,7 +966,7 @@ export default function TransportationLogisticsPage() {
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
                     {coldChainLogistics?.productsTransported?.map((p, i) => (
-                      <Badge key={i} variant="outline" className="text-gold border-gold/50">{p}</Badge>
+                      <Badge key={i} variant="outline" className="text-gold-700 border-gold-700/50">{p}</Badge>
                     ))}
                   </div>
                 </CardContent>
@@ -995,8 +995,8 @@ export default function TransportationLogisticsPage() {
                         { label: 'UAE Global Share', value: microMobilitySharedMobility?.microMobilityMarket?.uaeGlobalShare || 'N/A' },
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{item.label}</span>
-                          <span className="font-bold text-emerald">{item.value}</span>
+                          <span className="text-sm text-platinum-500-300">{item.label}</span>
+                          <span className="font-bold text-emerald-500">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -1018,8 +1018,8 @@ export default function TransportationLogisticsPage() {
                         { label: 'UAE Global Share', value: microMobilitySharedMobility?.sharedMobilityMarket?.uaeGlobalShare || 'N/A' },
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{item.label}</span>
-                          <span className="font-bold text-navy">{item.value}</span>
+                          <span className="text-sm text-platinum-500-300">{item.label}</span>
+                          <span className="font-bold text-navy-500">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -1037,7 +1037,7 @@ export default function TransportationLogisticsPage() {
                     {microMobilitySharedMobility?.abuDhabiMicroMobilityInfrastructure?.classification?.map((c, i) => (
                       <div key={i} className="rounded-lg border border-emerald-500/50 bg-emerald-500/10 p-4">
                         <p className="font-semibold text-emerald-400">{c.category}</p>
-                        <p className="text-xs text-platinum-300 mt-1">{c.description}</p>
+                        <p className="text-xs text-platinum-500-300 mt-1">{c.description}</p>
                       </div>
                     ))}
                   </div>
@@ -1077,8 +1077,8 @@ export default function TransportationLogisticsPage() {
                     <div className="space-y-3">
                       {transportEmissionsElectrification?.evAdoptionStatistics?.map((e, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{e.metric} ({e.date || 'N/A'})</span>
-                          <span className="font-bold text-emerald">{e.value}</span>
+                          <span className="text-sm text-platinum-500-300">{e.metric} ({e.date || 'N/A'})</span>
+                          <span className="font-bold text-emerald-500">{e.value}</span>
                         </div>
                       ))}
                     </div>
@@ -1096,8 +1096,8 @@ export default function TransportationLogisticsPage() {
                     <div className="space-y-3">
                       {transportEmissionsElectrification?.evTargetsPlans?.map((t, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{t.target}</span>
-                          <span className="font-bold text-gold">{t.value} <span className="text-xs text-platinum-400">({t.timeline})</span></span>
+                          <span className="text-sm text-platinum-500-300">{t.target}</span>
+                          <span className="font-bold text-gold-700">{t.value} <span className="text-xs text-platinum-500-400">({t.timeline})</span></span>
                         </div>
                       ))}
                     </div>
@@ -1113,8 +1113,8 @@ export default function TransportationLogisticsPage() {
                     <div className="space-y-3">
                       {transportEmissionsElectrification?.chargingInfrastructure?.map((c, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{c.location}</span>
-                          <span className="font-bold text-emerald">{c.stations}{c.timeline ? ` (${c.timeline})` : ''}</span>
+                          <span className="text-sm text-platinum-500-300">{c.location}</span>
+                          <span className="font-bold text-emerald-500">{c.stations}{c.timeline ? ` (${c.timeline})` : ''}</span>
                         </div>
                       ))}
                     </div>
@@ -1146,7 +1146,7 @@ export default function TransportationLogisticsPage() {
                         { label: 'Date Added', value: sanctionsSmuggling?.iranianSanctionsOceanlink?.dateAdded || 'N/A' },
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg border border-red-500/30 bg-red-500/10 p-3">
-                          <span className="text-sm text-platinum-300">{item.label}</span>
+                          <span className="text-sm text-platinum-500-300">{item.label}</span>
                           <span className="font-bold text-red-400">{item.value}</span>
                         </div>
                       ))}
@@ -1170,7 +1170,7 @@ export default function TransportationLogisticsPage() {
                         { label: 'Vessel Eagle S', value: sanctionsSmuggling?.russianShadowFleetDubai?.vesselEagleS || 'N/A' },
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg border border-red-500/30 bg-red-500/10 p-3">
-                          <span className="text-sm text-platinum-300">{item.label}</span>
+                          <span className="text-sm text-platinum-500-300">{item.label}</span>
                           <span className="font-bold text-red-400">{item.value}</span>
                         </div>
                       ))}
@@ -1189,12 +1189,12 @@ export default function TransportationLogisticsPage() {
                     {sanctionsSmuggling?.portSmugglingInterdictions?.map((s, i) => (
                       <div key={i} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                         <div className="flex items-center justify-between mb-2">
-                          <p className="font-semibold text-platinum-200">{s.name}</p>
-                          <span className="text-xs text-platinum-400">{s.date}</span>
+                          <p className="font-semibold text-platinum-500-200">{s.name}</p>
+                          <span className="text-xs text-platinum-500-400">{s.date}</span>
                         </div>
-                        <p className="text-sm text-platinum-300"><span className="text-gold font-semibold">Seized:</span> {s.seized}</p>
-                        <p className="text-sm text-platinum-400"><span className="text-platinum-300">Location:</span> {s.location}</p>
-                        {s.quote && <p className="text-xs text-platinum-400 italic mt-2">"{s.quote}"</p>}
+                        <p className="text-sm text-platinum-500-300"><span className="text-gold-700 font-semibold">Seized:</span> {s.seized}</p>
+                        <p className="text-sm text-platinum-500-400"><span className="text-platinum-500-300">Location:</span> {s.location}</p>
+                        {s.quote && <p className="text-xs text-platinum-500-400 italic mt-2">"{s.quote}"</p>}
                       </div>
                     ))}
                   </div>
@@ -1222,8 +1222,8 @@ export default function TransportationLogisticsPage() {
                       { label: 'Tariff Lines After', value: customsModernization?.twelveDigitIntegratedCustomsTariff?.tariffLinesAfter || 'N/A' },
                     ].map((item, index) => (
                       <div key={index} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
-                        <div className="text-xl font-bold text-gold">{item.value}</div>
-                        <p className="text-xs text-platinum-400 mt-1">{item.label}</p>
+                        <div className="text-xl font-bold text-gold-700">{item.value}</div>
+                        <p className="text-xs text-platinum-500-400 mt-1">{item.label}</p>
                       </div>
                     ))}
                   </div>
@@ -1244,7 +1244,7 @@ export default function TransportationLogisticsPage() {
                     ].map((item, index) => (
                       <div key={index} className="rounded-lg border border-emerald-500/50 bg-emerald-500/10 p-4 text-center">
                         <div className="text-2xl font-bold text-emerald-400">{item.value}</div>
-                        <p className="text-xs text-platinum-300 mt-1">{item.label}</p>
+                        <p className="text-xs text-platinum-500-300 mt-1">{item.label}</p>
                       </div>
                     ))}
                   </div>
@@ -1273,8 +1273,8 @@ export default function TransportationLogisticsPage() {
                         { label: 'Technical Staff', value: extremeWeatherResponse?.rtaWeatherResponseResources?.technicalStaff || 'N/A' },
                       ].map((item, index) => (
                         <div key={index} className="rounded-lg border border-navy-500/50 bg-navy-500/10 p-4 text-center">
-                          <div className="text-2xl font-bold text-navy-400">{item.value}</div>
-                          <p className="text-xs text-platinum-300 mt-1">{item.label}</p>
+                          <div className="text-2xl font-bold text-navy-500-400">{item.value}</div>
+                          <p className="text-xs text-platinum-500-300 mt-1">{item.label}</p>
                         </div>
                       ))}
                     </div>
@@ -1295,8 +1295,8 @@ export default function TransportationLogisticsPage() {
                         { label: 'Equivalent', value: extremeWeatherResponse?.rapidInterventionVehicle?.equivalent || 'N/A' },
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{item.label}</span>
-                          <span className="font-bold text-navy-400">{item.value}</span>
+                          <span className="text-sm text-platinum-500-300">{item.label}</span>
+                          <span className="font-bold text-navy-500-400">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -1321,8 +1321,8 @@ export default function TransportationLogisticsPage() {
                     <div className="space-y-3">
                       {laborConditions?.workHoursRegulations?.map((r, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{r.regulation}</span>
-                          <span className="font-bold text-platinum-200">{r.value}</span>
+                          <span className="text-sm text-platinum-500-300">{r.regulation}</span>
+                          <span className="font-bold text-platinum-500-200">{r.value}</span>
                         </div>
                       ))}
                     </div>
@@ -1339,7 +1339,7 @@ export default function TransportationLogisticsPage() {
                       {laborConditions?.migrantWorkerIssues?.map((issue, i) => (
                         <div key={i} className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-3">
                           <p className="text-sm font-semibold text-amber-400">{issue.issue}</p>
-                          <p className="text-xs text-platinum-300 mt-1">{issue.details}</p>
+                          <p className="text-xs text-platinum-500-300 mt-1">{issue.details}</p>
                         </div>
                       ))}
                     </div>
@@ -1363,8 +1363,8 @@ export default function TransportationLogisticsPage() {
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {ecommerceLogistics?.growthDrivers?.map((d, i) => (
                       <div key={i} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
-                        <p className="font-semibold text-gold">{d.driver}</p>
-                        <p className="text-xs text-platinum-300 mt-1">{d.details}</p>
+                        <p className="font-semibold text-gold-700">{d.driver}</p>
+                        <p className="text-xs text-platinum-500-300 mt-1">{d.details}</p>
                       </div>
                     ))}
                   </div>
@@ -1380,7 +1380,7 @@ export default function TransportationLogisticsPage() {
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
                       {ecommerceLogistics?.infrastructureCapabilities?.modernWarehouseFeatures?.map((f, i) => (
-                        <Badge key={i} variant="outline" className="text-gold border-gold/50">{f}</Badge>
+                        <Badge key={i} variant="outline" className="text-gold-700 border-gold-700/50">{f}</Badge>
                       ))}
                     </div>
                   </CardContent>
@@ -1394,7 +1394,7 @@ export default function TransportationLogisticsPage() {
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
                       {ecommerceLogistics?.infrastructureCapabilities?.lastMileDelivery?.map((f, i) => (
-                        <Badge key={i} variant="outline" className="text-emerald border-emerald/50">{f}</Badge>
+                        <Badge key={i} variant="outline" className="text-emerald-500 border-emerald-500/50">{f}</Badge>
                       ))}
                     </div>
                   </CardContent>
@@ -1423,8 +1423,8 @@ export default function TransportationLogisticsPage() {
                         { label: 'CAGR (2026-2031)', value: infrastructureMarket?.marketSizeGrowth?.cagr20262031 || 'N/A' },
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{item.label}</span>
-                          <span className="font-bold text-gold">{item.value}</span>
+                          <span className="text-sm text-platinum-500-300">{item.label}</span>
+                          <span className="font-bold text-gold-700">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -1441,10 +1441,10 @@ export default function TransportationLogisticsPage() {
                       {infrastructureMarket?.majorProjects?.map((p, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                           <div>
-                            <p className="text-sm font-semibold text-platinum-200">{p.project}</p>
-                            {p.status && <p className="text-xs text-platinum-400">{p.status}</p>}
+                            <p className="text-sm font-semibold text-platinum-500-200">{p.project}</p>
+                            {p.status && <p className="text-xs text-platinum-500-400">{p.status}</p>}
                           </div>
-                          <span className="font-bold text-navy">{p.value}</span>
+                          <span className="font-bold text-navy-500">{p.value}</span>
                         </div>
                       ))}
                     </div>
@@ -1469,8 +1469,8 @@ export default function TransportationLogisticsPage() {
                     <div className="space-y-3">
                       {globalLogisticsHub?.strategicPositioning?.map((s, i) => (
                         <div key={i} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
-                          <p className="font-semibold text-gold">{s.factor}</p>
-                          <p className="text-sm text-platinum-300 mt-1">{s.details}</p>
+                          <p className="font-semibold text-gold-700">{s.factor}</p>
+                          <p className="text-sm text-platinum-500-300 mt-1">{s.details}</p>
                         </div>
                       ))}
                     </div>
@@ -1487,10 +1487,10 @@ export default function TransportationLogisticsPage() {
                       {entitiesLeadership?.keyLeadership?.map((l, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                           <div>
-                            <p className="text-sm font-semibold text-platinum-200">{l.organization}</p>
-                            <p className="text-xs text-platinum-400">{l.position}</p>
+                            <p className="text-sm font-semibold text-platinum-500-200">{l.organization}</p>
+                            <p className="text-xs text-platinum-500-400">{l.position}</p>
                           </div>
-                          <span className="font-bold text-platinum-200">{l.name}</span>
+                          <span className="font-bold text-platinum-500-200">{l.name}</span>
                         </div>
                       ))}
                     </div>
@@ -1512,7 +1512,7 @@ export default function TransportationLogisticsPage() {
                       <div className="flex items-center gap-2 mb-2">
                         <Badge variant="gold" className="text-xs">{f.findingKey}</Badge>
                       </div>
-                      <p className="text-sm text-platinum-300">{f.summary}</p>
+                      <p className="text-sm text-platinum-500-300">{f.summary}</p>
                     </div>
                   ))}
                 </div>
@@ -1530,8 +1530,8 @@ export default function TransportationLogisticsPage() {
                   {sourcesSummary?.sourceEntries?.map((s, i) => (
                     <div key={i} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                       <div className="flex-1 min-w-0">
-                        <p className="text-xs text-platinum-300 truncate">{s.url}</p>
-                        <p className="text-xs text-platinum-400">{s.dataExtracted}</p>
+                        <p className="text-xs text-platinum-500-300 truncate">{s.url}</p>
+                        <p className="text-xs text-platinum-500-400">{s.dataExtracted}</p>
                       </div>
                       <Badge
                         variant={s.status === 'OK' ? 'success' : s.status.includes('Blocked') || s.status.includes('403') || s.status.includes('Error') || s.status.includes('ECONNREFUSED') ? 'destructive' : 'warning'}
@@ -1575,13 +1575,13 @@ export default function TransportationLogisticsPage() {
                     <div className="space-y-3">
                       {sentimentAnalysis?.positiveTopics?.map((t, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-3">
-                          <span className="text-sm text-platinum-300">{t.topic}</span>
+                          <span className="text-sm text-platinum-500-300">{t.topic}</span>
                           <Badge variant="success" className="text-xs">{t.sentiment}</Badge>
                         </div>
                       ))}
                       {sentimentAnalysis?.negativeTopics?.map((t, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg border border-red-500/30 bg-red-500/10 p-3">
-                          <span className="text-sm text-platinum-300">{t.topic}</span>
+                          <span className="text-sm text-platinum-500-300">{t.topic}</span>
                           <Badge variant="destructive" className="text-xs">{t.sentiment}</Badge>
                         </div>
                       ))}

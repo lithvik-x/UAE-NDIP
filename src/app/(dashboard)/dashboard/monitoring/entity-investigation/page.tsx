@@ -59,7 +59,7 @@ export default function EntityInvestigationPage() {
               Entity Investigation
             </span>
           </h1>
-          <p className="mt-2 text-platinum-400">Entity investigation intelligence — tracking organizations, individuals, and their interconnections</p>
+          <p className="mt-2 text-platinum-500-400">Entity investigation intelligence — tracking organizations, individuals, and their interconnections</p>
         </div>
       </motion.div>
 
@@ -90,11 +90,11 @@ export default function EntityInvestigationPage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Search className="h-5 w-5 text-violet-500" />Investigation Focus</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0">
-                    <div className="space-y-3 text-sm text-platinum-300">
-                      <div className="flex items-center gap-2"><Link2 className="h-4 w-4 text-rose" />Financial networks: priority</div>
-                      <div className="flex items-center gap-2"><Link2 className="h-4 w-4 text-rose" />Ownership structures: under review</div>
-                      <div className="flex items-center gap-2"><Link2 className="h-4 w-4 text-gold" />Corporate connections: monitored</div>
-                      <div className="flex items-center gap-2"><Link2 className="h-4 w-4 text-emerald" />Media entities: standard tracking</div>
+                    <div className="space-y-3 text-sm text-platinum-500-300">
+                      <div className="flex items-center gap-2"><Link2 className="h-4 w-4 text-rose-500" />Financial networks: priority</div>
+                      <div className="flex items-center gap-2"><Link2 className="h-4 w-4 text-rose-500" />Ownership structures: under review</div>
+                      <div className="flex items-center gap-2"><Link2 className="h-4 w-4 text-gold-700" />Corporate connections: monitored</div>
+                      <div className="flex items-center gap-2"><Link2 className="h-4 w-4 text-emerald-500" />Media entities: standard tracking</div>
                     </div>
                   </CardContent>
                 </motion.div>
@@ -112,10 +112,10 @@ export default function EntityInvestigationPage() {
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
                       className="rounded-lg bg-gradient-to-r from-violet-500/10 to-purple-600/5 p-4 border border-violet-500/30">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xl text-platinum-100 font-rajdhani">{e.name}</span>
+                        <span className="text-xl text-platinum-500-100 font-rajdhani">{e.name}</span>
                         <Badge variant="outline" className={`border-${e.risk === 'High' || e.risk === 'CRITICAL' ? 'rose' : e.risk === 'Medium' || e.risk === 'MEDIUM' ? 'gold' : 'emerald'}-500/50 text-${e.risk === 'High' || e.risk === 'CRITICAL' ? 'rose' : e.risk === 'Medium' || e.risk === 'MEDIUM' ? 'gold' : 'emerald'}`}>{e.risk}</Badge>
                       </div>
-                      <div className="flex items-center gap-4 text-sm text-platinum-400">
+                      <div className="flex items-center gap-4 text-sm text-platinum-500-400">
                         <span>Count: {e.count}</span>
                         <span>Type: {e.type}</span>
                       </div>
@@ -135,9 +135,9 @@ export default function EntityInvestigationPage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }}
                     className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-platinum-200">{c.entity}</span>
+                      <span className="text-sm font-medium text-platinum-500-200">{c.entity}</span>
                       <div className="flex items-center gap-3">
-                        <Badge variant="outline" className="border-violet-500/50 text-violet">{c.connections} links</Badge>
+                        <Badge variant="outline" className="border-violet-500/50 text-violet-500">{c.connections} links</Badge>
                         <Badge variant="outline" className={`border-${c.risk === 'CRITICAL' || c.risk === 'HIGH' ? 'rose' : 'platinum'}-500/50 text-${c.risk === 'CRITICAL' || c.risk === 'HIGH' ? 'rose' : 'platinum'}`}>{c.risk}</Badge>
                       </div>
                     </div>

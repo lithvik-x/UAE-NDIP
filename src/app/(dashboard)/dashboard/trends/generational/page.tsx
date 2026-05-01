@@ -317,17 +317,17 @@ export default function GenerationalTrendsPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">GENERATIONAL INSIGHTS</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Generational Shift Trends</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Generational Shift Trends</h1>
+          <p className="mt-2 text-platinum-500-400">
             Gen Z, Millennials, and Gen Alpha dynamics in the UAE - values, employment, identity, and digital behaviors
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <Users className="h-4 w-4" />
             View Demographics
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Sparkles className="h-4 w-4" />
             Analyze Generations
           </Button>
@@ -468,8 +468,8 @@ export default function GenerationalTrendsPage() {
                           whileHover={{ scale: 1.05 }}
                           className="rounded-lg bg-platinum-800/50 p-4 text-center"
                         >
-                          <p className="text-xs text-platinum-400">{kpi.kpi}</p>
-                          <p className="mt-2 text-xl font-bold text-gold">{kpi.value}</p>
+                          <p className="text-xs text-platinum-500-400">{kpi.kpi}</p>
+                          <p className="mt-2 text-xl font-bold text-gold-700">{kpi.value}</p>
                           <p className="text-xs text-emerald-400 mt-1">{kpi.trend}</p>
                           <Badge variant="outline" className="mt-2 text-xs">
                             {kpi.criticality}
@@ -518,10 +518,10 @@ export default function GenerationalTrendsPage() {
                     <div className="space-y-4">
                       {emiratizationMetrics.map((item, idx) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                          <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
+                          <span className="text-sm font-medium text-platinum-500-200">{item.metric}</span>
                           <div className="flex items-center gap-2">
-                            <span className="text-lg font-bold text-emerald">{item.value.toLocaleString()}</span>
-                            <span className="text-xs text-platinum-400">{item.unit}</span>
+                            <span className="text-lg font-bold text-emerald-500">{item.value.toLocaleString()}</span>
+                            <span className="text-xs text-platinum-500-400">{item.unit}</span>
                           </div>
                         </div>
                       ))}
@@ -539,10 +539,10 @@ export default function GenerationalTrendsPage() {
                     <div className="space-y-4">
                       {gigEconomyMetrics.map((item, idx) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                          <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
+                          <span className="text-sm font-medium text-platinum-500-200">{item.metric}</span>
                           <div className="flex items-center gap-2">
-                            <span className="text-lg font-bold text-gold">{item.value.toLocaleString()}</span>
-                            <span className="text-xs text-platinum-400">{item.unit}</span>
+                            <span className="text-lg font-bold text-gold-700">{item.value.toLocaleString()}</span>
+                            <span className="text-xs text-platinum-500-400">{item.unit}</span>
                           </div>
                         </div>
                       ))}
@@ -566,11 +566,11 @@ export default function GenerationalTrendsPage() {
                         className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4"
                       >
                         <div className="flex items-center gap-2 mb-2">
-                          <Briefcase className="h-4 w-4 text-gold" />
-                          <span className="font-medium text-platinum-200">{permit.type}</span>
+                          <Briefcase className="h-4 w-4 text-gold-700" />
+                          <span className="font-medium text-platinum-500-200">{permit.type}</span>
                         </div>
-                        <p className="text-xs text-platinum-400">Duration: {permit.duration}</p>
-                        <p className="text-xs text-platinum-500 mt-1">{permit.authority}</p>
+                        <p className="text-xs text-platinum-500-400">Duration: {permit.duration}</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">{permit.authority}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -587,10 +587,10 @@ export default function GenerationalTrendsPage() {
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
                     {educationSkillsMetrics.map((item, idx) => (
                       <div key={idx} className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                        <GraduationCap className="mx-auto h-6 w-6 text-navy mb-2" />
-                        <p className="text-xs text-platinum-400">{item.metric}</p>
-                        <p className="text-xl font-bold text-navy">{item.value}</p>
-                        <span className="text-xs text-platinum-400">{item.unit}</span>
+                        <GraduationCap className="mx-auto h-6 w-6 text-navy-500 mb-2" />
+                        <p className="text-xs text-platinum-500-400">{item.metric}</p>
+                        <p className="text-xl font-bold text-navy-500">{item.value}</p>
+                        <span className="text-xs text-platinum-500-400">{item.unit}</span>
                       </div>
                     ))}
                   </div>
@@ -609,7 +609,7 @@ export default function GenerationalTrendsPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Users className="h-5 w-5 text-gold" />
+                      <Users className="h-5 w-5 text-gold-700" />
                       Gen Z Consumer Behavior
                     </CardTitle>
                     <CardDescription>Key metrics from Deloitte, EDS Arabic, Mastercard</CardDescription>
@@ -619,10 +619,10 @@ export default function GenerationalTrendsPage() {
                       {genZConsumerMetrics.map((item, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.metric}</span>
                             <div className="flex items-center gap-2">
-                              <span className="text-lg font-bold text-gold">{item.value}</span>
-                              <span className="text-xs text-platinum-400">{item.unit}</span>
+                              <span className="text-lg font-bold text-gold-700">{item.value}</span>
+                              <span className="text-xs text-platinum-500-400">{item.unit}</span>
                             </div>
                           </div>
                           <Progress value={item.value} className="h-2" />
@@ -636,7 +636,7 @@ export default function GenerationalTrendsPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Baby className="h-5 w-5 text-platinum" />
+                      <Baby className="h-5 w-5 text-platinum-500" />
                       Gen Alpha (2013-2025) Metrics
                     </CardTitle>
                     <CardDescription>Luxury brand and consumer behavior</CardDescription>
@@ -646,10 +646,10 @@ export default function GenerationalTrendsPage() {
                       {genAlphaMetrics.map((item, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.metric}</span>
                             <div className="flex items-center gap-2">
-                              <span className="text-lg font-bold text-platinum">{item.value}</span>
-                              <span className="text-xs text-platinum-400">{item.unit}</span>
+                              <span className="text-lg font-bold text-platinum-500">{item.value}</span>
+                              <span className="text-xs text-platinum-500-400">{item.unit}</span>
                             </div>
                           </div>
                           <Progress value={item.value} className="h-2" />
@@ -675,9 +675,9 @@ export default function GenerationalTrendsPage() {
                           whileHover={{ scale: 1.05 }}
                           className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4"
                         >
-                          <Gamepad2 className="h-6 w-6 text-purple mb-2" />
-                          <p className="font-medium text-platinum-200">{item.collaboration}</p>
-                          <p className="text-xs text-platinum-400 mt-1">{item.type}</p>
+                          <Gamepad2 className="h-6 w-6 text-purple-500 mb-2" />
+                          <p className="font-medium text-platinum-500-200">{item.collaboration}</p>
+                          <p className="text-xs text-platinum-500-400 mt-1">{item.type}</p>
                           <Badge variant="outline" className="mt-2 text-xs">{item.platform}</Badge>
                         </motion.div>
                       ))}
@@ -696,10 +696,10 @@ export default function GenerationalTrendsPage() {
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {housingSupportMetrics.map((item, idx) => (
                       <div key={idx} className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                        <Home className="mx-auto h-6 w-6 text-navy mb-2" />
-                        <p className="text-xs text-platinum-400">{item.metric}</p>
-                        <p className="text-xl font-bold text-navy">{item.value}</p>
-                        <span className="text-xs text-platinum-400">{item.unit}</span>
+                        <Home className="mx-auto h-6 w-6 text-navy-500 mb-2" />
+                        <p className="text-xs text-platinum-500-400">{item.metric}</p>
+                        <p className="text-xl font-bold text-navy-500">{item.value}</p>
+                        <span className="text-xs text-platinum-500-400">{item.unit}</span>
                       </div>
                     ))}
                   </div>
@@ -723,10 +723,10 @@ export default function GenerationalTrendsPage() {
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
                     {digitalNativeMetrics.map((item, idx) => (
                       <div key={idx} className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                        <Smartphone className="mx-auto h-6 w-6 text-navy mb-2" />
-                        <p className="text-xs text-platinum-400">{item.metric}</p>
-                        <p className="text-xl font-bold text-navy">{item.value}</p>
-                        <span className="text-xs text-platinum-400">{item.unit}</span>
+                        <Smartphone className="mx-auto h-6 w-6 text-navy-500 mb-2" />
+                        <p className="text-xs text-platinum-500-400">{item.metric}</p>
+                        <p className="text-xl font-bold text-navy-500">{item.value}</p>
+                        <span className="text-xs text-platinum-500-400">{item.unit}</span>
                         {item.note && <p className="text-xs text-emerald-400 mt-1">{item.note}</p>}
                       </div>
                     ))}
@@ -744,27 +744,27 @@ export default function GenerationalTrendsPage() {
                   <div className="space-y-6">
                     <div className="flex items-center justify-between rounded-lg bg-navy/20 p-4">
                       <div className="flex items-center gap-3">
-                        <Code className="h-8 w-8 text-navy" />
+                        <Code className="h-8 w-8 text-navy-500" />
                         <div>
-                          <p className="font-medium text-platinum-200">Abu Dhabi Digital Strategy Budget</p>
-                          <p className="text-xs text-platinum-400">2025-2027 Investment</p>
+                          <p className="font-medium text-platinum-500-200">Abu Dhabi Digital Strategy Budget</p>
+                          <p className="text-xs text-platinum-500-400">2025-2027 Investment</p>
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-2xl font-bold text-navy">AED 13B</p>
+                        <p className="text-2xl font-bold text-navy-500">AED 13B</p>
                         <p className="text-xs text-emerald-400">Committed</p>
                       </div>
                     </div>
-                    <div className="flex items-center justify-between rounded-lg bg-purple/20 p-4">
+                    <div className="flex items-center justify-between rounded-lg bg-purple-500/20 p-4">
                       <div className="flex items-center gap-3">
-                        <Zap className="h-8 w-8 text-purple" />
+                        <Zap className="h-8 w-8 text-purple-500" />
                         <div>
-                          <p className="font-medium text-platinum-200">Agentic AI Government Services</p>
-                          <p className="text-xs text-platinum-400">Target by 2027</p>
+                          <p className="font-medium text-platinum-500-200">Agentic AI Government Services</p>
+                          <p className="text-xs text-platinum-500-400">Target by 2027</p>
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-2xl font-bold text-purple">50%</p>
+                        <p className="text-2xl font-bold text-purple-500">50%</p>
                         <p className="text-xs text-emerald-400">of services</p>
                       </div>
                     </div>
@@ -782,30 +782,30 @@ export default function GenerationalTrendsPage() {
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-emerald" />
-                        <span className="text-sm text-platinum-200">Master advanced technologies and future skills</span>
+                        <CheckCircle className="h-4 w-4 text-emerald-500" />
+                        <span className="text-sm text-platinum-500-200">Master advanced technologies and future skills</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-emerald" />
-                        <span className="text-sm text-platinum-200">Double projects for youth in future sectors</span>
+                        <CheckCircle className="h-4 w-4 text-emerald-500" />
+                        <span className="text-sm text-platinum-500-200">Double projects for youth in future sectors</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-emerald" />
-                        <span className="text-sm text-platinum-200">Make UAE easiest country for youth to access services</span>
+                        <CheckCircle className="h-4 w-4 text-emerald-500" />
+                        <span className="text-sm text-platinum-500-200">Make UAE easiest country for youth to access services</span>
                       </div>
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
-                        <Target className="h-4 w-4 text-gold" />
-                        <span className="text-sm text-platinum-200">100+ young Emiratis for global forums</span>
+                        <Target className="h-4 w-4 text-gold-700" />
+                        <span className="text-sm text-platinum-500-200">100+ young Emiratis for global forums</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Target className="h-4 w-4 text-gold" />
-                        <span className="text-sm text-platinum-200">100% suitable career pathways</span>
+                        <Target className="h-4 w-4 text-gold-700" />
+                        <span className="text-sm text-platinum-500-200">100% suitable career pathways</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Target className="h-4 w-4 text-gold" />
-                        <span className="text-sm text-platinum-200">Top 10 globally in youth quality of life</span>
+                        <Target className="h-4 w-4 text-gold-700" />
+                        <span className="text-sm text-platinum-500-200">Top 10 globally in youth quality of life</span>
                       </div>
                     </div>
                   </div>
@@ -833,12 +833,12 @@ export default function GenerationalTrendsPage() {
                         whileHover={{ scale: 1.05 }}
                         className="rounded-lg bg-platinum-800/50 p-4 text-center"
                       >
-                        <HeartPulse className="mx-auto h-6 w-6 text-rose mb-2" />
-                        <p className="text-xs text-platinum-400">{item.metric}</p>
-                        <p className="text-xl font-bold text-rose">{item.value}</p>
-                        <span className="text-xs text-platinum-400">{item.unit}</span>
+                        <HeartPulse className="mx-auto h-6 w-6 text-rose-500 mb-2" />
+                        <p className="text-xs text-platinum-500-400">{item.metric}</p>
+                        <p className="text-xl font-bold text-rose-500">{item.value}</p>
+                        <span className="text-xs text-platinum-500-400">{item.unit}</span>
                         {item.change && <p className="text-xs text-emerald-400 mt-1">{item.change}</p>}
-                        {item.note && <p className="text-xs text-platinum-400 mt-1">{item.note}</p>}
+                        {item.note && <p className="text-xs text-platinum-500-400 mt-1">{item.note}</p>}
                       </motion.div>
                     ))}
                   </div>
@@ -854,13 +854,13 @@ export default function GenerationalTrendsPage() {
                 <CardContent>
                   <div className="flex items-center justify-center gap-8 py-8">
                     <div className="text-center">
-                      <p className="text-sm text-platinum-400">2024</p>
-                      <p className="text-4xl font-bold text-platinum">62%</p>
+                      <p className="text-sm text-platinum-500-400">2024</p>
+                      <p className="text-4xl font-bold text-platinum-500">62%</p>
                     </div>
-                    <TrendingUp className="h-12 w-12 text-emerald" />
+                    <TrendingUp className="h-12 w-12 text-emerald-500" />
                     <div className="text-center">
-                      <p className="text-sm text-platinum-400">2025</p>
-                      <p className="text-4xl font-bold text-emerald">70%</p>
+                      <p className="text-sm text-platinum-500-400">2025</p>
+                      <p className="text-4xl font-bold text-emerald-500">70%</p>
                     </div>
                     <div className="text-center">
                       <Badge variant="success" className="text-lg px-4 py-2">+8pp</Badge>
@@ -878,16 +878,16 @@ export default function GenerationalTrendsPage() {
                 <CardContent>
                   <div className="grid gap-6 lg:grid-cols-2">
                     <div className="rounded-lg bg-emerald-500/10 p-6 text-center border border-emerald-500/30">
-                      <Brain className="mx-auto h-8 w-8 text-emerald mb-3" />
-                      <p className="text-lg font-medium text-platinum-200">OECD Average</p>
-                      <p className="text-3xl font-bold text-emerald">~15</p>
-                      <p className="text-xs text-platinum-400">per 100,000</p>
+                      <Brain className="mx-auto h-8 w-8 text-emerald-500 mb-3" />
+                      <p className="text-lg font-medium text-platinum-500-200">OECD Average</p>
+                      <p className="text-3xl font-bold text-emerald-500">~15</p>
+                      <p className="text-xs text-platinum-500-400">per 100,000</p>
                     </div>
                     <div className="rounded-lg bg-rose-500/10 p-6 text-center border border-rose-500/30">
-                      <AlertCircle className="mx-auto h-8 w-8 text-rose mb-3" />
-                      <p className="text-lg font-medium text-platinum-200">Most GCC Countries</p>
-                      <p className="text-3xl font-bold text-rose">&lt;3</p>
-                      <p className="text-xs text-platinum-400">per 100,000</p>
+                      <AlertCircle className="mx-auto h-8 w-8 text-rose-500 mb-3" />
+                      <p className="text-lg font-medium text-platinum-500-200">Most GCC Countries</p>
+                      <p className="text-3xl font-bold text-rose-500">&lt;3</p>
+                      <p className="text-xs text-platinum-500-400">per 100,000</p>
                     </div>
                   </div>
                 </CardContent>
@@ -903,15 +903,15 @@ export default function GenerationalTrendsPage() {
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium text-platinum-200">Gen Z Financial Insecurity</span>
-                        <span className="text-lg font-bold text-rose">48%</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Gen Z Financial Insecurity</span>
+                        <span className="text-lg font-bold text-rose-500">48%</span>
                       </div>
                       <Progress value={48} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium text-platinum-200">Millennial Financial Insecurity</span>
-                        <span className="text-lg font-bold text-rose">46%</span>
+                        <span className="text-sm font-medium text-platinum-500-200">Millennial Financial Insecurity</span>
+                        <span className="text-lg font-bold text-rose-500">46%</span>
                       </div>
                       <Progress value={46} className="h-3" />
                     </div>
@@ -936,9 +936,9 @@ export default function GenerationalTrendsPage() {
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
                     {nationalIdentityData.map((item, idx) => (
                       <div key={idx} className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                        <Flag className="mx-auto h-6 w-6 text-gold mb-2" />
-                        <p className="text-xs text-platinum-400">{item.metric}</p>
-                        <p className="text-2xl font-bold text-gold">{item.value}</p>
+                        <Flag className="mx-auto h-6 w-6 text-gold-700 mb-2" />
+                        <p className="text-xs text-platinum-500-400">{item.metric}</p>
+                        <p className="text-2xl font-bold text-gold-700">{item.value}</p>
                       </div>
                     ))}
                   </div>
@@ -950,7 +950,7 @@ export default function GenerationalTrendsPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Heart className="h-5 w-5 text-emerald" />
+                      <Heart className="h-5 w-5 text-emerald-500" />
                       5 Core Values
                     </CardTitle>
                   </CardHeader>
@@ -964,8 +964,8 @@ export default function GenerationalTrendsPage() {
                           transition={{ delay: idx * 0.1 }}
                           className="flex items-center gap-3 rounded-lg bg-emerald-500/10 p-3"
                         >
-                          <CheckCircle className="h-4 w-4 text-emerald" />
-                          <span className="text-sm text-platinum-200">{value}</span>
+                          <CheckCircle className="h-4 w-4 text-emerald-500" />
+                          <span className="text-sm text-platinum-500-200">{value}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -976,7 +976,7 @@ export default function GenerationalTrendsPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Shield className="h-5 w-5 text-navy" />
+                      <Shield className="h-5 w-5 text-navy-500" />
                       6 Core Elements
                     </CardTitle>
                   </CardHeader>
@@ -990,8 +990,8 @@ export default function GenerationalTrendsPage() {
                           transition={{ delay: idx * 0.1 }}
                           className="flex items-center gap-3 rounded-lg bg-navy-500/10 p-3"
                         >
-                          <Award className="h-4 w-4 text-navy" />
-                          <span className="text-sm text-platinum-200">{element}</span>
+                          <Award className="h-4 w-4 text-navy-500" />
+                          <span className="text-sm text-platinum-500-200">{element}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -1008,20 +1008,20 @@ export default function GenerationalTrendsPage() {
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <Lightbulb className="mx-auto h-6 w-6 text-gold mb-2" />
-                      <p className="text-xs text-platinum-400">Research over tradition</p>
+                      <Lightbulb className="mx-auto h-6 w-6 text-gold-700 mb-2" />
+                      <p className="text-xs text-platinum-500-400">Research over tradition</p>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <Heart className="mx-auto h-6 w-6 text-rose mb-2" />
-                      <p className="text-xs text-platinum-400">Gentle parenting</p>
+                      <Heart className="mx-auto h-6 w-6 text-rose-500 mb-2" />
+                      <p className="text-xs text-platinum-500-400">Gentle parenting</p>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <Smartphone className="mx-auto h-6 w-6 text-navy mb-2" />
-                      <p className="text-xs text-platinum-400">TikTok for advice</p>
+                      <Smartphone className="mx-auto h-6 w-6 text-navy-500 mb-2" />
+                      <p className="text-xs text-platinum-500-400">TikTok for advice</p>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <Users className="mx-auto h-6 w-6 text-emerald mb-2" />
-                      <p className="text-xs text-platinum-400">Quality over quantity</p>
+                      <Users className="mx-auto h-6 w-6 text-emerald-500 mb-2" />
+                      <p className="text-xs text-platinum-500-400">Quality over quantity</p>
                     </div>
                   </div>
                 </CardContent>
@@ -1038,7 +1038,7 @@ export default function GenerationalTrendsPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Crown className="h-5 w-5 text-gold" />
+                    <Crown className="h-5 w-5 text-gold-700" />
                     Key Individuals
                   </CardTitle>
                   <CardDescription>Notable figures in generational trends</CardDescription>
@@ -1053,12 +1053,12 @@ export default function GenerationalTrendsPage() {
                           className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4"
                         >
                           <div className="flex items-center gap-3">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20">
-                              <UserCheck className="h-5 w-5 text-gold" />
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-700/20">
+                              <UserCheck className="h-5 w-5 text-gold-700" />
                             </div>
                             <div>
-                              <p className="font-medium text-platinum-200">{person.name}</p>
-                              <p className="text-xs text-platinum-400">{person.role}</p>
+                              <p className="font-medium text-platinum-500-200">{person.name}</p>
+                              <p className="text-xs text-platinum-500-400">{person.role}</p>
                             </div>
                           </div>
                           <Badge variant="outline">{person.domain}</Badge>
@@ -1073,7 +1073,7 @@ export default function GenerationalTrendsPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Building className="h-5 w-5 text-navy" />
+                    <Building className="h-5 w-5 text-navy-500" />
                     Key Organizations
                   </CardTitle>
                   <CardDescription>Government programs, initiatives, and foundations</CardDescription>
@@ -1088,8 +1088,8 @@ export default function GenerationalTrendsPage() {
                           className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4"
                         >
                           <div className="flex items-center gap-2 mb-2">
-                            <Building className="h-4 w-4 text-navy" />
-                            <span className="font-medium text-platinum-200">{org.name}</span>
+                            <Building className="h-4 w-4 text-navy-500" />
+                            <span className="font-medium text-platinum-500-200">{org.name}</span>
                           </div>
                           <div className="flex items-center gap-2">
                             <Badge variant="outline" className="text-xs">{org.type}</Badge>
@@ -1120,8 +1120,8 @@ export default function GenerationalTrendsPage() {
                             T{source.tier}
                           </Badge>
                           <div>
-                            <p className="font-medium text-platinum-200">{source.source}</p>
-                            <p className="text-xs text-platinum-400">{source.type}</p>
+                            <p className="font-medium text-platinum-500-200">{source.source}</p>
+                            <p className="text-xs text-platinum-500-400">{source.type}</p>
                           </div>
                         </div>
                         <Badge variant="outline">{source.reliability}</Badge>
@@ -1141,7 +1141,7 @@ export default function GenerationalTrendsPage() {
                   <div className="space-y-3">
                     {sentimentTopics.map((topic, idx) => (
                       <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                        <span className="text-sm font-medium text-platinum-200">{topic.topic}</span>
+                        <span className="text-sm font-medium text-platinum-500-200">{topic.topic}</span>
                         <div className="flex items-center gap-3">
                           <Badge
                             variant={

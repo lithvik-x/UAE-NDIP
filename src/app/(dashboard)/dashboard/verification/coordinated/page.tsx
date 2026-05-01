@@ -113,7 +113,7 @@ export default function CoordinatedDashboardPage() {
       case 'Tier 1':
         return <Badge variant="success" className="text-xs bg-emerald-500/20 text-emerald-400 border-emerald-500/50">Tier 1</Badge>
       case 'Tier 2':
-        return <Badge variant="default" className="text-xs bg-navy-500/20 text-navy-400 border-navy-500/50">Tier 2</Badge>
+        return <Badge variant="default" className="text-xs bg-navy-500/20 text-navy-500-400 border-navy-500/50">Tier 2</Badge>
       case 'Tier 3':
         return <Badge variant="secondary" className="text-xs bg-amber-500/20 text-amber-400 border-amber-500/50">Tier 3</Badge>
       default:
@@ -161,17 +161,17 @@ export default function CoordinatedDashboardPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="emerald" className="mb-2">V-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">Coordinated Inauthentic Behavior</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald-500">Coordinated Inauthentic Behavior</h1>
+          <p className="mt-2 text-platinum-500-400">
             Comprehensive analysis of CIB operations targeting Gulf States with focus on UAE-linked activities
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-emerald/50 text-emerald hover:bg-emerald/10">
+          <Button variant="outline" className="gap-2 border-emerald-500/50 text-emerald-500 hover:bg-emerald-500/10">
             <Search className="h-4 w-4" />
             Investigate
           </Button>
-          <Button className="bg-gradient-emerald hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-emerald hover:opacity-90 text-navy-500-950 gap-2">
             <Shield className="h-4 w-4" />
             Analyze CIB
           </Button>
@@ -225,7 +225,7 @@ export default function CoordinatedDashboardPage() {
           <AlertCircle className="h-6 w-6 text-rose-400 mt-1" />
           <div>
             <h3 className="font-semibold text-rose-400">Key Finding</h3>
-            <p className="mt-2 text-platinum-300">{data.keyFinding}</p>
+            <p className="mt-2 text-platinum-500-300">{data.keyFinding}</p>
           </div>
         </div>
       </motion.div>
@@ -280,8 +280,8 @@ export default function CoordinatedDashboardPage() {
                             className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                           >
                             <div className="flex-1">
-                              <p className="font-medium text-platinum-200 text-sm">{kpi.kpi}</p>
-                              <p className="text-xs text-platinum-500">{kpi.source}</p>
+                              <p className="font-medium text-platinum-500-200 text-sm">{kpi.kpi}</p>
+                              <p className="text-xs text-platinum-500-500">{kpi.source}</p>
                             </div>
                             <div className="text-right">
                               <p className="text-lg font-bold text-emerald-400">{kpi.value}</p>
@@ -313,12 +313,12 @@ export default function CoordinatedDashboardPage() {
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <Target className="h-5 w-5 text-emerald-400" />
-                          <h4 className="font-semibold text-platinum-200">{branch.branch}</h4>
+                          <h4 className="font-semibold text-platinum-500-200">{branch.branch}</h4>
                         </div>
-                        <p className="text-sm text-platinum-400 mb-2">{branch.purpose}</p>
+                        <p className="text-sm text-platinum-500-400 mb-2">{branch.purpose}</p>
                         <div className="space-y-1">
                           {branch.keyIndicators.map((indicator: any, i: number) => (
-                            <p key={i} className="text-xs text-platinum-500 flex items-center gap-1">
+                            <p key={i} className="text-xs text-platinum-500-500 flex items-center gap-1">
                               <Check className="h-3 w-3 text-emerald-400" />
                               {indicator}
                             </p>
@@ -349,11 +349,11 @@ export default function CoordinatedDashboardPage() {
                         <div className="flex items-center justify-between mb-2">
                           <div className="flex items-center gap-2">
                             <Badge className="bg-denim-500/20 text-denim-400 border-denim-500/50">{sig.indicatorId}</Badge>
-                            <h4 className="font-semibold text-platinum-200">{sig.signatureName}</h4>
+                            <h4 className="font-semibold text-platinum-500-200">{sig.signatureName}</h4>
                           </div>
                           <Badge variant="outline" className="text-xs">FP: {sig.falsePositiveRate}</Badge>
                         </div>
-                        <p className="text-sm text-platinum-400">{sig.detectionMethod}</p>
+                        <p className="text-sm text-platinum-500-400">{sig.detectionMethod}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -376,13 +376,13 @@ export default function CoordinatedDashboardPage() {
                   className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-6"
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <h4 className="font-semibold text-platinum-200">{def.source}</h4>
+                    <h4 className="font-semibold text-platinum-500-200">{def.source}</h4>
                     <div className="flex gap-2">
                       {getTierBadge(def.credibility)}
                       {getRelevanceBadge(def.uaeRelevance)}
                     </div>
                   </div>
-                  <blockquote className="border-l-2 border-emerald-500 pl-4 italic text-platinum-300">
+                  <blockquote className="border-l-2 border-emerald-500 pl-4 italic text-platinum-500-300">
                     "{def.definition}"
                   </blockquote>
                 </motion.div>
@@ -407,8 +407,8 @@ export default function CoordinatedDashboardPage() {
                         <div className="flex items-center gap-3">
                           <Fingerprint className="h-5 w-5 text-emerald-400" />
                           <div>
-                            <p className="font-semibold text-platinum-200">{char.characteristic}</p>
-                            <p className="text-sm text-platinum-400">{char.description}</p>
+                            <p className="font-semibold text-platinum-500-200">{char.characteristic}</p>
+                            <p className="text-sm text-platinum-500-400">{char.description}</p>
                           </div>
                         </div>
                         <Badge variant="outline" className={
@@ -441,10 +441,10 @@ export default function CoordinatedDashboardPage() {
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
                         <div className="flex items-center gap-2 mb-2">
-                          <h4 className="font-semibold text-platinum-200">{concept.concept}</h4>
+                          <h4 className="font-semibold text-platinum-500-200">{concept.concept}</h4>
                           <Badge variant="outline" className="text-xs">Overlap: {concept.overlap}</Badge>
                         </div>
-                        <p className="text-sm text-platinum-400">{concept.distinctionFromCIB}</p>
+                        <p className="text-sm text-platinum-500-400">{concept.distinctionFromCIB}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -478,8 +478,8 @@ export default function CoordinatedDashboardPage() {
                           <Badge className="bg-denim-500/20 text-denim-400 border-denim-500/50">{tactic.tacticId}</Badge>
                           {getFrequencyBadge(tactic.frequencyObserved)}
                         </div>
-                        <h4 className="font-semibold text-platinum-200 mb-1">{tactic.tacticName}</h4>
-                        <p className="text-xs text-platinum-400">{tactic.description}</p>
+                        <h4 className="font-semibold text-platinum-500-200 mb-1">{tactic.tacticName}</h4>
+                        <p className="text-xs text-platinum-500-400">{tactic.description}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -503,9 +503,9 @@ export default function CoordinatedDashboardPage() {
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <Lock className="h-5 w-5 text-rose-400" />
-                          <h4 className="font-semibold text-platinum-200">{opsec.measure}</h4>
+                          <h4 className="font-semibold text-platinum-500-200">{opsec.measure}</h4>
                         </div>
-                        <p className="text-sm text-platinum-400 mb-2">{opsec.description}</p>
+                        <p className="text-sm text-platinum-500-400 mb-2">{opsec.description}</p>
                         <Badge variant="destructive" className="text-xs bg-red-500/20 text-red-400 border-red-500/50">
                           Detection: {opsec.detectionChallenge}
                         </Badge>
@@ -533,10 +533,10 @@ export default function CoordinatedDashboardPage() {
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <Layers className="h-5 w-5 text-emerald-400" />
-                          <h4 className="font-semibold text-platinum-200">{pattern.pattern}</h4>
+                          <h4 className="font-semibold text-platinum-500-200">{pattern.pattern}</h4>
                         </div>
-                        <p className="text-sm text-platinum-400 mb-1">{pattern.description}</p>
-                        <p className="text-xs text-platinum-500 italic">{pattern.statisticalEvidence}</p>
+                        <p className="text-sm text-platinum-500-400 mb-1">{pattern.description}</p>
+                        <p className="text-xs text-platinum-500-500 italic">{pattern.statisticalEvidence}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -569,14 +569,14 @@ export default function CoordinatedDashboardPage() {
                         <AlertOctagon className="h-5 w-5 text-red-400 mt-1" />
                         <div className="flex-1">
                           <div className="flex items-center justify-between mb-1">
-                            <h4 className="font-semibold text-platinum-200">{challenge.challenge}</h4>
+                            <h4 className="font-semibold text-platinum-500-200">{challenge.challenge}</h4>
                             <Badge variant="destructive" className="text-xs bg-red-500/20 text-red-400 border-red-500/50">
                               {challenge.severity}
                             </Badge>
                           </div>
                           <div className="space-y-1">
                             {challenge.contributingFactors.map((factor: any, i: number) => (
-                              <p key={i} className="text-sm text-platinum-400">• {factor}</p>
+                              <p key={i} className="text-sm text-platinum-500-400">• {factor}</p>
                             ))}
                           </div>
                         </div>
@@ -605,9 +605,9 @@ export default function CoordinatedDashboardPage() {
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <AlertTriangle className="h-5 w-5 text-amber-400" />
-                          <h4 className="font-semibold text-platinum-200">{sign.warningSign}</h4>
+                          <h4 className="font-semibold text-platinum-500-200">{sign.warningSign}</h4>
                         </div>
-                        <p className="text-sm text-platinum-400 mb-2">{sign.description}</p>
+                        <p className="text-sm text-platinum-500-400 mb-2">{sign.description}</p>
                         <Badge variant="warning" className="text-xs bg-orange-500/20 text-orange-400 border-orange-500/50">
                           {sign.actionRequired}
                         </Badge>
@@ -636,8 +636,8 @@ export default function CoordinatedDashboardPage() {
                         <div className="flex items-center gap-3">
                           <Badge className="bg-rose-500/20 text-rose-400 border-rose-500/50">{flag.indicatorId}</Badge>
                           <div>
-                            <p className="font-semibold text-platinum-200">{flag.indicator}</p>
-                            <p className="text-sm text-platinum-400">Threshold: {flag.threshold}</p>
+                            <p className="font-semibold text-platinum-500-200">{flag.indicator}</p>
+                            <p className="text-sm text-platinum-500-400">Threshold: {flag.threshold}</p>
                           </div>
                         </div>
                         <Badge variant="outline" className="text-xs">{flag.action}</Badge>
@@ -665,10 +665,10 @@ export default function CoordinatedDashboardPage() {
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <Network className="h-5 w-5 text-emerald-400" />
-                          <h4 className="font-semibold text-platinum-200">{indicator.indicator}</h4>
+                          <h4 className="font-semibold text-platinum-500-200">{indicator.indicator}</h4>
                         </div>
-                        <p className="text-sm text-platinum-400 mb-2">{indicator.description}</p>
-                        <p className="text-xs text-platinum-500 italic">Method: {indicator.analysisMethod}</p>
+                        <p className="text-sm text-platinum-500-400 mb-2">{indicator.description}</p>
+                        <p className="text-xs text-platinum-500-500 italic">Method: {indicator.analysisMethod}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -692,7 +692,7 @@ export default function CoordinatedDashboardPage() {
                 >
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <h3 className="text-xl font-bold text-platinum-200">{op.operationName}</h3>
+                      <h3 className="text-xl font-bold text-platinum-500-200">{op.operationName}</h3>
                       {getRelevanceBadge(op.uaeRelevance)}
                     </div>
                     <Badge variant="outline" className="text-xs">{op.date}</Badge>
@@ -701,30 +701,30 @@ export default function CoordinatedDashboardPage() {
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-4">
                     <div className="rounded-lg border border-platinum-700 bg-platinum-900/50 p-3 text-center">
                       <div className="text-2xl font-bold text-emerald-400">{op.facebookAccounts}</div>
-                      <p className="text-xs text-platinum-400">FB Accounts</p>
+                      <p className="text-xs text-platinum-500-400">FB Accounts</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-900/50 p-3 text-center">
                       <div className="text-2xl font-bold text-emerald-400">{op.pages}</div>
-                      <p className="text-xs text-platinum-400">Pages</p>
+                      <p className="text-xs text-platinum-500-400">Pages</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-900/50 p-3 text-center">
                       <div className="text-2xl font-bold text-emerald-400">{op.pageFollowers}</div>
-                      <p className="text-xs text-platinum-400">Page Followers</p>
+                      <p className="text-xs text-platinum-500-400">Page Followers</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-900/50 p-3 text-center">
-                      <div className="text-2xl font-bold text-gold">{op.adSpend}</div>
-                      <p className="text-xs text-platinum-400">Ad Spend</p>
+                      <div className="text-2xl font-bold text-gold-700">{op.adSpend}</div>
+                      <p className="text-xs text-platinum-500-400">Ad Spend</p>
                     </div>
                   </div>
 
                   <div className="mb-4">
-                    <p className="text-sm text-platinum-400 mb-2">Targeted Countries: {op.targetedCountries}</p>
-                    <p className="text-sm text-platinum-400 mb-2">Attribution: {op.attribution}</p>
+                    <p className="text-sm text-platinum-500-400 mb-2">Targeted Countries: {op.targetedCountries}</p>
+                    <p className="text-sm text-platinum-500-400 mb-2">Attribution: {op.attribution}</p>
                   </div>
 
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
-                      <h4 className="font-semibold text-platinum-300 mb-2">Methods Used</h4>
+                      <h4 className="font-semibold text-platinum-500-300 mb-2">Methods Used</h4>
                       <div className="flex flex-wrap gap-2">
                         {op.methodsUsed.map((method: any, i: number) => (
                           <Badge key={i} variant="outline" className="text-xs">{method}</Badge>
@@ -732,7 +732,7 @@ export default function CoordinatedDashboardPage() {
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-platinum-300 mb-2">Content Topics</h4>
+                      <h4 className="font-semibold text-platinum-500-300 mb-2">Content Topics</h4>
                       <div className="flex flex-wrap gap-2">
                         {op.contentTopics.map((topic: any, i: number) => (
                           <Badge key={i} className="text-xs bg-denim-500/20 text-denim-400 border-denim-500/50">{topic}</Badge>
@@ -762,8 +762,8 @@ export default function CoordinatedDashboardPage() {
                         <div className="flex items-center gap-3">
                           <Megaphone className="h-5 w-5 text-emerald-400" />
                           <div>
-                            <p className="font-semibold text-platinum-200">{page.pageName}</p>
-                            <p className="text-sm text-platinum-400">{page.description}</p>
+                            <p className="font-semibold text-platinum-500-200">{page.pageName}</p>
+                            <p className="text-sm text-platinum-500-400">{page.description}</p>
                           </div>
                         </div>
                         <Badge className="bg-gold-500/20 text-gold-400 border-gold-500/50">{page.followers}</Badge>
@@ -797,7 +797,7 @@ export default function CoordinatedDashboardPage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                         >
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-200">{narrative.narrativeTheme}</p>
+                            <p className="font-medium text-platinum-500-200">{narrative.narrativeTheme}</p>
                             <div className="flex items-center gap-2 mt-1">
                               <Badge variant="outline" className="text-xs">{narrative.target}</Badge>
                               <Badge variant="outline" className="text-xs">{narrative.sourceType}</Badge>
@@ -839,8 +839,8 @@ export default function CoordinatedDashboardPage() {
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 cursor-pointer"
                       >
                         <Badge className="mb-2">{cat.categoryId}</Badge>
-                        <h4 className="font-semibold text-platinum-200 mb-1">{cat.categoryName}</h4>
-                        <p className="text-xs text-platinum-400 mb-2">{cat.description}</p>
+                        <h4 className="font-semibold text-platinum-500-200 mb-1">{cat.categoryName}</h4>
+                        <p className="text-xs text-platinum-500-400 mb-2">{cat.description}</p>
                         {getFrequencyBadge(cat.prevalence)}
                       </motion.div>
                     ))}
@@ -891,8 +891,8 @@ export default function CoordinatedDashboardPage() {
                       >
                         <Scale className="h-5 w-5 text-emerald-400 mt-1" />
                         <div>
-                          <h4 className="font-semibold text-platinum-200">{challenge.challenge}</h4>
-                          <p className="text-sm text-platinum-400">{challenge.description}</p>
+                          <h4 className="font-semibold text-platinum-500-200">{challenge.challenge}</h4>
+                          <p className="text-sm text-platinum-500-400">{challenge.description}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -916,8 +916,8 @@ export default function CoordinatedDashboardPage() {
                         transition={{ delay: idx * 0.1 }}
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
-                        <h4 className="font-semibold text-platinum-200 mb-1">{framework.framework}</h4>
-                        <p className="text-sm text-platinum-400">{framework.applicationToCIB}</p>
+                        <h4 className="font-semibold text-platinum-500-200 mb-1">{framework.framework}</h4>
+                        <p className="text-sm text-platinum-500-400">{framework.applicationToCIB}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -949,9 +949,9 @@ export default function CoordinatedDashboardPage() {
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <Bot className="h-5 w-5 text-purple-400" />
-                          <h4 className="font-semibold text-platinum-200">{trend.trend}</h4>
+                          <h4 className="font-semibold text-platinum-500-200">{trend.trend}</h4>
                         </div>
-                        <p className="text-sm text-platinum-400 mb-2">{trend.description}</p>
+                        <p className="text-sm text-platinum-500-400 mb-2">{trend.description}</p>
                         <Badge variant="destructive" className="text-xs bg-red-500/20 text-red-400 border-red-500/50">
                           Impact: {trend.detectionImpact}
                         </Badge>
@@ -979,7 +979,7 @@ export default function CoordinatedDashboardPage() {
                       >
                         <div className="flex items-center gap-3">
                           <Globe2 className="h-5 w-5 text-emerald-400" />
-                          <p className="font-medium text-platinum-200">{platform.platformSpan}</p>
+                          <p className="font-medium text-platinum-500-200">{platform.platformSpan}</p>
                         </div>
                         <div className="flex items-center gap-3">
                           <Badge variant="outline" className="text-xs">{platform.coordinationType}</Badge>
@@ -1010,11 +1010,11 @@ export default function CoordinatedDashboardPage() {
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
                         <div className="flex items-center justify-between mb-3">
-                          <h4 className="font-semibold text-platinum-200">{op.operationName}</h4>
+                          <h4 className="font-semibold text-platinum-500-200">{op.operationName}</h4>
                           <Badge variant="outline" className="text-xs">{op.source}</Badge>
                         </div>
-                        <p className="text-sm text-platinum-400 mb-2">{op.content}</p>
-                        <p className="text-xs text-platinum-500 italic mb-2">{op.details}</p>
+                        <p className="text-sm text-platinum-500-400 mb-2">{op.content}</p>
+                        <p className="text-xs text-platinum-500-500 italic mb-2">{op.details}</p>
                         <div className="flex flex-wrap gap-2">
                           <Badge variant="outline" className="text-xs">Target: {op.targetedCountries}</Badge>
                           {op.facebookAccounts > 0 && <Badge variant="outline" className="text-xs">FB: {op.facebookAccounts}</Badge>}
@@ -1053,13 +1053,13 @@ export default function CoordinatedDashboardPage() {
                         <div className="flex items-center gap-3">
                           <Flag className="h-5 w-5 text-gold-400" />
                           <div>
-                            <p className="font-semibold text-platinum-200">{threat.target}</p>
-                            <p className="text-sm text-platinum-400">{threat.primaryNarrative}</p>
+                            <p className="font-semibold text-platinum-500-200">{threat.target}</p>
+                            <p className="text-sm text-platinum-500-400">{threat.primaryNarrative}</p>
                           </div>
                         </div>
                         <div className="text-right">
                           {getThreatBadge(threat.threatLevel)}
-                          <p className="text-xs text-platinum-500 mt-1">Engagement: {threat.engagementLevel}</p>
+                          <p className="text-xs text-platinum-500-500 mt-1">Engagement: {threat.engagementLevel}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -1084,24 +1084,24 @@ export default function CoordinatedDashboardPage() {
                         className="rounded-lg border border-gold-500/30 bg-gold-500/10 p-4"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-semibold text-platinum-200">{op.operation}</h4>
+                          <h4 className="font-semibold text-platinum-500-200">{op.operation}</h4>
                           <Badge variant="outline" className="text-xs">{op.date}</Badge>
                         </div>
                         <div className="grid gap-2 sm:grid-cols-3">
                           <div>
-                            <p className="text-xs text-platinum-500">Platforms</p>
-                            <p className="text-sm text-platinum-300">{op.platforms}</p>
+                            <p className="text-xs text-platinum-500-500">Platforms</p>
+                            <p className="text-sm text-platinum-500-300">{op.platforms}</p>
                           </div>
                           <div>
-                            <p className="text-xs text-platinum-500">Scale</p>
-                            <p className="text-sm text-platinum-300">{op.scale}</p>
+                            <p className="text-xs text-platinum-500-500">Scale</p>
+                            <p className="text-sm text-platinum-500-300">{op.scale}</p>
                           </div>
                           <div>
-                            <p className="text-xs text-platinum-500">Target</p>
-                            <p className="text-sm text-platinum-300">{op.sentimentTarget}</p>
+                            <p className="text-xs text-platinum-500-500">Target</p>
+                            <p className="text-sm text-platinum-500-300">{op.sentimentTarget}</p>
                           </div>
                         </div>
-                        <p className="text-xs text-platinum-500 mt-2">Attribution: {op.attribution}</p>
+                        <p className="text-xs text-platinum-500-500 mt-2">Attribution: {op.attribution}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1126,8 +1126,8 @@ export default function CoordinatedDashboardPage() {
                       >
                         {getRelevanceBadge(item.uaeRelevance)}
                         <div className="flex-1">
-                          <p className="font-medium text-platinum-200">{item.topicSource}</p>
-                          <p className="text-sm text-platinum-400">{item.rationale}</p>
+                          <p className="font-medium text-platinum-500-200">{item.topicSource}</p>
+                          <p className="text-sm text-platinum-500-400">{item.rationale}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -1154,15 +1154,15 @@ export default function CoordinatedDashboardPage() {
                         <div className="flex items-center gap-3">
                           <Building2 className="h-5 w-5 text-emerald-400" />
                           <div>
-                            <p className="font-semibold text-platinum-200">{firm.firmName}</p>
-                            <p className="text-sm text-platinum-400">{firm.country} • {firm.role}</p>
+                            <p className="font-semibold text-platinum-500-200">{firm.firmName}</p>
+                            <p className="text-sm text-platinum-500-400">{firm.country} • {firm.role}</p>
                           </div>
                         </div>
                         <div className="text-right">
                           <Badge variant={firm.status === 'Operating' ? 'success' : firm.status === 'Discontinued' ? 'destructive' : 'outline'} className="text-xs">
                             {firm.status}
                           </Badge>
-                          <p className="text-xs text-platinum-500 mt-1">{firm.operationDate}</p>
+                          <p className="text-xs text-platinum-500-500 mt-1">{firm.operationDate}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -1195,7 +1195,7 @@ export default function CoordinatedDashboardPage() {
                       >
                         <CheckCircle className="h-5 w-5 text-emerald-400 mt-1" />
                         <div className="flex-1">
-                          <p className="text-platinum-300">{conclusion.conclusion}</p>
+                          <p className="text-platinum-500-300">{conclusion.conclusion}</p>
                           <div className="flex items-center gap-2 mt-2">
                             {getRelevanceBadge(conclusion.uaeRelevance)}
                             <Badge variant="outline" className="text-xs">{conclusion.confidence}</Badge>
@@ -1224,7 +1224,7 @@ export default function CoordinatedDashboardPage() {
                         className="flex items-start gap-3 rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
                         <Lightbulb className="h-5 w-5 text-gold-400 mt-1" />
-                        <p className="text-sm text-platinum-300">{rec.recommendation}</p>
+                        <p className="text-sm text-platinum-500-300">{rec.recommendation}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1250,14 +1250,14 @@ export default function CoordinatedDashboardPage() {
                         >
                           <div className="flex-1">
                             <div className="flex items-center gap-2 mb-1">
-                              <p className="font-medium text-platinum-200 text-sm">{source.source}</p>
+                              <p className="font-medium text-platinum-500-200 text-sm">{source.source}</p>
                               <Badge variant="outline" className="text-xs">Tier {source.tier}</Badge>
                             </div>
-                            <p className="text-xs text-platinum-500 truncate">{source.url}</p>
+                            <p className="text-xs text-platinum-500-500 truncate">{source.url}</p>
                           </div>
                           <div className="text-right">
                             {getRelevanceBadge(source.uaeRelevance)}
-                            <p className="text-xs text-platinum-500 mt-1">{source.lastVerified}</p>
+                            <p className="text-xs text-platinum-500-500 mt-1">{source.lastVerified}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -1283,8 +1283,8 @@ export default function CoordinatedDashboardPage() {
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center"
                       >
                         <div className="text-2xl font-bold text-emerald-400">{stat.value}</div>
-                        <p className="text-sm text-platinum-400 mt-1">{stat.metric}</p>
-                        <p className="text-xs text-platinum-500 mt-1">{stat.source}</p>
+                        <p className="text-sm text-platinum-500-400 mt-1">{stat.metric}</p>
+                        <p className="text-xs text-platinum-500-500 mt-1">{stat.source}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1299,11 +1299,11 @@ export default function CoordinatedDashboardPage() {
                 <CardContent>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
-                      <p className="text-sm text-platinum-400">Last Updated</p>
+                      <p className="text-sm text-platinum-500-400">Last Updated</p>
                       <p className="text-lg font-bold text-emerald-400">{data.lastUpdated}</p>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
-                      <p className="text-sm text-platinum-400">Research Compiled</p>
+                      <p className="text-sm text-platinum-500-400">Research Compiled</p>
                       <p className="text-lg font-bold text-emerald-400">{data.researchCompiled}</p>
                     </div>
                   </div>

@@ -93,7 +93,7 @@ export function SportsTrendsSection({
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Trophy className="h-5 w-5 text-gold" />
+                    <Trophy className="h-5 w-5 text-gold-700" />
                     UAE Pro League Standings
                   </CardTitle>
                   <CardDescription>2024-25 Season Top 5</CardDescription>
@@ -108,20 +108,20 @@ export function SportsTrendsSection({
                         <div
                           className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${
                             index === 0
-                              ? 'bg-gold text-navy-950'
+                              ? 'bg-gold text-navy-500-950'
                               : index < 3
-                                ? 'bg-platinum/30 text-platinum'
-                                : 'bg-platinum-600/30 text-platinum-400'
+                                ? 'bg-platinum/30 text-platinum-500'
+                                : 'bg-platinum-600/30 text-platinum-500-400'
                           }`}
                         >
                           {team.pos}
                         </div>
                         <div className="flex-1">
-                          <p className="font-semibold text-platinum-200">{team.team}</p>
+                          <p className="font-semibold text-platinum-500-200">{team.team}</p>
                         </div>
                         <div className="text-right">
-                          <span className="text-lg font-bold text-gold">{team.pts}</span>
-                          <span className="text-xs text-platinum-400 ml-2">pts</span>
+                          <span className="text-lg font-bold text-gold-700">{team.pts}</span>
+                          <span className="text-xs text-platinum-500-400 ml-2">pts</span>
                         </div>
                       </div>
                     ))}
@@ -132,7 +132,7 @@ export function SportsTrendsSection({
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Award className="h-5 w-5 text-gold" />
+                    <Award className="h-5 w-5 text-gold-700" />
                     Top Scorers 2024-25
                   </CardTitle>
                   <CardDescription>UAE Pro League</CardDescription>
@@ -144,16 +144,16 @@ export function SportsTrendsSection({
                         key={index}
                         className="flex items-center gap-4 p-2 rounded-lg bg-platinum-800/50"
                       >
-                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gold/20 text-gold text-xs font-bold">
+                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gold-700/20 text-gold-700 text-xs font-bold">
                           {index + 1}
                         </div>
                         <div className="flex-1">
-                          <p className="font-semibold text-platinum-200">{scorer.player}</p>
-                          <p className="text-xs text-platinum-400">{scorer.club}</p>
+                          <p className="font-semibold text-platinum-500-200">{scorer.player}</p>
+                          <p className="text-xs text-platinum-500-400">{scorer.club}</p>
                         </div>
                         <div className="text-right">
-                          <span className="text-lg font-bold text-gold">{scorer.goals}</span>
-                          <span className="text-xs text-platinum-400 ml-1">goals</span>
+                          <span className="text-lg font-bold text-gold-700">{scorer.goals}</span>
+                          <span className="text-xs text-platinum-500-400 ml-1">goals</span>
                         </div>
                       </div>
                     ))}
@@ -166,7 +166,7 @@ export function SportsTrendsSection({
             <Card className="glass-card">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Target className="h-5 w-5 text-gold" />
+                  <Target className="h-5 w-5 text-gold-700" />
                   NBA UAE Partnership
                 </CardTitle>
                 <CardDescription>Key metrics</CardDescription>
@@ -178,8 +178,8 @@ export function SportsTrendsSection({
                       key={index}
                       className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3 text-center"
                     >
-                      <div className="text-2xl font-bold text-gold">{item.value}</div>
-                      <p className="text-sm text-platinum-400 mt-1">{item.item}</p>
+                      <div className="text-2xl font-bold text-gold-700">{item.value}</div>
+                      <p className="text-sm text-platinum-500-400 mt-1">{item.item}</p>
                     </div>
                   ))}
                 </div>

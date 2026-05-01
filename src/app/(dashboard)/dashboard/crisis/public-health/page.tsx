@@ -126,16 +126,16 @@ export default function PublicHealthPage() {
               Public Health
             </span>
           </h1>
-          <p className="mt-2 text-platinum-400">
+          <p className="mt-2 text-platinum-500-400">
             UAE public health intelligence — COVID-19, vaccination, disease surveillance, and digital health infrastructure
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <Badge variant="outline" className="border-emerald-500/50 text-emerald">
+          <Badge variant="outline" className="border-emerald-500/50 text-emerald-500">
             <ShieldCheck className="w-3 h-3 mr-1" />
             GREEN - Recovery
           </Badge>
-          <Badge variant="outline" className="border-platinum-500/50 text-platinum-400 text-xs">
+          <Badge variant="outline" className="border-platinum-500/50 text-platinum-500-400 text-xs">
             <Activity className="w-3 h-3 mr-1" />
             {executionMetadata.queriesExecuted} queries | {executionMetadata.pagesFetched} pages | {executionMetadata.confidence} confidence
           </Badge>
@@ -206,13 +206,13 @@ export default function PublicHealthPage() {
               <div className="grid gap-6 lg:grid-cols-2">
                 {/* Case Distribution */}
                 <div className="space-y-4">
-                  <h4 className="text-sm font-medium text-platinum-300">COVID-19 Case Distribution</h4>
+                  <h4 className="text-sm font-medium text-platinum-500-300">COVID-19 Case Distribution</h4>
                   <PieChart data={caseDistributionData} height={220} donut />
                 </div>
 
                 {/* Key Statistics */}
                 <div className="space-y-4">
-                  <h4 className="text-sm font-medium text-platinum-300">Disease Comparison</h4>
+                  <h4 className="text-sm font-medium text-platinum-500-300">Disease Comparison</h4>
                   <BarChart
                     data={diseaseComparisonData}
                     bars={[{ dataKey: 'cases', name: 'Cases', color: CHART_COLORS.info }]}
@@ -225,19 +225,19 @@ export default function PublicHealthPage() {
               <div className="mt-6 grid gap-4 md:grid-cols-4">
                 <div className="rounded-lg bg-cyan-500/10 border border-cyan-500/30 p-4 text-center">
                   <div className="text-2xl font-bold text-sky">1st</div>
-                  <div className="text-xs text-platinum-400">Middle Eastern COVID Case</div>
+                  <div className="text-xs text-platinum-500-400">Middle Eastern COVID Case</div>
                 </div>
                 <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/30 p-4 text-center">
-                  <div className="text-2xl font-bold text-emerald">2nd</div>
-                  <div className="text-xs text-platinum-400">Fastest Vaccination</div>
+                  <div className="text-2xl font-bold text-emerald-500">2nd</div>
+                  <div className="text-xs text-platinum-500-400">Fastest Vaccination</div>
                 </div>
                 <div className="rounded-lg bg-gold-500/10 border border-gold-500/30 p-4 text-center">
-                  <div className="text-2xl font-bold text-gold">80%</div>
-                  <div className="text-xs text-platinum-400">Intl Humanitarian Share</div>
+                  <div className="text-2xl font-bold text-gold-700">80%</div>
+                  <div className="text-xs text-platinum-500-400">Intl Humanitarian Share</div>
                 </div>
                 <div className="rounded-lg bg-purple-500/10 border border-purple-500/30 p-4 text-center">
-                  <div className="text-2xl font-bold text-purple">135</div>
-                  <div className="text-xs text-platinum-400">Countries Aided</div>
+                  <div className="text-2xl font-bold text-purple-500">135</div>
+                  <div className="text-xs text-platinum-500-400">Countries Aided</div>
                 </div>
               </div>
             </GlassPanel>
@@ -248,22 +248,22 @@ export default function PublicHealthPage() {
             <GlassPanel title="Risk Indicators & Response Capacity" description="Current threat levels and system capabilities">
               <div className="grid gap-6 lg:grid-cols-2">
                 <div>
-                  <h4 className="text-sm font-medium text-platinum-300 mb-3">Risk Assessment</h4>
+                  <h4 className="text-sm font-medium text-platinum-500-300 mb-3">Risk Assessment</h4>
                   <div className="space-y-2">
                     {riskIndicators.map((risk, idx) => (
                       <div key={idx} className="flex items-center justify-between rounded-lg bg-glass-surface/30 p-3 border border-glass-border">
                         <div className="flex items-center gap-2">
-                          <Bug className="h-4 w-4 text-platinum-500" />
-                          <span className="text-sm text-platinum-200">{risk.risk}</span>
+                          <Bug className="h-4 w-4 text-platinum-500-500" />
+                          <span className="text-sm text-platinum-500-200">{risk.risk}</span>
                         </div>
                         <Badge
                           variant="outline"
                           className={
                             risk.level === 'Low'
-                              ? 'border-emerald-500/50 text-emerald'
+                              ? 'border-emerald-500/50 text-emerald-500'
                               : risk.level === 'Moderate'
-                                ? 'border-gold-500/50 text-gold'
-                                : 'border-rose-500/50 text-rose'
+                                ? 'border-gold-500/50 text-gold-700'
+                                : 'border-rose-500/50 text-rose-500'
                           }
                         >
                           {risk.level}
@@ -274,23 +274,23 @@ export default function PublicHealthPage() {
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-medium text-platinum-300 mb-3">Response Capacity</h4>
+                  <h4 className="text-sm font-medium text-platinum-500-300 mb-3">Response Capacity</h4>
                   <div className="grid grid-cols-2 gap-3">
                     <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/30 p-3 text-center">
-                      <div className="text-xl font-bold text-emerald">#1</div>
-                      <div className="text-xs text-platinum-400">Emergency Prep</div>
+                      <div className="text-xl font-bold text-emerald-500">#1</div>
+                      <div className="text-xs text-platinum-500-400">Emergency Prep</div>
                     </div>
                     <div className="rounded-lg bg-cyan-500/10 border border-cyan-500/30 p-3 text-center">
                       <div className="text-xl font-bold text-sky">120+</div>
-                      <div className="text-xs text-platinum-400">Vax Locations</div>
+                      <div className="text-xs text-platinum-500-400">Vax Locations</div>
                     </div>
                     <div className="rounded-lg bg-purple-500/10 border border-purple-500/30 p-3 text-center">
-                      <div className="text-xl font-bold text-purple">6+</div>
-                      <div className="text-xs text-platinum-400">Health Apps</div>
+                      <div className="text-xl font-bold text-purple-500">6+</div>
+                      <div className="text-xs text-platinum-500-400">Health Apps</div>
                     </div>
                     <div className="rounded-lg bg-gold-500/10 border border-gold-500/30 p-3 text-center">
-                      <div className="text-xl font-bold text-gold">196</div>
-                      <div className="text-xs text-platinum-400">Medical Flights</div>
+                      <div className="text-xl font-bold text-gold-700">196</div>
+                      <div className="text-xs text-platinum-500-400">Medical Flights</div>
                     </div>
                   </div>
                 </div>
@@ -303,14 +303,14 @@ export default function PublicHealthPage() {
             <GlassPanel title="UAE Relevance Assessment" description="Strategic importance of public health to UAE">
               <div className="space-y-4">
                 <div>
-                  <h4 className="text-sm font-medium text-rose mb-2">Critical Relevance</h4>
+                  <h4 className="text-sm font-medium text-rose-500 mb-2">Critical Relevance</h4>
                   <div className="space-y-2">
                     {relevanceAssessment.critical.map((item, idx) => (
                       <div key={idx} className="flex items-start gap-3 rounded-lg bg-rose-500/5 border border-rose-500/20 p-3">
-                        <Lightbulb className="h-4 w-4 text-rose flex-shrink-0 mt-0.5" />
+                        <Lightbulb className="h-4 w-4 text-rose-500 flex-shrink-0 mt-0.5" />
                         <div>
-                          <div className="text-sm font-medium text-platinum-200">{item.topic}</div>
-                          <div className="text-xs text-platinum-500 mt-1">{item.justification}</div>
+                          <div className="text-sm font-medium text-platinum-500-200">{item.topic}</div>
+                          <div className="text-xs text-platinum-500-500 mt-1">{item.justification}</div>
                         </div>
                       </div>
                     ))}
@@ -394,29 +394,29 @@ export default function PublicHealthPage() {
             <GlassPanel title="Sentiment Analysis" description="Public perception of UAE public health response">
               <div className="grid gap-6 lg:grid-cols-2">
                 <div>
-                  <h4 className="text-sm font-medium text-platinum-300 mb-3">Sentiment Distribution</h4>
+                  <h4 className="text-sm font-medium text-platinum-500-300 mb-3">Sentiment Distribution</h4>
                   <PieChart data={sentimentData} height={220} donut />
                 </div>
 
                 <div className="space-y-4">
                   <div>
-                    <h4 className="text-sm font-medium text-emerald mb-2">Positive Sentiment</h4>
+                    <h4 className="text-sm font-medium text-emerald-500 mb-2">Positive Sentiment</h4>
                     <div className="space-y-2">
                       {sentimentAnalysis.positive.slice(0, 3).map((item, idx) => (
                         <div key={idx} className="flex items-start gap-2 rounded-lg bg-emerald-500/5 border border-emerald-500/20 p-2">
-                          <CheckCircle2 className="h-3 w-3 text-emerald flex-shrink-0 mt-0.5" />
-                          <span className="text-xs text-platinum-300">{item.finding}</span>
+                          <CheckCircle2 className="h-3 w-3 text-emerald-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-xs text-platinum-500-300">{item.finding}</span>
                         </div>
                       ))}
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-sm font-medium text-rose mb-2">Negative Sentiment</h4>
+                    <h4 className="text-sm font-medium text-rose-500 mb-2">Negative Sentiment</h4>
                     <div className="space-y-2">
                       {sentimentAnalysis.negative.slice(0, 3).map((item, idx) => (
                         <div key={idx} className="flex items-start gap-2 rounded-lg bg-rose-500/5 border border-rose-500/20 p-2">
-                          <AlertCircle className="h-3 w-3 text-rose flex-shrink-0 mt-0.5" />
-                          <span className="text-xs text-platinum-300">{item.finding}</span>
+                          <AlertCircle className="h-3 w-3 text-rose-500 flex-shrink-0 mt-0.5" />
+                          <span className="text-xs text-platinum-500-300">{item.finding}</span>
                         </div>
                       ))}
                     </div>
@@ -431,15 +431,15 @@ export default function PublicHealthPage() {
             <GlassPanel title="International Recognition" description="WHO statements on UAE healthcare">
               <div className="rounded-lg bg-gradient-to-r from-sky-500/10 to-emerald-500/10 border border-cyan-500/30 p-6">
                 <div className="flex items-start gap-4">
-                  <Award className="h-8 w-8 text-gold flex-shrink-0" />
+                  <Award className="h-8 w-8 text-gold-700 flex-shrink-0" />
                   <div>
-                    <div className="text-lg font-medium text-platinum-100 mb-2">
+                    <div className="text-lg font-medium text-platinum-500-100 mb-2">
                       "{internationalHealthCooperation.whoRelations.uaeHealthcareRanking}"
                     </div>
-                    <div className="text-sm text-platinum-400">
+                    <div className="text-sm text-platinum-500-400">
                       — {internationalHealthCooperation.whoRelations.statementBy}
                     </div>
-                    <div className="text-xs text-platinum-500 mt-1">
+                    <div className="text-xs text-platinum-500-500 mt-1">
                       {internationalHealthCooperation.whoRelations.statementDate}
                     </div>
                   </div>
@@ -453,24 +453,24 @@ export default function PublicHealthPage() {
             <GlassPanel title="Entity Registry" description="Key organizations and persons">
               <div className="grid gap-6 lg:grid-cols-2">
                 <div>
-                  <h4 className="text-sm font-medium text-platinum-300 mb-3">Key Persons</h4>
+                  <h4 className="text-sm font-medium text-platinum-500-300 mb-3">Key Persons</h4>
                   <div className="space-y-2">
                     {entityRegistry.persons.map((person, idx) => (
                       <div key={idx} className="rounded-lg bg-glass-surface/30 p-3 border border-glass-border">
-                        <div className="text-sm font-medium text-platinum-200">{person.name}</div>
-                        <div className="text-xs text-platinum-500">{person.role}</div>
+                        <div className="text-sm font-medium text-platinum-500-200">{person.name}</div>
+                        <div className="text-xs text-platinum-500-500">{person.role}</div>
                       </div>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-sm font-medium text-platinum-300 mb-3">Key Organizations</h4>
+                  <h4 className="text-sm font-medium text-platinum-500-300 mb-3">Key Organizations</h4>
                   <ScrollArea className="h-[200px]">
                     <div className="space-y-2">
                       {entityRegistry.organizations.slice(0, 8).map((org, idx) => (
                         <div key={idx} className="rounded-lg bg-glass-surface/30 p-3 border border-glass-border">
-                          <div className="text-sm font-medium text-platinum-200">{org.name}</div>
-                          <div className="text-xs text-platinum-500">{org.type} - {org.role}</div>
+                          <div className="text-sm font-medium text-platinum-500-200">{org.name}</div>
+                          <div className="text-xs text-platinum-500-500">{org.type} - {org.role}</div>
                         </div>
                       ))}
                     </div>
@@ -489,8 +489,8 @@ export default function PublicHealthPage() {
             <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-4">
               {dataSources.map((source) => (
                 <div key={source.id} className="rounded-lg bg-glass-surface/30 p-2 border border-glass-border">
-                  <div className="text-xs font-medium text-platinum-200 truncate">{source.name}</div>
-                  <div className="text-xs text-platinum-500">{source.type}</div>
+                  <div className="text-xs font-medium text-platinum-500-200 truncate">{source.name}</div>
+                  <div className="text-xs text-platinum-500-500">{source.type}</div>
                 </div>
               ))}
             </div>

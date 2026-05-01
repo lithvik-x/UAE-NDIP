@@ -53,20 +53,20 @@ export function TwitterXOverviewSection({ data }: TwitterXOverviewSectionProps) 
             <CardContent>
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
-                  <span className="text-2xl font-bold text-gold">{internetStats.internetUsers}</span>
-                  <span className="text-xs text-platinum-400">Internet Users</span>
+                  <span className="text-2xl font-bold text-gold-700">{internetStats.internetUsers}</span>
+                  <span className="text-xs text-platinum-500-400">Internet Users</span>
                 </div>
                 <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-emerald-400">{internetStats.internetPenetration}</span>
-                  <span className="text-xs text-platinum-400">Penetration</span>
+                  <span className="text-xs text-platinum-500-400">Penetration</span>
                 </div>
                 <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-info">{internetStats.fiveGCoverage}</span>
-                  <span className="text-xs text-platinum-400">5G Coverage</span>
+                  <span className="text-xs text-platinum-500-400">5G Coverage</span>
                 </div>
                 <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
-                  <span className="text-2xl font-bold text-platinum">{internetStats.twitterUsersHistorical}</span>
-                  <span className="text-xs text-platinum-400">Historical Users</span>
+                  <span className="text-2xl font-bold text-platinum-500">{internetStats.twitterUsersHistorical}</span>
+                  <span className="text-xs text-platinum-500-400">Historical Users</span>
                 </div>
               </div>
             </CardContent>
@@ -77,7 +77,7 @@ export function TwitterXOverviewSection({ data }: TwitterXOverviewSectionProps) 
             <Card className="glass-card border-glass">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <BarChart3 className="h-5 w-5 text-rose" />
+                  <BarChart3 className="h-5 w-5 text-rose-500" />
                   Sentiment Analysis
                 </CardTitle>
                 <CardDescription>Overall: {metrics.sentiment.overall} (Score: {metrics.sentiment.score})</CardDescription>
@@ -94,7 +94,7 @@ export function TwitterXOverviewSection({ data }: TwitterXOverviewSectionProps) 
             <Card className="glass-card border-glass">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Activity className="h-5 w-5 text-gold" />
+                  <Activity className="h-5 w-5 text-gold-700" />
                   Sentiment Breakdown
                 </CardTitle>
                 <CardDescription>Detailed sentiment percentages</CardDescription>
@@ -106,9 +106,9 @@ export function TwitterXOverviewSection({ data }: TwitterXOverviewSectionProps) 
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <div className="h-3 w-3 rounded-full" style={{ backgroundColor: item.color }} />
-                          <span className="text-sm font-medium text-platinum-200">{item.name}</span>
+                          <span className="text-sm font-medium text-platinum-500-200">{item.name}</span>
                         </div>
-                        <span className="text-lg font-bold text-platinum-200">{item.value}%</span>
+                        <span className="text-lg font-bold text-platinum-500-200">{item.value}%</span>
                       </div>
                     </div>
                   ))}
@@ -136,7 +136,7 @@ export function TwitterXOverviewSection({ data }: TwitterXOverviewSectionProps) 
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.05 }}
                   >
-                    <Badge variant="outline" className="text-platinum border-platinum/50 px-3 py-1">
+                    <Badge variant="outline" className="text-platinum-500 border-platinum/50 px-3 py-1">
                       <Hash className="h-3 w-3 mr-1" />
                       {tag}
                     </Badge>
@@ -150,7 +150,7 @@ export function TwitterXOverviewSection({ data }: TwitterXOverviewSectionProps) 
           <Card className="glass-card border-glass">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-emerald" />
+                <TrendingUp className="h-5 w-5 text-emerald-500" />
                 Average Engagement per Post
               </CardTitle>
               <CardDescription>Engagement metrics for UAE accounts</CardDescription>

@@ -55,17 +55,17 @@ export function SystemsSection({ data }: SystemsSectionProps) {
                 <div className="flex items-center gap-2">
                   <Radar
                     className={`h-4 w-4 ${
-                      s.status === 'Operational' ? 'text-emerald' : 'text-amber'
+                      s.status === 'Operational' ? 'text-emerald-500' : 'text-amber-500'
                     }`}
                   />
-                  <h4 className="font-medium text-platinum-200 text-sm">{s.system}</h4>
+                  <h4 className="font-medium text-platinum-500-200 text-sm">{s.system}</h4>
                 </div>
                 <Badge
                   variant="outline"
                   className={`${
                     s.status === 'Operational'
-                      ? 'border-emerald-500/50 text-emerald'
-                      : 'border-amber-500/50 text-amber'
+                      ? 'border-emerald-500/50 text-emerald-500'
+                      : 'border-amber-500/50 text-amber-500'
                   }`}
                 >
                   {s.status}
@@ -85,7 +85,7 @@ export function SystemsSection({ data }: SystemsSectionProps) {
                   }`}
                 />
               </div>
-              <p className="text-xs text-platinum-400 mt-1">{s.coverage}% coverage</p>
+              <p className="text-xs text-platinum-500-400 mt-1">{s.coverage}% coverage</p>
             </motion.div>
           ))}
         </div>

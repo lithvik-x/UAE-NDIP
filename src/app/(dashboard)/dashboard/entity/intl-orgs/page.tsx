@@ -289,7 +289,7 @@ export default function InternationalOrgsPage() {
       case 'down':
         return <ArrowDownRight className="h-4 w-4 text-red-500" />
       default:
-        return <Minus className="h-4 w-4 text-platinum-400" />
+        return <Minus className="h-4 w-4 text-platinum-500-400" />
     }
   }
 
@@ -307,22 +307,22 @@ export default function InternationalOrgsPage() {
             <Badge variant="denim" className="mb-2 text-xs font-bold tracking-wider">
               DIPLOMATIC INTELLIGENCE
             </Badge>
-            <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">
+            <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">
               International Organizations & Diplomatic Corps
             </h1>
-            <p className="mt-2 text-platinum-600 dark:text-platinum-400 font-rajdhani font-medium">
+            <p className="mt-2 text-platinum-500-600 dark:text-platinum-500-400 font-rajdhani font-medium">
               {data.overview.tableOfContents.length} content sections · {data.overview.executionMetadata.queriesExecuted} queries executed · Last enriched {data.overview.executionMetadata.dateEnriched}
             </p>
           </div>
           <div className="flex gap-3">
             <Button
               variant="outline"
-              className="gap-2 border-navy/30 text-navy hover:bg-navy/10"
+              className="gap-2 border-navy/30 text-navy-500 hover:bg-navy/10"
             >
               <Globe className="h-4 w-4" />
               Export Report
             </Button>
-            <Button className="bg-gradient-navy hover:opacity-90 text-platinum-100 gap-2">
+            <Button className="bg-gradient-navy hover:opacity-90 text-platinum-500-100 gap-2">
               <Star className="h-4 w-4" />
               Refresh Data
             </Button>
@@ -366,17 +366,17 @@ export default function InternationalOrgsPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">
+                  <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">
                     {data.unSystem.overview.residentCoordinator}
                   </p>
-                  <p className="text-sm text-platinum-500">{data.unSystem.overview.nationality}</p>
+                  <p className="text-sm text-platinum-500-500">{data.unSystem.overview.nationality}</p>
                   <div className="mt-4 space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-platinum-500">First UN Operations</span>
+                      <span className="text-platinum-500-500">First UN Operations</span>
                       <span className="font-medium">{data.unSystem.overview.firstUNOperations}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-platinum-500">Agencies in UAE</span>
+                      <span className="text-platinum-500-500">Agencies in UAE</span>
                       <span className="font-medium">{data.unSystem.overview.agenciesCount}</span>
                     </div>
                   </div>
@@ -432,11 +432,11 @@ export default function InternationalOrgsPage() {
               <Table variant="medium">
                 <TableHeader>
                   <TableRow className="border-b border-platinum-200/50 dark:border-platinum-700/50">
-                    <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Agency</TableHead>
-                    <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Full Name</TableHead>
-                    <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">UAE Office</TableHead>
-                    <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Relevance</TableHead>
-                    <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Sentiment</TableHead>
+                    <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Agency</TableHead>
+                    <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Full Name</TableHead>
+                    <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">UAE Office</TableHead>
+                    <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Relevance</TableHead>
+                    <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Sentiment</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -446,13 +446,13 @@ export default function InternationalOrgsPage() {
                       className="border-b border-platinum-100/50 dark:border-platinum-800/50 hover:bg-platinum-50/50 dark:hover:bg-platinum-800/25 transition-colors"
                     >
                       <TableCell>
-                        <span className="font-semibold text-navy-900 dark:text-platinum-100">{agency.name}</span>
+                        <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{agency.name}</span>
                       </TableCell>
                       <TableCell>
-                        <span className="text-sm text-platinum-600 dark:text-platinum-400">{agency.fullName}</span>
+                        <span className="text-sm text-platinum-500-600 dark:text-platinum-500-400">{agency.fullName}</span>
                       </TableCell>
                       <TableCell>
-                        <span className="text-sm text-platinum-600 dark:text-platinum-400">{agency.uaeOffice || 'N/A'}</span>
+                        <span className="text-sm text-platinum-500-600 dark:text-platinum-500-400">{agency.uaeOffice || 'N/A'}</span>
                       </TableCell>
                       <TableCell>
                         <div className="flex items-center gap-2 w-20">
@@ -526,8 +526,8 @@ export default function InternationalOrgsPage() {
                             )}
                           </div>
                           <div>
-                            <p className="font-medium text-navy-900 dark:text-platinum-100">{item.capability}</p>
-                            <p className="text-xs text-platinum-500 mt-1">{item.details}</p>
+                            <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{item.capability}</p>
+                            <p className="text-xs text-platinum-500-500 mt-1">{item.details}</p>
                           </div>
                         </div>
                       </div>
@@ -542,25 +542,25 @@ export default function InternationalOrgsPage() {
               <Card className="glass-card bg-gradient-to-br from-rose-50/50 to-transparent dark:from-rose-900/10">
                 <CardContent className="p-4 text-center">
                   <p className="text-2xl font-extrabold text-rose-600 dark:text-rose-400">$4.24B</p>
-                  <p className="text-xs text-platinum-500 mt-1">Sudan Aid (2015-2025)</p>
+                  <p className="text-xs text-platinum-500-500 mt-1">Sudan Aid (2015-2025)</p>
                 </CardContent>
               </Card>
               <Card className="glass-card bg-gradient-to-br from-rose-50/50 to-transparent dark:from-rose-900/10">
                 <CardContent className="p-4 text-center">
                   <p className="text-2xl font-extrabold text-rose-600 dark:text-rose-400">$784M</p>
-                  <p className="text-xs text-platinum-500 mt-1">Since 2023 Conflict</p>
+                  <p className="text-xs text-platinum-500-500 mt-1">Since 2023 Conflict</p>
                 </CardContent>
               </Card>
               <Card className="glass-card bg-gradient-to-br from-emerald-50/50 to-transparent dark:from-emerald-900/10">
                 <CardContent className="p-4 text-center">
                   <p className="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400">159</p>
-                  <p className="text-xs text-platinum-500 mt-1">Relief Flights</p>
+                  <p className="text-xs text-platinum-500-500 mt-1">Relief Flights</p>
                 </CardContent>
               </Card>
               <Card className="glass-card bg-gradient-to-br from-emerald-50/50 to-transparent dark:from-emerald-900/10">
                 <CardContent className="p-4 text-center">
                   <p className="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400">10,000+</p>
-                  <p className="text-xs text-platinum-500 mt-1">Tonnes Supplies</p>
+                  <p className="text-xs text-platinum-500-500 mt-1">Tonnes Supplies</p>
                 </CardContent>
               </Card>
             </div>
@@ -599,22 +599,22 @@ export default function InternationalOrgsPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div>
-                        <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">
+                        <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">
                           {data.gcc.secretaryGeneral.name}
                         </p>
-                        <p className="text-sm text-platinum-500">{data.gcc.secretaryGeneral.nationality}</p>
+                        <p className="text-sm text-platinum-500-500">{data.gcc.secretaryGeneral.nationality}</p>
                       </div>
                       <div className="space-y-2">
                         <div className="flex justify-between text-sm">
-                          <span className="text-platinum-500">Assumed Position</span>
+                          <span className="text-platinum-500-500">Assumed Position</span>
                           <span className="font-medium">{data.gcc.secretaryGeneral.assumedPosition}</span>
                         </div>
                         <div className="flex justify-between text-sm">
-                          <span className="text-platinum-500">序 (Order)</span>
+                          <span className="text-platinum-500-500">序 (Order)</span>
                           <span className="font-medium">{data.gcc.secretaryGeneral.序}th Secretary-General</span>
                         </div>
                         <div className="flex justify-between text-sm">
-                          <span className="text-platinum-500">Member States</span>
+                          <span className="text-platinum-500-500">Member States</span>
                           <span className="font-medium">{data.gcc.memberStates.length}</span>
                         </div>
                       </div>
@@ -637,17 +637,17 @@ export default function InternationalOrgsPage() {
                           <p className="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400">
                             {data.oic.organizationProfile.memberCount}
                           </p>
-                          <p className="text-xs text-platinum-500">Member States</p>
+                          <p className="text-xs text-platinum-500-500">Member States</p>
                         </div>
                         <div className="p-3 rounded-lg bg-denim-50/50 dark:bg-denim-900/10">
                           <p className="text-sm font-bold text-denim-600 dark:text-denim-400">
                             {data.oic.organizationProfile.globalRank}
                           </p>
-                          <p className="text-xs text-platinum-500">Global Rank</p>
+                          <p className="text-xs text-platinum-500-500">Global Rank</p>
                         </div>
                       </div>
                       <div className="flex justify-between text-sm">
-                        <span className="text-platinum-500">Headquarters</span>
+                        <span className="text-platinum-500-500">Headquarters</span>
                         <span className="font-medium">{data.oic.organizationProfile.hq}</span>
                       </div>
                     </div>
@@ -667,25 +667,25 @@ export default function InternationalOrgsPage() {
                     <CardContent>
                       <div className="space-y-4">
                         <div>
-                          <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">
+                          <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">
                             {data.gcc.secretaryGeneral.name}
                           </p>
-                          <p className="text-sm text-platinum-500">{data.gcc.secretaryGeneral.nationality} · {data.gcc.secretaryGeneral.序}th Secretary-General</p>
+                          <p className="text-sm text-platinum-500-500">{data.gcc.secretaryGeneral.nationality} · {data.gcc.secretaryGeneral.序}th Secretary-General</p>
                         </div>
                         <div className="space-y-2">
                           <div className="flex justify-between text-sm">
-                            <span className="text-platinum-500">Position Since</span>
+                            <span className="text-platinum-500-500">Position Since</span>
                             <span className="font-medium">{data.gcc.secretaryGeneral.assumedPosition}</span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="text-platinum-500">Previous Role</span>
+                            <span className="text-platinum-500-500">Previous Role</span>
                             <span className="font-medium">{data.gcc.secretaryGeneral.previousRole}</span>
                           </div>
                         </div>
                         <div className="space-y-1">
-                          <p className="text-sm font-medium text-platinum-700 dark:text-platinum-300">Education</p>
+                          <p className="text-sm font-medium text-platinum-500-700 dark:text-platinum-500-300">Education</p>
                           {data.gcc.secretaryGeneral.education.map((edu, idx) => (
-                            <p key={idx} className="text-xs text-platinum-500">• {edu}</p>
+                            <p key={idx} className="text-xs text-platinum-500-500">• {edu}</p>
                           ))}
                         </div>
                       </div>
@@ -702,8 +702,8 @@ export default function InternationalOrgsPage() {
                           <div key={idx} className="flex items-start gap-3">
                             <div className="mt-1.5 h-2 w-2 rounded-full bg-gold-500" />
                             <div>
-                              <p className="text-sm font-medium text-navy-900 dark:text-platinum-100">{career.role}</p>
-                              <p className="text-xs text-platinum-500">{career.period}</p>
+                              <p className="text-sm font-medium text-navy-500-900 dark:text-platinum-500-100">{career.role}</p>
+                              <p className="text-xs text-platinum-500-500">{career.period}</p>
                             </div>
                           </div>
                         ))}
@@ -714,7 +714,7 @@ export default function InternationalOrgsPage() {
 
                 {/* Member States */}
                 <div className="mt-6">
-                  <p className="text-sm font-medium text-platinum-700 dark:text-platinum-300 mb-3">GCC Member States</p>
+                  <p className="text-sm font-medium text-platinum-500-700 dark:text-platinum-500-300 mb-3">GCC Member States</p>
                   <div className="flex flex-wrap gap-2">
                     {data.gcc.memberStates.map((state) => (
                       <Badge key={state} variant="outline" className="text-xs">
@@ -742,21 +742,21 @@ export default function InternationalOrgsPage() {
                       <div className="grid gap-4 sm:grid-cols-2">
                         <div className="space-y-2">
                           <div className="flex justify-between text-sm">
-                            <span className="text-platinum-500">Location</span>
+                            <span className="text-platinum-500-500">Location</span>
                             <span className="font-medium">{data.arabLeague.emergencyMeetingFeb2026.location}</span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="text-platinum-500">Level</span>
+                            <span className="text-platinum-500-500">Level</span>
                             <span className="font-medium">{data.arabLeague.emergencyMeetingFeb2026.level}</span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="text-platinum-500">Chair</span>
+                            <span className="text-platinum-500-500">Chair</span>
                             <span className="font-medium">{data.arabLeague.emergencyMeetingFeb2026.chair}</span>
                           </div>
                         </div>
                         <div className="space-y-2">
                           <div className="flex justify-between text-sm">
-                            <span className="text-platinum-500">Topic</span>
+                            <span className="text-platinum-500-500">Topic</span>
                             <Badge variant="destructive" size="sm">{data.arabLeague.emergencyMeetingFeb2026.topic}</Badge>
                           </div>
                         </div>
@@ -777,16 +777,16 @@ export default function InternationalOrgsPage() {
                         <div className="grid gap-4 sm:grid-cols-2">
                           <div className="space-y-2">
                             <div className="flex justify-between text-sm">
-                              <span className="text-platinum-500">Format</span>
+                              <span className="text-platinum-500-500">Format</span>
                               <span className="font-medium">{data.arabLeague.emergencySessionMarch2026.format}</span>
                             </div>
                             <div className="flex justify-between text-sm">
-                              <span className="text-platinum-500">Chair</span>
+                              <span className="text-platinum-500-500">Chair</span>
                               <span className="font-medium">{data.arabLeague.emergencySessionMarch2026.chair}</span>
                             </div>
                           </div>
                           <div>
-                            <p className="text-sm font-medium text-platinum-700 dark:text-platinum-300 mb-2">Countries Targeted</p>
+                            <p className="text-sm font-medium text-platinum-500-700 dark:text-platinum-500-300 mb-2">Countries Targeted</p>
                             <div className="flex flex-wrap gap-1">
                               {data.arabLeague.emergencySessionMarch2026.countriesTargeted.map((country) => (
                                 <Badge key={country} variant="outline" size="sm">{country}</Badge>
@@ -800,28 +800,28 @@ export default function InternationalOrgsPage() {
                           <p className="text-sm font-medium text-rose-700 dark:text-rose-400 mb-2">Nature of Iranian Attacks</p>
                           <div className="space-y-1">
                             {data.arabLeague.iranianAttacks.targetType.map((type, idx) => (
-                              <p key={idx} className="text-xs text-platinum-600 dark:text-platinum-400">• {type}</p>
+                              <p key={idx} className="text-xs text-platinum-500-600 dark:text-platinum-500-400">• {type}</p>
                             ))}
                           </div>
-                          <p className="text-xs text-platinum-500 mt-2">Weapons: {data.arabLeague.iranianAttacks.weapons.join(', ')}</p>
+                          <p className="text-xs text-platinum-500-500 mt-2">Weapons: {data.arabLeague.iranianAttacks.weapons.join(', ')}</p>
                         </div>
 
                         {/* UAE Position */}
                         <div className="mt-4 p-4 rounded-lg bg-emerald-50/50 dark:bg-emerald-900/10">
                           <p className="text-sm font-medium text-emerald-700 dark:text-emerald-400 mb-2">UAE Position</p>
-                          <p className="text-sm italic text-platinum-600 dark:text-platinum-300 border-l-2 border-emerald-500 pl-3">
+                          <p className="text-sm italic text-platinum-500-600 dark:text-platinum-500-300 border-l-2 border-emerald-500 pl-3">
                             {data.arabLeague.uaePosition.quote}
                           </p>
                           <div className="mt-3 space-y-1">
                             {data.arabLeague.uaePosition.keyPoints.map((point, idx) => (
-                              <p key={idx} className="text-xs text-platinum-500">• {point}</p>
+                              <p key={idx} className="text-xs text-platinum-500-500">• {point}</p>
                             ))}
                           </div>
                         </div>
 
                         <div className="mt-4 p-3 rounded-lg bg-denim-50/50 dark:bg-denim-900/10">
                           <p className="text-sm font-medium text-denim-700 dark:text-denim-400">Outcome</p>
-                          <p className="text-xs text-platinum-600 dark:text-platinum-300 mt-1">{data.arabLeague.uaePosition.outcome}</p>
+                          <p className="text-xs text-platinum-500-600 dark:text-platinum-500-300 mt-1">{data.arabLeague.uaePosition.outcome}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -845,17 +845,17 @@ export default function InternationalOrgsPage() {
                             <p className="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">
                               {data.oic.organizationProfile.memberCount}
                             </p>
-                            <p className="text-xs text-platinum-500">Member States</p>
+                            <p className="text-xs text-platinum-500-500">Member States</p>
                           </div>
                           <div className="p-3 rounded-lg bg-denim-50/50 dark:bg-denim-900/10 text-center">
                             <p className="text-sm font-bold text-denim-600 dark:text-denim-400">
                               {data.oic.organizationProfile.globalRank}
                             </p>
-                            <p className="text-xs text-platinum-500">Global Rank</p>
+                            <p className="text-xs text-platinum-500-500">Global Rank</p>
                           </div>
                         </div>
                         <div className="flex justify-between text-sm">
-                          <span className="text-platinum-500">Headquarters</span>
+                          <span className="text-platinum-500-500">Headquarters</span>
                           <span className="font-medium">{data.oic.organizationProfile.hq}</span>
                         </div>
                       </div>
@@ -872,12 +872,12 @@ export default function InternationalOrgsPage() {
                     <CardContent>
                       <div className="space-y-3">
                         <Badge variant="success" size="sm">Plot Foiled</Badge>
-                        <p className="text-sm italic text-platinum-600 dark:text-platinum-300 border-l-2 border-emerald-500 pl-3">
+                        <p className="text-sm italic text-platinum-500-600 dark:text-platinum-500-300 border-l-2 border-emerald-500 pl-3">
                           {data.oic.condemnationApril2026.statement}
                         </p>
                         <div className="mt-3 space-y-1">
                           {data.oic.condemnationApril2026.actions.map((action, idx) => (
-                            <p key={idx} className="text-xs text-platinum-500">• {action}</p>
+                            <p key={idx} className="text-xs text-platinum-500-500">• {action}</p>
                           ))}
                         </div>
                       </div>
@@ -899,17 +899,17 @@ export default function InternationalOrgsPage() {
                       <div className="space-y-4">
                         <div className="grid grid-cols-2 gap-4">
                           <div className="space-y-1">
-                            <p className="text-xs text-platinum-500">Member Since</p>
-                            <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">{data.opec.membership.since}</p>
+                            <p className="text-xs text-platinum-500-500">Member Since</p>
+                            <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">{data.opec.membership.since}</p>
                           </div>
                           <div className="space-y-1">
-                            <p className="text-xs text-platinum-500">March 2026 Production</p>
+                            <p className="text-xs text-platinum-500-500">March 2026 Production</p>
                             <p className="text-lg font-bold text-emerald-600 dark:text-emerald-400">{data.opec.production.value}</p>
                           </div>
                         </div>
                         <div className="p-3 rounded-lg bg-denim-50/50 dark:bg-denim-900/10">
                           <p className="text-sm font-medium text-denim-700 dark:text-denim-400 mb-1">April 2026 Adjustment</p>
-                          <p className="text-xs text-platinum-600 dark:text-platinum-300">{data.opec.march2026Adjustments.aprilAdjustment}</p>
+                          <p className="text-xs text-platinum-500-600 dark:text-platinum-500-300">{data.opec.march2026Adjustments.aprilAdjustment}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -927,15 +927,15 @@ export default function InternationalOrgsPage() {
                       </div>
                       <div className="mt-4 space-y-2">
                         <div className="flex justify-between text-sm">
-                          <span className="text-platinum-500">Resumed Unwinding</span>
+                          <span className="text-platinum-500-500">Resumed Unwinding</span>
                           <span className="font-medium text-xs">{data.opec.march2026Adjustments.resumedUnwinding}</span>
                         </div>
                         <div className="flex justify-between text-sm">
-                          <span className="text-platinum-500">Additional Adjustments</span>
+                          <span className="text-platinum-500-500">Additional Adjustments</span>
                           <span className="font-medium text-xs">{data.opec.march2026Adjustments.additionalVoluntaryAdjustments}</span>
                         </div>
                         <div className="flex justify-between text-sm">
-                          <span className="text-platinum-500">Next Meeting</span>
+                          <span className="text-platinum-500-500">Next Meeting</span>
                           <span className="font-medium">{data.opec.march2026Adjustments.nextMeeting}</span>
                         </div>
                       </div>
@@ -997,7 +997,7 @@ export default function InternationalOrgsPage() {
                                 </span>
                               </TableCell>
                               <TableCell>{proj.consumerPrices || '-'}</TableCell>
-                              <TableCell className="text-xs text-platinum-500">{proj.notes || '-'}</TableCell>
+                              <TableCell className="text-xs text-platinum-500-500">{proj.notes || '-'}</TableCell>
                             </TableRow>
                           ))}
                         </TableBody>
@@ -1014,8 +1014,8 @@ export default function InternationalOrgsPage() {
                       <div className="space-y-4">
                         {data.imf.keyStatements.map((stmt, idx) => (
                           <div key={idx} className="p-3 rounded-lg bg-white/40 dark:bg-white/5">
-                            <p className="text-sm italic text-platinum-700 dark:text-platinum-300">"{stmt.quote}"</p>
-                            <p className="text-xs text-platinum-500 mt-2">— {stmt.speaker}, {stmt.date}</p>
+                            <p className="text-sm italic text-platinum-500-700 dark:text-platinum-500-300">"{stmt.quote}"</p>
+                            <p className="text-xs text-platinum-500-500 mt-2">— {stmt.speaker}, {stmt.date}</p>
                           </div>
                         ))}
                       </div>
@@ -1037,11 +1037,11 @@ export default function InternationalOrgsPage() {
                       <div className="space-y-4">
                         <div className="grid grid-cols-2 gap-4">
                           <div className="space-y-1">
-                            <p className="text-xs text-platinum-500">UAE Membership</p>
+                            <p className="text-xs text-platinum-500-500">UAE Membership</p>
                             <p className="text-lg font-bold">{data.worldBank.program.membership}</p>
                           </div>
                           <div className="space-y-1">
-                            <p className="text-xs text-platinum-500">UAE Office</p>
+                            <p className="text-xs text-platinum-500-500">UAE Office</p>
                             <p className="text-lg font-bold">{data.worldBank.program.uaeOfficeEstablished}</p>
                           </div>
                         </div>
@@ -1057,8 +1057,8 @@ export default function InternationalOrgsPage() {
                       <div className="grid grid-cols-2 gap-2">
                         {data.worldBank.strategicFocusAreas.map((area) => (
                           <div key={area.area} className="p-2 rounded bg-white/40 dark:bg-white/5">
-                            <p className="text-xs font-medium text-navy-900 dark:text-platinum-100">{area.area}</p>
-                            <p className="text-xs text-platinum-500">{area.description}</p>
+                            <p className="text-xs font-medium text-navy-500-900 dark:text-platinum-500-100">{area.area}</p>
+                            <p className="text-xs text-platinum-500-500">{area.description}</p>
                           </div>
                         ))}
                       </div>
@@ -1115,17 +1115,17 @@ export default function InternationalOrgsPage() {
                     <CardContent>
                       <div className="space-y-4">
                         <div className="text-center">
-                          <p className="text-4xl font-extrabold text-gold dark:text-gold-400">
+                          <p className="text-4xl font-extrabold text-gold-700 dark:text-gold-400">
                             {data.wto.tradeAchievement2025.value}
                           </p>
-                          <p className="text-sm text-platinum-500 mt-1">{data.wto.tradeAchievement2025.metric}</p>
+                          <p className="text-sm text-platinum-500-500 mt-1">{data.wto.tradeAchievement2025.metric}</p>
                           <Badge variant="gold" size="sm" className="mt-2">Rank #{data.wto.tradeAchievement2025.rank}</Badge>
                         </div>
                         <div className="p-3 rounded-lg bg-white/40 dark:bg-white/5">
-                          <p className="text-sm font-medium text-platinum-700 dark:text-platinum-300">
+                          <p className="text-sm font-medium text-platinum-500-700 dark:text-platinum-500-300">
                             Export Growth (2021-2025)
                           </p>
-                          <p className="text-xs text-platinum-500">{data.wto.tradeAchievement2025.exportGrowth}</p>
+                          <p className="text-xs text-platinum-500-500">{data.wto.tradeAchievement2025.exportGrowth}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -1139,19 +1139,19 @@ export default function InternationalOrgsPage() {
                       <div className="space-y-4">
                         <div className="flex items-center gap-4">
                           <div className="p-3 rounded-lg bg-denim-50/50 dark:bg-denim-900/10">
-                            <p className="text-xs text-platinum-500">WTO Member Since</p>
+                            <p className="text-xs text-platinum-500-500">WTO Member Since</p>
                             <p className="text-lg font-bold">{data.wto.membership.wtoMemberSince}</p>
                           </div>
                           <div className="p-3 rounded-lg bg-platinum-100/50 dark:bg-platinum-800/50">
-                            <p className="text-xs text-platinum-500">GATT Member Since</p>
+                            <p className="text-xs text-platinum-500-500">GATT Member Since</p>
                             <p className="text-lg font-bold">{data.wto.membership.gattMemberSince}</p>
                           </div>
                         </div>
                         <div>
-                          <p className="text-sm font-medium text-platinum-700 dark:text-platinum-300 mb-2">Available Data Categories</p>
+                          <p className="text-sm font-medium text-platinum-500-700 dark:text-platinum-500-300 mb-2">Available Data Categories</p>
                           <div className="space-y-1">
                             {data.wto.availableDataCategories.map((cat) => (
-                              <p key={cat} className="text-xs text-platinum-500">• {cat}</p>
+                              <p key={cat} className="text-xs text-platinum-500-500">• {cat}</p>
                             ))}
                           </div>
                         </div>
@@ -1177,13 +1177,13 @@ export default function InternationalOrgsPage() {
                         <Award className="h-12 w-12 text-cyan-600 dark:text-cyan-400" />
                       </motion.div>
                       <Badge variant="cyan" className="mb-4">5th Consecutive Term</Badge>
-                      <h3 className="text-2xl font-extrabold text-navy-900 dark:text-platinum-100">
+                      <h3 className="text-2xl font-extrabold text-navy-500-900 dark:text-platinum-500-100">
                         {data.imo.achievement.description}
                       </h3>
-                      <p className="text-sm text-platinum-500 mt-2">{data.imo.achievement.date}</p>
+                      <p className="text-sm text-platinum-500-500 mt-2">{data.imo.achievement.date}</p>
                       <div className="mt-4 flex justify-center gap-4">
                         <div className="px-4 py-2 rounded-lg bg-white/40 dark:bg-white/5">
-                          <p className="text-xs text-platinum-500">Council Category</p>
+                          <p className="text-xs text-platinum-500-500">Council Category</p>
                           <p className="text-sm font-bold">{data.imo.achievement.councilCategory}</p>
                         </div>
                       </div>
@@ -1204,18 +1204,18 @@ export default function InternationalOrgsPage() {
                     <CardContent>
                       <div className="space-y-4">
                         <div>
-                          <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">
+                          <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">
                             {data.ioc.committeeProfile.name}
                           </p>
-                          <p className="text-sm text-platinum-500">President: {data.ioc.committeeProfile.president}</p>
+                          <p className="text-sm text-platinum-500-500">President: {data.ioc.committeeProfile.president}</p>
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                           <div className="space-y-1">
-                            <p className="text-xs text-platinum-500">Founded</p>
+                            <p className="text-xs text-platinum-500-500">Founded</p>
                             <p className="text-sm font-medium">{data.ioc.committeeProfile.founded}</p>
                           </div>
                           <div className="space-y-1">
-                            <p className="text-xs text-platinum-500">IOC Recognition</p>
+                            <p className="text-xs text-platinum-500-500">IOC Recognition</p>
                             <p className="text-sm font-medium">{data.ioc.committeeProfile.iocRecognition}</p>
                           </div>
                         </div>
@@ -1233,11 +1233,11 @@ export default function InternationalOrgsPage() {
                     <CardContent>
                       <div className="text-center">
                         <Badge variant="gold" size="sm" className="mb-2">2004 Athens</Badge>
-                        <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">
+                        <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">
                           {data.ioc.historicalAchievement.athlete}
                         </p>
-                        <p className="text-sm text-platinum-500">{data.ioc.historicalAchievement.event}</p>
-                        <p className="text-2xl font-extrabold text-gold dark:text-gold-400 mt-2">
+                        <p className="text-sm text-platinum-500-500">{data.ioc.historicalAchievement.event}</p>
+                        <p className="text-2xl font-extrabold text-gold-700 dark:text-gold-400 mt-2">
                           {data.ioc.historicalAchievement.medal}
                         </p>
                       </div>
@@ -1255,8 +1255,8 @@ export default function InternationalOrgsPage() {
                       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                         {data.ioc.upcomingGamesSchedule.map((game, idx) => (
                           <div key={idx} className="p-3 rounded-lg bg-white/40 dark:bg-white/5">
-                            <p className="text-sm font-medium text-navy-900 dark:text-platinum-100">{game.games}</p>
-                            <p className="text-xs text-platinum-500 mt-1">{game.location}</p>
+                            <p className="text-sm font-medium text-navy-500-900 dark:text-platinum-500-100">{game.games}</p>
+                            <p className="text-xs text-platinum-500-500 mt-1">{game.location}</p>
                             <p className="text-xs text-emerald-600 dark:text-emerald-400 mt-1">{game.dates}</p>
                           </div>
                         ))}
@@ -1292,29 +1292,29 @@ export default function InternationalOrgsPage() {
                           <CardContent>
                             <div className="space-y-2">
                               <div className="flex items-center gap-2">
-                                <Flag className="h-3 w-3 text-platinum-400" />
+                                <Flag className="h-3 w-3 text-platinum-500-400" />
                                 <span className="text-sm font-medium">{embassy.ambassador}</span>
                               </div>
                               {embassy.phone && (
                                 <div className="flex items-center gap-2">
-                                  <Phone className="h-3 w-3 text-platinum-400" />
-                                  <span className="text-xs text-platinum-500">{embassy.phone}</span>
+                                  <Phone className="h-3 w-3 text-platinum-500-400" />
+                                  <span className="text-xs text-platinum-500-500">{embassy.phone}</span>
                                 </div>
                               )}
                               {embassy.email && (
                                 <div className="flex items-center gap-2">
-                                  <Mail className="h-3 w-3 text-platinum-400" />
-                                  <span className="text-xs text-platinum-500">{embassy.email}</span>
+                                  <Mail className="h-3 w-3 text-platinum-500-400" />
+                                  <span className="text-xs text-platinum-500-500">{embassy.email}</span>
                                 </div>
                               )}
                               {embassy.additionalInfo?.metric && (
                                 <div className="mt-3 p-2 rounded bg-white/40 dark:bg-white/5">
-                                  <p className="text-xs text-platinum-500">{embassy.additionalInfo.metric}</p>
+                                  <p className="text-xs text-platinum-500-500">{embassy.additionalInfo.metric}</p>
                                   <p className="text-lg font-bold text-emerald-600 dark:text-emerald-400">
                                     {embassy.additionalInfo.value}
                                   </p>
                                   {embassy.additionalInfo.target && (
-                                    <p className="text-xs text-platinum-500">Target: {embassy.additionalInfo.target}</p>
+                                    <p className="text-xs text-platinum-500-500">Target: {embassy.additionalInfo.target}</p>
                                   )}
                                 </div>
                               )}
@@ -1338,18 +1338,18 @@ export default function InternationalOrgsPage() {
                           <CardContent>
                             <div className="space-y-2">
                               <div className="flex items-center gap-2">
-                                <Building className="h-3 w-3 text-platinum-400" />
+                                <Building className="h-3 w-3 text-platinum-500-400" />
                                 <span className="text-sm font-medium">{embassy.currentHead}</span>
                               </div>
                               {embassy.since && (
                                 <div className="flex items-center gap-2">
-                                  <Calendar className="h-3 w-3 text-platinum-400" />
-                                  <span className="text-xs text-platinum-500">Since {embassy.since}</span>
+                                  <Calendar className="h-3 w-3 text-platinum-500-400" />
+                                  <span className="text-xs text-platinum-500-500">Since {embassy.since}</span>
                                 </div>
                               )}
                               {embassy.services && (
                                 <div className="mt-3">
-                                  <p className="text-xs font-medium text-platinum-700 dark:text-platinum-300 mb-1">Services</p>
+                                  <p className="text-xs font-medium text-platinum-500-700 dark:text-platinum-500-300 mb-1">Services</p>
                                   <div className="flex flex-wrap gap-1">
                                     {embassy.services.map((service) => (
                                       <Badge key={service} variant="outline" size="sm">{service}</Badge>
@@ -1400,8 +1400,8 @@ export default function InternationalOrgsPage() {
                           <CardContent className="p-4">
                             <div className="flex items-start justify-between">
                               <div className="space-y-1">
-                                <p className="text-xs text-platinum-500 font-medium">{event.date}</p>
-                                <p className="text-sm font-medium text-navy-900 dark:text-platinum-100">{event.event}</p>
+                                <p className="text-xs text-platinum-500-500 font-medium">{event.date}</p>
+                                <p className="text-sm font-medium text-navy-500-900 dark:text-platinum-500-100">{event.event}</p>
                               </div>
                               <Badge
                                 variant={
@@ -1433,7 +1433,7 @@ export default function InternationalOrgsPage() {
                       </div>
                       <div>
                         <p className="text-sm font-medium text-denim-700 dark:text-denim-300">UAE Positioning</p>
-                        <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">
+                        <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">
                           {data.keyDevelopments2026.uaePositioning}
                         </p>
                       </div>
@@ -1469,7 +1469,7 @@ export default function InternationalOrgsPage() {
                         }`}>
                           <div className={
                             finding.color === 'emerald' ? 'text-emerald-600 dark:text-emerald-400' :
-                            finding.color === 'gold' ? 'text-gold dark:text-gold-400' :
+                            finding.color === 'gold' ? 'text-gold-700 dark:text-gold-400' :
                             finding.color === 'denim' ? 'text-denim-600 dark:text-denim-400' :
                             finding.color === 'rose' ? 'text-rose-600 dark:text-rose-400' :
                             finding.color === 'cyan' ? 'text-cyan-600 dark:text-cyan-400' :
@@ -1479,8 +1479,8 @@ export default function InternationalOrgsPage() {
                           </div>
                         </div>
                         <div className="flex-1">
-                          <p className="font-medium text-navy-900 dark:text-platinum-100">{finding.title}</p>
-                          <p className="text-xs text-platinum-500 mt-1">{finding.description}</p>
+                          <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{finding.title}</p>
+                          <p className="text-xs text-platinum-500-500 mt-1">{finding.description}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -1509,7 +1509,7 @@ export default function InternationalOrgsPage() {
                     <TableCell className="font-medium">{org.organization}</TableCell>
                     <TableCell>{org.hq}</TableCell>
                     <TableCell>{org.uaeOffice}</TableCell>
-                    <TableCell className="text-xs text-platinum-500">{org.keyContact}</TableCell>
+                    <TableCell className="text-xs text-platinum-500-500">{org.keyContact}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -1525,28 +1525,28 @@ export default function InternationalOrgsPage() {
                 <CardContent className="p-4 text-center">
                   <Globe className="h-8 w-8 mx-auto text-emerald-500 mb-2" />
                   <p className="text-lg font-bold">{data.overview.executionMetadata.pagesFetched}</p>
-                  <p className="text-xs text-platinum-500">Pages Fetched</p>
+                  <p className="text-xs text-platinum-500-500">Pages Fetched</p>
                 </CardContent>
               </Card>
               <Card className="glass-card">
                 <CardContent className="p-4 text-center">
                   <Zap className="h-8 w-8 mx-auto text-gold-700 mb-2" />
                   <p className="text-lg font-bold">{data.overview.executionMetadata.queriesExecuted}</p>
-                  <p className="text-xs text-platinum-500">Queries Executed</p>
+                  <p className="text-xs text-platinum-500-500">Queries Executed</p>
                 </CardContent>
               </Card>
               <Card className="glass-card">
                 <CardContent className="p-4 text-center">
                   <Clock className="h-8 w-8 mx-auto text-denim-500 mb-2" />
                   <p className="text-lg font-bold">{data.overview.executionMetadata.dateEnriched}</p>
-                  <p className="text-xs text-platinum-500">Date Enriched</p>
+                  <p className="text-xs text-platinum-500-500">Date Enriched</p>
                 </CardContent>
               </Card>
               <Card className="glass-card">
                 <CardContent className="p-4 text-center">
                   <Award className="h-8 w-8 mx-auto text-cyan-500 mb-2" />
                   <p className="text-lg font-bold">{data.overview.executionMetadata.frameworkVersion}</p>
-                  <p className="text-xs text-platinum-500">Framework Version</p>
+                  <p className="text-xs text-platinum-500-500">Framework Version</p>
                 </CardContent>
               </Card>
             </div>

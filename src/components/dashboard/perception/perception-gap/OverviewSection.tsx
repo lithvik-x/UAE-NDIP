@@ -122,8 +122,8 @@ export function OverviewSection({ data }: OverviewSectionProps) {
             <CardContent className="px-0 pb-0">
               <div className="flex items-center justify-center h-[200px]">
                 <div className="text-center">
-                  <div className="text-5xl font-bold text-platinum-100">{data.dashboardMetrics?.avgCredibility || 4.2}</div>
-                  <div className="text-sm text-platinum-400 mt-2">out of 5</div>
+                  <div className="text-5xl font-bold text-platinum-500-100">{data.dashboardMetrics?.avgCredibility || 4.2}</div>
+                  <div className="text-sm text-platinum-500-400 mt-2">out of 5</div>
                 </div>
               </div>
             </CardContent>

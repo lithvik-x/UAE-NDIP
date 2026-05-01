@@ -398,7 +398,7 @@ export function Sidebar({ className }: SidebarProps) {
             </div>
             <div className="flex flex-col">
               <span className="text-sm font-bold gradient-text">DOSSIER</span>
-              <span className="text-[10px] uppercase tracking-widest text-platinum-500">National Intelligence</span>
+              <span className="text-[10px] uppercase tracking-widest text-platinum-500-500">National Intelligence</span>
             </div>
           </Link>
         ) : (
@@ -413,7 +413,7 @@ export function Sidebar({ className }: SidebarProps) {
           variant="ghost"
           size="icon"
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="h-8 w-8 text-platinum-500 hover:text-gold-700 hover:bg-gold-500/10 transition-colors"
+          className="h-8 w-8 text-platinum-500-500 hover:text-gold-700 hover:bg-gold-500/10 transition-colors"
         >
           {isCollapsed ? <PanelLeftOpen className="h-4 w-4" /> : <PanelLeftClose className="h-4 w-4" />}
         </Button>
@@ -457,7 +457,7 @@ export function Sidebar({ className }: SidebarProps) {
                       <item.icon
                         className={cn(
                           'h-5 w-5 flex-shrink-0 transition-colors',
-                          isActive ? 'text-white' : 'text-platinum-500'
+                          isActive ? 'text-white' : 'text-platinum-500-500'
                         )}
                       />
                     )}
@@ -467,7 +467,7 @@ export function Sidebar({ className }: SidebarProps) {
                     onClick={() => hasChildren && toggleSection(item.title)}
                     className={cn(
                       'flex w-full items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-200 relative overflow-hidden group',
-                      isActive ? 'text-white' : 'text-platinum-600 hover:text-platinum-900 hover:bg-white/10'
+                      isActive ? 'text-white' : 'text-platinum-500-600 hover:text-platinum-500-900 hover:bg-white/10'
                     )}
                     style={
                       isActive && platformColor
@@ -505,7 +505,7 @@ export function Sidebar({ className }: SidebarProps) {
                               <item.icon className="h-5 w-5" />
                             </span>
                           ) : (
-                            <item.icon className="h-5 w-5 text-navy-500" />
+                            <item.icon className="h-5 w-5 text-navy-500-500" />
                           )}
                         </div>
                         {!isCollapsed && (
@@ -544,7 +544,7 @@ export function Sidebar({ className }: SidebarProps) {
                               <item.icon className="h-5 w-5" />
                             </span>
                           ) : (
-                            <item.icon className="h-5 w-5 text-navy-500" />
+                            <item.icon className="h-5 w-5 text-navy-500-500" />
                           )}
                         </div>
                         {!isCollapsed && (
@@ -569,7 +569,7 @@ export function Sidebar({ className }: SidebarProps) {
                           href={child.href}
                           className={cn(
                             'flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 group relative overflow-hidden',
-                            isChildActive ? 'text-white' : 'text-platinum-500 hover:text-platinum-700'
+                            isChildActive ? 'text-white' : 'text-platinum-500-500 hover:text-platinum-500-700'
                           )}
                           style={
                             isChildActive && childColor
@@ -615,7 +615,7 @@ export function Sidebar({ className }: SidebarProps) {
           <Button
             variant="ghost"
             asChild
-            className="w-full justify-start text-platinum-500 hover:text-gold-700 hover:bg-gold-500/10 transition-all duration-200"
+            className="w-full justify-start text-platinum-500-500 hover:text-gold-700 hover:bg-gold-500/10 transition-all duration-200"
           >
             <Link href="/">
               <X className="mr-2 h-4 w-4" />
@@ -628,7 +628,7 @@ export function Sidebar({ className }: SidebarProps) {
             variant="ghost"
             asChild
             size="icon"
-            className="w-full h-10 text-platinum-500 hover:text-gold-700 hover:bg-gold-500/10 transition-all duration-200"
+            className="w-full h-10 text-platinum-500-500 hover:text-gold-700 hover:bg-gold-500/10 transition-all duration-200"
             title="Exit Dashboard"
           >
             <Link href="/">
@@ -703,16 +703,16 @@ function Header({
             variant="ghost"
             size="icon"
             onClick={onToggleMobileMenu}
-            className="lg:hidden h-9 w-9 text-platinum-500 hover:text-gold-700 hover:bg-gold-500/10 transition-colors shrink-0"
+            className="lg:hidden h-9 w-9 text-platinum-500-500 hover:text-gold-700 hover:bg-gold-500/10 transition-colors shrink-0"
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
 
-          <h1 className="text-xs lg:text-sm font-medium text-platinum-500 uppercase tracking-wider truncate">
+          <h1 className="text-xs lg:text-sm font-medium text-platinum-500-500 uppercase tracking-wider truncate">
             National Digital Intelligence Platform
           </h1>
           <Separator orientation="vertical" className="hidden sm:block h-6 bg-platinum-300/30" />
-          <span className="hidden sm:inline text-xs lg:text-sm font-bold text-platinum-900 truncate">United Arab Emirates</span>
+          <span className="hidden sm:inline text-xs lg:text-sm font-bold text-platinum-500-900 truncate">United Arab Emirates</span>
         </div>
 
         <div className="flex items-center gap-2">
@@ -721,7 +721,7 @@ function Header({
             variant="ghost"
             size="sm"
             onClick={onOpenCommandPalette}
-            className="h-9 px-2 lg:px-3 text-platinum-500 hover:text-navy-600 hover:bg-navy-500/10 transition-all duration-200 gap-1 lg:gap-2"
+            className="h-9 px-2 lg:px-3 text-platinum-500-500 hover:text-navy-500-600 hover:bg-navy-500/10 transition-all duration-200 gap-1 lg:gap-2"
           >
             <Command className="h-4 w-4" />
             <span className="hidden sm:inline text-sm">Search</span>
@@ -729,11 +729,11 @@ function Header({
 
           <Separator orientation="vertical" className="hidden sm:block h-6 bg-platinum-300/30" />
 
-          <Button variant="ghost" size="icon" className="h-9 w-9 text-platinum-500 hover:text-gold-700 hover:bg-gold-500/10 transition-colors relative shrink-0">
+          <Button variant="ghost" size="icon" className="h-9 w-9 text-platinum-500-500 hover:text-gold-700 hover:bg-gold-500/10 transition-colors relative shrink-0">
             <Bell className="h-4 w-4" />
             <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-red-500" />
           </Button>
-          <Button variant="ghost" size="icon" className="hidden sm:inline-flex h-9 w-9 text-platinum-500 hover:text-navy-600 hover:bg-navy-500/10 transition-colors">
+          <Button variant="ghost" size="icon" className="hidden sm:inline-flex h-9 w-9 text-platinum-500-500 hover:text-navy-500-600 hover:bg-navy-500/10 transition-colors">
             <Settings className="h-4 w-4" />
           </Button>
 
@@ -758,27 +758,27 @@ function DashboardFooter() {
             </div>
             <div className="flex flex-col">
               <span className="text-xs font-bold gradient-text">UAE NATIONAL INTELLIGENCE</span>
-              <span className="text-[10px] text-platinum-500">v1.0.0</span>
+              <span className="text-[10px] text-platinum-500-500">v1.0.0</span>
             </div>
           </div>
           <Separator orientation="vertical" className="h-6 bg-platinum-300/30" />
           <div className="flex items-center gap-2">
             <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-xs text-platinum-500">Systems Operational</span>
+            <span className="text-xs text-platinum-500-500">Systems Operational</span>
           </div>
         </div>
 
         {/* Center Section - Quick Links */}
         <div className="hidden md:flex items-center gap-4">
-          <Link href="/docs" className="flex items-center gap-1.5 text-xs text-platinum-500 hover:text-gold-700 transition-colors">
+          <Link href="/docs" className="flex items-center gap-1.5 text-xs text-platinum-500-500 hover:text-gold-700 transition-colors">
             <FileText className="h-3.5 w-3.5" />
             <span>Documentation</span>
           </Link>
-          <Link href="/support" className="flex items-center gap-1.5 text-xs text-platinum-500 hover:text-gold-700 transition-colors">
+          <Link href="/support" className="flex items-center gap-1.5 text-xs text-platinum-500-500 hover:text-gold-700 transition-colors">
             <Mail className="h-3.5 w-3.5" />
             <span>Support</span>
           </Link>
-          <Link href="/privacy" className="flex items-center gap-1.5 text-xs text-platinum-500 hover:text-gold-700 transition-colors">
+          <Link href="/privacy" className="flex items-center gap-1.5 text-xs text-platinum-500-500 hover:text-gold-700 transition-colors">
             <Shield className="h-3.5 w-3.5" />
             <span>Privacy</span>
           </Link>
@@ -787,19 +787,19 @@ function DashboardFooter() {
         {/* Right Section - Social & Copyright */}
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" className="h-7 w-7 text-platinum-400 hover:text-gold-700 hover:bg-gold-500/10 transition-colors">
+            <Button variant="ghost" size="icon" className="h-7 w-7 text-platinum-500-400 hover:text-gold-700 hover:bg-gold-500/10 transition-colors">
               <Twitter className="h-3.5 w-3.5" />
             </Button>
-            <Button variant="ghost" size="icon" className="h-7 w-7 text-platinum-400 hover:text-gold-700 hover:bg-gold-500/10 transition-colors">
+            <Button variant="ghost" size="icon" className="h-7 w-7 text-platinum-500-400 hover:text-gold-700 hover:bg-gold-500/10 transition-colors">
               <Linkedin className="h-3.5 w-3.5" />
             </Button>
-            <Button variant="ghost" size="icon" className="h-7 w-7 text-platinum-400 hover:text-gold-700 hover:bg-gold-500/10 transition-colors">
+            <Button variant="ghost" size="icon" className="h-7 w-7 text-platinum-500-400 hover:text-gold-700 hover:bg-gold-500/10 transition-colors">
               <Github className="h-3.5 w-3.5" />
             </Button>
           </div>
           <Separator orientation="vertical" className="h-6 bg-platinum-300/30" />
           <div className="flex items-center gap-1">
-            <span className="text-[10px] text-platinum-400">
+            <span className="text-[10px] text-platinum-500-400">
               © 2025 UAE National Intelligence Platform
             </span>
           </div>

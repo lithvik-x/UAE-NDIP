@@ -46,7 +46,7 @@ export function InstagramDemographicsSection({ data }: InstagramDemographicsSect
             <Card className="glass-card border-purple-500/30">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Users className="h-5 w-5 text-purple" />
+                  <Users className="h-5 w-5 text-purple-500" />
                   Gender Distribution
                 </CardTitle>
                 <CardDescription>UAE Instagram audience by gender (DataReportal, Feb 2025)</CardDescription>
@@ -60,10 +60,10 @@ export function InstagramDemographicsSection({ data }: InstagramDemographicsSect
                 <div className="mt-4 space-y-2">
                   {genderDemographics.map((g: { gender: string; percentage: number; source: string }) => (
                     <div key={g.gender} className="flex items-center justify-between">
-                      <span className="text-sm text-platinum/70">{g.gender}</span>
+                      <span className="text-sm text-platinum-500/70">{g.gender}</span>
                       <div className="flex items-center gap-2">
                         <span className="text-sm font-medium text-white">{g.percentage}%</span>
-                        <Badge variant="outline" className="text-xs border-platinum/30 text-platinum/50">
+                        <Badge variant="outline" className="text-xs border-platinum/30 text-platinum-500/50">
                           {g.source}
                         </Badge>
                       </div>
@@ -77,7 +77,7 @@ export function InstagramDemographicsSection({ data }: InstagramDemographicsSect
             <Card className="glass-card border-purple-500/30">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Calendar className="h-5 w-5 text-gold" />
+                  <Calendar className="h-5 w-5 text-gold-700" />
                   Age Demographics
                 </CardTitle>
                 <CardDescription>Audience breakdown by age and gender (NapoleonCat)</CardDescription>
@@ -109,10 +109,10 @@ export function InstagramDemographicsSection({ data }: InstagramDemographicsSect
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-platinum/10">
-                      <th className="text-left py-3 px-4 text-sm font-medium text-platinum/60">Age Group</th>
+                      <th className="text-left py-3 px-4 text-sm font-medium text-platinum-500/60">Age Group</th>
                       <th className="text-right py-3 px-4 text-sm font-medium text-rose-400">Female %</th>
-                      <th className="text-right py-3 px-4 text-sm font-medium text-navy-400">Male %</th>
-                      <th className="text-right py-3 px-4 text-sm font-medium text-platinum/60">Notes</th>
+                      <th className="text-right py-3 px-4 text-sm font-medium text-navy-500-400">Male %</th>
+                      <th className="text-right py-3 px-4 text-sm font-medium text-platinum-500/60">Notes</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -120,8 +120,8 @@ export function InstagramDemographicsSection({ data }: InstagramDemographicsSect
                       <tr key={age.ageGroup} className="border-b border-platinum/5 hover:bg-white/5">
                         <td className="py-3 px-4 font-medium text-white">{age.ageGroup}</td>
                         <td className="py-3 px-4 text-right text-rose-300">{age.female}%</td>
-                        <td className="py-3 px-4 text-right text-navy-300">{age.male}%</td>
-                        <td className="py-3 px-4 text-right text-sm text-platinum/50">
+                        <td className="py-3 px-4 text-right text-navy-500-300">{age.male}%</td>
+                        <td className="py-3 px-4 text-right text-sm text-platinum-500/50">
                           {age.notes || ''}
                         </td>
                       </tr>
@@ -141,13 +141,13 @@ export function InstagramDemographicsSection({ data }: InstagramDemographicsSect
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="p-4 rounded-lg bg-platinum-800/30">
                   <p className="text-sm font-medium text-white mb-2">Gender Gap Insight</p>
-                  <p className="text-xs text-platinum-400">
+                  <p className="text-xs text-platinum-500-400">
                     The highest gender difference occurs within the 25-34 age group, where men lead by 2,400,000.
                   </p>
                 </div>
                 <div className="p-4 rounded-lg bg-platinum-800/30">
                   <p className="text-sm font-medium text-white mb-2">Core Demographic</p>
-                  <p className="text-xs text-platinum-400">
+                  <p className="text-xs text-platinum-500-400">
                     25-34 age group is the largest segment with ~3.5 million users, making it the primary target audience.
                   </p>
                 </div>

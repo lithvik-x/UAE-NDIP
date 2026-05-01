@@ -92,13 +92,13 @@ export default function ReformChangePage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="denim" className="mb-2">H-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Reform & Change</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">Reform & Change</h1>
+          <p className="mt-2 text-platinum-500-400">
             {data.description || 'Major reforms, policy transformations, and national initiatives'}
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-navy/50 text-navy hover:bg-navy/10">
+          <Button variant="outline" className="gap-2 border-navy/50 text-navy-500 hover:bg-navy/10">
             <FileText className="h-4 w-4" />
             Policy Reports
           </Button>
@@ -205,8 +205,8 @@ export default function ReformChangePage() {
                       {sectorImpactData.map((item, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-200">{item.sector}</span>
-                            <span className="text-lg font-bold text-navy">{item.impact}%</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.sector}</span>
+                            <span className="text-lg font-bold text-navy-500">{item.impact}%</span>
                           </div>
                           <Progress
                             value={item.impact}
@@ -251,18 +251,18 @@ export default function ReformChangePage() {
                 </CardHeader>
                 <CardContent>
                   <ScrollArea className="h-[400px]">
-                    <div className="relative border-l-2 border-gold/30 pl-8">
+                    <div className="relative border-l-2 border-gold-700/30 pl-8">
                       {reformMilestonesData.slice().reverse().map((reform, idx) => (
                         <div key={idx} className="relative mb-8 last:mb-0">
-                          <div className="absolute -left-[41px] h-6 w-6 rounded-full bg-gold/20 text-gold flex items-center justify-center">
+                          <div className="absolute -left-[41px] h-6 w-6 rounded-full bg-gold-700/20 text-gold-700 flex items-center justify-center">
                             <Hammer className="h-3 w-3" />
                           </div>
                           <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                             <div className="flex items-center justify-between mb-2">
-                              <span className="text-sm font-bold text-gold">{reform.year}</span>
+                              <span className="text-sm font-bold text-gold-700">{reform.year}</span>
                               <Badge variant="gold" className="text-xs">Impact: {reform.impact}%</Badge>
                             </div>
-                            <h4 className="font-semibold text-platinum-200">{reform.reform}</h4>
+                            <h4 className="font-semibold text-platinum-500-200">{reform.reform}</h4>
                           </div>
                         </div>
                       ))}
@@ -311,10 +311,10 @@ export default function ReformChangePage() {
                         { policy: 'FTZ Development', impact: 'World\'s largest free zone network' },
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3">
-                          <CheckCircle className="h-5 w-5 text-emerald mt-0.5" />
+                          <CheckCircle className="h-5 w-5 text-emerald-500 mt-0.5" />
                           <div>
-                            <p className="font-medium text-platinum-200">{item.policy}</p>
-                            <p className="text-sm text-platinum-400">{item.impact}</p>
+                            <p className="font-medium text-platinum-500-200">{item.policy}</p>
+                            <p className="text-sm text-platinum-500-400">{item.impact}</p>
                           </div>
                         </div>
                       ))}
@@ -336,10 +336,10 @@ export default function ReformChangePage() {
                         { policy: 'Anti-Discrimination', impact: 'Social cohesion law 2015' },
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3">
-                          <Scale className="h-5 w-5 text-navy mt-0.5" />
+                          <Scale className="h-5 w-5 text-navy-500 mt-0.5" />
                           <div>
-                            <p className="font-medium text-platinum-200">{item.policy}</p>
-                            <p className="text-sm text-platinum-400">{item.impact}</p>
+                            <p className="font-medium text-platinum-500-200">{item.policy}</p>
+                            <p className="text-sm text-platinum-500-400">{item.impact}</p>
                           </div>
                         </div>
                       ))}
@@ -403,12 +403,12 @@ export default function ReformChangePage() {
                       ].map((policy, idx) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70">
                           <div className="flex items-center gap-4">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy/20 text-navy-500">
                               <FileText className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-200">{policy.policy}</p>
-                              <p className="text-sm text-platinum-400">{policy.description}</p>
+                              <p className="font-semibold text-platinum-500-200">{policy.policy}</p>
+                              <p className="text-sm text-platinum-500-400">{policy.description}</p>
                             </div>
                           </div>
                           <div className="text-right">
@@ -418,7 +418,7 @@ export default function ReformChangePage() {
                             >
                               {policy.alert}
                             </Badge>
-                            <p className="mt-1 text-xs text-platinum-500">{policy.outcome}</p>
+                            <p className="mt-1 text-xs text-platinum-500-500">{policy.outcome}</p>
                           </div>
                         </div>
                       ))}

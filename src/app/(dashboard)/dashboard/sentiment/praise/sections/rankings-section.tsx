@@ -52,9 +52,9 @@ export function RankingsSection({
           <Card className="glass-card border-amber-500/30 bg-gradient-to-br from-amber-500/10 to-transparent">
             <CardContent className="p-6 text-center">
               <Trophy className="h-10 w-10 text-amber-400 mx-auto mb-3" />
-              <p className="text-sm text-platinum-400">Residence Program Index</p>
+              <p className="text-sm text-platinum-500-400">Residence Program Index</p>
               <p className="text-4xl font-bold text-amber-400">#2</p>
-              <p className="text-xs text-platinum-500">Joint 2nd with 72 pts</p>
+              <p className="text-xs text-platinum-500-500">Joint 2nd with 72 pts</p>
               <Badge variant="gold" className="mt-2">Rising Star</Badge>
             </CardContent>
           </Card>
@@ -62,7 +62,7 @@ export function RankingsSection({
           <Card className="glass-card border-amber-500/30">
             <CardContent className="p-6 text-center">
               <Globe className="h-10 w-10 text-amber-400 mx-auto mb-3" />
-              <p className="text-sm text-platinum-400">World's Best Countries</p>
+              <p className="text-sm text-platinum-500-400">World's Best Countries</p>
               <p className="text-4xl font-bold text-amber-400">#17</p>
               <p className="text-xs text-emerald-400 mt-1">+5 from #22</p>
             </CardContent>
@@ -71,7 +71,7 @@ export function RankingsSection({
           <Card className="glass-card border-amber-500/30">
             <CardContent className="p-6 text-center">
               <Award className="h-10 w-10 text-amber-400 mx-auto mb-3" />
-              <p className="text-sm text-platinum-400">Smart City Index</p>
+              <p className="text-sm text-platinum-500-400">Smart City Index</p>
               <p className="text-4xl font-bold text-amber-400">#6</p>
               <p className="text-xs text-emerald-400 mt-1">1st in region, +2</p>
             </CardContent>
@@ -100,14 +100,14 @@ export function RankingsSection({
                       className={`flex h-8 w-8 items-center justify-center rounded-full font-bold text-sm ${
                         country.rank.includes('1')
                           ? 'bg-amber-500/20 text-amber-400'
-                          : 'bg-platinum-700/50 text-platinum-300'
+                          : 'bg-platinum-700/50 text-platinum-500-300'
                       }`}
                     >
                       {country.rank}
                     </div>
                     <div>
-                      <p className="font-semibold text-platinum-200">{country.country}</p>
-                      <p className="text-xs text-platinum-400">Score: {country.score}</p>
+                      <p className="font-semibold text-platinum-500-200">{country.country}</p>
+                      <p className="text-xs text-platinum-500-400">Score: {country.score}</p>
                     </div>
                   </div>
                   <Badge
@@ -136,9 +136,9 @@ export function RankingsSection({
                     {idx + 1}
                   </div>
                   <div>
-                    <p className="font-medium text-platinum-200 text-sm">{factor.factor}</p>
+                    <p className="font-medium text-platinum-500-200 text-sm">{factor.factor}</p>
                     <p className="text-xs text-emerald-400 mt-1">{factor.evidence}</p>
-                    <p className="text-xs text-platinum-500">Weight: {factor.weight}</p>
+                    <p className="text-xs text-platinum-500-500">Weight: {factor.weight}</p>
                   </div>
                 </div>
               ))}
@@ -160,8 +160,8 @@ export function RankingsSection({
                   className="flex items-center justify-between p-3 bg-platinum-800/30 rounded-lg"
                 >
                   <div>
-                    <p className="font-medium text-platinum-200 text-sm">{ranking.rankingIndex}</p>
-                    <p className="text-xs text-platinum-400">{ranking.entity} | {ranking.source}</p>
+                    <p className="font-medium text-platinum-500-200 text-sm">{ranking.rankingIndex}</p>
+                    <p className="text-xs text-platinum-500-400">{ranking.entity} | {ranking.source}</p>
                   </div>
                   <div className="text-right">
                     <p className="text-xl font-bold text-amber-400">{ranking.position}</p>

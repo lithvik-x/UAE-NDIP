@@ -127,7 +127,7 @@ const TableFooter = React.forwardRef<
   <tfoot
     ref={ref}
     className={cn(
-      'border-t border-white/10 bg-gradient-to-br from-white/60 to-white/30 backdrop-blur-md font-medium text-platinum-700 dark:from-white/10 dark:to-white/5 dark:text-platinum-300',
+      'border-t border-white/10 bg-gradient-to-br from-white/60 to-white/30 backdrop-blur-md font-medium text-platinum-500-700 dark:from-white/10 dark:to-white/5 dark:text-platinum-500-300',
       className
     )}
     {...props}
@@ -186,9 +186,9 @@ const TableHead = React.forwardRef<
     <th
       ref={ref}
       className={cn(
-        'h-12 px-4 text-left align-middle font-semibold text-platinum-600 dark:text-platinum-400 text-xs uppercase tracking-wider',
+        'h-12 px-4 text-left align-middle font-semibold text-platinum-500-600 dark:text-platinum-500-400 text-xs uppercase tracking-wider',
         '[&:has([role=checkbox])]:pr-0 [&:has([role=checkbox])]:w-[50px]]',
-        sortable && 'hover:text-navy-600 dark:hover:text-navy-400 hover:bg-white/50 dark:hover:bg-white/5 cursor-pointer transition-colors select-none',
+        sortable && 'hover:text-navy-500-600 dark:hover:text-navy-500-400 hover:bg-white/50 dark:hover:bg-white/5 cursor-pointer transition-colors select-none',
         className
       )}
       aria-sort={computedAriaSort}
@@ -198,7 +198,7 @@ const TableHead = React.forwardRef<
         {children}
         {sortable && (
           <span
-            className="text-platinum-400 dark:text-platinum-500 text-lg"
+            className="text-platinum-500-400 dark:text-platinum-500-500 text-lg"
             aria-hidden="true"
           >
             {sortDirection === 'asc' ? '↑' : sortDirection === 'desc' ? '↓' : '↕'}
@@ -226,14 +226,14 @@ const TableCell = React.forwardRef<
     success: 'bg-emerald-50/50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400',
     warning: 'bg-gold-50/50 dark:bg-gold-500/10 text-gold-700 dark:text-gold-400',
     error: 'bg-red-50/50 dark:bg-red-500/10 text-red-700 dark:text-red-400',
-    info: 'bg-navy-50/50 dark:bg-navy-500/10 text-navy-700 dark:text-navy-400',
+    info: 'bg-navy-50/50 dark:bg-navy-500/10 text-navy-500-700 dark:text-navy-500-400',
   }
 
   return (
     <td
       ref={ref}
       className={cn(
-        'p-4 align-middle text-platinum-700 dark:text-platinum-300',
+        'p-4 align-middle text-platinum-500-700 dark:text-platinum-500-300',
         '[&:has([role=checkbox])]:pr-0 [&:has([role=checkbox])]:w-[50px]',
         variant && variantStyles[variant],
         className
@@ -254,7 +254,7 @@ const TableCaption = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <caption
     ref={ref}
-    className={cn('mt-4 text-sm text-platinum-500 dark:text-platinum-400', className)}
+    className={cn('mt-4 text-sm text-platinum-500-500 dark:text-platinum-500-400', className)}
     {...props}
   />
 ))
@@ -401,7 +401,7 @@ const EnterpriseTable = React.forwardRef(
               role="status"
               aria-live="polite"
             >
-              <div className="flex items-center gap-2 text-platinum-500">
+              <div className="flex items-center gap-2 text-platinum-500-500">
                 <div
                   className="h-4 w-4 border-2 border-navy-500 border-t-transparent rounded-full animate-spin"
                   aria-hidden="true"
@@ -426,7 +426,7 @@ const EnterpriseTable = React.forwardRef(
                       }}
                       onChange={handleSelectAll}
                       aria-label={isAllSelected ? 'Deselect all rows' : 'Select all rows'}
-                      className="h-4 w-4 rounded border-platinum-300 text-navy-600 focus:ring-2 focus:ring-navy-500 focus:ring-offset-2 dark:border-platinum-600 dark:bg-platinum-800"
+                      className="h-4 w-4 rounded border-platinum-300 text-navy-500-600 focus:ring-2 focus:ring-navy-500 focus:ring-offset-2 dark:border-platinum-600 dark:bg-platinum-800"
                     />
                   </TableHead>
                 )}
@@ -448,7 +448,7 @@ const EnterpriseTable = React.forwardRef(
                 <TableRow>
                   <TableCell
                     colSpan={columns.length + (selectable ? 1 : 0)}
-                    className="text-center text-platinum-500 dark:text-platinum-400 py-8"
+                    className="text-center text-platinum-500-500 dark:text-platinum-500-400 py-8"
                   >
                     {emptyMessage}
                   </TableCell>
@@ -478,7 +478,7 @@ const EnterpriseTable = React.forwardRef(
                             onChange={() => handleRowSelect(row[keyField])}
                             onClick={e => e.stopPropagation()}
                             aria-label={`Select row ${idx + 1}`}
-                            className="h-4 w-4 rounded border-platinum-300 text-navy-600 focus:ring-2 focus:ring-navy-500 focus:ring-offset-2 dark:border-platinum-600 dark:bg-platinum-800"
+                            className="h-4 w-4 rounded border-platinum-300 text-navy-500-600 focus:ring-2 focus:ring-navy-500 focus:ring-offset-2 dark:border-platinum-600 dark:bg-platinum-800"
                           />
                         </TableCell>
                       )}
@@ -501,7 +501,7 @@ const EnterpriseTable = React.forwardRef(
             className="flex items-center justify-between px-4 py-3 glass-subtle rounded-xl border border-white/10 dark:border-white/5"
             aria-label="Table pagination"
           >
-            <div className="text-sm text-platinum-500 dark:text-platinum-400">
+            <div className="text-sm text-platinum-500-500 dark:text-platinum-500-400">
               {pagination.totalItems ? (
                 <>
                   Showing {(pagination.currentPage - 1) * (pagination.pageSize || 10) + 1} to{' '}
@@ -517,7 +517,7 @@ const EnterpriseTable = React.forwardRef(
                 onClick={() => pagination.onPageChange(Math.max(1, pagination.currentPage - 1))}
                 disabled={pagination.currentPage === 1}
                 aria-label="Go to previous page"
-                className="px-3 py-1.5 text-sm font-medium text-platinum-600 dark:text-platinum-400 hover:text-navy-600 dark:hover:text-navy-400 hover:bg-navy-50 dark:hover:bg-navy-900/20 rounded-lg disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                className="px-3 py-1.5 text-sm font-medium text-platinum-500-600 dark:text-platinum-500-400 hover:text-navy-500-600 dark:hover:text-navy-500-400 hover:bg-navy-50 dark:hover:bg-navy-900/20 rounded-lg disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
               >
                 Previous
               </button>
@@ -544,7 +544,7 @@ const EnterpriseTable = React.forwardRef(
                         'w-8 h-8 text-sm font-medium rounded-lg transition-colors',
                         pagination.currentPage === pageNum
                           ? 'bg-navy-600 text-white shadow-premium-sm dark:bg-navy-500'
-                          : 'text-platinum-600 dark:text-platinum-400 hover:text-navy-600 dark:hover:text-navy-400 hover:bg-navy-50 dark:hover:bg-navy-900/20'
+                          : 'text-platinum-500-600 dark:text-platinum-500-400 hover:text-navy-500-600 dark:hover:text-navy-500-400 hover:bg-navy-50 dark:hover:bg-navy-900/20'
                       )}
                     >
                       {pageNum}
@@ -556,7 +556,7 @@ const EnterpriseTable = React.forwardRef(
                 onClick={() => pagination.onPageChange(Math.min(pagination.totalPages, pagination.currentPage + 1))}
                 disabled={pagination.currentPage === pagination.totalPages}
                 aria-label="Go to next page"
-                className="px-3 py-1.5 text-sm font-medium text-platinum-600 dark:text-platinum-400 hover:text-navy-600 dark:hover:text-navy-400 hover:bg-navy-50 dark:hover:bg-navy-900/20 rounded-lg disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                className="px-3 py-1.5 text-sm font-medium text-platinum-500-600 dark:text-platinum-500-400 hover:text-navy-500-600 dark:hover:text-navy-500-400 hover:bg-navy-50 dark:hover:bg-navy-900/20 rounded-lg disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
               >
                 Next
               </button>

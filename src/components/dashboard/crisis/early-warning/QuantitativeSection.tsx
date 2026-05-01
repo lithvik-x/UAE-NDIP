@@ -45,8 +45,8 @@ export function QuantitativeSection({ data }: QuantitativeSectionProps) {
                 <div className="text-2xl font-bold text-cyan-400 mb-1">
                   {k.value}
                 </div>
-                <div className="text-sm text-platinum-300">{k.metric || k.source}</div>
-                <div className="text-xs text-platinum-500 mt-1">
+                <div className="text-sm text-platinum-500-300">{k.metric || k.source}</div>
+                <div className="text-xs text-platinum-500-500 mt-1">
                   Source: {k.source || 'Multiple'}
                 </div>
               </motion.div>
@@ -97,7 +97,7 @@ export function QuantitativeSection({ data }: QuantitativeSectionProps) {
                       s.tier === 'TIER_0'
                         ? 'border-cyan-500/50 text-cyan-400'
                         : s.tier === 'TIER_1'
-                        ? 'border-navy-500/50 text-navy-400'
+                        ? 'border-navy-500/50 text-navy-500-400'
                         : s.tier === 'TIER_2'
                         ? 'border-indigo-500/50 text-indigo-400'
                         : 'border-purple-500/50 text-purple-400'
@@ -106,8 +106,8 @@ export function QuantitativeSection({ data }: QuantitativeSectionProps) {
                     {s.tier?.replace('TIER_', 'T')}
                   </Badge>
                   <div className="flex-1 min-w-0">
-                    <div className="text-sm text-platinum-200 truncate">{s.source}</div>
-                    <div className="text-xs text-platinum-500">{s.credibility}</div>
+                    <div className="text-sm text-platinum-500-200 truncate">{s.source}</div>
+                    <div className="text-xs text-platinum-500-500">{s.credibility}</div>
                   </div>
                 </motion.div>
               ))}

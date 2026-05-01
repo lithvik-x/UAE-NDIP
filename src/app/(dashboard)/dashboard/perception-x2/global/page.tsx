@@ -122,9 +122,9 @@ function getSentimentBg(sentiment: string) {
 
 function getRankBadgeColor(rank: string) {
   const num = parseInt(rank)
-  if (isNaN(num)) return 'bg-gold/20 text-gold border-gold/30'
+  if (isNaN(num)) return 'bg-gold-700/20 text-gold-700 border-gold-700/30'
   if (num <= 5) return 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
-  if (num <= 10) return 'bg-gold/20 text-gold border-gold/30'
+  if (num <= 10) return 'bg-gold-700/20 text-gold-700 border-gold-700/30'
   if (num <= 20) return 'bg-amber-500/20 text-amber-400 border-amber-500/30'
   return 'bg-rose-500/20 text-rose-400 border-rose-500/30'
 }
@@ -145,7 +145,7 @@ export default function GlobalStandingPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-pulse text-gold font-rajdhani text-xl">
+        <div className="animate-pulse text-gold-700 font-rajdhani text-xl">
           Loading Global Standing data...
         </div>
       </div>
@@ -353,15 +353,15 @@ export default function GlobalStandingPage() {
           <Badge variant="gold" className="mb-3 font-rajdhani text-xs tracking-widest uppercase">
             PERCEPTION-X2 | GLOBAL STANDING
           </Badge>
-          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold">
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold-700">
             UAE Global Standing
           </h1>
-          <p className="mt-2 text-sm text-platinum-400 max-w-2xl">
+          <p className="mt-2 text-sm text-platinum-500-400 max-w-2xl">
             {globalStandingSummary.headlineFinding}
           </p>
         </div>
         <div className="flex items-center gap-3">
-          <Badge variant="outline" className="border-gold/40 text-gold text-xs">
+          <Badge variant="outline" className="border-gold-700/40 text-gold-700 text-xs">
             <Globe className="h-3 w-3 mr-1" />
             {globalStandingSummary.dataPoints} Data Points
           </Badge>
@@ -369,7 +369,7 @@ export default function GlobalStandingPage() {
             <CheckCircle2 className="h-3 w-3 mr-1" />
             {globalStandingSummary.sourcesVerified} Sources
           </Badge>
-          <Badge variant="outline" className="border-platinum-500/40 text-platinum-400 text-xs">
+          <Badge variant="outline" className="border-platinum-500/40 text-platinum-500-400 text-xs">
             <Activity className="h-3 w-3 mr-1" />
             Updated {globalStandingSummary.lastUpdated}
           </Badge>
@@ -407,22 +407,22 @@ export default function GlobalStandingPage() {
       <motion.div variants={fadeInUp}>
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
           <TabsList className="glass-panel flex gap-1 p-1 overflow-x-auto">
-            <TabsTrigger value="overview" className="font-rajdhani text-xs sm:text-sm data-[state=active]:bg-gold/20">
+            <TabsTrigger value="overview" className="font-rajdhani text-xs sm:text-sm data-[state=active]:bg-gold-700/20">
               <Trophy className="h-3 w-3 mr-1" /> Overview
             </TabsTrigger>
-            <TabsTrigger value="rankings" className="font-rajdhani text-xs sm:text-sm data-[state=active]:bg-gold/20">
+            <TabsTrigger value="rankings" className="font-rajdhani text-xs sm:text-sm data-[state=active]:bg-gold-700/20">
               <Globe className="h-3 w-3 mr-1" /> Rankings
             </TabsTrigger>
-            <TabsTrigger value="competitors" className="font-rajdhani text-xs sm:text-sm data-[state=active]:bg-gold/20">
+            <TabsTrigger value="competitors" className="font-rajdhani text-xs sm:text-sm data-[state=active]:bg-gold-700/20">
               <Users className="h-3 w-3 mr-1" /> Competitors
             </TabsTrigger>
-            <TabsTrigger value="sectors" className="font-rajdhani text-xs sm:text-sm data-[state=active]:bg-gold/20">
+            <TabsTrigger value="sectors" className="font-rajdhani text-xs sm:text-sm data-[state=active]:bg-gold-700/20">
               <Building2 className="h-3 w-3 mr-1" /> Sectors
             </TabsTrigger>
-            <TabsTrigger value="military" className="font-rajdhani text-xs sm:text-sm data-[state=active]:bg-gold/20">
+            <TabsTrigger value="military" className="font-rajdhani text-xs sm:text-sm data-[state=active]:bg-gold-700/20">
               <Shield className="h-3 w-3 mr-1" /> Military
             </TabsTrigger>
-            <TabsTrigger value="sentiment" className="font-rajdhani text-xs sm:text-sm data-[state=active]:bg-gold/20">
+            <TabsTrigger value="sentiment" className="font-rajdhani text-xs sm:text-sm data-[state=active]:bg-gold-700/20">
               <Heart className="h-3 w-3 mr-1" /> Sentiment
             </TabsTrigger>
           </TabsList>
@@ -441,14 +441,14 @@ export default function GlobalStandingPage() {
                   <motion.div
                     key={rank.index}
                     variants={fadeInUp}
-                    className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3 hover:border-gold/40 transition-colors"
+                    className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3 hover:border-gold-700/40 transition-colors"
                     whileHover={{ scale: 1.01 }}
                   >
                     <div className="flex items-start justify-between gap-2">
                       <div className="flex-1 min-w-0">
-                        <p className="text-xs text-platinum-400 truncate font-rajdhani">{rank.index}</p>
-                        <p className="mt-1 text-xl font-extrabold font-rajdhani text-gold">{rank.ranking}</p>
-                        <p className="text-xs text-platinum-500 mt-0.5">{rank.source} · {rank.year}</p>
+                        <p className="text-xs text-platinum-500-400 truncate font-rajdhani">{rank.index}</p>
+                        <p className="mt-1 text-xl font-extrabold font-rajdhani text-gold-700">{rank.ranking}</p>
+                        <p className="text-xs text-platinum-500-500 mt-0.5">{rank.source} · {rank.year}</p>
                       </div>
                       <Badge className={`shrink-0 text-xs border ${getRankBadgeColor(rank.ranking)}`}>
                         {rank.trend}
@@ -503,8 +503,8 @@ export default function GlobalStandingPage() {
                       <ArrowUpRight className="h-4 w-4 text-emerald-400 mt-0.5 shrink-0" />
                       <div>
                         <p className="text-xs text-emerald-400 font-rajdhani font-semibold">{adv.advantageDomain}</p>
-                        <p className="text-sm font-bold text-platinum-200 mt-0.5">{adv.uaeStrength}</p>
-                        <p className="text-xs text-platinum-500 mt-0.5">vs {adv.closestRival}</p>
+                        <p className="text-sm font-bold text-platinum-500-200 mt-0.5">{adv.uaeStrength}</p>
+                        <p className="text-xs text-platinum-500-500 mt-0.5">vs {adv.closestRival}</p>
                       </div>
                     </div>
                   </div>
@@ -524,8 +524,8 @@ export default function GlobalStandingPage() {
                       <ArrowDownRight className="h-4 w-4 text-rose-400 mt-0.5 shrink-0" />
                       <div>
                         <p className="text-xs text-rose-400 font-rajdhani font-semibold">{vuln.vulnerability}</p>
-                        <p className="text-sm font-bold text-platinum-200 mt-0.5">{vuln.uaeMetric}</p>
-                        <p className="text-xs text-platinum-500 mt-0.5">
+                        <p className="text-sm font-bold text-platinum-500-200 mt-0.5">{vuln.uaeMetric}</p>
+                        <p className="text-xs text-platinum-500-500 mt-0.5">
                           {vuln.dominantRival ? `vs ${vuln.dominantRival}: ${vuln.rivalAdvantage}` : vuln.rivalAdvantage}
                         </p>
                       </div>
@@ -557,10 +557,10 @@ export default function GlobalStandingPage() {
                 <div className="space-y-2">
                   {uaeIndicatorPerformance.map((ind, i) => (
                     <div key={ind.indicator} className="flex items-center justify-between rounded bg-platinum-800/30 px-3 py-2">
-                      <span className="text-sm text-platinum-300 font-rajdhani">{ind.indicator}</span>
+                      <span className="text-sm text-platinum-500-300 font-rajdhani">{ind.indicator}</span>
                       <div className="flex items-center gap-2">
                         <Badge className={`border text-xs ${getRankBadgeColor(ind.uaeRank)}`}>{ind.uaeRank}</Badge>
-                        {ind.notes && <span className="text-xs text-platinum-500 hidden sm:inline">{ind.notes}</span>}
+                        {ind.notes && <span className="text-xs text-platinum-500-500 hidden sm:inline">{ind.notes}</span>}
                       </div>
                     </div>
                   ))}
@@ -616,7 +616,7 @@ export default function GlobalStandingPage() {
                   <div className="space-y-2">
                     {uaeVsSaudiEconomic.slice(0, 10).map((row, i) => (
                       <div key={row.metric} className="grid grid-cols-3 gap-2 rounded bg-platinum-800/20 px-3 py-2 text-xs">
-                        <span className="text-platinum-400 font-rajdhani truncate">{row.metric}</span>
+                        <span className="text-platinum-500-400 font-rajdhani truncate">{row.metric}</span>
                         <span className="text-emerald-400 font-rajdhani font-bold text-right truncate">{row.uae}</span>
                         <span className="text-rose-400 font-rajdhani text-right truncate">{row.saudi}</span>
                       </div>
@@ -635,9 +635,9 @@ export default function GlobalStandingPage() {
                   <div className="space-y-2">
                     {uaeVsQatar.slice(0, 10).map((row, i) => (
                       <div key={row.metric} className="grid grid-cols-3 gap-2 rounded bg-platinum-800/20 px-3 py-2 text-xs">
-                        <span className="text-platinum-400 font-rajdhani truncate">{row.metric}</span>
+                        <span className="text-platinum-500-400 font-rajdhani truncate">{row.metric}</span>
                         <span className="text-emerald-400 font-rajdhani font-bold text-right truncate">{row.uae}</span>
-                        <span className="text-platinum-300 font-rajdhani text-right truncate">{row.qatar}</span>
+                        <span className="text-platinum-500-300 font-rajdhani text-right truncate">{row.qatar}</span>
                       </div>
                     ))}
                   </div>
@@ -655,9 +655,9 @@ export default function GlobalStandingPage() {
                 <div className="space-y-2">
                   {uaeVsSingapore.map((row, i) => (
                     <div key={row.metric} className="grid grid-cols-3 gap-2 rounded bg-platinum-800/20 px-3 py-2 text-xs">
-                      <span className="text-platinum-400 font-rajdhani truncate">{row.metric}</span>
-                      <span className="text-gold font-rajdhani font-bold text-right truncate">{row.uae}</span>
-                      <span className="text-platinum-300 font-rajdhani text-right truncate">{row.singapore}</span>
+                      <span className="text-platinum-500-400 font-rajdhani truncate">{row.metric}</span>
+                      <span className="text-gold-700 font-rajdhani font-bold text-right truncate">{row.uae}</span>
+                      <span className="text-platinum-500-300 font-rajdhani text-right truncate">{row.singapore}</span>
                     </div>
                   ))}
                 </div>
@@ -669,15 +669,15 @@ export default function GlobalStandingPage() {
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {uaeVsSwitzerland.map((row, i) => (
                   <div key={row.metric} className="rounded-lg border border-platinum-700/30 bg-platinum-800/20 p-3">
-                    <p className="text-xs text-platinum-400 font-rajdhani">{row.metric}</p>
+                    <p className="text-xs text-platinum-500-400 font-rajdhani">{row.metric}</p>
                     <div className="mt-2 space-y-1">
                       <div className="flex items-center justify-between">
-                        <span className="text-xs text-gold font-rajdhani">UAE</span>
-                        <span className="text-sm font-bold text-gold">{row.uae}</span>
+                        <span className="text-xs text-gold-700 font-rajdhani">UAE</span>
+                        <span className="text-sm font-bold text-gold-700">{row.uae}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-xs text-platinum-400 font-rajdhani">Switzerland</span>
-                        <span className="text-sm font-bold text-platinum-300">{row.switzerland}</span>
+                        <span className="text-xs text-platinum-500-400 font-rajdhani">Switzerland</span>
+                        <span className="text-sm font-bold text-platinum-500-300">{row.switzerland}</span>
                       </div>
                     </div>
                   </div>
@@ -691,22 +691,22 @@ export default function GlobalStandingPage() {
                 {Object.entries(competitorIntelligenceCards).map(([key, card]) => (
                   <Card key={key} className="glass-card border-platinum-700/50">
                     <CardHeader className="pb-2">
-                      <CardTitle className="text-sm font-rajdhani font-bold text-gold capitalize">
+                      <CardTitle className="text-sm font-rajdhani font-bold text-gold-700 capitalize">
                         {key === 'saudiArabia' ? 'Saudi Arabia' : key.charAt(0).toUpperCase() + key.slice(1)}
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-3">
                       <div>
                         <p className="text-xs text-emerald-400 font-rajdhani font-semibold mb-1">Strengths</p>
-                        <p className="text-xs text-platinum-400 leading-relaxed">{card.strengths.substring(0, 100)}...</p>
+                        <p className="text-xs text-platinum-500-400 leading-relaxed">{card.strengths.substring(0, 100)}...</p>
                       </div>
                       <div>
                         <p className="text-xs text-rose-400 font-rajdhani font-semibold mb-1">Weaknesses</p>
-                        <p className="text-xs text-platinum-400 leading-relaxed">{card.weaknesses.substring(0, 80)}...</p>
+                        <p className="text-xs text-platinum-500-400 leading-relaxed">{card.weaknesses.substring(0, 80)}...</p>
                       </div>
                       <div>
-                        <p className="text-xs text-gold font-rajdhani font-semibold mb-1">UAE Edge</p>
-                        <p className="text-xs text-platinum-400 leading-relaxed">{card.uaeCompetitiveEdge.substring(0, 80)}...</p>
+                        <p className="text-xs text-gold-700 font-rajdhani font-semibold mb-1">UAE Edge</p>
+                        <p className="text-xs text-platinum-500-400 leading-relaxed">{card.uaeCompetitiveEdge.substring(0, 80)}...</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -741,9 +741,9 @@ export default function GlobalStandingPage() {
                   <div className="space-y-2">
                     {dubaiVsLondon.map((row, i) => (
                       <div key={row.metric} className="grid grid-cols-3 gap-2 rounded bg-platinum-800/20 px-3 py-2 text-xs">
-                        <span className="text-platinum-400 font-rajdhani truncate">{row.metric}</span>
-                        <span className="text-gold font-rajdhani font-bold text-right truncate">{row.dubai}</span>
-                        <span className="text-platinum-300 font-rajdhani text-right truncate">{row.london}</span>
+                        <span className="text-platinum-500-400 font-rajdhani truncate">{row.metric}</span>
+                        <span className="text-gold-700 font-rajdhani font-bold text-right truncate">{row.dubai}</span>
+                        <span className="text-platinum-500-300 font-rajdhani text-right truncate">{row.london}</span>
                       </div>
                     ))}
                   </div>
@@ -769,15 +769,15 @@ export default function GlobalStandingPage() {
               />
               <div className="mt-4 grid gap-3 sm:grid-cols-3">
                 {[
-                  { label: 'Income Tax', dubai: '0%', ny: 'Federal + State + City', icon: <Banknote className="h-4 w-4 text-gold" /> },
-                  { label: 'Property Tax', dubai: 'None', ny: 'Varies by borough', icon: <Building2 className="h-4 w-4 text-emerald" /> },
-                  { label: 'Rental Yields', dubai: '5–8%', ny: 'Lower net yields', icon: <TrendingUp className="h-4 w-4 text-platinum" /> },
+                  { label: 'Income Tax', dubai: '0%', ny: 'Federal + State + City', icon: <Banknote className="h-4 w-4 text-gold-700" /> },
+                  { label: 'Property Tax', dubai: 'None', ny: 'Varies by borough', icon: <Building2 className="h-4 w-4 text-emerald-500" /> },
+                  { label: 'Rental Yields', dubai: '5–8%', ny: 'Lower net yields', icon: <TrendingUp className="h-4 w-4 text-platinum-500" /> },
                 ].map((item, i) => (
                   <div key={item.label} className="rounded-lg border border-platinum-700/30 bg-platinum-800/20 p-3 text-center">
                     {item.icon}
-                    <p className="mt-1 text-xs text-platinum-400 font-rajdhani">{item.label}</p>
-                    <p className="mt-1 text-sm font-bold text-gold font-rajdhani">{item.dubai}</p>
-                    <p className="text-xs text-platinum-500">{item.ny}</p>
+                    <p className="mt-1 text-xs text-platinum-500-400 font-rajdhani">{item.label}</p>
+                    <p className="mt-1 text-sm font-bold text-gold-700 font-rajdhani">{item.dubai}</p>
+                    <p className="text-xs text-platinum-500-500">{item.ny}</p>
                   </div>
                 ))}
               </div>
@@ -809,21 +809,21 @@ export default function GlobalStandingPage() {
                 <table className="w-full text-xs">
                   <thead>
                     <tr className="border-b border-platinum-700/50">
-                      <th className="text-left py-2 px-3 text-platinum-400 font-rajdhani">Feature</th>
-                      <th className="text-center py-2 px-3 text-gold font-rajdhani">UAE</th>
-                      <th className="text-center py-2 px-3 text-platinum-300 font-rajdhani">Switzerland</th>
-                      <th className="text-center py-2 px-3 text-platinum-300 font-rajdhani">Monaco</th>
-                      <th className="text-center py-2 px-3 text-platinum-300 font-rajdhani">Singapore</th>
+                      <th className="text-left py-2 px-3 text-platinum-500-400 font-rajdhani">Feature</th>
+                      <th className="text-center py-2 px-3 text-gold-700 font-rajdhani">UAE</th>
+                      <th className="text-center py-2 px-3 text-platinum-500-300 font-rajdhani">Switzerland</th>
+                      <th className="text-center py-2 px-3 text-platinum-500-300 font-rajdhani">Monaco</th>
+                      <th className="text-center py-2 px-3 text-platinum-500-300 font-rajdhani">Singapore</th>
                     </tr>
                   </thead>
                   <tbody>
                     {wealthManagementSector.map((row, i) => (
                       <tr key={row.feature} className="border-b border-platinum-800/30">
-                        <td className="py-2 px-3 text-platinum-400 font-rajdhani">{row.feature}</td>
+                        <td className="py-2 px-3 text-platinum-500-400 font-rajdhani">{row.feature}</td>
                         <td className="py-2 px-3 text-center text-emerald-400 font-bold font-rajdhani">{row.uae}</td>
-                        <td className="py-2 px-3 text-center text-platinum-300 font-rajdhani">{row.switzerland}</td>
-                        <td className="py-2 px-3 text-center text-platinum-300 font-rajdhani">{row.monaco}</td>
-                        <td className="py-2 px-3 text-center text-platinum-300 font-rajdhani">{row.singapore}</td>
+                        <td className="py-2 px-3 text-center text-platinum-500-300 font-rajdhani">{row.switzerland}</td>
+                        <td className="py-2 px-3 text-center text-platinum-500-300 font-rajdhani">{row.monaco}</td>
+                        <td className="py-2 px-3 text-center text-platinum-500-300 font-rajdhani">{row.singapore}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -835,11 +835,11 @@ export default function GlobalStandingPage() {
             <GlassPanel title="Tourism & Trade — UAE 2025-2026" description="Record-breaking tourism and trade milestones">
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {tourismSector.map((t, i) => (
-                  <div key={t.metric} className="rounded-lg border border-gold/20 bg-gold/5 p-3">
-                    <p className="text-xs text-gold font-rajdhani font-semibold">{t.metric}</p>
-                    <p className="mt-1 text-lg font-extrabold text-platinum-100 font-rajdhani">{(t.value as string).split('(')[0]}</p>
+                  <div key={t.metric} className="rounded-lg border border-gold-700/20 bg-gold-700/5 p-3">
+                    <p className="text-xs text-gold-700 font-rajdhani font-semibold">{t.metric}</p>
+                    <p className="mt-1 text-lg font-extrabold text-platinum-500-100 font-rajdhani">{(t.value as string).split('(')[0]}</p>
                     {((t.value as string).includes('(')) && (
-                      <p className="text-xs text-platinum-400">{(t.value as string).match(/\(.*\)/)?.[0]}</p>
+                      <p className="text-xs text-platinum-500-400">{(t.value as string).match(/\(.*\)/)?.[0]}</p>
                     )}
                   </div>
                 ))}
@@ -871,19 +871,19 @@ export default function GlobalStandingPage() {
                 <table className="w-full text-xs">
                   <thead>
                     <tr className="border-b border-platinum-700/50">
-                      <th className="text-left py-2 px-2 text-platinum-400 font-rajdhani">ME Rank</th>
-                      <th className="text-left py-2 px-2 text-platinum-400 font-rajdhani">Country</th>
-                      <th className="text-right py-2 px-2 text-platinum-400 font-rajdhani">Power Index</th>
-                      <th className="text-right py-2 px-2 text-platinum-400 font-rajdhani">Global Rank</th>
+                      <th className="text-left py-2 px-2 text-platinum-500-400 font-rajdhani">ME Rank</th>
+                      <th className="text-left py-2 px-2 text-platinum-500-400 font-rajdhani">Country</th>
+                      <th className="text-right py-2 px-2 text-platinum-500-400 font-rajdhani">Power Index</th>
+                      <th className="text-right py-2 px-2 text-platinum-500-400 font-rajdhani">Global Rank</th>
                     </tr>
                   </thead>
                   <tbody>
                     {middleEastMilitaryRankings.map((r, i) => (
-                      <tr key={r.country} className={`border-b border-platinum-800/30 ${r.country === 'UAE' ? 'bg-gold/10' : ''}`}>
-                        <td className={`py-2 px-2 font-rajdhani font-bold ${r.country === 'UAE' ? 'text-gold' : 'text-platinum-400'}`}>{r.meRank}</td>
-                        <td className={`py-2 px-2 font-rajdhani font-semibold ${r.country === 'UAE' ? 'text-gold' : 'text-platinum-300'}`}>{r.country}</td>
-                        <td className={`py-2 px-2 text-right font-rajdhani ${r.country === 'UAE' ? 'text-gold' : 'text-platinum-400'}`}>{r.powerIndex}</td>
-                        <td className={`py-2 px-2 text-right font-rajdhani ${r.country === 'UAE' ? 'text-gold' : 'text-platinum-400'}`}>{r.globalRank || '—'}</td>
+                      <tr key={r.country} className={`border-b border-platinum-800/30 ${r.country === 'UAE' ? 'bg-gold-700/10' : ''}`}>
+                        <td className={`py-2 px-2 font-rajdhani font-bold ${r.country === 'UAE' ? 'text-gold-700' : 'text-platinum-500-400'}`}>{r.meRank}</td>
+                        <td className={`py-2 px-2 font-rajdhani font-semibold ${r.country === 'UAE' ? 'text-gold-700' : 'text-platinum-500-300'}`}>{r.country}</td>
+                        <td className={`py-2 px-2 text-right font-rajdhani ${r.country === 'UAE' ? 'text-gold-700' : 'text-platinum-500-400'}`}>{r.powerIndex}</td>
+                        <td className={`py-2 px-2 text-right font-rajdhani ${r.country === 'UAE' ? 'text-gold-700' : 'text-platinum-500-400'}`}>{r.globalRank || '—'}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -916,10 +916,10 @@ export default function GlobalStandingPage() {
                   <div className="space-y-2">
                     {uaeVsTurkey.map((row, i) => (
                       <div key={row.metric} className="grid grid-cols-2 gap-2 rounded bg-platinum-800/20 px-3 py-2 text-xs">
-                        <span className="text-platinum-400 font-rajdhani">{row.metric}</span>
+                        <span className="text-platinum-500-400 font-rajdhani">{row.metric}</span>
                         <div className="flex flex-col gap-0.5">
-                          <span className="text-gold font-rajdhani font-bold text-right">{row.uae}</span>
-                          <span className="text-platinum-400 font-rajdhani text-right">{row.turkey}</span>
+                          <span className="text-gold-700 font-rajdhani font-bold text-right">{row.uae}</span>
+                          <span className="text-platinum-500-400 font-rajdhani text-right">{row.turkey}</span>
                         </div>
                       </div>
                     ))}
@@ -933,9 +933,9 @@ export default function GlobalStandingPage() {
                   <div className="space-y-2">
                     {uaeVsEgypt.map((row, i) => (
                       <div key={row.metric} className="grid grid-cols-2 gap-2 rounded bg-platinum-800/20 px-3 py-2 text-xs">
-                        <span className="text-platinum-400 font-rajdhani">{row.metric}</span>
+                        <span className="text-platinum-500-400 font-rajdhani">{row.metric}</span>
                         <div className="flex flex-col gap-0.5">
-                          <span className="text-gold font-rajdhani font-bold text-right">{row.uae}</span>
+                          <span className="text-gold-700 font-rajdhani font-bold text-right">{row.uae}</span>
                           <span className="text-rose-400 font-rajdhani text-right">{row.egypt}</span>
                         </div>
                       </div>
@@ -962,8 +962,8 @@ export default function GlobalStandingPage() {
                       <div className="flex items-center gap-2">
                         {getSentimentIcon(dim.uaeSentiment)}
                         <div>
-                          <p className="text-sm font-semibold text-platinum-200 font-rajdhani">{dim.dimension}</p>
-                          <p className="text-xs text-platinum-400 mt-0.5">{dim.note}</p>
+                          <p className="text-sm font-semibold text-platinum-500-200 font-rajdhani">{dim.dimension}</p>
+                          <p className="text-xs text-platinum-500-400 mt-0.5">{dim.note}</p>
                         </div>
                       </div>
                       <Badge className={`shrink-0 border ${getSentimentBg(dim.uaeSentiment)} ${getSentimentColor(dim.uaeSentiment)} text-xs font-rajdhani`}>
@@ -985,17 +985,17 @@ export default function GlobalStandingPage() {
                         variant="outline"
                         className={`text-xs font-rajdhani ${
                           tier.tier === 'TIER 0' ? 'border-emerald-500/50 text-emerald-400' :
-                          tier.tier === 'TIER 1' ? 'border-gold/50 text-gold' :
+                          tier.tier === 'TIER 1' ? 'border-gold-700/50 text-gold-700' :
                           tier.tier === 'Academic' ? 'border-indigo-500/50 text-indigo-400' :
-                          'border-platinum-500/50 text-platinum-400'
+                          'border-platinum-500/50 text-platinum-500-400'
                         }`}
                       >
                         {tier.tier}
                       </Badge>
-                      <span className="text-xl font-extrabold text-platinum-200 font-rajdhani">{tier.count}</span>
+                      <span className="text-xl font-extrabold text-platinum-500-200 font-rajdhani">{tier.count}</span>
                     </div>
-                    <p className="text-xs text-platinum-400 font-rajdhani">{tier.definition}</p>
-                    <p className="text-xs text-platinum-500 mt-1 leading-relaxed">{tier.examples}</p>
+                    <p className="text-xs text-platinum-500-400 font-rajdhani">{tier.definition}</p>
+                    <p className="text-xs text-platinum-500-500 mt-1 leading-relaxed">{tier.examples}</p>
                   </div>
                 ))}
               </div>

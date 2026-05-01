@@ -230,12 +230,12 @@ export const GlassPanel = React.forwardRef<HTMLDivElement, GlassPanelProps>(
           )}
           <div className="flex-1 min-w-0">
             {title && (
-              <h3 className="font-rajdhani text-lg font-semibold text-platinum-900 dark:text-platinum-100">
+              <h3 className="font-rajdhani text-lg font-semibold text-platinum-500-900 dark:text-platinum-500-100">
                 {title}
               </h3>
             )}
             {description && (
-              <p className="mt-1 text-sm text-platinum-600 dark:text-platinum-400 line-clamp-2">
+              <p className="mt-1 text-sm text-platinum-500-600 dark:text-platinum-500-400 line-clamp-2">
                 {description}
               </p>
             )}
@@ -343,7 +343,7 @@ const statusConfig: Record<
   neutral: {
     bg: 'bg-platinum-50/90 dark:bg-platinum-900/20',
     border: 'border-platinum-200/50 dark:border-platinum-700/50',
-    text: 'text-platinum-700 dark:text-platinum-300',
+    text: 'text-platinum-500-700 dark:text-platinum-500-300',
     icon: 'bg-gradient-to-br from-platinum-400 to-platinum-600 text-white shadow-premium-sm',
     glow: 'shadow-[0_0_20px_rgba(148,163,184,0.2)]',
   },
@@ -444,14 +444,14 @@ export const StatusCard = React.forwardRef<HTMLDivElement, StatusCardProps>(
           <div className="flex-1 min-w-0">
             <p className={cn('text-sm font-medium', config.text)}>{title}</p>
             {value !== undefined && (
-              <p className="mt-1 font-rajdhani text-2xl font-bold text-platinum-900 dark:text-platinum-100">
+              <p className="mt-1 font-rajdhani text-2xl font-bold text-platinum-500-900 dark:text-platinum-500-100">
                 {value}
               </p>
             )}
             {(description || trendValue) && (
               <div className="mt-1 flex items-center gap-2">
                 {description && (
-                  <p className="text-sm text-platinum-600 dark:text-platinum-400 truncate">
+                  <p className="text-sm text-platinum-500-600 dark:text-platinum-500-400 truncate">
                     {description}
                   </p>
                 )}
@@ -532,8 +532,8 @@ export const MetricCard = React.forwardRef<HTMLDivElement, MetricCardProps>(
       >
         <div className="flex items-start justify-between">
           <div className="flex-1">
-            <p className="text-sm font-medium text-platinum-600 dark:text-platinum-400">{title}</p>
-            <p className="mt-2 font-rajdhani text-3xl font-bold text-platinum-900 dark:text-platinum-100">
+            <p className="text-sm font-medium text-platinum-500-600 dark:text-platinum-500-400">{title}</p>
+            <p className="mt-2 font-rajdhani text-3xl font-bold text-platinum-500-900 dark:text-platinum-500-100">
               {value}
             </p>
             {(change || description) && (
@@ -544,7 +544,7 @@ export const MetricCard = React.forwardRef<HTMLDivElement, MetricCardProps>(
                       'text-sm font-medium',
                       change.type === 'increase' && 'text-emerald-600 dark:text-emerald-400',
                       change.type === 'decrease' && 'text-red-600 dark:text-red-400',
-                      change.type === 'neutral' && 'text-platinum-600 dark:text-platinum-400'
+                      change.type === 'neutral' && 'text-platinum-500-600 dark:text-platinum-500-400'
                     )}
                   >
                     {change.type === 'increase' && '↑'}
@@ -554,7 +554,7 @@ export const MetricCard = React.forwardRef<HTMLDivElement, MetricCardProps>(
                   </span>
                 )}
                 {description && (
-                  <span className="text-sm text-platinum-500 dark:text-platinum-500">
+                  <span className="text-sm text-platinum-500-500 dark:text-platinum-500-500">
                     {description}
                   </span>
                 )}
@@ -562,7 +562,7 @@ export const MetricCard = React.forwardRef<HTMLDivElement, MetricCardProps>(
             )}
           </div>
           {icon && (
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-50 dark:bg-navy-900/30 text-navy-600 dark:text-navy-400">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-50 dark:bg-navy-900/30 text-navy-500-600 dark:text-navy-500-400">
               {icon}
             </div>
           )}

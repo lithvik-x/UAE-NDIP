@@ -94,19 +94,19 @@ export function RedditHumanRightsSection({
                     <p className="text-3xl font-bold text-rose-400">
                       {massTrialData?.convicted || 44}/{massTrialData?.defendants || 84}
                     </p>
-                    <p className="text-sm text-platinum-400">Defendants convicted</p>
+                    <p className="text-sm text-platinum-500-400">Defendants convicted</p>
                   </div>
                   <div className="p-4 rounded-lg bg-rose-500/10 border border-rose-500/30 text-center">
                     <p className="text-3xl font-bold text-rose-400">{massTrialData?.lifeSentences || 40}</p>
-                    <p className="text-sm text-platinum-400">Life sentences</p>
+                    <p className="text-sm text-platinum-500-400">Life sentences</p>
                   </div>
                   <div className="p-4 rounded-lg bg-rose-500/10 border border-rose-500/30 text-center">
                     <p className="text-3xl font-bold text-rose-400">4</p>
-                    <p className="text-sm text-platinum-400">15-year sentences</p>
+                    <p className="text-sm text-platinum-500-400">15-year sentences</p>
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <p className="text-sm text-platinum-400 font-semibold">Key Prisoners:</p>
+                  <p className="text-sm text-platinum-500-400 font-semibold">Key Prisoners:</p>
                   {keyPrisoners.slice(0, 5).map((prisoner, idx) => (
                     <motion.div
                       key={idx}
@@ -116,8 +116,8 @@ export function RedditHumanRightsSection({
                       className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
                       <div>
-                        <p className="font-semibold text-platinum-200">{prisoner.name}</p>
-                        <p className="text-xs text-platinum-400">{prisoner.reason}</p>
+                        <p className="font-semibold text-platinum-500-200">{prisoner.name}</p>
+                        <p className="text-xs text-platinum-500-400">{prisoner.reason}</p>
                       </div>
                       <Badge variant="destructive" className="bg-rose-500/20 text-rose-400">
                         {prisoner.status}
@@ -140,7 +140,7 @@ export function RedditHumanRightsSection({
                   <UsersRound className="h-5 w-5" />
                   Kafala System Issues
                 </CardTitle>
-                <p className="text-sm text-platinum-400">Human Rights Watch 2025 Report</p>
+                <p className="text-sm text-platinum-500-400">Human Rights Watch 2025 Report</p>
               </CardHeader>
               <CardContent>
                 <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
@@ -155,7 +155,7 @@ export function RedditHumanRightsSection({
                       <AlertTriangle className="h-4 w-4 text-amber-400 flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="font-semibold text-amber-400 text-sm">{issue.issue}</p>
-                        <p className="text-xs text-platinum-300">{issue.details}</p>
+                        <p className="text-xs text-platinum-500-300">{issue.details}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -187,12 +187,12 @@ export function RedditHumanRightsSection({
                       className="p-3 rounded-lg border border-pink-500/20 bg-pink-500/5"
                     >
                       <div className="flex items-start justify-between">
-                        <p className="font-medium text-platinum-200 text-sm">{post.title}</p>
+                        <p className="font-medium text-platinum-500-200 text-sm">{post.title}</p>
                         <Badge variant="outline" className="border-pink-500/30 text-pink-400 text-xs ml-2">
                           {post.date}
                         </Badge>
                       </div>
-                      <p className="text-xs text-platinum-400 mt-1">{post.keyFacts}</p>
+                      <p className="text-xs text-platinum-500-400 mt-1">{post.keyFacts}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -223,12 +223,12 @@ export function RedditHumanRightsSection({
                       className="p-3 rounded-lg border border-orange-500/20 bg-orange-500/5"
                     >
                       <div className="flex items-start justify-between">
-                        <p className="font-medium text-platinum-200 text-sm">{post.title}</p>
+                        <p className="font-medium text-platinum-500-200 text-sm">{post.title}</p>
                         <Badge variant="outline" className="border-orange-500/30 text-orange-400 text-xs ml-2">
                           {post.date}
                         </Badge>
                       </div>
-                      <p className="text-xs text-platinum-400 mt-1">{post.keyFacts}</p>
+                      <p className="text-xs text-platinum-500-400 mt-1">{post.keyFacts}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -248,7 +248,7 @@ export function RedditHumanRightsSection({
                     <AlertOctagon className="h-5 w-5" />
                     Sex Trafficking Cases
                   </CardTitle>
-                  <p className="text-sm text-platinum-400">Documented cases from BBC, news sources</p>
+                  <p className="text-sm text-platinum-500-400">Documented cases from BBC, news sources</p>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
@@ -268,12 +268,12 @@ export function RedditHumanRightsSection({
                             </Badge>
                           )}
                         </div>
-                        <p className="text-sm text-platinum-300">{caseItem.details}</p>
+                        <p className="text-sm text-platinum-500-300">{caseItem.details}</p>
                         {caseItem.location && (
-                          <p className="text-xs text-platinum-400 mt-1">Location: {caseItem.location}</p>
+                          <p className="text-xs text-platinum-500-400 mt-1">Location: {caseItem.location}</p>
                         )}
                         {caseItem.method && (
-                          <p className="text-xs text-platinum-400">Method: {caseItem.method}</p>
+                          <p className="text-xs text-platinum-500-400">Method: {caseItem.method}</p>
                         )}
                       </motion.div>
                     ))}
@@ -302,14 +302,14 @@ export function RedditHumanRightsSection({
                       {domesticWorkerWages.map((wage, idx) => (
                         <div key={idx} className="p-3 rounded-lg border border-amber-500/20 bg-amber-500/5 text-center">
                           <p className="text-lg font-bold text-amber-400">{wage.monthlySalary}</p>
-                          <p className="text-sm text-platinum-300">{wage.nationality}</p>
-                          <p className="text-xs text-platinum-500">Source: {wage.source}</p>
+                          <p className="text-sm text-platinum-500-300">{wage.nationality}</p>
+                          <p className="text-xs text-platinum-500-500">Source: {wage.source}</p>
                         </div>
                       ))}
                     </div>
                     {abuseMethods.length > 0 && (
                       <div>
-                        <p className="text-sm text-platinum-400 mb-2">Documented Abuse Methods:</p>
+                        <p className="text-sm text-platinum-500-400 mb-2">Documented Abuse Methods:</p>
                         <div className="flex flex-wrap gap-2">
                           {abuseMethods.map((method, idx) => (
                             <Badge key={idx} variant="outline" className="border-amber-500/30 text-amber-400 text-xs">

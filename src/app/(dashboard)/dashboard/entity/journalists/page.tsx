@@ -133,7 +133,7 @@ function getSentimentColor(sentiment: string): string {
   if (sentiment.includes('POSITIVE') || sentiment.includes('positive')) return 'text-emerald-500'
   if (sentiment.includes('NEGATIVE') || sentiment.includes('negative')) return 'text-red-500'
   if (sentiment.includes('MIXED') || sentiment.includes('mixed')) return 'text-amber-500'
-  return 'text-platinum-500'
+  return 'text-platinum-500-500'
 }
 
 function getAlertBadgeVariant(alertLevel: string): 'success' | 'warning' | 'destructive' | 'secondary' {
@@ -231,10 +231,10 @@ export default function JournalistsPage() {
           <Badge variant="gold" className="mb-2 text-xs font-bold tracking-wider uppercase">
             MEDIA INTELLIGENCE
           </Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">
             UAE Journalists & Media Personalities
           </h1>
-          <p className="mt-2 text-platinum-600 dark:text-platinum-400 max-w-2xl">
+          <p className="mt-2 text-platinum-500-600 dark:text-platinum-500-400 max-w-2xl">
             Comprehensive registry of {overview.documentMetadata.totalEntities} journalists, presenters, anchors, and media personalities operating in the UAE and covering the Gulf region. Last enriched: {overview.documentMetadata.enriched}.
           </p>
         </motion.div>
@@ -424,10 +424,10 @@ export default function JournalistsPage() {
                       {area.priority}
                     </Badge>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-platinum-800 dark:text-platinum-200 truncate">
+                      <p className="text-sm font-medium text-platinum-500-800 dark:text-platinum-500-200 truncate">
                         {area.focusArea}
                       </p>
-                      <p className="text-xs text-platinum-500 dark:text-platinum-400 mt-0.5">
+                      <p className="text-xs text-platinum-500-500 dark:text-platinum-500-400 mt-0.5">
                         {area.coverageStatus}
                       </p>
                     </div>
@@ -446,27 +446,27 @@ export default function JournalistsPage() {
             <GlassPanel title="Document Metadata" description="Source and enrichment information">
               <div className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-platinum-500">File:</span>
-                  <span className="font-medium text-platinum-800 dark:text-platinum-200">{overview.documentMetadata.file}</span>
+                  <span className="text-platinum-500-500">File:</span>
+                  <span className="font-medium text-platinum-500-800 dark:text-platinum-500-200">{overview.documentMetadata.file}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-platinum-500">Type:</span>
-                  <span className="font-medium text-platinum-800 dark:text-platinum-200">People Registry</span>
+                  <span className="text-platinum-500-500">Type:</span>
+                  <span className="font-medium text-platinum-500-800 dark:text-platinum-500-200">People Registry</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-platinum-500">Enriched:</span>
-                  <span className="font-medium text-platinum-800 dark:text-platinum-200">{overview.documentMetadata.enriched}</span>
+                  <span className="text-platinum-500-500">Enriched:</span>
+                  <span className="font-medium text-platinum-500-800 dark:text-platinum-500-200">{overview.documentMetadata.enriched}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-platinum-500">Sources:</span>
-                  <span className="font-medium text-platinum-800 dark:text-platinum-200">{overview.documentMetadata.sourceCount} queries</span>
+                  <span className="text-platinum-500-500">Sources:</span>
+                  <span className="font-medium text-platinum-500-800 dark:text-platinum-500-200">{overview.documentMetadata.sourceCount} queries</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-platinum-500">Pages Synthesized:</span>
-                  <span className="font-medium text-platinum-800 dark:text-platinum-200">{overview.documentMetadata.pagesSynthesized}</span>
+                  <span className="text-platinum-500-500">Pages Synthesized:</span>
+                  <span className="font-medium text-platinum-500-800 dark:text-platinum-500-200">{overview.documentMetadata.pagesSynthesized}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-platinum-500">Confidence:</span>
+                  <span className="text-platinum-500-500">Confidence:</span>
                   <span className="font-medium text-emerald-600 dark:text-emerald-400">{overview.documentMetadata.confidence}</span>
                 </div>
               </div>
@@ -546,24 +546,24 @@ export default function JournalistsPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div>
-                    <span className="text-platinum-500">Editor-in-Chief:</span>
-                    <span className="ml-2 font-medium text-platinum-800 dark:text-platinum-200">{gulfNewsOrganization.editorInChief}</span>
+                    <span className="text-platinum-500-500">Editor-in-Chief:</span>
+                    <span className="ml-2 font-medium text-platinum-500-800 dark:text-platinum-500-200">{gulfNewsOrganization.editorInChief}</span>
                   </div>
                   <div>
-                    <span className="text-platinum-500">Managing Editor:</span>
-                    <span className="ml-2 font-medium text-platinum-800 dark:text-platinum-200">{gulfNewsOrganization.managingEditor}</span>
+                    <span className="text-platinum-500-500">Managing Editor:</span>
+                    <span className="ml-2 font-medium text-platinum-500-800 dark:text-platinum-500-200">{gulfNewsOrganization.managingEditor}</span>
                   </div>
                 </div>
                 <div className="border-t border-platinum-200/50 dark:border-platinum-700/50 pt-4">
-                  <p className="text-xs font-semibold text-platinum-600 dark:text-platinum-400 uppercase tracking-wider mb-2">Leadership</p>
+                  <p className="text-xs font-semibold text-platinum-500-600 dark:text-platinum-500-400 uppercase tracking-wider mb-2">Leadership</p>
                   <div className="grid grid-cols-1 gap-2">
                     {gulfNewsOrganization.leadership.slice(0, 6).map((leader, idx) => (
                       <div key={idx} className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-800 dark:text-platinum-200">{leader.name}</span>
+                        <span className="text-platinum-500-800 dark:text-platinum-500-200">{leader.name}</span>
                         <div className="flex items-center gap-2">
                           <Badge variant="outline" size="sm">{leader.role}</Badge>
                           {leader.twitter && (
-                            <a href={`https://twitter.com/${leader.twitter.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-navy-500 hover:text-navy-400 text-xs">
+                            <a href={`https://twitter.com/${leader.twitter.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-navy-500-500 hover:text-navy-500-400 text-xs">
                               {leader.twitter}
                             </a>
                           )}
@@ -573,11 +573,11 @@ export default function JournalistsPage() {
                   </div>
                 </div>
                 <div className="border-t border-platinum-200/50 dark:border-platinum-700/50 pt-4">
-                  <p className="text-xs font-semibold text-platinum-600 dark:text-platinum-400 uppercase tracking-wider mb-2">Business & Finance Desk</p>
+                  <p className="text-xs font-semibold text-platinum-500-600 dark:text-platinum-500-400 uppercase tracking-wider mb-2">Business & Finance Desk</p>
                   <div className="grid grid-cols-2 gap-2 text-sm">
                     {gulfNewsOrganization.staff.filter(s => s.coverage?.toLowerCase().includes('business') || s.role.toLowerCase().includes('Business')).slice(0, 4).map((person, idx) => (
                       <div key={idx} className="flex justify-between">
-                        <span className="text-platinum-800 dark:text-platinum-200">{person.name}</span>
+                        <span className="text-platinum-500-800 dark:text-platinum-500-200">{person.name}</span>
                         <Badge variant="outline" size="sm">{person.role}</Badge>
                       </div>
                     ))}
@@ -597,20 +597,20 @@ export default function JournalistsPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div>
-                    <span className="text-platinum-500">Editor-in-Chief:</span>
-                    <span className="ml-2 font-medium text-platinum-800 dark:text-platinum-200">{theNationalOrganization.editorInChief}</span>
+                    <span className="text-platinum-500-500">Editor-in-Chief:</span>
+                    <span className="ml-2 font-medium text-platinum-500-800 dark:text-platinum-500-200">{theNationalOrganization.editorInChief}</span>
                   </div>
                   <div>
-                    <span className="text-platinum-500">Managing Editor:</span>
-                    <span className="ml-2 font-medium text-platinum-800 dark:text-platinum-200">{theNationalOrganization.managingEditor}</span>
+                    <span className="text-platinum-500-500">Managing Editor:</span>
+                    <span className="ml-2 font-medium text-platinum-500-800 dark:text-platinum-500-200">{theNationalOrganization.managingEditor}</span>
                   </div>
                 </div>
                 <div className="border-t border-platinum-200/50 dark:border-platinum-700/50 pt-4">
-                  <p className="text-xs font-semibold text-platinum-600 dark:text-platinum-400 uppercase tracking-wider mb-2">Leadership</p>
+                  <p className="text-xs font-semibold text-platinum-500-600 dark:text-platinum-500-400 uppercase tracking-wider mb-2">Leadership</p>
                   <div className="grid grid-cols-1 gap-2">
                     {theNationalOrganization.leadership.slice(0, 6).map((leader, idx) => (
                       <div key={idx} className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-800 dark:text-platinum-200">{leader.name}</span>
+                        <span className="text-platinum-500-800 dark:text-platinum-500-200">{leader.name}</span>
                         <Badge variant="outline" size="sm">{leader.role}</Badge>
                       </div>
                     ))}
@@ -618,23 +618,23 @@ export default function JournalistsPage() {
                 </div>
                 {/* Mina Al-Oraibi Profile */}
                 <div className="border-t border-platinum-200/50 dark:border-platinum-700/50 pt-4">
-                  <p className="text-xs font-semibold text-platinum-600 dark:text-platinum-400 uppercase tracking-wider mb-2">Featured Profile: Mina Al-Oraibi</p>
+                  <p className="text-xs font-semibold text-platinum-500-600 dark:text-platinum-500-400 uppercase tracking-wider mb-2">Featured Profile: Mina Al-Oraibi</p>
                   <Card className="glass-subtle">
                     <CardContent className="p-4">
                       <div className="flex items-start justify-between mb-2">
                         <div>
-                          <p className="font-bold text-navy-900 dark:text-platinum-100">{minaAlOraibiProfile.name}</p>
-                          <p className="text-sm text-platinum-500">{minaAlOraibiProfile.role}</p>
+                          <p className="font-bold text-navy-500-900 dark:text-platinum-500-100">{minaAlOraibiProfile.name}</p>
+                          <p className="text-sm text-platinum-500-500">{minaAlOraibiProfile.role}</p>
                         </div>
                         <Badge variant="gold" size="sm">Tier {minaAlOraibiProfile.tier}</Badge>
                       </div>
                       <div className="grid grid-cols-2 gap-2 text-xs mt-3">
-                        <div><span className="text-platinum-500">Nationality:</span> <span className="text-platinum-700">{minaAlOraibiProfile.nationality}</span></div>
-                        <div><span className="text-platinum-500">Relevance:</span> <span className="text-platinum-700">{minaAlOraibiProfile.uaeRelevance}/100</span></div>
+                        <div><span className="text-platinum-500-500">Nationality:</span> <span className="text-platinum-500-700">{minaAlOraibiProfile.nationality}</span></div>
+                        <div><span className="text-platinum-500-500">Relevance:</span> <span className="text-platinum-500-700">{minaAlOraibiProfile.uaeRelevance}/100</span></div>
                       </div>
                       <div className="mt-3 space-y-1">
                         {minaAlOraibiProfile.keyFindings.slice(0, 4).map((finding, idx) => (
-                          <p key={idx} className="text-xs text-platinum-600 dark:text-platinum-400 flex items-start gap-1">
+                          <p key={idx} className="text-xs text-platinum-500-600 dark:text-platinum-500-400 flex items-start gap-1">
                             <ChevronRight className="h-3 w-3 mt-0.5 shrink-0" />
                             {finding}
                           </p>
@@ -657,27 +657,27 @@ export default function JournalistsPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div>
-                    <span className="text-platinum-500">Language:</span>
-                    <span className="ml-2 font-medium text-platinum-800 dark:text-platinum-200">{alArabiyaOrganization.language}</span>
+                    <span className="text-platinum-500-500">Language:</span>
+                    <span className="ml-2 font-medium text-platinum-500-800 dark:text-platinum-500-200">{alArabiyaOrganization.language}</span>
                   </div>
                   <div>
-                    <span className="text-platinum-500">Headquarters:</span>
-                    <span className="ml-2 font-medium text-platinum-800 dark:text-platinum-200">Dubai, UAE</span>
+                    <span className="text-platinum-500-500">Headquarters:</span>
+                    <span className="ml-2 font-medium text-platinum-500-800 dark:text-platinum-500-200">Dubai, UAE</span>
                   </div>
                 </div>
                 <div className="border-t border-platinum-200/50 dark:border-platinum-700/50 pt-4">
-                  <p className="text-xs font-semibold text-platinum-600 dark:text-platinum-400 uppercase tracking-wider mb-2">Named Journalists & Presenters</p>
+                  <p className="text-xs font-semibold text-platinum-500-600 dark:text-platinum-500-400 uppercase tracking-wider mb-2">Named Journalists & Presenters</p>
                   <div className="grid grid-cols-1 gap-2">
                     {alArabiyaOrganization.leadership.map((leader, idx) => (
                       <div key={idx} className="flex items-center justify-between text-sm">
                         <div>
-                          <span className="text-platinum-800 dark:text-platinum-200">{leader.name}</span>
-                          {leader.notes && <span className="text-xs text-platinum-500 ml-2">({leader.notes})</span>}
+                          <span className="text-platinum-500-800 dark:text-platinum-500-200">{leader.name}</span>
+                          {leader.notes && <span className="text-xs text-platinum-500-500 ml-2">({leader.notes})</span>}
                         </div>
                         <div className="flex items-center gap-2">
                           <Badge variant="outline" size="sm">{leader.role}</Badge>
                           {leader.twitter && (
-                            <a href={`https://twitter.com/${leader.twitter.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-navy-500 hover:text-navy-400 text-xs">
+                            <a href={`https://twitter.com/${leader.twitter.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-navy-500-500 hover:text-navy-500-400 text-xs">
                               {leader.twitter}
                             </a>
                           )}
@@ -700,20 +700,20 @@ export default function JournalistsPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-3 gap-4 text-sm">
                   <div className="p-3 rounded-lg bg-platinum-50/50 dark:bg-platinum-800/25">
-                    <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">{metrics.totalAlJazeeraArabicPresenters}+</p>
-                    <p className="text-xs text-platinum-500">Arabic Presenters</p>
+                    <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">{metrics.totalAlJazeeraArabicPresenters}+</p>
+                    <p className="text-xs text-platinum-500-500">Arabic Presenters</p>
                   </div>
                   <div className="p-3 rounded-lg bg-platinum-50/50 dark:bg-platinum-800/25">
-                    <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">{metrics.totalAlJazeeraEnglishPresenters}+</p>
-                    <p className="text-xs text-platinum-500">English Presenters</p>
+                    <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">{metrics.totalAlJazeeraEnglishPresenters}+</p>
+                    <p className="text-xs text-platinum-500-500">English Presenters</p>
                   </div>
                   <div className="p-3 rounded-lg bg-platinum-50/50 dark:bg-platinum-800/25">
-                    <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">{metrics.totalAlJazeeraBureauChiefs}</p>
-                    <p className="text-xs text-platinum-500">Bureau Chiefs</p>
+                    <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">{metrics.totalAlJazeeraBureauChiefs}</p>
+                    <p className="text-xs text-platinum-500-500">Bureau Chiefs</p>
                   </div>
                 </div>
                 <div className="border-t border-platinum-200/50 dark:border-platinum-700/50 pt-4">
-                  <p className="text-xs font-semibold text-platinum-600 dark:text-platinum-400 uppercase tracking-wider mb-2">Arabic Presenters ({alJazeeraArabicPresenters.length})</p>
+                  <p className="text-xs font-semibold text-platinum-500-600 dark:text-platinum-500-400 uppercase tracking-wider mb-2">Arabic Presenters ({alJazeeraArabicPresenters.length})</p>
                   <div className="flex flex-wrap gap-1.5">
                     {alJazeeraArabicPresenters.map((name, idx) => (
                       <Badge key={idx} variant="outline" size="sm">{name}</Badge>
@@ -721,7 +721,7 @@ export default function JournalistsPage() {
                   </div>
                 </div>
                 <div className="border-t border-platinum-200/50 dark:border-platinum-700/50 pt-4">
-                  <p className="text-xs font-semibold text-platinum-600 dark:text-platinum-400 uppercase tracking-wider mb-2">English Presenters (Selected)</p>
+                  <p className="text-xs font-semibold text-platinum-500-600 dark:text-platinum-500-400 uppercase tracking-wider mb-2">English Presenters (Selected)</p>
                   <div className="flex flex-wrap gap-1.5">
                     {alJazeeraEnglishPresenters.slice(0, 30).map((name, idx) => (
                       <Badge key={idx} variant="outline" size="sm">{name}</Badge>
@@ -730,35 +730,35 @@ export default function JournalistsPage() {
                   </div>
                 </div>
                 <div className="border-t border-platinum-200/50 dark:border-platinum-700/50 pt-4">
-                  <p className="text-xs font-semibold text-platinum-600 dark:text-platinum-400 uppercase tracking-wider mb-2">Bureau Chiefs ({alJazeeraBureauChiefs.length} Global Locations)</p>
+                  <p className="text-xs font-semibold text-platinum-500-600 dark:text-platinum-500-400 uppercase tracking-wider mb-2">Bureau Chiefs ({alJazeeraBureauChiefs.length} Global Locations)</p>
                   <div className="grid grid-cols-2 gap-2 text-sm">
                     {alJazeeraBureauChiefs.map((chief, idx) => (
                       <div key={idx} className="flex justify-between">
-                        <span className="text-platinum-600 dark:text-platinum-400">{chief.location}:</span>
-                        <span className="text-platinum-800 dark:text-platinum-200 font-medium">{chief.name}</span>
+                        <span className="text-platinum-500-600 dark:text-platinum-500-400">{chief.location}:</span>
+                        <span className="text-platinum-500-800 dark:text-platinum-500-200 font-medium">{chief.name}</span>
                       </div>
                     ))}
                   </div>
                 </div>
                 {/* Ghinwa Ibrahim Profile */}
                 <div className="border-t border-platinum-200/50 dark:border-platinum-700/50 pt-4">
-                  <p className="text-xs font-semibold text-platinum-600 dark:text-platinum-400 uppercase tracking-wider mb-2">Featured Profile: Ghinwa Ibrahim</p>
+                  <p className="text-xs font-semibold text-platinum-500-600 dark:text-platinum-500-400 uppercase tracking-wider mb-2">Featured Profile: Ghinwa Ibrahim</p>
                   <Card className="glass-subtle">
                     <CardContent className="p-4">
                       <div className="flex items-start justify-between mb-2">
                         <div>
-                          <p className="font-bold text-navy-900 dark:text-platinum-100">{ghinwaIbrahimProfile.name}</p>
-                          <p className="text-sm text-platinum-500">{ghinwaIbrahimProfile.role}</p>
+                          <p className="font-bold text-navy-500-900 dark:text-platinum-500-100">{ghinwaIbrahimProfile.name}</p>
+                          <p className="text-sm text-platinum-500-500">{ghinwaIbrahimProfile.role}</p>
                         </div>
                         <Badge variant="navy-solid" size="sm">Tier {ghinwaIbrahimProfile.tier}</Badge>
                       </div>
                       <div className="grid grid-cols-2 gap-2 text-xs mt-3">
-                        <div><span className="text-platinum-500">Nationality:</span> <span className="text-platinum-700">{ghinwaIbrahimProfile.nationality}</span></div>
-                        <div><span className="text-platinum-500">Based:</span> <span className="text-platinum-700">{ghinwaIbrahimProfile.based}</span></div>
+                        <div><span className="text-platinum-500-500">Nationality:</span> <span className="text-platinum-500-700">{ghinwaIbrahimProfile.nationality}</span></div>
+                        <div><span className="text-platinum-500-500">Based:</span> <span className="text-platinum-500-700">{ghinwaIbrahimProfile.based}</span></div>
                       </div>
                       <div className="mt-3 space-y-1">
                         {ghinwaIbrahimProfile.keyFindings.slice(0, 4).map((finding, idx) => (
-                          <p key={idx} className="text-xs text-platinum-600 dark:text-platinum-400 flex items-start gap-1">
+                          <p key={idx} className="text-xs text-platinum-500-600 dark:text-platinum-500-400 flex items-start gap-1">
                             <ChevronRight className="h-3 w-3 mt-0.5 shrink-0" />
                             {finding}
                           </p>
@@ -783,17 +783,17 @@ export default function JournalistsPage() {
                   </CardHeader>
                   <CardContent className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-platinum-500">Based:</span>
-                      <span className="text-platinum-800 dark:text-platinum-200">{mbcGroupOrganization.based}</span>
+                      <span className="text-platinum-500-500">Based:</span>
+                      <span className="text-platinum-500-800 dark:text-platinum-500-200">{mbcGroupOrganization.based}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-platinum-500">Employees:</span>
+                      <span className="text-platinum-500-500">Employees:</span>
                       <Badge variant="gold" size="sm">{mbcGroupOrganization.employees?.toLocaleString()}+</Badge>
                     </div>
                     <div className="pt-2 border-t border-platinum-200/50">
-                      <p className="text-xs text-platinum-500 mb-1">Key Staff:</p>
+                      <p className="text-xs text-platinum-500-500 mb-1">Key Staff:</p>
                       {mbcGroupOrganization.leadership.slice(0, 3).map((l, idx) => (
-                        <p key={idx} className="text-xs text-platinum-700 dark:text-platinum-300">{l.name} - {l.role}</p>
+                        <p key={idx} className="text-xs text-platinum-500-700 dark:text-platinum-500-300">{l.name} - {l.role}</p>
                       ))}
                     </div>
                   </CardContent>
@@ -807,13 +807,13 @@ export default function JournalistsPage() {
                   </CardHeader>
                   <CardContent className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-platinum-500">Based:</span>
-                      <span className="text-platinum-800 dark:text-platinum-200">{skyNewsArabiaOrganization.based}</span>
+                      <span className="text-platinum-500-500">Based:</span>
+                      <span className="text-platinum-500-800 dark:text-platinum-500-200">{skyNewsArabiaOrganization.based}</span>
                     </div>
                     <div className="pt-2 border-t border-platinum-200/50">
-                      <p className="text-xs text-platinum-500 mb-1">Key Staff:</p>
+                      <p className="text-xs text-platinum-500-500 mb-1">Key Staff:</p>
                       {skyNewsArabiaOrganization.leadership.map((l, idx) => (
-                        <p key={idx} className="text-xs text-platinum-700 dark:text-platinum-300">{l.name} - {l.role}</p>
+                        <p key={idx} className="text-xs text-platinum-500-700 dark:text-platinum-500-300">{l.name} - {l.role}</p>
                       ))}
                     </div>
                   </CardContent>
@@ -827,17 +827,17 @@ export default function JournalistsPage() {
                   </CardHeader>
                   <CardContent className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-platinum-500">Established:</span>
-                      <span className="text-platinum-800 dark:text-platinum-200">{wamOrganization.established}</span>
+                      <span className="text-platinum-500-500">Established:</span>
+                      <span className="text-platinum-500-800 dark:text-platinum-500-200">{wamOrganization.established}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-platinum-500">Based:</span>
-                      <span className="text-platinum-800 dark:text-platinum-200">{wamOrganization.based}</span>
+                      <span className="text-platinum-500-500">Based:</span>
+                      <span className="text-platinum-500-800 dark:text-platinum-500-200">{wamOrganization.based}</span>
                     </div>
                     <div className="pt-2 border-t border-platinum-200/50">
-                      <p className="text-xs text-platinum-500 mb-1">Key Staff:</p>
+                      <p className="text-xs text-platinum-500-500 mb-1">Key Staff:</p>
                       {wamOrganization.leadership.map((l, idx) => (
-                        <p key={idx} className="text-xs text-platinum-700 dark:text-platinum-300">{l.name} - {l.role}</p>
+                        <p key={idx} className="text-xs text-platinum-500-700 dark:text-platinum-500-300">{l.name} - {l.role}</p>
                       ))}
                     </div>
                   </CardContent>
@@ -871,7 +871,7 @@ export default function JournalistsPage() {
                     <TableRow key={journalist.id} className="hover:bg-platinum-50/50 dark:hover:bg-platinum-800/25 transition-colors">
                       <TableCell>
                         <div className="flex flex-col">
-                          <span className="font-medium text-navy-900 dark:text-platinum-100">{journalist.name}</span>
+                          <span className="font-medium text-navy-500-900 dark:text-platinum-500-100">{journalist.name}</span>
                         </div>
                       </TableCell>
                       <TableCell>
@@ -887,7 +887,7 @@ export default function JournalistsPage() {
                               style={{ width: `${journalist.uaeRelevance}%` }}
                             />
                           </div>
-                          <span className="text-sm font-medium text-platinum-700">{journalist.uaeRelevance}</span>
+                          <span className="text-sm font-medium text-platinum-500-700">{journalist.uaeRelevance}</span>
                         </div>
                       </TableCell>
                       <TableCell>
@@ -930,18 +930,18 @@ export default function JournalistsPage() {
                     <TableRow key={journalist.id} className="hover:bg-platinum-50/50 dark:hover:bg-platinum-800/25 transition-colors">
                       <TableCell>
                         <div className="flex flex-col">
-                          <span className="font-medium text-navy-900 dark:text-platinum-100">{journalist.name}</span>
-                          {journalist.nationality && <span className="text-xs text-platinum-500">{journalist.nationality}</span>}
+                          <span className="font-medium text-navy-500-900 dark:text-platinum-500-100">{journalist.name}</span>
+                          {journalist.nationality && <span className="text-xs text-platinum-500-500">{journalist.nationality}</span>}
                         </div>
                       </TableCell>
                       <TableCell>
-                        <span className="text-sm text-platinum-700 dark:text-platinum-300">{journalist.role}</span>
+                        <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{journalist.role}</span>
                       </TableCell>
                       <TableCell>
                         <Badge variant="outline" size="sm">{journalist.outlet}</Badge>
                       </TableCell>
                       <TableCell>
-                        <span className="text-sm text-platinum-600 dark:text-platinum-400">{journalist.based}</span>
+                        <span className="text-sm text-platinum-500-600 dark:text-platinum-500-400">{journalist.based}</span>
                       </TableCell>
                       <TableCell>
                         <div className="flex items-center gap-2">
@@ -951,7 +951,7 @@ export default function JournalistsPage() {
                               style={{ width: `${journalist.uaeRelevance}%` }}
                             />
                           </div>
-                          <span className="text-sm font-medium text-platinum-700">{journalist.uaeRelevance}</span>
+                          <span className="text-sm font-medium text-platinum-500-700">{journalist.uaeRelevance}</span>
                         </div>
                       </TableCell>
                       <TableCell>
@@ -979,28 +979,28 @@ export default function JournalistsPage() {
                     <CardContent className="p-4">
                       <div className="flex items-start justify-between mb-2">
                         <div>
-                          <p className="font-bold text-navy-900 dark:text-platinum-100">{anchor.name}</p>
-                          <p className="text-xs text-platinum-500">{anchor.outlet}</p>
+                          <p className="font-bold text-navy-500-900 dark:text-platinum-500-100">{anchor.name}</p>
+                          <p className="text-xs text-platinum-500-500">{anchor.outlet}</p>
                         </div>
                         <Badge variant="gold" size="sm">Tier {anchor.tier}</Badge>
                       </div>
                       <div className="space-y-1 text-sm">
-                        <p className="text-platinum-700 dark:text-platinum-300"><span className="text-platinum-500">Role:</span> {anchor.role}</p>
+                        <p className="text-platinum-500-700 dark:text-platinum-500-300"><span className="text-platinum-500-500">Role:</span> {anchor.role}</p>
                         {anchor.yearsOfExperience && (
-                          <p className="text-platinum-700 dark:text-platinum-300"><span className="text-platinum-500">YOE:</span> {anchor.yearsOfExperience}+ years</p>
+                          <p className="text-platinum-500-700 dark:text-platinum-500-300"><span className="text-platinum-500-500">YOE:</span> {anchor.yearsOfExperience}+ years</p>
                         )}
                         {anchor.twitter && (
-                          <a href={`https://twitter.com/${anchor.twitter.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-navy-500 hover:text-navy-400 text-xs flex items-center gap-1">
+                          <a href={`https://twitter.com/${anchor.twitter.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="text-navy-500-500 hover:text-navy-500-400 text-xs flex items-center gap-1">
                             <Twitter className="h-3 w-3" /> {anchor.twitter}
                           </a>
                         )}
                       </div>
                       <div className="mt-3 flex items-center gap-2">
-                        <span className="text-xs text-platinum-500">Relevance:</span>
+                        <span className="text-xs text-platinum-500-500">Relevance:</span>
                         <div className="flex-1 h-1.5 rounded-full bg-platinum-200 dark:bg-platinum-700 overflow-hidden">
                           <div className="h-full rounded-full bg-gradient-to-r from-gold-400 to-gold-600" style={{ width: `${anchor.uaeRelevance}%` }} />
                         </div>
-                        <span className="text-xs font-medium text-platinum-700">{anchor.uaeRelevance}</span>
+                        <span className="text-xs font-medium text-platinum-500-700">{anchor.uaeRelevance}</span>
                       </div>
                     </CardContent>
                   </Card>
@@ -1021,13 +1021,13 @@ export default function JournalistsPage() {
                   <Card key={host.id} className="glass-subtle">
                     <CardContent className="p-4">
                       <div className="flex items-start justify-between mb-2">
-                        <p className="font-bold text-navy-900 dark:text-platinum-100">{host.name}</p>
+                        <p className="font-bold text-navy-500-900 dark:text-platinum-500-100">{host.name}</p>
                         <Badge variant="emerald" size="sm">Tier {host.tier}</Badge>
                       </div>
-                      <p className="text-xs text-platinum-500 mb-2">{host.role}</p>
+                      <p className="text-xs text-platinum-500-500 mb-2">{host.role}</p>
                       <div className="space-y-1 text-xs">
-                        {host.nationality && <p className="text-platinum-600"><span className="text-platinum-400">Nationality:</span> {host.nationality}</p>}
-                        {host.outlet && <p className="text-platinum-600"><span className="text-platinum-400">Platform:</span> {host.outlet}</p>}
+                        {host.nationality && <p className="text-platinum-500-600"><span className="text-platinum-500-400">Nationality:</span> {host.nationality}</p>}
+                        {host.outlet && <p className="text-platinum-500-600"><span className="text-platinum-500-400">Platform:</span> {host.outlet}</p>}
                         <span className={`inline-block px-2 py-0.5 rounded text-xs font-medium ${getSentimentColor(host.sentiment)}`}>
                           {host.sentiment}
                         </span>
@@ -1052,14 +1052,14 @@ export default function JournalistsPage() {
                     <CardContent className="p-4">
                       <div className="flex items-start justify-between">
                         <div>
-                          <p className="font-bold text-navy-900 dark:text-platinum-100">{writer.name}</p>
-                          <p className="text-sm text-platinum-500">{writer.role}</p>
+                          <p className="font-bold text-navy-500-900 dark:text-platinum-500-100">{writer.name}</p>
+                          <p className="text-sm text-platinum-500-500">{writer.role}</p>
                         </div>
                         <Badge variant="gold" size="sm">Tier {writer.tier}</Badge>
                       </div>
                       <div className="mt-3 space-y-2">
                         {writer.keyFindings.map((finding, idx) => (
-                          <p key={idx} className="text-sm text-platinum-600 dark:text-platinum-400 flex items-start gap-2">
+                          <p key={idx} className="text-sm text-platinum-500-600 dark:text-platinum-500-400 flex items-start gap-2">
                             <ChevronRight className="h-4 w-4 mt-0.5 shrink-0 text-gold-700" />
                             {finding}
                           </p>
@@ -1123,15 +1123,15 @@ export default function JournalistsPage() {
                   <Card key={journalist.id} className="glass-subtle">
                     <CardContent className="p-4">
                       <div className="flex items-start justify-between">
-                        <p className="font-bold text-navy-900 dark:text-platinum-100">{journalist.name}</p>
+                        <p className="font-bold text-navy-500-900 dark:text-platinum-500-100">{journalist.name}</p>
                         <Badge variant="rose" size="sm">Female</Badge>
                       </div>
                       <div className="mt-3 flex items-center gap-2">
-                        <span className="text-xs text-platinum-500">Relevance:</span>
+                        <span className="text-xs text-platinum-500-500">Relevance:</span>
                         <div className="flex-1 h-1.5 rounded-full bg-platinum-200 dark:bg-platinum-700 overflow-hidden">
                           <div className="h-full rounded-full bg-gradient-to-r from-rose-400 to-rose-600" style={{ width: `${journalist.uaeRelevance}%` }} />
                         </div>
-                        <span className="text-xs font-medium text-platinum-700">{journalist.uaeRelevance}</span>
+                        <span className="text-xs font-medium text-platinum-500-700">{journalist.uaeRelevance}</span>
                       </div>
                     </CardContent>
                   </Card>
@@ -1161,24 +1161,24 @@ export default function JournalistsPage() {
                   {femaleJournalists.map((person) => (
                     <TableRow key={person.id} className="hover:bg-platinum-50/50 dark:hover:bg-platinum-800/25 transition-colors">
                       <TableCell>
-                        <span className="font-medium text-navy-900 dark:text-platinum-100">{person.name}</span>
+                        <span className="font-medium text-navy-500-900 dark:text-platinum-500-100">{person.name}</span>
                       </TableCell>
                       <TableCell>
                         <Badge variant="outline" size="sm">{person.role}</Badge>
                       </TableCell>
                       <TableCell>
-                        <span className="text-sm text-platinum-600 dark:text-platinum-400">{person.outlet || '—'}</span>
+                        <span className="text-sm text-platinum-500-600 dark:text-platinum-500-400">{person.outlet || '—'}</span>
                       </TableCell>
                       <TableCell>
                         <div className="flex items-center gap-2">
                           <div className="w-12 h-1.5 rounded-full bg-platinum-200 dark:bg-platinum-700 overflow-hidden">
                             <div className="h-full rounded-full bg-gradient-to-r from-rose-400 to-rose-600" style={{ width: `${person.uaeRelevance}%` }} />
                           </div>
-                          <span className="text-xs font-medium text-platinum-700">{person.uaeRelevance}</span>
+                          <span className="text-xs font-medium text-platinum-500-700">{person.uaeRelevance}</span>
                         </div>
                       </TableCell>
                       <TableCell>
-                        <span className="text-xs text-platinum-500">{person.keyFindings[0]}</span>
+                        <span className="text-xs text-platinum-500-500">{person.keyFindings[0]}</span>
                       </TableCell>
                     </TableRow>
                   ))}
@@ -1209,14 +1209,14 @@ export default function JournalistsPage() {
                   {twitterAccounts.map((account, idx) => (
                     <TableRow key={idx} className="hover:bg-platinum-50/50 dark:hover:bg-platinum-800/25 transition-colors">
                       <TableCell>
-                        <span className="font-medium text-navy-900 dark:text-platinum-100">{account.name}</span>
+                        <span className="font-medium text-navy-500-900 dark:text-platinum-500-100">{account.name}</span>
                       </TableCell>
                       <TableCell>
                         <a
                           href={`https://twitter.com/${account.handle.replace('@', '')}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-navy-500 hover:text-navy-400 flex items-center gap-1"
+                          className="text-navy-500-500 hover:text-navy-500-400 flex items-center gap-1"
                         >
                           <Twitter className="h-3 w-3" />
                           <span className="text-sm">{account.handle}</span>
@@ -1226,7 +1226,7 @@ export default function JournalistsPage() {
                         <Badge variant="outline" size="sm">{account.outlet}</Badge>
                       </TableCell>
                       <TableCell>
-                        <span className="text-sm text-platinum-600 dark:text-platinum-400">{account.role}</span>
+                        <span className="text-sm text-platinum-500-600 dark:text-platinum-500-400">{account.role}</span>
                       </TableCell>
                     </TableRow>
                   ))}
@@ -1248,14 +1248,14 @@ export default function JournalistsPage() {
                     <CardContent className="p-4">
                       <div className="flex items-start justify-between mb-3">
                         <div>
-                          <p className="font-bold text-navy-900 dark:text-platinum-100">{creator.name}</p>
-                          <p className="text-sm text-platinum-500">{creator.role}</p>
+                          <p className="font-bold text-navy-500-900 dark:text-platinum-500-100">{creator.name}</p>
+                          <p className="text-sm text-platinum-500-500">{creator.role}</p>
                         </div>
                         <Badge variant="purple" size="sm">Tier {creator.tier}</Badge>
                       </div>
                       <div className="space-y-2 text-sm">
                         {creator.keyFindings.map((finding, idx) => (
-                          <p key={idx} className="text-platinum-600 dark:text-platinum-400 flex items-start gap-2">
+                          <p key={idx} className="text-platinum-500-600 dark:text-platinum-500-400 flex items-start gap-2">
                             <ChevronRight className="h-4 w-4 mt-0.5 shrink-0 text-purple-500" />
                             {finding}
                           </p>
@@ -1292,8 +1292,8 @@ export default function JournalistsPage() {
                       {item.relevance}
                     </Badge>
                     <div className="flex-1">
-                      <p className="font-medium text-navy-900 dark:text-platinum-100">{item.outlet}</p>
-                      <p className="text-xs text-platinum-500 mt-0.5">{item.justification}</p>
+                      <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{item.outlet}</p>
+                      <p className="text-xs text-platinum-500-500 mt-0.5">{item.justification}</p>
                     </div>
                   </div>
                 ))}
@@ -1311,13 +1311,13 @@ export default function JournalistsPage() {
                 {sentimentByOutlet.map((item, idx) => (
                   <div key={idx} className="flex items-center gap-4 p-3 rounded-lg bg-platinum-50/50 dark:bg-platinum-800/25">
                     <div className="w-32">
-                      <p className="font-medium text-navy-900 dark:text-platinum-100">{item.outlet}</p>
+                      <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{item.outlet}</p>
                     </div>
                     <div className="flex-1">
                       <span className={`text-sm font-medium ${getSentimentColor(item.sentiment)}`}>
                         {item.sentiment}
                       </span>
-                      <p className="text-xs text-platinum-500 mt-0.5">{item.notes}</p>
+                      <p className="text-xs text-platinum-500-500 mt-0.5">{item.notes}</p>
                     </div>
                   </div>
                 ))}
@@ -1334,26 +1334,26 @@ export default function JournalistsPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div>
-                    <span className="text-platinum-500">Founder:</span>
-                    <span className="ml-2 font-medium text-platinum-800 dark:text-platinum-200">{dubaiPressClub.founder}</span>
+                    <span className="text-platinum-500-500">Founder:</span>
+                    <span className="ml-2 font-medium text-platinum-500-800 dark:text-platinum-500-200">{dubaiPressClub.founder}</span>
                   </div>
                   <div>
-                    <span className="text-platinum-500">Flagship Event:</span>
-                    <span className="ml-2 font-medium text-platinum-800 dark:text-platinum-200">{dubaiPressClub.flagshipEvent}</span>
+                    <span className="text-platinum-500-500">Flagship Event:</span>
+                    <span className="ml-2 font-medium text-platinum-500-800 dark:text-platinum-500-200">{dubaiPressClub.flagshipEvent}</span>
                   </div>
                   <div>
-                    <span className="text-platinum-500">Facebook:</span>
-                    <span className="ml-2 font-medium text-platinum-800 dark:text-platinum-200">{dubaiPressClub.facebookLikes}</span>
+                    <span className="text-platinum-500-500">Facebook:</span>
+                    <span className="ml-2 font-medium text-platinum-500-800 dark:text-platinum-500-200">{dubaiPressClub.facebookLikes}</span>
                   </div>
                 </div>
                 <div className="border-t border-platinum-200/50 dark:border-platinum-700/50 pt-4">
-                  <p className="text-xs font-semibold text-platinum-600 dark:text-platinum-400 uppercase tracking-wider mb-2">Leadership</p>
+                  <p className="text-xs font-semibold text-platinum-500-600 dark:text-platinum-500-400 uppercase tracking-wider mb-2">Leadership</p>
                   <div className="space-y-2">
                     {dubaiPressClub.leadership.map((leader, idx) => (
                       <div key={idx} className="p-3 rounded-lg bg-platinum-50/50 dark:bg-platinum-800/25">
-                        <p className="font-medium text-navy-900 dark:text-platinum-100">{leader.name}</p>
-                        <p className="text-sm text-platinum-500">{leader.role}</p>
-                        <p className="text-xs text-platinum-600 dark:text-platinum-400 mt-1">{leader.notes}</p>
+                        <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{leader.name}</p>
+                        <p className="text-sm text-platinum-500-500">{leader.role}</p>
+                        <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400 mt-1">{leader.notes}</p>
                       </div>
                     ))}
                   </div>
@@ -1383,19 +1383,19 @@ export default function JournalistsPage() {
                   {mediaOrganizationsSummary.map((org, idx) => (
                     <TableRow key={idx} className="hover:bg-platinum-50/50 dark:hover:bg-platinum-800/25 transition-colors">
                       <TableCell>
-                        <span className="font-medium text-navy-900 dark:text-platinum-100">{org.name}</span>
+                        <span className="font-medium text-navy-500-900 dark:text-platinum-500-100">{org.name}</span>
                       </TableCell>
                       <TableCell>
-                        <span className="text-sm text-platinum-600 dark:text-platinum-400">{org.type}</span>
+                        <span className="text-sm text-platinum-500-600 dark:text-platinum-500-400">{org.type}</span>
                       </TableCell>
                       <TableCell>
-                        <span className="text-sm text-platinum-600 dark:text-platinum-400">{org.based}</span>
+                        <span className="text-sm text-platinum-500-600 dark:text-platinum-500-400">{org.based}</span>
                       </TableCell>
                       <TableCell>
                         <Badge variant="outline" size="sm">{org.staffCount || '—'}</Badge>
                       </TableCell>
                       <TableCell>
-                        <span className="text-sm text-platinum-600 dark:text-platinum-400">{org.language || '—'}</span>
+                        <span className="text-sm text-platinum-500-600 dark:text-platinum-500-400">{org.language || '—'}</span>
                       </TableCell>
                     </TableRow>
                   ))}
@@ -1429,13 +1429,13 @@ export default function JournalistsPage() {
                         <Badge variant="gold" size="sm">{award.award}</Badge>
                       </TableCell>
                       <TableCell>
-                        <span className="font-medium text-navy-900 dark:text-platinum-100">{award.recipient}</span>
+                        <span className="font-medium text-navy-500-900 dark:text-platinum-500-100">{award.recipient}</span>
                       </TableCell>
                       <TableCell>
-                        <span className="text-sm text-platinum-600 dark:text-platinum-400">{award.organization}</span>
+                        <span className="text-sm text-platinum-500-600 dark:text-platinum-500-400">{award.organization}</span>
                       </TableCell>
                       <TableCell>
-                        <span className="text-xs text-platinum-500">{award.notes || '—'}</span>
+                        <span className="text-xs text-platinum-500-500">{award.notes || '—'}</span>
                       </TableCell>
                     </TableRow>
                   ))}
@@ -1455,15 +1455,15 @@ export default function JournalistsPage() {
                   <CardContent className="p-4">
                     <div className="flex items-start justify-between">
                       <div>
-                        <p className="font-bold text-navy-900 dark:text-platinum-100">Khalid bin Hamad Al-Malik</p>
-                        <p className="text-sm text-platinum-500">Media Personality of the Year | Arab Media Forum 2022</p>
+                        <p className="font-bold text-navy-500-900 dark:text-platinum-500-100">Khalid bin Hamad Al-Malik</p>
+                        <p className="text-sm text-platinum-500-500">Media Personality of the Year | Arab Media Forum 2022</p>
                       </div>
                       <Badge variant="gold" size="sm">President</Badge>
                     </div>
                     <div className="mt-3 space-y-1 text-sm">
-                      <p className="text-platinum-600"><span className="text-platinum-400">Role:</span> President, Saudi Journalists Association</p>
-                      <p className="text-platinum-600"><span className="text-platinum-400">Also:</span> President, Gulf Press Union</p>
-                      <p className="text-platinum-600"><span className="text-platinum-400">Affiliation:</span> Saudi daily Al-Jazirah</p>
+                      <p className="text-platinum-500-600"><span className="text-platinum-500-400">Role:</span> President, Saudi Journalists Association</p>
+                      <p className="text-platinum-500-600"><span className="text-platinum-500-400">Also:</span> President, Gulf Press Union</p>
+                      <p className="text-platinum-500-600"><span className="text-platinum-500-400">Affiliation:</span> Saudi daily Al-Jazirah</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -1471,14 +1471,14 @@ export default function JournalistsPage() {
                   <CardContent className="p-4">
                     <div className="flex items-start justify-between">
                       <div>
-                        <p className="font-bold text-navy-900 dark:text-platinum-100">Dr. Rasheed Al Khayoun</p>
-                        <p className="text-sm text-platinum-500">Best Column Award | Arab Media Forum 2022</p>
+                        <p className="font-bold text-navy-500-900 dark:text-platinum-500-100">Dr. Rasheed Al Khayoun</p>
+                        <p className="text-sm text-platinum-500-500">Best Column Award | Arab Media Forum 2022</p>
                       </div>
                       <Badge variant="emerald" size="sm">Columnist</Badge>
                     </div>
                     <div className="mt-3 space-y-1 text-sm">
-                      <p className="text-platinum-600"><span className="text-platinum-400">Role:</span> Columnist</p>
-                      <p className="text-platinum-600"><span className="text-platinum-400">Affiliation:</span> UAE daily Al-Ittihad</p>
+                      <p className="text-platinum-500-600"><span className="text-platinum-500-400">Role:</span> Columnist</p>
+                      <p className="text-platinum-500-600"><span className="text-platinum-500-400">Affiliation:</span> UAE daily Al-Ittihad</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -1509,8 +1509,8 @@ export default function JournalistsPage() {
                       {gap.priority}
                     </Badge>
                     <div className="flex-1">
-                      <p className="font-medium text-navy-900 dark:text-platinum-100">{gap.gap}</p>
-                      <p className="text-xs text-platinum-500 mt-0.5">{gap.notes}</p>
+                      <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{gap.gap}</p>
+                      <p className="text-xs text-platinum-500-500 mt-0.5">{gap.notes}</p>
                     </div>
                   </div>
                 ))}
@@ -1532,7 +1532,7 @@ export default function JournalistsPage() {
                         <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-gold text-white text-xs font-bold shrink-0">
                           {idx + 1}
                         </div>
-                        <p className="text-sm text-platinum-700 dark:text-platinum-300">{rec}</p>
+                        <p className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{rec}</p>
                       </div>
                     </CardContent>
                   </Card>

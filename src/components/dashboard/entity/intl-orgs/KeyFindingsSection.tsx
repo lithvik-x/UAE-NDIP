@@ -59,7 +59,7 @@ export function KeyFindingsSection({ findings }: KeyFindingsSectionProps) {
                     }`}>
                       <finding.icon className={`h-5 w-5 ${
                         finding.color === 'emerald' ? 'text-emerald-600 dark:text-emerald-400' :
-                        finding.color === 'gold' ? 'text-gold dark:text-gold-400' :
+                        finding.color === 'gold' ? 'text-gold-700 dark:text-gold-400' :
                         finding.color === 'denim' ? 'text-denim-600 dark:text-denim-400' :
                         finding.color === 'rose' ? 'text-rose-600 dark:text-rose-400' :
                         finding.color === 'cyan' ? 'text-cyan-600 dark:text-cyan-400' :
@@ -67,8 +67,8 @@ export function KeyFindingsSection({ findings }: KeyFindingsSectionProps) {
                       }`} />
                     </div>
                     <div className="flex-1">
-                      <p className="font-medium text-navy-900 dark:text-platinum-100">{finding.title}</p>
-                      <p className="text-xs text-platinum-500 mt-1">{finding.description}</p>
+                      <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{finding.title}</p>
+                      <p className="text-xs text-platinum-500-500 mt-1">{finding.description}</p>
                     </div>
                   </div>
                 </CardContent>

@@ -60,7 +60,7 @@ export default function CommunicationCrisisPage() {
   if (!data) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-400">Loading Communication Crisis data...</div>
+        <div className="text-platinum-500-400">Loading Communication Crisis data...</div>
       </div>
     )
   }
@@ -155,13 +155,13 @@ export default function CommunicationCrisisPage() {
       >
         <div>
           <Badge variant="denim" className="mb-2">CRISIS TYPE</Badge>
-          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-navy">Communication Crisis</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-navy-500">Communication Crisis</h1>
+          <p className="mt-2 text-platinum-500-400">
             Misinformation, deepfakes, disinformation campaigns, information suppression, DDoS attacks
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-purple-500/50 text-purple hover:bg-purple-500/10">
+          <Button variant="outline" className="gap-2 border-purple-500/50 text-purple-500 hover:bg-purple-500/10">
             <Shield className="h-4 w-4" />
             Counter Measures
           </Button>
@@ -216,7 +216,7 @@ export default function CommunicationCrisisPage() {
                   <Card className="glass-card border-purple-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Shield className="h-5 w-5 text-purple" />
+                        <Shield className="h-5 w-5 text-purple-500" />
                         Threat Radar
                       </CardTitle>
                       <CardDescription>Multi-dimensional threat assessment</CardDescription>
@@ -233,7 +233,7 @@ export default function CommunicationCrisisPage() {
                   <Card className="glass-card border-rose-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <TrendingUp className="h-5 w-5 text-rose" />
+                        <TrendingUp className="h-5 w-5 text-rose-500" />
                         Sentiment Analysis
                       </CardTitle>
                       <CardDescription>Public response sentiment</CardDescription>
@@ -252,7 +252,7 @@ export default function CommunicationCrisisPage() {
                   <Card className="glass-card border-cyan-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <AlertTriangle className="h-5 w-5 text-cyan" />
+                        <AlertTriangle className="h-5 w-5 text-cyan-500" />
                         Key Findings
                       </CardTitle>
                       <CardDescription>Critical crisis indicators</CardDescription>
@@ -268,8 +268,8 @@ export default function CommunicationCrisisPage() {
                             className="flex items-start justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50 hover:border-rose-500/30 transition-colors"
                           >
                             <div className="flex-1">
-                              <p className="text-sm text-platinum-200">{finding.finding}</p>
-                              <p className="text-xs text-platinum-500 mt-1">{finding.source}</p>
+                              <p className="text-sm text-platinum-500-200">{finding.finding}</p>
+                              <p className="text-xs text-platinum-500-500 mt-1">{finding.source}</p>
                             </div>
                             <div className="flex items-center gap-2 ml-4">
                               <Badge variant={finding.alert === 'RED' ? 'destructive' : finding.alert === 'YELLOW' ? 'warning' : 'outline'} className="text-xs">
@@ -285,7 +285,7 @@ export default function CommunicationCrisisPage() {
                   <Card className="glass-card border-gold-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Target className="h-5 w-5 text-gold" />
+                        <Target className="h-5 w-5 text-gold-700" />
                         Threat Levels
                       </CardTitle>
                       <CardDescription>Assessment by threat type</CardDescription>
@@ -295,7 +295,7 @@ export default function CommunicationCrisisPage() {
                         <div className="space-y-3">
                           {extended.threatLevels?.map((threat: any, idx: number) => (
                             <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50">
-                              <span className="text-platinum-200">{threat.threatType}</span>
+                              <span className="text-platinum-500-200">{threat.threatType}</span>
                               <div className="flex items-center gap-2">
                                 <Badge variant={threat.level === 'HIGH' ? 'destructive' : threat.level === 'MEDIUM-HIGH' ? 'warning' : 'outline'} className="text-xs">
                                   {threat.level}
@@ -326,7 +326,7 @@ export default function CommunicationCrisisPage() {
                   <Card className="glass-card border-rose-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <FileWarning className="h-5 w-5 text-rose" />
+                        <FileWarning className="h-5 w-5 text-rose-500" />
                         Misinformation Cases (March 2026)
                       </CardTitle>
                       <CardDescription>False claims during Iran conflict</CardDescription>
@@ -343,7 +343,7 @@ export default function CommunicationCrisisPage() {
                   <Card className="glass-card border-orange-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Shield className="h-5 w-5 text-orange" />
+                        <Shield className="h-5 w-5 text-orange-500" />
                         Counter-Measures
                       </CardTitle>
                       <CardDescription>Government agencies and actions</CardDescription>
@@ -360,10 +360,10 @@ export default function CommunicationCrisisPage() {
                               className="rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                             >
                               <div className="flex items-center justify-between mb-1">
-                                <span className="font-semibold text-platinum-200">{measure.agency}</span>
+                                <span className="font-semibold text-platinum-500-200">{measure.agency}</span>
                               </div>
-                              <p className="text-xs text-platinum-400 mb-1">{measure.role}</p>
-                              <p className="text-xs text-platinum-500">{measure.actions}</p>
+                              <p className="text-xs text-platinum-500-400 mb-1">{measure.role}</p>
+                              <p className="text-xs text-platinum-500-500">{measure.actions}</p>
                             </motion.div>
                           ))}
                         </div>
@@ -375,7 +375,7 @@ export default function CommunicationCrisisPage() {
                 <Card className="glass-card border-purple-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Quote className="h-5 w-5 text-purple" />
+                      <Quote className="h-5 w-5 text-purple-500" />
                       Key Government Quotes
                     </CardTitle>
                     <CardDescription>Official statements on misinformation</CardDescription>
@@ -390,9 +390,9 @@ export default function CommunicationCrisisPage() {
                           transition={{ duration: 0.3, delay: idx * 0.1 }}
                           className="rounded-lg bg-platinum-800/50 p-4 border border-purple-500/30"
                         >
-                          <p className="text-sm italic text-platinum-300 mb-2">"{quote.quote}"</p>
-                          <p className="text-xs text-platinum-500">{quote.source}</p>
-                          <p className="text-xs text-platinum-600">{quote.date}</p>
+                          <p className="text-sm italic text-platinum-500-300 mb-2">"{quote.quote}"</p>
+                          <p className="text-xs text-platinum-500-500">{quote.source}</p>
+                          <p className="text-xs text-platinum-500-600">{quote.date}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -402,7 +402,7 @@ export default function CommunicationCrisisPage() {
                 <Card className="glass-card border-rose-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Scale className="h-5 w-5 text-rose" />
+                      <Scale className="h-5 w-5 text-rose-500" />
                       Legal Framework
                     </CardTitle>
                     <CardDescription>Penalties for misinformation</CardDescription>
@@ -411,8 +411,8 @@ export default function CommunicationCrisisPage() {
                     <div className="grid gap-4 md:grid-cols-3">
                       {extended.misinformation?.legalFramework?.map((law: any, idx: number) => (
                         <div key={idx} className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
-                          <p className="font-medium text-rose mb-2">{law.law}</p>
-                          <p className="text-sm text-platinum-400">{law.penalty}</p>
+                          <p className="font-medium text-rose-500 mb-2">{law.law}</p>
+                          <p className="text-sm text-platinum-500-400">{law.penalty}</p>
                         </div>
                       ))}
                     </div>
@@ -436,7 +436,7 @@ export default function CommunicationCrisisPage() {
                   <Card className="glass-card border-rose-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Zap className="h-5 w-5 text-rose" />
+                        <Zap className="h-5 w-5 text-rose-500" />
                         Notable Incidents
                       </CardTitle>
                       <CardDescription>Documented deepfake cases</CardDescription>
@@ -455,7 +455,7 @@ export default function CommunicationCrisisPage() {
                   <Card className="glass-card border-orange-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Shield className="h-5 w-5 text-orange" />
+                        <Shield className="h-5 w-5 text-orange-500" />
                         Counter-Measures
                       </CardTitle>
                       <CardDescription>AI detection and prevention</CardDescription>
@@ -470,8 +470,8 @@ export default function CommunicationCrisisPage() {
                             transition={{ duration: 0.3, delay: idx * 0.1 }}
                             className="rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50 hover:border-orange-500/30 transition-colors"
                           >
-                            <p className="font-medium text-platinum-200">{measure.measure}</p>
-                            <p className="text-xs text-platinum-400 mt-1">{measure.description}</p>
+                            <p className="font-medium text-platinum-500-200">{measure.measure}</p>
+                            <p className="text-xs text-platinum-500-400 mt-1">{measure.description}</p>
                           </motion.div>
                         ))}
                       </div>
@@ -482,7 +482,7 @@ export default function CommunicationCrisisPage() {
                 <Card className="glass-card border-purple-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Quote className="h-5 w-5 text-purple" />
+                      <Quote className="h-5 w-5 text-purple-500" />
                       Expert Quotes
                     </CardTitle>
                     <CardDescription>Key statements on deepfake threats</CardDescription>
@@ -497,9 +497,9 @@ export default function CommunicationCrisisPage() {
                           transition={{ duration: 0.3, delay: idx * 0.1 }}
                           className="rounded-lg bg-platinum-800/50 p-4 border border-purple-500/30"
                         >
-                          <p className="text-sm italic text-platinum-300 mb-2">"{quote.quote}"</p>
+                          <p className="text-sm italic text-platinum-500-300 mb-2">"{quote.quote}"</p>
                           <p className="text-xs text-purple-400 font-medium">{quote.speaker}</p>
-                          <p className="text-xs text-platinum-500">{quote.context}</p>
+                          <p className="text-xs text-platinum-500-500">{quote.context}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -514,20 +514,20 @@ export default function CommunicationCrisisPage() {
                   <CardContent>
                     <div className="grid gap-4 md:grid-cols-4">
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30 text-center">
-                        <p className="text-2xl font-bold text-rose">$35M</p>
-                        <p className="text-xs text-platinum-400">Stolen Amount</p>
+                        <p className="text-2xl font-bold text-rose-500">$35M</p>
+                        <p className="text-xs text-platinum-500-400">Stolen Amount</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30 text-center">
-                        <p className="text-2xl font-bold text-rose">AI</p>
-                        <p className="text-xs text-platinum-400">Method Used</p>
+                        <p className="text-2xl font-bold text-rose-500">AI</p>
+                        <p className="text-xs text-platinum-500-400">Method Used</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30 text-center">
-                        <p className="text-2xl font-bold text-rose">Voice + Email</p>
-                        <p className="text-xs text-platinum-400">Attack Vector</p>
+                        <p className="text-2xl font-bold text-rose-500">Voice + Email</p>
+                        <p className="text-xs text-platinum-500-400">Attack Vector</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30 text-center">
-                        <p className="text-2xl font-bold text-rose">2021</p>
-                        <p className="text-xs text-platinum-400">Year</p>
+                        <p className="text-2xl font-bold text-rose-500">2021</p>
+                        <p className="text-xs text-platinum-500-400">Year</p>
                       </div>
                     </div>
                   </CardContent>
@@ -549,7 +549,7 @@ export default function CommunicationCrisisPage() {
                 <Card className="glass-card border-rose-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Crosshair className="h-5 w-5 text-rose" />
+                      <Crosshair className="h-5 w-5 text-rose-500" />
                       Alp Services Contract (UAE as Actor)
                     </CardTitle>
                     <CardDescription>European disinformation campaign</CardDescription>
@@ -557,26 +557,26 @@ export default function CommunicationCrisisPage() {
                   <CardContent>
                     <div className="grid gap-4 md:grid-cols-4">
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30 text-center">
-                        <p className="text-2xl font-bold text-rose">€5.7M</p>
-                        <p className="text-xs text-platinum-400">Contract Value</p>
+                        <p className="text-2xl font-bold text-rose-500">€5.7M</p>
+                        <p className="text-xs text-platinum-500-400">Contract Value</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30 text-center">
-                        <p className="text-2xl font-bold text-rose">18</p>
-                        <p className="text-xs text-platinum-400">European Countries</p>
+                        <p className="text-2xl font-bold text-rose-500">18</p>
+                        <p className="text-xs text-platinum-500-400">European Countries</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30 text-center">
-                        <p className="text-2xl font-bold text-rose">2017</p>
-                        <p className="text-xs text-platinum-400">Contract Start</p>
+                        <p className="text-2xl font-bold text-rose-500">2017</p>
+                        <p className="text-xs text-platinum-500-400">Contract Start</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30 text-center">
-                        <p className="text-2xl font-bold text-rose">Swiss</p>
-                        <p className="text-xs text-platinum-400">Company Origin</p>
+                        <p className="text-2xl font-bold text-rose-500">Swiss</p>
+                        <p className="text-xs text-platinum-500-400">Company Origin</p>
                       </div>
                     </div>
                     <div className="mt-4 space-y-2">
-                      <p className="text-sm text-platinum-400"><span className="text-platinum-300 font-medium">Methods:</span> {extended.disinformationAsActor?.alpServicesContract?.methods}</p>
-                      <p className="text-sm text-platinum-400"><span className="text-platinum-300 font-medium">Targets:</span> {extended.disinformationAsActor?.alpServicesContract?.targets}</p>
-                      <p className="text-sm text-platinum-400"><span className="text-platinum-300 font-medium">Outcome:</span> {extended.disinformationAsActor?.alpServicesContract?.outcome}</p>
+                      <p className="text-sm text-platinum-500-400"><span className="text-platinum-500-300 font-medium">Methods:</span> {extended.disinformationAsActor?.alpServicesContract?.methods}</p>
+                      <p className="text-sm text-platinum-500-400"><span className="text-platinum-500-300 font-medium">Targets:</span> {extended.disinformationAsActor?.alpServicesContract?.targets}</p>
+                      <p className="text-sm text-platinum-500-400"><span className="text-platinum-500-300 font-medium">Outcome:</span> {extended.disinformationAsActor?.alpServicesContract?.outcome}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -584,7 +584,7 @@ export default function CommunicationCrisisPage() {
                 <Card className="glass-card border-orange-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Bug className="h-5 w-5 text-orange" />
+                      <Bug className="h-5 w-5 text-orange-500" />
                       2017 Qatar Hacking Incident
                     </CardTitle>
                     <CardDescription>False quotes planted to trigger Gulf crisis</CardDescription>
@@ -593,20 +593,20 @@ export default function CommunicationCrisisPage() {
                     <div className="space-y-4">
                       <div className="grid gap-4 md:grid-cols-3">
                         <div className="rounded-lg bg-platinum-800/50 p-3 border border-orange-500/30">
-                          <p className="text-xs text-platinum-400">Date of Hack</p>
-                          <p className="text-lg font-bold text-orange">May 23-24, 2017</p>
+                          <p className="text-xs text-platinum-500-400">Date of Hack</p>
+                          <p className="text-lg font-bold text-orange-500">May 23-24, 2017</p>
                         </div>
                         <div className="rounded-lg bg-platinum-800/50 p-3 border border-orange-500/30">
-                          <p className="text-xs text-platinum-400">Target</p>
-                          <p className="text-sm font-bold text-orange">Qatar News Agency</p>
+                          <p className="text-xs text-platinum-500-400">Target</p>
+                          <p className="text-sm font-bold text-orange-500">Qatar News Agency</p>
                         </div>
                         <div className="rounded-lg bg-platinum-800/50 p-3 border border-orange-500/30">
-                          <p className="text-xs text-platinum-400">Crisis Trigger</p>
-                          <p className="text-sm font-bold text-orange">June 5, 2017</p>
+                          <p className="text-xs text-platinum-500-400">Crisis Trigger</p>
+                          <p className="text-sm font-bold text-orange-500">June 5, 2017</p>
                         </div>
                       </div>
-                      <p className="text-sm text-platinum-400">{extended.disinformationAsActor?.qatarHackingIncident?.method}</p>
-                      <p className="text-sm text-platinum-500 italic">"{extended.disinformationAsActor?.qatarHackingIncident?.falseContent}"</p>
+                      <p className="text-sm text-platinum-500-400">{extended.disinformationAsActor?.qatarHackingIncident?.method}</p>
+                      <p className="text-sm text-platinum-500-500 italic">"{extended.disinformationAsActor?.qatarHackingIncident?.falseContent}"</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -614,7 +614,7 @@ export default function CommunicationCrisisPage() {
                 <Card className="glass-card border-purple-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Wifi className="h-5 w-5 text-purple" />
+                      <Wifi className="h-5 w-5 text-purple-500" />
                       Influence Operations Methods
                     </CardTitle>
                   </CardHeader>
@@ -628,8 +628,8 @@ export default function CommunicationCrisisPage() {
                           transition={{ duration: 0.3, delay: idx * 0.05 }}
                           className="rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                         >
-                          <p className="font-medium text-purple">{method.method}</p>
-                          <p className="text-xs text-platinum-400 mt-1">{method.description}</p>
+                          <p className="font-medium text-purple-500">{method.method}</p>
+                          <p className="text-xs text-platinum-500-400 mt-1">{method.description}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -653,7 +653,7 @@ export default function CommunicationCrisisPage() {
                   <Card className="glass-card border-rose-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Ban className="h-5 w-5 text-rose" />
+                        <Ban className="h-5 w-5 text-rose-500" />
                         Blocked Platforms
                       </CardTitle>
                       <CardDescription>VoIP and messaging services</CardDescription>
@@ -670,7 +670,7 @@ export default function CommunicationCrisisPage() {
                   <Card className="glass-card border-emerald-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Wifi className="h-5 w-5 text-emerald" />
+                        <Wifi className="h-5 w-5 text-emerald-500" />
                         Available Platforms
                       </CardTitle>
                       <CardDescription>Services available since March 2023</CardDescription>
@@ -685,7 +685,7 @@ export default function CommunicationCrisisPage() {
                             transition={{ duration: 0.3, delay: idx * 0.1 }}
                             className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-emerald-500/30"
                           >
-                            <span className="text-platinum-200">{platform.platform}</span>
+                            <span className="text-platinum-500-200">{platform.platform}</span>
                             <Badge variant="success" className="text-xs">{platform.status}</Badge>
                           </motion.div>
                         ))}
@@ -697,7 +697,7 @@ export default function CommunicationCrisisPage() {
                 <Card className="glass-card border-rose-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <UserX className="h-5 w-5 text-rose" />
+                      <UserX className="h-5 w-5 text-rose-500" />
                       Arrest Cases (March 2026)
                     </CardTitle>
                     <CardDescription>Suppression during Iran conflict</CardDescription>
@@ -707,10 +707,10 @@ export default function CommunicationCrisisPage() {
                       {extended.suppression?.arrestCases?.map((arrest: any, idx: number) => (
                         <div key={idx} className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
                           <div className="flex items-center justify-between mb-2">
-                            <p className="font-bold text-rose text-xl">{arrest.number}</p>
+                            <p className="font-bold text-rose-500 text-xl">{arrest.number}</p>
                           </div>
-                          <p className="text-sm text-platinum-300">{arrest.category}</p>
-                          <p className="text-xs text-platinum-500 mt-1">{arrest.details}</p>
+                          <p className="text-sm text-platinum-500-300">{arrest.category}</p>
+                          <p className="text-xs text-platinum-500-500 mt-1">{arrest.details}</p>
                         </div>
                       ))}
                     </div>
@@ -720,7 +720,7 @@ export default function CommunicationCrisisPage() {
                 <Card className="glass-card border-purple-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Scale className="h-5 w-5 text-purple" />
+                      <Scale className="h-5 w-5 text-purple-500" />
                       Citizenship Revocation Cases
                     </CardTitle>
                   </CardHeader>
@@ -736,10 +736,10 @@ export default function CommunicationCrisisPage() {
                             className="rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                           >
                             <div className="flex items-center justify-between mb-1">
-                              <span className="font-semibold text-purple">{citCase.case}</span>
+                              <span className="font-semibold text-purple-500">{citCase.case}</span>
                               <Badge variant="outline" className="text-xs">{citCase.year}</Badge>
                             </div>
-                            <p className="text-xs text-platinum-400">{citCase.details}</p>
+                            <p className="text-xs text-platinum-500-400">{citCase.details}</p>
                           </motion.div>
                         ))}
                       </div>
@@ -750,7 +750,7 @@ export default function CommunicationCrisisPage() {
                 <Card className="glass-card border-gold-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <AlertCircle className="h-5 w-5 text-gold" />
+                      <AlertCircle className="h-5 w-5 text-gold-700" />
                       Platform Takedown Statistics
                     </CardTitle>
                   </CardHeader>
@@ -758,10 +758,10 @@ export default function CommunicationCrisisPage() {
                     <div className="space-y-3">
                       {extended.suppression?.platformTakedownStats?.map((stat: any, idx: number) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50">
-                          <span className="text-platinum-200">{stat.platform}</span>
+                          <span className="text-platinum-500-200">{stat.platform}</span>
                           <div className="text-right">
-                            <p className="text-sm font-medium text-gold">{stat.requests}</p>
-                            <p className="text-xs text-platinum-500">{stat.compliance}</p>
+                            <p className="text-sm font-medium text-gold-700">{stat.requests}</p>
+                            <p className="text-xs text-platinum-500-500">{stat.compliance}</p>
                           </div>
                         </div>
                       ))}
@@ -786,7 +786,7 @@ export default function CommunicationCrisisPage() {
                   <Card className="glass-card border-rose-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Activity className="h-5 w-5 text-rose" />
+                        <Activity className="h-5 w-5 text-rose-500" />
                         DDoS Attack Trend
                       </CardTitle>
                       <CardDescription>H1 vs H2 2025 comparison</CardDescription>
@@ -807,7 +807,7 @@ export default function CommunicationCrisisPage() {
                   <Card className="glass-card border-orange-500/30">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Target className="h-5 w-5 text-orange" />
+                        <Target className="h-5 w-5 text-orange-500" />
                         Most Targeted Sectors (H2 2025)
                       </CardTitle>
                       <CardDescription>Incident distribution</CardDescription>
@@ -829,22 +829,22 @@ export default function CommunicationCrisisPage() {
                   <CardContent>
                     <div className="grid gap-4 md:grid-cols-4">
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-purple-500/30 text-center">
-                        <p className="text-xs text-platinum-400 mb-1">Total Incidents H1</p>
-                        <p className="text-2xl font-bold text-purple">3,477</p>
+                        <p className="text-xs text-platinum-500-400 mb-1">Total Incidents H1</p>
+                        <p className="text-2xl font-bold text-purple-500">3,477</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30 text-center">
-                        <p className="text-xs text-platinum-400 mb-1">Total Incidents H2</p>
-                        <p className="text-2xl font-bold text-rose">10,303</p>
-                        <p className="text-xs text-rose">+196%</p>
+                        <p className="text-xs text-platinum-500-400 mb-1">Total Incidents H2</p>
+                        <p className="text-2xl font-bold text-rose-500">10,303</p>
+                        <p className="text-xs text-rose-500">+196%</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-purple-500/30 text-center">
-                        <p className="text-xs text-platinum-400 mb-1">Avg Duration H1</p>
-                        <p className="text-2xl font-bold text-purple">27 min</p>
+                        <p className="text-xs text-platinum-500-400 mb-1">Avg Duration H1</p>
+                        <p className="text-2xl font-bold text-purple-500">27 min</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30 text-center">
-                        <p className="text-xs text-platinum-400 mb-1">Avg Duration H2</p>
-                        <p className="text-2xl font-bold text-rose">~12 hrs</p>
-                        <p className="text-xs text-rose">+2,567%</p>
+                        <p className="text-xs text-platinum-500-400 mb-1">Avg Duration H2</p>
+                        <p className="text-2xl font-bold text-rose-500">~12 hrs</p>
+                        <p className="text-xs text-rose-500">+2,567%</p>
                       </div>
                     </div>
                   </CardContent>
@@ -853,7 +853,7 @@ export default function CommunicationCrisisPage() {
                 <Card className="glass-card border-rose-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Bug className="h-5 w-5 text-rose" />
+                      <Bug className="h-5 w-5 text-rose-500" />
                       Notable Cyber Attacks
                     </CardTitle>
                   </CardHeader>
@@ -869,11 +869,11 @@ export default function CommunicationCrisisPage() {
                             className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
                           >
                             <div className="flex items-center justify-between mb-2">
-                              <span className="font-semibold text-platinum-200">{attack.actor || 'Unknown'}</span>
+                              <span className="font-semibold text-platinum-500-200">{attack.actor || 'Unknown'}</span>
                               <Badge variant="outline" className="text-xs">{attack.date}</Badge>
                             </div>
-                            <p className="text-sm text-platinum-400 mb-1">{attack.target}</p>
-                            <p className="text-xs text-platinum-500">{attack.details}</p>
+                            <p className="text-sm text-platinum-500-400 mb-1">{attack.target}</p>
+                            <p className="text-xs text-platinum-500-500">{attack.details}</p>
                           </motion.div>
                         ))}
                       </div>
@@ -886,8 +886,8 @@ export default function CommunicationCrisisPage() {
                     <CardTitle className="text-lg">Expert Quote</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm italic text-platinum-300 mb-2">"{extended.cyberAttacks?.expertQuote?.text}"</p>
-                    <p className="text-xs text-gold">— {extended.cyberAttacks?.expertQuote?.source}</p>
+                    <p className="text-sm italic text-platinum-500-300 mb-2">"{extended.cyberAttacks?.expertQuote?.text}"</p>
+                    <p className="text-xs text-gold-700">— {extended.cyberAttacks?.expertQuote?.source}</p>
                   </CardContent>
                 </Card>
               </div>
@@ -924,10 +924,10 @@ export default function CommunicationCrisisPage() {
                             <div className="absolute -left-8 top-0 h-4 w-4 rounded-full bg-purple-500 border-2 border-platinum-900" />
                             <div className={`rounded-lg border p-4 transition-all duration-300 ${selectedIncident === idx ? 'bg-purple-500/20 border-purple-500/50' : 'bg-platinum-800/50 border-platinum-700/50 hover:border-purple-500/30'}`}>
                               <div className="flex items-center justify-between mb-1">
-                                <p className="font-semibold text-platinum-200">{event.event}</p>
+                                <p className="font-semibold text-platinum-500-200">{event.event}</p>
                                 <Badge variant="outline" className="text-xs">{event.date}</Badge>
                               </div>
-                              <p className="text-xs text-platinum-500">{event.category}</p>
+                              <p className="text-xs text-platinum-500-500">{event.category}</p>
                             </div>
                           </motion.div>
                         ))}
@@ -952,7 +952,7 @@ export default function CommunicationCrisisPage() {
                 <Card className="glass-card border-purple-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Users className="h-5 w-5 text-purple" />
+                      <Users className="h-5 w-5 text-purple-500" />
                       Government Officials
                     </CardTitle>
                   </CardHeader>
@@ -967,9 +967,9 @@ export default function CommunicationCrisisPage() {
                             transition={{ duration: 0.3, delay: idx * 0.05 }}
                             className="rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                           >
-                            <p className="font-medium text-platinum-200">{official.name}</p>
+                            <p className="font-medium text-platinum-500-200">{official.name}</p>
                             <p className="text-xs text-purple-400">{official.role}</p>
-                            <p className="text-xs text-platinum-500">{official.organization}</p>
+                            <p className="text-xs text-platinum-500-500">{official.organization}</p>
                           </motion.div>
                         ))}
                       </div>
@@ -980,7 +980,7 @@ export default function CommunicationCrisisPage() {
                 <Card className="glass-card border-emerald-500/30">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Globe className="h-5 w-5 text-emerald" />
+                      <Globe className="h-5 w-5 text-emerald-500" />
                       Organizations
                     </CardTitle>
                   </CardHeader>
@@ -995,9 +995,9 @@ export default function CommunicationCrisisPage() {
                             transition={{ duration: 0.3, delay: idx * 0.05 }}
                             className="rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
                           >
-                            <p className="font-medium text-platinum-200">{org.name}</p>
+                            <p className="font-medium text-platinum-500-200">{org.name}</p>
                             <p className="text-xs text-emerald-400">{org.type}</p>
-                            <p className="text-xs text-platinum-500">{org.notes}</p>
+                            <p className="text-xs text-platinum-500-500">{org.notes}</p>
                           </motion.div>
                         ))}
                       </div>

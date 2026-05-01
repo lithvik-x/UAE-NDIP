@@ -55,7 +55,7 @@ export default function GulfArabicPage() {
   if (!data) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-400">Loading Gulf Arabic intelligence data...</div>
+        <div className="text-platinum-500-400">Loading Gulf Arabic intelligence data...</div>
       </div>
     )
   }
@@ -96,7 +96,7 @@ export default function GulfArabicPage() {
     switch (trend) {
       case 'rising': return <ArrowUp className="h-4 w-4 text-emerald-400" />
       case 'declining': return <ArrowDown className="h-4 w-4 text-rose-400" />
-      default: return <Minus className="h-4 w-4 text-platinum-400" />
+      default: return <Minus className="h-4 w-4 text-platinum-500-400" />
     }
   }
 
@@ -105,7 +105,7 @@ export default function GulfArabicPage() {
     switch (trend) {
       case 'rising': return <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">Rising</Badge>
       case 'declining': return <Badge className="bg-rose-500/20 text-rose-400 border-rose-500/50">Declining</Badge>
-      default: return <Badge className="bg-platinum-500/20 text-platinum-400 border-platinum-500/50">Stable</Badge>
+      default: return <Badge className="bg-platinum-500/20 text-platinum-500-400 border-platinum-500/50">Stable</Badge>
     }
   }
 
@@ -141,25 +141,25 @@ export default function GulfArabicPage() {
       {/* CYCLE A: Header */}
       <motion.div className="flex items-start justify-between" variants={fadeInUp}>
         <div>
-          <Badge variant="default" className="mb-2 bg-gradient-to-r from-platinum/20 to-denim/20 text-platinum border-platinum/50">
+          <Badge variant="default" className="mb-2 bg-gradient-to-r from-platinum/20 to-denim/20 text-platinum-500 border-platinum/50">
             <Sparkles className="w-3 h-3 mr-1" />
             MULTI-LINGUAL
           </Badge>
           <motion.h1
-            className="text-3xl font-extrabold gradient-text-platinum"
+            className="text-3xl font-extrabold gradient-text-platinum-500"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
           >
             Gulf Arabic Dialect
           </motion.h1>
-          <p className="mt-2 text-platinum-400">
+          <p className="mt-2 text-platinum-500-400">
             {data.description || 'Intelligence on Gulf Arabic dialect: Saudi Arabia, Kuwait, Bahrain, Qatar, Oman, UAE'}
           </p>
           {/* Execution Metadata from MD */}
           {executionMetadata && (
             <motion.div
-              className="mt-4 flex items-center gap-4 text-xs text-platinum-500"
+              className="mt-4 flex items-center gap-4 text-xs text-platinum-500-500"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
@@ -182,12 +182,12 @@ export default function GulfArabicPage() {
         <div className="flex gap-3">
           <Button
             variant="outline"
-            className="gap-2 border-platinum/50 text-platinum hover:bg-platinum/10 transition-all duration-300 hover:scale-105"
+            className="gap-2 border-platinum/50 text-platinum-500 hover:bg-platinum/10 transition-all duration-300 hover:scale-105"
           >
             <Globe className="h-4 w-4" />
             View Dialect Map
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2 transition-all duration-300 hover:scale-105 hover:shadow-premium-lg">
+          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-500-950 gap-2 transition-all duration-300 hover:scale-105 hover:shadow-premium-lg">
             <Zap className="h-4 w-4" />
             Analyze
           </Button>
@@ -292,7 +292,7 @@ export default function GulfArabicPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Users className="h-5 w-5 text-platinum-400" />
+                      <Users className="h-5 w-5 text-platinum-500-400" />
                       Regional Distribution
                     </CardTitle>
                     <CardDescription>Gulf Arabic speaker distribution</CardDescription>
@@ -311,21 +311,21 @@ export default function GulfArabicPage() {
                         >
                           <div className={`text-2xl font-bold ${
                             demo.subDialect === 'TOTAL Gulf Arabic'
-                              ? 'text-platinum-400'
+                              ? 'text-platinum-500-400'
                               : idx === 0
-                              ? 'text-platinum-400'
+                              ? 'text-platinum-500-400'
                               : idx === 1
                               ? 'text-emerald-400'
                               : idx === 2
                               ? 'text-gold-400'
                               : idx === 3
-                              ? 'text-navy-400'
-                              : 'text-platinum-400'
+                              ? 'text-navy-500-400'
+                              : 'text-platinum-500-400'
                           }`}>
                             {demo.estSpeakers}
                           </div>
-                          <p className="text-sm text-platinum-400 mt-1">{demo.country}</p>
-                          <p className="text-xs text-platinum-500">{demo.subDialect}</p>
+                          <p className="text-sm text-platinum-500-400 mt-1">{demo.country}</p>
+                          <p className="text-xs text-platinum-500-500">{demo.subDialect}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -353,7 +353,7 @@ export default function GulfArabicPage() {
                   <Card className="glass-card">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Sparkles className="h-5 w-5 text-platinum-400" />
+                        <Sparkles className="h-5 w-5 text-platinum-500-400" />
                         Trend Direction
                       </CardTitle>
                       <CardDescription>Current trend analysis</CardDescription>
@@ -362,7 +362,7 @@ export default function GulfArabicPage() {
                       <div className="flex flex-col items-center justify-center h-[280px]">
                         <motion.div
                           className={`text-6xl font-bold ${
-                            trendDirection === 'rising' ? 'text-emerald-400' : trendDirection === 'declining' ? 'text-rose-400' : 'text-platinum-400'
+                            trendDirection === 'rising' ? 'text-emerald-400' : trendDirection === 'declining' ? 'text-rose-400' : 'text-platinum-500-400'
                           }`}
                           initial={{ scale: 0.8, opacity: 0 }}
                           animate={{ scale: 1, opacity: 1 }}
@@ -370,13 +370,13 @@ export default function GulfArabicPage() {
                         >
                           {trendDirection?.toUpperCase() || 'STABLE'}
                         </motion.div>
-                        <p className="mt-4 text-platinum-400">
+                        <p className="mt-4 text-platinum-500-400">
                           {trendDirection === 'rising' ? 'Query volume increasing' : trendDirection === 'declining' ? 'Query volume decreasing' : 'Query volume stable'}
                         </p>
                         <div className="mt-6 flex items-center gap-4">
                           <div className="flex items-center gap-2">
                             {getTrendIcon(trendDirection)}
-                            <span className="text-sm text-platinum-300">Regional Interest</span>
+                            <span className="text-sm text-platinum-500-300">Regional Interest</span>
                           </div>
                         </div>
                       </div>
@@ -412,7 +412,7 @@ export default function GulfArabicPage() {
                             >
                               {fa.id}
                             </Badge>
-                            <p className="text-sm text-platinum-300">{fa.description}</p>
+                            <p className="text-sm text-platinum-500-300">{fa.description}</p>
                           </motion.div>
                         ))}
                       </div>
@@ -431,17 +431,17 @@ export default function GulfArabicPage() {
                   <CardContent>
                     <div className="grid gap-4 lg:grid-cols-3">
                       <div className="space-y-2">
-                        <p className="text-sm text-platinum-400">Credibility Tier</p>
-                        <Badge variant="outline" className="border-platinum/50 text-platinum">
+                        <p className="text-sm text-platinum-500-400">Credibility Tier</p>
+                        <Badge variant="outline" className="border-platinum/50 text-platinum-500">
                           Tier {credibility?.tier || 3}
                         </Badge>
                       </div>
                       <div className="space-y-2">
-                        <p className="text-sm text-platinum-400">Credibility Score</p>
-                        <div className="text-2xl font-bold text-platinum-400">{credibility?.score || 82}%</div>
+                        <p className="text-sm text-platinum-500-400">Credibility Score</p>
+                        <div className="text-2xl font-bold text-platinum-500-400">{credibility?.score || 82}%</div>
                       </div>
                       <div className="space-y-2">
-                        <p className="text-sm text-platinum-400">Sources Verified</p>
+                        <p className="text-sm text-platinum-500-400">Sources Verified</p>
                         <div className="text-2xl font-bold text-emerald-400">{credibility?.sources || 17}</div>
                       </div>
                     </div>
@@ -463,7 +463,7 @@ export default function GulfArabicPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Hash className="h-5 w-5 text-platinum-400" />
+                    <Hash className="h-5 w-5 text-platinum-500-400" />
                     Search Volume Rankings
                   </CardTitle>
                   <CardDescription>Top 10 search terms by volume</CardDescription>
@@ -482,14 +482,14 @@ export default function GulfArabicPage() {
                         >
                           <div className="flex items-center gap-4">
                             <motion.div
-                              className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-platinum text-navy-950 text-sm font-bold"
+                              className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-platinum text-navy-500-950 text-sm font-bold"
                               whileHover={{ scale: 1.1 }}
                             >
                               {idx + 1}
                             </motion.div>
                             <div>
-                              <p className="font-semibold text-platinum-200">{term.term}</p>
-                              <p className="text-sm text-platinum-400">
+                              <p className="font-semibold text-platinum-500-200">{term.term}</p>
+                              <p className="text-sm text-platinum-500-400">
                                 {term.volume?.toLocaleString()} queries
                               </p>
                             </div>
@@ -502,7 +502,7 @@ export default function GulfArabicPage() {
                                   ? 'text-emerald-400'
                                   : term.sentiment === 'negative'
                                   ? 'text-rose-400'
-                                  : 'text-platinum-400'
+                                  : 'text-platinum-500-400'
                               }`}
                             >
                               {term.sentiment}
@@ -534,7 +534,7 @@ export default function GulfArabicPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <MessageSquare className="h-5 w-5 text-platinum-400" />
+                      <MessageSquare className="h-5 w-5 text-platinum-500-400" />
                       Sentiment Breakdown
                     </CardTitle>
                     <CardDescription>Detailed sentiment metrics</CardDescription>
@@ -545,7 +545,7 @@ export default function GulfArabicPage() {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
                             <div className="h-3 w-3 rounded-full bg-emerald-500" />
-                            <span className="text-sm font-medium text-platinum-200">Positive</span>
+                            <span className="text-sm font-medium text-platinum-500-200">Positive</span>
                           </div>
                           <span className="text-lg font-bold text-emerald-400">{sentiment?.positive || 75}%</span>
                         </div>
@@ -556,9 +556,9 @@ export default function GulfArabicPage() {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
                             <div className="h-3 w-3 rounded-full bg-platinum-500" />
-                            <span className="text-sm font-medium text-platinum-200">Neutral</span>
+                            <span className="text-sm font-medium text-platinum-500-200">Neutral</span>
                           </div>
-                          <span className="text-lg font-bold text-platinum-400">{sentiment?.neutral || 15}%</span>
+                          <span className="text-lg font-bold text-platinum-500-400">{sentiment?.neutral || 15}%</span>
                         </div>
                         <Progress value={sentiment?.neutral || 15} className="h-3" />
                       </div>
@@ -567,7 +567,7 @@ export default function GulfArabicPage() {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
                             <div className="h-3 w-3 rounded-full bg-rose-500" />
-                            <span className="text-sm font-medium text-platinum-200">Negative</span>
+                            <span className="text-sm font-medium text-platinum-500-200">Negative</span>
                           </div>
                           <span className="text-lg font-bold text-rose-400">{sentiment?.negative || 10}%</span>
                         </div>
@@ -599,7 +599,7 @@ export default function GulfArabicPage() {
                               transition={{ delay: idx * 0.05 }}
                             >
                               <div className="flex items-center justify-between mb-2">
-                                <span className="font-medium text-platinum-200">{item.topic}</span>
+                                <span className="font-medium text-platinum-500-200">{item.topic}</span>
                                 <Badge
                                   variant="outline"
                                   className={`${
@@ -607,7 +607,7 @@ export default function GulfArabicPage() {
                                       ? 'border-emerald-500/50 text-emerald-400'
                                       : item.overallSentiment === 'Negative'
                                       ? 'border-rose-500/50 text-rose-400'
-                                      : 'border-platinum-500/50 text-platinum-400'
+                                      : 'border-platinum-500/50 text-platinum-500-400'
                                   }`}
                                 >
                                   {item.overallSentiment}
@@ -615,12 +615,12 @@ export default function GulfArabicPage() {
                               </div>
                               <div className="flex gap-2 text-xs">
                                 <span className="text-emerald-400">+{item.positivePercent}%</span>
-                                <span className="text-platinum-500">/</span>
-                                <span className="text-platinum-400">{item.neutralPercent}%</span>
-                                <span className="text-platinum-500">/</span>
+                                <span className="text-platinum-500-500">/</span>
+                                <span className="text-platinum-500-400">{item.neutralPercent}%</span>
+                                <span className="text-platinum-500-500">/</span>
                                 <span className="text-rose-400">-{item.negativePercent}%</span>
                               </div>
-                              <p className="mt-2 text-xs text-platinum-500">{item.keyDrivers}</p>
+                              <p className="mt-2 text-xs text-platinum-500-500">{item.keyDrivers}</p>
                             </motion.div>
                           ))}
                         </div>
@@ -669,7 +669,7 @@ export default function GulfArabicPage() {
                   <Card className="glass-card">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <BookOpen className="h-5 w-5 text-platinum-400" />
+                        <BookOpen className="h-5 w-5 text-platinum-500-400" />
                         Dialect Preservation KPIs
                       </CardTitle>
                       <CardDescription>Youth pride, social media connection, and preservation support metrics</CardDescription>
@@ -683,12 +683,12 @@ export default function GulfArabicPage() {
                             whileHover={{ y: -2 }}
                           >
                             <div className="flex items-center justify-between">
-                              <p className="text-sm text-platinum-400">{kpi.kpi}</p>
-                              <Badge variant="outline" className="border-platinum/50 text-platinum">
+                              <p className="text-sm text-platinum-500-400">{kpi.kpi}</p>
+                              <Badge variant="outline" className="border-platinum/50 text-platinum-500">
                                 {kpi.value}
                               </Badge>
                             </div>
-                            <p className="text-xs text-platinum-500 mt-2">
+                            <p className="text-xs text-platinum-500-500 mt-2">
                               Source: {kpi.source} | {kpi.date}
                             </p>
                           </motion.div>
@@ -729,14 +729,14 @@ export default function GulfArabicPage() {
                               }`} />
                               <div className="p-4 rounded-lg border border-platinum-700 bg-platinum-800/50 hover:border-platinum/50 transition-all duration-300">
                                 <div className="flex items-center justify-between">
-                                  <span className="font-medium text-platinum-200">{event.phase}</span>
-                                  <Badge variant="outline" className="border-platinum-600 text-platinum-400">
+                                  <span className="font-medium text-platinum-500-200">{event.phase}</span>
+                                  <Badge variant="outline" className="border-platinum-600 text-platinum-500-400">
                                     {event.date}
                                   </Badge>
                                 </div>
-                                <p className="text-sm text-platinum-400 mt-1">{event.keyEvent}</p>
+                                <p className="text-sm text-platinum-500-400 mt-1">{event.keyEvent}</p>
                                 {event.duration !== '—' && (
-                                  <p className="text-xs text-platinum-500 mt-1">Duration: {event.duration}</p>
+                                  <p className="text-xs text-platinum-500-500 mt-1">Duration: {event.duration}</p>
                                 )}
                               </div>
                             </motion.div>
@@ -776,24 +776,24 @@ export default function GulfArabicPage() {
                           className="text-center p-6 rounded-lg bg-gradient-platinum/10 border border-platinum/50"
                           whileHover={{ scale: 1.02 }}
                         >
-                          <div className="text-4xl font-bold text-platinum-400">{alyahBenchmark.totalSamples}</div>
-                          <p className="text-sm text-platinum-400 mt-1">Total Samples</p>
+                          <div className="text-4xl font-bold text-platinum-500-400">{alyahBenchmark.totalSamples}</div>
+                          <p className="text-sm text-platinum-500-400 mt-1">Total Samples</p>
                         </motion.div>
                         <motion.div
                           className="text-center p-6 rounded-lg bg-gradient-emerald/10 border border-emerald-500/50"
                           whileHover={{ scale: 1.02 }}
                         >
                           <div className="text-4xl font-bold text-emerald-400">{alyahBenchmark.topAccuracy}%</div>
-                          <p className="text-sm text-platinum-400 mt-1">Top Accuracy</p>
-                          <p className="text-xs text-platinum-500 mt-1">{alyahBenchmark.topModel}</p>
+                          <p className="text-sm text-platinum-500-400 mt-1">Top Accuracy</p>
+                          <p className="text-xs text-platinum-500-500 mt-1">{alyahBenchmark.topModel}</p>
                         </motion.div>
                         <motion.div
                           className="text-center p-6 rounded-lg bg-gradient-denim/10 border border-denim-500/50"
                           whileHover={{ scale: 1.02 }}
                         >
                           <div className="text-4xl font-bold text-denim-400">TII</div>
-                          <p className="text-sm text-platinum-400 mt-1">Best Organization</p>
-                          <p className="text-xs text-platinum-500 mt-1">Technology Innovation Institute</p>
+                          <p className="text-sm text-platinum-500-400 mt-1">Best Organization</p>
+                          <p className="text-xs text-platinum-500-500 mt-1">Technology Innovation Institute</p>
                         </motion.div>
                       </div>
                     </CardContent>
@@ -805,7 +805,7 @@ export default function GulfArabicPage() {
                   <Card className="glass-card">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Database className="h-5 w-5 text-platinum-400" />
+                        <Database className="h-5 w-5 text-platinum-500-400" />
                         NLP/Corpus Resources
                       </CardTitle>
                       <CardDescription>Gulf Arabic and Emirati dialect datasets</CardDescription>
@@ -823,14 +823,14 @@ export default function GulfArabicPage() {
                               whileHover={{ x: 4 }}
                             >
                               <div className="flex-1">
-                                <p className="font-medium text-platinum-200">{resource.resource}</p>
-                                <p className="text-sm text-platinum-400">
+                                <p className="font-medium text-platinum-500-200">{resource.resource}</p>
+                                <p className="text-sm text-platinum-500-400">
                                   {resource.type} | {resource.sizeScope}
                                 </p>
                               </div>
                               <div className="text-right">
-                                <p className="text-sm text-platinum-500">{resource.source}</p>
-                                <p className="text-xs text-platinum-600">{resource.date}</p>
+                                <p className="text-sm text-platinum-500-500">{resource.source}</p>
+                                <p className="text-xs text-platinum-500-600">{resource.date}</p>
                               </div>
                             </motion.div>
                           ))}
@@ -857,7 +857,7 @@ export default function GulfArabicPage() {
                 <Card className="glass-card mb-6">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Users className="h-5 w-5 text-platinum-400" />
+                      <Users className="h-5 w-5 text-platinum-500-400" />
                       Key Individuals
                     </CardTitle>
                     <CardDescription>Subject matter experts and researchers</CardDescription>
@@ -873,15 +873,15 @@ export default function GulfArabicPage() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.05 }}
                           >
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-platinum text-navy-950">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-platinum text-navy-500-950">
                               {person.name.charAt(0)}
                             </div>
                             <div className="flex-1">
-                              <p className="font-medium text-platinum-200">{person.name}</p>
-                              <p className="text-sm text-platinum-400">{person.role}</p>
-                              <p className="text-xs text-platinum-500">{person.affiliation}</p>
+                              <p className="font-medium text-platinum-500-200">{person.name}</p>
+                              <p className="text-sm text-platinum-500-400">{person.role}</p>
+                              <p className="text-xs text-platinum-500-500">{person.affiliation}</p>
                             </div>
-                            <Badge variant="outline" className="border-platinum/50 text-platinum shrink-0">
+                            <Badge variant="outline" className="border-platinum/50 text-platinum-500 shrink-0">
                               {person.relevanceToUAE.split(';')[0]}
                             </Badge>
                           </motion.div>
@@ -916,15 +916,15 @@ export default function GulfArabicPage() {
                             <div className={`flex h-10 w-10 items-center justify-center rounded-full ${
                               inst.country === 'UAE' || inst.country.includes('UAE')
                                 ? 'bg-gradient-denim text-white'
-                                : 'bg-platinum-700 text-platinum-400'
+                                : 'bg-platinum-700 text-platinum-500-400'
                             }`}>
                               <Globe className="h-5 w-5" />
                             </div>
                             <div className="flex-1">
-                              <p className="font-medium text-platinum-200">{inst.institution}</p>
-                              <p className="text-sm text-platinum-400">{inst.type} | {inst.country}</p>
+                              <p className="font-medium text-platinum-500-200">{inst.institution}</p>
+                              <p className="text-sm text-platinum-500-400">{inst.type} | {inst.country}</p>
                             </div>
-                            <Badge variant="outline" className="border-platinum-600 text-platinum-400 shrink-0">
+                            <Badge variant="outline" className="border-platinum-600 text-platinum-500-400 shrink-0">
                               {inst.uaeRelevance}
                             </Badge>
                           </motion.div>
@@ -939,7 +939,7 @@ export default function GulfArabicPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Network className="h-5 w-5 text-platinum-400" />
+                    <Network className="h-5 w-5 text-platinum-500-400" />
                     Source Directory
                   </CardTitle>
                   <CardDescription>
@@ -965,14 +965,14 @@ export default function GulfArabicPage() {
                                 : source.tier === 1
                                 ? 'bg-gradient-denim text-white'
                                 : source.tier === 2
-                                ? 'bg-gradient-platinum text-navy-950'
-                                : 'bg-platinum-600 text-platinum-300'
+                                ? 'bg-gradient-platinum text-navy-500-950'
+                                : 'bg-platinum-600 text-platinum-500-300'
                             }`}>
                               <Globe className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-200">{source.name}</p>
-                              <p className="text-sm text-platinum-400">
+                              <p className="font-semibold text-platinum-500-200">{source.name}</p>
+                              <p className="text-sm text-platinum-500-400">
                                 {source.url ? (
                                   <a
                                     href={source.url}
@@ -984,7 +984,7 @@ export default function GulfArabicPage() {
                                     <ExternalLink className="h-3 w-3" />
                                   </a>
                                 ) : (
-                                  <span className="text-platinum-500">Last updated: {source.date}</span>
+                                  <span className="text-platinum-500-500">Last updated: {source.date}</span>
                                 )}
                               </p>
                             </div>
@@ -997,8 +997,8 @@ export default function GulfArabicPage() {
                                 : source.tier === 1
                                 ? 'border-denim-500/50 text-denim-400'
                                 : source.tier === 2
-                                ? 'border-platinum-500/50 text-platinum-400'
-                                : 'border-platinum-500/50 text-platinum-400'
+                                ? 'border-platinum-500/50 text-platinum-500-400'
+                                : 'border-platinum-500/50 text-platinum-500-400'
                             }`}
                           >
                             Tier {source.tier || 3}
@@ -1025,15 +1025,15 @@ export default function GulfArabicPage() {
                       <div className="text-center p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/50">
                         <CheckCircle2 className="h-8 w-8 text-emerald-400 mx-auto" />
                         <p className="text-lg font-bold text-emerald-400 mt-2">{verificationConfidence.status}</p>
-                        <p className="text-sm text-platinum-400">{verificationConfidence.confidenceLevel}</p>
+                        <p className="text-sm text-platinum-500-400">{verificationConfidence.confidenceLevel}</p>
                       </div>
                       <div className="col-span-2 p-4 rounded-lg bg-platinum-800/50 border border-platinum-700">
-                        <p className="text-sm text-platinum-400 mb-2">Failed Fetches ({verificationConfidence.failedFetches?.length || 0}):</p>
+                        <p className="text-sm text-platinum-500-400 mb-2">Failed Fetches ({verificationConfidence.failedFetches?.length || 0}):</p>
                         <div className="space-y-2">
                           {verificationConfidence.failedFetches?.map((fetch, idx) => (
                             <div key={idx} className="flex items-center gap-2 text-xs">
                               <XCircle className="h-3 w-3 text-rose-400" />
-                              <span className="text-platinum-500">{fetch.url}</span>
+                              <span className="text-platinum-500-500">{fetch.url}</span>
                               <Badge variant="outline" className="border-rose-500/50 text-rose-400 text-xs">
                                 {fetch.statusCode}
                               </Badge>

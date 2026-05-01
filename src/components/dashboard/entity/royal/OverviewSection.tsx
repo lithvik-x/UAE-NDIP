@@ -139,12 +139,12 @@ export function OverviewSection({
               {currentRulers.map((ruler, i) => (
                 <div key={i} className="flex items-center justify-between py-2 border-b border-platinum-200/30 dark:border-platinum-700/30 last:border-0">
                   <div>
-                    <p className="text-sm font-semibold text-navy-900 dark:text-platinum-100">{ruler.emirate}</p>
-                    <p className="text-xs text-platinum-500 truncate max-w-[180px]">{ruler.ruler}</p>
+                    <p className="text-sm font-semibold text-navy-500-900 dark:text-platinum-500-100">{ruler.emirate}</p>
+                    <p className="text-xs text-platinum-500-500 truncate max-w-[180px]">{ruler.ruler}</p>
                   </div>
                   <div className="text-right shrink-0 ml-2">
                     <Badge variant="outline" className="text-xs">{ruler.dynasty}</Badge>
-                    <p className="text-xs text-platinum-500 mt-0.5">Since {ruler.since}</p>
+                    <p className="text-xs text-platinum-500-500 mt-0.5">Since {ruler.since}</p>
                   </div>
                 </div>
               ))}
@@ -165,12 +165,12 @@ export function OverviewSection({
               {crownPrinces.map((cp, i) => (
                 <div key={i} className="flex items-center justify-between py-2 border-b border-platinum-200/30 dark:border-platinum-700/30 last:border-0">
                   <div>
-                    <p className="text-sm font-semibold text-navy-900 dark:text-platinum-100">{cp.emirate}</p>
-                    <p className="text-xs text-platinum-500 truncate max-w-[180px]">{cp.crownPrince}</p>
+                    <p className="text-sm font-semibold text-navy-500-900 dark:text-platinum-500-100">{cp.emirate}</p>
+                    <p className="text-xs text-platinum-500-500 truncate max-w-[180px]">{cp.crownPrince}</p>
                   </div>
                   <div className="text-right shrink-0 ml-2">
                     <Badge variant="outline" className="text-xs">{cp.age > 0 ? `Age ${cp.age}` : '—'}</Badge>
-                    <p className="text-xs text-platinum-500 mt-0.5">{cp.since}</p>
+                    <p className="text-xs text-platinum-500-500 mt-0.5">{cp.since}</p>
                   </div>
                 </div>
               ))}
@@ -183,28 +183,28 @@ export function OverviewSection({
           <GlassPanel
             title="Dashboard Metrics"
             description="Quick reference statistics"
-            icon={<Activity className="h-5 w-5 text-navy-600" />}
+            icon={<Activity className="h-5 w-5 text-navy-500-600" />}
           >
             <div className="grid grid-cols-2 gap-4">
               <div className="text-center p-3 rounded-lg bg-platinum-50 dark:bg-platinum-800/30">
-                <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">7</p>
-                <p className="text-xs text-platinum-500">Emirates</p>
+                <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">7</p>
+                <p className="text-xs text-platinum-500-500">Emirates</p>
               </div>
               <div className="text-center p-3 rounded-lg bg-platinum-50 dark:bg-platinum-800/30">
-                <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">6</p>
-                <p className="text-xs text-platinum-500">Ruling Families</p>
+                <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">6</p>
+                <p className="text-xs text-platinum-500-500">Ruling Families</p>
               </div>
               <div className="text-center p-3 rounded-lg bg-platinum-50 dark:bg-platinum-800/30">
-                <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">40+</p>
-                <p className="text-xs text-platinum-500">Historical Rulers</p>
+                <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">40+</p>
+                <p className="text-xs text-platinum-500-500">Historical Rulers</p>
               </div>
               <div className="text-center p-3 rounded-lg bg-platinum-50 dark:bg-platinum-800/30">
-                <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">$790B+</p>
-                <p className="text-xs text-platinum-500">ADIA Assets</p>
+                <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">$790B+</p>
+                <p className="text-xs text-platinum-500-500">ADIA Assets</p>
               </div>
               <div className="text-center p-3 rounded-lg bg-platinum-50 dark:bg-platinum-800/30 col-span-2">
                 <p className="text-2xl font-bold text-gold-700 dark:text-gold-400">MBZ</p>
-                <p className="text-xs text-platinum-500">Current President — Since May 14, 2022</p>
+                <p className="text-xs text-platinum-500-500">Current President — Since May 14, 2022</p>
               </div>
             </div>
           </GlassPanel>
@@ -245,7 +245,7 @@ export function OverviewSection({
                 showLegend={true}
               />
             ) : (
-              <div className="flex items-center justify-center h-48 text-platinum-500">No data</div>
+              <div className="flex items-center justify-center h-48 text-platinum-500-500">No data</div>
             )}
           </CardContent>
         </Card>
@@ -280,24 +280,24 @@ export function OverviewSection({
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-platinum-200/50 dark:border-platinum-700/50">
-                  <th className="text-left py-2 px-3 text-platinum-700 dark:text-platinum-300 font-semibold">Emirate</th>
-                  <th className="text-left py-2 px-3 text-platinum-700 dark:text-platinum-300 font-semibold">Dynasty</th>
-                  <th className="text-left py-2 px-3 text-platinum-700 dark:text-platinum-300 font-semibold">Current Ruler</th>
-                  <th className="text-left py-2 px-3 text-platinum-700 dark:text-platinum-300 font-semibold">Age</th>
-                  <th className="text-left py-2 px-3 text-platinum-700 dark:text-platinum-300 font-semibold">Since</th>
-                  <th className="text-left py-2 px-3 text-platinum-700 dark:text-platinum-300 font-semibold">Crown Prince</th>
-                  <th className="text-left py-2 px-3 text-platinum-700 dark:text-platinum-300 font-semibold">Sentiment</th>
+                  <th className="text-left py-2 px-3 text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Emirate</th>
+                  <th className="text-left py-2 px-3 text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Dynasty</th>
+                  <th className="text-left py-2 px-3 text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Current Ruler</th>
+                  <th className="text-left py-2 px-3 text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Age</th>
+                  <th className="text-left py-2 px-3 text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Since</th>
+                  <th className="text-left py-2 px-3 text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Crown Prince</th>
+                  <th className="text-left py-2 px-3 text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Sentiment</th>
                 </tr>
               </thead>
               <tbody>
                 {emirateOverviews.map((e, i) => (
                   <tr key={i} className="border-b border-platinum-100/50 dark:border-platinum-800/50 hover:bg-platinum-50/50 dark:hover:bg-platinum-800/25 transition-colors">
-                    <td className="py-2 px-3 font-semibold text-navy-900 dark:text-platinum-100">{e.emirate}</td>
-                    <td className="py-2 px-3 text-xs text-platinum-600 dark:text-platinum-400">{e.dynasty}</td>
-                    <td className="py-2 px-3 text-xs text-platinum-600 dark:text-platinum-400">{e.currentRuler}</td>
-                    <td className="py-2 px-3 text-xs text-platinum-600 dark:text-platinum-400">{e.age}</td>
-                    <td className="py-2 px-3 text-xs text-platinum-600 dark:text-platinum-400">{e.since}</td>
-                    <td className="py-2 px-3 text-xs text-platinum-600 dark:text-platinum-400">{e.crownPrince}</td>
+                    <td className="py-2 px-3 font-semibold text-navy-500-900 dark:text-platinum-500-100">{e.emirate}</td>
+                    <td className="py-2 px-3 text-xs text-platinum-500-600 dark:text-platinum-500-400">{e.dynasty}</td>
+                    <td className="py-2 px-3 text-xs text-platinum-500-600 dark:text-platinum-500-400">{e.currentRuler}</td>
+                    <td className="py-2 px-3 text-xs text-platinum-500-600 dark:text-platinum-500-400">{e.age}</td>
+                    <td className="py-2 px-3 text-xs text-platinum-500-600 dark:text-platinum-500-400">{e.since}</td>
+                    <td className="py-2 px-3 text-xs text-platinum-500-600 dark:text-platinum-500-400">{e.crownPrince}</td>
                     <td className="py-2 px-3">{getSentimentBadge(e.sentiment as RoyalFamilyMember['sentiment'])}</td>
                   </tr>
                 ))}

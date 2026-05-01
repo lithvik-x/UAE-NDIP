@@ -62,7 +62,7 @@ export function SectorVulnerabilitiesSection({ data }: SectorVulnerabilitiesSect
             <Card className="glass-card border-rose-500/30">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <HeartPulse className="h-5 w-5 text-rose" />
+                  <HeartPulse className="h-5 w-5 text-rose-500" />
                   Healthcare Incidents
                 </CardTitle>
                 <CardDescription>Major healthcare breaches</CardDescription>
@@ -81,7 +81,7 @@ export function SectorVulnerabilitiesSection({ data }: SectorVulnerabilitiesSect
             <Card className="glass-card border-orange-500/30">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Banknote className="h-5 w-5 text-orange" />
+                  <Banknote className="h-5 w-5 text-orange-500" />
                   Financial Incidents
                 </CardTitle>
                 <CardDescription>Major financial sector breaches</CardDescription>
@@ -101,7 +101,7 @@ export function SectorVulnerabilitiesSection({ data }: SectorVulnerabilitiesSect
           <Card className="glass-card border-amber-500/30">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Building2 className="h-5 w-5 text-amber" />
+                <Building2 className="h-5 w-5 text-amber-500" />
                 Bybit Hack - February 2025
               </CardTitle>
               <CardDescription>Largest cryptocurrency theft ever</CardDescription>
@@ -109,16 +109,16 @@ export function SectorVulnerabilitiesSection({ data }: SectorVulnerabilitiesSect
             <CardContent>
               <div className="grid gap-4 md:grid-cols-3">
                 <div className="rounded-lg bg-platinum-800/50 p-4 border border-amber-500/30 text-center">
-                  <p className="text-3xl font-bold text-amber">$1.5B</p>
-                  <p className="text-xs text-platinum-400">Amount Stolen</p>
+                  <p className="text-3xl font-bold text-amber-500">$1.5B</p>
+                  <p className="text-xs text-platinum-500-400">Amount Stolen</p>
                 </div>
                 <div className="rounded-lg bg-platinum-800/50 p-4 border border-amber-500/30 text-center">
-                  <p className="text-lg font-bold text-amber">400,000+ ETH</p>
-                  <p className="text-xs text-platinum-400">Currency</p>
+                  <p className="text-lg font-bold text-amber-500">400,000+ ETH</p>
+                  <p className="text-xs text-platinum-500-400">Currency</p>
                 </div>
                 <div className="rounded-lg bg-platinum-800/50 p-4 border border-amber-500/30 text-center">
-                  <p className="text-lg font-bold text-amber">North Korea</p>
-                  <p className="text-xs text-platinum-400">FBI Attribution</p>
+                  <p className="text-lg font-bold text-amber-500">North Korea</p>
+                  <p className="text-xs text-platinum-500-400">FBI Attribution</p>
                 </div>
               </div>
             </CardContent>

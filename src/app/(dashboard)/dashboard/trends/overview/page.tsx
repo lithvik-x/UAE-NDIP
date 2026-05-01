@@ -68,7 +68,7 @@ export default function TrendsOverviewPage() {
   if (!trendsData || trendsData.length === 0) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-400">Loading Trends data...</div>
+        <div className="text-platinum-500-400">Loading Trends data...</div>
       </div>
     )
   }
@@ -121,17 +121,17 @@ export default function TrendsOverviewPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">TRENDS INTELLIGENCE</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Trends Overview</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Trends Overview</h1>
+          <p className="mt-2 text-platinum-500-400">
             Cross-sector trend analysis, adoption metrics, and predictive foresight for the UAE
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <Target className="h-4 w-4" />
             View Forecasts
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Sparkles className="h-4 w-4" />
             Analyze Trends
           </Button>
@@ -186,25 +186,25 @@ export default function TrendsOverviewPage() {
               description={`${foresightTrend.uaeRelevance.level.toUpperCase()} relevance | ${foresightTrend.credibility.score}% credibility | Alert: ${foresightTrend.alertLevel}`}
             >
               <div className="grid gap-6 lg:grid-cols-3">
-                <Card className="glass-card border-gold/30">
+                <Card className="glass-card border-gold-700/30">
                   <CardHeader className="pb-2">
                     <CardTitle className="text-sm flex items-center gap-2">
-                      <Compass className="h-4 w-4 text-gold" />
+                      <Compass className="h-4 w-4 text-gold-700" />
                       Vision Alignment
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex justify-between items-center">
-                        <span className="text-xs text-platinum-400">UAE Relevance</span>
+                        <span className="text-xs text-platinum-500-400">UAE Relevance</span>
                         <Badge variant="gold">{foresightTrend.uaeRelevance.score}/100</Badge>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-xs text-platinum-400">Adoption Rate</span>
-                        <span className="text-sm font-medium text-gold">{foresightTrend.uaeAdoptionRate}%</span>
+                        <span className="text-xs text-platinum-500-400">Adoption Rate</span>
+                        <span className="text-sm font-medium text-gold-700">{foresightTrend.uaeAdoptionRate}%</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-xs text-platinum-400">Credibility</span>
+                        <span className="text-xs text-platinum-500-400">Credibility</span>
                         <span className="text-sm font-medium text-emerald-400">{foresightTrend.credibility.score}%</span>
                       </div>
                     </div>
@@ -222,15 +222,15 @@ export default function TrendsOverviewPage() {
                     <div className="space-y-2">
                       <div className="flex items-center gap-2 text-xs">
                         <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                        <span className="text-platinum-300">Oil: 2.37M bpd (-35%)</span>
+                        <span className="text-platinum-500-300">Oil: 2.37M bpd (-35%)</span>
                       </div>
                       <div className="flex items-center gap-2 text-xs">
                         <span className="w-2 h-2 rounded-full bg-amber-500" />
-                        <span className="text-platinum-300">GDP: 3.1% - 5.6% range</span>
+                        <span className="text-platinum-500-300">GDP: 3.1% - 5.6% range</span>
                       </div>
                       <div className="flex items-center gap-2 text-xs">
                         <span className="w-2 h-2 rounded-full bg-amber-500" />
-                        <span className="text-platinum-300">Property: -7% annually</span>
+                        <span className="text-platinum-500-300">Property: -7% annually</span>
                       </div>
                     </div>
                   </CardContent>
@@ -246,16 +246,16 @@ export default function TrendsOverviewPage() {
                   <CardContent>
                     <div className="space-y-2">
                       <div className="flex items-center gap-2 text-xs">
-                        <span className="text-gold">•</span>
-                        <span className="text-platinum-300">AI: $3.47B to $46.33B (43.9% CAGR)</span>
+                        <span className="text-gold-700">•</span>
+                        <span className="text-platinum-500-300">AI: $3.47B to $46.33B (43.9% CAGR)</span>
                       </div>
                       <div className="flex items-center gap-2 text-xs">
-                        <span className="text-gold">•</span>
-                        <span className="text-platinum-300">Jobs: +1.03M by 2030</span>
+                        <span className="text-gold-700">•</span>
+                        <span className="text-platinum-500-300">Jobs: +1.03M by 2030</span>
                       </div>
                       <div className="flex items-center gap-2 text-xs">
-                        <span className="text-gold">•</span>
-                        <span className="text-platinum-300">GDP: AED 3T target by 2031</span>
+                        <span className="text-gold-700">•</span>
+                        <span className="text-platinum-500-300">GDP: AED 3T target by 2031</span>
                       </div>
                     </div>
                   </CardContent>
@@ -264,7 +264,7 @@ export default function TrendsOverviewPage() {
 
               {foresightTrend.keyFindings && foresightTrend.keyFindings.length > 0 && (
                 <div className="mt-6">
-                  <h4 className="text-sm font-medium text-platinum-200 mb-3">Key Findings</h4>
+                  <h4 className="text-sm font-medium text-platinum-500-200 mb-3">Key Findings</h4>
                   <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     {foresightTrend.keyFindings.slice(0, 4).map((finding, idx) => (
                       <motion.div
@@ -275,8 +275,8 @@ export default function TrendsOverviewPage() {
                         className="flex items-start gap-3 p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50"
                       >
                         <div className="flex-1 min-w-0">
-                          <p className="text-xs font-medium text-platinum-200 truncate">{finding.finding}</p>
-                          <p className="text-xs text-platinum-400 mt-1 truncate">{finding.metric}</p>
+                          <p className="text-xs font-medium text-platinum-500-200 truncate">{finding.finding}</p>
+                          <p className="text-xs text-platinum-500-400 mt-1 truncate">{finding.metric}</p>
                         </div>
                         <Badge
                           variant={finding.alert === 'RED' ? 'destructive' : finding.alert === 'YELLOW' ? 'warning' : 'secondary'}
@@ -352,21 +352,21 @@ export default function TrendsOverviewPage() {
                       <div className="flex items-center justify-between rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30">
                         <div className="flex items-center gap-3">
                           <Shield className="h-6 w-6 text-emerald-400" />
-                          <span className="font-medium text-platinum-200">Green Alerts</span>
+                          <span className="font-medium text-platinum-500-200">Green Alerts</span>
                         </div>
                         <span className="text-2xl font-bold text-emerald-400">{greenAlerts}</span>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-amber-500/10 p-4 border border-amber-500/30">
                         <div className="flex items-center gap-3">
                           <AlertTriangle className="h-6 w-6 text-amber-400" />
-                          <span className="font-medium text-platinum-200">Yellow Alerts</span>
+                          <span className="font-medium text-platinum-500-200">Yellow Alerts</span>
                         </div>
                         <span className="text-2xl font-bold text-amber-400">{yellowAlerts}</span>
                       </div>
                       <div className="flex items-center justify-between rounded-lg bg-red-500/10 p-4 border border-red-500/30">
                         <div className="flex items-center gap-3">
                           <AlertCircle className="h-6 w-6 text-red-400" />
-                          <span className="font-medium text-platinum-200">Red Alerts</span>
+                          <span className="font-medium text-platinum-500-200">Red Alerts</span>
                         </div>
                         <span className="text-2xl font-bold text-red-400">{redAlerts}</span>
                       </div>
@@ -405,7 +405,7 @@ export default function TrendsOverviewPage() {
                   <Card key={idx} className="glass-card">
                     <CardContent className="p-4">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="font-medium text-platinum-200 text-sm">{trend.name}</span>
+                        <span className="font-medium text-platinum-500-200 text-sm">{trend.name}</span>
                         <Badge
                           variant={trend.alertLevel === 'GREEN' ? 'success' : trend.alertLevel === 'YELLOW' ? 'warning' : 'destructive'}
                           className="text-xs"
@@ -414,7 +414,7 @@ export default function TrendsOverviewPage() {
                         </Badge>
                       </div>
                       <div className="space-y-2">
-                        <div className="flex justify-between text-xs text-platinum-400">
+                        <div className="flex justify-between text-xs text-platinum-500-400">
                           <span>UAE Adoption</span>
                           <span>{trend.uaeAdoptionRate}%</span>
                         </div>
@@ -445,8 +445,8 @@ export default function TrendsOverviewPage() {
                       {trendsData.filter(t => t.alertLevel === 'RED').map((trend, idx) => (
                         <div key={idx} className="flex items-start justify-between rounded-lg bg-red-500/10 p-4 border border-red-500/30">
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-200">{trend.name}</p>
-                            <p className="mt-1 text-sm text-platinum-400">{trend.description?.slice(0, 150)}...</p>
+                            <p className="font-medium text-platinum-500-200">{trend.name}</p>
+                            <p className="mt-1 text-sm text-platinum-500-400">{trend.description?.slice(0, 150)}...</p>
                           </div>
                           <Badge variant="destructive" className="ml-4">RED</Badge>
                         </div>
@@ -469,8 +469,8 @@ export default function TrendsOverviewPage() {
                       {trendsData.filter(t => t.alertLevel === 'YELLOW').map((trend, idx) => (
                         <div key={idx} className="flex items-start justify-between rounded-lg bg-amber-500/10 p-4 border border-amber-500/30">
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-200">{trend.name}</p>
-                            <p className="mt-1 text-sm text-platinum-400">UAE Adoption: {trend.uaeAdoptionRate}%</p>
+                            <p className="font-medium text-platinum-500-200">{trend.name}</p>
+                            <p className="mt-1 text-sm text-platinum-500-400">UAE Adoption: {trend.uaeAdoptionRate}%</p>
                           </div>
                           <Badge variant="warning" className="ml-4">YELLOW</Badge>
                         </div>
@@ -494,7 +494,7 @@ export default function TrendsOverviewPage() {
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30">
                           <div className="flex items-center gap-3">
                             <TrendingUp className="h-5 w-5 text-emerald-400" />
-                            <span className="font-medium text-platinum-200">{trend.name}</span>
+                            <span className="font-medium text-platinum-500-200">{trend.name}</span>
                           </div>
                           <span className="text-sm text-emerald-400">{trend.uaeAdoptionRate}% adoption</span>
                         </div>
@@ -528,15 +528,15 @@ export default function TrendsOverviewPage() {
                             >
                               {forecast.scenario}
                             </Badge>
-                            <span className="text-sm text-platinum-400">
+                            <span className="text-sm text-platinum-500-400">
                               Probability: {Math.round(forecast.probability * 100)}%
                             </span>
                           </div>
-                          <p className="text-sm text-platinum-300 mb-2">Timeline: {forecast.timeline}</p>
+                          <p className="text-sm text-platinum-500-300 mb-2">Timeline: {forecast.timeline}</p>
                           <div className="space-y-1">
                             {forecast.indicators?.slice(0, 3).map((indicator, iIdx) => (
-                              <p key={iIdx} className="text-xs text-platinum-400 flex items-start gap-2">
-                                <span className="text-gold">•</span>
+                              <p key={iIdx} className="text-xs text-platinum-500-400 flex items-start gap-2">
+                                <span className="text-gold-700">•</span>
                                 {indicator}
                               </p>
                             ))}
@@ -556,10 +556,10 @@ export default function TrendsOverviewPage() {
           <GlassPanel title="Predictive Foresight" description="Strategic foresight, crisis indicators, and vision framework alignment">
             <div className="space-y-6">
               {/* Vision Frameworks */}
-              <Card className="glass-card border-gold/30">
+              <Card className="glass-card border-gold-700/30">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Compass className="h-5 w-5 text-gold" />
+                    <Compass className="h-5 w-5 text-gold-700" />
                     Vision Frameworks
                   </CardTitle>
                   <CardDescription>Official state policy and funding commitments</CardDescription>
@@ -581,11 +581,11 @@ export default function TrendsOverviewPage() {
                         transition={{ delay: idx * 0.05 }}
                         className="p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50"
                       >
-                        <p className="text-sm font-medium text-platinum-200">{vision.name}</p>
-                        <p className="text-xs text-platinum-400 mt-1">{vision.target}</p>
+                        <p className="text-sm font-medium text-platinum-500-200">{vision.name}</p>
+                        <p className="text-xs text-platinum-500-400 mt-1">{vision.target}</p>
                         <div className="mt-2 flex items-center gap-2">
                           <Progress value={parseInt(vision.progress)} className="h-1 flex-1" />
-                          <span className="text-xs text-gold">{vision.progress}</span>
+                          <span className="text-xs text-gold-700">{vision.progress}</span>
                         </div>
                       </motion.div>
                     ))}
@@ -605,12 +605,12 @@ export default function TrendsOverviewPage() {
                   <CardContent>
                     <div className="space-y-2">
                       <div className="flex justify-between">
-                        <span className="text-xs text-platinum-400">Probability</span>
+                        <span className="text-xs text-platinum-500-400">Probability</span>
                         <Badge variant="success" className="text-xs">78%</Badge>
                       </div>
                       <div className="space-y-1 mt-3">
                         {['GDP growth 5.6%', 'AI market $46.33B by 2030', 'Workforce +12.1%', 'FDI $45B'].map((item, i) => (
-                          <p key={i} className="text-xs text-platinum-300 flex items-center gap-2">
+                          <p key={i} className="text-xs text-platinum-500-300 flex items-center gap-2">
                             <span className="text-emerald-400">✓</span>
                             {item}
                           </p>
@@ -622,7 +622,7 @@ export default function TrendsOverviewPage() {
 
                 <Card className="glass-card border-platinum-500/30">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-sm flex items-center gap-2 text-platinum-400">
+                    <CardTitle className="text-sm flex items-center gap-2 text-platinum-500-400">
                       <ChartLine className="h-4 w-4" />
                       Baseline Scenario
                     </CardTitle>
@@ -630,13 +630,13 @@ export default function TrendsOverviewPage() {
                   <CardContent>
                     <div className="space-y-2">
                       <div className="flex justify-between">
-                        <span className="text-xs text-platinum-400">Probability</span>
+                        <span className="text-xs text-platinum-500-400">Probability</span>
                         <Badge variant="secondary" className="text-xs">65%</Badge>
                       </div>
                       <div className="space-y-1 mt-3">
                         {['AI $46-91B by 2030/31', 'Digital economy 20%', 'Population 13.6M', 'Clean energy 14 GW'].map((item, i) => (
-                          <p key={i} className="text-xs text-platinum-300 flex items-center gap-2">
-                            <span className="text-platinum-400">•</span>
+                          <p key={i} className="text-xs text-platinum-500-300 flex items-center gap-2">
+                            <span className="text-platinum-500-400">•</span>
                             {item}
                           </p>
                         ))}
@@ -655,12 +655,12 @@ export default function TrendsOverviewPage() {
                   <CardContent>
                     <div className="space-y-2">
                       <div className="flex justify-between">
-                        <span className="text-xs text-platinum-400">Probability</span>
+                        <span className="text-xs text-platinum-500-400">Probability</span>
                         <Badge variant="destructive" className="text-xs">35%</Badge>
                       </div>
                       <div className="space-y-1 mt-3">
                         {['Oil 2.37M bpd (-35%)', 'Property -7% annually', 'GDP 3.1% (IMF)', 'Safe haven at risk'].map((item, i) => (
-                          <p key={i} className="text-xs text-platinum-300 flex items-center gap-2">
+                          <p key={i} className="text-xs text-platinum-500-300 flex items-center gap-2">
                             <span className="text-red-400">!</span>
                             {item}
                           </p>
@@ -699,13 +699,13 @@ export default function TrendsOverviewPage() {
                           'bg-emerald-500/10 border-emerald-500/30'
                         }`}
                       >
-                        <p className="text-xs text-platinum-400">{item.metric}</p>
+                        <p className="text-xs text-platinum-500-400">{item.metric}</p>
                         <p className={`text-lg font-bold ${
                           item.severity === 'critical' ? 'text-red-400' :
                           item.severity === 'warning' ? 'text-amber-400' :
                           'text-emerald-400'
                         }`}>{item.value}</p>
-                        <p className="text-xs text-platinum-400">{item.change}</p>
+                        <p className="text-xs text-platinum-500-400">{item.change}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -716,7 +716,7 @@ export default function TrendsOverviewPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Milestone className="h-5 w-5 text-gold" />
+                    <Milestone className="h-5 w-5 text-gold-700" />
                     Key Growth Drivers
                   </CardTitle>
                 </CardHeader>
@@ -732,8 +732,8 @@ export default function TrendsOverviewPage() {
                           transition={{ delay: idx * 0.05 }}
                           className="flex items-start gap-2 p-2 rounded bg-platinum-800/30"
                         >
-                          <span className="text-gold shrink-0">•</span>
-                          <span className="text-xs text-platinum-300">{driver}</span>
+                          <span className="text-gold-700 shrink-0">•</span>
+                          <span className="text-xs text-platinum-500-300">{driver}</span>
                         </motion.div>
                       ))
                     })()}
@@ -763,7 +763,7 @@ export default function TrendsOverviewPage() {
                         </Badge>
                         <div className="space-y-1">
                           {group.sources.map((source, i) => (
-                            <p key={i} className="text-xs text-platinum-400">{source}</p>
+                            <p key={i} className="text-xs text-platinum-500-400">{source}</p>
                           ))}
                         </div>
                       </div>
@@ -786,7 +786,7 @@ export default function TrendsOverviewPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Shield className="h-5 w-5 text-gold" />
+                    <Shield className="h-5 w-5 text-gold-700" />
                     KPI Dashboard
                   </CardTitle>
                   <CardDescription>Key regulatory metrics from MD file 10-7</CardDescription>
@@ -801,13 +801,13 @@ export default function TrendsOverviewPage() {
                         transition={{ delay: idx * 0.05 }}
                         className="p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50"
                       >
-                        <p className="text-xs text-platinum-400 truncate">{kpi.kpi}</p>
+                        <p className="text-xs text-platinum-500-400 truncate">{kpi.kpi}</p>
                         <p className={`text-lg font-bold ${
                           kpi.trend.includes('+') ? 'text-emerald-400' :
-                          kpi.trend.includes('New') || kpi.trend.includes('Increased') ? 'text-gold' :
-                          'text-platinum-200'
+                          kpi.trend.includes('New') || kpi.trend.includes('Increased') ? 'text-gold-700' :
+                          'text-platinum-500-200'
                         }`}>{kpi.currentValue}</p>
-                        <p className="text-xs text-platinum-500 truncate">{kpi.trend}</p>
+                        <p className="text-xs text-platinum-500-500 truncate">{kpi.trend}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -840,9 +840,9 @@ export default function TrendsOverviewPage() {
                           {law.status}
                         </Badge>
                         <div className="min-w-0 flex-1">
-                          <p className="text-sm font-medium text-platinum-200 truncate">{law.lawName}</p>
-                          <p className="text-xs text-platinum-400">{law.number}</p>
-                          <p className="text-xs text-platinum-500 mt-1">Effective: {law.effectiveDate}</p>
+                          <p className="text-sm font-medium text-platinum-500-200 truncate">{law.lawName}</p>
+                          <p className="text-xs text-platinum-500-400">{law.number}</p>
+                          <p className="text-xs text-platinum-500-500 mt-1">Effective: {law.effectiveDate}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -870,14 +870,14 @@ export default function TrendsOverviewPage() {
                         className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/30 border border-platinum-700/30"
                       >
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm font-medium text-platinum-200 truncate">{fine.regulation}</p>
-                          <p className="text-xs text-platinum-400">{fine.notes}</p>
+                          <p className="text-sm font-medium text-platinum-500-200 truncate">{fine.regulation}</p>
+                          <p className="text-xs text-platinum-500-400">{fine.notes}</p>
                         </div>
                         <div className="text-right shrink-0 ml-4">
                           <p className="text-sm font-bold text-rose-400">
                             {fine.currency} {fine.maxFine.toLocaleString()}
                           </p>
-                          <p className="text-xs text-platinum-500">max fine</p>
+                          <p className="text-xs text-platinum-500-500">max fine</p>
                         </div>
                       </motion.div>
                     ))}
@@ -889,7 +889,7 @@ export default function TrendsOverviewPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <TrendingUp className="h-5 w-5 text-gold" />
+                    <TrendingUp className="h-5 w-5 text-gold-700" />
                     Compliance Timeline
                   </CardTitle>
                   <CardDescription>Key regulatory deadlines and milestones</CardDescription>
@@ -910,10 +910,10 @@ export default function TrendsOverviewPage() {
                           'bg-amber-400'
                         }`} />
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm text-platinum-200 truncate">{event.event}</p>
+                          <p className="text-sm text-platinum-500-200 truncate">{event.event}</p>
                         </div>
                         <div className="text-right shrink-0">
-                          <p className="text-xs text-platinum-400">{event.date}</p>
+                          <p className="text-xs text-platinum-500-400">{event.date}</p>
                           <Badge
                             variant={event.status === 'Passed' ? 'success' : event.status === 'Upcoming' ? 'warning' : 'secondary'}
                             className="text-xs mt-1"
@@ -931,7 +931,7 @@ export default function TrendsOverviewPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Globe className="h-5 w-5 text-navy-400" />
+                    <Globe className="h-5 w-5 text-navy-500-400" />
                     Regulatory Bodies
                   </CardTitle>
                   <CardDescription>Key UAE regulatory authorities and jurisdictions</CardDescription>
@@ -951,8 +951,8 @@ export default function TrendsOverviewPage() {
                             {body.jurisdiction}
                           </Badge>
                           <div className="min-w-0 flex-1">
-                            <p className="text-sm font-medium text-platinum-200 truncate">{body.entity}</p>
-                            <p className="text-xs text-platinum-400 mt-1 line-clamp-2">{body.role}</p>
+                            <p className="text-sm font-medium text-platinum-500-200 truncate">{body.entity}</p>
+                            <p className="text-xs text-platinum-500-400 mt-1 line-clamp-2">{body.role}</p>
                           </div>
                         </div>
                       </motion.div>
@@ -981,7 +981,7 @@ export default function TrendsOverviewPage() {
                         className="p-4 rounded-lg bg-platinum-800/30 border border-platinum-700/30"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="text-sm font-medium text-platinum-200">{topic.topic}</h4>
+                          <h4 className="text-sm font-medium text-platinum-500-200">{topic.topic}</h4>
                           <Badge
                             variant={
                               topic.overallSentiment.includes('POSITIVE') ? 'success' :
@@ -993,7 +993,7 @@ export default function TrendsOverviewPage() {
                             {topic.overallSentiment}
                           </Badge>
                         </div>
-                        <p className="text-xs text-platinum-400 mb-2">{topic.analysis}</p>
+                        <p className="text-xs text-platinum-500-400 mb-2">{topic.analysis}</p>
                         <div className="flex flex-wrap gap-1">
                           {topic.sources.slice(0, 3).map((source, sIdx) => (
                             <Badge key={sIdx} variant="outline" className="text-xs">
@@ -1039,7 +1039,7 @@ export default function TrendsOverviewPage() {
                         </Badge>
                         <div className="space-y-1">
                           {group.sources.map((source, i) => (
-                            <p key={i} className="text-xs text-platinum-400">{source}</p>
+                            <p key={i} className="text-xs text-platinum-500-400">{source}</p>
                           ))}
                         </div>
                       </motion.div>
@@ -1049,10 +1049,10 @@ export default function TrendsOverviewPage() {
               </Card>
 
               {/* Key Regulatory Trends Summary */}
-              <Card className="glass-card border-gold/30">
+              <Card className="glass-card border-gold-700/30">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Lightbulb className="h-5 w-5 text-gold" />
+                    <Lightbulb className="h-5 w-5 text-gold-700" />
                     Key Regulatory Trends Summary
                   </CardTitle>
                   <CardDescription>Five major regulatory trends from MD file 10-7</CardDescription>
@@ -1065,13 +1065,13 @@ export default function TrendsOverviewPage() {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.08 }}
-                        className="p-4 rounded-lg bg-platinum-800/30 border border-gold/20"
+                        className="p-4 rounded-lg bg-platinum-800/30 border border-gold-700/20"
                       >
-                        <h4 className="text-sm font-bold text-gold mb-2">{trend.trendName}</h4>
+                        <h4 className="text-sm font-bold text-gold-700 mb-2">{trend.trendName}</h4>
                         <div className="space-y-1">
                           {trend.keyPoints.slice(0, 4).map((point, pIdx) => (
-                            <p key={pIdx} className="text-xs text-platinum-300 flex items-start gap-2">
-                              <span className="text-gold shrink-0">•</span>
+                            <p key={pIdx} className="text-xs text-platinum-500-300 flex items-start gap-2">
+                              <span className="text-gold-700 shrink-0">•</span>
                               <span>{point}</span>
                             </p>
                           ))}
@@ -1131,7 +1131,7 @@ export default function TrendsOverviewPage() {
                   <Card className="glass-card">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Globe className="h-5 w-5 text-gold" />
+                        <Globe className="h-5 w-5 text-gold-700" />
                         Media Market Size ($B)
                       </CardTitle>
                       <CardDescription>2026 market valuation by sector</CardDescription>
@@ -1157,7 +1157,7 @@ export default function TrendsOverviewPage() {
                   <Card className="glass-card">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Megaphone className="h-5 w-5 text-navy" />
+                        <Megaphone className="h-5 w-5 text-navy-500" />
                         Digital Ad Spend Breakdown
                       </CardTitle>
                       <CardDescription>2026 advertising spend by type</CardDescription>
@@ -1180,7 +1180,7 @@ export default function TrendsOverviewPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <TrendingUp className="h-5 w-5 text-emerald" />
+                      <TrendingUp className="h-5 w-5 text-emerald-500" />
                       Growth Indicators (% YoY)
                     </CardTitle>
                     <CardDescription>Year-over-year growth rates across media sectors</CardDescription>
@@ -1212,35 +1212,35 @@ export default function TrendsOverviewPage() {
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="rounded-lg border border-gold/30 bg-gradient-to-br from-gold/10 to-transparent p-4"
+                    className="rounded-lg border border-gold-700/30 bg-gradient-to-br from-gold/10 to-transparent p-4"
                   >
-                    <Tv2 className="h-8 w-8 text-gold mb-2" />
-                    <p className="text-2xl font-bold text-gold">${mediaIndustryExtendedData.streaming.globalVideoStreamingMarket}B</p>
-                    <p className="text-sm text-platinum-400">Video Streaming Market</p>
+                    <Tv2 className="h-8 w-8 text-gold-700 mb-2" />
+                    <p className="text-2xl font-bold text-gold-700">${mediaIndustryExtendedData.streaming.globalVideoStreamingMarket}B</p>
+                    <p className="text-sm text-platinum-500-400">Video Streaming Market</p>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     className="rounded-lg border border-navy/30 bg-gradient-to-br from-navy/10 to-transparent p-4"
                   >
-                    <Tv2 className="h-8 w-8 text-navy mb-2" />
-                    <p className="text-2xl font-bold text-navy">${mediaIndustryExtendedData.streaming.USCTVAdSpending}B</p>
-                    <p className="text-sm text-platinum-400">US CTV Ad Spending</p>
+                    <Tv2 className="h-8 w-8 text-navy-500 mb-2" />
+                    <p className="text-2xl font-bold text-navy-500">${mediaIndustryExtendedData.streaming.USCTVAdSpending}B</p>
+                    <p className="text-sm text-platinum-500-400">US CTV Ad Spending</p>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="rounded-lg border border-emerald/30 bg-gradient-to-br from-emerald/10 to-transparent p-4"
+                    className="rounded-lg border border-emerald-500/30 bg-gradient-to-br from-emerald/10 to-transparent p-4"
                   >
-                    <TrendingUp className="h-8 w-8 text-emerald mb-2" />
-                    <p className="text-2xl font-bold text-emerald">+{mediaIndustryExtendedData.streaming.USCTVAdSpendingGrowth}%</p>
-                    <p className="text-sm text-platinum-400">CTV Growth YoY</p>
+                    <TrendingUp className="h-8 w-8 text-emerald-500 mb-2" />
+                    <p className="text-2xl font-bold text-emerald-500">+{mediaIndustryExtendedData.streaming.USCTVAdSpendingGrowth}%</p>
+                    <p className="text-sm text-platinum-500-400">CTV Growth YoY</p>
                   </motion.div>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     className="rounded-lg border border-platinum/30 bg-gradient-to-br from-platinum/10 to-transparent p-4"
                   >
-                    <Users className="h-8 w-8 text-platinum mb-2" />
-                    <p className="text-2xl font-bold text-platinum">{mediaIndustryExtendedData.streaming.globalSVODSubscriptions}B</p>
-                    <p className="text-sm text-platinum-400">SVOD Subscriptions</p>
+                    <Users className="h-8 w-8 text-platinum-500 mb-2" />
+                    <p className="text-2xl font-bold text-platinum-500">{mediaIndustryExtendedData.streaming.globalSVODSubscriptions}B</p>
+                    <p className="text-sm text-platinum-500-400">SVOD Subscriptions</p>
                   </motion.div>
                 </div>
               </div>
@@ -1253,23 +1253,23 @@ export default function TrendsOverviewPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Gamepad2 className="h-5 w-5 text-emerald" />
+                      <Gamepad2 className="h-5 w-5 text-emerald-500" />
                       Gaming Industry
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex justify-between items-center">
-                        <span className="text-platinum-400">Global Gaming Market</span>
-                        <span className="text-xl font-bold text-emerald">${mediaIndustryExtendedData.gaming.globalGamingMarket}B+</span>
+                        <span className="text-platinum-500-400">Global Gaming Market</span>
+                        <span className="text-xl font-bold text-emerald-500">${mediaIndustryExtendedData.gaming.globalGamingMarket}B+</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-platinum-400">In-Game Advertising</span>
-                        <span className="text-xl font-bold text-emerald">${mediaIndustryExtendedData.gaming.inGameAdvertising}B</span>
+                        <span className="text-platinum-500-400">In-Game Advertising</span>
+                        <span className="text-xl font-bold text-emerald-500">${mediaIndustryExtendedData.gaming.inGameAdvertising}B</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-platinum-400">Gaming Employment</span>
-                        <span className="text-xl font-bold text-emerald">{mediaIndustryExtendedData.gaming.gamingEmployment}M+ roles</span>
+                        <span className="text-platinum-500-400">Gaming Employment</span>
+                        <span className="text-xl font-bold text-emerald-500">{mediaIndustryExtendedData.gaming.gamingEmployment}M+ roles</span>
                       </div>
                     </div>
                   </CardContent>
@@ -1279,23 +1279,23 @@ export default function TrendsOverviewPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Bot className="h-5 w-5 text-rose" />
+                      <Bot className="h-5 w-5 text-rose-500" />
                       AI in Media
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex justify-between items-center">
-                        <span className="text-platinum-400">AI in M&E Market (2034)</span>
-                        <span className="text-xl font-bold text-rose">${mediaIndustryExtendedData.ai.aiInMediaMarket}B</span>
+                        <span className="text-platinum-500-400">AI in M&E Market (2034)</span>
+                        <span className="text-xl font-bold text-rose-500">${mediaIndustryExtendedData.ai.aiInMediaMarket}B</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-platinum-400">Creators Using GenAI</span>
-                        <span className="text-xl font-bold text-rose">{mediaIndustryExtendedData.ai.creatorsUsingGenAI}%</span>
+                        <span className="text-platinum-500-400">Creators Using GenAI</span>
+                        <span className="text-xl font-bold text-rose-500">{mediaIndustryExtendedData.ai.creatorsUsingGenAI}%</span>
                       </div>
                       <div className="flex justify-between items-center">
-                        <span className="text-platinum-400">AI Content Projection</span>
-                        <span className="text-xl font-bold text-rose">{mediaIndustryExtendedData.ai.aiGeneratedOnlineContentProjection}%</span>
+                        <span className="text-platinum-500-400">AI Content Projection</span>
+                        <span className="text-xl font-bold text-rose-500">{mediaIndustryExtendedData.ai.aiGeneratedOnlineContentProjection}%</span>
                       </div>
                     </div>
                   </CardContent>
@@ -1314,7 +1314,7 @@ export default function TrendsOverviewPage() {
                     transition={{ delay: idx * 0.05 }}
                     className={`rounded-lg p-4 border ${
                       item.sentiment === 'Very Positive' ? 'bg-emerald-500/10 border-emerald-500/30' :
-                      item.sentiment === 'Positive' ? 'bg-gold/10 border-gold/30' :
+                      item.sentiment === 'Positive' ? 'bg-gold-700/10 border-gold-700/30' :
                       item.sentiment === 'Mixed' ? 'bg-amber-500/10 border-amber-500/30' :
                       'bg-red-500/10 border-red-500/30'
                     }`}
@@ -1324,7 +1324,7 @@ export default function TrendsOverviewPage() {
                         <span className="flex h-6 w-6 items-center justify-center rounded-full bg-platinum-800 text-xs font-bold">
                           {item.priority}
                         </span>
-                        <p className="text-sm text-platinum-200">{item.takeaway}</p>
+                        <p className="text-sm text-platinum-500-200">{item.takeaway}</p>
                       </div>
                       <Badge
                         variant={item.uaeRelevance === 'Critical' ? 'destructive' : 'outline'}

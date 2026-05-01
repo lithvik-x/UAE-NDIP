@@ -67,7 +67,7 @@ const toastVariants = cva(
   {
     variants: {
       variant: {
-        default: 'glass-premium border border-white/20 text-platinum-900 dark:text-platinum-100',
+        default: 'glass-premium border border-white/20 text-platinum-500-900 dark:text-platinum-500-100',
         success:
           'bg-gradient-to-br from-emerald-50/95 to-emerald-100/90 border border-emerald-200/50 text-emerald-900 dark:from-emerald-900/80 dark:to-emerald-800/80 dark:border-emerald-700/50 dark:text-emerald-100',
         error:
@@ -75,9 +75,9 @@ const toastVariants = cva(
         warning:
           'bg-gradient-to-br from-gold-50/95 to-gold-100/90 border border-gold-200/50 text-gold-900 dark:from-gold-900/80 dark:to-gold-800/80 dark:border-gold-700/50 dark:text-gold-100',
         info:
-          'bg-gradient-to-br from-navy-50/95 to-indigo-100/90 border border-navy-200/50 text-navy-900 dark:from-navy-900/80 dark:to-indigo-800/80 dark:border-navy-700/50 dark:text-navy-100',
+          'bg-gradient-to-br from-navy-50/95 to-indigo-100/90 border border-navy-200/50 text-navy-500-900 dark:from-navy-900/80 dark:to-indigo-800/80 dark:border-navy-700/50 dark:text-navy-500-100',
         premium:
-          'glass-premium-premium border border-white/20 text-platinum-900 dark:text-platinum-100 shadow-premium-xl',
+          'glass-premium-premium border border-white/20 text-platinum-500-900 dark:text-platinum-500-100 shadow-premium-xl',
       },
     },
     defaultVariants: {
@@ -120,7 +120,7 @@ const ToastAction = React.forwardRef<
   <ToastPrimitives.Action
     ref={ref}
     className={cn(
-      'inline-flex h-8 shrink-0 items-center justify-center rounded-xl border border-platinum-200 bg-transparent px-3 text-sm font-medium transition-colors hover:bg-platinum-50 focus:outline-none focus:ring-2 focus:ring-navy-500 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:border-platinum-700 dark:text-platinum-300 dark:hover:bg-platinum-800 dark:focus:ring-navy-400',
+      'inline-flex h-8 shrink-0 items-center justify-center rounded-xl border border-platinum-200 bg-transparent px-3 text-sm font-medium transition-colors hover:bg-platinum-50 focus:outline-none focus:ring-2 focus:ring-navy-500 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:border-platinum-700 dark:text-platinum-500-300 dark:hover:bg-platinum-800 dark:focus:ring-navy-400',
       className
     )}
     {...props}
@@ -139,7 +139,7 @@ const ToastClose = React.forwardRef<
   <ToastPrimitives.Close
     ref={ref}
     className={cn(
-      'absolute right-2 top-2 rounded-md p-1 text-platinum-400 hover:text-platinum-600 dark:text-platinum-500 dark:hover:text-platinum-300 opacity-0 transition-opacity focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-navy-500 group-hover:opacity-100',
+      'absolute right-2 top-2 rounded-md p-1 text-platinum-500-400 hover:text-platinum-500-600 dark:text-platinum-500-500 dark:hover:text-platinum-500-300 opacity-0 transition-opacity focus:opacity-100 focus:outline-none focus:ring-2 focus:ring-navy-500 group-hover:opacity-100',
       className
     )}
     toast-close=""
@@ -161,7 +161,7 @@ const ToastTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Title
     ref={ref}
-    className={cn('text-sm font-semibold text-platinum-900 dark:text-platinum-100', className)}
+    className={cn('text-sm font-semibold text-platinum-500-900 dark:text-platinum-500-100', className)}
     {...props}
   />
 ))
@@ -177,7 +177,7 @@ const ToastDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Description
     ref={ref}
-    className={cn('text-sm opacity-90 text-platinum-700 dark:text-platinum-300', className)}
+    className={cn('text-sm opacity-90 text-platinum-500-700 dark:text-platinum-500-300', className)}
     {...props}
   />
 ))
@@ -193,10 +193,10 @@ const ToastIcon = React.memo<{
   const icons = {
     success: <Check className="h-5 w-5 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />,
     error: <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400" aria-hidden="true" />,
-    warning: <AlertTriangle className="h-5 w-5 text-gold dark:text-gold-400" aria-hidden="true" />,
-    info: <Info className="h-5 w-5 text-navy-600 dark:text-navy-400" aria-hidden="true" />,
-    default: <Info className="h-5 w-5 text-platinum-600 dark:text-platinum-400" aria-hidden="true" />,
-    premium: <Check className="h-5 w-5 text-navy-600 dark:text-navy-400" aria-hidden="true" />,
+    warning: <AlertTriangle className="h-5 w-5 text-gold-700 dark:text-gold-400" aria-hidden="true" />,
+    info: <Info className="h-5 w-5 text-navy-500-600 dark:text-navy-500-400" aria-hidden="true" />,
+    default: <Info className="h-5 w-5 text-platinum-500-600 dark:text-platinum-500-400" aria-hidden="true" />,
+    premium: <Check className="h-5 w-5 text-navy-500-600 dark:text-navy-500-400" aria-hidden="true" />,
   }
 
   return icons[variant] || icons.default

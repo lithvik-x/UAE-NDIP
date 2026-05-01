@@ -115,17 +115,17 @@ export default function ReligionInterfaithPage() {
       <div className="flex items-start justify-between">
         <div>
           {getSectorBadge()}
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum">Religion & Interfaith Affairs</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum-500">Religion & Interfaith Affairs</h1>
+          <p className="mt-2 text-platinum-500-400">
             Comprehensive data on religious demographics, tolerance initiatives, interfaith infrastructure, and restrictions
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-platinum/50 text-platinum hover:bg-platinum/10">
+          <Button variant="outline" className="gap-2 border-platinum/50 text-platinum-500 hover:bg-platinum/10">
             <Church className="h-4 w-4" />
             Tolerance Monitor
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-500-950 gap-2">
             <Zap className="h-4 w-4" />
             Export Report
           </Button>
@@ -210,11 +210,11 @@ export default function ReligionInterfaithPage() {
                       {religiousDemographics.populationOverview.map((item, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
-                            <span className="text-lg font-bold text-platinum">{item.value}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.metric}</span>
+                            <span className="text-lg font-bold text-platinum-500">{item.value}</span>
                           </div>
                           <Progress value={Math.random() * 60 + 20} className="h-2" />
-                          <p className="text-xs text-platinum-400">Source: {item.source}</p>
+                          <p className="text-xs text-platinum-500-400">Source: {item.source}</p>
                         </div>
                       ))}
                     </div>
@@ -233,13 +233,13 @@ export default function ReligionInterfaithPage() {
                       {religiousDemographics.religiousComposition.map((item, idx) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70">
                           <div className="flex-1">
-                            <p className="font-semibold text-platinum-200">{item.religion}</p>
-                            <p className="text-sm text-platinum-400">Est. Pop: {item.estimatedPopulation}</p>
+                            <p className="font-semibold text-platinum-500-200">{item.religion}</p>
+                            <p className="text-sm text-platinum-500-400">Est. Pop: {item.estimatedPopulation}</p>
                           </div>
                           <div className="flex items-center gap-4">
                             <div className="text-center">
-                              <div className="text-lg font-bold text-platinum">{item.percentage}</div>
-                              <p className="text-xs text-platinum-400">Percentage</p>
+                              <div className="text-lg font-bold text-platinum-500">{item.percentage}</div>
+                              <p className="text-xs text-platinum-500-400">Percentage</p>
                             </div>
                           </div>
                         </div>
@@ -259,12 +259,12 @@ export default function ReligionInterfaithPage() {
                     <div className="space-y-2">
                       {religiousDemographics.historicalTimeline.map((event, idx) => (
                         <div key={idx} className="flex items-start gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70">
-                          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-platinum/20 text-platinum font-bold text-sm">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-platinum/20 text-platinum-500 font-bold text-sm">
                             {event.year}
                           </div>
                           <div className="flex-1">
-                            <p className="font-semibold text-platinum-200">{event.event}</p>
-                            <p className="text-sm text-platinum-400">{event.significance}</p>
+                            <p className="font-semibold text-platinum-500-200">{event.event}</p>
+                            <p className="text-sm text-platinum-500-400">{event.significance}</p>
                           </div>
                         </div>
                       ))}
@@ -290,10 +290,10 @@ export default function ReligionInterfaithPage() {
                     {legalFramework.constitutionalProvisions.map((prov, idx) => (
                       <div key={idx} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="font-semibold text-platinum">{prov.provision}</span>
-                          <Badge variant="outline" className="text-platinum border-platinum/50">{prov.article}</Badge>
+                          <span className="font-semibold text-platinum-500">{prov.provision}</span>
+                          <Badge variant="outline" className="text-platinum-500 border-platinum/50">{prov.article}</Badge>
                         </div>
-                        <p className="text-sm text-platinum-400">{prov.text}</p>
+                        <p className="text-sm text-platinum-500-400">{prov.text}</p>
                       </div>
                     ))}
                   </div>
@@ -311,10 +311,10 @@ export default function ReligionInterfaithPage() {
                       {legalFramework.keyLaws.map((law, idx) => (
                         <div key={idx} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div className="flex items-center justify-between mb-2">
-                            <span className="font-semibold text-platinum">{law.law}</span>
-                            <Badge variant="outline" className="text-platinum border-platinum/50">{law.year}</Badge>
+                            <span className="font-semibold text-platinum-500">{law.law}</span>
+                            <Badge variant="outline" className="text-platinum-500 border-platinum/50">{law.year}</Badge>
                           </div>
-                          <p className="text-sm text-platinum-300 mb-2">{law.description}</p>
+                          <p className="text-sm text-platinum-500-300 mb-2">{law.description}</p>
                           {law.penalty && <p className="text-xs text-red-400">Penalty: {law.penalty}</p>}
                         </div>
                       ))}
@@ -331,12 +331,12 @@ export default function ReligionInterfaithPage() {
                 <CardContent>
                   <div className="grid gap-4 lg:grid-cols-2">
                     <div className="rounded-lg border border-navy-500/50 bg-navy-500/10 p-4">
-                      <h4 className="font-semibold text-platinum mb-2">Sharia Courts</h4>
-                      <p className="text-sm text-platinum-300">{legalFramework.legalSystemStructure.shariaCourtsJurisdiction}</p>
+                      <h4 className="font-semibold text-platinum-500 mb-2">Sharia Courts</h4>
+                      <p className="text-sm text-platinum-500-300">{legalFramework.legalSystemStructure.shariaCourtsJurisdiction}</p>
                     </div>
                     <div className="rounded-lg border border-navy-500/50 bg-navy-500/10 p-4">
-                      <h4 className="font-semibold text-platinum mb-2">Civil Courts</h4>
-                      <p className="text-sm text-platinum-300">{legalFramework.legalSystemStructure.civilCourtsJurisdiction}</p>
+                      <h4 className="font-semibold text-platinum-500 mb-2">Civil Courts</h4>
+                      <p className="text-sm text-platinum-500-300">{legalFramework.legalSystemStructure.civilCourtsJurisdiction}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -358,8 +358,8 @@ export default function ReligionInterfaithPage() {
                   <div className="grid gap-3">
                     {Object.entries(governmentReligiousBodies.ministryOfTolerance).map(([key, value]) => (
                       <div key={key} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/30 p-3">
-                        <span className="text-sm text-platinum-400 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
-                        <span className="text-sm font-medium text-platinum">{value}</span>
+                        <span className="text-sm text-platinum-500-400 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
+                        <span className="text-sm font-medium text-platinum-500">{value}</span>
                       </div>
                     ))}
                   </div>
@@ -376,10 +376,10 @@ export default function ReligionInterfaithPage() {
                     {governmentReligiousBodies.threeTierImamSystem.map((tier, idx) => (
                       <div key={idx} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="font-semibold text-platinum">{tier.tier}</span>
-                          <Badge variant="outline" className="text-platinum border-platinum/50">{tier.sermonFreedom} Freedom</Badge>
+                          <span className="font-semibold text-platinum-500">{tier.tier}</span>
+                          <Badge variant="outline" className="text-platinum-500 border-platinum/50">{tier.sermonFreedom} Freedom</Badge>
                         </div>
-                        <p className="text-sm text-platinum-300">{tier.description}</p>
+                        <p className="text-sm text-platinum-500-300">{tier.description}</p>
                       </div>
                     ))}
                   </div>
@@ -395,8 +395,8 @@ export default function ReligionInterfaithPage() {
                   <div className="grid gap-3">
                     {Object.entries(governmentReligiousBodies.nationalZakatPlatform).map(([key, value]) => (
                       <div key={key} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/30 p-3">
-                        <span className="text-sm text-platinum-400 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
-                        <span className="text-sm font-medium text-platinum">{value}</span>
+                        <span className="text-sm text-platinum-500-400 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
+                        <span className="text-sm font-medium text-platinum-500">{value}</span>
                       </div>
                     ))}
                   </div>
@@ -414,7 +414,7 @@ export default function ReligionInterfaithPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Cross className="h-5 w-5 text-gold" />
+                    <Cross className="h-5 w-5 text-gold-700" />
                     Christianity in UAE
                   </CardTitle>
                   <CardDescription>{christianityInUAE.demographics[0].value} adherents, {christianityInUAE.demographics[1].value} churches</CardDescription>
@@ -425,16 +425,16 @@ export default function ReligionInterfaithPage() {
                       {christianityInUAE.denominations.map((denom, idx) => (
                         <div key={idx} className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-3">
                           <div className="flex items-center justify-between">
-                            <span className="font-semibold text-platinum-200">{denom.denomination}</span>
-                            <Badge variant="outline" className="text-platinum border-platinum/50">{denom.churches} churches</Badge>
+                            <span className="font-semibold text-platinum-500-200">{denom.denomination}</span>
+                            <Badge variant="outline" className="text-platinum-500 border-platinum/50">{denom.churches} churches</Badge>
                           </div>
-                          <p className="text-xs text-platinum-400 mt-1">{denom.details}</p>
+                          <p className="text-xs text-platinum-500-400 mt-1">{denom.details}</p>
                         </div>
                       ))}
                     </div>
                   </ScrollArea>
                   <div className="mt-4">
-                    <h4 className="font-semibold text-platinum mb-2">Restrictions</h4>
+                    <h4 className="font-semibold text-platinum-500 mb-2">Restrictions</h4>
                     <div className="space-y-1">
                       {christianityInUAE.restrictions.map((r, idx) => (
                         <div key={idx} className="flex items-center gap-2 text-sm">
@@ -443,7 +443,7 @@ export default function ReligionInterfaithPage() {
                           ) : (
                             <ThumbsDown className="h-4 w-4 text-red-400" />
                           )}
-                          <span className="text-platinum-300">{r.activity}:</span>
+                          <span className="text-platinum-500-300">{r.activity}:</span>
                           <span className={r.status === 'Permitted' ? 'text-emerald-400' : 'text-red-400'}>{r.status}</span>
                         </div>
                       ))}
@@ -464,21 +464,21 @@ export default function ReligionInterfaithPage() {
                 <CardContent>
                   <div className="grid gap-3 lg:grid-cols-2">
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
-                      <h4 className="font-semibold text-platinum mb-2">Temple Details</h4>
+                      <h4 className="font-semibold text-platinum-500 mb-2">Temple Details</h4>
                       <div className="space-y-2 text-sm">
-                        <div className="flex justify-between"><span className="text-platinum-400">Location:</span><span className="text-platinum">{hinduismInUAE.bapsHinduMandir.location}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Cost:</span><span className="text-platinum">{hinduismInUAE.bapsHinduMandir.constructionCost}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Dimensions:</span><span className="text-platinum">{hinduismInUAE.bapsHinduMandir.dimensions}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Visitors (Year 1):</span><span className="text-platinum">{hinduismInUAE.bapsHinduMandir.visitorsYear1}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Location:</span><span className="text-platinum-500">{hinduismInUAE.bapsHinduMandir.location}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Cost:</span><span className="text-platinum-500">{hinduismInUAE.bapsHinduMandir.constructionCost}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Dimensions:</span><span className="text-platinum-500">{hinduismInUAE.bapsHinduMandir.dimensions}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Visitors (Year 1):</span><span className="text-platinum-500">{hinduismInUAE.bapsHinduMandir.visitorsYear1}</span></div>
                       </div>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
-                      <h4 className="font-semibold text-platinum mb-2">Interfaith Construction Team</h4>
+                      <h4 className="font-semibold text-platinum-500 mb-2">Interfaith Construction Team</h4>
                       <div className="space-y-2 text-sm">
                         {hinduismInUAE.interfaithConstruction.map((item, idx) => (
                           <div key={idx} className="flex justify-between">
-                            <span className="text-platinum-400">{item.element}:</span>
-                            <span className="text-platinum">{item.details}</span>
+                            <span className="text-platinum-500-400">{item.element}:</span>
+                            <span className="text-platinum-500">{item.details}</span>
                           </div>
                         ))}
                       </div>
@@ -491,7 +491,7 @@ export default function ReligionInterfaithPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <StarIcon className="h-5 w-5 text-navy-400" />
+                    <StarIcon className="h-5 w-5 text-navy-500-400" />
                     Moses Ben Maimon Synagogue
                   </CardTitle>
                   <CardDescription>First purpose-built synagogue in UAE - Abrahamic Family House</CardDescription>
@@ -500,19 +500,19 @@ export default function ReligionInterfaithPage() {
                   <div className="grid gap-3 lg:grid-cols-2">
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
                       <div className="space-y-2 text-sm">
-                        <div className="flex justify-between"><span className="text-platinum-400">Location:</span><span className="text-platinum">{judaismInUAE.mosessBenMaimonSynagogue.location}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Inaugurated:</span><span className="text-platinum">{judaismInUAE.mosessBenMaimonSynagogue.inaugurated}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Capacity:</span><span className="text-platinum">{judaismInUAE.mosessBenMaimonSynagogue.capacity}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Size:</span><span className="text-platinum">{judaismInUAE.mosessBenMaimonSynagogue.size}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Location:</span><span className="text-platinum-500">{judaismInUAE.mosessBenMaimonSynagogue.location}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Inaugurated:</span><span className="text-platinum-500">{judaismInUAE.mosessBenMaimonSynagogue.inaugurated}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Capacity:</span><span className="text-platinum-500">{judaismInUAE.mosessBenMaimonSynagogue.capacity}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Size:</span><span className="text-platinum-500">{judaismInUAE.mosessBenMaimonSynagogue.size}</span></div>
                       </div>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
-                      <h4 className="font-semibold text-platinum mb-2">UAE Jewish Community</h4>
+                      <h4 className="font-semibold text-platinum-500 mb-2">UAE Jewish Community</h4>
                       <div className="space-y-2 text-sm">
                         {judaismInUAE.uaeJewishCommunity.map((item, idx) => (
                           <div key={idx} className="flex justify-between">
-                            <span className="text-platinum-400">{item.attribute}:</span>
-                            <span className="text-platinum">{item.details}</span>
+                            <span className="text-platinum-500-400">{item.attribute}:</span>
+                            <span className="text-platinum-500">{item.details}</span>
                           </div>
                         ))}
                       </div>
@@ -534,19 +534,19 @@ export default function ReligionInterfaithPage() {
                   <div className="grid gap-3 lg:grid-cols-2">
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
                       <div className="space-y-2 text-sm">
-                        <div className="flex justify-between"><span className="text-platinum-400">Location:</span><span className="text-platinum">{sikhismInUAE.guruNanakDarbar.location}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Founded:</span><span className="text-platinum">{sikhismInUAE.guruNanakDarbar.founded}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Cost:</span><span className="text-platinum">{sikhismInUAE.guruNanakDarbar.constructionCost}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Weekly Visitors:</span><span className="text-platinum">{sikhismInUAE.visitors[1].value}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Location:</span><span className="text-platinum-500">{sikhismInUAE.guruNanakDarbar.location}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Founded:</span><span className="text-platinum-500">{sikhismInUAE.guruNanakDarbar.founded}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Cost:</span><span className="text-platinum-500">{sikhismInUAE.guruNanakDarbar.constructionCost}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Weekly Visitors:</span><span className="text-platinum-500">{sikhismInUAE.visitors[1].value}</span></div>
                       </div>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
-                      <h4 className="font-semibold text-platinum mb-2">ISO Certifications</h4>
+                      <h4 className="font-semibold text-platinum-500 mb-2">ISO Certifications</h4>
                       <div className="space-y-1">
                         {sikhismInUAE.isoCertifications.map((cert, idx) => (
                           <div key={idx} className="text-sm">
-                            <span className="text-platinum font-medium">{cert.certification}:</span>
-                            <span className="text-platinum-400 ml-2">{cert.details}</span>
+                            <span className="text-platinum-500 font-medium">{cert.certification}:</span>
+                            <span className="text-platinum-500-400 ml-2">{cert.details}</span>
                           </div>
                         ))}
                       </div>
@@ -571,16 +571,16 @@ export default function ReligionInterfaithPage() {
                   <div className="grid gap-4 lg:grid-cols-2 mb-4">
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
                       <div className="space-y-2 text-sm">
-                        <div className="flex justify-between"><span className="text-platinum-400">Location:</span><span className="text-platinum">{interfaithInitiatives.documentOnHumanFraternity.location}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Signatories:</span><span className="text-platinum">{interfaithInitiatives.documentOnHumanFraternity.signatories}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">UN Resolution:</span><span className="text-platinum">{interfaithInitiatives.documentOnHumanFraternity.unResolution}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Location:</span><span className="text-platinum-500">{interfaithInitiatives.documentOnHumanFraternity.location}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Signatories:</span><span className="text-platinum-500">{interfaithInitiatives.documentOnHumanFraternity.signatories}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">UN Resolution:</span><span className="text-platinum-500">{interfaithInitiatives.documentOnHumanFraternity.unResolution}</span></div>
                       </div>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
-                      <h4 className="font-semibold text-platinum mb-2">12 Key Principles</h4>
+                      <h4 className="font-semibold text-platinum-500 mb-2">12 Key Principles</h4>
                       <div className="grid grid-cols-2 gap-1 text-xs">
                         {interfaithInitiatives.twelveKeyPrinciples.map((p, idx) => (
-                          <div key={idx} className="text-platinum-300">{(idx + 1)}. {p.principle.substring(0, 40)}...</div>
+                          <div key={idx} className="text-platinum-500-300">{(idx + 1)}. {p.principle.substring(0, 40)}...</div>
                         ))}
                       </div>
                     </div>
@@ -598,15 +598,15 @@ export default function ReligionInterfaithPage() {
                     <div className="grid gap-4 lg:grid-cols-3">
                       {interfaithInitiatives.threeWorshipSpaces.map((space, idx) => (
                         <div key={idx} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
-                          <h4 className="font-semibold text-platinum mb-1">{space.space}</h4>
-                          <p className="text-xs text-platinum-400 mb-2">Named after: {space.namedAfter}</p>
+                          <h4 className="font-semibold text-platinum-500 mb-1">{space.space}</h4>
+                          <p className="text-xs text-platinum-500-400 mb-2">Named after: {space.namedAfter}</p>
                           <div className="flex justify-between text-sm">
-                            <span className="text-platinum-400">Capacity:</span>
-                            <span className="text-platinum">{space.capacity}</span>
+                            <span className="text-platinum-500-400">Capacity:</span>
+                            <span className="text-platinum-500">{space.capacity}</span>
                           </div>
                           <div className="flex justify-between text-sm">
-                            <span className="text-platinum-400">Size:</span>
-                            <span className="text-platinum">{space.size}</span>
+                            <span className="text-platinum-500-400">Size:</span>
+                            <span className="text-platinum-500">{space.size}</span>
                           </div>
                         </div>
                       ))}
@@ -624,13 +624,13 @@ export default function ReligionInterfaithPage() {
                   <div className="grid gap-3 lg:grid-cols-2">
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
                       <div className="space-y-2 text-sm">
-                        <div className="flex justify-between"><span className="text-platinum-400">Venue:</span><span className="text-platinum">{interfaithInitiatives.popeFrancisVisit.venue}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Attendance:</span><span className="text-platinum">{interfaithInitiatives.popeFrancisVisit.attendance}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Type:</span><span className="text-platinum">{interfaithInitiatives.popeFrancisVisit.type}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Venue:</span><span className="text-platinum-500">{interfaithInitiatives.popeFrancisVisit.venue}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Attendance:</span><span className="text-platinum-500">{interfaithInitiatives.popeFrancisVisit.attendance}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Type:</span><span className="text-platinum-500">{interfaithInitiatives.popeFrancisVisit.type}</span></div>
                       </div>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
-                      <p className="text-sm text-platinum-300 italic">"{interfaithInitiatives.popeFrancisVisit.quote}"</p>
+                      <p className="text-sm text-platinum-500-300 italic">"{interfaithInitiatives.popeFrancisVisit.quote}"</p>
                     </div>
                   </div>
                 </CardContent>
@@ -652,16 +652,16 @@ export default function ReligionInterfaithPage() {
                   <div className="grid gap-3 lg:grid-cols-2">
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
                       <div className="space-y-2 text-sm">
-                        <div className="flex justify-between"><span className="text-platinum-400">Current Minister:</span><span className="text-platinum">{toleranceMinistry.ministryOverview.currentMinister}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Director General:</span><span className="text-platinum">{toleranceMinistry.ministryOverview.directorGeneral}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Website:</span><span className="text-platinum">{toleranceMinistry.ministryOverview.website}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Current Minister:</span><span className="text-platinum-500">{toleranceMinistry.ministryOverview.currentMinister}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Director General:</span><span className="text-platinum-500">{toleranceMinistry.ministryOverview.directorGeneral}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Website:</span><span className="text-platinum-500">{toleranceMinistry.ministryOverview.website}</span></div>
                       </div>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
-                      <h4 className="font-semibold text-platinum mb-2">Programs</h4>
+                      <h4 className="font-semibold text-platinum-500 mb-2">Programs</h4>
                       <div className="space-y-1 text-sm">
                         {toleranceMinistry.programs.map((p, idx) => (
-                          <div key={idx} className="text-platinum-300">{p.program}: <span className="text-platinum">{p.details}</span></div>
+                          <div key={idx} className="text-platinum-500-300">{p.program}: <span className="text-platinum-500">{p.details}</span></div>
                         ))}
                       </div>
                     </div>
@@ -682,7 +682,7 @@ export default function ReligionInterfaithPage() {
                           <span className="font-semibold text-emerald-400">{r.index}</span>
                           <Badge variant="outline" className="text-emerald-400 border-emerald-400/50">{r.ranking}</Badge>
                         </div>
-                        <p className="text-xs text-platinum-400 mt-1">Source: {r.source}</p>
+                        <p className="text-xs text-platinum-500-400 mt-1">Source: {r.source}</p>
                       </div>
                     ))}
                   </div>
@@ -698,8 +698,8 @@ export default function ReligionInterfaithPage() {
                   <div className="grid gap-3 lg:grid-cols-2">
                     {toleranceMinistry.relatedEntities.map((entity, idx) => (
                       <div key={idx} className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-3">
-                        <span className="font-semibold text-platinum">{entity.entity}</span>
-                        <p className="text-xs text-platinum-400 mt-1">{entity.purpose}</p>
+                        <span className="font-semibold text-platinum-500">{entity.entity}</span>
+                        <p className="text-xs text-platinum-500-400 mt-1">{entity.purpose}</p>
                       </div>
                     ))}
                   </div>
@@ -726,8 +726,8 @@ export default function ReligionInterfaithPage() {
                         {getAlertBadge('RED')}
                       </div>
                       <div className="space-y-1 text-sm">
-                        <div className="flex justify-between"><span className="text-platinum-400">Legal Status:</span><span className="text-red-400">{restrictionsDiscrimination.apostasy.legalStatus}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Reality:</span><span className="text-emerald-400">{restrictionsDiscrimination.apostasy.reality}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Legal Status:</span><span className="text-red-400">{restrictionsDiscrimination.apostasy.legalStatus}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Reality:</span><span className="text-emerald-400">{restrictionsDiscrimination.apostasy.reality}</span></div>
                       </div>
                     </div>
                     <div className="rounded-lg border border-red-500/30 bg-red-500/10 p-4">
@@ -736,8 +736,8 @@ export default function ReligionInterfaithPage() {
                         {getAlertBadge('RED')}
                       </div>
                       <div className="space-y-1 text-sm">
-                        <div className="flex justify-between"><span className="text-platinum-400">Status:</span><span className="text-red-400">{restrictionsDiscrimination.blasphemy.status}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Article:</span><span className="text-platinum">{restrictionsDiscrimination.blasphemy.article}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Status:</span><span className="text-red-400">{restrictionsDiscrimination.blasphemy.status}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Article:</span><span className="text-platinum-500">{restrictionsDiscrimination.blasphemy.article}</span></div>
                       </div>
                     </div>
                   </div>
@@ -755,10 +755,10 @@ export default function ReligionInterfaithPage() {
                       {restrictionsDiscrimination.proselytizing.map((p, idx) => (
                         <div key={idx} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-200">{p.activity}</span>
+                            <span className="text-sm text-platinum-500-200">{p.activity}</span>
                             <Badge variant={p.status === 'Permitted' ? 'default' : 'destructive'} className={p.status === 'Permitted' ? 'bg-emerald-500' : 'bg-red-500'}>{p.status}</Badge>
                           </div>
-                          <p className="text-xs text-platinum-400 mt-1">Penalty: {p.penalty}</p>
+                          <p className="text-xs text-platinum-500-400 mt-1">Penalty: {p.penalty}</p>
                         </div>
                       ))}
                     </div>
@@ -777,9 +777,9 @@ export default function ReligionInterfaithPage() {
                       <div key={idx} className="rounded-lg border border-red-500/30 bg-red-500/10 p-3">
                         <div className="flex items-center justify-between mb-1">
                           <span className="font-semibold text-red-400">{item.issue}</span>
-                          <span className="text-xs text-platinum-400">{item.source}</span>
+                          <span className="text-xs text-platinum-500-400">{item.source}</span>
                         </div>
-                        <p className="text-sm text-platinum-300">{item.details}</p>
+                        <p className="text-sm text-platinum-500-300">{item.details}</p>
                       </div>
                     ))}
                   </div>
@@ -801,23 +801,23 @@ export default function ReligionInterfaithPage() {
                 <CardContent>
                   <div className="grid gap-3 lg:grid-cols-2">
                     <div>
-                      <h4 className="font-semibold text-platinum mb-2">Traditions</h4>
+                      <h4 className="font-semibold text-platinum-500 mb-2">Traditions</h4>
                       <div className="space-y-2">
                         {ramadanObservances.traditions.map((t, idx) => (
                           <div key={idx} className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-3">
-                            <span className="font-semibold text-platinum">{t.tradition}</span>
-                            <p className="text-xs text-platinum-400 mt-1">{t.description}</p>
+                            <span className="font-semibold text-platinum-500">{t.tradition}</span>
+                            <p className="text-xs text-platinum-500-400 mt-1">{t.description}</p>
                           </div>
                         ))}
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-platinum mb-2">Legal Restrictions</h4>
+                      <h4 className="font-semibold text-platinum-500 mb-2">Legal Restrictions</h4>
                       <div className="space-y-2">
                         {ramadanObservances.legalRestrictions.map((r, idx) => (
                           <div key={idx} className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-3">
-                            <span className="font-semibold text-platinum">{r.restriction}</span>
-                            <p className="text-xs text-platinum-400 mt-1">{r.details}</p>
+                            <span className="font-semibold text-platinum-500">{r.restriction}</span>
+                            <p className="text-xs text-platinum-500-400 mt-1">{r.details}</p>
                           </div>
                         ))}
                       </div>
@@ -835,18 +835,18 @@ export default function ReligionInterfaithPage() {
                   <div className="grid gap-3 lg:grid-cols-2">
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
                       <div className="space-y-2 text-sm">
-                        <div className="flex justify-between"><span className="text-platinum-400">Start Date:</span><span className="text-platinum">{eidCelebrations.eidAlFitr2026.startDate}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Public Holiday:</span><span className="text-platinum">{eidCelebrations.eidAlFitr2026.publicHoliday}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Work Resumes:</span><span className="text-platinum">{eidCelebrations.eidAlFitr2026.workResumes}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Start Date:</span><span className="text-platinum-500">{eidCelebrations.eidAlFitr2026.startDate}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Public Holiday:</span><span className="text-platinum-500">{eidCelebrations.eidAlFitr2026.publicHoliday}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Work Resumes:</span><span className="text-platinum-500">{eidCelebrations.eidAlFitr2026.workResumes}</span></div>
                       </div>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
-                      <h4 className="font-semibold text-platinum mb-2">Public Holidays</h4>
+                      <h4 className="font-semibold text-platinum-500 mb-2">Public Holidays</h4>
                       <div className="space-y-1 text-sm">
                         {eidCelebrations.officialPublicHolidays.map((h, idx) => (
                           <div key={idx} className="flex justify-between">
-                            <span className="text-platinum-300">{h.holiday}</span>
-                            <span className="text-platinum">{h.duration}</span>
+                            <span className="text-platinum-500-300">{h.holiday}</span>
+                            <span className="text-platinum-500">{h.duration}</span>
                           </div>
                         ))}
                       </div>
@@ -872,10 +872,10 @@ export default function ReligionInterfaithPage() {
                     {ramadanEidEconomy.ramadanEconomy2026.map((metric, idx) => (
                       <div key={idx} className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
                         <div className="flex items-center justify-between mb-1">
-                          <span className="text-sm text-platinum-300">{metric.metric}</span>
+                          <span className="text-sm text-platinum-500-300">{metric.metric}</span>
                           {metric.change && <Badge variant="outline" className="text-emerald-400 border-emerald-400/50">{metric.change}</Badge>}
                         </div>
-                        <p className="text-2xl font-bold text-platinum">{metric.value}</p>
+                        <p className="text-2xl font-bold text-platinum-500">{metric.value}</p>
                       </div>
                     ))}
                   </div>
@@ -891,18 +891,18 @@ export default function ReligionInterfaithPage() {
                   <div className="grid gap-3 lg:grid-cols-2">
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
                       <div className="space-y-2 text-sm">
-                        <div className="flex justify-between"><span className="text-platinum-400">Potential:</span><span className="text-emerald-400 font-bold">{zakatSystem.zakatPotential}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Chairman:</span><span className="text-platinum">{zakatSystem.nationalZakatPlatform.chairman}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Launch Date:</span><span className="text-platinum">{zakatSystem.nationalZakatPlatform.launchDate}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Potential:</span><span className="text-emerald-400 font-bold">{zakatSystem.zakatPotential}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Chairman:</span><span className="text-platinum-500">{zakatSystem.nationalZakatPlatform.chairman}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Launch Date:</span><span className="text-platinum-500">{zakatSystem.nationalZakatPlatform.launchDate}</span></div>
                       </div>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
-                      <h4 className="font-semibold text-platinum mb-2">Zakat Allocation</h4>
+                      <h4 className="font-semibold text-platinum-500 mb-2">Zakat Allocation</h4>
                       <div className="space-y-1 text-sm">
                         {zakatSystem.allocation.map((a, idx) => (
                           <div key={idx} className="flex justify-between">
-                            <span className="text-platinum-400">{a.sector}:</span>
-                            <span className="text-platinum">{a.use}</span>
+                            <span className="text-platinum-500-400">{a.sector}:</span>
+                            <span className="text-platinum-500">{a.use}</span>
                           </div>
                         ))}
                       </div>
@@ -919,23 +919,23 @@ export default function ReligionInterfaithPage() {
                 <CardContent>
                   <div className="grid gap-4 lg:grid-cols-2">
                     <div>
-                      <h4 className="font-semibold text-platinum mb-2">Key Institutions</h4>
+                      <h4 className="font-semibold text-platinum-500 mb-2">Key Institutions</h4>
                       <div className="space-y-2">
                         {islamicFinance.keyInstitutions.map((bank, idx) => (
                           <div key={idx} className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-3">
-                            <span className="font-semibold text-platinum">{bank.bank}</span>
-                            <p className="text-xs text-platinum-400">{bank.type}</p>
+                            <span className="font-semibold text-platinum-500">{bank.bank}</span>
+                            <p className="text-xs text-platinum-500-400">{bank.type}</p>
                           </div>
                         ))}
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-platinum mb-2">Regulatory Framework</h4>
+                      <h4 className="font-semibold text-platinum-500 mb-2">Regulatory Framework</h4>
                       <div className="space-y-2">
                         {islamicFinance.regulatoryFramework.map((reg, idx) => (
                           <div key={idx} className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-3">
-                            <span className="font-semibold text-platinum">{reg.authority}</span>
-                            <p className="text-xs text-platinum-400 mt-1">{reg.initiative}</p>
+                            <span className="font-semibold text-platinum-500">{reg.authority}</span>
+                            <p className="text-xs text-platinum-500-400 mt-1">{reg.initiative}</p>
                           </div>
                         ))}
                       </div>
@@ -960,17 +960,17 @@ export default function ReligionInterfaithPage() {
                   <div className="grid gap-3 lg:grid-cols-2 mb-4">
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
                       <div className="space-y-2 text-sm">
-                        <div className="flex justify-between"><span className="text-platinum-400">Mandatory For:</span><span className="text-platinum">{religiousEducation.curriculumStructure.mandatoryFor}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Start Age:</span><span className="text-platinum">{religiousEducation.curriculumStructure.startAge}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Duration:</span><span className="text-platinum">{religiousEducation.curriculumStructure.duration}</span></div>
-                        <div className="flex justify-between"><span className="text-platinum-400">Grade Levels:</span><span className="text-platinum">{religiousEducation.curriculumStructure.gradeLevels}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Mandatory For:</span><span className="text-platinum-500">{religiousEducation.curriculumStructure.mandatoryFor}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Start Age:</span><span className="text-platinum-500">{religiousEducation.curriculumStructure.startAge}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Duration:</span><span className="text-platinum-500">{religiousEducation.curriculumStructure.duration}</span></div>
+                        <div className="flex justify-between"><span className="text-platinum-500-400">Grade Levels:</span><span className="text-platinum-500">{religiousEducation.curriculumStructure.gradeLevels}</span></div>
                       </div>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
-                      <h4 className="font-semibold text-platinum mb-2">6 Core Fields of Study</h4>
+                      <h4 className="font-semibold text-platinum-500 mb-2">6 Core Fields of Study</h4>
                       <div className="space-y-1 text-sm">
                         {religiousEducation.sixCoreFields.map((field, idx) => (
-                          <div key={idx} className="text-platinum-300">{field.field}: <span className="text-platinum">{field.content}</span></div>
+                          <div key={idx} className="text-platinum-500-300">{field.field}: <span className="text-platinum-500">{field.content}</span></div>
                         ))}
                       </div>
                     </div>
@@ -987,22 +987,22 @@ export default function ReligionInterfaithPage() {
                   <ScrollArea className="h-[400px]">
                     <div className="space-y-4">
                       <div className="rounded-lg border border-navy-500/50 bg-navy-500/10 p-4">
-                        <h4 className="font-semibold text-platinum mb-2">Sheikh Zayed Grand Mosque</h4>
+                        <h4 className="font-semibold text-platinum-500 mb-2">Sheikh Zayed Grand Mosque</h4>
                         <div className="grid grid-cols-2 gap-2 text-sm">
-                          <div><span className="text-platinum-400">Capacity:</span> <span className="text-platinum">{religiousSites.sheikhZayedGrandMosque.dailyCapacity}</span></div>
-                          <div><span className="text-platinum-400">Cost:</span> <span className="text-platinum">{religiousSites.constructionDetails.cost}</span></div>
-                          <div><span className="text-platinum-400">Domes:</span> <span className="text-platinum">{religiousSites.architecture[5].measurement}</span></div>
-                          <div><span className="text-platinum-400">Minarets:</span> <span className="text-platinum">{religiousSites.architecture[4].measurement}</span></div>
+                          <div><span className="text-platinum-500-400">Capacity:</span> <span className="text-platinum-500">{religiousSites.sheikhZayedGrandMosque.dailyCapacity}</span></div>
+                          <div><span className="text-platinum-500-400">Cost:</span> <span className="text-platinum-500">{religiousSites.constructionDetails.cost}</span></div>
+                          <div><span className="text-platinum-500-400">Domes:</span> <span className="text-platinum-500">{religiousSites.architecture[5].measurement}</span></div>
+                          <div><span className="text-platinum-500-400">Minarets:</span> <span className="text-platinum-500">{religiousSites.architecture[4].measurement}</span></div>
                         </div>
-                        <p className="text-xs text-platinum-400 mt-2">Recognition: {religiousSites.recognition}</p>
+                        <p className="text-xs text-platinum-500-400 mt-2">Recognition: {religiousSites.recognition}</p>
                       </div>
                       <div className="rounded-lg border border-platinum-700 bg-platinum-800/30 p-4">
-                        <h4 className="font-semibold text-platinum mb-2">Other Mosques</h4>
+                        <h4 className="font-semibold text-platinum-500 mb-2">Other Mosques</h4>
                         <div className="space-y-2">
                           {religiousSites.otherMosques.map((mosque, idx) => (
                             <div key={idx} className="flex items-center justify-between text-sm">
-                              <span className="text-platinum-300">{mosque.mosque}</span>
-                              <span className="text-platinum">{mosque.location}</span>
+                              <span className="text-platinum-500-300">{mosque.mosque}</span>
+                              <span className="text-platinum-500">{mosque.location}</span>
                             </div>
                           ))}
                         </div>
@@ -1025,28 +1025,28 @@ export default function ReligionInterfaithPage() {
         <CardContent>
           <div className="grid gap-4 lg:grid-cols-3">
             <div>
-              <h4 className="font-semibold text-platinum mb-2">Fetch Success Rate</h4>
+              <h4 className="font-semibold text-platinum-500 mb-2">Fetch Success Rate</h4>
               <div className="space-y-1 text-sm">
                 {dataQualityNotes.fetchSuccessRate.slice(-4).map((rate, idx) => (
                   <div key={idx} className="flex justify-between">
-                    <span className="text-platinum-400">{rate.category}:</span>
-                    <span className="text-platinum">{rate.rate}</span>
+                    <span className="text-platinum-500-400">{rate.category}:</span>
+                    <span className="text-platinum-500">{rate.rate}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div>
-              <h4 className="font-semibold text-platinum mb-2">Enrichment Statistics</h4>
+              <h4 className="font-semibold text-platinum-500 mb-2">Enrichment Statistics</h4>
               <div className="space-y-1 text-sm">
-                <div><span className="text-platinum-400">URLs Processed:</span> <span className="text-platinum">{dataQualityNotes.enrichmentStatistics[0].count}</span></div>
-                <div><span className="text-platinum-400">Data Points:</span> <span className="text-platinum">{dataQualityNotes.enrichmentStatistics[1].count}</span></div>
-                <div><span className="text-platinum-400">Tables:</span> <span className="text-platinum">{dataQualityNotes.enrichmentStatistics[2].count}</span></div>
-                <div><span className="text-platinum-400">Organizations:</span> <span className="text-platinum">{dataQualityNotes.enrichmentStatistics[6].count}</span></div>
+                <div><span className="text-platinum-500-400">URLs Processed:</span> <span className="text-platinum-500">{dataQualityNotes.enrichmentStatistics[0].count}</span></div>
+                <div><span className="text-platinum-500-400">Data Points:</span> <span className="text-platinum-500">{dataQualityNotes.enrichmentStatistics[1].count}</span></div>
+                <div><span className="text-platinum-500-400">Tables:</span> <span className="text-platinum-500">{dataQualityNotes.enrichmentStatistics[2].count}</span></div>
+                <div><span className="text-platinum-500-400">Organizations:</span> <span className="text-platinum-500">{dataQualityNotes.enrichmentStatistics[6].count}</span></div>
               </div>
             </div>
             <div>
-              <h4 className="font-semibold text-platinum mb-2">Confidence Level</h4>
-              <p className="text-sm text-platinum-300">{reportMetadata.confidenceLevel}</p>
+              <h4 className="font-semibold text-platinum-500 mb-2">Confidence Level</h4>
+              <p className="text-sm text-platinum-500-300">{reportMetadata.confidenceLevel}</p>
             </div>
           </div>
         </CardContent>

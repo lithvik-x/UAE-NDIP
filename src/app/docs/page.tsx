@@ -101,16 +101,16 @@ export default function DocsPage() {
           <Activity className="mr-1 h-3 w-3" />
           Documentation
         </Badge>
-        <h1 className="text-5xl font-rajdhani font-bold text-platinum-900 mb-4">UAE National Digital Intelligence Platform</h1>
-        <p className="text-xl text-platinum-600 max-w-2xl mx-auto">
+        <h1 className="text-5xl font-rajdhani font-bold text-platinum-500-900 mb-4">UAE National Digital Intelligence Platform</h1>
+        <p className="text-xl text-platinum-500-600 max-w-2xl mx-auto">
           Clairvoyance-CX — A CryptoMize Product. Comprehensive intelligence for the United Arab Emirates. Ten integrated sections delivering situational awareness across all domains.
         </p>
       </div>
 
       <div className="mb-12">
         <GlassPanel className="p-8">
-          <h2 className="text-3xl font-rajdhani font-bold text-navy-900 mb-4">Platform Overview</h2>
-          <p className="text-platinum-700 mb-6 leading-relaxed">
+          <h2 className="text-3xl font-rajdhani font-bold text-navy-500-900 mb-4">Platform Overview</h2>
+          <p className="text-platinum-500-700 mb-6 leading-relaxed">
             The UAE National Digital Intelligence Platform monitors, analyzes, and reports on all aspects of the UAE digital landscape — from government officials and corporate entities to social media sentiment and geopolitical trends. The platform processes data in 12 languages across 52,401+ active sources.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
@@ -121,8 +121,8 @@ export default function DocsPage() {
             ].map(({ label, value, icon: Icon, color }) => (
               <div key={label} className={`bg-gradient-to-br from-${color}-50 to-${color}-100 p-6 rounded-xl border border-${color}-200`}>
                 <Icon className={`h-8 w-8 text-${color}-600 mb-3`} />
-                <div className="font-rajdhani text-3xl font-bold text-platinum-900">{value}</div>
-                <div className="text-sm text-platinum-600 mt-1">{label}</div>
+                <div className="font-rajdhani text-3xl font-bold text-platinum-500-900">{value}</div>
+                <div className="text-sm text-platinum-500-600 mt-1">{label}</div>
               </div>
             ))}
           </div>
@@ -130,7 +130,7 @@ export default function DocsPage() {
       </div>
 
       <div className="mb-12">
-        <h2 className="text-3xl font-rajdhani font-bold text-navy-900 mb-6">Intelligence Sections</h2>
+        <h2 className="text-3xl font-rajdhani font-bold text-navy-500-900 mb-6">Intelligence Sections</h2>
         <div className="grid gap-6 md:grid-cols-2">
           {sections.map(({ title, href, icon: Icon, description, gradient }) => (
             <GlassPanel key={href} className="p-6">
@@ -139,8 +139,8 @@ export default function DocsPage() {
                   <Icon className="h-6 w-6" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-rajdhani text-xl font-bold text-platinum-900 mb-1">{title}</h3>
-                  <p className="text-sm text-platinum-600 leading-relaxed mb-3">{description}</p>
+                  <h3 className="font-rajdhani text-xl font-bold text-platinum-500-900 mb-1">{title}</h3>
+                  <p className="text-sm text-platinum-500-600 leading-relaxed mb-3">{description}</p>
                   <Link href={href}>
                     <Button size="sm" variant="outline" className="text-xs">
                       Open Section
@@ -155,8 +155,8 @@ export default function DocsPage() {
 
       <div className="grid md:grid-cols-2 gap-6">
         <GlassPanel className="p-6">
-          <h3 className="text-xl font-rajdhani font-semibold text-navy-900 mb-3">Keyboard Shortcuts</h3>
-          <div className="space-y-2 text-sm text-platinum-700">
+          <h3 className="text-xl font-rajdhani font-semibold text-navy-500-900 mb-3">Keyboard Shortcuts</h3>
+          <div className="space-y-2 text-sm text-platinum-500-700">
             <div className="flex justify-between">
               <span>Command Palette</span>
               <kbd className="px-2 py-1 bg-platinum-100 rounded text-xs font-mono">⌘K</kbd>
@@ -173,15 +173,15 @@ export default function DocsPage() {
         </GlassPanel>
 
         <GlassPanel className="p-6">
-          <h3 className="text-xl font-rajdhani font-semibold text-navy-900 mb-3">Resources</h3>
+          <h3 className="text-xl font-rajdhani font-semibold text-navy-500-900 mb-3">Resources</h3>
           <div className="space-y-2">
-            <Link href="/privacy" className="block text-sm text-platinum-700 hover:text-navy-600 transition-colors">
+            <Link href="/privacy" className="block text-sm text-platinum-500-700 hover:text-navy-500-600 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/support" className="block text-sm text-platinum-700 hover:text-navy-600 transition-colors">
+            <Link href="/support" className="block text-sm text-platinum-500-700 hover:text-navy-500-600 transition-colors">
               Support Center
             </Link>
-            <Link href="/settings" className="block text-sm text-platinum-700 hover:text-navy-600 transition-colors">
+            <Link href="/settings" className="block text-sm text-platinum-500-700 hover:text-navy-500-600 transition-colors">
               Platform Settings
             </Link>
           </div>

@@ -48,7 +48,7 @@ function TableSection<T extends { [key: string]: any }>({
           <TableHeader>
             <TableRow className="border-platinum-700">
               {columns.map((col) => (
-                <TableHead key={String(col.key)} className="text-platinum-400">{col.label}</TableHead>
+                <TableHead key={String(col.key)} className="text-platinum-500-400">{col.label}</TableHead>
               ))}
             </TableRow>
           </TableHeader>
@@ -56,7 +56,7 @@ function TableSection<T extends { [key: string]: any }>({
             {data.map((row, idx) => (
               <TableRow key={idx} className="border-platinum-700/50 hover:bg-platinum-800/30">
                 {columns.map((col) => (
-                  <TableCell key={String(col.key)} className="text-platinum-300">
+                  <TableCell key={String(col.key)} className="text-platinum-500-300">
                     {col.render ? col.render(row[col.key], row) : String(row[col.key])}
                   </TableCell>
                 ))}
@@ -92,7 +92,7 @@ export function SectionStructuredData() {
         description="Echo chamber characteristics by platform"
         data={platformEchoChambers}
         columns={[
-          { key: 'platform', label: 'Platform', render: (v) => <span className="font-semibold text-platinum-200">{String(v)}</span> },
+          { key: 'platform', label: 'Platform', render: (v) => <span className="font-semibold text-platinum-500-200">{String(v)}</span> },
           { key: 'echoChamberStrength', label: 'Strength', render: (v) => {
             const val = String(v)
             const cls = val === 'STRONG' ? 'text-rose-400' : val === 'WEAK' ? 'text-emerald-400' : 'text-amber-400'
@@ -111,7 +111,7 @@ export function SectionStructuredData() {
         data={polarizationStudies}
         columns={[
           { key: 'study', label: 'Study' },
-          { key: 'finding', label: 'Finding', render: (v) => <span className="text-sm text-platinum-300">{String(v)}</span> },
+          { key: 'finding', label: 'Finding', render: (v) => <span className="text-sm text-platinum-500-300">{String(v)}</span> },
           { key: 'effectSize', label: 'Effect Size' },
           { key: 'sample', label: 'Sample' },
           { key: 'year', label: 'Year' },
@@ -196,7 +196,7 @@ export function SectionStructuredData() {
           { key: 'significance', label: 'Significance', render: (v) => {
             const val = String(v)
             return val.includes('NOT') ? (
-              <span className="text-platinum-500">{val}</span>
+              <span className="text-platinum-500-500">{val}</span>
             ) : (
               <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50 text-xs">{val}</Badge>
             )

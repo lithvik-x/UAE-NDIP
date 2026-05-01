@@ -57,7 +57,7 @@ export function UAESection({
               </CardHeader>
               <CardContent className="px-0 pb-0">
                 <div className="rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
-                  <p className="text-sm text-platinum-300">
+                  <p className="text-sm text-platinum-500-300">
                     NO official UAE government Threads accounts identified. The Digital Government Indicators framework
                     does NOT yet include Threads as a required platform. X (Twitter) remains the primary platform
                     for UAE government communications (2.85M users, declining 6%).
@@ -76,19 +76,19 @@ export function UAESection({
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   <div className="rounded-lg bg-info/10 p-4 border border-info/30">
                     <div className="text-2xl font-bold text-info">11.4M</div>
-                    <div className="text-sm text-platinum-400">Total Population</div>
+                    <div className="text-sm text-platinum-500-400">Total Population</div>
                   </div>
                   <div className="rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30">
                     <div className="text-2xl font-bold text-emerald-400">99%</div>
-                    <div className="text-sm text-platinum-400">Internet Penetration</div>
+                    <div className="text-sm text-platinum-500-400">Internet Penetration</div>
                   </div>
-                  <div className="rounded-lg bg-gold/10 p-4 border border-gold/30">
-                    <div className="text-2xl font-bold text-gold">614 Mbps</div>
-                    <div className="text-sm text-platinum-400">Median Mobile Speed</div>
+                  <div className="rounded-lg bg-gold-700/10 p-4 border border-gold-700/30">
+                    <div className="text-2xl font-bold text-gold-700">614 Mbps</div>
+                    <div className="text-sm text-platinum-500-400">Median Mobile Speed</div>
                   </div>
                   <div className="rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
                     <div className="text-2xl font-bold text-rose-400">31.6 yrs</div>
-                    <div className="text-sm text-platinum-400">Median Age</div>
+                    <div className="text-sm text-platinum-500-400">Median Age</div>
                   </div>
                 </div>
               </CardContent>
@@ -120,38 +120,38 @@ export function UAESection({
               <CardContent className="px-0 pb-0">
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   <div className="rounded-lg bg-platinum-800/50 p-4">
-                    <div className="text-sm text-platinum-400 mb-2">Daily Mobile Users</div>
+                    <div className="text-sm text-platinum-500-400 mb-2">Daily Mobile Users</div>
                     <div className="flex items-end gap-2">
                       <span className="text-2xl font-bold text-emerald-400">141.5M</span>
-                      <span className="text-sm text-platinum-400">Threads</span>
+                      <span className="text-sm text-platinum-500-400">Threads</span>
                     </div>
                     <div className="flex items-end gap-2 mt-1">
-                      <span className="text-2xl font-bold text-platinum-400">125M</span>
-                      <span className="text-sm text-platinum-400">X</span>
+                      <span className="text-2xl font-bold text-platinum-500-400">125M</span>
+                      <span className="text-sm text-platinum-500-400">X</span>
                     </div>
                     <div className="mt-2 text-xs text-emerald-400">Threads +13.2% advantage</div>
                   </div>
                   <div className="rounded-lg bg-platinum-800/50 p-4">
-                    <div className="text-sm text-platinum-400 mb-2">Engagement Rate</div>
+                    <div className="text-sm text-platinum-500-400 mb-2">Engagement Rate</div>
                     <div className="flex items-end gap-2">
                       <span className="text-2xl font-bold text-emerald-400">6.25%</span>
-                      <span className="text-sm text-platinum-400">Threads</span>
+                      <span className="text-sm text-platinum-500-400">Threads</span>
                     </div>
                     <div className="flex items-end gap-2 mt-1">
-                      <span className="text-2xl font-bold text-platinum-400">3.6%</span>
-                      <span className="text-sm text-platinum-400">X</span>
+                      <span className="text-2xl font-bold text-platinum-500-400">3.6%</span>
+                      <span className="text-sm text-platinum-500-400">X</span>
                     </div>
                     <div className="mt-2 text-xs text-emerald-400">Threads +73.6% higher</div>
                   </div>
                   <div className="rounded-lg bg-platinum-800/50 p-4">
-                    <div className="text-sm text-platinum-400 mb-2">UAE Users</div>
+                    <div className="text-sm text-platinum-500-400 mb-2">UAE Users</div>
                     <div className="flex items-end gap-2">
                       <span className="text-2xl font-bold text-rose-400">893K</span>
-                      <span className="text-sm text-platinum-400">Threads (7.8%)</span>
+                      <span className="text-sm text-platinum-500-400">Threads (7.8%)</span>
                     </div>
                     <div className="flex items-end gap-2 mt-1">
                       <span className="text-2xl font-bold text-emerald-400">2.85M</span>
-                      <span className="text-sm text-platinum-400">X (25%)</span>
+                      <span className="text-sm text-platinum-500-400">X (25%)</span>
                     </div>
                     <div className="mt-2 text-xs text-rose-400">X still dominant in UAE</div>
                   </div>
@@ -186,7 +186,7 @@ export function UAESection({
                           item.sentiment.includes('Negative') ? 'bg-rose-400' :
                           'bg-platinum-400'
                         }`} />
-                        <span className="text-sm text-platinum-200 flex-1">{item.context}</span>
+                        <span className="text-sm text-platinum-500-200 flex-1">{item.context}</span>
                         <Badge variant={item.sentiment.includes('Positive') ? 'default' : item.sentiment.includes('Negative') ? 'destructive' : 'outline'} className="text-xs">
                           {item.sentiment}
                         </Badge>
@@ -205,16 +205,16 @@ export function UAESection({
               </CardHeader>
               <CardContent className="px-0 pb-0">
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  <div className="rounded-lg bg-gold/10 p-4 border border-gold/30">
-                    <div className="text-sm text-platinum-400 mb-1">CPM</div>
-                    <div className="text-xl font-bold text-gold">$5-$10</div>
+                  <div className="rounded-lg bg-gold-700/10 p-4 border border-gold-700/30">
+                    <div className="text-sm text-platinum-500-400 mb-1">CPM</div>
+                    <div className="text-xl font-bold text-gold-700">$5-$10</div>
                   </div>
                   <div className="rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30">
-                    <div className="text-sm text-platinum-400 mb-1">2025 Revenue</div>
+                    <div className="text-sm text-platinum-500-400 mb-1">2025 Revenue</div>
                     <div className="text-xl font-bold text-emerald-400">$8B</div>
                   </div>
                   <div className="rounded-lg bg-info/10 p-4 border border-info/30">
-                    <div className="text-sm text-platinum-400 mb-1">2026 Revenue</div>
+                    <div className="text-sm text-platinum-500-400 mb-1">2026 Revenue</div>
                     <div className="text-xl font-bold text-info">$11.3B</div>
                   </div>
                 </div>

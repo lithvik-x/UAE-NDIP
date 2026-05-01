@@ -69,10 +69,10 @@ export function EntitiesSection() {
         <Badge variant="outline" className="mb-2 border-purple-500/50 text-purple-400">
           ENTITY REGISTRY
         </Badge>
-        <h2 className="text-2xl font-bold font-rajdhani text-platinum-100">
+        <h2 className="text-2xl font-bold font-rajdhani text-platinum-500-100">
           Government, Leadership & Demographics
         </h2>
-        <p className="text-sm text-platinum-400 mt-1">
+        <p className="text-sm text-platinum-500-400 mt-1">
           Key entities, leadership figures, expatriate communities, and tourism entities
         </p>
       </motion.div>
@@ -99,9 +99,9 @@ export function EntitiesSection() {
                     <Icon className={`h-5 w-5 text-${TIER_COLORS[entity.credibility]}-400`} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-platinum-200 truncate">{entity.entity}</p>
-                    <p className="text-xs text-platinum-500">{entity.type}</p>
-                    <p className="text-xs text-platinum-600 mt-1 line-clamp-2">{entity.mandate}</p>
+                    <p className="text-sm font-medium text-platinum-500-200 truncate">{entity.entity}</p>
+                    <p className="text-xs text-platinum-500-500">{entity.type}</p>
+                    <p className="text-xs text-platinum-500-600 mt-1 line-clamp-2">{entity.mandate}</p>
                   </div>
                   <Badge
                     variant="outline"
@@ -137,13 +137,13 @@ export function EntitiesSection() {
                     <Crown className="h-6 w-6 text-orange-400" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-bold text-platinum-100 truncate">{leader.name}</p>
+                    <p className="text-sm font-bold text-platinum-500-100 truncate">{leader.name}</p>
                     <p className="text-xs text-orange-400">{leader.title}</p>
                   </div>
                 </div>
                 <div className="space-y-1 text-xs">
-                  <p className="text-platinum-400">{leader.context}</p>
-                  <p className="text-platinum-500">Tenure: {leader.tenure}</p>
+                  <p className="text-platinum-500-400">{leader.context}</p>
+                  <p className="text-platinum-500-500">Tenure: {leader.tenure}</p>
                 </div>
                 <Badge
                   variant="outline"
@@ -178,7 +178,7 @@ export function EntitiesSection() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between">
-                    <p className="text-sm font-medium text-platinum-200">{community.community}</p>
+                    <p className="text-sm font-medium text-platinum-500-200">{community.community}</p>
                     <Badge
                       variant="outline"
                       className={`text-xs shrink-0 ${
@@ -186,7 +186,7 @@ export function EntitiesSection() {
                           ? 'border-emerald-500/50 text-emerald-400'
                           : community.organized === 'Growing'
                           ? 'border-gold-500/50 text-gold-400'
-                          : 'border-platinum-500/50 text-platinum-400'
+                          : 'border-platinum-500/50 text-platinum-500-400'
                       }`}
                     >
                       {community.organized === 'Yes' || community.organized === 'Yes - Indian diaspora'
@@ -196,8 +196,8 @@ export function EntitiesSection() {
                         : 'Partial'}
                     </Badge>
                   </div>
-                  <p className="text-xs text-platinum-500 mt-1">{community.population}</p>
-                  <p className="text-xs text-platinum-600 mt-1 line-clamp-2">{community.sectors}</p>
+                  <p className="text-xs text-platinum-500-500 mt-1">{community.population}</p>
+                  <p className="text-xs text-platinum-500-600 mt-1 line-clamp-2">{community.sectors}</p>
                 </div>
               </motion.div>
             ))}
@@ -224,9 +224,9 @@ export function EntitiesSection() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-500/20 mx-auto mb-3">
                   <Plane className="h-6 w-6 text-gold-400" />
                 </div>
-                <p className="text-sm font-bold text-platinum-100">{entity.entity}</p>
+                <p className="text-sm font-bold text-platinum-500-100">{entity.entity}</p>
                 <p className="text-xs text-gold-400 mt-1">{entity.type}</p>
-                <p className="text-xs text-platinum-500 mt-2">{entity.feature}</p>
+                <p className="text-xs text-platinum-500-500 mt-2">{entity.feature}</p>
                 <Badge
                   variant="outline"
                   className="mt-2 border-gold-500/50 text-gold-400 text-xs"

@@ -33,7 +33,7 @@ export function InstagramIncidentsSection({ data }: InstagramIncidentsSectionPro
               <div className="flex items-center justify-between">
                 <div>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <AlertOctagon className="h-5 w-5 text-rose" />
+                    <AlertOctagon className="h-5 w-5 text-rose-500" />
                     Dubai Safety Posts Incident
                   </CardTitle>
                   <CardDescription>{coordinatedBehaviorOverview.date}</CardDescription>
@@ -43,13 +43,13 @@ export function InstagramIncidentsSection({ data }: InstagramIncidentsSectionPro
             </CardHeader>
             <CardContent>
               <div className="p-4 rounded-lg bg-gradient-to-r from-rose-500/10 to-orange-500/10 border border-rose-500/20">
-                <p className="text-sm text-platinum-200 mb-3">
+                <p className="text-sm text-platinum-500-200 mb-3">
                   {coordinatedBehaviorOverview.overview}
                 </p>
                 <div className="space-y-2 mb-3">
-                  <p className="text-xs text-platinum/70 font-medium">Key Facts:</p>
+                  <p className="text-xs text-platinum-500/70 font-medium">Key Facts:</p>
                   {coordinatedBehaviorOverview.keyFacts.map((fact: string, idx: number) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-platinum-300">
+                    <div key={idx} className="flex items-start gap-2 text-xs text-platinum-500-300">
                       <span className="text-rose-400">•</span>
                       <span>{fact}</span>
                     </div>
@@ -59,7 +59,7 @@ export function InstagramIncidentsSection({ data }: InstagramIncidentsSectionPro
                   <AlertCircle className="h-4 w-4 text-rose-400 flex-shrink-0" />
                   <span className="text-xs text-rose-300 italic">
                     "{coordinatedBehaviorOverview.quote}"
-                    <span className="block mt-1 text-platinum/50">— {coordinatedBehaviorOverview.quoteAuthor}</span>
+                    <span className="block mt-1 text-platinum-500/50">— {coordinatedBehaviorOverview.quoteAuthor}</span>
                   </span>
                 </div>
               </div>
@@ -70,7 +70,7 @@ export function InstagramIncidentsSection({ data }: InstagramIncidentsSectionPro
           <Card className="glass-card border-purple-500/30">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <AlertTriangle className="h-5 w-5 text-orange" />
+                <AlertTriangle className="h-5 w-5 text-orange-500" />
                 Enforcement Timeline
               </CardTitle>
               <CardDescription>March - April 2026 incident chronology</CardDescription>
@@ -86,14 +86,14 @@ export function InstagramIncidentsSection({ data }: InstagramIncidentsSectionPro
                       </div>
                       <div className="flex-1 pt-2">
                         <div className="flex items-center gap-2 flex-wrap">
-                          <Badge variant="outline" className="text-xs border-platinum/30 text-platinum/70">
+                          <Badge variant="outline" className="text-xs border-platinum/30 text-platinum-500/70">
                             {event.date}
                           </Badge>
                           <Badge variant="outline" className="text-xs border-rose-500/30 text-rose-300">
                             {event.event}
                           </Badge>
                         </div>
-                        <p className="text-sm text-platinum-200 mt-1">{event.description}</p>
+                        <p className="text-sm text-platinum-500-200 mt-1">{event.description}</p>
                       </div>
                     </div>
                   ))}
@@ -111,14 +111,14 @@ export function InstagramIncidentsSection({ data }: InstagramIncidentsSectionPro
               <CardContent>
                 <div className="space-y-4">
                   <div className="p-4 rounded-lg bg-gradient-to-r from-rose-500/10 to-red-500/10 border border-rose-500/20">
-                    <p className="text-xs text-platinum/50 uppercase">Total Arrested</p>
+                    <p className="text-xs text-platinum-500/50 uppercase">Total Arrested</p>
                     <p className="text-3xl font-bold text-rose-400">~375</p>
-                    <p className="text-xs text-platinum-400 mt-1">For UAE conflict posts</p>
+                    <p className="text-xs text-platinum-500-400 mt-1">For UAE conflict posts</p>
                   </div>
                   <div className="p-4 rounded-lg bg-platinum-800/30">
-                    <p className="text-xs text-platinum/50 uppercase">Indian Nationals</p>
-                    <p className="text-2xl font-bold text-gold">19</p>
-                    <p className="text-xs text-platinum-400 mt-1">Caught in Gulf digital misinformation dragnet</p>
+                    <p className="text-xs text-platinum-500/50 uppercase">Indian Nationals</p>
+                    <p className="text-2xl font-bold text-gold-700">19</p>
+                    <p className="text-xs text-platinum-500-400 mt-1">Caught in Gulf digital misinformation dragnet</p>
                   </div>
                 </div>
               </CardContent>
@@ -131,13 +131,13 @@ export function InstagramIncidentsSection({ data }: InstagramIncidentsSectionPro
               <CardContent>
                 <div className="space-y-4">
                   <div className="p-4 rounded-lg bg-platinum-800/30">
-                    <p className="text-xs text-platinum/50 uppercase">Prison Sentence</p>
+                    <p className="text-xs text-platinum-500/50 uppercase">Prison Sentence</p>
                     <p className="text-2xl font-bold text-rose-400">Up to 2 years</p>
                   </div>
                   <div className="p-4 rounded-lg bg-platinum-800/30">
-                    <p className="text-xs text-platinum/50 uppercase">Fine Potential</p>
-                    <p className="text-2xl font-bold text-gold">$77,000</p>
-                    <p className="text-xs text-platinum-400 mt-1">(£40,000-58,000)</p>
+                    <p className="text-xs text-platinum-500/50 uppercase">Fine Potential</p>
+                    <p className="text-2xl font-bold text-gold-700">$77,000</p>
+                    <p className="text-xs text-platinum-500-400 mt-1">(£40,000-58,000)</p>
                   </div>
                 </div>
               </CardContent>
@@ -148,7 +148,7 @@ export function InstagramIncidentsSection({ data }: InstagramIncidentsSectionPro
           <Card className="glass-card border-rose-500/30">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Shield className="h-5 w-5 text-rose" />
+                <Shield className="h-5 w-5 text-rose-500" />
                 Charges Filed
               </CardTitle>
             </CardHeader>
@@ -162,7 +162,7 @@ export function InstagramIncidentsSection({ data }: InstagramIncidentsSectionPro
                 ].map((charge, idx) => (
                   <div key={idx} className="p-3 rounded-lg bg-rose-500/10 border border-rose-500/20">
                     <AlertTriangle className="h-4 w-4 text-rose-400 mb-2" />
-                    <p className="text-sm text-platinum-200">{charge}</p>
+                    <p className="text-sm text-platinum-500-200">{charge}</p>
                   </div>
                 ))}
               </div>
@@ -189,7 +189,7 @@ export function InstagramIncidentsSection({ data }: InstagramIncidentsSectionPro
                         </Badge>
                         <span className="text-sm font-medium text-white">{action.action}</span>
                       </div>
-                      <p className="text-xs text-platinum-400 mt-1">
+                      <p className="text-xs text-platinum-500-400 mt-1">
                         {action.location} — {action.details}
                       </p>
                     </div>
@@ -209,7 +209,7 @@ export function InstagramIncidentsSection({ data }: InstagramIncidentsSectionPro
               <div className="grid gap-3 sm:grid-cols-3">
                 {coordinatedBehaviorOverview.keyNarrativeThemes.map((theme: string, idx: number) => (
                   <div key={idx} className="p-3 rounded-lg bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20">
-                    <p className="text-sm text-platinum-200">{theme}</p>
+                    <p className="text-sm text-platinum-500-200">{theme}</p>
                   </div>
                 ))}
               </div>

@@ -55,7 +55,7 @@ export default function EgyptianArabicPage() {
               Egyptian Arabic
             </span>
           </h1>
-          <p className="mt-2 text-platinum-400">Egyptian Arabic dialect intelligence — key phrases, sentiment patterns, and cultural context for UAE-Egypt communications</p>
+          <p className="mt-2 text-platinum-500-400">Egyptian Arabic dialect intelligence — key phrases, sentiment patterns, and cultural context for UAE-Egypt communications</p>
         </div>
       </motion.div>
 
@@ -101,11 +101,11 @@ export default function EgyptianArabicPage() {
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
                       className="rounded-lg bg-gradient-to-r from-amber-500/10 to-yellow-600/5 p-4 border border-amber-500/30">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xl text-platinum-100 font-rajdhani">{p.phrase}</span>
+                        <span className="text-xl text-platinum-500-100 font-rajdhani">{p.phrase}</span>
                         <Badge variant="outline" className="border-amber-500/50 text-amber-400">{p.frequency}</Badge>
                       </div>
                       <p className="text-sm text-cyan-400 mb-1">{p.translation}</p>
-                      <p className="text-xs text-platinum-400">Usage: {p.usage}</p>
+                      <p className="text-xs text-platinum-500-400">Usage: {p.usage}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -122,10 +122,10 @@ export default function EgyptianArabicPage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }}
                     className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-platinum-200">{t.topic}</span>
+                      <span className="text-sm font-medium text-platinum-500-200">{t.topic}</span>
                       <div className="flex items-center gap-2">
-                        <Badge variant="outline" className={`${t.sentiment.includes('Positive') ? 'border-emerald-500/50 text-emerald' : t.sentiment.includes('Negative') || t.sentiment.includes('Concerned') ? 'border-rose-500/50 text-rose' : 'border-platinum-500/50 text-platinum'}`}>{t.sentiment}</Badge>
-                        <span className="text-lg font-bold text-platinum-100">{t.coverage}%</span>
+                        <Badge variant="outline" className={`${t.sentiment.includes('Positive') ? 'border-emerald-500/50 text-emerald-500' : t.sentiment.includes('Negative') || t.sentiment.includes('Concerned') ? 'border-rose-500/50 text-rose-500' : 'border-platinum-500/50 text-platinum-500'}`}>{t.sentiment}</Badge>
+                        <span className="text-lg font-bold text-platinum-500-100">{t.coverage}%</span>
                       </div>
                     </div>
                     <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">

@@ -56,7 +56,7 @@ export default function Web3DecentralizedPage() {
               Web3 & Decentralized
             </span>
           </h1>
-          <p className="mt-2 text-platinum-400">Blockchain intelligence — NFT marketplaces, DeFi protocols, chain activity, and crypto sentiment</p>
+          <p className="mt-2 text-platinum-500-400">Blockchain intelligence — NFT marketplaces, DeFi protocols, chain activity, and crypto sentiment</p>
         </div>
       </motion.div>
 
@@ -104,9 +104,9 @@ export default function Web3DecentralizedPage() {
                       className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                       <div className="flex items-center gap-3">
                         <Blocks className="h-4 w-4 text-cyan-400" />
-                        <span className="font-medium text-platinum-200">{n.collection}</span>
+                        <span className="font-medium text-platinum-500-200">{n.collection}</span>
                       </div>
-                      <div className="flex items-center gap-4 text-sm text-platinum-400">
+                      <div className="flex items-center gap-4 text-sm text-platinum-500-400">
                         <span>{n.owners?.toLocaleString?.()} owners</span>
                         <Badge variant="outline" className="border-cyan-500/50 text-cyan-400">${(n.volume/1000000).toFixed(1)}M</Badge>
                         <span className="text-xs">Floor: {n.floor}</span>
@@ -132,13 +132,13 @@ export default function Web3DecentralizedPage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }} whileHover={{ scale: 1.02 }}
                     className="glass-card rounded-xl p-5 bg-glass-surface/50 border-glass-border">
                     <div className="flex items-center gap-2 mb-3">
-                      <Wallet className="h-5 w-5 text-emerald" />
-                      <h4 className="font-medium text-platinum-200">{d.protocol}</h4>
+                      <Wallet className="h-5 w-5 text-emerald-500" />
+                      <h4 className="font-medium text-platinum-500-200">{d.protocol}</h4>
                     </div>
                     <div className="space-y-2 text-sm">
-                      <div className="flex justify-between"><span className="text-platinum-400">TVL</span><span className="text-platinum-200 font-medium">{d.tvl}</span></div>
-                      <div className="flex justify-between"><span className="text-platinum-400">24h Vol</span><span className="text-platinum-200 font-medium">{d.volume24h}</span></div>
-                      <div className="flex justify-between"><span className="text-platinum-400">Avg APR</span><Badge variant="outline" className="border-emerald-500/50 text-emerald text-xs">{d.apr}</Badge></div>
+                      <div className="flex justify-between"><span className="text-platinum-500-400">TVL</span><span className="text-platinum-500-200 font-medium">{d.tvl}</span></div>
+                      <div className="flex justify-between"><span className="text-platinum-500-400">24h Vol</span><span className="text-platinum-500-200 font-medium">{d.volume24h}</span></div>
+                      <div className="flex justify-between"><span className="text-platinum-500-400">Avg APR</span><Badge variant="outline" className="border-emerald-500/50 text-emerald-500 text-xs">{d.apr}</Badge></div>
                     </div>
                   </motion.div>
                 ))}
@@ -155,8 +155,8 @@ export default function Web3DecentralizedPage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }}
                     className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-platinum-200">{c.chain}</span>
-                      <div className="flex items-center gap-3 text-sm text-platinum-400">
+                      <span className="text-sm font-medium text-platinum-500-200">{c.chain}</span>
+                      <div className="flex items-center gap-3 text-sm text-platinum-500-400">
                         <span>{(c.txns/1000).toFixed(0)}K txns</span>
                         <Badge variant="outline" className="border-cyan-500/50 text-cyan-400">${(c.volume/1000000).toFixed(0)}M</Badge>
                         <span>{c.dominance}%</span>

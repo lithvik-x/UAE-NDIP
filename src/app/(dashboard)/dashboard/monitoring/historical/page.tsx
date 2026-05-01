@@ -145,17 +145,17 @@ export default function HistoricalBaselinePage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">HISTORICAL BASELINE</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Historical Baseline Research</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Historical Baseline Research</h1>
+          <p className="mt-2 text-platinum-500-400">
             Comprehensive archival intelligence across Pre-Modern, Early Internet, Social Media, and Recent Eras
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <Archive className="h-4 w-4" />
             Export Report
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <History className="h-4 w-4" />
             Generate Baseline
           </Button>
@@ -236,7 +236,7 @@ export default function HistoricalBaselinePage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Search className="h-5 w-5 text-gold" />
+                      <Search className="h-5 w-5 text-gold-700" />
                       Query Distribution by Era
                     </CardTitle>
                     <CardDescription>8M+ total queries across four historical periods</CardDescription>
@@ -253,7 +253,7 @@ export default function HistoricalBaselinePage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <TrendingUp className="h-5 w-5 text-emerald" />
+                      <TrendingUp className="h-5 w-5 text-emerald-500" />
                       Coverage Scores by Era
                     </CardTitle>
                     <CardDescription>Archive completeness assessment per period</CardDescription>
@@ -274,7 +274,7 @@ export default function HistoricalBaselinePage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Flag className="h-5 w-5 text-rose" />
+                    <Flag className="h-5 w-5 text-rose-500" />
                     UAE Relevance Distribution
                   </CardTitle>
                   <CardDescription>Source relevance assessment across 87 sources</CardDescription>
@@ -301,10 +301,10 @@ export default function HistoricalBaselinePage() {
                               item.rating === 'High' ? 'bg-gold' :
                               item.rating === 'Medium' ? 'bg-navy' : 'bg-platinum'
                             }`} />
-                            <span className="text-sm font-medium text-platinum-200">{item.rating}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.rating}</span>
                           </div>
                           <div className="flex items-center gap-4">
-                            <span className="text-sm text-platinum-400">{item.count} sources ({item.percentage})</span>
+                            <span className="text-sm text-platinum-500-400">{item.count} sources ({item.percentage})</span>
                           </div>
                         </motion.div>
                       ))}
@@ -317,7 +317,7 @@ export default function HistoricalBaselinePage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Globe className="h-5 w-5 text-navy" />
+                    <Globe className="h-5 w-5 text-navy-500" />
                     Key Source Domains
                   </CardTitle>
                   <CardDescription>Primary sources by tier classification</CardDescription>
@@ -334,13 +334,13 @@ export default function HistoricalBaselinePage() {
                           className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30 hover:bg-platinum-800/50 transition-colors"
                         >
                           <div className="flex-1">
-                            <p className="text-sm font-medium text-platinum-200">{source.domain}</p>
-                            <p className="text-xs text-platinum-400">{source.classification}</p>
+                            <p className="text-sm font-medium text-platinum-500-200">{source.domain}</p>
+                            <p className="text-xs text-platinum-500-400">{source.classification}</p>
                           </div>
                           <Badge variant="outline" className={`text-xs ${
-                            source.tier.includes('Tier 0') ? 'border-gold/50 text-gold' :
-                            source.tier.includes('Tier 2') ? 'border-navy/50 text-navy' :
-                            'border-rose/50 text-rose'
+                            source.tier.includes('Tier 0') ? 'border-gold-700/50 text-gold-700' :
+                            source.tier.includes('Tier 2') ? 'border-navy/50 text-navy-500' :
+                            'border-rose-500/50 text-rose-500'
                           }`}>
                             {source.tier}
                           </Badge>
@@ -370,7 +370,7 @@ export default function HistoricalBaselinePage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <BookOpen className="h-5 w-5 text-gold" />
+                    <BookOpen className="h-5 w-5 text-gold-700" />
                     NLA Subject Topics Distribution
                   </CardTitle>
                   <CardDescription>Collection focus areas by item count</CardDescription>
@@ -392,7 +392,7 @@ export default function HistoricalBaselinePage() {
                   <Card key={idx} className="glass-card">
                     <CardHeader>
                       <CardTitle className="text-lg flex items-center gap-2">
-                        <Newspaper className="h-5 w-5 text-gold" />
+                        <Newspaper className="h-5 w-5 text-gold-700" />
                         {archive.name}
                       </CardTitle>
                       <CardDescription>{archive.collectionSize} | {archive.issuesAvailable} issues</CardDescription>
@@ -401,24 +401,24 @@ export default function HistoricalBaselinePage() {
                       <div className="space-y-3">
                         <div className="grid grid-cols-2 gap-3">
                           <div className="p-2 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
-                            <div className="text-xs text-platinum-400">Language</div>
-                            <div className="text-sm font-medium text-platinum-200">{archive.language}</div>
+                            <div className="text-xs text-platinum-500-400">Language</div>
+                            <div className="text-sm font-medium text-platinum-500-200">{archive.language}</div>
                           </div>
                           <div className="p-2 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
-                            <div className="text-xs text-platinum-400">OCR Confidence</div>
-                            <div className="text-sm font-medium text-emerald">{archive.ocrConfidence}</div>
+                            <div className="text-xs text-platinum-500-400">OCR Confidence</div>
+                            <div className="text-sm font-medium text-emerald-500">{archive.ocrConfidence}</div>
                           </div>
                           <div className="p-2 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
-                            <div className="text-xs text-platinum-400">Views</div>
-                            <div className="text-sm font-medium text-platinum-200">{archive.viewStatistics.split(' ')[0]}</div>
+                            <div className="text-xs text-platinum-500-400">Views</div>
+                            <div className="text-sm font-medium text-platinum-500-200">{archive.viewStatistics.split(' ')[0]}</div>
                           </div>
                           <div className="p-2 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
-                            <div className="text-xs text-platinum-400">Credibility</div>
-                            <div className="text-sm font-medium text-gold">{archive.credibilityScore}</div>
+                            <div className="text-xs text-platinum-500-400">Credibility</div>
+                            <div className="text-sm font-medium text-gold-700">{archive.credibilityScore}</div>
                           </div>
                         </div>
                         <div className="p-2 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
-                          <div className="text-xs text-platinum-400 mb-1">Formats</div>
+                          <div className="text-xs text-platinum-500-400 mb-1">Formats</div>
                           <div className="flex flex-wrap gap-1">
                             {archive.formats.slice(0, 4).map((format, i) => (
                               <Badge key={i} variant="outline" className="text-xs">{format}</Badge>
@@ -435,7 +435,7 @@ export default function HistoricalBaselinePage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Calendar className="h-5 w-5 text-navy" />
+                    <Calendar className="h-5 w-5 text-navy-500" />
                     Gulf News Historical Timeline
                   </CardTitle>
                   <CardDescription>1978-2023 media evolution milestones</CardDescription>
@@ -452,11 +452,11 @@ export default function HistoricalBaselinePage() {
                           className="flex items-start gap-4 p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                         >
                           <div className="shrink-0 w-16 text-center">
-                            <span className="text-sm font-bold text-gold">{item.year}</span>
+                            <span className="text-sm font-bold text-gold-700">{item.year}</span>
                           </div>
                           <div className="flex-1">
-                            <p className="text-sm font-medium text-platinum-200">{item.event}</p>
-                            <p className="text-xs text-platinum-400 mt-1">{item.details}</p>
+                            <p className="text-sm font-medium text-platinum-500-200">{item.event}</p>
+                            <p className="text-xs text-platinum-500-400 mt-1">{item.details}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -469,7 +469,7 @@ export default function HistoricalBaselinePage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Users className="h-5 w-5 text-emerald" />
+                    <Users className="h-5 w-5 text-emerald-500" />
                     Oral History Programs
                   </CardTitle>
                   <CardDescription>Preserving history through personal narratives</CardDescription>
@@ -485,16 +485,16 @@ export default function HistoricalBaselinePage() {
                         whileHover={{ scale: 1.02 }}
                         className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-4 hover:bg-platinum-800/50 transition-colors cursor-pointer"
                       >
-                        <h4 className="font-semibold text-platinum-200 mb-2">{program.name}</h4>
+                        <h4 className="font-semibold text-platinum-500-200 mb-2">{program.name}</h4>
                         <div className="space-y-1">
-                          <p className="text-xs text-platinum-400">
-                            <span className="font-medium text-platinum-300">Focus:</span> {program.programFocus}
+                          <p className="text-xs text-platinum-500-400">
+                            <span className="font-medium text-platinum-500-300">Focus:</span> {program.programFocus}
                           </p>
-                          <p className="text-xs text-platinum-400">
-                            <span className="font-medium text-platinum-300">Subjects:</span> {program.interviewSubjects}
+                          <p className="text-xs text-platinum-500-400">
+                            <span className="font-medium text-platinum-500-300">Subjects:</span> {program.interviewSubjects}
                           </p>
-                          <p className="text-xs text-platinum-400">
-                            <span className="font-medium text-platinum-300">Output:</span> {program.outputFormats?.join(', ')}
+                          <p className="text-xs text-platinum-500-400">
+                            <span className="font-medium text-platinum-500-300">Output:</span> {program.outputFormats?.join(', ')}
                           </p>
                         </div>
                       </motion.div>
@@ -522,7 +522,7 @@ export default function HistoricalBaselinePage() {
               <Card className="glass-card border-rose-500/30">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Radio className="h-5 w-5 text-rose" />
+                    <Radio className="h-5 w-5 text-rose-500" />
                     Emirates Discussion Forum
                   </CardTitle>
                   <CardDescription>UAE's only credible online discussion forum (2009-2017)</CardDescription>
@@ -531,28 +531,28 @@ export default function HistoricalBaselinePage() {
                   <div className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
-                        <div className="text-xs text-platinum-400">Founded</div>
-                        <div className="text-lg font-bold text-gold">August 2009</div>
+                        <div className="text-xs text-platinum-500-400">Founded</div>
+                        <div className="text-lg font-bold text-gold-700">August 2009</div>
                       </div>
                       <div className="p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
-                        <div className="text-xs text-platinum-400">Status</div>
-                        <div className="text-lg font-bold text-rose">Shut Down</div>
+                        <div className="text-xs text-platinum-500-400">Status</div>
+                        <div className="text-lg font-bold text-rose-500">Shut Down</div>
                       </div>
                     </div>
                     <div className="p-3 rounded-lg bg-rose-500/10 border border-rose-500/30">
-                      <p className="text-sm text-platinum-300 mb-2">Censorship Timeline:</p>
+                      <p className="text-sm text-platinum-500-300 mb-2">Censorship Timeline:</p>
                       <div className="space-y-2">
                         <div className="flex items-start gap-2">
                           <div className="h-2 w-2 rounded-full bg-rose mt-1.5" />
-                          <p className="text-xs text-platinum-400">Nov 2009: First censorship action (atheism article)</p>
+                          <p className="text-xs text-platinum-500-400">Nov 2009: First censorship action (atheism article)</p>
                         </div>
                         <div className="flex items-start gap-2">
                           <div className="h-2 w-2 rounded-full bg-rose mt-1.5" />
-                          <p className="text-xs text-platinum-400">Feb 7, 2010: Complete access disruption in UAE</p>
+                          <p className="text-xs text-platinum-500-400">Feb 7, 2010: Complete access disruption in UAE</p>
                         </div>
                         <div className="flex items-start gap-2">
                           <div className="h-2 w-2 rounded-full bg-rose mt-1.5" />
-                          <p className="text-xs text-platinum-400">May 2017: Account suspended globally</p>
+                          <p className="text-xs text-platinum-500-400">May 2017: Account suspended globally</p>
                         </div>
                       </div>
                     </div>
@@ -564,7 +564,7 @@ export default function HistoricalBaselinePage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Building2 className="h-5 w-5 text-emerald" />
+                    <Building2 className="h-5 w-5 text-emerald-500" />
                     Academic & Government Databases
                   </CardTitle>
                   <CardDescription>Tier 0-2 source networks for archival research</CardDescription>
@@ -575,28 +575,28 @@ export default function HistoricalBaselinePage() {
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="p-4 rounded-lg border border-gold/30 bg-platinum-800/30"
+                      className="p-4 rounded-lg border border-gold-700/30 bg-platinum-800/30"
                     >
                       <div className="flex items-center justify-between mb-3">
-                        <h4 className="font-semibold text-platinum-200">National Library and Archives (NLA)</h4>
-                        <Badge variant="outline" className="border-gold/50 text-gold">Tier 0</Badge>
+                        <h4 className="font-semibold text-platinum-500-200">National Library and Archives (NLA)</h4>
+                        <Badge variant="outline" className="border-gold-700/50 text-gold-700">Tier 0</Badge>
                       </div>
                       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
                         <div className="p-2 rounded bg-platinum-800/50">
-                          <div className="text-xs text-platinum-400">Established</div>
-                          <div className="text-sm font-medium text-platinum-200">{nlaData.established}</div>
+                          <div className="text-xs text-platinum-500-400">Established</div>
+                          <div className="text-sm font-medium text-platinum-500-200">{nlaData.established}</div>
                         </div>
                         <div className="p-2 rounded bg-platinum-800/50">
-                          <div className="text-xs text-platinum-400">Historical Span</div>
-                          <div className="text-sm font-medium text-platinum-200">{nlaData.historicalSpan}</div>
+                          <div className="text-xs text-platinum-500-400">Historical Span</div>
+                          <div className="text-sm font-medium text-platinum-500-200">{nlaData.historicalSpan}</div>
                         </div>
                         <div className="p-2 rounded bg-platinum-800/50">
-                          <div className="text-xs text-platinum-400">Credibility</div>
-                          <div className="text-sm font-medium text-emerald">{nlaData.credibilityScore}</div>
+                          <div className="text-xs text-platinum-500-400">Credibility</div>
+                          <div className="text-sm font-medium text-emerald-500">{nlaData.credibilityScore}</div>
                         </div>
                         <div className="p-2 rounded bg-platinum-800/50">
-                          <div className="text-xs text-platinum-400">Languages</div>
-                          <div className="text-sm font-medium text-platinum-200">{nlaData.languages.length}</div>
+                          <div className="text-xs text-platinum-500-400">Languages</div>
+                          <div className="text-sm font-medium text-platinum-500-200">{nlaData.languages.length}</div>
                         </div>
                       </div>
                     </motion.div>
@@ -609,25 +609,25 @@ export default function HistoricalBaselinePage() {
                       className="p-4 rounded-lg border border-navy/30 bg-platinum-800/30"
                     >
                       <div className="flex items-center justify-between mb-3">
-                        <h4 className="font-semibold text-platinum-200">LexisNexis</h4>
-                        <Badge variant="outline" className="border-navy/50 text-navy">Tier 2</Badge>
+                        <h4 className="font-semibold text-platinum-500-200">LexisNexis</h4>
+                        <Badge variant="outline" className="border-navy/50 text-navy-500">Tier 2</Badge>
                       </div>
                       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
                         <div className="p-2 rounded bg-platinum-800/50">
-                          <div className="text-xs text-platinum-400">Archive Coverage</div>
-                          <div className="text-sm font-medium text-platinum-200">40+ years</div>
+                          <div className="text-xs text-platinum-500-400">Archive Coverage</div>
+                          <div className="text-sm font-medium text-platinum-500-200">40+ years</div>
                         </div>
                         <div className="p-2 rounded bg-platinum-800/50">
-                          <div className="text-xs text-platinum-400">Sources</div>
-                          <div className="text-sm font-medium text-platinum-200">40,000+</div>
+                          <div className="text-xs text-platinum-500-400">Sources</div>
+                          <div className="text-sm font-medium text-platinum-500-200">40,000+</div>
                         </div>
                         <div className="p-2 rounded bg-platinum-800/50">
-                          <div className="text-xs text-platinum-400">Publishers</div>
-                          <div className="text-sm font-medium text-platinum-200">4,000+</div>
+                          <div className="text-xs text-platinum-500-400">Publishers</div>
+                          <div className="text-sm font-medium text-platinum-500-200">4,000+</div>
                         </div>
                         <div className="p-2 rounded bg-platinum-800/50">
-                          <div className="text-xs text-platinum-400">Countries</div>
-                          <div className="text-sm font-medium text-platinum-200">200</div>
+                          <div className="text-xs text-platinum-500-400">Countries</div>
+                          <div className="text-sm font-medium text-platinum-500-200">200</div>
                         </div>
                       </div>
                     </motion.div>
@@ -639,7 +639,7 @@ export default function HistoricalBaselinePage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <FileText className="h-5 w-5 text-gold" />
+                    <FileText className="h-5 w-5 text-gold-700" />
                     UAE Media History Milestones
                   </CardTitle>
                   <CardDescription>Key developments in UAE media landscape</CardDescription>
@@ -656,10 +656,10 @@ export default function HistoricalBaselinePage() {
                           className="flex items-center gap-4 p-2 rounded-lg hover:bg-platinum-800/30 transition-colors"
                         >
                           <div className="shrink-0 w-20">
-                            <span className="text-sm font-bold text-gold">{milestone.year}</span>
+                            <span className="text-sm font-bold text-gold-700">{milestone.year}</span>
                           </div>
                           <div className="flex-1">
-                            <p className="text-sm text-platinum-300">{milestone.event}</p>
+                            <p className="text-sm text-platinum-500-300">{milestone.event}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -687,7 +687,7 @@ export default function HistoricalBaselinePage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Layers className="h-5 w-5 text-gold" />
+                    <Layers className="h-5 w-5 text-gold-700" />
                     Platform Reach (% of Population)
                   </CardTitle>
                   <CardDescription>DataReportal 2024 - UAE Digital Statistics</CardDescription>
@@ -703,8 +703,8 @@ export default function HistoricalBaselinePage() {
                         className="space-y-2"
                       >
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-platinum-200">{platform.platform}</span>
-                          <span className="text-sm text-platinum-400">{platform.users} ({platform.penetration})</span>
+                          <span className="text-sm font-medium text-platinum-500-200">{platform.platform}</span>
+                          <span className="text-sm text-platinum-500-400">{platform.users} ({platform.penetration})</span>
                         </div>
                         <Progress
                           value={parseFloat(platform.penetration)}
@@ -720,7 +720,7 @@ export default function HistoricalBaselinePage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <TrendingUp className="h-5 w-5 text-emerald" />
+                    <TrendingUp className="h-5 w-5 text-emerald-500" />
                     Year-over-Year Platform Growth
                   </CardTitle>
                   <CardDescription>Platform growth rates in UAE</CardDescription>
@@ -736,8 +736,8 @@ export default function HistoricalBaselinePage() {
                         whileHover={{ scale: 1.05 }}
                         className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-4 text-center hover:bg-platinum-800/50 transition-colors cursor-pointer"
                       >
-                        <div className="text-lg font-bold text-emerald">{platform.growth}</div>
-                        <div className="text-xs text-platinum-400 mt-1">{platform.platform}</div>
+                        <div className="text-lg font-bold text-emerald-500">{platform.growth}</div>
+                        <div className="text-xs text-platinum-500-400 mt-1">{platform.platform}</div>
                       </motion.div>
                     ))}
                   </div>
@@ -748,7 +748,7 @@ export default function HistoricalBaselinePage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Globe className="h-5 w-5 text-navy" />
+                    <Globe className="h-5 w-5 text-navy-500" />
                     Most Used Platforms (GMI 2024)
                   </CardTitle>
                   <CardDescription>Global Media Insight social media statistics</CardDescription>
@@ -763,9 +763,9 @@ export default function HistoricalBaselinePage() {
                         transition={{ delay: idx * 0.05 }}
                         className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3"
                       >
-                        <div className="text-sm font-semibold text-platinum-200">{platform.platform}</div>
-                        <div className="text-xs text-platinum-400 mt-1">Penetration: {platform.penetration}</div>
-                        <div className="text-xs text-emerald mt-1">{platform.users}</div>
+                        <div className="text-sm font-semibold text-platinum-500-200">{platform.platform}</div>
+                        <div className="text-xs text-platinum-500-400 mt-1">Penetration: {platform.penetration}</div>
+                        <div className="text-xs text-emerald-500 mt-1">{platform.users}</div>
                       </motion.div>
                     ))}
                   </div>
@@ -797,20 +797,20 @@ export default function HistoricalBaselinePage() {
                     <div className="space-y-4">
                       <div className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-300">Male</span>
-                          <span className="text-sm font-bold text-platinum-200">{socialMediaDemographics.males}</span>
+                          <span className="text-sm text-platinum-500-300">Male</span>
+                          <span className="text-sm font-bold text-platinum-500-200">{socialMediaDemographics.males}</span>
                         </div>
                         <Progress value={70.2} className="h-3" />
                       </div>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-300">Female</span>
-                          <span className="text-sm font-bold text-platinum-200">{socialMediaDemographics.females}</span>
+                          <span className="text-sm text-platinum-500-300">Female</span>
+                          <span className="text-sm font-bold text-platinum-500-200">{socialMediaDemographics.females}</span>
                         </div>
                         <Progress value={29.8} className="h-3" />
                       </div>
                       <div className="mt-4 p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
-                        <p className="text-xs text-platinum-400">Highest Engagement: <span className="text-emerald">{socialMediaDemographics.highestEngagement}</span></p>
+                        <p className="text-xs text-platinum-500-400">Highest Engagement: <span className="text-emerald-500">{socialMediaDemographics.highestEngagement}</span></p>
                       </div>
                     </div>
                   </CardContent>
@@ -837,7 +837,7 @@ export default function HistoricalBaselinePage() {
               <Card className="glass-card border-rose-500/30">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Shield className="h-5 w-5 text-rose" />
+                    <Shield className="h-5 w-5 text-rose-500" />
                     UAE COVID-19 Timeline
                   </CardTitle>
                   <CardDescription>Key milestones from first case to vaccination success</CardDescription>
@@ -847,20 +847,20 @@ export default function HistoricalBaselinePage() {
                     {monitoringRecentEraData.covid19UAE && (
                       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
                         <div className="p-2 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
-                          <div className="text-xs text-platinum-400">Confirmed</div>
-                          <div className="text-lg font-bold text-rose">{monitoringRecentEraData.covid19UAE.confirmedCases}</div>
+                          <div className="text-xs text-platinum-500-400">Confirmed</div>
+                          <div className="text-lg font-bold text-rose-500">{monitoringRecentEraData.covid19UAE.confirmedCases}</div>
                         </div>
                         <div className="p-2 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
-                          <div className="text-xs text-platinum-400">Recovered</div>
-                          <div className="text-lg font-bold text-emerald">{monitoringRecentEraData.covid19UAE.recovered}</div>
+                          <div className="text-xs text-platinum-500-400">Recovered</div>
+                          <div className="text-lg font-bold text-emerald-500">{monitoringRecentEraData.covid19UAE.recovered}</div>
                         </div>
                         <div className="p-2 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
-                          <div className="text-xs text-platinum-400">Deaths</div>
-                          <div className="text-lg font-bold text-platinum-200">{monitoringRecentEraData.covid19UAE.deaths}</div>
+                          <div className="text-xs text-platinum-500-400">Deaths</div>
+                          <div className="text-lg font-bold text-platinum-500-200">{monitoringRecentEraData.covid19UAE.deaths}</div>
                         </div>
                         <div className="p-2 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
-                          <div className="text-xs text-platinum-400">Fatality Rate</div>
-                          <div className="text-lg font-bold text-gold">{monitoringRecentEraData.covid19UAE.fatalityRate}</div>
+                          <div className="text-xs text-platinum-500-400">Fatality Rate</div>
+                          <div className="text-lg font-bold text-gold-700">{monitoringRecentEraData.covid19UAE.fatalityRate}</div>
                         </div>
                       </div>
                     )}
@@ -880,8 +880,8 @@ export default function HistoricalBaselinePage() {
                               'bg-platinum-500'
                             }`} />
                             <div className="flex-1">
-                              <p className="text-xs text-platinum-400">{event.date}</p>
-                              <p className="text-sm text-platinum-200">{event.event}</p>
+                              <p className="text-xs text-platinum-500-400">{event.date}</p>
+                              <p className="text-sm text-platinum-500-200">{event.event}</p>
                             </div>
                           </motion.div>
                         ))}
@@ -892,10 +892,10 @@ export default function HistoricalBaselinePage() {
               </Card>
 
               {/* COP28 */}
-              <Card className="glass-card border-gold/30">
+              <Card className="glass-card border-gold-700/30">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Globe className="h-5 w-5 text-gold" />
+                    <Globe className="h-5 w-5 text-gold-700" />
                     COP28 Dubai 2023
                   </CardTitle>
                   <CardDescription>UN Climate Change Conference - UAE Consensus outcomes</CardDescription>
@@ -903,38 +903,38 @@ export default function HistoricalBaselinePage() {
                 <CardContent>
                   <div className="space-y-4">
                     {/* Financial Commitments */}
-                    <div className="p-3 rounded-lg bg-gold/10 border border-gold/30">
-                      <h4 className="text-sm font-semibold text-gold mb-2">Financial Commitments (Day 1)</h4>
+                    <div className="p-3 rounded-lg bg-gold-700/10 border border-gold-700/30">
+                      <h4 className="text-sm font-semibold text-gold-700 mb-2">Financial Commitments (Day 1)</h4>
                       <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
                         <div className="p-2 rounded bg-platinum-800/50">
-                          <div className="text-xs text-platinum-400">UAE</div>
-                          <div className="text-sm font-bold text-gold">$100M</div>
+                          <div className="text-xs text-platinum-500-400">UAE</div>
+                          <div className="text-sm font-bold text-gold-700">$100M</div>
                         </div>
                         <div className="p-2 rounded bg-platinum-800/50">
-                          <div className="text-xs text-platinum-400">Germany</div>
-                          <div className="text-sm font-bold text-gold">$100M</div>
+                          <div className="text-xs text-platinum-500-400">Germany</div>
+                          <div className="text-sm font-bold text-gold-700">$100M</div>
                         </div>
                         <div className="p-2 rounded bg-platinum-800/50">
-                          <div className="text-xs text-platinum-400">UK</div>
-                          <div className="text-sm font-bold text-gold">$75M</div>
+                          <div className="text-xs text-platinum-500-400">UK</div>
+                          <div className="text-sm font-bold text-gold-700">$75M</div>
                         </div>
                         <div className="p-2 rounded bg-platinum-800/50">
-                          <div className="text-xs text-platinum-400">Total Day 1</div>
-                          <div className="text-sm font-bold text-emerald">$430M</div>
+                          <div className="text-xs text-platinum-500-400">Total Day 1</div>
+                          <div className="text-sm font-bold text-emerald-500">$430M</div>
                         </div>
                       </div>
                     </div>
 
                     {/* UAE Consensus */}
                     <div className="p-3 rounded-lg bg-platinum-800/30 border border-platinum-700/50">
-                      <h4 className="text-sm font-semibold text-platinum-200 mb-2">UAE Consensus Outcomes</h4>
+                      <h4 className="text-sm font-semibold text-platinum-500-200 mb-2">UAE Consensus Outcomes</h4>
                       <div className="grid gap-2">
                         {monitoringRecentEraData.cop28?.uaeConsensus?.map((item, idx) => (
                           <div key={idx} className="flex items-start gap-2">
-                            <CheckCircle className="h-4 w-4 text-emerald mt-0.5" />
+                            <CheckCircle className="h-4 w-4 text-emerald-500 mt-0.5" />
                             <div>
-                              <p className="text-xs font-medium text-platinum-300">{item.achievement}</p>
-                              <p className="text-xs text-platinum-400">{item.details}</p>
+                              <p className="text-xs font-medium text-platinum-500-300">{item.achievement}</p>
+                              <p className="text-xs text-platinum-500-400">{item.details}</p>
                             </div>
                           </div>
                         ))}
@@ -945,10 +945,10 @@ export default function HistoricalBaselinePage() {
               </Card>
 
               {/* Abraham Accords */}
-              <Card className="glass-card border-emerald/30">
+              <Card className="glass-card border-emerald-500/30">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Scale className="h-5 w-5 text-emerald" />
+                    <Scale className="h-5 w-5 text-emerald-500" />
                     Abraham Accords (2020)
                   </CardTitle>
                   <CardDescription>Normalization agreements and economic impact</CardDescription>
@@ -957,20 +957,20 @@ export default function HistoricalBaselinePage() {
                   <div className="space-y-4">
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
                       <div className="p-2 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
-                        <div className="text-xs text-platinum-400">Signed</div>
-                        <div className="text-sm font-bold text-platinum-200">Sept 15, 2020</div>
+                        <div className="text-xs text-platinum-500-400">Signed</div>
+                        <div className="text-sm font-bold text-platinum-500-200">Sept 15, 2020</div>
                       </div>
                       <div className="p-2 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
-                        <div className="text-xs text-platinum-400">Signatories</div>
-                        <div className="text-sm font-bold text-emerald">UAE, Bahrain, Israel</div>
+                        <div className="text-xs text-platinum-500-400">Signatories</div>
+                        <div className="text-sm font-bold text-emerald-500">UAE, Bahrain, Israel</div>
                       </div>
                       <div className="p-2 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
-                        <div className="text-xs text-platinum-400">Defense Exports</div>
-                        <div className="text-sm font-bold text-gold">$791M</div>
+                        <div className="text-xs text-platinum-500-400">Defense Exports</div>
+                        <div className="text-sm font-bold text-gold-700">$791M</div>
                       </div>
                       <div className="p-2 rounded-lg bg-platinum-800/50 border border-platinum-700/50">
-                        <div className="text-xs text-platinum-400">Abraham Fund</div>
-                        <div className="text-sm font-bold text-rose">Never funded</div>
+                        <div className="text-xs text-platinum-500-400">Abraham Fund</div>
+                        <div className="text-sm font-bold text-rose-500">Never funded</div>
                       </div>
                     </div>
                   </div>
@@ -1002,7 +1002,7 @@ export default function HistoricalBaselinePage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Building2 className="h-5 w-5 text-gold" />
+                    <Building2 className="h-5 w-5 text-gold-700" />
                     Organizations Registry
                   </CardTitle>
                   <CardDescription>Key entities from historical baseline research</CardDescription>
@@ -1019,14 +1019,14 @@ export default function HistoricalBaselinePage() {
                           className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30 hover:bg-platinum-800/50 transition-colors"
                         >
                           <div className="flex-1">
-                            <p className="text-sm font-medium text-platinum-200">{org.entityName}</p>
-                            <p className="text-xs text-platinum-400">{org.type}</p>
+                            <p className="text-sm font-medium text-platinum-500-200">{org.entityName}</p>
+                            <p className="text-xs text-platinum-500-400">{org.type}</p>
                           </div>
                           <div className="flex items-center gap-2">
                             <Badge variant="outline" className={`text-xs ${
-                              org.uaeRelevance === 'Critical' ? 'border-rose/50 text-rose' :
-                              org.uaeRelevance === 'High' ? 'border-gold/50 text-gold' :
-                              'border-platinum-500/50 text-platinum-400'
+                              org.uaeRelevance === 'Critical' ? 'border-rose-500/50 text-rose-500' :
+                              org.uaeRelevance === 'High' ? 'border-gold-700/50 text-gold-700' :
+                              'border-platinum-500/50 text-platinum-500-400'
                             }`}>
                               {org.uaeRelevance}
                             </Badge>
@@ -1042,7 +1042,7 @@ export default function HistoricalBaselinePage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Users className="h-5 w-5 text-emerald" />
+                    <Users className="h-5 w-5 text-emerald-500" />
                     Person Registry
                   </CardTitle>
                   <CardDescription>Key individuals in UAE historical narrative</CardDescription>
@@ -1059,13 +1059,13 @@ export default function HistoricalBaselinePage() {
                           className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30 hover:bg-platinum-800/50 transition-colors"
                         >
                           <div className="flex-1">
-                            <p className="text-sm font-medium text-platinum-200">{person.name}</p>
-                            <p className="text-xs text-platinum-400">{person.role} | {person.entity}</p>
+                            <p className="text-sm font-medium text-platinum-500-200">{person.name}</p>
+                            <p className="text-xs text-platinum-500-400">{person.role} | {person.entity}</p>
                           </div>
                           <Badge variant="outline" className={`text-xs ${
-                            person.uaeRelevance === 'Critical' ? 'border-rose/50 text-rose' :
-                            person.uaeRelevance === 'High' ? 'border-gold/50 text-gold' :
-                            'border-platinum-500/50 text-platinum-400'
+                            person.uaeRelevance === 'Critical' ? 'border-rose-500/50 text-rose-500' :
+                            person.uaeRelevance === 'High' ? 'border-gold-700/50 text-gold-700' :
+                            'border-platinum-500/50 text-platinum-500-400'
                           }`}>
                             {person.uaeRelevance}
                           </Badge>
@@ -1080,7 +1080,7 @@ export default function HistoricalBaselinePage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Calendar className="h-5 w-5 text-navy" />
+                    <Calendar className="h-5 w-5 text-navy-500" />
                     Event Registry
                   </CardTitle>
                   <CardDescription>Historical milestones and key events</CardDescription>
@@ -1097,15 +1097,15 @@ export default function HistoricalBaselinePage() {
                           className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30 hover:bg-platinum-800/50 transition-colors"
                         >
                           <div className="flex items-center gap-3">
-                            <div className="w-20 text-sm font-bold text-gold">{event.date}</div>
+                            <div className="w-20 text-sm font-bold text-gold-700">{event.date}</div>
                             <div className="flex-1">
-                              <p className="text-sm font-medium text-platinum-200">{event.event}</p>
+                              <p className="text-sm font-medium text-platinum-500-200">{event.event}</p>
                             </div>
                           </div>
                           <Badge variant="outline" className={`text-xs ${
-                            event.uaeRelevance === 'Critical' ? 'border-rose/50 text-rose' :
-                            event.uaeRelevance === 'High' ? 'border-gold/50 text-gold' :
-                            'border-platinum-500/50 text-platinum-400'
+                            event.uaeRelevance === 'Critical' ? 'border-rose-500/50 text-rose-500' :
+                            event.uaeRelevance === 'High' ? 'border-gold-700/50 text-gold-700' :
+                            'border-platinum-500/50 text-platinum-500-400'
                           }`}>
                             {event.uaeRelevance}
                           </Badge>
@@ -1127,10 +1127,10 @@ export default function HistoricalBaselinePage() {
                 <Card key={topic} className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg capitalize flex items-center gap-2">
-                      {topic === 'uaeMediaFreedom' && <Newspaper className="h-5 w-5 text-gold" />}
-                      {topic === 'laborRights' && <Users className="h-5 w-5 text-rose" />}
-                      {topic === 'politicalAgreements' && <Scale className="h-5 w-5 text-emerald" />}
-                      {topic === 'climateEnvironment' && <Globe className="h-5 w-5 text-navy" />}
+                      {topic === 'uaeMediaFreedom' && <Newspaper className="h-5 w-5 text-gold-700" />}
+                      {topic === 'laborRights' && <Users className="h-5 w-5 text-rose-500" />}
+                      {topic === 'politicalAgreements' && <Scale className="h-5 w-5 text-emerald-500" />}
+                      {topic === 'climateEnvironment' && <Globe className="h-5 w-5 text-navy-500" />}
                       {topic.replace(/([A-Z])/g, ' $1').trim()}
                     </CardTitle>
                   </CardHeader>
@@ -1145,16 +1145,16 @@ export default function HistoricalBaselinePage() {
                           className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                         >
                           <div className="flex items-center justify-between mb-2">
-                            <span className="text-sm font-medium text-platinum-200">{analysis.source}</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{analysis.source}</span>
                             <Badge variant="outline" className={`text-xs ${
-                              analysis.sentiment === 'Positive' ? 'border-emerald/50 text-emerald' :
-                              analysis.sentiment === 'Negative' ? 'border-rose/50 text-rose' :
-                              'border-platinum-500/50 text-platinum-400'
+                              analysis.sentiment === 'Positive' ? 'border-emerald-500/50 text-emerald-500' :
+                              analysis.sentiment === 'Negative' ? 'border-rose-500/50 text-rose-500' :
+                              'border-platinum-500/50 text-platinum-500-400'
                             }`}>
                               {analysis.sentiment} | {analysis.polarity}
                             </Badge>
                           </div>
-                          <p className="text-xs text-platinum-400">{analysis.notes}</p>
+                          <p className="text-xs text-platinum-500-400">{analysis.notes}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -1184,15 +1184,15 @@ export default function HistoricalBaselinePage() {
                         transition={{ delay: idx * 0.05 }}
                         whileHover={{ scale: 1.02 }}
                         className={`rounded-lg border p-3 text-center ${
-                          idx === 0 ? 'border-gold/50 bg-gold/10' :
-                          idx === 1 ? 'border-emerald/50 bg-emerald/10' :
+                          idx === 0 ? 'border-gold-700/50 bg-gold-700/10' :
+                          idx === 1 ? 'border-emerald-500/50 bg-emerald-500/10' :
                           idx === 2 ? 'border-navy/50 bg-navy/10' :
-                          idx === 3 ? 'border-rose/50 bg-rose/10' :
+                          idx === 3 ? 'border-rose-500/50 bg-rose-500/10' :
                           'border-platinum-600/50 bg-platinum-800/30'
                         }`}
                       >
                         <div className="text-sm font-bold">{tier.tier}</div>
-                        <p className="text-xs text-platinum-400 mt-1">{tier.description}</p>
+                        <p className="text-xs text-platinum-500-400 mt-1">{tier.description}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1217,20 +1217,20 @@ export default function HistoricalBaselinePage() {
                           className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30 hover:bg-platinum-800/50 transition-colors"
                         >
                           <div className="flex-1 min-w-0">
-                            <p className="text-sm font-medium text-platinum-200 truncate">{source.sourceUrl}</p>
-                            <p className="text-xs text-platinum-400">{source.dataQuality}</p>
+                            <p className="text-sm font-medium text-platinum-500-200 truncate">{source.sourceUrl}</p>
+                            <p className="text-xs text-platinum-500-400">{source.dataQuality}</p>
                           </div>
                           <div className="flex items-center gap-3">
                             <Badge variant="outline" className={`text-xs ${
-                              source.tier === 0 ? 'border-gold/50 text-gold' :
-                              source.tier === 1 ? 'border-emerald/50 text-emerald' :
-                              source.tier === 2 ? 'border-navy/50 text-navy' :
-                              source.tier === 3 ? 'border-rose/50 text-rose' :
-                              'border-platinum-500/50 text-platinum-400'
+                              source.tier === 0 ? 'border-gold-700/50 text-gold-700' :
+                              source.tier === 1 ? 'border-emerald-500/50 text-emerald-500' :
+                              source.tier === 2 ? 'border-navy/50 text-navy-500' :
+                              source.tier === 3 ? 'border-rose-500/50 text-rose-500' :
+                              'border-platinum-500/50 text-platinum-500-400'
                             }`}>
                               Tier {source.tier}
                             </Badge>
-                            <span className="text-sm font-bold text-gold">{source.credibilityScore}</span>
+                            <span className="text-sm font-bold text-gold-700">{source.credibilityScore}</span>
                           </div>
                         </motion.div>
                       ))}
@@ -1262,12 +1262,12 @@ export default function HistoricalBaselinePage() {
                         className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                       >
                         <div className="flex-1">
-                          <p className="text-sm font-medium text-platinum-200">{kpi.era}</p>
-                          <p className="text-xs text-platinum-400">{kpi.primarySources}</p>
+                          <p className="text-sm font-medium text-platinum-500-200">{kpi.era}</p>
+                          <p className="text-xs text-platinum-500-400">{kpi.primarySources}</p>
                         </div>
                         <div className="flex items-center gap-4">
-                          <span className="text-sm font-bold text-gold">{kpi.estimatedQueries}</span>
-                          <span className="text-sm text-emerald">{kpi.coverageScore}</span>
+                          <span className="text-sm font-bold text-gold-700">{kpi.estimatedQueries}</span>
+                          <span className="text-sm text-emerald-500">{kpi.coverageScore}</span>
                         </div>
                       </motion.div>
                     ))}
@@ -1279,7 +1279,7 @@ export default function HistoricalBaselinePage() {
               <Card className="glass-card border-rose-500/30">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <XCircle className="h-5 w-5 text-rose" />
+                    <XCircle className="h-5 w-5 text-rose-500" />
                     Identified Data Gaps
                   </CardTitle>
                 </CardHeader>
@@ -1294,13 +1294,13 @@ export default function HistoricalBaselinePage() {
                         className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                       >
                         <div className="flex-1">
-                          <p className="text-sm font-medium text-platinum-200">{gap.gapArea}</p>
-                          <p className="text-xs text-platinum-400">{gap.recommendation}</p>
+                          <p className="text-sm font-medium text-platinum-500-200">{gap.gapArea}</p>
+                          <p className="text-xs text-platinum-500-400">{gap.recommendation}</p>
                         </div>
                         <Badge variant="outline" className={`text-xs ${
-                          gap.severity === 'High' ? 'border-rose/50 text-rose' :
-                          gap.severity === 'Medium' ? 'border-gold/50 text-gold' :
-                          'border-platinum-500/50 text-platinum-400'
+                          gap.severity === 'High' ? 'border-rose-500/50 text-rose-500' :
+                          gap.severity === 'Medium' ? 'border-gold-700/50 text-gold-700' :
+                          'border-platinum-500/50 text-platinum-500-400'
                         }`}>
                           {gap.severity}
                         </Badge>
@@ -1329,9 +1329,9 @@ export default function HistoricalBaselinePage() {
                         >
                           <div className="flex items-center gap-2">
                             <Badge variant="destructive" className="text-xs">{url.status}</Badge>
-                            <span className="text-xs text-platinum-400">{url.url}</span>
+                            <span className="text-xs text-platinum-500-400">{url.url}</span>
                           </div>
-                          <span className="text-xs text-emerald">{url.alternative}</span>
+                          <span className="text-xs text-emerald-500">{url.alternative}</span>
                         </motion.div>
                       ))}
                     </div>

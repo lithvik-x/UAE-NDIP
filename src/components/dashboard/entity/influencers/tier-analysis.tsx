@@ -49,18 +49,18 @@ export function TierAnalysis({
             <Table>
               <TableHeader>
                 <TableRow className="border-b border-platinum-200/50">
-                  <TableHead className="text-platinum-700 font-semibold">Tier</TableHead>
-                  <TableHead className="text-platinum-700 font-semibold">Followers</TableHead>
-                  <TableHead className="text-platinum-700 font-semibold">Engagement</TableHead>
-                  <TableHead className="text-platinum-700 font-semibold">Value/Post</TableHead>
+                  <TableHead className="text-platinum-500-700 font-semibold">Tier</TableHead>
+                  <TableHead className="text-platinum-500-700 font-semibold">Followers</TableHead>
+                  <TableHead className="text-platinum-500-700 font-semibold">Engagement</TableHead>
+                  <TableHead className="text-platinum-500-700 font-semibold">Value/Post</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {tierFramework.map((t) => (
                   <TableRow key={t.tier} className="border-b border-platinum-100/50">
-                    <TableCell><span className="font-semibold text-navy-900 dark:text-platinum-100">{t.tier}</span></TableCell>
-                    <TableCell><span className="text-sm text-platinum-700">{t.followerRange}</span></TableCell>
-                    <TableCell><span className="text-sm text-platinum-700">{t.typicalEngagementRate}</span></TableCell>
+                    <TableCell><span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{t.tier}</span></TableCell>
+                    <TableCell><span className="text-sm text-platinum-500-700">{t.followerRange}</span></TableCell>
+                    <TableCell><span className="text-sm text-platinum-500-700">{t.typicalEngagementRate}</span></TableCell>
                     <TableCell><span className="text-sm text-emerald-600 dark:text-emerald-400">{t.commercialValue}</span></TableCell>
                   </TableRow>
                 ))}
@@ -87,7 +87,7 @@ export function TierAnalysis({
                 showGrid={true}
               />
             ) : (
-              <div className="flex items-center justify-center h-48 text-platinum-500">No tier data available</div>
+              <div className="flex items-center justify-center h-48 text-platinum-500-500">No tier data available</div>
             )}
           </CardContent>
         </Card>
@@ -105,8 +105,8 @@ export function TierAnalysis({
               {engagementByCategory.map((cat) => (
                 <div key={cat.category} className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="font-medium text-platinum-700 dark:text-platinum-300">{cat.category}</span>
-                    <span className="text-platinum-500">{cat.engagementRate}%</span>
+                    <span className="font-medium text-platinum-500-700 dark:text-platinum-500-300">{cat.category}</span>
+                    <span className="text-platinum-500-500">{cat.engagementRate}%</span>
                   </div>
                   <Progress value={cat.engagementRate} className="h-2" />
                 </div>
@@ -131,7 +131,7 @@ export function TierAnalysis({
                 showLegend={true}
               />
             ) : (
-              <div className="flex items-center justify-center h-48 text-platinum-500">No sentiment data</div>
+              <div className="flex items-center justify-center h-48 text-platinum-500-500">No sentiment data</div>
             )}
           </CardContent>
         </Card>
@@ -147,18 +147,18 @@ export function TierAnalysis({
           <CardContent>
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-medium text-platinum-700 dark:text-platinum-300">Emirati</span>
+                <span className="text-sm font-medium text-platinum-500-700 dark:text-platinum-500-300">Emirati</span>
                 <span className="text-sm font-bold text-gold-700">{emiratiCount}</span>
               </div>
               <Progress value={(emiratiCount / allInfluencers.length) * 100} className="h-3" />
               <div className="flex items-center justify-between">
-                <span className="text-sm font-medium text-platinum-700 dark:text-platinum-300">Expat (specified)</span>
+                <span className="text-sm font-medium text-platinum-500-700 dark:text-platinum-500-300">Expat (specified)</span>
                 <span className="text-sm font-bold text-indigo-600">{expatCount}</span>
               </div>
               <Progress value={(expatCount / allInfluencers.length) * 100} className="h-3" />
               <div className="flex items-center justify-between">
-                <span className="text-sm font-medium text-platinum-700 dark:text-platinum-300">Not specified</span>
-                <span className="text-sm font-bold text-platinum-500">{allInfluencers.length - emiratiCount - expatCount}</span>
+                <span className="text-sm font-medium text-platinum-500-700 dark:text-platinum-500-300">Not specified</span>
+                <span className="text-sm font-bold text-platinum-500-500">{allInfluencers.length - emiratiCount - expatCount}</span>
               </div>
               <Progress value={((allInfluencers.length - emiratiCount - expatCount) / allInfluencers.length) * 100} className="h-3" />
             </div>
@@ -181,7 +181,7 @@ export function TierAnalysis({
                 showLegend={true}
               />
             ) : (
-              <div className="flex items-center justify-center h-48 text-platinum-500">No nationality data</div>
+              <div className="flex items-center justify-center h-48 text-platinum-500-500">No nationality data</div>
             )}
           </CardContent>
         </Card>

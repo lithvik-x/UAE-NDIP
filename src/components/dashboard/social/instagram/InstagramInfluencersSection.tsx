@@ -41,7 +41,7 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
           <Card className="glass-card border-purple-500/30">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Star className="h-5 w-5 text-gold" />
+                <Star className="h-5 w-5 text-gold-700" />
                 Top 5 Influencers by Followers
               </CardTitle>
               <CardDescription>Follower count in millions</CardDescription>
@@ -88,12 +88,12 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
                                 </Badge>
                               )}
                             </div>
-                            <span className="text-xs text-platinum/50">{inf.username}</span>
+                            <span className="text-xs text-platinum-500/50">{inf.username}</span>
                           </div>
                         </div>
                         <div className="text-right">
-                          <span className="text-sm font-bold text-gold">{(inf.followers / 1000000).toFixed(1)}M</span>
-                          <span className="text-xs text-platinum/50 ml-1">
+                          <span className="text-sm font-bold text-gold-700">{(inf.followers / 1000000).toFixed(1)}M</span>
+                          <span className="text-xs text-platinum-500/50 ml-1">
                             ({inf.engagementRate > 0 ? `${inf.engagementRate}%` : 'N/A'})
                           </span>
                         </div>
@@ -120,7 +120,7 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
                           <CardTitle className="text-lg">{selectedInfluencer.name}</CardTitle>
                           <CardDescription>{selectedInfluencer.username}</CardDescription>
                         </div>
-                        <Badge variant="outline" className="border-gold/30 text-gold">
+                        <Badge variant="outline" className="border-gold-700/30 text-gold-700">
                           Rank #{selectedInfluencer.rank}
                         </Badge>
                       </div>
@@ -129,11 +129,11 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
                       <div className="space-y-4">
                         <div className="grid grid-cols-2 gap-4">
                           <div className="p-4 rounded-lg bg-platinum-800/30">
-                            <p className="text-xs text-platinum/50 uppercase">Followers</p>
-                            <p className="text-xl font-bold text-gold">{(selectedInfluencer.followers / 1000000).toFixed(1)}M</p>
+                            <p className="text-xs text-platinum-500/50 uppercase">Followers</p>
+                            <p className="text-xl font-bold text-gold-700">{(selectedInfluencer.followers / 1000000).toFixed(1)}M</p>
                           </div>
                           <div className="p-4 rounded-lg bg-platinum-800/30">
-                            <p className="text-xs text-platinum/50 uppercase">Engagement</p>
+                            <p className="text-xs text-platinum-500/50 uppercase">Engagement</p>
                             <p className="text-xl font-bold text-emerald-400">
                               {selectedInfluencer.engagementRate > 0 ? `${selectedInfluencer.engagementRate}%` : 'N/A'}
                             </p>
@@ -141,19 +141,19 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
                         </div>
                         {selectedInfluencer.brandPartners !== '-' && (
                           <div>
-                            <p className="text-xs text-platinum/50 uppercase mb-2">Brand Partners</p>
+                            <p className="text-xs text-platinum-500/50 uppercase mb-2">Brand Partners</p>
                             <p className="text-sm text-white">{selectedInfluencer.brandPartners}</p>
                           </div>
                         )}
                         {selectedInfluencer.notes && (
                           <div>
-                            <p className="text-xs text-platinum/50 uppercase mb-2">Notes</p>
-                            <p className="text-sm text-platinum-300">{selectedInfluencer.notes}</p>
+                            <p className="text-xs text-platinum-500/50 uppercase mb-2">Notes</p>
+                            <p className="text-sm text-platinum-500-300">{selectedInfluencer.notes}</p>
                           </div>
                         )}
                         {selectedInfluencer.category && (
                           <div>
-                            <p className="text-xs text-platinum/50 uppercase mb-2">Category</p>
+                            <p className="text-xs text-platinum-500/50 uppercase mb-2">Category</p>
                             <Badge variant="outline" className="border-purple-500/30 text-purple-300">
                               {selectedInfluencer.category}
                             </Badge>
@@ -183,10 +183,10 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
                             <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/30">
                               <div>
                                 <span className="text-sm font-medium text-white">{inf.username}</span>
-                                <p className="text-xs text-platinum/50">{inf.audienceGender}</p>
+                                <p className="text-xs text-platinum-500/50">{inf.audienceGender}</p>
                               </div>
                               <div className="text-right">
-                                <span className="text-sm font-bold text-gold">{(inf.followers / 1000000).toFixed(1)}M</span>
+                                <span className="text-sm font-bold text-gold-700">{(inf.followers / 1000000).toFixed(1)}M</span>
                                 <span className="text-xs text-emerald-400 ml-2">{inf.engagementRate}%</span>
                               </div>
                             </div>
@@ -204,7 +204,7 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
           <Card className="glass-card border-purple-500/30">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-emerald" />
+                <TrendingUp className="h-5 w-5 text-emerald-500" />
                 High Engagement Leaders
               </CardTitle>
               <CardDescription>Influencers with exceptional engagement rates</CardDescription>
@@ -219,8 +219,8 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
                         {inf.engagementRate}%
                       </Badge>
                     </div>
-                    <p className="text-xs text-platinum-400 mb-1">{(inf.followers / 1000000).toFixed(1)}M followers</p>
-                    <p className="text-xs text-platinum/50">{inf.audienceGender}</p>
+                    <p className="text-xs text-platinum-500-400 mb-1">{(inf.followers / 1000000).toFixed(1)}M followers</p>
+                    <p className="text-xs text-platinum-500/50">{inf.audienceGender}</p>
                   </div>
                 ))}
               </div>
@@ -231,7 +231,7 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
           <Card className="glass-card border-purple-500/30">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Users className="h-5 w-5 text-purple" />
+                <Users className="h-5 w-5 text-purple-500" />
                 Virtual Influencers
               </CardTitle>
               <CardDescription>43.7% CAGR - fastest growing globally</CardDescription>
@@ -246,11 +246,11 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
                       </div>
                       <div>
                         <h4 className="text-sm font-medium text-white">{vInf.name}</h4>
-                        <span className="text-xs text-platinum/50">{vInf.platform}</span>
+                        <span className="text-xs text-platinum-500/50">{vInf.platform}</span>
                       </div>
                     </div>
-                    <p className="text-xs text-platinum-300 mb-2">{vInf.description}</p>
-                    <Badge variant="outline" className="text-xs border-navy-500/30 text-navy-300">
+                    <p className="text-xs text-platinum-500-300 mb-2">{vInf.description}</p>
+                    <Badge variant="outline" className="text-xs border-navy-500/30 text-navy-500-300">
                       {vInf.location}
                     </Badge>
                   </div>

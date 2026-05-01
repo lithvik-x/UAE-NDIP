@@ -54,14 +54,14 @@ export function FacebookMetaGovernmentSection() {
                     <Building className="h-5 w-5 text-info flex-shrink-0 mt-1" />
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-sm font-medium text-platinum-200 truncate">{account.handle}</span>
+                        <span className="text-sm font-medium text-platinum-500-200 truncate">{account.handle}</span>
                         {account.verified && (
                           <Badge variant="outline" className="text-info border-info/50 text-xs">
                             Verified
                           </Badge>
                         )}
                       </div>
-                      <p className="text-xs text-platinum-400">
+                      <p className="text-xs text-platinum-500-400">
                         {((account.followers ?? 0) / 1000000).toFixed(1)}M followers
                       </p>
                       <div className="flex items-center gap-1 mt-2 text-xs text-info">
@@ -79,7 +79,7 @@ export function FacebookMetaGovernmentSection() {
           <Card className="glass-card border-glass">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Building className="h-5 w-5 text-gold" />
+                <Building className="h-5 w-5 text-gold-700" />
                 Federal Government Pages
               </CardTitle>
               <CardDescription>Ministry and federal agency Facebook pages</CardDescription>
@@ -95,8 +95,8 @@ export function FacebookMetaGovernmentSection() {
                     className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/30"
                   >
                     <div className="flex items-center gap-3">
-                      <Building className="h-4 w-4 text-gold" />
-                      <span className="text-sm font-medium text-platinum-200">{page.entity}</span>
+                      <Building className="h-4 w-4 text-gold-700" />
+                      <span className="text-sm font-medium text-platinum-500-200">{page.entity}</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Badge
@@ -104,12 +104,12 @@ export function FacebookMetaGovernmentSection() {
                         className={`text-xs ${
                           page.credibility === 'Very High' ? 'border-emerald-500/50 text-emerald-400' :
                           page.credibility === 'High' ? 'border-info/50 text-info' :
-                          'border-platinum-500/50 text-platinum-400'
+                          'border-platinum-500/50 text-platinum-500-400'
                         }`}
                       >
                         {page.credibility}
                       </Badge>
-                      <span className="text-sm text-platinum-400">
+                      <span className="text-sm text-platinum-500-400">
                         {page.likes >= 1000000 ? `${(page.likes / 1000000).toFixed(1)}M` : `${(page.likes / 1000).toFixed(0)}K`}
                       </span>
                     </div>
@@ -123,7 +123,7 @@ export function FacebookMetaGovernmentSection() {
           <Card className="glass-card border-glass">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Shield className="h-5 w-5 text-rose" />
+                <Shield className="h-5 w-5 text-rose-500" />
                 Police & Security Pages
               </CardTitle>
               <CardDescription>Law enforcement Facebook presence</CardDescription>
@@ -139,8 +139,8 @@ export function FacebookMetaGovernmentSection() {
                     className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/30"
                   >
                     <div className="flex items-center gap-3">
-                      <Shield className="h-4 w-4 text-rose" />
-                      <span className="text-sm font-medium text-platinum-200">{page.entity}</span>
+                      <Shield className="h-4 w-4 text-rose-500" />
+                      <span className="text-sm font-medium text-platinum-500-200">{page.entity}</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Badge
@@ -148,12 +148,12 @@ export function FacebookMetaGovernmentSection() {
                         className={`text-xs ${
                           page.credibility === 'Very High' ? 'border-emerald-500/50 text-emerald-400' :
                           page.credibility === 'High' ? 'border-info/50 text-info' :
-                          'border-platinum-500/50 text-platinum-400'
+                          'border-platinum-500/50 text-platinum-500-400'
                         }`}
                       >
                         {page.credibility}
                       </Badge>
-                      <span className="text-sm text-platinum-400">
+                      <span className="text-sm text-platinum-500-400">
                         {page.likes >= 1000000 ? `${(page.likes / 1000000).toFixed(1)}M` : `${(page.likes / 1000).toFixed(0)}K`}
                       </span>
                     </div>

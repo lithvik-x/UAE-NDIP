@@ -31,8 +31,8 @@ export function DubaiCrisis2009Section({
               <Calendar className="h-5 w-5 text-amber-500 flex-shrink-0 mt-1" />
               <div>
                 <div className="text-sm text-amber-400 font-semibold">{item.date}</div>
-                <div className="text-platinum-200">{item.event}</div>
-                <div className="text-xs text-platinum-500 mt-1">Source: {item.source}</div>
+                <div className="text-platinum-500-200">{item.event}</div>
+                <div className="text-xs text-platinum-500-500 mt-1">Source: {item.source}</div>
               </div>
             </motion.div>
           ))}
@@ -55,8 +55,8 @@ export function DebtStructureSection({ debtStructure }: DebtStructureSectionProp
             <motion.div key={idx} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: idx * 0.05 }}
               className="glass-card rounded-lg p-4 bg-glass-surface/50 border-glass-border">
               <div className="text-2xl font-bold text-amber-400">{debt.amount}</div>
-              <div className="text-sm text-platinum-300 mt-1">{debt.entity}</div>
-              <div className="text-xs text-platinum-500 mt-1">{debt.notes}</div>
+              <div className="text-sm text-platinum-500-300 mt-1">{debt.entity}</div>
+              <div className="text-xs text-platinum-500-500 mt-1">{debt.notes}</div>
             </motion.div>
           ))}
         </div>
@@ -80,22 +80,22 @@ export function PropertyMarketSection({ propertyMarketCollapse, globalMarketImpa
             {propertyMarketCollapse?.map((item: any, idx: number) => (
               <div key={idx} className="mb-3">
                 <div className="flex justify-between text-sm mb-1">
-                  <span className="text-platinum-300">{item.metric}</span>
+                  <span className="text-platinum-500-300">{item.metric}</span>
                   <span className="text-rose-400 font-bold">{item.value}</span>
                 </div>
                 <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                   <motion.div initial={{ width: 0 }} animate={{ width: item.value === '-40%' ? '40%' : item.value === '-60%' ? '60%' : '50%' }} transition={{ delay: idx * 0.2 + 0.5, duration: 0.8 }}
                     className="h-full rounded-full bg-gradient-to-r from-rose-500 to-orange-500" />
                 </div>
-                <div className="text-xs text-platinum-500 mt-1">{item.source}</div>
+                <div className="text-xs text-platinum-500-500 mt-1">{item.source}</div>
               </div>
             ))}
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-platinum-300 mb-3">Global Market Impact</h4>
+            <h4 className="text-lg font-semibold text-platinum-500-300 mb-3">Global Market Impact</h4>
             {globalMarketImpact?.map((market: any, idx: number) => (
               <div key={idx} className="flex justify-between py-2 border-b border-glass-border">
-                <span className="text-platinum-400">{market.market}</span>
+                <span className="text-platinum-500-400">{market.market}</span>
                 <span className="text-rose-400">{market.impact}</span>
               </div>
             ))}
@@ -126,8 +126,8 @@ export function NakheelDubaiWorldSection({
             <div className="space-y-2">
               {nakheelProfile?.map((item: any, idx: number) => (
                 <div key={idx} className="flex justify-between text-sm border-b border-glass-border pb-1">
-                  <span className="text-platinum-400">{item.attribute}</span>
-                  <span className="text-platinum-200">{item.value}</span>
+                  <span className="text-platinum-500-400">{item.attribute}</span>
+                  <span className="text-platinum-500-200">{item.value}</span>
                 </div>
               ))}
             </div>
@@ -135,7 +135,7 @@ export function NakheelDubaiWorldSection({
             <div className="space-y-2">
               {nakheelRecoveryTimeline?.map((item: any, idx: number) => (
                 <div key={idx} className="flex justify-between text-sm border-b border-glass-border pb-1">
-                  <span className="text-platinum-400">{item.date}</span>
+                  <span className="text-platinum-500-400">{item.date}</span>
                   <span className="text-emerald-400">{item.amount}</span>
                 </div>
               ))}
@@ -146,8 +146,8 @@ export function NakheelDubaiWorldSection({
             <div className="space-y-3">
               {dubaiWorldCorporateStructure?.map((entity: any, idx: number) => (
                 <div key={idx} className="p-3 rounded-lg bg-gradient-to-r from-amber-500/10 to-transparent border border-amber-500/30">
-                  <div className="font-semibold text-platinum-100">{entity.entity}</div>
-                  <div className="text-sm text-platinum-400">Debt: {entity.debt}</div>
+                  <div className="font-semibold text-platinum-500-100">{entity.entity}</div>
+                  <div className="text-sm text-platinum-500-400">Debt: {entity.debt}</div>
                   <Badge variant="outline" className={`mt-2 border-${entity.status === 'Recovered' || entity.status === 'Operational' ? 'emerald' : 'gold'}-500/50 text-${entity.status === 'Recovered' || entity.status === 'Operational' ? 'emerald' : 'gold'}`}>{entity.status}</Badge>
                 </div>
               ))}

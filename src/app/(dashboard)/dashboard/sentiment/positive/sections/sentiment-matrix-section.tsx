@@ -68,10 +68,10 @@ export function SentimentMatrixSection() {
         <Badge variant="outline" className="mb-2 border-gold-500/50 text-gold-400">
           SENTIMENT ANALYSIS
         </Badge>
-        <h2 className="text-2xl font-bold font-rajdhani text-platinum-100">
+        <h2 className="text-2xl font-bold font-rajdhani text-platinum-500-100">
           Topic & Source Sentiment Matrices
         </h2>
-        <p className="text-sm text-platinum-400 mt-1">
+        <p className="text-sm text-platinum-500-400 mt-1">
           Comprehensive sentiment scores across 13 topic categories and 7 source types
         </p>
       </motion.div>
@@ -114,7 +114,7 @@ export function SentimentMatrixSection() {
                   className="p-4 rounded-xl bg-glass-surface border border-glass-border backdrop-blur-sm hover:border-gold-500/30 transition-all"
                 >
                   <div className="flex items-start justify-between mb-2">
-                    <span className="text-sm font-medium text-platinum-200">{topic.topic}</span>
+                    <span className="text-sm font-medium text-platinum-500-200">{topic.topic}</span>
                     <Badge
                       variant="outline"
                       className={`text-xs ${
@@ -131,7 +131,7 @@ export function SentimentMatrixSection() {
                   <div className="flex items-end justify-between">
                     <div className="flex-1 mr-3">
                       <div className="flex justify-between text-xs mb-1">
-                        <span className="text-platinum-500">Score</span>
+                        <span className="text-platinum-500-500">Score</span>
                         <span className="text-gold-400 font-bold">{(topic.score * 100).toFixed(0)}%</span>
                       </div>
                       <Progress
@@ -140,7 +140,7 @@ export function SentimentMatrixSection() {
                       />
                     </div>
                   </div>
-                  <p className="text-xs text-platinum-500 mt-2 italic">&quot;{topic.narrative}&quot;</p>
+                  <p className="text-xs text-platinum-500-500 mt-2 italic">&quot;{topic.narrative}&quot;</p>
                 </motion.div>
               ))}
             </div>
@@ -211,13 +211,13 @@ export function SentimentMatrixSection() {
                               ? 'text-gold-400'
                               : source.averageSentiment >= 0.8
                               ? 'text-deni-400'
-                              : 'text-platinum-400'
+                              : 'text-platinum-500-400'
                           }`}
                         />
                       </div>
                       <div className="flex-1">
                         <div className="flex justify-between items-center">
-                          <span className="text-sm font-medium text-platinum-200">{source.source.split('(')[0].trim()}</span>
+                          <span className="text-sm font-medium text-platinum-500-200">{source.source.split('(')[0].trim()}</span>
                           <span
                             className={`text-sm font-bold ${
                               source.averageSentiment >= 0.9
@@ -226,15 +226,15 @@ export function SentimentMatrixSection() {
                                 ? 'text-gold-400'
                                 : source.averageSentiment >= 0.8
                                 ? 'text-deni-400'
-                                : 'text-platinum-400'
+                                : 'text-platinum-500-400'
                             }`}
                           >
                             {(source.averageSentiment * 100).toFixed(0)}%
                           </span>
                         </div>
                         <div className="flex justify-between items-center mt-1">
-                          <span className="text-xs text-platinum-500">{source.consistency}</span>
-                          <span className="text-xs text-platinum-500">{source.keyTheme}</span>
+                          <span className="text-xs text-platinum-500-500">{source.consistency}</span>
+                          <span className="text-xs text-platinum-500-500">{source.keyTheme}</span>
                         </div>
                       </div>
                     </div>
@@ -274,7 +274,7 @@ export function SentimentMatrixSection() {
                 style={{ borderColor: `${item.color}40` }}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-platinum-200">{item.theme}</span>
+                  <span className="text-sm font-medium text-platinum-500-200">{item.theme}</span>
                   <div
                     className="w-3 h-3 rounded-full"
                     style={{ backgroundColor: item.color }}
@@ -282,11 +282,11 @@ export function SentimentMatrixSection() {
                 </div>
                 <div className="space-y-1">
                   <div className="flex justify-between text-xs">
-                    <span className="text-platinum-500">Data Points</span>
-                    <span className="text-platinum-300 font-medium">{item.dataPoints}</span>
+                    <span className="text-platinum-500-500">Data Points</span>
+                    <span className="text-platinum-500-300 font-medium">{item.dataPoints}</span>
                   </div>
                   <div className="flex justify-between text-xs">
-                    <span className="text-platinum-500">Consistency</span>
+                    <span className="text-platinum-500-500">Consistency</span>
                     <span
                       className="font-medium"
                       style={{ color: item.color }}

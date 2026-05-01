@@ -56,7 +56,7 @@ export default function CodeSwitchingPage() {
               Code-Switching
             </span>
           </h1>
-          <p className="mt-2 text-platinum-400">Code-switching patterns in UAE communications — language mixing in multilingual contexts</p>
+          <p className="mt-2 text-platinum-500-400">Code-switching patterns in UAE communications — language mixing in multilingual contexts</p>
         </div>
       </motion.div>
 
@@ -87,11 +87,11 @@ export default function CodeSwitchingPage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Languages className="h-5 w-5 text-teal-500" />Context Usage</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0">
-                    <div className="space-y-3 text-sm text-platinum-300">
-                      <div className="flex items-center gap-2"><ArrowLeftRight className="h-4 w-4 text-cyan" />Business meetings: 78% code-switch</div>
-                      <div className="flex items-center gap-2"><ArrowLeftRight className="h-4 w-4 text-cyan" />Social media: 85% code-switch</div>
-                      <div className="flex items-center gap-2"><ArrowLeftRight className="h-4 w-4 text-cyan" />Customer service: 92% code-switch</div>
-                      <div className="flex items-center gap-2"><ArrowLeftRight className="h-4 w-4 text-cyan" />Academic: 45% code-switch</div>
+                    <div className="space-y-3 text-sm text-platinum-500-300">
+                      <div className="flex items-center gap-2"><ArrowLeftRight className="h-4 w-4 text-cyan-500" />Business meetings: 78% code-switch</div>
+                      <div className="flex items-center gap-2"><ArrowLeftRight className="h-4 w-4 text-cyan-500" />Social media: 85% code-switch</div>
+                      <div className="flex items-center gap-2"><ArrowLeftRight className="h-4 w-4 text-cyan-500" />Customer service: 92% code-switch</div>
+                      <div className="flex items-center gap-2"><ArrowLeftRight className="h-4 w-4 text-cyan-500" />Academic: 45% code-switch</div>
                     </div>
                   </CardContent>
                 </motion.div>
@@ -109,11 +109,11 @@ export default function CodeSwitchingPage() {
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
                       className="rounded-lg bg-gradient-to-r from-cyan-500/10 to-teal-600/5 p-4 border border-cyan-500/30">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xl text-platinum-100 font-rajdhani">{p.pattern}</span>
+                        <span className="text-xl text-platinum-500-100 font-rajdhani">{p.pattern}</span>
                         <Badge variant="outline" className="border-cyan-500/50 text-cyan-400">{p.frequency}</Badge>
                       </div>
                       <p className="text-sm text-cyan-400 mb-1">Context: {p.context}</p>
-                      <p className="text-xs text-platinum-400">Impact: <span className={p.impact === 'Positive' ? 'text-emerald' : 'text-platinum'}>{p.impact}</span></p>
+                      <p className="text-xs text-platinum-500-400">Impact: <span className={p.impact === 'Positive' ? 'text-emerald-500' : 'text-platinum-500'}>{p.impact}</span></p>
                     </motion.div>
                   ))}
                 </div>
@@ -130,11 +130,11 @@ export default function CodeSwitchingPage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }}
                     className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-platinum-200">{p.pair}</span>
+                      <span className="text-sm font-medium text-platinum-500-200">{p.pair}</span>
                       <div className="flex items-center gap-3">
-                        <Badge variant="outline" className="border-teal-500/50 text-teal">{p.speakers}</Badge>
+                        <Badge variant="outline" className="border-teal-500/50 text-teal-500">{p.speakers}</Badge>
                         <Badge variant="outline" className={`border-${p.trend === 'Growing' ? 'emerald' : p.trend === 'Stable' ? 'platinum' : 'rose'}-500/50`}>{p.trend}</Badge>
-                        <span className="text-lg font-bold text-platinum-100">{p.percentage}%</span>
+                        <span className="text-lg font-bold text-platinum-500-100">{p.percentage}%</span>
                       </div>
                     </div>
                     <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">

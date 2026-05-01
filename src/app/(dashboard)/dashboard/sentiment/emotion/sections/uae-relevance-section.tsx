@@ -30,8 +30,8 @@ interface UAERelevanceSectionProps {
 }
 
 const relevanceConfig: Record<string, { color: string; bgColor: string; icon: React.ElementType }> = {
-  CRITICAL: { color: 'text-rose', bgColor: 'bg-rose-500/20', icon: ShieldAlert },
-  HIGH: { color: 'text-gold', bgColor: 'bg-gold/20', icon: AlertTriangle },
+  CRITICAL: { color: 'text-rose-500', bgColor: 'bg-rose-500/20', icon: ShieldAlert },
+  HIGH: { color: 'text-gold-700', bgColor: 'bg-gold-700/20', icon: AlertTriangle },
   MEDIUM: { color: 'text-info', bgColor: 'bg-info/20', icon: MapPin },
 }
 
@@ -68,25 +68,25 @@ export function UAERelevanceSection({ uaeRelevanceAssessment }: UAERelevanceSect
             <CardContent className="p-4">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-rose-500/20">
-                  <ShieldAlert className="h-5 w-5 text-rose" />
+                  <ShieldAlert className="h-5 w-5 text-rose-500" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-rose">{criticalItems.length}</p>
-                  <p className="text-xs text-platinum-400">Critical Relevance</p>
+                  <p className="text-2xl font-bold text-rose-500">{criticalItems.length}</p>
+                  <p className="text-xs text-platinum-500-400">Critical Relevance</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="glass-card border-gold/30">
+          <Card className="glass-card border-gold-700/30">
             <CardContent className="p-4">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold/20">
-                  <AlertTriangle className="h-5 w-5 text-gold" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-700/20">
+                  <AlertTriangle className="h-5 w-5 text-gold-700" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-gold">{highItems.length}</p>
-                  <p className="text-xs text-platinum-400">High Relevance</p>
+                  <p className="text-2xl font-bold text-gold-700">{highItems.length}</p>
+                  <p className="text-xs text-platinum-500-400">High Relevance</p>
                 </div>
               </div>
             </CardContent>
@@ -100,7 +100,7 @@ export function UAERelevanceSection({ uaeRelevanceAssessment }: UAERelevanceSect
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-info">{mediumItems.length}</p>
-                  <p className="text-xs text-platinum-400">Medium Relevance</p>
+                  <p className="text-xs text-platinum-500-400">Medium Relevance</p>
                 </div>
               </div>
             </CardContent>
@@ -111,7 +111,7 @@ export function UAERelevanceSection({ uaeRelevanceAssessment }: UAERelevanceSect
         {criticalItems.length > 0 && (
           <Card className="glass-card border-rose-500/30">
             <CardHeader>
-              <CardTitle className="text-lg text-rose">Critical Relevance</CardTitle>
+              <CardTitle className="text-lg text-rose-500">Critical Relevance</CardTitle>
               <CardDescription>Core to UAE identity and strategic interests</CardDescription>
             </CardHeader>
             <CardContent>
@@ -123,10 +123,10 @@ export function UAERelevanceSection({ uaeRelevanceAssessment }: UAERelevanceSect
                       key={item.category}
                       className="flex items-start gap-3 p-3 rounded-lg bg-rose-500/10 border border-rose-500/20"
                     >
-                      <Icon className="h-5 w-5 text-rose mt-0.5" />
+                      <Icon className="h-5 w-5 text-rose-500 mt-0.5" />
                       <div className="flex-1">
-                        <p className="font-semibold text-platinum-200">{item.category}</p>
-                        <p className="text-sm text-platinum-400">{item.rationale}</p>
+                        <p className="font-semibold text-platinum-500-200">{item.category}</p>
+                        <p className="text-sm text-platinum-500-400">{item.rationale}</p>
                       </div>
                     </div>
                   )
@@ -138,9 +138,9 @@ export function UAERelevanceSection({ uaeRelevanceAssessment }: UAERelevanceSect
 
         {/* High Relevance */}
         {highItems.length > 0 && (
-          <Card className="glass-card border-gold/30">
+          <Card className="glass-card border-gold-700/30">
             <CardHeader>
-              <CardTitle className="text-lg text-gold">High Relevance</CardTitle>
+              <CardTitle className="text-lg text-gold-700">High Relevance</CardTitle>
               <CardDescription>Significant impact on resident sentiment</CardDescription>
             </CardHeader>
             <CardContent>
@@ -150,12 +150,12 @@ export function UAERelevanceSection({ uaeRelevanceAssessment }: UAERelevanceSect
                   return (
                     <div
                       key={item.category}
-                      className="flex items-start gap-3 p-3 rounded-lg bg-gold/10 border border-gold/20"
+                      className="flex items-start gap-3 p-3 rounded-lg bg-gold-700/10 border border-gold-700/20"
                     >
-                      <Icon className="h-5 w-5 text-gold mt-0.5" />
+                      <Icon className="h-5 w-5 text-gold-700 mt-0.5" />
                       <div className="flex-1">
-                        <p className="font-semibold text-platinum-200">{item.category}</p>
-                        <p className="text-sm text-platinum-400">{item.rationale}</p>
+                        <p className="font-semibold text-platinum-500-200">{item.category}</p>
+                        <p className="text-sm text-platinum-500-400">{item.rationale}</p>
                       </div>
                     </div>
                   )
@@ -183,8 +183,8 @@ export function UAERelevanceSection({ uaeRelevanceAssessment }: UAERelevanceSect
                     >
                       <Icon className="h-4 w-4 text-info" />
                       <div>
-                        <p className="font-medium text-platinum-200 text-sm">{item.category}</p>
-                        <p className="text-xs text-platinum-400">{item.rationale}</p>
+                        <p className="font-medium text-platinum-500-200 text-sm">{item.category}</p>
+                        <p className="text-xs text-platinum-500-400">{item.rationale}</p>
                       </div>
                     </div>
                   )

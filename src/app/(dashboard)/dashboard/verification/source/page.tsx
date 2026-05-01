@@ -207,8 +207,8 @@ export default function StatisticalDatapointsPage() {
       className="flex items-center justify-between rounded-lg border border-platinum-700/50 bg-platinum-800/30 px-4 py-3 hover:bg-platinum-800/60 hover:border-platinum-600/50 transition-all duration-200"
     >
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-medium text-platinum-200 truncate">{kpi.kpi}</p>
-        <p className="text-xs text-platinum-500 mt-0.5">{kpi.source}</p>
+        <p className="text-sm font-medium text-platinum-500-200 truncate">{kpi.kpi}</p>
+        <p className="text-xs text-platinum-500-500 mt-0.5">{kpi.source}</p>
       </div>
       <div className="flex items-center gap-3 ml-4 shrink-0">
         {kpi.change && (
@@ -216,7 +216,7 @@ export default function StatisticalDatapointsPage() {
             {kpi.change}
           </span>
         )}
-        <span className="text-lg font-bold text-platinum-100 tabular-nums">
+        <span className="text-lg font-bold text-platinum-500-100 tabular-nums">
           {kpi.value}
         </span>
         {getAlertBadge(kpi.alert)}
@@ -235,20 +235,20 @@ export default function StatisticalDatapointsPage() {
         className="flex items-start justify-between"
       >
         <div>
-          <Badge variant="default" className="mb-2 bg-gold/20 text-gold border-gold/50">STATISTICAL DATA</Badge>
-          <h1 className="text-3xl font-extrabold gradient-text-platinum font-rajdhani">
+          <Badge variant="default" className="mb-2 bg-gold-700/20 text-gold-700 border-gold-700/50">STATISTICAL DATA</Badge>
+          <h1 className="text-3xl font-extrabold gradient-text-platinum-500 font-rajdhani">
             UAE Statistical Datapoints
           </h1>
-          <p className="mt-2 text-platinum-400">
+          <p className="mt-2 text-platinum-500-400">
             Comprehensive official statistics across all sectors — 11 atomic queries, 40+ sources
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-platinum/50 text-platinum hover:bg-platinum/10">
+          <Button variant="outline" className="gap-2 border-platinum/50 text-platinum-500 hover:bg-platinum/10">
             <Shield className="h-4 w-4" />
             Data Quality
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-500-950 gap-2">
             <Verified className="h-4 w-4" />
             Source Verification
           </Button>
@@ -381,9 +381,9 @@ export default function StatisticalDatapointsPage() {
                   {budgetAllocation.map((item, i) => (
                     <div key={item.sector} className="space-y-1.5">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-300">{item.sector}</span>
-                        <span className="text-platinum-100 font-medium">
-                          AED {item.amount}B <span className="text-platinum-500">({item.pct}%)</span>
+                        <span className="text-platinum-500-300">{item.sector}</span>
+                        <span className="text-platinum-500-100 font-medium">
+                          AED {item.amount}B <span className="text-platinum-500-500">({item.pct}%)</span>
                         </span>
                       </div>
                       <Progress
@@ -400,7 +400,7 @@ export default function StatisticalDatapointsPage() {
                 {[
                   { label: 'EPI Rank', value: '53rd', icon: <Leaf className="h-5 w-5" />, color: 'bg-amber-500/20 text-amber-400' },
                   { label: 'Water Rank', value: '3rd', icon: <Droplets className="h-5 w-5" />, color: 'bg-emerald-500/20 text-emerald-400' },
-                  { label: 'Credit Rating', value: 'AA/Aa2', icon: <Award className="h-5 w-5" />, color: 'bg-platinum-500/20 text-platinum-400' },
+                  { label: 'Credit Rating', value: 'AA/Aa2', icon: <Award className="h-5 w-5" />, color: 'bg-platinum-500/20 text-platinum-500-400' },
                   { label: 'HDI Score', value: '0.940', icon: <Zap className="h-5 w-5" />, color: 'bg-cyan-500/20 text-cyan-400' },
                 ].map((stat, i) => (
                   <motion.div
@@ -413,8 +413,8 @@ export default function StatisticalDatapointsPage() {
                     <div className={`w-10 h-10 rounded-lg ${stat.color} flex items-center justify-center mx-auto mb-2`}>
                       {stat.icon}
                     </div>
-                    <div className="text-xl font-bold text-platinum-100">{stat.value}</div>
-                    <div className="text-xs text-platinum-400 mt-1">{stat.label}</div>
+                    <div className="text-xl font-bold text-platinum-500-100">{stat.value}</div>
+                    <div className="text-xs text-platinum-500-400 mt-1">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -427,7 +427,7 @@ export default function StatisticalDatapointsPage() {
               <GlassPanel title="Population & Demographics" description="UAE population statistics 2024-2026">
                 <div className="grid gap-6 lg:grid-cols-2">
                   <div className="space-y-3">
-                    <h4 className="text-sm font-semibold text-platinum-300 uppercase tracking-wider">Key Metrics</h4>
+                    <h4 className="text-sm font-semibold text-platinum-500-300 uppercase tracking-wider">Key Metrics</h4>
                     {statisticalKPIs.populationKPIs.map((kpi, i) => kpiRow(kpi, i))}
                   </div>
                   <div className="space-y-4">
@@ -466,7 +466,7 @@ export default function StatisticalDatapointsPage() {
                           height={180}
                           showLegend
                         />
-                        <p className="text-xs text-platinum-400 mt-2 text-center">Ratio 175:100 — reflects male-dominated expat workforce</p>
+                        <p className="text-xs text-platinum-500-400 mt-2 text-center">Ratio 175:100 — reflects male-dominated expat workforce</p>
                       </CardContent>
                     </Card>
                   </div>
@@ -481,7 +481,7 @@ export default function StatisticalDatapointsPage() {
               <GlassPanel title="Economic Performance" description="GDP, growth rates, and economic indicators">
                 <div className="grid gap-6 lg:grid-cols-2">
                   <div className="space-y-3">
-                    <h4 className="text-sm font-semibold text-platinum-300 uppercase tracking-wider">Economic KPIs</h4>
+                    <h4 className="text-sm font-semibold text-platinum-500-300 uppercase tracking-wider">Economic KPIs</h4>
                     {statisticalKPIs.economicKPIs.map((kpi, i) => kpiRow(kpi, i))}
                   </div>
                   <div className="space-y-4">
@@ -570,9 +570,9 @@ export default function StatisticalDatapointsPage() {
                       transition={{ delay: i * 0.08 }}
                       className="rounded-xl border border-glass-border bg-glass-surface p-4 text-center hover:shadow-glass hover:-translate-y-0.5 transition-all duration-200"
                     >
-                      <div className="text-2xl font-bold text-platinum-100">{market.visitors}M</div>
-                      <div className="text-sm text-platinum-400 mt-1">{market.region}</div>
-                      <div className="text-xs text-platinum-500 mt-1">{market.share}% share</div>
+                      <div className="text-2xl font-bold text-platinum-500-100">{market.visitors}M</div>
+                      <div className="text-sm text-platinum-500-400 mt-1">{market.region}</div>
+                      <div className="text-xs text-platinum-500-500 mt-1">{market.share}% share</div>
                     </motion.div>
                   ))}
                 </div>
@@ -702,17 +702,17 @@ export default function StatisticalDatapointsPage() {
         <div className="flex items-center gap-4 flex-wrap">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            <span className="text-sm text-platinum-400">Tier 0-1 Sources: WHO, UNFPA, MoF, SCAD</span>
+            <span className="text-sm text-platinum-500-400">Tier 0-1 Sources: WHO, UNFPA, MoF, SCAD</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-amber-400" />
-            <span className="text-sm text-platinum-400">Tier 2: Trading Economics, Numbeo, CPX</span>
+            <span className="text-sm text-platinum-500-400">Tier 2: Trading Economics, Numbeo, CPX</span>
           </div>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-platinum-400" />
-            <span className="text-sm text-platinum-400">Tier 3: Wikipedia (estimates)</span>
+            <span className="text-sm text-platinum-500-400">Tier 3: Wikipedia (estimates)</span>
           </div>
-          <div className="ml-auto text-xs text-platinum-500">
+          <div className="ml-auto text-xs text-platinum-500-500">
             Data compiled: April 2026 | 35 URLs processed | 22 successfully fetched (63%)
           </div>
         </div>

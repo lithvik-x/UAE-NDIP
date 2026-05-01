@@ -198,19 +198,19 @@ export default function DailyMonitoringPage() {
       >
         <div>
           <Badge variant="gold" className="mb-2">MD 12-1</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">
             Daily Monitoring
           </h1>
-          <p className="mt-2 text-platinum-400 font-rajdhani">
+          <p className="mt-2 text-platinum-500-400 font-rajdhani">
             Comprehensive UAE media intelligence - 4-hour monitoring cycle with tiered source classification
           </p>
         </div>
         <div className="flex gap-3">
-          <Badge variant="outline" className="border-emerald/50 text-emerald">
+          <Badge variant="outline" className="border-emerald-500/50 text-emerald-500">
             <CheckCircle className="h-3 w-3 mr-1" />
             18/30 Sources Enriched
           </Badge>
-          <Badge variant="outline" className="border-gold/50 text-gold">
+          <Badge variant="outline" className="border-gold-700/50 text-gold-700">
             <Clock className="h-3 w-3 mr-1" />
             Updated: 2026-04-28
           </Badge>
@@ -254,7 +254,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Clock className="h-5 w-5 text-gold" />
+                <Clock className="h-5 w-5 text-gold-700" />
                 4-Hour Monitoring Cycle
               </CardTitle>
               <CardDescription>Phased approach for comprehensive UAE media coverage</CardDescription>
@@ -272,18 +272,18 @@ export default function DailyMonitoringPage() {
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <div className={`text-sm font-bold px-2 py-1 rounded ${
-                        idx === 0 ? 'bg-gold/20 text-gold' :
-                        idx === 1 ? 'bg-emerald/20 text-emerald' :
-                        idx === 2 ? 'bg-navy/20 text-navy' : 'bg-rose/20 text-rose'
+                        idx === 0 ? 'bg-gold-700/20 text-gold-700' :
+                        idx === 1 ? 'bg-emerald-500/20 text-emerald-500' :
+                        idx === 2 ? 'bg-navy/20 text-navy-500' : 'bg-rose-500/20 text-rose-500'
                       }`}>
                         {phase.duration}
                       </div>
                     </div>
-                    <h4 className="font-semibold text-platinum-200 mb-2">{phase.name}</h4>
+                    <h4 className="font-semibold text-platinum-500-200 mb-2">{phase.name}</h4>
                     <div className="space-y-1">
                       {phase.activities.map((activity, i) => (
-                        <p key={i} className="text-xs text-platinum-400 flex items-center gap-1">
-                          <CheckCircle className="h-3 w-3 text-emerald" />
+                        <p key={i} className="text-xs text-platinum-500-400 flex items-center gap-1">
+                          <CheckCircle className="h-3 w-3 text-emerald-500" />
                           {activity}
                         </p>
                       ))}
@@ -299,7 +299,7 @@ export default function DailyMonitoringPage() {
             <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Newspaper className="h-5 w-5 text-gold" />
+                  <Newspaper className="h-5 w-5 text-gold-700" />
                   WAM - Emirates News Agency
                 </CardTitle>
                 <CardDescription>Official state news service of UAE (Est. 1976)</CardDescription>
@@ -315,13 +315,13 @@ export default function DailyMonitoringPage() {
                         transition={{ delay: idx * 0.1 }}
                         className="p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50 text-center"
                       >
-                        <div className="text-2xl font-bold text-gold">{stat.value}</div>
-                        <div className="text-xs text-platinum-400">{stat.label}</div>
+                        <div className="text-2xl font-bold text-gold-700">{stat.value}</div>
+                        <div className="text-xs text-platinum-500-400">{stat.label}</div>
                       </motion.div>
                     ))}
                   </div>
-                  <div className="p-3 rounded-lg bg-gold/10 border border-gold/30">
-                    <p className="text-sm text-platinum-300">{wamData.officialName}</p>
+                  <div className="p-3 rounded-lg bg-gold-700/10 border border-gold-700/30">
+                    <p className="text-sm text-platinum-500-300">{wamData.officialName}</p>
                   </div>
                 </div>
               </CardContent>
@@ -330,7 +330,7 @@ export default function DailyMonitoringPage() {
             <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Crown className="h-5 w-5 text-emerald" />
+                  <Crown className="h-5 w-5 text-emerald-500" />
                   UAE Leadership Figures
                 </CardTitle>
                 <CardDescription>Key leadership positions monitored</CardDescription>
@@ -347,10 +347,10 @@ export default function DailyMonitoringPage() {
                         className="flex items-center justify-between p-2 rounded-lg bg-platinum-800/30 hover:bg-platinum-800/50 transition-colors"
                       >
                         <div className="flex items-center gap-3">
-                          <Crown className="h-4 w-4 text-gold" />
-                          <span className="text-xs text-platinum-400">{leader.position}</span>
+                          <Crown className="h-4 w-4 text-gold-700" />
+                          <span className="text-xs text-platinum-500-400">{leader.position}</span>
                         </div>
-                        <span className="text-xs font-medium text-platinum-200">{leader.figure.split(' ').slice(0, 4).join(' ')}</span>
+                        <span className="text-xs font-medium text-platinum-500-200">{leader.figure.split(' ').slice(0, 4).join(' ')}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -360,10 +360,10 @@ export default function DailyMonitoringPage() {
           </div>
 
           {/* 1 Billion Followers Summit */}
-          <Card className="border-gold/30 bg-[var(--glass-surface)]">
+          <Card className="border-gold-700/30 bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Trophy className="h-5 w-5 text-gold" />
+                <Trophy className="h-5 w-5 text-gold-700" />
                 1 Billion Followers Summit
               </CardTitle>
               <CardDescription>UAE-hosted major media event with 1.6B+ combined followers</CardDescription>
@@ -386,10 +386,10 @@ export default function DailyMonitoringPage() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.05 }}
                     whileHover={{ scale: 1.05 }}
-                    className="rounded-lg border border-gold/30 bg-platinum-800/30 p-3 text-center hover:bg-platinum-800/50 transition-colors cursor-pointer"
+                    className="rounded-lg border border-gold-700/30 bg-platinum-800/30 p-3 text-center hover:bg-platinum-800/50 transition-colors cursor-pointer"
                   >
-                    <div className="text-lg font-bold text-gold">{stat.value}</div>
-                    <div className="text-xs text-platinum-400">{stat.label}</div>
+                    <div className="text-lg font-bold text-gold-700">{stat.value}</div>
+                    <div className="text-xs text-platinum-500-400">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -400,7 +400,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <AlertOctagon className="h-5 w-5 text-rose" />
+                <AlertOctagon className="h-5 w-5 text-rose-500" />
                 Crisis Response Tiers
               </CardTitle>
               <CardDescription>Alert level classification and response protocols</CardDescription>
@@ -415,22 +415,22 @@ export default function DailyMonitoringPage() {
                     transition={{ delay: idx * 0.1 }}
                     whileHover={{ scale: 1.02 }}
                     className={`rounded-lg border p-4 ${
-                      tier.tier === 'RED' ? 'border-rose/50 bg-rose/10' :
-                      tier.tier === 'YELLOW' ? 'border-gold/50 bg-gold/10' :
-                      'border-emerald/50 bg-emerald/10'
+                      tier.tier === 'RED' ? 'border-rose-500/50 bg-rose-500/10' :
+                      tier.tier === 'YELLOW' ? 'border-gold-700/50 bg-gold-700/10' :
+                      'border-emerald-500/50 bg-emerald-500/10'
                     }`}
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      {tier.tier === 'RED' && <XCircle className="h-5 w-5 text-rose" />}
-                      {tier.tier === 'YELLOW' && <AlertCircle className="h-5 w-5 text-gold" />}
-                      {tier.tier === 'GREEN' && <CheckCircle className="h-5 w-5 text-emerald" />}
+                      {tier.tier === 'RED' && <XCircle className="h-5 w-5 text-rose-500" />}
+                      {tier.tier === 'YELLOW' && <AlertCircle className="h-5 w-5 text-gold-700" />}
+                      {tier.tier === 'GREEN' && <CheckCircle className="h-5 w-5 text-emerald-500" />}
                       <span className={`font-bold ${
-                        tier.tier === 'RED' ? 'text-rose' :
-                        tier.tier === 'YELLOW' ? 'text-gold' : 'text-emerald'
+                        tier.tier === 'RED' ? 'text-rose-500' :
+                        tier.tier === 'YELLOW' ? 'text-gold-700' : 'text-emerald-500'
                       }`}>{tier.tier}</span>
                     </div>
-                    <div className="text-sm font-medium text-platinum-200 mb-1">{tier.responseTime}</div>
-                    <p className="text-xs text-platinum-400">{tier.criteria}</p>
+                    <div className="text-sm font-medium text-platinum-500-200 mb-1">{tier.responseTime}</div>
+                    <p className="text-xs text-platinum-500-400">{tier.criteria}</p>
                   </motion.div>
                 ))}
               </div>
@@ -441,7 +441,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <ShieldCheck className="h-5 w-5 text-navy" />
+                <ShieldCheck className="h-5 w-5 text-navy-500" />
                 Source Credibility Matrix
               </CardTitle>
               <CardDescription>Tiered classification for source reliability assessment</CardDescription>
@@ -458,22 +458,22 @@ export default function DailyMonitoringPage() {
                       className="flex items-center gap-4 p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
                       <div className={`px-3 py-1 rounded-full text-sm font-bold ${
-                        tier.tier === 'Tier 0' ? 'bg-gold/20 text-gold' :
-                        tier.tier === 'Tier 1' ? 'bg-emerald/20 text-emerald' :
-                        tier.tier === 'Tier 2' ? 'bg-navy/20 text-navy' :
-                        tier.tier === 'Tier 3' ? 'bg-platinum/20 text-platinum' :
-                        'bg-platinum-600/20 text-platinum-400'
+                        tier.tier === 'Tier 0' ? 'bg-gold-700/20 text-gold-700' :
+                        tier.tier === 'Tier 1' ? 'bg-emerald-500/20 text-emerald-500' :
+                        tier.tier === 'Tier 2' ? 'bg-navy/20 text-navy-500' :
+                        tier.tier === 'Tier 3' ? 'bg-platinum/20 text-platinum-500' :
+                        'bg-platinum-600/20 text-platinum-500-400'
                       }`}>
                         {tier.tier}
                       </div>
                       <div className="flex-1">
-                        <div className="text-sm font-medium text-platinum-200">{tier.classification}</div>
-                        <div className="text-xs text-platinum-400">{tier.sources}</div>
+                        <div className="text-sm font-medium text-platinum-500-200">{tier.classification}</div>
+                        <div className="text-xs text-platinum-500-400">{tier.sources}</div>
                       </div>
                       <div className={`text-xs px-2 py-1 rounded ${
-                        tier.reliability === 'Very High' ? 'bg-emerald/20 text-emerald' :
-                        tier.reliability === 'High' ? 'bg-emerald/10 text-emerald' :
-                        'bg-platinum/10 text-platinum'
+                        tier.reliability === 'Very High' ? 'bg-emerald-500/20 text-emerald-500' :
+                        tier.reliability === 'High' ? 'bg-emerald-500/10 text-emerald-500' :
+                        'bg-platinum/10 text-platinum-500'
                       }`}>
                         {tier.reliability}
                       </div>
@@ -491,7 +491,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold/20 text-gold font-bold">1</div>
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold-700/20 text-gold-700 font-bold">1</div>
                 Phase 1: High-Priority Scanning (30 min)
               </CardTitle>
               <CardDescription>Government/official sources, Tier 0 crisis detection, leadership mentions</CardDescription>
@@ -499,18 +499,18 @@ export default function DailyMonitoringPage() {
             <CardContent className="space-y-6">
               {/* TIER 0 Sources */}
               <div>
-                <h4 className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
-                  <Shield className="h-4 w-4 text-gold" />
+                <h4 className="text-sm font-semibold text-platinum-500-300 mb-3 flex items-center gap-2">
+                  <Shield className="h-4 w-4 text-gold-700" />
                   TIER 0 Sources (Government/Official)
                 </h4>
                 <div className="grid gap-4 lg:grid-cols-2">
-                  <div className="p-4 rounded-lg border border-gold/30 bg-gold/5">
+                  <div className="p-4 rounded-lg border border-gold-700/30 bg-gold-700/5">
                     <div className="flex items-center gap-2 mb-2">
-                      <Newspaper className="h-4 w-4 text-gold" />
-                      <span className="font-medium text-platinum-200">WAM (Emirates News Agency)</span>
+                      <Newspaper className="h-4 w-4 text-gold-700" />
+                      <span className="font-medium text-platinum-500-200">WAM (Emirates News Agency)</span>
                       <Badge variant="gold" className="text-xs">Tier 0</Badge>
                     </div>
-                    <div className="text-xs text-platinum-400 space-y-1">
+                    <div className="text-xs text-platinum-500-400 space-y-1">
                       <p>Operating since 1976 (50+ years)</p>
                       <p>19 languages, 100+ countries worldwide</p>
                       <p>Official state news service of UAE</p>
@@ -518,11 +518,11 @@ export default function DailyMonitoringPage() {
                   </div>
                   <div className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
                     <div className="flex items-center gap-2 mb-2">
-                      <Building2 className="h-4 w-4 text-emerald" />
-                      <span className="font-medium text-platinum-200">UAE Government Media Ecosystem</span>
+                      <Building2 className="h-4 w-4 text-emerald-500" />
+                      <span className="font-medium text-platinum-500-200">UAE Government Media Ecosystem</span>
                     </div>
                     <ScrollArea className="h-[60px]">
-                      <div className="text-xs text-platinum-400 space-y-1">
+                      <div className="text-xs text-platinum-500-400 space-y-1">
                         {uaeGovernmentMediaEcosystem.entities.slice(0, 5).map((e, i) => (
                           <p key={i}>• {e.entity}</p>
                         ))}
@@ -534,8 +534,8 @@ export default function DailyMonitoringPage() {
 
               {/* Media Free Zones */}
               <div>
-                <h4 className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
-                  <Building2 className="h-4 w-4 text-navy" />
+                <h4 className="text-sm font-semibold text-platinum-500-300 mb-3 flex items-center gap-2">
+                  <Building2 className="h-4 w-4 text-navy-500" />
                   UAE Media Free Zones (100% Foreign Ownership)
                 </h4>
                 <div className="grid gap-2 sm:grid-cols-4">
@@ -547,8 +547,8 @@ export default function DailyMonitoringPage() {
                       transition={{ delay: idx * 0.03 }}
                       className="p-2 rounded-lg border border-platinum-700/50 bg-platinum-800/30 text-center"
                     >
-                      <div className="text-sm font-medium text-platinum-200">{zone.freeZone}</div>
-                      <div className="text-xs text-platinum-500">{zone.location}</div>
+                      <div className="text-sm font-medium text-platinum-500-200">{zone.freeZone}</div>
+                      <div className="text-xs text-platinum-500-500">{zone.location}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -556,15 +556,15 @@ export default function DailyMonitoringPage() {
 
               {/* Royal Mentions */}
               <div>
-                <h4 className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
-                  <Crown className="h-4 w-4 text-emerald" />
+                <h4 className="text-sm font-semibold text-platinum-500-300 mb-3 flex items-center gap-2">
+                  <Crown className="h-4 w-4 text-emerald-500" />
                   Royal/Leadership Mention Queries
                 </h4>
                 <div className="grid gap-2 sm:grid-cols-3 lg:grid-cols-5">
                   {md12LeadershipFigures.slice(0, 5).map((leader, idx) => (
                     <div key={idx} className="p-2 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                      <div className="text-xs text-platinum-400">{leader.position}</div>
-                      <div className="text-xs font-medium text-platinum-200 truncate">{leader.figure.split(' ').slice(-2).join(' ')}</div>
+                      <div className="text-xs text-platinum-500-400">{leader.position}</div>
+                      <div className="text-xs font-medium text-platinum-500-200 truncate">{leader.figure.split(' ').slice(-2).join(' ')}</div>
                     </div>
                   ))}
                 </div>
@@ -572,8 +572,8 @@ export default function DailyMonitoringPage() {
 
               {/* Sentiment Anomaly Detection */}
               <div>
-                <h4 className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
-                  <Activity className="h-4 w-4 text-rose" />
+                <h4 className="text-sm font-semibold text-platinum-500-300 mb-3 flex items-center gap-2">
+                  <Activity className="h-4 w-4 text-rose-500" />
                   Sentiment Anomaly Detection Methodologies
                 </h4>
                 <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
@@ -585,8 +585,8 @@ export default function DailyMonitoringPage() {
                       transition={{ delay: idx * 0.05 }}
                       className="p-2 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
-                      <div className="text-xs font-medium text-platinum-200">{method.methodology}</div>
-                      <div className="text-xs text-platinum-500 truncate">{method.description.split(' ').slice(0, 4).join(' ')}...</div>
+                      <div className="text-xs font-medium text-platinum-500-200">{method.methodology}</div>
+                      <div className="text-xs text-platinum-500-500 truncate">{method.description.split(' ').slice(0, 4).join(' ')}...</div>
                     </motion.div>
                   ))}
                 </div>
@@ -598,7 +598,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald/20 text-emerald font-bold">2</div>
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-500 font-bold">2</div>
                 Phase 2: Social Media Scanning (60 min)
               </CardTitle>
               <CardDescription>Multi-platform monitoring for real-time sentiment and crisis early warning</CardDescription>
@@ -615,22 +615,22 @@ export default function DailyMonitoringPage() {
                     className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-4 hover:bg-platinum-800/50 transition-colors cursor-pointer"
                   >
                     <div className="flex items-center gap-2 mb-3">
-                      <div className="h-8 w-8 rounded-full bg-rose/20 flex items-center justify-center">
-                        <Radio className="h-4 w-4 text-rose" />
+                      <div className="h-8 w-8 rounded-full bg-rose-500/20 flex items-center justify-center">
+                        <Radio className="h-4 w-4 text-rose-500" />
                       </div>
-                      <h4 className="font-semibold text-platinum-200">{platform.platform}</h4>
+                      <h4 className="font-semibold text-platinum-500-200">{platform.platform}</h4>
                     </div>
                     <div className="space-y-1">
                       {platform.capabilities?.slice(0, 3).map((cap, i) => (
-                        <p key={i} className="text-xs text-platinum-400 flex items-center gap-1">
-                          <CheckCircle className="h-3 w-3 text-emerald" />
+                        <p key={i} className="text-xs text-platinum-500-400 flex items-center gap-1">
+                          <CheckCircle className="h-3 w-3 text-emerald-500" />
                           {cap}
                         </p>
                       ))}
                     </div>
                     <div className="mt-3 pt-3 border-t border-platinum-700/50">
-                      <span className="text-xs text-platinum-500">UAE Use Case: </span>
-                      <span className="text-xs text-emerald">{platform.uaeUseCase}</span>
+                      <span className="text-xs text-platinum-500-500">UAE Use Case: </span>
+                      <span className="text-xs text-emerald-500">{platform.uaeUseCase}</span>
                     </div>
                   </motion.div>
                 ))}
@@ -642,7 +642,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-navy/20 text-navy font-bold">3</div>
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-navy/20 text-navy-500 font-bold">3</div>
                 Phase 3: News & Web Scanning (60 min)
               </CardTitle>
               <CardDescription>Google News queries, regional media, international coverage, fact-check sites</CardDescription>
@@ -650,8 +650,8 @@ export default function DailyMonitoringPage() {
             <CardContent className="space-y-6">
               {/* News APIs */}
               <div>
-                <h4 className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
-                  <Globe className="h-4 w-4 text-navy" />
+                <h4 className="text-sm font-semibold text-platinum-500-300 mb-3 flex items-center gap-2">
+                  <Globe className="h-4 w-4 text-navy-500" />
                   News APIs
                 </h4>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -663,9 +663,9 @@ export default function DailyMonitoringPage() {
                       transition={{ delay: idx * 0.05 }}
                       className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
-                      <div className="text-sm font-medium text-platinum-200 mb-1">{api.api}</div>
-                      <div className="text-xs text-platinum-400">Sources: {api.sources}</div>
-                      <div className="text-xs text-emerald mt-1">Free: {api.freeTier}</div>
+                      <div className="text-sm font-medium text-platinum-500-200 mb-1">{api.api}</div>
+                      <div className="text-xs text-platinum-500-400">Sources: {api.sources}</div>
+                      <div className="text-xs text-emerald-500 mt-1">Free: {api.freeTier}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -673,15 +673,15 @@ export default function DailyMonitoringPage() {
 
               {/* Official Media Sources */}
               <div>
-                <h4 className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
-                  <Newspaper className="h-4 w-4 text-gold" />
+                <h4 className="text-sm font-semibold text-platinum-500-300 mb-3 flex items-center gap-2">
+                  <Newspaper className="h-4 w-4 text-gold-700" />
                   Key Official UAE Media Sources
                 </h4>
                 <div className="grid gap-2 sm:grid-cols-4">
                   {officialMediaSources.map((source, idx) => (
                     <div key={idx} className="p-2 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                      <div className="text-sm font-medium text-platinum-200">{source.outlet}</div>
-                      <div className="text-xs text-platinum-500">{source.language}</div>
+                      <div className="text-sm font-medium text-platinum-500-200">{source.outlet}</div>
+                      <div className="text-xs text-platinum-500-500">{source.language}</div>
                     </div>
                   ))}
                 </div>
@@ -689,8 +689,8 @@ export default function DailyMonitoringPage() {
 
               {/* Language Tiers */}
               <div>
-                <h4 className="text-sm font-semibold text-platinum-300 mb-3 flex items-center gap-2">
-                  <Globe2 className="h-4 w-4 text-emerald" />
+                <h4 className="text-sm font-semibold text-platinum-500-300 mb-3 flex items-center gap-2">
+                  <Globe2 className="h-4 w-4 text-emerald-500" />
                   Language Tiers
                 </h4>
                 <div className="grid gap-2 sm:grid-cols-3">
@@ -701,12 +701,12 @@ export default function DailyMonitoringPage() {
                   ].map((lt, idx) => (
                     <div key={idx} className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30 flex items-center gap-3">
                       <div className={`px-2 py-1 rounded text-sm font-bold ${
-                        idx === 0 ? 'bg-gold/20 text-gold' :
-                        idx === 1 ? 'bg-emerald/20 text-emerald' : 'bg-navy/20 text-navy'
+                        idx === 0 ? 'bg-gold-700/20 text-gold-700' :
+                        idx === 1 ? 'bg-emerald-500/20 text-emerald-500' : 'bg-navy/20 text-navy-500'
                       }`}>{lt.tier}</div>
                       <div>
-                        <div className="text-sm font-medium text-platinum-200">{lt.language}</div>
-                        <div className="text-xs text-platinum-400">{lt.priority}</div>
+                        <div className="text-sm font-medium text-platinum-500-200">{lt.language}</div>
+                        <div className="text-xs text-platinum-500-400">{lt.priority}</div>
                       </div>
                     </div>
                   ))}
@@ -719,7 +719,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-rose/20 text-rose font-bold">4</div>
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-rose-500/20 text-rose-500 font-bold">4</div>
                 Phase 4: Analysis & Flagging (30 min)
               </CardTitle>
               <CardDescription>Sentiment analysis, entity extraction, crisis indicators, anomaly detection</CardDescription>
@@ -738,11 +738,11 @@ export default function DailyMonitoringPage() {
                     transition={{ delay: idx * 0.1 }}
                     className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
-                    <h4 className="font-semibold text-platinum-200 mb-3">{section.title}</h4>
+                    <h4 className="font-semibold text-platinum-500-200 mb-3">{section.title}</h4>
                     <div className="space-y-2">
                       {section.items.map((item, i) => (
-                        <p key={i} className="text-xs text-platinum-400 flex items-center gap-2">
-                          <CheckCircle className="h-3 w-3 text-emerald" />
+                        <p key={i} className="text-xs text-platinum-500-400 flex items-center gap-2">
+                          <CheckCircle className="h-3 w-3 text-emerald-500" />
                           {item}
                         </p>
                       ))}
@@ -761,28 +761,28 @@ export default function DailyMonitoringPage() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="p-4 rounded-lg border border-emerald/50 bg-emerald/10 text-center"
+              className="p-4 rounded-lg border border-emerald-500/50 bg-emerald-500/10 text-center"
             >
-              <div className="text-2xl font-bold text-emerald">{sourceStatusCounts.full}</div>
-              <div className="text-sm text-platinum-400">Full Fetch</div>
+              <div className="text-2xl font-bold text-emerald-500">{sourceStatusCounts.full}</div>
+              <div className="text-sm text-platinum-500-400">Full Fetch</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.05 }}
-              className="p-4 rounded-lg border border-gold/50 bg-gold/10 text-center"
+              className="p-4 rounded-lg border border-gold-700/50 bg-gold-700/10 text-center"
             >
-              <div className="text-2xl font-bold text-gold">{sourceStatusCounts.partial}</div>
-              <div className="text-sm text-platinum-400">Partial</div>
+              <div className="text-2xl font-bold text-gold-700">{sourceStatusCounts.partial}</div>
+              <div className="text-sm text-platinum-500-400">Partial</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1 }}
-              className="p-4 rounded-lg border border-rose/50 bg-rose/10 text-center"
+              className="p-4 rounded-lg border border-rose-500/50 bg-rose-500/10 text-center"
             >
-              <div className="text-2xl font-bold text-rose">{sourceStatusCounts.blocked}</div>
-              <div className="text-sm text-platinum-400">Blocked</div>
+              <div className="text-2xl font-bold text-rose-500">{sourceStatusCounts.blocked}</div>
+              <div className="text-sm text-platinum-500-400">Blocked</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -790,8 +790,8 @@ export default function DailyMonitoringPage() {
               transition={{ delay: 0.15 }}
               className="p-4 rounded-lg border border-platinum-500/50 bg-platinum-500/10 text-center"
             >
-              <div className="text-2xl font-bold text-platinum-400">{sourceStatusCounts.notFetched}</div>
-              <div className="text-sm text-platinum-400">Not Fetched</div>
+              <div className="text-2xl font-bold text-platinum-500-400">{sourceStatusCounts.notFetched}</div>
+              <div className="text-sm text-platinum-500-400">Not Fetched</div>
             </motion.div>
           </div>
 
@@ -799,7 +799,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <DatabaseIcon className="h-5 w-5 text-navy" />
+                <DatabaseIcon className="h-5 w-5 text-navy-500" />
                 Sources Index with Fetch Status
               </CardTitle>
               <CardDescription>30 URLs identified | 18 successfully enriched | 60% completeness</CardDescription>
@@ -816,16 +816,16 @@ export default function DailyMonitoringPage() {
                       className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
                       <div className="flex-1 min-w-0">
-                        <p className="text-xs text-platinum-300 truncate">{source.url}</p>
+                        <p className="text-xs text-platinum-500-300 truncate">{source.url}</p>
                       </div>
                       <div className="flex items-center gap-3 ml-4">
                         <Badge
                           variant="outline"
                           className={`text-xs ${
-                            source.status === 'Full' ? 'border-emerald/50 text-emerald' :
-                            source.status.includes('Partial') ? 'border-gold/50 text-gold' :
-                            source.status === 'Blocked' ? 'border-rose/50 text-rose' :
-                            'border-platinum-500/50 text-platinum-400'
+                            source.status === 'Full' ? 'border-emerald-500/50 text-emerald-500' :
+                            source.status.includes('Partial') ? 'border-gold-700/50 text-gold-700' :
+                            source.status === 'Blocked' ? 'border-rose-500/50 text-rose-500' :
+                            'border-platinum-500/50 text-platinum-500-400'
                           }`}
                         >
                           {source.status}
@@ -833,9 +833,9 @@ export default function DailyMonitoringPage() {
                         <Badge
                           variant="outline"
                           className={`text-xs ${
-                            source.credibility === 'Tier 0' ? 'border-gold/50 text-gold' :
-                            source.credibility === 'Tier 1' ? 'border-emerald/50 text-emerald' :
-                            'border-navy/50 text-navy'
+                            source.credibility === 'Tier 0' ? 'border-gold-700/50 text-gold-700' :
+                            source.credibility === 'Tier 1' ? 'border-emerald-500/50 text-emerald-500' :
+                            'border-navy/50 text-navy-500'
                           }`}
                         >
                           {source.credibility}
@@ -852,7 +852,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Shield className="h-5 w-5 text-gold" />
+                <Shield className="h-5 w-5 text-gold-700" />
                 Entity Registry - UAE Media Intelligence
               </CardTitle>
             </CardHeader>
@@ -860,11 +860,11 @@ export default function DailyMonitoringPage() {
               <div className="grid gap-6 lg:grid-cols-2">
                 {/* Government Entities */}
                 <div>
-                  <h4 className="text-sm font-semibold text-platinum-300 mb-3">Government Entities</h4>
+                  <h4 className="text-sm font-semibold text-platinum-500-300 mb-3">Government Entities</h4>
                   <div className="space-y-2">
                     {md12GovernmentEntities.slice(0, 5).map((entity, idx) => (
                       <div key={idx} className="flex items-center justify-between p-2 rounded-lg bg-platinum-800/30 border border-platinum-700/50">
-                        <span className="text-xs text-platinum-200">{entity.entity}</span>
+                        <span className="text-xs text-platinum-500-200">{entity.entity}</span>
                         <Badge variant="gold" className="text-xs">{entity.credibility}</Badge>
                       </div>
                     ))}
@@ -872,12 +872,12 @@ export default function DailyMonitoringPage() {
                 </div>
                 {/* Technology Platforms */}
                 <div>
-                  <h4 className="text-sm font-semibold text-platinum-300 mb-3">Technology Platforms</h4>
+                  <h4 className="text-sm font-semibold text-platinum-500-300 mb-3">Technology Platforms</h4>
                   <div className="space-y-2">
                     {technologyPlatforms.slice(0, 5).map((platform, idx) => (
                       <div key={idx} className="flex items-center justify-between p-2 rounded-lg bg-platinum-800/30 border border-platinum-700/50">
-                        <span className="text-xs text-platinum-200">{platform.platform}</span>
-                        <Badge variant="outline" className="text-xs border-emerald/50 text-emerald">{platform.credibility}</Badge>
+                        <span className="text-xs text-platinum-500-200">{platform.platform}</span>
+                        <Badge variant="outline" className="text-xs border-emerald-500/50 text-emerald-500">{platform.credibility}</Badge>
                       </div>
                     ))}
                   </div>
@@ -893,7 +893,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <AlertOctagon className="h-5 w-5 text-rose" />
+                <AlertOctagon className="h-5 w-5 text-rose-500" />
                 Crisis Detection Categories
               </CardTitle>
               <CardDescription>Priority classification for crisis monitoring</CardDescription>
@@ -909,11 +909,11 @@ export default function DailyMonitoringPage() {
                     className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-platinum-200">{category.category}</span>
+                      <span className="text-sm font-medium text-platinum-500-200">{category.category}</span>
                       <Badge
                         variant="outline"
                         className={`text-xs ${
-                          category.priority === 'Critical' ? 'border-rose/50 text-rose' : 'border-gold/50 text-gold'
+                          category.priority === 'Critical' ? 'border-rose-500/50 text-rose-500' : 'border-gold-700/50 text-gold-700'
                         }`}
                       >
                         {category.priority}
@@ -921,7 +921,7 @@ export default function DailyMonitoringPage() {
                     </div>
                     <div className="flex flex-wrap gap-1">
                       {category.examples.map((ex, i) => (
-                        <span key={i} className="text-xs text-platinum-400 bg-platinum-700/50 px-1.5 py-0.5 rounded">
+                        <span key={i} className="text-xs text-platinum-500-400 bg-platinum-700/50 px-1.5 py-0.5 rounded">
                           {ex}
                         </span>
                       ))}
@@ -936,7 +936,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <MessageSquare className="h-5 w-5 text-navy" />
+                <MessageSquare className="h-5 w-5 text-navy-500" />
                 Crisis Communication Tools
               </CardTitle>
             </CardHeader>
@@ -950,11 +950,11 @@ export default function DailyMonitoringPage() {
                     transition={{ delay: idx * 0.08 }}
                     className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
-                    <h4 className="font-medium text-platinum-200 mb-2">{tool.category}</h4>
+                    <h4 className="font-medium text-platinum-500-200 mb-2">{tool.category}</h4>
                     <div className="space-y-1">
                       {tool.features.slice(0, 3).map((feature, i) => (
-                        <p key={i} className="text-xs text-platinum-400 flex items-center gap-1">
-                          <CheckCircle className="h-3 w-3 text-emerald" />
+                        <p key={i} className="text-xs text-platinum-500-400 flex items-center gap-1">
+                          <CheckCircle className="h-3 w-3 text-emerald-500" />
                           {feature}
                         </p>
                       ))}
@@ -969,7 +969,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Target className="h-5 w-5 text-gold" />
+                <Target className="h-5 w-5 text-gold-700" />
                 Crisis Detection KPIs
               </CardTitle>
             </CardHeader>
@@ -978,20 +978,20 @@ export default function DailyMonitoringPage() {
                 {crisisKPIs.map((kpi, idx) => (
                   <div key={idx} className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
                     <div className="flex items-center justify-between mb-3">
-                      <span className="font-medium text-platinum-200">{kpi.metric}</span>
+                      <span className="font-medium text-platinum-500-200">{kpi.metric}</span>
                     </div>
                     <div className="grid grid-cols-3 gap-4 text-center">
                       <div className="p-2 rounded bg-platinum-700/50">
-                        <div className="text-xs text-platinum-400">Baseline</div>
-                        <div className="text-sm font-medium text-platinum-300">{kpi.baseline}</div>
+                        <div className="text-xs text-platinum-500-400">Baseline</div>
+                        <div className="text-sm font-medium text-platinum-500-300">{kpi.baseline}</div>
                       </div>
-                      <div className="p-2 rounded bg-gold/10 border border-gold/30">
-                        <div className="text-xs text-platinum-400">Alert</div>
-                        <div className="text-sm font-medium text-gold">{kpi.alertThreshold}</div>
+                      <div className="p-2 rounded bg-gold-700/10 border border-gold-700/30">
+                        <div className="text-xs text-platinum-500-400">Alert</div>
+                        <div className="text-sm font-medium text-gold-700">{kpi.alertThreshold}</div>
                       </div>
-                      <div className="p-2 rounded bg-rose/10 border border-rose/30">
-                        <div className="text-xs text-platinum-400">Crisis</div>
-                        <div className="text-sm font-medium text-rose">{kpi.crisisThreshold}</div>
+                      <div className="p-2 rounded bg-rose-500/10 border border-rose-500/30">
+                        <div className="text-xs text-platinum-500-400">Crisis</div>
+                        <div className="text-sm font-medium text-rose-500">{kpi.crisisThreshold}</div>
                       </div>
                     </div>
                   </div>
@@ -1004,7 +1004,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Bell className="h-5 w-5 text-emerald" />
+                <Bell className="h-5 w-5 text-emerald-500" />
                 Alert Tier System
               </CardTitle>
             </CardHeader>
@@ -1017,22 +1017,22 @@ export default function DailyMonitoringPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.1 }}
                     className={`p-4 rounded-lg border ${
-                      tier.tier === 'RED' ? 'border-rose/50 bg-rose/10' :
-                      tier.tier === 'YELLOW' ? 'border-gold/50 bg-gold/10' :
-                      'border-emerald/50 bg-emerald/10'
+                      tier.tier === 'RED' ? 'border-rose-500/50 bg-rose-500/10' :
+                      tier.tier === 'YELLOW' ? 'border-gold-700/50 bg-gold-700/10' :
+                      'border-emerald-500/50 bg-emerald-500/10'
                     }`}
                   >
                     <div className="flex items-center gap-2 mb-2">
-                      {tier.tier === 'RED' && <XCircle className="h-5 w-5 text-rose" />}
-                      {tier.tier === 'YELLOW' && <AlertCircle className="h-5 w-5 text-gold" />}
-                      {tier.tier === 'GREEN' && <CheckCircle className="h-5 w-5 text-emerald" />}
+                      {tier.tier === 'RED' && <XCircle className="h-5 w-5 text-rose-500" />}
+                      {tier.tier === 'YELLOW' && <AlertCircle className="h-5 w-5 text-gold-700" />}
+                      {tier.tier === 'GREEN' && <CheckCircle className="h-5 w-5 text-emerald-500" />}
                       <span className={`font-bold ${
-                        tier.tier === 'RED' ? 'text-rose' :
-                        tier.tier === 'YELLOW' ? 'text-gold' : 'text-emerald'
+                        tier.tier === 'RED' ? 'text-rose-500' :
+                        tier.tier === 'YELLOW' ? 'text-gold-700' : 'text-emerald-500'
                       }`}>{tier.tier}</span>
                     </div>
-                    <div className="text-sm text-platinum-300 mb-1">{tier.responseTime}</div>
-                    <div className="text-xs text-platinum-400">{tier.examples}</div>
+                    <div className="text-sm text-platinum-500-300 mb-1">{tier.responseTime}</div>
+                    <div className="text-xs text-platinum-500-400">{tier.examples}</div>
                   </motion.div>
                 ))}
               </div>
@@ -1046,7 +1046,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Radio className="h-5 w-5 text-rose" />
+                <Radio className="h-5 w-5 text-rose-500" />
                 Social Media Monitoring KPIs
               </CardTitle>
             </CardHeader>
@@ -1061,21 +1061,21 @@ export default function DailyMonitoringPage() {
                     className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
                     <div className="flex items-center gap-3">
-                      <Radio className="h-4 w-4 text-rose" />
-                      <span className="font-medium text-platinum-200">{kpi.platform}</span>
+                      <Radio className="h-4 w-4 text-rose-500" />
+                      <span className="font-medium text-platinum-500-200">{kpi.platform}</span>
                     </div>
                     <div className="flex items-center gap-6">
                       <div className="text-center">
-                        <div className="text-xs text-platinum-400">API Access</div>
-                        <div className="text-xs text-emerald">{kpi.apiAccess}</div>
+                        <div className="text-xs text-platinum-500-400">API Access</div>
+                        <div className="text-xs text-emerald-500">{kpi.apiAccess}</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-xs text-platinum-400">Data Volume</div>
-                        <div className="text-xs text-gold">{kpi.dataVolume}</div>
+                        <div className="text-xs text-platinum-500-400">Data Volume</div>
+                        <div className="text-xs text-gold-700">{kpi.dataVolume}</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-xs text-platinum-400">Refresh</div>
-                        <div className="text-xs text-navy">{kpi.refreshRate}</div>
+                        <div className="text-xs text-platinum-500-400">Refresh</div>
+                        <div className="text-xs text-navy-500">{kpi.refreshRate}</div>
                       </div>
                     </div>
                   </motion.div>
@@ -1088,7 +1088,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Users className="h-5 w-5 text-navy" />
+                <Users className="h-5 w-5 text-navy-500" />
                 LinkedIn Workforce Metrics (2025-2026)
               </CardTitle>
             </CardHeader>
@@ -1103,9 +1103,9 @@ export default function DailyMonitoringPage() {
                     className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30 text-center"
                   >
                     <div className={`text-xl font-bold ${
-                      metric.value.startsWith('-') ? 'text-rose' : 'text-emerald'
+                      metric.value.startsWith('-') ? 'text-rose-500' : 'text-emerald-500'
                     }`}>{metric.value}</div>
-                    <div className="text-xs text-platinum-400 mt-1">{metric.label}</div>
+                    <div className="text-xs text-platinum-500-400 mt-1">{metric.label}</div>
                   </motion.div>
                 ))}
               </div>
@@ -1116,7 +1116,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Activity className="h-5 w-5 text-emerald" />
+                <Activity className="h-5 w-5 text-emerald-500" />
                 Sentiment Analysis Matrix
               </CardTitle>
             </CardHeader>
@@ -1131,17 +1131,17 @@ export default function DailyMonitoringPage() {
                       transition={{ delay: idx * 0.05 }}
                       className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
-                      <span className="text-xs text-platinum-200">{row.sourceCategory}</span>
+                      <span className="text-xs text-platinum-500-200">{row.sourceCategory}</span>
                       <div className="flex items-center gap-4">
-                        <Badge variant="outline" className="text-xs border-platinum-600/50 text-platinum-400">
+                        <Badge variant="outline" className="text-xs border-platinum-600/50 text-platinum-500-400">
                           {row.typicalSentiment}
                         </Badge>
                         <Badge
                           variant="outline"
                           className={`text-xs ${
-                            row.volatility === 'Very High' || row.volatility === 'High' ? 'border-rose/50 text-rose' :
-                            row.volatility === 'Medium' ? 'border-gold/50 text-gold' :
-                            'border-emerald/50 text-emerald'
+                            row.volatility === 'Very High' || row.volatility === 'High' ? 'border-rose-500/50 text-rose-500' :
+                            row.volatility === 'Medium' ? 'border-gold-700/50 text-gold-700' :
+                            'border-emerald-500/50 text-emerald-500'
                           }`}
                         >
                           {row.volatility} Volatility
@@ -1161,7 +1161,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Building2 className="h-5 w-5 text-gold" />
+                <Building2 className="h-5 w-5 text-gold-700" />
                 Enterprise Platforms
               </CardTitle>
             </CardHeader>
@@ -1177,13 +1177,13 @@ export default function DailyMonitoringPage() {
                     className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30 hover:bg-platinum-800/50 transition-colors cursor-pointer"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="font-medium text-platinum-200">{platform.platform}</span>
+                      <span className="font-medium text-platinum-500-200">{platform.platform}</span>
                       <Badge variant={platform.tier === 1 ? "gold" : "outline"} className="text-xs">
                         Tier {platform.tier}
                       </Badge>
                     </div>
-                    <div className="text-xs text-platinum-400 mb-2">{platform.bestFor}</div>
-                    <p className="text-xs text-platinum-500 line-clamp-2">{platform.features}</p>
+                    <div className="text-xs text-platinum-500-400 mb-2">{platform.bestFor}</div>
+                    <p className="text-xs text-platinum-500-500 line-clamp-2">{platform.features}</p>
                   </motion.div>
                 ))}
               </div>
@@ -1194,7 +1194,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Code className="h-5 w-5 text-emerald" />
+                <Code className="h-5 w-5 text-emerald-500" />
                 Open Source / Building Blocks
               </CardTitle>
             </CardHeader>
@@ -1208,8 +1208,8 @@ export default function DailyMonitoringPage() {
                     transition={{ delay: idx * 0.05 }}
                     className="p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30 text-center"
                   >
-                    <div className="font-medium text-platinum-200">{tool.tool}</div>
-                    <div className="text-xs text-platinum-400">{tool.purpose}</div>
+                    <div className="font-medium text-platinum-500-200">{tool.tool}</div>
+                    <div className="text-xs text-platinum-500-400">{tool.purpose}</div>
                     <Badge variant="outline" className="mt-2 text-xs">{tool.language}</Badge>
                   </motion.div>
                 ))}
@@ -1221,7 +1221,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Globe className="h-5 w-5 text-navy" />
+                <Globe className="h-5 w-5 text-navy-500" />
                 Geopolitical Risk Monitoring Framework
               </CardTitle>
             </CardHeader>
@@ -1235,12 +1235,12 @@ export default function DailyMonitoringPage() {
                     transition={{ delay: idx * 0.1 }}
                     className="flex items-start gap-4 p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-navy/20 text-navy font-bold">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-navy/20 text-navy-500 font-bold">
                       {step.step}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-platinum-200 mb-1">{step.name}</h4>
-                      <p className="text-sm text-platinum-400">{step.description}</p>
+                      <h4 className="font-semibold text-platinum-500-200 mb-1">{step.name}</h4>
+                      <p className="text-sm text-platinum-500-400">{step.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -1252,7 +1252,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Layers className="h-5 w-5 text-emerald" />
+                <Layers className="h-5 w-5 text-emerald-500" />
                 Monitoring Resources Matrix
               </CardTitle>
             </CardHeader>
@@ -1270,16 +1270,16 @@ export default function DailyMonitoringPage() {
                       <Badge
                         variant="outline"
                         className={`text-xs ${
-                          resource.credibility === 'Tier 0-1' || resource.credibility === 'Tier 1' ? 'border-emerald/50 text-emerald' :
-                          resource.credibility === 'Tier 1-2' ? 'border-gold/50 text-gold' :
-                          'border-platinum-500/50 text-platinum-400'
+                          resource.credibility === 'Tier 0-1' || resource.credibility === 'Tier 1' ? 'border-emerald-500/50 text-emerald-500' :
+                          resource.credibility === 'Tier 1-2' ? 'border-gold-700/50 text-gold-700' :
+                          'border-platinum-500/50 text-platinum-500-400'
                         }`}
                       >
                         {resource.credibility}
                       </Badge>
-                      <span className="font-medium text-platinum-200">{resource.category}</span>
+                      <span className="font-medium text-platinum-500-200">{resource.category}</span>
                     </div>
-                    <span className="text-xs text-platinum-400">{resource.sources}</span>
+                    <span className="text-xs text-platinum-500-400">{resource.sources}</span>
                   </motion.div>
                 ))}
               </div>
@@ -1293,7 +1293,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-emerald" />
+                <CheckCircle className="h-5 w-5 text-emerald-500" />
                 UAE Media Infrastructure KPIs
               </CardTitle>
             </CardHeader>
@@ -1313,15 +1313,15 @@ export default function DailyMonitoringPage() {
                         kpi.status === 'Active' ? 'bg-gold' :
                         kpi.status === 'On track' ? 'bg-navy' : 'bg-platinum-500'
                       }`} />
-                      <span className="text-sm font-medium text-platinum-200">{kpi.kpi}</span>
+                      <span className="text-sm font-medium text-platinum-500-200">{kpi.kpi}</span>
                     </div>
                     <div className="flex items-center gap-4">
-                      <span className="text-sm text-platinum-400">{kpi.currentValue}</span>
+                      <span className="text-sm text-platinum-500-400">{kpi.currentValue}</span>
                       <Badge variant="outline" className={`text-xs ${
-                        kpi.status === 'Complete' ? 'border-emerald/50 text-emerald' :
-                        kpi.status === 'Active' ? 'border-gold/50 text-gold' :
-                        kpi.status === 'On track' ? 'border-navy/50 text-navy' :
-                        'border-platinum-500/50 text-platinum-400'
+                        kpi.status === 'Complete' ? 'border-emerald-500/50 text-emerald-500' :
+                        kpi.status === 'Active' ? 'border-gold-700/50 text-gold-700' :
+                        kpi.status === 'On track' ? 'border-navy/50 text-navy-500' :
+                        'border-platinum-500/50 text-platinum-500-400'
                       }`}>
                         {kpi.status}
                       </Badge>
@@ -1336,7 +1336,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <BarChart3 className="h-5 w-5 text-gold" />
+                <BarChart3 className="h-5 w-5 text-gold-700" />
                 Key Metrics Categories
               </CardTitle>
             </CardHeader>
@@ -1350,8 +1350,8 @@ export default function DailyMonitoringPage() {
                     transition={{ delay: idx * 0.05 }}
                     className="p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
-                    <div className="font-medium text-platinum-200 mb-1">{cat.category}</div>
-                    <div className="text-xs text-platinum-400">{cat.metrics}</div>
+                    <div className="font-medium text-platinum-500-200 mb-1">{cat.category}</div>
+                    <div className="text-xs text-platinum-500-400">{cat.metrics}</div>
                   </motion.div>
                 ))}
               </div>
@@ -1362,7 +1362,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Clock className="h-5 w-5 text-navy" />
+                <Clock className="h-5 w-5 text-navy-500" />
                 Monitoring Cadence
               </CardTitle>
             </CardHeader>
@@ -1376,10 +1376,10 @@ export default function DailyMonitoringPage() {
                     transition={{ delay: idx * 0.05 }}
                     className="flex items-center gap-4 p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                   >
-                    <Badge variant="outline" className="border-navy/50 text-navy w-[120px] justify-center">
+                    <Badge variant="outline" className="border-navy/50 text-navy-500 w-[120px] justify-center">
                       {cadence.frequency}
                     </Badge>
-                    <span className="text-sm text-platinum-300">{cadence.activity}</span>
+                    <span className="text-sm text-platinum-500-300">{cadence.activity}</span>
                   </motion.div>
                 ))}
               </div>
@@ -1390,10 +1390,10 @@ export default function DailyMonitoringPage() {
         {/* Data Summary Tab */}
         <TabsContent value="data" className="space-y-6">
           {/* Quantitative Metrics */}
-          <Card className="border-gold/30 bg-[var(--glass-surface)]">
+          <Card className="border-gold-700/30 bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <BarChart3 className="h-5 w-5 text-gold" />
+                <BarChart3 className="h-5 w-5 text-gold-700" />
                 Quantitative Metrics
               </CardTitle>
               <CardDescription>Key performance indicators from MD 12-1 source data</CardDescription>
@@ -1409,9 +1409,9 @@ export default function DailyMonitoringPage() {
                     whileHover={{ scale: 1.05 }}
                     className="rounded-lg border border-platinum-700/50 bg-platinum-800/30 p-3 hover:bg-platinum-800/50 transition-colors cursor-pointer"
                   >
-                    <div className="text-lg font-bold text-gold">{metric.value}</div>
-                    <div className="text-xs text-platinum-400">{metric.dataPoint}</div>
-                    <div className="text-xs text-platinum-500 mt-1">{metric.category}</div>
+                    <div className="text-lg font-bold text-gold-700">{metric.value}</div>
+                    <div className="text-xs text-platinum-500-400">{metric.dataPoint}</div>
+                    <div className="text-xs text-platinum-500-500 mt-1">{metric.category}</div>
                   </motion.div>
                 ))}
               </div>
@@ -1422,7 +1422,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Award className="h-5 w-5 text-emerald" />
+                <Award className="h-5 w-5 text-emerald-500" />
                 Qualitative Insights
               </CardTitle>
             </CardHeader>
@@ -1438,9 +1438,9 @@ export default function DailyMonitoringPage() {
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <Badge variant="gold" className="text-xs">{insight.category}</Badge>
-                      <Badge variant="outline" className="text-xs border-platinum-600/50 text-platinum-400">{insight.source}</Badge>
+                      <Badge variant="outline" className="text-xs border-platinum-600/50 text-platinum-500-400">{insight.source}</Badge>
                     </div>
-                    <p className="text-sm text-platinum-300">{insight.insight}</p>
+                    <p className="text-sm text-platinum-500-300">{insight.insight}</p>
                   </motion.div>
                 ))}
               </div>
@@ -1451,7 +1451,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-[var(--glass-border)] bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Flag className="h-5 w-5 text-rose" />
+                <Flag className="h-5 w-5 text-rose-500" />
                 UAE Relevance Assessment
               </CardTitle>
             </CardHeader>
@@ -1467,15 +1467,15 @@ export default function DailyMonitoringPage() {
                       className="flex items-start justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30"
                     >
                       <div className="flex-1">
-                        <p className="text-sm font-medium text-platinum-200">{assessment.source}</p>
-                        <p className="text-xs text-platinum-400 mt-1">{assessment.rationale}</p>
+                        <p className="text-sm font-medium text-platinum-500-200">{assessment.source}</p>
+                        <p className="text-xs text-platinum-500-400 mt-1">{assessment.rationale}</p>
                       </div>
                       <Badge
                         variant="outline"
                         className={`ml-4 text-xs ${
-                          assessment.relevanceRating === 'Critical' ? 'border-rose/50 text-rose' :
-                          assessment.relevanceRating === 'High' ? 'border-gold/50 text-gold' :
-                          'border-emerald/50 text-emerald'
+                          assessment.relevanceRating === 'Critical' ? 'border-rose-500/50 text-rose-500' :
+                          assessment.relevanceRating === 'High' ? 'border-gold-700/50 text-gold-700' :
+                          'border-emerald-500/50 text-emerald-500'
                         }`}
                       >
                         {assessment.relevanceRating}
@@ -1491,7 +1491,7 @@ export default function DailyMonitoringPage() {
           <Card className="border-navy/30 bg-[var(--glass-surface)]">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Globe className="h-5 w-5 text-navy" />
+                <Globe className="h-5 w-5 text-navy-500" />
                 NewsAPI Coverage
               </CardTitle>
             </CardHeader>
@@ -1505,8 +1505,8 @@ export default function DailyMonitoringPage() {
                     transition={{ delay: idx * 0.05 }}
                     className="p-4 rounded-lg border border-navy/30 bg-platinum-800/30 text-center"
                   >
-                    <div className="text-2xl font-bold text-navy">{stat.value}</div>
-                    <div className="text-xs text-platinum-400 mt-1">{stat.label}</div>
+                    <div className="text-2xl font-bold text-navy-500">{stat.value}</div>
+                    <div className="text-xs text-platinum-500-400 mt-1">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>

@@ -87,17 +87,17 @@ export default function SupplyChainDisruptionsPage() {
       <div className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">PHOENIX PROTOCOL: SUPPLY CHAIN</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Supply Chain Disruptions</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Supply Chain Disruptions</h1>
+          <p className="mt-2 text-platinum-500-400">
             Global supply chain vulnerabilities, shipping disruptions, and logistics resilience for UAE
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <Ship className="h-4 w-4" />
             Logistics Portal
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Package className="h-4 w-4" />
             Supply Dashboard
           </Button>
@@ -148,8 +148,8 @@ export default function SupplyChainDisruptionsPage() {
             {data.alertLevel === 'YELLOW' && <AlertTriangle className="h-6 w-6 text-amber-400" />}
             {data.alertLevel === 'GREEN' && <TrendingUp className="h-6 w-6 text-emerald-400" />}
             <div>
-              <p className="font-semibold text-platinum-200">Supply Chain Alert Level: {data.alertLevel}</p>
-              <p className="text-sm text-platinum-400">
+              <p className="font-semibold text-platinum-500-200">Supply Chain Alert Level: {data.alertLevel}</p>
+              <p className="text-sm text-platinum-500-400">
                 {data.affectedEntities?.length || 0} affected entities | Crisis Stage: {data.phoenixStage}
               </p>
             </div>
@@ -177,8 +177,8 @@ export default function SupplyChainDisruptionsPage() {
                 >
                   <div className="flex items-center gap-4">
                     <div className={`flex h-10 w-10 items-center justify-center rounded-full ${
-                      finding.tier === 0 ? 'bg-gold/20 text-gold' :
-                      finding.tier === 1 ? 'bg-emerald/20 text-emerald' :
+                      finding.tier === 0 ? 'bg-gold-700/20 text-gold-700' :
+                      finding.tier === 1 ? 'bg-emerald-500/20 text-emerald-500' :
                       'bg-red-500/20 text-red-400'
                     }`}>
                       {finding.tier === 0 ? <Package className="h-5 w-5" /> :
@@ -186,14 +186,14 @@ export default function SupplyChainDisruptionsPage() {
                        <AlertCircle className="h-5 w-5" />}
                     </div>
                     <div>
-                      <p className="font-medium text-platinum-200">{finding.finding}</p>
-                      <p className="text-sm text-platinum-400">Source: {finding.source}</p>
+                      <p className="font-medium text-platinum-500-200">{finding.finding}</p>
+                      <p className="text-sm text-platinum-500-400">Source: {finding.source}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="text-right">
-                      <p className="text-xl font-bold text-gold">{finding.metric}</p>
-                      <p className="text-xs text-platinum-400">Tier {finding.tier}</p>
+                      <p className="text-xl font-bold text-gold-700">{finding.metric}</p>
+                      <p className="text-xs text-platinum-500-400">Tier {finding.tier}</p>
                     </div>
                     {finding.alert && getAlertBadge(finding.alert)}
                   </div>
@@ -261,12 +261,12 @@ export default function SupplyChainDisruptionsPage() {
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4">
                           <div className="flex items-center gap-3">
-                            <Factory className="h-5 w-5 text-gold" />
-                            <p className="font-medium text-platinum-200">{item.indicator}</p>
+                            <Factory className="h-5 w-5 text-gold-700" />
+                            <p className="font-medium text-platinum-500-200">{item.indicator}</p>
                           </div>
                           <div className="flex items-center gap-3">
                             <Badge variant="success" className="text-xs">{item.status}</Badge>
-                            <p className="text-lg font-bold text-gold">{item.uptime}%</p>
+                            <p className="text-lg font-bold text-gold-700">{item.uptime}%</p>
                           </div>
                         </div>
                       ))}
@@ -332,8 +332,8 @@ export default function SupplyChainDisruptionsPage() {
                       ].map((item, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-200">{item.sector}</span>
-                            <span className="text-sm text-platinum-400">Reliance: {item.reliance}% | Diversified: {item.diversification}%</span>
+                            <span className="text-sm font-medium text-platinum-500-200">{item.sector}</span>
+                            <span className="text-sm text-platinum-500-400">Reliance: {item.reliance}% | Diversified: {item.diversification}%</span>
                           </div>
                           <div className="flex gap-2">
                             <Progress value={item.reliance} className="h-2 flex-1" />
@@ -355,15 +355,15 @@ export default function SupplyChainDisruptionsPage() {
             <Card className="glass-card">
               <CardContent className="pt-6">
                 <ScrollArea className="h-[600px]">
-                  <div className="relative border-l-2 border-gold/30 pl-8 space-y-8">
+                  <div className="relative border-l-2 border-gold-700/30 pl-8 space-y-8">
                     {(data.timeline || []).map((event, index) => (
                       <div key={index} className="relative">
                         <div className="absolute -left-[37px] h-4 w-4 rounded-full bg-gold border-2 border-navy-950" />
                         <div className="flex items-start gap-4">
-                          <p className="text-sm font-bold text-gold whitespace-nowrap w-24">{event.date}</p>
+                          <p className="text-sm font-bold text-gold-700 whitespace-nowrap w-24">{event.date}</p>
                           <div>
-                            <p className="font-semibold text-platinum-200">{event.event}</p>
-                            <p className="text-sm text-platinum-400 mt-1">{event.description}</p>
+                            <p className="font-semibold text-platinum-500-200">{event.event}</p>
+                            <p className="text-sm text-platinum-500-400 mt-1">{event.description}</p>
                             {event.stage && (
                               <Badge variant="outline" className="mt-2 text-xs">{event.stage}</Badge>
                             )}

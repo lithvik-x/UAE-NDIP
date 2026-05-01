@@ -38,7 +38,7 @@ export function EntityRegistrySection({
         <div className="space-y-8">
           {/* International Organizations Table */}
           <div>
-            <h3 className="text-sm font-semibold text-platinum-700 dark:text-platinum-300 mb-3">
+            <h3 className="text-sm font-semibold text-platinum-500-700 dark:text-platinum-500-300 mb-3">
               International Organizations with UAE Presence
             </h3>
             <Table variant="medium">
@@ -56,7 +56,7 @@ export function EntityRegistrySection({
                     <TableCell className="font-medium">{org.organization}</TableCell>
                     <TableCell>{org.hq}</TableCell>
                     <TableCell>{org.uaeOffice}</TableCell>
-                    <TableCell className="text-xs text-platinum-500">{org.keyContact}</TableCell>
+                    <TableCell className="text-xs text-platinum-500-500">{org.keyContact}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -65,7 +65,7 @@ export function EntityRegistrySection({
 
           {/* Diplomatic Network Sample Table */}
           <div>
-            <h3 className="text-sm font-semibold text-platinum-700 dark:text-platinum-300 mb-3">
+            <h3 className="text-sm font-semibold text-platinum-500-700 dark:text-platinum-500-300 mb-3">
               UAE Diplomatic Network (Sample)
             </h3>
             <Table variant="medium">

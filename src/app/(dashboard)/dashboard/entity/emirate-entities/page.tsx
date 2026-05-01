@@ -279,17 +279,17 @@ export default function EmirateEntitiesPage() {
       >
         <div>
           <Badge variant="default" className="mb-2">EMIRATE ENTITIES</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Entity Intelligence</h1>
-          <p className="mt-2 text-platinum-600 dark:text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">Entity Intelligence</h1>
+          <p className="mt-2 text-platinum-500-600 dark:text-platinum-500-400">
             Government entities across all 7 Emirates — {totalEntities} entities tracked with {executionMetadata.queriesExecuted} queries executed
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-navy/30 text-navy hover:bg-navy/10">
+          <Button variant="outline" className="gap-2 border-navy/30 text-navy-500 hover:bg-navy/10">
             <Globe className="h-4 w-4" />
             Export List
           </Button>
-          <Button className="bg-gradient-navy hover:opacity-90 text-platinum-100 gap-2">
+          <Button className="bg-gradient-navy hover:opacity-90 text-platinum-500-100 gap-2">
             <Star className="h-4 w-4" />
             Refresh Data
           </Button>
@@ -359,13 +359,13 @@ export default function EmirateEntitiesPage() {
             <Table>
               <TableHeader>
                 <TableRow className="border-b border-platinum-200/50 dark:border-platinum-700/50">
-                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Entity</TableHead>
-                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Type</TableHead>
-                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Emirate</TableHead>
-                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Relevance</TableHead>
-                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Sentiment</TableHead>
-                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Confidence</TableHead>
-                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Key Metric</TableHead>
+                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Entity</TableHead>
+                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Type</TableHead>
+                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Emirate</TableHead>
+                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Relevance</TableHead>
+                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Sentiment</TableHead>
+                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Confidence</TableHead>
+                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Key Metric</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -373,17 +373,17 @@ export default function EmirateEntitiesPage() {
                   <TableRow key={entity.id} className="border-b border-platinum-100/50 dark:border-platinum-800/50 hover:bg-platinum-50/50 dark:hover:bg-platinum-800/25 transition-colors">
                     <TableCell>
                       <div className="flex flex-col">
-                        <span className="font-semibold text-navy-900 dark:text-platinum-100">{entity.name.split(' - ')[0]}</span>
+                        <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{entity.name.split(' - ')[0]}</span>
                         {entity.ceo && (
-                          <span className="text-xs text-platinum-500 dark:text-platinum-400">CEO: {entity.ceo}</span>
+                          <span className="text-xs text-platinum-500-500 dark:text-platinum-500-400">CEO: {entity.ceo}</span>
                         )}
                       </div>
                     </TableCell>
                     <TableCell>
-                      <span className="text-sm text-platinum-700 dark:text-platinum-300">{entity.type.replace(/_/g, ' ')}</span>
+                      <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{entity.type.replace(/_/g, ' ')}</span>
                     </TableCell>
                     <TableCell>
-                      <span className="text-sm text-platinum-700 dark:text-platinum-300">{entity.emirate}</span>
+                      <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{entity.emirate}</span>
                     </TableCell>
                     <TableCell>
                       {getRelevanceBadge(entity.uaeRelevance)}
@@ -397,7 +397,7 @@ export default function EmirateEntitiesPage() {
                       </Badge>
                     </TableCell>
                     <TableCell>
-                      <span className="text-sm text-navy-900 dark:text-platinum-100 font-medium">
+                      <span className="text-sm text-navy-500-900 dark:text-platinum-500-100 font-medium">
                         {entity.metrics[0]?.value}
                       </span>
                     </TableCell>
@@ -434,10 +434,10 @@ export default function EmirateEntitiesPage() {
                   {synthesizedAbuDhabiEcosystem.map((item) => (
                     <div key={item.entityType} className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="font-medium text-platinum-700 dark:text-platinum-300">{item.entityType}</span>
-                        <span className="text-platinum-500">{item.scale}</span>
+                        <span className="font-medium text-platinum-500-700 dark:text-platinum-500-300">{item.entityType}</span>
+                        <span className="text-platinum-500-500">{item.scale}</span>
                       </div>
-                      <p className="text-xs text-platinum-600 dark:text-platinum-400">{item.keyExamples}</p>
+                      <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">{item.keyExamples}</p>
                     </div>
                   ))}
                 </div>
@@ -453,10 +453,10 @@ export default function EmirateEntitiesPage() {
                   {synthesizedDubaiEcosystem.map((item) => (
                     <div key={item.entityType} className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="font-medium text-platinum-700 dark:text-platinum-300">{item.entityType}</span>
-                        <span className="text-platinum-500">{item.scale}</span>
+                        <span className="font-medium text-platinum-500-700 dark:text-platinum-500-300">{item.entityType}</span>
+                        <span className="text-platinum-500-500">{item.scale}</span>
                       </div>
-                      <p className="text-xs text-platinum-600 dark:text-platinum-400">{item.keyExamples}</p>
+                      <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">{item.keyExamples}</p>
                     </div>
                   ))}
                 </div>
@@ -472,10 +472,10 @@ export default function EmirateEntitiesPage() {
                   {synthesizedNorthernEmirates.map((item) => (
                     <div key={item.emirate} className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="font-medium text-platinum-700 dark:text-platinum-300">{item.emirate}</span>
+                        <span className="font-medium text-platinum-500-700 dark:text-platinum-500-300">{item.emirate}</span>
                         <Badge variant="outline" className="text-xs">{item.entityType}</Badge>
                       </div>
-                      <p className="text-xs text-platinum-600 dark:text-platinum-400">{item.keyExamples}</p>
+                      <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">{item.keyExamples}</p>
                     </div>
                   ))}
                 </div>
@@ -542,9 +542,9 @@ export default function EmirateEntitiesPage() {
                     <div key={item.level} className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
                         <Badge variant={item.level === 'HIGH' ? 'success' : 'warning'}>{item.level}</Badge>
-                        <span className="text-platinum-500 text-xs">{item.criteria}</span>
+                        <span className="text-platinum-500-500 text-xs">{item.criteria}</span>
                       </div>
-                      <p className="text-xs text-platinum-600 dark:text-platinum-400">{item.entities.join(', ')}</p>
+                      <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">{item.entities.join(', ')}</p>
                     </div>
                   ))}
                 </div>
@@ -579,7 +579,7 @@ export default function EmirateEntitiesPage() {
                         <TableCell>{item.emirate}</TableCell>
                         <TableCell>{item.type}</TableCell>
                         <TableCell>{item.metric}</TableCell>
-                        <TableCell className="text-navy-900 dark:text-platinum-100 font-semibold">{item.value}</TableCell>
+                        <TableCell className="text-navy-500-900 dark:text-platinum-500-100 font-semibold">{item.value}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -632,7 +632,7 @@ export default function EmirateEntitiesPage() {
                         <TableCell className="font-medium">{item.freeZone}</TableCell>
                         <TableCell>{item.emirate}</TableCell>
                         <TableCell>{item.companies}</TableCell>
-                        <TableCell className="text-platinum-600">{item.fdiContribution}</TableCell>
+                        <TableCell className="text-platinum-500-600">{item.fdiContribution}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -686,7 +686,7 @@ export default function EmirateEntitiesPage() {
                         <TableCell>{item.emirate}</TableCell>
                         <TableCell>{item.fleet}</TableCell>
                         <TableCell>{item.destinations}</TableCell>
-                        <TableCell className="text-navy-900 dark:text-platinum-100 font-semibold">{item.revenue}</TableCell>
+                        <TableCell className="text-navy-500-900 dark:text-platinum-500-100 font-semibold">{item.revenue}</TableCell>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -772,11 +772,11 @@ export default function EmirateEntitiesPage() {
             <div className="space-y-6">
               {Object.entries(entityHierarchy).map(([federal, emirates]) => (
                 <div key={federal}>
-                  <h4 className="font-rajdhani font-bold text-lg text-navy-900 dark:text-platinum-100 mb-3">{federal}</h4>
+                  <h4 className="font-rajdhani font-bold text-lg text-navy-500-900 dark:text-platinum-500-100 mb-3">{federal}</h4>
                   <div className="space-y-4 pl-4">
                     {emirates.map((entry) => (
                       <div key={entry.name} className="space-y-2">
-                        <h5 className="font-semibold text-platinum-700 dark:text-platinum-300">{entry.name}</h5>
+                        <h5 className="font-semibold text-platinum-500-700 dark:text-platinum-500-300">{entry.name}</h5>
                         <div className="flex flex-wrap gap-2 pl-4">
                           {entry.entities.map((entity) => (
                             <Badge key={entity} variant="outline" className="text-xs">
@@ -846,7 +846,7 @@ export default function EmirateEntitiesPage() {
                   <CardTitle className="text-base">Pattern {i + 1}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-platinum-700 dark:text-platinum-300">{pattern}</p>
+                  <p className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{pattern}</p>
                 </CardContent>
               </Card>
             ))}
@@ -854,32 +854,32 @@ export default function EmirateEntitiesPage() {
           <GlassPanel title="Execution Summary" description="Research metadata">
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <div className="space-y-1">
-                <p className="text-xs text-platinum-500">Date Executed</p>
-                <p className="font-medium text-navy-900 dark:text-platinum-100">{executionMetadata.dateExecuted}</p>
+                <p className="text-xs text-platinum-500-500">Date Executed</p>
+                <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{executionMetadata.dateExecuted}</p>
               </div>
               <div className="space-y-1">
-                <p className="text-xs text-platinum-500">Framework Version</p>
-                <p className="font-medium text-navy-900 dark:text-platinum-100">{executionMetadata.frameworkVersion}</p>
+                <p className="text-xs text-platinum-500-500">Framework Version</p>
+                <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{executionMetadata.frameworkVersion}</p>
               </div>
               <div className="space-y-1">
-                <p className="text-xs text-platinum-500">Queries Executed</p>
-                <p className="font-medium text-navy-900 dark:text-platinum-100">{executionMetadata.queriesExecuted}</p>
+                <p className="text-xs text-platinum-500-500">Queries Executed</p>
+                <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{executionMetadata.queriesExecuted}</p>
               </div>
               <div className="space-y-1">
-                <p className="text-xs text-platinum-500">Pages Fetched</p>
-                <p className="font-medium text-navy-900 dark:text-platinum-100">{executionMetadata.pagesFetched}</p>
+                <p className="text-xs text-platinum-500-500">Pages Fetched</p>
+                <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{executionMetadata.pagesFetched}</p>
               </div>
               <div className="space-y-1">
-                <p className="text-xs text-platinum-500">Total Entities</p>
-                <p className="font-medium text-navy-900 dark:text-platinum-100">{executionMetadata.totalEntitiesCovered}</p>
+                <p className="text-xs text-platinum-500-500">Total Entities</p>
+                <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{executionMetadata.totalEntitiesCovered}</p>
               </div>
               <div className="space-y-1">
-                <p className="text-xs text-platinum-500">Emirates Covered</p>
-                <p className="font-medium text-navy-900 dark:text-platinum-100">{executionMetadata.emiratesCovered.length}</p>
+                <p className="text-xs text-platinum-500-500">Emirates Covered</p>
+                <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{executionMetadata.emiratesCovered.length}</p>
               </div>
               <div className="space-y-1">
-                <p className="text-xs text-platinum-500">Enrichment Status</p>
-                <p className="font-medium text-navy-900 dark:text-platinum-100">{executionMetadata.enrichmentStatus}</p>
+                <p className="text-xs text-platinum-500-500">Enrichment Status</p>
+                <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{executionMetadata.enrichmentStatus}</p>
               </div>
             </div>
           </GlassPanel>

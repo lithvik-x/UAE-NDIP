@@ -92,10 +92,10 @@ export function KPISection() {
         <Badge variant="outline" className="mb-2 border-emerald-500/50 text-emerald-400">
           KEY PERFORMANCE INDICATORS
         </Badge>
-        <h2 className="text-2xl font-bold font-rajdhani text-platinum-100">
+        <h2 className="text-2xl font-bold font-rajdhani text-platinum-500-100">
           Six Pillars of UAE Positive Sentiment
         </h2>
-        <p className="text-sm text-platinum-400 mt-1">
+        <p className="text-sm text-platinum-500-400 mt-1">
           Comprehensive KPI dashboards extracted from 14 atomic queries and 12 WebFetch retrievals
         </p>
       </motion.div>
@@ -184,28 +184,28 @@ export function KPISection() {
               <CardContent className="space-y-4">
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span className="text-platinum-400">UAE Safety Index (Numbeo 2026)</span>
+                    <span className="text-platinum-500-400">UAE Safety Index (Numbeo 2026)</span>
                     <span className="text-emerald-400 font-bold">86.0 / 100</span>
                   </div>
                   <Progress value={86} className="h-2" />
                 </div>
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span className="text-platinum-400">Perception of Security (2025)</span>
+                    <span className="text-platinum-500-400">Perception of Security (2025)</span>
                     <span className="text-emerald-400 font-bold">94.8 / 100</span>
                   </div>
                   <Progress value={94.8} className="h-2" />
                 </div>
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span className="text-platinum-400">Abu Dhabi Safety Streak</span>
+                    <span className="text-platinum-500-400">Abu Dhabi Safety Streak</span>
                     <span className="text-emerald-400 font-bold">9 Years #1</span>
                   </div>
                   <Progress value={100} className="h-2" />
                 </div>
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span className="text-platinum-400">Fragile States Index (Rank)</span>
+                    <span className="text-platinum-500-400">Fragile States Index (Rank)</span>
                     <span className="text-emerald-400 font-bold">156 / 179</span>
                   </div>
                   <Progress value={87} className="h-2" />
@@ -222,7 +222,7 @@ export function KPISection() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-emerald-400">#1</p>
-                  <p className="text-xs text-platinum-500">Worldwide Safety</p>
+                  <p className="text-xs text-platinum-500-500">Worldwide Safety</p>
                 </div>
               </div>
             </Card>
@@ -233,7 +233,7 @@ export function KPISection() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-emerald-400">9th</p>
-                  <p className="text-xs text-platinum-500">Consecutive Year</p>
+                  <p className="text-xs text-platinum-500-500">Consecutive Year</p>
                 </div>
               </div>
             </Card>
@@ -244,7 +244,7 @@ export function KPISection() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-emerald-400">94.8</p>
-                  <p className="text-xs text-platinum-500">Perception Score</p>
+                  <p className="text-xs text-platinum-500-500">Perception Score</p>
                 </div>
               </div>
             </Card>
@@ -255,7 +255,7 @@ export function KPISection() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-emerald-400">156</p>
-                  <p className="text-xs text-platinum-500">Fragile States Rank</p>
+                  <p className="text-xs text-platinum-500-500">Fragile States Rank</p>
                 </div>
               </div>
             </Card>
@@ -287,7 +287,7 @@ export function KPISection() {
                 />
                 <div className="text-center mt-2">
                   <p className="text-3xl font-bold text-rose-400">#3</p>
-                  <p className="text-xs text-platinum-500">Globally</p>
+                  <p className="text-xs text-platinum-500-500">Globally</p>
                 </div>
               </CardContent>
             </Card>
@@ -298,19 +298,19 @@ export function KPISection() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex justify-between items-center p-3 rounded-lg bg-rose-500/10 border border-rose-500/20">
-                  <span className="text-sm text-platinum-300">2025 Humanitarian Aid</span>
+                  <span className="text-sm text-platinum-500-300">2025 Humanitarian Aid</span>
                   <span className="text-lg font-bold text-rose-400">$1.46 Billion</span>
                 </div>
                 <div className="flex justify-between items-center p-3 rounded-lg bg-rose-500/10 border border-rose-500/20">
-                  <span className="text-sm text-platinum-300">Share of Global Aid</span>
+                  <span className="text-sm text-platinum-500-300">Share of Global Aid</span>
                   <span className="text-lg font-bold text-rose-400">7.2%</span>
                 </div>
                 <div className="flex justify-between items-center p-3 rounded-lg bg-rose-500/10 border border-rose-500/20">
-                  <span className="text-sm text-platinum-300">Cumulative Since 1971</span>
+                  <span className="text-sm text-platinum-500-300">Cumulative Since 1971</span>
                   <span className="text-lg font-bold text-rose-400">Dh360 Billion</span>
                 </div>
                 <div className="flex justify-between items-center p-3 rounded-lg bg-rose-500/10 border border-rose-500/20">
-                  <span className="text-sm text-platinum-300">Lives Impacted</span>
+                  <span className="text-sm text-platinum-500-300">Lives Impacted</span>
                   <span className="text-lg font-bold text-rose-400">1 Billion+</span>
                 </div>
               </CardContent>
@@ -355,19 +355,19 @@ export function KPISection() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="p-4 rounded-lg bg-gold-500/10 border border-gold-500/20">
-                  <p className="text-xs text-platinum-400 mb-1">Innovation Investment Budget</p>
+                  <p className="text-xs text-platinum-500-400 mb-1">Innovation Investment Budget</p>
                   <p className="text-2xl font-bold text-gold-400">AED 300+ Billion</p>
-                  <p className="text-xs text-platinum-500">100 Science, Technology, Innovation Initiatives</p>
+                  <p className="text-xs text-platinum-500-500">100 Science, Technology, Innovation Initiatives</p>
                 </div>
                 <div className="p-4 rounded-lg bg-gold-500/10 border border-gold-500/20">
-                  <p className="text-xs text-platinum-400 mb-1">AI Government Target</p>
+                  <p className="text-xs text-platinum-500-400 mb-1">AI Government Target</p>
                   <p className="text-2xl font-bold text-gold-400">2027</p>
-                  <p className="text-xs text-platinum-500">World's First Fully AI-Powered Government</p>
+                  <p className="text-xs text-platinum-500-500">World's First Fully AI-Powered Government</p>
                 </div>
                 <div className="p-4 rounded-lg bg-gold-500/10 border border-gold-500/20">
-                  <p className="text-xs text-platinum-400 mb-1">Creative Economy GDP Target</p>
+                  <p className="text-xs text-platinum-500-400 mb-1">Creative Economy GDP Target</p>
                   <p className="text-2xl font-bold text-gold-400">5% by 2031</p>
-                  <p className="text-xs text-platinum-500">From National Strategy</p>
+                  <p className="text-xs text-platinum-500-500">From National Strategy</p>
                 </div>
               </CardContent>
             </Card>
@@ -392,31 +392,31 @@ export function KPISection() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="p-3 rounded-lg bg-deni-500/10 border border-deni-500/20 text-center">
                     <p className="text-xl font-bold text-deni-400">#1</p>
-                    <p className="text-xs text-platinum-500">Entrepreneurship</p>
+                    <p className="text-xs text-platinum-500-500">Entrepreneurship</p>
                   </div>
                   <div className="p-3 rounded-lg bg-deni-500/10 border border-deni-500/20 text-center">
                     <p className="text-xl font-bold text-deni-400">#9</p>
-                    <p className="text-xs text-platinum-500">IMD Talent</p>
+                    <p className="text-xs text-platinum-500-500">IMD Talent</p>
                   </div>
                   <div className="p-3 rounded-lg bg-deni-500/10 border border-deni-500/20 text-center">
                     <p className="text-xl font-bold text-deni-400">#4</p>
-                    <p className="text-xs text-platinum-500">Smart City</p>
+                    <p className="text-xs text-platinum-500-500">Smart City</p>
                   </div>
                   <div className="p-3 rounded-lg bg-deni-500/10 border border-deni-500/20 text-center">
                     <p className="text-xl font-bold text-deni-400">220+</p>
-                    <p className="text-xs text-platinum-500">Best in World</p>
+                    <p className="text-xs text-platinum-500-500">Best in World</p>
                   </div>
                 </div>
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span className="text-platinum-400">Oil Dependency (Dubai)</span>
+                    <span className="text-platinum-500-400">Oil Dependency (Dubai)</span>
                     <span className="text-deni-400 font-bold">&lt;5% GDP</span>
                   </div>
                   <Progress value={5} className="h-2" />
                 </div>
                 <div className="space-y-2">
                   <div className="flex justify-between text-sm">
-                    <span className="text-platinum-400">Dubai GDP Growth 2023</span>
+                    <span className="text-platinum-500-400">Dubai GDP Growth 2023</span>
                     <span className="text-deni-400 font-bold">3.3%</span>
                   </div>
                   <Progress value={33} className="h-2" />
@@ -430,19 +430,19 @@ export function KPISection() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex justify-between items-center p-3 rounded-lg bg-deni-500/10 border border-deni-500/20">
-                  <span className="text-sm text-platinum-300">Population</span>
+                  <span className="text-sm text-platinum-500-300">Population</span>
                   <span className="font-bold text-deni-400">~4 Million</span>
                 </div>
                 <div className="flex justify-between items-center p-3 rounded-lg bg-deni-500/10 border border-deni-500/20">
-                  <span className="text-sm text-platinum-300">Expatriate Population</span>
+                  <span className="text-sm text-platinum-500-300">Expatriate Population</span>
                   <span className="font-bold text-deni-400">80%+</span>
                 </div>
                 <div className="flex justify-between items-center p-3 rounded-lg bg-deni-500/10 border border-deni-500/20">
-                  <span className="text-sm text-platinum-300">Property Sales 2023</span>
+                  <span className="text-sm text-platinum-500-300">Property Sales 2023</span>
                   <span className="font-bold text-deni-400">Dh370 Billion</span>
                 </div>
                 <div className="flex justify-between items-center p-3 rounded-lg bg-deni-500/10 border border-deni-500/20">
-                  <span className="text-sm text-platinum-300">Expected Visitors 2025</span>
+                  <span className="text-sm text-platinum-500-300">Expected Visitors 2025</span>
                   <span className="font-bold text-deni-400">5 Million</span>
                 </div>
               </CardContent>
@@ -488,16 +488,16 @@ export function KPISection() {
               <CardContent className="space-y-3">
                 <div className="p-4 rounded-lg bg-purple-500/10 border border-purple-500/20 text-center">
                   <p className="text-4xl font-bold text-purple-400">200+</p>
-                  <p className="text-sm text-platinum-500">Nationalities in UAE</p>
+                  <p className="text-sm text-platinum-500-500">Nationalities in UAE</p>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div className="p-3 rounded-lg bg-purple-500/10 border border-purple-500/20 text-center">
                     <p className="text-xl font-bold text-purple-400">80%+</p>
-                    <p className="text-xs text-platinum-500">Expatriates</p>
+                    <p className="text-xs text-platinum-500-500">Expatriates</p>
                   </div>
                   <div className="p-3 rounded-lg bg-purple-500/10 border border-purple-500/20 text-center">
                     <p className="text-xl font-bold text-purple-400">204</p>
-                    <p className="text-xs text-platinum-500">Often Quoted</p>
+                    <p className="text-xs text-platinum-500-500">Often Quoted</p>
                   </div>
                 </div>
               </CardContent>
@@ -521,11 +521,11 @@ export function KPISection() {
                   <Building2 className="h-6 w-6 text-orange-400" />
                 </div>
                 <div>
-                  <p className="text-xs text-platinum-400">Ghadan 21 Program</p>
+                  <p className="text-xs text-platinum-500-400">Ghadan 21 Program</p>
                   <p className="text-xl font-bold text-orange-400">AED 50B</p>
                 </div>
               </div>
-              <p className="text-xs text-platinum-500">2018 accelerator programme driving economic transformation</p>
+              <p className="text-xs text-platinum-500-500">2018 accelerator programme driving economic transformation</p>
             </Card>
 
             <Card className="glass-card border-orange-500/30 p-4">
@@ -534,11 +534,11 @@ export function KPISection() {
                   <Globe className="h-6 w-6 text-orange-400" />
                 </div>
                 <div>
-                  <p className="text-xs text-platinum-400">Masdar Investment</p>
+                  <p className="text-xs text-platinum-500-400">Masdar Investment</p>
                   <p className="text-xl font-bold text-orange-400">$15B</p>
                 </div>
               </div>
-              <p className="text-xs text-platinum-500">2008 renewable energy investment</p>
+              <p className="text-xs text-platinum-500-500">2008 renewable energy investment</p>
             </Card>
 
             <Card className="glass-card border-orange-500/30 p-4">
@@ -547,11 +547,11 @@ export function KPISection() {
                   <Zap className="h-6 w-6 text-orange-400" />
                 </div>
                 <div>
-                  <p className="text-xs text-platinum-400">Barakah Nuclear</p>
+                  <p className="text-xs text-platinum-500-400">Barakah Nuclear</p>
                   <p className="text-xl font-bold text-orange-400">FIRST</p>
                 </div>
               </div>
-              <p className="text-xs text-platinum-500">First nuclear plant in the Arab world</p>
+              <p className="text-xs text-platinum-500-500">First nuclear plant in the Arab world</p>
             </Card>
 
             <Card className="glass-card border-orange-500/30 p-4">
@@ -560,11 +560,11 @@ export function KPISection() {
                   <Flag className="h-6 w-6 text-orange-400" />
                 </div>
                 <div>
-                  <p className="text-xs text-platinum-400">Net Zero Target</p>
+                  <p className="text-xs text-platinum-500-400">Net Zero Target</p>
                   <p className="text-xl font-bold text-orange-400">2050</p>
                 </div>
               </div>
-              <p className="text-xs text-platinum-500">National sustainability strategy</p>
+              <p className="text-xs text-platinum-500-500">National sustainability strategy</p>
             </Card>
           </div>
         </GlassPanel>

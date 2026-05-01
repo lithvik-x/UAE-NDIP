@@ -56,7 +56,7 @@ export default function StatisticalDatapointsPage() {
               Statistical Datapoints
             </span>
           </h1>
-          <p className="mt-2 text-platinum-400">Statistical claim verification — tracking claims, data points, and numerical assertions in UAE media</p>
+          <p className="mt-2 text-platinum-500-400">Statistical claim verification — tracking claims, data points, and numerical assertions in UAE media</p>
         </div>
       </motion.div>
 
@@ -87,11 +87,11 @@ export default function StatisticalDatapointsPage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><TrendingUp className="h-5 w-5 text-teal-500" />Key Metrics</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0">
-                    <div className="space-y-3 text-sm text-platinum-300">
-                      <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-emerald" />Government data: highest accuracy</div>
-                      <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-emerald" />Economic statistics: most verified</div>
-                      <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-gold" />Environmental: needs more sources</div>
-                      <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-teal" />Cross-validation active</div>
+                    <div className="space-y-3 text-sm text-platinum-500-300">
+                      <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-emerald-500" />Government data: highest accuracy</div>
+                      <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-emerald-500" />Economic statistics: most verified</div>
+                      <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-gold-700" />Environmental: needs more sources</div>
+                      <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-teal-500" />Cross-validation active</div>
                     </div>
                   </CardContent>
                 </motion.div>
@@ -108,10 +108,10 @@ export default function StatisticalDatapointsPage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }}
                     className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-platinum-200">{s.category}</span>
+                      <span className="text-sm font-medium text-platinum-500-200">{s.category}</span>
                       <div className="flex items-center gap-3">
-                        <Badge variant="outline" className="border-emerald-500/50 text-emerald">{s.verified}/{s.total}</Badge>
-                        <span className="text-lg font-bold text-platinum-100">{s.accuracy}%</span>
+                        <Badge variant="outline" className="border-emerald-500/50 text-emerald-500">{s.verified}/{s.total}</Badge>
+                        <span className="text-lg font-bold text-platinum-500-100">{s.accuracy}%</span>
                       </div>
                     </div>
                     <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
@@ -134,14 +134,14 @@ export default function StatisticalDatapointsPage() {
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
                       className="rounded-lg bg-gradient-to-r from-emerald-500/10 to-teal-600/5 p-4 border border-emerald-500/30">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-lg text-platinum-100 font-rajdhani">{c.claim}</span>
+                        <span className="text-lg text-platinum-500-100 font-rajdhani">{c.claim}</span>
                         <Badge variant="outline" className={`border-${c.verified ? 'emerald' : 'rose'}-500/50 text-${c.verified ? 'emerald' : 'rose'}`}>
                           {c.verified ? 'Verified' : 'Unverified'}
                         </Badge>
                       </div>
                       <div className="flex items-center gap-4 text-sm">
                         <span className="text-cyan-400 font-medium">{c.value}</span>
-                        <span className="text-platinum-400">Source: {c.source}</span>
+                        <span className="text-platinum-500-400">Source: {c.source}</span>
                       </div>
                     </motion.div>
                   ))}

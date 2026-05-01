@@ -59,7 +59,7 @@ export default function PredictiveTrendsPage() {
               Predictive Trends
             </span>
           </h1>
-          <p className="mt-2 text-platinum-400">Predictive intelligence — forecasting sentiment shifts, emerging topics, and trend trajectories</p>
+          <p className="mt-2 text-platinum-500-400">Predictive intelligence — forecasting sentiment shifts, emerging topics, and trend trajectories</p>
         </div>
       </motion.div>
 
@@ -92,11 +92,11 @@ export default function PredictiveTrendsPage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Brain className="h-5 w-5 text-purple-500" />Methodology</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0">
-                    <div className="space-y-3 text-sm text-platinum-300">
-                      <div className="flex items-center gap-2"><Target className="h-4 w-4 text-violet" />ML-based sentiment analysis</div>
-                      <div className="flex items-center gap-2"><Target className="h-4 w-4 text-violet" />Historical pattern matching</div>
-                      <div className="flex items-center gap-2"><Target className="h-4 w-4 text-violet" />Real-time signal integration</div>
-                      <div className="flex items-center gap-2"><Target className="h-4 w-4 text-violet" />Cross-source validation</div>
+                    <div className="space-y-3 text-sm text-platinum-500-300">
+                      <div className="flex items-center gap-2"><Target className="h-4 w-4 text-violet-500" />ML-based sentiment analysis</div>
+                      <div className="flex items-center gap-2"><Target className="h-4 w-4 text-violet-500" />Historical pattern matching</div>
+                      <div className="flex items-center gap-2"><Target className="h-4 w-4 text-violet-500" />Real-time signal integration</div>
+                      <div className="flex items-center gap-2"><Target className="h-4 w-4 text-violet-500" />Cross-source validation</div>
                     </div>
                   </CardContent>
                 </motion.div>
@@ -113,11 +113,11 @@ export default function PredictiveTrendsPage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }}
                     className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-platinum-200">{f.period}</span>
+                      <span className="text-sm font-medium text-platinum-500-200">{f.period}</span>
                       <div className="flex items-center gap-4">
-                        <span className="text-xs text-platinum-400">Sentiment: <span className="text-violet">{f.sentiment}%</span></span>
-                        <span className="text-xs text-platinum-400">Topics: <span className="text-cyan">{f.topics}</span></span>
-                        <span className="text-xs text-platinum-400">Velocity: <span className="text-emerald">{f.velocity}%</span></span>
+                        <span className="text-xs text-platinum-500-400">Sentiment: <span className="text-violet-500">{f.sentiment}%</span></span>
+                        <span className="text-xs text-platinum-500-400">Topics: <span className="text-cyan-500">{f.topics}</span></span>
+                        <span className="text-xs text-platinum-500-400">Velocity: <span className="text-emerald-500">{f.velocity}%</span></span>
                       </div>
                     </div>
                     <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
@@ -140,10 +140,10 @@ export default function PredictiveTrendsPage() {
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
                       className="rounded-lg bg-gradient-to-r from-violet-500/10 to-purple-600/5 p-4 border border-violet-500/30">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-lg text-platinum-100 font-rajdhani">{s.signal}</span>
+                        <span className="text-lg text-platinum-500-100 font-rajdhani">{s.signal}</span>
                         <Badge variant="outline" className={`border-${s.impact === 'HIGH' ? 'rose' : 'platinum'}-500/50 text-${s.impact === 'HIGH' ? 'rose' : 'platinum'}`}>{s.impact}</Badge>
                       </div>
-                      <div className="flex items-center gap-4 text-xs text-platinum-400">
+                      <div className="flex items-center gap-4 text-xs text-platinum-500-400">
                         <span>Timeframe: {s.timeframe}</span>
                         <span>Confidence: {s.confidence}%</span>
                       </div>

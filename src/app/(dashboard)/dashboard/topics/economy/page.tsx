@@ -382,9 +382,9 @@ const TierBadge = ({ tier }: { tier: number }) => {
   const colors: Record<number, string> = {
     0: 'bg-red-500/20 text-red-400 border-red-500/50',
     1: 'bg-amber-500/20 text-amber-400 border-amber-500/50',
-    2: 'bg-navy-500/20 text-navy-400 border-navy-500/50',
-    3: 'bg-platinum-500/20 text-platinum-400 border-platinum-500/50',
-    4: 'bg-platinum-500/20 text-platinum-400 border-platinum-500/50',
+    2: 'bg-navy-500/20 text-navy-500-400 border-navy-500/50',
+    3: 'bg-platinum-500/20 text-platinum-500-400 border-platinum-500/50',
+    4: 'bg-platinum-500/20 text-platinum-500-400 border-platinum-500/50',
   }
   return (
     <Badge variant="outline" className={`text-xs border ${colors[tier]}`}>
@@ -537,17 +537,17 @@ export default function EconomyBusinessPage() {
       <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
           <Badge variant="gold" className="mb-2">P-SECTOR</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold">Economy & Business</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Economy & Business</h1>
+          <p className="mt-2 text-platinum-500-400">
             Comprehensive analysis of UAE macroeconomic indicators, GDP, banking, sovereign wealth funds, diversification, trade, and business climate
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-gold/50 text-gold hover:bg-gold/10">
+          <Button variant="outline" className="gap-2 border-gold-700/50 text-gold-700 hover:bg-gold-700/10">
             <FileText className="h-4 w-4" />
             View Reports
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
             <Sparkles className="h-4 w-4" />
             Analyze Market
           </Button>
@@ -593,14 +593,14 @@ export default function EconomyBusinessPage() {
         <GlassPanel
           title="Executive Summary"
           description="Key economic intelligence at a glance"
-          icon={<Lightbulb className="h-5 w-5 text-gold" />}
+          icon={<Lightbulb className="h-5 w-5 text-gold-700" />}
         >
           <div className="grid gap-6 lg:grid-cols-3">
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gold flex items-center gap-2">
+              <h3 className="text-lg font-semibold text-gold-700 flex items-center gap-2">
                 <TrendingUp className="h-4 w-4" /> Economic Performance
               </h3>
-              <div className="space-y-2 text-sm text-platinum-300">
+              <div className="space-y-2 text-sm text-platinum-500-300">
                 <p>UAE GDP grew at {latestGdp?.realGrowthPercent || 4.5}% in {latestGdp?.year || 2024}, driven by strong non-oil sector performance.</p>
                 <p>Non-oil sectors accounted for {nonOilDiversification?.[0]?.nonOilGdpPercent || 71}% of GDP, up from {nonOilDiversification?.[0]?.previousYearPercent || 68}%.</p>
                 <p>Foreign reserves remain robust at ${foreignReserves?.[0]?.value || 180}Bn, providing strong external buffer.</p>
@@ -610,7 +610,7 @@ export default function EconomyBusinessPage() {
               <h3 className="text-lg font-semibold text-emerald-400 flex items-center gap-2">
                 <Shield className="h-4 w-4" /> Sector Strengths
               </h3>
-              <div className="space-y-2 text-sm text-platinum-300">
+              <div className="space-y-2 text-sm text-platinum-500-300">
                 <p>Banking sector total assets reached {'$'}{bankingData?.[0]?.totalAssets || 800}Bn with healthy credit growth of {bankingData?.[0]?.creditGrowth || 7.5}%.</p>
                 <p>Tourism recovered strongly with {tourismIndicators?.[0]?.internationalArrivals || 17}Mn international arrivals.</p>
                 <p>Startup ecosystem maturing with {'$'}{startupEcosystem?.[0]?.value || 1.2}Bn in funding across {startupEcosystem?.[1]?.value || '800+'} startups.</p>
@@ -620,7 +620,7 @@ export default function EconomyBusinessPage() {
               <h3 className="text-lg font-semibold text-amber-400 flex items-center gap-2">
                 <AlertTriangle className="h-4 w-4" /> Key Challenges
               </h3>
-              <div className="space-y-2 text-sm text-platinum-300">
+              <div className="space-y-2 text-sm text-platinum-500-300">
                 <p> {redFindings?.[0]?.challenge || 'Regional geopolitical tensions continue to impact investor sentiment.'}</p>
                 <p> {yellowFindings?.[0]?.challenge || 'Real estate market facing price corrections in certain segments.'}</p>
                 <p>Inflation moderated to {inflationTrends?.[0]?.cpiPercent || 2.5}%, supporting consumer purchasing power.</p>
@@ -718,9 +718,9 @@ export default function EconomyBusinessPage() {
                             className="h-3 w-3 rounded-full"
                             style={{ backgroundColor: item.color }}
                           />
-                          <span className="text-sm font-medium text-platinum-200">{item.name}</span>
+                          <span className="text-sm font-medium text-platinum-500-200">{item.name}</span>
                         </div>
-                        <span className="text-lg font-bold text-platinum-200">{item.value}%</span>
+                        <span className="text-lg font-bold text-platinum-500-200">{item.value}%</span>
                       </div>
                       <Progress
                         value={item.value}
@@ -744,15 +744,15 @@ export default function EconomyBusinessPage() {
                   {macroeconomicIndicators?.[0] && (
                     <>
                       <div className="rounded-lg bg-platinum-800/50 p-4">
-                        <div className="flex items-center gap-2 text-platinum-400 text-sm mb-1">
+                        <div className="flex items-center gap-2 text-platinum-500-400 text-sm mb-1">
                           <DollarSign className="h-4 w-4" /> GDP per Capita
                         </div>
-                        <div className="text-2xl font-bold text-gold">
+                        <div className="text-2xl font-bold text-gold-700">
                           ${gdpPerCapita?.[0]?.value?.toLocaleString() || '58,000+'}
                         </div>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4">
-                        <div className="flex items-center gap-2 text-platinum-400 text-sm mb-1">
+                        <div className="flex items-center gap-2 text-platinum-500-400 text-sm mb-1">
                           <TrendingDown className="h-4 w-4" /> Inflation
                         </div>
                         <div className="text-2xl font-bold text-emerald-400">
@@ -760,7 +760,7 @@ export default function EconomyBusinessPage() {
                         </div>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4">
-                        <div className="flex items-center gap-2 text-platinum-400 text-sm mb-1">
+                        <div className="flex items-center gap-2 text-platinum-500-400 text-sm mb-1">
                           <Users className="h-4 w-4" /> Unemployment
                         </div>
                         <div className="text-2xl font-bold text-cyan-400">
@@ -768,10 +768,10 @@ export default function EconomyBusinessPage() {
                         </div>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4">
-                        <div className="flex items-center gap-2 text-platinum-400 text-sm mb-1">
+                        <div className="flex items-center gap-2 text-platinum-500-400 text-sm mb-1">
                           <Globe className="h-4 w-4" /> Foreign Reserves
                         </div>
-                        <div className="text-2xl font-bold text-platinum-400">
+                        <div className="text-2xl font-bold text-platinum-500-400">
                           ${foreignReserves?.[0]?.value || 180}Bn
                         </div>
                       </div>
@@ -847,8 +847,8 @@ export default function EconomyBusinessPage() {
             {gdpGrowthRates?.slice(-4).map((g, i) => (
               <Card key={i} className="glass-card">
                 <CardContent className="p-4">
-                  <div className="text-sm text-platinum-400 mb-1">{g.year}</div>
-                  <div className="text-3xl font-bold gradient-text-gold mb-1">
+                  <div className="text-sm text-platinum-500-400 mb-1">{g.year}</div>
+                  <div className="text-3xl font-bold gradient-text-gold-700 mb-1">
                     ${g.nominalGdpBillions}Bn
                   </div>
                   <div className={`text-lg font-semibold ${g.realGrowthPercent >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
@@ -864,9 +864,9 @@ export default function EconomyBusinessPage() {
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {fiscalPosition?.map((f, i) => (
                   <div key={i} className="rounded-lg bg-platinum-800/50 p-4">
-                    <div className="text-sm text-platinum-400 mb-1">{f.indicator}</div>
-                    <div className="text-xl font-bold text-gold">{f.value}</div>
-                    <div className="text-xs text-platinum-500 mt-1">{f.year}</div>
+                    <div className="text-sm text-platinum-500-400 mb-1">{f.indicator}</div>
+                    <div className="text-xl font-bold text-gold-700">{f.value}</div>
+                    <div className="text-xs text-platinum-500-500 mt-1">{f.year}</div>
                   </div>
                 ))}
               </div>
@@ -964,17 +964,17 @@ export default function EconomyBusinessPage() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-platinum-700">
-                        <th className="text-left py-3 px-4 text-platinum-400">Year</th>
-                        <th className="text-right py-3 px-4 text-platinum-400">Total Assets (USD Bn)</th>
-                        <th className="text-right py-3 px-4 text-platinum-400">Credit Growth (%)</th>
-                        <th className="text-right py-3 px-4 text-platinum-400">Profitability (%)</th>
+                        <th className="text-left py-3 px-4 text-platinum-500-400">Year</th>
+                        <th className="text-right py-3 px-4 text-platinum-500-400">Total Assets (USD Bn)</th>
+                        <th className="text-right py-3 px-4 text-platinum-500-400">Credit Growth (%)</th>
+                        <th className="text-right py-3 px-4 text-platinum-500-400">Profitability (%)</th>
                       </tr>
                     </thead>
                     <tbody>
                       {bankingData.map((b, i) => (
                         <tr key={i} className="border-b border-platinum-800 hover:bg-platinum-800/50">
-                          <td className="py-3 px-4 text-platinum-200">{b.year}</td>
-                          <td className="text-right py-3 px-4 text-gold font-semibold">${b.totalAssets}</td>
+                          <td className="py-3 px-4 text-platinum-500-200">{b.year}</td>
+                          <td className="text-right py-3 px-4 text-gold-700 font-semibold">${b.totalAssets}</td>
                           <td className="text-right py-3 px-4 text-emerald-400">+{b.creditGrowth}%</td>
                           <td className="text-right py-3 px-4 text-cyan-400">{b.profitability}%</td>
                         </tr>
@@ -998,7 +998,7 @@ export default function EconomyBusinessPage() {
                     <div className="space-y-4">
                       {exchangeRate?.map((e, i) => (
                         <div key={i} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                          <span className="text-sm text-platinum-300">{e.year}</span>
+                          <span className="text-sm text-platinum-500-300">{e.year}</span>
                           <span className="text-lg font-bold text-emerald-400">{e.rate}</span>
                           <Badge variant="success" className="text-xs">{e.regime}</Badge>
                         </div>
@@ -1076,17 +1076,17 @@ export default function EconomyBusinessPage() {
                     <div key={i} className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700">
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
-                          <Crown className="h-5 w-5 text-gold" />
-                          <span className="font-semibold text-platinum-200">{s.fund}</span>
+                          <Crown className="h-5 w-5 text-gold-700" />
+                          <span className="font-semibold text-platinum-500-200">{s.fund}</span>
                         </div>
                         <Badge variant={s.tier === 0 ? 'destructive' : s.tier === 1 ? 'warning' : 'outline'} className="text-xs">
                           Tier {s.tier}
                         </Badge>
                       </div>
-                      <div className="text-2xl font-bold gradient-text-gold mb-1">
+                      <div className="text-2xl font-bold gradient-text-gold-700 mb-1">
                         ${s.assetsBillions}Bn
                       </div>
-                      <div className="text-xs text-platinum-400">
+                      <div className="text-xs text-platinum-500-400">
                         {Array.isArray(s.focus) ? s.focus.join(' | ') : s.focus || 'Diversified investments'}
                       </div>
                     </div>
@@ -1163,15 +1163,15 @@ export default function EconomyBusinessPage() {
                 {oilGasProduction?.[0] && (
                   <>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <div className="text-sm text-platinum-400 mb-1">OPEC+ Quota</div>
-                      <div className="text-2xl font-bold text-navy-400">{oilGasProduction[0].opecQuotaMbpd} MBPD</div>
+                      <div className="text-sm text-platinum-500-400 mb-1">OPEC+ Quota</div>
+                      <div className="text-2xl font-bold text-navy-500-400">{oilGasProduction[0].opecQuotaMbpd} MBPD</div>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <div className="text-sm text-platinum-400 mb-1">Actual Production</div>
-                      <div className="text-2xl font-bold text-gold">{oilGasProduction[0].oilProductionMbpd} MBPD</div>
+                      <div className="text-sm text-platinum-500-400 mb-1">Actual Production</div>
+                      <div className="text-2xl font-bold text-gold-700">{oilGasProduction[0].oilProductionMbpd} MBPD</div>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                      <div className="text-sm text-platinum-400 mb-1">Compliance Rate</div>
+                      <div className="text-sm text-platinum-500-400 mb-1">Compliance Rate</div>
                       <div className="text-2xl font-bold text-emerald-400">{oilGasProduction[0].complianceRate}%</div>
                     </div>
                   </>
@@ -1194,11 +1194,11 @@ export default function EconomyBusinessPage() {
                   {nonOilDiversification?.map((n, i) => (
                     <div key={i} className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium text-platinum-200">{n.year}</span>
-                        <span className="text-lg font-bold text-gold">{n.nonOilGdpPercent}%</span>
+                        <span className="text-sm font-medium text-platinum-500-200">{n.year}</span>
+                        <span className="text-lg font-bold text-gold-700">{n.nonOilGdpPercent}%</span>
                       </div>
                       <Progress value={n.nonOilGdpPercent} className="h-3" />
-                      <div className="flex items-center justify-between text-xs text-platinum-400">
+                      <div className="flex items-center justify-between text-xs text-platinum-500-400">
                         <span>Previous: {n.previousYearPercent}%</span>
                         <span className="text-emerald-400">+{(n.nonOilGdpPercent - n.previousYearPercent).toFixed(1)}% YoY</span>
                       </div>
@@ -1237,10 +1237,10 @@ export default function EconomyBusinessPage() {
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {nonOilDiversification?.[0]?.keySectors?.map((sector, i) => (
                   <div key={i} className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold/20">
-                      <CheckCircle className="h-4 w-4 text-gold" />
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold-700/20">
+                      <CheckCircle className="h-4 w-4 text-gold-700" />
                     </div>
-                    <span className="text-sm font-medium text-platinum-200">{sector}</span>
+                    <span className="text-sm font-medium text-platinum-500-200">{sector}</span>
                   </div>
                 ))}
               </div>
@@ -1257,9 +1257,9 @@ export default function EconomyBusinessPage() {
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   {tourismIndicators?.map((t, i) => (
                     <div key={i} className="rounded-lg bg-platinum-800/50 p-4">
-                      <div className="text-sm text-platinum-400 mb-1">{t.indicator}</div>
+                      <div className="text-sm text-platinum-500-400 mb-1">{t.indicator}</div>
                       <div className="text-2xl font-bold text-emerald-400">{t.value}</div>
-                      <div className="text-xs text-platinum-500 mt-1">{t.year}</div>
+                      <div className="text-xs text-platinum-500-500 mt-1">{t.year}</div>
                     </div>
                   ))}
                 </div>
@@ -1319,21 +1319,21 @@ export default function EconomyBusinessPage() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-platinum-700">
-                        <th className="text-left py-3 px-4 text-platinum-400">Country</th>
-                        <th className="text-right py-3 px-4 text-platinum-400">Trade Volume (USD Bn)</th>
-                        <th className="text-center py-3 px-4 text-platinum-400">Agreement</th>
+                        <th className="text-left py-3 px-4 text-platinum-500-400">Country</th>
+                        <th className="text-right py-3 px-4 text-platinum-500-400">Trade Volume (USD Bn)</th>
+                        <th className="text-center py-3 px-4 text-platinum-500-400">Agreement</th>
                       </tr>
                     </thead>
                     <tbody>
                       {tradeData.map((t, i) => (
                         <tr key={i} className="border-b border-platinum-800 hover:bg-platinum-800/50">
-                          <td className="py-3 px-4 text-platinum-200">
+                          <td className="py-3 px-4 text-platinum-500-200">
                             <div className="flex items-center gap-2">
-                              <Globe className="h-4 w-4 text-gold" />
+                              <Globe className="h-4 w-4 text-gold-700" />
                               {t.country}
                             </div>
                           </td>
-                          <td className="text-right py-3 px-4 text-gold font-semibold">${t.tradeVolume}</td>
+                          <td className="text-right py-3 px-4 text-gold-700 font-semibold">${t.tradeVolume}</td>
                           <td className="text-center py-3 px-4">
                             <Badge variant="outline" className="text-xs">{t.agreement}</Badge>
                           </td>
@@ -1433,9 +1433,9 @@ export default function EconomyBusinessPage() {
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {realEstateMarket?.slice(0, 4).map((r, i) => (
                   <div key={i} className="rounded-lg bg-platinum-800/50 p-4">
-                    <div className="text-sm text-platinum-400 mb-1">{r.quarter}</div>
-                    <div className="text-xl font-bold text-gold">${r.transactionValueBillions}Bn</div>
-                    <div className="text-xs text-platinum-500 mt-1">Index: {r.priceIndex}</div>
+                    <div className="text-sm text-platinum-500-400 mb-1">{r.quarter}</div>
+                    <div className="text-xl font-bold text-gold-700">${r.transactionValueBillions}Bn</div>
+                    <div className="text-xs text-platinum-500-500 mt-1">Index: {r.priceIndex}</div>
                   </div>
                 ))}
               </div>
@@ -1456,17 +1456,17 @@ export default function EconomyBusinessPage() {
                   {freeZoneData?.map((f, i) => (
                     <div key={i} className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700">
                       <div className="flex items-center gap-2 mb-2">
-                        <MapPin className="h-4 w-4 text-gold" />
-                        <span className="font-semibold text-platinum-200">{f.zone}</span>
+                        <MapPin className="h-4 w-4 text-gold-700" />
+                        <span className="font-semibold text-platinum-500-200">{f.zone}</span>
                       </div>
                       <div className="space-y-1 text-sm">
                         <div className="flex justify-between">
-                          <span className="text-platinum-400">Companies:</span>
+                          <span className="text-platinum-500-400">Companies:</span>
                           <span className="text-emerald-400">{f.companiesRegistered}</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-platinum-400">Focus:</span>
-                          <span className="text-platinum-200">{f.focus}</span>
+                          <span className="text-platinum-500-400">Focus:</span>
+                          <span className="text-platinum-500-200">{f.focus}</span>
                         </div>
                       </div>
                     </div>
@@ -1481,23 +1481,23 @@ export default function EconomyBusinessPage() {
               <div className="grid gap-6 lg:grid-cols-3">
                 <Card className="glass-card">
                   <CardContent className="p-6 text-center">
-                    <Coins className="h-8 w-8 text-gold mx-auto mb-2" />
-                    <div className="text-3xl font-bold gradient-text-gold">0%</div>
-                    <div className="text-sm text-platinum-400 mt-1">Corporate Tax (up to threshold)</div>
+                    <Coins className="h-8 w-8 text-gold-700 mx-auto mb-2" />
+                    <div className="text-3xl font-bold gradient-text-gold-700">0%</div>
+                    <div className="text-sm text-platinum-500-400 mt-1">Corporate Tax (up to threshold)</div>
                   </CardContent>
                 </Card>
                 <Card className="glass-card">
                   <CardContent className="p-6 text-center">
                     <FileText className="h-8 w-8 text-emerald-400 mx-auto mb-2" />
                     <div className="text-3xl font-bold text-emerald-400">5%</div>
-                    <div className="text-sm text-platinum-400 mt-1">VAT Rate</div>
+                    <div className="text-sm text-platinum-500-400 mt-1">VAT Rate</div>
                   </CardContent>
                 </Card>
                 <Card className="glass-card">
                   <CardContent className="p-6 text-center">
                     <Scale className="h-8 w-8 text-cyan-400 mx-auto mb-2" />
                     <div className="text-3xl font-bold text-cyan-400">100%</div>
-                    <div className="text-sm text-platinum-400 mt-1">Foreign Ownership</div>
+                    <div className="text-sm text-platinum-500-400 mt-1">Foreign Ownership</div>
                   </CardContent>
                 </Card>
               </div>
@@ -1523,7 +1523,7 @@ export default function EconomyBusinessPage() {
                   ].map((benefit, i) => (
                     <div key={i} className="flex items-center gap-2 rounded-lg bg-platinum-800/50 p-2">
                       <CheckCircle className="h-4 w-4 text-emerald-400 flex-shrink-0" />
-                      <span className="text-sm text-platinum-200">{benefit}</span>
+                      <span className="text-sm text-platinum-500-200">{benefit}</span>
                     </div>
                   ))}
                 </div>
@@ -1544,8 +1544,8 @@ export default function EconomyBusinessPage() {
                 <div className="space-y-4">
                   {startupData.map((s, i) => (
                     <div key={i} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                      <span className="text-sm text-platinum-300">{s.metric}</span>
-                      <span className="text-lg font-bold text-gold">{s.value}</span>
+                      <span className="text-sm text-platinum-500-300">{s.metric}</span>
+                      <span className="text-lg font-bold text-gold-700">{s.value}</span>
                     </div>
                   ))}
                 </div>
@@ -1586,9 +1586,9 @@ export default function EconomyBusinessPage() {
                   { icon: Plane, title: 'Smart Logistics', desc: 'Supply chain digitization' },
                 ].map((item, i) => (
                   <div key={i} className="rounded-lg bg-platinum-800/50 p-4">
-                    <item.icon className="h-6 w-6 text-gold mb-2" />
-                    <div className="font-semibold text-platinum-200">{item.title}</div>
-                    <div className="text-xs text-platinum-400">{item.desc}</div>
+                    <item.icon className="h-6 w-6 text-gold-700 mb-2" />
+                    <div className="font-semibold text-platinum-500-200">{item.title}</div>
+                    <div className="text-xs text-platinum-500-400">{item.desc}</div>
                   </div>
                 ))}
               </div>
@@ -1609,16 +1609,16 @@ export default function EconomyBusinessPage() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-platinum-700">
-                        <th className="text-left py-3 px-4 text-platinum-400">Indicator</th>
-                        <th className="text-right py-3 px-4 text-platinum-400">Value</th>
-                        <th className="text-right py-3 px-4 text-platinum-400">Global Rank</th>
+                        <th className="text-left py-3 px-4 text-platinum-500-400">Indicator</th>
+                        <th className="text-right py-3 px-4 text-platinum-500-400">Value</th>
+                        <th className="text-right py-3 px-4 text-platinum-500-400">Global Rank</th>
                       </tr>
                     </thead>
                     <tbody>
                       {logisticsData.map((l, i) => (
                         <tr key={i} className="border-b border-platinum-800 hover:bg-platinum-800/50">
-                          <td className="py-3 px-4 text-platinum-200">{l.indicator}</td>
-                          <td className="text-right py-3 px-4 text-gold font-semibold">{l.value}</td>
+                          <td className="py-3 px-4 text-platinum-500-200">{l.indicator}</td>
+                          <td className="text-right py-3 px-4 text-gold-700 font-semibold">{l.value}</td>
                           <td className="text-right py-3 px-4">
                             <Badge variant="outline" className="text-xs">#{l.rank}</Badge>
                           </td>
@@ -1634,23 +1634,23 @@ export default function EconomyBusinessPage() {
           <motion.div variants={itemVariants} className="grid gap-6 lg:grid-cols-3">
             <Card className="glass-card">
               <CardContent className="p-6 text-center">
-                <Ship className="h-8 w-8 text-gold mx-auto mb-2" />
-                <div className="text-3xl font-bold text-gold">13</div>
-                <div className="text-sm text-platinum-400 mt-1">Major Ports</div>
+                <Ship className="h-8 w-8 text-gold-700 mx-auto mb-2" />
+                <div className="text-3xl font-bold text-gold-700">13</div>
+                <div className="text-sm text-platinum-500-400 mt-1">Major Ports</div>
               </CardContent>
             </Card>
             <Card className="glass-card">
               <CardContent className="p-6 text-center">
                 <Plane className="h-8 w-8 text-cyan-400 mx-auto mb-2" />
                 <div className="text-3xl font-bold text-cyan-400">8</div>
-                <div className="text-sm text-platinum-400 mt-1">International Airports</div>
+                <div className="text-sm text-platinum-500-400 mt-1">International Airports</div>
               </CardContent>
             </Card>
             <Card className="glass-card">
               <CardContent className="p-6 text-center">
                 <Globe className="h-8 w-8 text-emerald-400 mx-auto mb-2" />
                 <div className="text-3xl font-bold text-emerald-400">200+</div>
-                <div className="text-sm text-platinum-400 mt-1">Air Freight Destinations</div>
+                <div className="text-sm text-platinum-500-400 mt-1">Air Freight Destinations</div>
               </CardContent>
             </Card>
           </motion.div>
@@ -1660,9 +1660,9 @@ export default function EconomyBusinessPage() {
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {infrastructureInvestment?.map((inf, i) => (
                   <div key={i} className="rounded-lg bg-platinum-800/50 p-4">
-                    <div className="text-sm text-platinum-400 mb-1">{inf.project}</div>
-                    <div className="text-xl font-bold text-gold">${inf.investmentBillions}Bn</div>
-                    <div className="text-xs text-platinum-500 mt-1">{inf.status}</div>
+                    <div className="text-sm text-platinum-500-400 mb-1">{inf.project}</div>
+                    <div className="text-xl font-bold text-gold-700">${inf.investmentBillions}Bn</div>
+                    <div className="text-xs text-platinum-500-500 mt-1">{inf.status}</div>
                   </div>
                 ))}
               </div>
@@ -1679,11 +1679,11 @@ export default function EconomyBusinessPage() {
                   {renewableEnergy?.map((r, i) => (
                     <div key={i} className="space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium text-platinum-200">{r.target}</span>
+                        <span className="text-sm font-medium text-platinum-500-200">{r.target}</span>
                         <span className="text-lg font-bold text-emerald-400">{r.capacity}GW</span>
                       </div>
                       <Progress value={r.currentProgress} className="h-2" />
-                      <div className="text-xs text-platinum-400">{r.currentProgress}% achieved</div>
+                      <div className="text-xs text-platinum-500-400">{r.currentProgress}% achieved</div>
                     </div>
                   ))}
                 </div>
@@ -1737,9 +1737,9 @@ export default function EconomyBusinessPage() {
               <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-6">
                 {employmentData?.map((e, i) => (
                   <div key={i} className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                    <div className="text-sm text-platinum-400 mb-1">{e.year}</div>
+                    <div className="text-sm text-platinum-500-400 mb-1">{e.year}</div>
                     <div className="text-lg font-bold text-emerald-400">{e.unemploymentPercent}%</div>
-                    <div className="text-xs text-platinum-500">Unemployed</div>
+                    <div className="text-xs text-platinum-500-500">Unemployed</div>
                   </div>
                 ))}
               </div>
@@ -1816,9 +1816,9 @@ export default function EconomyBusinessPage() {
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {businessSentiment?.map((b, i) => (
                   <div key={i} className="rounded-lg bg-platinum-800/50 p-4">
-                    <div className="text-sm text-platinum-400 mb-2">{b.factor}</div>
+                    <div className="text-sm text-platinum-500-400 mb-2">{b.factor}</div>
                     <div className="flex items-center justify-between">
-                      <span className="text-2xl font-bold text-gold">{b.score}</span>
+                      <span className="text-2xl font-bold text-gold-700">{b.score}</span>
                       <div className={`text-sm ${b.change >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
                         {b.change >= 0 ? '+' : ''}{b.change}
                       </div>
@@ -1868,8 +1868,8 @@ export default function EconomyBusinessPage() {
                     {redFindings.map((finding, idx) => (
                       <div key={idx} className="flex items-start justify-between rounded-lg bg-red-500/10 p-4 border border-red-500/30">
                         <div className="flex-1">
-                          <p className="font-medium text-platinum-200">{finding.challenge}</p>
-                          <p className="mt-1 text-sm text-platinum-400">{finding.impact}</p>
+                          <p className="font-medium text-platinum-500-200">{finding.challenge}</p>
+                          <p className="mt-1 text-sm text-platinum-500-400">{finding.impact}</p>
                         </div>
                         <AlertBadge level="RED" />
                       </div>
@@ -1894,8 +1894,8 @@ export default function EconomyBusinessPage() {
                     {yellowFindings.map((finding, idx) => (
                       <div key={idx} className="flex items-start justify-between rounded-lg bg-amber-500/10 p-4 border border-amber-500/30">
                         <div className="flex-1">
-                          <p className="font-medium text-platinum-200">{finding.challenge}</p>
-                          <p className="mt-1 text-sm text-platinum-400">{finding.impact}</p>
+                          <p className="font-medium text-platinum-500-200">{finding.challenge}</p>
+                          <p className="mt-1 text-sm text-platinum-500-400">{finding.impact}</p>
                         </div>
                         <AlertBadge level="YELLOW" />
                       </div>
@@ -1922,8 +1922,8 @@ export default function EconomyBusinessPage() {
                             <AlertTriangle className="h-5 w-5" />
                           </div>
                           <div>
-                            <p className="font-semibold text-platinum-200">{c.challenge}</p>
-                            <p className="text-sm text-platinum-400">{c.impact}</p>
+                            <p className="font-semibold text-platinum-500-200">{c.challenge}</p>
+                            <p className="text-sm text-platinum-500-400">{c.impact}</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-3">
@@ -1945,13 +1945,13 @@ export default function EconomyBusinessPage() {
         <GlassPanel
           title="Key Findings"
           description="Critical economic intelligence"
-          icon={<Lightbulb className="h-5 w-5 text-gold" />}
+          icon={<Lightbulb className="h-5 w-5 text-gold-700" />}
         >
           <div className="space-y-4">
             {economicChallenges?.filter(c => c.alertLevel === 'RED' || c.alertLevel === 'YELLOW').slice(0, 5).map((c, i) => (
               <div key={i} className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3">
                 <AlertBadge level={c.alertLevel} />
-                <p className="text-sm text-platinum-300 flex-1">{c.challenge}</p>
+                <p className="text-sm text-platinum-500-300 flex-1">{c.challenge}</p>
               </div>
             ))}
           </div>
@@ -1962,17 +1962,17 @@ export default function EconomyBusinessPage() {
       <motion.div variants={fadeInVariants}>
         <Card className="glass-card">
           <CardContent className="p-4">
-            <div className="flex items-center gap-2 text-sm text-platinum-400">
+            <div className="flex items-center gap-2 text-sm text-platinum-500-400">
               <FileText className="h-4 w-4" />
               <span>Source: {doc?.source || 'UAE Economy Analysis'}</span>
-              <span className="text-platinum-600">|</span>
+              <span className="text-platinum-500-600">|</span>
               <Calendar className="h-4 w-4" />
               <span>Last Updated: {lastUpdated}</span>
-              <span className="text-platinum-600">|</span>
+              <span className="text-platinum-500-600">|</span>
               <Badge variant="outline" className="text-xs">Version {version}</Badge>
-              <span className="text-platinum-600">|</span>
+              <span className="text-platinum-500-600">|</span>
               <Badge variant="gold" className="text-xs">Coverage: {coverage}</Badge>
-              <span className="text-platinum-600">|</span>
+              <span className="text-platinum-500-600">|</span>
               <Badge variant="outline" className="text-xs">Confidence: {confidence}</Badge>
             </div>
           </CardContent>
@@ -1980,7 +1980,7 @@ export default function EconomyBusinessPage() {
       </motion.div>
 
       {/* Document Info Footer */}
-      <motion.div variants={fadeInVariants} className="text-center text-xs text-platinum-500">
+      <motion.div variants={fadeInVariants} className="text-center text-xs text-platinum-500-500">
         <p>UAE National Digital Intelligence Platform | Economy & Business Analysis</p>
         <p className="mt-1">Data compiled from official sources, UAE Central Bank, Ministry of Economy, and international organizations</p>
       </motion.div>

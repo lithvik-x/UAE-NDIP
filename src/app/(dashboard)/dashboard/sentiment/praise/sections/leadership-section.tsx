@@ -66,36 +66,36 @@ export function LeadershipSection({
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <Card className="glass-card border-navy-500/30 bg-gradient-to-br from-blue-500/10 to-transparent">
             <CardContent className="p-6 text-center">
-              <Crown className="h-10 w-10 text-navy-400 mx-auto mb-3" />
-              <p className="text-4xl font-bold text-navy-400">20</p>
-              <p className="text-platinum-400 text-sm">Years of Leadership</p>
+              <Crown className="h-10 w-10 text-navy-500-400 mx-auto mb-3" />
+              <p className="text-4xl font-bold text-navy-500-400">20</p>
+              <p className="text-platinum-500-400 text-sm">Years of Leadership</p>
               <Badge variant="denim" className="mt-2">PM Tenure</Badge>
             </CardContent>
           </Card>
 
           <Card className="glass-card border-navy-500/30">
             <CardContent className="p-6 text-center">
-              <FileText className="h-10 w-10 text-navy-400 mx-auto mb-3" />
-              <p className="text-4xl font-bold text-navy-400">~16K</p>
-              <p className="text-platinum-400 text-sm">Resolutions Issued</p>
-              <p className="text-xs text-platinum-500 mt-1">558 Cabinet Meetings</p>
+              <FileText className="h-10 w-10 text-navy-500-400 mx-auto mb-3" />
+              <p className="text-4xl font-bold text-navy-500-400">~16K</p>
+              <p className="text-platinum-500-400 text-sm">Resolutions Issued</p>
+              <p className="text-xs text-platinum-500-500 mt-1">558 Cabinet Meetings</p>
             </CardContent>
           </Card>
 
           <Card className="glass-card border-navy-500/30">
             <CardContent className="p-6 text-center">
-              <Users className="h-10 w-10 text-navy-400 mx-auto mb-3" />
-              <p className="text-4xl font-bold text-navy-400">72</p>
-              <p className="text-platinum-400 text-sm">Ministers Led</p>
-              <p className="text-xs text-platinum-500 mt-1">9 Cabinet Formations</p>
+              <Users className="h-10 w-10 text-navy-500-400 mx-auto mb-3" />
+              <p className="text-4xl font-bold text-navy-500-400">72</p>
+              <p className="text-platinum-500-400 text-sm">Ministers Led</p>
+              <p className="text-xs text-platinum-500-500 mt-1">9 Cabinet Formations</p>
             </CardContent>
           </Card>
 
           <Card className="glass-card border-navy-500/30">
             <CardContent className="p-6 text-center">
-              <Briefcase className="h-10 w-10 text-navy-400 mx-auto mb-3" />
-              <p className="text-4xl font-bold text-navy-400">&gt;90%</p>
-              <p className="text-platinum-400 text-sm">Legal Framework Modernized</p>
+              <Briefcase className="h-10 w-10 text-navy-500-400 mx-auto mb-3" />
+              <p className="text-4xl font-bold text-navy-500-400">&gt;90%</p>
+              <p className="text-platinum-500-400 text-sm">Legal Framework Modernized</p>
             </CardContent>
           </Card>
         </div>
@@ -110,9 +110,9 @@ export function LeadershipSection({
             <div className="grid gap-4 sm:grid-cols-3">
               {visionDocuments.map((doc, idx) => (
                 <div key={idx} className="bg-platinum-800/30 rounded-lg p-4 text-center">
-                  <Target className="h-8 w-8 text-navy-400 mx-auto mb-2" />
-                  <p className="font-semibold text-platinum-200">{doc.document}</p>
-                  <p className="text-xs text-platinum-400 mt-1">
+                  <Target className="h-8 w-8 text-navy-500-400 mx-auto mb-2" />
+                  <p className="font-semibold text-platinum-500-200">{doc.document}</p>
+                  <p className="text-xs text-platinum-500-400 mt-1">
                     {doc.launchYear} - {doc.targetYear}
                   </p>
                 </div>
@@ -131,12 +131,12 @@ export function LeadershipSection({
             <div className="grid gap-3 sm:grid-cols-2">
               {governancePrinciples.map((principle, idx) => (
                 <div key={idx} className="flex items-start gap-3 p-3 bg-platinum-800/30 rounded-lg">
-                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-navy-500/20 text-navy-400 text-xs font-bold">
+                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-navy-500/20 text-navy-500-400 text-xs font-bold">
                     {idx + 1}
                   </div>
                   <div>
-                    <p className="font-medium text-platinum-200 text-sm">{principle.principle}</p>
-                    <p className="text-xs text-platinum-400 mt-1">{principle.description}</p>
+                    <p className="font-medium text-platinum-500-200 text-sm">{principle.principle}</p>
+                    <p className="text-xs text-platinum-500-400 mt-1">{principle.description}</p>
                     <p className="text-xs text-emerald-400 mt-1">{principle.evidence}</p>
                   </div>
                 </div>
@@ -155,8 +155,8 @@ export function LeadershipSection({
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {keyAchievements.map((achievement, idx) => (
                 <div key={idx} className="bg-platinum-800/30 rounded-lg p-3">
-                  <p className="text-xs text-platinum-400">{achievement.category}</p>
-                  <p className="font-medium text-platinum-200 text-sm mt-1">{achievement.achievement}</p>
+                  <p className="text-xs text-platinum-500-400">{achievement.category}</p>
+                  <p className="font-medium text-platinum-500-200 text-sm mt-1">{achievement.achievement}</p>
                   <p className="text-xs text-emerald-400 mt-1">{achievement.impact}</p>
                 </div>
               ))}
@@ -174,8 +174,8 @@ export function LeadershipSection({
             <div className="space-y-4">
               {tributeQuotes.map((quote, idx) => (
                 <div key={idx} className="border-l-2 border-navy-500 pl-4">
-                  <p className="text-platinum-300 italic text-sm">"{quote.quote}"</p>
-                  <p className="text-platinum-400 text-xs mt-2">
+                  <p className="text-platinum-500-300 italic text-sm">"{quote.quote}"</p>
+                  <p className="text-platinum-500-400 text-xs mt-2">
                     — {quote.speaker}, {quote.title}
                   </p>
                 </div>

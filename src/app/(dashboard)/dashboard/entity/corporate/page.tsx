@@ -257,17 +257,17 @@ export default function CorporateEntitiesPage() {
       >
         <div>
           <Badge variant="gold" className="mb-2">CORPORATE ENTITIES</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy">Entity Intelligence</h1>
-          <p className="mt-2 text-platinum-600 dark:text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">Entity Intelligence</h1>
+          <p className="mt-2 text-platinum-500-600 dark:text-platinum-500-400">
             Major UAE corporations — SOEs, banks, airlines, telcos, real estate & retail — {overview.totalEntities} entities tracked
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-navy/30 text-navy hover:bg-navy/10">
+          <Button variant="outline" className="gap-2 border-navy/30 text-navy-500 hover:bg-navy/10">
             <Globe className="h-4 w-4" />
             Export List
           </Button>
-          <Button className="bg-gradient-navy hover:opacity-90 text-platinum-100 gap-2">
+          <Button className="bg-gradient-navy hover:opacity-90 text-platinum-500-100 gap-2">
             <Star className="h-4 w-4" />
             Refresh Data
           </Button>
@@ -338,7 +338,7 @@ export default function CorporateEntitiesPage() {
                     donut={true}
                   />
                 ) : (
-                  <div className="flex items-center justify-center h-48 text-platinum-500">No sentiment data available</div>
+                  <div className="flex items-center justify-center h-48 text-platinum-500-500">No sentiment data available</div>
                 )}
               </CardContent>
             </Card>
@@ -355,10 +355,10 @@ export default function CorporateEntitiesPage() {
                     <div key={idx} className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         {getSectorIcon(entity.entity)}
-                        <span className="text-sm font-medium text-platinum-700 dark:text-platinum-300">{entity.entity}</span>
+                        <span className="text-sm font-medium text-platinum-500-700 dark:text-platinum-500-300">{entity.entity}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="text-xs text-platinum-500">{entity.rationale}</span>
+                        <span className="text-xs text-platinum-500-500">{entity.rationale}</span>
                         {getCriticalityBadge(entity.criticality)}
                       </div>
                     </div>
@@ -380,11 +380,11 @@ export default function CorporateEntitiesPage() {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           {getSectorIcon(sector.sector)}
-                          <span className="text-sm font-semibold text-platinum-700 dark:text-platinum-300">{sector.sector}</span>
+                          <span className="text-sm font-semibold text-platinum-500-700 dark:text-platinum-500-300">{sector.sector}</span>
                         </div>
                         <Badge variant="outline" className="text-xs">{sector.topPerformer}</Badge>
                       </div>
-                      <p className="text-xs text-platinum-500 pl-6">{sector.keyGrowthDriver}</p>
+                      <p className="text-xs text-platinum-500-500 pl-6">{sector.keyGrowthDriver}</p>
                     </div>
                   ))}
                 </div>
@@ -401,7 +401,7 @@ export default function CorporateEntitiesPage() {
                 <div className="space-y-4">
                   {data.investmentClimateIndicators.map((indicator, idx) => (
                     <div key={idx} className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-platinum-700 dark:text-platinum-300">{indicator.indicator}</span>
+                      <span className="text-sm font-medium text-platinum-500-700 dark:text-platinum-500-300">{indicator.indicator}</span>
                       <div className="flex items-center gap-2">
                         <Badge variant="success" className="text-xs">{indicator.status}</Badge>
                       </div>
@@ -450,37 +450,37 @@ export default function CorporateEntitiesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Oil Production</p>
-                    <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">4M bpd</p>
+                    <p className="text-xs text-platinum-500-500">Oil Production</p>
+                    <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">4M bpd</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Proven Reserves</p>
-                    <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">105B barrels</p>
+                    <p className="text-xs text-platinum-500-500">Proven Reserves</p>
+                    <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">105B barrels</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Employees</p>
-                    <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">207,356</p>
+                    <p className="text-xs text-platinum-500-500">Employees</p>
+                    <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">207,356</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Subsidiaries</p>
-                    <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">16</p>
+                    <p className="text-xs text-platinum-500-500">Subsidiaries</p>
+                    <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">16</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Key 2024-2025 Transactions</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Key 2024-2025 Transactions</p>
                   <div className="space-y-2">
                     <div className="flex justify-between text-xs">
-                      <span className="text-platinum-600 dark:text-platinum-400">Covestro Acquisition</span>
-                      <span className="font-semibold text-navy-900 dark:text-platinum-100">$16.3B</span>
+                      <span className="text-platinum-500-600 dark:text-platinum-500-400">Covestro Acquisition</span>
+                      <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">$16.3B</span>
                     </div>
                     <div className="flex justify-between text-xs">
-                      <span className="text-platinum-600 dark:text-platinum-400">OCI/Fertiglobe</span>
-                      <span className="font-semibold text-navy-900 dark:text-platinum-100">$3.62B</span>
+                      <span className="text-platinum-500-600 dark:text-platinum-500-400">OCI/Fertiglobe</span>
+                      <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">$3.62B</span>
                     </div>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Decarbonization Commitment</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Decarbonization Commitment</p>
                   <div className="space-y-1 text-xs">
                     <p>Net Zero: 2045 | Carbon Intensity -25% by 2030</p>
                     <p>Carbon Capture: 10M tonnes/year by 2030</p>
@@ -499,35 +499,35 @@ export default function CorporateEntitiesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">AUM (2025)</p>
-                    <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">$385B</p>
+                    <p className="text-xs text-platinum-500-500">AUM (2025)</p>
+                    <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">$385B</p>
                     <p className="text-xs text-emerald-600 dark:text-emerald-400">+17% YoY</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">5-Year Returns</p>
-                    <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">&gt;10%</p>
-                    <p className="text-xs text-platinum-500">Annualized</p>
+                    <p className="text-xs text-platinum-500-500">5-Year Returns</p>
+                    <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">&gt;10%</p>
+                    <p className="text-xs text-platinum-500-500">Annualized</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Notable Investments</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Notable Investments</p>
                   <div className="space-y-2">
                     <div className="flex justify-between text-xs">
-                      <span className="text-platinum-600 dark:text-platinum-400">GlobalFoundries</span>
-                      <span className="font-semibold text-navy-900 dark:text-platinum-100">$22.4B+</span>
+                      <span className="text-platinum-500-600 dark:text-platinum-500-400">GlobalFoundries</span>
+                      <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">$22.4B+</span>
                     </div>
                     <div className="flex justify-between text-xs">
-                      <span className="text-platinum-600 dark:text-platinum-400">Fortress (2023)</span>
-                      <span className="font-semibold text-navy-900 dark:text-platinum-100">$3B</span>
+                      <span className="text-platinum-500-600 dark:text-platinum-500-400">Fortress (2023)</span>
+                      <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">$3B</span>
                     </div>
                     <div className="flex justify-between text-xs">
-                      <span className="text-platinum-600 dark:text-platinum-400">Telegram</span>
-                      <span className="font-semibold text-navy-900 dark:text-platinum-100">$225M</span>
+                      <span className="text-platinum-500-600 dark:text-platinum-500-400">Telegram</span>
+                      <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">$225M</span>
                     </div>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Global Offices</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Global Offices</p>
                   <div className="flex flex-wrap gap-1">
                     {['Abu Dhabi', 'London', 'Rio', 'New York', 'San Francisco', 'Beijing'].map((city) => (
                       <Badge key={city} variant="outline" className="text-xs">{city}</Badge>
@@ -546,17 +546,17 @@ export default function CorporateEntitiesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Assets Under Management</p>
-                    <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">$1.057T</p>
-                    <p className="text-xs text-platinum-500">Estimated</p>
+                    <p className="text-xs text-platinum-500-500">Assets Under Management</p>
+                    <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">$1.057T</p>
+                    <p className="text-xs text-platinum-500-500">Estimated</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Founded</p>
-                    <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">1976</p>
+                    <p className="text-xs text-platinum-500-500">Founded</p>
+                    <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">1976</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Investment Strategy</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Investment Strategy</p>
                   <div className="flex flex-wrap gap-1">
                     {['Equities', 'Fixed Income', 'Infrastructure', 'Real Estate', 'Private Equity', 'Hedge Funds'].map((asset) => (
                       <Badge key={asset} variant="outline" className="text-xs">{asset}</Badge>
@@ -564,7 +564,7 @@ export default function CorporateEntitiesPage() {
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Notable Investments</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Notable Investments</p>
                   <div className="space-y-1 text-xs">
                     <p>Citigroup: $7B (2008 crisis)</p>
                     <p>DigitalBridge: 40% stake (2024)</p>
@@ -583,28 +583,28 @@ export default function CorporateEntitiesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Revenue (2025)</p>
-                    <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">$24.4B</p>
+                    <p className="text-xs text-platinum-500-500">Revenue (2025)</p>
+                    <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">$24.4B</p>
                     <p className="text-xs text-emerald-600 dark:text-emerald-400">+22% YoY</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Throughput</p>
-                    <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">93.4M TEU</p>
-                    <p className="text-xs text-platinum-500">+5.8%</p>
+                    <p className="text-xs text-platinum-500-500">Throughput</p>
+                    <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">93.4M TEU</p>
+                    <p className="text-xs text-platinum-500-500">+5.8%</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Net Profit</p>
-                    <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">$1.96B</p>
+                    <p className="text-xs text-platinum-500-500">Net Profit</p>
+                    <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">$1.96B</p>
                     <p className="text-xs text-emerald-600 dark:text-emerald-400">+32.2%</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Terminals</p>
-                    <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">82</p>
-                    <p className="text-xs text-platinum-500">40+ countries</p>
+                    <p className="text-xs text-platinum-500-500">Terminals</p>
+                    <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">82</p>
+                    <p className="text-xs text-platinum-500-500">40+ countries</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">2026 Strategic Focus</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">2026 Strategic Focus</p>
                   <div className="flex flex-wrap gap-1">
                     {['Jebel Ali', 'Drydocks World', 'London Gateway', 'Ndayane', 'Jeddah'].map((focus) => (
                       <Badge key={focus} variant="outline" className="text-xs">{focus}</Badge>
@@ -655,63 +655,63 @@ export default function CorporateEntitiesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Profit (2024-25)</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$5.8B</p>
+                    <p className="text-xs text-platinum-500-500">Profit (2024-25)</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$5.8B</p>
                     <p className="text-xs text-emerald-600 dark:text-emerald-400">+20% YoY</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Revenue</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$34.9B</p>
+                    <p className="text-xs text-platinum-500-500">Revenue</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$34.9B</p>
                     <p className="text-xs text-emerald-600 dark:text-emerald-400">+6%</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Passengers</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">53.7M</p>
-                    <p className="text-xs text-platinum-500">+3%</p>
+                    <p className="text-xs text-platinum-500-500">Passengers</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">53.7M</p>
+                    <p className="text-xs text-platinum-500-500">+3%</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Profit Margin</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">14.9%</p>
+                    <p className="text-xs text-platinum-500-500">Profit Margin</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">14.9%</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Fleet (March 2026)</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Fleet (March 2026)</p>
                   <div className="grid grid-cols-2 gap-2 text-xs">
                     <div className="flex justify-between">
-                      <span className="text-platinum-600">A380:</span>
+                      <span className="text-platinum-500-600">A380:</span>
                       <span className="font-semibold">116</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-platinum-600">Boeing 777:</span>
+                      <span className="text-platinum-500-600">Boeing 777:</span>
                       <span className="font-semibold">133</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-platinum-600">Cargo:</span>
+                      <span className="text-platinum-500-600">Cargo:</span>
                       <span className="font-semibold">13</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-platinum-600">Order Book:</span>
+                      <span className="text-platinum-500-600">Order Book:</span>
                       <span className="font-semibold">314</span>
                     </div>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Network</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Network</p>
                   <div className="grid grid-cols-2 gap-2 text-xs">
                     <div className="flex justify-between">
-                      <span className="text-platinum-600">Destinations:</span>
+                      <span className="text-platinum-500-600">Destinations:</span>
                       <span className="font-semibold">148 cities</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-platinum-600">Countries:</span>
+                      <span className="text-platinum-500-600">Countries:</span>
                       <span className="font-semibold">80</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-platinum-600">Weekly Flights:</span>
+                      <span className="text-platinum-500-600">Weekly Flights:</span>
                       <span className="font-semibold">3,600+</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-platinum-600">Seat Factor:</span>
+                      <span className="text-platinum-500-600">Seat Factor:</span>
                       <span className="font-semibold">78.9%</span>
                     </div>
                   </div>
@@ -728,36 +728,36 @@ export default function CorporateEntitiesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Profit (2025)</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$698M</p>
+                    <p className="text-xs text-platinum-500-500">Profit (2025)</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$698M</p>
                     <p className="text-xs text-emerald-600 dark:text-emerald-400">+47% YoY</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Revenue</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$8.4B</p>
+                    <p className="text-xs text-platinum-500-500">Revenue</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$8.4B</p>
                     <p className="text-xs text-emerald-600 dark:text-emerald-400">+21%</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Passengers</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">22.4M</p>
+                    <p className="text-xs text-platinum-500-500">Passengers</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">22.4M</p>
                     <p className="text-xs text-emerald-600 dark:text-emerald-400">+21%</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Load Factor</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">88.3%</p>
-                    <p className="text-xs text-platinum-500">+2pp</p>
+                    <p className="text-xs text-platinum-500-500">Load Factor</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">88.3%</p>
+                    <p className="text-xs text-platinum-500-500">+2pp</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Turnaround Story</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Turnaround Story</p>
                   <div className="space-y-1 text-xs">
-                    <p className="text-platinum-600 dark:text-platinum-400">2016-2021: $7B+ cumulative losses</p>
+                    <p className="text-platinum-500-600 dark:text-platinum-500-400">2016-2021: $7B+ cumulative losses</p>
                     <p className="text-emerald-600 dark:text-emerald-400">2022: Return to profit ($25M)</p>
                     <p className="text-emerald-600 dark:text-emerald-400">2025: Record profit ($698M)</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">New 2025 Routes</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">New 2025 Routes</p>
                   <div className="flex flex-wrap gap-1">
                     {['Atlanta', 'Prague', 'Warsaw', 'Addis Ababa', 'Phnom Penh', 'Hanoi', 'Hong Kong'].map((route) => (
                       <Badge key={route} variant="outline" className="text-xs">{route}</Badge>
@@ -778,21 +778,21 @@ export default function CorporateEntitiesPage() {
               <Table>
                 <TableHeader>
                   <TableRow className="border-b border-platinum-200/50 dark:border-platinum-700/50">
-                    <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Airline</TableHead>
-                    <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Fleet Size</TableHead>
-                    <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Aircraft Types</TableHead>
-                    <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Order Book</TableHead>
-                    <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Destinations</TableHead>
+                    <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Airline</TableHead>
+                    <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Fleet Size</TableHead>
+                    <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Aircraft Types</TableHead>
+                    <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Order Book</TableHead>
+                    <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Destinations</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {fleetComparison.map((airline, idx) => (
                     <TableRow key={idx} className="border-b border-platinum-100/50 dark:border-platinum-800/50">
-                      <TableCell className="font-semibold text-navy-900 dark:text-platinum-100">{airline.airline}</TableCell>
-                      <TableCell className="text-platinum-700 dark:text-platinum-300">{airline.fleetSize}</TableCell>
-                      <TableCell className="text-platinum-700 dark:text-platinum-300">{airline.aircraftTypes}</TableCell>
-                      <TableCell className="text-platinum-700 dark:text-platinum-300">{airline.orderBook}</TableCell>
-                      <TableCell className="text-platinum-700 dark:text-platinum-300">{airline.destinations}</TableCell>
+                      <TableCell className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{airline.airline}</TableCell>
+                      <TableCell className="text-platinum-500-700 dark:text-platinum-500-300">{airline.fleetSize}</TableCell>
+                      <TableCell className="text-platinum-500-700 dark:text-platinum-500-300">{airline.aircraftTypes}</TableCell>
+                      <TableCell className="text-platinum-500-700 dark:text-platinum-500-300">{airline.orderBook}</TableCell>
+                      <TableCell className="text-platinum-500-700 dark:text-platinum-500-300">{airline.destinations}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -839,26 +839,26 @@ export default function CorporateEntitiesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Total Assets</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$330B</p>
-                    <p className="text-xs text-platinum-500">AED 1.21T</p>
+                    <p className="text-xs text-platinum-500-500">Total Assets</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$330B</p>
+                    <p className="text-xs text-platinum-500-500">AED 1.21T</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Net Profit (2024)</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$4.66B</p>
+                    <p className="text-xs text-platinum-500-500">Net Profit (2024)</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$4.66B</p>
                     <p className="text-xs text-emerald-600 dark:text-emerald-400">+4% YoY</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">UAE Market Share</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">27%</p>
+                    <p className="text-xs text-platinum-500-500">UAE Market Share</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">27%</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Return on Equity</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">16.8%</p>
+                    <p className="text-xs text-platinum-500-500">Return on Equity</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">16.8%</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Revenue by Business Line (2024)</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Revenue by Business Line (2024)</p>
                   <div className="space-y-2">
                     {[
                       { name: 'Investment Banking', value: 'AED 10.9B', change: '+19%' },
@@ -867,15 +867,15 @@ export default function CorporateEntitiesPage() {
                       { name: 'Consumer Banking', value: 'AED 4.5B', change: '+18%' },
                     ].map((line) => (
                       <div key={line.name} className="flex justify-between text-xs">
-                        <span className="text-platinum-600 dark:text-platinum-400">{line.name}</span>
-                        <span className="font-semibold text-navy-900 dark:text-platinum-100">{line.value}</span>
+                        <span className="text-platinum-500-600 dark:text-platinum-500-400">{line.name}</span>
+                        <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{line.value}</span>
                         <span className="text-emerald-600 dark:text-emerald-400">{line.change}</span>
                       </div>
                     ))}
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Credit Ratings</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Credit Ratings</p>
                   <div className="flex gap-2">
                     {[
                       { agency: "Moody's", rating: 'Aa3' },
@@ -898,41 +898,41 @@ export default function CorporateEntitiesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Assets (June 2025)</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$295.7B</p>
-                    <p className="text-xs text-platinum-500">AED 1.086T</p>
+                    <p className="text-xs text-platinum-500-500">Assets (June 2025)</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$295.7B</p>
+                    <p className="text-xs text-platinum-500-500">AED 1.086T</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">FY 2025 Profit</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$8.1B</p>
+                    <p className="text-xs text-platinum-500-500">FY 2025 Profit</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$8.1B</p>
                     <p className="text-xs text-emerald-600 dark:text-emerald-400">Record</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Customers</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">9M+</p>
+                    <p className="text-xs text-platinum-500-500">Customers</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">9M+</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Countries</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">13</p>
+                    <p className="text-xs text-platinum-500-500">Countries</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">13</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Operational Scale</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Operational Scale</p>
                   <div className="grid grid-cols-2 gap-2 text-xs">
                     <div className="flex justify-between">
-                      <span className="text-platinum-600">Branches:</span>
+                      <span className="text-platinum-500-600">Branches:</span>
                       <span className="font-semibold">826</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-platinum-600">ATMs:</span>
+                      <span className="text-platinum-500-600">ATMs:</span>
                       <span className="font-semibold">4,555</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-platinum-600">Employees:</span>
+                      <span className="text-platinum-500-600">Employees:</span>
                       <span className="font-semibold">30,000+</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-platinum-600">Digital:</span>
+                      <span className="text-platinum-500-600">Digital:</span>
                       <span className="font-semibold">97%</span>
                     </div>
                   </div>
@@ -949,19 +949,19 @@ export default function CorporateEntitiesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Total Assets</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$148B</p>
-                    <p className="text-xs text-platinum-500">AED 148B</p>
+                    <p className="text-xs text-platinum-500-500">Total Assets</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$148B</p>
+                    <p className="text-xs text-platinum-500-500">AED 148B</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Q1 2026 Profit</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$1.03B</p>
+                    <p className="text-xs text-platinum-500-500">Q1 2026 Profit</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$1.03B</p>
                     <p className="text-xs text-emerald-600 dark:text-emerald-400">+30% YoY</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">2019 Merger</p>
-                  <p className="text-xs text-platinum-600 dark:text-platinum-400">Union National Bank + Al Hilal Bank → ADCB Group</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">2019 Merger</p>
+                  <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">Union National Bank + Al Hilal Bank → ADCB Group</p>
                 </div>
               </div>
             </GlassPanel>
@@ -975,20 +975,20 @@ export default function CorporateEntitiesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Total Assets</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$94B</p>
+                    <p className="text-xs text-platinum-500-500">Total Assets</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$94B</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Revenue (2024)</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$6.3B</p>
+                    <p className="text-xs text-platinum-500-500">Revenue (2024)</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$6.3B</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Branches</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">90+</p>
+                    <p className="text-xs text-platinum-500-500">Branches</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">90+</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Customers</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">1.7M</p>
+                    <p className="text-xs text-platinum-500-500">Customers</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">1.7M</p>
                   </div>
                 </div>
               </div>
@@ -1008,16 +1008,16 @@ export default function CorporateEntitiesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Operating Since</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">1976</p>
+                    <p className="text-xs text-platinum-500-500">Operating Since</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">1976</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Countries</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">38</p>
+                    <p className="text-xs text-platinum-500-500">Countries</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">38</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Key Brands</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Key Brands</p>
                   <div className="space-y-2 text-xs">
                     {[
                       { brand: 'e& UAE', focus: 'Domestic operations' },
@@ -1027,8 +1027,8 @@ export default function CorporateEntitiesPage() {
                       { brand: 'e& capital', focus: 'Investment arm' },
                     ].map((b) => (
                       <div key={b.brand} className="flex justify-between">
-                        <span className="font-semibold text-navy-900 dark:text-platinum-100">{b.brand}</span>
-                        <span className="text-platinum-500">{b.focus}</span>
+                        <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{b.brand}</span>
+                        <span className="text-platinum-500-500">{b.focus}</span>
                       </div>
                     ))}
                   </div>
@@ -1045,26 +1045,26 @@ export default function CorporateEntitiesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Revenue (2025)</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$4.3B</p>
-                    <p className="text-xs text-platinum-500">AED 15.9B</p>
+                    <p className="text-xs text-platinum-500-500">Revenue (2025)</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$4.3B</p>
+                    <p className="text-xs text-platinum-500-500">AED 15.9B</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Net Income</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$678M</p>
-                    <p className="text-xs text-platinum-500">AED 2.49B</p>
+                    <p className="text-xs text-platinum-500-500">Net Income</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$678M</p>
+                    <p className="text-xs text-platinum-500-500">AED 2.49B</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Mobile Subscribers</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">8M</p>
+                    <p className="text-xs text-platinum-500-500">Mobile Subscribers</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">8M</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Broadband</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">559K</p>
+                    <p className="text-xs text-platinum-500-500">Broadband</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">559K</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">5G Leadership</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">5G Leadership</p>
                   <div className="space-y-1 text-xs">
                     <p>Launched 5G June 2019 (first in UAE)</p>
                     <p>First MENA mmWave 5G deployment (2020)</p>
@@ -1087,29 +1087,29 @@ export default function CorporateEntitiesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Revenue</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$8.5B</p>
+                    <p className="text-xs text-platinum-500-500">Revenue</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$8.5B</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Valuation</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$16.8B</p>
+                    <p className="text-xs text-platinum-500-500">Valuation</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$16.8B</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Net Asset Value</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$37.6B</p>
+                    <p className="text-xs text-platinum-500-500">Net Asset Value</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$37.6B</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Employees</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">6,600</p>
+                    <p className="text-xs text-platinum-500-500">Employees</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">6,600</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Major Projects</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Major Projects</p>
                   <div className="space-y-1 text-xs">
-                    <p className="font-semibold text-navy-900 dark:text-platinum-100">Burj Khalifa</p>
-                    <p className="text-platinum-500">World's tallest building (828m, 160 floors)</p>
-                    <p className="font-semibold text-navy-900 dark:text-platinum-100">The Dubai Mall</p>
-                    <p className="text-platinum-500">World's largest shopping mall (80M+ visitors in 2014)</p>
+                    <p className="font-semibold text-navy-500-900 dark:text-platinum-500-100">Burj Khalifa</p>
+                    <p className="text-platinum-500-500">World's tallest building (828m, 160 floors)</p>
+                    <p className="font-semibold text-navy-500-900 dark:text-platinum-500-100">The Dubai Mall</p>
+                    <p className="text-platinum-500-500">World's largest shopping mall (80M+ visitors in 2014)</p>
                   </div>
                 </div>
               </div>
@@ -1124,40 +1124,40 @@ export default function CorporateEntitiesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Employees</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">65,000+</p>
+                    <p className="text-xs text-platinum-500-500">Employees</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">65,000+</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">GCC Outlets</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">259</p>
+                    <p className="text-xs text-platinum-500-500">GCC Outlets</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">259</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">GCC Presence</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">GCC Presence</p>
                   <div className="grid grid-cols-3 gap-2 text-xs">
                     <div className="text-center">
-                      <p className="font-bold text-navy-900 dark:text-platinum-100">175</p>
-                      <p className="text-platinum-500">UAE</p>
+                      <p className="font-bold text-navy-500-900 dark:text-platinum-500-100">175</p>
+                      <p className="text-platinum-500-500">UAE</p>
                     </div>
                     <div className="text-center">
-                      <p className="font-bold text-navy-900 dark:text-platinum-100">34</p>
-                      <p className="text-platinum-500">Saudi</p>
+                      <p className="font-bold text-navy-500-900 dark:text-platinum-500-100">34</p>
+                      <p className="text-platinum-500-500">Saudi</p>
                     </div>
                     <div className="text-center">
-                      <p className="font-bold text-navy-900 dark:text-platinum-100">35</p>
-                      <p className="text-platinum-500">Oman</p>
+                      <p className="font-bold text-navy-500-900 dark:text-platinum-500-100">35</p>
+                      <p className="text-platinum-500-500">Oman</p>
                     </div>
                     <div className="text-center">
-                      <p className="font-bold text-navy-900 dark:text-platinum-100">22</p>
-                      <p className="text-platinum-500">Qatar</p>
+                      <p className="font-bold text-navy-500-900 dark:text-platinum-500-100">22</p>
+                      <p className="text-platinum-500-500">Qatar</p>
                     </div>
                     <div className="text-center">
-                      <p className="font-bold text-navy-900 dark:text-platinum-100">11</p>
-                      <p className="text-platinum-500">Bahrain</p>
+                      <p className="font-bold text-navy-500-900 dark:text-platinum-500-100">11</p>
+                      <p className="text-platinum-500-500">Bahrain</p>
                     </div>
                     <div className="text-center">
-                      <p className="font-bold text-navy-900 dark:text-platinum-100">6</p>
-                      <p className="text-platinum-500">Kuwait</p>
+                      <p className="font-bold text-navy-500-900 dark:text-platinum-500-100">6</p>
+                      <p className="text-platinum-500-500">Kuwait</p>
                     </div>
                   </div>
                 </div>
@@ -1171,19 +1171,19 @@ export default function CorporateEntitiesPage() {
               badge="MEDIUM"
             >
               <div className="space-y-4">
-                <p className="text-xs text-platinum-500 mb-2">Key Properties</p>
+                <p className="text-xs text-platinum-500-500 mb-2">Key Properties</p>
                 <div className="space-y-2 text-xs">
                   <div className="flex justify-between">
-                    <span className="font-semibold text-navy-900 dark:text-platinum-100">Burj Al Arab</span>
-                    <span className="text-platinum-500">Iconic sail-shaped hotel</span>
+                    <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">Burj Al Arab</span>
+                    <span className="text-platinum-500-500">Iconic sail-shaped hotel</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="font-semibold text-navy-900 dark:text-platinum-100">Jumeirah Beach Hotel</span>
-                    <span className="text-platinum-500">598 rooms, 20 restaurants</span>
+                    <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">Jumeirah Beach Hotel</span>
+                    <span className="text-platinum-500-500">598 rooms, 20 restaurants</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="font-semibold text-navy-900 dark:text-platinum-100">Madinat Jumeirah</span>
-                    <span className="text-platinum-500">Resort complex</span>
+                    <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">Madinat Jumeirah</span>
+                    <span className="text-platinum-500-500">Resort complex</span>
                   </div>
                 </div>
               </div>
@@ -1198,12 +1198,12 @@ export default function CorporateEntitiesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Founded</p>
-                    <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">1970</p>
+                    <p className="text-xs text-platinum-500-500">Founded</p>
+                    <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">1970</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Business Segments</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Business Segments</p>
                   <div className="flex flex-wrap gap-1">
                     {['Hotel', 'Automotive', 'Real Estate', 'Education', 'Construction', 'Publishing'].map((seg) => (
                       <Badge key={seg} variant="outline" className="text-xs">{seg}</Badge>
@@ -1226,24 +1226,24 @@ export default function CorporateEntitiesPage() {
             >
               <div className="space-y-4">
                 <div className="space-y-1">
-                  <p className="text-xs text-platinum-500">Total Investment Plan (through 2029)</p>
-                  <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">$15.2B</p>
+                  <p className="text-xs text-platinum-500-500">Total Investment Plan (through 2029)</p>
+                  <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">$15.2B</p>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Investment Breakdown</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Investment Breakdown</p>
                   <div className="space-y-2 text-xs">
                     <div className="flex justify-between">
-                      <span className="text-platinum-600 dark:text-platinum-400">Already invested (2023-2025)</span>
-                      <span className="font-semibold text-navy-900 dark:text-platinum-100">$7.3B</span>
+                      <span className="text-platinum-500-600 dark:text-platinum-500-400">Already invested (2023-2025)</span>
+                      <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">$7.3B</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-platinum-600 dark:text-platinum-400">Earmarked (2026-2029)</span>
-                      <span className="font-semibold text-navy-900 dark:text-platinum-100">$7.9B</span>
+                      <span className="text-platinum-500-600 dark:text-platinum-500-400">Earmarked (2026-2029)</span>
+                      <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">$7.9B</span>
                     </div>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Strategic Focus</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Strategic Focus</p>
                   <div className="space-y-1 text-xs">
                     <p>AI and cloud computing projects</p>
                     <p>Secured US export licenses for AI chips</p>
@@ -1262,21 +1262,21 @@ export default function CorporateEntitiesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Region</p>
-                    <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">me-central-1</p>
+                    <p className="text-xs text-platinum-500-500">Region</p>
+                    <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">me-central-1</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Launch Date</p>
-                    <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">Aug 2022</p>
+                    <p className="text-xs text-platinum-500-500">Launch Date</p>
+                    <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">Aug 2022</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Data Centers</p>
-                    <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">2</p>
+                    <p className="text-xs text-platinum-500-500">Data Centers</p>
+                    <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">2</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
                   <Badge variant="destructive" className="text-xs mb-2">March 2026 Incident</Badge>
-                  <p className="text-xs text-platinum-600 dark:text-platinum-400">
+                  <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">
                     Drone strikes damaged three AWS facilities in UAE and Bahrain amid US-Iran tensions, causing AWS outage.
                   </p>
                 </div>
@@ -1290,10 +1290,10 @@ export default function CorporateEntitiesPage() {
               badge="MEDIUM"
             >
               <div className="space-y-4">
-                <p className="text-xs text-platinum-500 mb-2">Status</p>
-                <p className="text-sm text-navy-900 dark:text-platinum-100">Largest represented international bank in Middle East</p>
+                <p className="text-xs text-platinum-500-500 mb-2">Status</p>
+                <p className="text-sm text-navy-500-900 dark:text-platinum-500-100">Largest represented international bank in Middle East</p>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Services</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Services</p>
                   <div className="flex flex-wrap gap-1">
                     {['Personal Banking', 'Wealth Management', 'Commercial Banking', 'Investment Banking', 'Trade Finance'].map((svc) => (
                       <Badge key={svc} variant="outline" className="text-xs">{svc}</Badge>
@@ -1312,16 +1312,16 @@ export default function CorporateEntitiesPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Senior Partner</p>
-                    <p className="text-sm font-bold text-navy-900 dark:text-platinum-100">Hasan Muzaffar</p>
+                    <p className="text-xs text-platinum-500-500">Senior Partner</p>
+                    <p className="text-sm font-bold text-navy-500-900 dark:text-platinum-500-100">Hasan Muzaffar</p>
                   </div>
                   <div className="space-y-1">
-                    <p className="text-xs text-platinum-500">Glassdoor</p>
-                    <p className="text-sm font-bold text-navy-900 dark:text-platinum-100">3.9/5</p>
+                    <p className="text-xs text-platinum-500-500">Glassdoor</p>
+                    <p className="text-sm font-bold text-navy-500-900 dark:text-platinum-500-100">3.9/5</p>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                  <p className="text-xs text-platinum-500 mb-2">Office Focus</p>
+                  <p className="text-xs text-platinum-500-500 mb-2">Office Focus</p>
                   <div className="space-y-1 text-xs">
                     <p><span className="font-semibold">Dubai:</span> Banking, infrastructure, retail, tourism</p>
                     <p><span className="font-semibold">Abu Dhabi:</span> Sustainable/inclusive growth</p>
@@ -1362,19 +1362,19 @@ export default function CorporateEntitiesPage() {
               <Table>
                 <TableHeader>
                   <TableRow className="border-b border-platinum-200/50 dark:border-platinum-700/50">
-                    <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Acquirer</TableHead>
-                    <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Target</TableHead>
-                    <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Value</TableHead>
-                    <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Year</TableHead>
+                    <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Acquirer</TableHead>
+                    <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Target</TableHead>
+                    <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Value</TableHead>
+                    <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Year</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {majorAcquisitions.map((acq, idx) => (
                     <TableRow key={idx} className="border-b border-platinum-100/50 dark:border-platinum-800/50">
-                      <TableCell className="font-semibold text-navy-900 dark:text-platinum-100">{acq.acquirer}</TableCell>
-                      <TableCell className="text-platinum-700 dark:text-platinum-300">{acq.target}</TableCell>
-                      <TableCell className="text-platinum-700 dark:text-platinum-300">{acq.value}</TableCell>
-                      <TableCell className="text-platinum-700 dark:text-platinum-300">{acq.year}</TableCell>
+                      <TableCell className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{acq.acquirer}</TableCell>
+                      <TableCell className="text-platinum-500-700 dark:text-platinum-500-300">{acq.target}</TableCell>
+                      <TableCell className="text-platinum-500-700 dark:text-platinum-500-300">{acq.value}</TableCell>
+                      <TableCell className="text-platinum-500-700 dark:text-platinum-500-300">{acq.year}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -1395,8 +1395,8 @@ export default function CorporateEntitiesPage() {
               >
                 <div className="space-y-2">
                   <div>
-                    <p className="text-xs text-platinum-500">Impact</p>
-                    <p className="text-sm font-medium text-navy-900 dark:text-platinum-100">{controv.impact}</p>
+                    <p className="text-xs text-platinum-500-500">Impact</p>
+                    <p className="text-sm font-medium text-navy-500-900 dark:text-platinum-500-100">{controv.impact}</p>
                   </div>
                 </div>
               </GlassPanel>
@@ -1412,17 +1412,17 @@ export default function CorporateEntitiesPage() {
               <Table>
                 <TableHeader>
                   <TableRow className="border-b border-platinum-200/50 dark:border-platinum-700/50">
-                    <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Company</TableHead>
-                    <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Change</TableHead>
-                    <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Date</TableHead>
+                    <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Company</TableHead>
+                    <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Change</TableHead>
+                    <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Date</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {data.leadershipChanges.map((change, idx) => (
                     <TableRow key={idx} className="border-b border-platinum-100/50 dark:border-platinum-800/50">
-                      <TableCell className="font-semibold text-navy-900 dark:text-platinum-100">{change.company}</TableCell>
-                      <TableCell className="text-platinum-700 dark:text-platinum-300">{change.change}</TableCell>
-                      <TableCell className="text-platinum-700 dark:text-platinum-300">{change.date}</TableCell>
+                      <TableCell className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{change.company}</TableCell>
+                      <TableCell className="text-platinum-500-700 dark:text-platinum-500-300">{change.change}</TableCell>
+                      <TableCell className="text-platinum-500-700 dark:text-platinum-500-300">{change.date}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

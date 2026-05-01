@@ -269,9 +269,9 @@ const CardTitle = React.forwardRef<
     clairvoyance: 'gradient-text-clairvoyance',
     perception: 'gradient-text-perception',
     ricochet: 'gradient-text-ricochet',
-    gold: 'gradient-text-gold',
+    gold: 'gradient-text-gold-700',
     navy: 'gradient-text',
-    platinum: 'gradient-text-platinum',
+    platinum: 'gradient-text-platinum-500',
   }
 
   return (
@@ -305,7 +305,7 @@ const CardDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-  <p ref={ref} className={cn('text-sm text-platinum-600 leading-relaxed', className)} {...props} />
+  <p ref={ref} className={cn('text-sm text-platinum-500-600 leading-relaxed', className)} {...props} />
 ))
 CardDescription.displayName = 'CardDescription'
 
@@ -416,15 +416,15 @@ const MetricCard = React.forwardRef<
     red: { bg: 'bg-red-500/10', text: 'text-red-600', border: 'border-red-200/50' },
     indigo: { bg: 'bg-indigo-500/10', text: 'text-indigo-600', border: 'border-indigo-200/50' },
     cyan: { bg: 'bg-cyan-500/10', text: 'text-cyan-600', border: 'border-cyan-200/50' },
-    gold: { bg: 'bg-gold-500/10', text: 'text-gold', border: 'border-gold-200/50' },
+    gold: { bg: 'bg-gold-500/10', text: 'text-gold-700', border: 'border-gold-200/50' },
     emerald: { bg: 'bg-emerald-500/10', text: 'text-emerald-600', border: 'border-emerald-200/50' },
-    navy: { bg: 'bg-navy-500/10', text: 'text-navy-600', border: 'border-navy-200/50' },
+    navy: { bg: 'bg-navy-500/10', text: 'text-navy-500-600', border: 'border-navy-200/50' },
   }
 
   const trendConfig = {
     up: { icon: '↑', class: 'text-emerald-600 bg-emerald-50 dark:bg-emerald-950/30' },
     down: { icon: '↓', class: 'text-red-600 bg-red-50 dark:bg-red-950/30' },
-    neutral: { icon: '→', class: 'text-platinum-500 bg-platinum-50 dark:bg-platinum-950/30' },
+    neutral: { icon: '→', class: 'text-platinum-500-500 bg-platinum-50 dark:bg-platinum-950/30' },
   }
 
   return (
@@ -537,7 +537,7 @@ const StatCard = React.forwardRef<
           )}
         </div>
         <div className="text-3xl font-bold gradient-text mb-1">{value}</div>
-        <div className="text-sm text-platinum-600">{label}</div>
+        <div className="text-sm text-platinum-500-600">{label}</div>
       </div>
     </div>
   )

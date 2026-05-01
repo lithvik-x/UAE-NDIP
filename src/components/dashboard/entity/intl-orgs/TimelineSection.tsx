@@ -56,8 +56,8 @@ export function TimelineSection({ timeline, uaePositioning }: TimelineSectionPro
                   <CardContent className="p-4">
                     <div className="flex items-start justify-between">
                       <div className="space-y-1">
-                        <p className="text-xs text-platinum-500 font-medium">{event.date}</p>
-                        <p className="text-sm font-medium text-navy-900 dark:text-platinum-100">{event.event}</p>
+                        <p className="text-xs text-platinum-500-500 font-medium">{event.date}</p>
+                        <p className="text-sm font-medium text-navy-500-900 dark:text-platinum-500-100">{event.event}</p>
                       </div>
                       <Badge
                         variant={
@@ -89,7 +89,7 @@ export function TimelineSection({ timeline, uaePositioning }: TimelineSectionPro
               </div>
               <div>
                 <p className="text-sm font-medium text-denim-700 dark:text-denim-300">UAE Positioning</p>
-                <p className="text-lg font-bold text-navy-900 dark:text-platinum-100">
+                <p className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">
                   {uaePositioning}
                 </p>
               </div>

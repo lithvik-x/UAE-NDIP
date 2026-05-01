@@ -723,7 +723,7 @@ export default function IntlRelationsPage() {
     if (tier === 0) return 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50'
     if (tier === 1) return 'bg-cyan-500/20 text-cyan-400 border-cyan-500/50'
     if (tier === 2) return 'bg-gold-500/20 text-gold-400 border-gold-500/50'
-    return 'bg-platinum-500/20 text-platinum-400 border-platinum-500/50'
+    return 'bg-platinum-500/20 text-platinum-500-400 border-platinum-500/50'
   }
 
   return (
@@ -736,17 +736,17 @@ export default function IntlRelationsPage() {
       >
         <div>
           <Badge variant="cyan" className="mb-2">INTERNATIONAL RELATIONS</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-cyan">International Relations Body</h1>
-          <p className="mt-2 text-platinum-400">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-cyan-500">International Relations Body</h1>
+          <p className="mt-2 text-platinum-500-400">
             GCC, Arab League, OIC, UN coordination, bilateral partnerships, and multilateral positioning
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-cyan/50 text-cyan hover:bg-cyan/10">
+          <Button variant="outline" className="gap-2 border-cyan-500/50 text-cyan-500 hover:bg-cyan-500/10">
             <Globe2 className="h-4 w-4" />
             View Directory
           </Button>
-          <Button className="bg-gradient-cyan hover:opacity-90 text-navy-950 gap-2">
+          <Button className="bg-gradient-cyan hover:opacity-90 text-navy-500-950 gap-2">
             <Zap className="h-4 w-4" />
             Analyze
           </Button>
@@ -806,7 +806,7 @@ export default function IntlRelationsPage() {
               <AlertOctagon className="h-6 w-6 text-red-400" />
               <div>
                 <h3 className="font-bold text-red-400">CRISIS COORDINATION ACTIVE</h3>
-                <p className="text-sm text-platinum-300">
+                <p className="text-sm text-platinum-500-300">
                   {`${crisisResponseData.gccCrisis.attacksSinceFeb2026.toLocaleString()}+`} missile/drone attacks tracked | {`${crisisResponseData.gccCrisis.coordinationMeetings}+`} coordination meetings
                 </p>
               </div>
@@ -851,17 +851,17 @@ export default function IntlRelationsPage() {
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <span className="text-5xl font-extrabold text-cyan-400">{gccSoftPower.softPowerScore}</span>
-                      <span className="text-platinum-400">/100</span>
+                      <span className="text-platinum-500-400">/100</span>
                     </div>
                     <Progress value={gccSoftPower.softPowerScore} className="h-2" />
                     <div className="grid grid-cols-2 gap-2 mt-4">
                       <div className="text-center p-2 rounded bg-cyan-500/10">
                         <div className="text-xl font-bold text-cyan-400">#{gccSoftPower.gspiRank}</div>
-                        <div className="text-xs text-platinum-400">Global Rank</div>
+                        <div className="text-xs text-platinum-500-400">Global Rank</div>
                       </div>
                       <div className="text-center p-2 rounded bg-cyan-500/10">
                         <div className="text-xl font-bold text-cyan-400">#1</div>
-                        <div className="text-xs text-platinum-400">GCC Rank</div>
+                        <div className="text-xs text-platinum-500-400">GCC Rank</div>
                       </div>
                     </div>
                   </div>
@@ -929,8 +929,8 @@ export default function IntlRelationsPage() {
                       <div className="flex items-center gap-3">
                         <div className="w-2 h-2 rounded-full bg-gold-400" />
                         <div>
-                          <div className="font-medium text-platinum-200">{summit.name}</div>
-                          <div className="text-xs text-platinum-400">{summit.location}</div>
+                          <div className="font-medium text-platinum-500-200">{summit.name}</div>
+                          <div className="text-xs text-platinum-500-400">{summit.location}</div>
                         </div>
                       </div>
                       <Badge variant="outline" className="text-xs">{summit.date}</Badge>
@@ -959,15 +959,15 @@ export default function IntlRelationsPage() {
                 <div className="grid gap-4 sm:grid-cols-3">
                   <div className="text-center p-3 rounded bg-rose-500/10">
                     <div className="text-2xl font-bold text-rose-400">2nd</div>
-                    <div className="text-xs text-platinum-400">Largest Gaza Aid Donor (after US)</div>
+                    <div className="text-xs text-platinum-500-400">Largest Gaza Aid Donor (after US)</div>
                   </div>
                   <div className="text-center p-3 rounded bg-rose-500/10">
                     <div className="text-2xl font-bold text-rose-400">3rd</div>
-                    <div className="text-xs text-platinum-400">Largest Lebanon Aid Donor</div>
+                    <div className="text-xs text-platinum-500-400">Largest Lebanon Aid Donor</div>
                   </div>
                   <div className="text-center p-3 rounded bg-rose-500/10">
                     <div className="text-2xl font-bold text-rose-400">COP28</div>
-                    <div className="text-xs text-platinum-400">UAE Consensus 2023</div>
+                    <div className="text-xs text-platinum-500-400">UAE Consensus 2023</div>
                   </div>
                 </div>
               </CardContent>
@@ -985,15 +985,15 @@ export default function IntlRelationsPage() {
               <CardContent className="space-y-4">
                 <div className="text-center">
                   <div className="text-4xl font-extrabold text-cyan-400">10th</div>
-                  <div className="text-sm text-platinum-400">Global Soft Power Index</div>
+                  <div className="text-sm text-platinum-500-400">Global Soft Power Index</div>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-extrabold text-emerald-400">#1</div>
-                  <div className="text-sm text-platinum-400">GCC Ranking</div>
+                  <div className="text-sm text-platinum-500-400">GCC Ranking</div>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-extrabold text-gold-400">{gccSoftPower.softPowerScore}</div>
-                  <div className="text-sm text-platinum-400">Soft Power Score</div>
+                  <div className="text-sm text-platinum-500-400">Soft Power Score</div>
                 </div>
               </CardContent>
             </Card>
@@ -1025,7 +1025,7 @@ export default function IntlRelationsPage() {
                     <div key={summit.name} className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-emerald-400" />
                       <span className="text-sm">{summit.name}</span>
-                      <span className="text-xs text-platinum-500">({summit.year})</span>
+                      <span className="text-xs text-platinum-500-500">({summit.year})</span>
                     </div>
                   ))}
                 </div>
@@ -1100,17 +1100,17 @@ export default function IntlRelationsPage() {
                     className="p-3 rounded bg-platinum-800/50"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="font-medium text-platinum-200">{item.dimension}</span>
+                      <span className="font-medium text-platinum-500-200">{item.dimension}</span>
                       <Badge variant="outline" className="text-xs text-orange-400">{item.sentiment}</Badge>
                     </div>
                     <div className="grid grid-cols-2 gap-2 text-xs">
                       <div className="p-2 rounded bg-red-500/10">
-                        <div className="text-platinum-500 mb-1">Western:</div>
-                        <div className="text-platinum-300">{item.western}</div>
+                        <div className="text-platinum-500-500 mb-1">Western:</div>
+                        <div className="text-platinum-500-300">{item.western}</div>
                       </div>
                       <div className="p-2 rounded bg-emerald-500/10">
-                        <div className="text-platinum-500 mb-1">GCC:</div>
-                        <div className="text-platinum-300">{item.gcc}</div>
+                        <div className="text-platinum-500-500 mb-1">GCC:</div>
+                        <div className="text-platinum-500-300">{item.gcc}</div>
                       </div>
                     </div>
                   </motion.div>
@@ -1130,7 +1130,7 @@ export default function IntlRelationsPage() {
             <CardContent>
               <div className="text-center p-4">
                 <div className="text-4xl font-extrabold text-pink-400">{gccCreators.voicesBrought}</div>
-                <div className="text-sm text-platinum-400 mt-2">Voices Brought Together</div>
+                <div className="text-sm text-platinum-500-400 mt-2">Voices Brought Together</div>
                 <div className="text-sm text-pink-300 mt-2">{gccCreators.focus}</div>
               </div>
             </CardContent>
@@ -1147,15 +1147,15 @@ export default function IntlRelationsPage() {
               <CardContent className="space-y-4">
                 <div className="text-center">
                   <div className="text-4xl font-extrabold text-emerald-400">{arabLeagueData.memberCount}</div>
-                  <div className="text-sm text-platinum-400">Member States</div>
+                  <div className="text-sm text-platinum-500-400">Member States</div>
                 </div>
                 <div className="text-center">
                   <div className="text-lg font-bold text-gold-400">{arabLeagueData.mediaForum.date}</div>
-                  <div className="text-sm text-platinum-400">Media Forum</div>
+                  <div className="text-sm text-platinum-500-400">Media Forum</div>
                 </div>
                 <div className="text-center">
                   <div className="text-lg font-bold text-red-400">{arabLeagueData.mediaActionPlan.date}</div>
-                  <div className="text-sm text-platinum-400">Media Action Plan</div>
+                  <div className="text-sm text-platinum-500-400">Media Action Plan</div>
                 </div>
               </CardContent>
             </Card>
@@ -1197,20 +1197,20 @@ export default function IntlRelationsPage() {
             <CardContent>
               <div className="space-y-3">
                 <div className="p-3 rounded bg-red-500/10">
-                  <div className="text-sm text-platinum-300">China's supportive stance towards Palestine praised</div>
+                  <div className="text-sm text-platinum-500-300">China's supportive stance towards Palestine praised</div>
                 </div>
                 <div className="grid gap-2 sm:grid-cols-3">
                   <div className="p-2 rounded bg-platinum-800/50 text-center">
                     <div className="text-lg font-bold text-cyan-400">Training</div>
-                    <div className="text-xs text-platinum-400">Joint programs</div>
+                    <div className="text-xs text-platinum-500-400">Joint programs</div>
                   </div>
                   <div className="p-2 rounded bg-platinum-800/50 text-center">
                     <div className="text-lg font-bold text-cyan-400">Productions</div>
-                    <div className="text-xs text-platinum-400">Joint content</div>
+                    <div className="text-xs text-platinum-500-400">Joint content</div>
                   </div>
                   <div className="p-2 rounded bg-platinum-800/50 text-center">
                     <div className="text-lg font-bold text-cyan-400">Exchanges</div>
-                    <div className="text-xs text-platinum-400">Media visits</div>
+                    <div className="text-xs text-platinum-500-400">Media visits</div>
                   </div>
                 </div>
               </div>
@@ -1230,11 +1230,11 @@ export default function IntlRelationsPage() {
               <div className="space-y-3">
                 <div className="p-3 rounded bg-red-500/10 border border-red-500/30">
                   <div className="text-xs text-red-400 mb-1">Core Objectives</div>
-                  <div className="text-sm text-platinum-200">{arabLeagueData.mediaActionPlan.coreObjectives}</div>
+                  <div className="text-sm text-platinum-500-200">{arabLeagueData.mediaActionPlan.coreObjectives}</div>
                 </div>
                 <div className="p-3 rounded bg-platinum-800/50">
-                  <div className="text-xs text-platinum-400 mb-1">Vision</div>
-                  <div className="text-sm text-platinum-200">{arabLeagueData.mediaActionPlan.vision}</div>
+                  <div className="text-xs text-platinum-500-400 mb-1">Vision</div>
+                  <div className="text-sm text-platinum-500-200">{arabLeagueData.mediaActionPlan.vision}</div>
                 </div>
                 <div className="flex items-center gap-2 p-2 rounded bg-emerald-500/10">
                   <div className="w-2 h-2 rounded-full bg-emerald-400" />
@@ -1259,24 +1259,24 @@ export default function IntlRelationsPage() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center p-3 rounded bg-cyan-500/10">
                     <div className="text-3xl font-extrabold text-cyan-400">{oicData.memberCount}</div>
-                    <div className="text-xs text-platinum-400">Member States</div>
+                    <div className="text-xs text-platinum-500-400">Member States</div>
                   </div>
                   <div className="text-center p-3 rounded bg-cyan-500/10">
                     <div className="text-lg font-bold text-cyan-400">1969</div>
-                    <div className="text-xs text-platinum-400">Established</div>
+                    <div className="text-xs text-platinum-500-400">Established</div>
                   </div>
                 </div>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between p-2 rounded bg-platinum-800/50">
-                    <span className="text-platinum-400">Headquarters</span>
+                    <span className="text-platinum-500-400">Headquarters</span>
                     <span>{oicData.headquarters}</span>
                   </div>
                   <div className="flex justify-between p-2 rounded bg-platinum-800/50">
-                    <span className="text-platinum-400">UN Observer</span>
+                    <span className="text-platinum-500-400">UN Observer</span>
                     <span>{oicData.unObserverStatus}</span>
                   </div>
                   <div className="flex justify-between p-2 rounded bg-platinum-800/50">
-                    <span className="text-platinum-400">Framework</span>
+                    <span className="text-platinum-500-400">Framework</span>
                     <span className="text-right text-xs">{oicData.conferenceFramework}</span>
                   </div>
                 </div>
@@ -1294,7 +1294,7 @@ export default function IntlRelationsPage() {
                 <div className="space-y-3">
                   <div className="p-3 rounded bg-emerald-500/10">
                     <div className="text-lg font-bold text-emerald-400">{unCoordinationData.uaeStatements.date}</div>
-                    <div className="text-sm text-platinum-300">UAE at UN Fourth Committee</div>
+                    <div className="text-sm text-platinum-500-300">UAE at UN Fourth Committee</div>
                   </div>
                   <div className="space-y-2 text-sm">
                     {unCoordinationData.uaeStatements.keyPositions.slice(0, 4).map((pos, i) => (
@@ -1322,19 +1322,19 @@ export default function IntlRelationsPage() {
               <div className="grid gap-4 sm:grid-cols-4">
                 <div className="text-center p-3 rounded bg-rose-500/10">
                   <div className="text-2xl font-bold text-rose-400">$6B</div>
-                  <div className="text-xs text-platinum-400">UN Humanitarian Appeal</div>
+                  <div className="text-xs text-platinum-500-400">UN Humanitarian Appeal</div>
                 </div>
                 <div className="text-center p-3 rounded bg-rose-500/10">
                   <div className="text-2xl font-bold text-rose-400">$200M</div>
-                  <div className="text-xs text-platinum-400">UAE Additional Aid</div>
+                  <div className="text-xs text-platinum-500-400">UAE Additional Aid</div>
                 </div>
                 <div className="text-center p-3 rounded bg-rose-500/10">
                   <div className="text-2xl font-bold text-rose-400">$600.4M</div>
-                  <div className="text-xs text-platinum-400">Total UAE Aid</div>
+                  <div className="text-xs text-platinum-500-400">Total UAE Aid</div>
                 </div>
                 <div className="text-center p-3 rounded bg-rose-500/10">
                   <div className="text-2xl font-bold text-rose-400">$3.5B</div>
-                  <div className="text-xs text-platinum-400">UAE Aid (10 Years)</div>
+                  <div className="text-xs text-platinum-500-400">UAE Aid (10 Years)</div>
                 </div>
               </div>
             </CardContent>
@@ -1361,19 +1361,19 @@ export default function IntlRelationsPage() {
                   <CardContent className="space-y-3">
                     {partner.tradeVolume && (
                       <div className="text-sm">
-                        <span className="text-platinum-400">Trade: </span>
+                        <span className="text-platinum-500-400">Trade: </span>
                         <span className="text-emerald-400 font-medium">{partner.tradeVolume}</span>
                       </div>
                     )}
                     {partner.investmentFramework && (
                       <div className="text-sm">
-                        <span className="text-platinum-400">Investment: </span>
+                        <span className="text-platinum-500-400">Investment: </span>
                         <span className="text-gold-400 font-medium">{partner.investmentFramework}</span>
                       </div>
                     )}
                     {partner.agreements && partner.agreements.length > 0 && (
                       <div className="space-y-1">
-                        <div className="text-xs text-platinum-400">Key Agreements:</div>
+                        <div className="text-xs text-platinum-500-400">Key Agreements:</div>
                         {partner.agreements.slice(0, 3).map((agreement, i) => (
                           <div key={i} className="text-xs p-1 rounded bg-cyan-500/5">
                             {typeof agreement === 'string' ? agreement : `${agreement.project}: ${agreement.value}`}
@@ -1383,7 +1383,7 @@ export default function IntlRelationsPage() {
                     )}
                     {partner.keyMeetings && partner.keyMeetings.length > 0 && (
                       <div className="pt-2 border-t border-platinum-700">
-                        <div className="text-xs text-platinum-400 mb-1">Recent Meetings:</div>
+                        <div className="text-xs text-platinum-500-400 mb-1">Recent Meetings:</div>
                         {partner.keyMeetings.slice(0, 2).map((meeting, i) => (
                           <div key={i} className="text-xs">
                             <span className="text-cyan-400">{meeting.date}: </span>
@@ -1412,8 +1412,8 @@ export default function IntlRelationsPage() {
               </CardHeader>
               <CardContent>
                 <div className="p-4 rounded bg-cyan-500/10 mb-4">
-                  <div className="text-sm text-platinum-200 italic">"{regionalStanceData.gulfPositioning}"</div>
-                  <div className="text-xs text-platinum-500 mt-2">Source: {regionalStanceData.source}</div>
+                  <div className="text-sm text-platinum-500-200 italic">"{regionalStanceData.gulfPositioning}"</div>
+                  <div className="text-xs text-platinum-500-500 mt-2">Source: {regionalStanceData.source}</div>
                 </div>
                 <div className="space-y-2">
                   {regionalStanceData.sharedMotivations.map((motivation, idx) => (
@@ -1445,8 +1445,8 @@ export default function IntlRelationsPage() {
                       className="p-3 rounded bg-emerald-500/10"
                     >
                       <div className="font-medium text-emerald-400">{role.country}</div>
-                      <div className="text-sm text-platinum-300">{role.role}</div>
-                      <div className="text-xs text-platinum-500 mt-1">{role.note}</div>
+                      <div className="text-sm text-platinum-500-300">{role.role}</div>
+                      <div className="text-xs text-platinum-500-500 mt-1">{role.note}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -1474,7 +1474,7 @@ export default function IntlRelationsPage() {
                   >
                     <div>
                       <div className="font-medium text-purple-300">{support.supporter}</div>
-                      <div className="text-sm text-platinum-400">{support.support}</div>
+                      <div className="text-sm text-platinum-500-400">{support.support}</div>
                     </div>
                     <Badge variant="outline" className="text-emerald-400">{support.value}</Badge>
                   </motion.div>
@@ -1499,11 +1499,11 @@ export default function IntlRelationsPage() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="text-center p-3 rounded bg-pink-500/10">
                     <div className="text-2xl font-bold text-pink-400">420M+</div>
-                    <div className="text-xs text-platinum-400">Arabic Speakers</div>
+                    <div className="text-xs text-platinum-500-400">Arabic Speakers</div>
                   </div>
                   <div className="text-center p-3 rounded bg-pink-500/10">
                     <div className="text-2xl font-bold text-pink-400">3%</div>
-                    <div className="text-xs text-platinum-400">Online Content</div>
+                    <div className="text-xs text-platinum-500-400">Online Content</div>
                   </div>
                 </div>
                 <div className="space-y-2 text-sm">
@@ -1528,9 +1528,9 @@ export default function IntlRelationsPage() {
               <CardContent>
                 <div className="text-center p-6">
                   <div className="text-6xl font-extrabold text-gold-400">{campaignTrackingData.cannesLions.wins2025}</div>
-                  <div className="text-sm text-platinum-400 mt-2">Wins in 2025</div>
+                  <div className="text-sm text-platinum-500-400 mt-2">Wins in 2025</div>
                   <div className="text-lg font-bold text-emerald-400 mt-2">{campaignTrackingData.cannesLions.growth}</div>
-                  <div className="text-xs text-platinum-500">vs {campaignTrackingData.cannesLions.wins2024} in 2024</div>
+                  <div className="text-xs text-platinum-500-500">vs {campaignTrackingData.cannesLions.wins2024} in 2024</div>
                 </div>
               </CardContent>
             </Card>
@@ -1548,19 +1548,19 @@ export default function IntlRelationsPage() {
               <div className="grid gap-4 sm:grid-cols-4">
                 <div className="text-center p-3 rounded bg-red-500/10">
                   <div className="text-2xl font-bold text-red-400">{campaignTrackingData.palestinianCampaign.digitalRightsViolations.total}</div>
-                  <div className="text-xs text-platinum-400">Digital Violations</div>
+                  <div className="text-xs text-platinum-500-400">Digital Violations</div>
                 </div>
                 <div className="text-center p-3 rounded bg-red-500/10">
                   <div className="text-2xl font-bold text-red-400">{campaignTrackingData.palestinianCampaign.digitalRightsViolations.censorship}</div>
-                  <div className="text-xs text-platinum-400">Censorship Cases</div>
+                  <div className="text-xs text-platinum-500-400">Censorship Cases</div>
                 </div>
                 <div className="text-center p-3 rounded bg-red-500/10">
                   <div className="text-2xl font-bold text-red-400">12M</div>
-                  <div className="text-xs text-platinum-400">Violent Posts</div>
+                  <div className="text-xs text-platinum-500-400">Violent Posts</div>
                 </div>
                 <div className="text-center p-3 rounded bg-red-500/10">
                   <div className="text-2xl font-bold text-red-400">90K+</div>
-                  <div className="text-xs text-platinum-400">Coordinated Takedowns</div>
+                  <div className="text-xs text-platinum-500-400">Coordinated Takedowns</div>
                 </div>
               </div>
             </CardContent>
@@ -1575,7 +1575,7 @@ export default function IntlRelationsPage() {
                 <div className="text-4xl font-extrabold text-red-400">
                   {`${crisisResponseData.gccCrisis.attacksSinceFeb2026.toLocaleString()}+`}
                 </div>
-                <div className="text-sm text-platinum-400 mt-2">Attacks Since Feb 2026</div>
+                <div className="text-sm text-platinum-500-400 mt-2">Attacks Since Feb 2026</div>
               </CardContent>
             </Card>
             <Card className="glass-card">
@@ -1583,7 +1583,7 @@ export default function IntlRelationsPage() {
                 <div className="text-4xl font-extrabold text-gold-400">
                   {`${crisisResponseData.gccCrisis.coordinationMeetings}+`}
                 </div>
-                <div className="text-sm text-platinum-400 mt-2">Coordination Meetings</div>
+                <div className="text-sm text-platinum-500-400 mt-2">Coordination Meetings</div>
               </CardContent>
             </Card>
             <Card className="glass-card">
@@ -1591,7 +1591,7 @@ export default function IntlRelationsPage() {
                 <div className="text-4xl font-extrabold text-cyan-400">
                   {(parseInt(crisisResponseData.gccCrisis.lebanonDisplaced) / 1000000).toFixed(1)}M
                 </div>
-                <div className="text-sm text-platinum-400 mt-2">Lebanon Displaced</div>
+                <div className="text-sm text-platinum-500-400 mt-2">Lebanon Displaced</div>
               </CardContent>
             </Card>
             <Card className="glass-card">
@@ -1599,7 +1599,7 @@ export default function IntlRelationsPage() {
                 <div className="text-4xl font-extrabold text-red-400">
                   {crisisResponseData.gccCrisis.lebanonCasualties}
                 </div>
-                <div className="text-sm text-platinum-400 mt-2">Lebanon Casualties</div>
+                <div className="text-sm text-platinum-500-400 mt-2">Lebanon Casualties</div>
               </CardContent>
             </Card>
           </div>
@@ -1663,8 +1663,8 @@ export default function IntlRelationsPage() {
               </CardHeader>
               <CardContent className="text-center p-6">
                 <div className="text-6xl font-extrabold text-emerald-400">YES</div>
-                <div className="text-sm text-platinum-400 mt-2">Member since early 2024</div>
-                <div className="text-xs text-platinum-500 mt-1">Kazan Summit October 2024</div>
+                <div className="text-sm text-platinum-500-400 mt-2">Member since early 2024</div>
+                <div className="text-xs text-platinum-500-500 mt-1">Kazan Summit October 2024</div>
               </CardContent>
             </Card>
 
@@ -1674,7 +1674,7 @@ export default function IntlRelationsPage() {
               </CardHeader>
               <CardContent className="text-center p-6">
                 <div className="text-6xl font-extrabold text-gold-400">{multilateralData.cepaAgreements}</div>
-                <div className="text-sm text-platinum-400 mt-2">Since September 2021</div>
+                <div className="text-sm text-platinum-500-400 mt-2">Since September 2021</div>
               </CardContent>
             </Card>
 
@@ -1685,11 +1685,11 @@ export default function IntlRelationsPage() {
               <CardContent className="space-y-3">
                 <div className="p-3 rounded bg-emerald-500/10">
                   <div className="text-lg font-bold text-emerald-400">COP28 Host 2023</div>
-                  <div className="text-xs text-platinum-400">UAE Consensus adopted</div>
+                  <div className="text-xs text-platinum-500-400">UAE Consensus adopted</div>
                 </div>
                 <div className="p-3 rounded bg-cyan-500/10">
                   <div className="text-lg font-bold text-cyan-400">G20 Guest</div>
-                  <div className="text-xs text-platinum-400">Brazil November 2024</div>
+                  <div className="text-xs text-platinum-500-400">Brazil November 2024</div>
                 </div>
               </CardContent>
             </Card>
@@ -1730,11 +1730,11 @@ export default function IntlRelationsPage() {
             <CardContent>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <div className="text-xs text-platinum-400 mb-2">Purpose</div>
+                  <div className="text-xs text-platinum-500-400 mb-2">Purpose</div>
                   <div className="text-sm">{multilateralData.fitPInitiative.purpose}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-platinum-400 mb-2">Founding Members</div>
+                  <div className="text-xs text-platinum-500-400 mb-2">Founding Members</div>
                   <div className="flex gap-2">
                     {multilateralData.fitPInitiative.foundingMembers.map(m => (
                       <Badge key={m} variant="outline">{m}</Badge>
@@ -1757,15 +1757,15 @@ export default function IntlRelationsPage() {
               <div className="grid gap-4 sm:grid-cols-3">
                 <div className="text-center p-3 rounded bg-emerald-500/10">
                   <div className="text-2xl font-bold text-emerald-400">$817B</div>
-                  <div className="text-xs text-platinum-400">Non-oil Trade</div>
+                  <div className="text-xs text-platinum-500-400">Non-oil Trade</div>
                 </div>
                 <div className="text-center p-3 rounded bg-emerald-500/10">
                   <div className="text-2xl font-bold text-emerald-400">$45.6B</div>
-                  <div className="text-xs text-platinum-400">FDI Inflows</div>
+                  <div className="text-xs text-platinum-500-400">FDI Inflows</div>
                 </div>
                 <div className="text-center p-3 rounded bg-emerald-500/10">
                   <div className="text-2xl font-bold text-emerald-400">$52B</div>
-                  <div className="text-xs text-platinum-400">Digital Services</div>
+                  <div className="text-xs text-platinum-500-400">Digital Services</div>
                 </div>
               </div>
             </CardContent>
@@ -1794,7 +1794,7 @@ export default function IntlRelationsPage() {
                   </div>
                 ))}
                 <div className="pt-4 border-t border-platinum-700">
-                  <div className="text-xs text-platinum-400 mb-2">Survey: {threatIndicatorsData.arabOpinionIndex.surveyScope.countries} Arab countries, {threatIndicatorsData.arabOpinionIndex.surveyScope.respondents.toLocaleString()} respondents</div>
+                  <div className="text-xs text-platinum-500-400 mb-2">Survey: {threatIndicatorsData.arabOpinionIndex.surveyScope.countries} Arab countries, {threatIndicatorsData.arabOpinionIndex.surveyScope.respondents.toLocaleString()} respondents</div>
                 </div>
               </CardContent>
             </Card>
@@ -1832,7 +1832,7 @@ export default function IntlRelationsPage() {
                   </div>
                 </div>
                 <div className="pt-4 border-t border-platinum-700">
-                  <div className="text-xs text-platinum-400">Source: Arab Center DC</div>
+                  <div className="text-xs text-platinum-500-400">Source: Arab Center DC</div>
                 </div>
               </CardContent>
             </Card>
@@ -1850,11 +1850,11 @@ export default function IntlRelationsPage() {
               <div className="grid gap-6 sm:grid-cols-2">
                 <div className="text-center p-6 rounded bg-red-500/10">
                   <div className="text-5xl font-extrabold text-red-400">{threatIndicatorsData.redSeaThreat.foodImportsDisrupted}%</div>
-                  <div className="text-sm text-platinum-400 mt-2">Food Imports Disrupted</div>
+                  <div className="text-sm text-platinum-500-400 mt-2">Food Imports Disrupted</div>
                 </div>
                 <div className="text-center p-6 rounded bg-red-500/10">
                   <div className="text-5xl font-extrabold text-red-400">{threatIndicatorsData.redSeaThreat.desalinationPlantsUnderThreat}</div>
-                  <div className="text-sm text-platinum-400 mt-2">Desalination Under Threat</div>
+                  <div className="text-sm text-platinum-500-400 mt-2">Desalination Under Threat</div>
                 </div>
               </div>
             </CardContent>
@@ -1873,8 +1873,8 @@ export default function IntlRelationsPage() {
                 {threatIndicatorsData.iranianBackedGroups.map((group) => (
                   <div key={group.group} className="p-3 rounded bg-orange-500/10">
                     <div className="font-medium text-orange-300">{group.group}</div>
-                    <div className="text-xs text-platinum-400">{group.location}</div>
-                    <div className="text-xs text-platinum-500 mt-1">{group.note}</div>
+                    <div className="text-xs text-platinum-500-400">{group.location}</div>
+                    <div className="text-xs text-platinum-500-500 mt-1">{group.note}</div>
                   </div>
                 ))}
               </div>
@@ -1893,7 +1893,7 @@ export default function IntlRelationsPage() {
         <Card className="glass-card">
           <CardHeader>
             <CardTitle className="text-sm flex items-center gap-2">
-              <FileText className="h-4 w-4 text-platinum-400" />
+              <FileText className="h-4 w-4 text-platinum-500-400" />
               Source Credibility Matrix ({sourceCredibilityMatrix.length} sources)
             </CardTitle>
           </CardHeader>
@@ -1911,7 +1911,7 @@ export default function IntlRelationsPage() {
                     <Badge variant="outline" className={`text-xs ${getTierColor(source.tier)}`}>T{source.tier}</Badge>
                     <div className="flex-1 min-w-0">
                       <div className="text-xs font-medium truncate">{source.source}</div>
-                      <div className="text-xs text-platinum-500">{source.uaeRelevance}</div>
+                      <div className="text-xs text-platinum-500-500">{source.uaeRelevance}</div>
                     </div>
                   </motion.div>
                 ))}

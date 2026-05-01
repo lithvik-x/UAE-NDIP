@@ -215,15 +215,15 @@ export default function InfrastructurePage() {
       >
         <div>
           <Badge variant="emerald" className="mb-2">INFRASTRUCTURE</Badge>
-          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald">
+          <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald-500">
             Infrastructure & Landmark Intelligence
           </h1>
-          <p className="mt-2 text-platinum-600 dark:text-platinum-400">
+          <p className="mt-2 text-platinum-500-600 dark:text-platinum-500-400">
             Critical infrastructure — airports, ports, energy, and landmarks — {data.executionMetadata.dataPointsExtracted}+ data points tracked
           </p>
         </div>
         <div className="flex gap-3">
-          <Button variant="outline" className="gap-2 border-emerald/30 text-emerald hover:bg-emerald/10">
+          <Button variant="outline" className="gap-2 border-emerald-500/30 text-emerald-500 hover:bg-emerald-500/10">
             <Globe className="h-4 w-4" />
             Export Report
           </Button>
@@ -288,24 +288,24 @@ export default function InfrastructurePage() {
         <GlassPanel title="Research Execution" description="Data collection metadata">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             <div className="flex items-center gap-2">
-              <Clock className="h-4 w-4 text-platinum-500" />
-              <span className="text-sm text-platinum-600">Date: {data.executionMetadata.dateExecuted}</span>
+              <Clock className="h-4 w-4 text-platinum-500-500" />
+              <span className="text-sm text-platinum-500-600">Date: {data.executionMetadata.dateExecuted}</span>
             </div>
             <div className="flex items-center gap-2">
-              <Activity className="h-4 w-4 text-platinum-500" />
-              <span className="text-sm text-platinum-600">Queries: {data.executionMetadata.queriesExecuted}</span>
+              <Activity className="h-4 w-4 text-platinum-500-500" />
+              <span className="text-sm text-platinum-500-600">Queries: {data.executionMetadata.queriesExecuted}</span>
             </div>
             <div className="flex items-center gap-2">
-              <Database className="h-4 w-4 text-platinum-500" />
-              <span className="text-sm text-platinum-600">Pages: {data.executionMetadata.pagesFetched}</span>
+              <Database className="h-4 w-4 text-platinum-500-500" />
+              <span className="text-sm text-platinum-500-600">Pages: {data.executionMetadata.pagesFetched}</span>
             </div>
             <div className="flex items-center gap-2">
-              <Briefcase className="h-4 w-4 text-platinum-500" />
-              <span className="text-sm text-platinum-600">Data Points: {data.executionMetadata.dataPointsExtracted}+</span>
+              <Briefcase className="h-4 w-4 text-platinum-500-500" />
+              <span className="text-sm text-platinum-500-600">Data Points: {data.executionMetadata.dataPointsExtracted}+</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-              <span className="text-sm text-platinum-600">Sources: {data.executionMetadata.sourcesSuccessfullyFetched}</span>
+              <span className="text-sm text-platinum-500-600">Sources: {data.executionMetadata.sourcesSuccessfullyFetched}</span>
             </div>
           </div>
         </GlassPanel>
@@ -377,28 +377,28 @@ export default function InfrastructurePage() {
           >
             <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
               <GlassCard hover>
-                <p className="text-xs text-platinum-500 mb-1">Weekly Flights</p>
-                <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">8,500+</p>
+                <p className="text-xs text-platinum-500-500 mb-1">Weekly Flights</p>
+                <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">8,500+</p>
               </GlassCard>
               <GlassCard hover>
-                <p className="text-xs text-platinum-500 mb-1">Destinations</p>
-                <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">270+</p>
+                <p className="text-xs text-platinum-500-500 mb-1">Destinations</p>
+                <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">270+</p>
               </GlassCard>
               <GlassCard hover>
-                <p className="text-xs text-platinum-500 mb-1">Airlines</p>
-                <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">100+</p>
+                <p className="text-xs text-platinum-500-500 mb-1">Airlines</p>
+                <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">100+</p>
               </GlassCard>
               <GlassCard hover>
-                <p className="text-xs text-platinum-500 mb-1">Economic Impact</p>
-                <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">$26.7B</p>
+                <p className="text-xs text-platinum-500-500 mb-1">Economic Impact</p>
+                <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">$26.7B</p>
               </GlassCard>
               <GlassCard hover>
-                <p className="text-xs text-platinum-500 mb-1">Jobs Supported</p>
-                <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">400K</p>
+                <p className="text-xs text-platinum-500-500 mb-1">Jobs Supported</p>
+                <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">400K</p>
               </GlassCard>
               <GlassCard hover>
-                <p className="text-xs text-platinum-500 mb-1">World Rank</p>
-                <p className="text-xl font-bold text-navy-900 dark:text-platinum-100">#2</p>
+                <p className="text-xs text-platinum-500-500 mb-1">World Rank</p>
+                <p className="text-xl font-bold text-navy-500-900 dark:text-platinum-500-100">#2</p>
               </GlassCard>
             </div>
           </motion.div>
@@ -427,7 +427,7 @@ export default function InfrastructurePage() {
                       <TableCell><Badge variant="outline">{airport.code}</Badge></TableCell>
                       <TableCell className="text-emerald-600 font-semibold">{airport.passengers}</TableCell>
                       <TableCell>{airport.freightCapacity}</TableCell>
-                      <TableCell className="text-platinum-600">{airport.significance}</TableCell>
+                      <TableCell className="text-platinum-500-600">{airport.significance}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -500,9 +500,9 @@ export default function InfrastructurePage() {
                   <div className="space-y-2">
                     {zayedInternationalAirport.statistics2024.map((stat, i) => (
                       <div key={i} className="flex justify-between items-center p-2 glass-subtle rounded">
-                        <span className="text-sm text-platinum-600">{stat.metric}</span>
+                        <span className="text-sm text-platinum-500-600">{stat.metric}</span>
                         <div className="flex items-center gap-2">
-                          <span className="font-semibold text-navy-900">{stat.value}</span>
+                          <span className="font-semibold text-navy-500-900">{stat.value}</span>
                           <Badge variant="success" className="text-xs">+{stat.change}</Badge>
                         </div>
                       </div>
@@ -514,8 +514,8 @@ export default function InfrastructurePage() {
                   <div className="space-y-2">
                     {zayedInternationalAirport.connectivity.map((c, i) => (
                       <div key={i} className="flex justify-between items-center p-2 glass-subtle rounded">
-                        <span className="text-sm text-platinum-600">{c.metric}</span>
-                        <span className="font-medium text-navy-900">{c.value}</span>
+                        <span className="text-sm text-platinum-500-600">{c.metric}</span>
+                        <span className="font-medium text-navy-500-900">{c.value}</span>
                       </div>
                     ))}
                   </div>
@@ -539,24 +539,24 @@ export default function InfrastructurePage() {
             <GlassPanel title="Al Maktoum International (DWC)" description="Future Dubai Hub - $35B Expansion Planned">
               <div className="grid gap-4 md:grid-cols-4 mb-4">
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Projected Capacity</p>
-                  <p className="text-lg font-bold text-navy-900">260M</p>
-                  <p className="text-xs text-platinum-500">passengers</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Projected Capacity</p>
+                  <p className="text-lg font-bold text-navy-500-900">260M</p>
+                  <p className="text-xs text-platinum-500-500">passengers</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Freight Capacity</p>
-                  <p className="text-lg font-bold text-navy-900">12M</p>
-                  <p className="text-xs text-platinum-500">tonnes</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Freight Capacity</p>
+                  <p className="text-lg font-bold text-navy-500-900">12M</p>
+                  <p className="text-xs text-platinum-500-500">tonnes</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Planned Gates</p>
-                  <p className="text-lg font-bold text-navy-900">400</p>
-                  <p className="text-xs text-platinum-500">aircraft</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Planned Gates</p>
+                  <p className="text-lg font-bold text-navy-500-900">400</p>
+                  <p className="text-xs text-platinum-500-500">aircraft</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Planned Runways</p>
-                  <p className="text-lg font-bold text-navy-900">5</p>
-                  <p className="text-xs text-platinum-500">parallel</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Planned Runways</p>
+                  <p className="text-lg font-bold text-navy-500-900">5</p>
+                  <p className="text-xs text-platinum-500-500">parallel</p>
                 </GlassCard>
               </div>
               <div className="p-3 bg-gold-50/50 dark:bg-gold-900/20 rounded-lg">
@@ -619,7 +619,7 @@ export default function InfrastructurePage() {
                     <TableBody>
                       {jebelAliPort.infrastructure.map((inf, i) => (
                         <TableRow key={i}>
-                          <TableCell className="text-platinum-600">{inf.facility}</TableCell>
+                          <TableCell className="text-platinum-500-600">{inf.facility}</TableCell>
                           <TableCell className="font-medium">{inf.specification}</TableCell>
                         </TableRow>
                       ))}
@@ -654,8 +654,8 @@ export default function InfrastructurePage() {
                   <div className="space-y-2">
                     {khalifaPort.capacity.map((c, i) => (
                       <div key={i} className="flex justify-between p-2 glass-subtle rounded">
-                        <span className="text-xs text-platinum-600">{c.metric}</span>
-                        <span className="text-sm font-semibold text-navy-900">{c.value}</span>
+                        <span className="text-xs text-platinum-500-600">{c.metric}</span>
+                        <span className="text-sm font-semibold text-navy-500-900">{c.value}</span>
                       </div>
                     ))}
                   </div>
@@ -666,7 +666,7 @@ export default function InfrastructurePage() {
                     {khalifaPort.terminals.map((t, i) => (
                       <div key={i} className="p-2 glass-subtle rounded">
                         <p className="text-sm font-medium">{t.terminal}</p>
-                        <p className="text-xs text-platinum-500">{t.operator} - {t.notes}</p>
+                        <p className="text-xs text-platinum-500-500">{t.operator} - {t.notes}</p>
                       </div>
                     ))}
                   </div>
@@ -708,7 +708,7 @@ export default function InfrastructurePage() {
                   <div className="space-y-2">
                     {portOfFujairah.strategicImportance.map((s, i) => (
                       <div key={i} className="flex items-start gap-2 p-2 glass-subtle rounded">
-                        <Anchor className="h-4 w-4 text-navy-500 mt-0.5" />
+                        <Anchor className="h-4 w-4 text-navy-500-500 mt-0.5" />
                         <span className="text-sm">{s.item}</span>
                       </div>
                     ))}
@@ -776,19 +776,19 @@ export default function InfrastructurePage() {
             <GlassPanel title="Barakah Nuclear Power Plant" description="First Nuclear Plant in Arab World - 25% of UAE Electricity" badge="CRITICAL">
               <div className="grid gap-6 lg:grid-cols-3 mb-4">
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Total Capacity</p>
-                  <p className="text-2xl font-bold text-navy-900">5,600 MW</p>
-                  <p className="text-xs text-platinum-500">4 × 1,345 MW reactors</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Total Capacity</p>
+                  <p className="text-2xl font-bold text-navy-500-900">5,600 MW</p>
+                  <p className="text-xs text-platinum-500-500">4 × 1,345 MW reactors</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Annual Generation</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Annual Generation</p>
                   <p className="text-2xl font-bold text-emerald-600">40 TWh</p>
-                  <p className="text-xs text-platinum-500">Largest electricity source</p>
+                  <p className="text-xs text-platinum-500-500">Largest electricity source</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Carbon Prevented</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Carbon Prevented</p>
                   <p className="text-2xl font-bold text-cyan-600">21-22.4M</p>
-                  <p className="text-xs text-platinum-500">tonnes annually</p>
+                  <p className="text-xs text-platinum-500-500">tonnes annually</p>
                 </GlassCard>
               </div>
               <div className="p-3 bg-red-50/50 dark:bg-red-900/20 border border-red-200/50 rounded-lg mb-4">
@@ -803,8 +803,8 @@ export default function InfrastructurePage() {
               <div className="grid gap-4 md:grid-cols-4">
                 {barakahNuclear.constructionTimeline.map((unit, i) => (
                   <div key={i} className="p-3 glass-subtle rounded-lg">
-                    <p className="text-sm font-semibold text-navy-900 dark:text-platinum-100">{unit.unit}</p>
-                    <p className="text-xs text-platinum-500 mt-1">Start: {unit.constructionStart}</p>
+                    <p className="text-sm font-semibold text-navy-500-900 dark:text-platinum-500-100">{unit.unit}</p>
+                    <p className="text-xs text-platinum-500-500 mt-1">Start: {unit.constructionStart}</p>
                     <p className="text-xs text-emerald-600 font-medium">Operational: {unit.commercialOperation}</p>
                   </div>
                 ))}
@@ -856,11 +856,11 @@ export default function InfrastructurePage() {
                   <div className="mt-4 grid grid-cols-2 gap-2">
                     <div className="p-2 glass-subtle rounded text-center">
                       <p className="text-lg font-bold text-gold-700">77 km²</p>
-                      <p className="text-xs text-platinum-500">Area</p>
+                      <p className="text-xs text-platinum-500-500">Area</p>
                     </div>
                     <div className="p-2 glass-subtle rounded text-center">
                       <p className="text-lg font-bold text-gold-700">$7.11B</p>
-                      <p className="text-xs text-platinum-500">Total Investment</p>
+                      <p className="text-xs text-platinum-500-500">Total Investment</p>
                     </div>
                   </div>
                 </div>
@@ -877,20 +877,20 @@ export default function InfrastructurePage() {
             <GlassPanel title="Noor Abu Dhabi Solar Plant" description="World's Largest Single-Site Solar Power Plant (as of 2022)">
               <div className="grid gap-4 md:grid-cols-4 mb-4">
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Capacity</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Capacity</p>
                   <p className="text-xl font-bold text-emerald-600">1.2 GW</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Solar Panels</p>
-                  <p className="text-xl font-bold text-navy-900">3.2M+</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Solar Panels</p>
+                  <p className="text-xl font-bold text-navy-500-900">3.2M+</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Annual Output</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Annual Output</p>
                   <p className="text-xl font-bold text-cyan-600">2,000 GWh</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Homes Powered</p>
-                  <p className="text-xl font-bold text-platinum-700">~90,000</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Homes Powered</p>
+                  <p className="text-xl font-bold text-platinum-500-700">~90,000</p>
                 </GlassCard>
               </div>
               <div className="p-3 bg-emerald-50/50 dark:bg-emerald-900/20 rounded-lg">
@@ -915,8 +915,8 @@ export default function InfrastructurePage() {
                   <div className="space-y-2">
                     {uaeDesalination.abuDhabiCapacity.map((c, i) => (
                       <div key={i} className="flex justify-between p-2 glass-subtle rounded">
-                        <span className="text-sm text-platinum-600">{c.metric}</span>
-                        <span className="text-sm font-semibold text-navy-900">{c.value}</span>
+                        <span className="text-sm text-platinum-500-600">{c.metric}</span>
+                        <span className="text-sm font-semibold text-navy-500-900">{c.value}</span>
                       </div>
                     ))}
                   </div>
@@ -927,7 +927,7 @@ export default function InfrastructurePage() {
                     {uaeDesalination.technologyBreakdown.map((t, i) => (
                       <div key={i}>
                         <div className="flex justify-between mb-1">
-                          <span className="text-sm text-platinum-600">{t.technology}</span>
+                          <span className="text-sm text-platinum-500-600">{t.technology}</span>
                           <span className="text-sm font-semibold text-cyan-600">{t.percentage}</span>
                         </div>
                         <Progress value={parseFloat(t.percentage)} className="h-2" />
@@ -939,8 +939,8 @@ export default function InfrastructurePage() {
               <div className="mt-4 grid gap-4 md:grid-cols-3">
                 {uaeDesalination.majorPlants.slice(0, 3).map((plant, i) => (
                   <div key={i} className="p-3 glass-subtle rounded-lg">
-                    <p className="text-sm font-semibold text-navy-900 dark:text-platinum-100">{plant.plant}</p>
-                    <p className="text-xs text-platinum-500">{plant.location}</p>
+                    <p className="text-sm font-semibold text-navy-500-900 dark:text-platinum-500-100">{plant.plant}</p>
+                    <p className="text-xs text-platinum-500-500">{plant.location}</p>
                     <p className="text-sm text-cyan-600 font-medium">{plant.dailyCapacity} m³/day</p>
                   </div>
                 ))}
@@ -960,19 +960,19 @@ export default function InfrastructurePage() {
             <GlassPanel title="Burj Khalifa" description="World's Tallest Building - 828m" badge="ICONIC">
               <div className="grid gap-6 lg:grid-cols-4 mb-4">
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Height</p>
-                  <p className="text-2xl font-bold text-navy-900">828m</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Height</p>
+                  <p className="text-2xl font-bold text-navy-500-900">828m</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Floors</p>
-                  <p className="text-2xl font-bold text-navy-900">163</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Floors</p>
+                  <p className="text-2xl font-bold text-navy-500-900">163</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Construction Cost</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Construction Cost</p>
                   <p className="text-2xl font-bold text-gold-700">$1.5B</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Observatory</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Observatory</p>
                   <p className="text-2xl font-bold text-cyan-600">555.7m</p>
                 </GlassCard>
               </div>
@@ -982,8 +982,8 @@ export default function InfrastructurePage() {
                   <div className="space-y-2">
                     {burjKhalifa.constructionMaterials.map((m, i) => (
                       <div key={i} className="flex justify-between p-2 glass-subtle rounded">
-                        <span className="text-sm text-platinum-600">{m.material}</span>
-                        <span className="text-sm font-medium text-navy-900">{m.quantity}</span>
+                        <span className="text-sm text-platinum-500-600">{m.material}</span>
+                        <span className="text-sm font-medium text-navy-500-900">{m.quantity}</span>
                       </div>
                     ))}
                   </div>
@@ -1012,15 +1012,15 @@ export default function InfrastructurePage() {
             <GlassPanel title="Palm Jumeirah" description="Iconic Artificial Archipelago">
               <div className="grid gap-6 lg:grid-cols-3 mb-4">
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Residents (2022)</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Residents (2022)</p>
                   <p className="text-2xl font-bold text-emerald-600">25,000+</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Hotels (2024)</p>
-                  <p className="text-2xl font-bold text-navy-900">~30</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Hotels (2024)</p>
+                  <p className="text-2xl font-bold text-navy-500-900">~30</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Monorail Length</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Monorail Length</p>
                   <p className="text-2xl font-bold text-cyan-600">5.4 km</p>
                 </GlassCard>
               </div>
@@ -1032,7 +1032,7 @@ export default function InfrastructurePage() {
                       <div key={i} className="flex items-center gap-2 p-2 glass-subtle rounded">
                         <MapPin className="h-4 w-4 text-emerald-500" />
                         <span className="text-sm font-medium">{s.section}</span>
-                        <span className="text-sm text-platinum-500">- {s.description}</span>
+                        <span className="text-sm text-platinum-500-500">- {s.description}</span>
                       </div>
                     ))}
                   </div>
@@ -1058,15 +1058,15 @@ export default function InfrastructurePage() {
             <GlassPanel title="Museum of the Future" description="LEED Platinum Certified - Dubai Future Foundation">
               <div className="grid gap-6 lg:grid-cols-3 mb-4">
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Cost</p>
-                  <p className="text-xl font-bold text-navy-900">$136M</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Cost</p>
+                  <p className="text-xl font-bold text-navy-500-900">$136M</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Floors</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Floors</p>
                   <p className="text-xl font-bold text-emerald-600">7 floors</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Visitors (Year 1)</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Visitors (Year 1)</p>
                   <p className="text-xl font-bold text-cyan-600">1M+</p>
                 </GlassCard>
               </div>
@@ -1074,9 +1074,9 @@ export default function InfrastructurePage() {
               <div className="grid gap-3 md:grid-cols-5">
                 {museumOfFuture.exhibits.map((e, i) => (
                   <div key={i} className="p-3 glass-subtle rounded-lg text-center">
-                    <p className="text-xs font-semibold text-navy-900 dark:text-platinum-100">{e.floor}</p>
+                    <p className="text-xs font-semibold text-navy-500-900 dark:text-platinum-500-100">{e.floor}</p>
                     <p className="text-sm font-medium text-emerald-600 mt-1">{e.exhibit}</p>
-                    <p className="text-xs text-platinum-500 mt-1">{e.focus}</p>
+                    <p className="text-xs text-platinum-500-500 mt-1">{e.focus}</p>
                   </div>
                 ))}
               </div>
@@ -1096,13 +1096,13 @@ export default function InfrastructurePage() {
                   <div className="space-y-2">
                     {louvreAbuDhabi.size.map((s, i) => (
                       <div key={i} className="flex justify-between p-2 glass-subtle rounded">
-                        <span className="text-sm text-platinum-600">{s.metric}</span>
-                        <span className="text-sm font-medium text-navy-900">{s.value}</span>
+                        <span className="text-sm text-platinum-500-600">{s.metric}</span>
+                        <span className="text-sm font-medium text-navy-500-900">{s.value}</span>
                       </div>
                     ))}
                     {louvreAbuDhabi.costStructure.map((c, i) => (
                       <div key={i} className="flex justify-between p-2 glass-subtle rounded">
-                        <span className="text-sm text-platinum-600">{c.component}</span>
+                        <span className="text-sm text-platinum-500-600">{c.component}</span>
                         <span className="text-sm font-medium text-gold-700">{c.cost}</span>
                       </div>
                     ))}
@@ -1113,8 +1113,8 @@ export default function InfrastructurePage() {
                   <div className="space-y-2">
                     {louvreAbuDhabi.notableExhibits.map((e, i) => (
                       <div key={i} className="p-2 glass-subtle rounded">
-                        <p className="text-sm font-medium text-navy-900 dark:text-platinum-100">{e.artwork}</p>
-                        <p className="text-xs text-platinum-500">{e.artist}</p>
+                        <p className="text-sm font-medium text-navy-500-900 dark:text-platinum-500-100">{e.artwork}</p>
+                        <p className="text-xs text-platinum-500-500">{e.artist}</p>
                       </div>
                     ))}
                   </div>
@@ -1132,19 +1132,19 @@ export default function InfrastructurePage() {
             <GlassPanel title="Sheikh Zayed Grand Mosque" description="Abu Dhabi - 40,000+ Worshippers Capacity">
               <div className="grid gap-6 lg:grid-cols-4 mb-4">
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Cost</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Cost</p>
                   <p className="text-xl font-bold text-gold-700">$545M</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Domes</p>
-                  <p className="text-xl font-bold text-navy-900">82</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Domes</p>
+                  <p className="text-xl font-bold text-navy-500-900">82</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Minarets</p>
-                  <p className="text-xl font-bold text-navy-900">4 × 104m</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Minarets</p>
+                  <p className="text-xl font-bold text-navy-500-900">4 × 104m</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Columns</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Columns</p>
                   <p className="text-xl font-bold text-emerald-600">1,000+</p>
                 </GlassCard>
               </div>
@@ -1154,8 +1154,8 @@ export default function InfrastructurePage() {
                   <div className="space-y-2">
                     {sheikhZayedGrandMosque.architecture.map((a, i) => (
                       <div key={i} className="flex justify-between p-2 glass-subtle rounded">
-                        <span className="text-sm text-platinum-600">{a.element}</span>
-                        <span className="text-sm font-medium text-navy-900 text-right">{a.specification}</span>
+                        <span className="text-sm text-platinum-500-600">{a.element}</span>
+                        <span className="text-sm font-medium text-navy-500-900 text-right">{a.specification}</span>
                       </div>
                     ))}
                   </div>
@@ -1171,8 +1171,8 @@ export default function InfrastructurePage() {
                   <div className="space-y-2">
                     {sheikhZayedGrandMosque.visitingHours.map((h, i) => (
                       <div key={i} className="flex justify-between p-2 glass-subtle rounded">
-                        <span className="text-sm text-platinum-600">{h.day}</span>
-                        <span className="text-sm font-medium text-navy-900">{h.hours}</span>
+                        <span className="text-sm text-platinum-500-600">{h.day}</span>
+                        <span className="text-sm font-medium text-navy-500-900">{h.hours}</span>
                       </div>
                     ))}
                   </div>
@@ -1190,24 +1190,24 @@ export default function InfrastructurePage() {
             <GlassPanel title="World Islands Dubai" description="Artificial Archipelago Shaped Like World Map" badge="ICONIC">
               <div className="grid gap-6 lg:grid-cols-4 mb-4">
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Islands</p>
-                  <p className="text-2xl font-bold text-navy-900">260-300</p>
-                  <p className="text-xs text-platinum-500">individual islands</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Islands</p>
+                  <p className="text-2xl font-bold text-navy-500-900">260-300</p>
+                  <p className="text-xs text-platinum-500-500">individual islands</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Sand Used</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Sand Used</p>
                   <p className="text-2xl font-bold text-cyan-600">321M</p>
-                  <p className="text-xs text-platinum-500">cubic metres</p>
+                  <p className="text-xs text-platinum-500-500">cubic metres</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Rock Used</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Rock Used</p>
                   <p className="text-2xl font-bold text-cyan-600">386M</p>
-                  <p className="text-xs text-platinum-500">tons</p>
+                  <p className="text-xs text-platinum-500-500">tons</p>
                 </GlassCard>
                 <GlassCard hover intensity="low">
-                  <p className="text-xs text-platinum-500 mb-1">Cost</p>
+                  <p className="text-xs text-platinum-500-500 mb-1">Cost</p>
                   <p className="text-2xl font-bold text-gold-700">$13B</p>
-                  <p className="text-xs text-platinum-500">CAD (2005)</p>
+                  <p className="text-xs text-platinum-500-500">CAD (2005)</p>
                 </GlassCard>
               </div>
               <div className="grid gap-6 lg:grid-cols-2">
@@ -1222,8 +1222,8 @@ export default function InfrastructurePage() {
                   <div className="space-y-2">
                     {worldIslands.salesFinancial.map((s, i) => (
                       <div key={i} className="flex justify-between p-2 glass-subtle rounded">
-                        <span className="text-sm text-platinum-600">{s.date}</span>
-                        <span className="text-sm font-medium text-navy-900">{s.status}</span>
+                        <span className="text-sm text-platinum-500-600">{s.date}</span>
+                        <span className="text-sm font-medium text-navy-500-900">{s.status}</span>
                       </div>
                     ))}
                   </div>
@@ -1235,8 +1235,8 @@ export default function InfrastructurePage() {
                       <div key={i} className="flex items-start gap-2 p-2 glass-subtle rounded">
                         <MapPin className="h-4 w-4 text-emerald-500 mt-0.5" />
                         <div>
-                          <span className="text-xs font-semibold text-navy-900">{t.date}</span>
-                          <p className="text-sm text-platinum-600">{t.event}</p>
+                          <span className="text-xs font-semibold text-navy-500-900">{t.date}</span>
+                          <p className="text-sm text-platinum-500-600">{t.event}</p>
                         </div>
                       </div>
                     ))}
@@ -1244,7 +1244,7 @@ export default function InfrastructurePage() {
                   <h4 className="font-semibold text-sm mb-3 mt-4">Heart of Europe</h4>
                   <div className="p-3 bg-gold-50/50 dark:bg-gold-900/20 rounded-lg">
                     <p className="text-sm font-medium text-gold-700">Germany, Netherlands, Sweden, Ukraine, Main Europe, Switzerland, Monaco</p>
-                    <p className="text-xs text-platinum-500 mt-1">Features outdoor snow, euro-only currency</p>
+                    <p className="text-xs text-platinum-500-500 mt-1">Features outdoor snow, euro-only currency</p>
                   </div>
                 </div>
               </div>
@@ -1270,8 +1270,8 @@ export default function InfrastructurePage() {
                 <TableBody>
                   {feb2026DXBIncident.map((inc, i) => (
                     <TableRow key={i}>
-                      <TableCell className="font-medium text-platinum-700">{inc.aspect}</TableCell>
-                      <TableCell className="text-navy-900 dark:text-platinum-100">{inc.details}</TableCell>
+                      <TableCell className="font-medium text-platinum-500-700">{inc.aspect}</TableCell>
+                      <TableCell className="text-navy-500-900 dark:text-platinum-500-100">{inc.details}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -1312,8 +1312,8 @@ export default function InfrastructurePage() {
                 <TableBody>
                   {march2026BarakahThreat.map((inc, i) => (
                     <TableRow key={i}>
-                      <TableCell className="font-medium text-platinum-700">{inc.aspect}</TableCell>
-                      <TableCell className="text-navy-900 dark:text-platinum-100">{inc.details}</TableCell>
+                      <TableCell className="font-medium text-platinum-500-700">{inc.aspect}</TableCell>
+                      <TableCell className="text-navy-500-900 dark:text-platinum-500-100">{inc.details}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -1366,7 +1366,7 @@ export default function InfrastructurePage() {
                         {s.credibility === 'High' && <Badge variant="info" className="text-xs">{s.credibility}</Badge>}
                         {s.credibility === 'Medium' && <Badge variant="warning" className="text-xs">{s.credibility}</Badge>}
                       </TableCell>
-                      <TableCell className="text-sm text-platinum-600">{s.dataQuality}</TableCell>
+                      <TableCell className="text-sm text-platinum-500-600">{s.dataQuality}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -1400,7 +1400,7 @@ export default function InfrastructurePage() {
                   {uaeRelevanceAssessment.map((r, i) => (
                     <div key={i} className="p-3 glass-subtle rounded-lg flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <span className="text-sm font-medium text-navy-900 dark:text-platinum-100">{r.infrastructure}</span>
+                        <span className="text-sm font-medium text-navy-500-900 dark:text-platinum-500-100">{r.infrastructure}</span>
                       </div>
                       <Badge
                         variant={r.uaeRelevanceScore === 'Critical' ? 'destructive' : r.uaeRelevanceScore === 'High' ? 'warning' : 'outline'}
@@ -1432,7 +1432,7 @@ export default function InfrastructurePage() {
                         ) : (
                           <AlertTriangle className="h-4 w-4 text-amber-700" />
                         )}
-                        <span className="text-sm text-platinum-700">{v.item}</span>
+                        <span className="text-sm text-platinum-500-700">{v.item}</span>
                       </div>
                     ))}
                   </div>
@@ -1443,8 +1443,8 @@ export default function InfrastructurePage() {
                     {sourcesUnableToFetch.map((s, i) => (
                       <div key={i} className="flex items-center gap-2 p-2 bg-red-50/50 dark:bg-red-900/20 rounded">
                         <XCircle className="h-4 w-4 text-red-500" />
-                        <span className="text-sm text-platinum-700">{s.source}</span>
-                        <span className="text-xs text-platinum-500">({s.reason})</span>
+                        <span className="text-sm text-platinum-500-700">{s.source}</span>
+                        <span className="text-xs text-platinum-500-500">({s.reason})</span>
                       </div>
                     ))}
                   </div>

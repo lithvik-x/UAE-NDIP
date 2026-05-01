@@ -148,7 +148,7 @@ export function OverviewSection({ className }: OverviewSectionProps) {
           <Card className="glass-card rounded-xl bg-glass-surface/50 border-glass-border">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Crosshair className="h-5 w-5 text-navy-400" />
+                <Crosshair className="h-5 w-5 text-navy-500-400" />
                 Source Credibility Distribution
               </CardTitle>
               <CardDescription>Research sources by tier (30+ domains)</CardDescription>

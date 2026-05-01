@@ -138,7 +138,7 @@ export default function SocialCrisisPage() {
               Social Crisis
             </span>
           </h1>
-          <p className="mt-2 text-platinum-400">
+          <p className="mt-2 text-platinum-500-400">
             Social crisis intelligence — labor issues, vulnerable populations, community tensions, and support systems
           </p>
         </div>
@@ -282,8 +282,8 @@ export default function SocialCrisisPage() {
                         {event.date}
                       </div>
                       <div className="flex-grow">
-                        <div className="font-medium text-platinum-200">{event.event}</div>
-                        <div className="text-sm text-platinum-400">{event.description}</div>
+                        <div className="font-medium text-platinum-500-200">{event.event}</div>
+                        <div className="text-sm text-platinum-500-400">{event.description}</div>
                       </div>
                     </motion.div>
                   ))}
@@ -373,9 +373,9 @@ export default function SocialCrisisPage() {
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <XCircle className="h-4 w-4 text-rose-400" />
-                      <h4 className="font-medium text-platinum-200">Restriction</h4>
+                      <h4 className="font-medium text-platinum-500-200">Restriction</h4>
                     </div>
-                    <p className="text-sm text-platinum-400">{restriction}</p>
+                    <p className="text-sm text-platinum-500-400">{restriction}</p>
                   </motion.div>
                 ))}
               </div>
@@ -407,8 +407,8 @@ export default function SocialCrisisPage() {
                       <div className="flex items-center gap-3">
                         <div className="text-sm font-medium text-orange-400 w-24">{incident.date}</div>
                         <div>
-                          <div className="font-medium text-platinum-200">{incident.incident}</div>
-                          <div className="text-sm text-platinum-400">
+                          <div className="font-medium text-platinum-500-200">{incident.incident}</div>
+                          <div className="text-sm text-platinum-500-400">
                             {typeof incident.workersInvolved === 'number'
                               ? `${incident.workersInvolved.toLocaleString()} workers`
                               : incident.workersInvolved} • {incident.location}
@@ -424,7 +424,7 @@ export default function SocialCrisisPage() {
                             ? 'border-cyan-500/50 text-cyan-400'
                             : incident.status === 'Active'
                             ? 'border-rose-500/50 text-rose-400'
-                            : 'border-platinum-500/50 text-platinum-400'
+                            : 'border-platinum-500/50 text-platinum-500-400'
                         }
                       >
                         {incident.status}
@@ -453,9 +453,9 @@ export default function SocialCrisisPage() {
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <CheckCircle className="h-4 w-4 text-emerald-400" />
-                      <h4 className="font-medium text-platinum-200">{mech.mechanism}</h4>
+                      <h4 className="font-medium text-platinum-500-200">{mech.mechanism}</h4>
                     </div>
-                    <p className="text-sm text-platinum-400">{mech.detail}</p>
+                    <p className="text-sm text-platinum-500-400">{mech.detail}</p>
                   </motion.div>
                 ))}
               </div>
@@ -519,10 +519,10 @@ export default function SocialCrisisPage() {
                             key={idx}
                             className="p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50"
                           >
-                            <div className="font-medium text-platinum-200 mb-1">
+                            <div className="font-medium text-platinum-500-200 mb-1">
                               {impact.stakeholder}
                             </div>
-                            <div className="text-sm text-platinum-400 mb-2">{impact.impact}</div>
+                            <div className="text-sm text-platinum-500-400 mb-2">{impact.impact}</div>
                             <Badge
                               variant="outline"
                               className={
@@ -561,8 +561,8 @@ export default function SocialCrisisPage() {
                     <div className="text-4xl font-bold text-rose-400 mb-2">
                       {stat.arrested}
                     </div>
-                    <div className="text-platinum-400">arrested in {stat.year}</div>
-                    <div className="text-sm text-platinum-500 mt-2">{stat.note}</div>
+                    <div className="text-platinum-500-400">arrested in {stat.year}</div>
+                    <div className="text-sm text-platinum-500-500 mt-2">{stat.note}</div>
                   </motion.div>
                 ))}
               </div>
@@ -654,7 +654,7 @@ export default function SocialCrisisPage() {
                       className="flex items-start gap-3 p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50"
                     >
                       <AlertTriangle className="h-5 w-5 text-rose-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-platinum-300">{finding}</span>
+                      <span className="text-platinum-500-300">{finding}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -710,13 +710,13 @@ export default function SocialCrisisPage() {
                     <div className="space-y-3">
                       {demographicData.map((demo, idx) => (
                         <div key={idx} className="flex items-center justify-between">
-                          <span className="text-platinum-300">{demo.group}</span>
+                          <span className="text-platinum-500-300">{demo.group}</span>
                           <div className="flex items-center gap-2">
                             <div
                               className="h-2 rounded-full bg-gradient-to-r from-cyan-500 to-violet-500"
                               style={{ width: `${demo.percentage * 2}px` }}
                             />
-                            <Badge variant="outline" className="text-platinum-400">
+                            <Badge variant="outline" className="text-platinum-500-400">
                               {demo.percentage}%
                             </Badge>
                           </div>
@@ -758,7 +758,7 @@ export default function SocialCrisisPage() {
                             key={idx}
                             className="p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50"
                           >
-                            <div className="font-medium text-platinum-200 mb-1">
+                            <div className="font-medium text-platinum-500-200 mb-1">
                               {penalty.offense}
                             </div>
                             <div className="flex flex-wrap gap-2">
@@ -773,7 +773,7 @@ export default function SocialCrisisPage() {
                                 </Badge>
                               )}
                               {penalty.other && (
-                                <Badge className="bg-platinum-500/20 text-platinum-400 border-platinum-500/50">
+                                <Badge className="bg-platinum-500/20 text-platinum-500-400 border-platinum-500/50">
                                   {penalty.other}
                                 </Badge>
                               )}
@@ -805,7 +805,7 @@ export default function SocialCrisisPage() {
                             key={idx}
                             className="p-3 rounded-lg bg-platinum-800/50 border border-platinum-700/50"
                           >
-                            <div className="font-medium text-platinum-200 mb-1">
+                            <div className="font-medium text-platinum-500-200 mb-1">
                               {penalty.offense}
                             </div>
                             <div className="flex flex-wrap gap-2">
@@ -898,7 +898,7 @@ export default function SocialCrisisPage() {
                             key={idx}
                             className="flex items-center justify-between p-2 rounded bg-platinum-800/50"
                           >
-                            <span className="text-platinum-300">{scope.scope}</span>
+                            <span className="text-platinum-500-300">{scope.scope}</span>
                             <Badge variant="outline" className="text-cyan-400 border-cyan-500/50">
                               {scope.count} queries
                             </Badge>
@@ -928,10 +928,10 @@ export default function SocialCrisisPage() {
                       transition={{ delay: idx * 0.02 }}
                       className="glass-card rounded-lg p-3 bg-glass-surface/50 border-glass-border"
                     >
-                      <div className="font-medium text-platinum-200 text-sm mb-1">
+                      <div className="font-medium text-platinum-500-200 text-sm mb-1">
                         {source.source}
                       </div>
-                      <div className="text-xs text-platinum-400 mb-2">{source.coverage}</div>
+                      <div className="text-xs text-platinum-500-400 mb-2">{source.coverage}</div>
                       <div className="flex items-center gap-2">
                         <Badge
                           variant="outline"
@@ -944,12 +944,12 @@ export default function SocialCrisisPage() {
                               ? 'border-violet-500/50 text-violet-400'
                               : source.tier === 'TIER_3'
                               ? 'border-orange-500/50 text-orange-400'
-                              : 'border-platinum-500/50 text-platinum-400'
+                              : 'border-platinum-500/50 text-platinum-500-400'
                           }
                         >
                           {source.tier.replace('TIER_', 'T')}
                         </Badge>
-                        <span className="text-xs text-platinum-500">{source.type}</span>
+                        <span className="text-xs text-platinum-500-500">{source.type}</span>
                       </div>
                     </motion.div>
                   ))}
