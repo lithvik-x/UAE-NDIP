@@ -165,6 +165,9 @@ import { infrastructureData } from '@/lib/data/entity/infrastructure-data'
 // Narrative Themes Data (from 3-4-narrative-tracking-results.md - treated as Narrative Themes for MD 3-8)
 import { narrativeThemesData } from '@/lib/data/perception/narrative-themes-data'
 
+// Narrative Tracking Data (from 3-4-narrative-tracking-results.md)
+import { narrativeTrackingData } from '@/lib/data/perception/narrative-tracking-data'
+
 // Media Tone Data (from 3-5-media-tone-results.md)
 import { mediaToneData } from '@/lib/data/perception/media-tone-data'
 
@@ -173,6 +176,9 @@ import { mediaBiasData } from '@/lib/data/perception/media-bias-data'
 
 // Propaganda & Disinformation Data (from 3-7-propaganda-disinformation-results.md)
 import { propagandaDisinformationData } from '@/lib/data/perception/propaganda-disinformation-data'
+
+// Brand UAE Data (from 3-9-brand-uae-results.md)
+import { brandUaeData } from '@/lib/data/perception/brand-uae-data'
 
 // Reddit Intelligence Data (from 5-7-reddit-results.md)
 import { redditData } from '../data/social/reddit-data'
@@ -645,6 +651,17 @@ export function useCognitiveResilienceData() {
   const [error, setError] = useState<Error | null>(null)
 
   return { data, loading, error, refresh: () => setData(perceptionData.cognitiveResilience) }
+}
+
+/**
+ * useBrandUaeData - Hook for Brand UAE module
+ */
+export function useBrandUaeData() {
+  const [data, setData] = useState(brandUaeData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+
+  return { data, loading, error, refresh: () => setData(brandUaeData) }
 }
 
 // ============================================================================
@@ -1150,6 +1167,19 @@ export function useNarrativeThemesData() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
   return { data, loading, error, refresh: () => setData(narrativeThemesData) }
+}
+
+/**
+ * useNarrativeTrackingData - Hook for Narrative Tracking data (MD 3-4)
+ * Comprehensive data covering 12 core narratives, executive summary, UAE profile,
+ * all narrative details (pro/counter), data tables, source credibility,
+ * sentiment distribution, key tensions, and monitoring recommendations.
+ */
+export function useNarrativeTrackingData() {
+  const [data, setData] = useState(narrativeTrackingData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(narrativeTrackingData) }
 }
 
 // ============================================================================
@@ -2945,6 +2975,9 @@ export const dataHooks = {
   usePsychoSemanticData,
   useCognitiveResilienceData,
 
+  // Brand UAE Intelligence (MD 3-9)
+  useBrandUaeData,
+
   // Global Standing / Competitive Benchmarking
   useGlobalStandingData,
   useCompetitiveBenchmarkingData,
@@ -3017,6 +3050,7 @@ export const dataHooks = {
 
   // UAE NDIP — Narrative Themes Intelligence (MD 3-8 / 3-4)
   useNarrativeThemesData,
+  useNarrativeTrackingData,
 
   // UAE NDIP — Soft Power Intelligence
   useSoftPowerData,
