@@ -118,6 +118,12 @@ import { regionalPerceptionData } from '../data/perception/regional-data'
 // Global Standing / Competitive Benchmarking Data (from 3-3-competitive-benchmarking-results.md)
 import { globalStandingData } from '../data/perception/global-data'
 
+// Framing Analysis Data (from 3-5-framing-analysis-results.md)
+import { framingAnalysisData } from '../data/perception/framing-analysis-data'
+
+// Competitive Benchmarking Data (from 3-3-competitive-benchmarking-results.md) - Full extraction
+import { competitiveBenchmarkingData } from '../data/perception/competitive-benchmarking-data'
+
 // Perception Gap Data (from 3-10-perception-gap-results.md)
 import { perceptionGapData } from '../data/perception/perception-gap-data'
 
@@ -161,6 +167,12 @@ import { narrativeThemesData } from '@/lib/data/perception/narrative-themes-data
 
 // Media Tone Data (from 3-5-media-tone-results.md)
 import { mediaToneData } from '@/lib/data/perception/media-tone-data'
+
+// Media Bias Data (from 3-6-media-bias-results.md)
+import { mediaBiasData } from '@/lib/data/perception/media-bias-data'
+
+// Propaganda & Disinformation Data (from 3-7-propaganda-disinformation-results.md)
+import { propagandaDisinformationData } from '@/lib/data/perception/propaganda-disinformation-data'
 
 // Reddit Intelligence Data (from 5-7-reddit-results.md)
 import { redditData } from '../data/social/reddit-data'
@@ -302,6 +314,9 @@ import { softPowerData } from '@/lib/data/perception'
 
 // National Image Data (from 3-1-international-perception-results.md)
 import { nationalImageData } from '@/lib/data/perception/image-data'
+
+// Domestic Perception Data (from 3-2-domestic-perception-results.md)
+import { domesticPerceptionData } from '@/lib/data/perception/domestic-perception-data'
 
 // Environment & Infrastructure Data (from 2-5-environment-infrastructure-results.md)
 import {
@@ -1167,6 +1182,35 @@ export function useMediaToneData() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
   return { data, loading, error, refresh: () => setData(mediaToneData) }
+}
+
+/**
+ * useFramingAnalysisData - Hook for Framing Analysis data (MD 3-5)
+ * Comprehensive data covering media framing patterns, role/power framing,
+ * crisis framing response, soft power framing, and framing scorecards.
+ * Source: 3-5-framing-analysis-results.md
+ */
+export function useFramingAnalysisData() {
+  const [data, setData] = useState(framingAnalysisData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(framingAnalysisData) }
+}
+
+// ============================================================================
+// UAE NDIP — PROPAGANDA & DISINFORMATION INTELLIGENCE HOOKS
+// ============================================================================
+
+/**
+ * usePropagandaDisinformationData - Hook for Propaganda & Disinformation data (MD 3-7)
+ * Comprehensive data covering UAE as both actor and target of disinformation,
+ * bot/troll infrastructure, deepfake threats, and regional dynamics.
+ */
+export function usePropagandaDisinformationData() {
+  const [data, setData] = useState(propagandaDisinformationData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(propagandaDisinformationData) }
 }
 
 // ============================================================================
@@ -2664,6 +2708,17 @@ export function useNationalImageData() {
 }
 
 /**
+ * useDomesticPerceptionData - Hook for UAE Domestic Perception data (Perception X2 / Domestic)
+ */
+export function useDomesticPerceptionData() {
+  const [data, setData] = useState(domesticPerceptionData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+
+  return { data, loading, error, refresh: () => setData(domesticPerceptionData) }
+}
+
+/**
  * useAllRicochetData - Get all RICOCHET-CATALYST-X data
  */
 export function useAllRicochetData() {
@@ -2806,6 +2861,20 @@ export function useGlobalStandingData() {
 }
 
 /**
+ * useCompetitiveBenchmarkingData - Hook for Competitive Benchmarking data (MD 3-3)
+ * Comprehensive UAE competitive positioning vs. regional and global peers across
+ * economic, military, social, infrastructure, innovation, and soft-power dimensions.
+ * Full data extraction from 3-3-competitive-benchmarking-results.md
+ */
+export function useCompetitiveBenchmarkingData() {
+  const [data, setData] = useState(competitiveBenchmarkingData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+
+  return { data, loading, error, refresh: () => setData(competitiveBenchmarkingData) }
+}
+
+/**
  * usePerceptionGapData - Hook for Perception Gap data (MD 3-10)
  * Comprehensive data covering 10 perception gap categories including Human Rights,
  * Women's Rights, Migrant Workers, Climate, Media Freedom, Rule of Law, Economic
@@ -2832,6 +2901,20 @@ export function usePerceptionOverviewData() {
   const [error, setError] = useState<Error | null>(null)
 
   return { data, loading, error, refresh: () => setData(perceptionOverviewData) }
+}
+
+/**
+ * useMediaBiasData - Hook for Media Bias data (MD 3-6)
+ * Comprehensive analysis of UAE media bias, agenda-setting, censorship mechanisms,
+ * bot networks, dis-influencer ecosystem, and suppression case studies.
+ * Source: 3-6-media-bias-results.md
+ */
+export function useMediaBiasData() {
+  const [data, setData] = useState(mediaBiasData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+
+  return { data, loading, error, refresh: () => setData(mediaBiasData) }
 }
 
 // ============================================================================
@@ -2864,6 +2947,7 @@ export const dataHooks = {
 
   // Global Standing / Competitive Benchmarking
   useGlobalStandingData,
+  useCompetitiveBenchmarkingData,
 
   // Perception Gap Analysis
   usePerceptionGapData,
@@ -2939,6 +3023,15 @@ export const dataHooks = {
 
   // UAE NDIP — Media Tone Intelligence
   useMediaToneData,
+
+  // UAE NDIP — Framing Analysis Intelligence (MD 3-5)
+  useFramingAnalysisData,
+
+  // UAE NDIP — Media Bias Intelligence (MD 3-6)
+  useMediaBiasData,
+
+  // UAE NDIP — Propaganda & Disinformation Intelligence (MD 3-7)
+  usePropagandaDisinformationData,
 
   // UAE NDIP — Entity Intelligence
   useFederalOfficialsData,
@@ -3053,6 +3146,9 @@ export const dataHooks = {
 
   // National Image
   useNationalImageData,
+
+  // Domestic Perception
+  useDomesticPerceptionData,
 
   // Utility
   useCampaigns,
