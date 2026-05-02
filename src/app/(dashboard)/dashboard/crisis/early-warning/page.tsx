@@ -1,4 +1,4 @@
-// @ts-nocheck
+
 'use client'
 
 import { Badge } from '@/components/ui/badge'
@@ -96,7 +96,7 @@ export default function EarlyWarningPage() {
           title="Sources Analyzed"
           value={metrics.pagesFetched}
           icon={<Database className="h-5 w-5" />}
-          gradient="blue"
+          gradient="cyan"
         />
         <MetricCard
           title="System Coverage"
