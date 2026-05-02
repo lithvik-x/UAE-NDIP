@@ -1,4 +1,4 @@
-// @ts-nocheck
+
 import { GlassPanel } from '@/components/dashboard/glass-card'
 import { Badge } from '@/components/ui/badge'
 import { BarChart3, Globe, Users, TrendingUp } from 'lucide-react'
