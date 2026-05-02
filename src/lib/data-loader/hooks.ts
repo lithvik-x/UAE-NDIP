@@ -121,6 +121,9 @@ import { globalStandingData } from '../data/perception/global-data'
 // Perception Gap Data (from 3-10-perception-gap-results.md)
 import { perceptionGapData } from '../data/perception/perception-gap-data'
 
+// Perception Overview Data (from 3-1-international-perception-results.md)
+import { perceptionOverviewData } from '../data/perception/perception-overview-data'
+
 // Politics & Governance Data (from 2-1-politics-governance-results.md)
 import { politicsData } from '@/lib/data/topics/politics-data'
 
@@ -2817,6 +2820,20 @@ export function usePerceptionGapData() {
   return { data, loading, error, refresh: () => setData(perceptionGapData) }
 }
 
+/**
+ * usePerceptionOverviewData - Hook for Perception Overview data
+ * Comprehensive international perception analysis — how the world perceives UAE across
+ * 24 query dimensions, 35+ sources, and 15 global regions.
+ * Source: 3-1-international-perception-results.md
+ */
+export function usePerceptionOverviewData() {
+  const [data, setData] = useState(perceptionOverviewData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+
+  return { data, loading, error, refresh: () => setData(perceptionOverviewData) }
+}
+
 // ============================================================================
 // EXPORT ALL HOOKS
 // ============================================================================
@@ -2850,6 +2867,9 @@ export const dataHooks = {
 
   // Perception Gap Analysis
   usePerceptionGapData,
+
+  // Perception Overview
+  usePerceptionOverviewData,
 
   // RICOCHET-CATALYST-X
   useCommandPrimeData,
