@@ -1,4 +1,4 @@
-// @ts-nocheck
+
 'use client'
 
 import { Button } from '@/components/ui/button'
@@ -106,7 +106,7 @@ const regionalSentiment = [
   { country: 'Yemen', sentiment: 'Highly Negative', intensity: -9, color: CHART_COLORS.rose },
   { country: 'Libya', sentiment: 'Highly Negative', intensity: -8, color: CHART_COLORS.orange },
   { country: 'Sudan', sentiment: 'Highly Negative', intensity: -8, color: CHART_COLORS.orange },
-  { country: 'Somalia', sentiment: 'Negative', intensity: -6, color: CHART_COLORS.amber },
+  { country: 'Somalia', sentiment: 'Negative', intensity: -6, color: CHART_COLORS.gold },
   { country: 'Eritrea', sentiment: 'Neutral', intensity: 0, color: CHART_COLORS.platinum },
   { country: 'Syria', sentiment: 'Mixed', intensity: 2, color: CHART_COLORS.navy },
   { country: 'Gaza', sentiment: 'Mixed', intensity: 3, color: CHART_COLORS.navy },
@@ -127,10 +127,10 @@ const relevanceScores = [
 
 // --- Source Tier Distribution ---
 const sourceTierDistribution = [
-  { tier: 'Government/Intergov', count: 5, color: CHART_COLORS.navy },
-  { tier: 'Think Tanks', count: 10, color: CHART_COLORS.denim },
-  { tier: 'NGOs', count: 5, color: CHART_COLORS.teal },
-  { tier: 'News/Media', count: 10, color: CHART_COLORS.platinum },
+  { name: 'Government/Intergov', value: 5, color: CHART_COLORS.navy },
+  { name: 'Think Tanks', value: 10, color: CHART_COLORS.denim },
+  { name: 'NGOs', value: 5, color: CHART_COLORS.teal },
+  { name: 'News/Media', value: 10, color: CHART_COLORS.platinum },
 ]
 
 // --- Great Power Positioning ---
@@ -202,7 +202,7 @@ export default function GeopoliticalCrisisPage() {
 
   const timeline = data.timeline || []
   const keyFindings = data.keyFindings || []
-  const stakeholderImpacts = data.stakeholderImpacts || []
+  const stakeholderImpacts = data.stakeholderImpact || []
   const responseMetrics = data.responseMetrics
 
   // Radar chart data for sentiment by conflict
