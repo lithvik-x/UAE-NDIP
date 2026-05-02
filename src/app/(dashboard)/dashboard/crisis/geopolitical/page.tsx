@@ -159,7 +159,7 @@ const getStatusColor = (status: string) => {
   switch (status.toLowerCase()) {
     case 'withdrawn': return 'text-emerald-400'
     case 'ongoing': case 'active': return 'text-rose-400'
-    case 'denied': return 'text-amber-400'
+    case 'denied': return 'text-orange-400'
     case 'suspended': case 'severed': return 'text-orange-400'
     default: return 'text-platinum-400'
   }
@@ -181,7 +181,7 @@ const getIntensityBar = (intensity: number) => {
 const getRelevanceColor = (score: number) => {
   if (score >= 9) return 'text-rose-400'
   if (score >= 7) return 'text-orange-400'
-  if (score >= 5) return 'text-amber-400'
+  if (score >= 5) return 'text-gold-400'
   return 'text-platinum-400'
 }
 
@@ -264,7 +264,7 @@ export default function GeopoliticalCrisisPage() {
           <MetricCard title="Data Points" value="500+" icon={<Database className="h-5 w-5" />} gradient="navy" />
         </motion.div>
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }}>
-          <MetricCard title="Source Domains" value="30+" icon={<Globe className="h-5 w-5" />} gradient="blue" />
+          <MetricCard title="Source Domains" value="30+" icon={<Globe className="h-5 w-5" />} gradient="denim" />
         </motion.div>
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.25 }}>
           <MetricCard title="Conflict Zones" value="10+" icon={<Map className="h-5 w-5" />} gradient="cyan" />
@@ -660,7 +660,7 @@ export default function GeopoliticalCrisisPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Tent className="h-5 w-5 text-amber-400" />
+                      <Tent className="h-5 w-5 text-gold-400" />
                       Somalia - Relations Severed
                     </CardTitle>
                   </CardHeader>

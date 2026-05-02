@@ -152,12 +152,12 @@ export default function LinkedInProfessionalPage() {
       {/* Enhancement F: Premium Header with Rajdhani Font */}
       <motion.div className="flex items-start justify-between" variants={itemVariants}>
         <div>
-          <Badge variant="default" className="mb-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-400 border-cyan-500/30">
+          <Badge variant="default" className="mb-2 bg-gradient-to-r from-cyan-500/20 to-indigo-500/20 text-cyan-400 border-cyan-500/30">
             <BriefcaseIcon className="h-3 w-3 mr-1" />
             PROFESSIONAL INTELLIGENCE
           </Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani">
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-platinum-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-400 via-indigo-400 to-platinum-300 bg-clip-text text-transparent">
               LinkedIn & Professional Networks
             </span>
           </h1>
@@ -173,7 +173,7 @@ export default function LinkedInProfessionalPage() {
             <Search className="h-4 w-4" />
             Search
           </Button>
-          <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:opacity-90 text-navy-950 gap-2 shadow-lg shadow-cyan-500/20">
+          <Button className="bg-gradient-to-r from-cyan-500 to-indigo-600 hover:opacity-90 text-navy-950 gap-2 shadow-lg shadow-cyan-500/20">
             <Zap className="h-4 w-4" />
             Analyze
           </Button>
@@ -843,7 +843,7 @@ export default function LinkedInProfessionalPage() {
                             <motion.div
                               key={idx}
                               className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50"
-                              whileHover={{ x: 4, backgroundColor: 'rgba(59, 130, 246, 0.1)' }}
+                              whileHover={{ x: 4, backgroundColor: 'rgba(99, 102, 241, 0.1)' }}
                             >
                               <div>
                                 <span className="text-sm text-platinum-200">{stat.label}</span>

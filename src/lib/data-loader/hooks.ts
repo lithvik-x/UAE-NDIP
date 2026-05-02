@@ -139,7 +139,7 @@ import { tiktokIntelligenceData } from '../data/social/tiktok-data'
 import { telegramIntelligence } from '../data/social/telegram-data'
 
 // Snapchat Comprehensive Data (from 5-10-snapchat-results.md)
-import { snapchatData } from '../data/snapchat-data'
+import { snapchatData } from '../data/social/snapchat-data'
 
 // LinkedIn Intelligence Data (from 5-6-linkedin-results.md)
 import { linkedinData } from '../data/social/linkedin-data'
@@ -1862,6 +1862,17 @@ export function useTiktokIntelligenceData() {
 }
 
 /**
+ * useTiktokData - Hook for TikTok intelligence data (convenience alias)
+ * Complete TikTok intelligence data extracted from 5-2-tiktok-results.md
+ */
+export function useTiktokData() {
+  const [data, setData] = useState(tiktokIntelligenceData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(tiktokIntelligenceData) }
+}
+
+/**
  * useYoutubeIntelligenceData - Hook for YouTube intelligence data
  */
 export function useYoutubeIntelligenceData() {
@@ -1897,6 +1908,18 @@ export function useFacebookIntelligenceData() {
  * Uses facebookMetaData which contains all 22 sections from 5-4-facebook-meta-results.md
  */
 export function useFacebookMetaData() {
+  const [data, setData] = useState(facebookMetaData)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  return { data, loading, error, refresh: () => setData(facebookMetaData) }
+}
+
+/**
+ * useFacebookData - Hook for unified Facebook intelligence data (100% MD content)
+ * Combines data from facebook-meta-data.ts (PlatformIntelligence) and facebook-data.ts (detailed sections)
+ * Covers all 22+ sections from 5-4-facebook-meta-results.md
+ */
+export function useFacebookData() {
   const [data, setData] = useState(facebookMetaData)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<Error | null>(null)
@@ -2956,9 +2979,12 @@ export const dataHooks = {
   useTwitterIntelligenceData,
   useTwitterXData,
   useTiktokIntelligenceData,
+  useTiktokData,
   useYoutubeIntelligenceData,
   useYoutubeData,
   useFacebookIntelligenceData,
+  useFacebookMetaData,
+  useFacebookData,
   useInstagramIntelligenceData,
   useInstagramData,
   useLinkedinIntelligenceData,

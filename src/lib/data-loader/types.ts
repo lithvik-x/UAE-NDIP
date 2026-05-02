@@ -58,7 +58,7 @@ export interface Influencer {
 export interface Narrative {
   topic: string
   snippet?: string
-  narrative?: string
+  narrative: string
   underlyingBelief?: string
   source?: string
   sources?: string[]

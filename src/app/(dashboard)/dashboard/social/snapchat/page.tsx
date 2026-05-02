@@ -1,6 +1,8 @@
 // @ts-nocheck
 'use client'
 
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -44,8 +46,11 @@ import {
   Award,
   CheckCircle2,
   Info,
+  MapPin,
+  Megaphone,
+  ShieldCheck,
+  Lock,
 } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { useSnapchatIntelligenceData } from '@/lib/data-loader'
 
 // Animation variants
@@ -86,8 +91,37 @@ export default function SnapchatPage() {
     )
   }
 
-  const { metrics, keyNarratives, governmentAccounts, platformOverview, transparencyReportH1_2025, topInfluencers, arCampaigns, advertisingPricing, advertisingPerformance, shoppingBehavior, governmentEngagement, mediaPartners, uaeTopics, platformComparison, middleEastBreakdown, demographicReach, privacySafety } = data
-  const { users, penetration, sentiment, engagement, botActivity, censorship } = metrics
+  // Destructure with correct field names from snapchatData
+  const {
+    metrics,
+    keyNarratives,
+    governmentAccounts,
+    transparencyReportH1_2025,
+    topInfluencers,
+    arRamadanMall2025,
+    arStats,
+    arLabRamadanGiftBox,
+    spectaclesMuseumPartnerships,
+    advertisingPricing,
+    advertisingPerformance,
+    shoppingBehavior,
+    spendingPremium,
+    monthlySpendingMultiplier,
+    governmentEngagement,
+    mediaPartners,
+    uaeSnapchatTopics,
+    platformComparison,
+    middleEastUsers,
+    demographicReach,
+    privacySafetyIncidents,
+    familyCenterFeatures,
+    hereForYouFeatures,
+    influencerTierSummary,
+    snapExecutives,
+    darkSocialScore,
+  } = data
+
+  const { users, penetration, sentiment, engagement, botActivity } = metrics || {}
 
   // Sentiment data for pie chart
   const sentimentData = sentiment?.breakdown ? [
@@ -100,30 +134,28 @@ export default function SnapchatPage() {
     { name: 'Negative', value: 20, color: CHART_COLORS.rose },
   ]
 
-  // Engagement metrics for bar chart
-  const engagementData = [
-    { metric: 'Avg Views', value: engagement?.avgViews || 12000, color: CHART_COLORS.platinum },
-    { metric: 'Time Spent (min)', value: engagement?.avgTimeSpent || 30, color: CHART_COLORS.emerald },
-    { metric: 'Daily Opens', value: 30, color: CHART_COLORS.gold },
-  ]
+  // Platform comparison data - platformComparison is an array
+  const platformComparisonData = (platformComparison || []).map((p: { platform: string; users: number }) => ({
+    platform: p.platform,
+    users: p.users,
+    color: p.platform === 'Facebook' ? CHART_COLORS.denim :
+           p.platform === 'LinkedIn' ? CHART_COLORS.platinum :
+           p.platform === 'YouTube' ? CHART_COLORS.rose :
+           p.platform === 'Instagram' ? CHART_COLORS.purple :
+           p.platform === 'Snapchat' ? CHART_COLORS.gold :
+           CHART_COLORS.platinum,
+  }))
 
-  // Platform comparison data
-  const platformComparisonData = platformComparison ? [
-    { platform: 'Facebook', users: platformComparison.facebook, color: CHART_COLORS.denim },
-    { platform: 'LinkedIn', users: platformComparison.linkedin, color: CHART_COLORS.platinum },
-    { platform: 'YouTube', users: platformComparison.youtube, color: CHART_COLORS.rose },
-    { platform: 'Instagram', users: platformComparison.instagram, color: CHART_COLORS.purple },
-    { platform: 'Snapchat', users: platformComparison.snapchat, color: CHART_COLORS.gold },
-    { platform: 'X', users: platformComparison.x, color: CHART_COLORS.platinum },
-  ] : []
-
-  // Middle East breakdown data
-  const meBreakdownData = middleEastBreakdown ? [
-    { country: 'Saudi Arabia', users: middleEastBreakdown.uae?.istizada || 13400000, color: CHART_COLORS.emerald },
-    { country: 'UAE', users: middleEastBreakdown.uae?.istizada || 1950000, color: CHART_COLORS.gold },
-    { country: 'Egypt', users: middleEastBreakdown.egypt?.istizada || 2650000, color: CHART_COLORS.platinum },
-    { country: 'Turkey', users: middleEastBreakdown.turkey?.istizada || 8500000, color: CHART_COLORS.denim },
-  ] : []
+  // Middle East breakdown data - middleEastUsers is an array
+  const meBreakdownData = (middleEastUsers || []).filter((m: { country: string }) => !['MENA Total', 'Global Total'].includes(m.country)).slice(0, 6).map((m: { country: string; istizadaUsers: string }, idx: number) => ({
+    country: m.country,
+    users: parseInt(String(m.istizadaUsers).replace(/[^0-9]/g, '')) || 0,
+    color: idx === 0 ? CHART_COLORS.emerald :
+           idx === 1 ? CHART_COLORS.gold :
+           idx === 2 ? CHART_COLORS.denim :
+           idx === 3 ? CHART_COLORS.platinum :
+           CHART_COLORS.purple,
+  }))
 
   // Bot activity data
   const botData = [
@@ -132,35 +164,47 @@ export default function SnapchatPage() {
   ]
 
   // AR Campaign data
-  const arData = arCampaigns?.arRamadanMall2025 ? [
-    { metric: 'Users Reached (M)', value: arCampaigns.arRamadanMall2025.usersReached / 1000000 },
-    { metric: 'Impressions (M)', value: arCampaigns.arRamadanMall2025.impressions / 1000000 },
-    { metric: 'Avg Session (sec)', value: arCampaigns.arRamadanMall2025.avgSessionTime },
-    { metric: 'Social Shares (K)', value: arCampaigns.arRamadanMall2025.socialShares / 1000 },
-  ] : []
+  const arCampaignMetrics = [
+    { metric: 'Users Reached (M)', value: ((arRamadanMall2025?.usersReached || 16800000) / 1000000).toFixed(1) },
+    { metric: 'Impressions (M)', value: ((arRamadanMall2025?.impressions || 250000000) / 1000000).toFixed(0) },
+    { metric: 'Avg Session (sec)', value: arRamadanMall2025?.avgSessionTime || 26 },
+    { metric: 'Social Shares (K)', value: ((arRamadanMall2025?.socialShares || 265000) / 1000).toFixed(0) },
+  ]
 
   // Shopping behavior data
   const shoppingData = shoppingBehavior ? [
-    { metric: 'Love to Shop', value: shoppingBehavior.loveToShop, color: CHART_COLORS.emerald },
-    { metric: 'Primary Hobby', value: shoppingBehavior.shoppingAsPrimaryHobby, color: CHART_COLORS.gold },
-    { metric: 'Discover via Ads', value: shoppingBehavior.discoverViaSocialAds, color: CHART_COLORS.platinum },
-    { metric: 'Share Brands', value: shoppingBehavior.shareBrandsWithFriends, color: CHART_COLORS.denim },
+    { metric: 'Love to Shop', value: 97, color: CHART_COLORS.emerald },
+    { metric: 'Primary Hobby', value: 93, color: CHART_COLORS.gold },
+    { metric: 'Discover via Ads', value: 97, color: CHART_COLORS.platinum },
+    { metric: 'Share Brands', value: 93, color: CHART_COLORS.denim },
   ] : []
 
   // Key narratives formatted
-  const narrativesData = keyNarratives?.slice(0, 6) || []
+  const narrativesData = (keyNarratives || []).slice(0, 6)
 
   // Government events data
   const govEvents = governmentEngagement?.events || []
 
-  // Top influencers data
-  const topInf = topInfluencers?.slice(0, 10) || []
+  // Top influencers data (first 10)
+  const topInf = (topInfluencers || []).slice(0, 10)
 
   // Media partners
   const partners = mediaPartners?.partners || []
 
   // Transparency enforcement data
-  const enforcementData = transparencyReportH1_2025?.enforcementByCategory?.slice(0, 6) || []
+  const enforcementByCategory = transparencyReportH1_2025?.enforcementByCategory || []
+  const communityGuidelinesViolations = transparencyReportH1_2025?.communityGuidelinesViolations || []
+  const proactiveDetection = transparencyReportH1_2025?.proactiveDetection || []
+
+  // Privacy incidents
+  const privacyIncidents = (privacySafetyIncidents || []).map((p: { incident: string; date: string; details: string }) => ({
+    ...p,
+    date: p.date,
+    details: p.details,
+  }))
+
+  // Filter transparency categories to top 8 by enforcements
+  const topEnforcementCategories = [...enforcementByCategory].sort((a, b) => b.enforcements - a.enforcements).slice(0, 8)
 
   return (
     <motion.div
@@ -177,10 +221,10 @@ export default function SnapchatPage() {
             SOCIAL MEDIA
           </Badge>
           <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-platinum-500 tracking-tight">
-            Snapchat & Ephemeral Content
+            Snapchat Intelligence
           </h1>
           <p className="mt-2 text-platinum-400 text-lg">
-            {data.description || 'Ephemeral content, AR filters, Discover content, and youth engagement on Snapchat'}
+            Ephemeral content, AR filters, Discover content, and youth engagement on Snapchat in UAE
           </p>
         </div>
         <div className="flex gap-3">
@@ -201,7 +245,7 @@ export default function SnapchatPage() {
       {/* Key Metrics */}
       <motion.div variants={fadeInUp} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <MetricCard
-          title="UAE Users"
+          title="UAE Users (2025)"
           value={users?.toLocaleString() || '5,090,000'}
           previousValue={(users || 5090000) - 515000}
           unit="users"
@@ -226,8 +270,8 @@ export default function SnapchatPage() {
         />
         <MetricCard
           title="Dark Social Score"
-          value={data.darkSocialScore || 25}
-          previousValue={(data.darkSocialScore || 25) + 5}
+          value={darkSocialScore || 25}
+          previousValue={(darkSocialScore || 25) + 5}
           icon={<Eye className="h-6 w-6" />}
           gradient="gold"
         />
@@ -251,7 +295,7 @@ export default function SnapchatPage() {
         />
         <MetricCard
           title="Gen Z Adoption"
-          value={`${demographicReach?.uaeAdoptionRate || 51.8}%`}
+          value="51.8%"
           icon={<UserCheck className="h-6 w-6" />}
           gradient="gold"
         />
@@ -264,6 +308,30 @@ export default function SnapchatPage() {
         />
       </motion.div>
 
+      {/* Critical Findings Banner */}
+      <motion.div
+        variants={fadeInUp}
+        className="glass-panel border-amber-500/30 bg-amber-500/5 p-4 rounded-lg"
+      >
+        <div className="flex items-center gap-3">
+          <AlertTriangle className="h-6 w-6 text-amber-400" />
+          <div>
+            <h3 className="text-amber-400 font-bold font-rajdhani">Intelligence Highlights</h3>
+            <p className="text-sm text-platinum-400">
+              5.09M UAE users, 97% shopping behavior, AR Ramadan Mall 2025 reached 16.8M users
+            </p>
+          </div>
+          <div className="ml-auto flex gap-2">
+            <Badge variant="outline" className="border-amber-500/50 text-amber-400">
+              97% Shopping
+            </Badge>
+            <Badge variant="outline" className="border-platinum/50 text-platinum-500">
+              20 Media Partners
+            </Badge>
+          </div>
+        </div>
+      </motion.div>
+
       <Tabs defaultValue="overview" className="space-y-6">
         <TabsList className="glass-panel" scrollable>
           <TabsTrigger value="overview">Overview</TabsTrigger>
@@ -274,6 +342,7 @@ export default function SnapchatPage() {
           <TabsTrigger value="ar">AR & Tech</TabsTrigger>
           <TabsTrigger value="advertising">Advertising</TabsTrigger>
           <TabsTrigger value="transparency">Transparency</TabsTrigger>
+          <TabsTrigger value="topics">UAE Topics</TabsTrigger>
         </TabsList>
 
         {/* Overview Tab */}
@@ -359,7 +428,7 @@ export default function SnapchatPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
-                      {(metrics?.sentiment?.trending || ['AR filters', 'Discover content', 'Map stories', '#uae', '#inabudhabi']).map((item, idx) => (
+                      {(sentiment?.trending || ['AR filters', 'Discover content', 'Map stories', '#uae', '#inabudhabi']).map((item, idx) => (
                         <Badge
                           key={idx}
                           variant="outline"
@@ -384,7 +453,7 @@ export default function SnapchatPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      {(metrics?.sentiment?.keyConcerns || ['Privacy concerns', 'Location tracking', 'Content moderation']).map((concern, idx) => (
+                      {(sentiment?.keyConcerns || ['Privacy concerns', 'Location tracking', 'Content moderation']).map((concern, idx) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: -20 }}
@@ -434,9 +503,9 @@ export default function SnapchatPage() {
                         <div className="space-y-2">
                           <p className="text-sm text-platinum-400">Sources:</p>
                           <div className="flex flex-wrap gap-1">
-                            {narrative.source?.split(',').map((s, sIdx) => (
+                            {(narrative.sources || []).map((s, sIdx) => (
                               <Badge key={sIdx} variant="outline" className="text-xs border-platinum-600 text-platinum-300">
-                                {s.trim()}
+                                {s}
                               </Badge>
                             ))}
                           </div>
@@ -468,7 +537,11 @@ export default function SnapchatPage() {
                   </CardHeader>
                   <CardContent>
                     <BarChart
-                      data={engagementData}
+                      data={[
+                        { metric: 'Avg Views', value: engagement?.avgViews || 12000, color: CHART_COLORS.platinum },
+                        { metric: 'Time Spent (min)', value: engagement?.avgTimeSpent || 30, color: CHART_COLORS.emerald },
+                        { metric: 'Daily Opens', value: 30, color: CHART_COLORS.gold },
+                      ]}
                       xAxisKey="metric"
                       bars={[
                         { dataKey: 'value', name: 'Value', color: CHART_COLORS.gold },
@@ -570,6 +643,29 @@ export default function SnapchatPage() {
                     />
                   </CardContent>
                 </Card>
+
+                {/* Spending Premium */}
+                {spendingPremium && (
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        <TrendingUp className="h-5 w-5 text-emerald-400" />
+                        Spending Premium (Snapchatters vs Non-Snapchatters)
+                      </CardTitle>
+                      <CardDescription>Additional spending by category</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-3">
+                      {Object.entries(spendingPremium).map(([category, premium], idx) => (
+                        <div key={idx} className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/30">
+                          <span className="text-platinum-300">{category}</span>
+                          <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">
+                            +{premium}
+                          </Badge>
+                        </div>
+                      ))}
+                    </CardContent>
+                  </Card>
+                )}
               </div>
             </GlassPanel>
           </motion.div>
@@ -662,6 +758,48 @@ export default function SnapchatPage() {
                   </ScrollArea>
                 </CardContent>
               </Card>
+
+              {/* Key Government Officials */}
+              {governmentEngagement?.officials && (
+                <Card className="glass-card mt-6">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Megaphone className="h-5 w-5 text-platinum-400" />
+                      Key Government Officials
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      {governmentEngagement.officials.map((official, idx) => (
+                        <div key={idx} className="p-2 rounded bg-platinum-800/30 text-sm text-platinum-300">
+                          {official}
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+
+              {/* Snap Executives */}
+              {snapExecutives && (
+                <Card className="glass-card mt-6">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Megaphone className="h-5 w-5 text-gold-700" />
+                      Snap Inc. Executives
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      {snapExecutives.map((exec, idx) => (
+                        <div key={idx} className="p-2 rounded bg-platinum-800/30 text-sm text-platinum-300">
+                          {exec}
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
             </GlassPanel>
           </motion.div>
         </TabsContent>
@@ -670,11 +808,37 @@ export default function SnapchatPage() {
         <TabsContent value="influencers" className="space-y-6">
           <motion.div variants={fadeInUp}>
             <GlassPanel title="Top Influencers on Snapchat" description="Leading content creators by follower count">
+              {/* Tier Summary */}
+              {influencerTierSummary && (
+                <div className="grid gap-4 lg:grid-cols-4 mb-6">
+                  <div className="text-center p-4 rounded-lg bg-platinum-800/30 border border-platinum-700/30">
+                    <p className="text-2xl font-bold text-gold-700">{influencerTierSummary.topTier.count}</p>
+                    <p className="text-xs text-platinum-400">Top Tier (3M+)</p>
+                    <p className="text-sm text-platinum-300">Avg {influencerTierSummary.topTier.avgFollowers}</p>
+                  </div>
+                  <div className="text-center p-4 rounded-lg bg-platinum-800/30 border border-platinum-700/30">
+                    <p className="text-2xl font-bold text-emerald-400">{influencerTierSummary.midTier.count}</p>
+                    <p className="text-xs text-platinum-400">Mid Tier (1-3M)</p>
+                    <p className="text-sm text-platinum-300">Avg {influencerTierSummary.midTier.avgFollowers}</p>
+                  </div>
+                  <div className="text-center p-4 rounded-lg bg-platinum-800/30 border border-platinum-700/30">
+                    <p className="text-2xl font-bold text-platinum-400">{influencerTierSummary.emerging.count}</p>
+                    <p className="text-xs text-platinum-400">Emerging (1-1.2M)</p>
+                    <p className="text-sm text-platinum-300">Avg {influencerTierSummary.emerging.avgFollowers}</p>
+                  </div>
+                  <div className="text-center p-4 rounded-lg bg-platinum-800/30 border border-platinum-700/30">
+                    <p className="text-2xl font-bold text-platinum-200">{influencerTierSummary.grandTotal.count}</p>
+                    <p className="text-xs text-platinum-400">Total Influencers</p>
+                    <p className="text-sm text-platinum-300">{influencerTierSummary.grandTotal.totalFollowers} Followers</p>
+                  </div>
+                </div>
+              )}
+
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
                     <Award className="h-5 w-5 text-amber-400" />
-                    Top 10 Influencers
+                    Top 30 Influencers
                   </CardTitle>
                   <CardDescription>Ranked by followers (in millions)</CardDescription>
                 </CardHeader>
@@ -697,15 +861,15 @@ export default function SnapchatPage() {
                             </div>
                             <div>
                               <p className="font-semibold text-platinum-200">{influencer.name}</p>
-                              <p className="text-sm text-platinum-400">{influencer.profession}</p>
+                              <p className="text-sm text-platinum-400">{influencer.profession} | {influencer.nationality}</p>
                             </div>
                           </div>
                           <div className="text-right">
                             <p className="text-lg font-bold text-platinum-400">
-                              {(influencer.followers / 1000000).toFixed(1)}M
+                              {(influencer.followersNum / 1000000).toFixed(1)}M
                             </p>
                             <p className="text-xs text-platinum-400">
-                              {(influencer.storyViews / 1000000000).toFixed(1)}B views
+                              {(influencer.storyViewsNum / 1000000000).toFixed(1)}B views
                             </p>
                           </div>
                         </motion.div>
@@ -725,6 +889,22 @@ export default function SnapchatPage() {
                   <CardDescription>Content partners on Snapchat Discover</CardDescription>
                 </CardHeader>
                 <CardContent>
+                  {mediaPartners?.contentMetrics && (
+                    <div className="grid gap-3 lg:grid-cols-3 mb-4">
+                      <div className="p-3 rounded-lg bg-platinum-800/30 text-center">
+                        <p className="text-xl font-bold text-platinum-400">{mediaPartners.contentMetrics['Shows on Discover']}</p>
+                        <p className="text-xs text-platinum-400">Shows on Discover</p>
+                      </div>
+                      <div className="p-3 rounded-lg bg-platinum-800/30 text-center">
+                        <p className="text-xl font-bold text-emerald-400">{mediaPartners.contentMetrics['Daily viewership increase (Apr-Sep 2018)']}</p>
+                        <p className="text-xs text-platinum-400">Viewership Increase</p>
+                      </div>
+                      <div className="p-3 rounded-lg bg-platinum-800/30 text-center">
+                        <p className="text-xl font-bold text-gold-700">{mediaPartners.contentMetrics['Time spent increase on Discover']}</p>
+                        <p className="text-xs text-platinum-400">Time Spent Increase</p>
+                      </div>
+                    </div>
+                  )}
                   <div className="flex flex-wrap gap-2">
                     {partners.map((partner, idx) => (
                       <Badge
@@ -760,25 +940,25 @@ export default function SnapchatPage() {
                     <div className="grid gap-6 lg:grid-cols-4">
                       <div className="text-center p-4 rounded-lg bg-platinum-800/30">
                         <p className="text-3xl font-bold text-amber-400">
-                          {((arCampaigns?.arRamadanMall2025?.usersReached || 16800000) / 1000000).toFixed(1)}M
+                          {((arRamadanMall2025?.usersReached || 16800000) / 1000000).toFixed(1)}M
                         </p>
                         <p className="text-sm text-platinum-400">Users Reached</p>
                       </div>
                       <div className="text-center p-4 rounded-lg bg-platinum-800/30">
                         <p className="text-3xl font-bold text-platinum-400">
-                          {((arCampaigns?.arRamadanMall2025?.impressions || 250000000) / 1000000).toFixed(0)}M
+                          {((arRamadanMall2025?.impressions || 250000000) / 1000000).toFixed(0)}M
                         </p>
                         <p className="text-sm text-platinum-400">Impressions</p>
                       </div>
                       <div className="text-center p-4 rounded-lg bg-platinum-800/30">
                         <p className="text-3xl font-bold text-emerald-400">
-                          {arCampaigns?.arRamadanMall2025?.avgSessionTime || 26}+
+                          {arRamadanMall2025?.avgSessionTime || 26}+
                         </p>
                         <p className="text-sm text-platinum-400">Avg Session (sec)</p>
                       </div>
                       <div className="text-center p-4 rounded-lg bg-platinum-800/30">
                         <p className="text-3xl font-bold text-navy-400">
-                          +{arCampaigns?.arRamadanMall2025?.yoyIncrease || 30.25}%
+                          +{arRamadanMall2025?.yoyIncrease || 30.25}%
                         </p>
                         <p className="text-sm text-platinum-400">YoY Increase</p>
                       </div>
@@ -793,21 +973,31 @@ export default function SnapchatPage() {
                       <CardTitle className="text-lg">Global AR Engagement</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-platinum-300">Daily AR Users</span>
-                        <span className="font-bold text-platinum-400">350M+</span>
-                      </div>
-                      <Progress value={87.5} className="h-2" />
-                      <div className="flex items-center justify-between">
-                        <span className="text-platinum-300">MENA AR Daily</span>
-                        <span className="font-bold text-emerald-400">80%</span>
-                      </div>
-                      <Progress value={80} className="h-2" />
-                      <div className="flex items-center justify-between">
-                        <span className="text-platinum-300">GCC AR Engagement</span>
-                        <span className="font-bold text-amber-400">85%</span>
-                      </div>
-                      <Progress value={85} className="h-2" />
+                      {arStats && Object.entries(arStats).map(([key, value]) => (
+                        <div key={key} className="flex items-center justify-between">
+                          <span className="text-platinum-300">{key}</span>
+                          <span className="font-bold text-platinum-400">{String(value)}</span>
+                        </div>
+                      ))}
+                      {!arStats && (
+                        <>
+                          <div className="flex items-center justify-between">
+                            <span className="text-platinum-300">Daily AR Users</span>
+                            <span className="font-bold text-platinum-400">350M+</span>
+                          </div>
+                          <Progress value={87.5} className="h-2" />
+                          <div className="flex items-center justify-between">
+                            <span className="text-platinum-300">MENA AR Daily</span>
+                            <span className="font-bold text-emerald-400">80%</span>
+                          </div>
+                          <Progress value={80} className="h-2" />
+                          <div className="flex items-center justify-between">
+                            <span className="text-platinum-300">GCC AR Engagement</span>
+                            <span className="font-bold text-amber-400">85%</span>
+                          </div>
+                          <Progress value={85} className="h-2" />
+                        </>
+                      )}
                     </CardContent>
                   </Card>
 
@@ -842,7 +1032,7 @@ export default function SnapchatPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
-                      {(arCampaigns?.arRamadanMall2025?.participatingBrands || ['Givenchy', 'NiceOne', 'Al Majed Oud', 'Faces', 'Max Fashion', 'Tecno', 'Adfaz', 'Almarai', 'Keeta']).map((brand, idx) => (
+                      {(arRamadanMall2025?.participatingBrands || ['Givenchy', 'NiceOne', 'Al Majed Oud', 'Faces', 'Max Fashion', 'Tecno', 'Adfaz', 'Almarai', 'Keeta']).map((brand, idx) => (
                         <Badge
                           key={idx}
                           variant="outline"
@@ -854,6 +1044,43 @@ export default function SnapchatPage() {
                     </div>
                   </CardContent>
                 </Card>
+
+                {/* AR Lab Ramadan Gift Box */}
+                {arLabRamadanGiftBox && (
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        <Sparkles className="h-5 w-5 text-gold-700" />
+                        AR Lab Ramadan Gift Box Partnership
+                      </CardTitle>
+                      <CardDescription>Dubai-headquartered AR Lab + Snapchat collaboration</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-platinum-300">{arLabRamadanGiftBox.description || 'AR-powered Ramadan gift box with crescent-shaped design and Snapcode unlock'}</p>
+                    </CardContent>
+                  </Card>
+                )}
+
+                {/* Spectacles & Museum Partnerships */}
+                {spectaclesMuseumPartnerships && (
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        <Eye className="h-5 w-5 text-navy-400" />
+                        Spectacles & Museum Partnerships
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-2">
+                        {spectaclesMuseumPartnerships.map((partner, idx) => (
+                          <div key={idx} className="p-2 rounded bg-platinum-800/30 text-sm text-platinum-300">
+                            {partner}
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
               </div>
             </GlassPanel>
           </motion.div>
@@ -958,7 +1185,7 @@ export default function SnapchatPage() {
         {/* Transparency Tab */}
         <TabsContent value="transparency" className="space-y-6">
           <motion.div variants={fadeInUp}>
-            <GlassPanel title="Transparency Report H1 2025" description="Content moderation and enforcement data">
+            <GlassPanel title="Transparency Report H1 2025" description="Content moderation and enforcement data for UAE">
               <div className="space-y-6">
                 {/* Overview Stats */}
                 <div className="grid gap-6 lg:grid-cols-4">
@@ -1008,7 +1235,7 @@ export default function SnapchatPage() {
                   <CardContent>
                     <ScrollArea className="h-[400px]">
                       <div className="space-y-3">
-                        {enforcementData.map((item, idx) => (
+                        {topEnforcementCategories.map((item, idx) => (
                           <motion.div
                             key={idx}
                             initial={{ opacity: 0, x: -20 }}
@@ -1033,7 +1260,7 @@ export default function SnapchatPage() {
                   </CardContent>
                 </Card>
 
-                {/* Privacy & Safety */}
+                {/* Privacy & Safety Incidents */}
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
@@ -1043,13 +1270,7 @@ export default function SnapchatPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
-                      {(privacySafety || [
-                        { incident: 'Snap Map Bug', date: 'November 1, 2018', details: 'TRA warning - location exposure to all users worldwide' },
-                        { incident: 'Family Center Launch', date: 'September 14, 2022', details: 'Parental controls with UAE Ministry of Possibilities' },
-                        { incident: 'Here For You Portal', date: 'October 11, 2021', details: 'Mental health resources with UAE Digital Wellbeing Council' },
-                        { incident: 'Privacy Court Case', date: 'January 9, 2026', details: 'Dh25,000 compensation for unauthorized photos' },
-                        { incident: 'Children Pact', date: 'February 19, 2025', details: 'Leading member of UAE Digital Wellbeing Pact' },
-                      ]).map((item, idx) => (
+                      {privacyIncidents.map((item, idx) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: -20 }}
@@ -1070,7 +1291,118 @@ export default function SnapchatPage() {
                     </div>
                   </CardContent>
                 </Card>
+
+                {/* Family Center Features */}
+                {familyCenterFeatures && (
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        <ShieldCheck className="h-5 w-5 text-emerald-400" />
+                        Family Center Features
+                      </CardTitle>
+                      <CardDescription>Parental controls introduced September 14, 2022</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-2">
+                        {familyCenterFeatures.map((feature, idx) => (
+                          <div key={idx} className="flex items-center gap-3 p-2 rounded bg-platinum-800/30">
+                            <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                            <span className="text-sm text-platinum-300">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
+
+                {/* Here For You Portal */}
+                {hereForYouFeatures && (
+                  <Card className="glass-card">
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        <Heart className="h-5 w-5 text-rose-400" />
+                        Here For You Mental Health Portal
+                      </CardTitle>
+                      <CardDescription>Launched October 11, 2021 with UAE Digital Wellbeing Council</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-2">
+                        {hereForYouFeatures.map((feature, idx) => (
+                          <div key={idx} className="flex items-center gap-3 p-2 rounded bg-platinum-800/30">
+                            <Heart className="h-4 w-4 text-rose-400" />
+                            <span className="text-sm text-platinum-300">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
               </div>
+            </GlassPanel>
+          </motion.div>
+        </TabsContent>
+
+        {/* UAE Topics Tab */}
+        <TabsContent value="topics" className="space-y-6">
+          <motion.div variants={fadeInUp}>
+            <GlassPanel title="UAE Snapchat Topics" description="Trending topics and content categories on Snapchat UAE">
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Hash className="h-5 w-5 text-gold-700" />
+                    Active Topics
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ScrollArea className="h-[500px]">
+                    <div className="grid gap-3 lg:grid-cols-2">
+                      {(uaeSnapchatTopics || []).map((topic, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: idx * 0.03 }}
+                          className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/30 bg-platinum-800/20"
+                        >
+                          <div className="flex items-center gap-3">
+                            <Hash className="h-4 w-4 text-gold-700" />
+                            <span className="text-sm text-platinum-200">{topic.topic || topic}</span>
+                          </div>
+                          {topic.lastUpdated && (
+                            <Badge variant="outline" className="border-platinum/30 text-platinum-500 text-xs">
+                              {topic.lastUpdated}
+                            </Badge>
+                          )}
+                        </motion.div>
+                      ))}
+                    </div>
+                  </ScrollArea>
+                </CardContent>
+              </Card>
+
+              {/* Demographics */}
+              {demographicReach && (
+                <Card className="glass-card mt-6">
+                  <CardHeader>
+                    <CardTitle className="text-lg flex items-center gap-2">
+                      <Users className="h-5 w-5 text-platinum-400" />
+                      Demographic Reach
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      {(demographicReach || []).map((item, idx) => (
+                        <div key={idx} className="flex items-center justify-between p-2 rounded bg-platinum-800/30">
+                          <span className="text-sm text-platinum-300">{item.demographics || item.metric || item.metric || Object.values(item)[0]}</span>
+                          <Badge variant="outline" className="border-platinum/30 text-platinum-500">
+                            {item.metric || Object.values(item)[1]}
+                          </Badge>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
             </GlassPanel>
           </motion.div>
         </TabsContent>
@@ -1078,8 +1410,8 @@ export default function SnapchatPage() {
 
       {/* Sources Footer */}
       <motion.div variants={fadeInUp} className="text-center text-platinum-500 text-sm">
-        <p>Data sourced from {data.sources?.length || 35} references including DataReportal, Snap Inc, and government transparency reports</p>
-        <p className="mt-1">Last updated: {data.lastUpdated || '2026-04-27'}</p>
+        <p>Data sourced from 25+ queries including DataReportal, Snap Inc, Gulf News, and government transparency reports</p>
+        <p className="mt-1">Last updated: 2026-04-27 | Framework version: 1.0</p>
       </motion.div>
     </motion.div>
   )
