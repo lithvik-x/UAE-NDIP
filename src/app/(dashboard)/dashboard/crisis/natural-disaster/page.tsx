@@ -1,4 +1,3 @@
-// @ts-nocheck
 'use client'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -19,8 +18,17 @@ const cardHover = { rest: { scale: 1 }, hover: { scale: 1.02 } }
 
 export default function NaturalDisasterPage() {
   const { data } = useNaturalDisasterData()
-  const { metrics, timeline, keyFindings, stakeholderImpacts, responseMetrics, sources } = data || {}
   const ext = naturalDisasterExtendedData
+  const { timeline, keyFindings, responseMetrics, sources } = data || {}
+  const stakeholderImpacts = data?.stakeholderImpact
+  const metrics = {
+    riskScore: data?.severity ? (data.severity >= 4 ? 'HIGH' : data.severity >= 2 ? 'MEDIUM' : 'LOW') : 'MEDIUM',
+    active: 2,
+    atRisk: '3.9M',
+    capacity: responseMetrics?.stakeholderCooperation ? `${responseMetrics.stakeholderCooperation}%` : '85%',
+    systems: 12,
+    recent: timeline?.length || 6,
+  }
 
   // Flood data for visualizations
   const floodRainfallData = [
@@ -139,10 +147,10 @@ export default function NaturalDisasterPage() {
       {/* Top Metrics Row */}
       <motion.div variants={fadeInUp} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6">
         <MetricCard title="Risk Score" value={metrics?.riskScore || 'MEDIUM'} icon={<AlertTriangle className="h-6 w-6" />} gradient="gold" status="warning" />
-        <MetricCard title="Active Threats" value={metrics?.active || 2} icon={<Wind className="h-6 w-6" />} gradient="sky" />
+        <MetricCard title="Active Threats" value={metrics?.active || 2} icon={<Wind className="h-6 w-6" />} gradient="cyan" />
         <MetricCard title="At-Risk Population" value={metrics?.atRisk || '3.9M'} icon={<Umbrella className="h-6 w-6" />} gradient="rose" status="warning" />
         <MetricCard title="Response Capacity" value={metrics?.capacity || '85%'} icon={<Waves className="h-6 w-6" />} gradient="emerald" />
-        <MetricCard title="Warning Systems" value={metrics?.systems || 12} icon={<Cloud className="h-6 w-6" />} gradient="blue" />
+        <MetricCard title="Warning Systems" value={metrics?.systems || 12} icon={<Cloud className="h-6 w-6" />} gradient="cyan" />
         <MetricCard title="Recent Events" value={metrics?.recent || timeline?.length || 6} icon={<AlertTriangle className="h-6 w-6" />} gradient="orange" />
       </motion.div>
 
@@ -182,16 +190,16 @@ export default function NaturalDisasterPage() {
           <motion.div variants={fadeInUp}>
             <GlassPanel title="Key Findings" description="Critical insights from recent research">
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {(keyFindings || ext.keyFindings || []).slice(0, 9).map((finding: string, idx: number) => (
+                {(keyFindings || []).slice(0, 9).map((finding: { finding: string; metric?: string | number; source?: string }, idx: number) => (
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.05 }}
-                    className="flex items-start gap-3 rounded-lg bg-gradient-to-r from-sky-500/10 to-blue-600/5 p-4 border border-cyan-500/30"
+                    className="flex items-start gap-3 rounded-lg bg-gradient-to-r from-cyan-500/10 to-indigo-600/5 p-4 border border-cyan-500/30"
                   >
                     <AlertTriangle className="h-4 w-4 text-cyan-400 mt-0.5 shrink-0" />
-                    <p className="text-sm text-platinum-300">{finding}</p>
+                    <p className="text-sm text-platinum-300">{finding.finding}</p>
                   </motion.div>
                 ))}
               </div>
@@ -203,7 +211,7 @@ export default function NaturalDisasterPage() {
             <GlassPanel title="Event Timeline" description="Recent natural disaster events">
               <ScrollArea className="h-[300px]">
                 <div className="space-y-3">
-                  {(timeline || ext.timeline || []).map((event: any, idx: number) => (
+                  {(timeline || []).map((event: any, idx: number) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, x: -20 }}
@@ -433,7 +441,7 @@ export default function NaturalDisasterPage() {
                 </div>
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><AlertTriangle className="h-5 w-5 text-rose-500" />Severity by Year</CardTitle></CardHeader>
-                  <CardContent className="px-0 pb-0"><BarChart data={sandstormData} xAxisKey="year" bars={[{ dataKey: 'severity', name: 'Severity (0-3)', color: CHART_COLORS.amber }]} height={280} showGrid={true} ariaLabel="Sandstorm severity by year from 2008 to 2025 showing trend of increasing intensity with notable events in 2022 and 2023" /></CardContent>
+                  <CardContent className="px-0 pb-0"><BarChart data={sandstormData} xAxisKey="year" bars={[{ dataKey: 'severity', name: 'Severity (0-3)', color: CHART_COLORS.gold }]} height={280} showGrid={true} ariaLabel="Sandstorm severity by year from 2008 to 2025 showing trend of increasing intensity with notable events in 2022 and 2023" /></CardContent>
                 </motion.div>
               </div>
             </GlassPanel>
@@ -658,7 +666,7 @@ export default function NaturalDisasterPage() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: idx * 0.08 }}
-                    className="flex items-start gap-3 rounded-lg bg-gradient-to-r from-sky-500/10 to-blue-600/5 p-4 border border-cyan-500/30"
+                    className="flex items-start gap-3 rounded-lg bg-gradient-to-r from-cyan-500/10 to-indigo-600/5 p-4 border border-cyan-500/30"
                   >
                     <Shield className="h-5 w-5 text-cyan-400 mt-0.5 shrink-0" />
                     <div>
