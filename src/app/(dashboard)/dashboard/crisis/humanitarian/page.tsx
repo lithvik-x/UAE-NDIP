@@ -81,7 +81,7 @@ export default function HumanitarianCrisesPage() {
         <div>
           <Badge variant="gold" className="mb-2">PHOENIX PROTOCOL: HUMANITARIAN</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Humanitarian Crises</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Refugee movements, humanitarian aid operations, and displaced populations affecting the UAE region
           </p>
         </div>
@@ -90,7 +90,7 @@ export default function HumanitarianCrisesPage() {
             <Globe className="h-4 w-4" />
             UNHCR Portal
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
             <Heart className="h-4 w-4" />
             Aid Dashboard
           </Button>
@@ -141,8 +141,8 @@ export default function HumanitarianCrisesPage() {
             {data.alertLevel === 'YELLOW' && <AlertTriangle className="h-6 w-6 text-amber-400" />}
             {data.alertLevel === 'GREEN' && <TrendingUp className="h-6 w-6 text-emerald-400" />}
             <div>
-              <p className="font-semibold text-platinum-500-200">Humanitarian Alert Level: {data.alertLevel}</p>
-              <p className="text-sm text-platinum-500-400">
+              <p className="font-semibold text-platinum-200">Humanitarian Alert Level: {data.alertLevel}</p>
+              <p className="text-sm text-platinum-400">
                 {data.affectedEntities?.length || 0} affected entities | Crisis Stage: {data.phoenixStage}
               </p>
             </div>
@@ -179,14 +179,14 @@ export default function HumanitarianCrisesPage() {
                        <AlertCircle className="h-5 w-5" />}
                     </div>
                     <div>
-                      <p className="font-medium text-platinum-500-200">{finding.finding}</p>
-                      <p className="text-sm text-platinum-500-400">Source: {finding.source}</p>
+                      <p className="font-medium text-platinum-200">{finding.finding}</p>
+                      <p className="text-sm text-platinum-400">Source: {finding.source}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="text-right">
                       <p className="text-xl font-bold text-gold-700">{finding.metric}</p>
-                      <p className="text-xs text-platinum-500-400">Tier {finding.tier}</p>
+                      <p className="text-xs text-platinum-400">Tier {finding.tier}</p>
                     </div>
                     {finding.alert && getAlertBadge(finding.alert)}
                   </div>
@@ -299,7 +299,7 @@ export default function HumanitarianCrisesPage() {
                       ].map((item, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-500-200">{item.metric}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
                             <span className="text-lg font-bold text-gold-700">{item.value}</span>
                           </div>
                           <Progress value={item.metric.includes('%') ? parseInt(item.value) : 75} className="h-3" />
@@ -326,8 +326,8 @@ export default function HumanitarianCrisesPage() {
                         <div className="flex items-start gap-4">
                           <p className="text-sm font-bold text-gold-700 whitespace-nowrap w-24">{event.date}</p>
                           <div>
-                            <p className="font-semibold text-platinum-500-200">{event.event}</p>
-                            <p className="text-sm text-platinum-500-400 mt-1">{event.description}</p>
+                            <p className="font-semibold text-platinum-200">{event.event}</p>
+                            <p className="text-sm text-platinum-400 mt-1">{event.description}</p>
                             {event.stage && (
                               <Badge variant="outline" className="mt-2 text-xs">{event.stage}</Badge>
                             )}

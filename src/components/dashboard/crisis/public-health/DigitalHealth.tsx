@@ -43,13 +43,13 @@ export function DigitalHealth({ data }: DigitalHealthProps) {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="text-lg font-bold text-platinum-500-100">{alHosnApp.officialName}</div>
-              <div className="text-sm text-platinum-500-400">{alHosnApp.purpose}</div>
+              <div className="text-lg font-bold text-platinum-100">{alHosnApp.officialName}</div>
+              <div className="text-sm text-platinum-400">{alHosnApp.purpose}</div>
 
               <div className="space-y-2">
-                <div className="text-sm font-medium text-platinum-500-300">Features</div>
+                <div className="text-sm font-medium text-platinum-300">Features</div>
                 {alHosnApp.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-sm text-platinum-500-300">
+                  <div key={idx} className="flex items-center gap-2 text-sm text-platinum-300">
                     <Heart className="h-3 w-3 text-emerald-500" />
                     {feature}
                   </div>
@@ -57,7 +57,7 @@ export function DigitalHealth({ data }: DigitalHealthProps) {
               </div>
 
               <div className="space-y-2">
-                <div className="text-sm font-medium text-platinum-500-300">Color Codes</div>
+                <div className="text-sm font-medium text-platinum-300">Color Codes</div>
                 <div className="flex gap-2">
                   {alHosnApp.colorCodes.map((code, idx) => (
                     <Badge
@@ -78,11 +78,11 @@ export function DigitalHealth({ data }: DigitalHealthProps) {
               </div>
 
               <div className="grid grid-cols-2 gap-2 text-sm">
-                <div className="flex items-center gap-2 text-platinum-500-400">
+                <div className="flex items-center gap-2 text-platinum-400">
                   <Globe className="h-3 w-3" />
                   {alHosnApp.languages.join(', ')}
                 </div>
-                <div className="flex items-center gap-2 text-platinum-500-400">
+                <div className="flex items-center gap-2 text-platinum-400">
                   <Phone className="h-3 w-3" />
                   {alHosnApp.supportLine}
                 </div>
@@ -128,13 +128,13 @@ export function DigitalHealth({ data }: DigitalHealthProps) {
                       ) : (
                         <Smartphone className="h-4 w-4 text-sky" />
                       )}
-                      <span className="text-sm font-medium text-platinum-500-200">{tool.tool}</span>
+                      <span className="text-sm font-medium text-platinum-200">{tool.tool}</span>
                     </div>
                     <Badge variant="outline" className="border-platinum-500/50 text-platinum-500 text-xs">
                       {tool.authority}
                     </Badge>
                   </div>
-                  <div className="text-xs text-platinum-500-500">{tool.function}</div>
+                  <div className="text-xs text-platinum-500">{tool.function}</div>
                 </motion.div>
               ))}
             </CardContent>

@@ -69,7 +69,7 @@ export function SportsEntitiesSection({
                   key={index}
                   className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50"
                 >
-                  <span className="text-sm text-platinum-500-300">{owner.owner}</span>
+                  <span className="text-sm text-platinum-300">{owner.owner}</span>
                   <span className="text-xl font-bold text-gold-700">{owner.share}</span>
                 </div>
               ))}
@@ -95,7 +95,7 @@ export function SportsEntitiesSection({
                   key={index}
                   className="flex justify-between items-center p-3 rounded-lg bg-platinum-800/50"
                 >
-                  <span className="text-sm text-platinum-500-300">{item.year}</span>
+                  <span className="text-sm text-platinum-300">{item.year}</span>
                   <span className="text-xl font-bold text-gold-700">{item.revenue}</span>
                 </div>
               ))}
@@ -121,7 +121,7 @@ export function SportsEntitiesSection({
                   key={index}
                   className="flex justify-between items-center p-3 rounded-lg bg-platinum-800/50"
                 >
-                  <span className="text-sm text-platinum-500-300">{item.metric}</span>
+                  <span className="text-sm text-platinum-300">{item.metric}</span>
                   <span className="text-xl font-bold text-gold-700">{item.value}</span>
                 </div>
               ))}
@@ -149,8 +149,8 @@ export function SportsEntitiesSection({
                       {index + 1}
                     </div>
                     <div className="flex-1">
-                      <p className="font-semibold text-platinum-500-200">{result.driver}</p>
-                      <p className="text-sm text-platinum-500-400">{result.team}</p>
+                      <p className="font-semibold text-platinum-200">{result.driver}</p>
+                      <p className="text-sm text-platinum-400">{result.team}</p>
                     </div>
                     <div className="text-right">
                       <p className="font-bold text-gold-700">{result.gap !== '—' ? result.gap : 'Winner'}</p>
@@ -177,8 +177,8 @@ export function SportsEntitiesSection({
                       {index + 1}
                     </div>
                     <div className="flex-1">
-                      <p className="font-semibold text-platinum-500-200">{result.driver}</p>
-                      <p className="text-sm text-platinum-500-400">{result.team}</p>
+                      <p className="font-semibold text-platinum-200">{result.driver}</p>
+                      <p className="text-sm text-platinum-400">{result.team}</p>
                     </div>
                     <div className="text-right">
                       <p className="font-bold text-gold-700">{result.gap !== '—' ? result.gap : 'Winner'}</p>
@@ -210,8 +210,8 @@ export function SportsEntitiesSection({
                     className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                   >
                     <div>
-                      <p className="font-semibold text-platinum-500-200">{person.name}</p>
-                      <p className="text-sm text-platinum-500-400">{person.role}</p>
+                      <p className="font-semibold text-platinum-200">{person.name}</p>
+                      <p className="text-sm text-platinum-400">{person.role}</p>
                     </div>
                     <Badge variant="outline" className="text-platinum-500 border-platinum/50 ml-2">
                       {person.affiliation.split(',')[0]}

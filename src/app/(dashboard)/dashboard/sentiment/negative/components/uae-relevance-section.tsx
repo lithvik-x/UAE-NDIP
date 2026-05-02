@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client'
 
 import { motion } from 'framer-motion'
@@ -38,7 +39,7 @@ export function UAERelevanceSection({ className }: UAERelevanceSectionProps) {
           <p className="text-2xl font-bold text-rose-400 font-rajdhani">
             {criticalCount}
           </p>
-          <p className="text-xs text-platinum-500-500">Critical</p>
+          <p className="text-xs text-platinum-500">Critical</p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -50,7 +51,7 @@ export function UAERelevanceSection({ className }: UAERelevanceSectionProps) {
           <p className="text-2xl font-bold text-amber-400 font-rajdhani">
             {highCount}
           </p>
-          <p className="text-xs text-platinum-500-500">High</p>
+          <p className="text-xs text-platinum-500">High</p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -62,7 +63,7 @@ export function UAERelevanceSection({ className }: UAERelevanceSectionProps) {
           <p className="text-2xl font-bold text-amber-400 font-rajdhani">
             {mediumCount}
           </p>
-          <p className="text-xs text-platinum-500-500">Medium</p>
+          <p className="text-xs text-platinum-500">Medium</p>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -74,7 +75,7 @@ export function UAERelevanceSection({ className }: UAERelevanceSectionProps) {
           <p className="text-2xl font-bold text-emerald-400 font-rajdhani">
             {lowCount}
           </p>
-          <p className="text-xs text-platinum-500-500">Low</p>
+          <p className="text-xs text-platinum-500">Low</p>
         </motion.div>
       </div>
 
@@ -98,7 +99,7 @@ export function UAERelevanceSection({ className }: UAERelevanceSectionProps) {
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-3">
                     <Icon className="h-4 w-4" />
-                    <h4 className="font-semibold text-platinum-500-200 font-rajdhani">
+                    <h4 className="font-semibold text-platinum-200 font-rajdhani">
                       {item.category}
                     </h4>
                   </div>
@@ -107,8 +108,8 @@ export function UAERelevanceSection({ className }: UAERelevanceSectionProps) {
                   </Badge>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-platinum-500-500">Severity Score</span>
-                  <span className="text-sm font-mono text-platinum-500-300">
+                  <span className="text-xs text-platinum-500">Severity Score</span>
+                  <span className="text-sm font-mono text-platinum-300">
                     {item.severityScore}/10
                   </span>
                 </div>

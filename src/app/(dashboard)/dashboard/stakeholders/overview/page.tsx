@@ -44,7 +44,7 @@ export default function StakeholderOverviewPage() {
   if (!data) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-500-400">Loading Stakeholder Overview data...</div>
+        <div className="text-platinum-400">Loading Stakeholder Overview data...</div>
       </div>
     )
   }
@@ -128,7 +128,7 @@ export default function StakeholderOverviewPage() {
         <div>
           <Badge variant="default" className="mb-2">STAKEHOLDER INTELLIGENCE</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum-500">Stakeholder Overview</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Comprehensive view of all UAE stakeholder entities across government, media, corporate, civil society, and international sectors
           </p>
         </div>
@@ -137,7 +137,7 @@ export default function StakeholderOverviewPage() {
             <Users className="h-4 w-4" />
             Export Report
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2">
             <Zap className="h-4 w-4" />
             Analyze
           </Button>
@@ -245,14 +245,14 @@ export default function StakeholderOverviewPage() {
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 <Card className="glass-card border-navy-500/50">
                   <CardHeader className="pb-2">
-                    <CardTitle className="flex items-center gap-2 text-lg text-navy-500-400">
+                    <CardTitle className="flex items-center gap-2 text-lg text-navy-400">
                       <Landmark className="h-5 w-5" />
                       Government
                     </CardTitle>
                     <CardDescription>{governmentStakeholders.length} stakeholders</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-3xl font-bold text-navy-500-400">{governmentStakeholders.length}</div>
+                    <div className="text-3xl font-bold text-navy-400">{governmentStakeholders.length}</div>
                     <Progress value={(governmentStakeholders.length / totalStakeholders) * 100} className="mt-2" />
                   </CardContent>
                 </Card>
@@ -287,14 +287,14 @@ export default function StakeholderOverviewPage() {
 
                 <Card className="glass-card border-platinum-500/50">
                   <CardHeader className="pb-2">
-                    <CardTitle className="flex items-center gap-2 text-lg text-platinum-500-400">
+                    <CardTitle className="flex items-center gap-2 text-lg text-platinum-400">
                       <Heart className="h-5 w-5" />
                       Civil Society
                     </CardTitle>
                     <CardDescription>{civilSocietyStakeholders.length} stakeholders</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-3xl font-bold text-platinum-500-400">{civilSocietyStakeholders.length}</div>
+                    <div className="text-3xl font-bold text-platinum-400">{civilSocietyStakeholders.length}</div>
                     <Progress value={(civilSocietyStakeholders.length / totalStakeholders) * 100} className="mt-2" />
                   </CardContent>
                 </Card>
@@ -332,17 +332,17 @@ export default function StakeholderOverviewPage() {
                       <div key={stakeholder.id} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70">
                         <div className="flex items-center gap-4">
                           <div className={`flex h-10 w-10 items-center justify-center rounded-full ${
-                            stakeholder.type === 'government' ? 'bg-navy-500/20 text-navy-500-400' :
+                            stakeholder.type === 'government' ? 'bg-navy-500/20 text-navy-400' :
                             stakeholder.type === 'media' ? 'bg-gold-500/20 text-gold-400' :
                             stakeholder.type === 'corporate' ? 'bg-emerald-500/20 text-emerald-400' :
-                            stakeholder.type === 'civil-society' ? 'bg-platinum-500/20 text-platinum-500-400' :
+                            stakeholder.type === 'civil-society' ? 'bg-platinum-500/20 text-platinum-400' :
                             'bg-cyan-500/20 text-cyan-400'
                           }`}>
                             {getTypeIcon(stakeholder.type)}
                           </div>
                           <div>
-                            <p className="font-semibold text-platinum-500-200">{stakeholder.name}</p>
-                            <p className="text-sm text-platinum-500-400">{stakeholder.mandate?.substring(0, 80)}...</p>
+                            <p className="font-semibold text-platinum-200">{stakeholder.name}</p>
+                            <p className="text-sm text-platinum-400">{stakeholder.mandate?.substring(0, 80)}...</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-4">
@@ -350,10 +350,10 @@ export default function StakeholderOverviewPage() {
                             {stakeholder.type}
                           </Badge>
                           <div className="text-center">
-                            <div className="text-lg font-bold text-platinum-500-400">
+                            <div className="text-lg font-bold text-platinum-400">
                               {stakeholder.metrics?.credibility?.score || 'N/A'}
                             </div>
-                            <p className="text-xs text-platinum-500-400">Credibility</p>
+                            <p className="text-xs text-platinum-400">Credibility</p>
                           </div>
                           {getAlertBadge(stakeholder.alertLevel)}
                         </div>
@@ -385,8 +385,8 @@ export default function StakeholderOverviewPage() {
                       {stakeholders.filter(s => s.alertLevel === 'RED').map((stakeholder) => (
                         <div key={stakeholder.id} className="flex items-start justify-between rounded-lg bg-red-500/10 p-4 border border-red-500/30">
                           <div className="flex-1">
-                            <p className="font-semibold text-platinum-500-200">{stakeholder.name}</p>
-                            <p className="mt-1 text-sm text-platinum-500-400">{stakeholder.mandate?.substring(0, 100)}...</p>
+                            <p className="font-semibold text-platinum-200">{stakeholder.name}</p>
+                            <p className="mt-1 text-sm text-platinum-400">{stakeholder.mandate?.substring(0, 100)}...</p>
                           </div>
                           <Badge variant="destructive" className="text-xs ml-4">RED</Badge>
                         </div>
@@ -411,8 +411,8 @@ export default function StakeholderOverviewPage() {
                       {stakeholders.filter(s => s.alertLevel === 'YELLOW').map((stakeholder) => (
                         <div key={stakeholder.id} className="flex items-start justify-between rounded-lg bg-amber-500/10 p-4 border border-amber-500/30">
                           <div className="flex-1">
-                            <p className="font-semibold text-platinum-500-200">{stakeholder.name}</p>
-                            <p className="mt-1 text-sm text-platinum-500-400">{stakeholder.mandate?.substring(0, 100)}...</p>
+                            <p className="font-semibold text-platinum-200">{stakeholder.name}</p>
+                            <p className="mt-1 text-sm text-platinum-400">{stakeholder.mandate?.substring(0, 100)}...</p>
                           </div>
                           <Badge variant="warning" className="text-xs ml-4">YELLOW</Badge>
                         </div>
@@ -436,7 +436,7 @@ export default function StakeholderOverviewPage() {
                     {stakeholders.filter(s => s.alertLevel === 'GREEN').map((stakeholder) => (
                       <div key={stakeholder.id} className="flex items-center gap-2 rounded-lg bg-emerald-500/10 p-3 border border-emerald-500/30">
                         <Shield className="h-4 w-4 text-emerald-400" />
-                        <span className="text-sm font-medium text-platinum-500-200">{stakeholder.name}</span>
+                        <span className="text-sm font-medium text-platinum-200">{stakeholder.name}</span>
                       </div>
                     ))}
                   </div>

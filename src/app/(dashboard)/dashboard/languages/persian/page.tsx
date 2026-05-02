@@ -47,7 +47,7 @@ export default function PersianPage() {
               Persian (Farsi)
             </span>
           </h1>
-          <p className="mt-2 text-platinum-500-400">Persian language intelligence — Iran-UAE diplomatic context, regional security implications</p>
+          <p className="mt-2 text-platinum-400">Persian language intelligence — Iran-UAE diplomatic context, regional security implications</p>
         </div>
       </motion.div>
 
@@ -79,10 +79,10 @@ export default function PersianPage() {
                   <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Globe className="h-5 w-5 text-red-500" />Key Context</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0">
                     <div className="space-y-3">
-                      <div className="flex items-center gap-2 text-sm text-platinum-500-300"><AlertTriangle className="h-4 w-4 text-rose-500" />Iran-UAE relations: complex, economic ties</div>
-                      <div className="flex items-center gap-2 text-sm text-platinum-500-300"><AlertTriangle className="h-4 w-4 text-rose-500" />Sanctions monitoring active</div>
-                      <div className="flex items-center gap-2 text-sm text-platinum-500-300"><AlertTriangle className="h-4 w-4 text-rose-500" />1M+ Iranians in UAE (estimates vary)</div>
-                      <div className="flex items-center gap-2 text-sm text-platinum-500-300"><AlertTriangle className="h-4 w-4 text-rose-500" />Dubai: major Iran trade hub</div>
+                      <div className="flex items-center gap-2 text-sm text-platinum-300"><AlertTriangle className="h-4 w-4 text-rose-500" />Iran-UAE relations: complex, economic ties</div>
+                      <div className="flex items-center gap-2 text-sm text-platinum-300"><AlertTriangle className="h-4 w-4 text-rose-500" />Sanctions monitoring active</div>
+                      <div className="flex items-center gap-2 text-sm text-platinum-300"><AlertTriangle className="h-4 w-4 text-rose-500" />1M+ Iranians in UAE (estimates vary)</div>
+                      <div className="flex items-center gap-2 text-sm text-platinum-300"><AlertTriangle className="h-4 w-4 text-rose-500" />Dubai: major Iran trade hub</div>
                     </div>
                   </CardContent>
                 </motion.div>
@@ -100,11 +100,11 @@ export default function PersianPage() {
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
                       className="rounded-lg bg-gradient-to-r from-red-500/10 to-rose-600/5 p-4 border border-red-500/30">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xl text-platinum-500-100 font-rajdhani">{p.phrase}</span>
+                        <span className="text-xl text-platinum-100 font-rajdhani">{p.phrase}</span>
                         <Badge variant="outline" className="border-red-500/50 text-red-400">{p.transliteration}</Badge>
                       </div>
                       <p className="text-sm text-cyan-400 mb-1">{p.translation}</p>
-                      <p className="text-xs text-platinum-500-400">Context: {p.context}</p>
+                      <p className="text-xs text-platinum-400">Context: {p.context}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -128,7 +128,7 @@ export default function PersianPage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }}
                     className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="font-medium text-platinum-500-200">{t.topic}</span>
+                      <span className="font-medium text-platinum-200">{t.topic}</span>
                       <Badge variant="outline" className={`${t.risk === 'CRITICAL' ? 'text-rose-500 border-rose-500/50' : t.risk === 'HIGH' ? 'text-orange-500 border-orange-500/50' : 'text-emerald-500 border-emerald-500/50'}`}>{t.risk}</Badge>
                     </div>
                     <Badge variant="outline" className="text-xs border-platinum-500/50 text-platinum-500">{t.sentiment}</Badge>

@@ -37,28 +37,28 @@ export function SourcesSection({ metadata }: SourcesSectionProps) {
             <CardContent className="p-4 text-center">
               <Globe className="h-8 w-8 mx-auto text-emerald-500 mb-2" />
               <p className="text-lg font-bold">{metadata.pagesFetched}</p>
-              <p className="text-xs text-platinum-500-500">Pages Fetched</p>
+              <p className="text-xs text-platinum-500">Pages Fetched</p>
             </CardContent>
           </Card>
           <Card className="glass-card">
             <CardContent className="p-4 text-center">
               <Zap className="h-8 w-8 mx-auto text-gold-700 mb-2" />
               <p className="text-lg font-bold">{metadata.queriesExecuted}</p>
-              <p className="text-xs text-platinum-500-500">Queries Executed</p>
+              <p className="text-xs text-platinum-500">Queries Executed</p>
             </CardContent>
           </Card>
           <Card className="glass-card">
             <CardContent className="p-4 text-center">
               <Clock className="h-8 w-8 mx-auto text-denim-500 mb-2" />
               <p className="text-lg font-bold">{metadata.dateEnriched}</p>
-              <p className="text-xs text-platinum-500-500">Date Enriched</p>
+              <p className="text-xs text-platinum-500">Date Enriched</p>
             </CardContent>
           </Card>
           <Card className="glass-card">
             <CardContent className="p-4 text-center">
               <Award className="h-8 w-8 mx-auto text-cyan-500 mb-2" />
               <p className="text-lg font-bold">{metadata.frameworkVersion}</p>
-              <p className="text-xs text-platinum-500-500">Framework Version</p>
+              <p className="text-xs text-platinum-500">Framework Version</p>
             </CardContent>
           </Card>
         </div>

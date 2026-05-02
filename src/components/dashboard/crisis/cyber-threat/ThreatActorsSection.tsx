@@ -88,9 +88,9 @@ export function ThreatActorsSection({ data }: ThreatActorsSectionProps) {
                       >
                         <div className="flex items-center gap-3">
                           <div className="h-2 w-2 rounded-full bg-rose-500" />
-                          <span className="font-medium text-platinum-500-200">{group.group}</span>
+                          <span className="font-medium text-platinum-200">{group.group}</span>
                         </div>
-                        <span className="text-xs text-platinum-500-500">{group.knownActivity}</span>
+                        <span className="text-xs text-platinum-500">{group.knownActivity}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -110,29 +110,29 @@ export function ThreatActorsSection({ data }: ThreatActorsSectionProps) {
             <CardContent>
               <div className="grid gap-4 md:grid-cols-5">
                 <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
-                  <p className="text-xs text-platinum-500-400">Attribution</p>
+                  <p className="text-xs text-platinum-400">Attribution</p>
                   <p className="text-sm font-bold text-rose-500">Iran-backed</p>
                 </div>
                 <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
-                  <p className="text-xs text-platinum-500-400">FBI Bounty</p>
+                  <p className="text-xs text-platinum-400">FBI Bounty</p>
                   <p className="text-sm font-bold text-rose-500">$10 Million</p>
                 </div>
                 <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
-                  <p className="text-xs text-platinum-500-400">Active Since</p>
+                  <p className="text-xs text-platinum-400">Active Since</p>
                   <p className="text-sm font-bold text-rose-500">2022</p>
                 </div>
                 <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
-                  <p className="text-xs text-platinum-500-400">Motivation</p>
+                  <p className="text-xs text-platinum-400">Motivation</p>
                   <p className="text-sm font-bold text-rose-500">Pro-Palestinian</p>
                 </div>
                 <div className="rounded-lg bg-platinum-800/50 p-4 border border-rose-500/30">
-                  <p className="text-xs text-platinum-500-400">April 2026</p>
+                  <p className="text-xs text-platinum-400">April 2026</p>
                   <p className="text-sm font-bold text-rose-500">6PB Destroyed</p>
                 </div>
               </div>
 
               <div className="mt-6">
-                <p className="text-sm font-medium text-platinum-500-300 mb-3">April 2026 Dubai Attack Impact</p>
+                <p className="text-sm font-medium text-platinum-300 mb-3">April 2026 Dubai Attack Impact</p>
                 <BarChart
                   data={handalaAttackData.filter(a => a.entity !== 'Dubai RTA').map((a) => ({
                     name: a.entity.split(' ')[0],

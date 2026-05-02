@@ -57,7 +57,7 @@ export default function TransliterationPage() {
               Transliteration
             </span>
           </h1>
-          <p className="mt-2 text-platinum-500-400">Arabic transliteration intelligence — standardization, error patterns, and naming conventions</p>
+          <p className="mt-2 text-platinum-400">Arabic transliteration intelligence — standardization, error patterns, and naming conventions</p>
         </div>
       </motion.div>
 
@@ -88,7 +88,7 @@ export default function TransliterationPage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><ArrowLeftRight className="h-5 w-5 text-violet-500" />Standards</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0">
-                    <div className="space-y-3 text-sm text-platinum-500-300">
+                    <div className="space-y-3 text-sm text-platinum-300">
                       <div className="flex items-center gap-2"><BookOpen className="h-4 w-4 text-emerald-500" />ADEC: Official UAE standard</div>
                       <div className="flex items-center gap-2"><BookOpen className="h-4 w-4 text-emerald-500" />BGN/PCGN: US/UK standard</div>
                       <div className="flex items-center gap-2"><BookOpen className="h-4 w-4 text-emerald-500" />ISO 233: International standard</div>
@@ -110,11 +110,11 @@ export default function TransliterationPage() {
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
                       className="rounded-lg bg-gradient-to-r from-violet-500/10 to-purple-600/5 p-4 border border-violet-500/30">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xl text-platinum-500-100 font-rajdhani">{t.arabic}</span>
+                        <span className="text-xl text-platinum-100 font-rajdhani">{t.arabic}</span>
                         <Badge variant="outline" className="border-violet-500/50 text-violet-400">{t.transliteration}</Badge>
                       </div>
                       <p className="text-sm text-cyan-400 mb-1">{t.translation}</p>
-                      <p className="text-xs text-platinum-500-400">Context: {t.context}</p>
+                      <p className="text-xs text-platinum-400">Context: {t.context}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -132,7 +132,7 @@ export default function TransliterationPage() {
                     className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                     <div className="flex items-center gap-3">
                       <AlertTriangle className={`h-5 w-5 ${e.impact === 'HIGH' ? 'text-rose-500' : 'text-amber-500'}`} />
-                      <span className="text-platinum-500-200">{e.error}</span>
+                      <span className="text-platinum-200">{e.error}</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Badge variant="outline" className={`${e.impact === 'HIGH' ? 'text-rose-500 border-rose-500/50' : 'text-amber-500 border-amber-500/50'}`}>{e.impact}</Badge>

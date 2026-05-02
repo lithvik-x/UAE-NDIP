@@ -102,7 +102,7 @@ export default function MediaMonitoringPage() {
     switch (severity) {
       case 'HIGH': return <Badge variant="destructive" className="text-xs bg-red-500/20 text-red-400 border-red-500/50">HIGH</Badge>
       case 'MEDIUM': return <Badge variant="warning" className="text-xs bg-orange-500/20 text-orange-400 border-orange-500/50">MEDIUM</Badge>
-      default: return <Badge variant="outline" className="text-xs text-platinum-500-400 border-platinum-400/50">LOW</Badge>
+      default: return <Badge variant="outline" className="text-xs text-platinum-400 border-platinum-400/50">LOW</Badge>
     }
   }
 
@@ -113,7 +113,7 @@ export default function MediaMonitoringPage() {
         <div>
           <Badge variant="denim" className="mb-2">M-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">Media Monitoring</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Real-time tracking of news outlets, broadcast media, and print publications
           </p>
         </div>
@@ -268,18 +268,18 @@ export default function MediaMonitoringPage() {
                               <Newspaper className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{outlet.name}</p>
-                              <p className="text-sm text-platinum-500-400">{outlet.coverage.toLocaleString()} articles</p>
+                              <p className="font-semibold text-platinum-200">{outlet.name}</p>
+                              <p className="text-sm text-platinum-400">{outlet.coverage.toLocaleString()} articles</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-6">
                             <div className="text-center">
-                              <div className="text-lg font-bold text-platinum-500-200">{outlet.reach}M</div>
-                              <p className="text-xs text-platinum-500-400">Reach</p>
+                              <div className="text-lg font-bold text-platinum-200">{outlet.reach}M</div>
+                              <p className="text-xs text-platinum-400">Reach</p>
                             </div>
                             <div className="text-center">
                               <div className="text-lg font-bold text-emerald-400">{outlet.sentiment}%</div>
-                              <p className="text-xs text-platinum-500-400">Sentiment</p>
+                              <p className="text-xs text-platinum-400">Sentiment</p>
                             </div>
                           </div>
                         </div>
@@ -306,8 +306,8 @@ export default function MediaMonitoringPage() {
                       ].map((item, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-500-200">{item.channel}</span>
-                            <span className="text-sm font-medium text-platinum-500-400">{item.mentions} mentions</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.channel}</span>
+                            <span className="text-sm font-medium text-platinum-400">{item.mentions} mentions</span>
                           </div>
                           <Progress value={item.sentiment} className="h-2" />
                         </div>
@@ -332,9 +332,9 @@ export default function MediaMonitoringPage() {
                           { outlet: 'NYT', articles: 198, sentiment: 62 },
                         ].map((item, idx) => (
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                            <span className="text-sm font-medium text-platinum-500-200">{item.outlet}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.outlet}</span>
                             <div className="flex items-center gap-3">
-                              <span className="text-sm text-platinum-500-400">{item.articles} articles</span>
+                              <span className="text-sm text-platinum-400">{item.articles} articles</span>
                               <Badge variant={item.sentiment > 70 ? "success" : "warning"} className="text-xs">
                                 {item.sentiment}%
                               </Badge>
@@ -364,7 +364,7 @@ export default function MediaMonitoringPage() {
                     {contentTypeData.map((theme, idx) => (
                       <div key={idx} className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                         <div className="text-2xl font-bold text-gold-700">{theme.value}%</div>
-                        <p className="text-sm text-platinum-500-400 mt-1">{theme.name}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{theme.name}</p>
                       </div>
                     ))}
                   </div>
@@ -380,28 +380,28 @@ export default function MediaMonitoringPage() {
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-500-400">Factually Accurate</span>
+                        <span className="text-platinum-400">Factually Accurate</span>
                         <span className="font-medium text-emerald-400">78%</span>
                       </div>
                       <Progress value={78} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-500-400">Balanced Reporting</span>
+                        <span className="text-platinum-400">Balanced Reporting</span>
                         <span className="font-medium text-emerald-400">65%</span>
                       </div>
                       <Progress value={65} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-500-400">Source Diversity</span>
+                        <span className="text-platinum-400">Source Diversity</span>
                         <span className="font-medium text-emerald-400">72%</span>
                       </div>
                       <Progress value={72} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-500-400">Pro-UAE Framing</span>
+                        <span className="text-platinum-400">Pro-UAE Framing</span>
                         <span className="font-medium text-gold-700">54%</span>
                       </div>
                       <Progress value={54} className="h-3" />
@@ -430,12 +430,12 @@ export default function MediaMonitoringPage() {
                       {flaggedContent.map((item) => (
                         <div key={item.id} className="flex items-start justify-between rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-500-200">{item.headline}</p>
-                            <p className="text-sm text-platinum-500-400 mt-1">Source: {item.source} · {item.type}</p>
+                            <p className="font-medium text-platinum-200">{item.headline}</p>
+                            <p className="text-sm text-platinum-400 mt-1">Source: {item.source} · {item.type}</p>
                           </div>
                           <div className="flex items-center gap-3">
                             {getSeverityBadge(item.severity)}
-                            <span className="text-xs text-platinum-500-400">{item.time}</span>
+                            <span className="text-xs text-platinum-400">{item.time}</span>
                           </div>
                         </div>
                       ))}
@@ -453,19 +453,19 @@ export default function MediaMonitoringPage() {
                   <div className="grid gap-4 sm:grid-cols-4">
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">1,547</div>
-                      <p className="text-sm text-platinum-500-400">Verified True</p>
+                      <p className="text-sm text-platinum-400">Verified True</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-rose-400">89</div>
-                      <p className="text-sm text-platinum-500-400">Verified False</p>
+                      <p className="text-sm text-platinum-400">Verified False</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-orange-400">234</div>
-                      <p className="text-sm text-platinum-500-400">Under Review</p>
+                      <p className="text-sm text-platinum-400">Under Review</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-gold-700">45 min</div>
-                      <p className="text-sm text-platinum-500-400">Avg Response</p>
+                      <p className="text-sm text-platinum-400">Avg Response</p>
                     </div>
                   </div>
                 </CardContent>

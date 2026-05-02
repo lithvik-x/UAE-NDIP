@@ -46,7 +46,7 @@ export function FacebookMetaScamCenterSection() {
               <AlertCircle className="h-6 w-6 text-rose-500" />
               <div className="flex-1">
                 <h3 className="font-semibold text-rose-400">7 in 10 UAE Residents Targeted by Scams</h3>
-                <p className="text-sm text-platinum-500-400">
+                <p className="text-sm text-platinum-400">
                   Meta removed 159M+ scam ads and 10.9M scam accounts in 2025. Stay vigilant and report suspicious activity.
                 </p>
               </div>
@@ -88,15 +88,15 @@ export function FacebookMetaScamCenterSection() {
               <div className="grid gap-4 sm:grid-cols-3">
                 <div className="flex flex-col items-center p-4 rounded-lg bg-platinum-800/50">
                   <span className="text-3xl font-bold text-amber-500">{aiPoweredScamsStats.peopleArrested}</span>
-                  <span className="text-xs text-platinum-500-400 mt-1">People Arrested</span>
+                  <span className="text-xs text-platinum-400 mt-1">People Arrested</span>
                 </div>
                 <div className="flex flex-col items-center p-4 rounded-lg bg-platinum-800/50">
                   <span className="text-3xl font-bold text-rose-500">{aiPoweredScamsStats.fraudCases}</span>
-                  <span className="text-xs text-platinum-500-400 mt-1">Fraud Cases</span>
+                  <span className="text-xs text-platinum-400 mt-1">Fraud Cases</span>
                 </div>
                 <div className="flex flex-col items-center p-4 rounded-lg bg-platinum-800/50">
                   <span className="text-3xl font-bold text-gold-700">{aiPoweredScamsStats.timeframe}</span>
-                  <span className="text-xs text-platinum-500-400 mt-1">Timeframe</span>
+                  <span className="text-xs text-platinum-400 mt-1">Timeframe</span>
                 </div>
               </div>
             </CardContent>
@@ -124,19 +124,19 @@ export function FacebookMetaScamCenterSection() {
                     <AlertCircle className="h-5 w-5 text-rose-400 mt-0.5 flex-shrink-0" />
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-sm font-medium text-platinum-500-200">{alert.alertType}</span>
+                        <span className="text-sm font-medium text-platinum-200">{alert.alertType}</span>
                         <Badge
                           variant="outline"
                           className={`text-xs ${
                             alert.credibility === 'Very High' ? 'border-emerald-500/50 text-emerald-400' :
                             alert.credibility === 'High' ? 'border-info/50 text-info' :
-                            'border-platinum-500/50 text-platinum-500-400'
+                            'border-platinum-500/50 text-platinum-400'
                           }`}
                         >
                           {alert.credibility}
                         </Badge>
                       </div>
-                      <div className="flex items-center gap-3 text-xs text-platinum-500-500">
+                      <div className="flex items-center gap-3 text-xs text-platinum-500">
                         <span>{alert.date}</span>
                         <span>Source: {alert.source}</span>
                       </div>
@@ -164,19 +164,19 @@ export function FacebookMetaScamCenterSection() {
                     className="p-4 rounded-lg bg-platinum-800/50"
                   >
                     <div className="flex items-start justify-between mb-2">
-                      <h4 className="text-sm font-semibold text-platinum-500-200">{scam.scamType}</h4>
+                      <h4 className="text-sm font-semibold text-platinum-200">{scam.scamType}</h4>
                       <Badge
                         variant="outline"
                         className={`text-xs ${
                           scam.severity === 'High' ? 'border-rose-500/50 text-rose-400' :
                           scam.severity === 'Medium' ? 'border-amber-500/50 text-amber-400' :
-                          'border-platinum-500/50 text-platinum-500-400'
+                          'border-platinum-500/50 text-platinum-400'
                         }`}
                       >
                         {scam.severity}
                       </Badge>
                     </div>
-                    <p className="text-xs text-platinum-500-400 mb-2">{scam.description}</p>
+                    <p className="text-xs text-platinum-400 mb-2">{scam.description}</p>
                     <p className="text-xs text-emerald-400">{scam.prevention}</p>
                   </motion.div>
                 ))}
@@ -206,7 +206,7 @@ export function FacebookMetaScamCenterSection() {
                     <div className="h-6 w-6 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
                       <span className="text-xs text-emerald-400 font-bold">{idx + 1}</span>
                     </div>
-                    <p className="text-sm text-platinum-500-300">{tip}</p>
+                    <p className="text-sm text-platinum-300">{tip}</p>
                   </motion.div>
                 ))}
               </div>

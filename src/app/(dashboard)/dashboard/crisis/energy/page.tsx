@@ -81,7 +81,7 @@ export default function EnergyCrisesPage() {
         <div>
           <Badge variant="gold" className="mb-2">PHOENIX PROTOCOL: ENERGY</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Energy Crises</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Oil, gas, electricity disruptions, and energy security threats affecting UAE and the region
           </p>
         </div>
@@ -90,7 +90,7 @@ export default function EnergyCrisesPage() {
             <Fuel className="h-4 w-4" />
             ADNOC Portal
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
             <Zap className="h-4 w-4" />
             Energy Dashboard
           </Button>
@@ -141,8 +141,8 @@ export default function EnergyCrisesPage() {
             {data.alertLevel === 'YELLOW' && <AlertTriangle className="h-6 w-6 text-amber-400" />}
             {data.alertLevel === 'GREEN' && <TrendingUp className="h-6 w-6 text-emerald-400" />}
             <div>
-              <p className="font-semibold text-platinum-500-200">Energy Alert Level: {data.alertLevel}</p>
-              <p className="text-sm text-platinum-500-400">
+              <p className="font-semibold text-platinum-200">Energy Alert Level: {data.alertLevel}</p>
+              <p className="text-sm text-platinum-400">
                 {data.affectedEntities?.length || 0} affected entities | Crisis Stage: {data.phoenixStage}
               </p>
             </div>
@@ -179,14 +179,14 @@ export default function EnergyCrisesPage() {
                        <AlertCircle className="h-5 w-5" />}
                     </div>
                     <div>
-                      <p className="font-medium text-platinum-500-200">{finding.finding}</p>
-                      <p className="text-sm text-platinum-500-400">Source: {finding.source}</p>
+                      <p className="font-medium text-platinum-200">{finding.finding}</p>
+                      <p className="text-sm text-platinum-400">Source: {finding.source}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="text-right">
                       <p className="text-xl font-bold text-gold-700">{finding.metric}</p>
-                      <p className="text-xs text-platinum-500-400">Tier {finding.tier}</p>
+                      <p className="text-xs text-platinum-400">Tier {finding.tier}</p>
                     </div>
                     {finding.alert && getAlertBadge(finding.alert)}
                   </div>
@@ -291,9 +291,9 @@ export default function EnergyCrisesPage() {
                       ].map((item, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-500-200">{item.reserve}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.reserve}</span>
                             <div className="flex items-center gap-3">
-                              <span className="text-sm text-platinum-500-400">{item.days} days</span>
+                              <span className="text-sm text-platinum-400">{item.days} days</span>
                               <Badge variant="success" className="text-xs">{item.status}</Badge>
                             </div>
                           </div>
@@ -322,7 +322,7 @@ export default function EnergyCrisesPage() {
                       <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4">
                         <div className="flex items-center gap-3">
                           <Wind className="h-5 w-5 text-gold-700" />
-                          <p className="font-medium text-platinum-500-200">{item.infrastructure}</p>
+                          <p className="font-medium text-platinum-200">{item.infrastructure}</p>
                         </div>
                         <div className="flex items-center gap-3">
                           <Badge
@@ -355,8 +355,8 @@ export default function EnergyCrisesPage() {
                         <div className="flex items-start gap-4">
                           <p className="text-sm font-bold text-gold-700 whitespace-nowrap w-24">{event.date}</p>
                           <div>
-                            <p className="font-semibold text-platinum-500-200">{event.event}</p>
-                            <p className="text-sm text-platinum-500-400 mt-1">{event.description}</p>
+                            <p className="font-semibold text-platinum-200">{event.event}</p>
+                            <p className="text-sm text-platinum-400 mt-1">{event.description}</p>
                             {event.stage && (
                               <Badge variant="outline" className="mt-2 text-xs">{event.stage}</Badge>
                             )}

@@ -221,10 +221,10 @@ export default function CultureSocietyPage() {
         <div>
           <Badge variant="gold" className="mb-2 font-rajdhani">S-SECTOR</Badge>
           <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold-700">Culture & Society</h1>
-          <p className="mt-2 text-platinum-500-400 font-rajdhani">
+          <p className="mt-2 text-platinum-400 font-rajdhani">
             Heritage, demographics, traditions, arts, religion, social dynamics
           </p>
-          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500-500">
+          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500">
             <span className="flex items-center gap-1 font-rajdhani">
               <Calendar className="h-4 w-4" />
               {executionMetadata?.dateExecuted || '2026-04-27'}
@@ -244,7 +244,7 @@ export default function CultureSocietyPage() {
             <Palette className="h-4 w-4" />
             Heritage
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2 font-rajdhani">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2 font-rajdhani">
             <TrendingUp className="h-4 w-4" />
             Analyze
           </Button>
@@ -326,19 +326,19 @@ export default function CultureSocietyPage() {
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-300 font-rajdhani">Total Population</span>
+                        <span className="text-platinum-300 font-rajdhani">Total Population</span>
                         <span className="text-xl font-bold text-gold-700 font-rajdhani">{populationMetrics?.totalPopulation}M</span>
                       </div>
                       <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-300 font-rajdhani">Median Age</span>
+                        <span className="text-platinum-300 font-rajdhani">Median Age</span>
                         <span className="text-xl font-bold text-platinum-500 font-rajdhani">{populationMetrics?.medianAge} years</span>
                       </div>
                       <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-300 font-rajdhani">Literacy Rate</span>
+                        <span className="text-platinum-300 font-rajdhani">Literacy Rate</span>
                         <span className="text-xl font-bold text-emerald-500 font-rajdhani">{populationMetrics?.literacyRate}%</span>
                       </div>
                       <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-300 font-rajdhani">Urban Population</span>
+                        <span className="text-platinum-300 font-rajdhani">Urban Population</span>
                         <span className="text-xl font-bold text-navy-500 font-rajdhani">{populationMetrics?.urbanPercentage}%</span>
                       </div>
                     </CardContent>
@@ -359,13 +359,13 @@ export default function CultureSocietyPage() {
                       <div className="mt-4 grid grid-cols-2 gap-4">
                         <div className="text-center p-3 bg-navy/20 rounded-lg">
                           <p className="text-2xl font-bold text-navy-500 font-rajdhani">{genderDistribution?.malePercentage}%</p>
-                          <p className="text-sm text-platinum-500-500 font-rajdhani">Male</p>
-                          <p className="text-xs text-platinum-500-400 font-rajdhani">{(genderDistribution?.males || 7235074).toLocaleString()}</p>
+                          <p className="text-sm text-platinum-500 font-rajdhani">Male</p>
+                          <p className="text-xs text-platinum-400 font-rajdhani">{(genderDistribution?.males || 7235074).toLocaleString()}</p>
                         </div>
                         <div className="text-center p-3 bg-gold-700/20 rounded-lg">
                           <p className="text-2xl font-bold text-gold-700 font-rajdhani">{genderDistribution?.femalePercentage}%</p>
-                          <p className="text-sm text-platinum-500-500 font-rajdhani">Female</p>
-                          <p className="text-xs text-platinum-500-400 font-rajdhani">{(genderDistribution?.females || 4059169).toLocaleString()}</p>
+                          <p className="text-sm text-platinum-500 font-rajdhani">Female</p>
+                          <p className="text-xs text-platinum-400 font-rajdhani">{(genderDistribution?.females || 4059169).toLocaleString()}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -385,28 +385,28 @@ export default function CultureSocietyPage() {
                   <CardContent>
                     <div className="mb-4">
                       <div className="flex justify-between mb-2">
-                        <span className="text-platinum-500-300 font-rajdhani">Expatriates</span>
+                        <span className="text-platinum-300 font-rajdhani">Expatriates</span>
                         <span className="text-gold-700 font-bold font-rajdhani">88.5%</span>
                       </div>
                       <Progress value={88.5} className="h-3 bg-platinum-700" />
                     </div>
                     <div className="mb-4">
                       <div className="flex justify-between mb-2">
-                        <span className="text-platinum-500-300 font-rajdhani">Emirati Nationals</span>
+                        <span className="text-platinum-300 font-rajdhani">Emirati Nationals</span>
                         <span className="text-platinum-500 font-bold font-rajdhani">11.5%</span>
                       </div>
                       <Progress value={11.5} className="h-3 bg-platinum-700" />
                     </div>
                     <div className="grid grid-cols-2 gap-4 mt-4">
                       <div className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-500-400 font-rajdhani">Largest Community</p>
+                        <p className="text-sm text-platinum-400 font-rajdhani">Largest Community</p>
                         <p className="text-lg font-bold text-gold-700 font-rajdhani">Indian</p>
-                        <p className="text-sm text-platinum-500-500 font-rajdhani">37.96%</p>
+                        <p className="text-sm text-platinum-500 font-rajdhani">37.96%</p>
                       </div>
                       <div className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-500-400 font-rajdhani">Second Largest</p>
+                        <p className="text-sm text-platinum-400 font-rajdhani">Second Largest</p>
                         <p className="text-lg font-bold text-platinum-500 font-rajdhani">Pakistani</p>
-                        <p className="text-sm text-platinum-500-500 font-rajdhani">16.72%</p>
+                        <p className="text-sm text-platinum-500 font-rajdhani">16.72%</p>
                       </div>
                     </div>
                   </CardContent>
@@ -455,7 +455,7 @@ export default function CultureSocietyPage() {
                           <div className="w-16 shrink-0 text-center">
                             <span className="text-lg font-bold text-gold-700 font-rajdhani">{reform.year}</span>
                           </div>
-                          <p className="text-platinum-500-300 font-rajdhani">{reform.reform}</p>
+                          <p className="text-platinum-300 font-rajdhani">{reform.reform}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -516,7 +516,7 @@ export default function CultureSocietyPage() {
                             animate={{ opacity: 1 }}
                             transition={{ delay: idx * 0.1 }}
                           >
-                            <span className="text-platinum-500-200 font-rajdhani text-sm">{elem.name}</span>
+                            <span className="text-platinum-200 font-rajdhani text-sm">{elem.name}</span>
                             <Badge variant="outline" className="text-xs font-rajdhani">{elem.year}</Badge>
                           </motion.div>
                         ))}
@@ -544,7 +544,7 @@ export default function CultureSocietyPage() {
                             animate={{ opacity: 1 }}
                             transition={{ delay: idx * 0.1 }}
                           >
-                            <span className="text-platinum-500-200 font-rajdhani text-sm">{elem.name}</span>
+                            <span className="text-platinum-200 font-rajdhani text-sm">{elem.name}</span>
                             <Badge variant="outline" className="text-xs font-rajdhani">{elem.year}</Badge>
                           </motion.div>
                         ))}
@@ -572,7 +572,7 @@ export default function CultureSocietyPage() {
                             animate={{ opacity: 1 }}
                             transition={{ delay: idx * 0.1 }}
                           >
-                            <span className="text-platinum-500-200 font-rajdhani text-sm">{elem.name}</span>
+                            <span className="text-platinum-200 font-rajdhani text-sm">{elem.name}</span>
                             <Badge variant="outline" className="text-xs font-rajdhani">{elem.year}</Badge>
                           </motion.div>
                         ))}
@@ -600,7 +600,7 @@ export default function CultureSocietyPage() {
                             animate={{ opacity: 1 }}
                             transition={{ delay: idx * 0.1 }}
                           >
-                            <span className="text-platinum-500-200 font-rajdhani text-sm">{elem.name}</span>
+                            <span className="text-platinum-200 font-rajdhani text-sm">{elem.name}</span>
                             <Badge variant="outline" className="text-xs font-rajdhani">{elem.year}</Badge>
                           </motion.div>
                         ))}
@@ -629,16 +629,16 @@ export default function CultureSocietyPage() {
                         </h4>
                         <div className="space-y-2 text-sm">
                           <div className="flex justify-between">
-                            <span className="text-platinum-500-400 font-rajdhani">History:</span>
-                            <span className="text-platinum-500-200 font-rajdhani">{falconry?.history || '2,000 years old'}</span>
+                            <span className="text-platinum-400 font-rajdhani">History:</span>
+                            <span className="text-platinum-200 font-rajdhani">{falconry?.history || '2,000 years old'}</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-platinum-500-400 font-rajdhani">Purpose:</span>
-                            <span className="text-platinum-500-200 font-rajdhani">{falconry?.originalPurpose || 'Hunting'}</span>
+                            <span className="text-platinum-400 font-rajdhani">Purpose:</span>
+                            <span className="text-platinum-200 font-rajdhani">{falconry?.originalPurpose || 'Hunting'}</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-platinum-500-400 font-rajdhani">Significance:</span>
-                            <span className="text-platinum-500-200 font-rajdhani text-right">{falconry?.culturalSignificance || '"Way of life for leaders"'}</span>
+                            <span className="text-platinum-400 font-rajdhani">Significance:</span>
+                            <span className="text-platinum-200 font-rajdhani text-right">{falconry?.culturalSignificance || '"Way of life for leaders"'}</span>
                           </div>
                         </div>
                       </motion.div>
@@ -651,16 +651,16 @@ export default function CultureSocietyPage() {
                         </h4>
                         <div className="space-y-2 text-sm">
                           <div className="flex justify-between">
-                            <span className="text-platinum-500-400 font-rajdhani">Nickname:</span>
-                            <span className="text-platinum-500-200 font-rajdhani">{camelRacing?.nickname || '"Sport of Sheikhs"'}</span>
+                            <span className="text-platinum-400 font-rajdhani">Nickname:</span>
+                            <span className="text-platinum-200 font-rajdhani">{camelRacing?.nickname || '"Sport of Sheikhs"'}</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-platinum-500-400 font-rajdhani">Top Speed:</span>
-                            <span className="text-platinum-500-200 font-rajdhani">{camelRacing?.topSpeed || '40 mph'}</span>
+                            <span className="text-platinum-400 font-rajdhani">Top Speed:</span>
+                            <span className="text-platinum-200 font-rajdhani">{camelRacing?.topSpeed || '40 mph'}</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-platinum-500-400 font-rajdhani">Season:</span>
-                            <span className="text-platinum-500-200 font-rajdhani">{camelRacing?.season || 'October to April'}</span>
+                            <span className="text-platinum-400 font-rajdhani">Season:</span>
+                            <span className="text-platinum-200 font-rajdhani">{camelRacing?.season || 'October to April'}</span>
                           </div>
                         </div>
                       </motion.div>
@@ -691,8 +691,8 @@ export default function CultureSocietyPage() {
                           <div className="flex items-center gap-3">
                             <Landmark className="h-5 w-5 text-gold-700" />
                             <div>
-                              <p className="font-medium text-platinum-500-200 font-rajdhani">{museum.museum}</p>
-                              <p className="text-sm text-platinum-500-500 font-rajdhani">{museum.location}</p>
+                              <p className="font-medium text-platinum-200 font-rajdhani">{museum.museum}</p>
+                              <p className="text-sm text-platinum-500 font-rajdhani">{museum.location}</p>
                             </div>
                           </div>
                           <Badge
@@ -729,8 +729,8 @@ export default function CultureSocietyPage() {
                           transition={{ delay: idx * 0.1 }}
                         >
                           <h4 className="font-bold text-gold-700 mb-2 font-rajdhani">{value.value}</h4>
-                          <p className="text-sm text-platinum-500-400 mb-1 font-rajdhani">{value.description}</p>
-                          <p className="text-xs text-platinum-500-500 font-rajdhani">{value.expression}</p>
+                          <p className="text-sm text-platinum-400 mb-1 font-rajdhani">{value.description}</p>
+                          <p className="text-xs text-platinum-500 font-rajdhani">{value.expression}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -754,8 +754,8 @@ export default function CultureSocietyPage() {
                         <div className="space-y-2">
                           {(traditionalClothing?.mens || []).map((item, idx) => (
                             <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
-                              <p className="font-medium text-platinum-500-200 font-rajdhani">{item.item}</p>
-                              <p className="text-sm text-platinum-500-400 font-rajdhani">{item.description}</p>
+                              <p className="font-medium text-platinum-200 font-rajdhani">{item.item}</p>
+                              <p className="text-sm text-platinum-400 font-rajdhani">{item.description}</p>
                             </div>
                           ))}
                         </div>
@@ -765,8 +765,8 @@ export default function CultureSocietyPage() {
                         <div className="space-y-2">
                           {(traditionalClothing?.womens || []).map((item, idx) => (
                             <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
-                              <p className="font-medium text-platinum-500-200 font-rajdhani">{item.item}</p>
-                              <p className="text-sm text-platinum-500-400 font-rajdhani">{item.description}</p>
+                              <p className="font-medium text-platinum-200 font-rajdhani">{item.item}</p>
+                              <p className="text-sm text-platinum-400 font-rajdhani">{item.description}</p>
                             </div>
                           ))}
                         </div>
@@ -787,7 +787,7 @@ export default function CultureSocietyPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl mb-4">
-                      <p className="text-platinum-500-300 font-rajdhani italic">"{majlis?.definition || 'Arabic term meaning sitting room or council'}"</p>
+                      <p className="text-platinum-300 font-rajdhani italic">"{majlis?.definition || 'Arabic term meaning sitting room or council'}"</p>
                     </div>
                     <div className="grid gap-4 md:grid-cols-3">
                       {(majlis?.coreValues || []).map((value, idx) => (
@@ -797,8 +797,8 @@ export default function CultureSocietyPage() {
                       ))}
                     </div>
                     <div className="mt-4">
-                      <p className="text-sm text-platinum-500-400 font-rajdhani">UNESCO Recognition: {majlis?.unescoRecognition?.date || 2015}</p>
-                      <p className="text-sm text-platinum-500-500 font-rajdhani">Collaborative: {majlis?.unescoRecognition?.collaborativeEffort || 'UAE, Oman, Qatar, Saudi Arabia'}</p>
+                      <p className="text-sm text-platinum-400 font-rajdhani">UNESCO Recognition: {majlis?.unescoRecognition?.date || 2015}</p>
+                      <p className="text-sm text-platinum-500 font-rajdhani">Collaborative: {majlis?.unescoRecognition?.collaborativeEffort || 'UAE, Oman, Qatar, Saudi Arabia'}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -884,15 +884,15 @@ export default function CultureSocietyPage() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400 font-rajdhani">2000 (Baseline)</span>
+                        <span className="text-platinum-400 font-rajdhani">2000 (Baseline)</span>
                         <span className="text-lg font-bold text-gold-700 font-rajdhani">917,000</span>
                       </div>
                       <div className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400 font-rajdhani">2024</span>
+                        <span className="text-platinum-400 font-rajdhani">2024</span>
                         <span className="text-lg font-bold text-gold-700 font-rajdhani">3,825,000 (+317%)</span>
                       </div>
                       <div className="flex items-center justify-between p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
-                        <span className="text-platinum-500-400 font-rajdhani">September 2025</span>
+                        <span className="text-platinum-400 font-rajdhani">September 2025</span>
                         <span className="text-lg font-bold text-emerald-500 font-rajdhani">Surpassed 4 million</span>
                       </div>
                     </div>
@@ -912,19 +912,19 @@ export default function CultureSocietyPage() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-300 font-rajdhani">Private Sector Target</span>
+                        <span className="text-platinum-300 font-rajdhani">Private Sector Target</span>
                         <span className="font-bold text-gold-700 font-rajdhani">10%</span>
                       </div>
                       <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-300 font-rajdhani">Non-compliance Penalty</span>
+                        <span className="text-platinum-300 font-rajdhani">Non-compliance Penalty</span>
                         <span className="font-bold text-red font-rajdhani">AED 9,000/mo</span>
                       </div>
                       <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-300 font-rajdhani">2009 Participation</span>
+                        <span className="text-platinum-300 font-rajdhani">2009 Participation</span>
                         <span className="font-bold text-platinum-500 font-rajdhani">0.34%</span>
                       </div>
                       <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-300 font-rajdhani">Abu Dhabi Unemployment</span>
+                        <span className="text-platinum-300 font-rajdhani">Abu Dhabi Unemployment</span>
                         <span className="font-bold text-rose-500 font-rajdhani">{emiratizationPolicy?.abuDhabiUnemploymentEmiratis || 11.6}%</span>
                       </div>
                     </div>
@@ -970,19 +970,19 @@ export default function CultureSocietyPage() {
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                       <motion.div className="p-4 bg-platinum-800/50 rounded-xl text-center" whileHover={{ scale: 1.05 }}>
                         <p className="text-3xl font-bold text-gold-700 font-rajdhani">{placesOfWorship?.mosques?.total?.toLocaleString() || '4,818'}</p>
-                        <p className="text-platinum-500-400 font-rajdhani">Mosques</p>
+                        <p className="text-platinum-400 font-rajdhani">Mosques</p>
                       </motion.div>
                       <motion.div className="p-4 bg-platinum-800/50 rounded-xl text-center" whileHover={{ scale: 1.05 }}>
                         <p className="text-3xl font-bold text-emerald-500 font-rajdhani">52+</p>
-                        <p className="text-platinum-500-400 font-rajdhani">Churches</p>
+                        <p className="text-platinum-400 font-rajdhani">Churches</p>
                       </motion.div>
                       <motion.div className="p-4 bg-platinum-800/50 rounded-xl text-center" whileHover={{ scale: 1.05 }}>
                         <p className="text-3xl font-bold text-navy-500 font-rajdhani">2</p>
-                        <p className="text-platinum-500-400 font-rajdhani">Synagogues</p>
+                        <p className="text-platinum-400 font-rajdhani">Synagogues</p>
                       </motion.div>
                       <motion.div className="p-4 bg-platinum-800/50 rounded-xl text-center" whileHover={{ scale: 1.05 }}>
                         <p className="text-3xl font-bold text-rose-500 font-rajdhani">2</p>
-                        <p className="text-platinum-500-400 font-rajdhani">Hindu Temples</p>
+                        <p className="text-platinum-400 font-rajdhani">Hindu Temples</p>
                       </motion.div>
                     </div>
                   </CardContent>
@@ -1004,21 +1004,21 @@ export default function CultureSocietyPage() {
                         <motion.div className="text-center" whileHover={{ scale: 1.1 }}>
                           <Landmark className="h-8 w-8 mx-auto text-emerald-500 mb-2" />
                           <p className="text-xl font-bold text-emerald-500 font-rajdhani">Mosque</p>
-                          <p className="text-sm text-platinum-500-400 font-rajdhani">Islamic worship</p>
+                          <p className="text-sm text-platinum-400 font-rajdhani">Islamic worship</p>
                         </motion.div>
                         <motion.div className="text-center" whileHover={{ scale: 1.1 }}>
                           <Church className="h-8 w-8 mx-auto text-gold-700 mb-2" />
                           <p className="text-xl font-bold text-gold-700 font-rajdhani">Church</p>
-                          <p className="text-sm text-platinum-500-400 font-rajdhani">Christian worship</p>
+                          <p className="text-sm text-platinum-400 font-rajdhani">Christian worship</p>
                         </motion.div>
                         <motion.div className="text-center" whileHover={{ scale: 1.1 }}>
                           <Landmark className="h-8 w-8 mx-auto text-navy-500 mb-2" />
                           <p className="text-xl font-bold text-navy-500 font-rajdhani">Synagogue</p>
-                          <p className="text-sm text-platinum-500-400 font-rajdhani">Jewish worship</p>
+                          <p className="text-sm text-platinum-400 font-rajdhani">Jewish worship</p>
                         </motion.div>
                       </div>
                       <div className="mt-4 pt-4 border-t border-emerald-500/30">
-                        <p className="text-center text-platinum-500-300 font-rajdhani">
+                        <p className="text-center text-platinum-300 font-rajdhani">
                           Location: <span className="text-emerald-500">Abu Dhabi</span> | Opened: <span className="text-emerald-500">{abrahamicFamilyHouse?.openingDate || 'February 2023'}</span>
                         </p>
                       </div>
@@ -1039,7 +1039,7 @@ export default function CultureSocietyPage() {
                   <CardContent>
                     <div className="text-center p-6 bg-platinum-800/50 rounded-xl">
                       <p className="text-5xl font-bold text-red font-rajdhani">{religiousFreedom?.freedomHouseScore?.score || 2}/4</p>
-                      <p className="text-platinum-500-400 mt-2 font-rajdhani">Freedom House Score (2023)</p>
+                      <p className="text-platinum-400 mt-2 font-rajdhani">Freedom House Score (2023)</p>
                     </div>
                     <div className="mt-4 space-y-2">
                       {(religiousFreedom?.keyRestrictions || []).slice(0, 3).map((restriction, idx) => (
@@ -1051,7 +1051,7 @@ export default function CultureSocietyPage() {
                           transition={{ delay: idx * 0.1 }}
                         >
                           <AlertCircle className="h-4 w-4 text-red shrink-0" />
-                          <span className="text-sm text-platinum-500-300 font-rajdhani">{restriction.restriction}: {restriction.penalty || restriction.legalStatus}</span>
+                          <span className="text-sm text-platinum-300 font-rajdhani">{restriction.restriction}: {restriction.penalty || restriction.legalStatus}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -1081,14 +1081,14 @@ export default function CultureSocietyPage() {
                   <CardContent>
                     <div className="grid gap-4 md:grid-cols-2">
                       <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
-                        <p className="text-sm text-platinum-500-400 font-rajdhani">Gender Inequality Index</p>
+                        <p className="text-sm text-platinum-400 font-rajdhani">Gender Inequality Index</p>
                         <p className="text-3xl font-bold text-emerald-500 font-rajdhani">{genderEqualityIndices?.[0]?.value || 0.040}</p>
-                        <p className="text-platinum-500-500 font-rajdhani">{genderEqualityIndices?.[0]?.rank || '13th/191 countries'}</p>
+                        <p className="text-platinum-500 font-rajdhani">{genderEqualityIndices?.[0]?.rank || '13th/191 countries'}</p>
                       </div>
                       <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
-                        <p className="text-sm text-platinum-500-400 font-rajdhani">Global Gender Gap Index</p>
+                        <p className="text-sm text-platinum-400 font-rajdhani">Global Gender Gap Index</p>
                         <p className="text-3xl font-bold text-gold-700 font-rajdhani">{genderEqualityIndices?.[1]?.value || 0.724}</p>
-                        <p className="text-platinum-500-500 font-rajdhani">{genderEqualityIndices?.[1]?.rank || '69th/146 countries'}</p>
+                        <p className="text-platinum-500 font-rajdhani">{genderEqualityIndices?.[1]?.rank || '69th/146 countries'}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -1114,7 +1114,7 @@ export default function CultureSocietyPage() {
                           animate={{ opacity: 1 }}
                           transition={{ delay: idx * 0.05 }}
                         >
-                          <span className="text-platinum-500-300 font-rajdhani">{item.metric}</span>
+                          <span className="text-platinum-300 font-rajdhani">{item.metric}</span>
                           <span className="text-lg font-bold text-gold-700 font-rajdhani">{item.value}</span>
                         </motion.div>
                       ))}
@@ -1143,7 +1143,7 @@ export default function CultureSocietyPage() {
                           transition={{ delay: idx * 0.1 }}
                         >
                           <Badge variant="success" className="shrink-0 mt-0.5 font-rajdhani">{reform.year}</Badge>
-                          <span className="text-platinum-500-300 font-rajdhani text-sm">{reform.reform}</span>
+                          <span className="text-platinum-300 font-rajdhani text-sm">{reform.reform}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -1170,7 +1170,7 @@ export default function CultureSocietyPage() {
                           <span className="text-emerald-500 text-lg font-rajdhani">Crimes treated as normal murder cases</span>
                         </div>
                         <div className="flex items-start gap-3">
-                          <span className="text-platinum-500-300 font-rajdhani">Penalties: Life imprisonment or execution</span>
+                          <span className="text-platinum-300 font-rajdhani">Penalties: Life imprisonment or execution</span>
                         </div>
                       </div>
                     </div>
@@ -1196,11 +1196,11 @@ export default function CultureSocietyPage() {
                       </div>
                       <div className="grid gap-2 md:grid-cols-2">
                         <div className="flex justify-between p-2 bg-platinum-800/50 rounded">
-                          <span className="text-platinum-500-400 font-rajdhani">Imprisonment</span>
+                          <span className="text-platinum-400 font-rajdhani">Imprisonment</span>
                           <span className="font-bold text-red font-rajdhani">Up to 6 months</span>
                         </div>
                         <div className="flex justify-between p-2 bg-platinum-800/50 rounded">
-                          <span className="text-platinum-500-400 font-rajdhani">Fine</span>
+                          <span className="text-platinum-400 font-rajdhani">Fine</span>
                           <span className="font-bold text-red font-rajdhani">Dh5,000</span>
                         </div>
                       </div>
@@ -1232,11 +1232,11 @@ export default function CultureSocietyPage() {
                     <div className="grid gap-4 md:grid-cols-2">
                       <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="text-3xl font-bold text-gold-700 font-rajdhani">10 Years</p>
-                        <p className="text-platinum-500-400 font-rajdhani">Standard Duration</p>
+                        <p className="text-platinum-400 font-rajdhani">Standard Duration</p>
                       </div>
                       <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="text-3xl font-bold text-gold-700 font-rajdhani">5 Years</p>
-                        <p className="text-platinum-500-400 font-rajdhani">Retirement Visa</p>
+                        <p className="text-platinum-400 font-rajdhani">Retirement Visa</p>
                       </div>
                     </div>
                   </CardContent>
@@ -1256,15 +1256,15 @@ export default function CultureSocietyPage() {
                     <div className="grid gap-4 md:grid-cols-3">
                       <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="text-3xl font-bold text-emerald-500 font-rajdhani">{youthUnemployment?.uae || 6.43}%</p>
-                        <p className="text-platinum-500-400 font-rajdhani">UAE Rate</p>
+                        <p className="text-platinum-400 font-rajdhani">UAE Rate</p>
                       </div>
                       <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="text-3xl font-bold text-platinum-500 font-rajdhani">{youthUnemployment?.worldAverage || 15.7}%</p>
-                        <p className="text-platinum-500-400 font-rajdhani">World Average</p>
+                        <p className="text-platinum-400 font-rajdhani">World Average</p>
                       </div>
                       <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="text-3xl font-bold text-gold-700 font-rajdhani">{youthUnemployment?.maximum || 13.48}%</p>
-                        <p className="text-platinum-500-400 font-rajdhani">Peak ({youthUnemployment?.maximumYear || 2020})</p>
+                        <p className="text-platinum-400 font-rajdhani">Peak ({youthUnemployment?.maximumYear || 2020})</p>
                       </div>
                     </div>
                   </CardContent>
@@ -1284,15 +1284,15 @@ export default function CultureSocietyPage() {
                     <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-xl">
                       <div className="text-center mb-4">
                         <p className="text-3xl font-bold text-rose-500 font-rajdhani">{bidoonOverview?.estimatedNumbers || '15,000+'}</p>
-                        <p className="text-platinum-500-400 font-rajdhani">Estimated in UAE</p>
+                        <p className="text-platinum-400 font-rajdhani">Estimated in UAE</p>
                       </div>
                       <div className="space-y-2 text-sm">
                         <div className="flex justify-between">
-                          <span className="text-platinum-500-400 font-rajdhani">Term Meaning:</span>
-                          <span className="text-platinum-500-200 font-rajdhani">"Without nationality"</span>
+                          <span className="text-platinum-400 font-rajdhani">Term Meaning:</span>
+                          <span className="text-platinum-200 font-rajdhani">"Without nationality"</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-platinum-500-400 font-rajdhani">Status:</span>
+                          <span className="text-platinum-400 font-rajdhani">Status:</span>
                           <span className="text-rose-500 font-rajdhani">Denied citizenship for decades</span>
                         </div>
                       </div>
@@ -1314,9 +1314,9 @@ export default function CultureSocietyPage() {
                     <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-xl">
                       <div className="text-center mb-4">
                         <p className="text-3xl font-bold text-red font-rajdhani">{june2021Incident?.victims || 375}</p>
-                        <p className="text-platinum-500-400 font-rajdhani">African migrant workers detained and deported</p>
+                        <p className="text-platinum-400 font-rajdhani">African migrant workers detained and deported</p>
                       </div>
-                      <p className="text-sm text-platinum-500-300 font-rajdhani text-center">
+                      <p className="text-sm text-platinum-300 font-rajdhani text-center">
                         Amnesty International documented arbitrary detention, degrading treatment, and mass deportation without due process
                       </p>
                     </div>
@@ -1348,7 +1348,7 @@ export default function CultureSocietyPage() {
                       <p className="text-center text-amber-300 italic font-rajdhani">
                         "Clear evidence showing Arabic literacy is unquestionably losing ground"
                       </p>
-                      <p className="text-center text-sm text-platinum-500-500 mt-1 font-rajdhani">
+                      <p className="text-center text-sm text-platinum-500 mt-1 font-rajdhani">
                         - Ahmad Al-Issa, American University of Sharjah (2017)
                       </p>
                     </div>
@@ -1363,7 +1363,7 @@ export default function CultureSocietyPage() {
                         >
                           <AlertTriangle className="h-4 w-4 text-yellow shrink-0 mt-1" />
                           <div>
-                            <p className="text-platinum-500-200 font-rajdhani">{finding.detail}</p>
+                            <p className="text-platinum-200 font-rajdhani">{finding.detail}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -1391,8 +1391,8 @@ export default function CultureSocietyPage() {
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.1 }}
                         >
-                          <p className="text-platinum-500-200 italic font-rajdhani text-sm">"{quote.quote}"</p>
-                          <p className="text-xs text-platinum-500-500 mt-1 font-rajdhani">- {quote.source}</p>
+                          <p className="text-platinum-200 italic font-rajdhani text-sm">"{quote.quote}"</p>
+                          <p className="text-xs text-platinum-500 mt-1 font-rajdhani">- {quote.source}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -1421,8 +1421,8 @@ export default function CultureSocietyPage() {
                         >
                           <span className="text-rose-500 font-rajdhani">-</span>
                           <div>
-                            <p className="text-platinum-500-200 font-medium font-rajdhani">{change.change}</p>
-                            <p className="text-sm text-platinum-500-400 font-rajdhani">{change.impact}</p>
+                            <p className="text-platinum-200 font-medium font-rajdhani">{change.change}</p>
+                            <p className="text-sm text-platinum-400 font-rajdhani">{change.impact}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -1450,9 +1450,9 @@ export default function CultureSocietyPage() {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: idx * 0.1 }}
                         >
-                          <p className="font-medium text-platinum-500-200 font-rajdhani">{item.individual}</p>
-                          <p className="text-sm text-platinum-500-400 font-rajdhani">{item.status}</p>
-                          <p className="text-xs text-platinum-500-500 font-rajdhani">Reason: {item.reason}</p>
+                          <p className="font-medium text-platinum-200 font-rajdhani">{item.individual}</p>
+                          <p className="text-sm text-platinum-400 font-rajdhani">{item.status}</p>
+                          <p className="text-xs text-platinum-500 font-rajdhani">Reason: {item.reason}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -1476,7 +1476,7 @@ export default function CultureSocietyPage() {
                         <div className="space-y-2">
                           {(culturalIdentityStrengths || []).slice(0, 5).map((item, idx) => (
                             <div key={idx} className="p-2 bg-emerald-500/10 rounded">
-                              <p className="text-platinum-500-200 font-rajdhani text-sm">{item.achievement}</p>
+                              <p className="text-platinum-200 font-rajdhani text-sm">{item.achievement}</p>
                             </div>
                           ))}
                         </div>
@@ -1486,7 +1486,7 @@ export default function CultureSocietyPage() {
                         <div className="space-y-2">
                           {(culturalIdentityChallenges || []).slice(0, 5).map((item, idx) => (
                             <div key={idx} className="p-2 bg-rose-500/10 rounded">
-                              <p className="text-platinum-500-200 font-rajdhani text-sm">{item.challenge}</p>
+                              <p className="text-platinum-200 font-rajdhani text-sm">{item.challenge}</p>
                             </div>
                           ))}
                         </div>
@@ -1515,7 +1515,7 @@ export default function CultureSocietyPage() {
                           animate={{ opacity: 1 }}
                           transition={{ delay: idx * 0.05 }}
                         >
-                          <span className="text-platinum-500-300 font-rajdhani text-sm">{item.topic}</span>
+                          <span className="text-platinum-300 font-rajdhani text-sm">{item.topic}</span>
                           <Badge
                             variant={item.sentiment === 'Positive' ? 'success' : item.sentiment === 'Negative' ? 'destructive' : 'outline'}
                             className="font-rajdhani"
@@ -1534,7 +1534,7 @@ export default function CultureSocietyPage() {
       </Tabs>
 
       {/* Footer */}
-      <motion.div variants={itemVariants} className="text-center text-sm text-platinum-500-500">
+      <motion.div variants={itemVariants} className="text-center text-sm text-platinum-500">
         <p className="font-rajdhani">Last Updated: {executionMetadata?.lastEnriched || '2026-04-27'}</p>
         <p className="mt-1 font-rajdhani">
           Enrichment Status: <Badge variant="success" className="text-xs font-rajdhani">{executionMetadata?.enrichmentStatus || 'Full synthesis complete'}</Badge>

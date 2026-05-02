@@ -61,8 +61,8 @@ const badgeVariants = cva(
 
         // Premium Glassmorphism Variants
         'glass-premium': 'glass-premium-premium border-gold-300/50 text-gold-700 shadow-premium-sm hover:shadow-premium-md',
-        'glass-navy': 'glass-premium border-navy-300/50 text-navy-500-700 shadow-premium-sm hover:shadow-premium-md',
-        'glass-platinum': 'glass-premium border-platinum-300/50 text-platinum-500-700 shadow-premium-sm hover:shadow-premium-md',
+        'glass-navy': 'glass-premium border-navy-300/50 text-navy-700 shadow-premium-sm hover:shadow-premium-md',
+        'glass-platinum': 'glass-premium border-platinum-300/50 text-platinum-700 shadow-premium-sm hover:shadow-premium-md',
 
         // Platform-specific variants
         clairvoyance: 'border-transparent bg-gradient-red text-white shadow-premium-sm hover:opacity-90',

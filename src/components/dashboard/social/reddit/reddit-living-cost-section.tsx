@@ -97,7 +97,7 @@ export function RedditLivingCostSection({
               className="p-6 rounded-lg glass-card border-navy-500/30"
             >
               <CardHeader>
-                <CardTitle className="text-lg text-navy-500-400 flex items-center gap-2">
+                <CardTitle className="text-lg text-navy-400 flex items-center gap-2">
                   <Home className="h-5 w-5" />
                   Rent Ranges
                 </CardTitle>
@@ -112,9 +112,9 @@ export function RedditLivingCostSection({
                       transition={{ delay: idx * 0.1 }}
                       className="p-4 rounded-lg border border-navy-500/20 bg-navy-500/5"
                     >
-                      <p className="text-sm text-platinum-500-400">{item.propertyType}</p>
-                      <p className="text-xs text-platinum-500-500">{item.location}</p>
-                      <p className="text-xl font-bold text-navy-500-400 mt-1">{item.cost}</p>
+                      <p className="text-sm text-platinum-400">{item.propertyType}</p>
+                      <p className="text-xs text-platinum-500">{item.location}</p>
+                      <p className="text-xl font-bold text-navy-400 mt-1">{item.cost}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -138,7 +138,7 @@ export function RedditLivingCostSection({
                 <div className="grid gap-4 sm:grid-cols-3">
                   {normalDewaBills.slice(0, 3).map((bill, idx) => (
                     <div key={idx} className="p-4 rounded-lg bg-cyan-500/5 border border-cyan-500/20 text-center">
-                      <p className="text-sm text-platinum-500-400">{bill.propertyType}</p>
+                      <p className="text-sm text-platinum-400">{bill.propertyType}</p>
                       <p className="text-2xl font-bold text-cyan-400">{bill.monthlyCost}</p>
                     </div>
                   ))}
@@ -148,7 +148,7 @@ export function RedditLivingCostSection({
                     <p className="text-sm text-rose-400 font-semibold mb-2">Abnormal Cases:</p>
                     <div className="space-y-1">
                       {abnormalDewaCases.map((item, idx) => (
-                        <p key={idx} className="text-sm text-platinum-500-300">
+                        <p key={idx} className="text-sm text-platinum-300">
                           <span className="text-rose-400">{item.issue}:</span> {item.amount}
                         </p>
                       ))}
@@ -181,7 +181,7 @@ export function RedditLivingCostSection({
                       transition={{ delay: idx * 0.05 }}
                       className="flex items-center justify-between p-3 rounded-lg border border-emerald-500/20 bg-emerald-500/5"
                     >
-                      <span className="text-sm text-platinum-500-300">{expense.expense}</span>
+                      <span className="text-sm text-platinum-300">{expense.expense}</span>
                       <span className="font-bold text-emerald-400">{expense.cost}</span>
                     </motion.div>
                   ))}
@@ -212,7 +212,7 @@ export function RedditLivingCostSection({
                       transition={{ delay: idx * 0.1 }}
                       className="p-4 rounded-lg border border-purple-500/20 bg-purple-500/5"
                     >
-                      <p className="text-sm text-platinum-500-400">{req.scenario}</p>
+                      <p className="text-sm text-platinum-400">{req.scenario}</p>
                       <p className="text-xl font-bold text-purple-400 mt-1">{req.requiredSalary}</p>
                     </motion.div>
                   ))}
@@ -244,7 +244,7 @@ export function RedditLivingCostSection({
                         transition={{ delay: idx * 0.1 }}
                         className="flex items-center justify-between p-3 rounded-lg border border-teal-500/20 bg-teal-500/5"
                       >
-                        <span className="text-sm text-platinum-500-300">{measure.measure}</span>
+                        <span className="text-sm text-platinum-300">{measure.measure}</span>
                         <Badge variant="outline" className="border-teal-500/30 text-teal-400">
                           {measure.monthlySavings}/mo
                         </Badge>
@@ -280,8 +280,8 @@ export function RedditLivingCostSection({
                         className="flex items-start justify-between p-3 rounded-lg border border-amber-500/20 bg-amber-500/5"
                       >
                         <div>
-                          <p className="font-medium text-platinum-500-200 text-sm">{edu.title}</p>
-                          <p className="text-xs text-platinum-500-400 mt-1">{edu.notes}</p>
+                          <p className="font-medium text-platinum-200 text-sm">{edu.title}</p>
+                          <p className="text-xs text-platinum-400 mt-1">{edu.notes}</p>
                         </div>
                         <Badge variant="outline" className="border-amber-500/30 text-amber-400 ml-2">
                           {edu.cost}
@@ -318,8 +318,8 @@ export function RedditLivingCostSection({
                         className="flex items-start justify-between p-3 rounded-lg border border-pink-500/20 bg-pink-500/5"
                       >
                         <div>
-                          <p className="font-medium text-platinum-500-200 text-sm">{hc.title}</p>
-                          <p className="text-xs text-platinum-500-400 mt-1">{hc.notes}</p>
+                          <p className="font-medium text-platinum-200 text-sm">{hc.title}</p>
+                          <p className="text-xs text-platinum-400 mt-1">{hc.notes}</p>
                         </div>
                         <Badge variant="outline" className="border-pink-500/30 text-pink-400 ml-2">
                           {hc.cost}
@@ -355,7 +355,7 @@ export function RedditLivingCostSection({
                         transition={{ delay: idx * 0.05 }}
                         className="p-3 rounded-lg border border-indigo-500/20 bg-indigo-500/5 text-center"
                       >
-                        <p className="text-sm text-platinum-500-400">{cost.metric}</p>
+                        <p className="text-sm text-platinum-400">{cost.metric}</p>
                         <p className="text-lg font-bold text-indigo-400 mt-1">{cost.value}</p>
                       </motion.div>
                     ))}

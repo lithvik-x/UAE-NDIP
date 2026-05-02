@@ -62,25 +62,25 @@ export function DissidentAnalysis({
                 <div key={dissident.id} className="p-4 glass-subtle rounded-lg border border-red-500/10">
                   <div className="flex items-start justify-between mb-2">
                     <div>
-                      <p className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{dissident.name}</p>
-                      <p className="text-xs text-platinum-500-500">{dissident.charges || dissident.notes?.join(', ')}</p>
+                      <p className="font-semibold text-navy-900 dark:text-platinum-100">{dissident.name}</p>
+                      <p className="text-xs text-platinum-500">{dissident.charges || dissident.notes?.join(', ')}</p>
                     </div>
                     {getStatusBadge(dissident.status)}
                   </div>
                   <div className="mt-2 space-y-1">
                     <p className="text-xs">
-                      <span className="text-platinum-500-500">Sentence: </span>
+                      <span className="text-platinum-500">Sentence: </span>
                       <span className="text-sm font-medium text-red-600 dark:text-red-400">{dissident.sentence}</span>
                     </p>
                     {dissident.arrestDate && (
                       <p className="text-xs">
-                        <span className="text-platinum-500-500">Arrested: </span>
-                        <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{dissident.arrestDate}</span>
+                        <span className="text-platinum-500">Arrested: </span>
+                        <span className="text-sm text-platinum-700 dark:text-platinum-300">{dissident.arrestDate}</span>
                       </p>
                     )}
                     {dissident.deathDate && (
                       <p className="text-xs">
-                        <span className="text-platinum-500-500">Died: </span>
+                        <span className="text-platinum-500">Died: </span>
                         <span className="text-sm text-red-600 dark:text-red-400">{dissident.deathDate}</span>
                       </p>
                     )}
@@ -107,18 +107,18 @@ export function DissidentAnalysis({
               {exiledDissidents.map((dissident) => (
                 <div key={dissident.id} className="p-4 glass-subtle rounded-lg border border-orange-500/10">
                   <div className="flex items-start justify-between mb-2">
-                    <p className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{dissident.name}</p>
+                    <p className="font-semibold text-navy-900 dark:text-platinum-100">{dissident.name}</p>
                     {getStatusBadge(dissident.status)}
                   </div>
                   <div className="mt-2 space-y-1">
                     {dissident.location && (
                       <p className="text-xs">
-                        <span className="text-platinum-500-500">Location: </span>
-                        <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{dissident.location}</span>
+                        <span className="text-platinum-500">Location: </span>
+                        <span className="text-sm text-platinum-700 dark:text-platinum-300">{dissident.location}</span>
                       </p>
                     )}
                     {dissident.notes && dissident.notes.length > 0 && (
-                      <p className="text-xs text-platinum-500-500">{dissident.notes.join(' | ')}</p>
+                      <p className="text-xs text-platinum-500">{dissident.notes.join(' | ')}</p>
                     )}
                   </div>
                 </div>
@@ -146,8 +146,8 @@ export function DissidentAnalysis({
                 <div className="grid grid-cols-2 gap-2">
                   {uae94MassTrial.map((item, idx) => (
                     <div key={idx}>
-                      <p className="text-xs text-platinum-500-500">{item.field}</p>
-                      <p className="text-sm font-semibold text-navy-500-900 dark:text-platinum-500-100">{item.value}</p>
+                      <p className="text-xs text-platinum-500">{item.field}</p>
+                      <p className="text-sm font-semibold text-navy-900 dark:text-platinum-100">{item.value}</p>
                     </div>
                   ))}
                 </div>
@@ -155,13 +155,13 @@ export function DissidentAnalysis({
 
               {/* UAE Five Members */}
               <div className="space-y-2">
-                <p className="text-xs font-semibold text-platinum-500-500 uppercase tracking-wider">UAE Five (2011)</p>
+                <p className="text-xs font-semibold text-platinum-500 uppercase tracking-wider">UAE Five (2011)</p>
                 {uaeFiveMembers.map((member, idx) => (
                   <div key={idx} className="p-3 glass-subtle rounded-lg">
                     <div className="flex items-start justify-between">
                       <div>
-                        <p className="font-medium text-sm text-navy-500-900 dark:text-platinum-500-100">{member.name}</p>
-                        <p className="text-xs text-platinum-500-500">{member.background}</p>
+                        <p className="font-medium text-sm text-navy-900 dark:text-platinum-100">{member.name}</p>
+                        <p className="text-xs text-platinum-500">{member.background}</p>
                       </div>
                     </div>
                     <p className="text-xs text-emerald-600 dark:text-emerald-400 mt-1">{member.status}</p>
@@ -178,7 +178,7 @@ export function DissidentAnalysis({
         <Card className="glass-card">
           <CardHeader>
             <CardTitle className="text-lg flex items-center gap-2">
-              <Frown className="h-5 w-5 text-platinum-500-500" />
+              <Frown className="h-5 w-5 text-platinum-500" />
               Princess Latifa Case
             </CardTitle>
             <CardDescription>Daughter of Dubai ruler seeking asylum</CardDescription>
@@ -187,8 +187,8 @@ export function DissidentAnalysis({
             <div className="space-y-3">
               {princessLatifaCase.map((item, idx) => (
                 <div key={idx} className="flex justify-between p-3 glass-subtle rounded-lg">
-                  <span className="text-sm text-platinum-500-500">{item.field}</span>
-                  <span className="text-sm font-medium text-navy-500-900 dark:text-platinum-500-100 text-right max-w-[60%]">{item.value}</span>
+                  <span className="text-sm text-platinum-500">{item.field}</span>
+                  <span className="text-sm font-medium text-navy-900 dark:text-platinum-100 text-right max-w-[60%]">{item.value}</span>
                 </div>
               ))}
             </div>
@@ -208,7 +208,7 @@ export function DissidentAnalysis({
               {humanRightsConcerns.map((concern, idx) => (
                 <div key={idx} className="p-4 glass-subtle rounded-lg border border-red-500/10">
                   <p className="font-semibold text-sm text-red-600 dark:text-red-400 mb-1">{concern.concern}</p>
-                  <p className="text-xs text-platinum-500-500">{concern.details}</p>
+                  <p className="text-xs text-platinum-500">{concern.details}</p>
                 </div>
               ))}
             </div>

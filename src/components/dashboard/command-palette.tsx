@@ -314,7 +314,7 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-platinum-500-400"
+            className="text-platinum-400"
           >
             <circle cx="11" cy="11" r="8" />
             <path d="m21 21-4.3-4.3" />
@@ -325,12 +325,12 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
             value={query}
             onChange={e => setQuery(e.target.value)}
             placeholder="Type a command or search..."
-            className="flex-1 bg-transparent text-platinum-500-900 placeholder:text-platinum-500-400 outline-none text-sm"
+            className="flex-1 bg-transparent text-platinum-900 placeholder:text-platinum-400 outline-none text-sm"
           />
           {query && (
             <button
               onClick={() => setQuery('')}
-              className="text-platinum-500-400 hover:text-platinum-500-600 transition-colors"
+              className="text-platinum-400 hover:text-platinum-600 transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -353,14 +353,14 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
         {/* Command List */}
         <div ref={listRef} className="max-h-[400px] overflow-y-auto py-2">
           {filteredCommands.length === 0 ? (
-            <div className="px-4 py-8 text-center text-platinum-500-400">
+            <div className="px-4 py-8 text-center text-platinum-400">
               <p className="text-sm">No commands found</p>
               <p className="text-xs mt-1">Try a different search term</p>
             </div>
           ) : (
             Object.entries(groupedCommands).map(([category, commands]) => (
               <div key={category} className="mb-2 last:mb-0">
-                <div className="px-4 py-1.5 text-xs font-semibold text-platinum-500-400 uppercase tracking-wider">
+                <div className="px-4 py-1.5 text-xs font-semibold text-platinum-400 uppercase tracking-wider">
                   {category}
                 </div>
                 {commands.map((cmd, idx) => {
@@ -378,14 +378,14 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
                       className={cn(
                         'w-full flex items-center gap-3 px-4 py-3 text-left transition-colors',
                         isSelected
-                          ? 'bg-navy-500/10 text-navy-500-700'
-                          : 'hover:bg-white/50 text-platinum-500-700'
+                          ? 'bg-navy-500/10 text-navy-700'
+                          : 'hover:bg-white/50 text-platinum-700'
                       )}
                     >
                       <span className="text-lg">{cmd.icon}</span>
                       <span className="flex-1 text-sm font-medium">{cmd.name}</span>
                       {cmd.shortcut && (
-                        <kbd className="px-2 py-0.5 text-xs font-medium text-platinum-500-400 bg-platinum-100/50 rounded border border-platinum-200/50">
+                        <kbd className="px-2 py-0.5 text-xs font-medium text-platinum-400 bg-platinum-100/50 rounded border border-platinum-200/50">
                           {cmd.shortcut}
                         </kbd>
                       )}
@@ -399,7 +399,7 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
 
         {/* Footer */}
         <div className="flex items-center justify-between px-4 py-2 border-t border-white/10 bg-white/30">
-          <div className="flex items-center gap-4 text-xs text-platinum-500-400">
+          <div className="flex items-center gap-4 text-xs text-platinum-400">
             <div className="flex items-center gap-1">
               <kbd className="px-1.5 py-0.5 bg-white/50 rounded border border-platinum-200/50">↑↓</kbd>
               <span>to navigate</span>
@@ -413,7 +413,7 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
               <span>to close</span>
             </div>
           </div>
-          <div className="text-xs text-platinum-500-400">
+          <div className="text-xs text-platinum-400">
             {filteredCommands.length} {filteredCommands.length === 1 ? 'command' : 'commands'}
           </div>
         </div>

@@ -46,7 +46,7 @@ export function TechnicalSection({
     if (status.toLowerCase().includes('live') || status.toLowerCase().includes('completed')) return 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
     if (status.toLowerCase().includes('active')) return 'bg-gold-700/20 text-gold-700 border-gold-700/30'
     if (status.toLowerCase().includes('expanding') || status.toLowerCase().includes('rolling')) return 'bg-info/20 text-info border-info/30'
-    return 'bg-platinum-500/20 text-platinum-500-400 border-platinum-500/30'
+    return 'bg-platinum-500/20 text-platinum-400 border-platinum-500/30'
   }
 
   return (
@@ -82,7 +82,7 @@ export function TechnicalSection({
                         {category.features.map((feature: string, fidx: number) => (
                           <div key={fidx} className="flex items-start gap-2 text-sm">
                             <CheckCircle className="h-4 w-4 text-emerald-400 mt-0.5 flex-shrink-0" />
-                            <span className="text-platinum-500-300">{feature}</span>
+                            <span className="text-platinum-300">{feature}</span>
                           </div>
                         ))}
                       </div>
@@ -121,8 +121,8 @@ export function TechnicalSection({
                               {item.status}
                             </Badge>
                           </div>
-                          <p className="font-medium text-platinum-500-200">{item.feature}</p>
-                          <p className="text-sm text-platinum-500-400 mt-1">{item.details}</p>
+                          <p className="font-medium text-platinum-200">{item.feature}</p>
+                          <p className="text-sm text-platinum-400 mt-1">{item.details}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -152,15 +152,15 @@ export function TechnicalSection({
                         <div key={idx} className="flex items-start gap-2 text-sm">
                           <XCircle className="h-4 w-4 text-rose-400 mt-0.5 flex-shrink-0" />
                           <div>
-                            <span className="text-platinum-500-300">{item.dataType}</span>
-                            {item.details && <p className="text-xs text-platinum-500-500">{item.details}</p>}
+                            <span className="text-platinum-300">{item.dataType}</span>
+                            {item.details && <p className="text-xs text-platinum-500">{item.details}</p>}
                           </div>
                         </div>
                       ))}
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-platinum-500-400 mb-3 flex items-center gap-2">
+                    <h4 className="text-sm font-semibold text-platinum-400 mb-3 flex items-center gap-2">
                       <Lock className="h-4 w-4" />
                       Not Collected / Restricted
                     </h4>
@@ -169,8 +169,8 @@ export function TechnicalSection({
                         <div key={idx} className="flex items-start gap-2 text-sm">
                           <CheckCircle className="h-4 w-4 text-emerald-400 mt-0.5 flex-shrink-0" />
                           <div>
-                            <span className="text-platinum-500-300">{item.dataType}</span>
-                            {item.details && <p className="text-xs text-platinum-500-500">{item.details}</p>}
+                            <span className="text-platinum-300">{item.dataType}</span>
+                            {item.details && <p className="text-xs text-platinum-500">{item.details}</p>}
                           </div>
                         </div>
                       ))}
@@ -207,13 +207,13 @@ export function TechnicalSection({
                       <div className="text-sm font-semibold text-gold-700 mb-2">{category}</div>
                       <div className="space-y-1">
                         {features.slice(0, 3).map((f: any, idx: number) => (
-                          <div key={idx} className="text-xs text-platinum-500-300 flex items-center gap-1">
+                          <div key={idx} className="text-xs text-platinum-300 flex items-center gap-1">
                             <CheckCircle className="h-3 w-3 text-emerald-400 flex-shrink-0" />
                             <span className="truncate">{f.feature}</span>
                           </div>
                         ))}
                         {features.length > 3 && (
-                          <div className="text-xs text-platinum-500-500">+{features.length - 3} more</div>
+                          <div className="text-xs text-platinum-500">+{features.length - 3} more</div>
                         )}
                       </div>
                     </motion.div>
@@ -232,19 +232,19 @@ export function TechnicalSection({
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                   <div className="rounded-lg bg-info/10 p-4 border border-info/30">
                     <div className="text-2xl font-bold text-info">500</div>
-                    <div className="text-sm text-platinum-500-400">Characters (standard)</div>
+                    <div className="text-sm text-platinum-400">Characters (standard)</div>
                   </div>
                   <div className="rounded-lg bg-gold-700/10 p-4 border border-gold-700/30">
                     <div className="text-2xl font-bold text-gold-700">10,000</div>
-                    <div className="text-sm text-platinum-500-400">Characters (long-form)</div>
+                    <div className="text-sm text-platinum-400">Characters (long-form)</div>
                   </div>
                   <div className="rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30">
                     <div className="text-2xl font-bold text-emerald-400">10</div>
-                    <div className="text-sm text-platinum-500-400">Media per post</div>
+                    <div className="text-sm text-platinum-400">Media per post</div>
                   </div>
                   <div className="rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
                     <div className="text-2xl font-bold text-rose-400">5</div>
-                    <div className="text-sm text-platinum-500-400">Links max (dec 2025)</div>
+                    <div className="text-sm text-platinum-400">Links max (dec 2025)</div>
                   </div>
                 </div>
               </CardContent>

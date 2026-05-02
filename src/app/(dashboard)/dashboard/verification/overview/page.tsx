@@ -121,9 +121,9 @@ export default function VerificationOverviewPage() {
   const getTierBadge = (tier: number) => {
     switch (tier) {
       case 1: return <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">Tier {tier}</Badge>
-      case 2: return <Badge className="bg-navy-500/20 text-navy-500-400 border-navy-500/50">Tier {tier}</Badge>
+      case 2: return <Badge className="bg-navy-500/20 text-navy-400 border-navy-500/50">Tier {tier}</Badge>
       case 3: return <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/50">Tier {tier}</Badge>
-      default: return <Badge className="bg-platinum-500/20 text-platinum-500-400 border-platinum-500/50">Tier {tier}</Badge>
+      default: return <Badge className="bg-platinum-500/20 text-platinum-400 border-platinum-500/50">Tier {tier}</Badge>
     }
   }
 
@@ -153,7 +153,7 @@ export default function VerificationOverviewPage() {
         <div>
           <Badge variant="emerald" className="mb-2">V-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald-500">Verification Overview</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Fact-checking and content verification intelligence for UAE narratives
           </p>
         </div>
@@ -162,7 +162,7 @@ export default function VerificationOverviewPage() {
             <Search className="h-4 w-4" />
             Fact-Check
           </Button>
-          <Button className="bg-gradient-emerald hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-emerald hover:opacity-90 text-navy-950 gap-2">
             <CheckCircle className="h-4 w-4" />
             Submit Claim
           </Button>
@@ -318,19 +318,19 @@ export default function VerificationOverviewPage() {
                   <div className="grid gap-4 sm:grid-cols-4">
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">45%</div>
-                      <p className="text-sm text-platinum-500-400">Source Cross-ref</p>
+                      <p className="text-sm text-platinum-400">Source Cross-ref</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-navy-500">28%</div>
-                      <p className="text-sm text-platinum-500-400">Data Analysis</p>
+                      <p className="text-sm text-platinum-400">Data Analysis</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-gold-700">18%</div>
-                      <p className="text-sm text-platinum-500-400">Expert Review</p>
+                      <p className="text-sm text-platinum-400">Expert Review</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-platinum-500">9%</div>
-                      <p className="text-sm text-platinum-500-400">AI-Assisted</p>
+                      <p className="text-sm text-platinum-400">AI-Assisted</p>
                     </div>
                   </div>
                 </CardContent>
@@ -354,17 +354,17 @@ export default function VerificationOverviewPage() {
                       {recentVerifications.map((item) => (
                         <div key={item.id} className="flex items-start justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-500-200">{item.claim}</p>
-                            <p className="text-sm text-platinum-500-400 mt-1">Source: {item.source}</p>
+                            <p className="font-medium text-platinum-200">{item.claim}</p>
+                            <p className="text-sm text-platinum-400 mt-1">Source: {item.source}</p>
                           </div>
                           <div className="flex items-center gap-4">
                             <div className="text-center">
                               {getResultBadge(item.result)}
-                              <p className="text-xs text-platinum-500-400 mt-1">{item.time}</p>
+                              <p className="text-xs text-platinum-400 mt-1">{item.time}</p>
                             </div>
                             <div className="text-center">
                               <div className="text-lg font-bold text-emerald-400">{item.confidence}%</div>
-                              <p className="text-xs text-platinum-500-400">Confidence</p>
+                              <p className="text-xs text-platinum-400">Confidence</p>
                             </div>
                           </div>
                         </div>
@@ -396,15 +396,15 @@ export default function VerificationOverviewPage() {
                               <Shield className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{source.source}</p>
-                              <p className="text-sm text-platinum-500-400">{source.submissions.toLocaleString()} submissions</p>
+                              <p className="font-semibold text-platinum-200">{source.source}</p>
+                              <p className="text-sm text-platinum-400">{source.submissions.toLocaleString()} submissions</p>
                             </div>
                           </div>
                           <div className="text-center">
                             <div className={`text-lg font-bold ${source.reliability > 90 ? 'text-emerald-400' : source.reliability > 70 ? 'text-gold-700' : 'text-rose-400'}`}>
                               {source.reliability}%
                             </div>
-                            <p className="text-xs text-platinum-500-400">Reliability</p>
+                            <p className="text-xs text-platinum-400">Reliability</p>
                           </div>
                         </div>
                       ))}
@@ -465,28 +465,28 @@ export default function VerificationOverviewPage() {
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-500-400">Overall Accuracy</span>
+                        <span className="text-platinum-400">Overall Accuracy</span>
                         <span className="font-medium text-emerald-400">94.7%</span>
                       </div>
                       <Progress value={94.7} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-500-400">False Positive Rate</span>
+                        <span className="text-platinum-400">False Positive Rate</span>
                         <span className="font-medium text-emerald-400">2.3%</span>
                       </div>
                       <Progress value={97.7} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-500-400">Completeness Score</span>
+                        <span className="text-platinum-400">Completeness Score</span>
                         <span className="font-medium text-emerald-400">91.2%</span>
                       </div>
                       <Progress value={91.2} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-500-400">Timeliness Score</span>
+                        <span className="text-platinum-400">Timeliness Score</span>
                         <span className="font-medium text-emerald-400">88.5%</span>
                       </div>
                       <Progress value={88.5} className="h-3" />
@@ -511,19 +511,19 @@ export default function VerificationOverviewPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-platinum-500-400">Cameras Deployed</span>
+                        <span className="text-platinum-400">Cameras Deployed</span>
                         <span className="font-bold text-emerald-400">300,000+</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-platinum-500-400">Real-time Recognition</span>
+                        <span className="text-platinum-400">Real-time Recognition</span>
                         <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">Active</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-platinum-500-400">AI Arrests (2018)</span>
+                        <span className="text-platinum-400">AI Arrests (2018)</span>
                         <span className="font-bold text-emerald-400">319 suspects</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-platinum-500-400">Smart Police Stations</span>
+                        <span className="text-platinum-400">Smart Police Stations</span>
                         <span className="font-bold text-emerald-400">27</span>
                       </div>
                     </div>
@@ -538,16 +538,16 @@ export default function VerificationOverviewPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-platinum-500-400">Coverage Areas</span>
-                        <span className="font-bold text-navy-500-400">Abu Dhabi + Airport + Islands</span>
+                        <span className="text-platinum-400">Coverage Areas</span>
+                        <span className="font-bold text-navy-400">Abu Dhabi + Airport + Islands</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-platinum-500-400">Status</span>
+                        <span className="text-platinum-400">Status</span>
                         <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">Active</Badge>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-platinum-500-400">Cameras at Tourist Sites</span>
-                        <span className="font-bold text-navy-500-400">5,000+</span>
+                        <span className="text-platinum-400">Cameras at Tourist Sites</span>
+                        <span className="font-bold text-navy-400">5,000+</span>
                       </div>
                     </div>
                   </CardContent>
@@ -563,19 +563,19 @@ export default function VerificationOverviewPage() {
                   <div className="grid gap-4 sm:grid-cols-4">
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-rose-400">$34M</div>
-                      <p className="text-sm text-platinum-500-400">Annual Budget</p>
+                      <p className="text-sm text-platinum-400">Annual Budget</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-rose-400">40+</div>
-                      <p className="text-sm text-platinum-500-400">US Contractors</p>
+                      <p className="text-sm text-platinum-400">US Contractors</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-rose-400">2008</div>
-                      <p className="text-sm text-platinum-500-400">Contract Start</p>
+                      <p className="text-sm text-platinum-400">Contract Start</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-rose-400">$1.685M</div>
-                      <p className="text-sm text-platinum-500-400">Fines (2021)</p>
+                      <p className="text-sm text-platinum-400">Fines (2021)</p>
                     </div>
                   </div>
                 </CardContent>
@@ -590,19 +590,19 @@ export default function VerificationOverviewPage() {
                   <div className="grid gap-4 sm:grid-cols-4">
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">Billions</div>
-                      <p className="text-sm text-platinum-500-400">Data Points/Day</p>
+                      <p className="text-sm text-platinum-400">Data Points/Day</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">AED 1B+</div>
-                      <p className="text-sm text-platinum-500-400">Annual Efficiency</p>
+                      <p className="text-sm text-platinum-400">Annual Efficiency</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">2M+</div>
-                      <p className="text-sm text-platinum-500-400">Labor Hours Saved</p>
+                      <p className="text-sm text-platinum-400">Labor Hours Saved</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">100%</div>
-                      <p className="text-sm text-platinum-500-400">Automation</p>
+                      <p className="text-sm text-platinum-400">Automation</p>
                     </div>
                   </div>
                 </CardContent>
@@ -617,23 +617,23 @@ export default function VerificationOverviewPage() {
                   <div className="grid gap-4 sm:grid-cols-5">
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-rose-400">13</div>
-                      <p className="text-sm text-platinum-500-400">Killed</p>
+                      <p className="text-sm text-platinum-400">Killed</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-orange-400">224</div>
-                      <p className="text-sm text-platinum-500-400">Injured</p>
+                      <p className="text-sm text-platinum-400">Injured</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">537</div>
-                      <p className="text-sm text-platinum-500-400">Missiles Intercepted</p>
+                      <p className="text-sm text-platinum-400">Missiles Intercepted</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">2,256</div>
-                      <p className="text-sm text-platinum-500-400">Drones Intercepted</p>
+                      <p className="text-sm text-platinum-400">Drones Intercepted</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
                       <div className="text-2xl font-bold text-orange-400">21</div>
-                      <p className="text-sm text-platinum-500-400">People Charged</p>
+                      <p className="text-sm text-platinum-400">People Charged</p>
                     </div>
                   </div>
                 </CardContent>
@@ -667,8 +667,8 @@ export default function VerificationOverviewPage() {
                               <Building2 className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{entity.entity}</p>
-                              <p className="text-sm text-platinum-500-400">{entity.function}</p>
+                              <p className="font-semibold text-platinum-200">{entity.entity}</p>
+                              <p className="text-sm text-platinum-400">{entity.function}</p>
                             </div>
                           </div>
                           {entity.acronym && (
@@ -702,8 +702,8 @@ export default function VerificationOverviewPage() {
                               <Eye className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{program.program}</p>
-                              <p className="text-sm text-platinum-500-400">{program.type} — {program.operator}</p>
+                              <p className="font-semibold text-platinum-200">{program.program}</p>
+                              <p className="text-sm text-platinum-400">{program.type} — {program.operator}</p>
                             </div>
                           </div>
                           <Badge variant={program.status === 'Active' ? 'default' : 'outline'} className={program.status === 'Active' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' : ''}>
@@ -737,8 +737,8 @@ export default function VerificationOverviewPage() {
                               <UserCog className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{person.name}</p>
-                              <p className="text-sm text-platinum-500-400">{person.role} — {person.affiliation}</p>
+                              <p className="font-semibold text-platinum-200">{person.name}</p>
+                              <p className="text-sm text-platinum-400">{person.role} — {person.affiliation}</p>
                             </div>
                           </div>
                           {getRelevanceBadge(person.relevance?.split('(')[0]?.trim() || 'MEDIUM')}
@@ -773,8 +773,8 @@ export default function VerificationOverviewPage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                         >
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-500-200">{item.topic}</p>
-                            <p className="text-sm text-platinum-500-400 mt-1">{item.classification}</p>
+                            <p className="font-medium text-platinum-200">{item.topic}</p>
+                            <p className="text-sm text-platinum-400 mt-1">{item.classification}</p>
                           </div>
                           {getRelevanceBadge(item.uaeRelevance)}
                         </motion.div>
@@ -801,17 +801,17 @@ export default function VerificationOverviewPage() {
                           className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                         >
                           <div className="flex items-start justify-between mb-2">
-                            <h4 className="font-semibold text-platinum-500-200">{item.topic}</h4>
+                            <h4 className="font-semibold text-platinum-200">{item.topic}</h4>
                             <Badge variant={item.overallSentiment.includes('Negative') ? 'destructive' : item.overallSentiment.includes('Positive') ? 'default' : 'outline'} className={item.overallSentiment.includes('Negative') ? 'bg-red-500/20 text-red-400 border-red-500/50' : ''}>
                               {item.overallSentiment.split('(')[0].trim()}
                             </Badge>
                           </div>
-                          <p className="text-sm text-platinum-500-400 mb-2">{item.keyNarrative}</p>
-                          <div className="flex items-center gap-2 text-xs text-platinum-500-500">
+                          <p className="text-sm text-platinum-400 mb-2">{item.keyNarrative}</p>
+                          <div className="flex items-center gap-2 text-xs text-platinum-500">
                             <span className="text-emerald-400">+</span>
                             <span>{item.positiveSources || 'None'}</span>
                           </div>
-                          <div className="flex items-center gap-2 text-xs text-platinum-500-500 mt-1">
+                          <div className="flex items-center gap-2 text-xs text-platinum-500 mt-1">
                             <span className="text-rose-400">-</span>
                             <span>{item.negativeSources || 'None'}</span>
                           </div>
@@ -839,8 +839,8 @@ export default function VerificationOverviewPage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-500-200 text-sm">{source.name}</p>
-                            <p className="text-xs text-platinum-500-500">{source.credibility}</p>
+                            <p className="font-medium text-platinum-200 text-sm">{source.name}</p>
+                            <p className="text-xs text-platinum-500">{source.credibility}</p>
                           </div>
                           {getTierBadge(source.tier)}
                         </motion.div>
@@ -901,19 +901,19 @@ export default function VerificationOverviewPage() {
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     <div className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-rose-400">60-90</div>
-                      <p className="text-sm text-platinum-500-400">Journalists Lost Jobs</p>
+                      <p className="text-sm text-platinum-400">Journalists Lost Jobs</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
-                      <div className="text-2xl font-bold text-platinum-500-200">Sep 13, 2022</div>
-                      <p className="text-sm text-platinum-500-400">Incident Date</p>
+                      <div className="text-2xl font-bold text-platinum-200">Sep 13, 2022</div>
+                      <p className="text-sm text-platinum-400">Incident Date</p>
                     </div>
                     <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center">
-                      <div className="text-2xl font-bold text-platinum-500-200">IMI</div>
-                      <p className="text-sm text-platinum-500-400">Publisher (Sheikh Mansour)</p>
+                      <div className="text-2xl font-bold text-platinum-200">IMI</div>
+                      <p className="text-sm text-platinum-400">Publisher (Sheikh Mansour)</p>
                     </div>
                     <div className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-4 text-center">
                       <div className="text-lg font-bold text-rose-400">Economic Impact Story</div>
-                      <p className="text-sm text-platinum-500-400">Trigger: Fuel prices article</p>
+                      <p className="text-sm text-platinum-400">Trigger: Fuel prices article</p>
                     </div>
                   </div>
                 </CardContent>
@@ -941,8 +941,8 @@ export default function VerificationOverviewPage() {
                               <Building2 className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{outlet.outlet}</p>
-                              <p className="text-sm text-platinum-500-400">{outlet.owner}</p>
+                              <p className="font-semibold text-platinum-200">{outlet.outlet}</p>
+                              <p className="text-sm text-platinum-400">{outlet.owner}</p>
                             </div>
                           </div>
                           <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50 text-xs">
@@ -973,11 +973,11 @@ export default function VerificationOverviewPage() {
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <Eye className="h-5 w-5 text-rose-400" />
-                          <h4 className="font-semibold text-platinum-500-200">{sys.system}</h4>
+                          <h4 className="font-semibold text-platinum-200">{sys.system}</h4>
                         </div>
-                        <p className="text-sm text-platinum-500-400 mb-1">Location: {sys.location}</p>
-                        <p className="text-sm text-platinum-500-400 mb-1">Scale: {sys.scale}</p>
-                        <p className="text-xs text-platinum-500-500">{sys.capability}</p>
+                        <p className="text-sm text-platinum-400 mb-1">Location: {sys.location}</p>
+                        <p className="text-sm text-platinum-400 mb-1">Scale: {sys.scale}</p>
+                        <p className="text-xs text-platinum-500">{sys.capability}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1006,8 +1006,8 @@ export default function VerificationOverviewPage() {
                               <AlertOctagon className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{restriction.restrictionType}</p>
-                              <p className="text-sm text-platinum-500-400">{restriction.description}</p>
+                              <p className="font-semibold text-platinum-200">{restriction.restrictionType}</p>
+                              <p className="text-sm text-platinum-400">{restriction.description}</p>
                             </div>
                           </div>
                           <Badge variant="outline" className="text-xs">{restriction.frequency}</Badge>
@@ -1034,8 +1034,8 @@ export default function VerificationOverviewPage() {
                         transition={{ delay: idx * 0.03 }}
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                       >
-                        <div className="text-xs text-platinum-500-500 mb-1">Standard {standard.standardNumber}</div>
-                        <p className="text-sm text-platinum-500-300">{standard.requirement}</p>
+                        <div className="text-xs text-platinum-500 mb-1">Standard {standard.standardNumber}</div>
+                        <p className="text-sm text-platinum-300">{standard.requirement}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1059,8 +1059,8 @@ export default function VerificationOverviewPage() {
                         className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-4 text-center"
                       >
                         <div className="text-2xl font-bold text-rose-400">{penalty.fine}</div>
-                        <p className="text-sm text-platinum-500-400 mt-1">{penalty.offense}</p>
-                        <p className="text-xs text-platinum-500-500 mt-2">{penalty.additionalPenalties}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{penalty.offense}</p>
+                        <p className="text-xs text-platinum-500 mt-2">{penalty.additionalPenalties}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1084,8 +1084,8 @@ export default function VerificationOverviewPage() {
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
                         <div className="text-2xl font-bold text-emerald-400">{metric.trustLevel}</div>
-                        <p className="text-sm text-platinum-500-300 mt-1">{metric.source}</p>
-                        <p className="text-xs text-platinum-500-500 mt-1">Trend: {metric.trend}</p>
+                        <p className="text-sm text-platinum-300 mt-1">{metric.source}</p>
+                        <p className="text-xs text-platinum-500 mt-1">Trend: {metric.trend}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1138,8 +1138,8 @@ export default function VerificationOverviewPage() {
                               <Cpu className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{program.program}</p>
-                              <p className="text-sm text-platinum-500-400">Operator: {program.operator}</p>
+                              <p className="font-semibold text-platinum-200">{program.program}</p>
+                              <p className="text-sm text-platinum-400">Operator: {program.operator}</p>
                             </div>
                           </div>
                           <Badge variant="outline" className="text-xs">Target: {program.target}</Badge>
@@ -1168,8 +1168,8 @@ export default function VerificationOverviewPage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-500-200 text-sm">{source.source}</p>
-                            <p className="text-xs text-platinum-500-500">Reliability: {source.reliability} | Type: {source.dataType}</p>
+                            <p className="font-medium text-platinum-200 text-sm">{source.source}</p>
+                            <p className="text-xs text-platinum-500">Reliability: {source.reliability} | Type: {source.dataType}</p>
                           </div>
                           {getTierBadge(source.tier)}
                         </motion.div>
@@ -1197,7 +1197,7 @@ export default function VerificationOverviewPage() {
                           className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-semibold text-platinum-500-200">{item.topic}</h4>
+                            <h4 className="font-semibold text-platinum-200">{item.topic}</h4>
                             <Badge
                               variant={item.score < 0 ? 'destructive' : item.score > 0 ? 'default' : 'outline'}
                               className={item.score < 0 ? 'bg-red-500/20 text-red-400 border-red-500/50' : item.score > 0 ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' : ''}
@@ -1205,7 +1205,7 @@ export default function VerificationOverviewPage() {
                               {item.sentiment} ({item.score > 0 ? '+' : ''}{item.score})
                             </Badge>
                           </div>
-                          <p className="text-xs text-platinum-500-400">Source: {item.source}</p>
+                          <p className="text-xs text-platinum-400">Source: {item.source}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -1268,12 +1268,12 @@ export default function VerificationOverviewPage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-2"
                         >
                           <div className="flex-1">
-                            <p className="text-sm text-platinum-500-300">{point.metric}</p>
-                            <p className="text-xs text-platinum-500-500">{point.category} | Source: {point.source}</p>
+                            <p className="text-sm text-platinum-300">{point.metric}</p>
+                            <p className="text-xs text-platinum-500">{point.category} | Source: {point.source}</p>
                           </div>
                           <div className="text-right">
                             <p className="text-lg font-bold text-emerald-400">{point.value}</p>
-                            <p className="text-xs text-platinum-500-500">{point.extractionStatus}</p>
+                            <p className="text-xs text-platinum-500">{point.extractionStatus}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -1292,22 +1292,22 @@ export default function VerificationOverviewPage() {
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">{mediaAboutMediaData.extendedData?.urlsAnalyzed}</div>
-                      <p className="text-sm text-platinum-500-400">URLs Analyzed</p>
+                      <p className="text-sm text-platinum-400">URLs Analyzed</p>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">{mediaAboutMediaData.extendedData?.urlsSuccessfullyFetched}</div>
-                      <p className="text-sm text-platinum-500-400">Successfully Fetched</p>
+                      <p className="text-sm text-platinum-400">Successfully Fetched</p>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">{mediaAboutMediaData.extendedData?.dataPointsExtracted}</div>
-                      <p className="text-sm text-platinum-500-400">Data Points</p>
+                      <p className="text-sm text-platinum-400">Data Points</p>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">{mediaAboutMediaData.extendedData?.structuredTablesCreated}</div>
-                      <p className="text-sm text-platinum-500-400">Structured Tables</p>
+                      <p className="text-sm text-platinum-400">Structured Tables</p>
                     </div>
                   </div>
-                  <p className="text-xs text-platinum-500-500 mt-4 text-center">
+                  <p className="text-xs text-platinum-500 mt-4 text-center">
                     Enrichment Date: {mediaAboutMediaData.extendedData?.enrichmentDate}
                   </p>
                 </CardContent>
@@ -1399,8 +1399,8 @@ export default function VerificationOverviewPage() {
                         >
                           <div className="flex items-start justify-between mb-3">
                             <div>
-                              <h4 className="font-semibold text-platinum-500-200">{takedown.date} — {takedown.origin}</h4>
-                              <p className="text-sm text-platinum-500-400">Attribution: {takedown.attribution}</p>
+                              <h4 className="font-semibold text-platinum-200">{takedown.date} — {takedown.origin}</h4>
+                              <p className="text-sm text-platinum-400">Attribution: {takedown.attribution}</p>
                             </div>
                             <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
                               {takedown.accounts} Accounts
@@ -1409,19 +1409,19 @@ export default function VerificationOverviewPage() {
                           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
                             <div className="text-center p-2 rounded bg-platinum-700/50">
                               <div className="text-lg font-bold text-emerald-400">{takedown.accounts}</div>
-                              <p className="text-xs text-platinum-500-400">Accounts</p>
+                              <p className="text-xs text-platinum-400">Accounts</p>
                             </div>
                             <div className="text-center p-2 rounded bg-platinum-700/50">
                               <div className="text-lg font-bold text-emerald-400">{takedown.pages}</div>
-                              <p className="text-xs text-platinum-500-400">Pages</p>
+                              <p className="text-xs text-platinum-400">Pages</p>
                             </div>
                             <div className="text-center p-2 rounded bg-platinum-700/50">
                               <div className="text-lg font-bold text-emerald-400">{(takedown.pageFollowers / 1000000).toFixed(1)}M</div>
-                              <p className="text-xs text-platinum-500-400">Followers</p>
+                              <p className="text-xs text-platinum-400">Followers</p>
                             </div>
                             <div className="text-center p-2 rounded bg-platinum-700/50">
                               <div className="text-lg font-bold text-gold-700">${(takedown.adSpend / 1000).toFixed(0)}K</div>
-                              <p className="text-xs text-platinum-500-400">Ad Spend</p>
+                              <p className="text-xs text-platinum-400">Ad Spend</p>
                             </div>
                           </div>
                           <div className="flex flex-wrap gap-2">
@@ -1456,9 +1456,9 @@ export default function VerificationOverviewPage() {
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <Badge className="bg-rose-500/20 text-rose-400 border-rose-500/50">{indicator.id}</Badge>
-                          <h4 className="font-semibold text-platinum-500-200">{indicator.name}</h4>
+                          <h4 className="font-semibold text-platinum-200">{indicator.name}</h4>
                         </div>
-                        <p className="text-sm text-platinum-500-400 mb-2">Threshold: {indicator.threshold}</p>
+                        <p className="text-sm text-platinum-400 mb-2">Threshold: {indicator.threshold}</p>
                         <Badge variant="outline" className="text-xs">{indicator.action}</Badge>
                       </motion.div>
                     ))}
@@ -1486,8 +1486,8 @@ export default function VerificationOverviewPage() {
                           <div className="flex items-center gap-3">
                             <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">{tactic.id}</Badge>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{tactic.name}</p>
-                              <p className="text-sm text-platinum-500-400">{tactic.description}</p>
+                              <p className="font-semibold text-platinum-200">{tactic.name}</p>
+                              <p className="text-sm text-platinum-400">{tactic.description}</p>
                             </div>
                           </div>
                           <Badge
@@ -1525,12 +1525,12 @@ export default function VerificationOverviewPage() {
                               <Building2 className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{firm.name}</p>
-                              <p className="text-sm text-platinum-500-400">{firm.country} • {firm.role}</p>
+                              <p className="font-semibold text-platinum-200">{firm.name}</p>
+                              <p className="text-sm text-platinum-400">{firm.country} • {firm.role}</p>
                             </div>
                           </div>
                           <div className="text-right">
-                            <p className="text-xs text-platinum-500-400">{firm.operationDate}</p>
+                            <p className="text-xs text-platinum-400">{firm.operationDate}</p>
                             <Badge
                               variant={firm.status === 'Discontinued' || firm.status === 'Website offline' ? 'destructive' : 'outline'}
                               className="text-xs mt-1"
@@ -1563,7 +1563,7 @@ export default function VerificationOverviewPage() {
                           className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
                           <div className="flex items-start justify-between mb-2">
-                            <p className="font-medium text-platinum-500-200">{narrative.theme}</p>
+                            <p className="font-medium text-platinum-200">{narrative.theme}</p>
                             <Badge
                               variant={narrative.sentiment === 'Negative' ? 'destructive' : 'default'}
                               className={narrative.sentiment === 'Negative' ? 'bg-red-500/20 text-red-400 border-red-500/50' : 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50'}
@@ -1571,9 +1571,9 @@ export default function VerificationOverviewPage() {
                               {narrative.sentiment}
                             </Badge>
                           </div>
-                          <div className="flex items-center gap-4 text-xs text-platinum-500-400">
-                            <span>Target: <span className="text-platinum-500-300">{narrative.target}</span></span>
-                            <span>Source: <span className="text-platinum-500-300">{narrative.sourceType}</span></span>
+                          <div className="flex items-center gap-4 text-xs text-platinum-400">
+                            <span>Target: <span className="text-platinum-300">{narrative.target}</span></span>
+                            <span>Source: <span className="text-platinum-300">{narrative.sourceType}</span></span>
                             <Badge variant="outline" className="text-xs">{narrative.frequency}</Badge>
                           </div>
                         </motion.div>
@@ -1594,11 +1594,11 @@ export default function VerificationOverviewPage() {
                     <table className="w-full text-sm">
                       <thead>
                         <tr className="border-b border-platinum-700">
-                          <th className="text-left p-3 text-platinum-500-400">Platform</th>
-                          <th className="text-left p-3 text-platinum-500-400">Policy Strength</th>
-                          <th className="text-left p-3 text-platinum-500-400">Enforcement</th>
-                          <th className="text-left p-3 text-platinum-500-400">Transparency</th>
-                          <th className="text-left p-3 text-platinum-500-400">Detection</th>
+                          <th className="text-left p-3 text-platinum-400">Platform</th>
+                          <th className="text-left p-3 text-platinum-400">Policy Strength</th>
+                          <th className="text-left p-3 text-platinum-400">Enforcement</th>
+                          <th className="text-left p-3 text-platinum-400">Transparency</th>
+                          <th className="text-left p-3 text-platinum-400">Detection</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -1610,20 +1610,20 @@ export default function VerificationOverviewPage() {
                             transition={{ delay: idx * 0.05 }}
                             className="border-b border-platinum-700/50"
                           >
-                            <td className="p-3 font-semibold text-platinum-500-200">{platform.platform}</td>
+                            <td className="p-3 font-semibold text-platinum-200">{platform.platform}</td>
                             <td className="p-3">
-                              <Badge className={platform.policyStrength === 'Comprehensive' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' : 'bg-platinum-500/20 text-platinum-500-400 border-platinum-500/50'}>
+                              <Badge className={platform.policyStrength === 'Comprehensive' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' : 'bg-platinum-500/20 text-platinum-400 border-platinum-500/50'}>
                                 {platform.policyStrength}
                               </Badge>
                             </td>
-                            <td className="p-3 text-platinum-500-300">{platform.enforcement}</td>
+                            <td className="p-3 text-platinum-300">{platform.enforcement}</td>
                             <td className="p-3">
-                              <Badge className={platform.transparency === 'High' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' : platform.transparency === 'Moderate' ? 'bg-amber-500/20 text-amber-400 border-amber-500/50' : 'bg-platinum-500/20 text-platinum-500-400 border-platinum-500/50'}>
+                              <Badge className={platform.transparency === 'High' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' : platform.transparency === 'Moderate' ? 'bg-amber-500/20 text-amber-400 border-amber-500/50' : 'bg-platinum-500/20 text-platinum-400 border-platinum-500/50'}>
                                 {platform.transparency}
                               </Badge>
                             </td>
                             <td className="p-3">
-                              <Badge className={platform.detectionCapability === 'Advanced' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' : platform.detectionCapability === 'Basic' ? 'bg-amber-500/20 text-amber-400 border-amber-500/50' : 'bg-navy-500/20 text-navy-500-400 border-navy-500/50'}>
+                              <Badge className={platform.detectionCapability === 'Advanced' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' : platform.detectionCapability === 'Basic' ? 'bg-amber-500/20 text-amber-400 border-amber-500/50' : 'bg-navy-500/20 text-navy-400 border-navy-500/50'}>
                                 {platform.detectionCapability}
                               </Badge>
                             </td>
@@ -1652,7 +1652,7 @@ export default function VerificationOverviewPage() {
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-semibold text-platinum-500-200">{threat.target}</h4>
+                          <h4 className="font-semibold text-platinum-200">{threat.target}</h4>
                           <Badge
                             variant={threat.threatLevel === 'Critical' ? 'destructive' : threat.threatLevel === 'High' ? 'warning' : 'outline'}
                             className={threat.threatLevel === 'Critical' ? 'bg-red-500/20 text-red-400 border-red-500/50' : threat.threatLevel === 'High' ? 'bg-orange-500/20 text-orange-400 border-orange-500/50' : ''}
@@ -1660,8 +1660,8 @@ export default function VerificationOverviewPage() {
                             {threat.threatLevel}
                           </Badge>
                         </div>
-                        <p className="text-sm text-platinum-500-400 mb-2">{threat.primaryNarrative}</p>
-                        <p className="text-xs text-platinum-500-500">Engagement: {threat.engagementLevel}</p>
+                        <p className="text-sm text-platinum-400 mb-2">{threat.primaryNarrative}</p>
+                        <p className="text-xs text-platinum-500">Engagement: {threat.engagementLevel}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1687,9 +1687,9 @@ export default function VerificationOverviewPage() {
                         >
                           <div className="flex items-center gap-2 mb-2">
                             <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">{category.id}</Badge>
-                            <h4 className="font-semibold text-platinum-500-200">{category.name}</h4>
+                            <h4 className="font-semibold text-platinum-200">{category.name}</h4>
                           </div>
-                          <p className="text-sm text-platinum-500-400 mb-2">{category.description}</p>
+                          <p className="text-sm text-platinum-400 mb-2">{category.description}</p>
                           <Badge variant="outline" className="text-xs">Prevalence: {category.prevalence}</Badge>
                         </motion.div>
                       ))}
@@ -1716,9 +1716,9 @@ export default function VerificationOverviewPage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
                           <div>
-                            <Badge className="mb-1 bg-navy-500/20 text-navy-500-400 border-navy-500/50">{source.tier}</Badge>
-                            <p className="font-semibold text-platinum-500-200">{source.sourceType}</p>
-                            <p className="text-sm text-platinum-500-400">{source.examples}</p>
+                            <Badge className="mb-1 bg-navy-500/20 text-navy-400 border-navy-500/50">{source.tier}</Badge>
+                            <p className="font-semibold text-platinum-200">{source.sourceType}</p>
+                            <p className="text-sm text-platinum-400">{source.examples}</p>
                           </div>
                           <Badge className={source.reliability === 'Very High' || source.reliability === 'High' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' : 'bg-amber-500/20 text-amber-400 border-amber-500/50'}>
                             {source.reliability}
@@ -1797,7 +1797,7 @@ export default function VerificationOverviewPage() {
                         <div className={`text-2xl font-bold ${kpi.severity === 'Critical' ? 'text-rose-400' : 'text-orange-400'}`}>
                           {kpi.value}
                         </div>
-                        <p className="text-sm text-platinum-500-400 mt-1">{kpi.kpi}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{kpi.kpi}</p>
                         <Badge className={`mt-2 text-xs ${kpi.severity === 'Critical' ? 'bg-rose-500/20 text-rose-400 border-rose-500/50' : 'bg-orange-500/20 text-orange-400 border-orange-500/50'}`}>
                           {kpi.severity}
                         </Badge>
@@ -1829,15 +1829,15 @@ export default function VerificationOverviewPage() {
                               <Globe className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{item.contentType}</p>
-                              <p className="text-sm text-platinum-500-400">{item.platform} - {item.metric}</p>
+                              <p className="font-semibold text-platinum-200">{item.contentType}</p>
+                              <p className="text-sm text-platinum-400">{item.platform} - {item.metric}</p>
                             </div>
                           </div>
                           <div className="text-right">
                             <div className="text-lg font-bold text-emerald-400">
                               {item.value.toLocaleString()}
                             </div>
-                            <p className="text-xs text-platinum-500-500">{item.date}</p>
+                            <p className="text-xs text-platinum-500">{item.date}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -1867,12 +1867,12 @@ export default function VerificationOverviewPage() {
                             <AlertTriangle className="h-5 w-5" />
                           </div>
                           <div>
-                            <p className="font-semibold text-platinum-500-200">{threat.threatType}</p>
-                            <p className="text-sm text-platinum-500-400">{threat.keyFinding}</p>
+                            <p className="font-semibold text-platinum-200">{threat.threatType}</p>
+                            <p className="text-sm text-platinum-400">{threat.keyFinding}</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-2">
-                          <Badge className={`${threat.fetchStatus === 'SUCCESS' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' : 'bg-platinum-500/20 text-platinum-500-400 border-platinum-500/50'}`}>
+                          <Badge className={`${threat.fetchStatus === 'SUCCESS' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' : 'bg-platinum-500/20 text-platinum-400 border-platinum-500/50'}`}>
                             {threat.fetchStatus}
                           </Badge>
                           {getTierBadge(threat.sourceTier)}
@@ -1895,37 +1895,37 @@ export default function VerificationOverviewPage() {
                       <div className="grid grid-cols-2 gap-4">
                         <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3 text-center">
                           <div className="text-xl font-bold text-emerald-400">{visualMultimediaExtendedData.cloudSeedingData.missionsConducted}</div>
-                          <p className="text-xs text-platinum-500-400">Missions (2019)</p>
+                          <p className="text-xs text-platinum-400">Missions (2019)</p>
                         </div>
                         <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3 text-center">
-                          <div className="text-xl font-bold text-navy-500-400">{visualMultimediaExtendedData.cloudSeedingData.costPerOperation}</div>
-                          <p className="text-xs text-platinum-500-400">Cost/Operation</p>
+                          <div className="text-xl font-bold text-navy-400">{visualMultimediaExtendedData.cloudSeedingData.costPerOperation}</div>
+                          <p className="text-xs text-platinum-400">Cost/Operation</p>
                         </div>
                         <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3 text-center">
                           <div className="text-xl font-bold text-cyan-400">{visualMultimediaExtendedData.cloudSeedingData.effectivenessClear}</div>
-                          <p className="text-xs text-platinum-500-400">Effectiveness (Clear)</p>
+                          <p className="text-xs text-platinum-400">Effectiveness (Clear)</p>
                         </div>
                         <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3 text-center">
-                          <div className="text-xl font-bold text-platinum-500-400">{visualMultimediaExtendedData.cloudSeedingData.aircraft}</div>
-                          <p className="text-xs text-platinum-500-400">Aircraft Fleet</p>
+                          <div className="text-xl font-bold text-platinum-400">{visualMultimediaExtendedData.cloudSeedingData.aircraft}</div>
+                          <p className="text-xs text-platinum-400">Aircraft Fleet</p>
                         </div>
                       </div>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-platinum-500-400">Technology</span>
-                          <span className="text-platinum-500-300">Hygroscopic (KCl, NaCl)</span>
+                          <span className="text-platinum-400">Technology</span>
+                          <span className="text-platinum-300">Hygroscopic (KCl, NaCl)</span>
                         </div>
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-platinum-500-400">Weather Stations</span>
-                          <span className="text-platinum-500-300">{visualMultimediaExtendedData.cloudSeedingData.weatherStations} networked</span>
+                          <span className="text-platinum-400">Weather Stations</span>
+                          <span className="text-platinum-300">{visualMultimediaExtendedData.cloudSeedingData.weatherStations} networked</span>
                         </div>
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-platinum-500-400">Doppler Radars</span>
-                          <span className="text-platinum-500-300">{visualMultimediaExtendedData.cloudSeedingData.dopplerRadars} stationary + 1 mobile</span>
+                          <span className="text-platinum-400">Doppler Radars</span>
+                          <span className="text-platinum-300">{visualMultimediaExtendedData.cloudSeedingData.dopplerRadars} stationary + 1 mobile</span>
                         </div>
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-platinum-500-400">Drone Technology</span>
-                          <span className="text-platinum-500-300">Since 2021</span>
+                          <span className="text-platinum-400">Drone Technology</span>
+                          <span className="text-platinum-300">Since 2021</span>
                         </div>
                       </div>
                     </div>
@@ -1941,7 +1941,7 @@ export default function VerificationOverviewPage() {
                     <div className="space-y-4">
                       <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4">
                         <h4 className="font-semibold text-emerald-400">UAE 50-Year Logo: &quot;7 Lines&quot;</h4>
-                        <div className="mt-2 space-y-1 text-sm text-platinum-500-300">
+                        <div className="mt-2 space-y-1 text-sm text-platinum-300">
                           <p>10.6 million votes cast</p>
                           <p>49 Emirati designers</p>
                           <p>Symbolizes unity of seven emirates</p>
@@ -1949,15 +1949,15 @@ export default function VerificationOverviewPage() {
                       </div>
                       <div className="rounded-lg border border-gold-700/30 bg-gold-700/10 p-4">
                         <h4 className="font-semibold text-gold-400">Dubai Emblem Law 2025</h4>
-                        <div className="mt-2 space-y-1 text-sm text-platinum-500-300">
+                        <div className="mt-2 space-y-1 text-sm text-platinum-300">
                           <p>Up to 5 years imprisonment</p>
                           <p>Fines: AED 100K - 500K</p>
                           <p>Special permission required</p>
                         </div>
                       </div>
                       <div className="rounded-lg border border-blue/30 bg-blue/10 p-4">
-                        <h4 className="font-semibold text-navy-500-400">Eid Al Etihad 2025</h4>
-                        <div className="mt-2 space-y-1 text-sm text-platinum-500-300">
+                        <h4 className="font-semibold text-navy-400">Eid Al Etihad 2025</h4>
+                        <div className="mt-2 space-y-1 text-sm text-platinum-300">
                           <p>54th Union Anniversary</p>
                           <p>Theme: &quot;United&quot;</p>
                           <p>Nov 3 - Dec 2, 2025</p>
@@ -1985,7 +1985,7 @@ export default function VerificationOverviewPage() {
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-semibold text-platinum-500-200">{item.topic}</h4>
+                          <h4 className="font-semibold text-platinum-200">{item.topic}</h4>
                           <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">
                             {item.dominantNarrative}
                           </Badge>
@@ -1993,18 +1993,18 @@ export default function VerificationOverviewPage() {
                         <div className="flex items-center gap-4 text-sm">
                           <div className="flex items-center gap-1">
                             <span className="text-emerald-400">+{item.positive}%</span>
-                            <span className="text-platinum-500-500">positive</span>
+                            <span className="text-platinum-500">positive</span>
                           </div>
                           <div className="flex items-center gap-1">
                             <span className="text-rose-400">-{item.negative}%</span>
-                            <span className="text-platinum-500-500">negative</span>
+                            <span className="text-platinum-500">negative</span>
                           </div>
                           <div className="flex items-center gap-1">
-                            <span className="text-platinum-500-400">{item.neutral}%</span>
-                            <span className="text-platinum-500-500">neutral</span>
+                            <span className="text-platinum-400">{item.neutral}%</span>
+                            <span className="text-platinum-500">neutral</span>
                           </div>
                         </div>
-                        <p className="text-xs text-platinum-500-500 mt-2">Source: {item.source}</p>
+                        <p className="text-xs text-platinum-500 mt-2">Source: {item.source}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -2029,11 +2029,11 @@ export default function VerificationOverviewPage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-500-200 text-sm">{source.name}</p>
-                            <p className="text-xs text-platinum-500-500">{source.type}</p>
+                            <p className="font-medium text-platinum-200 text-sm">{source.name}</p>
+                            <p className="text-xs text-platinum-500">{source.type}</p>
                           </div>
                           <div className="flex items-center gap-2">
-                            <Badge className={`${source.fetchStatus === 'SUCCESS' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' : 'bg-platinum-500/20 text-platinum-500-400 border-platinum-500/50'}`}>
+                            <Badge className={`${source.fetchStatus === 'SUCCESS' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' : 'bg-platinum-500/20 text-platinum-400 border-platinum-500/50'}`}>
                               {source.fetchStatus}
                             </Badge>
                             {getTierBadge(source.tier)}
@@ -2065,9 +2065,9 @@ export default function VerificationOverviewPage() {
                           >
                             <div className="flex items-center gap-2">
                               <Building2 className="h-4 w-4 text-emerald-500" />
-                              <span className="text-sm text-platinum-500-200">{entity.entity}</span>
+                              <span className="text-sm text-platinum-200">{entity.entity}</span>
                             </div>
-                            <Badge className={`text-xs ${entity.uaeRelevance === 'Critical' ? 'bg-rose-500/20 text-rose-400 border-rose-500/50' : entity.uaeRelevance === 'High' ? 'bg-orange-500/20 text-orange-400 border-orange-500/50' : 'bg-platinum-500/20 text-platinum-500-400 border-platinum-500/50'}`}>
+                            <Badge className={`text-xs ${entity.uaeRelevance === 'Critical' ? 'bg-rose-500/20 text-rose-400 border-rose-500/50' : entity.uaeRelevance === 'High' ? 'bg-orange-500/20 text-orange-400 border-orange-500/50' : 'bg-platinum-500/20 text-platinum-400 border-platinum-500/50'}`}>
                               {entity.uaeRelevance}
                             </Badge>
                           </motion.div>
@@ -2097,8 +2097,8 @@ export default function VerificationOverviewPage() {
                               <Shield className="h-4 w-4" />
                             </div>
                             <div>
-                              <p className="text-sm font-medium text-platinum-500-200">{channel.agency}</p>
-                              <p className="text-xs text-platinum-500-400">{channel.platform}</p>
+                              <p className="text-sm font-medium text-platinum-200">{channel.agency}</p>
+                              <p className="text-xs text-platinum-400">{channel.platform}</p>
                             </div>
                           </div>
                         </motion.div>
@@ -2128,7 +2128,7 @@ export default function VerificationOverviewPage() {
                           <div className="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-500 text-xs font-bold">
                             {method.priority}
                           </div>
-                          <span className="text-sm text-platinum-500-300">{method.method}</span>
+                          <span className="text-sm text-platinum-300">{method.method}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -2152,8 +2152,8 @@ export default function VerificationOverviewPage() {
                         >
                           <AlertOctagon className="h-5 w-5 text-rose-500" />
                           <div>
-                            <p className="text-sm font-medium text-platinum-500-200">{type.type}</p>
-                            <p className="text-xs text-platinum-500-400">{type.description}</p>
+                            <p className="text-sm font-medium text-platinum-200">{type.type}</p>
+                            <p className="text-xs text-platinum-400">{type.description}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -2179,12 +2179,12 @@ export default function VerificationOverviewPage() {
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-semibold text-platinum-500-200">{target.landmark}</h4>
+                          <h4 className="font-semibold text-platinum-200">{target.landmark}</h4>
                           <Badge className={`${target.riskLevel === 'Critical' ? 'bg-rose-500/20 text-rose-400 border-rose-500/50' : target.riskLevel === 'High' ? 'bg-orange-500/20 text-orange-400 border-orange-500/50' : 'bg-amber-500/20 text-amber-400 border-amber-500/50'}`}>
                             {target.riskLevel}
                           </Badge>
                         </div>
-                        <p className="text-xs text-platinum-500-400">{target.manipulationHistory}</p>
+                        <p className="text-xs text-platinum-400">{target.manipulationHistory}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -2207,7 +2207,7 @@ export default function VerificationOverviewPage() {
                         transition={{ delay: idx * 0.02 }}
                       >
                         <Badge
-                          className={`cursor-pointer ${tag.usageCount === 'High' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' : tag.usageCount === 'Medium' ? 'bg-navy-500/20 text-navy-500-400 border-navy-500/50' : 'bg-platinum-500/20 text-platinum-500-400 border-platinum-500/50'}`}
+                          className={`cursor-pointer ${tag.usageCount === 'High' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50' : tag.usageCount === 'Medium' ? 'bg-navy-500/20 text-navy-400 border-navy-500/50' : 'bg-platinum-500/20 text-platinum-400 border-platinum-500/50'}`}
                           whileHover={{ scale: 1.05 }}
                         >
                           {tag.hashtag}
@@ -2237,8 +2237,8 @@ export default function VerificationOverviewPage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
                           <div>
-                            <p className="text-sm font-medium text-platinum-500-200">{kpi.category}</p>
-                            <p className="text-xs text-platinum-500-500">{kpi.source} - {kpi.date}</p>
+                            <p className="text-sm font-medium text-platinum-200">{kpi.category}</p>
+                            <p className="text-xs text-platinum-500">{kpi.source} - {kpi.date}</p>
                           </div>
                           <div className="flex items-center gap-2">
                             <span className="text-sm font-bold text-emerald-400">{kpi.statistic}</span>
@@ -2261,32 +2261,32 @@ export default function VerificationOverviewPage() {
                   <div className="grid gap-4 sm:grid-cols-4">
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">{visualMultimediaExtendedData.executionMetadata.totalUrls}</div>
-                      <p className="text-sm text-platinum-500-400">Total URLs</p>
+                      <p className="text-sm text-platinum-400">Total URLs</p>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">{visualMultimediaExtendedData.executionMetadata.successfullyFetched}</div>
-                      <p className="text-sm text-platinum-500-400">Successful Fetches</p>
+                      <p className="text-sm text-platinum-400">Successful Fetches</p>
                     </div>
                     <div className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-rose-400">{visualMultimediaExtendedData.executionMetadata.blockedInaccessible}</div>
-                      <p className="text-sm text-platinum-500-400">Blocked/Inaccessible</p>
+                      <p className="text-sm text-platinum-400">Blocked/Inaccessible</p>
                     </div>
                     <div className="rounded-lg border border-blue/30 bg-blue/10 p-4 text-center">
-                      <div className="text-2xl font-bold text-navy-500-400">{visualMultimediaExtendedData.executionMetadata.fetchRate}</div>
-                      <p className="text-sm text-platinum-500-400">Fetch Rate</p>
+                      <div className="text-2xl font-bold text-navy-400">{visualMultimediaExtendedData.executionMetadata.fetchRate}</div>
+                      <p className="text-sm text-platinum-400">Fetch Rate</p>
                     </div>
                   </div>
                   <div className="mt-4 grid grid-cols-3 gap-4 text-center text-sm">
                     <div>
-                      <span className="text-platinum-500-400">Data Points: </span>
+                      <span className="text-platinum-400">Data Points: </span>
                       <span className="font-bold text-emerald-400">{visualMultimediaExtendedData.executionMetadata.dataPointsExtracted}</span>
                     </div>
                     <div>
-                      <span className="text-platinum-500-400">Entities: </span>
+                      <span className="text-platinum-400">Entities: </span>
                       <span className="font-bold text-emerald-400">{visualMultimediaExtendedData.executionMetadata.entitiesCatalogued}</span>
                     </div>
                     <div>
-                      <span className="text-platinum-500-400">Topics: </span>
+                      <span className="text-platinum-400">Topics: </span>
                       <span className="font-bold text-emerald-400">{visualMultimediaExtendedData.executionMetadata.topicsAnalyzed}</span>
                     </div>
                   </div>
@@ -2381,8 +2381,8 @@ export default function VerificationOverviewPage() {
                         className="space-y-2"
                       >
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-platinum-500-400">{cat.category}</span>
-                          <span className="font-medium text-platinum-500-200">{cat.score}/{cat.max}</span>
+                          <span className="text-platinum-400">{cat.category}</span>
+                          <span className="font-medium text-platinum-200">{cat.score}/{cat.max}</span>
                         </div>
                         <Progress value={(cat.score / cat.max) * 100} className="h-3" />
                       </motion.div>
@@ -2431,8 +2431,8 @@ export default function VerificationOverviewPage() {
                         className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-4 text-center"
                       >
                         <div className="text-2xl font-bold text-rose-400">{kpi.value}</div>
-                        <p className="text-sm text-platinum-500-400 mt-1">{kpi.kpi}</p>
-                        {kpi.period && <p className="text-xs text-platinum-500-500 mt-1">{kpi.period}</p>}
+                        <p className="text-sm text-platinum-400 mt-1">{kpi.kpi}</p>
+                        {kpi.period && <p className="text-xs text-platinum-500 mt-1">{kpi.period}</p>}
                       </motion.div>
                     ))}
                   </div>
@@ -2461,8 +2461,8 @@ export default function VerificationOverviewPage() {
                               <AlertOctagon className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{pattern.pattern}</p>
-                              <p className="text-sm text-platinum-500-400">{pattern.evidenceBase}</p>
+                              <p className="font-semibold text-platinum-200">{pattern.pattern}</p>
+                              <p className="text-sm text-platinum-400">{pattern.evidenceBase}</p>
                             </div>
                           </div>
                           <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
@@ -2493,9 +2493,9 @@ export default function VerificationOverviewPage() {
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <Lock className="h-5 w-5 text-rose-400" />
-                          <h4 className="font-semibold text-platinum-500-200">{mech.mechanism}</h4>
+                          <h4 className="font-semibold text-platinum-200">{mech.mechanism}</h4>
                         </div>
-                        <p className="text-sm text-platinum-500-400 mb-2">{mech.implementation}</p>
+                        <p className="text-sm text-platinum-400 mb-2">{mech.implementation}</p>
                         <Badge variant="outline" className="text-xs">{mech.scale}</Badge>
                       </motion.div>
                     ))}
@@ -2521,19 +2521,19 @@ export default function VerificationOverviewPage() {
                           className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                         >
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-semibold text-platinum-500-200">{item.event}</h4>
+                            <h4 className="font-semibold text-platinum-200">{item.event}</h4>
                             <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
                               {item.informationGap}
                             </Badge>
                           </div>
                           <div className="grid grid-cols-2 gap-4 text-sm">
                             <div className="p-2 rounded bg-emerald-500/10 border border-emerald-500/30">
-                              <p className="text-xs text-platinum-500-500 mb-1">International Coverage</p>
-                              <p className="text-platinum-500-300">{item.internationalCoverage}</p>
+                              <p className="text-xs text-platinum-500 mb-1">International Coverage</p>
+                              <p className="text-platinum-300">{item.internationalCoverage}</p>
                             </div>
                             <div className="p-2 rounded bg-rose-500/10 border border-rose-500/30">
-                              <p className="text-xs text-platinum-500-500 mb-1">UAE Coverage</p>
-                              <p className="text-platinum-500-300">{item.uaeCoverage}</p>
+                              <p className="text-xs text-platinum-500 mb-1">UAE Coverage</p>
+                              <p className="text-platinum-300">{item.uaeCoverage}</p>
                             </div>
                           </div>
                         </motion.div>
@@ -2561,17 +2561,17 @@ export default function VerificationOverviewPage() {
                           className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                         >
                           <div className="flex items-center justify-between mb-3">
-                            <h4 className="font-semibold text-platinum-500-200">{item.location}</h4>
+                            <h4 className="font-semibold text-platinum-200">{item.location}</h4>
                             <Badge variant="outline" className="text-xs">{item.verificationSource}</Badge>
                           </div>
                           <div className="space-y-2 text-sm">
                             <div className="p-2 rounded bg-rose-500/10 border border-rose-500/30">
-                              <p className="text-xs text-platinum-500-500 mb-1">Official Claim</p>
-                              <p className="text-platinum-500-300">{item.officialClaim}</p>
+                              <p className="text-xs text-platinum-500 mb-1">Official Claim</p>
+                              <p className="text-platinum-300">{item.officialClaim}</p>
                             </div>
                             <div className="p-2 rounded bg-emerald-500/10 border border-emerald-500/30">
-                              <p className="text-xs text-platinum-500-500 mb-1">Contrasting Evidence</p>
-                              <p className="text-platinum-500-300">{item.contrastingEvidence}</p>
+                              <p className="text-xs text-platinum-500 mb-1">Contrasting Evidence</p>
+                              <p className="text-platinum-300">{item.contrastingEvidence}</p>
                             </div>
                           </div>
                         </motion.div>
@@ -2598,8 +2598,8 @@ export default function VerificationOverviewPage() {
                         className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-4"
                       >
                         <div className="text-2xl font-bold text-rose-400">{action.value}</div>
-                        <p className="text-sm text-platinum-500-300 mt-1">{action.metric}</p>
-                        <p className="text-xs text-platinum-500-500 mt-2">Source: {action.source}</p>
+                        <p className="text-sm text-platinum-300 mt-1">{action.metric}</p>
+                        <p className="text-xs text-platinum-500 mt-2">Source: {action.source}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -2624,12 +2624,12 @@ export default function VerificationOverviewPage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                         >
                           <div className="flex items-center gap-3">
-                            <div className={`flex h-10 w-10 items-center justify-center rounded-full ${restriction.country === 'UAE' ? 'bg-rose-500/20 text-rose-500' : 'bg-platinum-600/20 text-platinum-500-400'}`}>
+                            <div className={`flex h-10 w-10 items-center justify-center rounded-full ${restriction.country === 'UAE' ? 'bg-rose-500/20 text-rose-500' : 'bg-platinum-600/20 text-platinum-400'}`}>
                               <Globe className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{restriction.country}</p>
-                              <p className="text-sm text-platinum-500-400">{restriction.restrictionType}</p>
+                              <p className="font-semibold text-platinum-200">{restriction.country}</p>
+                              <p className="text-sm text-platinum-400">{restriction.restrictionType}</p>
                             </div>
                           </div>
                           <Badge variant={restriction.country === 'UAE' ? 'destructive' : 'outline'} className={restriction.country === 'UAE' ? 'bg-red-500/20 text-red-400 border-red-500/50' : ''}>
@@ -2664,15 +2664,15 @@ export default function VerificationOverviewPage() {
                               <Users className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{person.name}</p>
-                              <p className="text-sm text-platinum-500-400">{person.nationality} • {person.charges}</p>
+                              <p className="font-semibold text-platinum-200">{person.name}</p>
+                              <p className="text-sm text-platinum-400">{person.nationality} • {person.charges}</p>
                             </div>
                           </div>
                           <div className="text-right">
                             <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
                               {person.sentence}
                             </Badge>
-                            <p className="text-xs text-platinum-500-500 mt-1">{person.year}</p>
+                            <p className="text-xs text-platinum-500 mt-1">{person.year}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -2703,8 +2703,8 @@ export default function VerificationOverviewPage() {
                               <AlertOctagon className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{person.name}</p>
-                              <p className="text-sm text-platinum-500-400">{person.nationality} • Last seen: {person.lastSeen}</p>
+                              <p className="font-semibold text-platinum-200">{person.name}</p>
+                              <p className="text-sm text-platinum-400">{person.nationality} • Last seen: {person.lastSeen}</p>
                             </div>
                           </div>
                           <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
@@ -2734,7 +2734,7 @@ export default function VerificationOverviewPage() {
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 text-center"
                       >
                         <div className="text-2xl font-bold text-emerald-400">{metric.value}</div>
-                        <p className="text-sm text-platinum-500-400 mt-1">{metric.metric}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{metric.metric}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -2763,8 +2763,8 @@ export default function VerificationOverviewPage() {
                               <Network className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{account.account}</p>
-                              <p className="text-sm text-platinum-500-400">{account.type}</p>
+                              <p className="font-semibold text-platinum-200">{account.account}</p>
+                              <p className="text-sm text-platinum-400">{account.type}</p>
                             </div>
                           </div>
                           {account.followers !== 'N/A' && (
@@ -2796,10 +2796,10 @@ export default function VerificationOverviewPage() {
                         className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-4"
                       >
                         <div className="text-3xl font-bold text-rose-400">{op.accounts}</div>
-                        <p className="text-sm text-platinum-500-400 mt-1">Accounts on {op.platform}</p>
+                        <p className="text-sm text-platinum-400 mt-1">Accounts on {op.platform}</p>
                         <div className="mt-3 space-y-1">
-                          <p className="text-xs text-platinum-500-500">Origin: <span className="text-platinum-500-300">{op.origin}</span></p>
-                          <p className="text-xs text-platinum-500-500">Purpose: <span className="text-platinum-500-300">{op.purpose}</span></p>
+                          <p className="text-xs text-platinum-500">Origin: <span className="text-platinum-300">{op.origin}</span></p>
+                          <p className="text-xs text-platinum-500">Purpose: <span className="text-platinum-300">{op.purpose}</span></p>
                         </div>
                       </motion.div>
                     ))}
@@ -2825,8 +2825,8 @@ export default function VerificationOverviewPage() {
                           className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                         >
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-500-200 text-sm">{source.source}</p>
-                            <p className="text-xs text-platinum-500-500">{source.focus}</p>
+                            <p className="font-medium text-platinum-200 text-sm">{source.source}</p>
+                            <p className="text-xs text-platinum-500">{source.focus}</p>
                           </div>
                           <div className="flex items-center gap-2">
                             <Badge
@@ -2865,9 +2865,9 @@ export default function VerificationOverviewPage() {
                               <Lock className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{law.law}</p>
-                              <p className="text-sm text-platinum-500-400">{law.purpose}</p>
-                              <p className="text-xs text-platinum-500-500">{law.year}</p>
+                              <p className="font-semibold text-platinum-200">{law.law}</p>
+                              <p className="text-sm text-platinum-400">{law.purpose}</p>
+                              <p className="text-xs text-platinum-500">{law.year}</p>
                             </div>
                           </div>
                           <Badge variant="destructive" className="bg-red-500/20 text-red-400 border-red-500/50">
@@ -2892,28 +2892,28 @@ export default function VerificationOverviewPage() {
                       <div className="text-2xl font-bold text-emerald-400">
                         {omissionSilenceData.extendedData?.executionMetadata?.queriesExecuted}
                       </div>
-                      <p className="text-sm text-platinum-500-400">Queries Executed</p>
+                      <p className="text-sm text-platinum-400">Queries Executed</p>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">
                         {omissionSilenceData.extendedData?.executionMetadata?.pagesFetched}
                       </div>
-                      <p className="text-sm text-platinum-500-400">Pages Fetched</p>
+                      <p className="text-sm text-platinum-400">Pages Fetched</p>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">
                         {omissionSilenceData.extendedData?.executionMetadata?.urlsSuccessfullyFetched}
                       </div>
-                      <p className="text-sm text-platinum-500-400">Successfully Fetched</p>
+                      <p className="text-sm text-platinum-400">Successfully Fetched</p>
                     </div>
                     <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
                       <div className="text-2xl font-bold text-emerald-400">
                         {omissionSilenceData.extendedData?.executionMetadata?.enrichmentRate}
                       </div>
-                      <p className="text-sm text-platinum-500-400">Enrichment Rate</p>
+                      <p className="text-sm text-platinum-400">Enrichment Rate</p>
                     </div>
                   </div>
-                  <p className="text-xs text-platinum-500-500 mt-4 text-center">
+                  <p className="text-xs text-platinum-500 mt-4 text-center">
                     Enrichment Date: {omissionSilenceData.extendedData?.executionMetadata?.enrichmentCompleted}
                   </p>
                 </CardContent>
@@ -2991,15 +2991,15 @@ export default function VerificationOverviewPage() {
                              <AlertTriangle className="h-5 w-5" />}
                           </div>
                           <div>
-                            <p className="font-semibold text-platinum-500-200">{platform.platform}</p>
-                            <p className="text-sm text-platinum-500-400">{platform.dominantECType}</p>
+                            <p className="font-semibold text-platinum-200">{platform.platform}</p>
+                            <p className="text-sm text-platinum-400">{platform.dominantECType}</p>
                           </div>
                         </div>
                         <div className="text-right">
                           <Badge variant={platform.echoChamberStrength === 'STRONG' || platform.echoChamberStrength === 'HIGH' ? "destructive" : "success"}>
                             {platform.echoChamberStrength}
                           </Badge>
-                          <p className="text-sm text-platinum-500-400 mt-1">{platform.commonUsersPercent !== 'N/A' ? `${platform.commonUsersPercent} common users` : platform.platform === 'Facebook' ? 'Polarized clusters' : 'Ideological clustering'}</p>
+                          <p className="text-sm text-platinum-400 mt-1">{platform.commonUsersPercent !== 'N/A' ? `${platform.commonUsersPercent} common users` : platform.platform === 'Facebook' ? 'Polarized clusters' : 'Ideological clustering'}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -3025,7 +3025,7 @@ export default function VerificationOverviewPage() {
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <p className="font-semibold text-platinum-500-200">{sentiment.platform}</p>
+                          <p className="font-semibold text-platinum-200">{sentiment.platform}</p>
                           <Badge variant={
                             sentiment.sentimentUsers === 'NEGATIVE' ? 'destructive' :
                             sentiment.sentimentUsers === 'POSITIVE' ? 'success' : 'secondary'
@@ -3033,8 +3033,8 @@ export default function VerificationOverviewPage() {
                             {sentiment.sentimentUsers}
                           </Badge>
                         </div>
-                        <p className="text-xs text-platinum-500-400">Researchers: {sentiment.sentimentResearchers}</p>
-                        <p className="text-xs text-platinum-500-500 mt-1">{sentiment.consensus}</p>
+                        <p className="text-xs text-platinum-400">Researchers: {sentiment.sentimentResearchers}</p>
+                        <p className="text-xs text-platinum-500 mt-1">{sentiment.consensus}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -3057,7 +3057,7 @@ export default function VerificationOverviewPage() {
                         transition={{ duration: 0.3, delay: idx * 0.05 }}
                         className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                       >
-                        <p className="text-platinum-500-200">{item.topicArea}</p>
+                        <p className="text-platinum-200">{item.topicArea}</p>
                         <Badge variant={
                           item.uaeRelevance === 'CRITICAL' ? 'destructive' :
                           item.uaeRelevance === 'HIGH' ? 'warning' : 'secondary'
@@ -3070,15 +3070,15 @@ export default function VerificationOverviewPage() {
                   <div className="mt-4 grid gap-4 sm:grid-cols-3">
                     <div className="rounded-lg border border-rose-500/30 bg-rose-500/10 p-3 text-center">
                       <div className="text-lg font-bold text-rose-400">CRITICAL</div>
-                      <p className="text-xs text-platinum-500-400">Social Media Regulation</p>
+                      <p className="text-xs text-platinum-400">Social Media Regulation</p>
                     </div>
                     <div className="rounded-lg border border-orange-500/30 bg-orange-500/10 p-3 text-center">
                       <div className="text-lg font-bold text-orange-400">HIGH</div>
-                      <p className="text-xs text-platinum-500-400">Echo Chambers, Misinformation</p>
+                      <p className="text-xs text-platinum-400">Echo Chambers, Misinformation</p>
                     </div>
                     <div className="rounded-lg border border-gold-700/30 bg-gold-700/10 p-3 text-center">
                       <div className="text-lg font-bold text-gold-700">MEDIUM</div>
-                      <p className="text-xs text-platinum-500-400">Algorithmic Curation, Filter Bubbles</p>
+                      <p className="text-xs text-platinum-400">Algorithmic Curation, Filter Bubbles</p>
                     </div>
                   </div>
                 </CardContent>
@@ -3103,20 +3103,20 @@ export default function VerificationOverviewPage() {
                           <div className={`text-lg font-bold ${
                             tier.tier.includes('TIER 1') ? 'text-emerald-400' :
                             tier.tier.includes('TIER 2') ? 'text-gold-700' :
-                            tier.tier.includes('TIER 3') ? 'text-orange-400' : 'text-platinum-500-400'
+                            tier.tier.includes('TIER 3') ? 'text-orange-400' : 'text-platinum-400'
                           }`}>
                             {tier.count}
                           </div>
-                          <p className="text-xs text-platinum-500-400">{tier.tier.split(' ')[0]} {tier.tier.split(' ')[1]}</p>
-                          <p className="text-xs text-platinum-500-500">{tier.percentageOfSources}</p>
+                          <p className="text-xs text-platinum-400">{tier.tier.split(' ')[0]} {tier.tier.split(' ')[1]}</p>
+                          <p className="text-xs text-platinum-500">{tier.percentageOfSources}</p>
                         </motion.div>
                       ))}
                     </div>
                     <div className="space-y-2">
-                      <p className="text-sm font-semibold text-platinum-500-300">Evidence Quality Assessment</p>
+                      <p className="text-sm font-semibold text-platinum-300">Evidence Quality Assessment</p>
                       {echoChamberFilterData.extendedData?.evidenceQualityAssessment?.map((eq) => (
                         <div key={eq.qualityDimension} className="flex items-center justify-between rounded border border-platinum-700 bg-platinum-800/30 p-2">
-                          <span className="text-sm text-platinum-500-300">{eq.qualityDimension}</span>
+                          <span className="text-sm text-platinum-300">{eq.qualityDimension}</span>
                           <span className="text-sm font-medium text-emerald-400">{eq.score}</span>
                         </div>
                       ))}
@@ -3134,7 +3134,7 @@ export default function VerificationOverviewPage() {
                 <CardContent>
                   <div className="space-y-4">
                     <div className="space-y-2">
-                      <p className="text-sm font-semibold text-platinum-500-300">Consensus on Key Findings</p>
+                      <p className="text-sm font-semibold text-platinum-300">Consensus on Key Findings</p>
                       {echoChamberFilterData.extendedData?.consensusMatrix?.slice(0, 4).map((item) => (
                         <motion.div
                           key={item.finding}
@@ -3142,7 +3142,7 @@ export default function VerificationOverviewPage() {
                           animate={{ opacity: 1, x: 0 }}
                           className="flex items-center justify-between rounded border border-platinum-700 bg-platinum-800/30 p-2"
                         >
-                          <span className="text-xs text-platinum-500-300 flex-1 mr-2">{item.finding}</span>
+                          <span className="text-xs text-platinum-300 flex-1 mr-2">{item.finding}</span>
                           <Badge variant={
                             item.consensusLevel === 'HIGH' ? 'success' :
                             item.consensusLevel.includes('MODERATE') ? 'secondary' : 'warning'
@@ -3153,7 +3153,7 @@ export default function VerificationOverviewPage() {
                       ))}
                     </div>
                     <div className="space-y-2">
-                      <p className="text-sm font-semibold text-platinum-500-300">Methodological Quality</p>
+                      <p className="text-sm font-semibold text-platinum-300">Methodological Quality</p>
                       <BarChart
                         data={echoChamberFilterData.extendedData?.methodologicalQuality?.map((m) => ({
                           method: m.method.split(' ')[0],
@@ -3166,7 +3166,7 @@ export default function VerificationOverviewPage() {
                       />
                     </div>
                     <div className="space-y-2">
-                      <p className="text-sm font-semibold text-platinum-500-300">Key Research Gaps</p>
+                      <p className="text-sm font-semibold text-platinum-300">Key Research Gaps</p>
                       <ScrollArea className="h-[150px]">
                         <div className="space-y-2 pr-4">
                           {echoChamberFilterData.extendedData?.researchGaps?.map((gap) => (
@@ -3176,8 +3176,8 @@ export default function VerificationOverviewPage() {
                               animate={{ opacity: 1 }}
                               className="rounded border border-platinum-700 bg-platinum-800/30 p-2"
                             >
-                              <p className="text-sm font-medium text-platinum-500-200">{gap.gap}</p>
-                              <p className="text-xs text-platinum-500-400">{gap.description}</p>
+                              <p className="text-sm font-medium text-platinum-200">{gap.gap}</p>
+                              <p className="text-xs text-platinum-400">{gap.description}</p>
                             </motion.div>
                           ))}
                         </div>
@@ -3209,7 +3209,7 @@ export default function VerificationOverviewPage() {
                             threat.combinedScore === 'HIGH' ? 'bg-orange-500' :
                             threat.combinedScore === 'MEDIUM' ? 'bg-gold' : 'bg-platinum-500'
                           }`} />
-                          <span className="text-sm text-platinum-500-200">{threat.threat}</span>
+                          <span className="text-sm text-platinum-200">{threat.threat}</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <Badge variant="outline" className="text-xs">

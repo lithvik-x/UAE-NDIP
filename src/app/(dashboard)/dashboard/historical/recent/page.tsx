@@ -105,7 +105,7 @@ export default function RecentHistoryPage() {
         <div>
           <Badge variant="gold" className="mb-2">H-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Recent History (2010-2026)</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             {data.description || 'The modern era of transformation, achievement, and global leadership'}
           </p>
         </div>
@@ -114,7 +114,7 @@ export default function RecentHistoryPage() {
             <Calendar className="h-4 w-4" />
             Event Archive
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
             <Zap className="h-4 w-4" />
             Analyze Era
           </Button>
@@ -258,7 +258,7 @@ export default function RecentHistoryPage() {
                       {achievementData.map((item, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-500-200">{item.sector}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.sector}</span>
                             <span className="text-lg font-bold text-gold-700">{item.achievement}%</span>
                           </div>
                           <Progress
@@ -312,8 +312,8 @@ export default function RecentHistoryPage() {
                               <Calendar className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{milestone.event}</p>
-                              <p className="text-sm text-platinum-500-400">{milestone.year}</p>
+                              <p className="font-semibold text-platinum-200">{milestone.event}</p>
+                              <p className="text-sm text-platinum-400">{milestone.year}</p>
                             </div>
                           </div>
                           <Badge variant="gold" className="text-xs">Impact: {milestone.impact}%</Badge>
@@ -365,8 +365,8 @@ export default function RecentHistoryPage() {
                         <div key={idx} className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-3">
                           <item.icon className="h-5 w-5 text-emerald-500" />
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-500-200">{item.title}</p>
-                            <p className="text-sm text-platinum-500-400">{item.value}</p>
+                            <p className="font-medium text-platinum-200">{item.title}</p>
+                            <p className="text-sm text-platinum-400">{item.value}</p>
                           </div>
                         </div>
                       ))}
@@ -389,8 +389,8 @@ export default function RecentHistoryPage() {
                         <div key={idx} className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-3">
                           <item.icon className="h-5 w-5 text-cyan-500" />
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-500-200">{item.title}</p>
-                            <p className="text-sm text-platinum-500-400">{item.value}</p>
+                            <p className="font-medium text-platinum-200">{item.title}</p>
+                            <p className="text-sm text-platinum-400">{item.value}</p>
                           </div>
                         </div>
                       ))}
@@ -444,8 +444,8 @@ export default function RecentHistoryPage() {
                           <span className="text-sm font-bold text-navy-500">{leader.period}</span>
                           <Badge variant="denim" className="text-xs">{leader.role}</Badge>
                         </div>
-                        <h4 className="font-semibold text-platinum-500-200">{leader.leader}</h4>
-                        <p className="mt-1 text-sm text-platinum-500-400">{leader.event}</p>
+                        <h4 className="font-semibold text-platinum-200">{leader.leader}</h4>
+                        <p className="mt-1 text-sm text-platinum-400">{leader.event}</p>
                       </div>
                     ))}
                   </div>
@@ -466,7 +466,7 @@ export default function RecentHistoryPage() {
                       { index: 'Innovation Index', rank: '#34', change: '+15' },
                     ].map((item, idx) => (
                       <div key={idx} className="rounded-lg bg-platinum-800/50 p-4 text-center">
-                        <p className="text-sm text-platinum-500-400">{item.index}</p>
+                        <p className="text-sm text-platinum-400">{item.index}</p>
                         <p className="mt-1 text-2xl font-bold text-gold-700">{item.rank}</p>
                         <p className="text-xs text-emerald-500">+{item.change} from 2010</p>
                       </div>
@@ -506,7 +506,7 @@ export default function RecentHistoryPage() {
                         className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm font-bold text-platinum-500-200">{item.country}</span>
+                          <span className="text-sm font-bold text-platinum-200">{item.country}</span>
                           <Badge
                             variant={item.color === 'emerald' ? 'emerald' : item.color === 'rose' ? 'rose' : 'amber'}
                             className="text-xs"
@@ -515,7 +515,7 @@ export default function RecentHistoryPage() {
                           </Badge>
                         </div>
                         <p className="text-2xl font-bold text-gold-700">{item.deaths}</p>
-                        <p className="text-xs text-platinum-500-400">deaths</p>
+                        <p className="text-xs text-platinum-400">deaths</p>
                       </motion.div>
                     ))}
                   </div>
@@ -593,7 +593,7 @@ export default function RecentHistoryPage() {
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center justify-between">
-                            <h4 className="font-semibold text-platinum-500-200">{item.title}</h4>
+                            <h4 className="font-semibold text-platinum-200">{item.title}</h4>
                             <Badge
                               variant={item.impact === 'CRITICAL' ? 'rose' : item.impact === 'HIGH' ? 'denim' : 'amber'}
                               className="text-xs"
@@ -601,7 +601,7 @@ export default function RecentHistoryPage() {
                               {item.impact}
                             </Badge>
                           </div>
-                          <p className="mt-1 text-sm text-platinum-500-400">{item.description}</p>
+                          <p className="mt-1 text-sm text-platinum-400">{item.description}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -631,7 +631,7 @@ export default function RecentHistoryPage() {
                         height={200}
                         showGrid={true}
                       />
-                      <p className="text-center text-sm text-platinum-500-400">100x increase in 30 days</p>
+                      <p className="text-center text-sm text-platinum-400">100x increase in 30 days</p>
                     </div>
                     <div className="space-y-4">
                       <h4 className="text-sm font-semibold text-gold-700">Platform Usage</h4>
@@ -643,8 +643,8 @@ export default function RecentHistoryPage() {
                         ].map((item, idx) => (
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div>
-                              <p className="font-medium text-platinum-500-200">{item.platform}</p>
-                              <p className="text-xs text-platinum-500-400">{item.country}</p>
+                              <p className="font-medium text-platinum-200">{item.platform}</p>
+                              <p className="text-xs text-platinum-400">{item.country}</p>
                             </div>
                             <span className="text-lg font-bold text-emerald-500">{item.usage}</span>
                           </div>
@@ -741,9 +741,9 @@ export default function RecentHistoryPage() {
                         transition={{ delay: idx * 0.05 }}
                         className="rounded-lg border border-gold-700/20 bg-platinum-800/50 p-4"
                       >
-                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-sm text-platinum-400">{item.metric}</p>
                         <p className="text-xl font-bold text-gold-700">{item.value}</p>
-                        <p className="text-xs text-platinum-500-500 mt-1">Source: {item.source}</p>
+                        <p className="text-xs text-platinum-500 mt-1">Source: {item.source}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -777,12 +777,12 @@ export default function RecentHistoryPage() {
                         className="flex items-center justify-between rounded-lg border border-emerald-500/20 bg-platinum-800/50 p-3"
                       >
                         <div>
-                          <p className="font-medium text-platinum-500-200">{item.metric}</p>
-                          <p className="text-sm text-platinum-500-400">Target: {item.target}</p>
+                          <p className="font-medium text-platinum-200">{item.metric}</p>
+                          <p className="text-sm text-platinum-400">Target: {item.target}</p>
                         </div>
                         <div className="text-right">
                           <p className="text-lg font-bold text-emerald-500">{item.value}</p>
-                          <p className="text-xs text-platinum-500-500">{item.timeline}</p>
+                          <p className="text-xs text-platinum-500">{item.timeline}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -818,13 +818,13 @@ export default function RecentHistoryPage() {
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center justify-between">
-                            <h4 className="font-semibold text-platinum-500-200">{item.event}</h4>
+                            <h4 className="font-semibold text-platinum-200">{item.event}</h4>
                             <Badge variant={item.significance === 'critical' ? 'gold' : 'denim'} className="text-xs">
                               {item.significance}
                             </Badge>
                           </div>
-                          <p className="text-sm text-platinum-500-400 mt-1">{item.date}</p>
-                          <p className="text-sm text-platinum-500-300 mt-1">{item.detail}</p>
+                          <p className="text-sm text-platinum-400 mt-1">{item.date}</p>
+                          <p className="text-sm text-platinum-300 mt-1">{item.detail}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -858,9 +858,9 @@ export default function RecentHistoryPage() {
                         transition={{ delay: idx * 0.05 }}
                         className="rounded-lg border border-cyan-500/20 bg-platinum-800/50 p-4"
                       >
-                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-sm text-platinum-400">{item.metric}</p>
                         <p className="text-lg font-bold text-cyan-500">{item.value}</p>
-                        <p className="text-xs text-platinum-500-500 mt-1">Target: {item.target}</p>
+                        <p className="text-xs text-platinum-500 mt-1">Target: {item.target}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -869,7 +869,7 @@ export default function RecentHistoryPage() {
                       <AlertOctagon className="h-4 w-4 text-rose-500" />
                       <span className="text-sm font-medium text-rose-500">Controversy Note</span>
                     </div>
-                    <p className="text-sm text-platinum-500-300">
+                    <p className="text-sm text-platinum-300">
                       Dr. Sultan Al Jaber "No Science" comment (Dec 3, 2023): &quot;There is no science out there... that says phase-out of fossil fuels is going to achieve 1.5°C.&quot; Over 130 US/EU lawmakers demanded removal.
                     </p>
                   </div>
@@ -902,14 +902,14 @@ export default function RecentHistoryPage() {
                         transition={{ delay: idx * 0.05 }}
                         className="rounded-lg border border-amber-500/20 bg-platinum-800/50 p-4"
                       >
-                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-sm text-platinum-400">{item.metric}</p>
                         <p className="text-lg font-bold text-amber-500">{item.value}</p>
-                        <p className="text-xs text-platinum-500-500 mt-1">Source: {item.source}</p>
+                        <p className="text-xs text-platinum-500 mt-1">Source: {item.source}</p>
                       </motion.div>
                     ))}
                   </div>
                   <div className="mt-4 rounded-lg border border-amber-500/30 bg-amber-500/10 p-4">
-                    <p className="text-sm text-platinum-500-300">
+                    <p className="text-sm text-platinum-300">
                       <span className="font-medium text-amber-500">FATF Grey List:</span> UAE added March 2022 for money laundering concerns. UAE designated &quot;country of focus&quot; for sanctions evasion by US.
                     </p>
                   </div>
@@ -942,10 +942,10 @@ export default function RecentHistoryPage() {
                         transition={{ delay: idx * 0.05 }}
                         className="rounded-lg border border-gold-700/20 bg-platinum-800/50 p-4"
                       >
-                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-sm text-platinum-400">{item.metric}</p>
                         <p className="text-lg font-bold text-gold-700">{item.value}</p>
                         <div className="flex items-center justify-between mt-1">
-                          <p className="text-xs text-platinum-500-500">Prev: {item.previous}</p>
+                          <p className="text-xs text-platinum-500">Prev: {item.previous}</p>
                           <Badge variant={item.change === 'Declining' || item.change === '-3.2pp' ? 'destructive' : 'success'} className="text-xs">
                             {item.change}
                           </Badge>
@@ -954,7 +954,7 @@ export default function RecentHistoryPage() {
                     ))}
                   </div>
                   <div className="mt-4 rounded-lg border border-gold-700/30 bg-gold-700/10 p-4">
-                    <p className="text-sm text-platinum-500-300">
+                    <p className="text-sm text-platinum-300">
                       <span className="font-medium text-gold-700">Abu Dhabi GDP:</span> AED 1.14 trillion (10-year high) with 3.1% real GDP growth. Non-oil sector contributed &gt;53% of GDP.
                     </p>
                   </div>
@@ -1029,10 +1029,10 @@ export default function RecentHistoryPage() {
                         whileHover={{ scale: 1.02 }}
                         className="rounded-lg border border-gold-700/20 bg-platinum-800/50 p-4"
                       >
-                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-sm text-platinum-400">{item.metric}</p>
                         <p className="text-lg font-bold text-gold-700">{item.value}</p>
                         <div className="flex items-center justify-between mt-1">
-                          <p className="text-xs text-platinum-500-500">Target: {item.target}</p>
+                          <p className="text-xs text-platinum-500">Target: {item.target}</p>
                           <Badge variant={item.status === 'achieved' ? 'emerald' : 'amber'} className="text-xs">
                             {item.status}
                           </Badge>
@@ -1074,10 +1074,10 @@ export default function RecentHistoryPage() {
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <item.icon className="h-4 w-4 text-emerald-500" />
-                          <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                          <p className="text-sm text-platinum-400">{item.metric}</p>
                         </div>
                         <p className="text-xl font-bold text-emerald-500">{item.value}</p>
-                        <p className="text-xs text-platinum-500-500 mt-1">{item.context}</p>
+                        <p className="text-xs text-platinum-500 mt-1">{item.context}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1112,10 +1112,10 @@ export default function RecentHistoryPage() {
                         className="rounded-lg border border-cyan-500/20 bg-platinum-800/50 p-4"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <p className="font-semibold text-platinum-500-200">{item.metric}</p>
+                          <p className="font-semibold text-platinum-200">{item.metric}</p>
                           <Badge variant="cyan" className="text-xs">{item.value}</Badge>
                         </div>
-                        <p className="text-sm text-platinum-500-400">{item.detail}</p>
+                        <p className="text-sm text-platinum-400">{item.detail}</p>
                         <p className="text-xs text-cyan-500 mt-1">Target: {item.target}</p>
                       </motion.div>
                     ))}
@@ -1149,14 +1149,14 @@ export default function RecentHistoryPage() {
                         whileHover={{ scale: 1.05 }}
                         className="rounded-lg border border-rose-500/20 bg-platinum-800/50 p-3 text-center"
                       >
-                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-sm text-platinum-400">{item.metric}</p>
                         <p className="text-xl font-bold text-rose-500">{item.value}</p>
-                        <p className="text-xs text-platinum-500-500 mt-1">{item.context}</p>
+                        <p className="text-xs text-platinum-500 mt-1">{item.context}</p>
                       </motion.div>
                     ))}
                   </div>
                   <div className="mt-4 rounded-lg border border-rose-500/30 bg-rose-500/10 p-4">
-                    <p className="text-sm text-platinum-500-300">
+                    <p className="text-sm text-platinum-300">
                       <span className="font-medium text-rose-500">Scientific Analysis:</span> Lead author Basit Khan (NYU Abu Dhabi) identified cause as "Unusually warm Arabian Sea waters + Sudan low pressure + ITCZ". Warmer seas increased atmospheric moisture, intensified convective storms.
                     </p>
                   </div>
@@ -1192,9 +1192,9 @@ export default function RecentHistoryPage() {
                         whileHover={{ y: -4 }}
                         className="rounded-lg border border-cyan-500/20 bg-platinum-800/50 p-4"
                       >
-                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-sm text-platinum-400">{item.metric}</p>
                         <p className="text-lg font-bold text-cyan-500">{item.value}</p>
-                        <p className="text-xs text-platinum-500-500 mt-1">Target: {item.target}</p>
+                        <p className="text-xs text-platinum-500 mt-1">Target: {item.target}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1229,9 +1229,9 @@ export default function RecentHistoryPage() {
                         whileHover={{ x: 4 }}
                         className="rounded-lg border border-gold-700/20 bg-platinum-800/50 p-3"
                       >
-                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-sm text-platinum-400">{item.metric}</p>
                         <p className="text-lg font-bold text-gold-700">{item.value}</p>
-                        <p className="text-xs text-platinum-500-500 mt-1">{item.context}</p>
+                        <p className="text-xs text-platinum-500 mt-1">{item.context}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1267,9 +1267,9 @@ export default function RecentHistoryPage() {
                         whileHover={{ scale: 1.05 }}
                         className="rounded-lg border border-emerald-500/20 bg-platinum-800/50 p-3"
                       >
-                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-sm text-platinum-400">{item.metric}</p>
                         <p className="text-lg font-bold text-emerald-500">{item.value}</p>
-                        <p className="text-xs text-platinum-500-500 mt-1">{item.context}</p>
+                        <p className="text-xs text-platinum-500 mt-1">{item.context}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1302,9 +1302,9 @@ export default function RecentHistoryPage() {
                         whileHover={{ scale: 1.1 }}
                         className="rounded-lg border border-rose-500/20 bg-platinum-800/50 p-3 text-center"
                       >
-                        <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                        <p className="text-sm text-platinum-400">{item.metric}</p>
                         <p className="text-xl font-bold text-rose-500">{item.value}</p>
-                        <p className="text-xs text-platinum-500-500 mt-1">{item.context}</p>
+                        <p className="text-xs text-platinum-500 mt-1">{item.context}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -1354,17 +1354,17 @@ export default function RecentHistoryPage() {
                         whileHover={{ y: -4 }}
                         className="rounded-lg border border-gold-700/20 bg-platinum-800/50 p-4"
                       >
-                        <p className="text-sm text-platinum-500-400">{item.kpi}</p>
+                        <p className="text-sm text-platinum-400">{item.kpi}</p>
                         <div className="flex items-end gap-2 mt-1">
                           <p className="text-lg font-bold text-gold-700">{item.target}</p>
                           <Badge variant="emerald" className="text-xs">{item.growth}</Badge>
                         </div>
-                        <p className="text-xs text-platinum-500-500 mt-1">Baseline: {item.baseline}</p>
+                        <p className="text-xs text-platinum-500 mt-1">Baseline: {item.baseline}</p>
                       </motion.div>
                     ))}
                   </div>
                   <div className="mt-4 rounded-lg border border-gold-700/30 bg-gold-700/10 p-4">
-                    <p className="text-sm text-platinum-500-300">
+                    <p className="text-sm text-platinum-300">
                       <span className="font-medium text-gold-700">Four Pillars:</span> Forward Society | Forward Economy | Forward Diplomacy | Forward Ecosystem
                     </p>
                   </div>
@@ -1401,7 +1401,7 @@ export default function RecentHistoryPage() {
                         className="flex items-center gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                       >
                         <div className="w-40">
-                          <p className="font-medium text-platinum-500-200 text-sm">{item.topic}</p>
+                          <p className="font-medium text-platinum-200 text-sm">{item.topic}</p>
                         </div>
                         <div className="flex-1">
                           <Badge
@@ -1415,12 +1415,12 @@ export default function RecentHistoryPage() {
                           </Badge>
                         </div>
                         <div className="w-20 text-center">
-                          <p className="text-xs text-platinum-500-400">Volatility</p>
-                          <p className="text-sm font-medium text-platinum-500-300">{item.volatility}</p>
+                          <p className="text-xs text-platinum-400">Volatility</p>
+                          <p className="text-sm font-medium text-platinum-300">{item.volatility}</p>
                         </div>
                         <div className="flex-1">
-                          <p className="text-xs text-platinum-500-400">Tone</p>
-                          <p className="text-sm text-platinum-500-300">{item.tone}</p>
+                          <p className="text-xs text-platinum-400">Tone</p>
+                          <p className="text-sm text-platinum-300">{item.tone}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -1462,7 +1462,7 @@ export default function RecentHistoryPage() {
                         className="flex items-center gap-4 rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                       >
                         <div className="w-32">
-                          <p className="font-medium text-platinum-500-200">{item.topic}</p>
+                          <p className="font-medium text-platinum-200">{item.topic}</p>
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2">
@@ -1483,7 +1483,7 @@ export default function RecentHistoryPage() {
                           </div>
                         </div>
                         <div className="w-64">
-                          <p className="text-sm text-platinum-500-400">{item.narrative}</p>
+                          <p className="text-sm text-platinum-400">{item.narrative}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -1516,7 +1516,7 @@ export default function RecentHistoryPage() {
                         className="rounded-lg border border-rose-500/20 bg-platinum-800/50 p-4"
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-semibold text-platinum-500-200">{item.topic}</h4>
+                          <h4 className="font-semibold text-platinum-200">{item.topic}</h4>
                           <Badge
                             variant="destructive"
                             className="text-xs"
@@ -1524,7 +1524,7 @@ export default function RecentHistoryPage() {
                             {item.score}/10
                           </Badge>
                         </div>
-                        <p className="text-sm text-platinum-500-400">{item.issues}</p>
+                        <p className="text-sm text-platinum-400">{item.issues}</p>
                         <div className="mt-2 h-2 w-full rounded-full bg-platinum-700">
                           <div
                             className="h-2 rounded-full bg-rose"
@@ -1569,14 +1569,14 @@ export default function RecentHistoryPage() {
                           {item.count}
                         </Badge>
                         <div className="flex-1">
-                          <p className="font-medium text-platinum-500-200">{item.tier}</p>
-                          <p className="text-sm text-platinum-500-400">{item.sources}</p>
+                          <p className="font-medium text-platinum-200">{item.tier}</p>
+                          <p className="text-sm text-platinum-400">{item.sources}</p>
                         </div>
                       </motion.div>
                     ))}
                   </div>
                   <div className="mt-4 rounded-lg border border-navy/30 bg-navy/10 p-4">
-                    <p className="text-sm text-platinum-500-300">
+                    <p className="text-sm text-platinum-300">
                       <span className="font-medium text-navy-500">Total Sources:</span> 45+ documented | <span className="font-medium text-navy-500">Total Data Points:</span> 250+
                     </p>
                   </div>
@@ -1612,7 +1612,7 @@ export default function RecentHistoryPage() {
                           <h4 className="font-semibold text-gold-700 mb-2">{section.category}</h4>
                           <ul className="space-y-1">
                             {section.entities.map((entity, i) => (
-                              <li key={i} className="text-sm text-platinum-500-300 flex items-start gap-2">
+                              <li key={i} className="text-sm text-platinum-300 flex items-start gap-2">
                                 <span className="text-gold-700">-</span>
                                 {entity}
                               </li>

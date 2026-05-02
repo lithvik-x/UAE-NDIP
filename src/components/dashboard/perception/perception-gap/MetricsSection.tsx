@@ -77,11 +77,11 @@ export function MetricsSection({ data }: MetricsSectionProps) {
           />
 
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-platinum-500-300">Score Breakdown</h4>
+            <h4 className="text-sm font-semibold text-platinum-300">Score Breakdown</h4>
             <div className="space-y-3">
               {data.freedomScores?.map((score, idx) => (
                 <div key={idx} className="flex items-center justify-between">
-                  <span className="text-sm text-platinum-500-400">{score.index}</span>
+                  <span className="text-sm text-platinum-400">{score.index}</span>
                   <div className="flex items-center gap-2">
                     <span className={`text-sm font-bold ${
                       score.score < 40 ? 'text-rose-400' : score.score < 60 ? 'text-amber-400' : 'text-emerald-400'
@@ -121,15 +121,15 @@ export function MetricsSection({ data }: MetricsSectionProps) {
           />
 
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-platinum-500-300">Key Statistics</h4>
+            <h4 className="text-sm font-semibold text-platinum-300">Key Statistics</h4>
             <ScrollArea className="h-[240px]">
               <div className="space-y-3 pr-4">
                 {data.humanRightsStats?.map((stat, idx) => (
                   <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-3">
-                    <span className="text-sm text-platinum-500-300">{stat.metric}</span>
+                    <span className="text-sm text-platinum-300">{stat.metric}</span>
                     <div className="text-right">
                       <span className="text-lg font-bold text-rose-400">{stat.value}</span>
-                      <span className="text-xs text-platinum-500-500 ml-2">{stat.source}</span>
+                      <span className="text-xs text-platinum-500 ml-2">{stat.source}</span>
                     </div>
                   </div>
                 ))}
@@ -152,7 +152,7 @@ export function MetricsSection({ data }: MetricsSectionProps) {
           />
 
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-platinum-500-300">Worker Nationalities</h4>
+            <h4 className="text-sm font-semibold text-platinum-300">Worker Nationalities</h4>
             <div className="space-y-3">
               {[
                 { nationality: 'Indian', count: '3.5M', color: 'bg-orange-500' },
@@ -163,8 +163,8 @@ export function MetricsSection({ data }: MetricsSectionProps) {
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3">
                   <div className={`w-3 h-3 rounded-full ${item.color}`} />
-                  <span className="text-sm text-platinum-500-300 flex-1">{item.nationality}</span>
-                  <span className="text-sm font-bold text-platinum-500-100">{item.count}</span>
+                  <span className="text-sm text-platinum-300 flex-1">{item.nationality}</span>
+                  <span className="text-sm font-bold text-platinum-100">{item.count}</span>
                 </div>
               ))}
             </div>
@@ -173,11 +173,11 @@ export function MetricsSection({ data }: MetricsSectionProps) {
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center rounded-lg bg-platinum-800/50 p-3">
                   <div className="text-2xl font-bold text-rose-400">132,000</div>
-                  <div className="text-xs text-platinum-500-400">In Modern Slavery</div>
+                  <div className="text-xs text-platinum-400">In Modern Slavery</div>
                 </div>
                 <div className="text-center rounded-lg bg-platinum-800/50 p-3">
                   <div className="text-2xl font-bold text-amber-400">0/100</div>
-                  <div className="text-xs text-platinum-500-400">Supply Chain Rating</div>
+                  <div className="text-xs text-platinum-400">Supply Chain Rating</div>
                 </div>
               </div>
             </div>
@@ -208,7 +208,7 @@ export function MetricsSection({ data }: MetricsSectionProps) {
           <div className="space-y-3 pr-4">
             {data.womenRightsIndicators?.map((indicator, idx) => (
               <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-4">
-                <span className="text-sm text-platinum-500-300">{indicator.metric}</span>
+                <span className="text-sm text-platinum-300">{indicator.metric}</span>
                 <Badge
                   variant={indicator.value === 'Yes' ? 'destructive' : indicator.value === 'No' ? 'outline' : 'default'}
                   className={`text-xs ${

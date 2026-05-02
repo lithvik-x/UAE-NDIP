@@ -172,10 +172,10 @@ export default function TourismHospitalityPage() {
         <div>
           <Badge variant="default" className="mb-2 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 text-amber-400 border-amber-500/30">P-SECTOR</Badge>
           <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold-700">Tourism & Hospitality</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             {tourismHospitalityData.description}
           </p>
-          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500-500">
+          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500">
             <span className="flex items-center gap-1">
               <Calendar className="h-4 w-4" />
               {reportMetadata.reportCompleted}
@@ -195,7 +195,7 @@ export default function TourismHospitalityPage() {
             <Hotel className="h-4 w-4" />
             Hotels
           </Button>
-          <Button className="bg-gradient-to-r from-amber-500 to-yellow-500 hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-to-r from-amber-500 to-yellow-500 hover:opacity-90 text-navy-950 gap-2">
             <TrendingUp className="h-4 w-4" />
             Analyze
           </Button>
@@ -327,7 +327,7 @@ export default function TourismHospitalityPage() {
                     {kpis.map((kpi, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-2xl font-bold text-amber-400">{kpi.value}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{kpi.kpi}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{kpi.kpi}</p>
                         <p className="text-xs text-emerald-400 mt-1">{kpi.trend}</p>
                       </div>
                     ))}
@@ -352,12 +352,12 @@ export default function TourismHospitalityPage() {
                         'bg-amber-500/10 border-amber-500/30'
                       }`}>
                         <div className="flex justify-between items-center">
-                          <span className="text-sm font-medium text-platinum-500-200">{item.topic}</span>
+                          <span className="text-sm font-medium text-platinum-200">{item.topic}</span>
                           <Badge variant={item.sentiment === 'Positive' ? 'success' : item.sentiment === 'Negative' ? 'destructive' : 'warning'} className="text-xs">
                             {item.sentiment}
                           </Badge>
                         </div>
-                        <p className="text-xs text-platinum-500-400 mt-1">{item.notes}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{item.notes}</p>
                       </div>
                     ))}
                   </div>
@@ -389,13 +389,13 @@ export default function TourismHospitalityPage() {
                       <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <div className="flex items-center gap-3">
                           <div className="w-16 text-center font-bold text-amber-400">{year.year}</div>
-                          <div className="w-32 font-medium text-platinum-500-200">{year.visitorsMillions}M</div>
+                          <div className="w-32 font-medium text-platinum-200">{year.visitorsMillions}M</div>
                         </div>
                         <div className="flex items-center gap-4">
-                          <span className={`text-sm ${year.growthRate.includes('+') ? 'text-emerald-400' : 'text-platinum-500-500'}`}>
+                          <span className={`text-sm ${year.growthRate.includes('+') ? 'text-emerald-400' : 'text-platinum-500'}`}>
                             {year.growthRate}
                           </span>
-                          <span className="text-xs text-platinum-500-500 max-w-xs">{year.notes}</span>
+                          <span className="text-xs text-platinum-500 max-w-xs">{year.notes}</span>
                         </div>
                       </div>
                     ))}
@@ -416,7 +416,7 @@ export default function TourismHospitalityPage() {
                     {Object.entries(visitorStatistics.abuDhabiVisitors).map(([key, value]) => (
                       <div key={key} className="p-4 bg-navy/20 rounded-lg text-center">
                         <p className="text-2xl font-bold text-navy-500">{value}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
                       </div>
                     ))}
                   </div>
@@ -435,10 +435,10 @@ export default function TourismHospitalityPage() {
                   <div className="space-y-3">
                     {visitorStatistics.uaeGlobalRankings.map((rank, idx) => (
                       <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-300">{rank.index}</span>
+                        <span className="text-platinum-300">{rank.index}</span>
                         <div className="flex items-center gap-3">
                           <span className="text-xl font-bold text-amber-400">{rank.ranking}</span>
-                          <span className="text-xs text-platinum-500-500">{rank.year}</span>
+                          <span className="text-xs text-platinum-500">{rank.year}</span>
                         </div>
                       </div>
                     ))}
@@ -469,23 +469,23 @@ export default function TourismHospitalityPage() {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="p-4 bg-amber-500/10 rounded-lg text-center">
                       <p className="text-3xl font-bold text-amber-400">832</p>
-                      <p className="text-sm text-platinum-500-400">Hotels</p>
+                      <p className="text-sm text-platinum-400">Hotels</p>
                     </div>
                     <div className="p-4 bg-amber-500/10 rounded-lg text-center">
                       <p className="text-3xl font-bold text-amber-400">154K</p>
-                      <p className="text-sm text-platinum-500-400">Rooms</p>
+                      <p className="text-sm text-platinum-400">Rooms</p>
                     </div>
                     <div className="p-4 bg-amber-500/10 rounded-lg text-center">
                       <p className="text-3xl font-bold text-amber-400">AED 538</p>
-                      <p className="text-sm text-platinum-500-400">Avg Nightly Rate</p>
+                      <p className="text-sm text-platinum-400">Avg Nightly Rate</p>
                     </div>
                     <div className="p-4 bg-amber-500/10 rounded-lg text-center">
                       <p className="text-3xl font-bold text-amber-400">80.7%</p>
-                      <p className="text-sm text-platinum-500-400">Occupancy</p>
+                      <p className="text-sm text-platinum-400">Occupancy</p>
                     </div>
                   </div>
                   <div className="mt-4 p-3 bg-platinum-800/50 rounded-lg">
-                    <p className="text-sm text-platinum-500-400">RevPAR: <span className="text-amber-400 font-bold">AED 467</span> (+11% YoY)</p>
+                    <p className="text-sm text-platinum-400">RevPAR: <span className="text-amber-400 font-bold">AED 467</span> (+11% YoY)</p>
                   </div>
                 </CardContent>
               </Card>
@@ -502,15 +502,15 @@ export default function TourismHospitalityPage() {
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     <div className="p-4 bg-navy/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-navy-500">81%</p>
-                      <p className="text-sm text-platinum-500-400">Occupancy</p>
+                      <p className="text-sm text-platinum-400">Occupancy</p>
                     </div>
                     <div className="p-4 bg-navy/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-navy-500">Dh9.1B</p>
-                      <p className="text-sm text-platinum-500-400">Hotel Revenues</p>
+                      <p className="text-sm text-platinum-400">Hotel Revenues</p>
                     </div>
                     <div className="p-4 bg-navy/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-navy-500">+19.5%</p>
-                      <p className="text-sm text-platinum-500-400">YoY Growth</p>
+                      <p className="text-sm text-platinum-400">YoY Growth</p>
                     </div>
                   </div>
                 </CardContent>
@@ -528,19 +528,19 @@ export default function TourismHospitalityPage() {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald-500">1,252</p>
-                      <p className="text-xs text-platinum-500-400">Total Hotels</p>
+                      <p className="text-xs text-platinum-400">Total Hotels</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald-500">217K</p>
-                      <p className="text-xs text-platinum-500-400">Total Rooms</p>
+                      <p className="text-xs text-platinum-400">Total Rooms</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald-500">AED 44.8B</p>
-                      <p className="text-xs text-platinum-500-400">2024 Revenue</p>
+                      <p className="text-xs text-platinum-400">2024 Revenue</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald-500">71%</p>
-                      <p className="text-xs text-platinum-500-400">2022 Occupancy</p>
+                      <p className="text-xs text-platinum-400">2022 Occupancy</p>
                     </div>
                   </div>
                 </CardContent>
@@ -559,7 +559,7 @@ export default function TourismHospitalityPage() {
                     <div className="space-y-2">
                       {hotelAccommodation.majorAbuDhabiAttractions.map((attr, idx) => (
                         <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
-                          <span className="text-platinum-500-200 font-medium">{attr.attraction}</span>
+                          <span className="text-platinum-200 font-medium">{attr.attraction}</span>
                           <div className="flex items-center gap-3">
                             <span className="text-amber-400 font-bold">{attr.visitors}</span>
                             {attr.notes && <span className="text-xs text-emerald-400">{attr.notes}</span>}
@@ -594,24 +594,24 @@ export default function TourismHospitalityPage() {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="p-4 bg-amber-500/10 rounded-lg text-center">
                       <p className="text-3xl font-bold text-amber-400">6,800+</p>
-                      <p className="text-sm text-platinum-500-400">Exhibitors</p>
+                      <p className="text-sm text-platinum-400">Exhibitors</p>
                     </div>
                     <div className="p-4 bg-amber-500/10 rounded-lg text-center">
                       <p className="text-3xl font-bold text-amber-400">2,000</p>
-                      <p className="text-sm text-platinum-500-400">Startups</p>
+                      <p className="text-sm text-platinum-400">Startups</p>
                     </div>
                     <div className="p-4 bg-amber-500/10 rounded-lg text-center">
                       <p className="text-3xl font-bold text-amber-400">1,200</p>
-                      <p className="text-sm text-platinum-500-400">Investors</p>
+                      <p className="text-sm text-platinum-400">Investors</p>
                     </div>
                     <div className="p-4 bg-amber-500/10 rounded-lg text-center">
                       <p className="text-3xl font-bold text-amber-400">45th</p>
-                      <p className="text-sm text-platinum-500-400">Edition</p>
+                      <p className="text-sm text-platinum-400">Edition</p>
                     </div>
                   </div>
                   <div className="mt-4 p-3 bg-amber-500/10 rounded-lg">
-                    <p className="text-sm text-platinum-500-300">Economic Output (2024): <span className="text-amber-400 font-bold">AED 22.35 billion ($6 billion)</span></p>
-                    <p className="text-xs text-platinum-500-500 mt-1">Venue: Dubai World Trade Centre</p>
+                    <p className="text-sm text-platinum-300">Economic Output (2024): <span className="text-amber-400 font-bold">AED 22.35 billion ($6 billion)</span></p>
+                    <p className="text-xs text-platinum-500 mt-1">Venue: Dubai World Trade Centre</p>
                   </div>
                 </CardContent>
               </Card>
@@ -628,28 +628,28 @@ export default function TourismHospitalityPage() {
                   <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
                     <div className="p-3 bg-emerald-500/10 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald-400">205K+</p>
-                      <p className="text-xs text-platinum-500-400">Attendees</p>
+                      <p className="text-xs text-platinum-400">Attendees</p>
                     </div>
                     <div className="p-3 bg-emerald-500/10 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald-400">2,250+</p>
-                      <p className="text-xs text-platinum-500-400">Companies</p>
+                      <p className="text-xs text-platinum-400">Companies</p>
                     </div>
                     <div className="p-3 bg-emerald-500/10 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald-400">1,800+</p>
-                      <p className="text-xs text-platinum-500-400">Speakers</p>
+                      <p className="text-xs text-platinum-400">Speakers</p>
                     </div>
                     <div className="p-3 bg-emerald-500/10 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald-400">$46B</p>
-                      <p className="text-xs text-platinum-500-400">Cross-Sector Deals</p>
+                      <p className="text-xs text-platinum-400">Cross-Sector Deals</p>
                     </div>
                     <div className="p-3 bg-emerald-500/10 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald-400">30</p>
-                      <p className="text-xs text-platinum-500-400">Country Pavilions</p>
+                      <p className="text-xs text-platinum-400">Country Pavilions</p>
                     </div>
                   </div>
                   <div className="mt-4 p-3 bg-platinum-800/50 rounded-lg">
-                    <p className="text-sm text-platinum-500-300">Dates: <span className="text-emerald-400">November 3-6, 2025</span></p>
-                    <p className="text-sm text-platinum-500-300">Location: <span className="text-emerald-400">ADNEC, Abu Dhabi</span></p>
+                    <p className="text-sm text-platinum-300">Dates: <span className="text-emerald-400">November 3-6, 2025</span></p>
+                    <p className="text-sm text-platinum-300">Location: <span className="text-emerald-400">ADNEC, Abu Dhabi</span></p>
                   </div>
                 </CardContent>
               </Card>
@@ -666,11 +666,11 @@ export default function TourismHospitalityPage() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-4 bg-platinum/10 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">55,000+</p>
-                      <p className="text-sm text-platinum-500-400">Delegates</p>
+                      <p className="text-sm text-platinum-400">Delegates</p>
                     </div>
                     <div className="p-4 bg-platinum/10 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">2,800+</p>
-                      <p className="text-sm text-platinum-500-400">Exhibitors</p>
+                      <p className="text-sm text-platinum-400">Exhibitors</p>
                     </div>
                   </div>
                 </CardContent>
@@ -723,11 +723,11 @@ export default function TourismHospitalityPage() {
                             <span className="w-8 h-8 flex items-center justify-center bg-amber-500/20 rounded-full text-amber-400 font-bold text-sm">
                               {country.rank}
                             </span>
-                            <span className="text-platinum-500-200 font-medium">{country.country}</span>
+                            <span className="text-platinum-200 font-medium">{country.country}</span>
                           </div>
                           <div className="flex items-center gap-4">
                             <span className="text-amber-400 font-bold">{country.visitors}</span>
-                            <span className="text-xs text-platinum-500-500">{country.percentOfTotal}</span>
+                            <span className="text-xs text-platinum-500">{country.percentOfTotal}</span>
                           </div>
                         </div>
                       ))}
@@ -749,12 +749,12 @@ export default function TourismHospitalityPage() {
                     {sourceMarkets.abuDhabiSourceMarkets2025.map((market, idx) => (
                       <div key={idx} className="p-3 bg-navy/20 rounded-lg">
                         <div className="flex justify-between items-center">
-                          <span className="text-platinum-500-200 font-medium">{market.country}</span>
+                          <span className="text-platinum-200 font-medium">{market.country}</span>
                           {market.growth && (
                             <Badge variant="success" className="text-xs">{market.growth}</Badge>
                           )}
                         </div>
-                        <p className="text-sm text-platinum-500-400 mt-1">{market.hotelGuests}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{market.hotelGuests}</p>
                       </div>
                     ))}
                   </div>
@@ -784,27 +784,27 @@ export default function TourismHospitalityPage() {
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     <div className="p-4 bg-amber-500/10 rounded-lg text-center">
                       <p className="text-3xl font-bold text-amber-400">19M</p>
-                      <p className="text-sm text-platinum-500-400">Dubai Visitors 2024</p>
+                      <p className="text-sm text-platinum-400">Dubai Visitors 2024</p>
                     </div>
                     <div className="p-4 bg-amber-500/10 rounded-lg text-center">
                       <p className="text-3xl font-bold text-amber-400">25M</p>
-                      <p className="text-sm text-platinum-500-400">Forecast 2040</p>
+                      <p className="text-sm text-platinum-400">Forecast 2040</p>
                     </div>
                     <div className="p-4 bg-amber-500/10 rounded-lg text-center">
                       <p className="text-3xl font-bold text-amber-400">7:1</p>
-                      <p className="text-sm text-platinum-500-400">Visitor-to-Resident (2034)</p>
+                      <p className="text-sm text-platinum-400">Visitor-to-Resident (2034)</p>
                     </div>
                     <div className="p-4 bg-amber-500/10 rounded-lg text-center">
                       <p className="text-3xl font-bold text-amber-400">+20%</p>
-                      <p className="text-sm text-platinum-500-400">Housing Costs 2024</p>
+                      <p className="text-sm text-platinum-400">Housing Costs 2024</p>
                     </div>
                     <div className="p-4 bg-amber-500/10 rounded-lg text-center">
                       <p className="text-3xl font-bold text-amber-400">45hrs</p>
-                      <p className="text-sm text-platinum-500-400">Traffic Lost (2025)</p>
+                      <p className="text-sm text-platinum-400">Traffic Lost (2025)</p>
                     </div>
                     <div className="p-4 bg-amber-500/10 rounded-lg text-center">
                       <p className="text-3xl font-bold text-amber-400">29mph</p>
-                      <p className="text-sm text-platinum-500-400">Peak Speed (2025)</p>
+                      <p className="text-sm text-platinum-400">Peak Speed (2025)</p>
                     </div>
                   </div>
                 </CardContent>
@@ -824,7 +824,7 @@ export default function TourismHospitalityPage() {
                       {overtourismInfrastructure.expertWarnings.map((warning, idx) => (
                         <div key={idx} className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-lg">
                           <p className="text-sm font-semibold text-rose-400">{warning.expert}</p>
-                          <p className="text-sm text-platinum-500-300 mt-2 italic">{warning.quote}</p>
+                          <p className="text-sm text-platinum-300 mt-2 italic">{warning.quote}</p>
                         </div>
                       ))}
                     </div>
@@ -844,7 +844,7 @@ export default function TourismHospitalityPage() {
                   <div className="space-y-3">
                     {overtourismInfrastructure.infrastructureInvestment.map((project, idx) => (
                       <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-300">{project.project}</span>
+                        <span className="text-platinum-300">{project.project}</span>
                         <span className="text-emerald-400 font-bold">{project.investment}</span>
                       </div>
                     ))}
@@ -875,15 +875,15 @@ export default function TourismHospitalityPage() {
                   <div className="grid grid-cols-3 gap-4">
                     <div className="p-4 bg-rose-500/10 rounded-lg text-center">
                       <p className="text-2xl font-bold text-rose-400">$334.94M</p>
-                      <p className="text-sm text-platinum-500-400">Market Size 2024</p>
+                      <p className="text-sm text-platinum-400">Market Size 2024</p>
                     </div>
                     <div className="p-4 bg-rose-500/10 rounded-lg text-center">
                       <p className="text-2xl font-bold text-rose-400">$975.02M</p>
-                      <p className="text-sm text-platinum-500-400">Market Size 2032</p>
+                      <p className="text-sm text-platinum-400">Market Size 2032</p>
                     </div>
                     <div className="p-4 bg-rose-500/10 rounded-lg text-center">
                       <p className="text-2xl font-bold text-rose-400">14.29%</p>
-                      <p className="text-sm text-platinum-500-400">CAGR</p>
+                      <p className="text-sm text-platinum-400">CAGR</p>
                     </div>
                   </div>
                 </CardContent>
@@ -919,7 +919,7 @@ export default function TourismHospitalityPage() {
                   <div className="grid gap-3 md:grid-cols-2">
                     {medicalTourism.healthcareInfrastructure.map((item, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-xs text-platinum-500-500">{item.metric}</p>
+                        <p className="text-xs text-platinum-500">{item.metric}</p>
                         <p className="text-lg font-bold text-platinum-500">{item.value}</p>
                       </div>
                     ))}
@@ -940,7 +940,7 @@ export default function TourismHospitalityPage() {
                     <div className="space-y-2">
                       {medicalTourism.keyMedicalTourismCompanies.map((company, idx) => (
                         <div key={idx} className="p-2 bg-platinum-800/50 rounded-lg">
-                          <p className="text-sm text-platinum-500-300">{company.company}</p>
+                          <p className="text-sm text-platinum-300">{company.company}</p>
                         </div>
                       ))}
                     </div>

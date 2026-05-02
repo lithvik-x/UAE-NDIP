@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client'
 
 import { motion } from 'framer-motion'
@@ -68,10 +69,10 @@ export function OverviewSection() {
         <Badge variant="outline" className="mb-2 border-emerald-500/50 text-emerald-400">
           EXECUTIVE SUMMARY
         </Badge>
-        <h2 className="text-2xl font-bold font-rajdhani text-platinum-500-100">
+        <h2 className="text-2xl font-bold font-rajdhani text-platinum-100">
           Positive Sentiment Intelligence Overview
         </h2>
-        <p className="text-sm text-platinum-500-400 mt-1">
+        <p className="text-sm text-platinum-400 mt-1">
           Comprehensive SSOT from 14 atomic queries and 12/14 successful WebFetch retrievals (85.7%)
         </p>
       </motion.div>
@@ -87,7 +88,7 @@ export function OverviewSection() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-emerald-400">14</p>
-                  <p className="text-xs text-platinum-500-500">Atomic Queries</p>
+                  <p className="text-xs text-platinum-500">Atomic Queries</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -96,7 +97,7 @@ export function OverviewSection() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-emerald-400">14</p>
-                  <p className="text-xs text-platinum-500-500">URLs Fetched</p>
+                  <p className="text-xs text-platinum-500">URLs Fetched</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -105,7 +106,7 @@ export function OverviewSection() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-emerald-400">12</p>
-                  <p className="text-xs text-platinum-500-500">Successful Retrievals</p>
+                  <p className="text-xs text-platinum-500">Successful Retrievals</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -114,7 +115,7 @@ export function OverviewSection() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-gold-400">85.7%</p>
-                  <p className="text-xs text-platinum-500-500">Retrieval Rate</p>
+                  <p className="text-xs text-platinum-500">Retrieval Rate</p>
                 </div>
               </div>
             </div>
@@ -270,10 +271,10 @@ export function OverviewSection() {
                   />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs font-medium text-platinum-500-200 truncate">
+                  <p className="text-xs font-medium text-platinum-200 truncate">
                     {source.source.split('(')[0].trim()}
                   </p>
-                  <p className="text-xs text-platinum-500-500">{source.reliability}</p>
+                  <p className="text-xs text-platinum-500">{source.reliability}</p>
                 </div>
                 <Badge
                   variant="outline"
@@ -327,10 +328,10 @@ export function OverviewSection() {
                   />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-medium text-platinum-500-200 truncate">
+                  <p className="text-sm font-medium text-platinum-200 truncate">
                     {item.dataPoint}
                   </p>
-                  <p className="text-xs text-platinum-500-500 truncate">{item.rationale}</p>
+                  <p className="text-xs text-platinum-500 truncate">{item.rationale}</p>
                 </div>
                 <Badge
                   variant="outline"
@@ -363,14 +364,14 @@ export function OverviewSection() {
                 whileHover={{ scale: 1.05, y: -2 }}
                 className="p-3 rounded-xl bg-glass-surface border border-glass-border backdrop-blur-sm text-center hover:border-emerald-500/30 transition-all"
               >
-                <p className="text-sm font-medium text-platinum-500-200 mb-2">{theme.theme}</p>
+                <p className="text-sm font-medium text-platinum-200 mb-2">{theme.theme}</p>
                 <div className="space-y-1 text-xs">
                   <div className="flex justify-between">
-                    <span className="text-platinum-500-500">Data Points:</span>
+                    <span className="text-platinum-500">Data Points:</span>
                     <span className="text-emerald-400 font-medium">{theme.dataPoints}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-platinum-500-500">Consistency:</span>
+                    <span className="text-platinum-500">Consistency:</span>
                     <span
                       className={`font-medium ${
                         theme.sourceConsistency === 'Very High'

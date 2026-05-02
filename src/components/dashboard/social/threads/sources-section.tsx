@@ -43,13 +43,13 @@ export function SourcesSection({
   const getCredibilityColor = (credibility: string) => {
     if (credibility === 'Very High' || credibility === 'High') return 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
     if (credibility === 'Medium-High' || credibility === 'Medium') return 'bg-gold-700/20 text-gold-700 border-gold-700/30'
-    return 'bg-platinum-500/20 text-platinum-500-400 border-platinum-500/30'
+    return 'bg-platinum-500/20 text-platinum-400 border-platinum-500/30'
   }
 
   const getImpactColor = (impact: string) => {
     if (impact === 'High') return 'bg-rose-500/20 text-rose-400 border-rose-500/30'
     if (impact === 'Medium') return 'bg-gold-700/20 text-gold-700 border-gold-700/30'
-    return 'bg-platinum-500/20 text-platinum-500-400 border-platinum-500/30'
+    return 'bg-platinum-500/20 text-platinum-400 border-platinum-500/30'
   }
 
   return (
@@ -77,8 +77,8 @@ export function SourcesSection({
                       className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                     >
                       <div className="flex-1">
-                        <p className="font-medium text-platinum-500-200 text-sm">{source.source}</p>
-                        <p className="text-xs text-platinum-500-500">{source.type}</p>
+                        <p className="font-medium text-platinum-200 text-sm">{source.source}</p>
+                        <p className="text-xs text-platinum-500">{source.type}</p>
                       </div>
                       <div className="flex items-center gap-2">
                         <Badge className={`text-xs ${getCredibilityColor(source.credibility)}`}>
@@ -124,10 +124,10 @@ export function SourcesSection({
                         ) : (
                           <AlertTriangle className="h-5 w-5 text-rose-400" />
                         )}
-                        <span className="font-medium text-platinum-500-200">{item.dataType}</span>
+                        <span className="font-medium text-platinum-200">{item.dataType}</span>
                       </div>
                       <div className="text-right">
-                        <p className="text-sm text-platinum-500-400">{item.freshness}</p>
+                        <p className="text-sm text-platinum-400">{item.freshness}</p>
                         <Badge
                           variant="outline"
                           className={`text-xs mt-1 ${
@@ -169,12 +169,12 @@ export function SourcesSection({
                       <AlertTriangle className="h-5 w-5 text-rose-400 mt-0.5 flex-shrink-0" />
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-1">
-                          <p className="font-medium text-platinum-500-200">{gap.gap}</p>
+                          <p className="font-medium text-platinum-200">{gap.gap}</p>
                           <Badge className={`text-xs ${getImpactColor(gap.impact)}`}>
                             {gap.impact} Impact
                           </Badge>
                         </div>
-                        <p className="text-sm text-platinum-500-400 flex items-center gap-1">
+                        <p className="text-sm text-platinum-400 flex items-center gap-1">
                           <CheckCircle className="h-3 w-3 text-emerald-400" />
                           {gap.recommendation}
                         </p>
@@ -209,8 +209,8 @@ export function SourcesSection({
                           {rec.frequency}
                         </Badge>
                       </div>
-                      <p className="font-medium text-platinum-500-200 text-sm mb-1">{rec.metric}</p>
-                      <p className="text-xs text-platinum-500-500 flex items-center gap-1">
+                      <p className="font-medium text-platinum-200 text-sm mb-1">{rec.metric}</p>
+                      <p className="text-xs text-platinum-500 flex items-center gap-1">
                         <Source className="h-3 w-3" />
                         {rec.source}
                       </p>
@@ -239,10 +239,10 @@ export function SourcesSection({
                       transition={{ delay: idx * 0.02 }}
                       className="flex items-start gap-3 rounded-lg bg-platinum-800/30 p-3 hover:bg-platinum-800/50 transition-colors"
                     >
-                      <span className="text-xs text-platinum-500-500 font-mono w-6">{source.id}</span>
+                      <span className="text-xs text-platinum-500 font-mono w-6">{source.id}</span>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1">
-                          <p className="text-sm text-platinum-500-300 truncate flex-1">{source.contentSummary}</p>
+                          <p className="text-sm text-platinum-300 truncate flex-1">{source.contentSummary}</p>
                           <Badge
                             variant="outline"
                             className={`text-xs flex-shrink-0 ${
@@ -250,13 +250,13 @@ export function SourcesSection({
                                 ? 'text-emerald-400 border-emerald-500/30'
                                 : source.credibility === 'High'
                                 ? 'text-info border-info/30'
-                                : 'text-platinum-500-400 border-platinum-500/30'
+                                : 'text-platinum-400 border-platinum-500/30'
                             }`}
                           >
                             {source.credibility}
                           </Badge>
                         </div>
-                        <p className="text-xs text-platinum-500-500 truncate">{source.url}</p>
+                        <p className="text-xs text-platinum-500 truncate">{source.url}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -276,22 +276,22 @@ export function SourcesSection({
                 <div className="grid gap-4 sm:grid-cols-4">
                   <div className="text-center p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30">
                     <div className="text-2xl font-bold text-emerald-400">36</div>
-                    <div className="text-xs text-platinum-500-400">Total Sources</div>
+                    <div className="text-xs text-platinum-400">Total Sources</div>
                   </div>
                   <div className="text-center p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30">
                     <div className="text-2xl font-bold text-emerald-400">High+</div>
-                    <div className="text-xs text-platinum-500-400">Credibility</div>
+                    <div className="text-xs text-platinum-400">Credibility</div>
                   </div>
                   <div className="text-center p-3 rounded-lg bg-gold-700/10 border border-gold-700/30">
                     <div className="text-2xl font-bold text-gold-700">2026</div>
-                    <div className="text-xs text-platinum-500-400">Report Date</div>
+                    <div className="text-xs text-platinum-400">Report Date</div>
                   </div>
                   <div className="text-center p-3 rounded-lg bg-info/10 border border-info/30">
                     <div className="text-2xl font-bold text-info">Fully</div>
-                    <div className="text-xs text-platinum-500-400">Enriched</div>
+                    <div className="text-xs text-platinum-400">Enriched</div>
                   </div>
                 </div>
-                <p className="text-sm text-platinum-500-400 mt-4 text-center">
+                <p className="text-sm text-platinum-400 mt-4 text-center">
                   All data extracted from publicly available sources. No fabrication of facts or figures.
                   This document is the Single Source of Truth (SSOT) for UAE Threads platform intelligence.
                 </p>

@@ -123,7 +123,7 @@ export default function InfluencerSentimentPage() {
         <div>
           <Badge variant="gold" className="mb-2">SENTIMENT</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Influencer Sentiment</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Key opinion leaders, influencer analytics, and sentiment tracking
           </p>
         </div>
@@ -132,7 +132,7 @@ export default function InfluencerSentimentPage() {
             <User className="h-4 w-4" />
             Influencer List
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
             <Users className="h-4 w-4" />
             Track Influencers
           </Button>
@@ -261,15 +261,15 @@ export default function InfluencerSentimentPage() {
                               <Star className={`h-5 w-5 ${getSentimentColor(cat.sentiment)}`} />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{cat.category}</p>
-                              <p className="text-sm text-platinum-500-400">{cat.influencers} influencers</p>
+                              <p className="font-semibold text-platinum-200">{cat.category}</p>
+                              <p className="text-sm text-platinum-400">{cat.influencers} influencers</p>
                             </div>
                           </div>
                           <div className="text-center">
                             <div className={`text-lg font-bold ${getSentimentColor(cat.sentiment)}`}>
                               {cat.sentiment}%
                             </div>
-                            <p className="text-xs text-platinum-500-400">Sentiment</p>
+                            <p className="text-xs text-platinum-400">Sentiment</p>
                           </div>
                         </div>
                       ))}
@@ -301,8 +301,8 @@ export default function InfluencerSentimentPage() {
                                 <User className="h-6 w-6" />
                               </div>
                               <div>
-                                <p className="font-semibold text-platinum-500-200">{influencer.name}</p>
-                                <p className="text-sm text-platinum-500-400">{influencer.handle}</p>
+                                <p className="font-semibold text-platinum-200">{influencer.name}</p>
+                                <p className="text-sm text-platinum-400">{influencer.handle}</p>
                                 <div className="flex items-center gap-2 mt-1">
                                   <Badge variant="outline" className="text-xs">{influencer.category}</Badge>
                                   <Badge variant="outline" className="text-xs">{influencer.reach}</Badge>
@@ -311,11 +311,11 @@ export default function InfluencerSentimentPage() {
                             </div>
                             <div className="text-right">
                               <div className="text-2xl font-bold text-gold-700">{influencer.followers}M</div>
-                              <p className="text-xs text-platinum-500-400">Followers</p>
+                              <p className="text-xs text-platinum-400">Followers</p>
                             </div>
                           </div>
                           <div className="mt-3 flex items-center justify-between">
-                            <span className="text-sm text-platinum-500-400">Sentiment Score</span>
+                            <span className="text-sm text-platinum-400">Sentiment Score</span>
                             <div className="flex items-center gap-2">
                               <Progress value={influencer.sentiment} className="h-2 w-24" />
                               <span className={`text-sm font-bold ${getSentimentColor(influencer.sentiment)}`}>
@@ -348,8 +348,8 @@ export default function InfluencerSentimentPage() {
                           <div className="flex items-center gap-3">
                             <TrendingUp className="h-5 w-5 text-emerald-500" />
                             <div>
-                              <p className="text-sm font-medium text-platinum-500-200">{influencer.name}</p>
-                              <p className="text-xs text-platinum-500-400">{influencer.handle}</p>
+                              <p className="text-sm font-medium text-platinum-200">{influencer.name}</p>
+                              <p className="text-xs text-platinum-400">{influencer.handle}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-3">
@@ -378,7 +378,7 @@ export default function InfluencerSentimentPage() {
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Shield className="h-5 w-5 text-gold-700" />
-                            <span className="text-sm font-medium text-platinum-500-200">{item.name}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.name}</span>
                           </div>
                           <div className="flex items-center gap-3">
                             <Badge variant="outline" className="text-xs">{item.ambassadors}</Badge>
@@ -474,25 +474,25 @@ export default function InfluencerSentimentPage() {
                   <div className="grid gap-4 sm:grid-cols-4">
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <MessageSquare className="mx-auto h-6 w-6 text-gold-700 mb-2" />
-                      <p className="text-xs text-platinum-500-400">Avg Posts/Week</p>
+                      <p className="text-xs text-platinum-400">Avg Posts/Week</p>
                       <p className="text-xl font-bold text-gold-700">4.2</p>
                       <span className="text-xs text-emerald-500">+0.3 YoY</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <Heart className="mx-auto h-6 w-6 text-rose-500 mb-2" />
-                      <p className="text-xs text-platinum-500-400">Avg Engagement</p>
+                      <p className="text-xs text-platinum-400">Avg Engagement</p>
                       <p className="text-xl font-bold text-rose-500">5.8%</p>
                       <span className="text-xs text-emerald-500">+0.8% YoY</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <Share2 className="mx-auto h-6 w-6 text-navy-500 mb-2" />
-                      <p className="text-xs text-platinum-500-400">Avg Shares</p>
+                      <p className="text-xs text-platinum-400">Avg Shares</p>
                       <p className="text-xl font-bold text-navy-500">1.2K</p>
                       <span className="text-xs text-emerald-500">+15% YoY</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <Eye className="mx-auto h-6 w-6 text-emerald-500 mb-2" />
-                      <p className="text-xs text-platinum-500-400">Avg Reach</p>
+                      <p className="text-xs text-platinum-400">Avg Reach</p>
                       <p className="text-xl font-bold text-emerald-500">125K</p>
                       <span className="text-xs text-emerald-500">+22% YoY</span>
                     </div>
@@ -543,8 +543,8 @@ export default function InfluencerSentimentPage() {
                             <div className="flex items-center gap-3">
                               <AlertCircle className="h-5 w-5 text-rose-500" />
                               <div>
-                                <p className="text-sm font-medium text-platinum-500-200">{influencer.name}</p>
-                                <p className="text-xs text-platinum-500-400">{influencer.reason}</p>
+                                <p className="text-sm font-medium text-platinum-200">{influencer.name}</p>
+                                <p className="text-xs text-platinum-400">{influencer.reason}</p>
                               </div>
                             </div>
                             <Badge variant="destructive" className="text-xs">{influencer.risk}%</Badge>
@@ -570,10 +570,10 @@ export default function InfluencerSentimentPage() {
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <CheckCircle className="h-5 w-5 text-emerald-500" />
-                            <span className="text-sm font-medium text-platinum-500-200">{item.name}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.name}</span>
                           </div>
                           <div className="flex items-center gap-3">
-                            <span className="text-sm text-platinum-500-400">{item.time}</span>
+                            <span className="text-sm text-platinum-400">{item.time}</span>
                             <Badge variant="outline" className="text-xs text-emerald-500">{item.recovery}%</Badge>
                           </div>
                         </div>
@@ -592,19 +592,19 @@ export default function InfluencerSentimentPage() {
                   <div className="grid gap-4 sm:grid-cols-3">
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <Shield className="mx-auto h-6 w-6 text-emerald-500 mb-2" />
-                      <p className="text-xs text-platinum-500-400">Active Monitoring</p>
+                      <p className="text-xs text-platinum-400">Active Monitoring</p>
                       <p className="text-xl font-bold text-emerald-500">245</p>
                       <span className="text-xs text-emerald-500">Influencers</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <CheckCircle className="mx-auto h-6 w-6 text-gold-700 mb-2" />
-                      <p className="text-xs text-platinum-500-400">Pre-approved Content</p>
+                      <p className="text-xs text-platinum-400">Pre-approved Content</p>
                       <p className="text-xl font-bold text-gold-700">1,250</p>
                       <span className="text-xs text-emerald-500">Posts</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <AlertCircle className="mx-auto h-6 w-6 text-rose-500 mb-2" />
-                      <p className="text-xs text-platinum-500-400">Escalations</p>
+                      <p className="text-xs text-platinum-400">Escalations</p>
                       <p className="text-xl font-bold text-rose-500">12</p>
                       <span className="text-xs text-emerald-500">This Month</span>
                     </div>

@@ -90,12 +90,12 @@ export function OrganizationTableSection({ organizations }: OrganizationTableSec
       <Table>
         <TableHeader>
           <TableRow className="border-b border-platinum-200/50 dark:border-platinum-700/50">
-            <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Name</TableHead>
-            <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Type</TableHead>
-            <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Language</TableHead>
-            <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">HQ</TableHead>
-            <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Sentiment</TableHead>
-            <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Relevance</TableHead>
+            <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Name</TableHead>
+            <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Type</TableHead>
+            <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Language</TableHead>
+            <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">HQ</TableHead>
+            <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Sentiment</TableHead>
+            <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Relevance</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -103,25 +103,25 @@ export function OrganizationTableSection({ organizations }: OrganizationTableSec
             <TableRow key={org.id} className="border-b border-platinum-100/50 dark:border-platinum-800/50 hover:bg-platinum-50/50 dark:hover:bg-platinum-800/25 transition-colors">
               <TableCell>
                 <div className="flex flex-col">
-                  <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{org.name}</span>
+                  <span className="font-semibold text-navy-900 dark:text-platinum-100">{org.name}</span>
                   {org.nameAr && (
-                    <span className="text-xs text-platinum-500-500 dark:text-platinum-500-400 font-arabic">{org.nameAr}</span>
+                    <span className="text-xs text-platinum-500 dark:text-platinum-400 font-arabic">{org.nameAr}</span>
                   )}
                 </div>
               </TableCell>
               <TableCell>
                 <div className="flex items-center gap-2">
                   {getTypeIcon(org.type)}
-                  <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{org.type.replace('_', ' ')}</span>
+                  <span className="text-sm text-platinum-700 dark:text-platinum-300">{org.type.replace('_', ' ')}</span>
                 </div>
               </TableCell>
               <TableCell>
-                <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{org.language}</span>
+                <span className="text-sm text-platinum-700 dark:text-platinum-300">{org.language}</span>
               </TableCell>
               <TableCell>
                 <div className="flex flex-col">
-                  <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{org.headquarters}</span>
-                  <span className="text-xs text-platinum-500-500">{org.country}</span>
+                  <span className="text-sm text-platinum-700 dark:text-platinum-300">{org.headquarters}</span>
+                  <span className="text-xs text-platinum-500">{org.country}</span>
                 </div>
               </TableCell>
               <TableCell>

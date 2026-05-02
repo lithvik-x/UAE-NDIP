@@ -155,10 +155,10 @@ export default function DemographicsMigrationPage() {
         <div>
           <Badge variant="default" className="mb-2">S-SECTOR</Badge>
           <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-platinum-500">Demographics & Migration</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             {demographicsMigrationData.description}
           </p>
-          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500-500">
+          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500">
             <span className="flex items-center gap-1">
               <Calendar className="h-4 w-4" />
               {reportMetadata?.reportCompiled || '2026-04-27'}
@@ -178,7 +178,7 @@ export default function DemographicsMigrationPage() {
             <Users className="h-4 w-4" />
             Population
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2">
             <Zap className="h-4 w-4" />
             Analyze
           </Button>
@@ -275,11 +275,11 @@ export default function DemographicsMigrationPage() {
                     <div className="mt-4 grid grid-cols-2 gap-2">
                       <div className="text-center p-2 bg-gold-700/20 rounded-lg">
                         <p className="text-lg font-bold text-gold-700">88.5%</p>
-                        <p className="text-xs text-platinum-500-500">Expatriates</p>
+                        <p className="text-xs text-platinum-500">Expatriates</p>
                       </div>
                       <div className="text-center p-2 bg-navy/20 rounded-lg">
                         <p className="text-lg font-bold text-navy-500">11.5%</p>
-                        <p className="text-xs text-platinum-500-500">Nationals</p>
+                        <p className="text-xs text-platinum-500">Nationals</p>
                       </div>
                     </div>
                   </CardContent>
@@ -297,7 +297,7 @@ export default function DemographicsMigrationPage() {
                       {humanCapitalKPIs.map((kpi, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-500-200">{kpi.kpi}</span>
+                            <span className="text-sm font-medium text-platinum-200">{kpi.kpi}</span>
                             <span className="text-lg font-bold text-emerald-500">{kpi.value}</span>
                           </div>
                           <Progress
@@ -325,7 +325,7 @@ export default function DemographicsMigrationPage() {
                     {keyPopMetrics.map((metric, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-2xl font-bold text-gold-700">{metric.currentValue}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{metric.kpi}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{metric.kpi}</p>
                       </div>
                     ))}
                   </div>
@@ -418,14 +418,14 @@ export default function DemographicsMigrationPage() {
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-lg font-bold text-platinum-500">{emirate.population}</p>
                         <p className="text-sm text-gold-700">{emirate.emirate}</p>
-                        <p className="text-xs text-platinum-500-500">{emirate.percentOfTotal}</p>
+                        <p className="text-xs text-platinum-500">{emirate.percentOfTotal}</p>
                         {emirate.yoyGrowth && (
                           <Badge variant="outline" className="text-xs text-emerald-500 mt-1">{emirate.yoyGrowth}</Badge>
                         )}
                       </div>
                     ))}
                   </div>
-                  <p className="text-sm text-platinum-500-500 mt-3 text-center">
+                  <p className="text-sm text-platinum-500 mt-3 text-center">
                     83% of population concentrated in Dubai, Abu Dhabi, and Sharjah
                   </p>
                 </CardContent>
@@ -443,21 +443,21 @@ export default function DemographicsMigrationPage() {
                   <div className="grid gap-4 lg:grid-cols-2">
                     <div className="space-y-3">
                       <div className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-500-400">Total Indian Population</p>
+                        <p className="text-sm text-platinum-400">Total Indian Population</p>
                         <p className="text-2xl font-bold text-gold-700">~4 million</p>
-                        <p className="text-xs text-platinum-500-500">37.96% of total UAE population</p>
+                        <p className="text-xs text-platinum-500">37.96% of total UAE population</p>
                       </div>
                       <div className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-500-400">Top Source State</p>
+                        <p className="text-sm text-platinum-400">Top Source State</p>
                         <p className="text-xl font-bold text-platinum-500">Kerala - 35%</p>
-                        <p className="text-xs text-platinum-500-500">1.4 million people</p>
+                        <p className="text-xs text-platinum-500">1.4 million people</p>
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <p className="text-sm font-semibold text-platinum-500-300">Socioeconomic Profile</p>
+                      <p className="text-sm font-semibold text-platinum-300">Socioeconomic Profile</p>
                       {nationalExpatriateComposition.indianSocioeconomicProfile.map((profile, idx) => (
                         <div key={idx} className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
-                          <span className="text-platinum-500-300">{profile.category}</span>
+                          <span className="text-platinum-300">{profile.category}</span>
                           <span className="font-bold text-gold-700">{profile.percentage}</span>
                         </div>
                       ))}
@@ -479,12 +479,12 @@ export default function DemographicsMigrationPage() {
                     {populationSizeGrowth.genderDistribution.map((item, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-2xl font-bold text-platinum-500">{item.value}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{item.metric}</p>
-                        <p className="text-xs text-platinum-500-500">{item.year}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{item.metric}</p>
+                        <p className="text-xs text-platinum-500">{item.year}</p>
                       </div>
                     ))}
                   </div>
-                  <p className="text-sm text-platinum-500-500 mt-3 italic">
+                  <p className="text-sm text-platinum-500 mt-3 italic">
                     {populationSizeGrowth.genderRatioAnalysis}
                   </p>
                 </CardContent>
@@ -520,15 +520,15 @@ export default function DemographicsMigrationPage() {
                   <div className="mt-4 grid grid-cols-3 gap-4">
                     <div className="p-3 bg-gold-700/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-gold-700">350K+</p>
-                      <p className="text-sm text-platinum-500-400">Total (2020-2025)</p>
+                      <p className="text-sm text-platinum-400">Total (2020-2025)</p>
                     </div>
                     <div className="p-3 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-emerald-500">900%+</p>
-                      <p className="text-sm text-platinum-500-400">Growth Rate</p>
+                      <p className="text-sm text-platinum-400">Growth Rate</p>
                     </div>
                     <div className="p-3 bg-platinum/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">~120K</p>
-                      <p className="text-sm text-platinum-500-400">2025 Est.</p>
+                      <p className="text-sm text-platinum-400">2025 Est.</p>
                     </div>
                   </div>
                 </CardContent>
@@ -550,7 +550,7 @@ export default function DemographicsMigrationPage() {
                           <div className="w-8 h-8 rounded-full bg-gold-700/20 flex items-center justify-center text-gold-700 font-bold">
                             {idx + 1}
                           </div>
-                          <span className="text-platinum-500-200 font-medium">{nat.nationality}</span>
+                          <span className="text-platinum-200 font-medium">{nat.nationality}</span>
                         </div>
                         <div className="text-right">
                           <span className="text-xl font-bold text-gold-700">{nat.percentage}</span>
@@ -559,7 +559,7 @@ export default function DemographicsMigrationPage() {
                       </div>
                     ))}
                   </div>
-                  <p className="text-sm text-platinum-500-500 mt-3 italic">
+                  <p className="text-sm text-platinum-500 mt-3 italic">
                     Top 4 nationalities represent approximately 63% of all golden visa approvals
                   </p>
                 </CardContent>
@@ -577,13 +577,13 @@ export default function DemographicsMigrationPage() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-4 bg-gold-700/20 rounded-lg text-center border border-gold-700/30">
                       <p className="text-4xl font-bold text-gold-700">$6.3B</p>
-                      <p className="text-sm text-platinum-500-400 mt-1">Dubai Property Purchases</p>
-                      <p className="text-xs text-platinum-500-500">Since early 2022</p>
+                      <p className="text-sm text-platinum-400 mt-1">Dubai Property Purchases</p>
+                      <p className="text-xs text-platinum-500">Since early 2022</p>
                     </div>
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center border border-emerald-500/30">
                       <p className="text-4xl font-bold text-emerald-500">10x</p>
-                      <p className="text-sm text-platinum-500-400 mt-1">Increase vs Pre-2022</p>
-                      <p className="text-xs text-platinum-500-500">Post-Ukraine invasion</p>
+                      <p className="text-sm text-platinum-400 mt-1">Increase vs Pre-2022</p>
+                      <p className="text-xs text-platinum-500">Post-Ukraine invasion</p>
                     </div>
                   </div>
                 </CardContent>
@@ -601,8 +601,8 @@ export default function DemographicsMigrationPage() {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                     {goldenVisaProgram.eligibilityCategories_10Year.map((cat, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="font-medium text-platinum-500-200 text-sm">{cat.category}</p>
-                        {cat.details && <p className="text-xs text-platinum-500-500 mt-1">{cat.details}</p>}
+                        <p className="font-medium text-platinum-200 text-sm">{cat.category}</p>
+                        {cat.details && <p className="text-xs text-platinum-500 mt-1">{cat.details}</p>}
                       </div>
                     ))}
                   </div>
@@ -655,9 +655,9 @@ export default function DemographicsMigrationPage() {
                           <span className="w-6 h-6 rounded-full bg-gold-700/20 text-gold-700 text-xs flex items-center justify-center font-bold">
                             {path.number}
                           </span>
-                          <span className="font-medium text-platinum-500-200 text-sm">{path.pathway}</span>
+                          <span className="font-medium text-platinum-200 text-sm">{path.pathway}</span>
                         </div>
-                        <p className="text-xs text-platinum-500-500">{path.keyRequirements}</p>
+                        <p className="text-xs text-platinum-500">{path.keyRequirements}</p>
                       </div>
                     ))}
                   </div>
@@ -679,18 +679,18 @@ export default function DemographicsMigrationPage() {
                         <p className="font-medium text-rose-300 text-sm mb-2">{item.category}</p>
                         <div className="grid grid-cols-2 gap-2">
                           <div className="p-2 bg-platinum-800/50 rounded text-center">
-                            <p className="text-xs text-platinum-500-500">Men</p>
-                            <p className="text-sm font-medium text-platinum-500-200">{item.men}</p>
+                            <p className="text-xs text-platinum-500">Men</p>
+                            <p className="text-sm font-medium text-platinum-200">{item.men}</p>
                           </div>
                           <div className="p-2 bg-platinum-800/50 rounded text-center">
-                            <p className="text-xs text-platinum-500-500">Women</p>
+                            <p className="text-xs text-platinum-500">Women</p>
                             <p className="text-sm font-medium text-rose-300">{item.women}</p>
                           </div>
                         </div>
                       </div>
                     ))}
                   </div>
-                  <p className="text-sm text-platinum-500-500 mt-3 italic">
+                  <p className="text-sm text-platinum-500 mt-3 italic">
                     {citizenshipNaturalization.genderDiscriminationImpact}
                   </p>
                 </CardContent>
@@ -709,11 +709,11 @@ export default function DemographicsMigrationPage() {
                     {statelessnessBidoon.populationEstimates.map((est, idx) => (
                       <div key={idx} className="p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg text-center">
                         <p className="text-xl font-bold text-amber-400">{est.estimate}</p>
-                        <p className="text-xs text-platinum-500-500">{est.source}</p>
+                        <p className="text-xs text-platinum-500">{est.source}</p>
                       </div>
                     ))}
                   </div>
-                  <p className="text-sm font-semibold text-platinum-500-300 mb-2">Rights Denied Without Citizenship:</p>
+                  <p className="text-sm font-semibold text-platinum-300 mb-2">Rights Denied Without Citizenship:</p>
                   <div className="flex flex-wrap gap-2">
                     {statelessnessBidoon.rightsDeniedWithoutCitizenship.map((right, idx) => (
                       <Badge key={idx} variant="outline" className="text-xs">{right}</Badge>
@@ -735,9 +735,9 @@ export default function DemographicsMigrationPage() {
                     {citizenshipNaturalization.naturalizationRequirements.map((req, idx) => (
                       <div key={idx} className="flex justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <div>
-                          <span className="text-platinum-500-200 font-medium">{req.requirement}</span>
+                          <span className="text-platinum-200 font-medium">{req.requirement}</span>
                           {req.exceptions && (
-                            <p className="text-xs text-platinum-500-500">Exception: {req.exceptions}</p>
+                            <p className="text-xs text-platinum-500">Exception: {req.exceptions}</p>
                           )}
                         </div>
                         <span className="text-gold-700 font-medium">{req.standard}</span>
@@ -771,7 +771,7 @@ export default function DemographicsMigrationPage() {
                     {vitalStatistics.birthDeathRates.map((stat, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-2xl font-bold text-emerald-500">{stat.value.split(' ')[0]}</p>
-                        <p className="text-xs text-platinum-500-400">{stat.metric}</p>
+                        <p className="text-xs text-platinum-400">{stat.metric}</p>
                       </div>
                     ))}
                   </div>
@@ -791,7 +791,7 @@ export default function DemographicsMigrationPage() {
                     {vitalStatistics.lifeExpectancy.map((item, idx) => (
                       <div key={idx} className="p-4 bg-platinum/20 rounded-lg text-center">
                         <p className="text-4xl font-bold text-platinum-500">{item.years}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">Years</p>
+                        <p className="text-sm text-platinum-400 mt-1">Years</p>
                         <Badge variant="outline" className="mt-2">{item.metric}</Badge>
                       </div>
                     ))}
@@ -836,16 +836,16 @@ export default function DemographicsMigrationPage() {
                     {marriageDivorcePatterns.divorceStatistics.slice(0, 4).map((stat, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-2xl font-bold text-rose-500">{stat.value}</p>
-                        <p className="text-xs text-platinum-500-400">{stat.metric}</p>
+                        <p className="text-xs text-platinum-400">{stat.metric}</p>
                       </div>
                     ))}
                   </div>
                   <div className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg">
                     <p className="text-sm font-semibold text-rose-300 mb-2">Expert Analysis - Divorce Causes:</p>
                     {marriageDivorcePatterns.expertAnalysisCauses.map((cause, idx) => (
-                      <p key={idx} className="text-xs text-platinum-500-400">• {cause.description}</p>
+                      <p key={idx} className="text-xs text-platinum-400">• {cause.description}</p>
                     ))}
-                    <p className="text-xs text-platinum-500-500 mt-2 italic">
+                    <p className="text-xs text-platinum-500 mt-2 italic">
                       "{marriageDivorcePatterns.expertQuote.quote}" — {marriageDivorcePatterns.expertQuote.source}
                     </p>
                   </div>
@@ -871,15 +871,15 @@ export default function DemographicsMigrationPage() {
                   <div className="mt-4 grid grid-cols-3 gap-3">
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald-500">85.82%</p>
-                      <p className="text-xs text-platinum-500-400">2024 Urban</p>
+                      <p className="text-xs text-platinum-400">2024 Urban</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-gold-700">165.84</p>
-                      <p className="text-xs text-platinum-500-400">Density /sq km (2026)</p>
+                      <p className="text-xs text-platinum-400">Density /sq km (2026)</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-platinum-500">83,600</p>
-                      <p className="text-xs text-platinum-500-400">Total Area (sq km)</p>
+                      <p className="text-xs text-platinum-400">Total Area (sq km)</p>
                     </div>
                   </div>
                 </CardContent>
@@ -909,19 +909,19 @@ export default function DemographicsMigrationPage() {
                     {passportPowerMobility.uaePassportRankings.map((rank, idx) => (
                       <div key={idx} className="p-4 bg-gold-700/20 rounded-lg border border-gold-700/30 text-center">
                         <p className="text-4xl font-bold text-gold-700">{rank.ranking}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{rank.index}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{rank.index}</p>
                         <p className="text-lg font-bold text-platinum-500 mt-2">{rank.visaFreeDestinations}</p>
-                        <p className="text-xs text-platinum-500-500">Visa-free destinations</p>
+                        <p className="text-xs text-platinum-500">Visa-free destinations</p>
                       </div>
                     ))}
                   </div>
                   <div className="mt-4 grid grid-cols-2 gap-4">
                     <div className="p-3 bg-platinum-800/50 rounded-lg">
-                      <p className="text-sm text-platinum-500-400">Places gained since 2006</p>
+                      <p className="text-sm text-platinum-400">Places gained since 2006</p>
                       <p className="text-2xl font-bold text-emerald-500">+57</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg">
-                      <p className="text-sm text-platinum-500-400">Destinations gained</p>
+                      <p className="text-sm text-platinum-400">Destinations gained</p>
                       <p className="text-2xl font-bold text-emerald-500">+149</p>
                     </div>
                   </div>
@@ -941,7 +941,7 @@ export default function DemographicsMigrationPage() {
                     {passportPowerMobility.historicalProgression.map((milestone, idx) => (
                       <div key={idx} className="flex items-center gap-3 p-2 bg-platinum-800/50 rounded-lg">
                         <span className="w-20 text-gold-700 font-medium text-sm">{milestone.year}</span>
-                        <span className="text-platinum-500-200 text-sm">{milestone.milestone}</span>
+                        <span className="text-platinum-200 text-sm">{milestone.milestone}</span>
                       </div>
                     ))}
                   </div>
@@ -980,26 +980,26 @@ export default function DemographicsMigrationPage() {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
                     <div className="p-3 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald-500">2nd-3rd</p>
-                      <p className="text-xs text-platinum-500-400">Global Ranking</p>
+                      <p className="text-xs text-platinum-400">Global Ranking</p>
                     </div>
                     <div className="p-3 bg-gold-700/20 rounded-lg text-center">
                       <p className="text-2xl font-bold text-gold-700">$39.7B</p>
-                      <p className="text-xs text-platinum-500-400">Annual Outflows (2022)</p>
+                      <p className="text-xs text-platinum-400">Annual Outflows (2022)</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-platinum-500">$25.5B</p>
-                      <p className="text-xs text-platinum-500-400">UAE-India (2025 est.)</p>
+                      <p className="text-xs text-platinum-400">UAE-India (2025 est.)</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-platinum-500">15%</p>
-                      <p className="text-xs text-platinum-500-400">Digital Platforms (vs 52% global)</p>
+                      <p className="text-xs text-platinum-400">Digital Platforms (vs 52% global)</p>
                     </div>
                   </div>
                   <div className="p-3 bg-platinum-800/50 rounded-lg">
-                    <p className="text-sm font-semibold text-platinum-500-300 mb-2">Top Remittance Corridors</p>
+                    <p className="text-sm font-semibold text-platinum-300 mb-2">Top Remittance Corridors</p>
                     {remittanceFlows.averageTicketSizeByDestination.slice(0, 5).map((corridor, idx) => (
                       <div key={idx} className="flex justify-between p-2 border-b border-platinum-700 last:border-0">
-                        <span className="text-platinum-500-300 text-sm">{corridor.country}</span>
+                        <span className="text-platinum-300 text-sm">{corridor.country}</span>
                         <span className="text-gold-700 font-medium">{corridor.averageTransferUSD}</span>
                       </div>
                     ))}
@@ -1020,13 +1020,13 @@ export default function DemographicsMigrationPage() {
                     {socialCohesionTolerance.keyInstitutions.slice(0, 6).map((inst, idx) => (
                       <div key={idx} className="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
                         <p className="font-medium text-emerald-300 text-sm">{inst.institution}</p>
-                        <p className="text-xs text-platinum-500-500 mt-1">{inst.purpose}</p>
+                        <p className="text-xs text-platinum-500 mt-1">{inst.purpose}</p>
                       </div>
                     ))}
                   </div>
                   <div className="mt-4 p-3 bg-platinum/10 border border-platinum/30 rounded-lg">
                     <p className="text-sm text-emerald-400 font-medium">Interfaith Achievement:</p>
-                    <p className="text-sm text-platinum-500-300">{socialCohesionTolerance.interfaithAchievement}</p>
+                    <p className="text-sm text-platinum-300">{socialCohesionTolerance.interfaithAchievement}</p>
                   </div>
                 </CardContent>
               </Card>

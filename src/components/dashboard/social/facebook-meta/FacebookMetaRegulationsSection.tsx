@@ -44,7 +44,7 @@ export function FacebookMetaRegulationsSection() {
                     transition={{ delay: idx * 0.05 }}
                     className="p-4 rounded-lg bg-platinum-800/50 border border-platinum-700/50"
                   >
-                    <h4 className="text-sm font-semibold text-platinum-500-200 mb-1">{penalty.violation}</h4>
+                    <h4 className="text-sm font-semibold text-platinum-200 mb-1">{penalty.violation}</h4>
                     <div className="flex items-center gap-2">
                       <Badge variant="outline" className="text-xs border-gold-700/50 text-gold-700">
                         Fine: {penalty.fine}
@@ -82,7 +82,7 @@ export function FacebookMetaRegulationsSection() {
                     className="flex items-start gap-2 p-3 rounded-lg bg-platinum-800/30"
                   >
                     <div className="h-2 w-2 rounded-full bg-rose-400 mt-2 flex-shrink-0" />
-                    <span className="text-sm text-platinum-500-300">{tactic.tactic}</span>
+                    <span className="text-sm text-platinum-300">{tactic.tactic}</span>
                   </motion.div>
                 ))}
               </div>
@@ -101,13 +101,13 @@ export function FacebookMetaRegulationsSection() {
             <CardContent>
               <div className="space-y-4">
                 <div className="p-4 rounded-lg bg-platinum-800/50">
-                  <h4 className="text-sm font-semibold text-platinum-500-200 mb-2">UAE Price Monitoring</h4>
-                  <p className="text-xs text-platinum-500-400 mb-3">{priceTrackingPlatform.purpose}</p>
+                  <h4 className="text-sm font-semibold text-platinum-200 mb-2">UAE Price Monitoring</h4>
+                  <p className="text-xs text-platinum-400 mb-3">{priceTrackingPlatform.purpose}</p>
                   <div className="grid grid-cols-2 gap-2">
-                    <div className="text-xs"><span className="text-platinum-500-400">Items Tracked:</span> <span className="text-platinum-500-200">{priceTrackingPlatform.itemsTracked}</span></div>
-                    <div className="text-xs"><span className="text-platinum-500-400">Retail Outlets:</span> <span className="text-platinum-500-200">{priceTrackingPlatform.retailOutlets}</span></div>
-                    <div className="text-xs"><span className="text-platinum-500-400">Launch Date:</span> <span className="text-platinum-500-200">{priceTrackingPlatform.launchDate}</span></div>
-                    <div className="text-xs"><span className="text-platinum-500-400">Initiative By:</span> <span className="text-platinum-500-200">{priceTrackingPlatform.initiativeBy}</span></div>
+                    <div className="text-xs"><span className="text-platinum-400">Items Tracked:</span> <span className="text-platinum-200">{priceTrackingPlatform.itemsTracked}</span></div>
+                    <div className="text-xs"><span className="text-platinum-400">Retail Outlets:</span> <span className="text-platinum-200">{priceTrackingPlatform.retailOutlets}</span></div>
+                    <div className="text-xs"><span className="text-platinum-400">Launch Date:</span> <span className="text-platinum-200">{priceTrackingPlatform.launchDate}</span></div>
+                    <div className="text-xs"><span className="text-platinum-400">Initiative By:</span> <span className="text-platinum-200">{priceTrackingPlatform.initiativeBy}</span></div>
                   </div>
                 </div>
               </div>
@@ -124,7 +124,7 @@ export function FacebookMetaRegulationsSection() {
               <Shield className="h-6 w-6 text-info" />
               <div className="flex-1">
                 <h3 className="font-semibold text-info">Compliance Advisory</h3>
-                <p className="text-sm text-platinum-500-400">
+                <p className="text-sm text-platinum-400">
                   All Facebook pages operated by UAE businesses must comply with TRA regulations,
                   maintain accurate business licensing, and adhere to content guidelines.
                   Non-compliance may result in page removal and financial penalties.

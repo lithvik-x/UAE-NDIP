@@ -50,29 +50,29 @@ export function EmbassiesSection({ uaeEmbassies, foreignEmbassies }: EmbassiesSe
                   <CardContent>
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
-                        <Flag className="h-3 w-3 text-platinum-500-400" />
+                        <Flag className="h-3 w-3 text-platinum-400" />
                         <span className="text-sm font-medium">{embassy.ambassador}</span>
                       </div>
                       {embassy.phone && (
                         <div className="flex items-center gap-2">
-                          <Phone className="h-3 w-3 text-platinum-500-400" />
-                          <span className="text-xs text-platinum-500-500">{embassy.phone}</span>
+                          <Phone className="h-3 w-3 text-platinum-400" />
+                          <span className="text-xs text-platinum-500">{embassy.phone}</span>
                         </div>
                       )}
                       {embassy.email && (
                         <div className="flex items-center gap-2">
-                          <Mail className="h-3 w-3 text-platinum-500-400" />
-                          <span className="text-xs text-platinum-500-500">{embassy.email}</span>
+                          <Mail className="h-3 w-3 text-platinum-400" />
+                          <span className="text-xs text-platinum-500">{embassy.email}</span>
                         </div>
                       )}
                       {embassy.additionalInfo?.metric && (
                         <div className="mt-3 p-2 rounded bg-white/40 dark:bg-white/5">
-                          <p className="text-xs text-platinum-500-500">{embassy.additionalInfo.metric}</p>
+                          <p className="text-xs text-platinum-500">{embassy.additionalInfo.metric}</p>
                           <p className="text-lg font-bold text-emerald-600 dark:text-emerald-400">
                             {embassy.additionalInfo.value}
                           </p>
                           {embassy.additionalInfo.target && (
-                            <p className="text-xs text-platinum-500-500">Target: {embassy.additionalInfo.target}</p>
+                            <p className="text-xs text-platinum-500">Target: {embassy.additionalInfo.target}</p>
                           )}
                         </div>
                       )}
@@ -96,18 +96,18 @@ export function EmbassiesSection({ uaeEmbassies, foreignEmbassies }: EmbassiesSe
                   <CardContent>
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
-                        <Building className="h-3 w-3 text-platinum-500-400" />
+                        <Building className="h-3 w-3 text-platinum-400" />
                         <span className="text-sm font-medium">{embassy.currentHead}</span>
                       </div>
                       {embassy.since && (
                         <div className="flex items-center gap-2">
-                          <Calendar className="h-3 w-3 text-platinum-500-400" />
-                          <span className="text-xs text-platinum-500-500">Since {embassy.since}</span>
+                          <Calendar className="h-3 w-3 text-platinum-400" />
+                          <span className="text-xs text-platinum-500">Since {embassy.since}</span>
                         </div>
                       )}
                       {embassy.services && (
                         <div className="mt-3">
-                          <p className="text-xs font-medium text-platinum-500-700 dark:text-platinum-500-300 mb-1">Services</p>
+                          <p className="text-xs font-medium text-platinum-700 dark:text-platinum-300 mb-1">Services</p>
                           <div className="flex flex-wrap gap-1">
                             {embassy.services.map((service) => (
                               <Badge key={service} variant="outline" size="sm">{service}</Badge>

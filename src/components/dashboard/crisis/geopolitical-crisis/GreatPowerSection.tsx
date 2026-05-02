@@ -58,12 +58,12 @@ export function GreatPowerSection({ className }: GreatPowerSectionProps) {
                   <Card className="glass-card rounded-xl bg-glass-surface/50 border-glass-border">
                     <CardHeader className="p-4">
                       <div className="flex items-center gap-2">
-                        <IconComponent className="h-5 w-5 text-navy-500-400" />
+                        <IconComponent className="h-5 w-5 text-navy-400" />
                         <CardTitle className="text-sm">{power.domain}</CardTitle>
                       </div>
                     </CardHeader>
                     <CardContent className="p-4 pt-0">
-                      <p className="text-xs text-platinum-500-400 mb-1">{power.position}</p>
+                      <p className="text-xs text-platinum-400 mb-1">{power.position}</p>
                       <Badge
                         variant="outline"
                         className={`text-xs ${
@@ -73,7 +73,7 @@ export function GreatPowerSection({ className }: GreatPowerSectionProps) {
                             ? 'text-rose-400 border-rose-400/50'
                             : power.sentiment === 'Mixed'
                             ? 'text-amber-400 border-amber-400/50'
-                            : 'text-navy-500-400 border-navy-400/50'
+                            : 'text-navy-400 border-navy-400/50'
                         }`}
                       >
                         {power.sentiment}
@@ -106,7 +106,7 @@ export function GreatPowerSection({ className }: GreatPowerSectionProps) {
                       className="flex items-start gap-3 rounded bg-platinum-800/50 p-3"
                     >
                       <Badge variant="outline" className="text-xs shrink-0">{item.date}</Badge>
-                      <p className="text-sm text-platinum-500-200">{item.event}</p>
+                      <p className="text-sm text-platinum-200">{item.event}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -135,8 +135,8 @@ export function GreatPowerSection({ className }: GreatPowerSectionProps) {
                   { label: 'Divestment', value: g42Data.divestment },
                 ].map((item, idx) => (
                   <div key={idx} className="rounded bg-platinum-800/50 p-3 border border-platinum-700/50">
-                    <p className="text-xs text-platinum-500-400">{item.label}</p>
-                    <p className="text-sm font-medium text-platinum-500-200">{item.value}</p>
+                    <p className="text-xs text-platinum-400">{item.label}</p>
+                    <p className="text-sm font-medium text-platinum-200">{item.value}</p>
                   </div>
                 ))}
               </div>
@@ -160,7 +160,7 @@ export function GreatPowerSection({ className }: GreatPowerSectionProps) {
                   { label: 'Russian Gold 2024', value: russiaSanctionsEvasion.russianGold2024 },
                 ].map((item, idx) => (
                   <div key={idx} className="rounded bg-amber-500/10 p-3 border border-amber-500/30">
-                    <p className="text-xs text-platinum-500-400">{item.label}</p>
+                    <p className="text-xs text-platinum-400">{item.label}</p>
                     <p className="text-sm font-bold text-amber-300">{item.value}</p>
                   </div>
                 ))}
@@ -182,7 +182,7 @@ export function GreatPowerSection({ className }: GreatPowerSectionProps) {
                 {usTroopWithdrawal.map((item, idx) => (
                   <div key={idx} className="flex items-start gap-3 rounded bg-rose-500/10 p-3 border border-rose-500/20">
                     <Badge variant="outline" className="text-xs shrink-0">{item.date}</Badge>
-                    <p className="text-sm text-platinum-500-200">{item.event}</p>
+                    <p className="text-sm text-platinum-200">{item.event}</p>
                   </div>
                 ))}
               </div>
@@ -202,8 +202,8 @@ export function GreatPowerSection({ className }: GreatPowerSectionProps) {
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {bricsMembership.map((item, idx) => (
                   <div key={idx} className="rounded bg-platinum-800/50 p-3 border border-platinum-700/50">
-                    <p className="text-xs text-platinum-500-400">{item.label}</p>
-                    <p className="text-sm font-medium text-platinum-500-200">{item.value}</p>
+                    <p className="text-xs text-platinum-400">{item.label}</p>
+                    <p className="text-sm font-medium text-platinum-200">{item.value}</p>
                   </div>
                 ))}
               </div>
@@ -223,8 +223,8 @@ export function GreatPowerSection({ className }: GreatPowerSectionProps) {
               <div className="space-y-3">
                 {iranNuclearData.map((item, idx) => (
                   <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-3">
-                    <span className="text-platinum-500-400 text-sm">{item.label}</span>
-                    <span className="text-platinum-500-200 text-sm font-medium">{item.value}</span>
+                    <span className="text-platinum-400 text-sm">{item.label}</span>
+                    <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
                   </div>
                 ))}
               </div>

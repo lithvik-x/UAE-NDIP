@@ -69,7 +69,7 @@ export default function BlogsOpinionPage() {
               Blogs & Opinion
             </span>
           </h1>
-          <p className="mt-2 text-platinum-500-400">Bloggers, opinion writers, and independent analysts covering UAE — influence, reach, and sentiment</p>
+          <p className="mt-2 text-platinum-400">Bloggers, opinion writers, and independent analysts covering UAE — influence, reach, and sentiment</p>
         </div>
       </motion.div>
 
@@ -117,9 +117,9 @@ export default function BlogsOpinionPage() {
                       className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                       <div className="flex items-center gap-3">
                         <PenTool className="h-4 w-4 text-violet-400" />
-                        <span className="font-medium text-platinum-500-200">{b.name}</span>
+                        <span className="font-medium text-platinum-200">{b.name}</span>
                       </div>
-                      <div className="flex items-center gap-4 text-sm text-platinum-500-400">
+                      <div className="flex items-center gap-4 text-sm text-platinum-400">
                         <span>{(b.followers/1000).toFixed(0)}K followers</span>
                         <span>{(b.reach/1000).toFixed(0)}K reach</span>
                       </div>
@@ -139,11 +139,11 @@ export default function BlogsOpinionPage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }}
                     className="flex items-center justify-between rounded-lg bg-gradient-to-r from-violet-500/10 to-purple-600/5 p-4 border border-violet-500/30">
                     <div className="flex items-center gap-3">
-                      <span className="text-xs text-platinum-500-500 w-5">#{idx + 1}</span>
+                      <span className="text-xs text-platinum-500 w-5">#{idx + 1}</span>
                       <Users className="h-4 w-4 text-violet-400" />
                       <div>
-                        <p className="font-medium text-platinum-500-200">{l.name}</p>
-                        <p className="text-xs text-platinum-500-400">{l.topic} • {(l.followers/1000).toFixed(0)}K followers</p>
+                        <p className="font-medium text-platinum-200">{l.name}</p>
+                        <p className="text-xs text-platinum-400">{l.topic} • {(l.followers/1000).toFixed(0)}K followers</p>
                       </div>
                     </div>
                     <Badge className="border-violet-500/50 text-violet-400">{l.influence}/100</Badge>
@@ -162,10 +162,10 @@ export default function BlogsOpinionPage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }}
                     className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-platinum-500-200">{t.topic}</span>
+                      <span className="text-sm font-medium text-platinum-200">{t.topic}</span>
                       <div className="flex items-center gap-2">
                         <Badge variant="outline" className={`text-xs ${t.sentiment === 'positive' ? 'border-emerald-500/50 text-emerald-500' : t.sentiment === 'controlled' || t.sentiment === 'mixed' ? 'border-orange-500/50 text-orange-500' : 'border-platinum-500/50 text-platinum-500'}`}>{t.sentiment}</Badge>
-                        <span className="text-lg font-bold text-platinum-500-100">{t.articles}</span>
+                        <span className="text-lg font-bold text-platinum-100">{t.articles}</span>
                       </div>
                     </div>
                     <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">

@@ -110,7 +110,7 @@ export default function SocialMonitoringPage() {
     switch (trend) {
       case 'up': return <TrendingUp className="h-4 w-4 text-rose-400" />
       case 'down': return <TrendingUp className="h-4 w-4 text-emerald-400 rotate-180" />
-      default: return <Activity className="h-4 w-4 text-platinum-500-400" />
+      default: return <Activity className="h-4 w-4 text-platinum-400" />
     }
   }
 
@@ -121,7 +121,7 @@ export default function SocialMonitoringPage() {
         <div>
           <Badge variant="denim" className="mb-2">S-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">Social Media Monitoring</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Real-time surveillance and analytics across all major social platforms
           </p>
         </div>
@@ -267,18 +267,18 @@ export default function SocialMonitoringPage() {
                               <Globe className="h-5 w-5" style={{ color: platform.color }} />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{platform.name}</p>
-                              <p className="text-sm text-platinum-500-400">{platform.posts.toLocaleString()} posts tracked</p>
+                              <p className="font-semibold text-platinum-200">{platform.name}</p>
+                              <p className="text-sm text-platinum-400">{platform.posts.toLocaleString()} posts tracked</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-6">
                             <div className="text-center">
                               <div className="text-lg font-bold text-gold-700">{platform.reach}M</div>
-                              <p className="text-xs text-platinum-500-400">Reach</p>
+                              <p className="text-xs text-platinum-400">Reach</p>
                             </div>
                             <div className="text-center">
                               <div className="text-lg font-bold text-emerald-400">{platform.sentiment}%</div>
-                              <p className="text-xs text-platinum-500-400">Sentiment</p>
+                              <p className="text-xs text-platinum-400">Sentiment</p>
                             </div>
                           </div>
                         </div>
@@ -330,7 +330,7 @@ export default function SocialMonitoringPage() {
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Clock className="h-4 w-4 text-navy-500" />
-                            <span className="text-sm font-medium text-platinum-500-200">{item.time}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.time}</span>
                           </div>
                           <div className="flex items-center gap-3">
                             <Badge variant="outline" className="text-emerald-400">{item.activity}</Badge>
@@ -356,10 +356,10 @@ export default function SocialMonitoringPage() {
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Clock className="h-4 w-4 text-platinum-500" />
-                            <span className="text-sm font-medium text-platinum-500-200">{item.time}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.time}</span>
                           </div>
                           <div className="flex items-center gap-3">
-                            <Badge variant="outline" className="text-platinum-500-400">{item.activity}</Badge>
+                            <Badge variant="outline" className="text-platinum-400">{item.activity}</Badge>
                             <span className="text-sm font-bold text-platinum-500">{item.posts.toLocaleString()}</span>
                           </div>
                         </div>
@@ -400,8 +400,8 @@ export default function SocialMonitoringPage() {
                               <AlertTriangle className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{alert.category}</p>
-                              <p className="text-sm text-platinum-500-400">{alert.count} incidents this month</p>
+                              <p className="font-semibold text-platinum-200">{alert.category}</p>
+                              <p className="text-sm text-platinum-400">{alert.count} incidents this month</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-6">
@@ -411,11 +411,11 @@ export default function SocialMonitoringPage() {
                                 alert.severity > 60 ? 'text-amber-400' :
                                 'text-emerald-400'
                               }`}>{alert.severity}%</div>
-                              <p className="text-xs text-platinum-500-400">Severity</p>
+                              <p className="text-xs text-platinum-400">Severity</p>
                             </div>
                             <div className="text-center">
                               {getTrendIcon(alert.trend)}
-                              <p className="text-xs text-platinum-500-400 mt-1">Trend</p>
+                              <p className="text-xs text-platinum-400 mt-1">Trend</p>
                             </div>
                           </div>
                         </div>

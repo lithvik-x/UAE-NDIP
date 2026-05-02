@@ -27,7 +27,7 @@ export default function DiscordPage() {
   if (!data) {
     return (
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-500-400">Loading Discord intelligence data...</div>
+        <div className="text-platinum-400">Loading Discord intelligence data...</div>
       </motion.div>
     )
   }
@@ -66,7 +66,7 @@ export default function DiscordPage() {
               Discord Communities
             </span>
           </h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Gaming, tech, and interest-based community intelligence — servers, channels, and engagement patterns
           </p>
         </div>
@@ -146,7 +146,7 @@ export default function DiscordPage() {
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-2">
                         <Hash className="h-5 w-5 text-indigo-400" />
-                        <h4 className="font-medium text-platinum-500-200">{server.name}</h4>
+                        <h4 className="font-medium text-platinum-200">{server.name}</h4>
                       </div>
                       <Badge variant="outline" className="border-indigo-500/50 text-indigo-400">{server.members?.toLocaleString?.() || server.members}</Badge>
                     </div>
@@ -170,9 +170,9 @@ export default function DiscordPage() {
                 ].map((item, idx) => (
                   <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.1 }}
                     className="flex items-center justify-between rounded-lg bg-gradient-to-r from-indigo-500/10 to-purple-600/5 p-4 border border-indigo-500/30">
-                    <span className="text-platinum-500-200">{item.metric}</span>
+                    <span className="text-platinum-200">{item.metric}</span>
                     <div className="flex items-center gap-3">
-                      <span className="text-xl font-bold text-platinum-500-100">{item.value}</span>
+                      <span className="text-xl font-bold text-platinum-100">{item.value}</span>
                       <Badge variant="outline" className="border-emerald-500/50 text-emerald-500">{item.trend}</Badge>
                     </div>
                   </motion.div>
@@ -197,10 +197,10 @@ export default function DiscordPage() {
                     <AlertTriangle className={`h-5 w-5 mt-0.5 shrink-0 ${item.severity === 'error' ? 'text-rose-500' : item.severity === 'warning' ? 'text-orange-500' : 'text-emerald-500'}`} />
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-1">
-                        <h4 className="font-medium text-platinum-500-200">{item.risk}</h4>
+                        <h4 className="font-medium text-platinum-200">{item.risk}</h4>
                         <Badge variant="outline" className={`${item.severity === 'error' ? 'text-rose-500 border-rose-500/50' : item.severity === 'warning' ? 'text-orange-500 border-orange-500/50' : 'text-emerald-500 border-emerald-500/50'}`}>{item.level}</Badge>
                       </div>
-                      <p className="text-xs text-platinum-500-400">{item.mitigation}</p>
+                      <p className="text-xs text-platinum-400">{item.mitigation}</p>
                     </div>
                   </motion.div>
                 ))}

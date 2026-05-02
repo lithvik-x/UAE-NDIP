@@ -95,14 +95,14 @@ export function RefreshButton({
         <div className="hidden sm:flex flex-col items-start gap-1 text-xs">
           {lastRefreshTime && (
             <span className={cn(
-              'text-platinum-500-500',
+              'text-platinum-500',
               actuallyRefreshing && 'text-gold-600'
             )}>
               {actuallyRefreshing ? 'Refreshing...' : `Updated ${formatRelativeTime(lastRefreshTime)}`}
             </span>
           )}
           {autoRefreshInterval && !actuallyRefreshing && (
-            <span className="text-platinum-500-400">
+            <span className="text-platinum-400">
               Auto-refresh: {autoRefreshInterval}s
             </span>
           )}
@@ -148,7 +148,7 @@ export function AutoRefreshControl({
 }: AutoRefreshControlProps) {
   return (
     <div className="flex items-center gap-2">
-      <span className="hidden sm:inline text-xs text-platinum-500-500">Auto-refresh:</span>
+      <span className="hidden sm:inline text-xs text-platinum-500">Auto-refresh:</span>
       <div className="inline-flex items-center rounded-lg bg-platinum-100/50 p-1">
         {options.map((opt) => (
           <button
@@ -158,8 +158,8 @@ export function AutoRefreshControl({
             className={cn(
               'px-2 py-1 text-xs font-medium rounded-md transition-all',
               interval === opt
-                ? 'bg-white text-navy-500-700 shadow-sm'
-                : 'text-platinum-500-500 hover:text-platinum-500-700 hover:bg-white/50',
+                ? 'bg-white text-navy-700 shadow-sm'
+                : 'text-platinum-500 hover:text-platinum-700 hover:bg-white/50',
               disabled && 'opacity-50 cursor-not-allowed'
             )}
           >
@@ -192,13 +192,13 @@ export function LiveStatus({ isLive, lastUpdate, className }: LiveStatusProps) {
         />
         <span className={cn(
           'text-xs font-medium',
-          isLive ? 'text-emerald-600' : 'text-platinum-500-400'
+          isLive ? 'text-emerald-600' : 'text-platinum-400'
         )}>
           {isLive ? 'Live' : 'Offline'}
         </span>
       </div>
       {lastUpdate && (
-        <span className="text-xs text-platinum-500-400">
+        <span className="text-xs text-platinum-400">
           {formatRelativeTime(lastUpdate)}
         </span>
       )}

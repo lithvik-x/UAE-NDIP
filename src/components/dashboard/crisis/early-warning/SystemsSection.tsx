@@ -58,7 +58,7 @@ export function SystemsSection({ data }: SystemsSectionProps) {
                       s.status === 'Operational' ? 'text-emerald-500' : 'text-amber-500'
                     }`}
                   />
-                  <h4 className="font-medium text-platinum-500-200 text-sm">{s.system}</h4>
+                  <h4 className="font-medium text-platinum-200 text-sm">{s.system}</h4>
                 </div>
                 <Badge
                   variant="outline"
@@ -85,7 +85,7 @@ export function SystemsSection({ data }: SystemsSectionProps) {
                   }`}
                 />
               </div>
-              <p className="text-xs text-platinum-500-400 mt-1">{s.coverage}% coverage</p>
+              <p className="text-xs text-platinum-400 mt-1">{s.coverage}% coverage</p>
             </motion.div>
           ))}
         </div>

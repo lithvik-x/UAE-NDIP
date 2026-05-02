@@ -57,7 +57,7 @@ export default function PodcastAudioPage() {
               Podcast & Audio
             </span>
           </h1>
-          <p className="mt-2 text-platinum-500-400">Podcast and audio content intelligence — top shows, listener demographics, and content analysis</p>
+          <p className="mt-2 text-platinum-400">Podcast and audio content intelligence — top shows, listener demographics, and content analysis</p>
         </div>
       </motion.div>
 
@@ -106,8 +106,8 @@ export default function PodcastAudioPage() {
                       <div className="flex items-center gap-3">
                         <Mic className="h-4 w-4 text-fuchsia-400" />
                         <div>
-                          <p className="font-medium text-platinum-500-200">{p.name}</p>
-                          <p className="text-xs text-platinum-500-400">{p.episodes} episodes • {p.avgLength}</p>
+                          <p className="font-medium text-platinum-200">{p.name}</p>
+                          <p className="text-xs text-platinum-400">{p.episodes} episodes • {p.avgLength}</p>
                         </div>
                       </div>
                       <Badge variant="outline" className="border-fuchsia-500/50 text-fuchsia-400">{(p.subscribers/1000).toFixed(0)}K</Badge>
@@ -130,7 +130,7 @@ export default function PodcastAudioPage() {
                       <Radio className="h-5 w-5 text-fuchsia-400" />
                       <Badge variant="outline" className="border-fuchsia-500/50 text-fuchsia-400">{g.share}%</Badge>
                     </div>
-                    <h4 className="font-medium text-platinum-500-200">{g.name}</h4>
+                    <h4 className="font-medium text-platinum-200">{g.name}</h4>
                   </motion.div>
                 ))}
               </div>
@@ -152,7 +152,7 @@ export default function PodcastAudioPage() {
                 ].map((d: any, idx: number) => (
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }}
                     className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
-                    <span className="text-platinum-500-300">{d.segment}</span>
+                    <span className="text-platinum-300">{d.segment}</span>
                     <Badge variant="outline" className="border-fuchsia-500/50 text-fuchsia-400">{d.value}</Badge>
                   </motion.div>
                 ))}

@@ -221,8 +221,8 @@ export function ThreatOverviewSection({ data }: ThreatOverviewSectionProps) {
               <CardContent className="flex flex-col justify-center h-[220px]">
                 <blockquote className="border-l-4 border-amber pl-4">
                   <p className="text-2xl font-serif italic text-amber-500">"{officialQuote.text}"</p>
-                  <p className="mt-2 text-sm text-platinum-500-400">- {officialQuote.author}</p>
-                  <p className="text-xs text-platinum-500-500">{officialQuote.role}</p>
+                  <p className="mt-2 text-sm text-platinum-400">- {officialQuote.author}</p>
+                  <p className="text-xs text-platinum-500">{officialQuote.role}</p>
                 </blockquote>
               </CardContent>
             </Card>

@@ -282,7 +282,7 @@ export default function EducationYouthPage() {
         <div>
           <Badge variant="default" className="mb-2">S-SECTOR: EDUCATION & YOUTH</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum-500">Education & Youth</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             {educationYouthData.description}
           </p>
         </div>
@@ -291,7 +291,7 @@ export default function EducationYouthPage() {
             <GraduationCap className="h-4 w-4" />
             Education Portal
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2">
             <Zap className="h-4 w-4" />
             Analyze Trends
           </Button>
@@ -341,8 +341,8 @@ export default function EducationYouthPage() {
             {alertLevel === 'YELLOW' && <AlertTriangle className="h-6 w-6 text-amber-400" />}
             {alertLevel === 'GREEN' && <TrendingUp className="h-6 w-6 text-emerald-400" />}
             <div>
-              <p className="font-semibold text-platinum-500-200">Intelligence Alert Level: {alertLevel}</p>
-              <p className="text-sm text-platinum-500-400">UAE Relevance: {uaeRelevance.score}/100 — {uaeRelevance.justification}</p>
+              <p className="font-semibold text-platinum-200">Intelligence Alert Level: {alertLevel}</p>
+              <p className="text-sm text-platinum-400">UAE Relevance: {uaeRelevance.score}/100 — {uaeRelevance.justification}</p>
             </div>
           </div>
           {getAlertBadge(alertLevel)}
@@ -370,21 +370,21 @@ export default function EducationYouthPage() {
                     <div className={`flex h-10 w-10 items-center justify-center rounded-full ${
                       finding.tier === 0 ? 'bg-gold-700/20 text-gold-700' :
                       finding.tier === 1 ? 'bg-platinum/20 text-platinum-500' :
-                      'bg-platinum-700/50 text-platinum-500-400'
+                      'bg-platinum-700/50 text-platinum-400'
                     }`}>
                       {finding.tier === 0 ? <Award className="h-5 w-5" /> :
                        finding.tier === 1 ? <BookOpen className="h-5 w-5" /> :
                        <AlertCircle className="h-5 w-5" />}
                     </div>
                     <div>
-                      <p className="font-medium text-platinum-500-200">{finding.finding}</p>
-                      <p className="text-sm text-platinum-500-400">Source: {finding.source}</p>
+                      <p className="font-medium text-platinum-200">{finding.finding}</p>
+                      <p className="text-sm text-platinum-400">Source: {finding.source}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="text-right">
                       <p className="text-xl font-bold text-platinum-500">{finding.metric}</p>
-                      <p className="text-xs text-platinum-500-400">Tier {finding.tier}</p>
+                      <p className="text-xs text-platinum-400">Tier {finding.tier}</p>
                     </div>
                     {finding.alert && getAlertBadge(finding.alert)}
                   </div>
@@ -451,8 +451,8 @@ export default function EducationYouthPage() {
                       ].map((item, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-500-200">{item.label}</span>
-                            <span className="text-sm font-bold text-platinum-500-200">AED {item.value}B</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.label}</span>
+                            <span className="text-sm font-bold text-platinum-200">AED {item.value}B</span>
                           </div>
                           <Progress
                             value={(item.value / item.max) * 100}
@@ -483,8 +483,8 @@ export default function EducationYouthPage() {
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4">
                           <div>
-                            <p className="font-medium text-platinum-500-200">{item.index}</p>
-                            <p className="text-sm text-platinum-500-400">{item.rank}</p>
+                            <p className="font-medium text-platinum-200">{item.index}</p>
+                            <p className="text-sm text-platinum-400">{item.rank}</p>
                           </div>
                           <div className="text-right">
                             <p className="text-xl font-bold text-platinum-500">{item.value}</p>
@@ -585,7 +585,7 @@ export default function EducationYouthPage() {
                         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-platinum/20 text-platinum-500">
                           <GraduationCap className="h-5 w-5" />
                         </div>
-                        <p className="flex-1 font-medium text-platinum-500-200">{stakeholder}</p>
+                        <p className="flex-1 font-medium text-platinum-200">{stakeholder}</p>
                         <Badge variant="outline" className="text-xs">Tier 1</Badge>
                       </div>
                     ))}

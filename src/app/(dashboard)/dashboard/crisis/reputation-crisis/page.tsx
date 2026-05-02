@@ -262,19 +262,19 @@ export default function ReputationCrisisPage() {
               </CardHeader>
               <CardContent className="px-0 pb-0 space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-platinum-500-300">Official Exports to UAE</span>
+                  <span className="text-platinum-300">Official Exports to UAE</span>
                   <span className="text-2xl font-bold text-amber-400">${sudanGoldData?.officialExportsToUAE?.value || 0}B</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-platinum-500-300">Smuggled Out</span>
+                  <span className="text-platinum-300">Smuggled Out</span>
                   <span className="text-2xl font-bold text-rose-400">{sudanGoldData?.smuggledOut?.value || 0}%</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-platinum-500-300">UAE World Rank</span>
+                  <span className="text-platinum-300">UAE World Rank</span>
                   <span className="text-2xl font-bold text-violet-400">{sudanGoldData?.uaeWorldRank?.value || '#2'}</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-platinum-500-300">Imported from Sudan (2023)</span>
+                  <span className="text-platinum-300">Imported from Sudan (2023)</span>
                   <span className="text-2xl font-bold text-emerald-400">{sudanGoldData?.importedFromSudan?.value || 0}t</span>
                 </div>
               </CardContent>
@@ -294,8 +294,8 @@ export default function ReputationCrisisPage() {
                     className="glass-card rounded-lg p-4 bg-glass-surface/50 border-l-4 border-rose-500"
                   >
                     <Quote className="h-5 w-5 text-rose-400 mb-2" />
-                    <p className="text-platinum-500-200 italic">"{q.text}"</p>
-                    <p className="text-xs text-platinum-500-400 mt-2">— {q.source}</p>
+                    <p className="text-platinum-200 italic">"{q.text}"</p>
+                    <p className="text-xs text-platinum-400 mt-2">— {q.source}</p>
                   </motion.div>
                 ))}
               </div>
@@ -320,12 +320,12 @@ export default function ReputationCrisisPage() {
                       <ShieldAlert className={`h-5 w-5 mt-0.5 shrink-0 ${incident.severity === 'CRITICAL' ? 'text-rose-500' : incident.severity === 'HIGH' ? 'text-orange-500' : 'text-amber-500'}`} />
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-1">
-                          <h4 className="font-medium text-platinum-500-200">{incident.incident}</h4>
+                          <h4 className="font-medium text-platinum-200">{incident.incident}</h4>
                           <Badge variant="outline" className={`${incident.severity === 'CRITICAL' ? 'text-rose-500 border-rose-500/50' : incident.severity === 'HIGH' ? 'text-orange-500 border-orange-500/50' : 'text-amber-500 border-amber-500/50'}`}>
                             {incident.severity}
                           </Badge>
                         </div>
-                        <div className="flex items-center gap-4 text-xs text-platinum-500-400">
+                        <div className="flex items-center gap-4 text-xs text-platinum-400">
                           <span className="flex items-center gap-1"><Flag className="h-3 w-3" />{incident.category}</span>
                           <span className="flex items-center gap-1"><Globe className="h-3 w-3" />{incident.spread}</span>
                           <span>{incident.date}</span>
@@ -361,7 +361,7 @@ export default function ReputationCrisisPage() {
                   height={280}
                   showGrid={true}
                 />
-                <div className="mt-4 text-center text-sm text-platinum-500-400">
+                <div className="mt-4 text-center text-sm text-platinum-400">
                   UAE Rank: <span className="text-rose-400 font-bold">164/180</span> — 3rd worst in Middle East
                 </div>
               </CardContent>
@@ -399,7 +399,7 @@ export default function ReputationCrisisPage() {
                 <div className="grid gap-4 md:grid-cols-3">
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-platinum-500-300">Global Freedom</span>
+                      <span className="text-platinum-300">Global Freedom</span>
                       <span className="text-white font-bold">18/100</span>
                     </div>
                     <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
@@ -409,7 +409,7 @@ export default function ReputationCrisisPage() {
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-platinum-500-300">Political Rights</span>
+                      <span className="text-platinum-300">Political Rights</span>
                       <span className="text-white font-bold">5/40</span>
                     </div>
                     <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
@@ -418,7 +418,7 @@ export default function ReputationCrisisPage() {
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-platinum-500-300">Civil Liberties</span>
+                      <span className="text-platinum-300">Civil Liberties</span>
                       <span className="text-white font-bold">13/60</span>
                     </div>
                     <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
@@ -427,7 +427,7 @@ export default function ReputationCrisisPage() {
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-platinum-500-300">Internet Freedom</span>
+                      <span className="text-platinum-300">Internet Freedom</span>
                       <span className="text-white font-bold">28/100</span>
                     </div>
                     <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
@@ -437,7 +437,7 @@ export default function ReputationCrisisPage() {
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-platinum-500-300">Obstacles to Access</span>
+                      <span className="text-platinum-300">Obstacles to Access</span>
                       <span className="text-white font-bold">14/25</span>
                     </div>
                     <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
@@ -446,7 +446,7 @@ export default function ReputationCrisisPage() {
                   </div>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-platinum-500-300">Violations of User Rights</span>
+                      <span className="text-platinum-300">Violations of User Rights</span>
                       <span className="text-white font-bold">5/40</span>
                     </div>
                     <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
@@ -491,19 +491,19 @@ export default function ReputationCrisisPage() {
               </CardHeader>
               <CardContent className="px-0 pb-0 space-y-4">
                 <div className="flex items-center justify-between p-3 rounded-lg bg-rose-500/10 border border-rose-500/30">
-                  <span className="text-platinum-500-300">Interception Rate</span>
+                  <span className="text-platinum-300">Interception Rate</span>
                   <span className="text-2xl font-bold text-rose-400">{iranWarStats?.interceptionRate || '>90%'}</span>
                 </div>
                 <div className="flex items-center justify-between p-3 rounded-lg bg-violet-500/10 border border-violet-500/30">
-                  <span className="text-platinum-500-300">Influencers in Dubai</span>
+                  <span className="text-platinum-300">Influencers in Dubai</span>
                   <span className="text-2xl font-bold text-violet-400">{iranWarStats?.influencersInDubai?.toLocaleString() || '50,000'}</span>
                 </div>
                 <div className="flex items-center justify-between p-3 rounded-lg bg-amber-500/10 border border-amber-500/30">
-                  <span className="text-platinum-500-300">Expats in Dubai</span>
+                  <span className="text-platinum-300">Expats in Dubai</span>
                   <span className="text-2xl font-bold text-amber-400">{iranWarStats?.expatsInDubai?.value || '90'}%</span>
                 </div>
                 <div className="flex items-center justify-between p-3 rounded-lg bg-orange-500/10 border border-orange-500/30">
-                  <span className="text-platinum-500-300">Social Media Arrests</span>
+                  <span className="text-platinum-300">Social Media Arrests</span>
                   <span className="text-2xl font-bold text-orange-400">{iranWarStats?.detentions || '375+'}</span>
                 </div>
               </CardContent>
@@ -520,19 +520,19 @@ export default function ReputationCrisisPage() {
               <CardContent className="px-0 pb-0">
                 <div className="grid gap-4 md:grid-cols-3">
                   <div className="p-4 rounded-lg bg-gradient-to-br from-rose-500/20 to-red-600/10 border border-rose-500/30">
-                    <p className="text-sm text-platinum-500-300 mb-1">Detentions</p>
+                    <p className="text-sm text-platinum-300 mb-1">Detentions</p>
                     <p className="text-3xl font-bold text-rose-400">375+</p>
-                    <p className="text-xs text-platinum-500-400 mt-1">Per Abu Dhabi Police</p>
+                    <p className="text-xs text-platinum-400 mt-1">Per Abu Dhabi Police</p>
                   </div>
                   <div className="p-4 rounded-lg bg-gradient-to-br from-orange-500/20 to-amber-600/10 border border-orange-500/30">
-                    <p className="text-sm text-platinum-500-300 mb-1">Charged Together</p>
+                    <p className="text-sm text-platinum-300 mb-1">Charged Together</p>
                     <p className="text-3xl font-bold text-orange-400">20+</p>
-                    <p className="text-xs text-platinum-500-400 mt-1">Per Detained in Dubai</p>
+                    <p className="text-xs text-platinum-400 mt-1">Per Detained in Dubai</p>
                   </div>
                   <div className="p-4 rounded-lg bg-gradient-to-br from-violet-500/20 to-purple-600/10 border border-violet-500/30">
-                    <p className="text-sm text-platinum-500-300 mb-1">Drone Strike Survivors Arrested</p>
+                    <p className="text-sm text-platinum-300 mb-1">Drone Strike Survivors Arrested</p>
                     <p className="text-3xl font-bold text-violet-400">3</p>
-                    <p className="text-xs text-platinum-500-400 mt-1">For sharing photos with family</p>
+                    <p className="text-xs text-platinum-400 mt-1">For sharing photos with family</p>
                   </div>
                 </div>
               </CardContent>
@@ -576,7 +576,7 @@ export default function ReputationCrisisPage() {
                     {(tortureMethods || []).map((method: string, idx: number) => (
                       <div key={idx} className="flex items-center gap-2 p-2 rounded bg-rose-500/10 border border-rose-500/20">
                         <span className="text-rose-400 font-bold text-xs">{idx + 1}</span>
-                        <span className="text-platinum-500-300 text-sm">{method}</span>
+                        <span className="text-platinum-300 text-sm">{method}</span>
                       </div>
                     ))}
                   </div>
@@ -611,7 +611,7 @@ export default function ReputationCrisisPage() {
                       </span>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
-                          <h4 className="font-medium text-platinum-500-200">{vector.vector}</h4>
+                          <h4 className="font-medium text-platinum-200">{vector.vector}</h4>
                           <Badge variant="outline" className={`text-xs ${
                             vector.severity === 'CRITICAL' ? 'text-rose-500 border-rose-500/50' :
                             vector.severity === 'HIGH' ? 'text-orange-500 border-orange-500/50' :
@@ -620,7 +620,7 @@ export default function ReputationCrisisPage() {
                             {vector.severity}
                           </Badge>
                         </div>
-                        <p className="text-xs text-platinum-500-400 mt-1">{vector.evidence}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{vector.evidence}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -652,8 +652,8 @@ export default function ReputationCrisisPage() {
                             {event.stage}
                           </Badge>
                         </div>
-                        <h4 className="font-medium text-platinum-500-200 mb-1">{event.event}</h4>
-                        <p className="text-sm text-platinum-500-400">{event.description}</p>
+                        <h4 className="font-medium text-platinum-200 mb-1">{event.event}</h4>
+                        <p className="text-sm text-platinum-400">{event.description}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -681,13 +681,13 @@ export default function ReputationCrisisPage() {
                         source.tier === 'TIER_0' || source.tier === 'TIER_1' ? 'border-emerald-500/50 text-emerald-400' :
                         source.tier === 'TIER_2' ? 'border-violet-500/50 text-violet-400' :
                         source.tier === 'TIER_3' ? 'border-amber-500/50 text-amber-400' :
-                        'border-platinum-500/50 text-platinum-500-400'
+                        'border-platinum-500/50 text-platinum-400'
                       }`}>
                         {source.tier}
                       </Badge>
                       <div className="flex-1 min-w-0">
-                        <h4 className="font-medium text-platinum-500-200 text-sm truncate">{source.source}</h4>
-                        <p className="text-xs text-platinum-500-400 mt-1">
+                        <h4 className="font-medium text-platinum-200 text-sm truncate">{source.source}</h4>
+                        <p className="text-xs text-platinum-400 mt-1">
                           Credibility: {source.credibility} |{' '}
                           <a href={source.url} target="_blank" rel="noopener noreferrer" className="text-violet-400 hover:underline inline-flex items-center gap-1">
                             View Source <ExternalLink className="h-3 w-3" />

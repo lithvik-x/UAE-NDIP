@@ -84,11 +84,11 @@ export function HumanitarianResponse({ data }: HumanitarianResponseProps) {
 
               <div className="text-center p-3 rounded-lg bg-gold-500/10 border border-gold-500/30">
                 <div className="text-2xl font-bold text-gold-700">80%</div>
-                <div className="text-sm text-platinum-500-400">of international humanitarian response</div>
+                <div className="text-sm text-platinum-400">of international humanitarian response</div>
               </div>
 
               <div className="space-y-2">
-                <div className="text-sm font-medium text-platinum-500-300">Field Hospital Nations</div>
+                <div className="text-sm font-medium text-platinum-300">Field Hospital Nations</div>
                 <div className="flex flex-wrap gap-2">
                   {humanitarianResponse.fieldHospitalNations.map((nation, idx) => (
                     <Badge key={idx} variant="outline" className="border-emerald-500/50 text-emerald-500">
@@ -118,8 +118,8 @@ export function HumanitarianResponse({ data }: HumanitarianResponseProps) {
                   className="flex items-center justify-between rounded-lg bg-glass-surface/30 p-3 border border-glass-border"
                 >
                   <div className="flex-1 min-w-0">
-                    <div className="text-sm text-platinum-500-200 truncate">{pkg.jurisdiction}</div>
-                    <div className="text-xs text-platinum-500-500 truncate">{pkg.duration}</div>
+                    <div className="text-sm text-platinum-200 truncate">{pkg.jurisdiction}</div>
+                    <div className="text-xs text-platinum-500 truncate">{pkg.duration}</div>
                   </div>
                   <div className="text-right">
                     <div className="text-sm font-bold text-gold-700">{pkg.amount}</div>
@@ -132,7 +132,7 @@ export function HumanitarianResponse({ data }: HumanitarianResponseProps) {
 
         {/* Key Initiatives */}
         <div className="mt-6">
-          <h4 className="text-sm font-medium text-platinum-500-300 mb-3">Major Initiatives</h4>
+          <h4 className="text-sm font-medium text-platinum-300 mb-3">Major Initiatives</h4>
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {humanitarianResponse.majorInitiatives.map((initiative, idx) => (
               <motion.div
@@ -144,9 +144,9 @@ export function HumanitarianResponse({ data }: HumanitarianResponseProps) {
               >
                 <div className="flex items-center gap-2 mb-1">
                   <Star className="h-4 w-4 text-emerald-500" />
-                  <span className="text-sm font-medium text-platinum-500-100">{initiative.campaign}</span>
+                  <span className="text-sm font-medium text-platinum-100">{initiative.campaign}</span>
                 </div>
-                <div className="text-xs text-platinum-500-500">{initiative.date}</div>
+                <div className="text-xs text-platinum-500">{initiative.date}</div>
               </motion.div>
             ))}
           </div>
@@ -154,7 +154,7 @@ export function HumanitarianResponse({ data }: HumanitarianResponseProps) {
 
         {/* Health System Preparedness */}
         <div className="mt-6">
-          <h4 className="text-sm font-medium text-platinum-500-300 mb-3">Health System Preparedness</h4>
+          <h4 className="text-sm font-medium text-platinum-300 mb-3">Health System Preparedness</h4>
           <div className="flex flex-wrap gap-2">
             <Badge className="bg-emerald-500/20 text-emerald-500 border-emerald-500/50">
               <Shield className="w-3 h-3 mr-1" />

@@ -103,7 +103,7 @@ export default function ContentModerationPage() {
         <div>
           <Badge variant="denim" className="mb-2">S-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">Content Moderation & Censorship</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Automated content filtering and censorship operations across platforms
           </p>
         </div>
@@ -212,28 +212,28 @@ export default function ContentModerationPage() {
                   <div className="space-y-4">
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-500-400">Automated Detection Rate</span>
+                        <span className="text-platinum-400">Automated Detection Rate</span>
                         <span className="font-medium text-emerald-400">94.2%</span>
                       </div>
                       <Progress value={94.2} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-500-400">False Positive Rate</span>
+                        <span className="text-platinum-400">False Positive Rate</span>
                         <span className="font-medium text-amber-400">3.8%</span>
                       </div>
                       <Progress value={3.8} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-500-400">Average Response Time</span>
+                        <span className="text-platinum-400">Average Response Time</span>
                         <span className="font-medium text-navy-500">2.3 min</span>
                       </div>
                       <Progress value={23} className="h-3" />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-500-400">24/7 Coverage</span>
+                        <span className="text-platinum-400">24/7 Coverage</span>
                         <span className="font-medium text-emerald-400">100%</span>
                       </div>
                       <Progress value={100} className="h-3" />
@@ -265,10 +265,10 @@ export default function ContentModerationPage() {
                                 className="h-3 w-3 rounded-full"
                                 style={{ backgroundColor: cat.color }}
                               />
-                              <span className="text-sm font-medium text-platinum-500-200">{cat.category}</span>
+                              <span className="text-sm font-medium text-platinum-200">{cat.category}</span>
                             </div>
                             <div className="flex items-center gap-4">
-                              <span className="text-sm font-bold text-platinum-500-200">{cat.count.toLocaleString()}</span>
+                              <span className="text-sm font-bold text-platinum-200">{cat.count.toLocaleString()}</span>
                               <Badge variant="outline" className="text-xs">{cat.percentage}%</Badge>
                             </div>
                           </div>
@@ -298,8 +298,8 @@ export default function ContentModerationPage() {
                       <CardDescription>Enforcement action taken</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <div className="text-3xl font-bold text-platinum-500-200">{action.count.toLocaleString()}</div>
-                      <p className="text-sm text-platinum-500-400 mt-1">Total count this month</p>
+                      <div className="text-3xl font-bold text-platinum-200">{action.count.toLocaleString()}</div>
+                      <p className="text-sm text-platinum-400 mt-1">Total count this month</p>
                     </CardContent>
                   </Card>
                 ))}
@@ -350,13 +350,13 @@ export default function ContentModerationPage() {
                               <FileText className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{incident.content}</p>
-                              <p className="text-sm text-platinum-500-400">{incident.platform} · {incident.reason}</p>
+                              <p className="font-semibold text-platinum-200">{incident.content}</p>
+                              <p className="text-sm text-platinum-400">{incident.platform} · {incident.reason}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-4">
                             {getActionBadge(incident.action)}
-                            <div className="flex items-center gap-1 text-xs text-platinum-500-400">
+                            <div className="flex items-center gap-1 text-xs text-platinum-400">
                               <Clock className="h-3 w-3" />
                               {incident.time}
                             </div>

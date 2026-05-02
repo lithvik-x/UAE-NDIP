@@ -80,7 +80,7 @@ export default function PraiseEndorsementPage() {
   if (!praiseData) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-500-400">Loading Praise & Endorsement data...</div>
+        <div className="text-platinum-400">Loading Praise & Endorsement data...</div>
       </div>
     )
   }
@@ -144,7 +144,7 @@ export default function PraiseEndorsementPage() {
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-emerald-500">
             Praise & Endorsement Sentiment
           </h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Comprehensive analysis of positive sentiment, praise categories, and endorsement metrics toward the UAE
           </p>
         </div>
@@ -153,7 +153,7 @@ export default function PraiseEndorsementPage() {
             <ThumbsUp className="h-4 w-4" />
             View Analysis
           </Button>
-          <Button className="bg-gradient-emerald hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-emerald hover:opacity-90 text-navy-950 gap-2">
             <Zap className="h-4 w-4" />
             Deep Dive
           </Button>
@@ -225,19 +225,19 @@ export default function PraiseEndorsementPage() {
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                       <div className="bg-platinum-800/30 rounded-lg p-4 text-center">
                         <p className="text-3xl font-bold text-emerald-400">{overview.totalQueryCategories}</p>
-                        <p className="text-sm text-platinum-500-400">Query Categories</p>
+                        <p className="text-sm text-platinum-400">Query Categories</p>
                       </div>
                       <div className="bg-platinum-800/30 rounded-lg p-4 text-center">
                         <p className="text-3xl font-bold text-emerald-400">{overview.totalSourcesConsulted}</p>
-                        <p className="text-sm text-platinum-500-400">Sources Consulted</p>
+                        <p className="text-sm text-platinum-400">Sources Consulted</p>
                       </div>
                       <div className="bg-platinum-800/30 rounded-lg p-4 text-center">
                         <p className="text-3xl font-bold text-emerald-400">11</p>
-                        <p className="text-sm text-platinum-500-400">Praise Categories</p>
+                        <p className="text-sm text-platinum-400">Praise Categories</p>
                       </div>
                       <div className="bg-platinum-800/30 rounded-lg p-4 text-center">
                         <p className="text-3xl font-bold text-emerald-400">100%</p>
-                        <p className="text-sm text-platinum-500-400">Data Verified</p>
+                        <p className="text-sm text-platinum-400">Data Verified</p>
                       </div>
                     </div>
                   </CardContent>
@@ -308,8 +308,8 @@ export default function PraiseEndorsementPage() {
                       {crossCategoryObservations.map((obs, idx) => (
                         <div key={idx} className="bg-platinum-800/30 rounded-lg p-4">
                           <h4 className="font-semibold text-emerald-400 mb-2">{obs.title}</h4>
-                          <p className="text-sm text-platinum-500-300 mb-2">{obs.description}</p>
-                          <p className="text-xs text-platinum-500-400 italic">{obs.evidence}</p>
+                          <p className="text-sm text-platinum-300 mb-2">{obs.description}</p>
+                          <p className="text-xs text-platinum-400 italic">{obs.evidence}</p>
                         </div>
                       ))}
                     </div>
@@ -405,7 +405,7 @@ export default function PraiseEndorsementPage() {
       </Tabs>
 
       {/* Footer */}
-      <motion.div variants={itemVariants} className="text-center text-platinum-500-500 text-sm">
+      <motion.div variants={itemVariants} className="text-center text-platinum-500 text-sm">
         <p>Data Source: {overview.researchCompilationDate} | Last Updated: {overview.enrichedDate}</p>
         <p className="mt-1">All URLs verified via WebFetch | Total Data Points: 500+</p>
       </motion.div>

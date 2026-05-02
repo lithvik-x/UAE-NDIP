@@ -86,7 +86,7 @@ export function SportsSentimentSection({
                     {sportsInvestmentSentimentAnalysis.map((item, index) => (
                       <div key={index} className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-platinum-500-200">
+                          <span className="text-sm font-medium text-platinum-200">
                             {item.perspective}
                           </span>
                           <span
@@ -139,7 +139,7 @@ export function SportsSentimentSection({
                           <span className="font-semibold text-red-400">{item.source}</span>
                           <Badge variant="destructive">{item.sentiment}</Badge>
                         </div>
-                        <p className="text-sm text-platinum-500-300">{item.assessment}</p>
+                        <p className="text-sm text-platinum-300">{item.assessment}</p>
                       </div>
                     ))}
                   </div>
@@ -164,7 +164,7 @@ export function SportsSentimentSection({
                       className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4"
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <span className="font-semibold text-platinum-500-200">{item.area}</span>
+                        <span className="font-semibold text-platinum-200">{item.area}</span>
                         <Badge
                           variant="outline"
                           className={
@@ -178,7 +178,7 @@ export function SportsSentimentSection({
                           {item.sentiment}
                         </Badge>
                       </div>
-                      <p className="text-sm text-platinum-500-400">{item.notes}</p>
+                      <p className="text-sm text-platinum-400">{item.notes}</p>
                     </div>
                   ))}
                 </div>
@@ -199,7 +199,7 @@ export function SportsSentimentSection({
                       className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3"
                     >
                       <div className="flex justify-between items-start">
-                        <span className="font-semibold text-platinum-500-200">
+                        <span className="font-semibold text-platinum-200">
                           {sponsor.teamCompetition}
                         </span>
                         <Badge
@@ -209,7 +209,7 @@ export function SportsSentimentSection({
                           Since {sponsor.since}
                         </Badge>
                       </div>
-                      <p className="text-sm text-platinum-500-400 mt-1">{sponsor.status}</p>
+                      <p className="text-sm text-platinum-400 mt-1">{sponsor.status}</p>
                     </div>
                   ))}
                 </div>

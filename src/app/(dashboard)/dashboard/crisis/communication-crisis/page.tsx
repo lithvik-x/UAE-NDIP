@@ -58,7 +58,7 @@ export default function CommunicationCrisisPage() {
               <Radio className="w-8 h-8 text-cyan-400" />
               <h1 className="text-4xl font-bold text-white tracking-tight">Communication Crisis Intelligence</h1>
             </div>
-            <p className="text-platinum-500-400 text-lg">UAE Digital Media Suppression, Disinformation & Cyber Surveillance Analysis</p>
+            <p className="text-platinum-400 text-lg">UAE Digital Media Suppression, Disinformation & Cyber Surveillance Analysis</p>
           </div>
           <Badge variant="outline" className="border-cyan-500/50 text-cyan-400 px-4 py-2">
             <Clock className="w-4 h-4 mr-2" />Updated: May 2026
@@ -98,7 +98,7 @@ export default function CommunicationCrisisPage() {
               <div key={idx} className="bg-platinum-800/50 rounded-lg p-3 border border-platinum-700/30">
                 <p className="text-cyan-400 text-xs font-medium">{entity.title}</p>
                 <p className="text-white text-sm mt-1">{entity.name}</p>
-                <p className="text-platinum-500-500 text-xs mt-1">{entity.role}</p>
+                <p className="text-platinum-500 text-xs mt-1">{entity.role}</p>
               </div>
             ))}
           </div>
@@ -126,15 +126,15 @@ export default function CommunicationCrisisPage() {
               { (communicationCrisisData.sourceUrls || []).map((source, idx) => (
                 <a key={idx} href={source.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg hover:bg-platinum-700/50 transition-colors">
                   <div className="flex items-center gap-3">
-                    <Globe className="w-4 h-4 text-platinum-500-500" />
+                    <Globe className="w-4 h-4 text-platinum-500" />
                     <div>
                       <p className="text-white text-sm">{source.title}</p>
-                      <p className="text-platinum-500-500 text-xs">{source.domain}</p>
+                      <p className="text-platinum-500 text-xs">{source.domain}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
                     <Badge variant="secondary" className="text-xs">{source.type}</Badge>
-                    <ChevronRight className="w-4 h-4 text-platinum-500-500" />
+                    <ChevronRight className="w-4 h-4 text-platinum-500" />
                   </div>
                 </a>
               ))}
@@ -143,7 +143,7 @@ export default function CommunicationCrisisPage() {
         </GlassPanel>
 
         <GlassPanel variant="dark" className="p-4 rounded-xl border border-platinum-700/50">
-          <div className="flex items-center justify-between text-sm text-platinum-500-400">
+          <div className="flex items-center justify-between text-sm text-platinum-400">
             <div className="flex items-center gap-4">
               <span>Document ID: {communicationCrisisData.documentInfo?.documentId || 'N/A'}</span>
               <span>Version: {communicationCrisisData.documentInfo?.version || 'N/A'}</span>
@@ -168,7 +168,7 @@ function OverviewTab() {
         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
           <Activity className="w-6 h-6 text-cyan-400" />Executive Summary
         </h2>
-        <p className="text-platinum-500-300 leading-relaxed">
+        <p className="text-platinum-300 leading-relaxed">
           The UAE maintains comprehensive control over digital communications through layered legal frameworks, technological infrastructure, and strategic disinformation campaigns. The government systematically monitors, restricts, and manipulates digital media channels to maintain national security and suppress dissent. Key mechanisms include targeted deepfake detection, aggressive VPN restrictions, encrypted messaging app interference, and coordinated counter-misinformation operations.
         </p>
       </GlassPanel>
@@ -183,7 +183,7 @@ function OverviewTab() {
                   <h4 className="text-cyan-400 font-medium">{area.title}</h4>
                   <Badge variant="secondary">{area.severity}</Badge>
                 </div>
-                <p className="text-platinum-500-400 text-sm">{area.description}</p>
+                <p className="text-platinum-400 text-sm">{area.description}</p>
               </div>
             ))}
           </div>
@@ -206,10 +206,10 @@ function OverviewTab() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium">{measure.agency}</h4>
-                  <p className="text-platinum-500-500 text-sm">{measure.role}</p>
+                  <p className="text-platinum-500 text-sm">{measure.role}</p>
                 </div>
               </div>
-              <p className="text-platinum-500-400 text-sm">{measure.keyActions}</p>
+              <p className="text-platinum-400 text-sm">{measure.keyActions}</p>
             </motion.div>
           ))}
         </div>
@@ -231,7 +231,7 @@ function OverviewTab() {
                 <tr key={idx} className="border-b border-platinum-800">
                   <td className="py-3 px-4 text-white">{penalty.law}</td>
                   <td className="py-3 px-4 text-red-400">{penalty.penalty}</td>
-                  <td className="py-3 px-4 text-platinum-500-400">{penalty.source}</td>
+                  <td className="py-3 px-4 text-platinum-400">{penalty.source}</td>
                 </tr>
               ))}
             </tbody>
@@ -299,8 +299,8 @@ function MisinformationTab() {
                 <h4 className="text-white font-medium">{caseItem.falseClaim}</h4>
                 <Badge variant="destructive">{caseItem.status}</Badge>
               </div>
-              <p className="text-platinum-500-400 text-sm mb-3">Origin: {caseItem.origin}</p>
-              <p className="text-platinum-500-400 text-sm">Response: {caseItem.governmentResponse}</p>
+              <p className="text-platinum-400 text-sm mb-3">Origin: {caseItem.origin}</p>
+              <p className="text-platinum-400 text-sm">Response: {caseItem.governmentResponse}</p>
             </div>
           ))}
         </div>
@@ -317,8 +317,8 @@ function MisinformationTab() {
               transition={{ delay: idx * 0.08 }}
               className="glass-card rounded-xl p-4 bg-glass-surface/50 border-glass-border"
             >
-              <p className="text-sm text-platinum-500-200 italic mb-2">"{quote.quote}"</p>
-              <p className="text-xs text-platinum-500-400">
+              <p className="text-sm text-platinum-200 italic mb-2">"{quote.quote}"</p>
+              <p className="text-xs text-platinum-400">
                 <span className="text-cyan-400">{quote.source}</span> • {quote.date}
               </p>
             </motion.div>
@@ -347,8 +347,8 @@ function DeepfakeTab() {
               <div className="flex items-center justify-between mb-3">
                 <h4 className="text-white font-medium">{incident.incident}</h4>
               </div>
-              <p className="text-platinum-500-400 text-sm mb-2">Target: {incident.target}</p>
-              <p className="text-platinum-500-400 text-sm">{incident.details}</p>
+              <p className="text-platinum-400 text-sm mb-2">Target: {incident.target}</p>
+              <p className="text-platinum-400 text-sm">{incident.details}</p>
             </div>
           ))}
         </div>
@@ -361,8 +361,8 @@ function DeepfakeTab() {
             <div key={idx} className="flex items-start gap-3 p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30">
               <CheckCircle className="h-4 w-4 text-emerald-400 mt-0.5 shrink-0" />
               <div>
-                <p className="font-medium text-platinum-500-200 text-sm">{cm.measure}</p>
-                <p className="text-xs text-platinum-500-400">{cm.description}</p>
+                <p className="font-medium text-platinum-200 text-sm">{cm.measure}</p>
+                <p className="text-xs text-platinum-400">{cm.description}</p>
               </div>
             </div>
           ))}
@@ -380,7 +380,7 @@ function DeepfakeTab() {
               transition={{ delay: idx * 0.08 }}
               className="glass-card rounded-xl p-4 bg-glass-surface/50 border-glass-border"
             >
-              <p className="text-sm text-platinum-500-200 italic mb-2">"{quote.quote}"</p>
+              <p className="text-sm text-platinum-200 italic mb-2">"{quote.quote}"</p>
               <p className="text-xs text-cyan-400">{quote.source}</p>
             </motion.div>
           ))}
@@ -399,7 +399,7 @@ function DisinformationTab() {
         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
           <Globe className="w-6 h-6 text-cyan-400" />Disinformation as Strategic Actor
         </h2>
-        <p className="text-platinum-500-300 leading-relaxed mb-6">
+        <p className="text-platinum-300 leading-relaxed mb-6">
           The UAE employs sophisticated disinformation campaigns targeting regional rivals, dissidents, and international audiences. State-aligned bots and trolls amplify pro-UAE narratives while attacking critics across multiple platforms.
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -407,23 +407,23 @@ function DisinformationTab() {
             <h3 className="text-lg font-semibold text-white mb-3">ALP Services Contract</h3>
             <div className="bg-platinum-800/50 rounded-lg p-4 border border-platinum-700/30 space-y-3">
               <div className="flex justify-between">
-                <span className="text-platinum-500-400">Company</span>
+                <span className="text-platinum-400">Company</span>
                 <span className="text-white">{alpServicesContract?.company}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-platinum-500-400">Client</span>
+                <span className="text-platinum-400">Client</span>
                 <span className="text-white">{alpServicesContract?.client}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-platinum-500-400">Contract Value</span>
+                <span className="text-platinum-400">Contract Value</span>
                 <span className="text-cyan-400">{alpServicesContract?.contractValue}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-platinum-500-400">Geographic Scope</span>
+                <span className="text-platinum-400">Geographic Scope</span>
                 <span className="text-white">{alpServicesContract?.geographicScope}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-platinum-500-400">Methods</span>
+                <span className="text-platinum-400">Methods</span>
                 <span className="text-white">{alpServicesContract?.methods}</span>
               </div>
             </div>
@@ -433,20 +433,20 @@ function DisinformationTab() {
             <h3 className="text-lg font-semibold text-white mb-3">Qatar Hack 2017</h3>
             <div className="bg-platinum-800/50 rounded-lg p-4 border border-platinum-700/30 space-y-3">
               <div className="flex justify-between">
-                <span className="text-platinum-500-400">Date of Hack</span>
+                <span className="text-platinum-400">Date of Hack</span>
                 <span className="text-white">{qatarHackDetail?.dateOfHack}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-platinum-500-400">Target</span>
+                <span className="text-platinum-400">Target</span>
                 <span className="text-white">{qatarHackDetail?.target}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-platinum-500-400">Method</span>
+                <span className="text-platinum-400">Method</span>
                 <span className="text-white">{qatarHackDetail?.method}</span>
               </div>
               <div className="p-3 rounded-lg bg-orange-500/10 border border-orange-500/30">
-                <p className="text-xs text-platinum-500-300 mb-1">False Content</p>
-                <p className="text-sm text-platinum-500-200">{qatarHackDetail?.falseContent}</p>
+                <p className="text-xs text-platinum-300 mb-1">False Content</p>
+                <p className="text-sm text-platinum-200">{qatarHackDetail?.falseContent}</p>
               </div>
             </div>
           </div>
@@ -459,7 +459,7 @@ function DisinformationTab() {
           {influenceMethods?.map((method, idx) => (
             <div key={idx} className="bg-platinum-800/50 rounded-lg p-4 border border-platinum-700/30">
               <h4 className="text-white font-medium mb-2">{method.method}</h4>
-              <p className="text-platinum-500-400 text-sm">{method.description}</p>
+              <p className="text-platinum-400 text-sm">{method.description}</p>
             </div>
           ))}
         </div>
@@ -486,7 +486,7 @@ function SuppressionTab() {
             {informationSuppressionLaws?.map((law, idx) => (
               <div key={idx} className="bg-platinum-800/50 rounded-lg p-3 border border-platinum-700/30">
                 <p className="text-white text-sm font-medium">{law.law || law.category}</p>
-                <p className="text-platinum-500-400 text-xs mt-1">{law.penalty || law.description}</p>
+                <p className="text-platinum-400 text-xs mt-1">{law.penalty || law.description}</p>
               </div>
             ))}
           </div>
@@ -501,7 +501,7 @@ function SuppressionTab() {
                   <p className="text-white text-sm">{control.platform || control.control}</p>
                   <Badge variant="secondary">{control.status || control.level}</Badge>
                 </div>
-                <p className="text-platinum-500-400 text-xs mt-1">{control.description || control.details}</p>
+                <p className="text-platinum-400 text-xs mt-1">{control.description || control.details}</p>
               </div>
             ))}
           </div>
@@ -524,7 +524,7 @@ function SuppressionTab() {
                 <tr key={idx} className="border-b border-platinum-800">
                   <td className="py-3 px-4 text-white">{takedown.platform}</td>
                   <td className="py-3 px-4 text-orange-400">{takedown.requests}</td>
-                  <td className="py-3 px-4 text-platinum-500-400">{takedown.compliance}</td>
+                  <td className="py-3 px-4 text-platinum-400">{takedown.compliance}</td>
                 </tr>
               ))}
             </tbody>
@@ -541,7 +541,7 @@ function SuppressionTab() {
                 <h4 className="text-white font-medium">{arrest.category}</h4>
                 <Badge variant="destructive">{arrest.number}</Badge>
               </div>
-              <p className="text-platinum-500-400 text-sm">{arrest.details}</p>
+              <p className="text-platinum-400 text-sm">{arrest.details}</p>
             </div>
           ))}
         </div>
@@ -560,9 +560,9 @@ function SuppressionTab() {
             >
               <div className="flex items-center justify-between mb-2">
                 <Badge className="bg-rose-500/20 text-rose-400 border-rose-500/50">{caseItem.case}</Badge>
-                <span className="text-xs text-platinum-500-400">{caseItem.year}</span>
+                <span className="text-xs text-platinum-400">{caseItem.year}</span>
               </div>
-              <p className="text-sm text-platinum-500-300">{caseItem.details}</p>
+              <p className="text-sm text-platinum-300">{caseItem.details}</p>
             </motion.div>
           ))}
         </div>
@@ -580,7 +580,7 @@ function ContradictionsTab() {
         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
           <XCircle className="w-6 h-6 text-cyan-400" />Official Contradictions
         </h2>
-        <p className="text-platinum-500-300 leading-relaxed">
+        <p className="text-platinum-300 leading-relaxed">
           Analysis of discrepancies between official UAE government statements and actions, evidence, or independent reporting. These contradictions reveal gaps between stated policies and implemented practices.
         </p>
       </GlassPanel>
@@ -598,11 +598,11 @@ function ContradictionsTab() {
               </div>
               <div className="space-y-3">
                 <div className="bg-platinum-700/50 rounded-lg p-3">
-                  <p className="text-platinum-500-500 text-xs mb-1">Official Claim</p>
+                  <p className="text-platinum-500 text-xs mb-1">Official Claim</p>
                   <p className="text-white text-sm">{entry.officialClaim}</p>
                 </div>
                 <div className="bg-platinum-700/50 rounded-lg p-3">
-                  <p className="text-platinum-500-500 text-xs mb-1">Evidence</p>
+                  <p className="text-platinum-500 text-xs mb-1">Evidence</p>
                   <p className="text-red-400 text-sm">{entry.evidence}</p>
                 </div>
               </div>
@@ -614,7 +614,7 @@ function ContradictionsTab() {
       <GlassPanel variant="dark" className="p-6 rounded-xl border border-platinum-700/50">
         <h3 className="text-xl font-semibold text-white mb-4">Casualty Figures</h3>
         <div className="bg-platinum-800/50 rounded-lg p-4 border border-platinum-700/30">
-          <pre className="text-platinum-500-300 text-sm whitespace-pre-wrap">{JSON.stringify(iranConflictCasualties, null, 2)}</pre>
+          <pre className="text-platinum-300 text-sm whitespace-pre-wrap">{JSON.stringify(iranConflictCasualties, null, 2)}</pre>
         </div>
       </GlassPanel>
     </div>
@@ -630,7 +630,7 @@ function WhistleblowerTab() {
         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
           <AlertTriangle className="w-6 h-6 text-cyan-400" />Whistleblower Cases
         </h2>
-        <p className="text-platinum-500-300 leading-relaxed">
+        <p className="text-platinum-300 leading-relaxed">
           Documented cases of individuals who attempted to expose government surveillance, censorship, or digital rights violations, and the subsequent retaliation or failure of protection mechanisms.
         </p>
       </GlassPanel>
@@ -639,19 +639,19 @@ function WhistleblowerTab() {
         <h3 className="text-xl font-semibold text-white mb-4">Andre Gauthier Case</h3>
         <div className="bg-platinum-800/50 rounded-lg p-4 border border-platinum-700/30 space-y-3 mb-4">
           <div className="flex justify-between">
-            <span className="text-platinum-500-400">Status</span>
+            <span className="text-platinum-400">Status</span>
             <span className="text-white">{andreGauthierCase?.status}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-platinum-500-400">Arrest Date</span>
+            <span className="text-platinum-400">Arrest Date</span>
             <span className="text-white">{andreGauthierCase?.arrestDate}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-platinum-500-400">Charges</span>
+            <span className="text-platinum-400">Charges</span>
             <span className="text-red-400">{andreGauthierCase?.charges}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-platinum-500-400">Background</span>
+            <span className="text-platinum-400">Background</span>
             <span className="text-white">{andreGauthierCase?.background}</span>
           </div>
         </div>
@@ -686,7 +686,7 @@ function WhistleblowerTab() {
       <GlassPanel variant="dark" className="p-6 rounded-xl border border-platinum-700/50">
         <h3 className="text-xl font-semibold text-white mb-4">Gaza Administration Denial</h3>
         <div className="bg-platinum-800/50 rounded-lg p-4 border border-platinum-700/30">
-          <pre className="text-platinum-500-300 text-sm whitespace-pre-wrap">{JSON.stringify(gazaAdministrationDenial, null, 2)}</pre>
+          <pre className="text-platinum-300 text-sm whitespace-pre-wrap">{JSON.stringify(gazaAdministrationDenial, null, 2)}</pre>
         </div>
       </GlassPanel>
     </div>
@@ -711,7 +711,7 @@ function CyberTab() {
             {ddosStats?.map((stat, idx) => (
               <div key={idx} className="bg-platinum-800/50 rounded-lg p-3 border border-platinum-700/30">
                 <div className="flex justify-between items-center">
-                  <span className="text-platinum-500-400">{stat.metric}</span>
+                  <span className="text-platinum-400">{stat.metric}</span>
                   <span className="text-cyan-400 font-medium">{stat.value}</span>
                 </div>
               </div>
@@ -724,12 +724,12 @@ function CyberTab() {
           <div className="bg-platinum-800/50 rounded-lg p-4 border border-platinum-700/30 mb-4">
             <div className="text-center">
               <p className="text-6xl font-bold text-rose-400">{stateSponsoredThreat?.percentage}</p>
-              <p className="text-sm text-platinum-500-400 mt-2">of all cyber threats targeting UAE</p>
-              <p className="text-xs text-platinum-500-500 mt-1">are state-sponsored</p>
+              <p className="text-sm text-platinum-400 mt-2">of all cyber threats targeting UAE</p>
+              <p className="text-xs text-platinum-500 mt-1">are state-sponsored</p>
             </div>
           </div>
           <div className="bg-platinum-800/50 rounded-lg p-3 border border-platinum-700/30">
-            <p className="text-platinum-500-400 text-sm">{stateSponsoredThreat?.description}</p>
+            <p className="text-platinum-400 text-sm">{stateSponsoredThreat?.description}</p>
           </div>
         </GlassPanel>
       </div>
@@ -741,7 +741,7 @@ function CyberTab() {
             <div key={idx} className="bg-platinum-800/50 rounded-lg p-4 border border-platinum-700/30 text-center">
               <Server className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
               <p className="text-white font-medium">{sector.sector}</p>
-              <p className="text-platinum-500-500 text-sm">{sector.incidents}</p>
+              <p className="text-platinum-500 text-sm">{sector.incidents}</p>
             </div>
           ))}
         </div>
@@ -756,8 +756,8 @@ function CyberTab() {
                 <h4 className="text-white font-medium">{attack.target}</h4>
                 <Badge variant="destructive">{attack.year}</Badge>
               </div>
-              <p className="text-platinum-500-400 text-sm mb-2">{attack.method}</p>
-              <p className="text-platinum-500-500 text-xs">{attack.impact}</p>
+              <p className="text-platinum-400 text-sm mb-2">{attack.method}</p>
+              <p className="text-platinum-500 text-xs">{attack.impact}</p>
             </div>
           ))}
         </div>

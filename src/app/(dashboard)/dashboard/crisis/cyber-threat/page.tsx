@@ -24,7 +24,7 @@ export default function CyberThreatPage() {
   if (!data) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-500-400">Loading Cybersecurity Threats data...</div>
+        <div className="text-platinum-400">Loading Cybersecurity Threats data...</div>
       </div>
     )
   }
@@ -63,7 +63,7 @@ export default function CyberThreatPage() {
               Cyber Threat Intelligence
             </span>
           </h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             State-sponsored attacks, ransomware, Bybit hack, Handala, AI-powered threats
           </p>
         </div>
@@ -123,7 +123,7 @@ export default function CyberThreatPage() {
             transition={{ duration: 0.3, delay: 0.1 * idx }}
             className="rounded-lg glass-card border border-platinum-700/50 p-3 text-center hover:border-violet-500/30 transition-all"
           >
-            <p className="text-xs text-platinum-500-400 truncate" title={stat.metric}>{stat.metric}</p>
+            <p className="text-xs text-platinum-400 truncate" title={stat.metric}>{stat.metric}</p>
             <p className="text-lg font-bold text-purple-500">{stat.value}</p>
           </motion.div>
         ))}
@@ -186,23 +186,23 @@ export default function CyberThreatPage() {
 
               <TabsContent value="stats" className="space-y-4">
                 <div className="rounded-lg glass-card border border-rose-500/30 p-6">
-                  <h3 className="text-lg font-semibold text-platinum-500-200 mb-4">Ransomware Statistics (24 months)</h3>
+                  <h3 className="text-lg font-semibold text-platinum-200 mb-4">Ransomware Statistics (24 months)</h3>
                   <div className="grid gap-4 md:grid-cols-4">
                     <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-rose-500/30">
                       <p className="text-3xl font-bold text-rose-500">267%</p>
-                      <p className="text-xs text-platinum-500-400">Increase (24mo)</p>
+                      <p className="text-xs text-platinum-400">Increase (24mo)</p>
                     </div>
                     <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-rose-500/30">
                       <p className="text-3xl font-bold text-rose-500">145</p>
-                      <p className="text-xs text-platinum-500-400">Victims Tracked</p>
+                      <p className="text-xs text-platinum-400">Victims Tracked</p>
                     </div>
                     <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-rose-500/30">
                       <p className="text-3xl font-bold text-rose-500">44</p>
-                      <p className="text-xs text-platinum-500-400">2024 Incidents</p>
+                      <p className="text-xs text-platinum-400">2024 Incidents</p>
                     </div>
                     <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-rose-500/30">
                       <p className="text-3xl font-bold text-rose-500">78%</p>
-                      <p className="text-xs text-platinum-500-400">Orgs Affected (2020)</p>
+                      <p className="text-xs text-platinum-400">Orgs Affected (2020)</p>
                     </div>
                   </div>
                 </div>
@@ -210,12 +210,12 @@ export default function CyberThreatPage() {
 
               <TabsContent value="groups" className="space-y-4">
                 <div className="rounded-lg glass-card border border-purple-500/30 p-6">
-                  <h3 className="text-lg font-semibold text-platinum-500-200 mb-4">Active Ransomware Groups</h3>
+                  <h3 className="text-lg font-semibold text-platinum-200 mb-4">Active Ransomware Groups</h3>
                   <div className="grid gap-3 md:grid-cols-3 lg:grid-cols-4">
                     {data.ransomwareLandscape?.statistics?.length > 0 ? (
                       threatActors?.ransomwareGroups?.map((group, idx) => (
                         <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg border border-platinum-700/50">
-                          <span className="text-sm font-medium text-platinum-500-200">{group.group}</span>
+                          <span className="text-sm font-medium text-platinum-200">{group.group}</span>
                           <div className={`h-2 w-2 rounded-full ${group.active ? 'bg-rose-500' : 'bg-platinum-500'}`} />
                         </div>
                       ))
@@ -223,7 +223,7 @@ export default function CyberThreatPage() {
                       <>
                         {['Lockbit5', 'Lockbit3', 'Handala', 'Daixin', 'AvosLocker', 'Gunra', 'Clop', 'Medusa'].map((group, idx) => (
                           <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg border border-platinum-700/50">
-                            <span className="text-sm font-medium text-platinum-500-200">{group}</span>
+                            <span className="text-sm font-medium text-platinum-200">{group}</span>
                             <div className="h-2 w-2 rounded-full bg-rose-500" />
                           </div>
                         ))}
@@ -240,27 +240,27 @@ export default function CyberThreatPage() {
         <TabsContent value="phishing" className="space-y-6">
           <motion.div variants={fadeInUp}>
             <div className="rounded-lg glass-card border border-rose-500/30 p-6">
-              <h3 className="text-lg font-semibold text-platinum-500-200 mb-4">Phishing Statistics</h3>
+              <h3 className="text-lg font-semibold text-platinum-200 mb-4">Phishing Statistics</h3>
               <div className="grid gap-4 md:grid-cols-3">
                 <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-rose-500/30">
                   <p className="text-3xl font-bold text-rose-500">75%</p>
-                  <p className="text-xs text-platinum-500-400">UAE Breaches from Phishing</p>
+                  <p className="text-xs text-platinum-400">UAE Breaches from Phishing</p>
                 </div>
                 <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-rose-500/30">
                   <p className="text-3xl font-bold text-rose-500">3.4B</p>
-                  <p className="text-xs text-platinum-500-400">Global Daily Messages</p>
+                  <p className="text-xs text-platinum-400">Global Daily Messages</p>
                 </div>
                 <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-rose-500/30">
                   <p className="text-3xl font-bold text-rose-500">90%</p>
-                  <p className="text-xs text-platinum-500-400">AI-Powered Breaches</p>
+                  <p className="text-xs text-platinum-400">AI-Powered Breaches</p>
                 </div>
               </div>
 
-              <h3 className="text-lg font-semibold text-platinum-500-200 mt-8 mb-4">Major Scam Types in UAE (2026)</h3>
+              <h3 className="text-lg font-semibold text-platinum-200 mt-8 mb-4">Major Scam Types in UAE (2026)</h3>
               <div className="grid gap-3 md:grid-cols-3 lg:grid-cols-5">
                 {['Fake concert tickets', 'Bogus residency services', 'Domestic worker recruitment', 'Unauthorized insurance', 'Seized vehicle sales', 'Parcel tracking scams', 'Illegal investment schemes', 'Fake real estate', 'Job seeker phishing'].map((scam, idx) => (
                   <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg border border-platinum-700/50 text-center">
-                    <p className="text-sm font-medium text-platinum-500-200">{scam}</p>
+                    <p className="text-sm font-medium text-platinum-200">{scam}</p>
                   </div>
                 ))}
               </div>
@@ -272,23 +272,23 @@ export default function CyberThreatPage() {
         <TabsContent value="workforce" className="space-y-6">
           <motion.div variants={fadeInUp}>
             <div className="rounded-lg glass-card border border-purple-500/30 p-6">
-              <h3 className="text-lg font-semibold text-platinum-500-200 mb-4">Workforce & Talent Gap</h3>
+              <h3 className="text-lg font-semibold text-platinum-200 mb-4">Workforce & Talent Gap</h3>
               <div className="grid gap-4 md:grid-cols-4">
                 <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-purple-500/30">
                   <p className="text-3xl font-bold text-purple-500">40%</p>
-                  <p className="text-xs text-platinum-500-400">Orgs Lacking Skilled Staff</p>
+                  <p className="text-xs text-platinum-400">Orgs Lacking Skilled Staff</p>
                 </div>
                 <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-purple-500/30">
                   <p className="text-3xl font-bold text-purple-500">90%</p>
-                  <p className="text-xs text-platinum-500-400">Tech Cos Reporting Shortage</p>
+                  <p className="text-xs text-platinum-400">Tech Cos Reporting Shortage</p>
                 </div>
                 <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-purple-500/30">
                   <p className="text-3xl font-bold text-purple-500">47%</p>
-                  <p className="text-xs text-platinum-500-400">Struggling to Prioritize</p>
+                  <p className="text-xs text-platinum-400">Struggling to Prioritize</p>
                 </div>
                 <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-cyan-500/30">
                   <p className="text-3xl font-bold text-cyan-500">+40%</p>
-                  <p className="text-xs text-platinum-500-400">Home Network Attacks</p>
+                  <p className="text-xs text-platinum-400">Home Network Attacks</p>
                 </div>
               </div>
             </div>
@@ -299,23 +299,23 @@ export default function CyberThreatPage() {
         <TabsContent value="darkweb" className="space-y-6">
           <motion.div variants={fadeInUp}>
             <div className="rounded-lg glass-card border border-purple-500/30 p-6">
-              <h3 className="text-lg font-semibold text-platinum-500-200 mb-4">Dark Web Economy</h3>
+              <h3 className="text-lg font-semibold text-platinum-200 mb-4">Dark Web Economy</h3>
               <div className="grid gap-4 md:grid-cols-4">
                 <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-purple-500/30">
                   <p className="text-lg font-bold text-purple-500">$257-$50K</p>
-                  <p className="text-xs text-platinum-500-400">Per Database</p>
+                  <p className="text-xs text-platinum-400">Per Database</p>
                 </div>
                 <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-rose-500/30">
                   <p className="text-lg font-bold text-rose-500">$22.80</p>
-                  <p className="text-xs text-platinum-500-400">UAE InvestBank Data</p>
+                  <p className="text-xs text-platinum-400">UAE InvestBank Data</p>
                 </div>
                 <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-amber-500/30">
                   <p className="text-lg font-bold text-amber-500">$17.3M</p>
-                  <p className="text-xs text-platinum-500-400">UAE Personal Data (NordVPN)</p>
+                  <p className="text-xs text-platinum-400">UAE Personal Data (NordVPN)</p>
                 </div>
                 <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-cyan-500/30">
                   <p className="text-lg font-bold text-cyan-500">~200K</p>
-                  <p className="text-xs text-platinum-500-400">Dubai Property Owners</p>
+                  <p className="text-xs text-platinum-400">Dubai Property Owners</p>
                 </div>
               </div>
             </div>
@@ -326,23 +326,23 @@ export default function CyberThreatPage() {
         <TabsContent value="emerging" className="space-y-6">
           <motion.div variants={fadeInUp}>
             <div className="rounded-lg glass-card border border-purple-500/30 p-6">
-              <h3 className="text-lg font-semibold text-platinum-500-200 mb-4">Emerging Threats</h3>
+              <h3 className="text-lg font-semibold text-platinum-200 mb-4">Emerging Threats</h3>
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <div className="p-4 bg-platinum-800/50 rounded-lg border border-rose-500/30">
                   <p className="font-medium text-rose-500">Automated Malware Mutation</p>
-                  <p className="text-xs text-platinum-500-400 mt-1">Real-time behavior adaptation</p>
+                  <p className="text-xs text-platinum-400 mt-1">Real-time behavior adaptation</p>
                 </div>
                 <div className="p-4 bg-platinum-800/50 rounded-lg border border-amber-500/30">
                   <p className="font-medium text-amber-500">Deepfake Voice Fraud</p>
-                  <p className="text-xs text-platinum-500-400 mt-1">$35M loss recorded</p>
+                  <p className="text-xs text-platinum-400 mt-1">$35M loss recorded</p>
                 </div>
                 <div className="p-4 bg-platinum-800/50 rounded-lg border border-orange-500/30">
                   <p className="font-medium text-orange-500">AI-Generated Phishing</p>
-                  <p className="text-xs text-platinum-500-400 mt-1">90% of breaches</p>
+                  <p className="text-xs text-platinum-400 mt-1">90% of breaches</p>
                 </div>
                 <div className="p-4 bg-platinum-800/50 rounded-lg border border-purple-500/30">
                   <p className="font-medium text-purple-500">WormGPT for Attacks</p>
-                  <p className="text-xs text-platinum-500-400 mt-1">Iranian groups using</p>
+                  <p className="text-xs text-platinum-400 mt-1">Iranian groups using</p>
                 </div>
               </div>
             </div>
@@ -353,23 +353,23 @@ export default function CyberThreatPage() {
         <TabsContent value="insurance" className="space-y-6">
           <motion.div variants={fadeInUp}>
             <div className="rounded-lg glass-card border border-purple-500/30 p-6">
-              <h3 className="text-lg font-semibold text-platinum-500-200 mb-4">Cyber Insurance Market</h3>
+              <h3 className="text-lg font-semibold text-platinum-200 mb-4">Cyber Insurance Market</h3>
               <div className="grid gap-4 md:grid-cols-4">
                 <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-purple-500/30">
                   <p className="text-2xl font-bold text-purple-500">$83M</p>
-                  <p className="text-xs text-platinum-500-400">2026 Market</p>
+                  <p className="text-xs text-platinum-400">2026 Market</p>
                 </div>
                 <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-purple-500/30">
                   <p className="text-2xl font-bold text-purple-500">$350M</p>
-                  <p className="text-xs text-platinum-500-400">2034 Projection</p>
+                  <p className="text-xs text-platinum-400">2034 Projection</p>
                 </div>
                 <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-purple-500/30">
                   <p className="text-2xl font-bold text-purple-500">17.29%</p>
-                  <p className="text-xs text-platinum-500-400">CAGR</p>
+                  <p className="text-xs text-platinum-400">CAGR</p>
                 </div>
                 <div className="text-center p-4 bg-platinum-800/50 rounded-lg border border-cyan-500/30">
                   <p className="text-2xl font-bold text-cyan-500">40%</p>
-                  <p className="text-xs text-platinum-500-400">MENA Share</p>
+                  <p className="text-xs text-platinum-400">MENA Share</p>
                 </div>
               </div>
             </div>
@@ -380,32 +380,32 @@ export default function CyberThreatPage() {
         <TabsContent value="laws" className="space-y-6">
           <motion.div variants={fadeInUp}>
             <div className="rounded-lg glass-card border border-purple-500/30 p-6">
-              <h3 className="text-lg font-semibold text-platinum-500-200 mb-4">Federal Law No. 34 of 2021 - Cybercrime Penalties</h3>
+              <h3 className="text-lg font-semibold text-platinum-200 mb-4">Federal Law No. 34 of 2021 - Cybercrime Penalties</h3>
               <div className="grid gap-4 md:grid-cols-4">
                 <div className="p-4 bg-platinum-800/50 rounded-lg border border-purple-500/30">
                   <p className="font-medium text-purple-500 mb-2">General Hacking</p>
-                  <p className="text-sm text-platinum-500-400">Fine: 100,000-300,000 AED</p>
+                  <p className="text-sm text-platinum-400">Fine: 100,000-300,000 AED</p>
                 </div>
                 <div className="p-4 bg-platinum-800/50 rounded-lg border border-rose-500/30">
                   <p className="font-medium text-rose-500 mb-2">Causing Damage</p>
-                  <p className="text-sm text-platinum-500-400">6mo+ imprisonment + fine</p>
+                  <p className="text-sm text-platinum-400">6mo+ imprisonment + fine</p>
                 </div>
                 <div className="p-4 bg-platinum-800/50 rounded-lg border border-rose-500/30">
                   <p className="font-medium text-rose-500 mb-2">Government Systems</p>
-                  <p className="text-sm text-platinum-500-400">5-7 years imprisonment</p>
+                  <p className="text-sm text-platinum-400">5-7 years imprisonment</p>
                 </div>
                 <div className="p-4 bg-platinum-800/50 rounded-lg border border-orange-500/30">
                   <p className="font-medium text-orange-500 mb-2">Cyber Extortion</p>
-                  <p className="text-sm text-platinum-500-400">Up to 10 years imprisonment</p>
+                  <p className="text-sm text-platinum-400">Up to 10 years imprisonment</p>
                 </div>
               </div>
 
-              <h3 className="text-lg font-semibold text-platinum-500-200 mt-8 mb-4">Defense Capabilities</h3>
+              <h3 className="text-lg font-semibold text-platinum-200 mt-8 mb-4">Defense Capabilities</h3>
               <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
                 {['24/7 Security Operations Centers', 'Real-time traffic analysis', 'Multilayer AI defense', 'International cooperation (Israel, US)', 'National response team'].map((cap, idx) => (
                   <div key={idx} className="flex items-center gap-2 p-3 bg-platinum-800/50 rounded-lg border border-platinum-700/50">
                     <div className="h-2 w-2 rounded-full bg-emerald-500" />
-                    <span className="text-sm text-platinum-500-200">{cap}</span>
+                    <span className="text-sm text-platinum-200">{cap}</span>
                   </div>
                 ))}
               </div>

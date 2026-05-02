@@ -91,7 +91,7 @@ export function IndicatorsSection({ data }: IndicatorsSectionProps) {
               transition={{ delay: idx * 0.1 }}
               className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
             >
-              <span className="text-platinum-500-200 flex-1">{i.indicator}</span>
+              <span className="text-platinum-200 flex-1">{i.indicator}</span>
               <div className="flex items-center gap-3">
                 <Badge
                   variant="outline"

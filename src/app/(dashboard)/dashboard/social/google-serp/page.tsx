@@ -23,7 +23,7 @@ export default function GoogleSerpPage() {
   if (!data) {
     return (
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-500-400">Loading Google SERP intelligence data...</div>
+        <div className="text-platinum-400">Loading Google SERP intelligence data...</div>
       </motion.div>
     )
   }
@@ -72,7 +72,7 @@ export default function GoogleSerpPage() {
               Google SERP Analysis
             </span>
           </h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Search engine result page intelligence — ranking positions, SERP features, and visibility metrics for UAE topics
           </p>
         </div>
@@ -150,9 +150,9 @@ export default function GoogleSerpPage() {
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.06 }}
                       className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                       <div className="flex items-center gap-3">
-                        <span className="text-xs text-platinum-500-500 w-6">{idx + 1}</span>
+                        <span className="text-xs text-platinum-500 w-6">{idx + 1}</span>
                         <Search className="h-4 w-4 text-cyan-400" />
-                        <span className="text-sm text-platinum-500-200">{q.query}</span>
+                        <span className="text-sm text-platinum-200">{q.query}</span>
                       </div>
                       <div className="flex items-center gap-4">
                         <Badge variant="outline" className="border-cyan-500/50 text-cyan-400">{q.volume?.toLocaleString?.() || q.volume}/mo</Badge>
@@ -177,9 +177,9 @@ export default function GoogleSerpPage() {
                       <Eye className="h-5 w-5 text-cyan-400" />
                       <Badge variant="outline" className="border-emerald-500/50 text-emerald-500">{f.coverage}</Badge>
                     </div>
-                    <h4 className="font-medium text-platinum-500-200 mb-1">{f.feature}</h4>
-                    <p className="text-2xl font-bold text-platinum-500-100">{f.count}</p>
-                    <p className="text-xs text-platinum-500-400">occurrences tracked</p>
+                    <h4 className="font-medium text-platinum-200 mb-1">{f.feature}</h4>
+                    <p className="text-2xl font-bold text-platinum-100">{f.count}</p>
+                    <p className="text-xs text-platinum-400">occurrences tracked</p>
                   </motion.div>
                 ))}
               </div>
@@ -201,11 +201,11 @@ export default function GoogleSerpPage() {
                     className="space-y-2">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <Globe className="h-4 w-4 text-platinum-500-400" />
-                        <span className="text-sm font-medium text-platinum-500-200">{item.domain}</span>
+                        <Globe className="h-4 w-4 text-platinum-400" />
+                        <span className="text-sm font-medium text-platinum-200">{item.domain}</span>
                         <Badge variant="outline" className={`text-xs ${item.trend.startsWith('+') ? 'border-emerald-500/50 text-emerald-500' : 'border-rose-500/50 text-rose-500'}`}>{item.trend}</Badge>
                       </div>
-                      <span className="text-lg font-bold text-platinum-500-100">{item.visibility}%</span>
+                      <span className="text-lg font-bold text-platinum-100">{item.visibility}%</span>
                     </div>
                     <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
                       <motion.div initial={{ width: 0 }} animate={{ width: `${item.visibility}%` }} transition={{ delay: idx * 0.1 + 0.3, duration: 0.5 }}

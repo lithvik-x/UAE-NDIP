@@ -46,7 +46,7 @@ export default function RussianPage() {
     <motion.div initial="initial" animate="animate" variants={staggerContainer} className="space-y-8 p-8 font-rajdhani">
       <motion.div variants={fadeInUp} className="flex items-start justify-between">
         <div>
-          <Badge className="mb-2 bg-gradient-to-r from-blue-500/20 to-indigo-600/20 text-navy-500-400 border-navy-500/50">
+          <Badge className="mb-2 bg-gradient-to-r from-blue-500/20 to-indigo-600/20 text-navy-400 border-navy-500/50">
             <Globe className="w-3 h-3 mr-1" />
             SLAVIC INTELLIGENCE
           </Badge>
@@ -55,7 +55,7 @@ export default function RussianPage() {
               Russian Language
             </span>
           </h1>
-          <p className="mt-2 text-platinum-500-400">Russian language intelligence — Russian expat community, sanctions context, and UAE-Russia relations</p>
+          <p className="mt-2 text-platinum-400">Russian language intelligence — Russian expat community, sanctions context, and UAE-Russia relations</p>
         </div>
       </motion.div>
 
@@ -84,9 +84,9 @@ export default function RussianPage() {
                   <CardContent className="px-0 pb-0"><PieChart data={sentimentData} height={280} showLegend={true} /></CardContent>
                 </motion.div>
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
-                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><BookOpen className="h-5 w-5 text-navy-500-500" />Context Notes</CardTitle></CardHeader>
+                  <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><BookOpen className="h-5 w-5 text-navy-500" />Context Notes</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0">
-                    <div className="space-y-3 text-sm text-platinum-500-300">
+                    <div className="space-y-3 text-sm text-platinum-300">
                       <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-emerald-500" />Post-2022 migration wave: significant increase</div>
                       <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-emerald-500" />Dubai: primary destination for Russians</div>
                       <div className="flex items-center gap-2"><Shield className="h-4 w-4 text-rose-500" />Sanctions evasion concerns elevated</div>
@@ -108,11 +108,11 @@ export default function RussianPage() {
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
                       className="rounded-lg bg-gradient-to-r from-blue-500/10 to-indigo-600/5 p-4 border border-navy-500/30">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xl text-platinum-500-100 font-rajdhani">{p.phrase}</span>
-                        <Badge variant="outline" className="border-navy-500/50 text-navy-500-400">{p.transliteration}</Badge>
+                        <span className="text-xl text-platinum-100 font-rajdhani">{p.phrase}</span>
+                        <Badge variant="outline" className="border-navy-500/50 text-navy-400">{p.transliteration}</Badge>
                       </div>
                       <p className="text-sm text-cyan-400 mb-1">{p.translation}</p>
-                      <p className="text-xs text-platinum-500-400">Context: {p.context}</p>
+                      <p className="text-xs text-platinum-400">Context: {p.context}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -129,10 +129,10 @@ export default function RussianPage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }}
                     className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-platinum-500-200">{t.topic}</span>
+                      <span className="text-sm font-medium text-platinum-200">{t.topic}</span>
                       <div className="flex items-center gap-2">
                         <Badge variant="outline" className={`${t.sentiment === 'Positive' ? 'border-emerald-500/50 text-emerald-500' : t.sentiment === 'Negative' ? 'border-rose-500/50 text-rose-500' : 'border-platinum-500/50 text-platinum-500'}`}>{t.sentiment}</Badge>
-                        <span className="text-lg font-bold text-platinum-500-100">{t.coverage}%</span>
+                        <span className="text-lg font-bold text-platinum-100">{t.coverage}%</span>
                       </div>
                     </div>
                     <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">

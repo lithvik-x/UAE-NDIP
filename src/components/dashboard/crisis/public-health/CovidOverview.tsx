@@ -90,18 +90,18 @@ export function CovidOverview({ data }: CovidOverviewProps) {
             </div>
 
             <div className="rounded-lg bg-glass-surface/50 border border-glass-border p-4">
-              <h4 className="text-sm font-medium text-platinum-500-300 mb-3">First Case Details</h4>
+              <h4 className="text-sm font-medium text-platinum-300 mb-3">First Case Details</h4>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-platinum-500-400">Date:</span>
-                  <span className="text-platinum-500-200">{keyMetrics.firstCase.date}</span>
+                  <span className="text-platinum-400">Date:</span>
+                  <span className="text-platinum-200">{keyMetrics.firstCase.date}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-platinum-500-400">Patient:</span>
-                  <span className="text-platinum-500-200">{keyMetrics.firstCase.patient}</span>
+                  <span className="text-platinum-400">Patient:</span>
+                  <span className="text-platinum-200">{keyMetrics.firstCase.patient}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-platinum-500-400">Recovery Rate:</span>
+                  <span className="text-platinum-400">Recovery Rate:</span>
                   <span className="text-emerald-400">{keyMetrics.recoveryRate.value}</span>
                 </div>
               </div>
@@ -145,7 +145,7 @@ export function CovidOverview({ data }: CovidOverviewProps) {
 
         {/* Timeline */}
         <div className="mt-6">
-          <h4 className="text-sm font-medium text-platinum-500-300 mb-3">Key Timeline Events</h4>
+          <h4 className="text-sm font-medium text-platinum-300 mb-3">Key Timeline Events</h4>
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {covid19Timeline.slice(0, 6).map((item, idx) => (
               <motion.div
@@ -155,10 +155,10 @@ export function CovidOverview({ data }: CovidOverviewProps) {
                 transition={{ delay: idx * 0.1 }}
                 className="flex items-start gap-3 rounded-lg bg-glass-surface/30 p-3 border border-glass-border"
               >
-                <div className="flex-shrink-0 w-20 text-xs text-platinum-500-400 font-mono">{item.date}</div>
+                <div className="flex-shrink-0 w-20 text-xs text-platinum-400 font-mono">{item.date}</div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-sm text-platinum-500-200 font-medium truncate">{item.event}</div>
-                  <div className="text-xs text-platinum-500-500 truncate">{item.detail}</div>
+                  <div className="text-sm text-platinum-200 font-medium truncate">{item.event}</div>
+                  <div className="text-xs text-platinum-500 truncate">{item.detail}</div>
                 </div>
               </motion.div>
             ))}
@@ -167,7 +167,7 @@ export function CovidOverview({ data }: CovidOverviewProps) {
 
         {/* Lockdown Details */}
         <div className="mt-6">
-          <h4 className="text-sm font-medium text-platinum-500-300 mb-3">Lockdown Measures</h4>
+          <h4 className="text-sm font-medium text-platinum-300 mb-3">Lockdown Measures</h4>
           <div className="flex flex-wrap gap-2">
             <Badge variant="outline" className="border-rose-500/50 text-rose-500">
               <Clock className="w-3 h-3 mr-1" />

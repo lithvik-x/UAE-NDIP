@@ -206,7 +206,7 @@ export default function CivilSocietyStakeholdersPage() {
         <div>
           <Badge variant="default" className="mb-2">CIVIL SOCIETY</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum-500">Civil Society Stakeholders</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Charitable organizations, humanitarian groups, and civil society actors operating in the UAE
           </p>
         </div>
@@ -215,7 +215,7 @@ export default function CivilSocietyStakeholdersPage() {
             <Heart className="h-4 w-4" />
             View Directory
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2">
             <Zap className="h-4 w-4" />
             Analyze
           </Button>
@@ -330,43 +330,43 @@ export default function CivilSocietyStakeholdersPage() {
                     <CardHeader>
                       <div className="flex items-start justify-between">
                         <div className="flex items-center gap-3">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-platinum-500/20 text-platinum-500-400">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-platinum-500/20 text-platinum-400">
                             <Heart className="h-6 w-6" />
                           </div>
                           <div>
-                            <CardTitle className="text-lg text-platinum-500-200">{entity.name}</CardTitle>
-                            {entity.nameAr && <p className="text-sm text-platinum-500-400">{entity.nameAr}</p>}
+                            <CardTitle className="text-lg text-platinum-200">{entity.name}</CardTitle>
+                            {entity.nameAr && <p className="text-sm text-platinum-400">{entity.nameAr}</p>}
                           </div>
                         </div>
                         {getAlertBadge(entity.alertLevel)}
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-platinum-500-300 mb-4">{entity.mandate}</p>
+                      <p className="text-platinum-300 mb-4">{entity.mandate}</p>
                       <div className="grid gap-4 sm:grid-cols-4">
                         <div className="text-center">
-                          <div className="text-xl font-bold text-platinum-500-400">
+                          <div className="text-xl font-bold text-platinum-400">
                             {entity.metrics?.digitalReach?.toLocaleString() || 'N/A'}
                           </div>
-                          <div className="text-xs text-platinum-500-400">Digital Reach</div>
+                          <div className="text-xs text-platinum-400">Digital Reach</div>
                         </div>
                         <div className="text-center">
                           <div className="text-xl font-bold text-gold-400">
                             {entity.metrics?.engagement?.toFixed(1) || 'N/A'}
                           </div>
-                          <div className="text-xs text-platinum-500-400">Engagement</div>
+                          <div className="text-xs text-platinum-400">Engagement</div>
                         </div>
                         <div className="text-center">
                           <div className="text-xl font-bold text-emerald-400">
                             {entity.metrics?.credibility?.score || 'N/A'}
                           </div>
-                          <div className="text-xs text-platinum-500-400">Credibility</div>
+                          <div className="text-xs text-platinum-400">Credibility</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-xl font-bold text-navy-500-400">
+                          <div className="text-xl font-bold text-navy-400">
                             {entity.uaeRelevance?.level || 'N/A'}
                           </div>
-                          <div className="text-xs text-platinum-500-400">UAE Relevance</div>
+                          <div className="text-xs text-platinum-400">UAE Relevance</div>
                         </div>
                       </div>
                     </CardContent>
@@ -409,9 +409,9 @@ export default function CivilSocietyStakeholdersPage() {
                             className="h-3 w-3 rounded-full"
                             style={{ backgroundColor: type.color }}
                           />
-                          <span className="font-medium text-platinum-500-200">{type.name}</span>
+                          <span className="font-medium text-platinum-200">{type.name}</span>
                         </div>
-                        <span className="text-xl font-bold text-platinum-500-400">{type.value}%</span>
+                        <span className="text-xl font-bold text-platinum-400">{type.value}%</span>
                       </div>
                       <Progress
                         value={type.value}
@@ -456,10 +456,10 @@ export default function CivilSocietyStakeholdersPage() {
                         return (
                           <div key={entity.id} className="space-y-2">
                             <div className="flex items-center justify-between">
-                              <span className="text-sm font-medium text-platinum-500-200">{entity.name}</span>
+                              <span className="text-sm font-medium text-platinum-200">{entity.name}</span>
                               <div className="flex items-center gap-4 text-xs">
                                 <span className="text-emerald-400">+{sentiment?.positive || 0}%</span>
-                                <span className="text-platinum-500-400">{sentiment?.neutral || 0}%</span>
+                                <span className="text-platinum-400">{sentiment?.neutral || 0}%</span>
                                 <span className="text-rose-400">-{sentiment?.negative || 0}%</span>
                               </div>
                             </div>

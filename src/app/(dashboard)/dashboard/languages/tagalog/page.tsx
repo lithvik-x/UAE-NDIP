@@ -114,7 +114,7 @@ export default function TagalogLanguagePage() {
         <div>
           <Badge variant="gold" className="mb-2">L-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Filipino/Tagalog Media</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Filipino-language content monitoring and analysis in the UAE
           </p>
         </div>
@@ -123,7 +123,7 @@ export default function TagalogLanguagePage() {
             <Search className="h-4 w-4" />
             Search
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
             <Languages className="h-4 w-4" />
             Analyze
           </Button>
@@ -225,7 +225,7 @@ export default function TagalogLanguagePage() {
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Hash className="h-4 w-4 text-gold-700" />
-                            <span className="text-sm text-platinum-500-200">{search.term}</span>
+                            <span className="text-sm text-platinum-200">{search.term}</span>
                           </div>
                           <div className="flex items-center gap-2">
                             <Progress value={search.trend} className="h-2 w-16" />
@@ -278,14 +278,14 @@ export default function TagalogLanguagePage() {
                     <CardContent>
                       <div className="flex items-end justify-between">
                         <div>
-                          <div className="text-3xl font-bold text-platinum-500-200">{platform.percentage}%</div>
-                          <p className="text-sm text-platinum-500-400">of Filipino content</p>
+                          <div className="text-3xl font-bold text-platinum-200">{platform.percentage}%</div>
+                          <p className="text-sm text-platinum-400">of Filipino content</p>
                         </div>
                         <div className="text-right">
                           <div className="text-xl font-bold text-emerald-400">
                             {(platform.speakers / 1000).toFixed(0)}K
                           </div>
-                          <p className="text-xs text-platinum-500-400">Estimated users</p>
+                          <p className="text-xs text-platinum-400">Estimated users</p>
                         </div>
                       </div>
                     </CardContent>
@@ -311,9 +311,9 @@ export default function TagalogLanguagePage() {
                       {topicSentiment.map((topic, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-500-200">{topic.topic}</span>
+                            <span className="text-sm font-medium text-platinum-200">{topic.topic}</span>
                             <div className="flex items-center gap-4">
-                              <span className="text-xs text-platinum-500-400">{(topic.volume / 1000).toFixed(0)}K posts</span>
+                              <span className="text-xs text-platinum-400">{(topic.volume / 1000).toFixed(0)}K posts</span>
                               <span className={`text-sm font-bold ${
                                 topic.sentiment >= 80 ? 'text-emerald-400' :
                                 topic.sentiment >= 60 ? 'text-amber-400' :
@@ -372,16 +372,16 @@ export default function TagalogLanguagePage() {
                               <MessageSquare className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{influencer.name}</p>
-                              <p className="text-sm text-platinum-500-400">{influencer.handle}</p>
+                              <p className="font-semibold text-platinum-200">{influencer.name}</p>
+                              <p className="text-sm text-platinum-400">{influencer.handle}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-6">
                             <div className="text-center">
-                              <div className="text-lg font-bold text-platinum-500-200">
+                              <div className="text-lg font-bold text-platinum-200">
                                 {(influencer.followers / 1000).toFixed(0)}K
                               </div>
-                              <p className="text-xs text-platinum-500-400">Followers</p>
+                              <p className="text-xs text-platinum-400">Followers</p>
                             </div>
                             <div className="text-center">
                               <div className={`text-lg font-bold ${
@@ -389,7 +389,7 @@ export default function TagalogLanguagePage() {
                                 influencer.sentiment >= 60 ? 'text-amber-400' :
                                 'text-rose-400'
                               }`}>{influencer.sentiment}%</div>
-                              <p className="text-xs text-platinum-500-400">Sentiment</p>
+                              <p className="text-xs text-platinum-400">Sentiment</p>
                             </div>
                           </div>
                         </div>

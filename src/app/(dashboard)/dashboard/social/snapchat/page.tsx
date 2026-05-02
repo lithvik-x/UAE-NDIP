@@ -77,7 +77,7 @@ export default function SnapchatPage() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-platinum-500-400 flex items-center gap-3"
+          className="text-platinum-400 flex items-center gap-3"
         >
           <div className="animate-spin h-8 w-8 border-2 border-platinum border-t-transparent rounded-full" />
           Loading Snapchat intelligence data...
@@ -172,14 +172,14 @@ export default function SnapchatPage() {
       {/* Header */}
       <motion.div variants={fadeInUp} className="flex items-start justify-between">
         <div>
-          <Badge variant="default" className="mb-2 bg-gradient-platinum text-navy-500-950">
+          <Badge variant="default" className="mb-2 bg-gradient-platinum text-navy-950">
             <Ghost className="h-3 w-3 mr-1" />
             SOCIAL MEDIA
           </Badge>
           <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-platinum-500 tracking-tight">
             Snapchat & Ephemeral Content
           </h1>
-          <p className="mt-2 text-platinum-500-400 text-lg">
+          <p className="mt-2 text-platinum-400 text-lg">
             {data.description || 'Ephemeral content, AR filters, Discover content, and youth engagement on Snapchat'}
           </p>
         </div>
@@ -191,7 +191,7 @@ export default function SnapchatPage() {
             <Ghost className="h-4 w-4" />
             View Discover
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-500-950 gap-2 shadow-lg shadow-platinum/20">
+          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2 shadow-lg shadow-platinum/20">
             <Zap className="h-4 w-4" />
             Analyze
           </Button>
@@ -320,7 +320,7 @@ export default function SnapchatPage() {
                       />
                       <div className="mt-4 text-center">
                         <span className="text-2xl font-bold text-rose-400">{botActivity?.estimatedBotPercent || 5}%</span>
-                        <p className="text-sm text-platinum-500-400">Estimated Bot Activity</p>
+                        <p className="text-sm text-platinum-400">Estimated Bot Activity</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -330,7 +330,7 @@ export default function SnapchatPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <BarChart3 className="h-5 w-5 text-platinum-500-400" />
+                      <BarChart3 className="h-5 w-5 text-platinum-400" />
                       Platform Comparison (UAE Users in Millions)
                     </CardTitle>
                     <CardDescription>Snapchat vs other social platforms in UAE</CardDescription>
@@ -393,7 +393,7 @@ export default function SnapchatPage() {
                           className="flex items-center gap-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30 backdrop-blur-sm p-3"
                         >
                           <AlertTriangle className="h-4 w-4 text-amber-400" />
-                          <span className="text-platinum-500-200">{concern}</span>
+                          <span className="text-platinum-200">{concern}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -430,12 +430,12 @@ export default function SnapchatPage() {
                         <CardDescription>Prevalence: {narrative.prevalence}%</CardDescription>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-platinum-500-300 mb-4">{narrative.narrative}</p>
+                        <p className="text-platinum-300 mb-4">{narrative.narrative}</p>
                         <div className="space-y-2">
-                          <p className="text-sm text-platinum-500-400">Sources:</p>
+                          <p className="text-sm text-platinum-400">Sources:</p>
                           <div className="flex flex-wrap gap-1">
                             {narrative.source?.split(',').map((s, sIdx) => (
-                              <Badge key={sIdx} variant="outline" className="text-xs border-platinum-600 text-platinum-500-300">
+                              <Badge key={sIdx} variant="outline" className="text-xs border-platinum-600 text-platinum-300">
                                 {s.trim()}
                               </Badge>
                             ))}
@@ -461,7 +461,7 @@ export default function SnapchatPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <BarChart3 className="h-5 w-5 text-platinum-500-400" />
+                      <BarChart3 className="h-5 w-5 text-platinum-400" />
                       Engagement Metrics
                     </CardTitle>
                     <CardDescription>Average engagement per content piece</CardDescription>
@@ -482,22 +482,22 @@ export default function SnapchatPage() {
                 <div className="grid gap-6 lg:grid-cols-3">
                   <Card className="glass-card">
                     <CardHeader className="pb-2">
-                      <CardTitle className="text-sm text-platinum-500-400 flex items-center gap-2">
+                      <CardTitle className="text-sm text-platinum-400 flex items-center gap-2">
                         <Eye className="h-4 w-4" />
                         Average Views
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <div className="text-3xl font-bold text-platinum-500-400">
+                      <div className="text-3xl font-bold text-platinum-400">
                         {engagement?.avgViews?.toLocaleString() || '12,000'}
                       </div>
-                      <p className="text-sm text-platinum-500-400 mt-1">per snap</p>
+                      <p className="text-sm text-platinum-400 mt-1">per snap</p>
                     </CardContent>
                   </Card>
 
                   <Card className="glass-card">
                     <CardHeader className="pb-2">
-                      <CardTitle className="text-sm text-platinum-500-400 flex items-center gap-2">
+                      <CardTitle className="text-sm text-platinum-400 flex items-center gap-2">
                         <Clock className="h-4 w-4" />
                         Time Spent
                       </CardTitle>
@@ -507,13 +507,13 @@ export default function SnapchatPage() {
                         {engagement?.avgTimeSpent || 30}
                         <span className="text-lg ml-1">min</span>
                       </div>
-                      <p className="text-sm text-platinum-500-400 mt-1">daily average</p>
+                      <p className="text-sm text-platinum-400 mt-1">daily average</p>
                     </CardContent>
                   </Card>
 
                   <Card className="glass-card">
                     <CardHeader className="pb-2">
-                      <CardTitle className="text-sm text-platinum-500-400 flex items-center gap-2">
+                      <CardTitle className="text-sm text-platinum-400 flex items-center gap-2">
                         <Smartphone className="h-4 w-4" />
                         Daily Opens
                       </CardTitle>
@@ -522,7 +522,7 @@ export default function SnapchatPage() {
                       <div className="text-3xl font-bold text-amber-400">
                         30+
                       </div>
-                      <p className="text-sm text-platinum-500-400 mt-1">times per day</p>
+                      <p className="text-sm text-platinum-400 mt-1">times per day</p>
                     </CardContent>
                   </Card>
                 </div>
@@ -553,7 +553,7 @@ export default function SnapchatPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Globe2 className="h-5 w-5 text-navy-500-400" />
+                      <Globe2 className="h-5 w-5 text-navy-400" />
                       Middle East User Breakdown
                     </CardTitle>
                     <CardDescription>Snapchat users across MENA region</CardDescription>
@@ -602,8 +602,8 @@ export default function SnapchatPage() {
                           <CheckCircle2 className="h-5 w-5" />
                         </div>
                         <div className="flex-1">
-                          <p className="font-semibold text-platinum-500-200">{event.event}</p>
-                          <p className="text-sm text-platinum-500-400">{event.details}</p>
+                          <p className="font-semibold text-platinum-200">{event.event}</p>
+                          <p className="text-sm text-platinum-400">{event.details}</p>
                           <Badge variant="outline" className="mt-2 border-platinum/30 text-platinum-500 text-xs">
                             {event.date}
                           </Badge>
@@ -618,7 +618,7 @@ export default function SnapchatPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Shield className="h-5 w-5 text-platinum-500-400" />
+                    <Shield className="h-5 w-5 text-platinum-400" />
                     Verified Government Accounts
                   </CardTitle>
                   <CardDescription>Official UAE government accounts on Snapchat</CardDescription>
@@ -639,8 +639,8 @@ export default function SnapchatPage() {
                               <Camera className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{account.handle}</p>
-                              <p className="text-sm text-platinum-500-400">{account.type || account.platform}</p>
+                              <p className="font-semibold text-platinum-200">{account.handle}</p>
+                              <p className="text-sm text-platinum-400">{account.type || account.platform}</p>
                             </div>
                           </div>
                           <div className="text-right">
@@ -696,15 +696,15 @@ export default function SnapchatPage() {
                               {idx + 1}
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{influencer.name}</p>
-                              <p className="text-sm text-platinum-500-400">{influencer.profession}</p>
+                              <p className="font-semibold text-platinum-200">{influencer.name}</p>
+                              <p className="text-sm text-platinum-400">{influencer.profession}</p>
                             </div>
                           </div>
                           <div className="text-right">
-                            <p className="text-lg font-bold text-platinum-500-400">
+                            <p className="text-lg font-bold text-platinum-400">
                               {(influencer.followers / 1000000).toFixed(1)}M
                             </p>
-                            <p className="text-xs text-platinum-500-400">
+                            <p className="text-xs text-platinum-400">
                               {(influencer.storyViews / 1000000000).toFixed(1)}B views
                             </p>
                           </div>
@@ -719,7 +719,7 @@ export default function SnapchatPage() {
               <Card className="glass-card mt-6">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Target className="h-5 w-5 text-navy-500-400" />
+                    <Target className="h-5 w-5 text-navy-400" />
                     Media Partners ({mediaPartners?.partnerCount || 20})
                   </CardTitle>
                   <CardDescription>Content partners on Snapchat Discover</CardDescription>
@@ -762,25 +762,25 @@ export default function SnapchatPage() {
                         <p className="text-3xl font-bold text-amber-400">
                           {((arCampaigns?.arRamadanMall2025?.usersReached || 16800000) / 1000000).toFixed(1)}M
                         </p>
-                        <p className="text-sm text-platinum-500-400">Users Reached</p>
+                        <p className="text-sm text-platinum-400">Users Reached</p>
                       </div>
                       <div className="text-center p-4 rounded-lg bg-platinum-800/30">
-                        <p className="text-3xl font-bold text-platinum-500-400">
+                        <p className="text-3xl font-bold text-platinum-400">
                           {((arCampaigns?.arRamadanMall2025?.impressions || 250000000) / 1000000).toFixed(0)}M
                         </p>
-                        <p className="text-sm text-platinum-500-400">Impressions</p>
+                        <p className="text-sm text-platinum-400">Impressions</p>
                       </div>
                       <div className="text-center p-4 rounded-lg bg-platinum-800/30">
                         <p className="text-3xl font-bold text-emerald-400">
                           {arCampaigns?.arRamadanMall2025?.avgSessionTime || 26}+
                         </p>
-                        <p className="text-sm text-platinum-500-400">Avg Session (sec)</p>
+                        <p className="text-sm text-platinum-400">Avg Session (sec)</p>
                       </div>
                       <div className="text-center p-4 rounded-lg bg-platinum-800/30">
-                        <p className="text-3xl font-bold text-navy-500-400">
+                        <p className="text-3xl font-bold text-navy-400">
                           +{arCampaigns?.arRamadanMall2025?.yoyIncrease || 30.25}%
                         </p>
-                        <p className="text-sm text-platinum-500-400">YoY Increase</p>
+                        <p className="text-sm text-platinum-400">YoY Increase</p>
                       </div>
                     </div>
                   </CardContent>
@@ -794,17 +794,17 @@ export default function SnapchatPage() {
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-platinum-500-300">Daily AR Users</span>
-                        <span className="font-bold text-platinum-500-400">350M+</span>
+                        <span className="text-platinum-300">Daily AR Users</span>
+                        <span className="font-bold text-platinum-400">350M+</span>
                       </div>
                       <Progress value={87.5} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-platinum-500-300">MENA AR Daily</span>
+                        <span className="text-platinum-300">MENA AR Daily</span>
                         <span className="font-bold text-emerald-400">80%</span>
                       </div>
                       <Progress value={80} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-platinum-500-300">GCC AR Engagement</span>
+                        <span className="text-platinum-300">GCC AR Engagement</span>
                         <span className="font-bold text-amber-400">85%</span>
                       </div>
                       <Progress value={85} className="h-2" />
@@ -817,17 +817,17 @@ export default function SnapchatPage() {
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-platinum-500-300">AR Creators</span>
-                        <span className="font-bold text-platinum-500-400">400,000+</span>
+                        <span className="text-platinum-300">AR Creators</span>
+                        <span className="font-bold text-platinum-400">400,000+</span>
                       </div>
                       <Progress value={80} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-platinum-500-300">Lenses Created</span>
+                        <span className="text-platinum-300">Lenses Created</span>
                         <span className="font-bold text-emerald-400">4M+</span>
                       </div>
                       <Progress value={90} className="h-2" />
                       <div className="flex items-center justify-between">
-                        <span className="text-platinum-500-300">AI Lens Boost</span>
+                        <span className="text-platinum-300">AI Lens Boost</span>
                         <span className="font-bold text-amber-400">25-45%</span>
                       </div>
                       <Progress value={65} className="h-2" />
@@ -876,28 +876,28 @@ export default function SnapchatPage() {
                   <CardContent>
                     <div className="grid gap-4 lg:grid-cols-3">
                       <div className="p-4 rounded-lg bg-platinum-800/30 border border-platinum-700/30">
-                        <p className="text-sm text-platinum-500-400">Sponsored Lens (Sun-Wed)</p>
-                        <p className="text-2xl font-bold text-platinum-500-400">$450,000<span className="text-sm text-platinum-500-400">/day</span></p>
+                        <p className="text-sm text-platinum-400">Sponsored Lens (Sun-Wed)</p>
+                        <p className="text-2xl font-bold text-platinum-400">$450,000<span className="text-sm text-platinum-400">/day</span></p>
                       </div>
                       <div className="p-4 rounded-lg bg-platinum-800/30 border border-platinum-700/30">
-                        <p className="text-sm text-platinum-500-400">Sponsored Lens (Thu-Sat)</p>
-                        <p className="text-2xl font-bold text-amber-400">$500,000<span className="text-sm text-platinum-500-400">/day</span></p>
+                        <p className="text-sm text-platinum-400">Sponsored Lens (Thu-Sat)</p>
+                        <p className="text-2xl font-bold text-amber-400">$500,000<span className="text-sm text-platinum-400">/day</span></p>
                       </div>
                       <div className="p-4 rounded-lg bg-platinum-800/30 border border-platinum-700/30">
-                        <p className="text-sm text-platinum-500-400">Sponsored Lens (Holidays)</p>
-                        <p className="text-2xl font-bold text-rose-400">$700,000+<span className="text-sm text-platinum-500-400">/day</span></p>
+                        <p className="text-sm text-platinum-400">Sponsored Lens (Holidays)</p>
+                        <p className="text-2xl font-bold text-rose-400">$700,000+<span className="text-sm text-platinum-400">/day</span></p>
                       </div>
                       <div className="p-4 rounded-lg bg-platinum-800/30 border border-platinum-700/30">
-                        <p className="text-sm text-platinum-500-400">Discover Ads</p>
-                        <p className="text-2xl font-bold text-emerald-400">$50,000+<span className="text-sm text-platinum-500-400">/day</span></p>
+                        <p className="text-sm text-platinum-400">Discover Ads</p>
+                        <p className="text-2xl font-bold text-emerald-400">$50,000+<span className="text-sm text-platinum-400">/day</span></p>
                       </div>
                       <div className="p-4 rounded-lg bg-platinum-800/30 border border-platinum-700/30">
-                        <p className="text-sm text-platinum-500-400">Snap Ads CPM</p>
-                        <p className="text-2xl font-bold text-platinum-500-400">$1.88</p>
+                        <p className="text-sm text-platinum-400">Snap Ads CPM</p>
+                        <p className="text-2xl font-bold text-platinum-400">$1.88</p>
                       </div>
                       <div className="p-4 rounded-lg bg-platinum-800/30 border border-platinum-700/30">
-                        <p className="text-sm text-platinum-500-400">Geo Filters</p>
-                        <p className="text-2xl font-bold text-navy-500-400">$5-$1,000+</p>
+                        <p className="text-sm text-platinum-400">Geo Filters</p>
+                        <p className="text-2xl font-bold text-navy-400">$5-$1,000+</p>
                       </div>
                     </div>
                   </CardContent>
@@ -916,15 +916,15 @@ export default function SnapchatPage() {
                     <div className="grid gap-6 lg:grid-cols-3">
                       <div className="text-center p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
                         <p className="text-4xl font-bold text-emerald-400">+{advertisingPerformance?.roiVsChannelAverage || 14}%</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">ROI vs Channel Avg</p>
+                        <p className="text-sm text-platinum-400 mt-1">ROI vs Channel Avg</p>
                       </div>
                       <div className="text-center p-4 rounded-lg bg-platinum/10 border border-platinum/20">
-                        <p className="text-4xl font-bold text-platinum-500-400">5x</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">More Active Attention</p>
+                        <p className="text-4xl font-bold text-platinum-400">5x</p>
+                        <p className="text-sm text-platinum-400 mt-1">More Active Attention</p>
                       </div>
                       <div className="text-center p-4 rounded-lg bg-amber-500/10 border border-gold-500/20">
                         <p className="text-4xl font-bold text-amber-400">25%</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">GCC Digital Sales Share</p>
+                        <p className="text-sm text-platinum-400 mt-1">GCC Digital Sales Share</p>
                       </div>
                     </div>
                   </CardContent>
@@ -937,16 +937,16 @@ export default function SnapchatPage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/30">
-                      <span className="text-platinum-500-300">Fashion AR Lens Sales Increase</span>
+                      <span className="text-platinum-300">Fashion AR Lens Sales Increase</span>
                       <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">+{advertisingPerformance?.fashionARLensSalesIncrease || 20}%</Badge>
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/30">
-                      <span className="text-platinum-500-300">Snapfrequnt Engagement Rate</span>
+                      <span className="text-platinum-300">Snapfrequnt Engagement Rate</span>
                       <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/30">{advertisingPerformance?.snapfrequntEngagementRate || 40}%</Badge>
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/30">
-                      <span className="text-platinum-500-300">Giving Movement ROAS Increase</span>
-                      <Badge className="bg-navy-500/20 text-navy-500-400 border-navy-500/30">+{advertisingPerformance?.givingMovementROASIncrease || 15}%</Badge>
+                      <span className="text-platinum-300">Giving Movement ROAS Increase</span>
+                      <Badge className="bg-navy-500/20 text-navy-400 border-navy-500/30">+{advertisingPerformance?.givingMovementROASIncrease || 15}%</Badge>
                     </div>
                   </CardContent>
                 </Card>
@@ -964,10 +964,10 @@ export default function SnapchatPage() {
                 <div className="grid gap-6 lg:grid-cols-4">
                   <Card className="glass-card">
                     <CardContent className="pt-6 text-center">
-                      <p className="text-4xl font-bold text-platinum-500-400">
+                      <p className="text-4xl font-bold text-platinum-400">
                         {(transparencyReportH1_2025?.totalEnforcements || 49857).toLocaleString()}
                       </p>
-                      <p className="text-sm text-platinum-500-400 mt-1">Total Enforcements</p>
+                      <p className="text-sm text-platinum-400 mt-1">Total Enforcements</p>
                     </CardContent>
                   </Card>
                   <Card className="glass-card">
@@ -975,7 +975,7 @@ export default function SnapchatPage() {
                       <p className="text-4xl font-bold text-emerald-400">
                         {(transparencyReportH1_2025?.totalUniqueAccounts || 30829).toLocaleString()}
                       </p>
-                      <p className="text-sm text-platinum-500-400 mt-1">Unique Accounts</p>
+                      <p className="text-sm text-platinum-400 mt-1">Unique Accounts</p>
                     </CardContent>
                   </Card>
                   <Card className="glass-card">
@@ -983,7 +983,7 @@ export default function SnapchatPage() {
                       <p className="text-4xl font-bold text-amber-400">
                         {(transparencyReportH1_2025?.proactiveDetectionEnforcements || 15907).toLocaleString()}
                       </p>
-                      <p className="text-sm text-platinum-500-400 mt-1">Proactive Detection</p>
+                      <p className="text-sm text-platinum-400 mt-1">Proactive Detection</p>
                     </CardContent>
                   </Card>
                   <Card className="glass-card">
@@ -991,7 +991,7 @@ export default function SnapchatPage() {
                       <p className="text-4xl font-bold text-rose-400">
                         {(transparencyReportH1_2025?.cseaAccountsDisabled || 1661).toLocaleString()}
                       </p>
-                      <p className="text-sm text-platinum-500-400 mt-1">CSEA Accounts Disabled</p>
+                      <p className="text-sm text-platinum-400 mt-1">CSEA Accounts Disabled</p>
                     </CardContent>
                   </Card>
                 </div>
@@ -1000,7 +1000,7 @@ export default function SnapchatPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Shield className="h-5 w-5 text-platinum-500-400" />
+                      <Shield className="h-5 w-5 text-platinum-400" />
                       Enforcement by Category
                     </CardTitle>
                     <CardDescription>Breakdown of content policy enforcements</CardDescription>
@@ -1017,14 +1017,14 @@ export default function SnapchatPage() {
                             className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/30 bg-platinum-800/20"
                           >
                             <div className="flex-1">
-                              <p className="font-semibold text-platinum-500-200">{item.category}</p>
-                              <p className="text-sm text-platinum-500-400">{item.enforcements.toLocaleString()} enforcements</p>
+                              <p className="font-semibold text-platinum-200">{item.category}</p>
+                              <p className="text-sm text-platinum-400">{item.enforcements.toLocaleString()} enforcements</p>
                             </div>
                             <div className="text-right">
                               <Badge variant="outline" className="border-platinum/30 text-platinum-500">
                                 {item.uniqueAccounts.toLocaleString()} accounts
                               </Badge>
-                              <p className="text-xs text-platinum-500-400 mt-1">{item.medianTurnaround}</p>
+                              <p className="text-xs text-platinum-400 mt-1">{item.medianTurnaround}</p>
                             </div>
                           </motion.div>
                         ))}
@@ -1059,8 +1059,8 @@ export default function SnapchatPage() {
                         >
                           <AlertCircle className="h-5 w-5 text-rose-400 mt-0.5" />
                           <div className="flex-1">
-                            <p className="font-semibold text-platinum-500-200">{item.incident}</p>
-                            <p className="text-sm text-platinum-500-400">{item.details}</p>
+                            <p className="font-semibold text-platinum-200">{item.incident}</p>
+                            <p className="text-sm text-platinum-400">{item.details}</p>
                             <Badge variant="outline" className="mt-2 border-rose-500/30 text-rose-400 text-xs">
                               {item.date}
                             </Badge>
@@ -1077,7 +1077,7 @@ export default function SnapchatPage() {
       </Tabs>
 
       {/* Sources Footer */}
-      <motion.div variants={fadeInUp} className="text-center text-platinum-500-500 text-sm">
+      <motion.div variants={fadeInUp} className="text-center text-platinum-500 text-sm">
         <p>Data sourced from {data.sources?.length || 35} references including DataReportal, Snap Inc, and government transparency reports</p>
         <p className="mt-1">Last updated: {data.lastUpdated || '2026-04-27'}</p>
       </motion.div>

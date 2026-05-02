@@ -101,7 +101,7 @@ export default function EconomicCrisisPage() {
               Economic Crisis
             </span>
           </h1>
-          <p className="mt-2 text-platinum-500-400">Economic crisis intelligence - financial crises, corporate scandals, banking sector stress</p>
+          <p className="mt-2 text-platinum-400">Economic crisis intelligence - financial crises, corporate scandals, banking sector stress</p>
         </div>
       </motion.div>
 

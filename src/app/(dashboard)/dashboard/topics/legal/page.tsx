@@ -154,10 +154,10 @@ export default function LegalRegulatoryPage() {
         <div>
           <Badge variant="default" className="mb-2">H-SECTOR</Badge>
           <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-platinum-500">Legal & Regulatory</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             {legalRegulatoryData.description}
           </p>
-          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500-500">
+          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500">
             <span className="flex items-center gap-1">
               <Calendar className="h-4 w-4" />
               {reportMetadata.reportCompiled}
@@ -177,7 +177,7 @@ export default function LegalRegulatoryPage() {
             <Scale className="h-4 w-4" />
             Legal Monitor
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2">
             <Zap className="h-4 w-4" />
             Analyze
           </Button>
@@ -285,7 +285,7 @@ export default function LegalRegulatoryPage() {
                   <CardContent className="space-y-3">
                     {keyStatistics.legalSystem.slice(0, 5).map((stat, idx) => (
                       <div key={idx} className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400 text-sm">{stat.metric}</span>
+                        <span className="text-platinum-400 text-sm">{stat.metric}</span>
                         <span className="text-gold-700 font-bold text-sm">{stat.value}</span>
                       </div>
                     ))}
@@ -306,7 +306,7 @@ export default function LegalRegulatoryPage() {
                     {reformsTimeline.map((reform, idx) => (
                       <div key={idx} className="p-3 bg-gradient-to-br from-gold/20 to-navy/20 rounded-lg border border-gold-700/30 text-center">
                         <p className="text-lg font-bold text-gold-700">{reform.year}</p>
-                        <p className="text-xs text-platinum-500-400 mt-1 line-clamp-2">{reform.reform.substring(0, 30)}...</p>
+                        <p className="text-xs text-platinum-400 mt-1 line-clamp-2">{reform.reform.substring(0, 30)}...</p>
                       </div>
                     ))}
                   </div>
@@ -325,19 +325,19 @@ export default function LegalRegulatoryPage() {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald-500">98%</p>
-                      <p className="text-xs text-platinum-500-400">Case Completion</p>
+                      <p className="text-xs text-platinum-400">Case Completion</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-gold-700">3,000+</p>
-                      <p className="text-xs text-platinum-500-400">DIFC Companies</p>
+                      <p className="text-xs text-platinum-400">DIFC Companies</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-navy-500">1,005</p>
-                      <p className="text-xs text-platinum-500-400">Patent Applications</p>
+                      <p className="text-xs text-platinum-400">Patent Applications</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-platinum-500">AED 1B</p>
-                      <p className="text-xs text-platinum-500-400">AML Fines Max</p>
+                      <p className="text-xs text-platinum-400">AML Fines Max</p>
                     </div>
                   </div>
                 </CardContent>
@@ -366,15 +366,15 @@ export default function LegalRegulatoryPage() {
                   <div className="grid gap-4 md:grid-cols-3">
                     <div className="p-4 bg-platinum/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">Dual</p>
-                      <p className="text-sm text-platinum-500-400">Civil + Sharia Law</p>
+                      <p className="text-sm text-platinum-400">Civil + Sharia Law</p>
                     </div>
                     <div className="p-4 bg-gold-700/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-gold-700">3</p>
-                      <p className="text-sm text-platinum-500-400">Court Tiers</p>
+                      <p className="text-sm text-platinum-400">Court Tiers</p>
                     </div>
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-emerald-500">95%</p>
-                      <p className="text-sm text-platinum-500-400">Digital Services</p>
+                      <p className="text-sm text-platinum-400">Digital Services</p>
                     </div>
                   </div>
                 </CardContent>
@@ -393,7 +393,7 @@ export default function LegalRegulatoryPage() {
                     {legalSystemStructure.courtTiers.map((tier, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg border border-platinum-700">
                         <h4 className="font-bold text-platinum-500 mb-2">{tier.tier}</h4>
-                        <p className="text-sm text-platinum-500-400">{tier.jurisdiction}</p>
+                        <p className="text-sm text-platinum-400">{tier.jurisdiction}</p>
                       </div>
                     ))}
                   </div>
@@ -413,10 +413,10 @@ export default function LegalRegulatoryPage() {
                     {decriminalizationReforms.map((reform, idx) => (
                       <div key={idx} className="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
                         <h4 className="font-bold text-emerald-500 mb-2">{reform.area}</h4>
-                        <p className="text-xs text-platinum-500-400 mb-2">{reform.date}</p>
+                        <p className="text-xs text-platinum-400 mb-2">{reform.date}</p>
                         <ul className="space-y-1">
                           {reform.changes.map((change, cidx) => (
-                            <li key={cidx} className="text-sm text-platinum-500-300 flex items-start gap-2">
+                            <li key={cidx} className="text-sm text-platinum-300 flex items-start gap-2">
                               <span className="text-emerald-500">•</span>
                               {change}
                             </li>
@@ -441,7 +441,7 @@ export default function LegalRegulatoryPage() {
                     {keyStatistics.legalSystem.slice(3, 7).map((stat, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-lg font-bold text-rose-500">{stat.value}</p>
-                        <p className="text-xs text-platinum-500-400">{stat.metric}</p>
+                        <p className="text-xs text-platinum-400">{stat.metric}</p>
                       </div>
                     ))}
                   </div>
@@ -460,7 +460,7 @@ export default function LegalRegulatoryPage() {
                   <div className="grid gap-3 md:grid-cols-2">
                     {familyLawInheritance.shariaApplication.map((rule, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg flex justify-between">
-                        <span className="text-platinum-500-400 text-sm">{rule.beneficiary}</span>
+                        <span className="text-platinum-400 text-sm">{rule.beneficiary}</span>
                         <span className="text-gold-700 font-bold text-sm">{rule.share}</span>
                       </div>
                     ))}
@@ -491,20 +491,20 @@ export default function LegalRegulatoryPage() {
                   <div className="grid gap-6 lg:grid-cols-2">
                     <div className="space-y-3">
                       <div className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400">Established</span>
-                        <span className="text-platinum-500-200">{difcADGMCourts.difcOverview.established}</span>
+                        <span className="text-platinum-400">Established</span>
+                        <span className="text-platinum-200">{difcADGMCourts.difcOverview.established}</span>
                       </div>
                       <div className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400">Area</span>
-                        <span className="text-platinum-500-200">{difcADGMCourts.difcOverview.area}</span>
+                        <span className="text-platinum-400">Area</span>
+                        <span className="text-platinum-200">{difcADGMCourts.difcOverview.area}</span>
                       </div>
                       <div className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400">Companies (2022)</span>
+                        <span className="text-platinum-400">Companies (2022)</span>
                         <span className="text-gold-700 font-bold">{difcADGMCourts.difcOverview.companies2022}</span>
                       </div>
                       <div className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400">Legal Framework</span>
-                        <span className="text-platinum-500-200">Common Law, English</span>
+                        <span className="text-platinum-400">Legal Framework</span>
+                        <span className="text-platinum-200">Common Law, English</span>
                       </div>
                     </div>
                     <div>
@@ -512,8 +512,8 @@ export default function LegalRegulatoryPage() {
                       <div className="space-y-2">
                         {difcADGMCourts.difcCourts.structure.map((court, idx) => (
                           <div key={idx} className="p-2 bg-platinum-800/50 rounded-lg flex justify-between">
-                            <span className="text-platinum-500-200 text-sm">{court.name}</span>
-                            <span className="text-platinum-500-500 text-xs">{court.role}</span>
+                            <span className="text-platinum-200 text-sm">{court.name}</span>
+                            <span className="text-platinum-500 text-xs">{court.role}</span>
                           </div>
                         ))}
                       </div>
@@ -537,7 +537,7 @@ export default function LegalRegulatoryPage() {
                       <div className="grid grid-cols-2 gap-2">
                         {difcADGMCourts.difcCourts.willServices.map((will, idx) => (
                           <div key={idx} className="p-2 bg-platinum/10 rounded-lg text-center">
-                            <span className="text-platinum-500-300 text-xs">{will}</span>
+                            <span className="text-platinum-300 text-xs">{will}</span>
                           </div>
                         ))}
                       </div>
@@ -545,9 +545,9 @@ export default function LegalRegulatoryPage() {
                     <div>
                       <h4 className="text-sm font-semibold text-gold-700 mb-3">Contact</h4>
                       <div className="space-y-2 text-sm">
-                        <p className="text-platinum-500-400">Registry: {difcADGMCourts.difcContact.registry}</p>
-                        <p className="text-platinum-500-400">Wills: {difcADGMCourts.difcContact.willsService}</p>
-                        <p className="text-platinum-500-500 text-xs">{difcADGMCourts.difcContact.address}</p>
+                        <p className="text-platinum-400">Registry: {difcADGMCourts.difcContact.registry}</p>
+                        <p className="text-platinum-400">Wills: {difcADGMCourts.difcContact.willsService}</p>
+                        <p className="text-platinum-500 text-xs">{difcADGMCourts.difcContact.address}</p>
                       </div>
                     </div>
                   </div>
@@ -566,7 +566,7 @@ export default function LegalRegulatoryPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-emerald-500">2nd</p>
-                      <p className="text-sm text-platinum-500-400">Most Active FinTech Sandbox Globally</p>
+                      <p className="text-sm text-platinum-400">Most Active FinTech Sandbox Globally</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg">
                       <h4 className="text-sm font-semibold text-emerald-500 mb-3">Dispute Resolution</h4>
@@ -574,7 +574,7 @@ export default function LegalRegulatoryPage() {
                         {difcADGMCourts.adgmDisputeResolution.hearingOptions.map((option, idx) => (
                           <div key={idx} className="flex items-center gap-2">
                             <span className="text-emerald-500">•</span>
-                            <span className="text-platinum-500-300 text-sm">{option.type}</span>
+                            <span className="text-platinum-300 text-sm">{option.type}</span>
                           </div>
                         ))}
                       </div>
@@ -595,9 +595,9 @@ export default function LegalRegulatoryPage() {
                   <div className="grid gap-2 md:grid-cols-2">
                     {arbitrationInstitutions.map((inst, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="font-medium text-platinum-500-200 text-sm">{inst.name}</p>
+                        <p className="font-medium text-platinum-200 text-sm">{inst.name}</p>
                         {inst.established && (
-                          <p className="text-xs text-platinum-500-500">Est. {inst.established}</p>
+                          <p className="text-xs text-platinum-500">Est. {inst.established}</p>
                         )}
                       </div>
                     ))}
@@ -638,11 +638,11 @@ export default function LegalRegulatoryPage() {
                   <div className="mt-4 grid grid-cols-2 gap-4">
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald-500">+62%</p>
-                      <p className="text-xs text-platinum-500-400">Resident Applications Growth</p>
+                      <p className="text-xs text-platinum-400">Resident Applications Growth</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-gold-700">28.7</p>
-                      <p className="text-xs text-platinum-500-400">Per Million Residents (2023)</p>
+                      <p className="text-xs text-platinum-400">Per Million Residents (2023)</p>
                     </div>
                   </div>
                 </CardContent>
@@ -663,15 +663,15 @@ export default function LegalRegulatoryPage() {
                         <h4 className="font-bold text-gold-700 mb-3">{ip.type}</h4>
                         <div className="space-y-2 text-sm">
                           <div className="flex justify-between">
-                            <span className="text-platinum-500-400">Duration</span>
-                            <span className="text-platinum-500-200">{ip.protection}</span>
+                            <span className="text-platinum-400">Duration</span>
+                            <span className="text-platinum-200">{ip.protection}</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-platinum-500-400">Initial</span>
+                            <span className="text-platinum-400">Initial</span>
                             <span className="text-gold-700">{ip.costInitial}</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-platinum-500-400">Annual</span>
+                            <span className="text-platinum-400">Annual</span>
                             <span className="text-gold-700">{ip.costAnnual}</span>
                           </div>
                         </div>
@@ -684,7 +684,7 @@ export default function LegalRegulatoryPage() {
               {/* Data Protection Law */}
               <Card className="glass-card border-navy-500/50">
                 <CardHeader>
-                  <CardTitle className="text-lg flex items-center gap-2 text-navy-500-400">
+                  <CardTitle className="text-lg flex items-center gap-2 text-navy-400">
                     <Lock className="h-5 w-5" />
                     Personal Data Protection Law (PDPL)
                   </CardTitle>
@@ -693,15 +693,15 @@ export default function LegalRegulatoryPage() {
                   <div className="grid gap-4 lg:grid-cols-2">
                     <div className="space-y-3">
                       <div className="p-3 bg-navy/20 rounded-lg">
-                        <p className="text-sm text-navy-500-400 font-semibold">Effective Date</p>
+                        <p className="text-sm text-navy-400 font-semibold">Effective Date</p>
                         <p className="text-lg font-bold text-platinum-500">{dataProtectionLaw.primaryLaw.effectiveDate}</p>
                       </div>
                       <div className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-500-400">Maximum Fine</p>
+                        <p className="text-sm text-platinum-400">Maximum Fine</p>
                         <p className="text-xl font-bold text-rose-500">AED 5,000,000</p>
                       </div>
                       <div className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-500-400">Children Protection</p>
+                        <p className="text-sm text-platinum-400">Children Protection</p>
                         <p className="text-xl font-bold text-gold-700">Under 13</p>
                       </div>
                     </div>
@@ -710,7 +710,7 @@ export default function LegalRegulatoryPage() {
                       <div className="space-y-2">
                         {dataProtectionLaw.keyProvisions.map((prov, idx) => (
                           <div key={idx} className="p-2 bg-platinum-800/50 rounded-lg">
-                            <p className="text-platinum-500-300 text-sm">{prov}</p>
+                            <p className="text-platinum-300 text-sm">{prov}</p>
                           </div>
                         ))}
                       </div>
@@ -732,7 +732,7 @@ export default function LegalRegulatoryPage() {
                     {cybercrimeLaw.keyProvisions.map((prov, idx) => (
                       <div key={idx} className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg">
                         <p className="text-xs text-rose-400 font-semibold">{prov.article}</p>
-                        <p className="text-sm text-platinum-500-300 mt-1">{prov.offense}</p>
+                        <p className="text-sm text-platinum-300 mt-1">{prov.offense}</p>
                         <p className="text-xs text-rose-300 mt-1">{prov.penalty}</p>
                       </div>
                     ))}
@@ -763,15 +763,15 @@ export default function LegalRegulatoryPage() {
                   <div className="grid gap-4 md:grid-cols-3">
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-emerald-500">AED 1B</p>
-                      <p className="text-sm text-platinum-500-400">Max Administrative Fines</p>
+                      <p className="text-sm text-platinum-400">Max Administrative Fines</p>
                     </div>
                     <div className="p-4 bg-gold-700/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-gold-700">2020</p>
-                      <p className="text-sm text-platinum-500-400">AML Courts Established</p>
+                      <p className="text-sm text-platinum-400">AML Courts Established</p>
                     </div>
                     <div className="p-4 bg-platinum/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">FATF</p>
-                      <p className="text-sm text-platinum-500-400">Aligned Framework</p>
+                      <p className="text-sm text-platinum-400">Aligned Framework</p>
                     </div>
                   </div>
                 </CardContent>
@@ -789,8 +789,8 @@ export default function LegalRegulatoryPage() {
                   <div className="grid gap-2 md:grid-cols-2">
                     {antiMoneyLaundering.institutions.map((inst, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="font-medium text-platinum-500-200 text-sm">{inst.name}</p>
-                        <p className="text-xs text-platinum-500-500">{inst.role}</p>
+                        <p className="font-medium text-platinum-200 text-sm">{inst.name}</p>
+                        <p className="text-xs text-platinum-500">{inst.role}</p>
                       </div>
                     ))}
                   </div>
@@ -810,9 +810,9 @@ export default function LegalRegulatoryPage() {
                     {antiMoneyLaundering.systems.map((sys, idx) => (
                       <div key={idx} className="p-4 bg-navy/20 rounded-lg border border-navy/30">
                         <h4 className="font-bold text-navy-500 mb-2">{sys.name}</h4>
-                        <p className="text-sm text-platinum-500-400">{sys.type}</p>
+                        <p className="text-sm text-platinum-400">{sys.type}</p>
                         {sys.developer && (
-                          <p className="text-xs text-platinum-500-500 mt-1">Developer: {sys.developer}</p>
+                          <p className="text-xs text-platinum-500 mt-1">Developer: {sys.developer}</p>
                         )}
                       </div>
                     ))}
@@ -832,7 +832,7 @@ export default function LegalRegulatoryPage() {
                   <div className="grid gap-3 md:grid-cols-3">
                     {regulatorySandboxes.sandboxes.map((sandbox, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg border border-platinum-700">
-                        <p className="font-medium text-platinum-500-200 text-sm">{sandbox.name}</p>
+                        <p className="font-medium text-platinum-200 text-sm">{sandbox.name}</p>
                         {sandbox.regulator && (
                           <p className="text-xs text-emerald-400 mt-1">{sandbox.regulator}</p>
                         )}
@@ -858,7 +858,7 @@ export default function LegalRegulatoryPage() {
                     {legalProfession.categories.map((cat, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg border border-platinum-700">
                         <h4 className="font-bold text-gold-700 mb-2">{cat.category}</h4>
-                        <p className="text-xs text-platinum-500-400 mb-2">{cat.note || cat.courtRights}</p>
+                        <p className="text-xs text-platinum-400 mb-2">{cat.note || cat.courtRights}</p>
                         <div className="flex flex-wrap gap-1">
                           {cat.requirements.slice(0, 2).map((req, ridx) => (
                             <Badge key={ridx} variant="outline" className="text-xs">{req}</Badge>
@@ -898,7 +898,7 @@ export default function LegalRegulatoryPage() {
                             <p className="text-lg font-bold text-gold-700">{reform.year}</p>
                           </div>
                           <div className="flex-1">
-                            <p className="font-medium text-platinum-500-200">{reform.reform}</p>
+                            <p className="font-medium text-platinum-200">{reform.reform}</p>
                             {reform.decree && (
                               <p className="text-xs text-emerald-400 mt-1">{reform.decree}</p>
                             )}
@@ -922,15 +922,15 @@ export default function LegalRegulatoryPage() {
                   <div className="grid gap-4 md:grid-cols-3">
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-emerald-500">98%</p>
-                      <p className="text-sm text-platinum-500-400">Abu Dhabi Case Completion</p>
+                      <p className="text-sm text-platinum-400">Abu Dhabi Case Completion</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">40</p>
-                      <p className="text-sm text-platinum-500-400">Days - First Instance</p>
+                      <p className="text-sm text-platinum-400">Days - First Instance</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">34</p>
-                      <p className="text-sm text-platinum-500-400">Days - Appeals</p>
+                      <p className="text-sm text-platinum-400">Days - Appeals</p>
                     </div>
                   </div>
                 </CardContent>
@@ -954,7 +954,7 @@ export default function LegalRegulatoryPage() {
                             <span className="w-6 h-6 bg-navy/30 rounded-full flex items-center justify-center text-xs text-navy-500 font-bold">
                               {stage.stage}
                             </span>
-                            <span className="text-platinum-500-300 text-sm">{stage.name}</span>
+                            <span className="text-platinum-300 text-sm">{stage.name}</span>
                           </div>
                         ))}
                       </div>
@@ -964,8 +964,8 @@ export default function LegalRegulatoryPage() {
                       <div className="space-y-2">
                         {internationalLegalCooperation.agreements.slice(0, 5).map((agg, idx) => (
                           <div key={idx} className="p-2 bg-platinum-800/50 rounded-lg">
-                            <p className="text-xs text-platinum-500-400">{agg.type}</p>
-                            <p className="text-sm text-platinum-500-300">{agg.countries.join(', ')}</p>
+                            <p className="text-xs text-platinum-400">{agg.type}</p>
+                            <p className="text-sm text-platinum-300">{agg.countries.join(', ')}</p>
                           </div>
                         ))}
                       </div>
@@ -1024,8 +1024,8 @@ export default function LegalRegulatoryPage() {
                         {uaeRelevanceAssessment.criticalPriority.map((item, idx) => (
                           <div key={idx} className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg">
                             <p className="text-xs text-rose-400">#{item.priority}</p>
-                            <p className="font-medium text-platinum-500-200">{item.topic}</p>
-                            <p className="text-xs text-platinum-500-500">{item.importance}</p>
+                            <p className="font-medium text-platinum-200">{item.topic}</p>
+                            <p className="text-xs text-platinum-500">{item.importance}</p>
                           </div>
                         ))}
                       </div>

@@ -84,27 +84,27 @@ export function OverviewSection({
                 <CardContent className="px-0 pb-0">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-platinum-500-300">Global MAU</span>
+                      <span className="text-sm text-platinum-300">Global MAU</span>
                       <span className="text-xl font-bold text-gold-700">400M</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-platinum-500-300">Global DAU</span>
+                      <span className="text-sm text-platinum-300">Global DAU</span>
                       <span className="text-xl font-bold text-gold-700">141.5M</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-platinum-500-300">Time to 100M users</span>
+                      <span className="text-sm text-platinum-300">Time to 100M users</span>
                       <span className="text-lg font-bold text-emerald-400">2 days (fastest)</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-platinum-500-300">Character Limit</span>
+                      <span className="text-sm text-platinum-300">Character Limit</span>
                       <span className="text-lg font-bold text-info">500 (10K long-form)</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-platinum-500-300">Engagement Rate</span>
+                      <span className="text-sm text-platinum-300">Engagement Rate</span>
                       <span className="text-lg font-bold text-rose-400">6.25% (vs X 3.6%)</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-platinum-500-300">2025 Revenue</span>
+                      <span className="text-sm text-platinum-300">2025 Revenue</span>
                       <span className="text-lg font-bold text-gold-700">$8B projected</span>
                     </div>
                   </div>
@@ -121,12 +121,12 @@ export function OverviewSection({
                   <div className="space-y-4">
                     <div>
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm text-platinum-500-300">Gender Split</span>
+                        <span className="text-sm text-platinum-300">Gender Split</span>
                       </div>
                       <PieChart data={genderData} height={160} showLegend={true} />
                     </div>
                     <div className="mt-4">
-                      <p className="text-sm text-platinum-500-400 mb-2">Age Distribution</p>
+                      <p className="text-sm text-platinum-400 mb-2">Age Distribution</p>
                       <BarChart
                         data={ageData}
                         xAxisKey="name"
@@ -174,8 +174,8 @@ export function OverviewSection({
                       className="rounded-lg bg-gradient-to-br from-gold/10 to-platinum/5 p-4 border border-gold-700/20"
                     >
                       <div className="text-2xl font-bold text-gold-700">{record.timeframe}</div>
-                      <div className="text-sm text-platinum-500-300 mt-1">{record.achievement}</div>
-                      <div className="text-xs text-platinum-500-500 mt-1">{record.milestone}</div>
+                      <div className="text-sm text-platinum-300 mt-1">{record.achievement}</div>
+                      <div className="text-xs text-platinum-500 mt-1">{record.milestone}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -195,13 +195,13 @@ export function OverviewSection({
                       <div className="text-sm font-semibold text-gold-700 mb-2">{category}</div>
                       <div className="space-y-1">
                         {features.slice(0, 3).map((f: any, idx: number) => (
-                          <div key={idx} className="text-xs text-platinum-500-300 flex items-center gap-1">
+                          <div key={idx} className="text-xs text-platinum-300 flex items-center gap-1">
                             <CheckCircle className="h-3 w-3 text-emerald-400" />
                             {f.feature}
                           </div>
                         ))}
                         {features.length > 3 && (
-                          <div className="text-xs text-platinum-500-500">+{features.length - 3} more</div>
+                          <div className="text-xs text-platinum-500">+{features.length - 3} more</div>
                         )}
                       </div>
                     </div>
@@ -228,11 +228,11 @@ export function OverviewSection({
                     >
                       <div className="flex items-center gap-3">
                         <Hash className="h-5 w-5 text-gold-700" />
-                        <span className="font-medium text-platinum-500-200">{tag.hashtag}</span>
+                        <span className="font-medium text-platinum-200">{tag.hashtag}</span>
                       </div>
                       <div className="text-right">
                         <div className="text-lg font-bold text-gold-700">{(tag.totalThreads / 1000000).toFixed(1)}M total</div>
-                        <div className="text-xs text-platinum-500-400">{(tag.recentThreads / 1000).toFixed(0)}K recent</div>
+                        <div className="text-xs text-platinum-400">{(tag.recentThreads / 1000).toFixed(0)}K recent</div>
                       </div>
                     </motion.div>
                   ))}
@@ -267,7 +267,7 @@ export function OverviewSection({
                 <div className="grid gap-4 sm:grid-cols-2">
                   {platformOverlap.map((item: any, idx: number) => (
                     <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                      <span className="text-sm text-platinum-500-300">{item.platform}</span>
+                      <span className="text-sm text-platinum-300">{item.platform}</span>
                       <div className="flex items-center gap-2">
                         <div className="h-2 w-24 bg-platinum-700 rounded-full overflow-hidden">
                           <motion.div
@@ -306,11 +306,11 @@ export function OverviewSection({
                           idx === 0 ? 'bg-gold-700/20 text-gold-700' :
                           idx === 1 ? 'bg-platinum/20 text-platinum-500' :
                           idx === 2 ? 'bg-rose-500/20 text-rose-400' :
-                          'bg-platinum-700/50 text-platinum-500-400'
+                          'bg-platinum-700/50 text-platinum-400'
                         }`}>
                           {idx + 1}
                         </div>
-                        <span className="font-medium text-platinum-500-200">{account.account}</span>
+                        <span className="font-medium text-platinum-200">{account.account}</span>
                       </div>
                       <span className="text-lg font-bold text-gold-700">{account.followers}M</span>
                     </motion.div>

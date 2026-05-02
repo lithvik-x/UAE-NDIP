@@ -52,7 +52,7 @@ export function AlertsSection({ data }: AlertsSectionProps) {
                 />
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-1">
-                    <h4 className="font-medium text-platinum-500-200">{a.alert}</h4>
+                    <h4 className="font-medium text-platinum-200">{a.alert}</h4>
                     <Badge
                       variant="outline"
                       className={`${
@@ -66,7 +66,7 @@ export function AlertsSection({ data }: AlertsSectionProps) {
                       {a.level}
                     </Badge>
                   </div>
-                  <div className="flex items-center gap-4 text-xs text-platinum-500-400">
+                  <div className="flex items-center gap-4 text-xs text-platinum-400">
                     <span>Timeframe: {a.timeframe}</span>
                     <span>Source: {a.source}</span>
                   </div>
@@ -95,7 +95,7 @@ export function AlertsSection({ data }: AlertsSectionProps) {
                 >
                   {s.value}
                 </div>
-                <div className="text-sm text-platinum-500-400">{s.name}</div>
+                <div className="text-sm text-platinum-400">{s.name}</div>
               </motion.div>
             ))}
           </div>

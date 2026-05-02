@@ -160,10 +160,10 @@ export default function PoliticsGovernancePage() {
         <div>
           <Badge variant="default" className="mb-2">H-SECTOR</Badge>
           <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-platinum-500">Politics & Governance</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             {politicsGovernanceData.description}
           </p>
-          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500-500">
+          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500">
             <span className="flex items-center gap-1">
               <Calendar className="h-4 w-4" />
               {reportMetadata?.reportCompiled || '2026-04-27'}
@@ -183,7 +183,7 @@ export default function PoliticsGovernancePage() {
             <Landmark className="h-4 w-4" />
             Policy
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2">
             <Zap className="h-4 w-4" />
             Analyze
           </Button>
@@ -274,7 +274,7 @@ export default function PoliticsGovernancePage() {
                     {freedomData.map((item, idx) => (
                       <div key={idx} className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-platinum-500-200">{item.index}</span>
+                          <span className="text-sm font-medium text-platinum-200">{item.index}</span>
                           <span className={`text-lg font-bold ${item.score < 30 ? 'text-rose-500' : item.score < 60 ? 'text-gold-700' : 'text-emerald-500'}`}>
                             {item.score}/{item.max}
                           </span>
@@ -307,15 +307,15 @@ export default function PoliticsGovernancePage() {
                     <div className="mt-4 grid grid-cols-3 gap-2">
                       <div className="text-center p-2 bg-rose-500/20 rounded-lg">
                         <p className="text-lg font-bold text-rose-500">65%</p>
-                        <p className="text-xs text-platinum-500-500">Negative</p>
+                        <p className="text-xs text-platinum-500">Negative</p>
                       </div>
                       <div className="text-center p-2 bg-platinum/20 rounded-lg">
                         <p className="text-lg font-bold text-platinum-500">20%</p>
-                        <p className="text-xs text-platinum-500-500">Neutral</p>
+                        <p className="text-xs text-platinum-500">Neutral</p>
                       </div>
                       <div className="text-center p-2 bg-emerald-500/20 rounded-lg">
                         <p className="text-lg font-bold text-emerald-500">15%</p>
-                        <p className="text-xs text-platinum-500-500">Positive</p>
+                        <p className="text-xs text-platinum-500">Positive</p>
                       </div>
                     </div>
                   </CardContent>
@@ -335,8 +335,8 @@ export default function PoliticsGovernancePage() {
                     {keyMetrics.slice(0, 8).map((metric, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-2xl font-bold text-gold-700">{metric.value}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{metric.metric}</p>
-                        <p className="text-xs text-platinum-500-500">{metric.source}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{metric.metric}</p>
+                        <p className="text-xs text-platinum-500">{metric.source}</p>
                       </div>
                     ))}
                   </div>
@@ -355,28 +355,28 @@ export default function PoliticsGovernancePage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="p-4 bg-gradient-to-br from-gold/20 to-navy/20 rounded-lg border border-gold-700/30">
                       <h4 className="text-lg font-bold text-gold-700">We The UAE 2031</h4>
-                      <p className="text-sm text-platinum-500-300 mt-1">10-year national plan</p>
+                      <p className="text-sm text-platinum-300 mt-1">10-year national plan</p>
                       <div className="mt-3 space-y-2">
                         <div className="flex justify-between">
-                          <span className="text-platinum-500-400">GDP Target</span>
+                          <span className="text-platinum-400">GDP Target</span>
                           <span className="font-bold text-gold-700">AED 3 Trillion</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-platinum-500-400">Current</span>
+                          <span className="text-platinum-400">Current</span>
                           <span className="font-bold text-platinum-500">AED 1.49T</span>
                         </div>
                       </div>
                     </div>
                     <div className="p-4 bg-gradient-to-br from-platinum/20 to-emerald/20 rounded-lg border border-platinum/30">
                       <h4 className="text-lg font-bold text-platinum-500">Centennial 2071</h4>
-                      <p className="text-sm text-platinum-500-300 mt-1">UAE 100th anniversary goal</p>
+                      <p className="text-sm text-platinum-300 mt-1">UAE 100th anniversary goal</p>
                       <div className="mt-3 space-y-2">
                         <div className="flex justify-between">
-                          <span className="text-platinum-500-400">Goal</span>
+                          <span className="text-platinum-400">Goal</span>
                           <span className="font-bold text-platinum-500">Best nation globally</span>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-platinum-500-400">Timeline</span>
+                          <span className="text-platinum-400">Timeline</span>
                           <span className="font-bold text-platinum-500">2071</span>
                         </div>
                       </div>
@@ -410,7 +410,7 @@ export default function PoliticsGovernancePage() {
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg border border-platinum-700">
                         <h4 className="font-bold text-platinum-500 mb-2">{branch.branch}</h4>
                         <p className="text-sm text-gold-700 mb-2">{branch.authority}</p>
-                        <p className="text-xs text-platinum-500-400">{branch.keyBodies}</p>
+                        <p className="text-xs text-platinum-400">{branch.keyBodies}</p>
                       </div>
                     ))}
                   </div>
@@ -430,20 +430,20 @@ export default function PoliticsGovernancePage() {
                     <div>
                       <div className="space-y-3">
                         <div className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
-                          <span className="text-platinum-500-400">Full Name</span>
-                          <span className="text-platinum-500-200 font-medium">{presidentialLeadership.personalDetails.fullName}</span>
+                          <span className="text-platinum-400">Full Name</span>
+                          <span className="text-platinum-200 font-medium">{presidentialLeadership.personalDetails.fullName}</span>
                         </div>
                         <div className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
-                          <span className="text-platinum-500-400">Born</span>
-                          <span className="text-platinum-500-200">{presidentialLeadership.personalDetails.born}</span>
+                          <span className="text-platinum-400">Born</span>
+                          <span className="text-platinum-200">{presidentialLeadership.personalDetails.born}</span>
                         </div>
                         <div className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
-                          <span className="text-platinum-500-400">Father</span>
-                          <span className="text-platinum-500-200 text-right text-sm">{presidentialLeadership.personalDetails.father}</span>
+                          <span className="text-platinum-400">Father</span>
+                          <span className="text-platinum-200 text-right text-sm">{presidentialLeadership.personalDetails.father}</span>
                         </div>
                         <div className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
-                          <span className="text-platinum-500-400">Education</span>
-                          <span className="text-platinum-500-200">Royal Military Academy Sandhurst (1979)</span>
+                          <span className="text-platinum-400">Education</span>
+                          <span className="text-platinum-200">Royal Military Academy Sandhurst (1979)</span>
                         </div>
                       </div>
                     </div>
@@ -453,8 +453,8 @@ export default function PoliticsGovernancePage() {
                         {presidentialLeadership.currentPositions.slice(0, 5).map((pos, idx) => (
                           <div key={idx} className="flex items-center gap-2 p-2 bg-platinum-800/50 rounded-lg">
                             <div className="w-2 h-2 bg-gold rounded-full"></div>
-                            <span className="text-platinum-500-200 text-sm">{pos.position}</span>
-                            <span className="text-platinum-500-500 text-xs ml-auto">{pos.since}</span>
+                            <span className="text-platinum-200 text-sm">{pos.position}</span>
+                            <span className="text-platinum-500 text-xs ml-auto">{pos.since}</span>
                           </div>
                         ))}
                       </div>
@@ -475,20 +475,20 @@ export default function PoliticsGovernancePage() {
                   <div className="grid gap-4 md:grid-cols-3">
                     <div className="p-4 bg-navy/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-navy-500">{federalGovernmentStructure.cabinet.totalMinistries}</p>
-                      <p className="text-sm text-platinum-500-400">Total Ministries</p>
+                      <p className="text-sm text-platinum-400">Total Ministries</p>
                     </div>
                     <div className="p-4 bg-gold-700/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-gold-700">Jan 2026</p>
-                      <p className="text-sm text-platinum-500-400">AI Integration</p>
+                      <p className="text-sm text-platinum-400">AI Integration</p>
                     </div>
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-emerald-500">June 2025</p>
-                      <p className="text-sm text-platinum-500-400">Last Reshuffle</p>
+                      <p className="text-sm text-platinum-400">Last Reshuffle</p>
                     </div>
                   </div>
                   <div className="mt-4">
-                    <p className="text-sm text-platinum-500-400 italic">"{cabinetGovernance.cabinetStatement}"</p>
-                    <p className="text-xs text-platinum-500-500 mt-1">— Sheikh Mohammed bin Rashid Al Maktoum</p>
+                    <p className="text-sm text-platinum-400 italic">"{cabinetGovernance.cabinetStatement}"</p>
+                    <p className="text-xs text-platinum-500 mt-1">— Sheikh Mohammed bin Rashid Al Maktoum</p>
                   </div>
                 </CardContent>
               </Card>
@@ -511,11 +511,11 @@ export default function PoliticsGovernancePage() {
                   />
                   <div className="mt-4 grid grid-cols-2 gap-4">
                     <div className="p-3 bg-platinum-800/50 rounded-lg">
-                      <p className="text-sm text-platinum-500-400">Global Ranking</p>
+                      <p className="text-sm text-platinum-400">Global Ranking</p>
                       <p className="text-lg font-bold text-gold-700">7th - UNDP Gender Inequality Index</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg">
-                      <p className="text-sm text-platinum-500-400">Regional Position</p>
+                      <p className="text-sm text-platinum-400">Regional Position</p>
                       <p className="text-lg font-bold text-emerald-500">1st in MENA</p>
                     </div>
                   </div>
@@ -545,19 +545,19 @@ export default function PoliticsGovernancePage() {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="p-4 bg-platinum/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">40</p>
-                      <p className="text-sm text-platinum-500-400">Total Members</p>
+                      <p className="text-sm text-platinum-400">Total Members</p>
                     </div>
                     <div className="p-4 bg-gold-700/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-gold-700">20</p>
-                      <p className="text-sm text-platinum-500-400">Elected</p>
+                      <p className="text-sm text-platinum-400">Elected</p>
                     </div>
                     <div className="p-4 bg-navy/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-navy-500">20</p>
-                      <p className="text-sm text-platinum-500-400">Appointed</p>
+                      <p className="text-sm text-platinum-400">Appointed</p>
                     </div>
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-emerald-500">50%</p>
-                      <p className="text-sm text-platinum-500-400">Women Quota</p>
+                      <p className="text-sm text-platinum-400">Women Quota</p>
                     </div>
                   </div>
                 </CardContent>
@@ -582,15 +582,15 @@ export default function PoliticsGovernancePage() {
                   <div className="mt-4 grid grid-cols-3 gap-4">
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-gold-700">44%</p>
-                      <p className="text-sm text-platinum-500-400">Overall Turnout</p>
+                      <p className="text-sm text-platinum-400">Overall Turnout</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-platinum-500">398,879</p>
-                      <p className="text-sm text-platinum-500-400">Electoral College</p>
+                      <p className="text-sm text-platinum-400">Electoral College</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald-500">92.69%</p>
-                      <p className="text-sm text-platinum-500-400">Remote Voting</p>
+                      <p className="text-sm text-platinum-400">Remote Voting</p>
                     </div>
                   </div>
                 </CardContent>
@@ -643,8 +643,8 @@ export default function PoliticsGovernancePage() {
                     {prisonerData.map((item, idx) => (
                       <div key={idx} className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg text-center">
                         <p className="text-2xl font-bold text-rose-500">{item.count}</p>
-                        <p className="text-xs text-platinum-500-400 mt-1">{item.category}</p>
-                        <p className="text-xs text-platinum-500-500">{item.source}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{item.category}</p>
+                        <p className="text-xs text-platinum-500">{item.source}</p>
                       </div>
                     ))}
                   </div>
@@ -663,32 +663,32 @@ export default function PoliticsGovernancePage() {
                   <div className="grid gap-4 lg:grid-cols-2">
                     <div className="space-y-3">
                       <div className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-500-400">Name</p>
+                        <p className="text-sm text-platinum-400">Name</p>
                         <p className="text-lg font-bold text-platinum-500">{ahmedMansoorCaseStudy.profile.name}</p>
                       </div>
                       <div className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-500-400">Awards</p>
+                        <p className="text-sm text-platinum-400">Awards</p>
                         <p className="text-gold-700">Martin Ennals Award (2015)</p>
                       </div>
                       <div className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-500-400">Nicknames</p>
-                        <p className="text-platinum-500-300 text-sm italic">"{ahmedMansoorCaseStudy.profile.nicknames}"</p>
+                        <p className="text-sm text-platinum-400">Nicknames</p>
+                        <p className="text-platinum-300 text-sm italic">"{ahmedMansoorCaseStudy.profile.nicknames}"</p>
                       </div>
                     </div>
                     <div className="space-y-3">
                       <div className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg">
                         <p className="text-sm text-rose-400">Sentence</p>
                         <p className="text-2xl font-bold text-rose-500">10 Years</p>
-                        <p className="text-sm text-platinum-500-400">+ AED 1 Million Fine</p>
+                        <p className="text-sm text-platinum-400">+ AED 1 Million Fine</p>
                       </div>
                       <div className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg">
                         <p className="text-sm text-rose-400">Detention</p>
                         <p className="text-lg font-bold text-rose-500">~4 Years Solitary</p>
-                        <p className="text-sm text-platinum-500-400">Al-Sadr Prison, Abu Dhabi</p>
+                        <p className="text-sm text-platinum-400">Al-Sadr Prison, Abu Dhabi</p>
                       </div>
                       <div className="p-3 bg-amber-500/10 border border-amber-500/30 rounded-lg">
                         <p className="text-sm text-amber-400">Charges</p>
-                        <p className="text-xs text-platinum-500-300">Social media posts, publishing false statements</p>
+                        <p className="text-xs text-platinum-300">Social media posts, publishing false statements</p>
                       </div>
                     </div>
                   </div>
@@ -707,19 +707,19 @@ export default function PoliticsGovernancePage() {
                   <div className="grid gap-4 md:grid-cols-4">
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">{uae94MassTrial.caseOverview.totalDefendants}</p>
-                      <p className="text-sm text-platinum-500-400">Total Defendants</p>
+                      <p className="text-sm text-platinum-400">Total Defendants</p>
                     </div>
                     <div className="p-4 bg-amber-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-amber-400">{uae94MassTrial.caseOverview.convicted}</p>
-                      <p className="text-sm text-platinum-500-400">Convicted</p>
+                      <p className="text-sm text-platinum-400">Convicted</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">{uae94MassTrial.caseOverview.sentences}</p>
-                      <p className="text-sm text-platinum-500-400">Sentences</p>
+                      <p className="text-sm text-platinum-400">Sentences</p>
                     </div>
                     <div className="p-4 bg-rose-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-rose-500">{uae94MassTrial.caseOverview.status2024.split(' ')[0]}</p>
-                      <p className="text-sm text-platinum-500-400">Still Imprisoned</p>
+                      <p className="text-sm text-platinum-400">Still Imprisoned</p>
                     </div>
                   </div>
                 </CardContent>
@@ -738,7 +738,7 @@ export default function PoliticsGovernancePage() {
                     {humanRightsPoliticalPrisoners.dueProcessViolations.map((violation, idx) => (
                       <div key={idx} className="p-3 bg-rose-500/5 border border-rose-500/20 rounded-lg">
                         <p className="font-medium text-rose-300 text-sm">{violation.violationType}</p>
-                        <p className="text-xs text-platinum-500-400 mt-1">{violation.details}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{violation.details}</p>
                       </div>
                     ))}
                   </div>
@@ -768,27 +768,27 @@ export default function PoliticsGovernancePage() {
                   <div className="grid gap-4 lg:grid-cols-2">
                     <div className="space-y-3">
                       <div className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-500-400">Founded</p>
+                        <p className="text-sm text-platinum-400">Founded</p>
                         <p className="text-lg font-bold text-platinum-500">{surveillanceState.darkMatter.founded}</p>
                       </div>
                       <div className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-500-400">Founder</p>
-                        <p className="text-platinum-500-200">{surveillanceState.darkMatter.founder}</p>
+                        <p className="text-sm text-platinum-400">Founder</p>
+                        <p className="text-platinum-200">{surveillanceState.darkMatter.founder}</p>
                       </div>
                       <div className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-500-400">CEO</p>
-                        <p className="text-platinum-500-200">{surveillanceState.darkMatter.ceo}</p>
+                        <p className="text-sm text-platinum-400">CEO</p>
+                        <p className="text-platinum-200">{surveillanceState.darkMatter.ceo}</p>
                       </div>
                     </div>
                     <div className="space-y-3">
                       <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-lg">
                         <p className="text-sm text-rose-400">Government Work</p>
                         <p className="text-2xl font-bold text-rose-500">80%</p>
-                        <p className="text-xs text-platinum-500-400">of DarkMatter work by early 2018</p>
+                        <p className="text-xs text-platinum-400">of DarkMatter work by early 2018</p>
                       </div>
                       <div className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-500-400">Products</p>
-                        <p className="text-platinum-500-200">Katim phone, Cyber offensive technology</p>
+                        <p className="text-sm text-platinum-400">Products</p>
+                        <p className="text-platinum-200">Katim phone, Cyber offensive technology</p>
                       </div>
                     </div>
                   </div>
@@ -808,20 +808,20 @@ export default function PoliticsGovernancePage() {
                     <div className="p-4 bg-amber-500/10 border border-amber-500/30 rounded-lg">
                       <p className="text-sm text-amber-400">Capability</p>
                       <p className="text-lg font-bold text-amber-300">Zero-Click iPhone Exploit</p>
-                      <p className="text-xs text-platinum-500-400 mt-1">No user interaction required</p>
+                      <p className="text-xs text-platinum-400 mt-1">No user interaction required</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg">
-                      <p className="text-sm text-platinum-500-400">Access Gained</p>
-                      <p className="text-platinum-500-200">Passwords, emails, texts, photos, location</p>
+                      <p className="text-sm text-platinum-400">Access Gained</p>
+                      <p className="text-platinum-200">Passwords, emails, texts, photos, location</p>
                     </div>
                   </div>
                   <div className="mt-4">
-                    <p className="text-sm font-semibold text-platinum-500-300 mb-2">Documented Targets</p>
+                    <p className="text-sm font-semibold text-platinum-300 mb-2">Documented Targets</p>
                     <div className="grid gap-2">
                       {surveillanceState.karmaSurveillanceTargets.slice(0, 5).map((target, idx) => (
                         <div key={idx} className="p-2 bg-platinum-800/50 rounded-lg flex justify-between">
-                          <span className="text-platinum-500-200 text-sm">{target.target}</span>
-                          <span className="text-platinum-500-500 text-xs">{target.description}</span>
+                          <span className="text-platinum-200 text-sm">{target.target}</span>
+                          <span className="text-platinum-500 text-xs">{target.description}</span>
                         </div>
                       ))}
                     </div>
@@ -841,15 +841,15 @@ export default function PoliticsGovernancePage() {
                   <div className="grid gap-4 md:grid-cols-3">
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-3xl font-bold text-rose-500">45</p>
-                      <p className="text-sm text-platinum-500-400">Countries with Suspected Infections</p>
+                      <p className="text-sm text-platinum-400">Countries with Suspected Infections</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-3xl font-bold text-amber-400">36</p>
-                      <p className="text-sm text-platinum-500-400">Pegasus Operator Systems</p>
+                      <p className="text-sm text-platinum-400">Pegasus Operator Systems</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">1,091</p>
-                      <p className="text-sm text-platinum-500-400">Matching IP Addresses</p>
+                      <p className="text-sm text-platinum-400">Matching IP Addresses</p>
                     </div>
                   </div>
                 </CardContent>
@@ -878,19 +878,19 @@ export default function PoliticsGovernancePage() {
                   <div className="grid gap-4 md:grid-cols-4">
                     <div className="p-4 bg-gold-700/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-gold-700">$157M+</p>
-                      <p className="text-sm text-platinum-500-400">Since 2016</p>
+                      <p className="text-sm text-platinum-400">Since 2016</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">$64M+</p>
-                      <p className="text-sm text-platinum-500-400">2020-2021</p>
+                      <p className="text-sm text-platinum-400">2020-2021</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">25+</p>
-                      <p className="text-sm text-platinum-500-400">Firms Registered</p>
+                      <p className="text-sm text-platinum-400">Firms Registered</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-3xl font-bold text-navy-500">7,251</p>
-                      <p className="text-sm text-platinum-500-400">Congressional Contacts</p>
+                      <p className="text-sm text-platinum-400">Congressional Contacts</p>
                     </div>
                   </div>
                 </CardContent>
@@ -932,7 +932,7 @@ export default function PoliticsGovernancePage() {
                     {uaeInfluenceOperations.policyFocusAreas.map((area, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg border border-platinum-700">
                         <h4 className="font-bold text-rose-300">{area.area}</h4>
-                        <p className="text-sm text-platinum-500-400 mt-1">{area.details}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{area.details}</p>
                       </div>
                     ))}
                   </div>
@@ -952,8 +952,8 @@ export default function PoliticsGovernancePage() {
                     {uaeInfluenceOperations.armsSalesResults.map((sale, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg flex justify-between items-center">
                         <div>
-                          <p className="font-medium text-platinum-500-200">{sale.sale}</p>
-                          <p className="text-sm text-platinum-500-500">{sale.amount}</p>
+                          <p className="font-medium text-platinum-200">{sale.sale}</p>
+                          <p className="text-sm text-platinum-500">{sale.amount}</p>
                         </div>
                         <Badge variant={sale.status.includes('Approved') ? 'success' : sale.status.includes('Scuttled') ? 'destructive' : 'warning'} className="text-xs">
                           {sale.status}

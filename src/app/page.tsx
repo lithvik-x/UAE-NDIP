@@ -175,7 +175,7 @@ export default function HomePage() {
             </h1>
 
             {/* Subheading — improved contrast */}
-            <p className="mt-8 mx-auto max-w-3xl text-balance text-base sm:text-lg font-medium text-platinum-500-600 leading-relaxed px-4">
+            <p className="mt-8 mx-auto max-w-3xl text-balance text-base sm:text-lg font-medium text-platinum-600 leading-relaxed px-4">
               AI-powered digital intelligence platform delivering real-time situational awareness
               for UAE Federal decision-makers. Ten integrated sections — Entity Intelligence,
               Topics & Issues, Crisis Management, Social Media, Multi-Lingual, Stakeholders,
@@ -193,8 +193,8 @@ export default function HomePage() {
                   >
                     <Icon className="h-4 w-4 text-amber-700 shrink-0" />
                     <div className="text-left">
-                      <div className="text-xs font-semibold text-platinum-500-800 leading-tight">{pillar.label}</div>
-                      <div className="text-[10px] text-platinum-500-600 leading-tight">{pillar.detail}</div>
+                      <div className="text-xs font-semibold text-platinum-800 leading-tight">{pillar.label}</div>
+                      <div className="text-[10px] text-platinum-600 leading-tight">{pillar.detail}</div>
                     </div>
                   </div>
                 )
@@ -219,7 +219,7 @@ export default function HomePage() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="px-10 py-6 text-lg font-semibold border-2 border-gold-300/50 hover:bg-gold-50/50 hover:border-gold-400 text-platinum-500-700"
+                className="px-10 py-6 text-lg font-semibold border-2 border-gold-300/50 hover:bg-gold-50/50 hover:border-gold-400 text-platinum-700"
               >
                 <Link href="/docs">
                   <BookOpen className="mr-2 h-5 w-5" />
@@ -230,7 +230,7 @@ export default function HomePage() {
             </div>
 
             {/* Compliance Strip */}
-            <div className="mt-16 flex flex-wrap items-center justify-center gap-6 text-xs text-platinum-500-500">
+            <div className="mt-16 flex flex-wrap items-center justify-center gap-6 text-xs text-platinum-500">
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
                 <span>UAE Federal Decree-Law No. 45 of 2021</span>
@@ -259,7 +259,7 @@ export default function HomePage() {
             <h2 className="font-rajdhani text-4xl font-bold tracking-tight sm:text-5xl gradient-text-premium">
               Ten Intelligence Sections
             </h2>
-            <p className="mt-4 text-base text-platinum-500-600 max-w-2xl mx-auto px-4">
+            <p className="mt-4 text-base text-platinum-600 max-w-2xl mx-auto px-4">
               Integrated intelligence modules operating across federal ministries, media networks,
               social platforms, and geopolitical domains — delivering comprehensive situational awareness.
             </p>
@@ -285,8 +285,8 @@ export default function HomePage() {
                         {section.badge}
                       </Badge>
                     </div>
-                    <CardTitle className="font-rajdhani text-lg text-platinum-500-900 leading-tight">{section.title}</CardTitle>
-                    <CardDescription className="text-xs font-medium text-platinum-500-600 leading-relaxed mt-1.5">
+                    <CardTitle className="font-rajdhani text-lg text-platinum-900 leading-tight">{section.title}</CardTitle>
+                    <CardDescription className="text-xs font-medium text-platinum-600 leading-relaxed mt-1.5">
                       {section.description}
                     </CardDescription>
                   </CardHeader>
@@ -313,14 +313,14 @@ export default function HomePage() {
       <section className="px-6 py-20 bg-gradient-to-b from-transparent via-bg-secondary/50 to-transparent">
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4 border-navy-300/50 text-navy-500-700">
+            <Badge variant="outline" className="mb-4 border-navy-300/50 text-navy-700">
               <BarChart3 className="mr-1 h-3 w-3" />
               Platform Capabilities
             </Badge>
             <h2 className="font-rajdhani text-4xl font-bold tracking-tight sm:text-5xl gradient-text-premium">
               Built for Federal Intelligence
             </h2>
-            <p className="mt-4 text-base text-platinum-500-600">
+            <p className="mt-4 text-base text-platinum-600">
               Enterprise-grade infrastructure aligned with UAE Federal standards
             </p>
           </div>
@@ -366,8 +366,8 @@ export default function HomePage() {
                   <Icon className="h-6 w-6" />
                 </div>
                 <div className="font-rajdhani text-4xl font-bold gradient-text-premium mb-1">{value}</div>
-                <div className="text-sm font-semibold text-platinum-500-800 mb-2 leading-tight">{label}</div>
-                <div className="text-xs text-platinum-500-600 leading-relaxed">{sub}</div>
+                <div className="text-sm font-semibold text-platinum-800 mb-2 leading-tight">{label}</div>
+                <div className="text-xs text-platinum-600 leading-relaxed">{sub}</div>
               </div>
             ))}
           </div>
@@ -379,8 +379,8 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8">
             <div>
-              <h3 className="font-rajdhani text-base font-bold text-platinum-500-900 mb-4">Intelligence Sections</h3>
-              <ul className="space-y-2 text-sm text-platinum-500-600">
+              <h3 className="font-rajdhani text-base font-bold text-platinum-900 mb-4">Intelligence Sections</h3>
+              <ul className="space-y-2 text-sm text-platinum-600">
                 <li><Link href="/dashboard/entity/overview" className="hover:text-amber-600 transition-colors">Entity Intelligence</Link></li>
                 <li><Link href="/dashboard/topics/politics" className="hover:text-amber-600 transition-colors">Topics & Issues</Link></li>
                 <li><Link href="/dashboard/crisis/overview" className="hover:text-amber-600 transition-colors">Crisis Management</Link></li>
@@ -388,8 +388,8 @@ export default function HomePage() {
               </ul>
             </div>
             <div>
-              <h3 className="font-rajdhani text-base font-bold text-platinum-500-900 mb-4">More Sections</h3>
-              <ul className="space-y-2 text-sm text-platinum-500-600">
+              <h3 className="font-rajdhani text-base font-bold text-platinum-900 mb-4">More Sections</h3>
+              <ul className="space-y-2 text-sm text-platinum-600">
                 <li><Link href="/dashboard/languages/overview" className="hover:text-amber-600 transition-colors">Multi-Lingual</Link></li>
                 <li><Link href="/dashboard/stakeholders/overview" className="hover:text-amber-600 transition-colors">Stakeholders</Link></li>
                 <li><Link href="/dashboard/historical/overview" className="hover:text-amber-600 transition-colors">Historical</Link></li>
@@ -397,8 +397,8 @@ export default function HomePage() {
               </ul>
             </div>
             <div>
-              <h3 className="font-rajdhani text-base font-bold text-platinum-500-900 mb-4">Resources</h3>
-              <ul className="space-y-2 text-sm text-platinum-500-600">
+              <h3 className="font-rajdhani text-base font-bold text-platinum-900 mb-4">Resources</h3>
+              <ul className="space-y-2 text-sm text-platinum-600">
                 <li><Link href="/docs" className="hover:text-amber-600 transition-colors">Documentation</Link></li>
                 <li><Link href="/dashboard" className="hover:text-amber-600 transition-colors">Dashboard Hub</Link></li>
                 <li><Link href="/support" className="hover:text-amber-600 transition-colors">Support Center</Link></li>
@@ -406,8 +406,8 @@ export default function HomePage() {
               </ul>
             </div>
             <div>
-              <h3 className="font-rajdhani text-base font-bold text-platinum-500-900 mb-4">Connect</h3>
-              <ul className="space-y-2 text-sm text-platinum-500-600">
+              <h3 className="font-rajdhani text-base font-bold text-platinum-900 mb-4">Connect</h3>
+              <ul className="space-y-2 text-sm text-platinum-600">
                 <li><a href="https://www.linkedin.com/in/CryptoMize" target="_blank" rel="noopener noreferrer" className="hover:text-amber-600 transition-colors">LinkedIn</a></li>
                 <li><a href="https://twitter.com/CryptoMize" target="_blank" rel="noopener noreferrer" className="hover:text-amber-600 transition-colors">Twitter / X</a></li>
                 <li><a href="https://cryptomize.com" target="_blank" rel="noopener noreferrer" className="hover:text-amber-600 transition-colors">CryptoMize.com</a></li>
@@ -417,18 +417,18 @@ export default function HomePage() {
           </div>
 
           <div className="border-t border-platinum-200/50 pt-8 text-center">
-            <div className="flex items-center justify-center gap-2 text-sm text-platinum-500-500 mb-2">
+            <div className="flex items-center justify-center gap-2 text-sm text-platinum-500 mb-2">
               <Crown className="h-4 w-4 text-amber-700" />
               <span className="font-bold">
                 <span className="gradient-text-premium font-rajdhani">Clairvoyance-CX</span>
-                <span className="text-platinum-500-400 font-normal ml-2">| ndip.dossier.li</span>
+                <span className="text-platinum-400 font-normal ml-2">| ndip.dossier.li</span>
               </span>
               <Gem className="h-4 w-4 text-amber-700" />
             </div>
-            <p className="text-sm text-platinum-500-500">
-              A <span className="font-semibold text-platinum-500-700">CryptoMize</span> Product
+            <p className="text-sm text-platinum-500">
+              A <span className="font-semibold text-platinum-700">CryptoMize</span> Product
             </p>
-            <p className="text-xs text-platinum-500-400 mt-1.5">
+            <p className="text-xs text-platinum-400 mt-1.5">
               © 2026 CryptoMize. All rights reserved. | Group CEO: Lithvik Mukesh Sharma
             </p>
           </div>

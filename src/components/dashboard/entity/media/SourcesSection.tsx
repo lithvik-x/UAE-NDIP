@@ -28,10 +28,10 @@ export function SourcesSection({
         <div className="grid gap-3 sm:grid-cols-2">
           {sourceUrls.map((source, i) => (
             <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-platinum-50/50 dark:bg-platinum-800/25">
-              <Globe className="h-4 w-4 text-navy-500-600 mt-0.5" />
+              <Globe className="h-4 w-4 text-navy-600 mt-0.5" />
               <div>
-                <p className="font-medium text-navy-500-900 dark:text-platinum-500-100 text-sm">{source.source}</p>
-                <p className="text-xs text-platinum-500-500 mt-1 break-all">{source.url}</p>
+                <p className="font-medium text-navy-900 dark:text-platinum-100 text-sm">{source.source}</p>
+                <p className="text-xs text-platinum-500 mt-1 break-all">{source.url}</p>
               </div>
             </div>
           ))}
@@ -43,7 +43,7 @@ export function SourcesSection({
         <GlassPanel title="Critical Importance" description={`${criticalImportance.length} organizations`}>
           <div className="space-y-2">
             {criticalImportance.map((item, i) => (
-              <p key={i} className="text-sm text-platinum-500-700 dark:text-platinum-500-300">• {item.organization}</p>
+              <p key={i} className="text-sm text-platinum-700 dark:text-platinum-300">• {item.organization}</p>
             ))}
           </div>
         </GlassPanel>
@@ -51,7 +51,7 @@ export function SourcesSection({
         <GlassPanel title="High Importance" description={`${highImportance.length} organizations`}>
           <div className="space-y-2">
             {highImportance.map((item, i) => (
-              <p key={i} className="text-sm text-platinum-500-700 dark:text-platinum-500-300">• {item.organization}</p>
+              <p key={i} className="text-sm text-platinum-700 dark:text-platinum-300">• {item.organization}</p>
             ))}
           </div>
         </GlassPanel>
@@ -59,7 +59,7 @@ export function SourcesSection({
         <GlassPanel title="Medium Importance" description={`${mediumImportance.length} organizations`}>
           <div className="space-y-2">
             {mediumImportance.map((item, i) => (
-              <p key={i} className="text-sm text-platinum-500-700 dark:text-platinum-500-300">• {item.organization}</p>
+              <p key={i} className="text-sm text-platinum-700 dark:text-platinum-300">• {item.organization}</p>
             ))}
           </div>
         </GlassPanel>

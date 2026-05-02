@@ -48,17 +48,17 @@ export function PersonnelSection({
           <Table>
             <TableHeader>
               <TableRow className="border-b border-platinum-200/50">
-                <TableHead className="text-platinum-500-700 font-semibold">Newspaper</TableHead>
-                <TableHead className="text-platinum-500-700 font-semibold">Position</TableHead>
-                <TableHead className="text-platinum-500-700 font-semibold">Name</TableHead>
+                <TableHead className="text-platinum-700 font-semibold">Newspaper</TableHead>
+                <TableHead className="text-platinum-700 font-semibold">Position</TableHead>
+                <TableHead className="text-platinum-700 font-semibold">Name</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {newspaperLeadership.map((leader, i) => (
                 <TableRow key={i} className="border-b border-platinum-100/50">
-                  <TableCell className="font-medium text-navy-500-900 dark:text-platinum-500-100">{leader.newspaper}</TableCell>
-                  <TableCell className="text-sm text-platinum-500-600">{leader.position}</TableCell>
-                  <TableCell className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{leader.name}</TableCell>
+                  <TableCell className="font-medium text-navy-900 dark:text-platinum-100">{leader.newspaper}</TableCell>
+                  <TableCell className="text-sm text-platinum-600">{leader.position}</TableCell>
+                  <TableCell className="text-sm text-platinum-700 dark:text-platinum-300">{leader.name}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -70,17 +70,17 @@ export function PersonnelSection({
           <Table>
             <TableHeader>
               <TableRow className="border-b border-platinum-200/50">
-                <TableHead className="text-platinum-500-700 font-semibold">Channel</TableHead>
-                <TableHead className="text-platinum-500-700 font-semibold">Position</TableHead>
-                <TableHead className="text-platinum-500-700 font-semibold">Name</TableHead>
+                <TableHead className="text-platinum-700 font-semibold">Channel</TableHead>
+                <TableHead className="text-platinum-700 font-semibold">Position</TableHead>
+                <TableHead className="text-platinum-700 font-semibold">Name</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {broadcastLeadership.map((leader, i) => (
                 <TableRow key={i} className="border-b border-platinum-100/50">
-                  <TableCell className="font-medium text-navy-500-900 dark:text-platinum-500-100">{leader.channel}</TableCell>
-                  <TableCell className="text-sm text-platinum-500-600">{leader.position}</TableCell>
-                  <TableCell className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{leader.name}</TableCell>
+                  <TableCell className="font-medium text-navy-900 dark:text-platinum-100">{leader.channel}</TableCell>
+                  <TableCell className="text-sm text-platinum-600">{leader.position}</TableCell>
+                  <TableCell className="text-sm text-platinum-700 dark:text-platinum-300">{leader.name}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -101,8 +101,8 @@ export function PersonnelSection({
                 <MapPin className="h-4 w-4" />
               </div>
               <div>
-                <span className="font-medium text-navy-500-900 dark:text-platinum-500-100">{office.office}</span>
-                <p className="text-xs text-platinum-500-500">{office.location}</p>
+                <span className="font-medium text-navy-900 dark:text-platinum-100">{office.office}</span>
+                <p className="text-xs text-platinum-500">{office.location}</p>
               </div>
             </motion.div>
           ))}

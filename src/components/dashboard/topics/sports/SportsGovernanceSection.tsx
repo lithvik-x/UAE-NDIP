@@ -80,9 +80,9 @@ export function SportsGovernanceSection({
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <Shield className="h-4 w-4 text-gold-700" />
-                    <span className="font-semibold text-platinum-500-200">{obj.objective}</span>
+                    <span className="font-semibold text-platinum-200">{obj.objective}</span>
                   </div>
-                  <p className="text-sm text-platinum-500-400">{obj.description}</p>
+                  <p className="text-sm text-platinum-400">{obj.description}</p>
                 </div>
               ))}
             </div>
@@ -114,7 +114,7 @@ export function SportsGovernanceSection({
                   </div>
                   <div className="flex-1 pb-4">
                     <p className="text-xs text-gold-700 font-medium">{event.year}</p>
-                    <p className="text-sm text-platinum-500-300">{event.event}</p>
+                    <p className="text-sm text-platinum-300">{event.event}</p>
                   </div>
                 </div>
               ))}
@@ -136,7 +136,7 @@ export function SportsGovernanceSection({
                 {camelRacingTimeline.slice(0, 7).map((event, index) => (
                   <div key={index} className="flex gap-4 p-2 rounded bg-platinum-800/30">
                     <span className="text-xs font-mono text-gold-700 w-24">{event.year}</span>
-                    <span className="text-sm text-platinum-500-300">{event.event}</span>
+                    <span className="text-sm text-platinum-300">{event.event}</span>
                   </div>
                 ))}
               </div>
@@ -166,10 +166,10 @@ export function SportsGovernanceSection({
                     <Award className="h-5 w-5" />
                   </div>
                   <div className="flex-1">
-                    <p className="font-semibold text-platinum-500-200">
+                    <p className="font-semibold text-platinum-200">
                       {medal.medal} — {medal.event}
                     </p>
-                    <p className="text-sm text-platinum-500-400">
+                    <p className="text-sm text-platinum-400">
                       {medal.athlete} | {medal.year} {medal.location}
                     </p>
                   </div>
@@ -191,21 +191,21 @@ export function SportsGovernanceSection({
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-lg border border-emerald-900/50 bg-emerald-900/20 p-4">
                 <h4 className="font-semibold text-emerald-400 mb-2">Women&apos;s Cycling</h4>
-                <p className="text-sm text-platinum-500-300">
+                <p className="text-sm text-platinum-300">
                   UAE Tour Women — only women&apos;s World Tour race in Middle East
                 </p>
-                <p className="text-sm text-platinum-500-400 mt-2">
+                <p className="text-sm text-platinum-400 mt-2">
                   {womensSportsParticipation.cycling.join(' | ')}
                 </p>
               </div>
               <div className="rounded-lg border border-platinum-900/50 bg-platinum-900/20 p-4">
-                <h4 className="font-semibold text-platinum-500-400 mb-2">Youth Development</h4>
-                <p className="text-sm text-platinum-500-300">
+                <h4 className="font-semibold text-platinum-400 mb-2">Youth Development</h4>
+                <p className="text-sm text-platinum-300">
                   {youthDevelopmentPrograms.length}+ programs including scholarships and academies
                 </p>
                 <div className="mt-2 space-y-1">
                   {youthDevelopmentPrograms.slice(0, 3).map((p, i) => (
-                    <p key={i} className="text-xs text-platinum-500-400">
+                    <p key={i} className="text-xs text-platinum-400">
                       {p.program}: {p.details}
                     </p>
                   ))}
@@ -234,7 +234,7 @@ export function SportsGovernanceSection({
                   className="rounded-lg border border-red-900/30 bg-red-900/10 p-3"
                 >
                   <p className="font-semibold text-red-400 text-sm">{violation.issue}</p>
-                  <p className="text-xs text-platinum-500-400 mt-1">{violation.details}</p>
+                  <p className="text-xs text-platinum-400 mt-1">{violation.details}</p>
                 </div>
               ))}
             </div>
@@ -256,8 +256,8 @@ export function SportsGovernanceSection({
                   key={index}
                   className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50"
                 >
-                  <span className="font-semibold text-platinum-500-200">{holder.holder}</span>
-                  <span className="text-sm text-platinum-500-400">{holder.rights}</span>
+                  <span className="font-semibold text-platinum-200">{holder.holder}</span>
+                  <span className="text-sm text-platinum-400">{holder.rights}</span>
                 </div>
               ))}
             </div>

@@ -91,7 +91,7 @@ export default function ClimateEnvironmentalPage() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="text-platinum-500-400 flex items-center gap-3"
+          className="text-platinum-400 flex items-center gap-3"
         >
           <div className="h-8 w-8 border-2 border-platinum-500 border-t-transparent rounded-full animate-spin" />
           Loading Climate & Environmental data...
@@ -176,7 +176,7 @@ export default function ClimateEnvironmentalPage() {
         <div>
           <Badge variant="denim" className="mb-2">CRISIS TYPE</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">Climate & Environmental</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Extreme heat, flooding, climate change, infrastructure resilience
           </p>
         </div>
@@ -369,7 +369,7 @@ export default function ClimateEnvironmentalPage() {
                         <Card className="glass-card">
                           <CardHeader className="pb-2">
                             <CardTitle className="text-lg flex items-center gap-2">
-                              <Users className="h-5 w-5 text-navy-500-400" />
+                              <Users className="h-5 w-5 text-navy-400" />
                               Public Sentiment
                             </CardTitle>
                             <CardDescription>Sentiment on climate events</CardDescription>
@@ -412,10 +412,10 @@ export default function ClimateEnvironmentalPage() {
                             <div className="absolute -left-8 top-0 h-4 w-4 rounded-full bg-emerald-500 border-2 border-platinum-900" />
                             <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70 transition-colors">
                               <div className="flex items-center justify-between mb-1">
-                                <p className="font-semibold text-platinum-500-200">{event.event}</p>
+                                <p className="font-semibold text-platinum-200">{event.event}</p>
                                 <Badge variant="outline" className="text-xs">{event.date}</Badge>
                               </div>
-                              <p className="text-sm text-platinum-500-400">{event.description}</p>
+                              <p className="text-sm text-platinum-400">{event.description}</p>
                             </div>
                           </motion.div>
                         ))}
@@ -449,23 +449,23 @@ export default function ClimateEnvironmentalPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
-                        <span className="text-sm text-platinum-500-400">Event Duration</span>
+                        <span className="text-sm text-platinum-400">Event Duration</span>
                         <Badge variant="outline" className="text-cyan-300 border-cyan-500/50">3 days</Badge>
                       </div>
                       <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
-                        <span className="text-sm text-platinum-500-400">Peak Rainfall</span>
+                        <span className="text-sm text-platinum-400">Peak Rainfall</span>
                         <Badge variant="outline" className="text-rose-300 border-rose-500/50">254.8mm</Badge>
                       </div>
                       <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
-                        <span className="text-sm text-platinum-500-400">UAE Deaths</span>
+                        <span className="text-sm text-platinum-400">UAE Deaths</span>
                         <Badge variant="destructive">5</Badge>
                       </div>
                       <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
-                        <span className="text-sm text-platinum-500-400">Regional Deaths</span>
+                        <span className="text-sm text-platinum-400">Regional Deaths</span>
                         <Badge variant="destructive">23</Badge>
                       </div>
                       <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
-                        <span className="text-sm text-platinum-500-400">Flights Cancelled</span>
+                        <span className="text-sm text-platinum-400">Flights Cancelled</span>
                         <Badge variant="outline" className="text-gold-300 border-gold-500/50">1,244</Badge>
                       </div>
                     </div>
@@ -492,11 +492,11 @@ export default function ClimateEnvironmentalPage() {
                     />
                     <div className="mt-4 grid grid-cols-2 gap-2">
                       <div className="p-2 rounded bg-platinum-800/50 text-center">
-                        <p className="text-xs text-platinum-500-400">Clear Atmosphere</p>
+                        <p className="text-xs text-platinum-400">Clear Atmosphere</p>
                         <p className="text-lg font-bold text-emerald-400">30-35%</p>
                       </div>
                       <div className="p-2 rounded bg-platinum-800/50 text-center">
-                        <p className="text-xs text-platinum-500-400">Humid Conditions</p>
+                        <p className="text-xs text-platinum-400">Humid Conditions</p>
                         <p className="text-lg font-bold text-cyan-400">10-15%</p>
                       </div>
                     </div>
@@ -553,7 +553,7 @@ export default function ClimateEnvironmentalPage() {
                             <AlertCircle className="h-4 w-4" />
                             Climate Change Link
                           </h4>
-                          <p className="text-sm text-platinum-500-300">
+                          <p className="text-sm text-platinum-300">
                             Climate change "reduced the temperature gradient between the equator and the North Pole,"
                             slowing the subtropical jet stream. This caused stronger trough formation, making the
                             April 2024 event 10-40% more intense due to 1.2C of warming.
@@ -564,7 +564,7 @@ export default function ClimateEnvironmentalPage() {
                             <CheckCircle2 className="h-4 w-4" />
                             Cloud Seeding Clarification
                           </h4>
-                          <p className="text-sm text-platinum-500-300">
+                          <p className="text-sm text-platinum-300">
                             NCM explicitly stated: "did not conduct any seeding operations during this event."
                             Experts universally concluded cloud seeding was neither deployed nor responsible.
                           </p>
@@ -576,14 +576,14 @@ export default function ClimateEnvironmentalPage() {
                           </h4>
                           <div className="grid grid-cols-2 gap-4 mt-2">
                             <div>
-                              <p className="text-xs text-platinum-500-400">Stormwater Plan</p>
+                              <p className="text-xs text-platinum-400">Stormwater Plan</p>
                               <p className="text-lg font-bold text-emerald-400">$8.2B</p>
-                              <p className="text-xs text-platinum-500-500">700% capacity increase</p>
+                              <p className="text-xs text-platinum-500">700% capacity increase</p>
                             </div>
                             <div>
-                              <p className="text-xs text-platinum-500-400">Deep Tunnel</p>
+                              <p className="text-xs text-platinum-400">Deep Tunnel</p>
                               <p className="text-lg font-bold text-gold-400">100-year</p>
-                              <p className="text-xs text-platinum-500-500">Design life</p>
+                              <p className="text-xs text-platinum-500">Design life</p>
                             </div>
                           </div>
                         </div>
@@ -665,24 +665,24 @@ export default function ClimateEnvironmentalPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
-                        <span className="text-sm text-platinum-500-400">Effective Period</span>
+                        <span className="text-sm text-platinum-400">Effective Period</span>
                         <Badge variant="outline" className="text-emerald-300 border-emerald-500/50">
                           June 15 - Sept 15
                         </Badge>
                       </div>
                       <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
-                        <span className="text-sm text-platinum-500-400">Prohibited Hours</span>
+                        <span className="text-sm text-platinum-400">Prohibited Hours</span>
                         <Badge variant="outline" className="text-gold-300 border-gold-500/50">
                           12:30 PM - 3:00 PM
                         </Badge>
                       </div>
                       <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
-                        <span className="text-sm text-platinum-500-400">2025 Compliance</span>
+                        <span className="text-sm text-platinum-400">2025 Compliance</span>
                         <Badge variant="success">99%</Badge>
                       </div>
                       <div className="mt-4">
-                        <p className="text-xs text-platinum-500-400 mb-2">Employer Requirements</p>
-                        <ul className="space-y-1 text-sm text-platinum-500-300">
+                        <p className="text-xs text-platinum-400 mb-2">Employer Requirements</p>
+                        <ul className="space-y-1 text-sm text-platinum-300">
                           <li className="flex items-center gap-2"><CheckCircle2 className="h-3 w-3 text-emerald-400" />Suspend outdoor work</li>
                           <li className="flex items-center gap-2"><CheckCircle2 className="h-3 w-3 text-emerald-400" />Provide shaded rest areas</li>
                           <li className="flex items-center gap-2"><CheckCircle2 className="h-3 w-3 text-emerald-400" />Ensure drinking water</li>
@@ -707,36 +707,36 @@ export default function ClimateEnvironmentalPage() {
                     <div className="grid gap-4 md:grid-cols-2">
                       <div className="rounded-lg border border-rose-500/30 bg-platinum-800/30 p-4">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm text-platinum-500-400">Outdoor Workers Excessive Heat</span>
+                          <span className="text-sm text-platinum-400">Outdoor Workers Excessive Heat</span>
                           <span className="text-xl font-bold text-rose-400">83.6%</span>
                         </div>
-                        <p className="text-xs text-platinum-500-500">ILO 2024</p>
+                        <p className="text-xs text-platinum-500">ILO 2024</p>
                       </div>
                       <div className="rounded-lg border border-rose-500/30 bg-platinum-800/30 p-4">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm text-platinum-500-400">Hajj Pilgrims Heat Deaths</span>
+                          <span className="text-sm text-platinum-400">Hajj Pilgrims Heat Deaths</span>
                           <span className="text-xl font-bold text-rose-400">1,300+</span>
                         </div>
-                        <p className="text-xs text-platinum-500-500">June 2024</p>
+                        <p className="text-xs text-platinum-500">June 2024</p>
                       </div>
                       <div className="rounded-lg border border-rose-500/30 bg-platinum-800/30 p-4">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm text-platinum-500-400">Worker Exposure</span>
+                          <span className="text-sm text-platinum-400">Worker Exposure</span>
                           <span className="text-xl font-bold text-gold-400">14 hrs</span>
                         </div>
-                        <p className="text-xs text-platinum-500-500">Up to 14 hours in 45C+</p>
+                        <p className="text-xs text-platinum-500">Up to 14 hours in 45C+</p>
                       </div>
                       <div className="rounded-lg border border-emerald-500/30 bg-platinum-800/30 p-4">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-sm text-platinum-500-400">Prediction Lead Time</span>
+                          <span className="text-sm text-platinum-400">Prediction Lead Time</span>
                           <span className="text-xl font-bold text-emerald-400">2-3 months</span>
                         </div>
-                        <p className="text-xs text-platinum-500-500">Weeks to months advance</p>
+                        <p className="text-xs text-platinum-500">Weeks to months advance</p>
                       </div>
                     </div>
                     <div className="mt-4 p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/30">
                       <h4 className="font-semibold text-emerald-400 mb-2">NYU Abu Dhabi Research</h4>
-                      <p className="text-sm text-platinum-500-300">
+                      <p className="text-sm text-platinum-300">
                         Extreme heat events occur when two wind systems change simultaneously:
                         (1) North-westerly Shamal winds weaken, and (2) Summer Indian monsoon winds intensify.
                         La Nina events favor these heatwaves. Lead researcher: Zouhair Lachkar, Senior Scientist.
@@ -771,29 +771,29 @@ export default function ClimateEnvironmentalPage() {
                     <div className="space-y-4">
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div className="rounded-lg border border-rose-500/30 bg-platinum-800/30 p-4 text-center">
-                          <p className="text-xs text-platinum-500-400">Iran Attacks</p>
+                          <p className="text-xs text-platinum-400">Iran Attacks</p>
                           <p className="text-2xl font-bold text-rose-400">1,800+</p>
-                          <p className="text-xs text-platinum-500-500">Missiles/drones at UAE</p>
+                          <p className="text-xs text-platinum-500">Missiles/drones at UAE</p>
                         </div>
                         <div className="rounded-lg border border-rose-500/30 bg-platinum-800/30 p-4 text-center">
-                          <p className="text-xs text-platinum-500-400">Civilian Deaths</p>
+                          <p className="text-xs text-platinum-400">Civilian Deaths</p>
                           <p className="text-2xl font-bold text-rose-400">3</p>
-                          <p className="text-xs text-platinum-500-500">UAE casualties</p>
+                          <p className="text-xs text-platinum-500">UAE casualties</p>
                         </div>
                         <div className="rounded-lg border border-gold-500/30 bg-platinum-800/30 p-4 text-center">
-                          <p className="text-xs text-platinum-500-400">Intercepted (Tuesday)</p>
+                          <p className="text-xs text-platinum-400">Intercepted (Tuesday)</p>
                           <p className="text-2xl font-bold text-gold-400">55</p>
-                          <p className="text-xs text-platinum-500-500">10 missiles, 45 drones</p>
+                          <p className="text-xs text-platinum-500">10 missiles, 45 drones</p>
                         </div>
                         <div className="rounded-lg border border-emerald-500/30 bg-platinum-800/30 p-4 text-center">
-                          <p className="text-xs text-platinum-500-400">Gulf States Total</p>
+                          <p className="text-xs text-platinum-400">Gulf States Total</p>
                           <p className="text-2xl font-bold text-emerald-400">2,000+</p>
-                          <p className="text-xs text-platinum-500-500">Combined attacks</p>
+                          <p className="text-xs text-platinum-500">Combined attacks</p>
                         </div>
                       </div>
                       <div>
                         <div className="flex items-center justify-between mb-2">
-                          <p className="text-sm text-platinum-500-400">Attack Timeline</p>
+                          <p className="text-sm text-platinum-400">Attack Timeline</p>
                           <Button
                             variant="ghost"
                             size="sm"
@@ -809,7 +809,7 @@ export default function ClimateEnvironmentalPage() {
                               <div key={idx} className="flex items-center gap-3 p-2 rounded bg-platinum-800/30">
                                 <div className="h-2 w-2 rounded-full bg-rose-400" />
                                 <span className="text-xs text-rose-400 font-mono">{item.date}</span>
-                                <span className="text-sm text-platinum-500-300">{item.event}</span>
+                                <span className="text-sm text-platinum-300">{item.event}</span>
                               </div>
                             ))}
                           </div>
@@ -833,28 +833,28 @@ export default function ClimateEnvironmentalPage() {
                     <div className="space-y-4">
                       <div className="grid grid-cols-2 gap-3">
                         <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
-                          <p className="text-xs text-platinum-500-400">Frequency</p>
+                          <p className="text-xs text-platinum-400">Frequency</p>
                           <p className="text-lg font-bold text-emerald-400">2x/year</p>
                         </div>
                         <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
-                          <p className="text-xs text-platinum-500-400">Daily Losses</p>
+                          <p className="text-xs text-platinum-400">Daily Losses</p>
                           <p className="text-lg font-bold text-rose-400">$100K</p>
                         </div>
                         <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
-                          <p className="text-xs text-platinum-500-400">Desalination Impact</p>
+                          <p className="text-xs text-platinum-400">Desalination Impact</p>
                           <p className="text-lg font-bold text-rose-400">30-40%</p>
                         </div>
                         <div className="rounded-lg bg-platinum-800/50 p-3 text-center">
-                          <p className="text-xs text-platinum-500-400">Cause</p>
+                          <p className="text-xs text-platinum-400">Cause</p>
                           <p className="text-sm font-bold text-cyan-400">Dinoflagellates</p>
                         </div>
                       </div>
                       <div>
-                        <p className="text-xs text-platinum-500-400 mb-2">Key Historical Events</p>
+                        <p className="text-xs text-platinum-400 mb-2">Key Historical Events</p>
                         <div className="space-y-2">
                           {extended.redTideEvents.historicalEvents.slice(0, 4).map((event, idx) => (
                             <div key={idx} className="flex items-center justify-between p-2 rounded bg-platinum-800/30">
-                              <span className="text-sm text-platinum-500-300">{event.date}</span>
+                              <span className="text-sm text-platinum-300">{event.date}</span>
                               <span className="text-xs text-emerald-400">{event.impact}</span>
                             </div>
                           ))}
@@ -866,7 +866,7 @@ export default function ClimateEnvironmentalPage() {
 
                 <Card className="glass-card border-navy-500/30">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-lg flex items-center gap-2 text-navy-500-400">
+                    <CardTitle className="text-lg flex items-center gap-2 text-navy-400">
                       <MapPin className="h-5 w-5" />
                       Sea Level Rise Projections
                     </CardTitle>
@@ -880,10 +880,10 @@ export default function ClimateEnvironmentalPage() {
                     />
                     <div className="mt-4 p-3 rounded bg-platinum-800/50">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm text-platinum-500-400">Infrastructure at Risk</span>
+                        <span className="text-sm text-platinum-400">Infrastructure at Risk</span>
                         <span className="text-lg font-bold text-rose-400">90%</span>
                       </div>
-                      <p className="text-xs text-platinum-500-500">Within meters of sea level</p>
+                      <p className="text-xs text-platinum-500">Within meters of sea level</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -904,15 +904,15 @@ export default function ClimateEnvironmentalPage() {
                         <h4 className="font-semibold text-orange-400 mb-2">Dubai Palm Islands</h4>
                         <div className="space-y-2 text-sm">
                           <div className="flex justify-between">
-                            <span className="text-platinum-500-400">Construction Cost</span>
+                            <span className="text-platinum-400">Construction Cost</span>
                             <span className="text-orange-300">$12 billion</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-platinum-500-400">Wave Barrier</span>
+                            <span className="text-platinum-400">Wave Barrier</span>
                             <span className="text-orange-300">Only 2m</span>
                           </div>
                           <div className="flex justify-between">
-                            <span className="text-platinum-500-400">Elevation</span>
+                            <span className="text-platinum-400">Elevation</span>
                             <span className="text-orange-300">13 ft above sea level</span>
                           </div>
                         </div>
@@ -921,11 +921,11 @@ export default function ClimateEnvironmentalPage() {
                         <h4 className="font-semibold text-rose-400 mb-2">Beach Erosion</h4>
                         <div className="space-y-2 text-sm">
                           <div className="flex justify-between">
-                            <span className="text-platinum-500-400">Madinat Jumeirah</span>
+                            <span className="text-platinum-400">Madinat Jumeirah</span>
                             <span className="text-rose-300">5-10m/year</span>
                           </div>
                         </div>
-                        <p className="text-xs text-platinum-500-500 mt-2">
+                        <p className="text-xs text-platinum-500 mt-2">
                           Mangrove protection in Abu Dhabi acts as natural coastal defense.
                         </p>
                       </div>
@@ -973,7 +973,7 @@ export default function ClimateEnvironmentalPage() {
               <motion.div variants={itemVariants} className="grid gap-6 lg:grid-cols-2">
                 <Card className="glass-card border-navy-500/30">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-lg flex items-center gap-2 text-navy-500-400">
+                    <CardTitle className="text-lg flex items-center gap-2 text-navy-400">
                       <Activity className="h-5 w-5" />
                       Recent Seismic Events
                     </CardTitle>
@@ -986,13 +986,13 @@ export default function ClimateEnvironmentalPage() {
                           <div className="flex items-center gap-3">
                             <div className={`h-3 w-3 rounded-full ${event.magnitude >= 4 ? 'bg-rose-400' : 'bg-emerald-400'}`} />
                             <div>
-                              <p className="text-sm font-medium text-platinum-500-200">{event.location}</p>
-                              <p className="text-xs text-platinum-500-500">{event.date}</p>
+                              <p className="text-sm font-medium text-platinum-200">{event.location}</p>
+                              <p className="text-xs text-platinum-500">{event.date}</p>
                             </div>
                           </div>
                           <div className="text-right">
-                            <p className="text-lg font-bold text-platinum-500-200">{event.magnitude}</p>
-                            <p className="text-xs text-platinum-500-500">Magnitude</p>
+                            <p className="text-lg font-bold text-platinum-200">{event.magnitude}</p>
+                            <p className="text-xs text-platinum-500">Magnitude</p>
                           </div>
                         </div>
                       ))}
@@ -1030,7 +1030,7 @@ export default function ClimateEnvironmentalPage() {
                 <Card className="glass-card">
                   <CardHeader className="pb-2">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Info className="h-5 w-5 text-navy-500-400" />
+                      <Info className="h-5 w-5 text-navy-400" />
                       NCM Seismic Network
                     </CardTitle>
                     <CardDescription>Monitoring capabilities</CardDescription>
@@ -1039,18 +1039,18 @@ export default function ClimateEnvironmentalPage() {
                     <div className="grid gap-4 md:grid-cols-3">
                       <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                         <CheckCircle2 className="h-8 w-8 text-emerald-400 mx-auto mb-2" />
-                        <p className="font-semibold text-platinum-500-200">Broadband Network</p>
-                        <p className="text-xs text-platinum-500-400">Advanced seismic sensors</p>
+                        <p className="font-semibold text-platinum-200">Broadband Network</p>
+                        <p className="text-xs text-platinum-400">Advanced seismic sensors</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                         <CheckCircle2 className="h-8 w-8 text-emerald-400 mx-auto mb-2" />
-                        <p className="font-semibold text-platinum-500-200">Real-time Monitoring</p>
-                        <p className="text-xs text-platinum-500-400">24/7 surveillance</p>
+                        <p className="font-semibold text-platinum-200">Real-time Monitoring</p>
+                        <p className="text-xs text-platinum-400">24/7 surveillance</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                         <CheckCircle2 className="h-8 w-8 text-emerald-400 mx-auto mb-2" />
-                        <p className="font-semibold text-platinum-500-200">Public Portal</p>
-                        <p className="text-xs text-platinum-500-400">earthquakes.ncm.gov.ae</p>
+                        <p className="font-semibold text-platinum-200">Public Portal</p>
+                        <p className="text-xs text-platinum-400">earthquakes.ncm.gov.ae</p>
                       </div>
                     </div>
                   </CardContent>
@@ -1121,7 +1121,7 @@ export default function ClimateEnvironmentalPage() {
                         >
                           <div className="flex items-center gap-3">
                             <item.icon className={`h-5 w-5 text-${item.color}-400`} />
-                            <span className="text-sm font-medium text-platinum-500-200">{item.measure}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.measure}</span>
                           </div>
                           <Badge variant="outline" className={`text-${item.color}-300 border-${item.color}-500/50`}>
                             {item.status}
@@ -1145,28 +1145,28 @@ export default function ClimateEnvironmentalPage() {
                   <CardContent>
                     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                       <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/30 p-4 text-center">
-                        <p className="text-xs text-platinum-500-400 mb-1">Net Zero Target</p>
+                        <p className="text-xs text-platinum-400 mb-1">Net Zero Target</p>
                         <p className="text-2xl font-bold text-emerald-400">2050</p>
-                        <p className="text-xs text-platinum-500-500">First in Middle East</p>
+                        <p className="text-xs text-platinum-500">First in Middle East</p>
                       </div>
                       <div className="rounded-lg bg-gold-500/10 border border-gold-500/30 p-4 text-center">
-                        <p className="text-xs text-platinum-500-400 mb-1">Emissions Reduction</p>
+                        <p className="text-xs text-platinum-400 mb-1">Emissions Reduction</p>
                         <p className="text-2xl font-bold text-gold-400">40%</p>
-                        <p className="text-xs text-platinum-500-500">By 2030 (Third NDC)</p>
+                        <p className="text-xs text-platinum-500">By 2030 (Third NDC)</p>
                       </div>
                       <div className="rounded-lg bg-cyan-500/10 border border-cyan-500/30 p-4 text-center">
-                        <p className="text-xs text-platinum-500-400 mb-1">Solar Park Capacity</p>
+                        <p className="text-xs text-platinum-400 mb-1">Solar Park Capacity</p>
                         <p className="text-2xl font-bold text-cyan-400">5,000 MW</p>
-                        <p className="text-xs text-platinum-500-500">MBR Solar Park by 2030</p>
+                        <p className="text-xs text-platinum-500">MBR Solar Park by 2030</p>
                       </div>
                       <div className="rounded-lg bg-navy-500/10 border border-navy-500/30 p-4 text-center">
-                        <p className="text-xs text-platinum-500-400 mb-1">Renewable Growth</p>
-                        <p className="text-2xl font-bold text-navy-500-400">70%</p>
-                        <p className="text-xs text-platinum-500-500">2022-2023 increase</p>
+                        <p className="text-xs text-platinum-400 mb-1">Renewable Growth</p>
+                        <p className="text-2xl font-bold text-navy-400">70%</p>
+                        <p className="text-xs text-platinum-500">2022-2023 increase</p>
                       </div>
                     </div>
                     <div className="mt-4 p-4 rounded-lg bg-platinum-800/50">
-                      <p className="text-sm text-platinum-500-400 mb-2">Environmental Threats</p>
+                      <p className="text-sm text-platinum-400 mb-2">Environmental Threats</p>
                       <div className="flex flex-wrap gap-2">
                         {['Water Stress', 'Groundwater Depletion', 'Desertification', 'Coral Reefs', 'Salt Marshes'].map((threat, idx) => (
                           <Badge key={idx} variant="outline" className="text-rose-300 border-rose-500/50">
@@ -1182,7 +1182,7 @@ export default function ClimateEnvironmentalPage() {
               <motion.div variants={itemVariants}>
                 <Card className="glass-card border-navy-500/30">
                   <CardHeader className="pb-2">
-                    <CardTitle className="text-lg flex items-center gap-2 text-navy-500-400">
+                    <CardTitle className="text-lg flex items-center gap-2 text-navy-400">
                       <Activity className="h-5 w-5" />
                       Emergency Contacts
                     </CardTitle>
@@ -1201,16 +1201,16 @@ export default function ClimateEnvironmentalPage() {
                           className={`rounded-lg border border-${item.color}-500/30 bg-platinum-800/30 p-4 text-center cursor-pointer hover:bg-platinum-800/50 transition-colors`}
                         >
                           <p className={`text-3xl font-bold text-${item.color}-400`}>{item.service}</p>
-                          <p className="text-sm text-platinum-500-300 mt-1">{item.purpose}</p>
+                          <p className="text-sm text-platinum-300 mt-1">{item.purpose}</p>
                         </motion.div>
                       ))}
                     </div>
                     <div className="mt-4">
-                      <p className="text-sm text-platinum-500-400 mb-2">Government Resources</p>
+                      <p className="text-sm text-platinum-400 mb-2">Government Resources</p>
                       <div className="space-y-2">
                         {extended.governmentResources.map((resource, idx) => (
                           <div key={idx} className="flex items-center justify-between p-2 rounded bg-platinum-800/30">
-                            <span className="text-sm text-platinum-500-300">{resource.resource}</span>
+                            <span className="text-sm text-platinum-300">{resource.resource}</span>
                             <a href={resource.url} target="_blank" rel="noopener noreferrer" className="text-xs text-cyan-400 hover:text-cyan-300 flex items-center gap-1">
                               <ExternalLink className="h-3 w-3" />
                               Visit

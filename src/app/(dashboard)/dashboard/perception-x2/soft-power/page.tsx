@@ -215,15 +215,15 @@ export default function SoftPowerPage() {
       {/* Header */}
       <motion.div variants={itemVariants} className="flex items-start justify-between">
         <div>
-          <Badge variant="default" className="mb-2 bg-gradient-to-r from-gold to-yellow-600 text-navy-500-950">
+          <Badge variant="default" className="mb-2 bg-gradient-to-r from-gold to-yellow-600 text-navy-950">
             <Sparkles className="h-4 w-4 mr-1" />
             SOFT POWER
           </Badge>
           <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold-700">UAE Soft Power & Public Diplomacy</h1>
-          <p className="mt-2 text-platinum-500-400 font-rajdhani">
+          <p className="mt-2 text-platinum-400 font-rajdhani">
             {executionMetadata.classification} | Source: {executionMetadata.outputFile}
           </p>
-          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500-500">
+          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500">
             <span className="flex items-center gap-1">
               <Calendar className="h-4 w-4" />
               {executionMetadata.dateExecuted}
@@ -243,7 +243,7 @@ export default function SoftPowerPage() {
             <Star className="h-4 w-4" />
             Rankings
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
             <Rocket className="h-4 w-4" />
             Analyze
           </Button>
@@ -301,7 +301,7 @@ export default function SoftPowerPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-platinum-500-200 font-rajdhani text-lg">{executiveSummary.keyDifferentiator}</p>
+                <p className="text-platinum-200 font-rajdhani text-lg">{executiveSummary.keyDifferentiator}</p>
               </CardContent>
             </Card>
             <Card className="glass-card bg-gradient-to-br from-emerald/20 to-navy/20 border-emerald-500/30">
@@ -312,7 +312,7 @@ export default function SoftPowerPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-platinum-500-200 text-sm">{executiveSummary.strategy}</p>
+                <p className="text-platinum-200 text-sm">{executiveSummary.strategy}</p>
               </CardContent>
             </Card>
             <Card className="glass-card bg-gradient-to-br from-platinum/20 to-navy/20 border-platinum/30">
@@ -323,7 +323,7 @@ export default function SoftPowerPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-platinum-500-200 text-sm">{executiveSummary.foundingPrinciples}</p>
+                <p className="text-platinum-200 text-sm">{executiveSummary.foundingPrinciples}</p>
               </CardContent>
             </Card>
           </div>
@@ -409,15 +409,15 @@ export default function SoftPowerPage() {
                     <div className="mt-4 grid grid-cols-3 gap-2">
                       <div className="text-center p-2 bg-emerald-500/20 rounded-lg">
                         <p className="text-lg font-bold text-emerald-500">45%</p>
-                        <p className="text-xs text-platinum-500-500">Positive</p>
+                        <p className="text-xs text-platinum-500">Positive</p>
                       </div>
                       <div className="text-center p-2 bg-rose-500/20 rounded-lg">
                         <p className="text-lg font-bold text-rose-500">25%</p>
-                        <p className="text-xs text-platinum-500-500">Negative</p>
+                        <p className="text-xs text-platinum-500">Negative</p>
                       </div>
                       <div className="text-center p-2 bg-platinum/20 rounded-lg">
                         <p className="text-lg font-bold text-platinum-500">30%</p>
-                        <p className="text-xs text-platinum-500-500">Neutral</p>
+                        <p className="text-xs text-platinum-500">Neutral</p>
                       </div>
                     </div>
                   </CardContent>
@@ -463,8 +463,8 @@ export default function SoftPowerPage() {
                     {softPowerStrategy.sixPillarsArchitecture.map((pillar, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg border border-platinum-700">
                         <p className="text-xs text-gold-700 font-semibold">#{pillar.priority}</p>
-                        <p className="text-sm text-platinum-500-200 mt-1">{pillar.pillar}</p>
-                        <p className="text-xs text-platinum-500-500 mt-1">{pillar.keyInstruments}</p>
+                        <p className="text-sm text-platinum-200 mt-1">{pillar.pillar}</p>
+                        <p className="text-xs text-platinum-500 mt-1">{pillar.keyInstruments}</p>
                       </div>
                     ))}
                   </div>
@@ -521,8 +521,8 @@ export default function SoftPowerPage() {
                     {globalRankings.historicalProgression.slice(-3).map((item, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-2xl font-bold text-gold-700">{item.year}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{item.uaeRank}</p>
-                        <p className="text-xs text-platinum-500-500 mt-1">{item.notableEvent}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{item.uaeRank}</p>
+                        <p className="text-xs text-platinum-500 mt-1">{item.notableEvent}</p>
                       </div>
                     ))}
                   </div>
@@ -542,8 +542,8 @@ export default function SoftPowerPage() {
                     {coreMetricsDashboard.slice(0, 8).map((metric, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg border border-platinum-700 text-center">
                         <p className="text-2xl font-bold text-gold-700">{metric.value}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{metric.metric}</p>
-                        <p className="text-xs text-platinum-500-500">Rank: {metric.rank}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{metric.metric}</p>
+                        <p className="text-xs text-platinum-500">Rank: {metric.rank}</p>
                       </div>
                     ))}
                   </div>
@@ -573,16 +573,16 @@ export default function SoftPowerPage() {
                   <div className="grid gap-4 lg:grid-cols-2">
                     <div className="space-y-3">
                       <div className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400">Launched</span>
+                        <span className="text-platinum-400">Launched</span>
                         <span className="text-gold-700 font-semibold">{softPowerStrategy.institutionalFramework.softPowerCouncil.launched}</span>
                       </div>
                       <div className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400">Venue</span>
-                        <span className="text-platinum-500-200">{softPowerStrategy.institutionalFramework.softPowerCouncil.venue}</span>
+                        <span className="text-platinum-400">Venue</span>
+                        <span className="text-platinum-200">{softPowerStrategy.institutionalFramework.softPowerCouncil.venue}</span>
                       </div>
                     </div>
                     <div className="p-4 bg-gold-700/10 rounded-lg border border-gold-700/30">
-                      <p className="text-sm text-platinum-500-300 italic">"{softPowerStrategy.institutionalFramework.softPowerCouncil.objective}"</p>
+                      <p className="text-sm text-platinum-300 italic">"{softPowerStrategy.institutionalFramework.softPowerCouncil.objective}"</p>
                     </div>
                   </div>
                 </CardContent>
@@ -604,7 +604,7 @@ export default function SoftPowerPage() {
                           <span className="flex h-6 w-6 rounded-full bg-emerald-500/20 text-emerald-500 text-sm font-bold items-center justify-center">
                             {idx + 1}
                           </span>
-                          <p className="text-sm text-platinum-500-200">{obj}</p>
+                          <p className="text-sm text-platinum-200">{obj}</p>
                         </div>
                       </div>
                     ))}
@@ -626,9 +626,9 @@ export default function SoftPowerPage() {
                       <div key={idx} className="flex items-center gap-4 p-3 bg-platinum-800/50 rounded-lg">
                         <span className="text-gold-700 font-bold w-12">{item.year}</span>
                         <div className="flex-1">
-                          <p className="text-platinum-500-200 text-sm">{item.event}</p>
+                          <p className="text-platinum-200 text-sm">{item.event}</p>
                           {item.official !== '-' && (
-                            <p className="text-platinum-500-500 text-xs">{item.official}</p>
+                            <p className="text-platinum-500 text-xs">{item.official}</p>
                           )}
                         </div>
                       </div>
@@ -646,7 +646,7 @@ export default function SoftPowerPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-platinum-500-200 italic text-lg">"{softPowerStrategy.foundationalPrinciples}"</p>
+                  <p className="text-platinum-200 italic text-lg">"{softPowerStrategy.foundationalPrinciples}"</p>
                 </CardContent>
               </Card>
             </div>
@@ -680,14 +680,14 @@ export default function SoftPowerPage() {
                         whileHover="hover"
                       >
                         <h4 className="font-bold text-gold-700 text-sm">{museum.institution}</h4>
-                        <p className="text-xs text-platinum-500-400 mt-1">{museum.location}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{museum.location}</p>
                         <div className="mt-2 space-y-1">
-                          <p className="text-xs text-platinum-500-500">
-                            <span className="text-platinum-500-400">Opened:</span> {museum.opened}
+                          <p className="text-xs text-platinum-500">
+                            <span className="text-platinum-400">Opened:</span> {museum.opened}
                           </p>
                           {museum.partnership !== '-' && (
-                            <p className="text-xs text-platinum-500-500">
-                              <span className="text-platinum-500-400">Partner:</span> {museum.partnership}
+                            <p className="text-xs text-platinum-500">
+                              <span className="text-platinum-400">Partner:</span> {museum.partnership}
                             </p>
                           )}
                         </div>
@@ -714,8 +714,8 @@ export default function SoftPowerPage() {
                             {program.type}
                           </Badge>
                         </div>
-                        <p className="text-sm text-platinum-500-200 mt-2">{program.program}</p>
-                        <p className="text-xs text-platinum-500-500 mt-1">{program.scope}</p>
+                        <p className="text-sm text-platinum-200 mt-2">{program.program}</p>
+                        <p className="text-xs text-platinum-500 mt-1">{program.scope}</p>
                       </div>
                     ))}
                   </div>
@@ -734,19 +734,19 @@ export default function SoftPowerPage() {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="p-4 bg-gold-700/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-gold-700">{culturalDiplomacy.expo2020Impact.participatingCountries}</p>
-                      <p className="text-sm text-platinum-500-400">Countries</p>
+                      <p className="text-sm text-platinum-400">Countries</p>
                     </div>
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-emerald-500">{culturalDiplomacy.expo2020Impact.totalVisits}</p>
-                      <p className="text-sm text-platinum-500-400">Total Visits</p>
+                      <p className="text-sm text-platinum-400">Total Visits</p>
                     </div>
                     <div className="p-4 bg-platinum/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">$20.6B</p>
-                      <p className="text-sm text-platinum-500-400">Brand Value Contribution</p>
+                      <p className="text-sm text-platinum-400">Brand Value Contribution</p>
                     </div>
                     <div className="p-4 bg-navy/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-navy-500">2/3</p>
-                      <p className="text-sm text-platinum-500-400">of Top 10 Improvement</p>
+                      <p className="text-sm text-platinum-400">of Top 10 Improvement</p>
                     </div>
                   </div>
                 </CardContent>
@@ -755,7 +755,7 @@ export default function SoftPowerPage() {
               {/* Research Finding */}
               <Card className="glass-card border-l-4 border-l-gold">
                 <CardContent className="pt-6">
-                  <p className="text-platinum-500-300 italic text-sm">"{culturalDiplomacy.researchFinding}"</p>
+                  <p className="text-platinum-300 italic text-sm">"{culturalDiplomacy.researchFinding}"</p>
                 </CardContent>
               </Card>
             </div>
@@ -782,19 +782,19 @@ export default function SoftPowerPage() {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="p-4 bg-rose-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-rose-500">3rd</p>
-                      <p className="text-sm text-platinum-500-400">Largest Donor (GNI)</p>
+                      <p className="text-sm text-platinum-400">Largest Donor (GNI)</p>
                     </div>
                     <div className="p-4 bg-gold-700/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-gold-700">Top 5</p>
-                      <p className="text-sm text-platinum-500-400">State Donors (USD)</p>
+                      <p className="text-sm text-platinum-400">State Donors (USD)</p>
                     </div>
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-emerald-500">18%</p>
-                      <p className="text-sm text-platinum-500-400">Aid as % of GNI</p>
+                      <p className="text-sm text-platinum-400">Aid as % of GNI</p>
                     </div>
                     <div className="p-4 bg-platinum/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">6x</p>
-                      <p className="text-sm text-platinum-500-400">Top Donor Relative to GNP</p>
+                      <p className="text-sm text-platinum-400">Top Donor Relative to GNP</p>
                     </div>
                   </div>
                 </CardContent>
@@ -819,7 +819,7 @@ export default function SoftPowerPage() {
                     <div className="space-y-3">
                       {humanitarianHealthDiplomacy.regionalAidDistribution.map((region, idx) => (
                         <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
-                          <span className="text-platinum-500-200">{region.region}</span>
+                          <span className="text-platinum-200">{region.region}</span>
                           <Badge variant="outline" className="border-gold-700/30 text-gold-700">{region.percentage}</Badge>
                         </div>
                       ))}
@@ -844,8 +844,8 @@ export default function SoftPowerPage() {
                           <p className="text-rose-300 font-semibold">{crisis.crisis}</p>
                           <p className="text-gold-700 font-bold">${crisis.amount}</p>
                         </div>
-                        <p className="text-xs text-platinum-500-500 mt-1">{crisis.period}</p>
-                        <p className="text-xs text-platinum-500-400 mt-2">{crisis.notes}</p>
+                        <p className="text-xs text-platinum-500 mt-1">{crisis.period}</p>
+                        <p className="text-xs text-platinum-400 mt-2">{crisis.notes}</p>
                       </div>
                     ))}
                   </div>
@@ -864,19 +864,19 @@ export default function SoftPowerPage() {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald-500">6th</p>
-                      <p className="text-xs text-platinum-500-400">Global Vaccine Donor</p>
+                      <p className="text-xs text-platinum-400">Global Vaccine Donor</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-gold-700">200M</p>
-                      <p className="text-xs text-platinum-500-400">Annual Production Target</p>
+                      <p className="text-xs text-platinum-400">Annual Production Target</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-platinum-500">6B+</p>
-                      <p className="text-xs text-platinum-500-400">Hope Consortium Capacity</p>
+                      <p className="text-xs text-platinum-400">Hope Consortium Capacity</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <CheckCircle className="h-8 w-8 text-emerald-500 mx-auto" />
-                      <p className="text-xs text-platinum-500-400 mt-1">First in Region (Sinopharm/G42)</p>
+                      <p className="text-xs text-platinum-400 mt-1">First in Region (Sinopharm/G42)</p>
                     </div>
                   </div>
                 </CardContent>
@@ -894,7 +894,7 @@ export default function SoftPowerPage() {
                   <div className="grid gap-3 md:grid-cols-2">
                     {humanitarianHealthDiplomacy.institutionalFramework.map((org, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-platinum-500-200 font-semibold text-sm">{org.organization}</p>
+                        <p className="text-platinum-200 font-semibold text-sm">{org.organization}</p>
                         <p className="text-xs text-gold-700 mt-1">{org.role}</p>
                       </div>
                     ))}
@@ -926,8 +926,8 @@ export default function SoftPowerPage() {
                     {sportsDiplomacy.majorEvents.map((event, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg border border-platinum-700">
                         <h4 className="font-bold text-gold-700 text-sm">{event.event}</h4>
-                        <p className="text-xs text-platinum-500-400 mt-1">{event.location}</p>
-                        <p className="text-xs text-platinum-500-500 mt-2">{event.note || 'Sports Event'}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{event.location}</p>
+                        <p className="text-xs text-platinum-500 mt-2">{event.note || 'Sports Event'}</p>
                         {event.investment && (
                           <p className="text-xs text-emerald-500 mt-2">Investment: {event.investment}</p>
                         )}
@@ -949,19 +949,19 @@ export default function SoftPowerPage() {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="p-4 bg-gold-700/20 rounded-lg text-center">
                       <p className="text-2xl font-bold text-gold-700">2008</p>
-                      <p className="text-xs text-platinum-500-400">Designated National Sport</p>
+                      <p className="text-xs text-platinum-400">Designated National Sport</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-platinum-500">~200,000</p>
-                      <p className="text-xs text-platinum-500-400">Emiratis Practicing</p>
+                      <p className="text-xs text-platinum-400">Emiratis Practicing</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-platinum-500">130+</p>
-                      <p className="text-xs text-platinum-500-400">Jiu-Jitsu Schools</p>
+                      <p className="text-xs text-platinum-400">Jiu-Jitsu Schools</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-platinum-500">76,000+</p>
-                      <p className="text-xs text-platinum-500-400">Students Enrolled (by 2016)</p>
+                      <p className="text-xs text-platinum-400">Students Enrolled (by 2016)</p>
                     </div>
                   </div>
                 </CardContent>
@@ -981,8 +981,8 @@ export default function SoftPowerPage() {
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg border border-platinum-700">
                         <div className="flex justify-between items-start">
                           <div>
-                            <p className="text-platinum-500-200 font-semibold">{inv.entity}</p>
-                            <p className="text-xs text-platinum-500-500 mt-1">{inv.year}</p>
+                            <p className="text-platinum-200 font-semibold">{inv.entity}</p>
+                            <p className="text-xs text-platinum-500 mt-1">{inv.year}</p>
                           </div>
                           {inv.investment && (
                             <Badge variant="outline" className="border-gold-700/30 text-gold-700">
@@ -994,7 +994,7 @@ export default function SoftPowerPage() {
                     ))}
                   </div>
                   <div className="mt-4">
-                    <p className="text-sm text-platinum-500-400">European Clubs Training in Dubai:</p>
+                    <p className="text-sm text-platinum-400">European Clubs Training in Dubai:</p>
                     <div className="flex flex-wrap gap-2 mt-2">
                       {sportsDiplomacy.clubsTrainingInDubai.map((club, idx) => (
                         <Badge key={idx} variant="outline" className="border-platinum/30 text-platinum-500">
@@ -1009,7 +1009,7 @@ export default function SoftPowerPage() {
               {/* Sportswashing Analysis */}
               <Card className="glass-card border-l-4 border-l-platinum">
                 <CardContent className="pt-6">
-                  <p className="text-platinum-500-300 italic text-sm">"{sportsDiplomacy.sportswashingAnalysis}"</p>
+                  <p className="text-platinum-300 italic text-sm">"{sportsDiplomacy.sportswashingAnalysis}"</p>
                   <p className="text-gold-700 text-sm mt-3 font-semibold">— Dr. Seth Perkin</p>
                 </CardContent>
               </Card>
@@ -1038,8 +1038,8 @@ export default function SoftPowerPage() {
                     {digitalTechnologyDiplomacy.aiStrategy.map((initiative, idx) => (
                       <div key={idx} className="p-4 bg-navy/20 rounded-lg border border-navy/30">
                         <p className="text-navy-500 font-semibold text-sm">{initiative.initiative}</p>
-                        <p className="text-xs text-platinum-500-400 mt-1">{initiative.launch}</p>
-                        <p className="text-xs text-platinum-500-500 mt-2">{initiative.goal}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{initiative.launch}</p>
+                        <p className="text-xs text-platinum-500 mt-2">{initiative.goal}</p>
                       </div>
                     ))}
                   </div>
@@ -1059,7 +1059,7 @@ export default function SoftPowerPage() {
                     {digitalTechnologyDiplomacy.digitalDiplomacyTools.map((platform, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg border border-platinum-700">
                         <div className="flex items-center justify-between">
-                          <p className="text-platinum-500-200 font-semibold">{platform.platform}</p>
+                          <p className="text-platinum-200 font-semibold">{platform.platform}</p>
                           <Badge
                             variant="outline"
                             className={platform.ministryUse === 'Primary' ? 'border-gold-700/30 text-gold-700' : 'border-platinum/30 text-platinum-500'}
@@ -1067,7 +1067,7 @@ export default function SoftPowerPage() {
                             {platform.ministryUse}
                           </Badge>
                         </div>
-                        <p className="text-xs text-platinum-500-500 mt-2">{platform.strategicPurpose}</p>
+                        <p className="text-xs text-platinum-500 mt-2">{platform.strategicPurpose}</p>
                       </div>
                     ))}
                   </div>
@@ -1087,7 +1087,7 @@ export default function SoftPowerPage() {
                     {digitalTechnologyDiplomacy.strategicGoals.map((goal, idx) => (
                       <div key={idx} className="flex items-center gap-2 p-2 bg-emerald-500/10 rounded-lg">
                         <CheckCircle className="h-4 w-4 text-emerald-500" />
-                        <p className="text-sm text-platinum-500-200">{goal}</p>
+                        <p className="text-sm text-platinum-200">{goal}</p>
                       </div>
                     ))}
                   </div>
@@ -1107,7 +1107,7 @@ export default function SoftPowerPage() {
                     {digitalTechnologyDiplomacy.digitalDiplomacyChallenges.map((challenge, idx) => (
                       <div key={idx} className="p-3 bg-rose-500/10 border border-rose-500/20 rounded-lg">
                         <p className="text-rose-300 font-semibold text-sm">{challenge.category}</p>
-                        <p className="text-xs text-platinum-500-400 mt-1">{challenge.issues}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{challenge.issues}</p>
                       </div>
                     ))}
                   </div>
@@ -1129,7 +1129,7 @@ export default function SoftPowerPage() {
                         <span className="flex h-6 w-6 rounded-full bg-gold-700/20 text-gold-700 text-sm font-bold items-center justify-center">
                           {idx + 1}
                         </span>
-                        <p className="text-sm text-platinum-500-200">{rec}</p>
+                        <p className="text-sm text-platinum-200">{rec}</p>
                       </div>
                     ))}
                   </div>
@@ -1160,7 +1160,7 @@ export default function SoftPowerPage() {
                     {challengesLimitations.externalChallenges.map((challenge, idx) => (
                       <div key={idx} className="p-4 bg-rose-500/10 border border-rose-500/20 rounded-lg">
                         <p className="text-rose-300 font-semibold text-sm">{challenge.challenge}</p>
-                        <p className="text-xs text-platinum-500-400 mt-2">{challenge.description.replace(/"/g, '')}</p>
+                        <p className="text-xs text-platinum-400 mt-2">{challenge.description.replace(/"/g, '')}</p>
                       </div>
                     ))}
                   </div>
@@ -1179,8 +1179,8 @@ export default function SoftPowerPage() {
                   <div className="grid gap-3 md:grid-cols-2">
                     {challengesLimitations.internalChallenges.map((challenge, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg border border-platinum-700">
-                        <p className="text-platinum-500-200 font-semibold text-sm">{challenge.challenge}</p>
-                        <p className="text-xs text-platinum-500-400 mt-1">{challenge.description}</p>
+                        <p className="text-platinum-200 font-semibold text-sm">{challenge.challenge}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{challenge.description}</p>
                       </div>
                     ))}
                   </div>
@@ -1207,13 +1207,13 @@ export default function SoftPowerPage() {
                         </h4>
                         <div className="mt-2 space-y-1">
                           {phase.elements?.map((el, i) => (
-                            <p key={i} className="text-xs text-platinum-500-400">
-                              <span className="text-platinum-500-300">{el.element}:</span> {el.detail}
+                            <p key={i} className="text-xs text-platinum-400">
+                              <span className="text-platinum-300">{el.element}:</span> {el.detail}
                             </p>
                           )) ||
                           phase.actions?.map((action, i) => (
-                            <p key={i} className="text-xs text-platinum-500-400">
-                              <span className="text-platinum-500-300">{action.action}:</span> {action.detail}
+                            <p key={i} className="text-xs text-platinum-400">
+                              <span className="text-platinum-300">{action.action}:</span> {action.detail}
                             </p>
                           ))}
                         </div>
@@ -1235,23 +1235,23 @@ export default function SoftPowerPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-2">
                       <div className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-xs text-platinum-500-400">Nickname</p>
-                        <p className="text-platinum-500-200 font-semibold">"{geopoliticalStrategy.militaryCapabilities.nickname}"</p>
-                        <p className="text-xs text-platinum-500-500">from US Defense Secretary James Mattis</p>
+                        <p className="text-xs text-platinum-400">Nickname</p>
+                        <p className="text-platinum-200 font-semibold">"{geopoliticalStrategy.militaryCapabilities.nickname}"</p>
+                        <p className="text-xs text-platinum-500">from US Defense Secretary James Mattis</p>
                       </div>
                       <div className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-xs text-platinum-500-400">Army Quality</p>
-                        <p className="text-platinum-500-200 text-sm">{geopoliticalStrategy.militaryCapabilities.armyQuality}</p>
+                        <p className="text-xs text-platinum-400">Army Quality</p>
+                        <p className="text-platinum-200 text-sm">{geopoliticalStrategy.militaryCapabilities.armyQuality}</p>
                       </div>
                     </div>
                     <div className="space-y-2">
                       <div className="p-3 bg-rose-500/10 border border-rose-500/20 rounded-lg">
                         <p className="text-xs text-rose-400">EDI Group Ranking</p>
-                        <p className="text-platinum-500-200 font-semibold">22nd among global arms firms</p>
+                        <p className="text-platinum-200 font-semibold">22nd among global arms firms</p>
                       </div>
                       <div className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-xs text-platinum-500-400">Capabilities</p>
-                        <p className="text-platinum-500-200 text-sm">Fifth-gen fighter jets, drones, air defense</p>
+                        <p className="text-xs text-platinum-400">Capabilities</p>
+                        <p className="text-platinum-200 text-sm">Fifth-gen fighter jets, drones, air defense</p>
                       </div>
                     </div>
                   </div>
@@ -1261,7 +1261,7 @@ export default function SoftPowerPage() {
               {/* Key Quote */}
               <Card className="glass-card border-l-4 border-l-gold">
                 <CardContent className="pt-6">
-                  <p className="text-platinum-500-300 italic text-lg">"{geopoliticalStrategy.keyQuote}"</p>
+                  <p className="text-platinum-300 italic text-lg">"{geopoliticalStrategy.keyQuote}"</p>
                 </CardContent>
               </Card>
 
@@ -1277,7 +1277,7 @@ export default function SoftPowerPage() {
                   <div className="space-y-4">
                     {sentimentAnalysis.byTopic.slice(0, 6).map((item, idx) => (
                       <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-200 text-sm">{item.topic}</span>
+                        <span className="text-platinum-200 text-sm">{item.topic}</span>
                         <Badge
                           variant="outline"
                           className={
@@ -1310,7 +1310,7 @@ export default function SoftPowerPage() {
               <p className="text-gold-700 font-semibold text-sm mb-2">Government & Official</p>
               <div className="space-y-1">
                 {sourceRegistry.governmentOfficial.slice(0, 3).map((src, idx) => (
-                  <p key={idx} className="text-xs text-platinum-500-400">{src.source}</p>
+                  <p key={idx} className="text-xs text-platinum-400">{src.source}</p>
                 ))}
               </div>
             </div>
@@ -1318,7 +1318,7 @@ export default function SoftPowerPage() {
               <p className="text-platinum-500 font-semibold text-sm mb-2">Academic Research</p>
               <div className="space-y-1">
                 {sourceRegistry.academicResearch.slice(0, 3).map((src, idx) => (
-                  <p key={idx} className="text-xs text-platinum-500-400">{src.type}</p>
+                  <p key={idx} className="text-xs text-platinum-400">{src.type}</p>
                 ))}
               </div>
             </div>
@@ -1326,7 +1326,7 @@ export default function SoftPowerPage() {
               <p className="text-emerald-500 font-semibold text-sm mb-2">Media</p>
               <div className="space-y-1">
                 {sourceRegistry.media.slice(0, 3).map((src, idx) => (
-                  <p key={idx} className="text-xs text-platinum-500-400">{src.source}</p>
+                  <p key={idx} className="text-xs text-platinum-400">{src.source}</p>
                 ))}
               </div>
             </div>
@@ -1334,7 +1334,7 @@ export default function SoftPowerPage() {
               <p className="text-navy-500 font-semibold text-sm mb-2">International Orgs</p>
               <div className="space-y-1">
                 {sourceRegistry.internationalOrganizations.slice(0, 3).map((src, idx) => (
-                  <p key={idx} className="text-xs text-platinum-500-400">{src.source}</p>
+                  <p key={idx} className="text-xs text-platinum-400">{src.source}</p>
                 ))}
               </div>
             </div>

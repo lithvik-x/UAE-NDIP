@@ -49,12 +49,12 @@ export function TrendsInsights({
             <div className="grid gap-4 sm:grid-cols-2">
               {keyTrendsInsights.map((trend, idx) => (
                 <div key={idx} className="p-4 glass-subtle rounded-lg">
-                  <p className="font-semibold text-navy-500-900 dark:text-platinum-500-100 mb-2">{trend.trend}</p>
-                  <p className="text-xs text-platinum-500-500 mb-1">
+                  <p className="font-semibold text-navy-900 dark:text-platinum-100 mb-2">{trend.trend}</p>
+                  <p className="text-xs text-platinum-500 mb-1">
                     <span className="font-medium text-cyan-600 dark:text-cyan-400">Observation: </span>
                     {trend.observation}
                   </p>
-                  <p className="text-xs text-platinum-500-500">
+                  <p className="text-xs text-platinum-500">
                     <span className="font-medium text-emerald-600 dark:text-emerald-400">Implication: </span>
                     {trend.implication}
                   </p>
@@ -79,7 +79,7 @@ export function TrendsInsights({
             <div className="space-y-3">
               {uaeSocialMediaStats.map((stat, idx) => (
                 <div key={idx} className="flex items-center justify-between p-3 glass-subtle rounded-lg">
-                  <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{stat.metric}</span>
+                  <span className="text-sm text-platinum-700 dark:text-platinum-300">{stat.metric}</span>
                   <div className="flex items-center gap-2">
                     <span className="text-sm font-bold text-gold-700">{stat.value}</span>
                     <Badge
@@ -111,10 +111,10 @@ export function TrendsInsights({
               {influencerFollowingMetrics.map((metric, idx) => (
                 <div key={idx} className="p-3 glass-subtle rounded-lg">
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{metric.metric}</span>
+                    <span className="text-sm text-platinum-700 dark:text-platinum-300">{metric.metric}</span>
                     <span className="text-sm font-bold text-gold-700">{metric.value}</span>
                   </div>
-                  <p className="text-xs text-platinum-500-500 text-right">Source: {metric.source}</p>
+                  <p className="text-xs text-platinum-500 text-right">Source: {metric.source}</p>
                 </div>
               ))}
             </div>
@@ -142,7 +142,7 @@ export function TrendsInsights({
                 showGrid={true}
               />
             ) : (
-              <div className="flex items-center justify-center h-48 text-platinum-500-500">No engagement data</div>
+              <div className="flex items-center justify-center h-48 text-platinum-500">No engagement data</div>
             )}
           </CardContent>
         </Card>
@@ -160,10 +160,10 @@ export function TrendsInsights({
               {engagementRankingsDubai.slice(0, 4).map((item) => (
                 <div key={item.rank} className="space-y-2">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="font-medium text-platinum-500-700 dark:text-platinum-500-300">
+                    <span className="font-medium text-platinum-700 dark:text-platinum-300">
                       #{item.rank} {item.category}
                     </span>
-                    <span className="text-platinum-500-500">{item.engagementRate}%</span>
+                    <span className="text-platinum-500">{item.engagementRate}%</span>
                   </div>
                   <Progress value={item.engagementRate} className="h-2" />
                 </div>
@@ -187,24 +187,24 @@ export function TrendsInsights({
             <div className="space-y-4">
               <div className="p-4 glass-subtle rounded-lg">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-platinum-500-700 dark:text-platinum-500-300">Total Agencies</span>
+                  <span className="text-sm font-medium text-platinum-700 dark:text-platinum-300">Total Agencies</span>
                   <span className="text-lg font-bold text-gold-700">300+</span>
                 </div>
-                <p className="text-xs text-platinum-500-500">Influencer marketing agencies in UAE</p>
+                <p className="text-xs text-platinum-500">Influencer marketing agencies in UAE</p>
               </div>
               <div className="p-4 glass-subtle rounded-lg">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-platinum-500-700 dark:text-platinum-500-300">Tier 1 Fee Range</span>
+                  <span className="text-sm font-medium text-platinum-700 dark:text-platinum-300">Tier 1 Fee Range</span>
                   <span className="text-lg font-bold text-emerald-600">$18K-$50K+</span>
                 </div>
-                <p className="text-xs text-platinum-500-500">Per sponsored post for mega-influencers</p>
+                <p className="text-xs text-platinum-500">Per sponsored post for mega-influencers</p>
               </div>
               <div className="p-4 glass-subtle rounded-lg">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-platinum-500-700 dark:text-platinum-500-300">Micro Engagement</span>
+                  <span className="text-sm font-medium text-platinum-700 dark:text-platinum-300">Micro Engagement</span>
                   <span className="text-lg font-bold text-cyan-600">10-20%</span>
                 </div>
-                <p className="text-xs text-platinum-500-500">vs 1-3% for mega-influencers</p>
+                <p className="text-xs text-platinum-500">vs 1-3% for mega-influencers</p>
               </div>
             </div>
           </CardContent>

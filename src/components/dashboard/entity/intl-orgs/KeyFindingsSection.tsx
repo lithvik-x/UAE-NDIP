@@ -67,8 +67,8 @@ export function KeyFindingsSection({ findings }: KeyFindingsSectionProps) {
                       }`} />
                     </div>
                     <div className="flex-1">
-                      <p className="font-medium text-navy-500-900 dark:text-platinum-500-100">{finding.title}</p>
-                      <p className="text-xs text-platinum-500-500 mt-1">{finding.description}</p>
+                      <p className="font-medium text-navy-900 dark:text-platinum-100">{finding.title}</p>
+                      <p className="text-xs text-platinum-500 mt-1">{finding.description}</p>
                     </div>
                   </div>
                 </CardContent>

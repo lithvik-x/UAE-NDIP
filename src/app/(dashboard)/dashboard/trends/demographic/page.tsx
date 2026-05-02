@@ -200,7 +200,7 @@ export default function DemographicTrendsPage() {
         <div>
           <Badge variant="denim" className="mb-2">TRENDS</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">Demographic Trends</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Population dynamics, migration patterns, and workforce trends
           </p>
         </div>
@@ -328,25 +328,25 @@ export default function DemographicTrendsPage() {
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <Baby className="mx-auto h-6 w-6 text-gold-700 mb-2" />
-                      <p className="text-xs text-platinum-500-400">Fertility Rate</p>
+                      <p className="text-xs text-platinum-400">Fertility Rate</p>
                       <p className="text-xl font-bold text-gold-700">2.1</p>
                       <span className="text-xs text-emerald-500">+5% YoY</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <Users className="mx-auto h-6 w-6 text-navy-500 mb-2" />
-                      <p className="text-xs text-platinum-500-400">Median Age</p>
+                      <p className="text-xs text-platinum-400">Median Age</p>
                       <p className="text-xl font-bold text-navy-500">32</p>
-                      <span className="text-xs text-platinum-500-400">Years</span>
+                      <span className="text-xs text-platinum-400">Years</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <Home className="mx-auto h-6 w-6 text-emerald-500 mb-2" />
-                      <p className="text-xs text-platinum-500-400">Urban Population</p>
+                      <p className="text-xs text-platinum-400">Urban Population</p>
                       <p className="text-xl font-bold text-emerald-500">88%</p>
                       <span className="text-xs text-emerald-500">+1% YoY</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <GraduationCap className="mx-auto h-6 w-6 text-platinum-500 mb-2" />
-                      <p className="text-xs text-platinum-500-400">Literacy Rate</p>
+                      <p className="text-xs text-platinum-400">Literacy Rate</p>
                       <p className="text-xl font-bold text-platinum-500">96%</p>
                       <span className="text-xs text-emerald-500">+0.5% YoY</span>
                     </div>
@@ -389,12 +389,12 @@ export default function DemographicTrendsPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium text-platinum-500-200">Male</span>
+                        <span className="text-sm font-medium text-platinum-200">Male</span>
                         <span className="text-lg font-bold text-gold-700">68%</span>
                       </div>
                       <Progress value={68} className="h-4" />
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium text-platinum-500-200">Female</span>
+                        <span className="text-sm font-medium text-platinum-200">Female</span>
                         <span className="text-lg font-bold text-navy-500">32%</span>
                       </div>
                       <Progress value={32} className="h-4" />
@@ -411,9 +411,9 @@ export default function DemographicTrendsPage() {
                     <div className="space-y-3">
                       {ageDistributionData.map((group, index) => (
                         <div key={index} className="flex items-center justify-between">
-                          <span className="text-sm text-platinum-500-400">{group.group}</span>
+                          <span className="text-sm text-platinum-400">{group.group}</span>
                           <div className="flex items-center gap-2">
-                            <span className="text-sm font-medium text-platinum-500-200">{(group.male + group.female)}%</span>
+                            <span className="text-sm font-medium text-platinum-200">{(group.male + group.female)}%</span>
                             <div className="w-20 h-2 bg-platinum-700 rounded-full overflow-hidden">
                               <div
                                 className="h-full rounded-full"
@@ -438,7 +438,7 @@ export default function DemographicTrendsPage() {
                     <div className="grid gap-4 sm:grid-cols-2">
                       {familyData.map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4">
-                          <span className="text-sm font-medium text-platinum-500-200">{item.metric}</span>
+                          <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
                           <div className="flex items-center gap-3">
                             <span className="text-lg font-bold text-navy-500">{item.value}</span>
                             <Badge variant="outline" className="text-xs text-emerald-500">{item.trend}</Badge>
@@ -495,8 +495,8 @@ export default function DemographicTrendsPage() {
                               <Globe className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{community.nationality}</p>
-                              <p className="text-sm text-platinum-500-400">{community.percentage}% of total</p>
+                              <p className="font-semibold text-platinum-200">{community.nationality}</p>
+                              <p className="text-sm text-platinum-400">{community.percentage}% of total</p>
                             </div>
                           </div>
                           <div className="text-right">
@@ -519,19 +519,19 @@ export default function DemographicTrendsPage() {
                   <div className="grid gap-4 sm:grid-cols-3">
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <UserPlus className="mx-auto h-6 w-6 text-emerald-500 mb-2" />
-                      <p className="text-xs text-platinum-500-400">New Visas (2024)</p>
+                      <p className="text-xs text-platinum-400">New Visas (2024)</p>
                       <p className="text-xl font-bold text-emerald-500">1.2M</p>
                       <span className="text-xs text-emerald-500">+15% YoY</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <UserMinus className="mx-auto h-6 w-6 text-rose-500 mb-2" />
-                      <p className="text-xs text-platinum-500-400">Departures (2024)</p>
+                      <p className="text-xs text-platinum-400">Departures (2024)</p>
                       <p className="text-xl font-bold text-rose-500">0.8M</p>
                       <span className="text-xs text-emerald-500">+5% YoY</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <TrendingUp className="mx-auto h-6 w-6 text-gold-700 mb-2" />
-                      <p className="text-xs text-platinum-500-400">Net Migration</p>
+                      <p className="text-xs text-platinum-400">Net Migration</p>
                       <p className="text-xl font-bold text-gold-700">+400K</p>
                       <span className="text-xs text-emerald-500">+22% YoY</span>
                     </div>
@@ -594,9 +594,9 @@ export default function DemographicTrendsPage() {
                       {nationalizationData.map((sector, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-500-200">{sector.sector}</span>
+                            <span className="text-sm font-medium text-platinum-200">{sector.sector}</span>
                             <div className="flex items-center gap-4">
-                              <span className="text-sm text-platinum-500-400">Target: {sector.target}%</span>
+                              <span className="text-sm text-platinum-400">Target: {sector.target}%</span>
                               <span className="text-sm font-bold text-navy-500">Current: {sector.current}%</span>
                             </div>
                           </div>
@@ -655,7 +655,7 @@ export default function DemographicTrendsPage() {
                         { metric: 'Part-time Workers', value: '85K', change: '+12%' },
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                          <span className="text-sm font-medium text-platinum-500-200">{item.metric}</span>
+                          <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
                           <div className="flex items-center gap-3">
                             <span className="text-lg font-bold text-gold-700">{item.value}</span>
                             <Badge variant="outline" className="text-xs text-emerald-500">{item.change}</Badge>
@@ -740,10 +740,10 @@ export default function DemographicTrendsPage() {
                     <div className="space-y-3">
                       {genZConsumerData.map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                          <span className="text-sm font-medium text-platinum-500-200">{item.metric}</span>
+                          <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
                           <div className="flex items-center gap-2">
                             <span className="text-lg font-bold text-gold-700">{item.value}</span>
-                            <span className="text-xs text-platinum-500-400">{item.unit}</span>
+                            <span className="text-xs text-platinum-400">{item.unit}</span>
                           </div>
                         </div>
                       ))}
@@ -761,10 +761,10 @@ export default function DemographicTrendsPage() {
                     <div className="space-y-3">
                       {genAlphaData.map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                          <span className="text-sm font-medium text-platinum-500-200">{item.metric}</span>
+                          <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
                           <div className="flex items-center gap-2">
                             <span className="text-lg font-bold text-platinum-500">{item.value}</span>
-                            <span className="text-xs text-platinum-500-400">{item.unit}</span>
+                            <span className="text-xs text-platinum-400">{item.unit}</span>
                           </div>
                         </div>
                       ))}
@@ -784,9 +784,9 @@ export default function DemographicTrendsPage() {
                     {digitalNativeMetrics.map((item, index) => (
                       <div key={index} className="rounded-lg bg-platinum-800/50 p-4 text-center">
                         <Smartphone className="mx-auto h-6 w-6 text-navy-500 mb-2" />
-                        <p className="text-xs text-platinum-500-400">{item.metric}</p>
+                        <p className="text-xs text-platinum-400">{item.metric}</p>
                         <p className="text-xl font-bold text-navy-500">{item.value}</p>
-                        <span className="text-xs text-platinum-500-400">{item.unit}</span>
+                        <span className="text-xs text-platinum-400">{item.unit}</span>
                         {item.note && <p className="text-xs text-emerald-500 mt-1">{item.note}</p>}
                       </div>
                     ))}
@@ -805,9 +805,9 @@ export default function DemographicTrendsPage() {
                     {mentalHealthMetrics.map((item, index) => (
                       <div key={index} className="rounded-lg bg-platinum-800/50 p-4 text-center">
                         <Heart className="mx-auto h-6 w-6 text-rose-500 mb-2" />
-                        <p className="text-xs text-platinum-500-400">{item.metric}</p>
+                        <p className="text-xs text-platinum-400">{item.metric}</p>
                         <p className="text-xl font-bold text-rose-500">{item.value}</p>
-                        <span className="text-xs text-platinum-500-400">{item.unit}</span>
+                        <span className="text-xs text-platinum-400">{item.unit}</span>
                         {item.change && <p className="text-xs text-emerald-500 mt-1">{item.change}</p>}
                         {item.note && <p className="text-xs text-emerald-500 mt-1">{item.note}</p>}
                       </div>
@@ -827,10 +827,10 @@ export default function DemographicTrendsPage() {
                     <div className="space-y-3">
                       {emiratizationMetrics.map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                          <span className="text-sm font-medium text-platinum-500-200">{item.metric}</span>
+                          <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
                           <div className="flex items-center gap-2">
                             <span className="text-lg font-bold text-emerald-500">{item.value.toLocaleString()}</span>
-                            <span className="text-xs text-platinum-500-400">{item.unit}</span>
+                            <span className="text-xs text-platinum-400">{item.unit}</span>
                           </div>
                         </div>
                       ))}
@@ -848,10 +848,10 @@ export default function DemographicTrendsPage() {
                     <div className="space-y-3">
                       {gigEconomyData.map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                          <span className="text-sm font-medium text-platinum-500-200">{item.metric}</span>
+                          <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
                           <div className="flex items-center gap-2">
                             <span className="text-lg font-bold text-gold-700">{item.value.toLocaleString()}</span>
-                            <span className="text-xs text-platinum-500-400">{item.unit}</span>
+                            <span className="text-xs text-platinum-400">{item.unit}</span>
                           </div>
                         </div>
                       ))}
@@ -871,10 +871,10 @@ export default function DemographicTrendsPage() {
                     <div className="space-y-3">
                       {housingSupportData.map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                          <span className="text-sm font-medium text-platinum-500-200">{item.metric}</span>
+                          <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
                           <div className="flex items-center gap-2">
                             <span className="text-lg font-bold text-navy-500">{item.value}</span>
-                            <span className="text-xs text-platinum-500-400">{item.unit}</span>
+                            <span className="text-xs text-platinum-400">{item.unit}</span>
                           </div>
                         </div>
                       ))}
@@ -892,10 +892,10 @@ export default function DemographicTrendsPage() {
                     <div className="space-y-3">
                       {nationalIdentityData.map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                          <span className="text-sm font-medium text-platinum-500-200">{item.metric}</span>
+                          <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
                           <div className="flex items-center gap-2">
                             <span className="text-lg font-bold text-platinum-500">{item.value}</span>
-                            <span className="text-xs text-platinum-500-400">{item.unit}</span>
+                            <span className="text-xs text-platinum-400">{item.unit}</span>
                           </div>
                         </div>
                       ))}

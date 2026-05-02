@@ -47,7 +47,7 @@ export default function ChinesePage() {
               Chinese Language
             </span>
           </h1>
-          <p className="mt-2 text-platinum-500-400">Chinese language intelligence — UAE-China strategic partnership, trade, and BRI implications</p>
+          <p className="mt-2 text-platinum-400">Chinese language intelligence — UAE-China strategic partnership, trade, and BRI implications</p>
         </div>
       </motion.div>
 
@@ -78,7 +78,7 @@ export default function ChinesePage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0"><CardTitle className="text-lg flex items-center gap-2"><Globe className="h-5 w-5 text-red-500" />Strategic Context</CardTitle></CardHeader>
                   <CardContent className="px-0 pb-0">
-                    <div className="space-y-3 text-sm text-platinum-500-300">
+                    <div className="space-y-3 text-sm text-platinum-300">
                       <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-emerald-500" />$85B+ annual trade volume</div>
                       <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-emerald-500" />BRI: key infrastructure partner</div>
                       <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-emerald-500" />Huawei, Alibaba significant presence</div>
@@ -100,11 +100,11 @@ export default function ChinesePage() {
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
                       className="rounded-lg bg-gradient-to-r from-red-500/10 to-orange-600/5 p-4 border border-red-500/30">
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xl text-platinum-500-100 font-rajdhani">{p.phrase}</span>
+                        <span className="text-xl text-platinum-100 font-rajdhani">{p.phrase}</span>
                         <Badge variant="outline" className="border-red-500/50 text-red-400">{p.pinyin}</Badge>
                       </div>
                       <p className="text-sm text-cyan-400 mb-1">{p.translation}</p>
-                      <p className="text-xs text-platinum-500-400">Context: {p.context}</p>
+                      <p className="text-xs text-platinum-400">Context: {p.context}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -128,7 +128,7 @@ export default function ChinesePage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }}
                     className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="font-medium text-platinum-500-200">{t.topic}</span>
+                      <span className="font-medium text-platinum-200">{t.topic}</span>
                       <Badge variant="outline" className="border-emerald-500/50 text-emerald-500">{t.sentiment}</Badge>
                     </div>
                     <div className="h-2 bg-platinum-700 rounded-full overflow-hidden">

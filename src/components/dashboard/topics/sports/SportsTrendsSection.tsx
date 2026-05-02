@@ -108,20 +108,20 @@ export function SportsTrendsSection({
                         <div
                           className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold ${
                             index === 0
-                              ? 'bg-gold text-navy-500-950'
+                              ? 'bg-gold text-navy-950'
                               : index < 3
                                 ? 'bg-platinum/30 text-platinum-500'
-                                : 'bg-platinum-600/30 text-platinum-500-400'
+                                : 'bg-platinum-600/30 text-platinum-400'
                           }`}
                         >
                           {team.pos}
                         </div>
                         <div className="flex-1">
-                          <p className="font-semibold text-platinum-500-200">{team.team}</p>
+                          <p className="font-semibold text-platinum-200">{team.team}</p>
                         </div>
                         <div className="text-right">
                           <span className="text-lg font-bold text-gold-700">{team.pts}</span>
-                          <span className="text-xs text-platinum-500-400 ml-2">pts</span>
+                          <span className="text-xs text-platinum-400 ml-2">pts</span>
                         </div>
                       </div>
                     ))}
@@ -148,12 +148,12 @@ export function SportsTrendsSection({
                           {index + 1}
                         </div>
                         <div className="flex-1">
-                          <p className="font-semibold text-platinum-500-200">{scorer.player}</p>
-                          <p className="text-xs text-platinum-500-400">{scorer.club}</p>
+                          <p className="font-semibold text-platinum-200">{scorer.player}</p>
+                          <p className="text-xs text-platinum-400">{scorer.club}</p>
                         </div>
                         <div className="text-right">
                           <span className="text-lg font-bold text-gold-700">{scorer.goals}</span>
-                          <span className="text-xs text-platinum-500-400 ml-1">goals</span>
+                          <span className="text-xs text-platinum-400 ml-1">goals</span>
                         </div>
                       </div>
                     ))}
@@ -179,7 +179,7 @@ export function SportsTrendsSection({
                       className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3 text-center"
                     >
                       <div className="text-2xl font-bold text-gold-700">{item.value}</div>
-                      <p className="text-sm text-platinum-500-400 mt-1">{item.item}</p>
+                      <p className="text-sm text-platinum-400 mt-1">{item.item}</p>
                     </div>
                   ))}
                 </div>

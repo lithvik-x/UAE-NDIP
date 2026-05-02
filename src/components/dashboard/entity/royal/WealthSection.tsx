@@ -62,8 +62,8 @@ export function WealthSection({
               {wealthMetrics.map((w, i) => (
                 <div key={i} className="flex items-center justify-between py-2 border-b border-platinum-200/30 dark:border-platinum-700/30 last:border-0">
                   <div>
-                    <p className="text-sm font-medium text-navy-500-900 dark:text-platinum-500-100">{w.entity}</p>
-                    <p className="text-xs text-platinum-500-500">Source: {w.source}</p>
+                    <p className="text-sm font-medium text-navy-900 dark:text-platinum-100">{w.entity}</p>
+                    <p className="text-xs text-platinum-500">Source: {w.source}</p>
                   </div>
                   <Badge variant="gold" className="text-xs font-semibold shrink-0 ml-2">{w.amount}</Badge>
                 </div>

@@ -34,7 +34,7 @@ export default function PerceptionGapPage() {
   if (!data) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-500-400">Loading Perception Gap data...</div>
+        <div className="text-platinum-400">Loading Perception Gap data...</div>
       </div>
     )
   }
@@ -72,7 +72,7 @@ export default function PerceptionGapPage() {
               Perception Gap
             </span>
           </h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Analysis of gaps between UAE self-presentation and external reality — 10 categories, 200+ data points, 100% verified
           </p>
         </div>

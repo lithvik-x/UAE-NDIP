@@ -79,7 +79,7 @@ export default function YouTubePage() {
         animate={{ opacity: 1 }}
         className="flex items-center justify-center min-h-[400px]"
       >
-        <div className="text-platinum-500-400">Loading YouTube intelligence data...</div>
+        <div className="text-platinum-400">Loading YouTube intelligence data...</div>
       </motion.div>
     )
   }
@@ -161,7 +161,7 @@ export default function YouTubePage() {
         <div>
           <Badge variant="denim" className="mb-2">SOCIAL INTELLIGENCE</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">YouTube & Video Content</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Video platform intelligence in UAE - channels, viewership, and government control
           </p>
         </div>
@@ -200,7 +200,7 @@ export default function YouTubePage() {
             >
               <item.icon className={`h-5 w-5 ${item.color}`} />
               <div>
-                <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                <p className="text-sm text-platinum-400">{item.metric}</p>
                 <p className={`font-bold ${item.color}`}>{item.value}</p>
               </div>
             </motion.div>
@@ -395,7 +395,7 @@ export default function YouTubePage() {
                                 >
                                   <div className="flex items-center gap-3">
                                     <Play className="h-4 w-4 text-navy-500" />
-                                    <span className="text-sm font-medium text-platinum-500-200">{topic}</span>
+                                    <span className="text-sm font-medium text-platinum-200">{topic}</span>
                                   </div>
                                   <Badge variant="outline" className="text-navy-500">#{idx + 1}</Badge>
                                 </motion.div>
@@ -423,7 +423,7 @@ export default function YouTubePage() {
                                 className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3"
                               >
                                 <AlertCircle className="h-4 w-4 text-rose-500 mt-0.5" />
-                                <span className="text-sm text-platinum-500-300">{concern}</span>
+                                <span className="text-sm text-platinum-300">{concern}</span>
                               </motion.div>
                             ))}
                           </div>
@@ -469,17 +469,17 @@ export default function YouTubePage() {
                                 </div>
                                 <div>
                                   <div className="flex items-center gap-2">
-                                    <p className="font-semibold text-platinum-500-200">{account.handle}</p>
+                                    <p className="font-semibold text-platinum-200">{account.handle}</p>
                                     {account.verified && (
                                       <Badge variant="outline" className="text-navy-500 border-navy">Verified</Badge>
                                     )}
                                   </div>
-                                  <p className="text-sm text-platinum-500-400">{account.platform}</p>
+                                  <p className="text-sm text-platinum-400">{account.platform}</p>
                                 </div>
                               </div>
                               <div className="text-right">
                                 <p className="text-lg font-bold text-gold-700">{account.followers ? `${(account.followers / 1000000).toFixed(1)}M` : 'N/A'}</p>
-                                <p className="text-xs text-platinum-500-400">subscribers</p>
+                                <p className="text-xs text-platinum-400">subscribers</p>
                               </div>
                             </motion.div>
                           ))}
@@ -501,7 +501,7 @@ export default function YouTubePage() {
                         >
                           <div className="flex items-center gap-3">
                             <Eye className="h-5 w-5 text-gold-700" />
-                            <span className="text-sm font-medium text-platinum-500-200">Avg Views</span>
+                            <span className="text-sm font-medium text-platinum-200">Avg Views</span>
                           </div>
                           <span className="text-xl font-bold text-gold-700">{(metrics?.engagement?.avgViews || 45000).toLocaleString()}</span>
                         </motion.div>
@@ -511,7 +511,7 @@ export default function YouTubePage() {
                         >
                           <div className="flex items-center gap-3">
                             <ThumbsUp className="h-5 w-5 text-navy-500" />
-                            <span className="text-sm font-medium text-platinum-500-200">Avg Likes</span>
+                            <span className="text-sm font-medium text-platinum-200">Avg Likes</span>
                           </div>
                           <span className="text-xl font-bold text-navy-500">{(metrics?.engagement?.avgLikes || 2100).toLocaleString()}</span>
                         </motion.div>
@@ -521,7 +521,7 @@ export default function YouTubePage() {
                         >
                           <div className="flex items-center gap-3">
                             <MessageSquare className="h-5 w-5 text-platinum-500" />
-                            <span className="text-sm font-medium text-platinum-500-200">Avg Comments</span>
+                            <span className="text-sm font-medium text-platinum-200">Avg Comments</span>
                           </div>
                           <span className="text-xl font-bold text-platinum-500">{(metrics?.engagement?.avgComments || 340).toLocaleString()}</span>
                         </motion.div>
@@ -556,7 +556,7 @@ export default function YouTubePage() {
                         >
                           <div className="flex items-center gap-3">
                             <Shield className="h-5 w-5 text-gold-700" />
-                            <span className="text-sm font-medium text-platinum-500-200">Compliance Rate</span>
+                            <span className="text-sm font-medium text-platinum-200">Compliance Rate</span>
                           </div>
                           <span className="text-xl font-bold text-gold-700">{censorship?.complianceRate || 75}%</span>
                         </motion.div>
@@ -566,7 +566,7 @@ export default function YouTubePage() {
                         >
                           <div className="flex items-center gap-3">
                             <Globe className="h-5 w-5 text-navy-500" />
-                            <span className="text-sm font-medium text-platinum-500-200">Gov Requests</span>
+                            <span className="text-sm font-medium text-platinum-200">Gov Requests</span>
                           </div>
                           <span className="text-xl font-bold text-navy-500">{censorship?.governmentRequests || 234}</span>
                         </motion.div>
@@ -576,12 +576,12 @@ export default function YouTubePage() {
                         >
                           <div className="flex items-center gap-3">
                             <AlertCircle className="h-5 w-5 text-rose-500" />
-                            <span className="text-sm font-medium text-platinum-500-200">Content Removed</span>
+                            <span className="text-sm font-medium text-platinum-200">Content Removed</span>
                           </div>
                           <span className="text-xl font-bold text-rose-500">{censorship?.contentRemoved?.toLocaleString() || '1,247'}</span>
                         </motion.div>
                       </div>
-                      <p className="mt-4 text-sm text-platinum-500-400">
+                      <p className="mt-4 text-sm text-platinum-400">
                         {censorship?.notes || 'Selective removal; government channels dominate recommendations'}
                       </p>
                     </CardContent>
@@ -603,7 +603,7 @@ export default function YouTubePage() {
                             className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3"
                           >
                             <AlertCircle className="h-4 w-4 text-rose-500 mt-0.5" />
-                            <span className="text-sm text-platinum-500-300">{indicator}</span>
+                            <span className="text-sm text-platinum-300">{indicator}</span>
                           </motion.div>
                         )) || [
                           'View botting on government channels',
@@ -618,7 +618,7 @@ export default function YouTubePage() {
                             className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3"
                           >
                             <AlertCircle className="h-4 w-4 text-rose-500 mt-0.5" />
-                            <span className="text-sm text-platinum-500-300">{indicator}</span>
+                            <span className="text-sm text-platinum-300">{indicator}</span>
                           </motion.div>
                         ))}
                       </div>
@@ -653,7 +653,7 @@ export default function YouTubePage() {
                                   {narrative.topic}
                                 </Badge>
                               </div>
-                              <p className="text-sm text-platinum-500-300">{narrative.narrative}</p>
+                              <p className="text-sm text-platinum-300">{narrative.narrative}</p>
                             </motion.div>
                           ))}
                         </div>
@@ -690,28 +690,28 @@ export default function YouTubePage() {
                           className="rounded-lg bg-rose-500/10 border border-rose-500/30 p-4 text-center"
                         >
                           <p className="text-3xl font-bold text-rose-500">2,819+</p>
-                          <p className="text-sm text-platinum-500-400">Missile/Drone Attacks</p>
+                          <p className="text-sm text-platinum-400">Missile/Drone Attacks</p>
                         </motion.div>
                         <motion.div
                           whileHover={{ scale: 1.05 }}
                           className="rounded-lg bg-rose-500/10 border border-rose-500/30 p-4 text-center"
                         >
                           <p className="text-3xl font-bold text-rose-500">$240B</p>
-                          <p className="text-sm text-platinum-500-400">Stock Market Losses</p>
+                          <p className="text-sm text-platinum-400">Stock Market Losses</p>
                         </motion.div>
                         <motion.div
                           whileHover={{ scale: 1.05 }}
                           className="rounded-lg bg-gold-700/10 border border-gold-700/30 p-4 text-center"
                         >
                           <p className="text-3xl font-bold text-gold-700">5x</p>
-                          <p className="text-sm text-platinum-500-400">vs Israel Attacks</p>
+                          <p className="text-sm text-platinum-400">vs Israel Attacks</p>
                         </motion.div>
                         <motion.div
                           whileHover={{ scale: 1.05 }}
                           className="rounded-lg bg-gold-700/10 border border-gold-700/30 p-4 text-center"
                         >
                           <p className="text-3xl font-bold text-gold-700">1st</p>
-                          <p className="text-sm text-platinum-500-400">Iron Dome Overseas</p>
+                          <p className="text-sm text-platinum-400">Iron Dome Overseas</p>
                         </motion.div>
                       </div>
                     </CardContent>
@@ -740,7 +740,7 @@ export default function YouTubePage() {
                               className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3"
                             >
                               <Activity className="h-4 w-4 text-rose-500 mt-0.5" />
-                              <span className="text-sm text-platinum-500-300">{item}</span>
+                              <span className="text-sm text-platinum-300">{item}</span>
                             </motion.div>
                           ))}
                         </div>
@@ -769,7 +769,7 @@ export default function YouTubePage() {
                               className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3"
                             >
                               <AlertCircle className="h-4 w-4 text-gold-700 mt-0.5" />
-                              <span className="text-sm text-platinum-500-300">{item}</span>
+                              <span className="text-sm text-platinum-300">{item}</span>
                             </motion.div>
                           ))}
                         </div>
@@ -804,23 +804,23 @@ export default function YouTubePage() {
                       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-4">
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 text-center">
                           <p className="text-2xl font-bold text-rose-500">78,000</p>
-                          <p className="text-xs text-platinum-500-400">Documents</p>
+                          <p className="text-xs text-platinum-400">Documents</p>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 text-center">
                           <p className="text-2xl font-bold text-rose-500">€5.7M</p>
-                          <p className="text-xs text-platinum-500-400">Payments</p>
+                          <p className="text-xs text-platinum-400">Payments</p>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 text-center">
                           <p className="text-2xl font-bold text-gold-700">18</p>
-                          <p className="text-xs text-platinum-500-400">Countries</p>
+                          <p className="text-xs text-platinum-400">Countries</p>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 text-center">
                           <p className="text-2xl font-bold text-gold-700">3</p>
-                          <p className="text-xs text-platinum-500-400">Prosecutors</p>
+                          <p className="text-xs text-platinum-400">Prosecutors</p>
                         </motion.div>
                       </div>
                       <div className="space-y-2">
-                        <p className="text-sm font-medium text-platinum-500-300">Key Individuals:</p>
+                        <p className="text-sm font-medium text-platinum-300">Key Individuals:</p>
                         <div className="flex flex-wrap gap-2">
                           {['Mario Brero (Alp Services)', 'Roland Jacquard (300K+10%)', 'Sheikh Matar (Spy Supervisor)', 'Ali Saeed al-Neyadi'].map((item, idx) => (
                             <Badge key={idx} variant="outline" className="text-rose-500 border-rose">{item}</Badge>
@@ -843,26 +843,26 @@ export default function YouTubePage() {
                       <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-5 mb-4">
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 text-center">
                           <p className="text-2xl font-bold text-rose-500">83%</p>
-                          <p className="text-xs text-platinum-500-400">Forced Labor</p>
+                          <p className="text-xs text-platinum-400">Forced Labor</p>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 text-center">
                           <p className="text-2xl font-bold text-gold-700">57%</p>
-                          <p className="text-xs text-platinum-500-400">Illegal Fees</p>
+                          <p className="text-xs text-platinum-400">Illegal Fees</p>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 text-center">
                           <p className="text-2xl font-bold text-gold-700">$1,006</p>
-                          <p className="text-xs text-platinum-500-400">Avg Fee</p>
+                          <p className="text-xs text-platinum-400">Avg Fee</p>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 text-center">
                           <p className="text-2xl font-bold text-rose-500">0</p>
-                          <p className="text-xs text-platinum-500-400">Complaints</p>
+                          <p className="text-xs text-platinum-400">Complaints</p>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 text-center">
                           <p className="text-2xl font-bold text-rose-500">2/3</p>
-                          <p className="text-xs text-platinum-500-400">Unpaid Wages</p>
+                          <p className="text-xs text-platinum-400">Unpaid Wages</p>
                         </motion.div>
                       </div>
-                      <p className="text-sm text-platinum-500-400">69 interviews conducted September-December 2021 across 11 nationalities</p>
+                      <p className="text-sm text-platinum-400">69 interviews conducted September-December 2021 across 11 nationalities</p>
                     </CardContent>
                   </Card>
 
@@ -877,7 +877,7 @@ export default function YouTubePage() {
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-3">
-                        <p className="text-sm text-platinum-500-300">Exposed Individuals:</p>
+                        <p className="text-sm text-platinum-300">Exposed Individuals:</p>
                         <div className="flex flex-wrap gap-2">
                           {['David Cameron (Former UK PM)', 'Anthony Scaramucci (White House Comms)', 'UBS/Blackstone/Barclays/Morgan Stanley Execs', 'Tether Crypto Executives'].map((item, idx) => (
                             <Badge key={idx} variant="outline" className="text-navy-500 border-navy">{item}</Badge>
@@ -925,9 +925,9 @@ export default function YouTubePage() {
                             >
                               <div className="flex items-center gap-2 mb-2">
                                 <AlertCircle className="h-4 w-4 text-rose-500" />
-                                <span className="font-semibold text-platinum-500-200">{item.name}</span>
+                                <span className="font-semibold text-platinum-200">{item.name}</span>
                               </div>
-                              <p className="text-sm text-platinum-500-400">{item.details}</p>
+                              <p className="text-sm text-platinum-400">{item.details}</p>
                             </motion.div>
                           ))}
                         </div>
@@ -942,20 +942,20 @@ export default function YouTubePage() {
                     <CardContent>
                       <div className="grid gap-4 sm:grid-cols-2">
                         <div className="space-y-2">
-                          <p className="text-sm font-medium text-platinum-500-300">Kafala System</p>
-                          <p className="text-xs text-platinum-500-400">Workers bound to employers; wage theft, excessive hours, recruitment fee debt documented</p>
+                          <p className="text-sm font-medium text-platinum-300">Kafala System</p>
+                          <p className="text-xs text-platinum-400">Workers bound to employers; wage theft, excessive hours, recruitment fee debt documented</p>
                         </div>
                         <div className="space-y-2">
-                          <p className="text-sm font-medium text-platinum-500-300">Women's Rights</p>
-                          <p className="text-xs text-platinum-500-400">Domestic violence law allows beating "if no physical marks remain"; male guardian permission required</p>
+                          <p className="text-sm font-medium text-platinum-300">Women's Rights</p>
+                          <p className="text-xs text-platinum-400">Domestic violence law allows beating "if no physical marks remain"; male guardian permission required</p>
                         </div>
                         <div className="space-y-2">
-                          <p className="text-sm font-medium text-platinum-500-300">LGBTQ Rights</p>
-                          <p className="text-xs text-platinum-500-400">Illegal; minimum 6-month prison term</p>
+                          <p className="text-sm font-medium text-platinum-300">LGBTQ Rights</p>
+                          <p className="text-xs text-platinum-400">Illegal; minimum 6-month prison term</p>
                         </div>
                         <div className="space-y-2">
-                          <p className="text-sm font-medium text-platinum-500-300">Secret Prisons</p>
-                          <p className="text-xs text-platinum-500-400">16 torture methods documented; 100+ Emirati activists jailed post-Arab Spring</p>
+                          <p className="text-sm font-medium text-platinum-300">Secret Prisons</p>
+                          <p className="text-xs text-platinum-400">16 torture methods documented; 100+ Emirati activists jailed post-Arab Spring</p>
                         </div>
                       </div>
                     </CardContent>
@@ -987,23 +987,23 @@ export default function YouTubePage() {
                       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-4">
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 text-center">
                           <p className="text-2xl font-bold text-gold-700">7+</p>
-                          <p className="text-xs text-platinum-500-400">X Accounts</p>
+                          <p className="text-xs text-platinum-400">X Accounts</p>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 text-center">
                           <p className="text-2xl font-bold text-gold-700">5</p>
-                          <p className="text-xs text-platinum-500-400">Fake News Sites</p>
+                          <p className="text-xs text-platinum-400">Fake News Sites</p>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 text-center">
                           <p className="text-2xl font-bold text-gold-700">8+</p>
-                          <p className="text-xs text-platinum-500-400">AI Books</p>
+                          <p className="text-xs text-platinum-400">AI Books</p>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-3 text-center">
                           <p className="text-2xl font-bold text-gold-700">1</p>
-                          <p className="text-xs text-platinum-500-400">Studio Set</p>
+                          <p className="text-xs text-platinum-400">Studio Set</p>
                         </motion.div>
                       </div>
                       <div className="space-y-2">
-                        <p className="text-sm font-medium text-platinum-500-300">Fake News Websites:</p>
+                        <p className="text-sm font-medium text-platinum-300">Fake News Websites:</p>
                         <div className="flex flex-wrap gap-2">
                           {['The Washington Eye', 'Daily Euro Times', 'Brieflex', 'AfricaLix', 'InfoFlix'].map((site, idx) => (
                             <Badge key={idx} variant="outline" className="text-gold-700 border-gold">{site}</Badge>
@@ -1034,8 +1034,8 @@ export default function YouTubePage() {
                           >
                             <AlertCircle className="h-4 w-4 text-gold-700 mt-0.5" />
                             <div>
-                              <p className="text-sm font-medium text-platinum-500-200">{item.topic}</p>
-                              <p className="text-xs text-platinum-500-400">{item.content}</p>
+                              <p className="text-sm font-medium text-platinum-200">{item.topic}</p>
+                              <p className="text-xs text-platinum-400">{item.content}</p>
                             </div>
                           </motion.div>
                         ))}
@@ -1065,19 +1065,19 @@ export default function YouTubePage() {
                       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-4 text-center">
                           <p className="text-2xl font-bold text-emerald-500">$1.006T</p>
-                          <p className="text-xs text-platinum-500-400">GDP (PPP 2026)</p>
+                          <p className="text-xs text-platinum-400">GDP (PPP 2026)</p>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-4 text-center">
                           <p className="text-2xl font-bold text-emerald-500">$87,774</p>
-                          <p className="text-xs text-platinum-500-400">GDP/Capita (PPP)</p>
+                          <p className="text-xs text-platinum-400">GDP/Capita (PPP)</p>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-4 text-center">
                           <p className="text-2xl font-bold text-gold-700">0.940</p>
-                          <p className="text-xs text-platinum-500-400">HDI (15th)</p>
+                          <p className="text-xs text-platinum-400">HDI (15th)</p>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-4 text-center">
                           <p className="text-2xl font-bold text-navy-500">11.5M</p>
-                          <p className="text-xs text-platinum-500-400">Population 2025</p>
+                          <p className="text-xs text-platinum-400">Population 2025</p>
                         </motion.div>
                       </div>
                     </CardContent>
@@ -1091,15 +1091,15 @@ export default function YouTubePage() {
                       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-4 text-center">
                           <p className="text-2xl font-bold text-gold-700">$156.3B</p>
-                          <p className="text-xs text-platinum-500-400">GDP Nominal 2024</p>
+                          <p className="text-xs text-platinum-400">GDP Nominal 2024</p>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-4 text-center">
                           <p className="text-2xl font-bold text-emerald-500">92M+</p>
-                          <p className="text-xs text-platinum-500-400">Airport Passengers</p>
+                          <p className="text-xs text-platinum-400">Airport Passengers</p>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-platinum-800/50 p-4 text-center">
                           <p className="text-2xl font-bold text-navy-500">92%</p>
-                          <p className="text-xs text-platinum-500-400">Expat Share</p>
+                          <p className="text-xs text-platinum-400">Expat Share</p>
                         </motion.div>
                       </div>
                     </CardContent>
@@ -1125,7 +1125,7 @@ export default function YouTubePage() {
                           >
                             <div className="flex items-center gap-3">
                               <Badge variant="outline" className="text-gold-700 border-gold">#{item.rank}</Badge>
-                              <span className="text-sm font-medium text-platinum-500-200">{item.partner}</span>
+                              <span className="text-sm font-medium text-platinum-200">{item.partner}</span>
                             </div>
                             <span className="text-lg font-bold text-emerald-500">{item.value}</span>
                           </motion.div>
@@ -1169,10 +1169,10 @@ export default function YouTubePage() {
                             className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 glass-panel"
                           >
                             <div className="flex items-center justify-between mb-2">
-                              <p className="font-semibold text-platinum-500-200">{source.outlet}</p>
+                              <p className="font-semibold text-platinum-200">{source.outlet}</p>
                               <Badge variant="outline" className="text-navy-500 border-navy text-xs">Tier {source.tier}</Badge>
                             </div>
-                            <p className="text-xs text-platinum-500-400 mb-1">{source.lang} | {source.focus}</p>
+                            <p className="text-xs text-platinum-400 mb-1">{source.lang} | {source.focus}</p>
                             <p className="text-xs text-platinum-500">{source.url}</p>
                           </motion.div>
                         ))}
@@ -1208,7 +1208,7 @@ export default function YouTubePage() {
                               className="flex items-start gap-3 rounded-lg bg-platinum-800/50 p-3"
                             >
                               <Badge variant="outline" className="text-gold-700 border-gold shrink-0 text-xs mt-0.5">{item.date}</Badge>
-                              <p className="text-sm text-platinum-500-300">{item.headline}</p>
+                              <p className="text-sm text-platinum-300">{item.headline}</p>
                             </motion.div>
                           ))}
                         </div>
@@ -1240,8 +1240,8 @@ export default function YouTubePage() {
                           >
                             <Badge variant="outline" className={`${item.colorClass} shrink-0`}>{item.tier}</Badge>
                             <div className="flex-1">
-                              <p className="text-sm font-medium text-platinum-500-200">{item.sources}</p>
-                              <p className="text-xs text-platinum-500-400">{item.reliability}</p>
+                              <p className="text-sm font-medium text-platinum-200">{item.sources}</p>
+                              <p className="text-xs text-platinum-400">{item.reliability}</p>
                             </div>
                           </motion.div>
                         ))}
@@ -1276,15 +1276,15 @@ export default function YouTubePage() {
                       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-4">
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-rose-500/10 border border-rose-500/30 p-4 text-center">
                           <p className="text-3xl font-bold text-rose-500">254mm</p>
-                          <p className="text-sm text-platinum-500-400">Rainfall (highest since 1949)</p>
+                          <p className="text-sm text-platinum-400">Rainfall (highest since 1949)</p>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-rose-500/10 border border-rose-500/30 p-4 text-center">
                           <p className="text-3xl font-bold text-rose-500">2 Years</p>
-                          <p className="text-sm text-platinum-500-400">Worth of rain in one day</p>
+                          <p className="text-sm text-platinum-400">Worth of rain in one day</p>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.05 }} className="rounded-lg bg-rose-500/10 border border-rose-500/30 p-4 text-center">
                           <p className="text-3xl font-bold text-rose-500">23+</p>
-                          <p className="text-sm text-platinum-500-400">Total deaths (UAE+Oman)</p>
+                          <p className="text-sm text-platinum-400">Total deaths (UAE+Oman)</p>
                         </motion.div>
                       </div>
                       <div className="grid gap-3 sm:grid-cols-2">
@@ -1299,8 +1299,8 @@ export default function YouTubePage() {
                           <div key={idx} className="flex items-center gap-3 rounded-lg bg-platinum-800/50 p-3">
                             <AlertCircle className="h-4 w-4 text-gold-700 shrink-0" />
                             <div>
-                              <p className="text-xs text-platinum-500-400">{item.metric}</p>
-                              <p className="text-sm text-platinum-500-200">{item.value}</p>
+                              <p className="text-xs text-platinum-400">{item.metric}</p>
+                              <p className="text-sm text-platinum-200">{item.value}</p>
                             </div>
                           </div>
                         ))}
@@ -1329,8 +1329,8 @@ export default function YouTubePage() {
                             className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 glass-panel"
                           >
                             <item.icon className="h-5 w-5 text-gold-700 mb-2" />
-                            <p className="font-semibold text-platinum-500-200 text-sm">{item.issue}</p>
-                            <p className="text-xs text-platinum-500-400 mt-1">{item.detail}</p>
+                            <p className="font-semibold text-platinum-200 text-sm">{item.issue}</p>
+                            <p className="text-xs text-platinum-400 mt-1">{item.detail}</p>
                           </motion.div>
                         ))}
                       </div>
@@ -1359,7 +1359,7 @@ export default function YouTubePage() {
                         height={280}
                         showGrid={true}
                       />
-                      <p className="text-xs text-platinum-500-400 mt-2 text-center">Rose = Negative sentiment pressure | Emerald = Positive counter-narrative</p>
+                      <p className="text-xs text-platinum-400 mt-2 text-center">Rose = Negative sentiment pressure | Emerald = Positive counter-narrative</p>
                     </CardContent>
                   </Card>
                 </div>

@@ -201,10 +201,10 @@ export default function LaborEmploymentPage() {
         <div>
           <Badge variant="default" className="mb-2">S-SECTOR</Badge>
           <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-platinum-500">Labor & Employment</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             {laborEmploymentData.description}
           </p>
-          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500-500">
+          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500">
             <span className="flex items-center gap-1">
               <Calendar className="h-4 w-4" />
               {laborReportMetadata.enrichedDate}
@@ -224,7 +224,7 @@ export default function LaborEmploymentPage() {
             <Briefcase className="h-4 w-4" />
             Workforce
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2">
             <Zap className="h-4 w-4" />
             Analyze
           </Button>
@@ -322,15 +322,15 @@ export default function LaborEmploymentPage() {
                     <div className="mt-4 grid grid-cols-3 gap-2">
                       <div className="text-center p-2 bg-emerald-500/20 rounded-lg">
                         <p className="text-lg font-bold text-emerald-500">52%</p>
-                        <p className="text-xs text-platinum-500-500">Positive</p>
+                        <p className="text-xs text-platinum-500">Positive</p>
                       </div>
                       <div className="text-center p-2 bg-rose-500/20 rounded-lg">
                         <p className="text-lg font-bold text-rose-500">32%</p>
-                        <p className="text-xs text-platinum-500-500">Negative</p>
+                        <p className="text-xs text-platinum-500">Negative</p>
                       </div>
                       <div className="text-center p-2 bg-platinum/20 rounded-lg">
                         <p className="text-lg font-bold text-platinum-500">16%</p>
-                        <p className="text-xs text-platinum-500-500">Neutral</p>
+                        <p className="text-xs text-platinum-500">Neutral</p>
                       </div>
                     </div>
                   </CardContent>
@@ -353,11 +353,11 @@ export default function LaborEmploymentPage() {
                     ].map((item, index) => (
                       <div key={index} className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-platinum-500-200">{item.label}</span>
+                          <span className="text-sm font-medium text-platinum-200">{item.label}</span>
                           <span className="text-lg font-bold text-platinum-500">{item.value}</span>
                         </div>
                         <Progress value={Math.random() * 60 + 20} className="h-2" />
-                        <p className="text-xs text-platinum-500-400">{item.sublabel}</p>
+                        <p className="text-xs text-platinum-400">{item.sublabel}</p>
                       </div>
                     ))}
                   </CardContent>
@@ -397,7 +397,7 @@ export default function LaborEmploymentPage() {
                     {uaeRelevanceWhy.map((point, idx) => (
                       <div key={idx} className="flex items-start gap-2 p-3 bg-platinum-800/50 rounded-lg">
                         <CheckCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
-                        <span className="text-sm text-platinum-500-300">{point}</span>
+                        <span className="text-sm text-platinum-300">{point}</span>
                       </div>
                     ))}
                   </div>
@@ -416,11 +416,11 @@ export default function LaborEmploymentPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
                       <h4 className="font-bold text-emerald-500 mb-2">Reform Momentum</h4>
-                      <p className="text-sm text-platinum-500-300">{keyTension.reform}</p>
+                      <p className="text-sm text-platinum-300">{keyTension.reform}</p>
                     </div>
                     <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-lg">
                       <h4 className="font-bold text-rose-500 mb-2">Enforcement Gap</h4>
-                      <p className="text-sm text-platinum-500-300">{keyTension.enforcement}</p>
+                      <p className="text-sm text-platinum-300">{keyTension.enforcement}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -450,8 +450,8 @@ export default function LaborEmploymentPage() {
                     {workforceMetrics.slice(0, 8).map((metric, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-2xl font-bold text-gold-700">{metric.figure}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{metric.metric}</p>
-                        <p className="text-xs text-platinum-500-500">{metric.source}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{metric.metric}</p>
+                        <p className="text-xs text-platinum-500">{metric.source}</p>
                       </div>
                     ))}
                   </div>
@@ -489,16 +489,16 @@ export default function LaborEmploymentPage() {
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="p-4 bg-platinum-800/50 rounded-lg">
-                      <p className="text-sm text-platinum-500-400">Member Since</p>
+                      <p className="text-sm text-platinum-400">Member Since</p>
                       <p className="text-2xl font-bold text-platinum-500">{iloContext.memberSince}</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg">
-                      <p className="text-sm text-platinum-500-400">Migrant Workers</p>
+                      <p className="text-sm text-platinum-400">Migrant Workers</p>
                       <p className="text-2xl font-bold text-platinum-500">{iloContext.migrantWorkers}</p>
                     </div>
                   </div>
                   <div className="mt-4 space-y-2">
-                    <p className="text-sm text-platinum-500-400">Collaboration Areas:</p>
+                    <p className="text-sm text-platinum-400">Collaboration Areas:</p>
                     <div className="flex flex-wrap gap-2">
                       {iloContext.collaborationAreas.split(', ').map((area, idx) => (
                         <Badge key={idx} variant="outline" className="text-platinum-500 border-platinum/30">{area}</Badge>
@@ -535,7 +535,7 @@ export default function LaborEmploymentPage() {
                           <span className="font-bold text-platinum-500">{reform.reform}</span>
                           <Badge variant="outline" className="text-emerald-500 border-emerald-500/50">{reform.year}</Badge>
                         </div>
-                        <p className="text-sm text-platinum-500-400">{reform.keyProvision}</p>
+                        <p className="text-sm text-platinum-400">{reform.keyProvision}</p>
                       </div>
                     ))}
                   </div>
@@ -558,7 +558,7 @@ export default function LaborEmploymentPage() {
                           <span className="font-medium text-rose-300">{abuse.issue}</span>
                           <Badge variant="destructive" className="text-xs">{abuse.source}</Badge>
                         </div>
-                        <p className="text-sm text-platinum-500-300">{abuse.evidence}</p>
+                        <p className="text-sm text-platinum-300">{abuse.evidence}</p>
                       </div>
                     ))}
                   </div>
@@ -578,7 +578,7 @@ export default function LaborEmploymentPage() {
                     {governmentResponseRating.map((rating, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-2xl font-bold text-platinum-500">{rating.score}</p>
-                        <p className="text-xs text-platinum-500-400 mt-1">{rating.category}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{rating.category}</p>
                       </div>
                     ))}
                   </div>
@@ -630,24 +630,24 @@ export default function LaborEmploymentPage() {
                   <div className="grid gap-4 md:grid-cols-3">
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-emerald-500">99%+</p>
-                      <p className="text-sm text-platinum-500-400">Coverage</p>
+                      <p className="text-sm text-platinum-400">Coverage</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">{wpsOverview.monthlyTransfers}</p>
-                      <p className="text-sm text-platinum-500-400">Monthly Transfers</p>
+                      <p className="text-sm text-platinum-400">Monthly Transfers</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-platinum-500">2009</p>
-                      <p className="text-sm text-platinum-500-400">Launched</p>
+                      <p className="text-sm text-platinum-400">Launched</p>
                     </div>
                   </div>
                   <div className="mt-4">
-                    <p className="text-sm text-platinum-500-400 mb-2">2025 WPS Updates:</p>
+                    <p className="text-sm text-platinum-400 mb-2">2025 WPS Updates:</p>
                     <div className="grid gap-2 md:grid-cols-2">
                       {wps2025Updates.map((update, idx) => (
                         <div key={idx} className="flex items-center gap-2 p-2 bg-platinum-800/50 rounded-lg">
                           <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" />
-                          <span className="text-sm text-platinum-500-300">{update.item}</span>
+                          <span className="text-sm text-platinum-300">{update.item}</span>
                         </div>
                       ))}
                     </div>
@@ -670,7 +670,7 @@ export default function LaborEmploymentPage() {
                       <div className="space-y-2">
                         {emiratiMinimumWages.map((wage, idx) => (
                           <div key={idx} className="flex justify-between p-2 bg-platinum-800/50 rounded">
-                            <span className="text-sm text-platinum-500-400">{wage.effectiveDate}</span>
+                            <span className="text-sm text-platinum-400">{wage.effectiveDate}</span>
                             <span className="font-bold text-platinum-500">{wage.minimumMonthlySalary}</span>
                           </div>
                         ))}
@@ -708,24 +708,24 @@ export default function LaborEmploymentPage() {
                       <div className="space-y-2">
                         {traditionalGratuity.calculations.map((calc, idx) => (
                           <div key={idx} className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
-                            <span className="text-sm text-platinum-500-300">{calc.servicePeriod}</span>
+                            <span className="text-sm text-platinum-300">{calc.servicePeriod}</span>
                             <span className="text-sm font-medium text-platinum-500">{calc.calculation}</span>
                           </div>
                         ))}
                       </div>
-                      <p className="text-xs text-platinum-500-500 mt-2">Payment deadline: {traditionalGratuity.paymentDeadline}</p>
+                      <p className="text-xs text-platinum-500 mt-2">Payment deadline: {traditionalGratuity.paymentDeadline}</p>
                     </div>
                     <div>
                       <h4 className="text-sm font-semibold text-emerald-500 mb-2">Alternative EOSB Scheme (Since Oct 2023)</h4>
                       <div className="space-y-2">
                         {voluntaryAlternativeEOSB.employerContributionRates.map((rate, idx) => (
                           <div key={idx} className="flex justify-between p-2 bg-platinum-800/50 rounded-lg">
-                            <span className="text-sm text-platinum-500-300">{rate.category}</span>
+                            <span className="text-sm text-platinum-300">{rate.category}</span>
                             <span className="text-sm font-medium text-emerald-500">{rate.rate}</span>
                           </div>
                         ))}
                       </div>
-                      <p className="text-xs text-platinum-500-500 mt-2">Approved providers: {voluntaryAlternativeEOSB.approvedProviders.length}</p>
+                      <p className="text-xs text-platinum-500 mt-2">Approved providers: {voluntaryAlternativeEOSB.approvedProviders.length}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -743,21 +743,21 @@ export default function LaborEmploymentPage() {
                   <div className="grid gap-4 md:grid-cols-3">
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-emerald-500">90%</p>
-                      <p className="text-sm text-platinum-500-400">Registration Rate</p>
+                      <p className="text-sm text-platinum-400">Registration Rate</p>
                     </div>
                     <div className="p-4 bg-gold-700/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-gold-700">AED 350M</p>
-                      <p className="text-sm text-platinum-500-400">Compensation Paid</p>
+                      <p className="text-sm text-platinum-400">Compensation Paid</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">60%</p>
-                      <p className="text-sm text-platinum-500-400">Payout Rate</p>
+                      <p className="text-sm text-platinum-400">Payout Rate</p>
                     </div>
                   </div>
                   <div className="mt-4 grid gap-3 md:grid-cols-2">
                     {iloePremiumStructure.map((premium, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-500-400">Category {premium.category}</p>
+                        <p className="text-sm text-platinum-400">Category {premium.category}</p>
                         <p className="text-lg font-bold text-platinum-500">{premium.basicMonthlySalary}</p>
                         <p className="text-sm text-emerald-500">Max premium: {premium.monthlyPremium}</p>
                       </div>
@@ -778,17 +778,17 @@ export default function LaborEmploymentPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="p-4 bg-platinum-800/50 rounded-lg">
                       <div className="flex justify-between mb-2">
-                        <span className="text-platinum-500-400">Period</span>
+                        <span className="text-platinum-400">Period</span>
                         <span className="font-bold text-platinum-500">{middayBreakDetails.period}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-platinum-500-400">Hours</span>
+                        <span className="text-platinum-400">Hours</span>
                         <span className="font-bold text-platinum-500">{middayBreakDetails.hours}</span>
                       </div>
                     </div>
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-emerald-500">99%+</p>
-                      <p className="text-sm text-platinum-500-400">Compliance Rate</p>
+                      <p className="text-sm text-platinum-400">Compliance Rate</p>
                     </div>
                   </div>
                   <div className="mt-4 grid gap-2 md:grid-cols-2">
@@ -827,19 +827,19 @@ export default function LaborEmploymentPage() {
                   <div className="grid gap-4 md:grid-cols-4">
                     <div className="p-4 bg-gold-700/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-gold-700">2021</p>
-                      <p className="text-sm text-platinum-500-400">Launched</p>
+                      <p className="text-sm text-platinum-400">Launched</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">AED 24B</p>
-                      <p className="text-sm text-platinum-500-400">Budget</p>
+                      <p className="text-sm text-platinum-400">Budget</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">75K</p>
-                      <p className="text-sm text-platinum-500-400">Original Target</p>
+                      <p className="text-sm text-platinum-400">Original Target</p>
                     </div>
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-emerald-500">92%</p>
-                      <p className="text-sm text-platinum-500-400">Target Achieved</p>
+                      <p className="text-sm text-platinum-400">Target Achieved</p>
                     </div>
                   </div>
                 </CardContent>
@@ -857,7 +857,7 @@ export default function LaborEmploymentPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     {nafisAchievements.map((achievement, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-500-400">{achievement.metric}</p>
+                        <p className="text-sm text-platinum-400">{achievement.metric}</p>
                         <p className="text-2xl font-bold text-gold-700">{achievement.figure}</p>
                         {achievement.growth && (
                           <p className="text-sm text-emerald-500 mt-1">{achievement.growth}</p>
@@ -905,12 +905,12 @@ export default function LaborEmploymentPage() {
                   </div>
                   <div className="grid gap-2 md:grid-cols-2">
                     <div className="p-3 bg-platinum-800/50 rounded-lg">
-                      <p className="text-sm text-platinum-500-400">Existing employees</p>
-                      <p className="text-sm text-platinum-500-300">Must be adjusted by {minimumSalaryEmiratis.existingEmployees}</p>
+                      <p className="text-sm text-platinum-400">Existing employees</p>
+                      <p className="text-sm text-platinum-300">Must be adjusted by {minimumSalaryEmiratis.existingEmployees}</p>
                     </div>
                     <div className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg">
                       <p className="text-sm text-rose-400">Non-compliance</p>
-                      <p className="text-sm text-platinum-500-300">{minimumSalaryEmiratis.nonCompliance}</p>
+                      <p className="text-sm text-platinum-300">{minimumSalaryEmiratis.nonCompliance}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -929,7 +929,7 @@ export default function LaborEmploymentPage() {
                     {emiratiIncentives.map((incentive, idx) => (
                       <div key={idx} className="flex items-center gap-2 p-2 bg-platinum-800/50 rounded-lg">
                         <CheckCircle className="h-4 w-4 text-emerald-500 shrink-0" />
-                        <span className="text-sm text-platinum-500-300">{incentive}</span>
+                        <span className="text-sm text-platinum-300">{incentive}</span>
                       </div>
                     ))}
                   </div>
@@ -949,7 +949,7 @@ export default function LaborEmploymentPage() {
                     {emiratiChallenges.map((challenge, idx) => (
                       <div key={idx} className="flex items-start gap-2 p-2 bg-amber-500/5 border border-amber-500/20 rounded-lg">
                         <AlertTriangle className="h-4 w-4 text-amber-400 shrink-0 mt-0.5" />
-                        <span className="text-sm text-platinum-500-300">{challenge}</span>
+                        <span className="text-sm text-platinum-300">{challenge}</span>
                       </div>
                     ))}
                   </div>
@@ -979,26 +979,26 @@ export default function LaborEmploymentPage() {
                   <div className="grid grid-cols-2 md:grid-cols-5 gap-2 mb-4">
                     <div className="p-3 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-2xl font-bold text-emerald-500">{iloConventionsRatified.length}</p>
-                      <p className="text-xs text-platinum-500-400">Total Ratified</p>
+                      <p className="text-xs text-platinum-400">Total Ratified</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-platinum-500">6</p>
-                      <p className="text-xs text-platinum-500-400">Core Conventions</p>
+                      <p className="text-xs text-platinum-400">Core Conventions</p>
                     </div>
                     <div className="p-3 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-2xl font-bold text-rose-500">3</p>
-                      <p className="text-xs text-platinum-500-400">Not Ratified</p>
+                      <p className="text-xs text-platinum-400">Not Ratified</p>
                     </div>
                     <div className="p-3 bg-gold-700/20 rounded-lg text-center col-span-2">
                       <p className="text-2xl font-bold text-gold-700">Jan 2026</p>
-                      <p className="text-xs text-platinum-500-400">Protocol C29 Ratified</p>
+                      <p className="text-xs text-platinum-400">Protocol C29 Ratified</p>
                     </div>
                   </div>
                   <div className="space-y-2">
                     {iloConventionsRatified.slice(0, 6).map((conv, idx) => (
                       <div key={idx} className="flex items-center justify-between p-2 bg-platinum-800/50 rounded-lg">
                         <span className="text-sm font-medium text-platinum-500">{conv.convention}</span>
-                        <span className="text-xs text-platinum-500-500">{conv.name}</span>
+                        <span className="text-xs text-platinum-500">{conv.name}</span>
                         <Badge variant="outline" className="text-emerald-500 border-emerald-500/50 text-xs">{conv.ratificationYear}</Badge>
                       </div>
                     ))}
@@ -1021,7 +1021,7 @@ export default function LaborEmploymentPage() {
                         <div className="flex items-center justify-between">
                           <span className="font-medium text-rose-300">{conv.convention}: {conv.name}</span>
                         </div>
-                        <p className="text-sm text-platinum-500-400 mt-1">Reason: {conv.reason}</p>
+                        <p className="text-sm text-platinum-400 mt-1">Reason: {conv.reason}</p>
                       </div>
                     ))}
                   </div>
@@ -1044,7 +1044,7 @@ export default function LaborEmploymentPage() {
                         {domesticWorkerRights.map((right, idx) => (
                           <div key={idx} className="flex items-center gap-2 p-1.5 bg-platinum-800/50 rounded">
                             <CheckCircle className="h-3 w-3 text-emerald-500 shrink-0" />
-                            <span className="text-xs text-platinum-500-300">{right.right}: {right.provision}</span>
+                            <span className="text-xs text-platinum-300">{right.right}: {right.provision}</span>
                           </div>
                         ))}
                       </div>
@@ -1055,13 +1055,13 @@ export default function LaborEmploymentPage() {
                         {domesticWorkerProhibitedActions.map((proh, idx) => (
                           <div key={idx} className="flex items-center gap-2 p-1.5 bg-rose-500/5 border border-rose-500/20 rounded">
                             <XCircle className="h-3 w-3 text-rose-500 shrink-0" />
-                            <span className="text-xs text-platinum-500-300">{proh.prohibition}</span>
+                            <span className="text-xs text-platinum-300">{proh.prohibition}</span>
                           </div>
                         ))}
                       </div>
                     </div>
                   </div>
-                  <p className="text-sm text-platinum-500-400 mt-4">
+                  <p className="text-sm text-platinum-400 mt-4">
                     {domesticWorkerLaw.coveredOccupations}
                   </p>
                 </CardContent>
@@ -1080,7 +1080,7 @@ export default function LaborEmploymentPage() {
                     {ohsEmployerObligations.map((obligation, idx) => (
                       <div key={idx} className="flex items-center gap-2 p-2 bg-platinum-800/50 rounded-lg">
                         <span className="text-xs font-bold text-gold-700 w-6">{obligation.number}</span>
-                        <span className="text-xs text-platinum-500-300">{obligation.obligation}</span>
+                        <span className="text-xs text-platinum-300">{obligation.obligation}</span>
                       </div>
                     ))}
                   </div>
@@ -1100,7 +1100,7 @@ export default function LaborEmploymentPage() {
                     {laborInspectionScale.slice(0, 4).map((metric, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-2xl font-bold text-platinum-500">{metric.figure}</p>
-                        <p className="text-xs text-platinum-500-400">{metric.metric}</p>
+                        <p className="text-xs text-platinum-400">{metric.metric}</p>
                         {metric.changeVs2024 && metric.changeVs2024 !== '—' && (
                           <Badge variant="outline" className="text-emerald-500 border-emerald-500/50 text-xs mt-1">{metric.changeVs2024}</Badge>
                         )}
@@ -1111,7 +1111,7 @@ export default function LaborEmploymentPage() {
                     {laborInspectionFramework.map((item, idx) => (
                       <div key={idx} className="p-2 bg-platinum-800/50 rounded-lg">
                         <p className="text-sm font-medium text-platinum-500">{item.item}</p>
-                        <p className="text-xs text-platinum-500-500">{item.details}</p>
+                        <p className="text-xs text-platinum-500">{item.details}</p>
                       </div>
                     ))}
                   </div>
@@ -1130,13 +1130,13 @@ export default function LaborEmploymentPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-lg">
                       <h4 className="font-bold text-rose-500 mb-2">Trade Unions</h4>
-                      <p className="text-sm text-platinum-500-300">{tradeUnionStatus.status}</p>
-                      <p className="text-sm text-platinum-500-500 mt-1">{tradeUnionStatus.professionalAssociations}</p>
+                      <p className="text-sm text-platinum-300">{tradeUnionStatus.status}</p>
+                      <p className="text-sm text-platinum-500 mt-1">{tradeUnionStatus.professionalAssociations}</p>
                     </div>
                     <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-lg">
                       <h4 className="font-bold text-rose-500 mb-2">Right to Strike</h4>
-                      <p className="text-sm text-platinum-500-300">{rightToStrike.status}</p>
-                      <p className="text-xs text-platinum-500-500 mt-1">{rightToStrike.legalBasis}</p>
+                      <p className="text-sm text-platinum-300">{rightToStrike.status}</p>
+                      <p className="text-xs text-platinum-500 mt-1">{rightToStrike.legalBasis}</p>
                     </div>
                   </div>
                   <div className="mt-4">
@@ -1163,7 +1163,7 @@ export default function LaborEmploymentPage() {
                     {nationalityBasedSegmentation.map((seg, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="font-medium text-gold-700">{seg.nationalityGroup}</p>
-                        <p className="text-sm text-platinum-500-400">{seg.typicalSectors}</p>
+                        <p className="text-sm text-platinum-400">{seg.typicalSectors}</p>
                       </div>
                     ))}
                   </div>

@@ -59,21 +59,21 @@ export function DiseaseOutbreaks({ data }: DiseaseOutbreaksProps) {
               <div className="grid grid-cols-3 gap-3">
                 <div className="text-center p-2 rounded-lg bg-rose-500/10 border border-rose-500/30">
                   <div className="text-xl font-bold text-rose-500">{MersCov.uaeTotalCases}</div>
-                  <div className="text-xs text-platinum-500-400">UAE Cases</div>
+                  <div className="text-xs text-platinum-400">UAE Cases</div>
                 </div>
                 <div className="text-center p-2 rounded-lg bg-rose-500/10 border border-rose-500/30">
                   <div className="text-xl font-bold text-rose-500">{MersCov.uaeDeaths}</div>
-                  <div className="text-xs text-platinum-500-400">Deaths</div>
+                  <div className="text-xs text-platinum-400">Deaths</div>
                 </div>
                 <div className="text-center p-2 rounded-lg bg-rose-500/10 border border-rose-500/30">
                   <div className="text-xl font-bold text-rose-500">{MersCov.caseFatalityRate}</div>
-                  <div className="text-xs text-platinum-500-400">CFR</div>
+                  <div className="text-xs text-platinum-400">CFR</div>
                 </div>
               </div>
-              <div className="text-sm text-platinum-500-300">
-                <span className="text-platinum-500-400">Most Recent Case:</span> {MersCov.mostRecentCase.patient}, {MersCov.mostRecentCase.location}
+              <div className="text-sm text-platinum-300">
+                <span className="text-platinum-400">Most Recent Case:</span> {MersCov.mostRecentCase.patient}, {MersCov.mostRecentCase.location}
               </div>
-              <div className="text-xs text-platinum-500-500">
+              <div className="text-xs text-platinum-500">
                 {MersCov.mostRecentCase.date} | {MersCov.mostRecentCase.positiveTest}
               </div>
             </CardContent>
@@ -91,15 +91,15 @@ export function DiseaseOutbreaks({ data }: DiseaseOutbreaksProps) {
               <div className="grid grid-cols-2 gap-3">
                 <div className="text-center p-2 rounded-lg bg-gold-500/10 border border-gold-500/30">
                   <div className="text-xl font-bold text-gold-700">{mpoxData['2022Outbreak'].cases}</div>
-                  <div className="text-xs text-platinum-500-400">2022 Cases</div>
+                  <div className="text-xs text-platinum-400">2022 Cases</div>
                 </div>
                 <div className="text-center p-2 rounded-lg bg-gold-500/10 border border-gold-500/30">
                   <div className="text-xl font-bold text-gold-700">Feb 2025</div>
-                  <div className="text-xs text-platinum-500-400">Clade Ib</div>
+                  <div className="text-xs text-platinum-400">Clade Ib</div>
                 </div>
               </div>
-              <div className="text-sm text-platinum-500-300">
-                <span className="text-platinum-500-400">First Clade Ib Case:</span> {mpoxData.feb2025.detail}
+              <div className="text-sm text-platinum-300">
+                <span className="text-platinum-400">First Clade Ib Case:</span> {mpoxData.feb2025.detail}
               </div>
               <Badge variant="outline" className="border-gold-500/50 text-gold-700">
                 <AlertTriangle className="w-3 h-3 mr-1" />
@@ -117,14 +117,14 @@ export function DiseaseOutbreaks({ data }: DiseaseOutbreaksProps) {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="text-sm text-platinum-500-300">
-                <span className="text-platinum-500-400">Trigger:</span> {dengueOutbreak.trigger}
+              <div className="text-sm text-platinum-300">
+                <span className="text-platinum-400">Trigger:</span> {dengueOutbreak.trigger}
               </div>
-              <div className="text-sm text-platinum-500-300">
-                <span className="text-platinum-500-400">Vector:</span> {dengueOutbreak.vector}
+              <div className="text-sm text-platinum-300">
+                <span className="text-platinum-400">Vector:</span> {dengueOutbreak.vector}
               </div>
-              <div className="text-sm text-platinum-500-300">
-                <span className="text-platinum-500-400">Vulnerable:</span> {dengueOutbreak.vulnerablePopulation}
+              <div className="text-sm text-platinum-300">
+                <span className="text-platinum-400">Vulnerable:</span> {dengueOutbreak.vulnerablePopulation}
               </div>
               <div className="text-xs text-orange-400 italic">
                 "{dengueOutbreak.researcherQuote}"
@@ -144,15 +144,15 @@ export function DiseaseOutbreaks({ data }: DiseaseOutbreaksProps) {
               <div className="grid grid-cols-2 gap-3">
                 <div className="text-center p-2 rounded-lg bg-rose-500/10 border border-rose-500/30">
                   <div className="text-xl font-bold text-rose-500">{foodPoisoningStats.totalCasesH12025}+</div>
-                  <div className="text-xs text-platinum-500-400">Total Cases</div>
+                  <div className="text-xs text-platinum-400">Total Cases</div>
                 </div>
                 <div className="text-center p-2 rounded-lg bg-rose-500/10 border border-rose-500/30">
                   <div className="text-xl font-bold text-rose-500">{foodPoisoningStats.confirmedSalmonella}+</div>
-                  <div className="text-xs text-platinum-500-400">Salmonella</div>
+                  <div className="text-xs text-platinum-400">Salmonella</div>
                 </div>
               </div>
-              <div className="text-sm text-platinum-500-300">
-                <span className="text-platinum-500-400">Cause:</span> {foodPoisoningStats.contributingFactors}
+              <div className="text-sm text-platinum-300">
+                <span className="text-platinum-400">Cause:</span> {foodPoisoningStats.contributingFactors}
               </div>
             </CardContent>
           </Card>
@@ -160,7 +160,7 @@ export function DiseaseOutbreaks({ data }: DiseaseOutbreaksProps) {
 
         {/* Disease Comparison Chart */}
         <div className="mt-6">
-          <h4 className="text-sm font-medium text-platinum-500-300 mb-3">Disease Cases Comparison</h4>
+          <h4 className="text-sm font-medium text-platinum-300 mb-3">Disease Cases Comparison</h4>
           <BarChart
             data={diseaseComparisonData}
             bars={[{ dataKey: 'cases', name: 'Cases', color: CHART_COLORS.info }]}
@@ -170,35 +170,35 @@ export function DiseaseOutbreaks({ data }: DiseaseOutbreaksProps) {
 
         {/* Vector Control */}
         <div className="mt-6">
-          <h4 className="text-sm font-medium text-platinum-500-300 mb-3">Dubai Vector Control (2026)</h4>
+          <h4 className="text-sm font-medium text-platinum-300 mb-3">Dubai Vector Control (2026)</h4>
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-5">
             <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/30 p-3">
               <div className="flex items-center gap-2 mb-1">
                 <Droplets className="h-4 w-4 text-emerald-500" />
                 <span className="text-sm font-medium text-emerald-500">Predatory Fish</span>
               </div>
-              <div className="text-lg font-bold text-platinum-500-100">{vectorControl.predatoryFishDeployment}</div>
+              <div className="text-lg font-bold text-platinum-100">{vectorControl.predatoryFishDeployment}</div>
             </div>
             <div className="rounded-lg bg-cyan-500/10 border border-cyan-500/30 p-3">
               <div className="flex items-center gap-2 mb-1">
                 <Thermometer className="h-4 w-4 text-sky" />
                 <span className="text-sm font-medium text-sky">Bacterial Tablets</span>
               </div>
-              <div className="text-lg font-bold text-platinum-500-100">Used</div>
+              <div className="text-lg font-bold text-platinum-100">Used</div>
             </div>
             <div className="rounded-lg bg-purple-500/10 border border-purple-500/30 p-3">
               <div className="flex items-center gap-2 mb-1">
                 <Leaf className="h-4 w-4 text-purple-500" />
                 <span className="text-sm font-medium text-purple-500">Growth Regulators</span>
               </div>
-              <div className="text-lg font-bold text-platinum-500-100">Active</div>
+              <div className="text-lg font-bold text-platinum-100">Active</div>
             </div>
             <div className="rounded-lg bg-gold-500/10 border border-gold-500/30 p-3">
               <div className="flex items-center gap-2 mb-1">
                 <Eye className="h-4 w-4 text-gold-700" />
                 <span className="text-sm font-medium text-gold-700">Smart Traps</span>
               </div>
-              <div className="text-lg font-bold text-platinum-500-100">Deployed</div>
+              <div className="text-lg font-bold text-platinum-100">Deployed</div>
             </div>
             <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/30 p-3">
               <div className="flex items-center gap-2 mb-1">

@@ -32,8 +32,8 @@ export function IranWar2026Section({
             {iranWarCrisisOrigin?.map((item: any, idx: number) => (
               <div key={idx} className="mb-3 p-3 rounded-lg bg-rose-500/10 border border-rose-500/30">
                 <div className="text-sm text-rose-400 font-semibold">{item.event}</div>
-                <div className="text-platinum-500-300 mt-1">{item.details}</div>
-                <div className="text-xs text-platinum-500-500 mt-1">{item.date}</div>
+                <div className="text-platinum-300 mt-1">{item.details}</div>
+                <div className="text-xs text-platinum-500 mt-1">{item.date}</div>
               </div>
             ))}
           </div>
@@ -42,7 +42,7 @@ export function IranWar2026Section({
             <div className="space-y-2">
               {stockMarketImpact?.map((item: any, idx: number) => (
                 <div key={idx} className="flex justify-between py-2 border-b border-glass-border">
-                  <span className="text-platinum-500-400">{item.metric}</span>
+                  <span className="text-platinum-400">{item.metric}</span>
                   <span className="text-rose-400 font-bold">{item.value}</span>
                 </div>
               ))}
@@ -69,8 +69,8 @@ export function ExchangeClosuresSection({ exchangeClosures, centralBankResponse 
             <div className="space-y-2">
               {exchangeClosures?.map((item: any, idx: number) => (
                 <div key={idx} className="flex justify-between text-sm border-b border-glass-border pb-1">
-                  <span className="text-platinum-500-400">{item.detail}</span>
-                  <span className="text-platinum-500-200">{item.value}</span>
+                  <span className="text-platinum-400">{item.detail}</span>
+                  <span className="text-platinum-200">{item.value}</span>
                 </div>
               ))}
             </div>
@@ -80,7 +80,7 @@ export function ExchangeClosuresSection({ exchangeClosures, centralBankResponse 
             <div className="space-y-2">
               {centralBankResponse?.map((item: any, idx: number) => (
                 <div key={idx} className="flex justify-between text-sm border-b border-glass-border pb-1">
-                  <span className="text-platinum-500-400">{item.action}</span>
+                  <span className="text-platinum-400">{item.action}</span>
                   <span className="text-emerald-400 font-semibold">{item.amount}</span>
                 </div>
               ))}
@@ -107,19 +107,19 @@ export function SectorImpactSection({ economicSectorImpact, expertAssessments }:
             {economicSectorImpact?.map((sector: any, idx: number) => (
               <div key={idx} className="mb-3 p-3 rounded-lg bg-platinum-800/50 border border-glass-border">
                 <div className="flex justify-between">
-                  <span className="text-platinum-500-200 font-semibold">{sector.sector}</span>
+                  <span className="text-platinum-200 font-semibold">{sector.sector}</span>
                   <span className="text-rose-400">{sector.impact}</span>
                 </div>
-                <div className="text-xs text-platinum-500-500 mt-1">{sector.value}</div>
+                <div className="text-xs text-platinum-500 mt-1">{sector.value}</div>
               </div>
             ))}
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-platinum-500-300 mb-3">Expert Assessments</h4>
+            <h4 className="text-lg font-semibold text-platinum-300 mb-3">Expert Assessments</h4>
             {expertAssessments?.map((expert: any, idx: number) => (
               <div key={idx} className="mb-3 p-4 rounded-lg bg-gradient-to-r from-slate-800/50 to-transparent border-l-2 border-amber-500">
                 <div className="text-sm text-amber-400 font-semibold">{expert.source}</div>
-                <div className="text-platinum-500-300 mt-2 text-sm italic">"{expert.quote}"</div>
+                <div className="text-platinum-300 mt-2 text-sm italic">"{expert.quote}"</div>
               </div>
             ))}
           </div>

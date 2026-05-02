@@ -279,7 +279,7 @@ export default function HealthcarePage() {
                       </div>
                       <div className="text-center p-2 bg-platinum/20 rounded-lg">
                         <p className="text-lg font-bold text-platinum-500">25%</p>
-                        <p className="text-xs text-platinum-500-500">Neutral</p>
+                        <p className="text-xs text-platinum-500">Neutral</p>
                       </div>
                       <div className="text-center p-2 bg-rose-500/20 rounded-lg">
                         <p className="text-lg font-bold text-rose-500">30%</p>
@@ -323,7 +323,7 @@ export default function HealthcarePage() {
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-2xl font-bold text-gold-700">{metric.value}</p>
                         <p className="text-sm text-emerald-400 mt-1">{metric.kpi}</p>
-                        <p className="text-xs text-platinum-500-500">{metric.trend}</p>
+                        <p className="text-xs text-platinum-500">{metric.trend}</p>
                       </div>
                     ))}
                   </div>
@@ -373,7 +373,7 @@ export default function HealthcarePage() {
                     {covid19PandemicResponse.timeline.slice(0, 4).map((item, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg border border-platinum-700">
                         <p className="text-sm font-semibold text-navy-500">{item.date}</p>
-                        <p className="text-xs text-platinum-500-400 mt-1">{item.event}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{item.event}</p>
                       </div>
                     ))}
                   </div>
@@ -393,7 +393,7 @@ export default function HealthcarePage() {
                     {covidMetrics.map((metric, idx) => (
                       <div key={idx} className="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-lg text-center">
                         <p className="text-2xl font-bold text-emerald-500">{metric.value}</p>
-                        <p className="text-xs text-platinum-500-400 mt-1">{metric.metric}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{metric.metric}</p>
                       </div>
                     ))}
                   </div>
@@ -421,15 +421,15 @@ export default function HealthcarePage() {
                     </div>
                     <div className="space-y-3">
                       <div className="p-4 bg-navy/20 rounded-lg">
-                        <p className="text-sm text-platinum-500-400">Total Doses</p>
+                        <p className="text-sm text-platinum-400">Total Doses</p>
                         <p className="text-2xl font-bold text-navy-500">16.4M</p>
                       </div>
                       <div className="p-4 bg-emerald-500/20 rounded-lg">
-                        <p className="text-sm text-platinum-500-400">Fully Vaccinated</p>
+                        <p className="text-sm text-platinum-400">Fully Vaccinated</p>
                         <p className="text-2xl font-bold text-emerald-500">68.4%</p>
                       </div>
                       <div className="p-4 bg-gold-700/20 rounded-lg">
-                        <p className="text-sm text-platinum-500-400">At Least One Dose</p>
+                        <p className="text-sm text-platinum-400">At Least One Dose</p>
                         <p className="text-2xl font-bold text-gold-700">77.7%</p>
                       </div>
                     </div>
@@ -450,7 +450,7 @@ export default function HealthcarePage() {
                     {covid19PandemicResponse.responseAchievements.map((achievement, idx) => (
                       <div key={idx} className="p-3 bg-emerald-500/5 border border-emerald-500/20 rounded-lg flex items-start gap-2">
                         <div className="w-2 h-2 bg-emerald rounded-full mt-1.5"></div>
-                        <span className="text-sm text-platinum-500-200">{achievement}</span>
+                        <span className="text-sm text-platinum-200">{achievement}</span>
                       </div>
                     ))}
                   </div>
@@ -480,19 +480,19 @@ export default function HealthcarePage() {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="p-4 bg-gold-700/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-gold-700">$865.8M</p>
-                      <p className="text-sm text-platinum-500-400">2025 Market</p>
+                      <p className="text-sm text-platinum-400">2025 Market</p>
                     </div>
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-emerald-500">$4.5B</p>
-                      <p className="text-sm text-platinum-500-400">2034 Projection</p>
+                      <p className="text-sm text-platinum-400">2034 Projection</p>
                     </div>
                     <div className="p-4 bg-navy/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-navy-500">19.63%</p>
-                      <p className="text-sm text-platinum-500-400">CAGR</p>
+                      <p className="text-sm text-platinum-400">CAGR</p>
                     </div>
                     <div className="p-4 bg-platinum/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">691K+</p>
-                      <p className="text-sm text-platinum-500-400">Dubai Tourists 2023</p>
+                      <p className="text-sm text-platinum-400">Dubai Tourists 2023</p>
                     </div>
                   </div>
                 </CardContent>
@@ -518,7 +518,7 @@ export default function HealthcarePage() {
                         <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg flex justify-between items-center">
                           <div className="flex items-center gap-2">
                             <span className="text-gold-700 font-bold">#{specialty.rank}</span>
-                            <span className="text-platinum-500-200">{specialty.specialty}</span>
+                            <span className="text-platinum-200">{specialty.specialty}</span>
                           </div>
                         </div>
                       ))}
@@ -539,15 +539,15 @@ export default function HealthcarePage() {
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                       <p className="text-3xl font-bold text-emerald-500">15,000+</p>
-                      <p className="text-sm text-platinum-500-400">Annual Tourists</p>
+                      <p className="text-sm text-platinum-400">Annual Tourists</p>
                     </div>
                     <div className="p-4 bg-gold-700/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-gold-700">8th</p>
-                      <p className="text-sm text-platinum-500-400">Global Rank (MTA)</p>
+                      <p className="text-sm text-platinum-400">Global Rank (MTA)</p>
                     </div>
                     <div className="p-4 bg-navy/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-navy-500">9th</p>
-                      <p className="text-sm text-platinum-500-400">Quality Rank</p>
+                      <p className="text-sm text-platinum-400">Quality Rank</p>
                     </div>
                   </div>
                 </CardContent>
@@ -578,7 +578,7 @@ export default function HealthcarePage() {
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg border border-platinum-700">
                         <div className="flex justify-between items-start">
                           <div>
-                            <p className="font-semibold text-platinum-500-200">{item.category}</p>
+                            <p className="font-semibold text-platinum-200">{item.category}</p>
                             <p className="text-sm text-emerald-400 mt-1">{item.coverage}</p>
                           </div>
                           <Badge variant="outline" className="text-xs">{item.sourceOfFunding}</Badge>
@@ -600,21 +600,21 @@ export default function HealthcarePage() {
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-3">
                     <div className="p-4 bg-gold-700/20 rounded-lg text-center">
-                      <p className="text-sm text-platinum-500-400">Managed By</p>
+                      <p className="text-sm text-platinum-400">Managed By</p>
                       <p className="text-lg font-bold text-gold-700">Daman (since 2008)</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
-                      <p className="text-sm text-platinum-500-400">Eligible</p>
+                      <p className="text-sm text-platinum-400">Eligible</p>
                       <p className="text-lg font-bold text-platinum-500">UAE Nationals</p>
                     </div>
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
-                      <p className="text-sm text-platinum-500-400">Annual Limit</p>
+                      <p className="text-sm text-platinum-400">Annual Limit</p>
                       <p className="text-lg font-bold text-emerald-500">None</p>
                     </div>
                   </div>
                   <div className="mt-4 p-4 bg-platinum-800/50 rounded-lg">
                     <p className="text-sm font-semibold text-gold-700 mb-2">Benefits Include:</p>
-                    <div className="grid grid-cols-2 gap-2 text-xs text-platinum-500-400">
+                    <div className="grid grid-cols-2 gap-2 text-xs text-platinum-400">
                       <span>- Inpatient: Day surgery, private room</span>
                       <span>- Outpatient: Consultations, diagnostics</span>
                       <span>- Maternity: Inpatient and outpatient</span>
@@ -636,7 +636,7 @@ export default function HealthcarePage() {
                   <div className="grid gap-3 md:grid-cols-2">
                     {healthInsuranceSystem.employerObligations.map((oblig, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg flex justify-between">
-                        <span className="text-platinum-500-400 text-sm">{oblig.requirement}</span>
+                        <span className="text-platinum-400 text-sm">{oblig.requirement}</span>
                         <span className="text-navy-500 font-medium text-sm">{oblig.detail}</span>
                       </div>
                     ))}
@@ -672,19 +672,19 @@ export default function HealthcarePage() {
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="p-4 bg-navy/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-navy-500">40+</p>
-                      <p className="text-sm text-platinum-500-400">Public</p>
+                      <p className="text-sm text-platinum-400">Public</p>
                     </div>
                     <div className="p-4 bg-gold-700/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-gold-700">79+</p>
-                      <p className="text-sm text-platinum-500-400">Private</p>
+                      <p className="text-sm text-platinum-400">Private</p>
                     </div>
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-emerald-500">119+</p>
-                      <p className="text-sm text-platinum-500-400">Total</p>
+                      <p className="text-sm text-platinum-400">Total</p>
                     </div>
                     <div className="p-4 bg-platinum/20 rounded-lg text-center">
                       <p className="text-3xl font-bold text-platinum-500">214+</p>
-                      <p className="text-sm text-platinum-500-400">JCI Accredited</p>
+                      <p className="text-sm text-platinum-400">JCI Accredited</p>
                     </div>
                   </div>
                 </CardContent>
@@ -703,7 +703,7 @@ export default function HealthcarePage() {
                     {healthcareWorkforce.nursingStatistics.slice(0, 4).map((stat, idx) => (
                       <div key={idx} className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-platinum-500-200">{stat.metric}</span>
+                          <span className="text-sm font-medium text-platinum-200">{stat.metric}</span>
                           <span className="text-sm font-bold text-emerald-500">{stat.value}</span>
                         </div>
                         <Progress value={70 + Math.random() * 30} className="h-2" />
@@ -726,8 +726,8 @@ export default function HealthcarePage() {
                     {healthcareInfrastructure.majorPublicHospitals.map((hospital, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg flex justify-between">
                         <div>
-                          <p className="font-medium text-platinum-500-200">{hospital.hospital}</p>
-                          <p className="text-xs text-platinum-500-500">{hospital.location}</p>
+                          <p className="font-medium text-platinum-200">{hospital.hospital}</p>
+                          <p className="text-xs text-platinum-500">{hospital.location}</p>
                         </div>
                         <Badge variant="outline" className="text-xs">{hospital.specialty}</Badge>
                       </div>
@@ -760,7 +760,7 @@ export default function HealthcarePage() {
                     {mentalHealthMetrics.map((metric, idx) => (
                       <div key={idx} className="p-4 bg-warning/10 border border-warning/30 rounded-lg text-center">
                         <p className="text-2xl font-bold text-warning">{metric.value}</p>
-                        <p className="text-xs text-platinum-500-400 mt-1">{metric.metric}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{metric.metric}</p>
                       </div>
                     ))}
                   </div>
@@ -778,21 +778,21 @@ export default function HealthcarePage() {
                 <CardContent>
                   <div className="grid gap-4 md:grid-cols-3">
                     <div className="p-4 bg-emerald-500/20 rounded-lg text-center">
-                      <p className="text-sm text-platinum-500-400">Effective Date</p>
+                      <p className="text-sm text-platinum-400">Effective Date</p>
                       <p className="text-lg font-bold text-emerald-500">May 30, 2024</p>
                     </div>
                     <div className="p-4 bg-gold-700/20 rounded-lg text-center">
-                      <p className="text-sm text-platinum-500-400">Replaced</p>
+                      <p className="text-sm text-platinum-400">Replaced</p>
                       <p className="text-lg font-bold text-gold-700">Federal Law 28/1981</p>
                     </div>
                     <div className="p-4 bg-rose-500/20 rounded-lg text-center">
-                      <p className="text-sm text-platinum-500-400">Penalties</p>
+                      <p className="text-sm text-platinum-400">Penalties</p>
                       <p className="text-lg font-bold text-rose-500">AED 50K-200K</p>
                     </div>
                   </div>
                   <div className="mt-4 p-4 bg-platinum-800/50 rounded-lg">
                     <p className="text-sm font-semibold text-gold-700 mb-2">Key Provisions:</p>
-                    <div className="grid gap-2 text-xs text-platinum-500-400">
+                    <div className="grid gap-2 text-xs text-platinum-400">
                       <span>- Employment protections (Article 9)</span>
                       <span>- Employer termination requires specialized committee report</span>
                       <span>- Confidentiality rights extend to employees</span>
@@ -815,8 +815,8 @@ export default function HealthcarePage() {
                     {mentalHealthServices.keyFacilities.map((facility, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg flex justify-between items-center">
                         <div>
-                          <p className="font-medium text-platinum-500-200">{facility.facility}</p>
-                          <p className="text-sm text-platinum-500-500">{facility.location}</p>
+                          <p className="font-medium text-platinum-200">{facility.facility}</p>
+                          <p className="text-sm text-platinum-500">{facility.location}</p>
                         </div>
                         <Badge variant="outline" className="text-xs">{facility.notes}</Badge>
                       </div>

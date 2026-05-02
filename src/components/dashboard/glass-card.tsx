@@ -48,8 +48,8 @@ export function GlassPanel({ children, className, title, description, badge, act
       {(title || description || badge || action) && (
         <div className="mb-4 flex items-start justify-between">
           <div className="flex-1">
-            {title && <h3 className="font-rajdhani text-lg font-semibold text-platinum-500-900">{title}</h3>}
-            {description && <p className="mt-1 text-sm text-platinum-500-600">{description}</p>}
+            {title && <h3 className="font-rajdhani text-lg font-semibold text-platinum-900">{title}</h3>}
+            {description && <p className="mt-1 text-sm text-platinum-600">{description}</p>}
             {badge && (
               <Badge variant="outline" className="mt-2 border-gold-300/50 text-gold-700">
                 {badge}
@@ -79,7 +79,7 @@ const statusConfig = {
   warning: { bg: 'bg-gold-50/90', border: 'border-gold-200/50', text: 'text-gold-700', icon: 'bg-gradient-gold text-white' },
   error: { bg: 'bg-red-50/90', border: 'border-red-200/50', text: 'text-red-700', icon: 'bg-gradient-red text-white' },
   info: { bg: 'bg-indigo-50/90', border: 'border-indigo-200/50', text: 'text-indigo-700', icon: 'bg-gradient-indigo text-white' },
-  neutral: { bg: 'bg-platinum-50/90', border: 'border-platinum-200/50', text: 'text-platinum-500-700', icon: 'bg-gradient-platinum text-white' },
+  neutral: { bg: 'bg-platinum-50/90', border: 'border-platinum-200/50', text: 'text-platinum-700', icon: 'bg-gradient-platinum text-white' },
 }
 
 export function StatusCard({ status, title, value, description, icon, trend, className }: StatusCardProps) {
@@ -95,8 +95,8 @@ export function StatusCard({ status, title, value, description, icon, trend, cla
         )}
         <div className="flex-1">
           <p className={cn('text-sm font-medium', config.text)}>{title}</p>
-          {value !== undefined && <p className="mt-1 font-rajdhani text-2xl font-bold text-platinum-500-900">{value}</p>}
-          {description && <p className="mt-1 text-sm text-platinum-500-600">{description}</p>}
+          {value !== undefined && <p className="mt-1 font-rajdhani text-2xl font-bold text-platinum-900">{value}</p>}
+          {description && <p className="mt-1 text-sm text-platinum-600">{description}</p>}
         </div>
         {trend && (
           <Badge

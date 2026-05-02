@@ -102,19 +102,19 @@ export default function RoyalFamilyPage() {
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">
             UAE Royal Family Intelligence
           </h1>
-          <p className="mt-2 text-platinum-500-600 dark:text-platinum-500-400 text-sm max-w-2xl">
+          <p className="mt-2 text-platinum-600 dark:text-platinum-400 text-sm max-w-2xl">
             Comprehensive intelligence on all 7 Emirates ruling families — {totalMembers} documented royal members across 6 ruling dynasties with wealth metrics, sentiment analysis, and relevance scoring.
           </p>
           <div className="flex items-center gap-4 mt-3">
-            <div className="flex items-center gap-1.5 text-xs text-platinum-500-500">
+            <div className="flex items-center gap-1.5 text-xs text-platinum-500">
               <Calendar className="h-3.5 w-3.5" />
               <span>Updated: {dashboardSummary.lastUpdated}</span>
             </div>
-            <div className="flex items-center gap-1.5 text-xs text-platinum-500-500">
+            <div className="flex items-center gap-1.5 text-xs text-platinum-500">
               <Globe2 className="h-3.5 w-3.5" />
               <span>{dashboardSummary.queriesExecuted} queries executed</span>
             </div>
-            <div className="flex items-center gap-1.5 text-xs text-platinum-500-500">
+            <div className="flex items-center gap-1.5 text-xs text-platinum-500">
               <BookOpen className="h-3.5 w-3.5" />
               <span>{dashboardSummary.pagesFetched} pages analyzed</span>
             </div>
@@ -143,9 +143,9 @@ export default function RoyalFamilyPage() {
           <GlassCard hover className="p-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm font-medium text-platinum-500-600 dark:text-platinum-500-400">Ruling Families</p>
-                <p className="mt-2 font-rajdhani text-3xl font-bold text-navy-500-900 dark:text-platinum-500-100">{dashboardSummary.rulingFamilies}</p>
-                <p className="text-xs text-platinum-500-500 mt-0.5">6 dynasties across 7 Emirates</p>
+                <p className="text-sm font-medium text-platinum-600 dark:text-platinum-400">Ruling Families</p>
+                <p className="mt-2 font-rajdhani text-3xl font-bold text-navy-900 dark:text-platinum-100">{dashboardSummary.rulingFamilies}</p>
+                <p className="text-xs text-platinum-500 mt-0.5">6 dynasties across 7 Emirates</p>
               </div>
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-gold text-white shadow-lg">
                 <Crown className="h-6 w-6" />
@@ -157,9 +157,9 @@ export default function RoyalFamilyPage() {
           <GlassCard hover className="p-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm font-medium text-platinum-500-600 dark:text-platinum-500-400">Documented Members</p>
-                <p className="mt-2 font-rajdhani text-3xl font-bold text-navy-500-900 dark:text-platinum-500-100">{dashboardSummary.totalRulingFamilyMembers}+</p>
-                <p className="text-xs text-platinum-500-500 mt-0.5">Historical & current rulers</p>
+                <p className="text-sm font-medium text-platinum-600 dark:text-platinum-400">Documented Members</p>
+                <p className="mt-2 font-rajdhani text-3xl font-bold text-navy-900 dark:text-platinum-100">{dashboardSummary.totalRulingFamilyMembers}+</p>
+                <p className="text-xs text-platinum-500 mt-0.5">Historical & current rulers</p>
               </div>
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-emerald text-white shadow-lg">
                 <Users className="h-6 w-6" />
@@ -171,9 +171,9 @@ export default function RoyalFamilyPage() {
           <GlassCard hover className="p-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm font-medium text-platinum-500-600 dark:text-platinum-500-400">Bloomberg Ranking</p>
-                <p className="mt-2 font-rajdhani text-3xl font-bold text-navy-500-900 dark:text-platinum-500-100">{dashboardSummary.bloombergRichFamilyRank}</p>
-                <p className="text-xs text-platinum-500-500 mt-0.5">World&apos;s richest family {dashboardSummary.bloombergRichFamilyRankYear}</p>
+                <p className="text-sm font-medium text-platinum-600 dark:text-platinum-400">Bloomberg Ranking</p>
+                <p className="mt-2 font-rajdhani text-3xl font-bold text-navy-900 dark:text-platinum-100">{dashboardSummary.bloombergRichFamilyRank}</p>
+                <p className="text-xs text-platinum-500 mt-0.5">World&apos;s richest family {dashboardSummary.bloombergRichFamilyRankYear}</p>
               </div>
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-navy text-white shadow-lg">
                 <TrendingUp className="h-6 w-6" />
@@ -185,9 +185,9 @@ export default function RoyalFamilyPage() {
           <GlassCard hover className="p-6">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm font-medium text-platinum-500-600 dark:text-platinum-500-400">Combined Wealth</p>
-                <p className="mt-2 font-rajdhani text-3xl font-bold text-navy-500-900 dark:text-platinum-500-100">$1T+</p>
-                <p className="text-xs text-platinum-500-500 mt-0.5">Total family wealth estimate</p>
+                <p className="text-sm font-medium text-platinum-600 dark:text-platinum-400">Combined Wealth</p>
+                <p className="mt-2 font-rajdhani text-3xl font-bold text-navy-900 dark:text-platinum-100">$1T+</p>
+                <p className="text-xs text-platinum-500 mt-0.5">Total family wealth estimate</p>
               </div>
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-platinum text-white shadow-lg">
                 <DollarSign className="h-6 w-6" />

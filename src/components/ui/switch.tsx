@@ -230,7 +230,7 @@ export const SwitchWithLabel = React.forwardRef<
               <label
                 className={cn(
                   'text-sm font-medium',
-                  'text-platinum-500-900 dark:text-platinum-500-100',
+                  'text-platinum-900 dark:text-platinum-100',
                   'cursor-pointer',
                   'transition-colors duration-200',
                   'peer-disabled:cursor-not-allowed peer-disabled:opacity-50'
@@ -242,7 +242,7 @@ export const SwitchWithLabel = React.forwardRef<
                 <p
                   className={cn(
                     'text-xs',
-                    'text-platinum-500-600 dark:text-platinum-500-400',
+                    'text-platinum-600 dark:text-platinum-400',
                     'transition-colors duration-200'
                   )}
                 >
@@ -257,7 +257,7 @@ export const SwitchWithLabel = React.forwardRef<
               <label
                 className={cn(
                   'text-sm font-medium',
-                  'text-platinum-500-900 dark:text-platinum-500-100',
+                  'text-platinum-900 dark:text-platinum-100',
                   'cursor-pointer',
                   'transition-colors duration-200',
                   'peer-disabled:cursor-not-allowed peer-disabled:opacity-50'
@@ -269,7 +269,7 @@ export const SwitchWithLabel = React.forwardRef<
                 <p
                   className={cn(
                     'text-xs',
-                    'text-platinum-500-600 dark:text-platinum-500-400',
+                    'text-platinum-600 dark:text-platinum-400',
                     'transition-colors duration-200'
                   )}
                 >
@@ -358,7 +358,7 @@ export function SwitchGroup({ title, description, switches }: SwitchGroupProps) 
         <h3
           className={cn(
             'text-lg font-semibold',
-            'text-platinum-500-900 dark:text-platinum-500-100',
+            'text-platinum-900 dark:text-platinum-100',
             'gradient-text'
           )}
         >
@@ -368,7 +368,7 @@ export function SwitchGroup({ title, description, switches }: SwitchGroupProps) 
           <p
             className={cn(
               'text-sm',
-              'text-platinum-500-600 dark:text-platinum-500-400',
+              'text-platinum-600 dark:text-platinum-400',
               'transition-colors duration-200'
             )}
           >
@@ -474,7 +474,7 @@ export const SwitchCard = React.forwardRef<
             <h4
               className={cn(
                 'text-sm font-semibold',
-                'text-platinum-500-900 dark:text-platinum-500-100',
+                'text-platinum-900 dark:text-platinum-100',
                 'transition-colors duration-200'
               )}
             >
@@ -484,7 +484,7 @@ export const SwitchCard = React.forwardRef<
               <p
                 className={cn(
                   'text-xs',
-                  'text-platinum-500-600 dark:text-platinum-500-400',
+                  'text-platinum-600 dark:text-platinum-400',
                   'transition-colors duration-200'
                 )}
               >

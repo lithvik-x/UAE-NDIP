@@ -23,7 +23,7 @@ export default function NewsWebsitesPage() {
   if (!data) {
     return (
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-500-400">Loading news websites intelligence data...</div>
+        <div className="text-platinum-400">Loading news websites intelligence data...</div>
       </motion.div>
     )
   }
@@ -71,7 +71,7 @@ export default function NewsWebsitesPage() {
               News Websites
             </span>
           </h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             News outlet coverage analysis — source credibility, topic coverage, and media landscape mapping
           </p>
         </div>
@@ -149,11 +149,11 @@ export default function NewsWebsitesPage() {
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.06 }}
                       className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                       <div className="flex items-center gap-3">
-                        <span className="text-xs text-platinum-500-500 w-6">{idx + 1}</span>
+                        <span className="text-xs text-platinum-500 w-6">{idx + 1}</span>
                         <Newspaper className="h-4 w-4 text-emerald-400" />
                         <div>
-                          <p className="text-sm font-medium text-platinum-500-200">{s.name}</p>
-                          <p className="text-xs text-platinum-500-400">{(s.visits / 1000000).toFixed(1)}M monthly visits</p>
+                          <p className="text-sm font-medium text-platinum-200">{s.name}</p>
+                          <p className="text-xs text-platinum-400">{(s.visits / 1000000).toFixed(1)}M monthly visits</p>
                         </div>
                       </div>
                       <Badge variant="outline" className={`${s.bias === 'pro-gov' ? 'border-emerald-500/50 text-emerald-500' : s.bias === 'critical' ? 'border-rose-500/50 text-rose-500' : 'border-platinum-500/50 text-platinum-500'}`}>
@@ -175,10 +175,10 @@ export default function NewsWebsitesPage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }}
                     className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-platinum-500-200">{t.topic}</span>
+                      <span className="text-sm font-medium text-platinum-200">{t.topic}</span>
                       <div className="flex items-center gap-2">
                         <Badge variant="outline" className={`text-xs ${t.sentiment === 'positive' ? 'border-emerald-500/50 text-emerald-500' : t.sentiment === 'negative' || t.sentiment === 'controlled' ? 'border-rose-500/50 text-rose-500' : 'border-platinum-500/50 text-platinum-500'}`}>{t.sentiment}</Badge>
-                        <span className="text-lg font-bold text-platinum-500-100">{t.coverage}%</span>
+                        <span className="text-lg font-bold text-platinum-100">{t.coverage}%</span>
                       </div>
                     </div>
                     <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
@@ -209,10 +209,10 @@ export default function NewsWebsitesPage() {
                     <Shield className={`h-5 w-5 mt-0.5 shrink-0 ${s.reliability === 'HIGH' ? 'text-emerald-500' : s.reliability === 'MIXED' ? 'text-orange-500' : 'text-rose-500'}`} />
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-1">
-                        <h4 className="font-medium text-platinum-500-200">{s.source}</h4>
+                        <h4 className="font-medium text-platinum-200">{s.source}</h4>
                         <Badge variant="outline" className={`text-xs ${s.reliability === 'HIGH' ? 'border-emerald-500/50 text-emerald-500' : 'border-orange-500/50 text-orange-500'}`}>{s.reliability}</Badge>
                       </div>
-                      <div className="grid grid-cols-2 gap-2 text-xs text-platinum-500-400">
+                      <div className="grid grid-cols-2 gap-2 text-xs text-platinum-400">
                         <span>Credibility: {s.credibility}%</span>
                         <span>Fact-check: {s.factCheck}%</span>
                       </div>

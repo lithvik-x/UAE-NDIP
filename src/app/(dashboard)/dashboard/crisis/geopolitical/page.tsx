@@ -161,7 +161,7 @@ const getStatusColor = (status: string) => {
     case 'ongoing': case 'active': return 'text-rose-400'
     case 'denied': return 'text-amber-400'
     case 'suspended': case 'severed': return 'text-orange-400'
-    default: return 'text-platinum-500-400'
+    default: return 'text-platinum-400'
   }
 }
 
@@ -173,7 +173,7 @@ const getIntensityBar = (intensity: number) => {
       <div className="w-16 h-2 bg-platinum-700 rounded-full overflow-hidden">
         <div className={color} style={{ width: `${(absIntensity / 10) * 100}%` }} />
       </div>
-      <span className="text-xs text-platinum-500-400">{intensity > 0 ? '+' : ''}{intensity}</span>
+      <span className="text-xs text-platinum-400">{intensity > 0 ? '+' : ''}{intensity}</span>
     </div>
   )
 }
@@ -182,7 +182,7 @@ const getRelevanceColor = (score: number) => {
   if (score >= 9) return 'text-rose-400'
   if (score >= 7) return 'text-orange-400'
   if (score >= 5) return 'text-amber-400'
-  return 'text-platinum-500-400'
+  return 'text-platinum-400'
 }
 
 // ============================================================================
@@ -195,7 +195,7 @@ export default function GeopoliticalCrisisPage() {
   if (!data) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-500-400">Loading Geopolitical Crisis data...</div>
+        <div className="text-platinum-400">Loading Geopolitical Crisis data...</div>
       </div>
     )
   }
@@ -239,7 +239,7 @@ export default function GeopoliticalCrisisPage() {
         <div>
           <Badge variant="denim" className="mb-2">GEOPOLITICAL</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">Geopolitical Crises</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             UAE involvement in regional conflicts, great power competition, and diplomatic dynamics (1971-2026)
           </p>
         </div>
@@ -373,7 +373,7 @@ export default function GeopoliticalCrisisPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <Crosshair className="h-5 w-5 text-navy-500-400" />
+                    <Crosshair className="h-5 w-5 text-navy-400" />
                     Source Credibility Distribution
                   </CardTitle>
                   <CardDescription>Research sources by tier (30+ domains)</CardDescription>
@@ -433,7 +433,7 @@ export default function GeopoliticalCrisisPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <ScrollText className="h-5 w-5 text-navy-500-400" />
+                    <ScrollText className="h-5 w-5 text-navy-400" />
                     UAE-Yemen Relations Timeline (1971-2026)
                   </CardTitle>
                   <CardDescription>Key diplomatic and military events</CardDescription>
@@ -461,10 +461,10 @@ export default function GeopoliticalCrisisPage() {
                           <div className="absolute -left-8 top-0 h-4 w-4 rounded-full bg-rose-500 border-2 border-platinum-900" />
                           <div className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-3 hover:bg-platinum-800/70 transition-colors">
                             <div className="flex items-center justify-between mb-1">
-                              <p className="font-semibold text-platinum-500-200">{item.event}</p>
+                              <p className="font-semibold text-platinum-200">{item.event}</p>
                               <Badge variant="outline" className="text-xs">{item.date}</Badge>
                             </div>
-                            <p className="text-sm text-platinum-500-400">{item.detail}</p>
+                            <p className="text-sm text-platinum-400">{item.detail}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -492,8 +492,8 @@ export default function GeopoliticalCrisisPage() {
                         { label: 'UAE Role', value: 'Primary backer throughout conflict' },
                       ].map((item, idx) => (
                         <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
-                          <span className="text-platinum-500-400 text-sm">{item.label}</span>
-                          <span className="text-platinum-500-200 text-sm font-medium">{item.value}</span>
+                          <span className="text-platinum-400 text-sm">{item.label}</span>
+                          <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -522,7 +522,7 @@ export default function GeopoliticalCrisisPage() {
                           <div key={idx} className="flex items-center justify-between rounded bg-platinum-800/50 p-2">
                             <div className="flex items-center gap-2">
                               <Map className="h-3 w-3 text-cyan-400" />
-                              <span className="text-platinum-500-200 text-sm">{loc.location}</span>
+                              <span className="text-platinum-200 text-sm">{loc.location}</span>
                             </div>
                             <Badge variant="outline" className="text-xs">{loc.facility}</Badge>
                           </div>
@@ -551,7 +551,7 @@ export default function GeopoliticalCrisisPage() {
                       { label: 'UN Requested', value: 'Intervention (2020)' },
                     ].map((item, idx) => (
                       <div key={idx} className="rounded bg-rose-500/10 p-3 border border-rose-500/30">
-                        <p className="text-xs text-platinum-500-400">{item.label}</p>
+                        <p className="text-xs text-platinum-400">{item.label}</p>
                         <p className="text-lg font-bold text-rose-300">{item.value}</p>
                       </div>
                     ))}
@@ -589,13 +589,13 @@ export default function GeopoliticalCrisisPage() {
                           <div className="flex items-center gap-3">
                             <Flag className={`h-4 w-4 ${getStatusColor(op.status)}`} />
                             <div>
-                              <p className="font-medium text-platinum-500-200">{op.operation}</p>
-                              <p className="text-xs text-platinum-500-400">{op.country} | {op.start}-{op.end}</p>
+                              <p className="font-medium text-platinum-200">{op.operation}</p>
+                              <p className="text-xs text-platinum-400">{op.country} | {op.start}-{op.end}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-3">
                             <Badge variant="outline" className={`text-xs ${getStatusColor(op.status)}`}>{op.status}</Badge>
-                            <span className="text-xs text-platinum-500-400">{op.casualties}</span>
+                            <span className="text-xs text-platinum-400">{op.casualties}</span>
                           </div>
                         </motion.div>
                       ))}
@@ -622,8 +622,8 @@ export default function GeopoliticalCrisisPage() {
                         { label: 'Oil Deal (Jan 2026)', value: '$20B+ (TotalEnergies)' },
                       ].map((item, idx) => (
                         <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
-                          <span className="text-platinum-500-400 text-sm">{item.label}</span>
-                          <span className="text-platinum-500-200 text-sm font-medium">{item.value}</span>
+                          <span className="text-platinum-400 text-sm">{item.label}</span>
+                          <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -646,8 +646,8 @@ export default function GeopoliticalCrisisPage() {
                         { label: 'GB50A Bombs', value: 'Documented March 2025' },
                       ].map((item, idx) => (
                         <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
-                          <span className="text-platinum-500-400 text-sm">{item.label}</span>
-                          <span className="text-platinum-500-200 text-sm font-medium">{item.value}</span>
+                          <span className="text-platinum-400 text-sm">{item.label}</span>
+                          <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -673,8 +673,8 @@ export default function GeopoliticalCrisisPage() {
                         { label: 'Cancelled', value: 'All defense/port agreements' },
                       ].map((item, idx) => (
                         <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
-                          <span className="text-platinum-500-400 text-sm">{item.label}</span>
-                          <span className="text-platinum-500-200 text-sm font-medium">{item.value}</span>
+                          <span className="text-platinum-400 text-sm">{item.label}</span>
+                          <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -684,7 +684,7 @@ export default function GeopoliticalCrisisPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Map className="h-5 w-5 text-platinum-500-400" />
+                      <Map className="h-5 w-5 text-platinum-400" />
                       Eritrea - Assab Base Withdrawn
                     </CardTitle>
                   </CardHeader>
@@ -697,8 +697,8 @@ export default function GeopoliticalCrisisPage() {
                         { label: 'Status', value: 'Withdrawn' },
                       ].map((item, idx) => (
                         <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
-                          <span className="text-platinum-500-400 text-sm">{item.label}</span>
-                          <span className="text-platinum-500-200 text-sm font-medium">{item.value}</span>
+                          <span className="text-platinum-400 text-sm">{item.label}</span>
+                          <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -711,7 +711,7 @@ export default function GeopoliticalCrisisPage() {
                 <Card className="glass-card">
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Building className="h-5 w-5 text-navy-500-400" />
+                      <Building className="h-5 w-5 text-navy-400" />
                       Syria - Reconstruction
                     </CardTitle>
                   </CardHeader>
@@ -724,8 +724,8 @@ export default function GeopoliticalCrisisPage() {
                         { label: 'Damascus Metro', value: '$2B (National Invest)' },
                       ].map((item, idx) => (
                         <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
-                          <span className="text-platinum-500-400 text-sm">{item.label}</span>
-                          <span className="text-platinum-500-200 text-sm font-medium">{item.value}</span>
+                          <span className="text-platinum-400 text-sm">{item.label}</span>
+                          <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -748,8 +748,8 @@ export default function GeopoliticalCrisisPage() {
                         { label: 'Stabilization Force', value: 'Refused (Nov 2025)' },
                       ].map((item, idx) => (
                         <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
-                          <span className="text-platinum-500-400 text-sm">{item.label}</span>
-                          <span className="text-platinum-500-200 text-sm font-medium">{item.value}</span>
+                          <span className="text-platinum-400 text-sm">{item.label}</span>
+                          <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -776,7 +776,7 @@ export default function GeopoliticalCrisisPage() {
                       { label: 'Opened', value: 'Sep 2025' },
                     ].map((item, idx) => (
                       <div key={idx} className="rounded bg-cyan-500/10 p-3 border border-cyan-500/30 text-center">
-                        <p className="text-xs text-platinum-500-400">{item.label}</p>
+                        <p className="text-xs text-platinum-400">{item.label}</p>
                         <p className="text-lg font-bold text-cyan-300">{item.value}</p>
                       </div>
                     ))}
@@ -802,10 +802,10 @@ export default function GeopoliticalCrisisPage() {
                     whileHover={{ scale: 1.02 }}
                     className="rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:border-navy-500/50 transition-colors"
                   >
-                    <gp.icon className="h-6 w-6 text-navy-500-400 mb-2" />
-                    <p className="font-semibold text-platinum-500-200">{gp.domain}</p>
-                    <p className="text-xs text-platinum-500-400 mt-1">{gp.position}</p>
-                    <Badge variant="outline" className={`text-xs mt-2 ${gp.sentiment === 'Negative' ? 'border-rose-500/50 text-rose-400' : gp.sentiment === 'Positive' ? 'border-emerald-500/50 text-emerald-400' : 'border-navy-500/50 text-navy-500-300'}`}>
+                    <gp.icon className="h-6 w-6 text-navy-400 mb-2" />
+                    <p className="font-semibold text-platinum-200">{gp.domain}</p>
+                    <p className="text-xs text-platinum-400 mt-1">{gp.position}</p>
+                    <Badge variant="outline" className={`text-xs mt-2 ${gp.sentiment === 'Negative' ? 'border-rose-500/50 text-rose-400' : gp.sentiment === 'Positive' ? 'border-emerald-500/50 text-emerald-400' : 'border-navy-500/50 text-navy-300'}`}>
                       {gp.sentiment}
                     </Badge>
                   </motion.div>
@@ -853,7 +853,7 @@ export default function GeopoliticalCrisisPage() {
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-start gap-3 rounded bg-orange-500/10 p-3 border border-orange-500/20">
                           <Badge variant="outline" className="text-xs shrink-0">{item.date}</Badge>
-                          <p className="text-sm text-platinum-500-200">{item.event}</p>
+                          <p className="text-sm text-platinum-200">{item.event}</p>
                         </div>
                       ))}
                     </div>
@@ -883,7 +883,7 @@ export default function GeopoliticalCrisisPage() {
                       { label: 'Divestment', value: 'ByteDance, xFusion (2023)' },
                     ].map((item, idx) => (
                       <div key={idx} className="rounded bg-cyan-500/10 p-3 border border-cyan-500/30">
-                        <p className="text-xs text-platinum-500-400">{item.label}</p>
+                        <p className="text-xs text-platinum-400">{item.label}</p>
                         <p className="text-sm font-bold text-cyan-300">{item.value}</p>
                       </div>
                     ))}
@@ -910,7 +910,7 @@ export default function GeopoliticalCrisisPage() {
                       { label: 'XRP Trade', value: 'UAE-India oil using XRP (May 2025, reported)' },
                     ].map((item, idx) => (
                       <div key={idx} className="flex justify-between rounded bg-emerald-500/10 p-2 border border-emerald-500/20">
-                        <span className="text-platinum-500-400 text-sm">{item.label}</span>
+                        <span className="text-platinum-400 text-sm">{item.label}</span>
                         <span className="text-emerald-300 text-sm font-medium text-right max-w-[50%]">{item.value}</span>
                       </div>
                     ))}
@@ -936,7 +936,7 @@ export default function GeopoliticalCrisisPage() {
                       { label: 'FATF Grey List', value: '2022-2024 (removed)' },
                     ].map((item, idx) => (
                       <div key={idx} className="rounded bg-rose-500/10 p-3 border border-rose-500/30">
-                        <p className="text-xs text-platinum-500-400">{item.label}</p>
+                        <p className="text-xs text-platinum-400">{item.label}</p>
                         <p className="text-sm font-bold text-rose-300">{item.value}</p>
                       </div>
                     ))}
@@ -962,7 +962,7 @@ export default function GeopoliticalCrisisPage() {
                     ].map((item, idx) => (
                       <div key={idx} className="flex items-start gap-3 rounded bg-platinum-800/50 p-2">
                         <Badge variant="outline" className="text-xs shrink-0">{item.date}</Badge>
-                        <p className="text-sm text-platinum-500-200">{item.event}</p>
+                        <p className="text-sm text-platinum-200">{item.event}</p>
                       </div>
                     ))}
                   </div>
@@ -1001,10 +1001,10 @@ export default function GeopoliticalCrisisPage() {
                               className="w-3 h-3 rounded-full"
                               style={{ backgroundColor: item.color }}
                             />
-                            <span className="font-medium text-platinum-500-200">{item.country}</span>
+                            <span className="font-medium text-platinum-200">{item.country}</span>
                           </div>
                           <div className="flex items-center gap-4">
-                            <Badge variant="outline" className={`text-xs ${item.intensity < 0 ? 'text-rose-400 border-rose-500/50' : item.intensity > 0 ? 'text-emerald-400 border-emerald-500/50' : 'text-platinum-500-400 border-platinum-500/50'}`}>
+                            <Badge variant="outline" className={`text-xs ${item.intensity < 0 ? 'text-rose-400 border-rose-500/50' : item.intensity > 0 ? 'text-emerald-400 border-emerald-500/50' : 'text-platinum-400 border-platinum-500/50'}`}>
                               {item.sentiment}
                             </Badge>
                             {getIntensityBar(item.intensity)}
@@ -1036,7 +1036,7 @@ export default function GeopoliticalCrisisPage() {
                           transition={{ delay: idx * 0.05 }}
                           className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                         >
-                          <span className="font-medium text-platinum-500-200">{item.topic}</span>
+                          <span className="font-medium text-platinum-200">{item.topic}</span>
                           <div className="flex items-center gap-3">
                             <span className={`text-lg font-bold ${getRelevanceColor(item.score)}`}>{item.score}/10</span>
                             <Progress value={item.score * 10} className="w-20" />
@@ -1052,7 +1052,7 @@ export default function GeopoliticalCrisisPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg flex items-center gap-2">
-                    <ScrollText className="h-5 w-5 text-navy-500-400" />
+                    <ScrollText className="h-5 w-5 text-navy-400" />
                     Key Research Findings
                   </CardTitle>
                   <CardDescription>Top findings from 36 query patterns executed</CardDescription>
@@ -1067,8 +1067,8 @@ export default function GeopoliticalCrisisPage() {
                         transition={{ delay: idx * 0.03 }}
                         className="flex items-start justify-between rounded-lg bg-navy-500/10 p-3 border border-navy-500/30"
                       >
-                        <p className="text-sm text-platinum-500-200">{typeof finding === 'string' ? finding : (finding as any).finding || finding}</p>
-                        <ChevronRight className="h-4 w-4 text-navy-500-400 flex-shrink-0 mt-0.5" />
+                        <p className="text-sm text-platinum-200">{typeof finding === 'string' ? finding : (finding as any).finding || finding}</p>
+                        <ChevronRight className="h-4 w-4 text-navy-400 flex-shrink-0 mt-0.5" />
                       </motion.div>
                     ))}
                   </div>

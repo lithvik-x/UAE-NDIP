@@ -57,7 +57,7 @@ export default function GamingPage() {
               Gaming Platforms
             </span>
           </h1>
-          <p className="mt-2 text-platinum-500-400">Gaming community intelligence — top games, tournaments, esports ecosystem, and player demographics</p>
+          <p className="mt-2 text-platinum-400">Gaming community intelligence — top games, tournaments, esports ecosystem, and player demographics</p>
         </div>
       </motion.div>
 
@@ -104,14 +104,14 @@ export default function GamingPage() {
                     <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
                       className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
                       <div className="flex items-center gap-3">
-                        <span className="text-xs text-platinum-500-500 w-5">{idx + 1}</span>
+                        <span className="text-xs text-platinum-500 w-5">{idx + 1}</span>
                         <Gamepad2 className="h-4 w-4 text-rose-400" />
                         <div>
-                          <p className="font-medium text-platinum-500-200">{g.name}</p>
-                          <p className="text-xs text-platinum-500-400">{g.genre}</p>
+                          <p className="font-medium text-platinum-200">{g.name}</p>
+                          <p className="text-xs text-platinum-400">{g.genre}</p>
                         </div>
                       </div>
-                      <div className="flex items-center gap-4 text-sm text-platinum-500-400">
+                      <div className="flex items-center gap-4 text-sm text-platinum-400">
                         <span>{(g.players/1000).toFixed(0)}K players</span>
                         <Badge variant="outline" className="border-emerald-500/50 text-emerald-500">${(g.revenue/1000000).toFixed(0)}M</Badge>
                       </div>
@@ -133,8 +133,8 @@ export default function GamingPage() {
                     <div className="flex items-center gap-3">
                       <Trophy className="h-5 w-5 text-rose-400" />
                       <div>
-                        <p className="font-medium text-platinum-500-200">{t.event}</p>
-                        <p className="text-xs text-platinum-500-400">{t.date} • {t.participants} teams</p>
+                        <p className="font-medium text-platinum-200">{t.event}</p>
+                        <p className="text-xs text-platinum-400">{t.date} • {t.participants} teams</p>
                       </div>
                     </div>
                     <Badge className="border-emerald-500/50 text-emerald-500 bg-emerald-500/10">{t.prize}</Badge>
@@ -153,8 +153,8 @@ export default function GamingPage() {
                   <motion.div key={idx} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.08 }} whileHover={{ scale: 1.03 }}
                     className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border text-center">
                     <Gamepad2 className={`h-8 w-8 mx-auto mb-3 ${p.name === 'Mobile' ? 'text-emerald-500' : p.name === 'PC' ? 'text-sky' : 'text-violet-500'}`} />
-                    <h4 className="font-bold text-2xl text-platinum-500-100">{p.share}%</h4>
-                    <p className="text-platinum-500-400">{p.name}</p>
+                    <h4 className="font-bold text-2xl text-platinum-100">{p.share}%</h4>
+                    <p className="text-platinum-400">{p.name}</p>
                   </motion.div>
                 ))}
               </div>

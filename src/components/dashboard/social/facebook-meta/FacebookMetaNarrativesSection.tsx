@@ -85,7 +85,7 @@ export function FacebookMetaNarrativesSection() {
                         className={`${
                           narrative.sentiment === 'positive' ? 'border-emerald-500/50 text-emerald-400' :
                           narrative.sentiment === 'negative' ? 'border-rose-500/50 text-rose-400' :
-                          'border-platinum-500/50 text-platinum-500-400'
+                          'border-platinum-500/50 text-platinum-400'
                         }`}
                       >
                         {narrative.sentiment}
@@ -93,9 +93,9 @@ export function FacebookMetaNarrativesSection() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-platinum-500-300 mb-3">{narrative.narrative}</p>
-                    <div className="flex items-center justify-between text-xs text-platinum-500-500">
-                      <span>Prevalence: <strong className="text-platinum-500-300">{narrative.prevalence}%</strong></span>
+                    <p className="text-sm text-platinum-300 mb-3">{narrative.narrative}</p>
+                    <div className="flex items-center justify-between text-xs text-platinum-500">
+                      <span>Prevalence: <strong className="text-platinum-300">{narrative.prevalence}%</strong></span>
                       <span>Source: {narrative.source}</span>
                     </div>
                   </CardContent>

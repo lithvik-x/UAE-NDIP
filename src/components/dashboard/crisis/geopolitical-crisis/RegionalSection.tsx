@@ -37,7 +37,7 @@ const getStatusColor = (status: string) => {
     case 'denied': return 'text-amber-400'
     case 'suspended':
     case 'severed': return 'text-orange-400'
-    default: return 'text-platinum-500-400'
+    default: return 'text-platinum-400'
   }
 }
 
@@ -72,13 +72,13 @@ export function RegionalSection({ className }: RegionalSectionProps) {
                       <div className="flex items-center gap-3">
                         <Flag className={`h-4 w-4 ${getStatusColor(op.status)}`} />
                         <div>
-                          <p className="font-medium text-platinum-500-200">{op.operation}</p>
-                          <p className="text-xs text-platinum-500-400">{op.country} | {op.start}-{op.end}</p>
+                          <p className="font-medium text-platinum-200">{op.operation}</p>
+                          <p className="text-xs text-platinum-400">{op.country} | {op.start}-{op.end}</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-3">
                         <Badge variant="outline" className={`text-xs ${getStatusColor(op.status)}`}>{op.status}</Badge>
-                        <span className="text-xs text-platinum-500-400">{op.casualties}</span>
+                        <span className="text-xs text-platinum-400">{op.casualties}</span>
                       </div>
                     </motion.div>
                   ))}
@@ -105,8 +105,8 @@ export function RegionalSection({ className }: RegionalSectionProps) {
                     { label: 'Cancelled', value: 'All defense/port agreements' },
                   ].map((item, idx) => (
                     <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
-                      <span className="text-platinum-500-400 text-sm">{item.label}</span>
-                      <span className="text-platinum-500-200 text-sm font-medium">{item.value}</span>
+                      <span className="text-platinum-400 text-sm">{item.label}</span>
+                      <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -116,7 +116,7 @@ export function RegionalSection({ className }: RegionalSectionProps) {
             <Card className="glass-card rounded-xl bg-glass-surface/50 border-glass-border">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Map className="h-5 w-5 text-platinum-500-400" />
+                  <Map className="h-5 w-5 text-platinum-400" />
                   Eritrea - Assab Base Withdrawn
                 </CardTitle>
               </CardHeader>
@@ -124,8 +124,8 @@ export function RegionalSection({ className }: RegionalSectionProps) {
                 <div className="space-y-3">
                   {eritrea.map((item, idx) => (
                     <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
-                      <span className="text-platinum-500-400 text-sm">{item.label}</span>
-                      <span className="text-platinum-500-200 text-sm font-medium">{item.value}</span>
+                      <span className="text-platinum-400 text-sm">{item.label}</span>
+                      <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -138,7 +138,7 @@ export function RegionalSection({ className }: RegionalSectionProps) {
             <Card className="glass-card rounded-xl bg-glass-surface/50 border-glass-border">
               <CardHeader>
                 <CardTitle className="text-lg flex items-center gap-2">
-                  <Building className="h-5 w-5 text-navy-500-400" />
+                  <Building className="h-5 w-5 text-navy-400" />
                   Syria - Reconstruction
                 </CardTitle>
               </CardHeader>
@@ -151,8 +151,8 @@ export function RegionalSection({ className }: RegionalSectionProps) {
                     { label: 'Damascus Metro', value: '$2B (National Invest)' },
                   ].map((item, idx) => (
                     <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
-                      <span className="text-platinum-500-400 text-sm">{item.label}</span>
-                      <span className="text-platinum-500-200 text-sm font-medium">{item.value}</span>
+                      <span className="text-platinum-400 text-sm">{item.label}</span>
+                      <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -175,8 +175,8 @@ export function RegionalSection({ className }: RegionalSectionProps) {
                     { label: 'Stabilization Force', value: 'Refused (Nov 2025)' },
                   ].map((item, idx) => (
                     <div key={idx} className="flex justify-between rounded bg-platinum-800/50 p-2">
-                      <span className="text-platinum-500-400 text-sm">{item.label}</span>
-                      <span className="text-platinum-500-200 text-sm font-medium">{item.value}</span>
+                      <span className="text-platinum-400 text-sm">{item.label}</span>
+                      <span className="text-platinum-200 text-sm font-medium">{item.value}</span>
                     </div>
                   ))}
                 </div>
@@ -196,8 +196,8 @@ export function RegionalSection({ className }: RegionalSectionProps) {
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {iraqKurdistan.map((item, idx) => (
                   <div key={idx} className="rounded bg-platinum-800/50 p-3 border border-platinum-700/50">
-                    <p className="text-xs text-platinum-500-400">{item.label}</p>
-                    <p className="text-sm font-medium text-platinum-500-200">{item.value}</p>
+                    <p className="text-xs text-platinum-400">{item.label}</p>
+                    <p className="text-sm font-medium text-platinum-200">{item.value}</p>
                   </div>
                 ))}
               </div>

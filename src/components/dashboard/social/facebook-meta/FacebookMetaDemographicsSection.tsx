@@ -100,7 +100,7 @@ export function FacebookMetaDemographicsSection() {
                     className="space-y-2"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-platinum-500-200">{item.age}</span>
+                      <span className="text-sm font-medium text-platinum-200">{item.age}</span>
                       <div className="flex gap-4">
                         <span className="text-xs text-rose-400">F: {item.female}%</span>
                         <span className="text-xs text-indigo-400">M: {item.male}%</span>
@@ -133,7 +133,7 @@ export function FacebookMetaDemographicsSection() {
                     className="rounded-lg bg-platinum-800/50 p-3"
                   >
                     <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium text-platinum-500-200">{item.nationality}</span>
+                      <span className="text-sm font-medium text-platinum-200">{item.nationality}</span>
                       <Badge variant="outline" className="text-gold-700 border-gold-700/50">
                         {item.percent}%
                       </Badge>

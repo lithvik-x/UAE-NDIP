@@ -65,8 +65,8 @@ const getSeverityIcon = (severity: string) => {
     case 'CRITICAL': return <XCircle className="h-5 w-5 text-rose-400" />
     case 'HIGH': return <AlertTriangle className="h-5 w-5 text-orange-400" />
     case 'MEDIUM': return <AlertCircle className="h-5 w-5 text-amber-400" />
-    case 'LOW': return <Bell className="h-5 w-5 text-navy-500-400" />
-    default: return <Activity className="h-5 w-5 text-platinum-500-400" />
+    case 'LOW': return <Bell className="h-5 w-5 text-navy-400" />
+    default: return <Activity className="h-5 w-5 text-platinum-400" />
   }
 }
 
@@ -75,7 +75,7 @@ const getStatusBadge = (status: string) => {
   switch (status) {
     case 'Active': return <Badge variant="destructive" className="text-xs">{status}</Badge>
     case 'Investigating': return <Badge variant="warning" className="text-xs">{status}</Badge>
-    case 'Monitoring': return <Badge variant="outline" className="text-xs text-navy-500-400">{status}</Badge>
+    case 'Monitoring': return <Badge variant="outline" className="text-xs text-navy-400">{status}</Badge>
     case 'Resolved': return <Badge variant="outline" className="text-xs text-emerald-400">{status}</Badge>
     default: return <Badge variant="outline" className="text-xs">{status}</Badge>
   }
@@ -90,27 +90,27 @@ const getStatusColor = (status: string) => {
     case 'CRITICAL': return 'text-rose-400'
     case 'OPERATIONAL': return 'text-emerald-400'
     case 'ACTIVE': return 'text-rose-400'
-    case 'CLOSED': return 'text-platinum-500-400'
+    case 'CLOSED': return 'text-platinum-400'
     case 'WITHDRAWN': return 'text-orange-400'
     case 'VOLATILE': return 'text-orange-400'
     case 'SECURE': return 'text-emerald-400'
     case 'REPORTED': return 'text-amber-400'
-    case 'MONITORED': return 'text-navy-500-400'
+    case 'MONITORED': return 'text-navy-400'
     case 'SURGE': return 'text-rose-400'
     case 'STABLE': return 'text-emerald-400'
     case 'DEVASTATED': return 'text-rose-400'
     case 'PARTIAL': return 'text-amber-400'
-    case 'ENHANCED': return 'text-navy-500-400'
+    case 'ENHANCED': return 'text-navy-400'
     case 'MULTIPLE': return 'text-orange-400'
     case 'CRISIS': return 'text-rose-400'
-    case 'BRIEF': return 'text-navy-500-400'
+    case 'BRIEF': return 'text-navy-400'
     case 'CONTROLLED': return 'text-orange-400'
-    case 'FORMING': return 'text-navy-500-400'
+    case 'FORMING': return 'text-navy-400'
     case 'DETERIORATED': return 'text-rose-400'
     case 'CHANGED': return 'text-amber-400'
     case 'ENGAGED': return 'text-orange-400'
     case 'COMPLETED': return 'text-emerald-400'
-    default: return 'text-platinum-500-400'
+    default: return 'text-platinum-400'
   }
 }
 
@@ -133,9 +133,9 @@ const QuantitativeCard = ({ metric, value, source }: { metric: string; value: st
     whileHover={{ scale: 1.02 }}
     className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm transition-all hover:bg-white/10"
   >
-    <p className="text-xs text-platinum-500-400">{metric}</p>
+    <p className="text-xs text-platinum-400">{metric}</p>
     <p className="mt-1 text-2xl font-bold text-white">{value}</p>
-    <p className="mt-1 text-xs text-platinum-500-500">{source}</p>
+    <p className="mt-1 text-xs text-platinum-500">{source}</p>
   </motion.div>
 )
 
@@ -156,11 +156,11 @@ const IndicatorRow = ({ name, status, detail }: { name: string; status: string; 
           ? 'bg-orange-400'
           : 'bg-navy-400'
       }`} />
-      <span className="text-sm font-medium text-platinum-500-200">{name}</span>
+      <span className="text-sm font-medium text-platinum-200">{name}</span>
     </div>
     <div className="flex items-center gap-4">
       <span className={`text-xs font-medium ${getStatusColor(status)}`}>{status}</span>
-      <span className="max-w-48 truncate text-xs text-platinum-500-500">{detail}</span>
+      <span className="max-w-48 truncate text-xs text-platinum-500">{detail}</span>
     </div>
   </motion.div>
 )
@@ -318,7 +318,7 @@ export default function CrisisAlertsPage() {
         <div>
           <Badge variant="rose" className="mb-2">C-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-rose-500">Real-time Crisis Alerts</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Live alert monitoring and early warning system
           </p>
         </div>
@@ -458,13 +458,13 @@ export default function CrisisAlertsPage() {
                           <div className="flex items-center gap-4">
                             {getSeverityIcon(alert.severity)}
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{alert.alert}</p>
+                              <p className="font-semibold text-platinum-200">{alert.alert}</p>
                               <div className="flex items-center gap-3 mt-1">
-                                <span className="text-xs text-platinum-500-400">ID: {alert.id}</span>
-                                <span className="text-xs text-platinum-500-500">-</span>
-                                <span className="text-xs text-platinum-500-400">Source: {alert.source}</span>
-                                <span className="text-xs text-platinum-500-500">-</span>
-                                <span className="text-xs text-platinum-500-400 flex items-center gap-1">
+                                <span className="text-xs text-platinum-400">ID: {alert.id}</span>
+                                <span className="text-xs text-platinum-500">-</span>
+                                <span className="text-xs text-platinum-400">Source: {alert.source}</span>
+                                <span className="text-xs text-platinum-500">-</span>
+                                <span className="text-xs text-platinum-400 flex items-center gap-1">
                                   <Clock className="h-3 w-3" />
                                   {alert.time}
                                 </span>
@@ -476,7 +476,7 @@ export default function CrisisAlertsPage() {
                               alert.severity === 'CRITICAL' ? 'text-rose-400' :
                               alert.severity === 'HIGH' ? 'text-orange-400' :
                               alert.severity === 'MEDIUM' ? 'text-amber-400' :
-                              'text-navy-500-400'
+                              'text-navy-400'
                             }`}>{alert.severity}</Badge>
                             {getStatusBadge(alert.status)}
                           </div>
@@ -545,7 +545,7 @@ export default function CrisisAlertsPage() {
                       className="text-center"
                     >
                       <div className="text-4xl font-bold text-rose-400">{activeAlerts}</div>
-                      <p className="mt-1 text-sm text-platinum-500-400">Active</p>
+                      <p className="mt-1 text-sm text-platinum-400">Active</p>
                     </motion.div>
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9 }}
@@ -554,7 +554,7 @@ export default function CrisisAlertsPage() {
                       className="text-center"
                     >
                       <div className="text-4xl font-bold text-orange-400">{activeAlerts + 12}</div>
-                      <p className="mt-1 text-sm text-platinum-500-400">Last 24h</p>
+                      <p className="mt-1 text-sm text-platinum-400">Last 24h</p>
                     </motion.div>
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9 }}
@@ -563,7 +563,7 @@ export default function CrisisAlertsPage() {
                       className="text-center"
                     >
                       <div className="text-4xl font-bold text-emerald-400">{resolvedAlerts}</div>
-                      <p className="mt-1 text-sm text-platinum-500-400">Resolved</p>
+                      <p className="mt-1 text-sm text-platinum-400">Resolved</p>
                     </motion.div>
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9 }}
@@ -572,7 +572,7 @@ export default function CrisisAlertsPage() {
                       className="text-center"
                     >
                       <div className="text-4xl font-bold text-amber-400">{avgResponseTime}</div>
-                      <p className="mt-1 text-sm text-platinum-500-400">Avg Response</p>
+                      <p className="mt-1 text-sm text-platinum-400">Avg Response</p>
                     </motion.div>
                   </div>
                 </CardContent>
@@ -602,9 +602,9 @@ export default function CrisisAlertsPage() {
                           className="space-y-2"
                         >
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-500-200">{indicator.indicator}</span>
+                            <span className="text-sm font-medium text-platinum-200">{indicator.indicator}</span>
                             <div className="flex items-center gap-4">
-                              <span className="text-xs text-platinum-500-400">Value: {indicator.value}</span>
+                              <span className="text-xs text-platinum-400">Value: {indicator.value}</span>
                               <Badge variant="outline" className={`text-xs ${getStatusColor(indicator.status)}`}>
                                 {indicator.status}
                               </Badge>
@@ -639,7 +639,7 @@ export default function CrisisAlertsPage() {
                       className="space-y-2"
                     >
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-500-400">Overall Accuracy</span>
+                        <span className="text-platinum-400">Overall Accuracy</span>
                         <span className="font-medium text-emerald-400">87.5%</span>
                       </div>
                       <Progress value={87.5} className="h-3" />
@@ -651,7 +651,7 @@ export default function CrisisAlertsPage() {
                       className="space-y-2"
                     >
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-500-400">False Positive Rate</span>
+                        <span className="text-platinum-400">False Positive Rate</span>
                         <span className="font-medium text-amber-400">8.2%</span>
                       </div>
                       <Progress value={8.2} className="h-3" />
@@ -663,7 +663,7 @@ export default function CrisisAlertsPage() {
                       className="space-y-2"
                     >
                       <div className="flex items-center justify-between text-sm">
-                        <span className="text-platinum-500-400">Lead Time (avg)</span>
+                        <span className="text-platinum-400">Lead Time (avg)</span>
                         <span className="font-medium text-navy-500">4.2 hours</span>
                       </div>
                       <Progress value={42} className="h-3" />
@@ -737,7 +737,7 @@ export default function CrisisAlertsPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-lg">
-                    <Users className="h-5 w-5 text-navy-500-400" />
+                    <Users className="h-5 w-5 text-navy-400" />
                     Social
                   </CardTitle>
                   <CardDescription>Status: HIGH</CardDescription>
@@ -807,20 +807,20 @@ export default function CrisisAlertsPage() {
                         alert.level === 'CRITICAL' ? 'bg-rose-500/20 text-rose-400' :
                         alert.level === 'HIGH' ? 'bg-orange-500/20 text-orange-400' :
                         alert.level === 'MEDIUM' ? 'bg-amber-500/20 text-amber-400' :
-                        'bg-navy-500/20 text-navy-500-400'
+                        'bg-navy-500/20 text-navy-400'
                       }`}>
                         <span className="text-sm font-bold">{alert.priority}</span>
                       </div>
                       <div>
-                        <p className="font-semibold text-platinum-500-200">{alert.alert}</p>
-                        <p className="mt-1 text-xs text-platinum-500-400">Status: {alert.status}</p>
+                        <p className="font-semibold text-platinum-200">{alert.alert}</p>
+                        <p className="mt-1 text-xs text-platinum-400">Status: {alert.status}</p>
                       </div>
                     </div>
                     <Badge variant="outline" className={`text-xs ${
                       alert.level === 'CRITICAL' ? 'text-rose-400 border-rose-400' :
                       alert.level === 'HIGH' ? 'text-orange-400 border-orange-400' :
                       alert.level === 'MEDIUM' ? 'text-amber-400 border-amber-400' :
-                      'text-navy-500-400 border-navy-400'
+                      'text-navy-400 border-navy-400'
                     }`}>{alert.level}</Badge>
                   </div>
                 </motion.div>
@@ -851,7 +851,7 @@ export default function CrisisAlertsPage() {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
                             <Badge variant="outline" className="w-20 justify-center">{channel.channel}</Badge>
-                            <span className="text-sm text-platinum-500-400">{channel.delivered.toLocaleString()} delivered</span>
+                            <span className="text-sm text-platinum-400">{channel.delivered.toLocaleString()} delivered</span>
                           </div>
                           <span className={`text-sm font-bold ${
                             channel.successRate >= 99 ? 'text-emerald-400' :
@@ -890,7 +890,7 @@ export default function CrisisAlertsPage() {
                         >
                           <div className="flex items-center gap-3">
                             <MessageSquare className="h-4 w-4 text-navy-500" />
-                            <span className="text-sm font-medium text-platinum-500-200">{contact.name}</span>
+                            <span className="text-sm font-medium text-platinum-200">{contact.name}</span>
                           </div>
                           <div className="flex items-center gap-3">
                             <Badge variant="outline" className="text-xs">{contact.type}</Badge>
@@ -938,8 +938,8 @@ export default function CrisisAlertsPage() {
                   transition={{ delay: index * 0.05 }}
                   className="rounded-lg border border-white/10 bg-white/5 p-4 backdrop-blur-sm"
                 >
-                  <p className="text-xs text-platinum-500-400">{item.period}</p>
-                  <p className="mt-1 text-sm font-medium text-platinum-500-200">{item.coverage}</p>
+                  <p className="text-xs text-platinum-400">{item.period}</p>
+                  <p className="mt-1 text-sm font-medium text-platinum-200">{item.coverage}</p>
                 </motion.div>
               ))}
             </div>
@@ -970,10 +970,10 @@ export default function CrisisAlertsPage() {
                   }`}>{item.tier}</p>
                   <div className="mt-2 space-y-1">
                     {item.sources.slice(0, 3).map((source, idx) => (
-                      <p key={idx} className="text-xs text-platinum-500-400">{source}</p>
+                      <p key={idx} className="text-xs text-platinum-400">{source}</p>
                     ))}
                     {item.sources.length > 3 && (
-                      <p className="text-xs text-platinum-500-500">+{item.sources.length - 3} more</p>
+                      <p className="text-xs text-platinum-500">+{item.sources.length - 3} more</p>
                     )}
                   </div>
                 </motion.div>

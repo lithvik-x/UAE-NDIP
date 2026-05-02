@@ -109,7 +109,7 @@ export default function FederalOfficialsPage() {
       'bg-gradient-platinum text-white',
       'bg-gradient-denim text-white',
       'bg-platinum-400 text-white',
-      'bg-platinum-300 text-platinum-500-700',
+      'bg-platinum-300 text-platinum-700',
     ]
     return (
       <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold ${colors[tier]}`}>
@@ -125,14 +125,14 @@ export default function FederalOfficialsPage() {
           href={`https://twitter.com/${entity.socialAccounts.twitter.replace('@', '')}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 text-navy-500-500 hover:text-navy-500-400 transition-colors"
+          className="inline-flex items-center gap-1 text-navy-500 hover:text-navy-400 transition-colors"
         >
           <Twitter className="h-3.5 w-3.5" />
           <span className="text-xs">{entity.socialAccounts.twitter}</span>
         </a>
       )
     }
-    return <span className="text-platinum-500-500 text-xs">—</span>
+    return <span className="text-platinum-500 text-xs">—</span>
   }
 
   return (
@@ -142,7 +142,7 @@ export default function FederalOfficialsPage() {
         <div>
           <Badge variant="gold" className="mb-2">FEDERAL OFFICIALS</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Entity Intelligence</h1>
-          <p className="mt-2 text-platinum-500-600 dark:text-platinum-500-400">
+          <p className="mt-2 text-platinum-600 dark:text-platinum-400">
             Federal officials and government leadership — {totalCount} entities tracked
           </p>
         </div>
@@ -151,7 +151,7 @@ export default function FederalOfficialsPage() {
             <Globe className="h-4 w-4" />
             Export List
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
             <Star className="h-4 w-4" />
             Refresh Data
           </Button>
@@ -202,14 +202,14 @@ export default function FederalOfficialsPage() {
             <Table>
               <TableHeader>
                 <TableRow className="border-b border-platinum-200/50 dark:border-platinum-700/50">
-                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Name</TableHead>
-                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Role / Title</TableHead>
-                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Emirate</TableHead>
-                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Tier</TableHead>
-                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Relevance</TableHead>
-                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Sentiment</TableHead>
-                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Alert</TableHead>
-                  <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Twitter</TableHead>
+                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Name</TableHead>
+                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Role / Title</TableHead>
+                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Emirate</TableHead>
+                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Tier</TableHead>
+                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Relevance</TableHead>
+                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Sentiment</TableHead>
+                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Alert</TableHead>
+                  <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Twitter</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -217,17 +217,17 @@ export default function FederalOfficialsPage() {
                   <TableRow key={entity.id} className="border-b border-platinum-100/50 dark:border-platinum-800/50 hover:bg-platinum-50/50 dark:hover:bg-platinum-800/25 transition-colors">
                     <TableCell>
                       <div className="flex flex-col">
-                        <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{entity.name}</span>
+                        <span className="font-semibold text-navy-900 dark:text-platinum-100">{entity.name}</span>
                         {entity.nameAr && (
-                          <span className="text-xs text-platinum-500-500 dark:text-platinum-500-400 font-arabic">{entity.nameAr}</span>
+                          <span className="text-xs text-platinum-500 dark:text-platinum-400 font-arabic">{entity.nameAr}</span>
                         )}
                       </div>
                     </TableCell>
                     <TableCell>
-                      <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{entity.role || '—'}</span>
+                      <span className="text-sm text-platinum-700 dark:text-platinum-300">{entity.role || '—'}</span>
                     </TableCell>
                     <TableCell>
-                      <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{entity.emirate || '—'}</span>
+                      <span className="text-sm text-platinum-700 dark:text-platinum-300">{entity.emirate || '—'}</span>
                     </TableCell>
                     <TableCell>
                       <div className="flex items-center gap-2">
@@ -236,7 +236,7 @@ export default function FederalOfficialsPage() {
                     </TableCell>
                     <TableCell>
                       <div className="flex flex-col gap-1 w-16">
-                        <span className="text-sm font-bold text-navy-500-900 dark:text-platinum-500-100">{entity.uaeRelevance}</span>
+                        <span className="text-sm font-bold text-navy-900 dark:text-platinum-100">{entity.uaeRelevance}</span>
                         <Progress value={entity.uaeRelevance} className="h-1.5" />
                       </div>
                     </TableCell>
@@ -272,7 +272,7 @@ export default function FederalOfficialsPage() {
                     showLegend={true}
                   />
                 ) : (
-                  <div className="flex items-center justify-center h-48 text-platinum-500-500">No sentiment data available</div>
+                  <div className="flex items-center justify-center h-48 text-platinum-500">No sentiment data available</div>
                 )}
               </CardContent>
             </Card>
@@ -290,8 +290,8 @@ export default function FederalOfficialsPage() {
                     return (
                       <div key={tier} className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="font-medium text-platinum-500-700 dark:text-platinum-500-300">Tier {tier}</span>
-                          <span className="text-platinum-500-500">{tierEntities.length} officials · {pct}% positive</span>
+                          <span className="font-medium text-platinum-700 dark:text-platinum-300">Tier {tier}</span>
+                          <span className="text-platinum-500">{tierEntities.length} officials · {pct}% positive</span>
                         </div>
                         <Progress value={pct} className="h-2" />
                       </div>
@@ -334,8 +334,8 @@ export default function FederalOfficialsPage() {
                     .map((entity, i) => (
                       <div key={entity.id} className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <span className="text-sm font-bold text-platinum-500-400 w-5">{i + 1}</span>
-                          <span className="text-sm font-medium text-navy-500-900 dark:text-platinum-500-100">{entity.name}</span>
+                          <span className="text-sm font-bold text-platinum-400 w-5">{i + 1}</span>
+                          <span className="text-sm font-medium text-navy-900 dark:text-platinum-100">{entity.name}</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <span className="text-sm font-bold text-gold-700">{entity.uaeRelevance}</span>
@@ -369,7 +369,7 @@ export default function FederalOfficialsPage() {
                   <CardContent className="space-y-2">
                     <ul className="space-y-1.5">
                       {entity.keyFindings.slice(0, 3).map((finding, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs text-platinum-500-700 dark:text-platinum-500-300">
+                        <li key={i} className="flex items-start gap-2 text-xs text-platinum-700 dark:text-platinum-300">
                           <ChevronRight className="h-3 w-3 mt-0.5 text-gold-700 shrink-0" />
                           {finding}
                         </li>
@@ -377,7 +377,7 @@ export default function FederalOfficialsPage() {
                     </ul>
                     {entity.sources && entity.sources.length > 0 && (
                       <div className="pt-2 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                        <p className="text-xs text-platinum-500-500">Sources: {entity.sources.join(', ')}</p>
+                        <p className="text-xs text-platinum-500">Sources: {entity.sources.join(', ')}</p>
                       </div>
                     )}
                   </CardContent>

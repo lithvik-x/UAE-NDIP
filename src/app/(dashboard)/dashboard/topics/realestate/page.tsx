@@ -159,10 +159,10 @@ export default function RealEstatePage() {
         <div>
           <Badge variant="default" className="mb-2">P-SECTOR: REAL ESTATE</Badge>
           <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold-700">Real Estate & Urban Development</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             {realEstateData.description}
           </p>
-          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500-500">
+          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500">
             <span className="flex items-center gap-1">
               <Calendar className="h-4 w-4" />
               {reportMetadata?.reportCompiled || '2026-04-27'}
@@ -182,7 +182,7 @@ export default function RealEstatePage() {
             <Building2 className="h-4 w-4" />
             DLD Portal
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
             <Home className="h-4 w-4" />
             Market Data
           </Button>
@@ -249,8 +249,8 @@ export default function RealEstatePage() {
           <div className="flex items-center gap-3">
             <AlertTriangle className="h-6 w-6 text-amber-400" />
             <div>
-              <p className="font-semibold text-platinum-500-200">Bubble Risk Assessment: MODERATE (UBS 0.64)</p>
-              <p className="text-sm text-platinum-500-400">Fitch (May 2025) predicts double-digit price declines after years of boom</p>
+              <p className="font-semibold text-platinum-200">Bubble Risk Assessment: MODERATE (UBS 0.64)</p>
+              <p className="text-sm text-platinum-400">Fitch (May 2025) predicts double-digit price declines after years of boom</p>
             </div>
           </div>
           <Badge variant="warning" className="text-xs"><AlertTriangle className="h-3 w-3 mr-1" />YELLOW</Badge>
@@ -279,7 +279,7 @@ export default function RealEstatePage() {
                 {marketKPIs.slice(0, 4).map((kpi, idx) => (
                   <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg text-center">
                     <p className="text-2xl font-bold text-gold-700">{kpi.current}</p>
-                    <p className="text-sm text-platinum-500-400 mt-1">{kpi.kpi}</p>
+                    <p className="text-sm text-platinum-400 mt-1">{kpi.kpi}</p>
                     <p className="text-xs text-emerald-400 mt-1">{kpi.change}</p>
                   </div>
                 ))}
@@ -304,15 +304,15 @@ export default function RealEstatePage() {
                     <div className="grid grid-cols-3 gap-2">
                       <div className="text-center p-2 bg-rose-500/20 rounded-lg">
                         <p className="text-lg font-bold text-rose-500">55%</p>
-                        <p className="text-xs text-platinum-500-400">Negative</p>
+                        <p className="text-xs text-platinum-400">Negative</p>
                       </div>
                       <div className="text-center p-2 bg-emerald-500/20 rounded-lg">
                         <p className="text-lg font-bold text-emerald-500">25%</p>
-                        <p className="text-xs text-platinum-500-400">Positive</p>
+                        <p className="text-xs text-platinum-400">Positive</p>
                       </div>
                       <div className="text-center p-2 bg-platinum/20 rounded-lg">
                         <p className="text-lg font-bold text-platinum-500">20%</p>
-                        <p className="text-xs text-platinum-500-400">Neutral</p>
+                        <p className="text-xs text-platinum-400">Neutral</p>
                       </div>
                     </div>
                   </div>
@@ -332,8 +332,8 @@ export default function RealEstatePage() {
                     {realEstateMarketOverview.keyDevelopers.map((dev, idx) => (
                       <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <div>
-                          <p className="font-medium text-platinum-500-200">{dev.developer}</p>
-                          <p className="text-sm text-platinum-500-400">{dev.notableProjects}</p>
+                          <p className="font-medium text-platinum-200">{dev.developer}</p>
+                          <p className="text-sm text-platinum-400">{dev.notableProjects}</p>
                         </div>
                         <Badge variant="outline" className="text-xs">{dev.focus}</Badge>
                       </div>
@@ -409,11 +409,11 @@ export default function RealEstatePage() {
                     <div className="space-y-3">
                       <div className="p-4 bg-gold-700/20 rounded-lg">
                         <p className="text-3xl font-bold text-gold-700">68%</p>
-                        <p className="text-sm text-platinum-500-400">Off-Plan (speculative)</p>
+                        <p className="text-sm text-platinum-400">Off-Plan (speculative)</p>
                       </div>
                       <div className="p-4 bg-navy/20 rounded-lg">
                         <p className="text-3xl font-bold text-navy-500">32%</p>
-                        <p className="text-sm text-platinum-500-400">Ready Properties</p>
+                        <p className="text-sm text-platinum-400">Ready Properties</p>
                       </div>
                     </div>
                   </div>
@@ -430,8 +430,8 @@ export default function RealEstatePage() {
                     {realEstateMarketOverview.priceMetrics.map((metric, idx) => (
                       <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <div>
-                          <p className="font-medium text-platinum-500-200">{metric.location}</p>
-                          <p className="text-sm text-platinum-500-400">{metric.priceMetric} - {metric.date}</p>
+                          <p className="font-medium text-platinum-200">{metric.location}</p>
+                          <p className="text-sm text-platinum-400">{metric.priceMetric} - {metric.date}</p>
                         </div>
                         <p className="text-xl font-bold text-gold-700">{metric.value}</p>
                       </div>
@@ -451,8 +451,8 @@ export default function RealEstatePage() {
                       {propertyPricesTransactionData.recentTransactions.map((tx, idx) => (
                         <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                           <div>
-                            <p className="font-medium text-platinum-500-200">{tx.transaction}</p>
-                            <p className="text-sm text-platinum-500-400">{tx.details}</p>
+                            <p className="font-medium text-platinum-200">{tx.transaction}</p>
+                            <p className="text-sm text-platinum-400">{tx.details}</p>
                           </div>
                           <p className="text-lg font-bold text-gold-700">{tx.amount}</p>
                         </div>
@@ -486,7 +486,7 @@ export default function RealEstatePage() {
                     {bubbleRiskAssessment.riskIndicators.map((risk, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg">
                         <div className="flex items-center justify-between mb-2">
-                          <p className="font-medium text-platinum-500-200">{risk.indicator}</p>
+                          <p className="font-medium text-platinum-200">{risk.indicator}</p>
                           <Badge
                             variant={risk.riskLevel === 'High' ? 'destructive' : risk.riskLevel === 'Moderate' ? 'warning' : 'outline'}
                             className="text-xs"
@@ -495,7 +495,7 @@ export default function RealEstatePage() {
                           </Badge>
                         </div>
                         <p className="text-2xl font-bold text-gold-700">{risk.value}</p>
-                        <p className="text-xs text-platinum-500-500 mt-1">Source: {risk.source}</p>
+                        <p className="text-xs text-platinum-500 mt-1">Source: {risk.source}</p>
                       </div>
                     ))}
                   </div>
@@ -534,15 +534,15 @@ export default function RealEstatePage() {
                   <div className="space-y-3">
                     {bubbleRiskAssessment.crashComparison.map((comparison, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-500-400 mb-1">{comparison.metric}</p>
+                        <p className="text-sm text-platinum-400 mb-1">{comparison.metric}</p>
                         <div className="grid grid-cols-2 gap-4">
                           <div className="p-2 bg-rose-500/10 rounded">
                             <p className="text-xs text-rose-400">2009 Crash</p>
-                            <p className="font-medium text-platinum-500-200">{comparison.year2009Crash}</p>
+                            <p className="font-medium text-platinum-200">{comparison.year2009Crash}</p>
                           </div>
                           <div className="p-2 bg-amber-500/10 rounded">
                             <p className="text-xs text-amber-400">Current Concern</p>
-                            <p className="font-medium text-platinum-500-200">{comparison.currentConcern}</p>
+                            <p className="font-medium text-platinum-200">{comparison.currentConcern}</p>
                           </div>
                         </div>
                       </div>
@@ -563,7 +563,7 @@ export default function RealEstatePage() {
                         <h4 className="font-semibold text-gold-700 mb-2">{warning.category}</h4>
                         <div className="space-y-1">
                           {warning.items.map((item, i) => (
-                            <p key={i} className="text-sm text-platinum-500-300">• {item}</p>
+                            <p key={i} className="text-sm text-platinum-300">• {item}</p>
                           ))}
                         </div>
                       </div>
@@ -596,20 +596,20 @@ export default function RealEstatePage() {
                     <div className="grid grid-cols-3 gap-3">
                       <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-lg text-center">
                         <p className="text-2xl font-bold text-rose-500">0.002%</p>
-                        <p className="text-xs text-platinum-500-400">Suspicious transaction reports</p>
+                        <p className="text-xs text-platinum-400">Suspicious transaction reports</p>
                       </div>
                       <div className="p-4 bg-amber-500/10 border border-amber-500/30 rounded-lg text-center">
                         <p className="text-2xl font-bold text-amber-400">0</p>
-                        <p className="text-xs text-platinum-500-400">Questions asked by realtors</p>
+                        <p className="text-xs text-platinum-400">Questions asked by realtors</p>
                       </div>
                       <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-2xl font-bold text-platinum-500">FATF</p>
-                        <p className="text-xs text-platinum-500-400">Removed Feb 2024</p>
+                        <p className="text-xs text-platinum-400">Removed Feb 2024</p>
                       </div>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg">
                       <h4 className="font-semibold text-gold-700 mb-2">Dubai Unlocked Investigation (May 2024)</h4>
-                      <p className="text-sm text-platinum-500-400">Data leak 2020-2022 revealed {moneyLaunderingVulnerabilities.sanctionedPropertyOwners.length}+ sanctioned property owners including crime figures and corrupt officials.</p>
+                      <p className="text-sm text-platinum-400">Data leak 2020-2022 revealed {moneyLaunderingVulnerabilities.sanctionedPropertyOwners.length}+ sanctioned property owners including crime figures and corrupt officials.</p>
                     </div>
                   </div>
                 </CardContent>
@@ -628,20 +628,20 @@ export default function RealEstatePage() {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                       <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-lg text-center">
                         <p className="text-3xl font-bold text-rose-500">132K</p>
-                        <p className="text-xs text-platinum-500-400">In Modern Slavery</p>
+                        <p className="text-xs text-platinum-400">In Modern Slavery</p>
                         <p className="text-xs text-rose-400">7th highest globally</p>
                       </div>
                       <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-3xl font-bold text-platinum-500">90%</p>
-                        <p className="text-xs text-platinum-500-400">Non-citizen workforce</p>
+                        <p className="text-xs text-platinum-400">Non-citizen workforce</p>
                       </div>
                       <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-3xl font-bold text-platinum-500">13.4</p>
-                        <p className="text-xs text-platinum-500-400">Per 1,000 prevalence</p>
+                        <p className="text-xs text-platinum-400">Per 1,000 prevalence</p>
                       </div>
                       <div className="p-4 bg-platinum-800/50 rounded-lg text-center">
                         <p className="text-3xl font-bold text-platinum-500">8</p>
-                        <p className="text-xs text-platinum-500-400">Per room occupancy</p>
+                        <p className="text-xs text-platinum-400">Per room occupancy</p>
                       </div>
                     </div>
                     <div className="p-4 bg-amber-500/10 border border-amber-500/30 rounded-lg">
@@ -665,13 +665,13 @@ export default function RealEstatePage() {
                       {affordabilityKPIs.filter(k => k.status !== 'Adequate').map((kpi, idx) => (
                         <div key={idx} className="p-4 bg-platinum-800/50 rounded-lg text-center">
                           <p className="text-2xl font-bold text-amber-400">{kpi.value}</p>
-                          <p className="text-xs text-platinum-500-400">{kpi.kpi}</p>
+                          <p className="text-xs text-platinum-400">{kpi.kpi}</p>
                           <Badge variant="destructive" className="text-xs mt-1">{kpi.status}</Badge>
                         </div>
                       ))}
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-lg">
-                      <p className="text-sm text-platinum-500-400">Max affordable sale price: <span className="text-gold-700 font-bold">AED 790,000</span> based on income ratios, yet market prices far exceed this for most workers.</p>
+                      <p className="text-sm text-platinum-400">Max affordable sale price: <span className="text-gold-700 font-bold">AED 790,000</span> based on income ratios, yet market prices far exceed this for most workers.</p>
                     </div>
                   </div>
                 </CardContent>
@@ -689,7 +689,7 @@ export default function RealEstatePage() {
                   <div className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="p-4 bg-platinum-800/50 rounded-lg">
-                        <p className="text-sm text-platinum-500-400">Pre-Transformation Rent</p>
+                        <p className="text-sm text-platinum-400">Pre-Transformation Rent</p>
                         <p className="text-xl font-bold text-platinum-500">$8,200-$10,500/year</p>
                       </div>
                       <div className="p-4 bg-gold-700/20 rounded-lg">
@@ -725,7 +725,7 @@ export default function RealEstatePage() {
                       {environmentalKPIs.map((kpi, idx) => (
                         <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                           <p className="text-lg font-bold text-emerald-500">{kpi.value}</p>
-                          <p className="text-xs text-platinum-500-400">{kpi.kpi}</p>
+                          <p className="text-xs text-platinum-400">{kpi.kpi}</p>
                         </div>
                       ))}
                     </div>
@@ -786,7 +786,7 @@ export default function RealEstatePage() {
                     {sentimentAnalysis.positiveSentiments.map((item, idx) => (
                       <div key={idx} className="p-3 bg-emerald-500/10 border border-emerald-500/20 rounded-lg">
                         <p className="font-medium text-emerald-300">{item.topic}</p>
-                        <p className="text-sm text-platinum-500-400">{item.source}</p>
+                        <p className="text-sm text-platinum-400">{item.source}</p>
                       </div>
                     ))}
                   </div>
@@ -803,7 +803,7 @@ export default function RealEstatePage() {
                     {sentimentAnalysis.negativeSentiments.map((item, idx) => (
                       <div key={idx} className="p-3 bg-rose-500/10 border border-rose-500/20 rounded-lg">
                         <p className="font-medium text-rose-300">{item.topic}</p>
-                        <p className="text-sm text-platinum-500-400">{item.source}</p>
+                        <p className="text-sm text-platinum-400">{item.source}</p>
                       </div>
                     ))}
                   </div>
@@ -819,7 +819,7 @@ export default function RealEstatePage() {
                   <div className="space-y-3">
                     {sentimentAnalysis.sentimentByStakeholder.map((item, idx) => (
                       <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="font-medium text-platinum-500-200">{item.stakeholder}</p>
+                        <p className="font-medium text-platinum-200">{item.stakeholder}</p>
                         <Badge
                           variant={
                             item.overallSentiment.includes('Negative') ? 'destructive' :

@@ -109,10 +109,10 @@ function MSAMetricCard({
       <div className="relative glass-panel p-6 rounded-xl border-[var(--glass-border)] hover:border-gold-700/50 transition-all duration-300">
         <div className="flex items-start justify-between">
           <div className="space-y-2">
-            <p className="text-sm text-platinum-500-400 font-medium">{title}</p>
+            <p className="text-sm text-platinum-400 font-medium">{title}</p>
             <div className="flex items-baseline gap-2">
-              <span className="text-3xl font-bold text-platinum-500-100">{value}</span>
-              {unit && <span className="text-lg text-platinum-500-400">{unit}</span>}
+              <span className="text-3xl font-bold text-platinum-100">{value}</span>
+              {unit && <span className="text-lg text-platinum-400">{unit}</span>}
             </div>
           </div>
           <div className={`p-3 rounded-lg bg-gradient-to-br ${gradient} bg-clip-padding`}>
@@ -124,7 +124,7 @@ function MSAMetricCard({
             {trend === 'rising' && <TrendingUp className="h-4 w-4 text-emerald-400" />}
             {trend === 'stable' && <Activity className="h-4 w-4 text-gold-700" />}
             {trend === 'declining' && <TrendingUp className="h-4 w-4 text-red-400 rotate-180" />}
-            <span className="text-sm text-platinum-500-400 capitalize">{trend}</span>
+            <span className="text-sm text-platinum-400 capitalize">{trend}</span>
           </div>
         )}
       </div>
@@ -157,7 +157,7 @@ function TopicSentimentCard({ topic, sentiment, index }: {
       className="glass-card p-5 rounded-xl border border-platinum-700/50 hover:border-gold-700/30 transition-all duration-300"
     >
       <div className="flex items-center justify-between mb-4">
-        <h4 className="font-semibold text-platinum-500-200">{topic.name}</h4>
+        <h4 className="font-semibold text-platinum-200">{topic.name}</h4>
         <Badge
           variant={sentiment.positive >= 70 ? "success" : sentiment.positive >= 50 ? "warning" : "danger"}
           className="text-xs"
@@ -168,17 +168,17 @@ function TopicSentimentCard({ topic, sentiment, index }: {
       <div className="space-y-3">
         <div className="flex items-center justify-between text-sm">
           <span className="text-emerald-400">Positive</span>
-          <span className="text-platinum-500-300">{sentiment.positive}%</span>
+          <span className="text-platinum-300">{sentiment.positive}%</span>
         </div>
         <Progress value={sentiment.positive} className="h-2 bg-platinum-700" />
         <div className="flex items-center justify-between text-sm">
-          <span className="text-platinum-500-400">Neutral</span>
-          <span className="text-platinum-500-300">{sentiment.neutral}%</span>
+          <span className="text-platinum-400">Neutral</span>
+          <span className="text-platinum-300">{sentiment.neutral}%</span>
         </div>
         <Progress value={sentiment.neutral} className="h-2 bg-platinum-700" />
         <div className="flex items-center justify-between text-sm">
           <span className="text-red-400">Negative</span>
-          <span className="text-platinum-500-300">{sentiment.negative}%</span>
+          <span className="text-platinum-300">{sentiment.negative}%</span>
         </div>
         <Progress value={sentiment.negative} className="h-2 bg-platinum-700" />
       </div>
@@ -213,8 +213,8 @@ function KeyEntityCard({ entity, index }: {
         <Landmark className="h-6 w-6 text-gold-700" />
       </div>
       <div className="flex-1 min-w-0">
-        <p className="font-semibold text-platinum-500-200 truncate">{entity.name}</p>
-        <p className="text-sm text-platinum-500-400 truncate">{entity.role}</p>
+        <p className="font-semibold text-platinum-200 truncate">{entity.name}</p>
+        <p className="text-sm text-platinum-400 truncate">{entity.role}</p>
       </div>
       <Badge variant="outline" className="text-xs border-gold-700/30 text-gold-700">
         Since {entity.since}
@@ -251,7 +251,7 @@ function QueryPatternCard({ pattern, example, index }: {
         <div className="h-2 w-2 rounded-full bg-emerald-400" />
         <span className="text-sm font-medium text-emerald-300">{pattern}</span>
       </div>
-      <p className="text-sm text-platinum-500-400 font-mono ml-5">{example}</p>
+      <p className="text-sm text-platinum-400 font-mono ml-5">{example}</p>
     </motion.div>
   )
 }
@@ -288,7 +288,7 @@ function SourceTierChart({ tiers, index }: {
           transition={{ duration: 0.8, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-platinum-500-300">{tier.tier}</span>
+            <span className="text-sm text-platinum-300">{tier.tier}</span>
             <span className="text-sm font-semibold" style={{ color: tier.color }}>{tier.count}</span>
           </div>
           <div className="h-3 bg-platinum-700 rounded-full overflow-hidden">
@@ -418,7 +418,7 @@ export default function MSALanguagePage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mt-2 text-platinum-500-400 text-lg"
+            className="mt-2 text-platinum-400 text-lg"
           >
             Pan-Arab media queries, formal communications, and official content analysis
           </motion.p>
@@ -433,7 +433,7 @@ export default function MSALanguagePage() {
             <Eye className="h-4 w-4" />
             Monitor MSA
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2 shadow-lg shadow-gold/20">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2 shadow-lg shadow-gold/20">
             <BookOpen className="h-4 w-4" />
             Track Terms
           </Button>
@@ -451,7 +451,7 @@ export default function MSALanguagePage() {
           title="MSA Query Volume"
           value={(data?.queryVolume / 1000000).toFixed(0) + 'M'}
           previousValue={45}
-          icon={<Globe className="h-6 w-6 text-navy-500-950" />}
+          icon={<Globe className="h-6 w-6 text-navy-950" />}
           gradient="from-gold to-amber-500"
           status="success"
           trend="stable"
@@ -461,7 +461,7 @@ export default function MSALanguagePage() {
           title="Sentiment Score"
           value={data?.sentiment?.overall || 82}
           previousValue={80}
-          icon={<TrendingUp className="h-6 w-6 text-navy-500-950" />}
+          icon={<TrendingUp className="h-6 w-6 text-navy-950" />}
           gradient="from-emerald-400 to-emerald-600"
           status="success"
           trend="rising"
@@ -471,7 +471,7 @@ export default function MSALanguagePage() {
           title="Top Sources"
           value={data?.sources?.length || 47}
           previousValue={45}
-          icon={<MessageSquare className="h-6 w-6 text-navy-500-950" />}
+          icon={<MessageSquare className="h-6 w-6 text-navy-950" />}
           gradient="from-denim-400 to-denim-600"
           status="success"
           trend="stable"
@@ -481,7 +481,7 @@ export default function MSALanguagePage() {
           title="Credibility Score"
           value={data?.credibility?.score || 88}
           previousValue={85}
-          icon={<Star className="h-6 w-6 text-navy-500-950" />}
+          icon={<Star className="h-6 w-6 text-navy-950" />}
           gradient="from-platinum-300 to-platinum-500"
           status="success"
           trend="stable"
@@ -506,8 +506,8 @@ export default function MSALanguagePage() {
                 <TrendingUp className="h-5 w-5 text-emerald-400" />
               </div>
               <div>
-                <p className="text-sm text-platinum-500-400">GDP 2025</p>
-                <p className="text-xl font-bold text-platinum-500-100">${keyMetrics.gdp2025}B</p>
+                <p className="text-sm text-platinum-400">GDP 2025</p>
+                <p className="text-xl font-bold text-platinum-100">${keyMetrics.gdp2025}B</p>
               </div>
             </div>
           </motion.div>
@@ -520,8 +520,8 @@ export default function MSALanguagePage() {
                 <Activity className="h-5 w-5 text-gold-700" />
               </div>
               <div>
-                <p className="text-sm text-platinum-500-400">GDP Growth</p>
-                <p className="text-xl font-bold text-platinum-500-100">{keyMetrics.gdpGrowth2025}%</p>
+                <p className="text-sm text-platinum-400">GDP Growth</p>
+                <p className="text-xl font-bold text-platinum-100">{keyMetrics.gdpGrowth2025}%</p>
               </div>
             </div>
           </motion.div>
@@ -531,11 +531,11 @@ export default function MSALanguagePage() {
           >
             <div className="flex items-center gap-3">
               <div className="p-2 rounded-lg bg-navy-500/20">
-                <Users className="h-5 w-5 text-navy-500-400" />
+                <Users className="h-5 w-5 text-navy-400" />
               </div>
               <div>
-                <p className="text-sm text-platinum-500-400">Population</p>
-                <p className="text-xl font-bold text-platinum-500-100">{keyMetrics.population2025}M</p>
+                <p className="text-sm text-platinum-400">Population</p>
+                <p className="text-xl font-bold text-platinum-100">{keyMetrics.population2025}M</p>
               </div>
             </div>
           </motion.div>
@@ -548,8 +548,8 @@ export default function MSALanguagePage() {
                 <Shield className="h-5 w-5 text-red-400" />
               </div>
               <div>
-                <p className="text-sm text-platinum-500-400">Defense Budget</p>
-                <p className="text-xl font-bold text-platinum-500-100">${keyMetrics.defenseBudget2024}B</p>
+                <p className="text-sm text-platinum-400">Defense Budget</p>
+                <p className="text-xl font-bold text-platinum-100">${keyMetrics.defenseBudget2024}B</p>
               </div>
             </div>
           </motion.div>
@@ -653,7 +653,7 @@ export default function MSALanguagePage() {
                             className="space-y-2"
                           >
                             <div className="flex items-center justify-between text-sm">
-                              <span className="font-medium text-platinum-500-200">{region.region}</span>
+                              <span className="font-medium text-platinum-200">{region.region}</span>
                               <span style={{ color: region.color }}>{region.reach}%</span>
                             </div>
                             <Progress value={region.reach} className="h-3" />
@@ -696,16 +696,16 @@ export default function MSALanguagePage() {
                                 <Search className="h-5 w-5" />
                               </div>
                               <div>
-                                <p className="font-semibold text-platinum-500-200">{item.term}</p>
-                                <p className="text-sm text-platinum-500-400">MSA Arabic</p>
+                                <p className="font-semibold text-platinum-200">{item.term}</p>
+                                <p className="text-sm text-platinum-400">MSA Arabic</p>
                               </div>
                             </div>
                             <div className="flex items-center gap-6">
                               <div className="text-center">
-                                <div className="text-lg font-bold text-platinum-500-200">
+                                <div className="text-lg font-bold text-platinum-200">
                                   {(item.volume / 1000000).toFixed(1)}M
                                 </div>
-                                <p className="text-xs text-platinum-500-400">Volume</p>
+                                <p className="text-xs text-platinum-400">Volume</p>
                               </div>
                               <div className="text-center">
                                 <Badge
@@ -828,15 +828,15 @@ export default function MSALanguagePage() {
                     <div className="grid gap-4 sm:grid-cols-3">
                       <div className="rounded-lg border border-gold-700/50 bg-gold-900/20 p-4 text-center">
                         <div className="text-3xl font-bold text-gold-700">{data?.extendedData?.urlRegistry?.totalUrls || 47}</div>
-                        <p className="text-sm text-platinum-500-400 mt-1">Total URLs</p>
+                        <p className="text-sm text-platinum-400 mt-1">Total URLs</p>
                       </div>
                       <div className="rounded-lg border border-emerald-700/50 bg-emerald-900/20 p-4 text-center">
                         <div className="text-3xl font-bold text-emerald-400">{data?.extendedData?.urlRegistry?.successfulFetches || 42}</div>
-                        <p className="text-sm text-platinum-500-400 mt-1">Successful Fetches</p>
+                        <p className="text-sm text-platinum-400 mt-1">Successful Fetches</p>
                       </div>
                       <div className="rounded-lg border border-navy-700/50 bg-navy-900/20 p-4 text-center">
-                        <div className="text-3xl font-bold text-navy-500-400">{data?.extendedData?.urlRegistry?.fetchRate || 89}%</div>
-                        <p className="text-sm text-platinum-500-400 mt-1">Fetch Rate</p>
+                        <div className="text-3xl font-bold text-navy-400">{data?.extendedData?.urlRegistry?.fetchRate || 89}%</div>
+                        <p className="text-sm text-platinum-400 mt-1">Fetch Rate</p>
                       </div>
                     </div>
                   </CardContent>
@@ -864,8 +864,8 @@ export default function MSALanguagePage() {
                                 <Star className="h-5 w-5" />
                               </div>
                               <div>
-                                <p className="font-semibold text-platinum-500-200">{source.name}</p>
-                                <p className="text-sm text-platinum-500-400">Tier {source.tier} Source</p>
+                                <p className="font-semibold text-platinum-200">{source.name}</p>
+                                <p className="text-sm text-platinum-400">Tier {source.tier} Source</p>
                               </div>
                             </div>
                             <Badge variant="gold" className="text-xs">Official</Badge>
@@ -900,25 +900,25 @@ export default function MSALanguagePage() {
                         <div className="text-2xl font-bold text-emerald-400">
                           {data?.extendedData?.verificationStatus?.queriesExecuted || 18}
                         </div>
-                        <p className="text-sm text-platinum-500-400">Queries Executed</p>
+                        <p className="text-sm text-platinum-400">Queries Executed</p>
                       </div>
                       <div className="text-center p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
                         <div className="text-2xl font-bold text-gold-700">
                           {data?.extendedData?.verificationStatus?.pagesFetched || 12}
                         </div>
-                        <p className="text-sm text-platinum-500-400">Pages Fetched</p>
+                        <p className="text-sm text-platinum-400">Pages Fetched</p>
                       </div>
                       <div className="text-center p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                        <div className="text-2xl font-bold text-navy-500-400">
+                        <div className="text-2xl font-bold text-navy-400">
                           {data?.extendedData?.verificationStatus?.dataExtractionRate || 89}%
                         </div>
-                        <p className="text-sm text-platinum-500-400">Extraction Rate</p>
+                        <p className="text-sm text-platinum-400">Extraction Rate</p>
                       </div>
                       <div className="text-center p-4 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
                         <div className="text-2xl font-bold text-platinum-500">
                           {data?.extendedData?.verificationStatus?.confidence || '100%'}
                         </div>
-                        <p className="text-sm text-platinum-500-400">Confidence</p>
+                        <p className="text-sm text-platinum-400">Confidence</p>
                       </div>
                     </div>
                   </CardContent>

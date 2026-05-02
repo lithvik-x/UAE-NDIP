@@ -148,7 +148,7 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
                         {selectedInfluencer.notes && (
                           <div>
                             <p className="text-xs text-platinum-500/50 uppercase mb-2">Notes</p>
-                            <p className="text-sm text-platinum-500-300">{selectedInfluencer.notes}</p>
+                            <p className="text-sm text-platinum-300">{selectedInfluencer.notes}</p>
                           </div>
                         )}
                         {selectedInfluencer.category && (
@@ -219,7 +219,7 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
                         {inf.engagementRate}%
                       </Badge>
                     </div>
-                    <p className="text-xs text-platinum-500-400 mb-1">{(inf.followers / 1000000).toFixed(1)}M followers</p>
+                    <p className="text-xs text-platinum-400 mb-1">{(inf.followers / 1000000).toFixed(1)}M followers</p>
                     <p className="text-xs text-platinum-500/50">{inf.audienceGender}</p>
                   </div>
                 ))}
@@ -249,8 +249,8 @@ export function InstagramInfluencersSection({ data }: InstagramInfluencersSectio
                         <span className="text-xs text-platinum-500/50">{vInf.platform}</span>
                       </div>
                     </div>
-                    <p className="text-xs text-platinum-500-300 mb-2">{vInf.description}</p>
-                    <Badge variant="outline" className="text-xs border-navy-500/30 text-navy-500-300">
+                    <p className="text-xs text-platinum-300 mb-2">{vInf.description}</p>
+                    <Badge variant="outline" className="text-xs border-navy-500/30 text-navy-300">
                       {vInf.location}
                     </Badge>
                   </div>

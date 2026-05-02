@@ -249,11 +249,11 @@ export default function MediaCommunicationsPage() {
         <div>
           <Badge variant="gold" className="mb-2">M-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Media & Communications</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Comprehensive analysis of UAE media environment including regulation, press freedom,
             influencer licensing, internet restrictions, and media market dynamics
           </p>
-          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500-500">
+          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500">
             <span>Queries: 26</span>
             <span>Pages: 18</span>
             <span>Sources: 45+ URLs</span>
@@ -264,7 +264,7 @@ export default function MediaCommunicationsPage() {
             <Newspaper className="h-4 w-4" />
             Media Outlets
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
             <Zap className="h-4 w-4" />
             Analyze
           </Button>
@@ -342,10 +342,10 @@ export default function MediaCommunicationsPage() {
                       variants={itemVariants}
                       className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
                     >
-                      <p className="text-sm text-platinum-500-400">{metric.metric}</p>
+                      <p className="text-sm text-platinum-400">{metric.metric}</p>
                       <p className="mt-1 text-xl font-bold text-platinum-500">{metric.value}</p>
                       {metric.trend && (
-                        <p className="mt-1 text-xs text-platinum-500-500">{metric.trend}</p>
+                        <p className="mt-1 text-xs text-platinum-500">{metric.trend}</p>
                       )}
                     </motion.div>
                   ))}
@@ -371,7 +371,7 @@ export default function MediaCommunicationsPage() {
                           </Badge>
                           <span className="text-2xl font-bold text-rose-500">50%</span>
                         </div>
-                        <p className="text-sm text-platinum-500-400">
+                        <p className="text-sm text-platinum-400">
                           Press freedom restrictions, internet controls, severe penalties
                         </p>
                         <div className="flex items-center justify-between">
@@ -380,7 +380,7 @@ export default function MediaCommunicationsPage() {
                           </Badge>
                           <span className="text-2xl font-bold text-platinum-500">20%</span>
                         </div>
-                        <p className="text-sm text-platinum-500-400">
+                        <p className="text-sm text-platinum-400">
                           Foreign investment openness, some regulatory aspects
                         </p>
                         <div className="flex items-center justify-between">
@@ -389,7 +389,7 @@ export default function MediaCommunicationsPage() {
                           </Badge>
                           <span className="text-2xl font-bold text-emerald-500">30%</span>
                         </div>
-                        <p className="text-sm text-platinum-500-400">
+                        <p className="text-sm text-platinum-400">
                           Digital infrastructure, market growth, training programs
                         </p>
                       </div>
@@ -408,29 +408,29 @@ export default function MediaCommunicationsPage() {
                       <div className="flex items-start gap-3 rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
                         <AlertCircle className="h-5 w-5 text-rose-500 mt-0.5" />
                         <div>
-                          <p className="font-medium text-platinum-500-200">Press Freedom at Critical Low</p>
-                          <p className="mt-1 text-sm text-platinum-500-400">164th of 180 countries, declining 5+ years</p>
+                          <p className="font-medium text-platinum-200">Press Freedom at Critical Low</p>
+                          <p className="mt-1 text-sm text-platinum-400">164th of 180 countries, declining 5+ years</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3 rounded-lg bg-orange-500/10 p-4 border border-orange-500/30">
                         <AlertTriangle className="h-5 w-5 text-orange-500 mt-0.5" />
                         <div>
-                          <p className="font-medium text-platinum-500-200">Influencer License Deadline Imminent</p>
-                          <p className="mt-1 text-sm text-platinum-500-400">January 31, 2026 - mandatory licensing enforcement</p>
+                          <p className="font-medium text-platinum-200">Influencer License Deadline Imminent</p>
+                          <p className="mt-1 text-sm text-platinum-400">January 31, 2026 - mandatory licensing enforcement</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3 rounded-lg bg-gold-500/10 p-4 border border-gold-500/30">
                         <Lock className="h-5 w-5 text-gold-700 mt-0.5" />
                         <div>
-                          <p className="font-medium text-platinum-500-200">VPN Restrictions Intensifying</p>
-                          <p className="mt-1 text-sm text-platinum-500-400">9.6M downloads, 85.5% adoption rate</p>
+                          <p className="font-medium text-platinum-200">VPN Restrictions Intensifying</p>
+                          <p className="mt-1 text-sm text-platinum-400">9.6M downloads, 85.5% adoption rate</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3 rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
                         <ShieldAlert className="h-5 w-5 text-rose-500 mt-0.5" />
                         <div>
-                          <p className="font-medium text-platinum-500-200">21 Detention Cases (2026)</p>
-                          <p className="mt-1 text-sm text-platinum-500-400">Iran conflict-related charges under cybercrime laws</p>
+                          <p className="font-medium text-platinum-200">21 Detention Cases (2026)</p>
+                          <p className="mt-1 text-sm text-platinum-400">Iran conflict-related charges under cybercrime laws</p>
                         </div>
                       </div>
                     </div>
@@ -456,7 +456,7 @@ export default function MediaCommunicationsPage() {
                       {primaryLegislation.map((leg, idx) => (
                         <div key={idx} className="rounded-lg border border-platinum-700 p-4">
                           <h4 className="font-semibold text-platinum-500">{leg.name}</h4>
-                          <p className="mt-1 text-sm text-platinum-500-400">Effective: {leg.effectiveDate}</p>
+                          <p className="mt-1 text-sm text-platinum-400">Effective: {leg.effectiveDate}</p>
                           {leg.significance && (
                             <p className="mt-2 text-sm">{leg.significance}</p>
                           )}
@@ -488,11 +488,11 @@ export default function MediaCommunicationsPage() {
                           <div className="flex items-center gap-2">
                             <Badge variant="gold">{decision.number}</Badge>
                             {decision.effectiveDate && (
-                              <span className="text-xs text-platinum-500-500">{decision.effectiveDate}</span>
+                              <span className="text-xs text-platinum-500">{decision.effectiveDate}</span>
                             )}
                           </div>
                           <p className="mt-2 font-medium">{decision.name}</p>
-                          <p className="mt-1 text-sm text-platinum-500-400">{decision.details}</p>
+                          <p className="mt-1 text-sm text-platinum-400">{decision.details}</p>
                         </div>
                       ))}
                     </div>
@@ -511,7 +511,7 @@ export default function MediaCommunicationsPage() {
                   <CardContent>
                     <div className="space-y-4">
                       <div>
-                        <p className="text-sm font-medium text-platinum-500-300">Consolidated from:</p>
+                        <p className="text-sm font-medium text-platinum-300">Consolidated from:</p>
                         <div className="mt-2 flex flex-wrap gap-2">
                           {nmaInfo.consolidatedFrom.map((item, i) => (
                             <Badge key={i} variant="outline">{item}</Badge>
@@ -519,12 +519,12 @@ export default function MediaCommunicationsPage() {
                         </div>
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-platinum-500-300">Core Competencies:</p>
+                        <p className="text-sm font-medium text-platinum-300">Core Competencies:</p>
                         <div className="mt-2 space-y-2">
                           {nmaInfo.coreCompetencies.map((comp, i) => (
                             <div key={i} className="flex items-start gap-2 text-sm">
                               <ChevronRight className="h-4 w-4 text-gold-700 mt-0.5" />
-                              <span className="text-platinum-500-400">{comp}</span>
+                              <span className="text-platinum-400">{comp}</span>
                             </div>
                           ))}
                         </div>
@@ -563,7 +563,7 @@ export default function MediaCommunicationsPage() {
                           <h4 className="font-semibold text-gold-700">{zone.emirate}</h4>
                           <div className="mt-2 space-y-1">
                             {zone.benefits.map((benefit, i) => (
-                              <p key={i} className="text-xs text-platinum-500-400">{benefit}</p>
+                              <p key={i} className="text-xs text-platinum-400">{benefit}</p>
                             ))}
                           </div>
                         </div>
@@ -609,18 +609,18 @@ export default function MediaCommunicationsPage() {
                     <CardContent>
                       <div className="space-y-3">
                         <div className="flex items-center justify-between">
-                          <span className="text-platinum-500-400">Score</span>
+                          <span className="text-platinum-400">Score</span>
                           <span className="text-2xl font-bold text-rose-500">26.91/100</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-platinum-500-400">Rank</span>
+                          <span className="text-platinum-400">Rank</span>
                           <span className="text-2xl font-bold text-rose-500">164th of 180</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-platinum-500-400">Trend</span>
+                          <span className="text-platinum-400">Trend</span>
                           <Badge variant="destructive">Down 12.1%</Badge>
                         </div>
-                        <p className="mt-4 text-sm text-platinum-500-400">{rsfAssessment2025.text}</p>
+                        <p className="mt-4 text-sm text-platinum-400">{rsfAssessment2025.text}</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -632,18 +632,18 @@ export default function MediaCommunicationsPage() {
                     <CardContent>
                       <div className="space-y-3">
                         <div className="flex items-center justify-between">
-                          <span className="text-platinum-500-400">Internet Freedom</span>
+                          <span className="text-platinum-400">Internet Freedom</span>
                           <span className="text-2xl font-bold text-orange-500">28/100</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-platinum-500-400">Classification</span>
+                          <span className="text-platinum-400">Classification</span>
                           <Badge variant="warning">"Not Free"</Badge>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-platinum-500-400">Previous Year</span>
+                          <span className="text-platinum-400">Previous Year</span>
                           <span className="text-lg">27/100</span>
                         </div>
-                        <p className="mt-4 text-sm text-platinum-500-400">{freedomHouseAssessment.text}</p>
+                        <p className="mt-4 text-sm text-platinum-400">{freedomHouseAssessment.text}</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -692,7 +692,7 @@ export default function MediaCommunicationsPage() {
                         </div>
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-platinum-500-400 mb-2">Umbrella Groups</p>
+                        <p className="text-sm font-medium text-platinum-400 mb-2">Umbrella Groups</p>
                         <div className="flex flex-wrap gap-2">
                           {umbrellaGroups.map((group, i) => (
                             <Badge key={i} variant="secondary">{group}</Badge>
@@ -709,10 +709,10 @@ export default function MediaCommunicationsPage() {
                     <CardTitle className="text-lg">Government Statement</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <blockquote className="border-l-4 border-gold pl-4 italic text-platinum-500-300">
+                    <blockquote className="border-l-4 border-gold pl-4 italic text-platinum-300">
                       "{governmentStatementMedia.quote}"
                     </blockquote>
-                    <p className="mt-2 text-sm text-platinum-500-500">— {governmentStatementMedia.speaker}</p>
+                    <p className="mt-2 text-sm text-platinum-500">— {governmentStatementMedia.speaker}</p>
                   </CardContent>
                 </Card>
               </div>
@@ -730,7 +730,7 @@ export default function MediaCommunicationsPage() {
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-sm text-platinum-500-400">License Deadline</p>
+                        <p className="text-sm text-platinum-400">License Deadline</p>
                         <p className="mt-1 text-3xl font-bold text-gold-700">{influencerDeadline.deadline}</p>
                       </div>
                       <Badge variant="gold" className="text-lg px-4 py-2">MANDATORY</Badge>
@@ -751,9 +751,9 @@ export default function MediaCommunicationsPage() {
                             <h4 className="font-semibold text-platinum-500">{license.license}</h4>
                             <Badge variant="gold">{license.cost}</Badge>
                           </div>
-                          <p className="mt-2 text-sm text-platinum-500-400">{license.purpose || license.covers}</p>
+                          <p className="mt-2 text-sm text-platinum-400">{license.purpose || license.covers}</p>
                           {license.visitorPermit && (
-                            <p className="mt-1 text-sm text-platinum-500-500">Visitor permit: {license.visitorPermit}</p>
+                            <p className="mt-1 text-sm text-platinum-500">Visitor permit: {license.visitorPermit}</p>
                           )}
                         </div>
                       ))}
@@ -787,7 +787,7 @@ export default function MediaCommunicationsPage() {
                     <div className="space-y-3">
                       {influencerApplicationProcess.map((step, idx) => (
                         <div key={idx} className="flex items-center gap-3">
-                          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gold text-navy-500-950 text-sm font-bold">
+                          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-gold text-navy-950 text-sm font-bold">
                             {idx + 1}
                           </div>
                           <span className="text-sm">{step}</span>
@@ -911,13 +911,13 @@ export default function MediaCommunicationsPage() {
                           <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 p-3">
                             <div className="flex-1">
                               <p className="text-sm font-medium">{violation.violationType}</p>
-                              <p className="text-xs text-platinum-500-500">{violation.severity}</p>
+                              <p className="text-xs text-platinum-500">{violation.severity}</p>
                             </div>
                             <div className="text-right">
                               <p className="text-sm font-bold text-rose-500">
                                 {violation.maxFine.toLocaleString()} AED
                               </p>
-                              <p className="text-xs text-platinum-500-500">
+                              <p className="text-xs text-platinum-500">
                                 Min: {violation.minFine.toLocaleString()} AED
                               </p>
                             </div>
@@ -948,7 +948,7 @@ export default function MediaCommunicationsPage() {
                       {enforcementMechanisms.map((mech, idx) => (
                         <div key={idx} className="rounded-lg bg-platinum-800/50 p-4">
                           <h4 className="font-semibold text-gold-700">{mech.mechanism}</h4>
-                          <p className="mt-1 text-sm text-platinum-500-400">{mech.details}</p>
+                          <p className="mt-1 text-sm text-platinum-400">{mech.details}</p>
                         </div>
                       ))}
                     </div>
@@ -967,7 +967,7 @@ export default function MediaCommunicationsPage() {
                         <div key={idx} className="flex items-start justify-between rounded-lg bg-rose-500/10 p-3 border border-rose-500/30">
                           <div>
                             <p className="font-medium">{caseItem.case}</p>
-                            <p className="mt-1 text-sm text-platinum-500-400">{caseItem.details}</p>
+                            <p className="mt-1 text-sm text-platinum-400">{caseItem.details}</p>
                           </div>
                         </div>
                       ))}
@@ -1015,11 +1015,11 @@ export default function MediaCommunicationsPage() {
                           <span className="font-medium">{country.country}</span>
                           <div className="flex gap-4">
                             <div className="text-right">
-                              <p className="text-sm text-platinum-500-400">Downloads</p>
+                              <p className="text-sm text-platinum-400">Downloads</p>
                               <p className="font-bold">{country.downloads}</p>
                             </div>
                             <div className="text-right">
-                              <p className="text-sm text-platinum-500-400">Adoption</p>
+                              <p className="text-sm text-platinum-400">Adoption</p>
                               <p className="font-bold text-gold-700">{country.adoption}</p>
                             </div>
                           </div>
@@ -1074,7 +1074,7 @@ export default function MediaCommunicationsPage() {
                       ))}
                     </div>
                     <div className="mt-4">
-                      <p className="text-sm font-medium text-platinum-500-300">Legal Alternatives:</p>
+                      <p className="text-sm font-medium text-platinum-300">Legal Alternatives:</p>
                       <div className="mt-2 flex gap-2">
                         {legalVoipAlternatives.map((alt, idx) => (
                           <Badge key={idx} variant="success">{alt}</Badge>
@@ -1107,15 +1107,15 @@ export default function MediaCommunicationsPage() {
                     <div className="grid gap-4 md:grid-cols-3">
                       <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                         <p className="text-3xl font-bold text-rose-500">160,000+</p>
-                        <p className="text-sm text-platinum-500-400">Total Blocked</p>
+                        <p className="text-sm text-platinum-400">Total Blocked</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                         <p className="text-3xl font-bold text-gold-700">883</p>
-                        <p className="text-sm text-platinum-500-400">Q1 2022</p>
+                        <p className="text-sm text-platinum-400">Q1 2022</p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                         <p className="text-sm font-medium">TDRA</p>
-                        <p className="text-sm text-platinum-500-400">Managed by</p>
+                        <p className="text-sm text-platinum-400">Managed by</p>
                       </div>
                     </div>
                   </CardContent>
@@ -1130,7 +1130,7 @@ export default function MediaCommunicationsPage() {
                     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                       {internetInfrastructure.map((infra, idx) => (
                         <div key={idx} className="rounded-lg bg-platinum-800/50 p-4">
-                          <p className="text-sm text-platinum-500-400">{infra.metric}</p>
+                          <p className="text-sm text-platinum-400">{infra.metric}</p>
                           <p className="mt-1 text-lg font-bold text-gold-700">{infra.value}</p>
                         </div>
                       ))}
@@ -1146,9 +1146,9 @@ export default function MediaCommunicationsPage() {
                   <CardContent>
                     <div className="space-y-2">
                       <p>{redSeaCableCuts.details}</p>
-                      <p className="text-sm text-platinum-500-400">Impact: {redSeaCableCuts.impact}</p>
-                      <p className="text-sm text-platinum-500-400">Repair duration: {redSeaCableCuts.repairDuration}</p>
-                      <p className="text-xs text-platinum-500-500">{redSeaCableCuts.context}</p>
+                      <p className="text-sm text-platinum-400">Impact: {redSeaCableCuts.impact}</p>
+                      <p className="text-sm text-platinum-400">Repair duration: {redSeaCableCuts.repairDuration}</p>
+                      <p className="text-xs text-platinum-500">{redSeaCableCuts.context}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -1166,19 +1166,19 @@ export default function MediaCommunicationsPage() {
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                   <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                     <p className="text-3xl font-bold text-gold-700">$3.6B</p>
-                    <p className="text-sm text-platinum-500-400">Ad Market 2025</p>
+                    <p className="text-sm text-platinum-400">Ad Market 2025</p>
                   </div>
                   <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                     <p className="text-3xl font-bold text-emerald-500">$18.5B</p>
-                    <p className="text-sm text-platinum-500-400">Digital Market 2030</p>
+                    <p className="text-sm text-platinum-400">Digital Market 2030</p>
                   </div>
                   <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                     <p className="text-3xl font-bold text-platinum-500">68%</p>
-                    <p className="text-sm text-platinum-500-400">Digital Ad Share</p>
+                    <p className="text-sm text-platinum-400">Digital Ad Share</p>
                   </div>
                   <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                     <p className="text-3xl font-bold text-diamond">12.2%</p>
-                    <p className="text-sm text-platinum-500-400">Digital CAGR</p>
+                    <p className="text-sm text-platinum-400">Digital CAGR</p>
                   </div>
                 </div>
 
@@ -1193,7 +1193,7 @@ export default function MediaCommunicationsPage() {
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div>
                             <p className="font-medium">{metric.metric}</p>
-                            <p className="text-xs text-platinum-500-500">Source: {metric.source}</p>
+                            <p className="text-xs text-platinum-500">Source: {metric.source}</p>
                           </div>
                           <p className="text-lg font-bold text-gold-700">{metric.value}</p>
                         </div>
@@ -1303,7 +1303,7 @@ export default function MediaCommunicationsPage() {
                         {telegraphAcquisition.keyEntities.map((entity, idx) => (
                           <div key={idx} className="rounded-lg bg-platinum-800/50 p-3">
                             <p className="text-sm font-medium text-gold-700">{entity.name}</p>
-                            <p className="text-xs text-platinum-500-400">{entity.role}</p>
+                            <p className="text-xs text-platinum-400">{entity.role}</p>
                           </div>
                         ))}
                       </div>
@@ -1331,7 +1331,7 @@ export default function MediaCommunicationsPage() {
                         <div key={idx} className="flex items-start justify-between rounded-lg border border-platinum-700 p-4">
                           <div>
                             <p className="font-medium">{journalist.individual}</p>
-                            <p className="mt-1 text-sm text-platinum-500-400">{journalist.details}</p>
+                            <p className="mt-1 text-sm text-platinum-400">{journalist.details}</p>
                           </div>
                           <Badge variant={journalist.status === 'Detained' ? 'destructive' : 'warning'}>
                             {journalist.status}
@@ -1372,7 +1372,7 @@ export default function MediaCommunicationsPage() {
                           <p className="font-medium text-rose-500">{concern.organization}</p>
                           <div className="mt-2 space-y-1">
                             {concern.details.map((detail, i) => (
-                              <p key={i} className="text-sm text-platinum-500-400">{detail}</p>
+                              <p key={i} className="text-sm text-platinum-400">{detail}</p>
                             ))}
                           </div>
                         </div>
@@ -1409,7 +1409,7 @@ export default function MediaCommunicationsPage() {
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div>
                             <p className="font-medium">{salary.source}</p>
-                            <p className="text-xs text-platinum-500-500">{salary.details}</p>
+                            <p className="text-xs text-platinum-500">{salary.details}</p>
                           </div>
                           <p className="text-lg font-bold text-gold-700">{salary.averageSalary}</p>
                         </div>
@@ -1504,7 +1504,7 @@ export default function MediaCommunicationsPage() {
                       {gpsTechnicalMethods.map((method, idx) => (
                         <div key={idx} className="rounded-lg bg-platinum-800/50 p-4">
                           <h4 className="font-semibold text-gold-700">{method.method}</h4>
-                          <p className="mt-1 text-sm text-platinum-500-400">{method.description}</p>
+                          <p className="mt-1 text-sm text-platinum-400">{method.description}</p>
                         </div>
                       ))}
                     </div>
@@ -1517,10 +1517,10 @@ export default function MediaCommunicationsPage() {
                     <CardTitle className="text-lg">Expert Warning</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <blockquote className="border-l-4 border-gold pl-4 italic text-platinum-500-300">
+                    <blockquote className="border-l-4 border-gold pl-4 italic text-platinum-300">
                       "{gpsExpertQuote.quote}"
                     </blockquote>
-                    <p className="mt-2 text-sm text-platinum-500-500">— {gpsExpertQuote.speaker}</p>
+                    <p className="mt-2 text-sm text-platinum-500">— {gpsExpertQuote.speaker}</p>
                   </CardContent>
                 </Card>
 
@@ -1545,7 +1545,7 @@ export default function MediaCommunicationsPage() {
                           </div>
                         ))}
                       </div>
-                      <blockquote className="border-l-4 border-platinum pl-4 italic text-platinum-500-400">
+                      <blockquote className="border-l-4 border-platinum pl-4 italic text-platinum-400">
                         "{gigWorkerImpact.quote}"
                       </blockquote>
                     </div>
@@ -1562,7 +1562,7 @@ export default function MediaCommunicationsPage() {
                       {gpsExpertWarnings.map((warning, idx) => (
                         <div key={idx} className="rounded-lg bg-platinum-800/50 p-4">
                           <p className="text-sm font-medium text-gold-700">{warning.speaker}</p>
-                          <p className="mt-1 text-sm text-platinum-500-400">"{warning.quote}"</p>
+                          <p className="mt-1 text-sm text-platinum-400">"{warning.quote}"</p>
                         </div>
                       ))}
                     </div>
@@ -1594,28 +1594,28 @@ export default function MediaCommunicationsPage() {
                             )}
                           </div>
                           {institution.launched && (
-                            <p className="mt-1 text-sm text-platinum-500-500">Launched: {institution.launched}</p>
+                            <p className="mt-1 text-sm text-platinum-500">Launched: {institution.launched}</p>
                           )}
                           {institution.founder && (
-                            <p className="mt-1 text-sm text-platinum-500-400">Founder: {institution.founder}</p>
+                            <p className="mt-1 text-sm text-platinum-400">Founder: {institution.founder}</p>
                           )}
                           {institution.mission && (
                             <p className="mt-2 text-sm">{institution.mission}</p>
                           )}
                           {institution.programs && (
                             <div className="mt-2">
-                              <p className="text-xs font-medium text-platinum-500-400">Programs:</p>
+                              <p className="text-xs font-medium text-platinum-400">Programs:</p>
                               <p className="text-sm">{institution.programs}</p>
                             </div>
                           )}
                           {institution.courses && (
                             <div className="mt-2">
-                              <p className="text-xs font-medium text-platinum-500-400">Courses:</p>
+                              <p className="text-xs font-medium text-platinum-400">Courses:</p>
                               <p className="text-sm">{institution.courses}</p>
                             </div>
                           )}
                           {institution.contact && (
-                            <p className="mt-2 text-xs text-platinum-500-500">{institution.contact}</p>
+                            <p className="mt-2 text-xs text-platinum-500">{institution.contact}</p>
                           )}
                         </div>
                       ))}
@@ -1652,7 +1652,7 @@ export default function MediaCommunicationsPage() {
                     <div className="space-y-3">
                       <div>
                         <p className="text-sm font-medium">Program:</p>
-                        <p className="text-sm text-platinum-500-400">{dubaiAiInitiative.program}</p>
+                        <p className="text-sm text-platinum-400">{dubaiAiInitiative.program}</p>
                       </div>
                       <div>
                         <p className="text-sm font-medium">Focus Areas:</p>
@@ -1677,7 +1677,7 @@ export default function MediaCommunicationsPage() {
                       {streamingRegulationIssues.map((item, idx) => (
                         <div key={idx} className="rounded-lg bg-platinum-800/50 p-4">
                           <p className="font-medium">{item.issue}</p>
-                          <p className="mt-1 text-sm text-platinum-500-400">{item.details}</p>
+                          <p className="mt-1 text-sm text-platinum-400">{item.details}</p>
                         </div>
                       ))}
                     </div>
@@ -1755,7 +1755,7 @@ export default function MediaCommunicationsPage() {
                               {dim.sentiment}
                             </Badge>
                           </div>
-                          <p className="mt-2 text-sm text-platinum-500-400">{dim.evidence}</p>
+                          <p className="mt-2 text-sm text-platinum-400">{dim.evidence}</p>
                         </div>
                       ))}
                     </div>
@@ -1774,7 +1774,7 @@ export default function MediaCommunicationsPage() {
                           <CheckCircle className="h-4 w-4 text-emerald-500 mt-0.5" />
                           <div>
                             <span className="font-medium text-emerald-500">{element.dimension}:</span>
-                            <span className="text-sm text-platinum-500-400 ml-1">{element.evidence}</span>
+                            <span className="text-sm text-platinum-400 ml-1">{element.evidence}</span>
                           </div>
                         </div>
                       ))}
@@ -1794,7 +1794,7 @@ export default function MediaCommunicationsPage() {
                           <h4 className="font-semibold text-gold-700">{narrative.narrative}</h4>
                           <div className="mt-2 space-y-1">
                             {narrative.statements.map((statement, i) => (
-                              <p key={i} className="text-sm text-platinum-500-400">• {statement}</p>
+                              <p key={i} className="text-sm text-platinum-400">• {statement}</p>
                             ))}
                           </div>
                         </div>
@@ -1862,7 +1862,7 @@ export default function MediaCommunicationsPage() {
                         <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 p-3">
                           <div>
                             <p className="text-sm font-medium">{gap.gap}</p>
-                            <p className="text-xs text-platinum-500-500">Source: {gap.sourceNeeded}</p>
+                            <p className="text-xs text-platinum-500">Source: {gap.sourceNeeded}</p>
                           </div>
                           <Badge
                             variant={
@@ -1890,18 +1890,18 @@ export default function MediaCommunicationsPage() {
                     <div className="grid gap-4 md:grid-cols-3">
                       <div className="text-center">
                         <p className="text-3xl font-bold text-gold-700">{enrichmentMetadata.dataPointsExtracted}+</p>
-                        <p className="text-sm text-platinum-500-400">Data Points</p>
+                        <p className="text-sm text-platinum-400">Data Points</p>
                       </div>
                       <div className="text-center">
                         <p className="text-3xl font-bold text-gold-700">{enrichmentMetadata.tablesCreated}</p>
-                        <p className="text-sm text-platinum-500-400">Tables Created</p>
+                        <p className="text-sm text-platinum-400">Tables Created</p>
                       </div>
                       <div className="text-center">
                         <p className="text-3xl font-bold text-gold-700">{enrichmentMetadata.entitiesDocumented}</p>
-                        <p className="text-sm text-platinum-500-400">Entities</p>
+                        <p className="text-sm text-platinum-400">Entities</p>
                       </div>
                     </div>
-                    <p className="mt-4 text-center text-sm text-platinum-500-500">
+                    <p className="mt-4 text-center text-sm text-platinum-500">
                       Report generated: {enrichmentMetadata.reportGenerated} | Confidence: {enrichmentMetadata.confidenceLevel}
                     </p>
                   </CardContent>
@@ -1917,7 +1917,7 @@ export default function MediaCommunicationsPage() {
                       {keyDefinitions.map((def, idx) => (
                         <div key={idx} className="rounded-lg bg-platinum-800/50 p-3">
                           <p className="font-medium text-gold-700">{def.term}</p>
-                          <p className="text-sm text-platinum-500-400">{def.definition}</p>
+                          <p className="text-sm text-platinum-400">{def.definition}</p>
                         </div>
                       ))}
                     </div>

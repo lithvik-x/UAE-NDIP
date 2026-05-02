@@ -40,7 +40,7 @@ export default function HashtagsPage() {
   if (!twitterData.data && !instagramData.data) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-500-400">Loading hashtag intelligence data...</div>
+        <div className="text-platinum-400">Loading hashtag intelligence data...</div>
       </div>
     )
   }
@@ -201,7 +201,7 @@ export default function HashtagsPage() {
         <div>
           <Badge variant="denim" className="mb-2">TREND INTELLIGENCE</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-navy-500">Trending Hashtags & Topics</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Real-time hashtag tracking — trending topics, sentiment analysis, and platform distribution
           </p>
         </div>
@@ -299,13 +299,13 @@ export default function HashtagsPage() {
                               #{hashtag.rank}
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200 text-lg">{hashtag.hashtag}</p>
+                              <p className="font-semibold text-platinum-200 text-lg">{hashtag.hashtag}</p>
                               <div className="flex items-center gap-2 mt-1">
                                 <Badge variant="outline" className="text-xs">
                                   {hashtag.category}
                                 </Badge>
                                 {hashtag.platforms.map((platform) => (
-                                  <Badge key={platform} variant="outline" className="text-xs text-platinum-500-400">
+                                  <Badge key={platform} variant="outline" className="text-xs text-platinum-400">
                                     {platform}
                                   </Badge>
                                 ))}
@@ -314,11 +314,11 @@ export default function HashtagsPage() {
                           </div>
                           <div className="flex items-center gap-6">
                             <div className="text-center">
-                              <p className="text-sm text-platinum-500-400">Tweets</p>
-                              <p className="font-bold text-platinum-500-200">{(hashtag.tweets / 1000000).toFixed(2)}M</p>
+                              <p className="text-sm text-platinum-400">Tweets</p>
+                              <p className="font-bold text-platinum-200">{(hashtag.tweets / 1000000).toFixed(2)}M</p>
                             </div>
                             <div className="text-center">
-                              <p className="text-sm text-platinum-500-400">Change</p>
+                              <p className="text-sm text-platinum-400">Change</p>
                               <div className="flex items-center gap-1 justify-center">
                                 {getTrendIcon(hashtag.change)}
                                 <span className={`font-bold ${hashtag.change > 0 ? 'text-emerald-500' : 'text-rose-500'}`}>
@@ -327,7 +327,7 @@ export default function HashtagsPage() {
                               </div>
                             </div>
                             <div className="text-center">
-                              <p className="text-sm text-platinum-500-400">Sentiment</p>
+                              <p className="text-sm text-platinum-400">Sentiment</p>
                               <p className={`font-bold ${getSentimentColor(hashtag.sentiment)}`}>
                                 {hashtag.sentiment}%
                               </p>
@@ -381,10 +381,10 @@ export default function HashtagsPage() {
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center gap-3">
                               <Hash className="h-4 w-4 text-navy-500" />
-                              <span className="text-sm font-medium text-platinum-500-200">{item.hashtag}</span>
+                              <span className="text-sm font-medium text-platinum-200">{item.hashtag}</span>
                             </div>
                             <div className="flex items-center gap-3">
-                              <span className="text-sm text-platinum-500-400">{(item.uses / 1000000).toFixed(1)}M</span>
+                              <span className="text-sm text-platinum-400">{(item.uses / 1000000).toFixed(1)}M</span>
                               <span className={`text-sm font-medium ${item.growth > 0 ? 'text-emerald-500' : 'text-rose-500'}`}>
                                 +{item.growth}%
                               </span>
@@ -414,7 +414,7 @@ export default function HashtagsPage() {
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center gap-3">
                               <Star className="h-4 w-4 text-gold-700" />
-                              <span className="text-sm font-medium text-platinum-500-200">{item.hashtag}</span>
+                              <span className="text-sm font-medium text-platinum-200">{item.hashtag}</span>
                             </div>
                             <span className="text-sm font-medium text-gold-700">{(item.uses / 1000000).toFixed(2)}M</span>
                           </div>
@@ -461,8 +461,8 @@ export default function HashtagsPage() {
                       {platformHashtagData.map((platform, idx) => (
                         <div key={idx} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-500-200">{platform.platform}</span>
-                            <span className="text-sm text-platinum-500-400">Avg {platform.avgUse} tags/post</span>
+                            <span className="text-sm font-medium text-platinum-200">{platform.platform}</span>
+                            <span className="text-sm text-platinum-400">Avg {platform.avgUse} tags/post</span>
                           </div>
                           <Progress value={(platform.hashtags / 78000) * 100} className="h-2" />
                         </div>
@@ -490,11 +490,11 @@ export default function HashtagsPage() {
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div className="flex items-center gap-3">
                               <Hash className="h-4 w-4 text-gold-700" />
-                              <span className="text-sm font-medium text-platinum-500-200">{item.hashtag}</span>
+                              <span className="text-sm font-medium text-platinum-200">{item.hashtag}</span>
                             </div>
                             <div className="flex items-center gap-3">
                               <Badge variant="outline" className="text-xs">{item.platforms} platforms</Badge>
-                              <span className="text-sm text-platinum-500-400">{(item.volume / 1000000).toFixed(1)}M</span>
+                              <span className="text-sm text-platinum-400">{(item.volume / 1000000).toFixed(1)}M</span>
                             </div>
                           </div>
                         ))}
@@ -542,28 +542,28 @@ export default function HashtagsPage() {
                       <div className="h-4 w-4 rounded-full bg-emerald" />
                       <div>
                         <p className="font-medium text-emerald-500">High Positive</p>
-                        <p className="text-sm text-platinum-500-400">80-100%</p>
+                        <p className="text-sm text-platinum-400">80-100%</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3 rounded-lg bg-gold-500/10 p-3 border border-gold-500/30">
                       <div className="h-4 w-4 rounded-full bg-gold" />
                       <div>
                         <p className="font-medium text-gold-700">Moderate</p>
-                        <p className="text-sm text-platinum-500-400">60-79%</p>
+                        <p className="text-sm text-platinum-400">60-79%</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3 rounded-lg bg-platinum-500/10 p-3 border border-platinum-500/30">
                       <div className="h-4 w-4 rounded-full bg-platinum" />
                       <div>
                         <p className="font-medium text-platinum-500">Neutral</p>
-                        <p className="text-sm text-platinum-500-400">40-59%</p>
+                        <p className="text-sm text-platinum-400">40-59%</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3 rounded-lg bg-rose-500/10 p-3 border border-rose-500/30">
                       <div className="h-4 w-4 rounded-full bg-rose" />
                       <div>
                         <p className="font-medium text-rose-500">Concern</p>
-                        <p className="text-sm text-platinum-500-400">0-39%</p>
+                        <p className="text-sm text-platinum-400">0-39%</p>
                       </div>
                     </div>
                   </div>

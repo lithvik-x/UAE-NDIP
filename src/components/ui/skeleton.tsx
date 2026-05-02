@@ -381,7 +381,7 @@ export function PageLoader({ message = 'Loading...' }: PageLoaderProps) {
         {/* Pulse effect ring */}
         <div className="absolute inset-0 h-16 w-16 animate-ping rounded-full border-4 border-gold-400/30 dark:border-gold-500/20" />
       </div>
-      <p className="text-sm font-medium text-platinum-500-600 dark:text-platinum-500-400 animate-pulse">
+      <p className="text-sm font-medium text-platinum-600 dark:text-platinum-400 animate-pulse">
         {message}
       </p>
     </div>
@@ -475,7 +475,7 @@ export function LoadingOverlay({ isLoading, children, message }: LoadingOverlayP
           <div className="flex flex-col items-center gap-2">
             <LoadingSpinner size="lg" />
             {message && (
-              <p className="text-sm text-platinum-500-600 dark:text-platinum-500-400">
+              <p className="text-sm text-platinum-600 dark:text-platinum-400">
                 {message}
               </p>
             )}

@@ -112,7 +112,7 @@ export default function CrisisTimelinePage() {
   const getStatusBadge = (status: string) => {
     switch (status) {
       case 'Resolved': return <Badge variant="outline" className="text-xs text-emerald-400">{status}</Badge>
-      case 'Monitoring': return <Badge variant="outline" className="text-xs text-navy-500-400">{status}</Badge>
+      case 'Monitoring': return <Badge variant="outline" className="text-xs text-navy-400">{status}</Badge>
       case 'Active': return <Badge variant="destructive" className="text-xs">{status}</Badge>
       default: return <Badge variant="outline" className="text-xs">{status}</Badge>
     }
@@ -125,7 +125,7 @@ export default function CrisisTimelinePage() {
         <div>
           <Badge variant="rose" className="mb-2">C-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-rose-500">Crisis Timeline Dashboard</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Historical crisis tracking and temporal analysis
           </p>
         </div>
@@ -208,11 +208,11 @@ export default function CrisisTimelinePage() {
                             }`} />
                             <div className="flex items-start justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4 hover:bg-platinum-800/70">
                               <div>
-                                <p className="font-semibold text-platinum-500-200">{event.crisis}</p>
-                                <p className="text-sm text-platinum-500-400 mt-1">{event.date}</p>
+                                <p className="font-semibold text-platinum-200">{event.crisis}</p>
+                                <p className="text-sm text-platinum-400 mt-1">{event.date}</p>
                                 <div className="flex items-center gap-2 mt-2">
                                   <Badge variant="outline" className="text-xs">{event.type}</Badge>
-                                  <span className="text-xs text-platinum-500-500">Duration: {event.duration}</span>
+                                  <span className="text-xs text-platinum-500">Duration: {event.duration}</span>
                                 </div>
                               </div>
                               <div className="flex items-center gap-3">
@@ -329,7 +329,7 @@ export default function CrisisTimelinePage() {
                     ].map((item, index) => (
                       <div key={index} className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="text-sm font-medium text-platinum-500-200">{item.type}</span>
+                          <span className="text-sm font-medium text-platinum-200">{item.type}</span>
                           <span className="text-sm font-bold text-gold-700">{item.duration} days</span>
                         </div>
                         <Progress value={(item.duration / 25) * 100} className="h-2" />
@@ -356,22 +356,22 @@ export default function CrisisTimelinePage() {
                       <div className="flex items-start gap-3 rounded-lg bg-emerald-500/10 p-3 border border-emerald-500/30">
                         <CheckCircle className="h-5 w-5 text-emerald-400 mt-0.5" />
                         <div>
-                          <p className="font-medium text-platinum-500-200">Response Time Improved</p>
-                          <p className="text-sm text-platinum-500-400">42% faster resolution vs last year</p>
+                          <p className="font-medium text-platinum-200">Response Time Improved</p>
+                          <p className="text-sm text-platinum-400">42% faster resolution vs last year</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3 rounded-lg bg-navy-500/10 p-3 border border-navy-500/30">
                         <TrendingUp className="h-5 w-5 text-navy-500 mt-0.5" />
                         <div>
-                          <p className="font-medium text-platinum-500-200">Peak Season: Jul-Sep</p>
-                          <p className="text-sm text-platinum-500-400">Summer months show 35% higher incidents</p>
+                          <p className="font-medium text-platinum-200">Peak Season: Jul-Sep</p>
+                          <p className="text-sm text-platinum-400">Summer months show 35% higher incidents</p>
                         </div>
                       </div>
                       <div className="flex items-start gap-3 rounded-lg bg-gold-500/10 p-3 border border-gold-500/30">
                         <AlertTriangle className="h-5 w-5 text-gold-700 mt-0.5" />
                         <div>
-                          <p className="font-medium text-platinum-500-200">Economic Crises Most Frequent</p>
-                          <p className="text-sm text-platinum-500-400">31% of all recorded crises</p>
+                          <p className="font-medium text-platinum-200">Economic Crises Most Frequent</p>
+                          <p className="text-sm text-platinum-400">31% of all recorded crises</p>
                         </div>
                       </div>
                     </div>
@@ -386,28 +386,28 @@ export default function CrisisTimelinePage() {
                     <div className="space-y-4">
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-platinum-500-400">Recurring Crises</span>
-                          <span className="font-medium text-platinum-500-200">23%</span>
+                          <span className="text-platinum-400">Recurring Crises</span>
+                          <span className="font-medium text-platinum-200">23%</span>
                         </div>
                         <Progress value={23} className="h-2" />
                       </div>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-platinum-500-400">Clustered Events</span>
-                          <span className="font-medium text-platinum-500-200">45%</span>
+                          <span className="text-platinum-400">Clustered Events</span>
+                          <span className="font-medium text-platinum-200">45%</span>
                         </div>
                         <Progress value={45} className="h-2" />
                       </div>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-platinum-500-400">Isolated Incidents</span>
-                          <span className="font-medium text-platinum-500-200">32%</span>
+                          <span className="text-platinum-400">Isolated Incidents</span>
+                          <span className="font-medium text-platinum-200">32%</span>
                         </div>
                         <Progress value={32} className="h-2" />
                       </div>
                       <div className="space-y-2">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-platinum-500-400">Successful Prevention</span>
+                          <span className="text-platinum-400">Successful Prevention</span>
                           <span className="font-medium text-emerald-400">67%</span>
                         </div>
                         <Progress value={67} className="h-2" />

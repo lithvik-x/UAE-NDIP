@@ -88,24 +88,24 @@ export function VaccinationSection({ data }: VaccinationSectionProps) {
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex justify-between text-sm">
-                  <span className="text-platinum-500-400">Announced Efficacy:</span>
+                  <span className="text-platinum-400">Announced Efficacy:</span>
                   <span className="text-emerald-400 font-medium">{sinopharmDetails.announcedEfficacy}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-platinum-500-400">Development Partner:</span>
-                  <span className="text-platinum-500-200">{sinopharmDetails.developmentPartner}</span>
+                  <span className="text-platinum-400">Development Partner:</span>
+                  <span className="text-platinum-200">{sinopharmDetails.developmentPartner}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-platinum-500-400">Local Production:</span>
+                  <span className="text-platinum-400">Local Production:</span>
                   <span className="text-cyan-400">{sinopharmDetails.localProduction}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-platinum-500-400">Capacity Target:</span>
-                  <span className="text-platinum-500-200">{sinopharmDetails.productionCapacityTarget}</span>
+                  <span className="text-platinum-400">Capacity Target:</span>
+                  <span className="text-platinum-200">{sinopharmDetails.productionCapacityTarget}</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-platinum-500-400">Current Production:</span>
-                  <span className="text-platinum-500-200">{sinopharmDetails.currentProduction}</span>
+                  <span className="text-platinum-400">Current Production:</span>
+                  <span className="text-platinum-200">{sinopharmDetails.currentProduction}</span>
                 </div>
               </CardContent>
             </Card>
@@ -146,8 +146,8 @@ export function VaccinationSection({ data }: VaccinationSectionProps) {
                         <span className="text-xs font-bold text-gold-700">{ranking.rank}</span>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="text-sm text-platinum-500-200 font-medium truncate">{ranking.ranking}</div>
-                        <div className="text-xs text-platinum-500-500 truncate">{ranking.achievement}</div>
+                        <div className="text-sm text-platinum-200 font-medium truncate">{ranking.ranking}</div>
+                        <div className="text-xs text-platinum-500 truncate">{ranking.achievement}</div>
                       </div>
                     </motion.div>
                   ))}
@@ -159,7 +159,7 @@ export function VaccinationSection({ data }: VaccinationSectionProps) {
 
         {/* Available Vaccines */}
         <div className="mt-6">
-          <h4 className="text-sm font-medium text-platinum-500-300 mb-3">Available Vaccines in UAE</h4>
+          <h4 className="text-sm font-medium text-platinum-300 mb-3">Available Vaccines in UAE</h4>
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             {vaccinesAvailable.map((vaccine, idx) => (
               <motion.div
@@ -171,9 +171,9 @@ export function VaccinationSection({ data }: VaccinationSectionProps) {
               >
                 <div className="flex items-center gap-2 mb-2">
                   <Pill className="h-4 w-4 text-sky" />
-                  <span className="text-sm font-medium text-platinum-500-100">{vaccine.name}</span>
+                  <span className="text-sm font-medium text-platinum-100">{vaccine.name}</span>
                 </div>
-                <div className="text-xs text-platinum-500-400">{vaccine.type}</div>
+                <div className="text-xs text-platinum-400">{vaccine.type}</div>
               </motion.div>
             ))}
           </div>

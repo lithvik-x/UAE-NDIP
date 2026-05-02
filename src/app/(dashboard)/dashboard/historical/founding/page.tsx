@@ -50,7 +50,7 @@ const HeaderSection = ({ data }: { data: any }) => (
       <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold-700">
         Federation & Early Years
       </h1>
-      <p className="mt-2 text-platinum-500-400 font-rajdhani">
+      <p className="mt-2 text-platinum-400 font-rajdhani">
         {data.description}
       </p>
     </div>
@@ -59,7 +59,7 @@ const HeaderSection = ({ data }: { data: any }) => (
         <Flag className="h-4 w-4" />
         View Archive
       </Button>
-      <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2 font-rajdhani">
+      <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2 font-rajdhani">
         <Handshake className="h-4 w-4" />
         Founding Story
       </Button>
@@ -174,7 +174,7 @@ const OverviewTab = ({ data, events }: { data: any; events: any[] }) => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-platinum-500-300 leading-relaxed font-rajdhani">{data.description}</p>
+              <p className="text-platinum-300 leading-relaxed font-rajdhani">{data.description}</p>
             </CardContent>
           </Card>
 
@@ -217,7 +217,7 @@ const OverviewTab = ({ data, events }: { data: any; events: any[] }) => {
                           <span className="text-sm font-medium text-gold-700 font-rajdhani">{policy.policy}</span>
                           <Badge variant="outline" className="text-xs font-rajdhani">{policy.year}</Badge>
                         </div>
-                        <p className="text-xs text-platinum-500-400">{policy.impact}</p>
+                        <p className="text-xs text-platinum-400">{policy.impact}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -246,7 +246,7 @@ const OverviewTab = ({ data, events }: { data: any; events: any[] }) => {
                     className="flex items-start gap-2 rounded-lg bg-platinum-800/50 p-2 border border-[var(--glass-border)]"
                   >
                     <div className="h-2 w-2 rounded-full bg-gold mt-1.5 shrink-0" />
-                    <span className="text-sm text-platinum-500-300 font-rajdhani">{milestone}</span>
+                    <span className="text-sm text-platinum-300 font-rajdhani">{milestone}</span>
                   </motion.div>
                 ))}
               </div>
@@ -307,8 +307,8 @@ const TimelineTab = ({ events }: { events: any[] }) => {
                       <span className="text-lg font-mono font-bold text-gold-700 font-rajdhani">{event.date}</span>
                       {getSignificanceBadge(event.significance)}
                     </div>
-                    <h3 className="text-xl font-bold text-platinum-500-100 mb-2 font-rajdhani">{event.title}</h3>
-                    <p className="text-platinum-500-400 leading-relaxed font-rajdhani">{event.description}</p>
+                    <h3 className="text-xl font-bold text-platinum-100 mb-2 font-rajdhani">{event.title}</h3>
+                    <p className="text-platinum-400 leading-relaxed font-rajdhani">{event.description}</p>
                     {event.entities && event.entities.length > 0 && (
                       <div className="mt-3 flex flex-wrap gap-2">
                         {event.entities.map((entity: string, eIdx: number) => (
@@ -325,7 +325,7 @@ const TimelineTab = ({ events }: { events: any[] }) => {
                         className="mt-3 rounded-lg bg-emerald-500/10 p-2 border border-emerald-500/30"
                       >
                         <span className="text-xs text-emerald-400 font-medium font-rajdhani">Outcome: </span>
-                        <span className="text-xs text-platinum-500-300 font-rajdhani">{event.outcome}</span>
+                        <span className="text-xs text-platinum-300 font-rajdhani">{event.outcome}</span>
                       </motion.div>
                     )}
                   </div>
@@ -372,15 +372,15 @@ const MilestonesTab = ({ data }: { data: any }) => {
               <Card className="glass-card border-gold-700/30">
                 <CardContent className="p-4">
                   <div className="flex items-start gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-gold text-navy-500-950 font-bold text-xl shrink-0 border-2 border-gold-700/50">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-gold text-navy-950 font-bold text-xl shrink-0 border-2 border-gold-700/50">
                       {milestone.icon}
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         <span className="text-sm font-mono text-gold-700 font-rajdhani">{milestone.date}</span>
                       </div>
-                      <h3 className="text-lg font-bold text-platinum-500-100 mb-1 font-rajdhani">{milestone.event}</h3>
-                      <p className="text-sm text-platinum-500-400 font-rajdhani">{milestone.detail}</p>
+                      <h3 className="text-lg font-bold text-platinum-100 mb-1 font-rajdhani">{milestone.event}</h3>
+                      <p className="text-sm text-platinum-400 font-rajdhani">{milestone.detail}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -450,17 +450,17 @@ const FiguresTab = ({ data }: { data: any }) => {
                 <motion.div
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.8 }}
-                  className="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-gold text-navy-500-950 mb-4 border-2 border-gold-700/50"
+                  className="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-gold text-navy-950 mb-4 border-2 border-gold-700/50"
                 >
                   {figure.icon}
                 </motion.div>
-                <h3 className="text-lg font-bold text-platinum-500-100 mb-1 font-rajdhani">{figure.name}</h3>
+                <h3 className="text-lg font-bold text-platinum-100 mb-1 font-rajdhani">{figure.name}</h3>
                 <Badge variant="outline" className="mb-2 border-gold-700/50 text-gold-700 font-rajdhani">{figure.role}</Badge>
-                <div className="flex items-center gap-1 text-sm text-platinum-500-400 mb-2">
+                <div className="flex items-center gap-1 text-sm text-platinum-400 mb-2">
                   <MapPin className="h-4 w-4" />
                   {figure.emirate}
                 </div>
-                <p className="text-xs text-platinum-500-400 font-rajdhani">{figure.detail}</p>
+                <p className="text-xs text-platinum-400 font-rajdhani">{figure.detail}</p>
               </div>
             </motion.div>
           ))}
@@ -495,8 +495,8 @@ const FiguresTab = ({ data }: { data: any }) => {
                     <Users className="h-4 w-4 text-gold-700" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-platinum-500-200 font-rajdhani">{figure.name}</p>
-                    <p className="text-xs text-platinum-500-400 font-rajdhani">{figure.role} - {figure.emirate}</p>
+                    <p className="text-sm font-medium text-platinum-200 font-rajdhani">{figure.name}</p>
+                    <p className="text-xs text-platinum-400 font-rajdhani">{figure.role} - {figure.emirate}</p>
                   </div>
                 </motion.div>
               ))}
@@ -581,9 +581,9 @@ const SourcesTab = ({ data }: { data: any }) => {
                           <span className="text-sm font-medium text-gold-700 font-rajdhani">{source.name}</span>
                           <Badge variant="outline" className="text-xs font-rajdhani">{tierLabels[source.tier] || `TIER-${source.tier}`}</Badge>
                         </div>
-                        <p className="text-xs text-platinum-500-400 font-rajdhani">Date: {source.date}</p>
+                        <p className="text-xs text-platinum-400 font-rajdhani">Date: {source.date}</p>
                         {source.url && (
-                          <p className="text-xs text-navy-500-400 mt-1 font-rajdhani truncate">{source.url}</p>
+                          <p className="text-xs text-navy-400 mt-1 font-rajdhani truncate">{source.url}</p>
                         )}
                       </div>
                     </motion.div>
@@ -611,7 +611,7 @@ export default function FoundingPage() {
         animate={{ opacity: 1 }}
         className="flex items-center justify-center min-h-[400px]"
       >
-        <div className="text-platinum-500-400 font-rajdhani text-lg">Loading Federation Era data...</div>
+        <div className="text-platinum-400 font-rajdhani text-lg">Loading Federation Era data...</div>
       </motion.div>
     )
   }

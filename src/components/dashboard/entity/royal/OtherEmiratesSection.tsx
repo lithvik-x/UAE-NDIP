@@ -39,22 +39,22 @@ function MemberCard({ member }: { member: RoyalFamilyMember }) {
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <h4 className="font-semibold text-navy-500-900 dark:text-platinum-500-100 text-sm truncate">{member.name}</h4>
+            <h4 className="font-semibold text-navy-900 dark:text-platinum-100 text-sm truncate">{member.name}</h4>
             {member.nameAr && (
-              <span className="text-xs text-platinum-500-500 dark:text-platinum-500-400 font-arabic">{member.nameAr}</span>
+              <span className="text-xs text-platinum-500 dark:text-platinum-400 font-arabic">{member.nameAr}</span>
             )}
           </div>
-          <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400 mt-0.5">{member.role}</p>
+          <p className="text-xs text-platinum-600 dark:text-platinum-400 mt-0.5">{member.role}</p>
           <div className="flex items-center gap-2 mt-2 flex-wrap">
             <Badge variant="outline" className="text-xs">{member.dynasty}</Badge>
             <Badge variant="outline" className="text-xs">{member.emirate}</Badge>
           </div>
           {member.age && (
-            <p className="text-xs text-platinum-500-500 mt-1">Age: {member.age}</p>
+            <p className="text-xs text-platinum-500 mt-1">Age: {member.age}</p>
           )}
         </div>
         <div className="flex flex-col items-end gap-1 shrink-0">
-          <div className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">{member.uaeRelevance}</div>
+          <div className="text-lg font-bold text-navy-900 dark:text-platinum-100">{member.uaeRelevance}</div>
           <div className="w-16">
             <div className="h-1 bg-platinum-200 dark:bg-platinum-700 rounded-full overflow-hidden">
               <div
@@ -68,10 +68,10 @@ function MemberCard({ member }: { member: RoyalFamilyMember }) {
       </div>
       {member.achievements && member.achievements.length > 0 && (
         <div className="mt-3 pt-3 border-t border-platinum-200/30 dark:border-platinum-700/30">
-          <p className="text-xs font-medium text-platinum-500-700 dark:text-platinum-500-300 mb-1">Key Achievements</p>
+          <p className="text-xs font-medium text-platinum-700 dark:text-platinum-300 mb-1">Key Achievements</p>
           <ul className="space-y-0.5">
             {member.achievements.slice(0, 2).map((a, i) => (
-              <li key={i} className="text-xs text-platinum-500-600 dark:text-platinum-500-400 flex items-start gap-1">
+              <li key={i} className="text-xs text-platinum-600 dark:text-platinum-400 flex items-start gap-1">
                 <span className="h-3 w-3 mt-0.5 text-emerald-500 shrink-0">•</span>
                 <span className="truncate">{a}</span>
               </li>
@@ -83,7 +83,7 @@ function MemberCard({ member }: { member: RoyalFamilyMember }) {
         <div className="mt-2 pt-2 border-t border-platinum-200/30 dark:border-platinum-700/30">
           <ul className="space-y-0.5">
             {member.keyFindings.slice(0, 2).map((f, i) => (
-              <li key={i} className="text-xs text-platinum-500-600 dark:text-platinum-500-400 flex items-start gap-1">
+              <li key={i} className="text-xs text-platinum-600 dark:text-platinum-400 flex items-start gap-1">
                 <span className="h-3 w-3 mt-0.5 text-emerald-500 shrink-0">•</span>
                 <span>{f}</span>
               </li>
@@ -117,10 +117,10 @@ export function OtherEmiratesSection({
           <div className="grid gap-4 sm:grid-cols-5">
             {otherEmirates.map((e, i) => (
               <div key={i} className="p-3 rounded-lg bg-platinum-50 dark:bg-platinum-800/30 text-center">
-                <p className="text-sm font-bold text-navy-500-900 dark:text-platinum-500-100">{e.emirate}</p>
+                <p className="text-sm font-bold text-navy-900 dark:text-platinum-100">{e.emirate}</p>
                 <Badge variant="outline" className="text-xs mt-1 block">{e.dynasty}</Badge>
-                <p className="text-xs text-platinum-500-500 mt-1">Age {e.age}</p>
-                <p className="text-xs text-platinum-500-500">Since {e.since}</p>
+                <p className="text-xs text-platinum-500 mt-1">Age {e.age}</p>
+                <p className="text-xs text-platinum-500">Since {e.since}</p>
               </div>
             ))}
           </div>
@@ -150,16 +150,16 @@ export function OtherEmiratesSection({
               <p className="text-xs text-teal-600 dark:text-teal-400">GDP per capita growth</p>
             </div>
             <div className="p-3 rounded-lg bg-platinum-50 dark:bg-platinum-800/30 text-center">
-              <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">10.4%</p>
-              <p className="text-xs text-platinum-500-500">Gov Debt (2022)</p>
+              <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">10.4%</p>
+              <p className="text-xs text-platinum-500">Gov Debt (2022)</p>
             </div>
             <div className="p-3 rounded-lg bg-platinum-50 dark:bg-platinum-800/30 text-center">
-              <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">A/A-1</p>
-              <p className="text-xs text-platinum-500-500">Credit Rating</p>
+              <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">A/A-1</p>
+              <p className="text-xs text-platinum-500">Credit Rating</p>
             </div>
             <div className="p-3 rounded-lg bg-platinum-50 dark:bg-platinum-800/30 text-center">
-              <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">8/10</p>
-              <p className="text-xs text-platinum-500-500">Avg Relevance</p>
+              <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">8/10</p>
+              <p className="text-xs text-platinum-500">Avg Relevance</p>
             </div>
           </div>
         </GlassPanel>
@@ -180,12 +180,12 @@ export function OtherEmiratesSection({
               <p className="text-xs text-emerald-600 dark:text-emerald-400">Books authored by the Ruler</p>
             </div>
             <div className="p-3 rounded-lg bg-platinum-50 dark:bg-platinum-800/30 text-center">
-              <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">1972</p>
-              <p className="text-xs text-platinum-500-500">Ruler Since</p>
+              <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">1972</p>
+              <p className="text-xs text-platinum-500">Ruler Since</p>
             </div>
             <div className="p-3 rounded-lg bg-platinum-50 dark:bg-platinum-800/30 text-center">
-              <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">86</p>
-              <p className="text-xs text-platinum-500-500">Age</p>
+              <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">86</p>
+              <p className="text-xs text-platinum-500">Age</p>
             </div>
           </div>
         </GlassPanel>

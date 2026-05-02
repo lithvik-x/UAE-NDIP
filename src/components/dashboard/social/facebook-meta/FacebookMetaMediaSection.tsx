@@ -52,7 +52,7 @@ export function FacebookMetaMediaSection() {
                       <Globe className="h-5 w-5 text-info" />
                       <div>
                         <div className="flex items-center gap-2">
-                          <span className="text-sm font-medium text-platinum-500-200">{page.outlet}</span>
+                          <span className="text-sm font-medium text-platinum-200">{page.outlet}</span>
                           <Badge
                             variant="outline"
                             className={`text-xs ${
@@ -63,21 +63,21 @@ export function FacebookMetaMediaSection() {
                             {page.credibility}
                           </Badge>
                         </div>
-                        <p className="text-xs text-platinum-500-400 mt-0.5">{page.description}</p>
+                        <p className="text-xs text-platinum-400 mt-0.5">{page.description}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3 text-right">
                       <div>
-                        <p className="text-sm font-medium text-platinum-500-200">
+                        <p className="text-sm font-medium text-platinum-200">
                           {page.likes >= 1000000 ? `${(page.likes / 1000000).toFixed(1)}M` : `${(page.likes / 1000).toFixed(0)}K`}
                         </p>
-                        <p className="text-xs text-platinum-500-500">Likes</p>
+                        <p className="text-xs text-platinum-500">Likes</p>
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-platinum-500-200">
+                        <p className="text-sm font-medium text-platinum-200">
                           {page.talkingAbout >= 1000000 ? `${(page.talkingAbout / 1000000).toFixed(1)}M` : `${(page.talkingAbout / 1000).toFixed(0)}K`}
                         </p>
-                        <p className="text-xs text-platinum-500-500">Talking</p>
+                        <p className="text-xs text-platinum-500">Talking</p>
                       </div>
                       <ExternalLink className="h-4 w-4 text-info" />
                     </div>
@@ -97,24 +97,24 @@ export function FacebookMetaMediaSection() {
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <div className="flex flex-col items-center p-4 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-gold-700">{(khaleejTimesDetails.totalLikes / 1000000).toFixed(1)}M</span>
-                  <span className="text-xs text-platinum-500-400 mt-1">Total Likes</span>
+                  <span className="text-xs text-platinum-400 mt-1">Total Likes</span>
                 </div>
                 <div className="flex flex-col items-center p-4 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-info">{(khaleejTimesDetails.talkingAbout / 1000).toFixed(0)}K</span>
-                  <span className="text-xs text-platinum-500-400 mt-1">Talking About</span>
+                  <span className="text-xs text-platinum-400 mt-1">Talking About</span>
                 </div>
                 <div className="flex flex-col items-center p-4 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-emerald-500">{khaleejTimesDetails.sentiment}</span>
-                  <span className="text-xs text-platinum-500-400 mt-1">Sentiment</span>
+                  <span className="text-xs text-platinum-400 mt-1">Sentiment</span>
                 </div>
                 <div className="flex flex-col items-center p-4 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-platinum-500">EN/AR</span>
-                  <span className="text-xs text-platinum-500-400 mt-1">Languages</span>
+                  <span className="text-xs text-platinum-400 mt-1">Languages</span>
                 </div>
               </div>
               <div className="mt-4 p-4 rounded-lg bg-platinum-800/30">
-                <h4 className="text-sm font-semibold text-platinum-500-200 mb-2">Credibility</h4>
-                <p className="text-sm text-platinum-500-400">{khaleejTimesDetails.credibility}</p>
+                <h4 className="text-sm font-semibold text-platinum-200 mb-2">Credibility</h4>
+                <p className="text-sm text-platinum-400">{khaleejTimesDetails.credibility}</p>
               </div>
             </CardContent>
           </Card>
@@ -129,24 +129,24 @@ export function FacebookMetaMediaSection() {
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <div className="flex flex-col items-center p-4 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-emerald-500">{(gulfNewsDetails.totalLikes / 1000000).toFixed(1)}M</span>
-                  <span className="text-xs text-platinum-500-400 mt-1">Total Likes</span>
+                  <span className="text-xs text-platinum-400 mt-1">Total Likes</span>
                 </div>
                 <div className="flex flex-col items-center p-4 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-info">{(gulfNewsDetails.talkingAbout / 1000).toFixed(0)}K</span>
-                  <span className="text-xs text-platinum-500-400 mt-1">Talking About</span>
+                  <span className="text-xs text-platinum-400 mt-1">Talking About</span>
                 </div>
                 <div className="flex flex-col items-center p-4 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-gold-700">{gulfNewsDetails.historicalGrowth}</span>
-                  <span className="text-xs text-platinum-500-400 mt-1">Historical Growth</span>
+                  <span className="text-xs text-platinum-400 mt-1">Historical Growth</span>
                 </div>
                 <div className="flex flex-col items-center p-4 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-platinum-500">EN/AR</span>
-                  <span className="text-xs text-platinum-500-400 mt-1">Languages</span>
+                  <span className="text-xs text-platinum-400 mt-1">Languages</span>
                 </div>
               </div>
               <div className="mt-4 p-4 rounded-lg bg-platinum-800/30">
-                <h4 className="text-sm font-semibold text-platinum-500-200 mb-2">Operating Model</h4>
-                <p className="text-sm text-platinum-500-400">{gulfNewsDetails.operatingModel}</p>
+                <h4 className="text-sm font-semibold text-platinum-200 mb-2">Operating Model</h4>
+                <p className="text-sm text-platinum-400">{gulfNewsDetails.operatingModel}</p>
               </div>
             </CardContent>
           </Card>

@@ -35,12 +35,12 @@ export function AgencyOverview({
             <Table>
               <TableHeader>
                 <TableRow className="border-b border-platinum-200/50">
-                  <TableHead className="text-platinum-500-700 font-semibold">Agency</TableHead>
-                  <TableHead className="text-platinum-500-700 font-semibold">Location</TableHead>
-                  <TableHead className="text-platinum-500-700 font-semibold">Network Size</TableHead>
-                  <TableHead className="text-platinum-500-700 font-semibold">Brands Served</TableHead>
-                  <TableHead className="text-platinum-500-700 font-semibold">Credibility</TableHead>
-                  <TableHead className="text-platinum-500-700 font-semibold">Specialization</TableHead>
+                  <TableHead className="text-platinum-700 font-semibold">Agency</TableHead>
+                  <TableHead className="text-platinum-700 font-semibold">Location</TableHead>
+                  <TableHead className="text-platinum-700 font-semibold">Network Size</TableHead>
+                  <TableHead className="text-platinum-700 font-semibold">Brands Served</TableHead>
+                  <TableHead className="text-platinum-700 font-semibold">Credibility</TableHead>
+                  <TableHead className="text-platinum-700 font-semibold">Specialization</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -48,13 +48,13 @@ export function AgencyOverview({
                   <TableRow key={agency.id} className="border-b border-platinum-100/50">
                     <TableCell>
                       <div className="flex flex-col">
-                        <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{agency.name}</span>
-                        {agency.handle && <span className="text-xs text-platinum-500-500 font-mono">{agency.handle}</span>}
+                        <span className="font-semibold text-navy-900 dark:text-platinum-100">{agency.name}</span>
+                        {agency.handle && <span className="text-xs text-platinum-500 font-mono">{agency.handle}</span>}
                       </div>
                     </TableCell>
-                    <TableCell className="text-sm text-platinum-500-700">{agency.location}</TableCell>
-                    <TableCell className="text-sm font-bold text-navy-500-900 dark:text-platinum-500-100">{agency.influencersInNetwork || '—'}</TableCell>
-                    <TableCell className="text-sm text-platinum-500-700">{agency.brandsServed || '—'}</TableCell>
+                    <TableCell className="text-sm text-platinum-700">{agency.location}</TableCell>
+                    <TableCell className="text-sm font-bold text-navy-900 dark:text-platinum-100">{agency.influencersInNetwork || '—'}</TableCell>
+                    <TableCell className="text-sm text-platinum-700">{agency.brandsServed || '—'}</TableCell>
                     <TableCell>
                       <Badge
                         variant={agency.credibility === 'High' ? 'success' : agency.credibility === 'Medium' ? 'secondary' : 'default'}
@@ -63,7 +63,7 @@ export function AgencyOverview({
                         {agency.credibility}
                       </Badge>
                     </TableCell>
-                    <TableCell className="text-sm text-platinum-500-700">{agency.specialization || agency.methodology || '—'}</TableCell>
+                    <TableCell className="text-sm text-platinum-700">{agency.specialization || agency.methodology || '—'}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -83,19 +83,19 @@ export function AgencyOverview({
             <Table>
               <TableHeader>
                 <TableRow className="border-b border-platinum-200/50">
-                  <TableHead className="text-platinum-500-700 font-semibold">Agency</TableHead>
-                  <TableHead className="text-platinum-500-700 font-semibold">Experience</TableHead>
-                  <TableHead className="text-platinum-500-700 font-semibold">Network</TableHead>
-                  <TableHead className="text-platinum-500-700 font-semibold">Specialization</TableHead>
+                  <TableHead className="text-platinum-700 font-semibold">Agency</TableHead>
+                  <TableHead className="text-platinum-700 font-semibold">Experience</TableHead>
+                  <TableHead className="text-platinum-700 font-semibold">Network</TableHead>
+                  <TableHead className="text-platinum-700 font-semibold">Specialization</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {agencyComparison.map((a) => (
                   <TableRow key={a.agency} className="border-b border-platinum-100/50">
-                    <TableCell className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{a.agency}</TableCell>
-                    <TableCell className="text-sm text-platinum-500-700">{a.yearsExperience}</TableCell>
-                    <TableCell className="text-sm font-bold text-navy-500-900 dark:text-platinum-500-100">{a.networkSize}</TableCell>
-                    <TableCell className="text-sm text-platinum-500-700">{a.specialization}</TableCell>
+                    <TableCell className="font-semibold text-navy-900 dark:text-platinum-100">{a.agency}</TableCell>
+                    <TableCell className="text-sm text-platinum-700">{a.yearsExperience}</TableCell>
+                    <TableCell className="text-sm font-bold text-navy-900 dark:text-platinum-100">{a.networkSize}</TableCell>
+                    <TableCell className="text-sm text-platinum-700">{a.specialization}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -115,7 +115,7 @@ export function AgencyOverview({
             <div className="space-y-4">
               {industryStatistics.map((stat) => (
                 <div key={stat.metric} className="flex items-center justify-between p-3 glass-subtle rounded-lg">
-                  <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{stat.metric}</span>
+                  <span className="text-sm text-platinum-700 dark:text-platinum-300">{stat.metric}</span>
                   <span className="text-sm font-bold text-gold-700">{stat.value}</span>
                 </div>
               ))}

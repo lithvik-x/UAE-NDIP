@@ -47,8 +47,8 @@ export function TimelineSection({ data }: TimelineSectionProps) {
                       {t.date}
                     </Badge>
                   </div>
-                  <h4 className="font-medium text-platinum-500-200 mb-1">{t.event}</h4>
-                  <p className="text-sm text-platinum-500-400">{t.description}</p>
+                  <h4 className="font-medium text-platinum-200 mb-1">{t.event}</h4>
+                  <p className="text-sm text-platinum-400">{t.description}</p>
                 </div>
               </motion.div>
             ))}

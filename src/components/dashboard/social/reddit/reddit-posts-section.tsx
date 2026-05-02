@@ -70,8 +70,8 @@ const colorMap: Record<string, { border: string; bg: string; text: string }> = {
   red: { border: 'border-red-500/30', bg: 'bg-red-500/5', text: 'text-red-400' },
   amber: { border: 'border-amber-500/30', bg: 'bg-amber-500/5', text: 'text-amber-400' },
   purple: { border: 'border-purple-500/30', bg: 'bg-purple-500/5', text: 'text-purple-400' },
-  slate: { border: 'border-platinum-500/30', bg: 'bg-platinum-500/5', text: 'text-platinum-500-400' },
-  blue: { border: 'border-navy-500/30', bg: 'bg-navy-500/5', text: 'text-navy-500-400' },
+  slate: { border: 'border-platinum-500/30', bg: 'bg-platinum-500/5', text: 'text-platinum-400' },
+  blue: { border: 'border-navy-500/30', bg: 'bg-navy-500/5', text: 'text-navy-400' },
   pink: { border: 'border-pink-500/30', bg: 'bg-pink-500/5', text: 'text-pink-400' },
 }
 
@@ -102,7 +102,7 @@ export function RedditPostsSection({ queryCategories }: RedditPostsSectionProps)
                     className={`flex items-center gap-2 px-4 py-2 rounded-full border transition-all ${
                       isSelected
                         ? `${colors.border} ${colors.bg} ${colors.text}`
-                        : 'border-platinum-600 bg-platinum-800/50 text-platinum-500-300 hover:border-platinum-500'
+                        : 'border-platinum-600 bg-platinum-800/50 text-platinum-300 hover:border-platinum-500'
                     }`}
                   >
                     {iconMap[category.icon] || <ThumbsDown className="h-4 w-4" />}
@@ -137,7 +137,7 @@ export function RedditPostsSection({ queryCategories }: RedditPostsSectionProps)
                       >
                         <CardHeader className="pb-2">
                           <div className="flex items-start justify-between">
-                            <CardTitle className="text-base text-platinum-500-200">{post.title}</CardTitle>
+                            <CardTitle className="text-base text-platinum-200">{post.title}</CardTitle>
                             <Badge
                               variant={post.sentiment.includes('Very') ? 'destructive' : 'outline'}
                               className="ml-2"
@@ -146,8 +146,8 @@ export function RedditPostsSection({ queryCategories }: RedditPostsSectionProps)
                             </Badge>
                           </div>
                           <CardDescription className="flex items-center gap-2">
-                            <span className="text-platinum-500-400">{post.date}</span>
-                            <span className="text-platinum-500-600">•</span>
+                            <span className="text-platinum-400">{post.date}</span>
+                            <span className="text-platinum-600">•</span>
                             <Badge variant="outline" className="border-emerald-500/30 text-emerald-400 text-xs">
                               {post.credibility}
                             </Badge>
@@ -157,12 +157,12 @@ export function RedditPostsSection({ queryCategories }: RedditPostsSectionProps)
                           </CardDescription>
                         </CardHeader>
                         <CardContent>
-                          <p className="text-platinum-500-300 text-sm">{post.context}</p>
+                          <p className="text-platinum-300 text-sm">{post.context}</p>
                           {post.keyQuote && (
                             <motion.blockquote
                               initial={{ opacity: 0 }}
                               animate={{ opacity: 1 }}
-                              className="mt-3 border-l-2 border-rose-500/50 pl-3 text-sm italic text-platinum-500-400"
+                              className="mt-3 border-l-2 border-rose-500/50 pl-3 text-sm italic text-platinum-400"
                             >
                               &ldquo;{post.keyQuote}&rdquo;
                             </motion.blockquote>
@@ -194,7 +194,7 @@ export function RedditPostsSection({ queryCategories }: RedditPostsSectionProps)
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-center text-platinum-500-400 py-8"
+                className="text-center text-platinum-400 py-8"
               >
                 <p>Select a category above to view detailed posts</p>
                 <p className="text-sm mt-2">Total: {queryCategories.reduce((acc, c) => acc + c.posts.length, 0)} posts across {queryCategories.length} categories</p>

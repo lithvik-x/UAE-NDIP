@@ -178,7 +178,7 @@ export default function NationalImagePage() {
         <div>
           <Badge variant="gold" className="mb-2 font-rajdhani text-xs tracking-widest uppercase">UAE National Image</Badge>
           <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold-700">UAE National Image</h1>
-          <p className="mt-2 text-platinum-500-400 text-sm max-w-2xl">
+          <p className="mt-2 text-platinum-400 text-sm max-w-2xl">
             Comprehensive international perception analysis — how the world perceives UAE across{' '}
             <span className="text-gold-400 font-semibold">24 query dimensions</span>,{' '}
             <span className="text-gold-400 font-semibold">{exec.urlsSuccessfullyFetched}+ sources</span>, and{' '}
@@ -256,12 +256,12 @@ export default function NationalImagePage() {
 
             {/* Narrative Panel */}
             <GlassPanel title="National Narrative" description="Core story of UAE's international positioning" className="lg:col-span-2" badge="Strategic Narrative">
-              <p className="font-rajdhani text-platinum-500-300 leading-relaxed text-sm">
+              <p className="font-rajdhani text-platinum-300 leading-relaxed text-sm">
                 {ov.narrative}
               </p>
               <div className="mt-4 grid grid-cols-2 gap-3">
                 <div>
-                  <p className="text-xs text-platinum-500-500 uppercase tracking-wider mb-1">Key Strengths</p>
+                  <p className="text-xs text-platinum-500 uppercase tracking-wider mb-1">Key Strengths</p>
                   <ul className="space-y-1">
                     {ov.strengths.slice(0, 3).map((s, i) => (
                       <li key={i} className="flex items-start gap-1.5 text-xs text-emerald-300">
@@ -271,7 +271,7 @@ export default function NationalImagePage() {
                   </ul>
                 </div>
                 <div>
-                  <p className="text-xs text-platinum-500-500 uppercase tracking-wider mb-1">Key Challenges</p>
+                  <p className="text-xs text-platinum-500 uppercase tracking-wider mb-1">Key Challenges</p>
                   <ul className="space-y-1">
                     {ov.challenges.slice(0, 3).map((c, i) => (
                       <li key={i} className="flex items-start gap-1.5 text-xs text-rose-300">
@@ -289,7 +289,6 @@ export default function NationalImagePage() {
                 <PieChart
                   data={sentimentPieData}
                   height={220}
-                  showLabel
                   innerRadius={60}
                 />
               </GlassPanel>
@@ -304,7 +303,7 @@ export default function NationalImagePage() {
                 {topPillars.map((p, i) => (
                   <motion.div key={p.pillar} variants={itemVariants} className="text-center p-3 rounded-xl bg-white/5 border border-white/10">
                     <p className="text-2xl font-extrabold font-rajdhani text-gold-400">#{p.rank}</p>
-                    <p className="text-xs text-platinum-500-400 mt-1 font-rajdhani">{p.pillar}</p>
+                    <p className="text-xs text-platinum-400 mt-1 font-rajdhani">{p.pillar}</p>
                   </motion.div>
                 ))}
               </div>
@@ -319,7 +318,7 @@ export default function NationalImagePage() {
                   {usAsymData.map(d => (
                     <div key={d.name}>
                       <div className="flex justify-between text-xs font-rajdhani mb-1">
-                        <span className="text-platinum-500-300">{d.name}</span>
+                        <span className="text-platinum-300">{d.name}</span>
                         <span className="text-gold-400 font-semibold">{d.value}%</span>
                       </div>
                       <div className="h-3 bg-white/5 rounded-full overflow-hidden">
@@ -345,7 +344,7 @@ export default function NationalImagePage() {
                   ].map(d => (
                     <div key={d.label} className="text-center p-3 bg-white/5 rounded-xl border border-white/10">
                       <p className="text-xl font-extrabold font-rajdhani" style={{ color: d.color }}>{d.value}%</p>
-                      <p className="text-xs text-platinum-500-400 mt-1 font-rajdhani">{d.label}</p>
+                      <p className="text-xs text-platinum-400 mt-1 font-rajdhani">{d.label}</p>
                     </div>
                   ))}
                 </div>
@@ -368,8 +367,8 @@ export default function NationalImagePage() {
                       <d.icon className="w-4 h-4" style={{ color: d.color }} />
                     </div>
                     <div>
-                      <p className="text-xs text-platinum-500-500 font-rajdhani">{d.label}</p>
-                      <p className="text-sm font-bold font-rajdhani text-platinum-500-100">{d.value}</p>
+                      <p className="text-xs text-platinum-500 font-rajdhani">{d.label}</p>
+                      <p className="text-sm font-bold font-rajdhani text-platinum-100">{d.value}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -385,10 +384,11 @@ export default function NationalImagePage() {
             {/* Regional Perception Chart */}
             <GlassPanel title="Regional Favorability — UAE Positive Views" badge="Survey Data">
               <BarChart
-                data={regionalBarData.map(d => ({ name: d.name, value: d.value }))}
+                data={regionalBarData.map(d => ({ name: d.name, value: d.positive }))}
+                xAxisKey="name"
+                bars={[{ dataKey: 'value', name: 'Positive', color: CHART_COLORS.rose }]}
                 height={280}
-                showValue
-                layout="vertical"
+                showGrid={true}
               />
             </GlassPanel>
 
@@ -397,14 +397,14 @@ export default function NationalImagePage() {
               <div className="space-y-3">
                 <div className="grid grid-cols-2 gap-3">
                   <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
-                    <p className="text-xs text-platinum-500-500 font-rajdhani">UAE Citizens → US</p>
+                    <p className="text-xs text-platinum-500 font-rajdhani">UAE Citizens → US</p>
                     <p className="text-2xl font-extrabold font-rajdhani text-emerald-400">82%</p>
-                    <p className="text-xs text-platinum-500-400">positive</p>
+                    <p className="text-xs text-platinum-400">positive</p>
                   </div>
                   <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/20">
-                    <p className="text-xs text-platinum-500-500 font-rajdhani">Americans → UAE</p>
+                    <p className="text-xs text-platinum-500 font-rajdhani">Americans → UAE</p>
                     <p className="text-2xl font-extrabold font-rajdhani text-rose-400">14-19%</p>
-                    <p className="text-xs text-platinum-500-400">positive</p>
+                    <p className="text-xs text-platinum-400">positive</p>
                   </div>
                 </div>
                 <div className="space-y-1.5">
@@ -413,7 +413,7 @@ export default function NationalImagePage() {
                     { icon: DollarSign, text: '$23B F-35 & MQ-9B deal (January 2021)' },
                     { icon: Shield, text: 'Major Defence Partner designation (September 2024)' },
                   ].map((item, i) => (
-                    <div key={i} className="flex items-start gap-2 text-xs text-platinum-500-300">
+                    <div key={i} className="flex items-start gap-2 text-xs text-platinum-300">
                       <item.icon className="w-3.5 h-3.5 mt-0.5 text-gold-400 shrink-0" />
                       {item.text}
                     </div>
@@ -433,7 +433,7 @@ export default function NationalImagePage() {
                   ].map(d => (
                     <div key={d.label} className="text-center p-2 rounded-lg bg-white/5">
                       <p className="text-sm font-bold font-rajdhani text-gold-400">{d.value}</p>
-                      <p className="text-xs text-platinum-500-500 font-rajdhani">{d.label}</p>
+                      <p className="text-xs text-platinum-500 font-rajdhani">{d.label}</p>
                     </div>
                   ))}
                 </div>
@@ -450,14 +450,14 @@ export default function NationalImagePage() {
               <div className="space-y-3">
                 <div className="grid grid-cols-2 gap-3">
                   <div className="p-3 rounded-xl bg-gold-500/10 border border-gold-500/20">
-                    <p className="text-xs text-platinum-500-500 font-rajdhani">Trade (2024)</p>
+                    <p className="text-xs text-platinum-500 font-rajdhani">Trade (2024)</p>
                     <p className="text-xl font-extrabold font-rajdhani text-gold-400">$11.5B</p>
-                    <p className="text-xs text-platinum-500-400">vs $4B pre-2021</p>
+                    <p className="text-xs text-platinum-400">vs $4B pre-2021</p>
                   </div>
                   <div className="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20">
-                    <p className="text-xs text-platinum-500-500 font-rajdhani">BRICS Member</p>
+                    <p className="text-xs text-platinum-500 font-rajdhani">BRICS Member</p>
                     <p className="text-xl font-extrabold font-rajdhani text-purple-400">Since Jan 2024</p>
-                    <p className="text-xs text-platinum-500-400">Full member</p>
+                    <p className="text-xs text-platinum-400">Full member</p>
                   </div>
                 </div>
                 {[
@@ -465,7 +465,7 @@ export default function NationalImagePage() {
                   'Mediated Russia-Ukraine prisoner exchange',
                   '$710M Russian anti-tank weapons (2019)',
                 ].map((d, i) => (
-                  <div key={i} className="flex items-start gap-2 text-xs text-platinum-500-300">
+                  <div key={i} className="flex items-start gap-2 text-xs text-platinum-300">
                     <Flag className="w-3.5 h-3.5 mt-0.5 text-gold-400 shrink-0" />
                     {d}
                   </div>
@@ -480,30 +480,30 @@ export default function NationalImagePage() {
             <GlassPanel title="Arab World — Regionally Strained" badge="High Relevance" className="mb-4">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 <div className="lg:col-span-2 space-y-3">
-                  <div className="flex items-start gap-2 text-xs text-platinum-500-300">
+                  <div className="flex items-start gap-2 text-xs text-platinum-300">
                     <AlertTriangle className="w-4 h-4 mt-0.5 text-rose-400 shrink-0" />
                     <span>Saudi-UAE rupture documented (ECFR, January 2026) — competition across Yemen, Sudan, AI/technology sectors</span>
                   </div>
                   <div className="grid grid-cols-2 gap-3">
                     <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/20">
-                      <p className="text-xs text-platinum-500-500 font-rajdhani">Abraham Accords Positive</p>
+                      <p className="text-xs text-platinum-500 font-rajdhani">Abraham Accords Positive</p>
                       <p className="text-2xl font-extrabold font-rajdhani text-rose-400">27%</p>
                     </div>
                     <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/20">
-                      <p className="text-xs text-platinum-500-500 font-rajdhani">Oppose Israel Recognition</p>
+                      <p className="text-xs text-platinum-500 font-rajdhani">Oppose Israel Recognition</p>
                       <p className="text-2xl font-extrabold font-rajdhani text-rose-400">87%</p>
                     </div>
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <p className="text-xs text-platinum-500-500 uppercase tracking-wider font-rajdhani">Arab Opinion Index 2025</p>
+                  <p className="text-xs text-platinum-500 uppercase tracking-wider font-rajdhani">Arab Opinion Index 2025</p>
                   {[
                     { threat: 'Israel as Greatest Threat', value: '28% nationally' },
                     { threat: 'US as Greatest Threat', value: '10% nationally' },
                     { threat: 'Palestinian Cause Collective', value: '80%' },
                   ].map(d => (
                     <div key={d.threat} className="flex justify-between text-xs p-2 rounded-lg bg-white/5">
-                      <span className="text-platinum-500-400 font-rajdhani">{d.threat}</span>
+                      <span className="text-platinum-400 font-rajdhani">{d.threat}</span>
                       <span className="text-gold-400 font-semibold font-rajdhani">{d.value}</span>
                     </div>
                   ))}
@@ -518,17 +518,17 @@ export default function NationalImagePage() {
               <div className="space-y-3">
                 <div className="grid grid-cols-2 gap-3">
                   <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
-                    <p className="text-xs text-platinum-500-500 font-rajdhani">UAE Investment</p>
+                    <p className="text-xs text-platinum-500 font-rajdhani">UAE Investment</p>
                     <p className="text-xl font-extrabold font-rajdhani text-emerald-400">$97-110B</p>
-                    <p className="text-xs text-platinum-500-400">2022-2023</p>
+                    <p className="text-xs text-platinum-400">2022-2023</p>
                   </div>
                   <div className="p-3 rounded-xl bg-gold-500/10 border border-gold-500/20">
-                    <p className="text-xs text-platinum-500-500 font-rajdhani">Sub-Saharan Embassies</p>
+                    <p className="text-xs text-platinum-500 font-rajdhani">Sub-Saharan Embassies</p>
                     <p className="text-xl font-extrabold font-rajdhani text-gold-400">19</p>
-                    <p className="text-xs text-platinum-500-400">UAE embassies</p>
+                    <p className="text-xs text-platinum-400">UAE embassies</p>
                   </div>
                 </div>
-                <p className="text-xs text-platinum-500-400 italic font-rajdhani">TNI characterizes as "sub-imperial power" — investing in ports, airports, infrastructure to extract resources</p>
+                <p className="text-xs text-platinum-400 italic font-rajdhani">TNI characterizes as "sub-imperial power" — investing in ports, airports, infrastructure to extract resources</p>
               </div>
             </GlassPanel>
 
@@ -542,7 +542,7 @@ export default function NationalImagePage() {
                   ].map(d => (
                     <div key={d.label} className="text-center p-2 rounded-lg bg-white/5">
                       <p className="text-sm font-bold font-rajdhani text-gold-400">{d.value}</p>
-                      <p className="text-xs text-platinum-500-500 font-rajdhani">{d.label}</p>
+                      <p className="text-xs text-platinum-500 font-rajdhani">{d.label}</p>
                     </div>
                   ))}
                 </div>
@@ -567,12 +567,12 @@ export default function NationalImagePage() {
                   ].map(d => (
                     <div key={d.label} className="text-center p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
                       <p className="text-xl font-extrabold font-rajdhani" style={{ color: d.color }}>{d.value}</p>
-                      <p className="text-xs text-platinum-500-400 font-rajdhani">{d.sub}</p>
-                      <p className="text-xs text-platinum-500-500 font-rajdhani mt-0.5">{d.label}</p>
+                      <p className="text-xs text-platinum-400 font-rajdhani">{d.sub}</p>
+                      <p className="text-xs text-platinum-500 font-rajdhani mt-0.5">{d.label}</p>
                     </div>
                   ))}
                 </div>
-                <p className="text-xs text-platinum-500-400 font-rajdhani">90%+ of Abu Dhabi residents report feeling safe in surveys since 2015. OSAC: LOW threat for crime.</p>
+                <p className="text-xs text-platinum-400 font-rajdhani">90%+ of Abu Dhabi residents report feeling safe in surveys since 2015. OSAC: LOW threat for crime.</p>
               </div>
             </GlassPanel>
 
@@ -582,7 +582,7 @@ export default function NationalImagePage() {
                 {freedomScores.map(d => (
                   <div key={d.name}>
                     <div className="flex justify-between text-xs font-rajdhani mb-1">
-                      <span className="text-platinum-500-300">{d.name}</span>
+                      <span className="text-platinum-300">{d.name}</span>
                       <span className="text-rose-400 font-semibold">{d.score}/{d.max}</span>
                     </div>
                     <div className="h-2 bg-white/5 rounded-full overflow-hidden">
@@ -604,9 +604,9 @@ export default function NationalImagePage() {
             <GlassPanel title="Democracy & Political System" badge="VERY LOW" className="border-rose-500/20">
               <div className="space-y-3">
                 <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/20">
-                  <p className="text-xs text-platinum-500-500 font-rajdhani">BTI Political Transformation Score</p>
+                  <p className="text-xs text-platinum-500 font-rajdhani">BTI Political Transformation Score</p>
                   <p className="text-2xl font-extrabold font-rajdhani text-rose-400">4.0 / 10</p>
-                  <p className="text-xs text-platinum-500-400 font-rajdhani">Rank 85/137 globally</p>
+                  <p className="text-xs text-platinum-400 font-rajdhani">Rank 85/137 globally</p>
                 </div>
                 <div className="space-y-1.5">
                   {[
@@ -615,7 +615,7 @@ export default function NationalImagePage() {
                     '"No progress is expected on either front" — BTI 2026',
                     'Press Freedom: 160th of 180 countries',
                   ].map((d, i) => (
-                    <div key={i} className="flex items-start gap-2 text-xs text-platinum-500-300">
+                    <div key={i} className="flex items-start gap-2 text-xs text-platinum-300">
                       <Scale className="w-3.5 h-3.5 mt-0.5 text-rose-400 shrink-0" />
                       {d}
                     </div>
@@ -633,7 +633,7 @@ export default function NationalImagePage() {
                   ))}
                 </div>
                 <div className="p-3 rounded-xl bg-orange-500/10 border border-orange-500/20">
-                  <p className="text-xs text-platinum-500-500 font-rajdhani mb-1">HRW Quote</p>
+                  <p className="text-xs text-platinum-500 font-rajdhani mb-1">HRW Quote</p>
                   <p className="text-xs text-orange-300 italic font-rajdhani">"While NBA entertains spectators in Abu Dhabi, people will be dying in Sudan, where UAE credibly accused of providing support to abusive parties"</p>
                 </div>
               </div>
@@ -645,15 +645,15 @@ export default function NationalImagePage() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/20 text-center">
                     <p className="text-2xl font-extrabold font-rajdhani text-rose-400">883</p>
-                    <p className="text-xs text-platinum-500-400 font-rajdhani">Sites blocked</p>
+                    <p className="text-xs text-platinum-400 font-rajdhani">Sites blocked</p>
                   </div>
                   <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/20 text-center">
                     <p className="text-2xl font-extrabold font-rajdhani text-rose-400">28/100</p>
-                    <p className="text-xs text-platinum-500-400 font-rajdhani">Internet Freedom</p>
+                    <p className="text-xs text-platinum-400 font-rajdhani">Internet Freedom</p>
                   </div>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-xs text-platinum-500-500 font-rajdhani uppercase tracking-wider">Blocked VoIP Services</p>
+                  <p className="text-xs text-platinum-500 font-rajdhani uppercase tracking-wider">Blocked VoIP Services</p>
                   <div className="flex flex-wrap gap-1.5">
                     {['WhatsApp', 'Facebook', 'Viber', 'FaceTime', 'Discord', 'Skype'].map(d => (
                       <Badge key={d} variant="destructive" className="text-xs font-rajdhani bg-rose-500/20 text-rose-300 border-rose-500/30">{d}</Badge>
@@ -675,11 +675,11 @@ export default function NationalImagePage() {
                   ].map(d => (
                     <div key={d.label} className="p-2 rounded-lg bg-white/5 border border-white/10 text-center">
                       <p className="text-base font-extrabold font-rajdhani" style={{ color: d.color }}>{d.value}</p>
-                      <p className="text-xs text-platinum-500-500 font-rajdhani">{d.label}</p>
+                      <p className="text-xs text-platinum-500 font-rajdhani">{d.label}</p>
                     </div>
                   ))}
                 </div>
-                <p className="text-xs text-platinum-500-400 font-rajdhani">UAE aims for 20% of non-oil GDP from AI by 2031. Microsoft deal signals US technology alignment.</p>
+                <p className="text-xs text-platinum-400 font-rajdhani">UAE aims for 20% of non-oil GDP from AI by 2031. Microsoft deal signals US technology alignment.</p>
               </div>
             </GlassPanel>
 
@@ -698,7 +698,7 @@ export default function NationalImagePage() {
                   ].map(d => (
                     <div key={d.label} className="p-2 rounded-lg bg-white/5 border border-white/10">
                       <p className="text-sm font-bold font-rajdhani" style={{ color: d.color }}>{d.value}</p>
-                      <p className="text-xs text-platinum-500-500 font-rajdhani">{d.label}</p>
+                      <p className="text-xs text-platinum-500 font-rajdhani">{d.label}</p>
                     </div>
                   ))}
                 </div>
@@ -719,7 +719,7 @@ export default function NationalImagePage() {
                     </div>
                   ))}
                 </div>
-                <p className="text-xs text-platinum-500-400 font-rajdhani italic">"Accusations fundamentally miss the mark" — Gulf IF. But ADNOC expanding production significantly.</p>
+                <p className="text-xs text-platinum-400 font-rajdhani italic">"Accusations fundamentally miss the mark" — Gulf IF. But ADNOC expanding production significantly.</p>
               </div>
             </GlassPanel>
           </motion.div>
@@ -732,7 +732,8 @@ export default function NationalImagePage() {
             {/* Radar Chart */}
             <GlassPanel title="Perception Radar — All Dimensions" badge="Multi-Source" className="lg:col-span-2">
               <RadarChart
-                data={radarData.map(d => ({ name: d.dimension, value: d.score, color: d.color }))}
+                data={radarData.map(d => ({ name: d.dimension, value: d.score }))}
+                metrics={[{ dataKey: 'value', name: 'Score' }]}
                 height={360}
               />
             </GlassPanel>
@@ -742,7 +743,6 @@ export default function NationalImagePage() {
               <PieChart
                 data={scorecardPieData}
                 height={240}
-                showLabel
                 innerRadius={60}
               />
               <div className="mt-4 space-y-2">
@@ -756,7 +756,7 @@ export default function NationalImagePage() {
                 </div>
                 <div className="flex items-center gap-2 text-xs font-rajdhani">
                   <div className="w-3 h-3 rounded-full" style={{ backgroundColor: neutralColor }} />
-                  <span className="text-platinum-500-300">Mixed Dimensions ({mixedCount})</span>
+                  <span className="text-platinum-300">Mixed Dimensions ({mixedCount})</span>
                 </div>
               </div>
             </GlassPanel>
@@ -771,19 +771,19 @@ export default function NationalImagePage() {
                   const isPositive = row.perception === 'VERY HIGH' || row.perception === 'HIGH'
                   const isNegative = row.perception === 'VERY LOW' || row.perception === 'LOW'
                   const bgClass = isPositive ? 'bg-emerald-500/5 border-emerald-500/10' : isNegative ? 'bg-rose-500/5 border-rose-500/10' : 'bg-platinum-500/5 border-platinum-500/10'
-                  const textClass = isPositive ? 'text-emerald-300' : isNegative ? 'text-rose-300' : 'text-platinum-500-300'
+                  const textClass = isPositive ? 'text-emerald-300' : isNegative ? 'text-rose-300' : 'text-platinum-300'
                   return (
                     <div key={i} className={`flex items-center justify-between p-3 rounded-xl border ${bgClass}`}>
                       <div className="flex items-center gap-3">
-                        {isPositive ? <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" /> : isNegative ? <XCircle className="w-4 h-4 text-rose-400 shrink-0" /> : <MinusCircle className="w-4 h-4 text-platinum-500-400 shrink-0" />}
+                        {isPositive ? <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" /> : isNegative ? <XCircle className="w-4 h-4 text-rose-400 shrink-0" /> : <MinusCircle className="w-4 h-4 text-platinum-400 shrink-0" />}
                         <div>
-                          <p className="text-sm font-rajdhani font-semibold text-platinum-500-100">{row.dimension}</p>
-                          <p className="text-xs text-platinum-500-500 font-rajdhani">{row.details}</p>
+                          <p className="text-sm font-rajdhani font-semibold text-platinum-100">{row.dimension}</p>
+                          <p className="text-xs text-platinum-500 font-rajdhani">{row.details}</p>
                         </div>
                       </div>
                       <div className="text-right shrink-0 ml-4">
                         <Badge variant="outline" className={`font-rajdhani text-xs border-current ${textClass}`}>{row.perception}</Badge>
-                        <p className="text-xs text-platinum-500-500 font-rajdhani mt-1">{row.score}</p>
+                        <p className="text-xs text-platinum-500 font-rajdhani mt-1">{row.score}</p>
                       </div>
                     </div>
                   )
@@ -805,9 +805,8 @@ export default function NationalImagePage() {
                   title={finding.title}
                   className="h-full"
                   badge={`Finding #${finding.id}`}
-                  hover
                 >
-                  <p className="text-sm text-platinum-500-300 font-rajdhani leading-relaxed">{finding.finding}</p>
+                  <p className="text-sm text-platinum-300 font-rajdhani leading-relaxed">{finding.finding}</p>
                   <div className="mt-3 pt-3 border-t border-white/10">
                     <Badge variant="outline" className="border-cyan-300/30 text-cyan-400 text-xs font-rajdhani">
                       <MapPin className="w-3 h-3 mr-1" />{finding.uaeRelevance}
@@ -823,7 +822,7 @@ export default function NationalImagePage() {
             <GlassPanel title="Strategic Recommendations" badge="Strategic Guidance">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <p className="text-xs text-platinum-500-500 uppercase tracking-wider font-rajdhani mb-2">Opportunities</p>
+                  <p className="text-xs text-platinum-500 uppercase tracking-wider font-rajdhani mb-2">Opportunities</p>
                   <ul className="space-y-2">
                     {ov.strategic.filter((_, i) => i < 2).map((s, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-emerald-300 font-rajdhani">
@@ -833,7 +832,7 @@ export default function NationalImagePage() {
                   </ul>
                 </div>
                 <div>
-                  <p className="text-xs text-platinum-500-500 uppercase tracking-wider font-rajdhani mb-2">Risk Mitigation</p>
+                  <p className="text-xs text-platinum-500 uppercase tracking-wider font-rajdhani mb-2">Risk Mitigation</p>
                   <ul className="space-y-2">
                     {ov.strategic.filter((_, i) => i >= 2).map((s, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-rose-300 font-rajdhani">
@@ -864,9 +863,9 @@ export default function NationalImagePage() {
                         >
                           {s.credibility}
                         </Badge>
-                        <p className="text-xs text-platinum-500-300 font-rajdhani">{s.source}</p>
+                        <p className="text-xs text-platinum-300 font-rajdhani">{s.source}</p>
                       </div>
-                      <span className="text-xs text-platinum-500-500 font-rajdhani shrink-0 ml-2">{s.date || '—'}</span>
+                      <span className="text-xs text-platinum-500 font-rajdhani shrink-0 ml-2">{s.date || '—'}</span>
                     </div>
                   ))}
                 </div>

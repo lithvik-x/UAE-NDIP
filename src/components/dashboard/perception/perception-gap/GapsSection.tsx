@@ -123,8 +123,8 @@ export function GapsSection({ data }: GapsSectionProps) {
                       {gapIcons[gap.name] || <AlertTriangle className="h-5 w-5" />}
                     </div>
                     <div>
-                      <h4 className="font-semibold text-platinum-500-100">{gap.name}</h4>
-                      <p className="text-sm text-platinum-500-400 mt-1">{gap.selfPresentation}</p>
+                      <h4 className="font-semibold text-platinum-100">{gap.name}</h4>
+                      <p className="text-sm text-platinum-400 mt-1">{gap.selfPresentation}</p>
                     </div>
                   </div>
                   <div className="flex gap-2">
@@ -136,7 +136,7 @@ export function GapsSection({ data }: GapsSectionProps) {
                     </Badge>
                     <Badge
                       variant="outline"
-                      className={`text-xs ${sentimentColors[gap.sentiment] || 'text-platinum-500-400'}`}
+                      className={`text-xs ${sentimentColors[gap.sentiment] || 'text-platinum-400'}`}
                     >
                       {gap.sentiment}
                     </Badge>
@@ -147,7 +147,7 @@ export function GapsSection({ data }: GapsSectionProps) {
                   <h5 className="text-xs font-semibold text-cyan-400 uppercase tracking-wide mb-2">Key Findings</h5>
                   <ul className="space-y-1">
                     {gap.keyFindings.slice(0, 4).map((finding, fIdx) => (
-                      <li key={fIdx} className="flex items-start gap-2 text-sm text-platinum-500-300">
+                      <li key={fIdx} className="flex items-start gap-2 text-sm text-platinum-300">
                         <ChevronRight className="h-4 w-4 text-rose-400 shrink-0 mt-0.5" />
                         {finding}
                       </li>
@@ -157,8 +157,8 @@ export function GapsSection({ data }: GapsSectionProps) {
 
                 {gap.keyQuotes && gap.keyQuotes.length > 0 && (
                   <div className="bg-platinum-800/50 rounded-lg p-3 border border-platinum-700">
-                    <h5 className="text-xs font-semibold text-platinum-500-400 uppercase tracking-wide mb-2">Key Quote</h5>
-                    <p className="text-sm text-platinum-500-300 italic">
+                    <h5 className="text-xs font-semibold text-platinum-400 uppercase tracking-wide mb-2">Key Quote</h5>
+                    <p className="text-sm text-platinum-300 italic">
                       {gap.keyQuotes[0].substring(0, 200)}
                       {gap.keyQuotes[0].length > 200 ? '...' : ''}
                     </p>
@@ -167,11 +167,11 @@ export function GapsSection({ data }: GapsSectionProps) {
 
                 <div className="flex items-center justify-between mt-4 pt-4 border-t border-platinum-700">
                   <div className="flex items-center gap-4">
-                    <span className="text-xs text-platinum-500-500">
-                      Trend: <span className={gap.trend.includes('Worsening') ? 'text-rose-400' : gap.trend.includes('Improvement') ? 'text-emerald-400' : 'text-platinum-500-300'}>{gap.trend}</span>
+                    <span className="text-xs text-platinum-500">
+                      Trend: <span className={gap.trend.includes('Worsening') ? 'text-rose-400' : gap.trend.includes('Improvement') ? 'text-emerald-400' : 'text-platinum-300'}>{gap.trend}</span>
                     </span>
-                    <span className="text-xs text-platinum-500-500">
-                      Credibility: <span className="text-platinum-500-300">{gap.credibility}</span>
+                    <span className="text-xs text-platinum-500">
+                      Credibility: <span className="text-platinum-300">{gap.credibility}</span>
                     </span>
                   </div>
                 </div>

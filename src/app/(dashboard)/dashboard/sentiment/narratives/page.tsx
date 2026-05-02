@@ -137,7 +137,7 @@ export default function NarrativeAnalysisPage() {
         <div>
           <Badge variant="gold" className="mb-2">SENTIMENT</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Narrative Analysis</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Dominant narratives, theme tracking, and sentiment intelligence
           </p>
         </div>
@@ -146,7 +146,7 @@ export default function NarrativeAnalysisPage() {
             <MessageSquare className="h-4 w-4" />
             Full Report
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
             <Target className="h-4 w-4" />
             Track Narratives
           </Button>
@@ -277,20 +277,20 @@ export default function NarrativeAnalysisPage() {
                               <Globe className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{platform.platform}</p>
-                              <p className="text-sm text-platinum-500-400">Dominant: {platform.dominant}</p>
+                              <p className="font-semibold text-platinum-200">{platform.platform}</p>
+                              <p className="text-sm text-platinum-400">Dominant: {platform.dominant}</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-6">
                             <div className="text-center">
                               <div className="text-lg font-bold text-gold-700">{platform.engagement}%</div>
-                              <p className="text-xs text-platinum-500-400">Engagement</p>
+                              <p className="text-xs text-platinum-400">Engagement</p>
                             </div>
                             <div className="text-center">
                               <div className={`text-lg font-bold ${getSentimentColor(platform.sentiment)}`}>
                                 {platform.sentiment}%
                               </div>
-                              <p className="text-xs text-platinum-500-400">Sentiment</p>
+                              <p className="text-xs text-platinum-400">Sentiment</p>
                             </div>
                           </div>
                         </div>
@@ -323,8 +323,8 @@ export default function NarrativeAnalysisPage() {
                                 <MessageSquare className={`h-4 w-4 ${getSentimentColor(narrative.sentiment)}`} />
                               </div>
                               <div>
-                                <p className="font-semibold text-platinum-500-200">{narrative.narrative}</p>
-                                <p className="text-sm text-platinum-500-400">{narrative.volume.toLocaleString()} mentions</p>
+                                <p className="font-semibold text-platinum-200">{narrative.narrative}</p>
+                                <p className="text-sm text-platinum-400">{narrative.volume.toLocaleString()} mentions</p>
                               </div>
                             </div>
                             <div className="flex items-center gap-2">
@@ -332,7 +332,7 @@ export default function NarrativeAnalysisPage() {
                                 {narrative.trend === 'up' ? (
                                   <TrendingUp className="h-3 w-3 mr-1 text-emerald-500" />
                                 ) : (
-                                  <Clock className="h-3 w-3 mr-1 text-platinum-500-400" />
+                                  <Clock className="h-3 w-3 mr-1 text-platinum-400" />
                                 )}
                                 {narrative.trend}
                               </Badge>
@@ -342,7 +342,7 @@ export default function NarrativeAnalysisPage() {
                             </div>
                           </div>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-500-400">Sentiment Score</span>
+                            <span className="text-sm text-platinum-400">Sentiment Score</span>
                             <div className="flex items-center gap-2">
                               <Progress value={narrative.sentiment} className="h-2 w-24" />
                               <span className={`text-sm font-bold ${getSentimentColor(narrative.sentiment)}`}>
@@ -374,7 +374,7 @@ export default function NarrativeAnalysisPage() {
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Lightbulb className="h-5 w-5 text-gold-700" />
-                            <span className="text-sm font-medium text-platinum-500-200">{item.narrative}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.narrative}</span>
                           </div>
                           <div className="flex items-center gap-3">
                             <Badge variant="outline" className="text-xs text-emerald-500">+{item.growth}%</Badge>
@@ -402,7 +402,7 @@ export default function NarrativeAnalysisPage() {
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <TrendingDown className="h-5 w-5 text-rose-500" />
-                            <span className="text-sm font-medium text-platinum-500-200">{item.narrative}</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.narrative}</span>
                           </div>
                           <div className="flex items-center gap-3">
                             <Badge variant="outline" className="text-xs text-rose-500">{item.decline}%</Badge>
@@ -496,19 +496,19 @@ export default function NarrativeAnalysisPage() {
                   <div className="grid gap-4 sm:grid-cols-3">
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <Target className="mx-auto h-6 w-6 text-gold-700 mb-2" />
-                      <p className="text-xs text-platinum-500-400">Overlapping Themes</p>
+                      <p className="text-xs text-platinum-400">Overlapping Themes</p>
                       <p className="text-xl font-bold text-gold-700">42</p>
                       <span className="text-xs text-emerald-500">+8 this month</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <MessageSquare className="mx-auto h-6 w-6 text-navy-500 mb-2" />
-                      <p className="text-xs text-platinum-500-400">Hybrid Narratives</p>
+                      <p className="text-xs text-platinum-400">Hybrid Narratives</p>
                       <p className="text-xl font-bold text-navy-500">18</p>
                       <span className="text-xs text-emerald-500">+3 this month</span>
                     </div>
                     <div className="rounded-lg bg-platinum-800/50 p-4 text-center">
                       <Users className="mx-auto h-6 w-6 text-emerald-500 mb-2" />
-                      <p className="text-xs text-platinum-500-400">Audience Segments</p>
+                      <p className="text-xs text-platinum-400">Audience Segments</p>
                       <p className="text-xl font-bold text-emerald-500">24</p>
                       <span className="text-xs text-emerald-500">Stable</span>
                     </div>
@@ -559,9 +559,9 @@ export default function NarrativeAnalysisPage() {
                         <div key={index} className="flex items-center justify-between">
                           <div className="flex items-center gap-3">
                             <div className={`h-3 w-3 rounded-full bg-${item.color}-500`} />
-                            <span className="text-sm text-platinum-500-300">{item.status}</span>
+                            <span className="text-sm text-platinum-300">{item.status}</span>
                           </div>
-                          <span className="text-lg font-bold text-platinum-500-200">{item.count}</span>
+                          <span className="text-lg font-bold text-platinum-200">{item.count}</span>
                         </div>
                       ))}
                     </div>
@@ -582,7 +582,7 @@ export default function NarrativeAnalysisPage() {
                         { metric: 'Engagement Lift', value: '+22%', change: '+5%' },
                       ].map((item, index) => (
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                          <span className="text-sm font-medium text-platinum-500-200">{item.metric}</span>
+                          <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
                           <div className="flex items-center gap-3">
                             <span className="text-lg font-bold text-gold-700">{item.value}</span>
                             <Badge variant="outline" className="text-xs text-emerald-500">{item.change}</Badge>
@@ -611,10 +611,10 @@ export default function NarrativeAnalysisPage() {
                         <div key={index} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Shield className="h-5 w-5 text-gold-700" />
-                            <span className="text-sm font-medium text-platinum-500-200">{campaign.topic}</span>
+                            <span className="text-sm font-medium text-platinum-200">{campaign.topic}</span>
                           </div>
                           <div className="flex items-center gap-3">
-                            <span className="text-sm text-platinum-500-400">{campaign.reach}M reach</span>
+                            <span className="text-sm text-platinum-400">{campaign.reach}M reach</span>
                             <Badge variant={campaign.status === 'Active' ? 'default' : 'outline'} className="text-xs">
                               {campaign.status}
                             </Badge>
@@ -691,17 +691,17 @@ export default function NarrativeAnalysisPage() {
                                  <CheckCircle className="h-4 w-4 text-emerald-500" />}
                               </div>
                               <div>
-                                <p className="font-semibold text-platinum-500-200">{topic.title}</p>
-                                <p className="text-sm text-platinum-500-400">{topic.sentiment.volume.toLocaleString()} mentions</p>
+                                <p className="font-semibold text-platinum-200">{topic.title}</p>
+                                <p className="text-sm text-platinum-400">{topic.sentiment.volume.toLocaleString()} mentions</p>
                               </div>
                             </div>
                             <Badge variant={topic.alertLevel === 'RED' ? 'destructive' : 'outline'} className="text-xs">
                               {topic.alertLevel}
                             </Badge>
                           </div>
-                          <p className="text-sm text-platinum-500-300 mb-3 line-clamp-2">{topic.description}</p>
+                          <p className="text-sm text-platinum-300 mb-3 line-clamp-2">{topic.description}</p>
                           <div className="flex items-center justify-between">
-                            <span className="text-sm text-platinum-500-400">Sentiment Score</span>
+                            <span className="text-sm text-platinum-400">Sentiment Score</span>
                             <div className="flex items-center gap-2">
                               <Progress
                                 value={(topic.sentimentScore + 1) * 50}
@@ -716,7 +716,7 @@ export default function NarrativeAnalysisPage() {
                           </div>
                           <div className="flex flex-wrap gap-2 mt-3">
                             {topic.keyDrivers.slice(0, 3).map((driver, idx) => (
-                              <Badge key={idx} variant="outline" className="text-xs text-platinum-500-400">
+                              <Badge key={idx} variant="outline" className="text-xs text-platinum-400">
                                 {driver}
                               </Badge>
                             ))}
@@ -786,7 +786,7 @@ export default function NarrativeAnalysisPage() {
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Shield className="h-4 w-4 text-rose-500" />
-                            <span className="text-sm font-medium text-platinum-500-200">{kpi.kpi}</span>
+                            <span className="text-sm font-medium text-platinum-200">{kpi.kpi}</span>
                           </div>
                           <div className="flex items-center gap-2">
                             <span className="text-sm font-bold text-gold-700">{kpi.currentValue}</span>
@@ -811,7 +811,7 @@ export default function NarrativeAnalysisPage() {
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div className="flex items-center gap-3">
                             <Flame className="h-4 w-4 text-orange-500" />
-                            <span className="text-sm font-medium text-platinum-500-200">{kpi.kpi}</span>
+                            <span className="text-sm font-medium text-platinum-200">{kpi.kpi}</span>
                           </div>
                           <div className="flex items-center gap-2">
                             <span className="text-sm font-bold text-gold-700">{kpi.currentValue}</span>
@@ -836,25 +836,25 @@ export default function NarrativeAnalysisPage() {
                     <div className="grid gap-4 sm:grid-cols-3">
                       <div className="rounded-lg bg-rose-500/10 p-4 text-center border border-rose-500/20">
                         <AlertTriangle className="mx-auto h-6 w-6 text-rose-500 mb-2" />
-                        <p className="text-xs text-platinum-500-400">Sentiment Score</p>
+                        <p className="text-xs text-platinum-400">Sentiment Score</p>
                         <p className="text-xl font-bold text-rose-500">-90%</p>
                       </div>
                       <div className="rounded-lg bg-rose-500/10 p-4 text-center border border-rose-500/20">
                         <Eye className="mx-auto h-6 w-6 text-rose-500 mb-2" />
-                        <p className="text-xs text-platinum-500-400">Alert Level</p>
+                        <p className="text-xs text-platinum-400">Alert Level</p>
                         <p className="text-xl font-bold text-rose-500">RED</p>
                       </div>
                       <div className="rounded-lg bg-rose-500/10 p-4 text-center border border-rose-500/20">
                         <Globe className="mx-auto h-6 w-6 text-rose-500 mb-2" />
-                        <p className="text-xs text-platinum-500-400">UAE Relevance</p>
+                        <p className="text-xs text-platinum-400">UAE Relevance</p>
                         <p className="text-xl font-bold text-rose-500">96/100</p>
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <h4 className="text-sm font-semibold text-platinum-500-300">Key Debate Angles</h4>
+                      <h4 className="text-sm font-semibold text-platinum-300">Key Debate Angles</h4>
                       {surveillanceData?.debateAngles?.map((angle, idx) => (
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/30 p-3">
-                          <span className="text-sm text-platinum-500-300">{angle.angle}</span>
+                          <span className="text-sm text-platinum-300">{angle.angle}</span>
                           <Badge variant="outline" className="text-xs">
                             {angle.evidenceStrength}
                           </Badge>

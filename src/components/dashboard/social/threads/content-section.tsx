@@ -80,8 +80,8 @@ export function ContentSection({
                     >
                       <div className="flex items-center gap-3">
                         <Calendar className="h-5 w-5 text-gold-700" />
-                        <span className="font-medium text-platinum-500-200">{item.day}</span>
-                        <span className="text-sm text-platinum-500-400">at {item.time}</span>
+                        <span className="font-medium text-platinum-200">{item.day}</span>
+                        <span className="text-sm text-platinum-400">at {item.time}</span>
                       </div>
                       <Badge variant={item.engagement === 'Highest' ? 'default' : 'outline'}>
                         {item.engagement}
@@ -109,9 +109,9 @@ export function ContentSection({
                       whileHover={{ scale: 1.02 }}
                       className="rounded-lg bg-platinum-800/50 p-4 cursor-pointer"
                     >
-                      <p className="font-medium text-platinum-500-200">{item.strategy}</p>
+                      <p className="font-medium text-platinum-200">{item.strategy}</p>
                       <p className="text-sm text-emerald-400">{item.impact}</p>
-                      <p className="text-xs text-platinum-500-500 mt-1">Source: {item.source}</p>
+                      <p className="text-xs text-platinum-500 mt-1">Source: {item.source}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -136,8 +136,8 @@ export function ContentSection({
                     >
                       <div className="flex items-start justify-between">
                         <div>
-                          <p className="font-medium text-platinum-500-200">{item.strategy}</p>
-                          <p className="text-sm text-platinum-500-400 mt-1">{item.details}</p>
+                          <p className="font-medium text-platinum-200">{item.strategy}</p>
+                          <p className="text-sm text-platinum-400 mt-1">{item.details}</p>
                         </div>
                         <Badge variant="default" className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">
                           {item.expectedImpact}
@@ -176,7 +176,7 @@ export function ContentSection({
                 <div className="grid gap-3 sm:grid-cols-2">
                   {usageHabits.map((habit: any, idx: number) => (
                     <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
-                      <span className="text-sm text-platinum-500-300">{habit.metric}</span>
+                      <span className="text-sm text-platinum-300">{habit.metric}</span>
                       <span className="text-sm font-bold text-gold-700">{habit.value}</span>
                     </div>
                   ))}

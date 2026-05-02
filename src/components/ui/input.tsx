@@ -116,7 +116,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     }
 
     // File input styles
-    const fileStyles = 'file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-navy-500-600 dark:file:text-navy-500-400'
+    const fileStyles = 'file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-navy-600 dark:file:text-navy-400'
 
     return (
       <input

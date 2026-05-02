@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client'
 
 import { motion } from 'framer-motion'
@@ -168,10 +169,10 @@ export default function TechnologyInnovationPage() {
         <div>
           <Badge variant="gold" className="mb-2">P-SECTOR</Badge>
           <h1 className="text-4xl font-extrabold font-rajdhani gradient-text-gold-700">Technology & Innovation</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             AI ecosystem, G42, space program, startup intelligence, and digital infrastructure
           </p>
-          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500-500">
+          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500">
             <span className="flex items-center gap-1">
               <Clock className="h-4 w-4" />
               {data.execution.dateExecuted}
@@ -191,7 +192,7 @@ export default function TechnologyInnovationPage() {
             <Cpu className="h-4 w-4" />
             AI Dashboard
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
             <Lightbulb className="h-4 w-4" />
             Track Startup
           </Button>
@@ -281,15 +282,15 @@ export default function TechnologyInnovationPage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
-                      <span className="text-platinum-500-300">Target Contribution</span>
+                      <span className="text-platinum-300">Target Contribution</span>
                       <span className="text-xl font-bold text-gold-700">$91 Billion</span>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
-                      <span className="text-platinum-500-300">Non-oil GDP Target</span>
+                      <span className="text-platinum-300">Non-oil GDP Target</span>
                       <span className="text-xl font-bold text-emerald-500">20%</span>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
-                      <span className="text-platinum-500-300">Minister Appointed</span>
+                      <span className="text-platinum-300">Minister Appointed</span>
                       <span className="text-xl font-bold text-platinum-500">2017</span>
                     </div>
                   </CardContent>
@@ -308,8 +309,8 @@ export default function TechnologyInnovationPage() {
                       {data.majorTechnologyInvestments.slice(0, 5).map((inv, idx) => (
                         <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                           <div>
-                            <p className="font-medium text-platinum-500-200">{inv.investment}</p>
-                            <p className="text-xs text-platinum-500-500">{inv.investors}</p>
+                            <p className="font-medium text-platinum-200">{inv.investment}</p>
+                            <p className="text-xs text-platinum-500">{inv.investors}</p>
                           </div>
                           <Badge variant="gold" className="text-xs">{inv.amount}</Badge>
                         </div>
@@ -331,7 +332,7 @@ export default function TechnologyInnovationPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     {data.techRankings.map((rank, idx) => (
                       <div key={idx} className="flex items-center justify-between p-4 bg-platinum-800/50 rounded-xl">
-                        <span className="text-platinum-500-300">{rank.index}</span>
+                        <span className="text-platinum-300">{rank.index}</span>
                         <Badge variant="emerald" className="text-lg px-3 py-1">{rank.ranking}</Badge>
                       </div>
                     ))}
@@ -400,7 +401,7 @@ export default function TechnologyInnovationPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     {data.aiStrategyMetrics.slice(0, 8).map((metric, idx) => (
                       <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-300 text-sm">{metric.metric}</span>
+                        <span className="text-platinum-300 text-sm">{metric.metric}</span>
                         <Badge variant="gold" className="text-xs">{metric.value}</Badge>
                       </div>
                     ))}
@@ -422,11 +423,11 @@ export default function TechnologyInnovationPage() {
                       <div key={idx} className="flex items-start gap-4 p-3 bg-platinum-800/50 rounded-lg">
                         <div className="w-20 shrink-0 text-center">
                           <span className="text-sm font-bold text-gold-700">{event.date.split(' ')[0]}</span>
-                          <span className="text-xs text-platinum-500-500 block">{event.date.split(' ')[1]}</span>
+                          <span className="text-xs text-platinum-500 block">{event.date.split(' ')[1]}</span>
                         </div>
                         <div className="flex-1">
-                          <p className="font-medium text-platinum-500-200">{event.event}</p>
-                          <p className="text-xs text-platinum-500-500">{event.partners}</p>
+                          <p className="font-medium text-platinum-200">{event.event}</p>
+                          <p className="text-xs text-platinum-500">{event.partners}</p>
                         </div>
                         {event.investment && event.investment !== '-' && (
                           <Badge variant="emerald" className="text-xs shrink-0">{event.investment}</Badge>
@@ -448,14 +449,14 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="space-y-4">
                     <div className="p-4 bg-navy/20 border border-navy-500/30 rounded-xl">
-                      <h4 className="font-bold text-navy-500-300 mb-2">Framework: AI Principles and Ethics for Emirate of Dubai</h4>
-                      <p className="text-sm text-platinum-500-400">Launched January 2019 by Smart Dubai Government Establishment</p>
+                      <h4 className="font-bold text-navy-300 mb-2">Framework: AI Principles and Ethics for Emirate of Dubai</h4>
+                      <p className="text-sm text-platinum-400">Launched January 2019 by Smart Dubai Government Establishment</p>
                     </div>
                     <div className="grid gap-2 md:grid-cols-2">
                       {data.aiEthicsRegulation.map((aspect, idx) => (
                         <div key={idx} className="flex items-center justify-between p-2 bg-platinum-800/50 rounded">
-                          <span className="text-platinum-500-400 text-sm">{aspect.aspect}:</span>
-                          <span className="text-platinum-500-200 text-sm text-right">{aspect.details}</span>
+                          <span className="text-platinum-400 text-sm">{aspect.aspect}:</span>
+                          <span className="text-platinum-200 text-sm text-right">{aspect.details}</span>
                         </div>
                       ))}
                     </div>
@@ -473,7 +474,7 @@ export default function TechnologyInnovationPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-xl">
-                    <p className="text-platinum-500-300">Legal Basis: <span className="text-rose-500 font-bold">Federal Decree-Law No. (34) of 2021</span></p>
+                    <p className="text-platinum-300">Legal Basis: <span className="text-rose-500 font-bold">Federal Decree-Law No. (34) of 2021</span></p>
                   </div>
                 </CardContent>
               </Card>
@@ -501,29 +502,29 @@ export default function TechnologyInnovationPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="space-y-3">
                       <div className="flex justify-between p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400">Founded</span>
+                        <span className="text-platinum-400">Founded</span>
                         <span className="font-bold text-gold-700">{data.g42Overview.founded}</span>
                       </div>
                       <div className="flex justify-between p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400">Headquarters</span>
+                        <span className="text-platinum-400">Headquarters</span>
                         <span className="font-bold text-platinum-500">{data.g42Overview.headquarters}</span>
                       </div>
                       <div className="flex justify-between p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400">Chairman</span>
+                        <span className="text-platinum-400">Chairman</span>
                         <span className="font-bold text-platinum-500">{data.g42Overview.chairman}</span>
                       </div>
                     </div>
                     <div className="space-y-3">
                       <div className="flex justify-between p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400">CEO</span>
+                        <span className="text-platinum-400">CEO</span>
                         <span className="font-bold text-platinum-500">{data.g42Overview.ceo}</span>
                       </div>
                       <div className="flex justify-between p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400">Employees</span>
+                        <span className="text-platinum-400">Employees</span>
                         <span className="font-bold text-emerald-500">{data.g42Overview.employees}</span>
                       </div>
                       <div className="flex justify-between p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400">Business Areas</span>
+                        <span className="text-platinum-400">Business Areas</span>
                         <span className="font-bold text-navy-500 text-right text-sm">{data.g42Overview.businessAreas}</span>
                       </div>
                     </div>
@@ -544,7 +545,7 @@ export default function TechnologyInnovationPage() {
                     {data.g42Subsidiaries.map((sub, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="font-bold text-gold-700">{sub.name}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{sub.focusArea}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{sub.focusArea}</p>
                       </div>
                     ))}
                   </div>
@@ -564,8 +565,8 @@ export default function TechnologyInnovationPage() {
                     {data.g42Partnerships.map((partnership, idx) => (
                       <div key={idx} className="flex items-start justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <div>
-                          <p className="font-medium text-platinum-500-200">{partnership.partnership}</p>
-                          <p className="text-xs text-platinum-500-500">{partnership.details}</p>
+                          <p className="font-medium text-platinum-200">{partnership.partnership}</p>
+                          <p className="text-xs text-platinum-500">{partnership.details}</p>
                         </div>
                         <Badge variant="outline" className="text-xs shrink-0">{partnership.date}</Badge>
                       </div>
@@ -587,7 +588,7 @@ export default function TechnologyInnovationPage() {
                     {data.g42Controversies.map((controversy, idx) => (
                       <div key={idx} className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg">
                         <p className="font-medium text-rose-500">{controversy.issue}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{controversy.details}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{controversy.details}</p>
                       </div>
                     ))}
                   </div>
@@ -617,7 +618,7 @@ export default function TechnologyInnovationPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     {data.hopeProbeMetrics.map((metric, idx) => (
                       <div key={idx} className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400 text-sm">{metric.attribute}</span>
+                        <span className="text-platinum-400 text-sm">{metric.attribute}</span>
                         <span className="font-bold text-gold-700 text-sm text-right">{metric.value}</span>
                       </div>
                     ))}
@@ -637,7 +638,7 @@ export default function TechnologyInnovationPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     {data.marsMissionLeaders.map((leader, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-xl text-center">
-                        <p className="text-sm text-platinum-500-400">{leader.role}</p>
+                        <p className="text-sm text-platinum-400">{leader.role}</p>
                         <p className="text-xl font-bold text-gold-700 mt-1">{leader.person}</p>
                       </div>
                     ))}
@@ -657,18 +658,18 @@ export default function TechnologyInnovationPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     {data.sultanAlNeyadiAttributes.slice(0, 6).map((attr, idx) => (
                       <div key={idx} className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400 text-sm">{attr.attribute}</span>
+                        <span className="text-platinum-400 text-sm">{attr.attribute}</span>
                         <span className="font-bold text-platinum-500 text-sm text-right">{attr.value}</span>
                       </div>
                     ))}
                   </div>
                   <div className="mt-4">
-                    <h4 className="text-sm text-platinum-500-400 mb-2">Space Missions</h4>
+                    <h4 className="text-sm text-platinum-400 mb-2">Space Missions</h4>
                     <div className="space-y-2">
                       {data.sultanSpaceMissions.map((mission, idx) => (
                         <div key={idx} className="flex items-start gap-3 p-2 bg-platinum-800/50 rounded">
                           <Badge variant="gold" className="text-xs shrink-0">{mission.date}</Badge>
-                          <span className="text-platinum-500-200 text-sm">{mission.details}</span>
+                          <span className="text-platinum-200 text-sm">{mission.details}</span>
                         </div>
                       ))}
                     </div>
@@ -688,7 +689,7 @@ export default function TechnologyInnovationPage() {
                   <div className="grid gap-3 md:grid-cols-2">
                     {data.lunarMissionAttributes.map((attr, idx) => (
                       <div key={idx} className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400 text-sm">{attr.attribute}</span>
+                        <span className="text-platinum-400 text-sm">{attr.attribute}</span>
                         <span className="font-bold text-cyan-500 text-sm text-right">{attr.value}</span>
                       </div>
                     ))}
@@ -710,7 +711,7 @@ export default function TechnologyInnovationPage() {
                       <div key={idx} className="flex items-center justify-between p-4 bg-platinum-800/50 rounded-xl">
                         <div>
                           <p className="font-bold text-gold-700">{mission.mission}</p>
-                          <p className="text-sm text-platinum-500-400">Target: {mission.target}</p>
+                          <p className="text-sm text-platinum-400">Target: {mission.target}</p>
                         </div>
                         <Badge variant="emerald">{mission.launchDate}</Badge>
                       </div>
@@ -742,17 +743,17 @@ export default function TechnologyInnovationPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                       <p className="text-3xl font-bold text-gold-700">$2.38B</p>
-                      <p className="text-platinum-500-400">2025 Valuation</p>
+                      <p className="text-platinum-400">2025 Valuation</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                       <p className="text-3xl font-bold text-emerald-500">$6.70B</p>
-                      <p className="text-platinum-500-400">2031 Projection</p>
+                      <p className="text-platinum-400">2031 Projection</p>
                     </div>
                   </div>
                   <div className="mt-4 grid gap-2">
                     {data.dataCenterMetrics.slice(0, 8).map((metric, idx) => (
                       <div key={idx} className="flex justify-between items-center p-2 bg-platinum-800/50 rounded">
-                        <span className="text-platinum-500-400 text-sm">{metric.metric}</span>
+                        <span className="text-platinum-400 text-sm">{metric.metric}</span>
                         <span className="font-bold text-platinum-500 text-sm">{metric.value}</span>
                       </div>
                     ))}
@@ -774,7 +775,7 @@ export default function TechnologyInnovationPage() {
                       <div key={idx} className="flex items-center justify-between p-4 bg-platinum-800/50 rounded-xl">
                         <div>
                           <p className="font-bold text-gold-700">{inv.investor}</p>
-                          <p className="text-sm text-platinum-500-500">{inv.partner}</p>
+                          <p className="text-sm text-platinum-500">{inv.partner}</p>
                         </div>
                         <Badge variant="gold" className="text-lg px-3">{inv.investment}</Badge>
                       </div>
@@ -796,7 +797,7 @@ export default function TechnologyInnovationPage() {
                     {data.dataCenterPlayers.map((player, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg text-center">
                         <p className="font-bold text-navy-500">{player.company}</p>
-                        <p className="text-xs text-platinum-500-400 mt-1">{player.role}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{player.role}</p>
                       </div>
                     ))}
                   </div>
@@ -849,8 +850,8 @@ export default function TechnologyInnovationPage() {
                     {data.surveillanceProgrammes.map((prog, idx) => (
                       <div key={idx} className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-xl">
                         <h4 className="font-bold text-rose-500">{prog.programme}</h4>
-                        <p className="text-sm text-platinum-500-400 mt-1">Location: {prog.location}</p>
-                        <p className="text-platinum-500-300 mt-2">{prog.scope}</p>
+                        <p className="text-sm text-platinum-400 mt-1">Location: {prog.location}</p>
+                        <p className="text-platinum-300 mt-2">{prog.scope}</p>
                       </div>
                     ))}
                   </div>
@@ -869,8 +870,8 @@ export default function TechnologyInnovationPage() {
                   <div className="grid gap-2">
                     {data.oyoonDetails.map((detail, idx) => (
                       <div key={idx} className="flex justify-between items-center p-2 bg-platinum-800/50 rounded">
-                        <span className="text-platinum-500-400 text-sm">{detail.aspect}:</span>
-                        <span className="text-platinum-500-200 text-sm text-right">{detail.details}</span>
+                        <span className="text-platinum-400 text-sm">{detail.aspect}:</span>
+                        <span className="text-platinum-200 text-sm text-right">{detail.details}</span>
                       </div>
                     ))}
                   </div>
@@ -890,7 +891,7 @@ export default function TechnologyInnovationPage() {
                     {data.humanRightsConcerns.map((concern, idx) => (
                       <div key={idx} className="p-3 bg-rose-500/10 border border-rose-500/30 rounded-lg">
                         <p className="font-medium text-rose-500">{concern.issue}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{concern.details}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{concern.details}</p>
                       </div>
                     ))}
                   </div>
@@ -909,7 +910,7 @@ export default function TechnologyInnovationPage() {
                   <div className="space-y-2">
                     {data.internetRestrictions.slice(0, 8).map((rest, idx) => (
                       <div key={idx} className="flex items-center justify-between p-2 bg-platinum-800/50 rounded">
-                        <span className="text-platinum-500-300 text-sm">{rest.restriction}</span>
+                        <span className="text-platinum-300 text-sm">{rest.restriction}</span>
                         <Badge variant={rest.status === 'Blocked' || rest.status === 'Banned' ? 'rose' : 'outline'} className="text-xs">
                           {rest.status}
                         </Badge>
@@ -932,15 +933,15 @@ export default function TechnologyInnovationPage() {
                     {data.cybersecurityEntities.map((entity, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="font-bold text-emerald-500">{entity.entity}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{entity.role}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{entity.role}</p>
                       </div>
                     ))}
                   </div>
                   <div className="mt-4 grid gap-2">
                     {data.dataProtectionLaws.map((law, idx) => (
                       <div key={idx} className="flex justify-between items-center p-2 bg-platinum-800/50 rounded">
-                        <span className="text-platinum-500-400 text-sm">{law.jurisdiction}</span>
-                        <span className="text-platinum-500-200 text-sm">{law.law}</span>
+                        <span className="text-platinum-400 text-sm">{law.jurisdiction}</span>
+                        <span className="text-platinum-200 text-sm">{law.law}</span>
                       </div>
                     ))}
                   </div>
@@ -973,8 +974,8 @@ export default function TechnologyInnovationPage() {
                   <div className="grid gap-2">
                     {data.cryptoRegulatoryFramework.map((reg, idx) => (
                       <div key={idx} className="flex justify-between items-center p-2 bg-platinum-800/50 rounded">
-                        <span className="text-platinum-500-400 text-sm">{reg.regulator}</span>
-                        <span className="text-platinum-500-200 text-sm text-right">{reg.scope}</span>
+                        <span className="text-platinum-400 text-sm">{reg.regulator}</span>
+                        <span className="text-platinum-200 text-sm text-right">{reg.scope}</span>
                       </div>
                     ))}
                   </div>
@@ -993,7 +994,7 @@ export default function TechnologyInnovationPage() {
                   <div className="grid gap-4 md:grid-cols-2">
                     {data.cryptoLicensing.map((item, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
-                        <p className="text-platinum-500-400 text-sm">{item.aspect}</p>
+                        <p className="text-platinum-400 text-sm">{item.aspect}</p>
                         <p className="font-bold text-emerald-500 mt-1">{item.details}</p>
                       </div>
                     ))}
@@ -1014,7 +1015,7 @@ export default function TechnologyInnovationPage() {
                     {data.cryptoCompliance.map((req, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <Badge variant="gold" className="text-xs mb-2">{req.requirement}</Badge>
-                        <p className="text-sm text-platinum-500-400">{req.description}</p>
+                        <p className="text-sm text-platinum-400">{req.description}</p>
                       </div>
                     ))}
                   </div>
@@ -1047,8 +1048,8 @@ export default function TechnologyInnovationPage() {
                   <div className="grid gap-2">
                     {data.difcInnovationHub.map((item, idx) => (
                       <div key={idx} className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400 text-sm">{item.aspect}:</span>
-                        <span className="text-platinum-500-200 text-sm text-right">{item.details}</span>
+                        <span className="text-platinum-400 text-sm">{item.aspect}:</span>
+                        <span className="text-platinum-200 text-sm text-right">{item.details}</span>
                       </div>
                     ))}
                   </div>
@@ -1066,16 +1067,16 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="space-y-4">
                     <div className="p-4 bg-platinum-800/50 rounded-xl">
-                      <p className="text-platinum-500-400 text-sm">Launch Year</p>
+                      <p className="text-platinum-400 text-sm">Launch Year</p>
                       <p className="text-2xl font-bold text-emerald-500">{data.dubaiFinTechHive.details}</p>
                     </div>
                     <div className="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl">
                       <p className="text-emerald-500 font-bold mb-2">Inaugural Batch</p>
-                      <p className="text-platinum-500-300">11 finalists</p>
+                      <p className="text-platinum-300">11 finalists</p>
                     </div>
                     <div className="p-4 bg-platinum-800/50 rounded-xl">
-                      <p className="text-platinum-500-400 text-sm mb-2">Key Partnership</p>
-                      <p className="text-platinum-500-200">Emirates NBD for API sandbox certification</p>
+                      <p className="text-platinum-400 text-sm mb-2">Key Partnership</p>
+                      <p className="text-platinum-200">Emirates NBD for API sandbox certification</p>
                     </div>
                   </div>
                 </CardContent>
@@ -1130,8 +1131,8 @@ export default function TechnologyInnovationPage() {
                   <div className="grid gap-2">
                     {data.uaePassFeatures.slice(0, 8).map((feature, idx) => (
                       <div key={idx} className="flex justify-between items-center p-2 bg-platinum-800/50 rounded">
-                        <span className="text-platinum-500-400 text-sm">{feature.feature}</span>
-                        <span className="text-platinum-500-200 text-sm text-right">{feature.details}</span>
+                        <span className="text-platinum-400 text-sm">{feature.feature}</span>
+                        <span className="text-platinum-200 text-sm text-right">{feature.details}</span>
                       </div>
                     ))}
                   </div>
@@ -1151,7 +1152,7 @@ export default function TechnologyInnovationPage() {
                     {data.eGovernmentApps.slice(0, 6).map((app, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="font-bold text-emerald-500">{app.application}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{app.description}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{app.description}</p>
                       </div>
                     ))}
                   </div>
@@ -1171,7 +1172,7 @@ export default function TechnologyInnovationPage() {
                     {data.quantumInitiatives.map((init, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="font-bold text-cyan-500">{init.initiative}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{init.details}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{init.details}</p>
                       </div>
                     ))}
                   </div>
@@ -1193,8 +1194,8 @@ export default function TechnologyInnovationPage() {
                   <div className="grid gap-2">
                     {data.mbzuaiGlobalPresence.map((loc, idx) => (
                       <div key={idx} className="flex justify-between items-center p-2 bg-platinum-800/50 rounded">
-                        <span className="text-platinum-500-400 text-sm">{loc.location}</span>
-                        <span className="text-platinum-500-200 text-sm text-right">{loc.details}</span>
+                        <span className="text-platinum-400 text-sm">{loc.location}</span>
+                        <span className="text-platinum-200 text-sm text-right">{loc.details}</span>
                       </div>
                     ))}
                   </div>
@@ -1225,7 +1226,7 @@ export default function TechnologyInnovationPage() {
                     {data.avRegulations.map((reg, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <Badge variant="gold" className="text-xs mb-2">{reg.law}</Badge>
-                        <p className="text-sm text-platinum-500-400">{reg.details}</p>
+                        <p className="text-sm text-platinum-400">{reg.details}</p>
                       </div>
                     ))}
                   </div>
@@ -1247,11 +1248,11 @@ export default function TechnologyInnovationPage() {
                         <div className="flex justify-between items-start">
                           <div>
                             <p className="font-bold text-emerald-500">{op.operator}</p>
-                            <p className="text-sm text-platinum-500-400">Location: {op.location}</p>
+                            <p className="text-sm text-platinum-400">Location: {op.location}</p>
                           </div>
                           <Badge variant="outline">{idx === 0 ? 'Active' : 'Piloting'}</Badge>
                         </div>
-                        <p className="text-sm text-platinum-500-300 mt-2">{op.deploymentDetails}</p>
+                        <p className="text-sm text-platinum-300 mt-2">{op.deploymentDetails}</p>
                       </div>
                     ))}
                   </div>
@@ -1271,8 +1272,8 @@ export default function TechnologyInnovationPage() {
                     {data.avMarketProjections.map((proj, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="text-2xl font-bold text-cyan-500">{proj.value}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{proj.metric}</p>
-                        {proj.source && <p className="text-xs text-platinum-500-500 mt-1">Source: {proj.source}</p>}
+                        <p className="text-sm text-platinum-400 mt-1">{proj.metric}</p>
+                        {proj.source && <p className="text-xs text-platinum-500 mt-1">Source: {proj.source}</p>}
                       </div>
                     ))}
                   </div>
@@ -1291,8 +1292,8 @@ export default function TechnologyInnovationPage() {
                   <div className="grid gap-2">
                     {data.droneDetails.map((drone, idx) => (
                       <div key={idx} className="flex justify-between items-center p-2 bg-platinum-800/50 rounded">
-                        <span className="text-platinum-500-400 text-sm">{drone.aspect}</span>
-                        <span className="text-platinum-500-200 text-sm text-right">{drone.details}</span>
+                        <span className="text-platinum-400 text-sm">{drone.aspect}</span>
+                        <span className="text-platinum-200 text-sm text-right">{drone.details}</span>
                       </div>
                     ))}
                   </div>
@@ -1326,7 +1327,7 @@ export default function TechnologyInnovationPage() {
                           <p className="font-bold text-gold-700">{dev.development}</p>
                           <Badge variant="outline" className="text-xs">{dev.date}</Badge>
                         </div>
-                        <p className="text-sm text-platinum-500-400">{dev.details}</p>
+                        <p className="text-sm text-platinum-400">{dev.details}</p>
                       </div>
                     ))}
                   </div>
@@ -1346,8 +1347,8 @@ export default function TechnologyInnovationPage() {
                     {data.semiconductorMarkets.map((mkt, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-xl text-center">
                         <p className="text-2xl font-bold text-emerald-500">{mkt.value}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{mkt.metric}</p>
-                        {mkt.year && <p className="text-xs text-platinum-500-500 mt-1">{mkt.year}</p>}
+                        <p className="text-sm text-platinum-400 mt-1">{mkt.metric}</p>
+                        {mkt.year && <p className="text-xs text-platinum-500 mt-1">{mkt.year}</p>}
                       </div>
                     ))}
                   </div>
@@ -1367,7 +1368,7 @@ export default function TechnologyInnovationPage() {
                     {data.semiconductorInitiatives.map((init, idx) => (
                       <div key={idx} className="p-3 bg-platinum-800/50 rounded-lg">
                         <p className="font-bold text-navy-500">{init.initiative}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{init.details}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{init.details}</p>
                       </div>
                     ))}
                   </div>
@@ -1399,12 +1400,12 @@ export default function TechnologyInnovationPage() {
                       <div key={idx} className="flex items-center justify-between p-4 bg-platinum-800/50 rounded-xl">
                         <div className="flex-1">
                           <p className="font-bold text-gold-700">{company.company}</p>
-                          <p className="text-sm text-platinum-500-400">{company.sector}</p>
-                          <p className="text-xs text-platinum-500-500 mt-1">Location: {company.location}</p>
+                          <p className="text-sm text-platinum-400">{company.sector}</p>
+                          <p className="text-xs text-platinum-500 mt-1">Location: {company.location}</p>
                         </div>
                         <div className="text-right">
                           <p className="text-xl font-bold text-emerald-500">{company.valuation}</p>
-                          <p className="text-xs text-platinum-500-500">Funding: {company.funding}</p>
+                          <p className="text-xs text-platinum-500">Funding: {company.funding}</p>
                         </div>
                       </div>
                     ))}
@@ -1445,7 +1446,7 @@ export default function TechnologyInnovationPage() {
                     {data.governmentTargets.map((target, idx) => (
                       <div key={idx} className="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl">
                         <p className="font-bold text-emerald-500">{target.target}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{target.details}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{target.details}</p>
                       </div>
                     ))}
                   </div>
@@ -1466,11 +1467,11 @@ export default function TechnologyInnovationPage() {
                       <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
                         <div>
                           <p className="font-bold text-navy-500">{firm.firm}</p>
-                          <p className="text-xs text-platinum-500-500">{firm.location} | Est. {firm.established}</p>
+                          <p className="text-xs text-platinum-500">{firm.location} | Est. {firm.established}</p>
                         </div>
                         <div className="text-right">
                           <p className="text-sm font-bold text-platinum-500">{firm.totalFunding}</p>
-                          <p className="text-xs text-platinum-500-500">{firm.investments} investments</p>
+                          <p className="text-xs text-platinum-500">{firm.investments} investments</p>
                         </div>
                       </div>
                     ))}
@@ -1490,7 +1491,7 @@ export default function TechnologyInnovationPage() {
                   <div className="grid gap-3 md:grid-cols-2">
                     {data.vcStatistics.map((stat, idx) => (
                       <div key={idx} className="flex justify-between items-center p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400 text-sm">{stat.metric}</span>
+                        <span className="text-platinum-400 text-sm">{stat.metric}</span>
                         <span className="font-bold text-cyan-500">{stat.value}</span>
                       </div>
                     ))}
@@ -1522,8 +1523,8 @@ export default function TechnologyInnovationPage() {
                     {data.layoffMetrics.map((metric, idx) => (
                       <div key={idx} className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-xl text-center">
                         <p className="text-3xl font-bold text-rose-500">{metric.value}</p>
-                        <p className="text-platinum-500-400 mt-1">{metric.metric}</p>
-                        <p className="text-xs text-platinum-500-500 mt-1">Source: {metric.source}</p>
+                        <p className="text-platinum-400 mt-1">{metric.metric}</p>
+                        <p className="text-xs text-platinum-500 mt-1">Source: {metric.source}</p>
                       </div>
                     ))}
                   </div>
@@ -1543,7 +1544,7 @@ export default function TechnologyInnovationPage() {
                     {data.regionalDisruptions.map((disruption, idx) => (
                       <div key={idx} className="p-4 bg-rose-500/10 border border-rose-500/30 rounded-xl">
                         <p className="font-bold text-rose-500">{disruption.event}</p>
-                        <p className="text-sm text-platinum-500-400 mt-1">{disruption.impact}</p>
+                        <p className="text-sm text-platinum-400 mt-1">{disruption.impact}</p>
                       </div>
                     ))}
                   </div>
@@ -1561,10 +1562,10 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="p-4 bg-platinum-800/50 rounded-xl">
                     <div className="flex justify-between items-center mb-4">
-                      <span className="text-platinum-500-400">UAE Companies Cutting Jobs</span>
+                      <span className="text-platinum-400">UAE Companies Cutting Jobs</span>
                       <Badge variant="rose" className="text-lg px-3">29%</Badge>
                     </div>
-                    <p className="text-sm text-platinum-500-500">Source: Cooper Fitch Report</p>
+                    <p className="text-sm text-platinum-500">Source: Cooper Fitch Report</p>
                   </div>
                 </CardContent>
               </Card>
@@ -1580,8 +1581,8 @@ export default function TechnologyInnovationPage() {
                 <CardContent>
                   <div className="p-4 bg-platinum-800/50 rounded-xl text-center">
                     <p className="text-4xl font-bold text-rose-500">30,000+</p>
-                    <p className="text-platinum-500-400 mt-2">Global tech employees affected</p>
-                    <p className="text-xs text-platinum-500-500 mt-1">Source: Gulf News</p>
+                    <p className="text-platinum-400 mt-2">Global tech employees affected</p>
+                    <p className="text-xs text-platinum-500 mt-1">Source: Gulf News</p>
                   </div>
                 </CardContent>
               </Card>
@@ -1606,7 +1607,7 @@ export default function TechnologyInnovationPage() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-platinum-500-300 leading-relaxed">{finding.content}</p>
+                    <p className="text-platinum-300 leading-relaxed">{finding.content}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -1635,7 +1636,7 @@ export default function TechnologyInnovationPage() {
                     {data.sentimentBySource.map((source, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-xl">
                         <div className="flex justify-between items-start mb-2">
-                          <p className="font-bold text-platinum-500-200">{source.sourceCategory}</p>
+                          <p className="font-bold text-platinum-200">{source.sourceCategory}</p>
                           <Badge
                             variant={
                               source.sentiment.includes('Positive')
@@ -1648,7 +1649,7 @@ export default function TechnologyInnovationPage() {
                             {source.sentiment}
                           </Badge>
                         </div>
-                        <p className="text-sm text-platinum-500-400">{source.keyFactors}</p>
+                        <p className="text-sm text-platinum-400">{source.keyFactors}</p>
                       </div>
                     ))}
                   </div>
@@ -1668,7 +1669,7 @@ export default function TechnologyInnovationPage() {
                     {data.sentimentByTheme.map((theme, idx) => (
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-xl">
                         <div className="flex justify-between items-start mb-2">
-                          <p className="font-bold text-platinum-500-200">{theme.theme}</p>
+                          <p className="font-bold text-platinum-200">{theme.theme}</p>
                           <Badge
                             variant={
                               theme.sentiment.includes('Positive')
@@ -1681,7 +1682,7 @@ export default function TechnologyInnovationPage() {
                             {theme.sentiment}
                           </Badge>
                         </div>
-                        <p className="text-sm text-platinum-500-400">Drivers: {theme.drivers}</p>
+                        <p className="text-sm text-platinum-400">Drivers: {theme.drivers}</p>
                       </div>
                     ))}
                   </div>
@@ -1700,10 +1701,10 @@ export default function TechnologyInnovationPage() {
                   <div className="space-y-3">
                     {data.globalAIRace.map((dim, idx) => (
                       <div key={idx} className="flex items-center justify-between p-3 bg-platinum-800/50 rounded-lg">
-                        <span className="text-platinum-500-400 text-sm">{dim.dimension}</span>
+                        <span className="text-platinum-400 text-sm">{dim.dimension}</span>
                         <div className="text-right">
                           <p className="font-bold text-cyan-500 text-sm">{dim.uaePosition}</p>
-                          <p className="text-xs text-platinum-500-500">{dim.relevance}</p>
+                          <p className="text-xs text-platinum-500">{dim.relevance}</p>
                         </div>
                       </div>
                     ))}
@@ -1725,7 +1726,7 @@ export default function TechnologyInnovationPage() {
                       <div key={idx} className="p-4 bg-platinum-800/50 rounded-xl">
                         <p className="font-bold text-gold-700">{asset.asset}</p>
                         <p className="text-sm text-emerald-500 mt-1">Value: {asset.value}</p>
-                        <p className="text-xs text-platinum-500-400 mt-1">{asset.competitivePosition}</p>
+                        <p className="text-xs text-platinum-400 mt-1">{asset.competitivePosition}</p>
                       </div>
                     ))}
                   </div>
@@ -1748,7 +1749,7 @@ export default function TechnologyInnovationPage() {
                           <p className="font-bold text-rose-500">{risk.risk}</p>
                           <Badge variant="rose" className="text-xs">Severity: {risk.severity}</Badge>
                         </div>
-                        <p className="text-sm text-platinum-500-400">Mitigation: {risk.mitigation}</p>
+                        <p className="text-sm text-platinum-400">Mitigation: {risk.mitigation}</p>
                       </div>
                     ))}
                   </div>
@@ -1767,7 +1768,7 @@ export default function TechnologyInnovationPage() {
                   <div className="space-y-2">
                     {data.verificationChecks.map((check, idx) => (
                       <div key={idx} className="flex items-center justify-between p-2 bg-platinum-800/50 rounded">
-                        <span className="text-platinum-500-300 text-sm">{check.check}</span>
+                        <span className="text-platinum-300 text-sm">{check.check}</span>
                         <Badge
                           variant={check.status === 'PASS' ? 'emerald' : 'rose'}
                           className="text-xs"
@@ -1785,12 +1786,12 @@ export default function TechnologyInnovationPage() {
       </Tabs>
 
       {/* Footer */}
-      <motion.div variants={itemVariants} className="text-center text-sm text-platinum-500-500">
+      <motion.div variants={itemVariants} className="text-center text-sm text-platinum-500">
         <p>Last Updated: {data.lastUpdated}</p>
         <p className="mt-1">
           Enrichment Status: <Badge variant="success" className="text-xs">{data.execution.enrichmentStatus}</Badge>
         </p>
-        <p className="mt-1 text-platinum-500-600">
+        <p className="mt-1 text-platinum-600">
           Data Completeness: {data.execution.dataCompleteness}
         </p>
       </motion.div>

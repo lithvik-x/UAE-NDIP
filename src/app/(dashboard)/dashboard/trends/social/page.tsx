@@ -122,7 +122,7 @@ function PlatformCardB({ name, value, users, color, trend }: {
               >
                 <Hash className="h-4 w-4 text-white" />
               </motion.div>
-              <span className="font-rajdhani text-lg font-bold text-platinum-500-200">{name}</span>
+              <span className="font-rajdhani text-lg font-bold text-platinum-200">{name}</span>
             </div>
             <Badge variant="outline" className="border-glass-border bg-glass-surface/40 text-gold-400">
               {users} users
@@ -130,7 +130,7 @@ function PlatformCardB({ name, value, users, color, trend }: {
           </div>
           <div className="space-y-2">
             <div className="flex justify-between text-sm">
-              <span className="font-rajdhani text-platinum-500-400">Market Share</span>
+              <span className="font-rajdhani text-platinum-400">Market Share</span>
               <span className="font-rajdhani font-bold text-gold-400">{value}%</span>
             </div>
             <Progress value={value} className="h-2 glass-progress" />
@@ -185,7 +185,7 @@ function SentimentRingC({ data }: { data: { name: string; value: number; color: 
       </motion.svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span className="font-rajdhani text-3xl font-bold text-gold-400">{total}%</span>
-        <span className="font-rajdhani text-xs text-platinum-500-400">Total</span>
+        <span className="font-rajdhani text-xs text-platinum-400">Total</span>
       </div>
     </div>
   )
@@ -206,7 +206,7 @@ function ContentPerformanceD({ categories }: {
           className="flex items-center gap-3"
         >
           <div className="w-24 text-right">
-            <span className="font-rajdhani text-sm text-platinum-500-300">{cat.name}</span>
+            <span className="font-rajdhani text-sm text-platinum-300">{cat.name}</span>
           </div>
           <div className="flex-1 relative">
             <div className="absolute inset-0 bg-glass-surface/30 rounded-full" />
@@ -257,12 +257,12 @@ function ForecastCardE({ scenario, probability, timeline, indicators, variant }:
       <Card className={`relative glass-panel border-glass-border bg-glass-surface/60 backdrop-blur-md ${variantStyles[variant]}`}>
         <CardHeader className="pb-2">
           <div className="flex items-center justify-between">
-            <CardTitle className="font-rajdhani text-lg capitalize text-platinum-500-100">{scenario} Scenario</CardTitle>
+            <CardTitle className="font-rajdhani text-lg capitalize text-platinum-100">{scenario} Scenario</CardTitle>
             <Badge className={`font-rajdhani ${badgeStyles[variant]}`}>
               {Math.round(probability * 100)}% probability
             </Badge>
           </div>
-          <CardDescription className="font-rajdhani text-platinum-500-400">Timeline: {timeline}</CardDescription>
+          <CardDescription className="font-rajdhani text-platinum-400">Timeline: {timeline}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-2">
@@ -275,7 +275,7 @@ function ForecastCardE({ scenario, probability, timeline, indicators, variant }:
                 className="flex items-start gap-2 rounded-lg bg-glass-surface/40 p-2"
               >
                 <Target className="h-4 w-4 text-gold-400 mt-0.5 flex-shrink-0" />
-                <span className="font-rajdhani text-sm text-platinum-500-200">{indicator}</span>
+                <span className="font-rajdhani text-sm text-platinum-200">{indicator}</span>
               </motion.div>
             ))}
           </div>
@@ -301,7 +301,7 @@ function GenZHighlightF({ label, value, subValue, icon: Icon }: {
         <Icon className="h-5 w-5 text-violet-400" />
       </div>
       <div className="flex-1">
-        <p className="font-rajdhani text-xs text-platinum-500-400">{label}</p>
+        <p className="font-rajdhani text-xs text-platinum-400">{label}</p>
         <p className="font-rajdhani text-xl font-bold text-gold-400">{value}</p>
         {subValue && <p className="font-rajdhani text-xs text-emerald-400">{subValue}</p>}
       </div>
@@ -318,7 +318,7 @@ export default function SocialTrendsPage() {
         <motion.div
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="text-platinum-500-400 font-rajdhani"
+          className="text-platinum-400 font-rajdhani"
         >
           Loading Social Trends data...
         </motion.div>
@@ -489,7 +489,7 @@ export default function SocialTrendsPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-2 text-platinum-500-400 font-rajdhani"
+            className="mt-2 text-platinum-400 font-rajdhani"
           >
             Social media adoption, platform analytics, engagement metrics, and content trends
           </motion.p>
@@ -504,7 +504,7 @@ export default function SocialTrendsPage() {
             <Share2 className="h-4 w-4" />
             View Analytics
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2 font-rajdhani">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2 font-rajdhani">
             <Zap className="h-4 w-4" />
             Analyze Platform
           </Button>
@@ -548,7 +548,7 @@ export default function SocialTrendsPage() {
       <motion.div variants={fadeInUp}>
         <div className="mb-4">
           <h3 className="font-rajdhani text-lg font-semibold text-gold-400">Gen Z Key Metrics</h3>
-          <p className="font-rajdhani text-sm text-platinum-500-400">Critical demographic insights from MD research</p>
+          <p className="font-rajdhani text-sm text-platinum-400">Critical demographic insights from MD research</p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {genZHighlights.map((item, idx) => (
@@ -620,7 +620,7 @@ export default function SocialTrendsPage() {
                                 className="h-3 w-3 rounded-full"
                                 style={{ backgroundColor: item.color }}
                               />
-                              <span className="font-rajdhani text-sm text-platinum-500-300">
+                              <span className="font-rajdhani text-sm text-platinum-300">
                                 {item.name}: {item.value}%
                               </span>
                             </div>
@@ -756,7 +756,7 @@ export default function SocialTrendsPage() {
                                 >
                                   <item.icon className="h-4 w-4 text-white" />
                                 </div>
-                                <span className="font-rajdhani text-sm font-medium text-platinum-500-200">{item.label}</span>
+                                <span className="font-rajdhani text-sm font-medium text-platinum-200">{item.label}</span>
                               </div>
                               <span className="font-rajdhani text-lg font-bold text-gold-400">{item.value}</span>
                             </motion.div>
@@ -789,7 +789,7 @@ export default function SocialTrendsPage() {
                             >
                               <div className="flex items-center gap-3">
                                 <span className="text-xl">{item.icon}</span>
-                                <span className="font-rajdhani text-sm font-medium text-platinum-500-200">{item.type}</span>
+                                <span className="font-rajdhani text-sm font-medium text-platinum-200">{item.type}</span>
                               </div>
                               <div className="flex items-center gap-2">
                                 <div className="w-20 h-2 bg-glass-surface rounded-full overflow-hidden">

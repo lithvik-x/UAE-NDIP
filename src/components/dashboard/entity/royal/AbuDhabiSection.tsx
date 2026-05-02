@@ -51,22 +51,22 @@ function MemberCard({ member }: { member: RoyalFamilyMember }) {
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <h4 className="font-semibold text-navy-500-900 dark:text-platinum-500-100 text-sm truncate">{member.name}</h4>
+            <h4 className="font-semibold text-navy-900 dark:text-platinum-100 text-sm truncate">{member.name}</h4>
             {member.nameAr && (
-              <span className="text-xs text-platinum-500-500 dark:text-platinum-500-400 font-arabic">{member.nameAr}</span>
+              <span className="text-xs text-platinum-500 dark:text-platinum-400 font-arabic">{member.nameAr}</span>
             )}
           </div>
-          <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400 mt-0.5">{member.role}</p>
+          <p className="text-xs text-platinum-600 dark:text-platinum-400 mt-0.5">{member.role}</p>
           <div className="flex items-center gap-2 mt-2 flex-wrap">
             <Badge variant="outline" className="text-xs">{member.dynasty}</Badge>
             <Badge variant="outline" className="text-xs">{member.emirate}</Badge>
           </div>
           {member.age && (
-            <p className="text-xs text-platinum-500-500 mt-1">Age: {member.age}</p>
+            <p className="text-xs text-platinum-500 mt-1">Age: {member.age}</p>
           )}
         </div>
         <div className="flex flex-col items-end gap-1 shrink-0">
-          <div className="text-lg font-bold text-navy-500-900 dark:text-platinum-500-100">{member.uaeRelevance}</div>
+          <div className="text-lg font-bold text-navy-900 dark:text-platinum-100">{member.uaeRelevance}</div>
           <div className="w-16">
             <div className="h-1 bg-platinum-200 dark:bg-platinum-700 rounded-full overflow-hidden">
               <div
@@ -81,11 +81,11 @@ function MemberCard({ member }: { member: RoyalFamilyMember }) {
       </div>
       {member.achievements && member.achievements.length > 0 && (
         <div className="mt-3 pt-3 border-t border-platinum-200/30 dark:border-platinum-700/30">
-          <p className="text-xs font-medium text-platinum-500-700 dark:text-platinum-500-300 mb-1">Key Achievements</p>
+          <p className="text-xs font-medium text-platinum-700 dark:text-platinum-300 mb-1">Key Achievements</p>
           <ul className="space-y-0.5">
             {member.achievements.slice(0, 2).map((a, i) => (
-              <li key={i} className="text-xs text-platinum-500-600 dark:text-platinum-500-400 flex items-start gap-1">
-                <span className="h-3 w-3 mt-0.5 text-navy-500-500 shrink-0">•</span>
+              <li key={i} className="text-xs text-platinum-600 dark:text-platinum-400 flex items-start gap-1">
+                <span className="h-3 w-3 mt-0.5 text-navy-500 shrink-0">•</span>
                 <span className="truncate">{a}</span>
               </li>
             ))}
@@ -97,7 +97,7 @@ function MemberCard({ member }: { member: RoyalFamilyMember }) {
           <p className="text-xs font-medium text-red-700 dark:text-red-300 mb-1">Controversies</p>
           <ul className="space-y-0.5">
             {member.controversies.slice(0, 2).map((c, i) => (
-              <li key={i} className="text-xs text-platinum-500-600 dark:text-platinum-500-400 flex items-start gap-1">
+              <li key={i} className="text-xs text-platinum-600 dark:text-platinum-400 flex items-start gap-1">
                 <span className="h-3 w-3 mt-0.5 text-red-500 shrink-0">•</span>
                 <span>{c.year && `${c.year}: `}{c.detail}</span>
               </li>
@@ -109,7 +109,7 @@ function MemberCard({ member }: { member: RoyalFamilyMember }) {
         <div className="mt-2 pt-2 border-t border-platinum-200/30 dark:border-platinum-700/30">
           <ul className="space-y-0.5">
             {member.keyFindings.slice(0, 2).map((f, i) => (
-              <li key={i} className="text-xs text-platinum-500-600 dark:text-platinum-500-400 flex items-start gap-1">
+              <li key={i} className="text-xs text-platinum-600 dark:text-platinum-400 flex items-start gap-1">
                 <span className="h-3 w-3 mt-0.5 text-emerald-500 shrink-0">•</span>
                 <span>{f}</span>
               </li>
@@ -173,28 +173,28 @@ export function AbuDhabiSection({
         >
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <div className="p-3 rounded-lg bg-platinum-50 dark:bg-platinum-800/30 text-center">
-              <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">10/10</p>
-              <p className="text-xs text-platinum-500-500">UAE Relevance</p>
+              <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">10/10</p>
+              <p className="text-xs text-platinum-500">UAE Relevance</p>
             </div>
             <div className="p-3 rounded-lg bg-platinum-50 dark:bg-platinum-800/30 text-center">
-              <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">65</p>
-              <p className="text-xs text-platinum-500-500">Age</p>
+              <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">65</p>
+              <p className="text-xs text-platinum-500">Age</p>
             </div>
             <div className="p-3 rounded-lg bg-platinum-50 dark:bg-platinum-800/30 text-center">
-              <p className="text-2xl font-bold text-navy-500-900 dark:text-platinum-500-100">2022</p>
-              <p className="text-xs text-platinum-500-500">President Since</p>
+              <p className="text-2xl font-bold text-navy-900 dark:text-platinum-100">2022</p>
+              <p className="text-xs text-platinum-500">President Since</p>
             </div>
             <div className="p-3 rounded-lg bg-platinum-50 dark:bg-platinum-800/30 text-center">
               <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">Positive</p>
-              <p className="text-xs text-platinum-500-500">Sentiment</p>
+              <p className="text-xs text-platinum-500">Sentiment</p>
             </div>
           </div>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div>
-              <p className="text-sm font-semibold text-platinum-500-800 dark:text-platinum-500-200 mb-2">Key Achievements</p>
+              <p className="text-sm font-semibold text-platinum-800 dark:text-platinum-200 mb-2">Key Achievements</p>
               <ul className="space-y-1">
                 {['First nuclear power plant in Arab world (Barakah)', 'Key architect of Abraham Accords (2020)', 'Established Masdar renewable energy (2006)', 'Ghadan 21 Program - AED 50 billion (2018)', 'Led UAE "Little Sparta" military buildup'].map((a, i) => (
-                  <li key={i} className="text-xs text-platinum-500-600 dark:text-platinum-500-400 flex items-start gap-1.5">
+                  <li key={i} className="text-xs text-platinum-600 dark:text-platinum-400 flex items-start gap-1.5">
                     <CheckCircle2 className="h-3.5 w-3.5 mt-0.5 text-emerald-500 shrink-0" />
                     {a}
                   </li>
@@ -202,10 +202,10 @@ export function AbuDhabiSection({
               </ul>
             </div>
             <div>
-              <p className="text-sm font-semibold text-platinum-500-800 dark:text-platinum-500-200 mb-2">Wealth & Investments</p>
+              <p className="text-sm font-semibold text-platinum-800 dark:text-platinum-200 mb-2">Wealth & Investments</p>
               <ul className="space-y-1">
                 {wealthMetrics.slice(0, 4).map((w, i) => (
-                  <li key={i} className="text-xs text-platinum-500-600 dark:text-platinum-500-400 flex items-start gap-1.5">
+                  <li key={i} className="text-xs text-platinum-600 dark:text-platinum-400 flex items-start gap-1.5">
                     <DollarSign className="h-3.5 w-3.5 mt-0.5 text-gold-700 shrink-0" />
                     <span>{w.entity}: <strong>{w.amount}</strong></span>
                   </li>

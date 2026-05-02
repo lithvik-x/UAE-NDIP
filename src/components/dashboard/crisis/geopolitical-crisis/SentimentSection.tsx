@@ -28,7 +28,7 @@ interface SentimentSectionProps {
 const getIntensityColor = (intensity: number) => {
   if (intensity < -5) return 'text-rose-400'
   if (intensity < 0) return 'text-orange-400'
-  if (intensity === 0) return 'text-platinum-500-400'
+  if (intensity === 0) return 'text-platinum-400'
   if (intensity < 5) return 'text-emerald-400'
   return 'text-emerald-400'
 }
@@ -102,7 +102,7 @@ export function SentimentSection({ className }: SentimentSectionProps) {
                         <span className={`h-5 w-5 ${getIntensityColor(country.intensity)}`}>
                           {getSentimentIcon(country.intensity)}
                         </span>
-                        <h4 className="font-semibold text-platinum-500-200">{country.country}</h4>
+                        <h4 className="font-semibold text-platinum-200">{country.country}</h4>
                       </div>
                       <div className="flex items-center gap-3">
                         <Badge
@@ -125,7 +125,7 @@ export function SentimentSection({ className }: SentimentSectionProps) {
                     {country.keyDrivers && country.keyDrivers.length > 0 && (
                       <div className="flex flex-wrap gap-2 mt-2">
                         {country.keyDrivers.map((driver, dIdx) => (
-                          <Badge key={dIdx} variant="secondary" className="text-xs bg-platinum-700 text-platinum-500-300">
+                          <Badge key={dIdx} variant="secondary" className="text-xs bg-platinum-700 text-platinum-300">
                             {driver}
                           </Badge>
                         ))}
@@ -141,7 +141,7 @@ export function SentimentSection({ className }: SentimentSectionProps) {
           <Card className="glass-card rounded-xl bg-glass-surface/50 border-glass-border">
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <Target className="h-5 w-5 text-navy-500-400" />
+                <Target className="h-5 w-5 text-navy-400" />
                 UAE Strategic Relevance Assessment
               </CardTitle>
               <CardDescription>Priority issues for UAE foreign policy (1-10 scale)</CardDescription>
@@ -188,9 +188,9 @@ export function SentimentSection({ className }: SentimentSectionProps) {
                     <div key={idx} className="flex items-center justify-between rounded bg-platinum-800/50 p-3">
                       <div className="flex items-center gap-3">
                         <div className={`h-3 w-3 rounded-full ${item.color}`} />
-                        <span className="text-platinum-500-300">{item.tier}</span>
+                        <span className="text-platinum-300">{item.tier}</span>
                       </div>
-                      <span className="text-platinum-500-200 font-medium">{item.count} sources</span>
+                      <span className="text-platinum-200 font-medium">{item.count} sources</span>
                     </div>
                   ))}
                 </div>

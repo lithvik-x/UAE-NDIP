@@ -110,15 +110,15 @@ export function SectorVulnerabilitiesSection({ data }: SectorVulnerabilitiesSect
               <div className="grid gap-4 md:grid-cols-3">
                 <div className="rounded-lg bg-platinum-800/50 p-4 border border-amber-500/30 text-center">
                   <p className="text-3xl font-bold text-amber-500">$1.5B</p>
-                  <p className="text-xs text-platinum-500-400">Amount Stolen</p>
+                  <p className="text-xs text-platinum-400">Amount Stolen</p>
                 </div>
                 <div className="rounded-lg bg-platinum-800/50 p-4 border border-amber-500/30 text-center">
                   <p className="text-lg font-bold text-amber-500">400,000+ ETH</p>
-                  <p className="text-xs text-platinum-500-400">Currency</p>
+                  <p className="text-xs text-platinum-400">Currency</p>
                 </div>
                 <div className="rounded-lg bg-platinum-800/50 p-4 border border-amber-500/30 text-center">
                   <p className="text-lg font-bold text-amber-500">North Korea</p>
-                  <p className="text-xs text-platinum-500-400">FBI Attribution</p>
+                  <p className="text-xs text-platinum-400">FBI Attribution</p>
                 </div>
               </div>
             </CardContent>

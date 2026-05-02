@@ -63,7 +63,7 @@ export function RedditCommunitiesSection({
                 >
                   <CardHeader className="pb-2">
                     <div className="flex items-center justify-between">
-                      <CardTitle className="text-xl font-bold text-platinum-500-400 flex items-center gap-2">
+                      <CardTitle className="text-xl font-bold text-platinum-400 flex items-center gap-2">
                         <Hash className="h-5 w-5" />
                         {sub.name}
                       </CardTitle>
@@ -74,12 +74,12 @@ export function RedditCommunitiesSection({
                         {sub.sentimentTrend.includes('Negative') ? 'Negative' : 'Mixed'}
                       </Badge>
                     </div>
-                    <p className="text-sm text-platinum-500-400 mt-1">{sub.primaryFocus}</p>
+                    <p className="text-sm text-platinum-400 mt-1">{sub.primaryFocus}</p>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
                       <div>
-                        <p className="text-sm text-platinum-500-400 mb-2">Common Topics:</p>
+                        <p className="text-sm text-platinum-400 mb-2">Common Topics:</p>
                         <div className="flex flex-wrap gap-1">
                           {sub.commonTopics.map((topic) => (
                             <Badge key={topic} variant="outline" className="border-platinum-600 text-xs">
@@ -89,15 +89,15 @@ export function RedditCommunitiesSection({
                         </div>
                       </div>
                       <div className="flex items-center gap-2 text-sm">
-                        <span className="text-platinum-500-400">Trend:</span>
-                        <span className={sub.sentimentTrend.includes('Increasingly negative') ? 'text-rose-400' : 'text-platinum-500-300'}>
+                        <span className="text-platinum-400">Trend:</span>
+                        <span className={sub.sentimentTrend.includes('Increasingly negative') ? 'text-rose-400' : 'text-platinum-300'}>
                           {sub.sentimentTrend}
                         </span>
                       </div>
                       {sub.userActivity && (
                         <div className="flex items-center gap-2 text-sm">
-                          <Users className="h-4 w-4 text-platinum-500-400" />
-                          <span className="text-platinum-500-400">{sub.userActivity}</span>
+                          <Users className="h-4 w-4 text-platinum-400" />
+                          <span className="text-platinum-400">{sub.userActivity}</span>
                         </div>
                       )}
                     </div>
@@ -123,23 +123,23 @@ export function RedditCommunitiesSection({
                 <CardContent>
                   <div className="space-y-4">
                     <div className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                      <span className="text-platinum-500-300">Coordinated Inauthentic Behavior</span>
+                      <span className="text-platinum-300">Coordinated Inauthentic Behavior</span>
                       <Badge variant="default" className="bg-emerald-500/20 text-emerald-400">
                         NOT DETECTED
                       </Badge>
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                      <span className="text-platinum-500-300">Confidence Level</span>
-                      <span className="font-bold text-platinum-500-400">58%</span>
+                      <span className="text-platinum-300">Confidence Level</span>
+                      <span className="font-bold text-platinum-400">58%</span>
                     </div>
                     <div className="space-y-2">
-                      <p className="text-sm text-platinum-500-400">Bot Indicators:</p>
+                      <p className="text-sm text-platinum-400">Bot Indicators:</p>
                       <div className="space-y-1">
-                        <div className="flex items-center gap-2 text-sm text-platinum-500-300">
+                        <div className="flex items-center gap-2 text-sm text-platinum-300">
                           <AlertCircle className="h-3 w-3 text-amber-400" />
                           Government shill accounts suspected
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-platinum-500-300">
+                        <div className="flex items-center gap-2 text-sm text-platinum-300">
                           <AlertCircle className="h-3 w-3 text-amber-400" />
                           Occasional coordinated upvotes
                         </div>
@@ -164,21 +164,21 @@ export function RedditCommunitiesSection({
                 <CardContent>
                   <div className="grid gap-4">
                     <div className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                      <span className="text-platinum-500-300">Censorship Level</span>
+                      <span className="text-platinum-300">Censorship Level</span>
                       <Badge variant="outline" className="border-amber-500/50 text-amber-400">
                         PARTIAL
                       </Badge>
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                      <span className="text-platinum-500-300">Compliance Rate</span>
+                      <span className="text-platinum-300">Compliance Rate</span>
                       <div className="text-2xl font-bold text-emerald-400">45%</div>
                     </div>
                     <div className="flex items-center justify-between p-3 rounded-lg border border-platinum-700/50 bg-platinum-800/30">
-                      <span className="text-platinum-500-300">Content Removed</span>
+                      <span className="text-platinum-300">Content Removed</span>
                       <div className="text-2xl font-bold text-rose-400">89</div>
                     </div>
                   </div>
-                  <p className="mt-4 text-sm text-platinum-500-400">Community self-moderation; government presence limited</p>
+                  <p className="mt-4 text-sm text-platinum-400">Community self-moderation; government presence limited</p>
                 </CardContent>
               </motion.div>
             </div>

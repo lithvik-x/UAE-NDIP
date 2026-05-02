@@ -263,7 +263,7 @@ export const SliderWithLabel = React.forwardRef<
           <label
             className={cn(
               'text-sm font-medium',
-              'text-platinum-500-900 dark:text-platinum-500-100',
+              'text-platinum-900 dark:text-platinum-100',
               'transition-colors duration-200'
             )}
           >
@@ -294,7 +294,7 @@ export const SliderWithLabel = React.forwardRef<
           <p
             className={cn(
               'text-xs',
-              'text-platinum-500-600 dark:text-platinum-500-400',
+              'text-platinum-600 dark:text-platinum-400',
               'transition-colors duration-200'
             )}
           >
@@ -359,7 +359,7 @@ export function SliderGroup({ title, sliders }: SliderGroupProps) {
       <h3
         className={cn(
           'text-lg font-semibold',
-          'text-platinum-500-900 dark:text-platinum-500-100',
+          'text-platinum-900 dark:text-platinum-100',
           'gradient-text'
         )}
       >

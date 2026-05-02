@@ -53,7 +53,7 @@ export function OwnershipSection({
                 donut={true}
               />
             ) : (
-              <div className="flex items-center justify-center h-48 text-platinum-500-500">No data available</div>
+              <div className="flex items-center justify-center h-48 text-platinum-500">No data available</div>
             )}
           </CardContent>
         </Card>
@@ -72,14 +72,14 @@ export function OwnershipSection({
                     <Badge variant={os.category === 'STATE_OWNED' ? 'default' : os.category === 'FAMILY_OWNED' ? 'secondary' : 'outline'} className="text-xs">
                       {os.category.replace('_', ' ')}
                     </Badge>
-                    <span className="text-sm text-platinum-500-500">{os.organizations.length} organizations</span>
+                    <span className="text-sm text-platinum-500">{os.organizations.length} organizations</span>
                   </div>
                   <div className="pl-4 space-y-1">
                     {os.organizations.slice(0, 5).map((org, j) => (
-                      <p key={j} className="text-xs text-platinum-500-700 dark:text-platinum-500-300">{org}</p>
+                      <p key={j} className="text-xs text-platinum-700 dark:text-platinum-300">{org}</p>
                     ))}
                     {os.organizations.length > 5 && (
-                      <p className="text-xs text-platinum-500-500">+{os.organizations.length - 5} more</p>
+                      <p className="text-xs text-platinum-500">+{os.organizations.length - 5} more</p>
                     )}
                   </div>
                 </div>
@@ -98,10 +98,10 @@ export function OwnershipSection({
           >
             <div className="flex items-center gap-2 mb-2">
               <Crown className="h-5 w-5 text-gold-700" />
-              <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">Sheikh Mansour</span>
+              <span className="font-semibold text-navy-900 dark:text-platinum-100">Sheikh Mansour</span>
             </div>
-            <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">UAE Vice President</p>
-            <p className="text-xs text-platinum-500-500 mt-1">The National, Sky News Arabia (via IMI)</p>
+            <p className="text-xs text-platinum-600 dark:text-platinum-400">UAE Vice President</p>
+            <p className="text-xs text-platinum-500 mt-1">The National, Sky News Arabia (via IMI)</p>
           </motion.div>
 
           <motion.div
@@ -109,11 +109,11 @@ export function OwnershipSection({
             className="p-4 rounded-lg bg-gradient-navy/10 border border-navy-200/50"
           >
             <div className="flex items-center gap-2 mb-2">
-              <Building2 className="h-5 w-5 text-navy-500-600" />
-              <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">Abu Dhabi Government</span>
+              <Building2 className="h-5 w-5 text-navy-600" />
+              <span className="font-semibold text-navy-900 dark:text-platinum-100">Abu Dhabi Government</span>
             </div>
-            <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">State Media</p>
-            <p className="text-xs text-platinum-500-500 mt-1">Al Ittihad, WAM</p>
+            <p className="text-xs text-platinum-600 dark:text-platinum-400">State Media</p>
+            <p className="text-xs text-platinum-500 mt-1">Al Ittihad, WAM</p>
           </motion.div>
 
           <motion.div
@@ -122,10 +122,10 @@ export function OwnershipSection({
           >
             <div className="flex items-center gap-2 mb-2">
               <Building2 className="h-5 w-5 text-emerald-600" />
-              <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">Dubai Government</span>
+              <span className="font-semibold text-navy-900 dark:text-platinum-100">Dubai Government</span>
             </div>
-            <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">State Media</p>
-            <p className="text-xs text-platinum-500-500 mt-1">Al Bayan, Emarat Al Youm</p>
+            <p className="text-xs text-platinum-600 dark:text-platinum-400">State Media</p>
+            <p className="text-xs text-platinum-500 mt-1">Al Bayan, Emarat Al Youm</p>
           </motion.div>
 
           <motion.div
@@ -134,10 +134,10 @@ export function OwnershipSection({
           >
             <div className="flex items-center gap-2 mb-2">
               <Crown className="h-5 w-5 text-gold-700" />
-              <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">Saudi PIF</span>
+              <span className="font-semibold text-navy-900 dark:text-platinum-100">Saudi PIF</span>
             </div>
-            <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">Public Investment Fund</p>
-            <p className="text-xs text-platinum-500-500 mt-1">Al Arabiya (54%), Al Hadath</p>
+            <p className="text-xs text-platinum-600 dark:text-platinum-400">Public Investment Fund</p>
+            <p className="text-xs text-platinum-500 mt-1">Al Arabiya (54%), Al Hadath</p>
           </motion.div>
 
           <motion.div
@@ -145,11 +145,11 @@ export function OwnershipSection({
             className="p-4 rounded-lg bg-gradient-platinum/10 border border-platinum-200/50"
           >
             <div className="flex items-center gap-2 mb-2">
-              <Users className="h-5 w-5 text-platinum-500-600" />
-              <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">Galadari Family</span>
+              <Users className="h-5 w-5 text-platinum-600" />
+              <span className="font-semibold text-navy-900 dark:text-platinum-100">Galadari Family</span>
             </div>
-            <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">Family Ownership</p>
-            <p className="text-xs text-platinum-500-500 mt-1">Khaleej Times</p>
+            <p className="text-xs text-platinum-600 dark:text-platinum-400">Family Ownership</p>
+            <p className="text-xs text-platinum-500 mt-1">Khaleej Times</p>
           </motion.div>
 
           <motion.div
@@ -157,11 +157,11 @@ export function OwnershipSection({
             className="p-4 rounded-lg bg-gradient-platinum/10 border border-platinum-200/50"
           >
             <div className="flex items-center gap-2 mb-2">
-              <Users className="h-5 w-5 text-platinum-500-600" />
-              <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">Taryam Family</span>
+              <Users className="h-5 w-5 text-platinum-600" />
+              <span className="font-semibold text-navy-900 dark:text-platinum-100">Taryam Family</span>
             </div>
-            <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">Family Ownership</p>
-            <p className="text-xs text-platinum-500-500 mt-1">Al Khaleej, Gulf Today</p>
+            <p className="text-xs text-platinum-600 dark:text-platinum-400">Family Ownership</p>
+            <p className="text-xs text-platinum-500 mt-1">Al Khaleej, Gulf Today</p>
           </motion.div>
         </div>
       </GlassPanel>

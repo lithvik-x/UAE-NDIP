@@ -48,19 +48,19 @@ export function FacebookMetaOverviewSection({ data }: FacebookMetaOverviewSectio
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-gold-700">{(metrics.users / 1000000).toFixed(1)}M</span>
-                  <span className="text-xs text-platinum-500-400">Total Users</span>
+                  <span className="text-xs text-platinum-400">Total Users</span>
                 </div>
                 <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-emerald-400">{metrics.penetration}%</span>
-                  <span className="text-xs text-platinum-500-400">Penetration</span>
+                  <span className="text-xs text-platinum-400">Penetration</span>
                 </div>
                 <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-info">{(metrics.dailyActive / 1000000).toFixed(1)}M</span>
-                  <span className="text-xs text-platinum-500-400">Daily Active</span>
+                  <span className="text-xs text-platinum-400">Daily Active</span>
                 </div>
                 <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-platinum-500">{metrics.engagement.engagementRate}%</span>
-                  <span className="text-xs text-platinum-500-400">Engagement Rate</span>
+                  <span className="text-xs text-platinum-400">Engagement Rate</span>
                 </div>
               </div>
             </CardContent>
@@ -92,19 +92,19 @@ export function FacebookMetaOverviewSection({ data }: FacebookMetaOverviewSectio
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
-                    <span className="text-sm text-platinum-500-300">Estimated Bot Percent</span>
+                    <span className="text-sm text-platinum-300">Estimated Bot Percent</span>
                     <Badge variant="outline" className="text-amber-400 border-amber-400/50">
                       {botActivity.estimatedBotPercent}%
                     </Badge>
                   </div>
                   <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
-                    <span className="text-sm text-platinum-500-300">CIB Detected</span>
+                    <span className="text-sm text-platinum-300">CIB Detected</span>
                     <Badge variant="destructive" className={botActivity.coordinatedInauthentic ? 'bg-rose-500/20 text-rose-400' : ''}>
                       {botActivity.coordinatedInauthentic ? 'YES' : 'NO'}
                     </Badge>
                   </div>
                   <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50">
-                    <span className="text-sm text-platinum-500-300">Confidence Score</span>
+                    <span className="text-sm text-platinum-300">Confidence Score</span>
                     <span className="text-lg font-bold text-platinum-500">{(botActivity.confidence * 100).toFixed(0)}%</span>
                   </div>
                 </div>
@@ -125,19 +125,19 @@ export function FacebookMetaOverviewSection({ data }: FacebookMetaOverviewSectio
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-gold-700">{censorship?.complianceRate || 82}%</span>
-                  <span className="text-xs text-platinum-500-400">Compliance Rate</span>
+                  <span className="text-xs text-platinum-400">Compliance Rate</span>
                 </div>
                 <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-rose-500">{censorship?.governmentRequests?.toLocaleString() || '1,893'}</span>
-                  <span className="text-xs text-platinum-500-400">Gov Requests</span>
+                  <span className="text-xs text-platinum-400">Gov Requests</span>
                 </div>
                 <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-amber-500">{censorship?.contentRemoved?.toLocaleString() || '15,234'}</span>
-                  <span className="text-xs text-platinum-500-400">Content Removed</span>
+                  <span className="text-xs text-platinum-400">Content Removed</span>
                 </div>
                 <div className="flex flex-col items-center p-3 rounded-lg bg-platinum-800/50">
                   <span className="text-2xl font-bold text-platinum-500">{metrics.censorshipLevel.toUpperCase()}</span>
-                  <span className="text-xs text-platinum-500-400">Censorship Level</span>
+                  <span className="text-xs text-platinum-400">Censorship Level</span>
                 </div>
               </div>
             </CardContent>

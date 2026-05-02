@@ -80,7 +80,7 @@ export default function WhatsAppPage() {
         animate={{ opacity: 1 }}
         className="flex items-center justify-center min-h-[400px]"
       >
-        <div className="text-platinum-500-400">Loading WhatsApp intelligence data...</div>
+        <div className="text-platinum-400">Loading WhatsApp intelligence data...</div>
       </motion.div>
     )
   }
@@ -206,7 +206,7 @@ export default function WhatsAppPage() {
               WhatsApp & Messaging
             </span>
           </h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Encrypted messaging intelligence — VoIP restrictions, surveillance confirmed, and Article 52 enforcement
           </p>
         </div>
@@ -332,7 +332,7 @@ export default function WhatsAppPage() {
                       className="flex items-start gap-3 rounded-lg bg-gradient-to-r from-rose-500/10 to-rose-600/5 p-4 border border-rose-500/30"
                     >
                       <AlertTriangle className="h-5 w-5 text-rose-500 mt-0.5 shrink-0" />
-                      <span className="text-sm text-platinum-500-200">{concern}</span>
+                      <span className="text-sm text-platinum-200">{concern}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -353,7 +353,7 @@ export default function WhatsAppPage() {
                   </motion.div>
                   <div className="flex-1">
                     <h4 className="text-lg font-bold text-rose-400">WhatsApp is NOT Private</h4>
-                    <p className="text-sm text-platinum-500-300 mt-1">
+                    <p className="text-sm text-platinum-300 mt-1">
                       Dubai Police confirmed conducting "electronic monitoring operations" capable of detecting private WhatsApp messages.
                       Pegasus spyware allows zero-click WhatsApp call infection.
                     </p>
@@ -391,8 +391,8 @@ export default function WhatsAppPage() {
                           className="space-y-2"
                         >
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-500-200">{item.metric}</span>
-                            <span className="text-lg font-bold text-platinum-500-100">{item.value}%</span>
+                            <span className="text-sm font-medium text-platinum-200">{item.metric}</span>
+                            <span className="text-lg font-bold text-platinum-100">{item.value}%</span>
                           </div>
                           <Progress
                             value={(item.value / item.max) * 100}
@@ -420,7 +420,7 @@ export default function WhatsAppPage() {
                   </motion.div>
                   <div className="flex-1">
                     <h4 className="text-lg font-bold text-purple-400">Pegasus Spyware — CONFIRMED</h4>
-                    <p className="text-sm text-platinum-500-300 mt-1">
+                    <p className="text-sm text-platinum-300 mt-1">
                       NSO Group spyware infects devices via WhatsApp calls (zero-click — no user interaction needed).
                       Access to all messages, photos, contacts. UAE government confirmed user.
                     </p>
@@ -452,8 +452,8 @@ export default function WhatsAppPage() {
                             <div className="flex items-center gap-3">
                               <Shield className="h-4 w-4 text-rose-500" />
                               <div>
-                                <p className="text-sm font-medium text-platinum-500-200">{item.method}</p>
-                                <p className="text-xs text-platinum-500-400">{item.detail}</p>
+                                <p className="text-sm font-medium text-platinum-200">{item.method}</p>
+                                <p className="text-xs text-platinum-400">{item.detail}</p>
                               </div>
                             </div>
                             <Badge
@@ -503,7 +503,7 @@ export default function WhatsAppPage() {
                           transition={{ delay: idx * 0.05 }}
                           className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                         >
-                          <span className="text-sm text-platinum-500-300">{item.data}</span>
+                          <span className="text-sm text-platinum-300">{item.data}</span>
                           {item.accessible ? (
                             <Badge variant="destructive" className="bg-rose-500/20 text-rose-400 border-rose-500/50">
                               <XCircle className="h-3 w-3 mr-1" />
@@ -546,7 +546,7 @@ export default function WhatsAppPage() {
                   </motion.div>
                   <div className="flex-1">
                     <h4 className="text-lg font-bold text-orange-400">WhatsApp VoIP Calls Blocked Nationwide</h4>
-                    <p className="text-sm text-platinum-500-300 mt-1">
+                    <p className="text-sm text-platinum-300 mt-1">
                       Voice and video calls via WhatsApp are blocked by TDRA regulation.
                       VPN for VoIP bypass is illegal (AED 500K-2M fine).
                     </p>
@@ -560,7 +560,7 @@ export default function WhatsAppPage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0 pb-4">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Clock className="h-5 w-5 text-navy-500-400" />
+                      <Clock className="h-5 w-5 text-navy-400" />
                       Restriction Timeline
                     </CardTitle>
                     <CardDescription>History of WhatsApp VoIP restrictions in UAE</CardDescription>
@@ -576,12 +576,12 @@ export default function WhatsAppPage() {
                             transition={{ delay: idx * 0.1 }}
                             className="flex items-start gap-4"
                           >
-                            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-navy-500/20 to-navy-600/20 text-navy-500-400 text-sm font-bold border border-navy-500/30">
+                            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-navy-500/20 to-navy-600/20 text-navy-400 text-sm font-bold border border-navy-500/30">
                               {event.year.slice(2)}
                             </div>
                             <div className="flex-1 rounded-lg bg-platinum-800/50 p-3 border border-platinum-700/50">
                               <div className="flex items-center gap-2 flex-wrap">
-                                <span className="font-medium text-platinum-500-200">{event.event}</span>
+                                <span className="font-medium text-platinum-200">{event.event}</span>
                                 <Badge
                                   variant="outline"
                                   className={
@@ -626,11 +626,11 @@ export default function WhatsAppPage() {
                         >
                           <Phone className="h-4 w-4 text-emerald-500 mt-0.5 shrink-0" />
                           <div>
-                            <p className="text-sm font-medium text-platinum-500-200">{item.app}</p>
+                            <p className="text-sm font-medium text-platinum-200">{item.app}</p>
                             <Badge variant="outline" className="text-xs mt-1 border-emerald-500/50 text-emerald-500">
                               {item.type}
                             </Badge>
-                            <p className="text-xs text-platinum-500-400 mt-1">{item.notes}</p>
+                            <p className="text-xs text-platinum-400 mt-1">{item.notes}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -663,7 +663,7 @@ export default function WhatsAppPage() {
                   </motion.div>
                   <div className="flex-1">
                     <h4 className="text-lg font-bold text-rose-400">Article 52 Penalties — No Intent Required</h4>
-                    <p className="text-sm text-platinum-500-300 mt-1">
+                    <p className="text-sm text-platinum-300 mt-1">
                       Courts focus on impact of dissemination, not intent. Forwarding treated as re-publishing.
                       Private WhatsApp chats are NOT exempt from cybercrime laws.
                     </p>
@@ -693,18 +693,18 @@ export default function WhatsAppPage() {
                             className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
                           >
                             <div className="flex items-start justify-between mb-2">
-                              <h4 className="font-medium text-platinum-500-200">{penalty.offense}</h4>
+                              <h4 className="font-medium text-platinum-200">{penalty.offense}</h4>
                               <Badge variant="outline" className="text-rose-500 border-rose-500/50 text-xs">
                                 {penalty.context}
                               </Badge>
                             </div>
                             <div className="grid grid-cols-2 gap-4">
                               <div>
-                                <p className="text-xs text-platinum-500-400">Fine</p>
+                                <p className="text-xs text-platinum-400">Fine</p>
                                 <p className="text-lg font-bold text-rose-400">{penalty.fine}</p>
                               </div>
                               <div>
-                                <p className="text-xs text-platinum-500-400">Imprisonment</p>
+                                <p className="text-xs text-platinum-400">Imprisonment</p>
                                 <p className="text-lg font-bold text-rose-400">{penalty.imprisonment}</p>
                               </div>
                             </div>
@@ -742,7 +742,7 @@ export default function WhatsAppPage() {
                           <Shield className="h-4 w-4 text-gold-700 mt-0.5 shrink-0" />
                           <div>
                             <p className="text-sm font-medium text-gold-400">{item.principle}</p>
-                            <p className="text-xs text-platinum-500-400 mt-1">{item.implication}</p>
+                            <p className="text-xs text-platinum-400 mt-1">{item.implication}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -754,31 +754,31 @@ export default function WhatsAppPage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0 pb-4">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <FileText className="h-5 w-5 text-navy-500-400" />
+                      <FileText className="h-5 w-5 text-navy-400" />
                       WhatsApp as Evidence
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="px-0 pb-0">
                     <div className="space-y-4">
                       <div className="rounded-lg bg-navy-500/10 p-4 border border-navy-500/30">
-                        <p className="text-sm text-platinum-500-300">
-                          <strong className="text-navy-500-400">Dubai Court of Cassation (April 17, 2026):</strong> WhatsApp messages in divorce case must be "thoroughly investigated to establish their authenticity, verify the identity of the sender, and determine whether they meet the legal threshold required for admissible evidence."
+                        <p className="text-sm text-platinum-300">
+                          <strong className="text-navy-400">Dubai Court of Cassation (April 17, 2026):</strong> WhatsApp messages in divorce case must be "thoroughly investigated to establish their authenticity, verify the identity of the sender, and determine whether they meet the legal threshold required for admissible evidence."
                         </p>
                       </div>
                       <div className="rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50">
-                        <p className="text-sm text-platinum-500-300">
-                          <strong className="text-platinum-500-200">Requirements:</strong>
+                        <p className="text-sm text-platinum-300">
+                          <strong className="text-platinum-200">Requirements:</strong>
                         </p>
                         <ul className="mt-2 space-y-1">
-                          <li className="text-xs text-platinum-500-400 flex items-center gap-2">
+                          <li className="text-xs text-platinum-400 flex items-center gap-2">
                             <CheckCircle className="h-3 w-3 text-emerald-500" />
                             Authenticity verification — messages must be proven genuine
                           </li>
-                          <li className="text-xs text-platinum-500-400 flex items-center gap-2">
+                          <li className="text-xs text-platinum-400 flex items-center gap-2">
                             <CheckCircle className="h-3 w-3 text-emerald-500" />
                             Sender identity verification — confirm who actually sent the messages
                           </li>
-                          <li className="text-xs text-platinum-500-400 flex items-center gap-2">
+                          <li className="text-xs text-platinum-400 flex items-center gap-2">
                             <CheckCircle className="h-3 w-3 text-emerald-500" />
                             Legal threshold met — must satisfy admissibility requirements
                           </li>
@@ -806,8 +806,8 @@ export default function WhatsAppPage() {
                     className="rounded-lg bg-gradient-to-br from-emerald-500/10 to-emerald-600/5 p-4 border border-emerald-500/30"
                   >
                     <p className="text-xs text-emerald-400 mb-1">Global Launch</p>
-                    <p className="text-lg font-bold text-platinum-500-100">June 2023</p>
-                    <p className="text-xs text-platinum-500-400">Colombia & Singapore pilot</p>
+                    <p className="text-lg font-bold text-platinum-100">June 2023</p>
+                    <p className="text-xs text-platinum-400">Colombia & Singapore pilot</p>
                   </motion.div>
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -816,8 +816,8 @@ export default function WhatsAppPage() {
                     className="rounded-lg bg-gradient-to-br from-gold-500/10 to-gold-600/5 p-4 border border-gold-500/30"
                   >
                     <p className="text-xs text-gold-400 mb-1">UAE/Saudi Launch</p>
-                    <p className="text-lg font-bold text-platinum-500-100">Sep 14, 2023</p>
-                    <p className="text-xs text-platinum-500-400">September 14, 2023</p>
+                    <p className="text-lg font-bold text-platinum-100">Sep 14, 2023</p>
+                    <p className="text-xs text-platinum-400">September 14, 2023</p>
                   </motion.div>
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -825,9 +825,9 @@ export default function WhatsAppPage() {
                     transition={{ delay: 0.2 }}
                     className="rounded-lg bg-gradient-to-br from-navy-500/10 to-navy-600/5 p-4 border border-navy-500/30"
                   >
-                    <p className="text-xs text-navy-500-400 mb-1">Global Expansion</p>
-                    <p className="text-lg font-bold text-platinum-500-100">150+</p>
-                    <p className="text-xs text-platinum-500-400">Countries worldwide</p>
+                    <p className="text-xs text-navy-400 mb-1">Global Expansion</p>
+                    <p className="text-lg font-bold text-platinum-100">150+</p>
+                    <p className="text-xs text-platinum-400">Countries worldwide</p>
                   </motion.div>
                 </div>
 
@@ -881,7 +881,7 @@ export default function WhatsAppPage() {
                           <CheckCircle className="h-4 w-4 text-emerald-500 mt-0.5 shrink-0" />
                           <div>
                             <p className="text-xs text-emerald-400 font-medium">{item.feature}</p>
-                            <p className="text-sm text-platinum-500-300">{item.detail}</p>
+                            <p className="text-sm text-platinum-300">{item.detail}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -893,7 +893,7 @@ export default function WhatsAppPage() {
                 <motion.div variants={cardHover} whileHover="hover" className="glass-card rounded-xl p-6 bg-glass-surface/50 border-glass-border">
                   <CardHeader className="px-0 pt-0 pb-4">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Megaphone className="h-5 w-5 text-navy-500-400" />
+                      <Megaphone className="h-5 w-5 text-navy-400" />
                       Government WhatsApp Channels
                     </CardTitle>
                   </CardHeader>
@@ -901,19 +901,19 @@ export default function WhatsAppPage() {
                     <div className="space-y-4">
                       <div className="rounded-lg bg-gradient-to-r from-navy-500/10 to-navy-600/5 p-4 border border-navy-500/30">
                         <div className="flex items-center justify-between mb-2">
-                          <h4 className="font-medium text-navy-500-400">MoHRE (Ministry of Human Resources)</h4>
+                          <h4 className="font-medium text-navy-400">MoHRE (Ministry of Human Resources)</h4>
                           <Badge variant="outline" className="border-emerald-500/50 text-emerald-500">
                             <CheckCircle className="h-3 w-3 mr-1" />
                             First Federal
                           </Badge>
                         </div>
-                        <div className="grid grid-cols-2 gap-2 text-xs text-platinum-500-400">
+                        <div className="grid grid-cols-2 gap-2 text-xs text-platinum-400">
                           <p>Launch: September 8, 2022</p>
                           <p>Contact: 600590000</p>
                           <p>Languages: English & Arabic</p>
                           <p>Availability: 24/7</p>
                         </div>
-                        <p className="text-xs text-platinum-500-400 mt-2">
+                        <p className="text-xs text-platinum-400 mt-2">
                           Services: Labour laws, application status, domestic helpers law, ministerial decrees
                         </p>
                       </div>
@@ -924,11 +924,11 @@ export default function WhatsAppPage() {
                             NEW
                           </Badge>
                         </div>
-                        <div className="grid grid-cols-2 gap-2 text-xs text-platinum-500-400">
+                        <div className="grid grid-cols-2 gap-2 text-xs text-platinum-400">
                           <p>Launch: March 18, 2026</p>
                           <p>Purpose: Public safety advisories</p>
                         </div>
-                        <p className="text-xs text-platinum-500-400 mt-2">
+                        <p className="text-xs text-platinum-400 mt-2">
                           Real-time city-wide announcements and key Dubai developments
                         </p>
                       </div>
@@ -961,7 +961,7 @@ export default function WhatsAppPage() {
                   </motion.div>
                   <div className="flex-1">
                     <h4 className="text-lg font-bold text-rose-400">"WhatsApp Snitches" — April 2026</h4>
-                    <p className="text-sm text-platinum-500-300 mt-1">
+                    <p className="text-sm text-platinum-300 mt-1">
                       Dubai residents reporting group chat members to police for sharing Iranian drone missile attack pictures.
                       Expats fleeing UAE over fears of being reported.
                     </p>
@@ -998,7 +998,7 @@ export default function WhatsAppPage() {
                                 {arrest.charge}
                               </Badge>
                             </div>
-                            <p className="text-sm text-platinum-500-200">{arrest.incident}</p>
+                            <p className="text-sm text-platinum-200">{arrest.incident}</p>
                           </motion.div>
                         ))}
                       </div>
@@ -1026,9 +1026,9 @@ export default function WhatsAppPage() {
                             className="flex items-start justify-between rounded-lg bg-platinum-800/50 p-4 border border-platinum-700/50"
                           >
                             <div className="flex-1">
-                              <p className="font-medium text-platinum-500-200">{narrative.topic}</p>
-                              <p className="text-sm text-platinum-500-400 mt-1">{narrative.narrative}</p>
-                              <p className="text-xs text-platinum-500-500 mt-2">Source: {narrative.source}</p>
+                              <p className="font-medium text-platinum-200">{narrative.topic}</p>
+                              <p className="text-sm text-platinum-400 mt-1">{narrative.narrative}</p>
+                              <p className="text-xs text-platinum-500 mt-2">Source: {narrative.source}</p>
                             </div>
                             <Badge
                               variant={narrative.sentiment === 'positive' ? 'secondary' : narrative.sentiment === 'negative' ? 'destructive' : 'outline'}
@@ -1068,7 +1068,7 @@ export default function WhatsAppPage() {
                           transition={{ delay: idx * 0.06 }}
                           className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                         >
-                          <span className="text-sm text-platinum-500-300">{item.theme}</span>
+                          <span className="text-sm text-platinum-300">{item.theme}</span>
                           <Badge
                             variant="outline"
                             className={

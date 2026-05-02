@@ -35,7 +35,7 @@ export function BankingSectorSection({
                   key={idx}
                   className="flex justify-between text-sm border-b border-glass-border pb-1"
                 >
-                  <span className="text-platinum-500-400">{item.measure}</span>
+                  <span className="text-platinum-400">{item.measure}</span>
                   <span className="text-emerald-400 font-semibold">
                     {item.amount}
                   </span>
@@ -44,7 +44,7 @@ export function BankingSectorSection({
             </div>
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-platinum-500-300 mb-3">
+            <h4 className="text-lg font-semibold text-platinum-300 mb-3">
               Banking Sector Performance
             </h4>
             <div className="space-y-2">
@@ -53,8 +53,8 @@ export function BankingSectorSection({
                   key={idx}
                   className="flex justify-between text-sm border-b border-glass-border pb-1"
                 >
-                  <span className="text-platinum-500-400">{item.metric}</span>
-                  <span className="text-platinum-500-200">{item.value}</span>
+                  <span className="text-platinum-400">{item.metric}</span>
+                  <span className="text-platinum-200">{item.value}</span>
                 </div>
               ))}
             </div>
@@ -64,8 +64,8 @@ export function BankingSectorSection({
             {bankRunPrevention?.map((item: any, idx: number) => (
               <div key={idx} className="flex items-center gap-2 text-sm mb-1">
                 <Shield className="h-4 w-4 text-emerald-500" />
-                <span className="text-platinum-500-300">{item.observation}</span>
-                <span className="text-platinum-500-500 text-xs">
+                <span className="text-platinum-300">{item.observation}</span>
+                <span className="text-platinum-500 text-xs">
                   ({item.source})
                 </span>
               </div>
@@ -105,7 +105,7 @@ export function SovereignDebtSection({
                   key={idx}
                   className="flex justify-between text-sm border-b border-glass-border pb-1"
                 >
-                  <span className="text-platinum-500-400">{item.metric}</span>
+                  <span className="text-platinum-400">{item.metric}</span>
                   <span className="text-amber-400 font-semibold">
                     {item.value}
                   </span>
@@ -123,19 +123,19 @@ export function SovereignDebtSection({
                   key={idx}
                   className="flex justify-between text-sm border-b border-glass-border pb-1"
                 >
-                  <span className="text-platinum-500-400">{item.attribute}</span>
-                  <span className="text-platinum-500-200 text-right max-w-[180px]">
+                  <span className="text-platinum-400">{item.attribute}</span>
+                  <span className="text-platinum-200 text-right max-w-[180px]">
                     {item.value}
                   </span>
                 </div>
               ))}
             </div>
-            <h4 className="text-lg font-semibold text-platinum-500-300 mt-4 mb-3">
+            <h4 className="text-lg font-semibold text-platinum-300 mt-4 mb-3">
               FATF Status
             </h4>
             {fatfStatusHistory?.map((item: any, idx: number) => (
               <div key={idx} className="flex justify-between text-sm">
-                <span className="text-platinum-500-400">{item.date}</span>
+                <span className="text-platinum-400">{item.date}</span>
                 <Badge
                   variant="outline"
                   className={`border-${

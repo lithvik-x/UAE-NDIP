@@ -157,11 +157,11 @@ function ProfileCard({ official, index }: { official: typeof supremeCouncilMembe
       <GlassCard hover className="h-full">
         <div className="flex items-start justify-between mb-3">
           <div className="flex-1">
-            <h3 className="font-rajdhani font-bold text-lg text-navy-500-900 dark:text-platinum-500-100">
+            <h3 className="font-rajdhani font-bold text-lg text-navy-900 dark:text-platinum-100">
               {official.name}
             </h3>
             {official.personalInfo?.arabic && (
-              <p className="text-xs text-platinum-500-500 font-arabic">{official.personalInfo.arabic}</p>
+              <p className="text-xs text-platinum-500 font-arabic">{official.personalInfo.arabic}</p>
             )}
             <p className="text-sm text-gold-700 font-medium mt-1">{official.title}</p>
           </div>
@@ -173,17 +173,17 @@ function ProfileCard({ official, index }: { official: typeof supremeCouncilMembe
         {official.personalInfo && (
           <div className="space-y-1 mb-3 text-xs">
             {official.personalInfo.born && (
-              <p className="text-platinum-500-600 dark:text-platinum-500-400">
+              <p className="text-platinum-600 dark:text-platinum-400">
                 <span className="font-semibold">Born:</span> {official.personalInfo.born}
               </p>
             )}
             {official.personalInfo.age && (
-              <p className="text-platinum-500-600 dark:text-platinum-500-400">
+              <p className="text-platinum-600 dark:text-platinum-400">
                 <span className="font-semibold">Age:</span> {official.personalInfo.age} years old
               </p>
             )}
             {official.personalInfo.father && (
-              <p className="text-platinum-500-600 dark:text-platinum-500-400">
+              <p className="text-platinum-600 dark:text-platinum-400">
                 <span className="font-semibold">Father:</span> {official.personalInfo.father?.split('(')[0].trim()}
               </p>
             )}
@@ -192,7 +192,7 @@ function ProfileCard({ official, index }: { official: typeof supremeCouncilMembe
 
         {official.positions && official.positions.length > 0 && (
           <div className="mb-3">
-            <p className="text-xs font-semibold text-platinum-500-700 dark:text-platinum-500-300 mb-1">Current Positions</p>
+            <p className="text-xs font-semibold text-platinum-700 dark:text-platinum-300 mb-1">Current Positions</p>
             <div className="flex flex-wrap gap-1">
               {official.positions.slice(0, 3).map((pos, i) => (
                 <Badge key={i} variant="outline" className="text-xs border-gold-700/30 text-gold-700">
@@ -200,7 +200,7 @@ function ProfileCard({ official, index }: { official: typeof supremeCouncilMembe
                 </Badge>
               ))}
               {official.positions.length > 3 && (
-                <Badge variant="outline" className="text-xs border-platinum/30 text-platinum-500-500">
+                <Badge variant="outline" className="text-xs border-platinum/30 text-platinum-500">
                   +{official.positions.length - 3} more
                 </Badge>
               )}
@@ -210,10 +210,10 @@ function ProfileCard({ official, index }: { official: typeof supremeCouncilMembe
 
         {official.achievements && official.achievements.length > 0 && (
           <div className="mb-3">
-            <p className="text-xs font-semibold text-platinum-500-700 dark:text-platinum-500-300 mb-1">Key Achievements</p>
+            <p className="text-xs font-semibold text-platinum-700 dark:text-platinum-300 mb-1">Key Achievements</p>
             <ul className="space-y-0.5">
               {official.achievements.slice(0, 3).map((ach, i) => (
-                <li key={i} className="flex items-start gap-1.5 text-xs text-platinum-500-600 dark:text-platinum-500-400">
+                <li key={i} className="flex items-start gap-1.5 text-xs text-platinum-600 dark:text-platinum-400">
                   <ArrowUpRight className="h-3 w-3 mt-0.5 text-emerald-500 shrink-0" />
                   {ach.year && <span className="text-gold-700 font-medium">{ach.year}:</span>} {ach.achievement}
                 </li>
@@ -227,7 +227,7 @@ function ProfileCard({ official, index }: { official: typeof supremeCouncilMembe
             <p className="text-xs font-semibold text-red-600 mb-1">Controversies</p>
             <ul className="space-y-0.5">
               {official.controversies.slice(0, 2).map((c, i) => (
-                <li key={i} className="flex items-start gap-1.5 text-xs text-platinum-500-600 dark:text-platinum-500-400">
+                <li key={i} className="flex items-start gap-1.5 text-xs text-platinum-600 dark:text-platinum-400">
                   <AlertTriangle className="h-3 w-3 mt-0.5 text-red-400 shrink-0" />
                   {c.issue}
                 </li>
@@ -266,7 +266,7 @@ function TimelineItem({ year, event }: { year: string, event: string }) {
       </div>
       <div className="pb-4">
         <span className="text-sm font-bold text-gold-700">{year}</span>
-        <p className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{event}</p>
+        <p className="text-sm text-platinum-700 dark:text-platinum-300">{event}</p>
       </div>
     </div>
   )
@@ -376,7 +376,7 @@ export default function FederalOfficialsPage() {
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">
             Entity Intelligence — Federal Government
           </h1>
-          <p className="mt-2 text-platinum-500-600 dark:text-platinum-500-400 text-sm">
+          <p className="mt-2 text-platinum-600 dark:text-platinum-400 text-sm">
             UAE Federal Officials covering all ministries, policies, officials, statements, and initiatives.
             SSOT status — fully updated {execSummary.dateExecuted}
           </p>
@@ -386,7 +386,7 @@ export default function FederalOfficialsPage() {
             <Globe className="h-4 w-4" />
             Export List
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
             <Star className="h-4 w-4" />
             Refresh Data
           </Button>
@@ -444,25 +444,25 @@ export default function FederalOfficialsPage() {
           <div className="flex items-center gap-6 flex-wrap">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-              <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">
+              <span className="text-sm text-platinum-700 dark:text-platinum-300">
                 <span className="font-semibold">{execSummary.queriesExecuted}</span> queries executed
               </span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-              <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">
+              <span className="text-sm text-platinum-700 dark:text-platinum-300">
                 <span className="font-semibold">{execSummary.urlsIdentified}</span> URLs identified
               </span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-              <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">
+              <span className="text-sm text-platinum-700 dark:text-platinum-300">
                 <span className="font-semibold">{execSummary.sourceTiersCovered}</span> source tiers
               </span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-              <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">
+              <span className="text-sm text-platinum-700 dark:text-platinum-300">
                 <span className="font-semibold">{execSummary.achievementsDocumented}</span> achievements documented
               </span>
             </div>
@@ -509,7 +509,7 @@ export default function FederalOfficialsPage() {
           >
             <div className="grid gap-6 lg:grid-cols-2">
               <div>
-                <h4 className="font-rajdhani font-bold text-base text-navy-500-900 dark:text-platinum-500-100 mb-3">
+                <h4 className="font-rajdhani font-bold text-base text-navy-900 dark:text-platinum-100 mb-3">
                   Early Career (1979–2005)
                 </h4>
                 <div className="space-y-0">
@@ -520,7 +520,7 @@ export default function FederalOfficialsPage() {
                 </div>
               </div>
               <div>
-                <h4 className="font-rajdhani font-bold text-base text-navy-500-900 dark:text-platinum-500-100 mb-3">
+                <h4 className="font-rajdhani font-bold text-base text-navy-900 dark:text-platinum-100 mb-3">
                   Rise to Presidency (2006–2023)
                 </h4>
                 <div className="space-y-0">
@@ -542,7 +542,7 @@ export default function FederalOfficialsPage() {
               {data.supremeCouncilMembers.find(o => o.id === 'mbz')?.foreignPolicy?.map((fp, i) => (
                 <div key={i} className="flex items-start gap-2 text-sm">
                   <Globe2 className="h-4 w-4 mt-0.5 text-gold-700 shrink-0" />
-                  <span className="text-platinum-500-700 dark:text-platinum-500-300">{fp}</span>
+                  <span className="text-platinum-700 dark:text-platinum-300">{fp}</span>
                 </div>
               ))}
             </div>
@@ -563,8 +563,8 @@ export default function FederalOfficialsPage() {
                   {data.supremeCouncilMembers.find(o => o.id === 'mbz')?.honors?.map((h, i) => (
                     <TableRow key={i}>
                       <TableCell className="text-sm">{h.country}</TableCell>
-                      <TableCell className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{h.honor}</TableCell>
-                      <TableCell className="text-sm text-platinum-500-500">{h.year || '—'}</TableCell>
+                      <TableCell className="text-sm text-platinum-700 dark:text-platinum-300">{h.honor}</TableCell>
+                      <TableCell className="text-sm text-platinum-500">{h.year || '—'}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -583,7 +583,7 @@ export default function FederalOfficialsPage() {
                   <Rocket className="h-4 w-4 mt-0.5 text-gold-700 shrink-0" />
                   <div>
                     <span className="text-sm font-semibold text-gold-700">{ach.year}</span>
-                    <p className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{ach.achievement}</p>
+                    <p className="text-sm text-platinum-700 dark:text-platinum-300">{ach.achievement}</p>
                   </div>
                 </div>
               ))}
@@ -613,13 +613,13 @@ export default function FederalOfficialsPage() {
                   { club: 'Club Puebla', country: 'Mexico' },
                 ].map((c, i) => (
                   <div key={i} className="glass-subtle rounded-lg p-2">
-                    <p className="text-xs font-semibold text-navy-500-900 dark:text-platinum-500-100">{c.club}</p>
-                    <p className="text-xs text-platinum-500-500">{c.country}</p>
+                    <p className="text-xs font-semibold text-navy-900 dark:text-platinum-100">{c.club}</p>
+                    <p className="text-xs text-platinum-500">{c.country}</p>
                   </div>
                 ))}
               </div>
               <div className="pt-3 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                <p className="text-sm text-platinum-500-600 dark:text-platinum-500-400">
+                <p className="text-sm text-platinum-600 dark:text-platinum-400">
                   <span className="font-semibold text-gold-700">13 Global Clubs</span> — City Football Group, founded 2014, acquired Manchester City September 2008
                 </p>
               </div>
@@ -639,7 +639,7 @@ export default function FederalOfficialsPage() {
                 { platform: 'YouTube', handle: 'M_Hamdan Fazza', followers: '10.6K' },
               ].map((s, i) => (
                 <div key={i} className="glass-subtle rounded-lg p-3">
-                  <p className="text-xs font-semibold text-navy-500-900 dark:text-platinum-500-100">{s.platform}</p>
+                  <p className="text-xs font-semibold text-navy-900 dark:text-platinum-100">{s.platform}</p>
                   <p className="text-xs text-gold-700">{s.handle}</p>
                   <p className="text-xs text-emerald-500 font-medium mt-1">{s.followers}</p>
                 </div>
@@ -662,7 +662,7 @@ export default function FederalOfficialsPage() {
               {/* Prime Minister */}
               <div className="glass-subtle rounded-xl p-4">
                 <Badge variant="gold" className="mb-2">Prime Minister</Badge>
-                <p className="font-rajdhani font-bold text-navy-500-900 dark:text-platinum-500-100">
+                <p className="font-rajdhani font-bold text-navy-900 dark:text-platinum-100">
                   {data.cabinetData.primeMinister.name}
                 </p>
               </div>
@@ -673,8 +673,8 @@ export default function FederalOfficialsPage() {
                 <div className="grid gap-2 sm:grid-cols-2 mt-2">
                   {(cabinetData["deputyPrime Ministers"] ?? []).map((dpm, i) => (
                     <div key={i} className="text-sm">
-                      <p className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{dpm.name}</p>
-                      <p className="text-xs text-platinum-500-500">{dpm.position}</p>
+                      <p className="font-semibold text-navy-900 dark:text-platinum-100">{dpm.name}</p>
+                      <p className="text-xs text-platinum-500">{dpm.position}</p>
                       {dpm.additional && <p className="text-xs text-gold-700">{dpm.additional}</p>}
                     </div>
                   ))}
@@ -702,8 +702,8 @@ export default function FederalOfficialsPage() {
                   {(cabinetData["general Ministers"] ?? []).map((gm, i) => (
                     <TableRow key={i}>
                       <TableCell className="text-sm font-medium">{i + 1}</TableCell>
-                      <TableCell className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{gm.position}</TableCell>
-                      <TableCell className="text-sm font-semibold text-navy-500-900 dark:text-platinum-500-100">{gm.name}</TableCell>
+                      <TableCell className="text-sm text-platinum-700 dark:text-platinum-300">{gm.position}</TableCell>
+                      <TableCell className="text-sm font-semibold text-navy-900 dark:text-platinum-100">{gm.name}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -723,7 +723,7 @@ export default function FederalOfficialsPage() {
                   <div className="w-20 shrink-0">
                     <span className="text-xs font-bold text-gold-700">{t.year}</span>
                   </div>
-                  <p className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{t.event}</p>
+                  <p className="text-sm text-platinum-700 dark:text-platinum-300">{t.event}</p>
                 </div>
               ))}
             </div>
@@ -748,10 +748,10 @@ export default function FederalOfficialsPage() {
                 <TableBody>
                   {(undersecretaries ?? []).map((us, i) => (
                     <TableRow key={i}>
-                      <TableCell className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{us.entity}</TableCell>
-                      <TableCell className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{us.position}</TableCell>
-                      <TableCell className="text-sm font-semibold text-navy-500-900 dark:text-platinum-500-100">{us.name}</TableCell>
-                      <TableCell className="text-sm text-platinum-500-500">{us.appointment || '—'}</TableCell>
+                      <TableCell className="text-sm text-platinum-700 dark:text-platinum-300">{us.entity}</TableCell>
+                      <TableCell className="text-sm text-platinum-700 dark:text-platinum-300">{us.position}</TableCell>
+                      <TableCell className="text-sm font-semibold text-navy-900 dark:text-platinum-100">{us.name}</TableCell>
+                      <TableCell className="text-sm text-platinum-500">{us.appointment || '—'}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -782,8 +782,8 @@ export default function FederalOfficialsPage() {
                   {(ministersOfState ?? []).map((m, i) => (
                     <TableRow key={i}>
                       <TableCell className="text-sm font-medium">{m.number}</TableCell>
-                      <TableCell className="text-sm font-semibold text-navy-500-900 dark:text-platinum-500-100">{m.name}</TableCell>
-                      <TableCell className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{m.portfolio}</TableCell>
+                      <TableCell className="text-sm font-semibold text-navy-900 dark:text-platinum-100">{m.name}</TableCell>
+                      <TableCell className="text-sm text-platinum-700 dark:text-platinum-300">{m.portfolio}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -799,21 +799,21 @@ export default function FederalOfficialsPage() {
                 <Badge variant="cyan" className="text-xs">WORLD'S FIRST AI MINISTER</Badge>
                 <Rocket className="h-5 w-5 text-cyan-500" />
               </div>
-              <h3 className="font-rajdhani font-bold text-base text-navy-500-900 dark:text-platinum-500-100">
+              <h3 className="font-rajdhani font-bold text-base text-navy-900 dark:text-platinum-100">
                 {data.notableMinisters.omarAlOlama.name}
               </h3>
               <p className="text-xs text-gold-700 mt-1">{data.notableMinisters.omarAlOlama.position}</p>
               <div className="mt-3 space-y-1.5 text-xs">
-                <p className="text-platinum-500-600 dark:text-platinum-500-400">
+                <p className="text-platinum-600 dark:text-platinum-400">
                   <span className="font-semibold">Appointment:</span> {data.notableMinisters.omarAlOlama.appointment}
                 </p>
-                <p className="text-platinum-500-600 dark:text-platinum-500-400">
+                <p className="text-platinum-600 dark:text-platinum-400">
                   <span className="font-semibold">Added:</span> {data.notableMinisters.omarAlOlama.added}
                 </p>
-                <p className="text-platinum-500-600 dark:text-platinum-500-400">
+                <p className="text-platinum-600 dark:text-platinum-400">
                   <span className="font-semibold">Profile:</span> {data.notableMinisters.omarAlOlama.profile}
                 </p>
-                <p className="text-platinum-500-600 dark:text-platinum-500-400">
+                <p className="text-platinum-600 dark:text-platinum-400">
                   <span className="font-semibold">Warning (Jan 2026):</span> {data.notableMinisters.omarAlOlama.warning}
                 </p>
               </div>
@@ -825,21 +825,21 @@ export default function FederalOfficialsPage() {
                 <Badge variant="emerald" className="text-xs">YOUNGEST CABINET MINISTER</Badge>
                 <Star className="h-5 w-5 text-emerald-500" />
               </div>
-              <h3 className="font-rajdhani font-bold text-base text-navy-500-900 dark:text-platinum-500-100">
+              <h3 className="font-rajdhani font-bold text-base text-navy-900 dark:text-platinum-100">
                 {data.notableMinisters.shammaAlMazrui.name}
               </h3>
               <p className="text-xs text-gold-700 mt-1">{data.notableMinisters.shammaAlMazrui.positionHistory}</p>
               <div className="mt-3 space-y-1.5 text-xs">
-                <p className="text-platinum-500-600 dark:text-platinum-500-400">
+                <p className="text-platinum-600 dark:text-platinum-400">
                   <span className="font-semibold">Full Name:</span> {data.notableMinisters.shammaAlMazrui.fullName}
                 </p>
-                <p className="text-platinum-500-600 dark:text-platinum-500-400">
+                <p className="text-platinum-600 dark:text-platinum-400">
                   <span className="font-semibold">Age at Appointment:</span> {data.notableMinisters.shammaAlMazrui.ageAtAppointment}
                 </p>
-                <p className="text-platinum-500-600 dark:text-platinum-500-400">
+                <p className="text-platinum-600 dark:text-platinum-400">
                   <span className="font-semibold">Education:</span> {data.notableMinisters.shammaAlMazrui.education}
                 </p>
-                <p className="text-platinum-500-600 dark:text-platinum-500-400">
+                <p className="text-platinum-600 dark:text-platinum-400">
                   <span className="font-semibold">Recognition:</span> {data.notableMinisters.shammaAlMazrui.recognition}
                 </p>
               </div>
@@ -851,18 +851,18 @@ export default function FederalOfficialsPage() {
                 <Badge variant="gold" className="text-xs">COP28 PRESIDENT</Badge>
                 <Globe className="h-5 w-5 text-gold-700" />
               </div>
-              <h3 className="font-rajdhani font-bold text-base text-navy-500-900 dark:text-platinum-500-100">
+              <h3 className="font-rajdhani font-bold text-base text-navy-900 dark:text-platinum-100">
                 {data.notableMinisters.sultanAlJaber.name}
               </h3>
               <p className="text-xs text-gold-700 mt-1">{data.notableMinisters.sultanAlJaber.position}</p>
               <div className="mt-3 space-y-1.5 text-xs">
                 {notableMinisters.sultanAlJaber?.also?.map((a, i) => (
-                  <p key={i} className="text-platinum-500-600 dark:text-platinum-500-400">{a}</p>
+                  <p key={i} className="text-platinum-600 dark:text-platinum-400">{a}</p>
                 ))}
-                <p className="text-platinum-500-600 dark:text-platinum-500-400">
+                <p className="text-platinum-600 dark:text-platinum-400">
                   <span className="font-semibold">Experience:</span> {data.notableMinisters.sultanAlJaber.experience}
                 </p>
-                <p className="text-platinum-500-600 dark:text-platinum-500-400">
+                <p className="text-platinum-600 dark:text-platinum-400">
                   <span className="font-semibold">Award:</span> {data.notableMinisters.sultanAlJaber.award}
                 </p>
               </div>
@@ -882,24 +882,24 @@ export default function FederalOfficialsPage() {
           >
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               <div className="text-sm">
-                <p className="font-semibold text-platinum-500-700 dark:text-platinum-500-300">Mandate</p>
-                <p className="text-platinum-500-600 dark:text-platinum-500-400">{data.gcoData.mandate}</p>
+                <p className="font-semibold text-platinum-700 dark:text-platinum-300">Mandate</p>
+                <p className="text-platinum-600 dark:text-platinum-400">{data.gcoData.mandate}</p>
               </div>
               <div className="text-sm">
-                <p className="font-semibold text-platinum-500-700 dark:text-platinum-500-300">Operations</p>
-                <p className="text-platinum-500-600 dark:text-platinum-500-400">{data.gcoData.operatesUnder}</p>
+                <p className="font-semibold text-platinum-700 dark:text-platinum-300">Operations</p>
+                <p className="text-platinum-600 dark:text-platinum-400">{data.gcoData.operatesUnder}</p>
               </div>
               <div className="text-sm">
-                <p className="font-semibold text-platinum-500-700 dark:text-platinum-500-300">WhatsApp Channel</p>
+                <p className="font-semibold text-platinum-700 dark:text-platinum-300">WhatsApp Channel</p>
                 <p className="text-emerald-500 font-medium">{data.gcoData.whatsappChannel}</p>
               </div>
               <div className="text-sm">
-                <p className="font-semibold text-platinum-500-700 dark:text-platinum-500-300">Media Council President</p>
-                <p className="text-platinum-500-600 dark:text-platinum-500-400">{data.gcoData.uaeMediaCouncil.president}</p>
+                <p className="font-semibold text-platinum-700 dark:text-platinum-300">Media Council President</p>
+                <p className="text-platinum-600 dark:text-platinum-400">{data.gcoData.uaeMediaCouncil.president}</p>
               </div>
               <div className="text-sm">
-                <p className="font-semibold text-platinum-500-700 dark:text-platinum-500-300">Media Strategy Lead</p>
-                <p className="text-platinum-500-600 dark:text-platinum-500-400">{data.gcoData.uaeMediaCouncil.mediaStrategyAndPoliciesSector}</p>
+                <p className="font-semibold text-platinum-700 dark:text-platinum-300">Media Strategy Lead</p>
+                <p className="text-platinum-600 dark:text-platinum-400">{data.gcoData.uaeMediaCouncil.mediaStrategyAndPoliciesSector}</p>
               </div>
             </div>
           </GlassPanel>
@@ -913,24 +913,24 @@ export default function FederalOfficialsPage() {
             >
               <div className="space-y-3">
                 {(m.leadership ?? []).map((leader, j) => (
-                  <p key={j} className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{leader}</p>
+                  <p key={j} className="text-sm text-platinum-700 dark:text-platinum-300">{leader}</p>
                 ))}
                 {m.keyFacts && (
                   <div className="pt-3 border-t border-platinum-200/50 dark:border-platinum-700/50">
                     {m.keyFacts.map((fact, k) => (
-                      <p key={k} className="text-xs text-platinum-500-500 mt-1">{fact}</p>
+                      <p key={k} className="text-xs text-platinum-500 mt-1">{fact}</p>
                     ))}
                   </div>
                 )}
                 {m.initiatives && (
                   <div className="pt-3 border-t border-platinum-200/50 dark:border-platinum-700/50">
-                    <p className="text-xs font-semibold text-platinum-500-700 dark:text-platinum-500-300 mb-2">Key Initiatives</p>
+                    <p className="text-xs font-semibold text-platinum-700 dark:text-platinum-300 mb-2">Key Initiatives</p>
                     {m.initiatives.map((init, l) => (
                       <div key={l} className="flex items-start gap-2 mb-1">
                         <CheckCircle2 className="h-3 w-3 mt-0.5 text-emerald-500 shrink-0" />
                         <div>
                           <span className="text-xs font-semibold text-gold-700">{init.name}:</span>
-                          <span className="text-xs text-platinum-500-600 dark:text-platinum-500-400 ml-1">{init.description}</span>
+                          <span className="text-xs text-platinum-600 dark:text-platinum-400 ml-1">{init.description}</span>
                         </div>
                       </div>
                     ))}
@@ -949,41 +949,41 @@ export default function FederalOfficialsPage() {
           <GlassCard className="border-2 border-gold-700/30">
             <div className="flex items-start gap-3">
               <div className="w-12 h-12 rounded-xl bg-gradient-gold flex items-center justify-center shrink-0">
-                <Rocket className="h-6 w-6 text-navy-500-950" />
+                <Rocket className="h-6 w-6 text-navy-950" />
               </div>
               <div className="flex-1">
                 <div className="flex items-start justify-between">
                   <div>
                     <Badge variant="gold" className="mb-1">WORLD FIRST</Badge>
-                    <h3 className="font-rajdhani font-bold text-xl text-navy-500-900 dark:text-platinum-500-100">
+                    <h3 className="font-rajdhani font-bold text-xl text-navy-900 dark:text-platinum-100">
                       Agentic AI Government Framework
                     </h3>
-                    <p className="text-sm text-platinum-500-500 mt-1">{data.recentInitiatives[0].date}</p>
+                    <p className="text-sm text-platinum-500 mt-1">{data.recentInitiatives[0].date}</p>
                   </div>
                 </div>
                 <div className="mt-3 space-y-2">
-                  <p className="text-sm text-platinum-500-700 dark:text-platinum-500-300">
+                  <p className="text-sm text-platinum-700 dark:text-platinum-300">
                     {data.recentInitiatives[0].details}
                   </p>
                   <div className="grid gap-2 sm:grid-cols-2">
                     <div className="text-xs">
                       <span className="font-semibold text-gold-700">Authority:</span>
-                      <span className="text-platinum-500-600 dark:text-platinum-500-400 ml-1">{data.recentInitiatives[0].authority}</span>
+                      <span className="text-platinum-600 dark:text-platinum-400 ml-1">{data.recentInitiatives[0].authority}</span>
                     </div>
                     <div className="text-xs">
                       <span className="font-semibold text-gold-700">Target:</span>
-                      <span className="text-platinum-500-600 dark:text-platinum-500-400 ml-1">{data.recentInitiatives[0].target}</span>
+                      <span className="text-platinum-600 dark:text-platinum-400 ml-1">{data.recentInitiatives[0].target}</span>
                     </div>
                     <div className="text-xs">
                       <span className="font-semibold text-gold-700">Taskforce Chair:</span>
-                      <span className="text-platinum-500-600 dark:text-platinum-500-400 ml-1">{data.recentInitiatives[0].taskforceChair}</span>
+                      <span className="text-platinum-600 dark:text-platinum-400 ml-1">{data.recentInitiatives[0].taskforceChair}</span>
                     </div>
                     <div className="text-xs">
                       <span className="font-semibold text-gold-700">Oversight:</span>
-                      <span className="text-platinum-500-600 dark:text-platinum-500-400 ml-1">{data.recentInitiatives[0].oversight}</span>
+                      <span className="text-platinum-600 dark:text-platinum-400 ml-1">{data.recentInitiatives[0].oversight}</span>
                     </div>
                   </div>
-                  <p className="text-xs text-platinum-500-500 mt-2">
+                  <p className="text-xs text-platinum-500 mt-2">
                     Builds on: {data.recentInitiatives[0].buildsOn}
                   </p>
                 </div>
@@ -996,18 +996,18 @@ export default function FederalOfficialsPage() {
             {(recentInitiatives ?? []).slice(1).map((init, i) => (
               <GlassCard key={i} hover>
                 <div className="flex items-start justify-between mb-2">
-                  <h4 className="font-rajdhani font-bold text-base text-navy-500-900 dark:text-platinum-500-100">
+                  <h4 className="font-rajdhani font-bold text-base text-navy-900 dark:text-platinum-100">
                     {init.name}
                   </h4>
                   {init.worldFirst && <Badge variant="gold" className="text-xs">World First</Badge>}
                 </div>
-                <p className="text-xs text-platinum-500-500 mb-2">{init.date || init.details}</p>
-                <p className="text-sm text-platinum-500-700 dark:text-platinum-500-300">
+                <p className="text-xs text-platinum-500 mb-2">{init.date || init.details}</p>
+                <p className="text-sm text-platinum-700 dark:text-platinum-300">
                   {init.location && <span className="text-gold-700">{init.location}</span>}
                   {init.details}
                 </p>
                 {init.keyDiscussions && (
-                  <p className="text-xs text-platinum-500-500 mt-1">Key: {init.keyDiscussions}</p>
+                  <p className="text-xs text-platinum-500 mt-1">Key: {init.keyDiscussions}</p>
                 )}
               </GlassCard>
             ))}
@@ -1024,21 +1024,21 @@ export default function FederalOfficialsPage() {
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-xl bg-gradient-navy flex items-center justify-center shrink-0">
                     {proj.project.toLowerCase().includes('space') ? (
-                      <Rocket className="h-5 w-5 text-platinum-500-100" />
+                      <Rocket className="h-5 w-5 text-platinum-100" />
                     ) : proj.project.toLowerCase().includes('digital') ? (
-                      <Globe className="h-5 w-5 text-platinum-500-100" />
+                      <Globe className="h-5 w-5 text-platinum-100" />
                     ) : proj.project.toLowerCase().includes('economic') ? (
-                      <TrendingUp className="h-5 w-5 text-platinum-500-100" />
+                      <TrendingUp className="h-5 w-5 text-platinum-100" />
                     ) : (
-                      <Building2 className="h-5 w-5 text-platinum-500-100" />
+                      <Building2 className="h-5 w-5 text-platinum-100" />
                     )}
                   </div>
                   <div>
-                    <h3 className="font-rajdhani font-bold text-base text-navy-500-900 dark:text-platinum-500-100">
+                    <h3 className="font-rajdhani font-bold text-base text-navy-900 dark:text-platinum-100">
                       {proj.project}
                     </h3>
                     <p className="text-xs text-gold-700 mt-0.5">{proj.date || ''}</p>
-                    <p className="text-sm text-platinum-500-600 dark:text-platinum-500-400 mt-2">
+                    <p className="text-sm text-platinum-600 dark:text-platinum-400 mt-2">
                       {proj.details}
                     </p>
                   </div>
@@ -1058,16 +1058,16 @@ export default function FederalOfficialsPage() {
               <Handshake className="h-8 w-8 text-emerald-500 shrink-0 mt-1" />
               <div>
                 <Badge variant="emerald" className="mb-2">{data.foreignPolicyData.abrahamAccords.year}</Badge>
-                <h3 className="font-rajdhani font-bold text-xl text-navy-500-900 dark:text-platinum-500-100">
+                <h3 className="font-rajdhani font-bold text-xl text-navy-900 dark:text-platinum-100">
                   Abraham Accords
                 </h3>
-                <p className="text-sm text-platinum-500-600 dark:text-platinum-500-400 mt-1">
+                <p className="text-sm text-platinum-600 dark:text-platinum-400 mt-1">
                   <span className="font-semibold">Brokered by:</span> {data.foreignPolicyData.abrahamAccords.brokeredBy}
                 </p>
-                <p className="text-sm text-platinum-500-600 dark:text-platinum-500-400">
+                <p className="text-sm text-platinum-600 dark:text-platinum-400">
                   <span className="font-semibold">Significance:</span> {data.foreignPolicyData.abrahamAccords.significance}
                 </p>
-                <p className="text-sm text-platinum-500-600 dark:text-platinum-500-400">
+                <p className="text-sm text-platinum-600 dark:text-platinum-400">
                   <span className="font-semibold">Impact:</span> {data.foreignPolicyData.abrahamAccords.impact}
                 </p>
               </div>
@@ -1089,8 +1089,8 @@ export default function FederalOfficialsPage() {
                   {(foreignPolicyData.diplomaticVisitsMBZ ?? []).map((v, i) => (
                     <TableRow key={i}>
                       <TableCell className="text-xs text-gold-700 font-medium">{v.date}</TableCell>
-                      <TableCell className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{v.location}</TableCell>
-                      <TableCell className="text-sm text-platinum-500-600 dark:text-platinum-500-400">{v.event}</TableCell>
+                      <TableCell className="text-sm text-platinum-700 dark:text-platinum-300">{v.location}</TableCell>
+                      <TableCell className="text-sm text-platinum-600 dark:text-platinum-400">{v.event}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -1104,8 +1104,8 @@ export default function FederalOfficialsPage() {
               {(foreignPolicyData.diplomaticVisitsMBR ?? []).map((v, i) => (
                 <div key={i} className="flex items-start gap-3 text-sm">
                   <span className="text-xs text-gold-700 font-medium w-20 shrink-0">{v.date}</span>
-                  <Globe2 className="h-4 w-4 mt-0.5 text-platinum-500-400 shrink-0" />
-                  <span className="text-platinum-500-700 dark:text-platinum-500-300">{v.event}</span>
+                  <Globe2 className="h-4 w-4 mt-0.5 text-platinum-400 shrink-0" />
+                  <span className="text-platinum-700 dark:text-platinum-300">{v.event}</span>
                 </div>
               ))}
             </div>
@@ -1117,7 +1117,7 @@ export default function FederalOfficialsPage() {
               {(foreignPolicyData.indiaUAERelations ?? []).map((r, i) => (
                 <div key={i} className="flex items-start gap-3 text-sm">
                   <span className="text-xs text-gold-700 font-medium w-16 shrink-0">{r.year}</span>
-                  <span className="text-platinum-500-700 dark:text-platinum-500-300">{r.event}</span>
+                  <span className="text-platinum-700 dark:text-platinum-300">{r.event}</span>
                 </div>
               ))}
             </div>
@@ -1130,7 +1130,7 @@ export default function FederalOfficialsPage() {
                 <AlertTriangle className="h-4 w-4 mt-0.5 text-orange-500 shrink-0" />
                 <div>
                   <span className="text-orange-600 font-medium">{t.issue}:</span>
-                  <span className="text-platinum-500-700 dark:text-platinum-500-300 ml-1">{t.details}</span>
+                  <span className="text-platinum-700 dark:text-platinum-300 ml-1">{t.details}</span>
                 </div>
               </div>
             ))}
@@ -1149,7 +1149,7 @@ export default function FederalOfficialsPage() {
                   <AlertTriangle className="h-5 w-5 text-red-400 shrink-0 mt-0.5" />
                   <div>
                     <p className="text-sm font-semibold text-red-600">{c.issue}</p>
-                    <p className="text-sm text-platinum-500-600 dark:text-platinum-500-400 mt-0.5">{c.details}</p>
+                    <p className="text-sm text-platinum-600 dark:text-platinum-400 mt-0.5">{c.details}</p>
                   </div>
                 </div>
               ))}
@@ -1162,16 +1162,16 @@ export default function FederalOfficialsPage() {
             <GlassCard hover className="border-red-500/20">
               <div className="flex items-center gap-2 mb-3">
                 <AlertTriangle className="h-5 w-5 text-red-400" />
-                <h3 className="font-rajdhani font-bold text-lg text-navy-500-900 dark:text-platinum-500-100">
+                <h3 className="font-rajdhani font-bold text-lg text-navy-900 dark:text-platinum-100">
                   Mohammed bin Rashid
                 </h3>
               </div>
               <div className="space-y-2">
                 {(controversiesData.individual?.mohammedBinRashid ?? []).map((c, i) => (
                   <div key={i} className="text-sm">
-                    <p className="font-semibold text-platinum-500-800 dark:text-platinum-500-200">{c.issue}</p>
-                    <p className="text-xs text-platinum-500-500 mt-0.5">{c.details}</p>
-                    {c.source && <p className="text-xs text-platinum-500-400 mt-0.5">Source: {c.source}</p>}
+                    <p className="font-semibold text-platinum-800 dark:text-platinum-200">{c.issue}</p>
+                    <p className="text-xs text-platinum-500 mt-0.5">{c.details}</p>
+                    {c.source && <p className="text-xs text-platinum-400 mt-0.5">Source: {c.source}</p>}
                   </div>
                 ))}
               </div>
@@ -1181,15 +1181,15 @@ export default function FederalOfficialsPage() {
             <GlassCard hover className="border-red-500/20">
               <div className="flex items-center gap-2 mb-3">
                 <AlertTriangle className="h-5 w-5 text-red-400" />
-                <h3 className="font-rajdhani font-bold text-lg text-navy-500-900 dark:text-platinum-500-100">
+                <h3 className="font-rajdhani font-bold text-lg text-navy-900 dark:text-platinum-100">
                   Mohamed bin Zayed
                 </h3>
               </div>
               <div className="space-y-2">
                 {(controversiesData.individual?.mohamedBinZayed ?? []).map((c, i) => (
                   <div key={i} className="text-sm">
-                    <p className="font-semibold text-platinum-500-800 dark:text-platinum-500-200">{c.issue}</p>
-                    <p className="text-xs text-platinum-500-500 mt-0.5">{c.details}</p>
+                    <p className="font-semibold text-platinum-800 dark:text-platinum-200">{c.issue}</p>
+                    <p className="text-xs text-platinum-500 mt-0.5">{c.details}</p>
                   </div>
                 ))}
               </div>
@@ -1199,15 +1199,15 @@ export default function FederalOfficialsPage() {
             <GlassCard hover className="border-red-500/20">
               <div className="flex items-center gap-2 mb-3">
                 <AlertTriangle className="h-5 w-5 text-red-400" />
-                <h3 className="font-rajdhani font-bold text-lg text-navy-500-900 dark:text-platinum-500-100">
+                <h3 className="font-rajdhani font-bold text-lg text-navy-900 dark:text-platinum-100">
                   Mansour bin Zayed
                 </h3>
               </div>
               <div className="space-y-2">
                 {(controversiesData.individual?.mansourBinZayed ?? []).map((c, i) => (
                   <div key={i} className="text-sm">
-                    <p className="font-semibold text-platinum-500-800 dark:text-platinum-500-200">{c.issue}</p>
-                    <p className="text-xs text-platinum-500-500 mt-0.5">{c.details}</p>
+                    <p className="font-semibold text-platinum-800 dark:text-platinum-200">{c.issue}</p>
+                    <p className="text-xs text-platinum-500 mt-0.5">{c.details}</p>
                   </div>
                 ))}
               </div>
@@ -1217,15 +1217,15 @@ export default function FederalOfficialsPage() {
             <GlassCard hover className="border-red-500/20">
               <div className="flex items-center gap-2 mb-3">
                 <AlertTriangle className="h-5 w-5 text-red-400" />
-                <h3 className="font-rajdhani font-bold text-lg text-navy-500-900 dark:text-platinum-500-100">
+                <h3 className="font-rajdhani font-bold text-lg text-navy-900 dark:text-platinum-100">
                   Khaled bin Mohamed
                 </h3>
               </div>
               <div className="space-y-2">
                 {(controversiesData.individual?.khaledBinMohamed ?? []).map((c, i) => (
                   <div key={i} className="text-sm">
-                    <p className="font-semibold text-platinum-500-800 dark:text-platinum-500-200">{c.issue}</p>
-                    <p className="text-xs text-platinum-500-500 mt-0.5">{c.details}</p>
+                    <p className="font-semibold text-platinum-800 dark:text-platinum-200">{c.issue}</p>
+                    <p className="text-xs text-platinum-500 mt-0.5">{c.details}</p>
                   </div>
                 ))}
               </div>
@@ -1281,14 +1281,14 @@ export default function FederalOfficialsPage() {
               {(sentimentAnalysis.byOfficial ?? []).map((s, i) => (
                 <div key={i} className="p-3 glass-subtle rounded-lg">
                   <div className="flex items-center justify-between mb-2">
-                    <p className="text-sm font-semibold text-navy-500-900 dark:text-platinum-500-100">{s.official}</p>
+                    <p className="text-sm font-semibold text-navy-900 dark:text-platinum-100">{s.official}</p>
                     {getSentimentBadge(s.overallSentiment)}
                   </div>
                   <div className="grid gap-2 sm:grid-cols-2">
                     <div>
                       <p className="text-xs font-semibold text-emerald-500 mb-1">Positive Signals</p>
                       {(s.positiveSignals ?? []).map((ps, j) => (
-                        <p key={j} className="text-xs text-platinum-500-600 dark:text-platinum-500-400 flex items-start gap-1">
+                        <p key={j} className="text-xs text-platinum-600 dark:text-platinum-400 flex items-start gap-1">
                           <TrendingUp className="h-3 w-3 mt-0.5 text-emerald-400 shrink-0" />
                           {ps}
                         </p>
@@ -1297,7 +1297,7 @@ export default function FederalOfficialsPage() {
                     <div>
                       <p className="text-xs font-semibold text-red-500 mb-1">Negative Signals</p>
                       {(s.negativeSignals ?? []).map((ns, j) => (
-                        <p key={j} className="text-xs text-platinum-500-600 dark:text-platinum-500-400 flex items-start gap-1">
+                        <p key={j} className="text-xs text-platinum-600 dark:text-platinum-400 flex items-start gap-1">
                           <TrendingDown className="h-3 w-3 mt-0.5 text-red-400 shrink-0" />
                           {ns}
                         </p>
@@ -1314,9 +1314,9 @@ export default function FederalOfficialsPage() {
             <div className="space-y-3">
               {(sentimentAnalysis.byTopic ?? []).map((t, i) => (
                 <div key={i} className="flex items-center justify-between">
-                  <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300 flex-1">{t.topic}</span>
+                  <span className="text-sm text-platinum-700 dark:text-platinum-300 flex-1">{t.topic}</span>
                   {getSentimentBadge(t.sentiment)}
-                  <span className="text-xs text-platinum-500-500 w-48 text-right ml-4">{t.notes}</span>
+                  <span className="text-xs text-platinum-500 w-48 text-right ml-4">{t.notes}</span>
                 </div>
               ))}
             </div>
@@ -1370,14 +1370,14 @@ export default function FederalOfficialsPage() {
               {(relevanceAssessment.governanceThemes ?? []).map((t, i) => (
                 <div key={i} className="p-4 glass-subtle rounded-xl">
                   <div className="flex items-center justify-between mb-2">
-                    <h4 className="font-rajdhani font-bold text-sm text-navy-500-900 dark:text-platinum-500-100">
+                    <h4 className="font-rajdhani font-bold text-sm text-navy-900 dark:text-platinum-100">
                       {t.theme}
                     </h4>
                     <Badge variant={i === 0 ? 'destructive' : i === 1 ? 'warning' : 'secondary'} className="text-xs">
                       #{i + 1}
                     </Badge>
                   </div>
-                  <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400">{t.description}</p>
+                  <p className="text-xs text-platinum-600 dark:text-platinum-400">{t.description}</p>
                 </div>
               ))}
             </div>
@@ -1399,7 +1399,7 @@ export default function FederalOfficialsPage() {
                 <TableBody>
                   {(relevanceAssessment.relevanceMatrix ?? []).map((r, i) => (
                     <TableRow key={i}>
-                      <TableCell className="text-sm font-semibold text-navy-500-900 dark:text-platinum-500-100">
+                      <TableCell className="text-sm font-semibold text-navy-900 dark:text-platinum-100">
                         {r.official}
                       </TableCell>
                       <TableCell>{getRelevanceBadge(r.governanceRelevance)}</TableCell>
@@ -1432,7 +1432,7 @@ export default function FederalOfficialsPage() {
                 <div key={i} className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <span className={`w-2 h-2 rounded-full ${d.coverage.includes('100%') ? 'bg-emerald-500' : d.coverage.includes('Not') ? 'bg-red-500' : 'bg-gold-500'}`} />
-                    <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{d.category}</span>
+                    <span className="text-sm text-platinum-700 dark:text-platinum-300">{d.category}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Badge
@@ -1441,7 +1441,7 @@ export default function FederalOfficialsPage() {
                     >
                       {d.coverage}
                     </Badge>
-                    <span className="text-xs text-platinum-500-500 max-w-xs">{d.notes}</span>
+                    <span className="text-xs text-platinum-500 max-w-xs">{d.notes}</span>
                   </div>
                 </div>
               ))}
@@ -1460,11 +1460,11 @@ export default function FederalOfficialsPage() {
                 <a key={i} href={u.url} target="_blank" rel="noopener noreferrer" className="block p-3 glass-subtle rounded-lg hover:shadow-glass transition-all">
                   <div className="flex items-center gap-2 mb-1">
                     <ExternalLink className="h-3 w-3 text-gold-700 shrink-0" />
-                    <span className="text-xs font-semibold text-navy-500-900 dark:text-platinum-500-100 truncate">
+                    <span className="text-xs font-semibold text-navy-900 dark:text-platinum-100 truncate">
                       {u.type || new URL(u.url).hostname}
                     </span>
                   </div>
-                  <p className="text-xs text-platinum-500-500 truncate">{u.url}</p>
+                  <p className="text-xs text-platinum-500 truncate">{u.url}</p>
                   <div className="flex items-center gap-2 mt-1">
                     <Badge variant="success" className="text-xs">{u.credibility}</Badge>
                     <Badge variant="gold" className="text-xs">{u.uaeRelevance}</Badge>
@@ -1481,12 +1481,12 @@ export default function FederalOfficialsPage() {
                 <a key={i} href={u.url} target="_blank" rel="noopener noreferrer" className="block p-3 glass-subtle rounded-lg hover:shadow-glass transition-all">
                   <div className="flex items-center gap-2 mb-1">
                     <ExternalLink className="h-3 w-3 text-denim shrink-0" />
-                    <span className="text-xs font-semibold text-navy-500-900 dark:text-platinum-500-100 truncate">
+                    <span className="text-xs font-semibold text-navy-900 dark:text-platinum-100 truncate">
                       {u.type}
                     </span>
                   </div>
-                  <p className="text-xs text-platinum-500-500 truncate">{u.url}</p>
-                  <p className="text-xs text-platinum-500-600 dark:text-platinum-500-400 mt-1 line-clamp-2">{u.contentSummary}</p>
+                  <p className="text-xs text-platinum-500 truncate">{u.url}</p>
+                  <p className="text-xs text-platinum-600 dark:text-platinum-400 mt-1 line-clamp-2">{u.contentSummary}</p>
                 </a>
               ))}
             </div>
@@ -1498,12 +1498,12 @@ export default function FederalOfficialsPage() {
               {(urlRepository ?? []).filter(u => u.type === 'Wikipedia').map((u, i) => (
                 <a key={i} href={u.url} target="_blank" rel="noopener noreferrer" className="block p-3 glass-subtle rounded-lg hover:shadow-glass transition-all">
                   <div className="flex items-center gap-2 mb-1">
-                    <BookOpen className="h-3 w-3 text-platinum-500-400 shrink-0" />
-                    <span className="text-xs font-semibold text-navy-500-900 dark:text-platinum-500-100 truncate">
+                    <BookOpen className="h-3 w-3 text-platinum-400 shrink-0" />
+                    <span className="text-xs font-semibold text-navy-900 dark:text-platinum-100 truncate">
                       {u.contentSummary.split(' ').slice(0, 3).join(' ')}
                     </span>
                   </div>
-                  <p className="text-xs text-platinum-500-500 truncate">{u.url}</p>
+                  <p className="text-xs text-platinum-500 truncate">{u.url}</p>
                   <div className="flex items-center gap-2 mt-1">
                     <Badge variant="secondary" className="text-xs">{u.credibility}</Badge>
                     <Badge variant="secondary" className="text-xs">{u.uaeRelevance}</Badge>
@@ -1532,7 +1532,7 @@ export default function FederalOfficialsPage() {
                   ) : (
                     <AlertCircle className="h-4 w-4 text-gold-700 shrink-0" />
                   )}
-                  <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{v.label}</span>
+                  <span className="text-sm text-platinum-700 dark:text-platinum-300">{v.label}</span>
                   {!v.status && v.note && (
                     <Badge variant="warning" className="text-xs ml-auto">{v.note}</Badge>
                   )}

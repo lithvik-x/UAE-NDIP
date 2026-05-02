@@ -177,10 +177,10 @@ export default function MediaTrendsPage() {
         <div>
           <Badge variant="gold" className="mb-2">TRENDS INTELLIGENCE</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-gold-700">Media Industry Trends</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Comprehensive analysis of global media and entertainment trends, streaming maturation, AI disruption, creator economy evolution, and shifting consumption patterns
           </p>
-          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500-500">
+          <div className="mt-2 flex items-center gap-4 text-sm text-platinum-500">
             <span>Research: {data.executionMetadata.researchDate}</span>
             <span>Enriched: {data.executionMetadata.enrichmentDate}</span>
             <span>Sources: {data.references.length}+</span>
@@ -191,7 +191,7 @@ export default function MediaTrendsPage() {
             <ExternalLink className="h-4 w-4" />
             Sources
           </Button>
-          <Button className="bg-gradient-gold hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-gold hover:opacity-90 text-navy-950 gap-2">
             <Sparkles className="h-4 w-4" />
             Analyze
           </Button>
@@ -315,7 +315,7 @@ export default function MediaTrendsPage() {
                           <div>
                             <p className="text-sm font-medium">{kpi.kpi}</p>
                             <p className="text-lg font-bold text-gold-700">{kpi.currentValue}</p>
-                            <p className="text-xs text-platinum-500-500">{kpi.trend} | Confidence: {kpi.confidence}</p>
+                            <p className="text-xs text-platinum-500">{kpi.trend} | Confidence: {kpi.confidence}</p>
                           </div>
                         </motion.div>
                       ))}
@@ -411,7 +411,7 @@ export default function MediaTrendsPage() {
                           </div>
                           <div className="text-right">
                             <span className="text-sm text-gold-700">{region.growthRate}</span>
-                            <p className="text-xs text-platinum-500-500">{region.marketShare}</p>
+                            <p className="text-xs text-platinum-500">{region.marketShare}</p>
                           </div>
                         </div>
                       ))}
@@ -469,9 +469,9 @@ export default function MediaTrendsPage() {
                     <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
                       {data.section2_Streaming.consumptionBehavior.map((metric, idx) => (
                         <div key={idx} className="rounded-lg border border-platinum-700 p-4">
-                          <p className="text-xs text-platinum-500-400">{metric.metric}</p>
+                          <p className="text-xs text-platinum-400">{metric.metric}</p>
                           <p className="mt-1 text-xl font-bold text-gold-700">{metric.value}</p>
-                          <p className="text-xs text-platinum-500-500 mt-1">Source: {metric.source}</p>
+                          <p className="text-xs text-platinum-500 mt-1">Source: {metric.source}</p>
                         </div>
                       ))}
                     </div>
@@ -490,7 +490,7 @@ export default function MediaTrendsPage() {
                     <div className="grid gap-4 md:grid-cols-2">
                       {data.section2_Streaming.youtubePosition.map((item, idx) => (
                         <div key={idx} className="rounded-lg bg-gold-500/10 p-4 border border-gold-500/30">
-                          <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                          <p className="text-sm text-platinum-400">{item.metric}</p>
                           <p className="mt-1 text-lg font-bold text-gold-700">{item.value || 'Leading'}</p>
                           <Badge variant="success" className="mt-2">{item.sentiment}</Badge>
                         </div>
@@ -537,7 +537,7 @@ export default function MediaTrendsPage() {
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div>
                               <p className="text-sm">{metric.metric}</p>
-                              <p className="text-xs text-platinum-500-500">UAE: {metric.uaeRelevance}</p>
+                              <p className="text-xs text-platinum-500">UAE: {metric.uaeRelevance}</p>
                             </div>
                             <span className="text-lg font-bold text-gold-700">{metric.value}</span>
                           </div>
@@ -557,9 +557,9 @@ export default function MediaTrendsPage() {
                     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                       {data.section3_CTV.marketSize.map((metric, idx) => (
                         <div key={idx} className="rounded-lg border border-gold-500/30 bg-gold-500/5 p-4 text-center">
-                          <p className="text-xs text-platinum-500-400">{metric.metric}</p>
+                          <p className="text-xs text-platinum-400">{metric.metric}</p>
                           <p className="mt-1 text-2xl font-bold text-gold-700">{metric.value}</p>
-                          <p className="text-xs text-platinum-500-500 mt-1">Tier {metric.tier}</p>
+                          <p className="text-xs text-platinum-500 mt-1">Tier {metric.tier}</p>
                         </div>
                       ))}
                     </div>
@@ -577,7 +577,7 @@ export default function MediaTrendsPage() {
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div>
                             <p className="text-sm">{stat.metric}</p>
-                            <p className="text-xs text-platinum-500-500">{stat.source} | UAE: {stat.uaeRelevance}</p>
+                            <p className="text-xs text-platinum-500">{stat.source} | UAE: {stat.uaeRelevance}</p>
                           </div>
                           <div className="text-right">
                             <span className="text-lg font-bold text-gold-700">{stat.value}</span>
@@ -654,7 +654,7 @@ export default function MediaTrendsPage() {
                         >
                           <p className="text-sm font-medium">{region.region}</p>
                           <p className="mt-1 text-xl font-bold text-emerald-500">+{region.growth}%</p>
-                          <p className="text-xs text-platinum-500-500 mt-1">Source: {region.source}</p>
+                          <p className="text-xs text-platinum-500 mt-1">Source: {region.source}</p>
                         </div>
                       ))}
                     </div>
@@ -671,7 +671,7 @@ export default function MediaTrendsPage() {
                     <div className="grid gap-4 md:grid-cols-3">
                       {data.section5_Music.physicalRevival.map((item, idx) => (
                         <div key={idx} className="rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/30">
-                          <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                          <p className="text-sm text-platinum-400">{item.metric}</p>
                           <p className="mt-1 text-lg font-bold text-emerald-500">{item.growth}</p>
                         </div>
                       ))}
@@ -731,7 +731,7 @@ export default function MediaTrendsPage() {
                     <div className="grid gap-3 md:grid-cols-4">
                       {data.section6_Podcast.videoTrends.map((item, idx) => (
                         <div key={idx} className="rounded-lg bg-purple-500/10 p-4 border border-purple-500/30 text-center">
-                          <p className="text-xs text-platinum-500-400">{item.metric}</p>
+                          <p className="text-xs text-platinum-400">{item.metric}</p>
                           <p className="mt-1 text-xl font-bold text-purple-500">{item.value}</p>
                         </div>
                       ))}
@@ -776,7 +776,7 @@ export default function MediaTrendsPage() {
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div>
                               <p className="text-sm">{metric.metric}</p>
-                              <p className="text-xs text-platinum-500-500">UAE: {metric.uaeRelevance}</p>
+                              <p className="text-xs text-platinum-500">UAE: {metric.uaeRelevance}</p>
                             </div>
                             <span className="text-lg font-bold text-gold-700">{metric.value}</span>
                           </div>
@@ -908,7 +908,7 @@ export default function MediaTrendsPage() {
                     <div className="grid gap-3 md:grid-cols-2">
                       {data.section8_AI.contentGeneration.map((item, idx) => (
                         <div key={idx} className="rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
-                          <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                          <p className="text-sm text-platinum-400">{item.metric}</p>
                           <p className="mt-1 text-xl font-bold text-rose-500">{item.value}</p>
                           <Badge variant="destructive" className="mt-2">{item.sentiment}</Badge>
                         </div>
@@ -973,9 +973,9 @@ export default function MediaTrendsPage() {
                     <div className="grid gap-3 md:grid-cols-2">
                       {data.section9_Consumption.generationalDifferences.map((item, idx) => (
                         <div key={idx} className="rounded-lg bg-gold-500/10 p-4 border border-gold-500/30">
-                          <p className="text-sm text-platinum-500-400">{item.metric}</p>
+                          <p className="text-sm text-platinum-400">{item.metric}</p>
                           <p className="mt-1 text-xl font-bold text-gold-700">{item.genZ}</p>
-                          <p className="text-xs text-platinum-500-500">vs Average: {item.vsAverage}</p>
+                          <p className="text-xs text-platinum-500">vs Average: {item.vsAverage}</p>
                           <Badge variant="warning" className="mt-2">UAE: {item.uaeRelevance}</Badge>
                         </div>
                       ))}
@@ -994,7 +994,7 @@ export default function MediaTrendsPage() {
                         <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                           <div>
                             <p className="text-sm">{item.metric}</p>
-                            <p className="text-xs text-platinum-500-500">UAE: {item.uaeRelevance}</p>
+                            <p className="text-xs text-platinum-500">UAE: {item.uaeRelevance}</p>
                           </div>
                           <div className="text-right">
                             <span className="text-lg font-bold text-emerald-500">{item.value}</span>
@@ -1028,7 +1028,7 @@ export default function MediaTrendsPage() {
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div>
                               <p className="text-sm">{metric.metric}</p>
-                              <p className="text-xs text-platinum-500-500">UAE: {metric.uaeRelevance}</p>
+                              <p className="text-xs text-platinum-500">UAE: {metric.uaeRelevance}</p>
                             </div>
                             <span className="text-lg font-bold text-gold-700">{metric.value}</span>
                           </div>
@@ -1047,7 +1047,7 @@ export default function MediaTrendsPage() {
                           <div key={idx} className="rounded-lg bg-gold-500/10 p-4 border border-gold-500/30">
                             <p className="font-medium text-gold-700">{creator.creator}</p>
                             <p className="mt-1 text-lg font-bold">${creator.revenue}</p>
-                            <p className="text-xs text-platinum-500-500 mt-1">{creator.notes}</p>
+                            <p className="text-xs text-platinum-500 mt-1">{creator.notes}</p>
                           </div>
                         ))}
                       </div>
@@ -1083,7 +1083,7 @@ export default function MediaTrendsPage() {
                       {data.section10_Creator.economyTrends.map((trend, idx) => (
                         <div key={idx} className="rounded-lg border border-platinum-700 p-4">
                           <p className="font-medium">{trend.trend}</p>
-                          <p className="mt-1 text-sm text-platinum-500-400">{trend.impact}</p>
+                          <p className="mt-1 text-sm text-platinum-400">{trend.impact}</p>
                           <Badge variant={trend.sentiment === 'Positive' || trend.sentiment === 'Very Positive' ? 'success' : trend.sentiment === 'Negative' ? 'destructive' : 'outline'} className="mt-2 text-xs">
                             {trend.sentiment}
                           </Badge>
@@ -1112,7 +1112,7 @@ export default function MediaTrendsPage() {
                     <div className="grid gap-3 md:grid-cols-2">
                       {data.section12_Traditional.newsIndustry.map((metric, idx) => (
                         <div key={idx} className="rounded-lg bg-rose-500/10 p-4 border border-rose-500/30">
-                          <p className="text-sm text-platinum-500-400">{metric.metric}</p>
+                          <p className="text-sm text-platinum-400">{metric.metric}</p>
                           <p className="mt-1 text-xl font-bold text-rose-500">{metric.value}</p>
                           <Badge variant="destructive" className="mt-2">{metric.sentiment}</Badge>
                         </div>
@@ -1158,7 +1158,7 @@ export default function MediaTrendsPage() {
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div>
                               <p className="text-sm">{metric.metric}</p>
-                              <p className="text-xs text-platinum-500-500">UAE: {metric.uaeRelevance}</p>
+                              <p className="text-xs text-platinum-500">UAE: {metric.uaeRelevance}</p>
                             </div>
                             <span className="text-lg font-bold text-gold-700">{metric.value}</span>
                           </div>
@@ -1194,7 +1194,7 @@ export default function MediaTrendsPage() {
                     <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-4">
                       {data.section13_Mobile.streamingInfrastructure.map((metric, idx) => (
                         <div key={idx} className="rounded-lg border border-platinum-700 p-4 text-center">
-                          <p className="text-xs text-platinum-500-400">{metric.metric}</p>
+                          <p className="text-xs text-platinum-400">{metric.metric}</p>
                           <p className="mt-1 text-lg font-bold text-gold-700">{metric.value}</p>
                         </div>
                       ))}
@@ -1223,7 +1223,7 @@ export default function MediaTrendsPage() {
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div>
                               <p className="font-medium">{entity.entity}</p>
-                              <p className="text-xs text-platinum-500-500">{entity.category}</p>
+                              <p className="text-xs text-platinum-500">{entity.category}</p>
                             </div>
                             <Badge variant="outline">{entity.type}</Badge>
                           </div>
@@ -1245,7 +1245,7 @@ export default function MediaTrendsPage() {
                           <div key={idx} className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3">
                             <div>
                               <p className="font-medium">{entity.entity}</p>
-                              <p className="text-xs text-platinum-500-500">{entity.category}</p>
+                              <p className="text-xs text-platinum-500">{entity.category}</p>
                             </div>
                             <Badge variant="gold">{entity.type}</Badge>
                           </div>
@@ -1265,7 +1265,7 @@ export default function MediaTrendsPage() {
                       {data.entityRegistry.geographic.map((entity, idx) => (
                         <div key={idx} className="rounded-lg border border-platinum-700 p-4">
                           <p className="font-medium">{entity.entity}</p>
-                          <p className="text-xs text-platinum-500-500 mt-1">{entity.notes}</p>
+                          <p className="text-xs text-platinum-500 mt-1">{entity.notes}</p>
                           <Badge variant="outline" className="mt-2 text-xs">{entity.region}</Badge>
                         </div>
                       ))}

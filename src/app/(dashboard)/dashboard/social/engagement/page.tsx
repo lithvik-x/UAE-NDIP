@@ -103,7 +103,7 @@ export default function EngagementAnalyticsPage() {
         <div>
           <Badge variant="default" className="mb-2">S-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum-500">Engagement Analytics</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Audience interaction metrics and content performance analytics
           </p>
         </div>
@@ -112,7 +112,7 @@ export default function EngagementAnalyticsPage() {
             <TrendingUp className="h-4 w-4" />
             Trends
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2">
             <Zap className="h-4 w-4" />
             Analyze
           </Button>
@@ -221,8 +221,8 @@ export default function EngagementAnalyticsPage() {
                                 {index + 1}
                               </div>
                               <div>
-                                <p className="text-sm font-medium text-platinum-500-200">{content.title}</p>
-                                <p className="text-xs text-platinum-500-400">{content.platform}</p>
+                                <p className="text-sm font-medium text-platinum-200">{content.title}</p>
+                                <p className="text-xs text-platinum-400">{content.platform}</p>
                               </div>
                             </div>
                             <div className="text-right">
@@ -282,24 +282,24 @@ export default function EngagementAnalyticsPage() {
                                 className="h-8 w-8 rounded-full"
                                 style={{ backgroundColor: `${platform.color}20` }}
                               />
-                              <span className="text-sm font-medium text-platinum-500-200">{platform.platform}</span>
+                              <span className="text-sm font-medium text-platinum-200">{platform.platform}</span>
                             </div>
                             <div className="flex gap-4">
                               <div className="text-center">
                                 <Heart className="h-4 w-4 text-rose-400 mx-auto" />
-                                <p className="text-xs text-platinum-500-400">{(platform.likes * 100).toFixed(0)}%</p>
+                                <p className="text-xs text-platinum-400">{(platform.likes * 100).toFixed(0)}%</p>
                               </div>
                               <div className="text-center">
                                 <MessageCircle className="h-4 w-4 text-gold-400 mx-auto" />
-                                <p className="text-xs text-platinum-500-400">{(platform.comments * 100).toFixed(0)}%</p>
+                                <p className="text-xs text-platinum-400">{(platform.comments * 100).toFixed(0)}%</p>
                               </div>
                               <div className="text-center">
-                                <Share2 className="h-4 w-4 text-navy-500-400 mx-auto" />
-                                <p className="text-xs text-platinum-500-400">{(platform.shares * 100).toFixed(0)}%</p>
+                                <Share2 className="h-4 w-4 text-navy-400 mx-auto" />
+                                <p className="text-xs text-platinum-400">{(platform.shares * 100).toFixed(0)}%</p>
                               </div>
                               <div className="text-center">
                                 <Bookmark className="h-4 w-4 text-emerald-400 mx-auto" />
-                                <p className="text-xs text-platinum-500-400">{(platform.saves * 100).toFixed(0)}%</p>
+                                <p className="text-xs text-platinum-400">{(platform.saves * 100).toFixed(0)}%</p>
                               </div>
                             </div>
                           </div>
@@ -319,7 +319,7 @@ export default function EngagementAnalyticsPage() {
                       {platformEngagement.map((platform, index) => (
                         <div key={index} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-platinum-500-200">{platform.platform}</span>
+                            <span className="text-sm font-medium text-platinum-200">{platform.platform}</span>
                             <span className="text-sm font-bold text-emerald-400">
                               {((platform.likes + platform.comments + platform.shares + platform.saves) * 100 / 4).toFixed(1)}%
                             </span>
@@ -378,20 +378,20 @@ export default function EngagementAnalyticsPage() {
                               <Zap className="h-5 w-5" />
                             </div>
                             <div>
-                              <p className="font-semibold text-platinum-500-200">{content.type}</p>
-                              <p className="text-sm text-platinum-500-400">{content.percentage}% of total engagement</p>
+                              <p className="font-semibold text-platinum-200">{content.type}</p>
+                              <p className="text-sm text-platinum-400">{content.percentage}% of total engagement</p>
                             </div>
                           </div>
                           <div className="flex items-center gap-6">
                             <div className="text-center">
-                              <div className="text-lg font-bold text-platinum-500-200">
+                              <div className="text-lg font-bold text-platinum-200">
                                 {(content.engagement / 1000000).toFixed(1)}M
                               </div>
-                              <p className="text-xs text-platinum-500-400">Engagements</p>
+                              <p className="text-xs text-platinum-400">Engagements</p>
                             </div>
                             <div className="text-center">
                               <div className="text-lg font-bold text-emerald-400">{content.rate}%</div>
-                              <p className="text-xs text-platinum-500-400">Rate</p>
+                              <p className="text-xs text-platinum-400">Rate</p>
                             </div>
                           </div>
                         </div>
@@ -436,7 +436,7 @@ export default function EngagementAnalyticsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="text-4xl font-bold text-gold-700">25-34</div>
-                    <p className="text-sm text-platinum-500-400 mt-2">Highest overall engagement rate</p>
+                    <p className="text-sm text-platinum-400 mt-2">Highest overall engagement rate</p>
                     <div className="mt-4">
                       <Badge variant="gold">78% avg engagement</Badge>
                     </div>
@@ -450,7 +450,7 @@ export default function EngagementAnalyticsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="text-4xl font-bold text-emerald-400">18-24</div>
-                    <p className="text-sm text-platinum-500-400 mt-2">+23% YoY growth</p>
+                    <p className="text-sm text-platinum-400 mt-2">+23% YoY growth</p>
                     <div className="mt-4">
                       <Badge variant="outline" className="text-emerald-400">+23% increase</Badge>
                     </div>
@@ -464,7 +464,7 @@ export default function EngagementAnalyticsPage() {
                   </CardHeader>
                   <CardContent>
                     <div className="text-4xl font-bold text-navy-500">{avgSessionTime}min</div>
-                    <p className="text-sm text-platinum-500-400 mt-2">Across all demographics</p>
+                    <p className="text-sm text-platinum-400 mt-2">Across all demographics</p>
                     <div className="mt-4">
                       <Badge variant="denim">Above average</Badge>
                     </div>

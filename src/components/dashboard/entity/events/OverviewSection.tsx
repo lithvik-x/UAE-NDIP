@@ -141,7 +141,7 @@ export function OverviewSection({
         <Card className="glass-premium">
           <CardHeader>
             <CardTitle className="text-lg font-rajdhani font-semibold">Sentiment Distribution</CardTitle>
-            <p className="text-sm text-platinum-500-500">Overall sentiment across all tracked events</p>
+            <p className="text-sm text-platinum-500">Overall sentiment across all tracked events</p>
           </CardHeader>
           <CardContent>
             {sentimentDistribution.length > 0 ? (
@@ -153,7 +153,7 @@ export function OverviewSection({
                 showTooltip
               />
             ) : (
-              <div className="flex items-center justify-center h-48 text-platinum-500-500">No sentiment data available</div>
+              <div className="flex items-center justify-center h-48 text-platinum-500">No sentiment data available</div>
             )}
           </CardContent>
         </Card>
@@ -162,7 +162,7 @@ export function OverviewSection({
         <Card className="glass-premium">
           <CardHeader>
             <CardTitle className="text-lg font-rajdhani font-semibold">Relevance Distribution</CardTitle>
-            <p className="text-sm text-platinum-500-500">Events by UAE relevance level</p>
+            <p className="text-sm text-platinum-500">Events by UAE relevance level</p>
           </CardHeader>
           <CardContent>
             {relevanceDistribution.length > 0 ? (
@@ -174,7 +174,7 @@ export function OverviewSection({
                 showTooltip
               />
             ) : (
-              <div className="flex items-center justify-center h-48 text-platinum-500-500">No data available</div>
+              <div className="flex items-center justify-center h-48 text-platinum-500">No data available</div>
             )}
           </CardContent>
         </Card>
@@ -186,12 +186,12 @@ export function OverviewSection({
           <Table>
             <TableHeader>
               <TableRow className="border-b border-platinum-200/50 dark:border-platinum-700/50">
-                <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Event Name</TableHead>
-                <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Category</TableHead>
-                <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Frequency</TableHead>
-                <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Relevance</TableHead>
-                <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Key Metric</TableHead>
-                <TableHead className="text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Sentiment</TableHead>
+                <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Event Name</TableHead>
+                <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Category</TableHead>
+                <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Frequency</TableHead>
+                <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Relevance</TableHead>
+                <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Key Metric</TableHead>
+                <TableHead className="text-platinum-700 dark:text-platinum-300 font-semibold">Sentiment</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -205,14 +205,14 @@ export function OverviewSection({
                       <div className={`flex h-8 w-8 items-center justify-center rounded-lg`}>
                         {getCategoryIcon(event.type)}
                       </div>
-                      <span className="font-semibold text-navy-500-900 dark:text-platinum-500-100">{event.name}</span>
+                      <span className="font-semibold text-navy-900 dark:text-platinum-100">{event.name}</span>
                     </div>
                   </TableCell>
                   <TableCell>
                     <Badge variant="outline" className="text-xs">{event.category}</Badge>
                   </TableCell>
                   <TableCell>
-                    <span className="text-sm text-platinum-500-700 dark:text-platinum-500-300">{event.frequency}</span>
+                    <span className="text-sm text-platinum-700 dark:text-platinum-300">{event.frequency}</span>
                   </TableCell>
                   <TableCell>
                     <Badge variant={getRelevanceBadgeVariant(event.relevance)} className="text-xs">
@@ -220,7 +220,7 @@ export function OverviewSection({
                     </Badge>
                   </TableCell>
                   <TableCell>
-                    <span className="text-sm text-platinum-500-600 dark:text-platinum-500-400">{event.keyMetric || '—'}</span>
+                    <span className="text-sm text-platinum-600 dark:text-platinum-400">{event.keyMetric || '—'}</span>
                   </TableCell>
                   <TableCell>
                     {getSentimentBadge(event.sentiment)}

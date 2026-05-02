@@ -121,7 +121,7 @@ export function SentimentSection({
                 showLegend={true}
               />
             ) : (
-              <div className="flex items-center justify-center h-48 text-platinum-500-500">No data</div>
+              <div className="flex items-center justify-center h-48 text-platinum-500">No data</div>
             )}
           </CardContent>
         </Card>
@@ -140,7 +140,7 @@ export function SentimentSection({
                 showLegend={true}
               />
             ) : (
-              <div className="flex items-center justify-center h-48 text-platinum-500-500">No data</div>
+              <div className="flex items-center justify-center h-48 text-platinum-500">No data</div>
             )}
           </CardContent>
         </Card>
@@ -157,15 +157,15 @@ export function SentimentSection({
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-platinum-200/50 dark:border-platinum-700/50">
-                  <th className="text-left py-2 px-3 text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Emirate</th>
-                  <th className="text-left py-2 px-3 text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Overall Sentiment</th>
-                  <th className="text-left py-2 px-3 text-platinum-500-700 dark:text-platinum-500-300 font-semibold">Key Factors</th>
+                  <th className="text-left py-2 px-3 text-platinum-700 dark:text-platinum-300 font-semibold">Emirate</th>
+                  <th className="text-left py-2 px-3 text-platinum-700 dark:text-platinum-300 font-semibold">Overall Sentiment</th>
+                  <th className="text-left py-2 px-3 text-platinum-700 dark:text-platinum-300 font-semibold">Key Factors</th>
                 </tr>
               </thead>
               <tbody>
                 {emirateOverviews.map((row, i) => (
                   <tr key={i} className="border-b border-platinum-100/50 dark:border-platinum-800/50 hover:bg-platinum-50/50 dark:hover:bg-platinum-800/25 transition-colors">
-                    <td className="py-2 px-3 font-semibold text-navy-500-900 dark:text-platinum-500-100">{row.emirate}</td>
+                    <td className="py-2 px-3 font-semibold text-navy-900 dark:text-platinum-100">{row.emirate}</td>
                     <td className="py-2 px-3">
                       <Badge
                         variant={row.sentiment === 'Positive' || row.sentiment === 'OVERWHELMINGLY_POSITIVE' ? 'success' : row.sentiment === 'Mixed' ? 'warning' : 'secondary'}
@@ -174,7 +174,7 @@ export function SentimentSection({
                         {row.sentiment}
                       </Badge>
                     </td>
-                    <td className="py-2 px-3 text-xs text-platinum-500-600 dark:text-platinum-500-400">
+                    <td className="py-2 px-3 text-xs text-platinum-600 dark:text-platinum-400">
                       {sentimentFactors[row.emirate] || 'N/A'}
                     </td>
                   </tr>

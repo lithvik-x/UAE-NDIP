@@ -75,7 +75,7 @@ export default function SportsIntelligencePage() {
         <div>
           <Badge variant="default" className="mb-2">S-SECTOR</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum-500">Sports Intelligence</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             Sportswashing analysis, F1 monitoring, and sports diplomacy tracking
           </p>
         </div>
@@ -84,7 +84,7 @@ export default function SportsIntelligencePage() {
             <Target className="h-4 w-4" />
             Sports Monitor
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2">
             <Trophy className="h-4 w-4" />
             Track Event
           </Button>

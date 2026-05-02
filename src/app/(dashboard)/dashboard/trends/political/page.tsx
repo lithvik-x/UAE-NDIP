@@ -141,7 +141,7 @@ export default function PoliticalTrendsPage() {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="text-platinum-500-400"
+          className="text-platinum-400"
         >
           Loading Political Trends data...
         </motion.div>
@@ -320,7 +320,7 @@ export default function PoliticalTrendsPage() {
     ) : trend === 'down' ? (
       <ArrowDownRight className="h-3 w-3 text-rose-400" />
     ) : (
-      <Activity className="h-3 w-3 text-platinum-500-400" />
+      <Activity className="h-3 w-3 text-platinum-400" />
     )
   }
 
@@ -335,7 +335,7 @@ export default function PoliticalTrendsPage() {
       Expired: 'text-rose-400 bg-rose-400/20',
     }
     return (
-      <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${colors[status] || 'text-platinum-500-400 bg-platinum-400/20'}`}>
+      <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${colors[status] || 'text-platinum-400 bg-platinum-400/20'}`}>
         {status}
       </span>
     )
@@ -375,7 +375,7 @@ export default function PoliticalTrendsPage() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="mt-2 text-platinum-500-400"
+            className="mt-2 text-platinum-400"
           >
             BRICS membership, multipolar positioning, diplomatic relations, and international partnerships
           </motion.p>
@@ -393,7 +393,7 @@ export default function PoliticalTrendsPage() {
             <Map className="h-4 w-4" />
             View Relations
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-500-950 gap-2 glass-panel">
+          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2 glass-panel">
             <Zap className="h-4 w-4" />
             Analyze Policy
           </Button>
@@ -470,21 +470,21 @@ export default function PoliticalTrendsPage() {
             </motion.div>
             <div>
               <h3 className="font-bold text-lg text-platinum-500">BRICS Membership</h3>
-              <p className="text-sm text-platinum-500-400">Since January 2024 | Full Member</p>
+              <p className="text-sm text-platinum-400">Since January 2024 | Full Member</p>
             </div>
           </div>
           <div className="flex gap-8">
             <div className="text-center">
               <p className="text-2xl font-bold text-brics-gold">40%</p>
-              <p className="text-xs text-platinum-500-400">Global Trade</p>
+              <p className="text-xs text-platinum-400">Global Trade</p>
             </div>
             <div className="text-center">
               <p className="text-2xl font-bold text-brics-gold">40%</p>
-              <p className="text-xs text-platinum-500-400">Oil Production</p>
+              <p className="text-xs text-platinum-400">Oil Production</p>
             </div>
             <div className="text-center">
               <p className="text-2xl font-bold text-brics-gold">57%</p>
-              <p className="text-xs text-platinum-500-400">USD Reserves</p>
+              <p className="text-xs text-platinum-400">USD Reserves</p>
             </div>
           </div>
         </div>
@@ -570,8 +570,8 @@ export default function PoliticalTrendsPage() {
                                   <Building className="h-5 w-5" />
                                 </div>
                                 <div>
-                                  <span className="text-sm font-medium text-platinum-500-200">{partner.name}</span>
-                                  <p className="text-xs text-platinum-500-400">{partner.type} | {partner.country}</p>
+                                  <span className="text-sm font-medium text-platinum-200">{partner.name}</span>
+                                  <p className="text-xs text-platinum-400">{partner.type} | {partner.country}</p>
                                 </div>
                               </div>
                               <div className="flex items-center gap-2">
@@ -640,13 +640,13 @@ export default function PoliticalTrendsPage() {
                                   tension.status === 'High' ? 'bg-orange-400' :
                                   tension.status === 'Medium' ? 'bg-amber-400' : 'bg-emerald-400'
                                 }`} />
-                                <span className="text-sm font-medium text-platinum-500-200">{tension.actor}</span>
+                                <span className="text-sm font-medium text-platinum-200">{tension.actor}</span>
                               </div>
                               <div className="flex items-center gap-2">
                                 <StatusIndicator status={tension.status} />
                                 <span className={`text-xs ${
                                   tension.trend === 'escalating' ? 'text-rose-400' :
-                                  tension.trend === 'de-escalating' ? 'text-emerald-400' : 'text-platinum-500-400'
+                                  tension.trend === 'de-escalating' ? 'text-emerald-400' : 'text-platinum-400'
                                 }`}>
                                   {tension.trend}
                                 </span>
@@ -707,9 +707,9 @@ export default function PoliticalTrendsPage() {
                             className="flex items-center gap-2 rounded-lg bg-platinum-800/30 px-3 py-2"
                           >
                             <div className="h-3 w-3 rounded-full" style={{ backgroundColor: d.color }} />
-                            <span className="text-sm text-platinum-500-300">{d.region}</span>
+                            <span className="text-sm text-platinum-300">{d.region}</span>
                             <TrendBadge trend={d.trend} />
-                            <span className="text-xs text-platinum-500-400">({d.change > 0 ? '+' : ''}{d.change}%)</span>
+                            <span className="text-xs text-platinum-400">({d.change > 0 ? '+' : ''}{d.change}%)</span>
                           </motion.div>
                         ))}
                       </div>
@@ -738,8 +738,8 @@ export default function PoliticalTrendsPage() {
                               className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                             >
                               <div>
-                                <span className="text-sm font-medium text-platinum-500-200">{rel.metric || rel.partner}</span>
-                                <p className="text-xs text-platinum-500-400">{rel.note || rel.since || rel.value}</p>
+                                <span className="text-sm font-medium text-platinum-200">{rel.metric || rel.partner}</span>
+                                <p className="text-xs text-platinum-400">{rel.note || rel.since || rel.value}</p>
                               </div>
                               <StatusIndicator status={rel.status} />
                             </motion.div>
@@ -774,7 +774,7 @@ export default function PoliticalTrendsPage() {
                             >
                               <div className="flex items-center gap-3">
                                 <item.icon className="h-5 w-5 text-platinum-500" />
-                                <span className="text-sm font-medium text-platinum-500-200">{item.label}</span>
+                                <span className="text-sm font-medium text-platinum-200">{item.label}</span>
                               </div>
                               <span className="text-lg font-bold text-platinum-500">{item.value}</span>
                             </motion.div>
@@ -825,8 +825,8 @@ export default function PoliticalTrendsPage() {
                                   <Handshake className="h-5 w-5" />
                                 </div>
                                 <div>
-                                  <p className="font-semibold text-platinum-500-200">{agreement.name}</p>
-                                  <p className="text-sm text-platinum-500-400">
+                                  <p className="font-semibold text-platinum-200">{agreement.name}</p>
+                                  <p className="text-sm text-platinum-400">
                                     Signed: {agreement.year} | Partner: {agreement.partner}
                                     {agreement.tradeValue && ` | Trade: ${agreement.tradeValue}`}
                                   </p>
@@ -861,8 +861,8 @@ export default function PoliticalTrendsPage() {
                               className="flex items-center justify-between rounded-lg bg-platinum-800/50 p-3"
                             >
                               <div>
-                                <span className="text-sm font-medium text-platinum-500-200">{kpi.label}</span>
-                                <p className="text-xs text-platinum-500-400">{kpi.change}</p>
+                                <span className="text-sm font-medium text-platinum-200">{kpi.label}</span>
+                                <p className="text-xs text-platinum-400">{kpi.change}</p>
                               </div>
                               <div className="flex items-center gap-2">
                                 <span className="text-xl font-bold text-platinum-500">{kpi.value}</span>
@@ -893,11 +893,11 @@ export default function PoliticalTrendsPage() {
                               className="space-y-2"
                             >
                               <div className="flex items-center justify-between">
-                                <span className="text-sm font-medium text-platinum-500-200">{metric.label}</span>
+                                <span className="text-sm font-medium text-platinum-200">{metric.label}</span>
                                 <span className="text-lg font-bold text-platinum-500">{metric.value}</span>
                               </div>
                               <div className="flex items-center justify-between text-xs">
-                                <span className="text-platinum-500-400">Target: {metric.target}</span>
+                                <span className="text-platinum-400">Target: {metric.target}</span>
                                 <StatusIndicator
                                   status={metric.status === 'on-track' ? 'Low' : metric.status === 'ahead' ? 'Active' : 'High'}
                                 />
@@ -940,9 +940,9 @@ export default function PoliticalTrendsPage() {
                         className="glass-panel border-brics-gold/30 p-4 rounded-xl text-center"
                       >
                         <p className="text-3xl font-bold text-brics-gold">{metric.value}</p>
-                        <p className="text-sm text-platinum-500-300 mt-1">{metric.indicator}</p>
+                        <p className="text-sm text-platinum-300 mt-1">{metric.indicator}</p>
                         {metric.year && (
-                          <p className="text-xs text-platinum-500-500 mt-1">{metric.year}</p>
+                          <p className="text-xs text-platinum-500 mt-1">{metric.year}</p>
                         )}
                       </motion.div>
                     ))}
@@ -976,13 +976,13 @@ export default function PoliticalTrendsPage() {
                             >
                               <div className="flex items-center gap-2">
                                 <Flag className="h-4 w-4 text-platinum-500" />
-                                <span className="text-sm font-medium text-platinum-500-200">{member.country}</span>
+                                <span className="text-sm font-medium text-platinum-200">{member.country}</span>
                               </div>
                               <div className="text-right">
                                 <span className={`text-xs px-2 py-0.5 rounded-full ${
                                   member.status === 'Full Member' ? 'bg-brics-gold/20 text-brics-gold' :
                                   member.status === 'Founding' ? 'bg-platinum/20 text-platinum-500' :
-                                  'bg-platinum-700/50 text-platinum-500-400'
+                                  'bg-platinum-700/50 text-platinum-400'
                                 }`}>
                                   {member.status}
                                 </span>
@@ -1010,7 +1010,7 @@ export default function PoliticalTrendsPage() {
                           ].map((item, idx) => (
                             <div key={idx} className="space-y-2">
                               <div className="flex items-center justify-between">
-                                <span className="text-sm text-platinum-500-300">{item.currency}</span>
+                                <span className="text-sm text-platinum-300">{item.currency}</span>
                                 <span className="text-lg font-bold text-platinum-500">{item.share}%</span>
                               </div>
                               <div className="h-2 bg-platinum-800 rounded-full overflow-hidden">
@@ -1079,7 +1079,7 @@ export default function PoliticalTrendsPage() {
                               className="flex items-start gap-2 rounded-lg bg-platinum-800/50 p-3"
                             >
                               <TrendingUp className="h-4 w-4 text-platinum-500 mt-0.5" />
-                              <span className="text-sm text-platinum-500-200">{indicator}</span>
+                              <span className="text-sm text-platinum-200">{indicator}</span>
                             </motion.div>
                           ))}
                         </div>

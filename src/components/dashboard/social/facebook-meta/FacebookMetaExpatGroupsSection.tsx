@@ -59,7 +59,7 @@ function GroupCard({ group, icon: Icon, index }: GroupCardProps) {
       <Icon className="h-5 w-5 text-info flex-shrink-0 mt-1" />
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-1">
-          <span className="text-sm font-medium text-platinum-500-200 truncate">{group.name}</span>
+          <span className="text-sm font-medium text-platinum-200 truncate">{group.name}</span>
           <Badge
             variant="outline"
             className={`text-xs shrink-0 ${credibilityColors[group.credibility] || credibilityColors['Medium']}`}
@@ -67,7 +67,7 @@ function GroupCard({ group, icon: Icon, index }: GroupCardProps) {
             {group.credibility}
           </Badge>
         </div>
-        <p className="text-xs text-platinum-500-400 mb-2 line-clamp-2">{group.description || group.focus}</p>
+        <p className="text-xs text-platinum-400 mb-2 line-clamp-2">{group.description || group.focus}</p>
         {group.members && (
           <div className="flex items-center gap-1 text-xs text-info">
             <Users className="h-3 w-3" />
@@ -225,12 +225,12 @@ export function FacebookMetaExpatGroupsSection() {
                     <div className="flex items-center gap-3">
                       <Church className="h-5 w-5 text-gold-700" />
                       <div>
-                        <span className="text-sm font-medium text-platinum-500-200">{group.name}</span>
-                        <p className="text-xs text-platinum-500-400 mt-0.5">{group.focus}</p>
+                        <span className="text-sm font-medium text-platinum-200">{group.name}</span>
+                        <p className="text-xs text-platinum-400 mt-0.5">{group.focus}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="text-xs text-platinum-500-400">{group.members}</span>
+                      <span className="text-xs text-platinum-400">{group.members}</span>
                       <ExternalLink className="h-4 w-4 text-info" />
                     </div>
                   </motion.a>

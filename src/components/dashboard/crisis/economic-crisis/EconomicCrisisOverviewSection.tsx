@@ -71,11 +71,11 @@ export function KeyCrisesSection({ majorUAEEconomicCrisesTimeline }: KeyCrisesSe
               <motion.div key={idx} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: idx * 0.07 }}
                 className="rounded-lg bg-gradient-to-r from-amber-500/10 to-orange-600/5 p-4 border border-amber-500/30">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xl text-platinum-500-100 font-rajdhani">{crisis.year} - {crisis.crisis}</span>
+                  <span className="text-xl text-platinum-100 font-rajdhani">{crisis.year} - {crisis.crisis}</span>
                   <Badge variant="outline" className={`border-${crisis.severity === 'Extreme' ? 'rose' : crisis.severity === 'High' ? 'amber' : 'gold'}-500/50 text-${crisis.severity === 'Extreme' ? 'rose' : crisis.severity === 'High' ? 'amber' : 'gold'}`}>{crisis.severity}</Badge>
                 </div>
-                <div className="text-sm text-platinum-500-400 mb-1"><strong>Key Metric:</strong> {crisis.keyMetric}</div>
-                <div className="text-sm text-platinum-500-400"><strong>Resolution:</strong> {crisis.resolution}</div>
+                <div className="text-sm text-platinum-400 mb-1"><strong>Key Metric:</strong> {crisis.keyMetric}</div>
+                <div className="text-sm text-platinum-400"><strong>Resolution:</strong> {crisis.resolution}</div>
               </motion.div>
             ))}
           </div>
@@ -101,18 +101,18 @@ export function UAERelevanceSection({ directUAECrises, uaeSpecificMetrics }: UAE
               {directUAECrises?.map((item: any, idx: number) => (
                 <div key={idx} className="flex items-center gap-2 text-sm">
                   <span className="text-amber-500 font-bold">{item.number}.</span>
-                  <span className="text-platinum-500-200">{item.crisis}</span>
-                  <span className="text-platinum-500-500">- {item.description}</span>
+                  <span className="text-platinum-200">{item.crisis}</span>
+                  <span className="text-platinum-500">- {item.description}</span>
                 </div>
               ))}
             </div>
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-platinum-500-400 mb-3">UAE Specific Metrics</h4>
+            <h4 className="text-lg font-semibold text-platinum-400 mb-3">UAE Specific Metrics</h4>
             <div className="space-y-2">
               {uaeSpecificMetrics?.slice(0, 6).map((metric: any, idx: number) => (
                 <div key={idx} className="flex justify-between text-sm border-b border-glass-border pb-1">
-                  <span className="text-platinum-500-400">{metric.metric}</span>
+                  <span className="text-platinum-400">{metric.metric}</span>
                   <span className="text-orange-400 font-semibold">{metric.value}</span>
                 </div>
               ))}

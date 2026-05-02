@@ -42,7 +42,7 @@ export default function LevantineArabicPage() {
   if (!data) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-platinum-500-400">Loading Levantine Arabic intelligence data...</div>
+        <div className="text-platinum-400">Loading Levantine Arabic intelligence data...</div>
       </div>
     )
   }
@@ -68,7 +68,7 @@ export default function LevantineArabicPage() {
     switch (trend) {
       case 'rising': return <ArrowUp className="h-4 w-4 text-emerald-400" />
       case 'declining': return <ArrowDown className="h-4 w-4 text-rose-400" />
-      default: return <Minus className="h-4 w-4 text-platinum-500-400" />
+      default: return <Minus className="h-4 w-4 text-platinum-400" />
     }
   }
 
@@ -77,7 +77,7 @@ export default function LevantineArabicPage() {
     switch (trend) {
       case 'rising': return <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/50">Rising</Badge>
       case 'declining': return <Badge className="bg-rose-500/20 text-rose-400 border-rose-500/50">Declining</Badge>
-      default: return <Badge className="bg-platinum-500/20 text-platinum-500-400 border-platinum-500/50">Stable</Badge>
+      default: return <Badge className="bg-platinum-500/20 text-platinum-400 border-platinum-500/50">Stable</Badge>
     }
   }
 
@@ -88,7 +88,7 @@ export default function LevantineArabicPage() {
         <div>
           <Badge variant="default" className="mb-2">MULTI-LINGUAL</Badge>
           <h1 className="text-3xl font-extrabold font-rajdhani gradient-text-platinum-500">Levantine Arabic Dialect</h1>
-          <p className="mt-2 text-platinum-500-400">
+          <p className="mt-2 text-platinum-400">
             {data.description || 'Intelligence on Levantine Arabic dialect: Syria, Lebanon, Jordan, Palestine, Iraq'}
           </p>
         </div>
@@ -97,7 +97,7 @@ export default function LevantineArabicPage() {
             <Languages className="h-4 w-4" />
             View Dialect Map
           </Button>
-          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-500-950 gap-2">
+          <Button className="bg-gradient-platinum hover:opacity-90 text-navy-950 gap-2">
             <Zap className="h-4 w-4" />
             Analyze
           </Button>
@@ -157,24 +157,24 @@ export default function LevantineArabicPage() {
                 <CardContent>
                   <div className="grid gap-4 lg:grid-cols-5">
                     <div className="text-center p-4 rounded-lg bg-platinum-800/50 border border-platinum-700">
-                      <div className="text-2xl font-bold text-platinum-500-400">17.5M</div>
-                      <p className="text-sm text-platinum-500-400">Syria</p>
+                      <div className="text-2xl font-bold text-platinum-400">17.5M</div>
+                      <p className="text-sm text-platinum-400">Syria</p>
                     </div>
                     <div className="text-center p-4 rounded-lg bg-platinum-800/50 border border-platinum-700">
                       <div className="text-2xl font-bold text-emerald-400">6.8M</div>
-                      <p className="text-sm text-platinum-500-400">Lebanon</p>
+                      <p className="text-sm text-platinum-400">Lebanon</p>
                     </div>
                     <div className="text-center p-4 rounded-lg bg-platinum-800/50 border border-platinum-700">
                       <div className="text-2xl font-bold text-gold-400">11.3M</div>
-                      <p className="text-sm text-platinum-500-400">Jordan</p>
+                      <p className="text-sm text-platinum-400">Jordan</p>
                     </div>
                     <div className="text-center p-4 rounded-lg bg-platinum-800/50 border border-platinum-700">
-                      <div className="text-2xl font-bold text-navy-500-400">5.4M</div>
-                      <p className="text-sm text-platinum-500-400">Palestine</p>
+                      <div className="text-2xl font-bold text-navy-400">5.4M</div>
+                      <p className="text-sm text-platinum-400">Palestine</p>
                     </div>
                     <div className="text-center p-4 rounded-lg bg-platinum-800/50 border border-platinum-700">
-                      <div className="text-2xl font-bold text-platinum-500-400">43.3M</div>
-                      <p className="text-sm text-platinum-500-400">Iraq</p>
+                      <div className="text-2xl font-bold text-platinum-400">43.3M</div>
+                      <p className="text-sm text-platinum-400">Iraq</p>
                     </div>
                   </div>
                 </CardContent>
@@ -205,21 +205,21 @@ export default function LevantineArabicPage() {
                       <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50 border border-platinum-700">
                         <div className="flex items-center gap-3">
                           <UserCheck className="h-5 w-5 text-emerald-400" />
-                          <span className="text-platinum-500-200">Refugee Integration</span>
+                          <span className="text-platinum-200">Refugee Integration</span>
                         </div>
                         <Badge className="bg-emerald-500/20 text-emerald-400">Active</Badge>
                       </div>
                       <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50 border border-platinum-700">
                         <div className="flex items-center gap-3">
-                          <Users className="h-5 w-5 text-platinum-500-400" />
-                          <span className="text-platinum-500-200">Worker Communities</span>
+                          <Users className="h-5 w-5 text-platinum-400" />
+                          <span className="text-platinum-200">Worker Communities</span>
                         </div>
-                        <Badge className="bg-platinum-500/20 text-platinum-500-400">Established</Badge>
+                        <Badge className="bg-platinum-500/20 text-platinum-400">Established</Badge>
                       </div>
                       <div className="flex items-center justify-between p-3 rounded-lg bg-platinum-800/50 border border-platinum-700">
                         <div className="flex items-center gap-3">
                           <TrendingUp className="h-5 w-5 text-gold-400" />
-                          <span className="text-platinum-500-200">Economic Migration</span>
+                          <span className="text-platinum-200">Economic Migration</span>
                         </div>
                         <Badge className="bg-gold-500/20 text-gold-400">Growing</Badge>
                       </div>
@@ -236,17 +236,17 @@ export default function LevantineArabicPage() {
                 <CardContent>
                   <div className="grid gap-4 lg:grid-cols-3">
                     <div className="space-y-2">
-                      <p className="text-sm text-platinum-500-400">Credibility Tier</p>
+                      <p className="text-sm text-platinum-400">Credibility Tier</p>
                       <Badge variant="outline" className="border-platinum/50 text-platinum-500">
                         Tier {credibility?.tier || 3}
                       </Badge>
                     </div>
                     <div className="space-y-2">
-                      <p className="text-sm text-platinum-500-400">Credibility Score</p>
-                      <div className="text-2xl font-bold text-platinum-500-400">{credibility?.score || 79}%</div>
+                      <p className="text-sm text-platinum-400">Credibility Score</p>
+                      <div className="text-2xl font-bold text-platinum-400">{credibility?.score || 79}%</div>
                     </div>
                     <div className="space-y-2">
-                      <p className="text-sm text-platinum-500-400">Sources Verified</p>
+                      <p className="text-sm text-platinum-400">Sources Verified</p>
                       <div className="text-2xl font-bold text-emerald-400">{credibility?.sources || 23}</div>
                     </div>
                   </div>
@@ -274,14 +274,14 @@ export default function LevantineArabicPage() {
                             {idx + 1}
                           </div>
                           <div>
-                            <p className="font-semibold text-platinum-500-200">{term.term}</p>
-                            <p className="text-sm text-platinum-500-400">
+                            <p className="font-semibold text-platinum-200">{term.term}</p>
+                            <p className="text-sm text-platinum-400">
                               {term.volume?.toLocaleString()} queries
                             </p>
                           </div>
                         </div>
                         <div className="flex items-center gap-4">
-                          <Badge variant="outline" className={`border-platinum-600 ${term.sentiment === 'positive' ? 'text-emerald-400' : term.sentiment === 'negative' ? 'text-rose-400' : 'text-platinum-500-400'}`}>
+                          <Badge variant="outline" className={`border-platinum-600 ${term.sentiment === 'positive' ? 'text-emerald-400' : term.sentiment === 'negative' ? 'text-rose-400' : 'text-platinum-400'}`}>
                             {term.sentiment}
                           </Badge>
                           <div className="flex items-center gap-1">
@@ -313,7 +313,7 @@ export default function LevantineArabicPage() {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <div className="h-3 w-3 rounded-full bg-emerald-500" />
-                          <span className="text-sm font-medium text-platinum-500-200">Positive</span>
+                          <span className="text-sm font-medium text-platinum-200">Positive</span>
                         </div>
                         <span className="text-lg font-bold text-emerald-400">{sentiment?.positive || 58}%</span>
                       </div>
@@ -324,9 +324,9 @@ export default function LevantineArabicPage() {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <div className="h-3 w-3 rounded-full bg-platinum-500" />
-                          <span className="text-sm font-medium text-platinum-500-200">Neutral</span>
+                          <span className="text-sm font-medium text-platinum-200">Neutral</span>
                         </div>
-                        <span className="text-lg font-bold text-platinum-500-400">{sentiment?.neutral || 20}%</span>
+                        <span className="text-lg font-bold text-platinum-400">{sentiment?.neutral || 20}%</span>
                       </div>
                       <Progress value={sentiment?.neutral || 20} className="h-3" />
                     </div>
@@ -335,7 +335,7 @@ export default function LevantineArabicPage() {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <div className="h-3 w-3 rounded-full bg-rose-500" />
-                          <span className="text-sm font-medium text-platinum-500-200">Negative</span>
+                          <span className="text-sm font-medium text-platinum-200">Negative</span>
                         </div>
                         <span className="text-lg font-bold text-rose-400">{sentiment?.negative || 22}%</span>
                       </div>
@@ -385,7 +385,7 @@ export default function LevantineArabicPage() {
                       <div key={idx} className="flex items-center justify-between rounded-lg border border-platinum-700 bg-platinum-800/50 p-4">
                         <div className="flex items-center gap-3">
                           <AlertTriangle className="h-4 w-4 text-amber-400" />
-                          <span className="text-platinum-500-200">{term.term}</span>
+                          <span className="text-platinum-200">{term.term}</span>
                         </div>
                         <Badge variant="outline" className="border-platinum-600">
                           {term.volume?.toLocaleString()} queries
@@ -410,16 +410,16 @@ export default function LevantineArabicPage() {
                             <div className={`flex h-10 w-10 items-center justify-center rounded-full ${
                               source.tier === 2 ? 'bg-emerald-500/20 text-emerald-400' :
                               source.tier === 3 ? 'bg-platinum-500/20 text-platinum-500' :
-                              'bg-platinum-500/20 text-platinum-500-400'
+                              'bg-platinum-500/20 text-platinum-400'
                             }`}>
                               <Globe className="h-5 w-5" />
                             </div>
-                            <span className="font-semibold text-platinum-500-200">{source.name}</span>
+                            <span className="font-semibold text-platinum-200">{source.name}</span>
                           </div>
                           <Badge variant="outline" className={`border-platinum-600 ${
                             source.tier === 2 ? 'text-emerald-400 border-emerald-500/50' :
-                            source.tier === 3 ? 'text-platinum-500-400 border-platinum-500/50' :
-                            'text-platinum-500-400'
+                            source.tier === 3 ? 'text-platinum-400 border-platinum-500/50' :
+                            'text-platinum-400'
                           }`}>
                             Tier {source.tier || 3}
                           </Badge>

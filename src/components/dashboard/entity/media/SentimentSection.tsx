@@ -43,15 +43,15 @@ export function SentimentSection({
           <Table>
             <TableHeader>
               <TableRow className="border-b border-platinum-200/50">
-                <TableHead className="text-platinum-500-700 font-semibold">Organization</TableHead>
-                <TableHead className="text-platinum-500-700 font-semibold">Sentiment</TableHead>
-                <TableHead className="text-platinum-500-700 font-semibold">UAE Position</TableHead>
+                <TableHead className="text-platinum-700 font-semibold">Organization</TableHead>
+                <TableHead className="text-platinum-700 font-semibold">Sentiment</TableHead>
+                <TableHead className="text-platinum-700 font-semibold">UAE Position</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {sentimentMatrix.slice(0, 10).map((entry, i) => (
                 <TableRow key={i} className="border-b border-platinum-100/50">
-                  <TableCell className="font-medium text-navy-500-900 dark:text-platinum-500-100">{entry.organization}</TableCell>
+                  <TableCell className="font-medium text-navy-900 dark:text-platinum-100">{entry.organization}</TableCell>
                   <TableCell>
                     <Badge
                       variant={
@@ -64,7 +64,7 @@ export function SentimentSection({
                       {entry.sentiment}
                     </Badge>
                   </TableCell>
-                  <TableCell className="text-sm text-platinum-500-600">{entry.uaePosition}</TableCell>
+                  <TableCell className="text-sm text-platinum-600">{entry.uaePosition}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -87,7 +87,7 @@ export function SentimentSection({
               donut={true}
             />
           ) : (
-            <div className="flex items-center justify-center h-48 text-platinum-500-500">No data available</div>
+            <div className="flex items-center justify-center h-48 text-platinum-500">No data available</div>
           )}
         </CardContent>
       </Card>
