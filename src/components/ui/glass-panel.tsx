@@ -126,7 +126,7 @@ export const GlassCard = React.forwardRef<HTMLDivElement, GlassCardProps>(
           gradient === 'emerald' && 'bg-gradient-to-br from-emerald-400 to-emerald-600',
           gradient === 'teal' && 'bg-gradient-to-br from-teal-400 to-teal-600',
           gradient === 'cyan' && 'bg-gradient-to-br from-cyan-400 to-cyan-600',
-          gradient === 'denim' && 'bg-gradient-to-br from-blue-400 to-blue-600',
+          gradient === 'denim' && 'bg-gradient-to-br from-denim-400 to-denim-600',
           gradient === 'indigo' && 'bg-gradient-to-br from-indigo-400 to-indigo-600',
           gradient === 'purple' && 'bg-gradient-to-br from-purple-400 to-purple-600',
           gradient === 'fuchsia' && 'bg-gradient-to-br from-fuchsia-400 to-fuchsia-600'

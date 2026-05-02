@@ -349,14 +349,17 @@
   /* Glass Intensity Levels */
   .glass-subtle {
     @apply bg-white/40 backdrop-blur-sm border border-white/20;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.4);
   }
 
   .glass-medium {
     @apply bg-white/60 backdrop-blur-md border border-white/30;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
   }
 
   .glass-strong {
     @apply bg-white/80 backdrop-blur-xl border border-white/40;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.6);
   }
 
   /* Dark mode glass variants */
@@ -820,6 +823,18 @@
 
   .glow-navy-strong {
     box-shadow: var(--glow-navy-strong);
+  }
+
+  .glow-platinum {
+    box-shadow: var(--glow-platinum);
+  }
+
+  .glow-success {
+    box-shadow: var(--glow-success);
+  }
+
+  .glow-error {
+    box-shadow: var(--glow-error);
   }
 
   /* Glass-specific shadows */
